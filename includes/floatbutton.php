@@ -25,14 +25,6 @@
 <span id="bdshare" class="bdshare_t mobile-hide"><a class="bds_more" href="#" data-cmd="more"></a></span>
 <!-- /.Share -->
 
-<!-- QR -->
-<span id="qr" class="mobile-hide"><i class="fa fa-qrcode"></i>
-	<div id="floatbtn-qr">
-		<div id="floatbtn-qr-msg"><?php _e('扫一扫二维码分享','tinection'); ?></div>
-	</div>
-</span>
-<!-- /.QR -->
-
 <!-- Simplified or Traditional -->
 <span id="zh-cn-tw" class="mobile-hide"><i><a id="StranLink"><?php _e('繁','tinection'); ?></a></i></span>
 <!-- /.Simplified or Traditional -->
