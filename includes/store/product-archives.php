@@ -15,7 +15,7 @@
 ?>
 <?php get_header(); ?>
 <!-- Main Wrap -->
-<div id="main-wrap" style="margin-top:-60px;background:#f1f1f1;">
+<div id="main-wrap" style="margin-top:-80px;background:#f1f1f1;">
 <div class="sub-billboard billboard shopping">
   <div class="wrapper">
     <div class="inner">

@@ -527,6 +527,7 @@ if ( ! class_exists( 'OT_Loader' ) ) {
           font-style: normal;
         }
 		#wpadminbar *,#wpwrap{font-family:consolas,"Microsoft Yahei";}
+        #wpwrap .avatar-100{width:50px !important; height:50px !important;}
         #adminmenu #toplevel_page_ot-settings .menu-icon-generic div.wp-menu-image:before,
         #option-tree-header #option-tree-logo a:before {
           font: normal ' . $fontsize . '/1 "option-tree-font" !important;

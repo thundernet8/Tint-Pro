@@ -2,8 +2,8 @@
 Theme Name: Tincetion
 Theme URI: http://www.zhiyanblog.com/tinection.html
 Description: Tinection主题，WordPress多模板主题，知言博客自用主题
-Version: 1.1.9
-Date: 2015.5.27
+Version: 2.0.0
+Date: 2016.1.30
 Author: Zhiyan
 Author URI: http://www.zhiyanblog.com/
 Text Domain: tinection
@@ -85,14 +85,25 @@ article h2,article h3{text-transform: capitalize;}
 .hidefixnav{height: 80px;/* background: url(images/pix.png) repeat 2px 2px; */}
 #nav-scroll {position: fixed; top:0px;}
 #nav-scroll.tofix{position: fixed;transition: all 0.5s;-webkit-transition: all 0.5s;height: 60px;box-shadow: 0px 2px 5px 0px rgba(0,0,0,.15);opacity:0.9;filter: alpha(opacity=90);}
-#nav-scroll.tofix .logo a img{height: 60px;}
-#nav-scroll.tofix .login-yet-click{display: none;}
-#nav-scroll.tofix #login-reg{height: 60px;padding: 13px 0;}
-#nav-scroll.tofix li{line-height: 52px;height: 60px;}
-#nav-scroll.tofix li li{line-height: 20px;height: auto;}
-#nav-scroll.tofix .menu-item-has-children > a:after, #nav-scroll.tofix .page_item_has_children > a:after{line-height: 50px;}
-#nav-scroll.tofix .logo-title a{line-height:60px;}
-#nav-scroll.tofix .search-btn-click{line-height: 60px;width:50px;}
+#nav-scroll.tofix .logo a img, .post-type-archive-store #nav-scroll .logo a img{height: 60px; background: transparent;}
+#nav-scroll.tofix .login-yet-click, .post-type-archive-store #nav-scroll .login-yet-click{display: none;}
+#nav-scroll.tofix #login-reg, .post-type-archive-store #nav-scroll #login-reg{height: 60px;padding: 13px 0;}
+#nav-scroll.tofix li, .post-type-archive-store #nav-scroll li{line-height: 52px;height: 60px;}
+#nav-scroll.tofix li li, .post-type-archive-store #nav-scroll li li{line-height: 20px;height: auto;}
+#nav-scroll.tofix .menu-item-has-children > a:after, #nav-scroll.tofix .page_item_has_children > a:after, .post-type-archive-store #nav-scroll .menu-item-has-children > a:after, .post-type-archive-store #nav-scroll .page_item_has_children > a:after{line-height: 50px;}
+#nav-scroll.tofix .logo-title a, .post-type-archive-store #nav-scroll .logo-title a{line-height:60px;}
+#nav-scroll.tofix .search-btn-click, .post-type-archive-store #nav-scroll .search-btn-click{line-height: 60px;width:50px;}
+
+.post-type-archive-store #nav-scroll, .post-type-archive-store #nav-scroll.tofix{position: absolute; height: 60px; opacity: 1; box-shadow: none; background: transparent !important;}
+.post-type-archive-store .elan_menu li a span{display: none;}
+.post-type-archive-store .pri-nav li > a, .post-type-archive-store .pri-nav li.current-menu-item a{color: #ffffff; height: 60px;}
+.post-type-archive-store #focus-us{display: none;}
+.post-type-archive-store .pri-nav .nav-menu{background: transparent;}
+.post-type-archive-store .pri-nav li > a:hover{color: #ffffff; background: transparent; border-bottom-color: #ffffff; border-bottom-width: 1px;}
+.post-type-archive-store .pri-nav ul li ul li a{color: #333333; background: #ffffff; line-height: 36px;}
+.post-type-archive-store .pri-nav ul li ul li a:hover{color: #333333;}
+.post-type-archive-store .elan_menu li a{height: 60px;}
+.post-type-archive-store .elan_menu li a i{margin-top: -4px;}
 
 .logo {display: inline-block; float: left; margin-right: 20px;}
 .logo a img {height: 80px; width: auto; margin-top: 0px;}
@@ -177,7 +188,9 @@ input.focus-email-submit{width:100%;height:30px;background:#00b5a9;color:#fff;bo
 .pri-nav ul ul a {padding: 12px 12px !important; white-space: nowrap; width: 100%;text-align: center;}
 .pri-nav li a:hover{color: #428bca;}
 .pri-nav li.current-menu-item a {border-bottom: 4px solid #428bca;}
+.post-type-archive-store .pri-nav li.current-menu-item a{border-bottom: 1px solid #ffffff;}
 .pri-nav ul ul {border-bottom: 4px solid #428bca;}
+.post-type-archive-store .pri-nav ul ul{border-bottom: none;}
 .pri-nav a {padding-top: 4px;border-bottom: 4px solid transparent;_border-bottom-color: #fff;}
 .pri-nav a:hover {border-bottom-color: #428bca;}
 .pri-nav ul li ul li a {border-bottom: 0;}
