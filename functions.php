@@ -29,14 +29,41 @@ if (!defined('THEME_ASSET')){
 	define('THEME_ASSET', get_template_directory_uri().'/assets');
 }
 
+if(!function_exists('load_dash')){
+	function load_dash($path){
+		load_template(THEME_DIR.'/dashboard/'.$path);
+	}
+}
+
+if(!function_exists('load_func')){
+	function load_func($path){
+		load_template(THEME_DIR.'/functions/'.$path);
+	}
+}
+
+if(!function_exists('load_class')){
+	function load_class($path){
+		load_template(THEME_DIR.'/classes/'.$path);
+	}
+}
+
 /* 载入option_tree */
-load_template(THEME_DIR.'/dashboard/ot.php');
+load_dash('ot.php');
 
 /* 载入后台相关处理逻辑 */
-load_template(THEME_DIR.'dashboard/dash.php');
+load_dash('dash.php');
 
 /* 载入主题选项 */
-load_template( THEME_DIR.'/dashboard/theme-options.php' );
+load_dash('options.php');
+
+/* 载入功能函数 */
+load_func('func.Kits.php');
+load_func('func.Optimization.php');
+load_func('func.Sidebar.php');
+
+/* 载入类 */
+load_class('class.PostThumb.php');
+load_class('class.Utils.php');
 
 /* 载入主题功能模块 */
 function tin_load() {
