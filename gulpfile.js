@@ -132,6 +132,13 @@ gulp.task('cleanDist', function () {
         .pipe(clean());
 });
 
+//
+gulp.task('lint', function() {
+    return gulp.src('src/js/**/*.js')
+        .pipe(eslint())
+        .pipe(eslint.format());
+});
+
 //默认任务
 gulp.task('default', ['watch'], function () {
     console.log('start monitor task');
