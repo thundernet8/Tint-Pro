@@ -4,7 +4,7 @@
  */
 function optionsframework_option_name() {
 	// Change this to use your theme slug
-	return 'options-framework-theme';
+	return 'options-framework-theme-tint';
 }
 
 /**
@@ -17,17 +17,40 @@ function optionsframework_option_name() {
  */
 
 function optionsframework_options() {
+    // 主题版本
+    $theme_version = wp_get_theme()->get('Version');
 
-	//主题选项 - 基本设置
+    // 定义选项面板图片引用路径
+    $imagepath =  THEME_URI . '/dashboard/of_inc/images/';
+
+    $options = array();
+
+	// 主题选项 - 基本设置
 	$options[] = array(
 		'name' => __( 'Basic Settings', 'tt' ),
 		'type' => 'heading'
 	);
 
-	//
+	// - 首页描述
+    $options[] = array(
+        'name' => __( 'Home Page Description', 'tt' ),
+        'desc' => __( 'Home page description meta information, good for SEO', 'tt' ),
+        'id' => 'tt_home_description',
+        'std' => '',
+        'type' => 'text'
+    );
+
+    // - 首页关键词
+    $options[] = array(
+        'name' => __( 'Home Page Keywords', 'tt' ),
+        'desc' => __( 'Home page keywords meta information, good for SEO', 'tt' ),
+        'id' => 'tt_home_keywords',
+        'std' => '',
+        'type' => 'text'
+    );
 
 
-	//主题选项 - 样式设置
+	// 主题选项 - 样式设置
 	$options[] = array(
 		'name' => __( 'Style Settings', 'tt' ),
 		'type' => 'heading'
@@ -36,7 +59,7 @@ function optionsframework_options() {
 	//
 
 
-	//主题设置 - 边栏设置
+	// 主题设置 - 边栏设置
 	$options[] = array(
 		'name' => __( 'Sidebar Settings', 'tt' ),
 		'type' => 'heading'
@@ -46,7 +69,7 @@ function optionsframework_options() {
 	//
 
 
-	//主题设置 - 社会化设置(包含管理员社会化链接等)
+	// 主题设置 - 社会化设置(包含管理员社会化链接等)
 	$options[] = array(
 		'name' => __( 'Social Settings', 'tt' ),
 		'type' => 'heading'
@@ -56,7 +79,7 @@ function optionsframework_options() {
 	//
 
 
-	//主题设置 - 广告设置
+	// 主题设置 - 广告设置
 	$options[] = array(
 		'name' => __( 'Ad Settings', 'tt' ),
 		'type' => 'heading'
@@ -66,7 +89,7 @@ function optionsframework_options() {
 	//
 
 
-	//主题设置 - 用户系统设置(包含积分和会员)
+	// 主题设置 - 用户系统设置(包含积分和会员)
 	$options[] = array(
 		'name' => __( 'Member Settings', 'tt' ),
 		'type' => 'heading'
@@ -76,7 +99,7 @@ function optionsframework_options() {
 	//
 
 
-	//主题设置 - 商店设置
+	// 主题设置 - 商店设置
 	$options[] = array(
 		'name' => __( 'Shop Settings', 'tt' ),
 		'type' => 'heading'
@@ -86,7 +109,7 @@ function optionsframework_options() {
 	//
 
 
-	//主题设置 - 辅助设置(包含短链接、SMTP工具等)
+	// 主题设置 - 辅助设置(包含短链接、SMTP工具等)
 	$options[] = array(
 		'name' => __( 'Auxiliary Settings', 'tt' ),
 		'type' => 'heading'
@@ -148,37 +171,29 @@ function optionsframework_options() {
 	);
 
 	// Pull all the categories into an array
-	$options_categories = array();
-	$options_categories_obj = get_categories();
-	foreach ($options_categories_obj as $category) {
-		$options_categories[$category->cat_ID] = $category->cat_name;
-	}
+//	$options_categories = array();
+//	$options_categories_obj = get_categories();
+//	foreach ($options_categories_obj as $category) {
+//		$options_categories[$category->cat_ID] = $category->cat_name;
+//	}
 
 	// Pull all tags into an array
-	$options_tags = array();
-	$options_tags_obj = get_tags();
-	foreach ( $options_tags_obj as $tag ) {
-		$options_tags[$tag->term_id] = $tag->name;
-	}
+//	$options_tags = array();
+//	$options_tags_obj = get_tags();
+//	foreach ( $options_tags_obj as $tag ) {
+//		$options_tags[$tag->term_id] = $tag->name;
+//	}
 
 
 	// Pull all the pages into an array
-	$options_pages = array();
-	$options_pages_obj = get_pages( 'sort_column=post_parent,menu_order' );
-	$options_pages[''] = 'Select a page:';
-	foreach ($options_pages_obj as $page) {
-		$options_pages[$page->ID] = $page->post_title;
-	}
+//	$options_pages = array();
+//	$options_pages_obj = get_pages( 'sort_column=post_parent,menu_order' );
+//	$options_pages[''] = 'Select a page:';
+//	foreach ($options_pages_obj as $page) {
+//		$options_pages[$page->ID] = $page->post_title;
+//	}
 
-	// If using image radio buttons, define a directory path
-	$imagepath =  get_template_directory_uri() . 'dashboard/of_inc/images/';
 
-	$options = array();
-
-	$options[] = array(
-		'name' => __( 'Basic Settings', 'tt' ),
-		'type' => 'heading'
-	);
 
 	$options[] = array(
 		'name' => __( 'Input Text Mini', 'tt' ),
@@ -394,3 +409,6 @@ function optionsframework_options() {
 
 	return $options;
 }
+
+// TODO DEBUG mode option
+// TODO jQuery 1.x/3.x switch option

@@ -26,6 +26,10 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
+if ( ! defined( 'OPTIONS_FRAMEWORK_DIRECTORY' )) {
+    define( 'OPTIONS_FRAMEWORK_DIRECTORY', THEME_URI . '/dashboard/of_inc/');
+}
+
 // Don't load if optionsframework_init is already defined
 if (is_admin() && ! function_exists( 'optionsframework_init' ) ) :
 

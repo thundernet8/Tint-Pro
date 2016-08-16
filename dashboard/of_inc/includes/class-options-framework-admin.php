@@ -85,18 +85,18 @@ class Options_Framework_Admin {
 		$menu = array(
 
 			// Modes: submenu, menu
-            'mode' => 'submenu',
+			'mode' => 'menu',
 
-            // Submenu default settings
-            'page_title' => __( 'Theme Options', 'theme-textdomain' ),
+			// Submenu default settings
+			'page_title' => __( 'Theme Options', 'theme-textdomain' ),
 			'menu_title' => __( 'Theme Options', 'theme-textdomain' ),
 			'capability' => 'edit_theme_options',
 			'menu_slug' => 'options-framework',
-            'parent_slug' => 'themes.php',
+			'parent_slug' => 'admin.php',
 
-            // Menu default settings
-            'icon_url' => 'dashicons-admin-generic',
-            'position' => '61'
+			// Menu default settings
+			'icon_url' => 'dashicons-admin-customizer',
+			'position' => 61
 
 		);
 
@@ -117,13 +117,15 @@ class Options_Framework_Admin {
 
 		// Code removed because it conflicts with .org theme check.
 
-		$this->options_screen = add_theme_page(
-            $menu['page_title'],
-            $menu['menu_title'],
-            $menu['capability'],
-            $menu['menu_slug'],
-            array( $this, 'options_page' )
-        );
+		$this->options_screen = add_menu_page(
+			$menu['page_title'],
+			$menu['menu_title'],
+			$menu['capability'],
+			$menu['menu_slug'],
+			array( $this, 'options_page' ),
+			$menu['icon_url'],
+			$menu['position']
+		);
 
 	}
 

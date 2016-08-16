@@ -1,20 +1,22 @@
 <?php
 
 /**
- * Copyright 2016, Zhiyanblog.com
+ * Copyright 2016, WebApproach.net
  * All right reserved.
  *
  * @author Zhiyan
  * @date 16/5/27 16:30
  * @license GPL v3 LICENSE
  */
- 
+
 ?>
 
 <?php
 
 /* 安全检测 */
-if (!defined('ABSPATH')){exit;}
+if (!defined('ABSPATH')){
+    wp_die(__('Lack of WordPress environment', 'tt'), __('WordPress internal error', 'tt'), array('response'=>500));
+}
 
 /* 定义全局常量 */
 if (!defined('THEME_DIR')){
@@ -22,7 +24,7 @@ if (!defined('THEME_DIR')){
 }
 
 if (!defined('THEME_URI')){
-	define('THEME_URI', get_template_directory_uri());
+	define('THEME_URI', get_template_directory_uri()); // TODO: check ssl support
 }
 
 if (!defined('THEME_ASSET')){
@@ -31,42 +33,52 @@ if (!defined('THEME_ASSET')){
 
 if(!function_exists('load_dash')){
 	function load_dash($path){
-		load_template(THEME_DIR.'/dashboard/'.$path);
-	}
-}
-
-if(!function_exists('load_func')){
-	function load_func($path){
-		load_template(THEME_DIR.'/functions/'.$path);
+		load_template(THEME_DIR.'/dashboard/'.$path.'.php');
 	}
 }
 
 if(!function_exists('load_class')){
 	function load_class($path){
-		load_template(THEME_DIR.'/classes/'.$path);
+		load_template(THEME_DIR.'/core/classes/'.$path.'.php');
 	}
 }
 
-/* 载入option_tree */
-load_dash('ot.php');
+if(!function_exists('load_func')){
+    function load_func($path){
+        load_template(THEME_DIR.'/core/functions/'.$path.'.php');
+    }
+}
 
-/* 载入后台相关处理逻辑 */
-load_dash('dash.php');
+if(!function_exists('load_mod')){
+    function load_mod($path){
+        load_template(THEME_DIR.'/core/modules/'.$path.'.php');
+    }
+}
+
+/* 载入option_framework */
+load_dash('of_inc/options-framework');
 
 /* 载入主题选项 */
-load_dash('options.php');
+load_dash('options');
+
+/* 载入后台相关处理逻辑 */
+if( is_admin() ){
+    load_dash('dash');
+}
 
 /* 载入功能函数 */
-load_func('func.Kits.php');
-load_func('func.Optimization.php');
-load_func('func.Sidebar.php');
+load_func('func.Install');
+load_func('func.Kits');
+load_func('func.Optimization');
+load_func('func.Sidebar');
 
 /* 载入类 */
-load_class('class.PostThumb.php');
-load_class('class.Utils.php');
+load_class('class.Avatar');
+load_class('class.PostThumb');
+load_class('class.Utils');
 
 /* 载入主题功能模块 */
-function tin_load() {
+function tt_load() {
 	//载入小工具
 	load_template( THEME_DIR . '/modules/widgets/tin-tabs.php' );
 	load_template( THEME_DIR . '/modules/widgets/tin-posts.php' );
@@ -114,18 +126,18 @@ function tin_load() {
 	}
 
 	// 载入语言包
-	load_theme_textdomain( 'option-tree', THEME_DIR . '/dashboard/option/languages' );
+	//load_theme_textdomain( 'option-tree', THEME_DIR . '/dashboard/option/languages' );
 
 	// 移除自动保存和修订版本
-	if ( ot_get_option( 'wp_auto_save' ) == 'on' ) {
-		add_action( 'wp_print_scripts', 'tin_disable_autosave' );
-		remove_action( 'post_updated', 'wp_save_post_revision' );
-	}
+//	if ( ot_get_option( 'wp_auto_save' ) == 'on' ) {
+//		add_action( 'wp_print_scripts', 'tin_disable_autosave' );
+//		remove_action( 'post_updated', 'wp_save_post_revision' );
+//	}
 }
-add_action( 'after_setup_theme', 'tin_load' );
+//add_action( 'after_setup_theme', 'tt_load' );
 
 /* 主题扩展 */
-function tin_setup() {
+function tt_setup() {
 	// 开启自动feed地址
 	add_theme_support( 'automatic-feed-links' );
 
@@ -148,11 +160,6 @@ function tin_setup() {
 		'pageBar' => '页面合并菜单',
 	) );
 }
-add_action( 'after_setup_theme', 'tin_setup' );
+add_action( 'after_setup_theme', 'tt_setup' );
 
-
-/* 载入优化功能 */
-load_template(THEME_DIR.'/functions/func.Optimization.php');
-
-/* 边栏区管理 */
-load_template(THEME_DIR.'/functions/func.Sidebar.php');
+// TODO: @since

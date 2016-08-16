@@ -6,10 +6,10 @@
 var gulp = require('gulp');
 var pkg = require('./package.json');
 
-//加载所有 gulp 插件, 插件以 GP 的属性方式调用
-//var GP = require('gulp-load-plugins')();
+// 加载所有 gulp 插件, 插件以 GP 的属性方式调用
+// var GP = require('gulp-load-plugins')();
 
-//逐个加载插件
+// 逐个加载插件
 var cache = require('gulp-cache'),
     clean = require('gulp-clean'),
     concat = require('gulp-concat'),
@@ -26,7 +26,7 @@ var cache = require('gulp-cache'),
     webpack = require('gulp-webpack');
 
 
-/*
+/**
  * 构建文件的注释头
  */
 var banner = ['/**',
@@ -45,11 +45,11 @@ var banner = ['/**',
     ''].join('\n');
 
 
-/*
+/**
  * gulp 任务流
  */
 
-//less 样式文件压缩发布
+// less 样式文件压缩发布
 gulp.task('less', function () {
     console.log('start less task');
     gulp.src('./assets/css')
@@ -67,7 +67,7 @@ gulp.task('less', function () {
         .pipe(gulp.dest('./src/rev'));              //- 将 rev-manifest.json 保存到 rev 目录内
 });
 
-//图片压缩发布
+// 图片压缩发布
 gulp.task('imagemin', function () {
     console.log('start imagemin task');
     gulp.src('./src/img/**/*.{png,jpg,gif,ico}')
@@ -80,7 +80,7 @@ gulp.task('imagemin', function () {
         .pipe(gulp.dest('./assets/img'));
 });
 
-//js压缩合并发布
+// js压缩合并发布
 gulp.task('scripts', function () {
     console.log('start scripts task');
     gulp.src('./assets/js')
@@ -100,7 +100,7 @@ gulp.task('scripts', function () {
         .pipe(gulp.dest('./src/rev'));                                            //- 将 rev-manifest.json 保存到 rev 目录内
 });
 
-//php文件内资源文件引用路径替换
+// php文件内资源文件引用路径替换
 gulp.task('rev', function () {
     console.log('start rev task');
     gulp.src(['./src/rev/*.json', './src/php/*.php'])
@@ -108,7 +108,7 @@ gulp.task('rev', function () {
         .pipe(gulp.dest('./'));                     //- 输出php文件至视图目录
 });
 
-//监控
+// 监控
 gulp.task('watch', function () {
     console.log('execute watch and auto-combine task');
     gulp.watch('./src/css/*.less', ['less', 'rev']);
@@ -116,7 +116,7 @@ gulp.task('watch', function () {
     gulp.watch('./src/img/**/*.{png,jpg,gif,ico}', ['imagemin']);
 });
 
-//构建
+// 构建
 gulp.task('build', ['less', 'scripts', 'imagemin'], function () {
     console.log('start build task');
     gulp.src(['./src/rev/*.json', './src/php/header.php', './src/php/footer.php'])
@@ -125,21 +125,39 @@ gulp.task('build', ['less', 'scripts', 'imagemin'], function () {
         .pipe(gulp.dest('./'));
 });
 
-//清理发布目录
+// 清理发布目录
 gulp.task('cleanDist', function () {
     console.log('start clean dist directory');
     gulp.src('./assets/**/*.*')
         .pipe(clean());
 });
 
-//
+// ESlint
 gulp.task('lint', function() {
     return gulp.src('src/js/**/*.js')
         .pipe(eslint())
         .pipe(eslint.format());
 });
 
-//默认任务
+// 默认任务
 gulp.task('default', ['watch'], function () {
     console.log('start monitor task');
+});
+
+// 发布主题文件至本地服务器路径调试
+gulp.task('deploy', function () {
+    console.log('Begin clear themes folder');
+    gulp.src('D:/Dev/WebServer/WWW/wordpress/wp-content/themes/Tint/**/*.*')
+        .pipe(clean({force: true}));
+    setTimeout(function(){
+        console.log('Begin copy theme to themes folder');
+        gulp.src(['./assets/**/*.*'])
+            .pipe(gulp.dest('D:/Dev/WebServer/WWW/wordpress/wp-content/themes/Tint/assets'));
+        gulp.src(['./core/**/*.*'])
+            .pipe(gulp.dest('D:/Dev/WebServer/WWW/wordpress/wp-content/themes/Tint/core'));
+        gulp.src(['./dashboard/**/*.*'])
+            .pipe(gulp.dest('D:/Dev/WebServer/WWW/wordpress/wp-content/themes/Tint/dashboard'));
+        gulp.src(['./*.php', './*.png', './*.css'])
+            .pipe(gulp.dest('D:/Dev/WebServer/WWW/wordpress/wp-content/themes/Tint'));
+    }, 2000);
 });
