@@ -1,28 +1,28 @@
 {
-  "name": "tinection",
-  "capitalName": "Tinection",
+  "name": "tint",
+  "capitalName": "Tint",
   "version": "2.0.0",
-  "description": "Tinection主题，WordPress多模板主题，知言博客自用主题",
+  "description": "Tint - WordPress Template",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "WordPress",
-    "Tinection",
+    "Tint",
     "Theme"
   ],
   "author": "Zhiyan",
-  "email": "admin@zhiyanblog.com",
-  "site": "www.zhiyanblog.com",
-  "siteAbbr": "Zhiyanblog",
-  "license": "GPL-2.0",
+  "email": "mail@webapproach.net",
+  "site": "www.webapproach.net",
+  "siteAbbr": "WebApproach",
+  "license": "GPL-3.0",
   "licenseDes": "http://opensource.org/licenses/gpl-2.0.php GPL v2 or later",
   "bugs": {
     "url": "https://github.com/thundernet8/Tinection-Pro/issues"
   },
   "githome": "https://github.com/thundernet8/Tinection-Pro",
-  "homepage": "http://www.zhiyanblog.com/store/goods/tinection-pro.html",
+  "homepage": "http://www.webapproach.net/tint.html",
   "devDependencies": {
     "babel-core": "^6.9.0",
     "babel-loader": "^6.2.4",
@@ -35,8 +35,9 @@
     "gulp-eslint": "^2.0.0",
     "gulp-header": "^1.8.2",
     "gulp-htmlmin": "^2.0.0",
-    "gulp-imagemin": "^3.0.1",
+    "gulp-imagemin": "^3.0.3",
     "gulp-less": "^3.1.0",
+    "gulp-notify": "^2.2.0",
     "gulp-rename": "^1.2.2",
     "gulp-rev": "^7.0.0",
     "gulp-rev-collector": "^1.0.3",

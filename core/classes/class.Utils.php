@@ -1,14 +1,14 @@
 <?php
 
 /**
- * Copyright 2016, Zhiyanblog.com
+ * Copyright 2016, WebApproach.net
  * All right reserved.
  *
  * @author Zhiyan
  * @date 16/6/21 14:57
  * @license GPL v3 LICENSE
  */
- 
+
 ?>
 <?php
 
@@ -337,7 +337,7 @@ class Utils{
         }
         return false;
     }
-    
+
 
     /**
      * 格式化时间为时间差字符串(如`1分钟以前`)
@@ -381,13 +381,13 @@ class Utils{
         };
         return '';
     }
-    
-    
+
+
     /**
      * 截取字符串,支持UTF-8中文字符,中文一个文字计为一个字符
-     * 
+     *
      * @since 2.0.0
-     * 
+     *
      * @static
      * @access public
      * @param string $str       待截取字符串
@@ -443,7 +443,7 @@ class Utils{
 
 
     /**
-     * 获取HTTPS协议链接
+     * 获取HTTPS协议链接, WordPress set_url_scheme( $url, $scheme )则基于当前页面是否SSL自动选择默认值
      *
      * @since   2.0.0
      *
@@ -460,33 +460,34 @@ class Utils{
     }
 
 
+//    /**
+//     * 判断是否HTTPS连接
+//     *
+//     * @since   2.0.0
+//     *
+//     * @static
+//     * @access  public
+//     * @return bool
+//     */
+//    public static function isSSL(){
+//        return  isset($_SERVER['HTTPS']);
+//    }
+//    use is_ssl() instead
+
+
     /**
-     * 判断是否HTTPS连接
-     *
-     * @since   2.0.0
-     *
-     * @static
-     * @access  public
-     * @return bool
-     */
-    public static function isSSL(){
-        return  isset($_SERVER['HTTPS']);
-    }
-
-
-    /*
      * 获取主题设置(别名函数)
      *
      * @since   2.0.0
      *
      * @static
      * @access  public
-     * @param   string  $id     设置ID
+     * @param   string  $name       设置名
      * @param   mixed   $default    默认值
      * @return  mixed   设置值
      */
-    public static function getOption($id, $default){
-        return of_get_option($id, $default);
+    public static function getOption($name, $default){
+        return of_get_option($name, $default);
     }
 
 }

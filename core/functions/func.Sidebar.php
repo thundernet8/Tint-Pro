@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Copyright 2016, Zhiyanblog.com
+ * Copyright 2016, WebApproach.net
  * All right reserved.
  *
  * @author Zhiyan

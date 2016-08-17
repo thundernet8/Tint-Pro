@@ -67,6 +67,7 @@ if( is_admin() ){
 }
 
 /* 载入功能函数 */
+load_func('func.I18n');
 load_func('func.Install');
 load_func('func.Kits');
 load_func('func.Optimization');

@@ -1,14 +1,14 @@
 <?php
 
 /**
- * Copyright 2016, Zhiyanblog.com
+ * Copyright 2016, WebApproach.net
  * All right reserved.
  *
  * @author Zhiyan
  * @date 16/6/22 15:35
  * @license GPL v3 LICENSE
  */
- 
+
 ?>
 <?php
 

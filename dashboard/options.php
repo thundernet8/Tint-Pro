@@ -27,7 +27,7 @@ function optionsframework_options() {
 
 	// 主题选项 - 基本设置
 	$options[] = array(
-		'name' => __( 'Basic Settings', 'tt' ),
+		'name' => __( 'Basic', 'tt' ),
 		'type' => 'heading'
 	);
 
@@ -49,10 +49,23 @@ function optionsframework_options() {
         'type' => 'text'
     );
 
+    // - 本地化语言
+    $options[] = array(
+        'name' => __( 'I18n', 'tt' ),
+        'desc' => __( 'Multi languages and I18n support', 'tt' ),
+        'id' => 'tt_i18n',
+        'std' => 'zh_CN',
+        'type' => 'select',
+        'options' => array(
+            'zh_CN' => __( 'zh_cn', 'tt' ),
+            'en_US' => __( 'en_us', 'tt' )
+        )
+    );
+
 
 	// 主题选项 - 样式设置
 	$options[] = array(
-		'name' => __( 'Style Settings', 'tt' ),
+		'name' => __( 'Style', 'tt' ),
 		'type' => 'heading'
 	);
 
@@ -61,7 +74,7 @@ function optionsframework_options() {
 
 	// 主题设置 - 边栏设置
 	$options[] = array(
-		'name' => __( 'Sidebar Settings', 'tt' ),
+		'name' => __( 'Sidebar', 'tt' ),
 		'type' => 'heading'
 	);
 
@@ -71,7 +84,7 @@ function optionsframework_options() {
 
 	// 主题设置 - 社会化设置(包含管理员社会化链接等)
 	$options[] = array(
-		'name' => __( 'Social Settings', 'tt' ),
+		'name' => __( 'Social', 'tt' ),
 		'type' => 'heading'
 	);
 
@@ -81,7 +94,7 @@ function optionsframework_options() {
 
 	// 主题设置 - 广告设置
 	$options[] = array(
-		'name' => __( 'Ad Settings', 'tt' ),
+		'name' => __( 'Ad', 'tt' ),
 		'type' => 'heading'
 	);
 
@@ -91,7 +104,7 @@ function optionsframework_options() {
 
 	// 主题设置 - 用户系统设置(包含积分和会员)
 	$options[] = array(
-		'name' => __( 'Member Settings', 'tt' ),
+		'name' => __( 'Membership', 'tt' ),
 		'type' => 'heading'
 	);
 
@@ -101,7 +114,7 @@ function optionsframework_options() {
 
 	// 主题设置 - 商店设置
 	$options[] = array(
-		'name' => __( 'Shop Settings', 'tt' ),
+		'name' => __( 'Shop', 'tt' ),
 		'type' => 'heading'
 	);
 
@@ -111,12 +124,22 @@ function optionsframework_options() {
 
 	// 主题设置 - 辅助设置(包含短链接、SMTP工具等)
 	$options[] = array(
-		'name' => __( 'Auxiliary Settings', 'tt' ),
+		'name' => __( 'Auxiliary', 'tt' ),
 		'type' => 'heading'
 	);
 
 
 	//
+
+
+    // 主题反馈
+    $options[] = array(
+        'name' => __( 'Feedback', 'tt' ),
+        'type' => 'heading'
+    );
+
+
+    //
 
 
 

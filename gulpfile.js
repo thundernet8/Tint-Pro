@@ -23,7 +23,8 @@ var cache = require('gulp-cache'),
     rev = require('gulp-rev'),
     revCollector = require('gulp-rev-collector'),
     uglify = require('gulp-uglify'),
-    webpack = require('gulp-webpack');
+    webpack = require('gulp-webpack'),
+    notify = require('gulp-notify');
 
 
 /**
@@ -71,13 +72,16 @@ gulp.task('less', function () {
 gulp.task('imagemin', function () {
     console.log('start imagemin task');
     gulp.src('./src/img/**/*.{png,jpg,gif,ico}')
-        .pipe(cache(imagemin({
-            optimizationLevel: 5, //类型：Number  默认：3  取值范围：0-7（优化等级）
-            progressive: true, //类型：Boolean 默认：false 无损压缩jpg图片
-            interlaced: true, //类型：Boolean 默认：false 隔行扫描gif进行渲染
-            multipass: true //类型：Boolean 默认：false 多次优化svg直到完全优化
-        })))
+        .pipe(cache(
+            imagemin({
+                optimizationLevel: 5, //类型：Number  默认：3  取值范围：0-7（优化等级）
+                progressive: true, //类型：Boolean 默认：false 无损压缩jpg图片
+                interlaced: true, //类型：Boolean 默认：false 隔行扫描gif进行渲染
+                multipass: true //类型：Boolean 默认：false 多次优化svg直到完全优化
+            })
+        ))
         .pipe(gulp.dest('./assets/img'));
+        //.pipe(notify({ message: 'Images task complete' }));
 });
 
 // js压缩合并发布
@@ -88,7 +92,7 @@ gulp.task('scripts', function () {
     gulp.src(['./src/js/*.js'])
         .pipe(eslint())                                                           //- js代码检查
         .pipe(eslint.format())
-        .pipe(webpack(require('./webpack.config.js')))                                   //- webpack打包模块
+        .pipe(webpack(require('./webpack.config.js')))                            //- webpack打包模块
         .pipe(uglify())                                                           //- js压缩
         .pipe(rev())                                                              //- 文件名加MD5后缀
         .pipe(header(banner, {pkg: pkg}))                                         //- 文档添加注释头

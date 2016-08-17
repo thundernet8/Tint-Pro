@@ -1,0 +1,518 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: TinT\n"
+"POT-Creation-Date: 2016-08-17 22:23+0800\n"
+"PO-Revision-Date: 2016-08-17 22:40+0800\n"
+"Last-Translator: Zhiyan <mail@webapproach.net>\n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 1.8.8\n"
+"X-Poedit-Basepath: ../../..\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: core/classes/class.Utils.php:364
+msgid "刚刚"
+msgstr ""
+
+#: core/classes/class.Utils.php:367
+msgid "年前"
+msgstr ""
+
+#: core/classes/class.Utils.php:368
+msgid "个月前"
+msgstr ""
+
+#: core/classes/class.Utils.php:369
+msgid "周前"
+msgstr ""
+
+#: core/classes/class.Utils.php:370
+msgid "天前"
+msgstr ""
+
+#: core/classes/class.Utils.php:371
+msgid "小时前"
+msgstr ""
+
+#: core/classes/class.Utils.php:372
+msgid "分钟"
+msgstr ""
+
+#: core/classes/class.Utils.php:373
+msgid "秒前"
+msgstr ""
+
+#: core/functions/func.Install.php:26
+msgid ""
+"Create avatar upload folder failed, maybe check your php.ini to enable "
+"`mkdir` function.\\n"
+msgstr "创建头像上传文件夹失败，或许可检查php.ini以启用`mkdir`函数.\\n"
+
+#: core/functions/func.Install.php:27
+msgid "Caught exception: "
+msgstr "捕获异常: "
+
+#: dashboard/of_inc/includes/class-options-framework-admin.php:91
+#: dashboard/of_inc/includes/class-options-framework-admin.php:92
+msgid "Theme Options"
+msgstr "主题选项"
+
+#: dashboard/of_inc/includes/class-options-framework-admin.php:205
+msgid "Save Options"
+msgstr "保存"
+
+#: dashboard/of_inc/includes/class-options-framework-admin.php:206
+msgid "Restore Defaults"
+msgstr "还原默认"
+
+#: dashboard/of_inc/includes/class-options-framework-admin.php:206
+msgid "Click OK to reset. Any theme settings will be lost!"
+msgstr "点击`确定`以重置，将会丢失所有主题设置！"
+
+#: dashboard/of_inc/includes/class-options-framework-admin.php:237
+msgid "Default options restored."
+msgstr "已还原默认设置"
+
+#: dashboard/of_inc/includes/class-options-framework-admin.php:291
+msgid "Options saved."
+msgstr "设置已保存"
+
+#: dashboard/of_inc/includes/class-options-media-uploader.php:62
+msgid "No file chosen"
+msgstr "未选择文件"
+
+#: dashboard/of_inc/includes/class-options-media-uploader.php:65
+#: dashboard/of_inc/includes/class-options-media-uploader.php:118
+msgid "Upload"
+msgstr "上传"
+
+#: dashboard/of_inc/includes/class-options-media-uploader.php:67
+#: dashboard/of_inc/includes/class-options-media-uploader.php:119
+msgid "Remove"
+msgstr "移除"
+
+#: dashboard/of_inc/includes/class-options-media-uploader.php:70
+msgid "Upgrade your version of WordPress for full media support."
+msgstr "升级你的WordPress版本以获得完整的功能支持"
+
+#: dashboard/of_inc/includes/class-options-media-uploader.php:94
+msgid "View File"
+msgstr "选择文件"
+
+#: dashboard/of_inc/includes/class-options-sanitization.php:316
+msgid "No Repeat"
+msgstr "不重复"
+
+#: dashboard/of_inc/includes/class-options-sanitization.php:317
+msgid "Repeat Horizontally"
+msgstr "水平重复"
+
+#: dashboard/of_inc/includes/class-options-sanitization.php:318
+msgid "Repeat Vertically"
+msgstr "垂直重复"
+
+#: dashboard/of_inc/includes/class-options-sanitization.php:319
+msgid "Repeat All"
+msgstr "全部重复"
+
+#: dashboard/of_inc/includes/class-options-sanitization.php:331
+msgid "Top Left"
+msgstr "上 左"
+
+#: dashboard/of_inc/includes/class-options-sanitization.php:332
+msgid "Top Center"
+msgstr "上 中"
+
+#: dashboard/of_inc/includes/class-options-sanitization.php:333
+msgid "Top Right"
+msgstr "上 右"
+
+#: dashboard/of_inc/includes/class-options-sanitization.php:334
+msgid "Middle Left"
+msgstr "中 左"
+
+#: dashboard/of_inc/includes/class-options-sanitization.php:335
+msgid "Middle Center"
+msgstr "中 中"
+
+#: dashboard/of_inc/includes/class-options-sanitization.php:336
+msgid "Middle Right"
+msgstr "中 右"
+
+#: dashboard/of_inc/includes/class-options-sanitization.php:337
+msgid "Bottom Left"
+msgstr "底 左"
+
+#: dashboard/of_inc/includes/class-options-sanitization.php:338
+msgid "Bottom Center"
+msgstr "底 中"
+
+#: dashboard/of_inc/includes/class-options-sanitization.php:339
+msgid "Bottom Right"
+msgstr "底 右"
+
+#: dashboard/of_inc/includes/class-options-sanitization.php:351
+msgid "Scroll Normally"
+msgstr "正常滚动"
+
+#: dashboard/of_inc/includes/class-options-sanitization.php:352
+msgid "Fixed in Place"
+msgstr "固定"
+
+#: dashboard/of_inc/includes/class-options-sanitization.php:424
+msgid "Normal"
+msgstr "正常"
+
+#: dashboard/of_inc/includes/class-options-sanitization.php:425
+msgid "Italic"
+msgstr "斜体"
+
+#: dashboard/of_inc/includes/class-options-sanitization.php:426
+msgid "Bold"
+msgstr "粗体"
+
+#: dashboard/of_inc/includes/class-options-sanitization.php:427
+msgid "Bold Italic"
+msgstr "斜体加粗"
+
+#: dashboard/options.php:30
+msgid "Basic"
+msgstr "基本"
+
+#: dashboard/options.php:36
+msgid "Home Page Description"
+msgstr "主页描述"
+
+#: dashboard/options.php:37
+msgid "Home page description meta information, good for SEO"
+msgstr "主页描述元信息，SEO友好"
+
+#: dashboard/options.php:45
+msgid "Home Page Keywords"
+msgstr "主页关键词"
+
+#: dashboard/options.php:46
+msgid "Home page keywords meta information, good for SEO"
+msgstr "主页关键词元信息，SEO友好(多个关键词以英文逗号分隔)"
+
+#: dashboard/options.php:54
+msgid "I18n"
+msgstr "国际化"
+
+#: dashboard/options.php:55
+msgid "Multi languages and I18n support"
+msgstr "多语言与国际化支持"
+
+#: dashboard/options.php:60
+msgid "zh_cn"
+msgstr "中文"
+
+#: dashboard/options.php:61
+msgid "en_us"
+msgstr "英语"
+
+#: dashboard/options.php:68
+msgid "Style"
+msgstr "样式"
+
+#: dashboard/options.php:77
+msgid "Sidebar"
+msgstr "边栏"
+
+#: dashboard/options.php:87
+msgid "Social"
+msgstr "社会化"
+
+#: dashboard/options.php:97
+msgid "Ad"
+msgstr "广告"
+
+#: dashboard/options.php:107
+msgid "Membership"
+msgstr "会员"
+
+#: dashboard/options.php:117
+msgid "Shop"
+msgstr "商店"
+
+#: dashboard/options.php:127
+msgid "Auxiliary"
+msgstr "辅助"
+
+#: dashboard/options.php:137
+msgid "Feedback"
+msgstr "反馈"
+
+#: dashboard/options.php:151
+msgid "One"
+msgstr "一"
+
+#: dashboard/options.php:152
+msgid "Two"
+msgstr "二"
+
+#: dashboard/options.php:153
+msgid "Three"
+msgstr "三"
+
+#: dashboard/options.php:154
+msgid "Four"
+msgstr "四"
+
+#: dashboard/options.php:155
+msgid "Five"
+msgstr "五"
+
+#: dashboard/options.php:160
+msgid "French Toast"
+msgstr ""
+
+#: dashboard/options.php:161
+msgid "Pancake"
+msgstr ""
+
+#: dashboard/options.php:162
+msgid "Omelette"
+msgstr ""
+
+#: dashboard/options.php:163
+msgid "Crepe"
+msgstr ""
+
+#: dashboard/options.php:164
+msgid "Waffle"
+msgstr ""
+
+#: dashboard/options.php:222
+msgid "Input Text Mini"
+msgstr ""
+
+#: dashboard/options.php:223
+msgid "A mini text input field."
+msgstr ""
+
+#: dashboard/options.php:231
+msgid "Input Text"
+msgstr ""
+
+#: dashboard/options.php:232
+msgid "A text input field."
+msgstr ""
+
+#: dashboard/options.php:239
+msgid "Input with Placeholder"
+msgstr ""
+
+#: dashboard/options.php:240
+msgid "A text input field with an HTML5 placeholder."
+msgstr ""
+
+#: dashboard/options.php:247
+msgid "Textarea"
+msgstr ""
+
+#: dashboard/options.php:248
+msgid "Textarea description."
+msgstr ""
+
+#: dashboard/options.php:255
+msgid "Input Select Small"
+msgstr ""
+
+#: dashboard/options.php:256
+msgid "Small Select Box."
+msgstr ""
+
+#: dashboard/options.php:265
+msgid "Input Select Wide"
+msgstr ""
+
+#: dashboard/options.php:266
+msgid "A wider select box."
+msgstr ""
+
+#: dashboard/options.php:275
+msgid "Select a Category"
+msgstr ""
+
+#: dashboard/options.php:276
+msgid "Passed an array of categories with cat_ID and cat_name"
+msgstr ""
+
+#: dashboard/options.php:285
+msgid "Select a Tag"
+msgstr ""
+
+#: dashboard/options.php:286
+msgid "Passed an array of tags with term_id and term_name"
+msgstr ""
+
+#: dashboard/options.php:294
+msgid "Select a Page"
+msgstr ""
+
+#: dashboard/options.php:295
+msgid "Passed an pages with ID and post_title"
+msgstr ""
+
+#: dashboard/options.php:302
+msgid "Input Radio (one)"
+msgstr ""
+
+#: dashboard/options.php:303
+msgid "Radio select with default options \"one\"."
+msgstr ""
+
+#: dashboard/options.php:311
+msgid "Example Info"
+msgstr ""
+
+#: dashboard/options.php:312
+msgid "This is just some example information you can put in the panel."
+msgstr ""
+
+#: dashboard/options.php:317
+msgid "Input Checkbox"
+msgstr ""
+
+#: dashboard/options.php:318
+msgid "Example checkbox, defaults to true."
+msgstr ""
+
+#: dashboard/options.php:325
+msgid "Advanced Settings"
+msgstr ""
+
+#: dashboard/options.php:330
+msgid "Check to Show a Hidden Text Input"
+msgstr ""
+
+#: dashboard/options.php:331
+msgid "Click here and see what happens."
+msgstr ""
+
+#: dashboard/options.php:337
+msgid "Hidden Text Input"
+msgstr ""
+
+#: dashboard/options.php:338
+msgid "This option is hidden unless activated by a checkbox click."
+msgstr ""
+
+#: dashboard/options.php:346
+msgid "Uploader Test"
+msgstr ""
+
+#: dashboard/options.php:347
+msgid "This creates a full size uploader that previews the image."
+msgstr ""
+
+#: dashboard/options.php:366
+msgid "Example Background"
+msgstr ""
+
+#: dashboard/options.php:367
+msgid "Change the background CSS."
+msgstr ""
+
+#: dashboard/options.php:374
+msgid "Multicheck"
+msgstr ""
+
+#: dashboard/options.php:375
+msgid "Multicheck description."
+msgstr ""
+
+#: dashboard/options.php:383
+msgid "Colorpicker"
+msgstr ""
+
+#: dashboard/options.php:384
+msgid "No color selected by default."
+msgstr ""
+
+#: dashboard/options.php:390
+msgid "Typography"
+msgstr ""
+
+#: dashboard/options.php:391
+msgid "Example typography."
+msgstr ""
+
+#: dashboard/options.php:398
+msgid "Custom Typography"
+msgstr ""
+
+#: dashboard/options.php:399
+msgid "Custom typography options."
+msgstr ""
+
+#: dashboard/options.php:407
+msgid "Text Editor"
+msgstr "文本编辑器"
+
+#: dashboard/options.php:426
+msgid "Default Text Editor"
+msgstr "默认文本编辑器"
+
+#: dashboard/options.php:427
+#, php-format
+msgid ""
+"You can also pass settings to the editor.  Read more about wp_editor in <a "
+"href=\"%1$s\" target=\"_blank\">the WordPress codex</a>"
+msgstr ""
+
+#: functions.php:18
+msgid "Lack of WordPress environment"
+msgstr "缺少WordPress环境"
+
+#: functions.php:18
+msgid "WordPress internal error"
+msgstr "WordPress内部错误"
+
+#. Theme Name of the plugin/theme
+msgid "TinT"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "https://www.webapproach.net/tint.html"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Tinection主题全新改版升级Tinection 2/Tinection Two(TinT)，WordPress多用户"
+"CMS主题，Designed for WebApproach."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Zhiyan"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://www.webapproach.net/"
+msgstr ""
+
+#~ msgid "Theme options"
+#~ msgstr "主题选项"
+
+#~ msgid "On"
+#~ msgstr "开"
+
+#~ msgid "Off"
+#~ msgstr "关"
+
+#~ msgid "Import Theme Options"
+#~ msgstr "导入主题选项"
+
+#~ msgid "Reset Options"
+#~ msgstr "重置选项"
