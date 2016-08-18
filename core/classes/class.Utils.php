@@ -12,7 +12,9 @@
 ?>
 <?php
 
-class Utils{
+require_once 'class.NameFirstChar.php';
+
+class TUtils{
     /**
      * 实用工具类
      */
@@ -39,7 +41,7 @@ class Utils{
      *              default false
      * @return bool
      */
-    public static function is_mobile($strict=false){
+    public static function isMobile($strict=false){
         if(!$strict){
             return wp_is_mobile();
         }
@@ -56,7 +58,7 @@ class Utils{
      * @access public
      * @return bool
      */
-    public static function is_phone(){
+    public static function isPhone(){
         //先通过HTTP头判断
         $mobileHeaders = array(
             'HTTP_ACCEPT'                  => array('matches' => array(
@@ -150,7 +152,7 @@ class Utils{
      * @access public
      * @return bool
      */
-    public static function is_tablet(){
+    public static function isTablet(){
         $tabletDeviceRegxs = array(
             'iPad'              => 'iPad|iPad.*Mobile',
             'NexusTablet'       => 'Android.*Nexus[\s]+(7|9|10)',
@@ -283,7 +285,7 @@ class Utils{
      * @access public
      * @return bool
      */
-    public static function is_bot(){
+    public static function isBot(){
         $spiders= array(
             "TencentTraveler",
             "Baiduspider+",
@@ -473,6 +475,24 @@ class Utils{
 //        return  isset($_SERVER['HTTPS']);
 //    }
 //    use is_ssl() instead
+
+
+    /**
+     * 获取名字首字符, 中文采用拼音首字母
+     *
+     * @since   2.0.0
+     *
+     * @static
+     * @access  public
+     * @param   string  $name
+     * @param   bool    $convertNum
+     * @param   bool    $capitalize
+     * @return  string
+     */
+    public static function getNameFirstChar($name, $convertNum, $capitalize=true){
+        $char = new NameFirstChar($name, $convertNum);
+        return $capitalize ? $char->toUpperCase() : $char->toLowerCase();
+    }
 
 
     /**
