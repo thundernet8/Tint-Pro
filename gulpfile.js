@@ -26,7 +26,6 @@ var cache = require('gulp-cache'),
     webpack = require('gulp-webpack'),
     notify = require('gulp-notify');
 
-
 /**
  * 构建文件的注释头
  */
@@ -44,7 +43,6 @@ var banner = ['/**',
     '**/',
     ' ',
     ''].join('\n');
-
 
 /**
  * gulp 任务流
@@ -151,7 +149,7 @@ gulp.task('default', ['watch'], function () {
 // 发布主题文件至本地服务器路径调试
 gulp.task('deploy', function () {
     console.log('Begin clear themes folder');
-    gulp.src('D:/Dev/WebServer/WWW/wordpress/wp-content/themes/Tint/**/*.*')
+    gulp.src('D:/Dev/WebServer/WWW/wordpress/wp-content/themes/Tint/')
         .pipe(clean({force: true}));
     setTimeout(function(){
         console.log('Begin copy theme to themes folder');

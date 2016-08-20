@@ -14,7 +14,7 @@
 
 require_once 'class.NameFirstChar.php';
 
-class TUtils{
+class Utils{
     /**
      * 实用工具类
      */
@@ -492,6 +492,40 @@ class TUtils{
     public static function getNameFirstChar($name, $convertNum, $capitalize=true){
         $char = new NameFirstChar($name, $convertNum);
         return $capitalize ? $char->toUpperCase() : $char->toLowerCase();
+    }
+
+
+    /**
+     * 获取时间字符串
+     *
+     * @since   2.0.0
+     *
+     * @static
+     * @access  public
+     * @param   string  $level  时间具体程度(month|week|day|hour|minute)
+     * @return  string
+     */
+    public static function getCurrentDateTimeStr($level='day'){
+        switch ($level){
+            case 'minute':
+                $format = 'YmWdHi';
+                break;
+            case 'hour':
+                $format = 'YmWdH';
+                break;
+            case 'day':
+                $format = 'YmWd';
+                break;
+            case 'week':
+                $format = 'YmW';
+                break;
+            case 'month':
+                $format = 'Ym';
+                break;
+            default:
+                $format = 'YmWd';
+        }
+        return date($format);
     }
 
 

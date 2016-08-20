@@ -11,23 +11,213 @@
 
 ?>
 <?php
+require_once 'class.NameFirstChar.php';
+require_once 'class.Utils.php';
 
 /**
  * 用户头像
  */
 
-class TAvatar{
+final class Avatar{
+
+    /**
+     * 头像尺寸
+     *
+     * @since   2.0.0
+     *
+     * @access  private
+     * @var     string
+     */
+    private $_size = 'medium';
+
+
+    /**
+     * 尺寸对照
+     *
+     * @since   2.0.0
+     *
+     * @static
+     * @access  private
+     * @var     array
+     */
+    private static $_sizeMap = array(
+        'small'     =>  32,
+        'medium'    =>  64,
+        'large'     =>  120
+    );
+
+    /**
+     * Gravatar API url
+     *
+     * @since   2.0.0
+     *
+     * @static
+     * @access  private
+     * @var     string
+     */
+    private static $_gravatarAPI = "https://cn.gravatar.com/avatar/";
+
+
+    /**
+     * Gravatar API url
+     *
+     * @since   2.0.0
+     *
+     * @static
+     * @access  private
+     * @var     string
+     */
+    private static $_letterAvatarAPI = THEME_ASSET . '/assets/img/avatar/letters/';  //https://ruby-china.org/system/letter_avatars/2/
+
+
+    /**
+     * QQ avatar API
+     *
+     * @since   2.0.0
+     *
+     * @static
+     * @access  private
+     * @var     string
+     */
+    private static $_qqAvatarAPI = 'https://q.qlogo.cn/qqapp/';
+
+
+    /**
+     * 微博 avatar API
+     *
+     * @since   2.0.0
+     *
+     * @static
+     * @access  private
+     * @var     string
+     */
+    private static $_weiboAvatarAPI = 'http://tp1.sinaimg.cn/';
+
+
+    /**
+     * 允许的头像类型
+     *
+     * @since   2.0.0
+     *
+     * @static
+     * @access  private
+     * @var     array
+     */
+    private static $_avatarTypes = array(
+        "gravatar",
+        "qq",
+        "weibo",
+        "weixin",
+        "custom",
+        "letter"
+    );
+
+
+    /**
+     * 用户实例
+     * Note: 由于禁止游客评论，即每个评论以及头像都对应一个数据库存在的用户，则不论通过用户id还是邮箱实例化Avatar时，必须绑定对应用户实例
+     *
+     * @since   2.0.0
+     *
+     * @access  private
+     * @var     object  //WP_User
+     */
+    private $_user;
+
+
+    /**
+     * 缓存键
+     *
+     * @since   2.0.0
+     *
+     * @access  public
+     * @var     string
+     */
+    public $transient_cache_key;
+
+
     /**
      * 构造器,根据用户id或邮箱获得头像
      *
      * @since   2.0.0
      *
      * @access  public
-     * @param   int | string    $uid_or_email    用户ID或用户邮箱
+     * @param   int | string | object    $id_or_email    用户ID或用户邮箱或用户实例对象
+     * @param   string | int    尺寸
      */
-    public function __construct($uid_or_email){
+    public function __construct($id_or_email, $size){
+        if($id_or_email instanceof WP_User){
+            $this->_user = $id_or_email;
+        } elseif (is_email(strval($id_or_email))){
+            $this->_user = get_user_by('email', $id_or_email);
+        } else {
+            $this->_user = get_user_by('id', $id_or_email);
+        }
+        $this->_size = self::strSize($size);
+        //为每个用户头像赋予一个专用缓存key
+        $this->transient_cache_key = TRANSIENT_PREFIX . '_daily' . '_avatar_' . md5(strval($this->_user->ID) . strval($this->_size) . Utils::getCurrentDateTimeStr('day'));
+    }
+
+
+    /**
+     * 获取头像，主要方法
+     *
+     * @since   2.0.0
+     *
+     * @access  public
+     * @return  string
+     */
+    public function getAvatar(){
+        $type = $this->getUserAvatarType();
+        switch ($type){
+            case "gravatar":
+                return $this->getGravatar();
+                break;
+            case "qq":
+                return self::$_qqAvatarAPI . tt_get_option('tt_qq_openid') . '/' . get_user_meta( $this->_user->ID, 'tt_qq_openid', true ) . '/100';
+                break;
+            case "weibo":
+                return self::$_weiboAvatarAPI . get_user_meta( $this->_user->ID, 'tt_weibo_openid', true ) . '/180/0/1';
+                break;
+            case "weixin":
+                return get_user_meta( $this->_user->ID, 'tt_weixin_avatar', true) ? get_user_meta( $this->_user->ID, 'tt_weixin_avatar', true) : $this->getLetterAvatar();
+                break;
+            case "custom":
+                return HOME_URI . '/wp-content/uploads/avatars/' . $this->_user->ID . '.jpg';
+            default:
+                return $this->getLetterAvatar();
+        }
 
     }
+
+
+    /**
+     * 获取Gravatar
+     *
+     * @since   2.0.0
+     *
+     * @access  public
+     * @return  string
+     */
+    public function getGravatar(){
+        $default = self::getDefaultAvatar($this->_size);
+        return self::$_gravatarAPI . md5( strtolower( trim( $this->_user->user_email ) ) ) . "?d=" . urlencode( $default ) . "&s=" . self::$_sizeMap[$this->_size];
+    }
+
+
+    /**
+     * 获取字母头像
+     *
+     * @since   2.0.0
+     *
+     * @access  public
+     * @return  string
+     */
+    public function getLetterAvatar(){
+        $firstLetter = (new NameFirstChar($this->_user->display_name, true, "Sharp"))->toUpperCase();
+        return self::$_letterAvatarAPI . $firstLetter . '/' . $this->_size . '.png';
+    }
+
 
     /**
      * 获取本地默认头像
@@ -36,11 +226,55 @@ class TAvatar{
      *
      * @static
      * @access  public
-     * @param   string      $size   头像尺寸(small|medium|large)
+     * @param   string | int      $size   头像尺寸(small|medium|large) | (100)
      * @return  string
      */
-    public static function get_default_avatar($size = 'medium'){
-        $size = in_array($size, array('small', 'medium', 'large')) ? $size : 'medium';
+    public static function getDefaultAvatar($size = 'medium'){
+        $size = self::strSize($size);
         return THEME_ASSET . '/img/avatar_' . $size . '.png';
+    }
+
+
+    /**
+     * 获取用户头像类型
+     *
+     * @since   2.0.0
+     *
+     * @access  private
+     * @return  string
+     */
+    private function getUserAvatarType(){
+        $type = get_user_meta($this->_user->ID,'tt_avatar_type',true);
+        $type = in_array($type, self::$_avatarTypes) ? $type : 'gravatar';
+        if($type=='gravatar'){
+            return tt_get_option('tt_enable_gravatar') ? $type : 'letter';
+        }
+        return $type;
+    }
+
+
+    /**
+     * 辅助方法 - 语义化尺寸
+     *
+     * @since   2.0.0
+     *
+     * @static
+     * @access  private
+     * @param   string | int    $size
+     * @return  string
+     */
+    private static function strSize($size='medium'){
+        if(is_int($size)){
+            if($size>64){
+                $size = 'large';
+            } elseif ($size>32){
+                $size = 'medium';
+            }else{
+                $size = 'small';
+            }
+        }
+        $size = in_array($size, array('small', 'medium', 'large')) ? $size : 'medium';
+
+        return $size;
     }
 }

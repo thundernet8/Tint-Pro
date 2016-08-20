@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-08-17 22:23+0800\n"
-"PO-Revision-Date: 2016-08-17 22:24+0800\n"
+"POT-Creation-Date: 2016-08-19 20:39+0800\n"
+"PO-Revision-Date: 2016-08-19 20:39+0800\n"
 "Last-Translator: Zhiyan <mail@webapproach.net>\n"
 "Language-Team: Zhiyan <mail@webapproach.net>\n"
 "Language: en_US\n"
@@ -19,35 +19,35 @@ msgstr ""
 "_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: core/classes/class.Utils.php:364
+#: core/classes/class.Utils.php:366
 msgid "刚刚"
-msgstr "Just now"
+msgstr "just now"
 
-#: core/classes/class.Utils.php:367
+#: core/classes/class.Utils.php:369
 msgid "年前"
 msgstr "years ago"
 
-#: core/classes/class.Utils.php:368
+#: core/classes/class.Utils.php:370
 msgid "个月前"
 msgstr "months ago"
 
-#: core/classes/class.Utils.php:369
+#: core/classes/class.Utils.php:371
 msgid "周前"
 msgstr "weeks ago"
 
-#: core/classes/class.Utils.php:370
+#: core/classes/class.Utils.php:372
 msgid "天前"
 msgstr "days ago"
 
-#: core/classes/class.Utils.php:371
+#: core/classes/class.Utils.php:373
 msgid "小时前"
 msgstr "hours ago"
 
-#: core/classes/class.Utils.php:372
+#: core/classes/class.Utils.php:374
 msgid "分钟"
 msgstr "minutes"
 
-#: core/classes/class.Utils.php:373
+#: core/classes/class.Utils.php:375
 msgid "秒前"
 msgstr "seconds"
 
@@ -205,266 +205,282 @@ msgid "Home page keywords meta information, good for SEO"
 msgstr ""
 
 #: dashboard/options.php:54
-msgid "I18n"
+msgid "Favicon"
 msgstr ""
 
 #: dashboard/options.php:55
+msgid "Please upload an ico file"
+msgstr ""
+
+#: dashboard/options.php:63
+msgid "Favicon(PNG)"
+msgstr ""
+
+#: dashboard/options.php:64
+msgid "Please upload an png file"
+msgstr ""
+
+#: dashboard/options.php:72
+msgid "I18n"
+msgstr ""
+
+#: dashboard/options.php:73
 msgid "Multi languages and I18n support"
 msgstr ""
 
-#: dashboard/options.php:60
+#: dashboard/options.php:78
 msgid "zh_cn"
 msgstr ""
 
-#: dashboard/options.php:61
+#: dashboard/options.php:79
 msgid "en_us"
 msgstr ""
 
-#: dashboard/options.php:68
+#: dashboard/options.php:86
 msgid "Style"
 msgstr ""
 
-#: dashboard/options.php:77
+#: dashboard/options.php:95
 msgid "Sidebar"
 msgstr ""
 
-#: dashboard/options.php:87
+#: dashboard/options.php:105
 msgid "Social"
 msgstr ""
 
-#: dashboard/options.php:97
+#: dashboard/options.php:115
 msgid "Ad"
 msgstr ""
 
-#: dashboard/options.php:107
+#: dashboard/options.php:125
 msgid "Membership"
 msgstr ""
 
-#: dashboard/options.php:117
+#: dashboard/options.php:135
 msgid "Shop"
 msgstr ""
 
-#: dashboard/options.php:127
+#: dashboard/options.php:145
 msgid "Auxiliary"
 msgstr ""
 
-#: dashboard/options.php:137
+#: dashboard/options.php:155
 msgid "Feedback"
 msgstr ""
 
-#: dashboard/options.php:151
+#: dashboard/options.php:169
 msgid "One"
 msgstr ""
 
-#: dashboard/options.php:152
+#: dashboard/options.php:170
 msgid "Two"
 msgstr ""
 
-#: dashboard/options.php:153
+#: dashboard/options.php:171
 msgid "Three"
 msgstr ""
 
-#: dashboard/options.php:154
+#: dashboard/options.php:172
 msgid "Four"
 msgstr ""
 
-#: dashboard/options.php:155
+#: dashboard/options.php:173
 msgid "Five"
 msgstr ""
 
-#: dashboard/options.php:160
+#: dashboard/options.php:178
 msgid "French Toast"
 msgstr ""
 
-#: dashboard/options.php:161
+#: dashboard/options.php:179
 msgid "Pancake"
 msgstr ""
 
-#: dashboard/options.php:162
+#: dashboard/options.php:180
 msgid "Omelette"
 msgstr ""
 
-#: dashboard/options.php:163
+#: dashboard/options.php:181
 msgid "Crepe"
 msgstr ""
 
-#: dashboard/options.php:164
+#: dashboard/options.php:182
 msgid "Waffle"
 msgstr ""
 
-#: dashboard/options.php:222
+#: dashboard/options.php:240
 msgid "Input Text Mini"
 msgstr ""
 
-#: dashboard/options.php:223
+#: dashboard/options.php:241
 msgid "A mini text input field."
 msgstr ""
 
-#: dashboard/options.php:231
+#: dashboard/options.php:249
 msgid "Input Text"
 msgstr ""
 
-#: dashboard/options.php:232
+#: dashboard/options.php:250
 msgid "A text input field."
 msgstr ""
 
-#: dashboard/options.php:239
+#: dashboard/options.php:257
 msgid "Input with Placeholder"
 msgstr ""
 
-#: dashboard/options.php:240
+#: dashboard/options.php:258
 msgid "A text input field with an HTML5 placeholder."
 msgstr ""
 
-#: dashboard/options.php:247
+#: dashboard/options.php:265
 msgid "Textarea"
 msgstr ""
 
-#: dashboard/options.php:248
+#: dashboard/options.php:266
 msgid "Textarea description."
 msgstr ""
 
-#: dashboard/options.php:255
+#: dashboard/options.php:273
 msgid "Input Select Small"
 msgstr ""
 
-#: dashboard/options.php:256
+#: dashboard/options.php:274
 msgid "Small Select Box."
 msgstr ""
 
-#: dashboard/options.php:265
+#: dashboard/options.php:283
 msgid "Input Select Wide"
 msgstr ""
 
-#: dashboard/options.php:266
+#: dashboard/options.php:284
 msgid "A wider select box."
 msgstr ""
 
-#: dashboard/options.php:275
+#: dashboard/options.php:293
 msgid "Select a Category"
 msgstr ""
 
-#: dashboard/options.php:276
+#: dashboard/options.php:294
 msgid "Passed an array of categories with cat_ID and cat_name"
 msgstr ""
 
-#: dashboard/options.php:285
+#: dashboard/options.php:303
 msgid "Select a Tag"
 msgstr ""
 
-#: dashboard/options.php:286
+#: dashboard/options.php:304
 msgid "Passed an array of tags with term_id and term_name"
 msgstr ""
 
-#: dashboard/options.php:294
+#: dashboard/options.php:312
 msgid "Select a Page"
 msgstr ""
 
-#: dashboard/options.php:295
+#: dashboard/options.php:313
 msgid "Passed an pages with ID and post_title"
 msgstr ""
 
-#: dashboard/options.php:302
+#: dashboard/options.php:320
 msgid "Input Radio (one)"
 msgstr ""
 
-#: dashboard/options.php:303
+#: dashboard/options.php:321
 msgid "Radio select with default options \"one\"."
 msgstr ""
 
-#: dashboard/options.php:311
+#: dashboard/options.php:329
 msgid "Example Info"
 msgstr ""
 
-#: dashboard/options.php:312
+#: dashboard/options.php:330
 msgid "This is just some example information you can put in the panel."
 msgstr ""
 
-#: dashboard/options.php:317
+#: dashboard/options.php:335
 msgid "Input Checkbox"
 msgstr ""
 
-#: dashboard/options.php:318
+#: dashboard/options.php:336
 msgid "Example checkbox, defaults to true."
 msgstr ""
 
-#: dashboard/options.php:325
+#: dashboard/options.php:343
 msgid "Advanced Settings"
 msgstr ""
 
-#: dashboard/options.php:330
+#: dashboard/options.php:348
 msgid "Check to Show a Hidden Text Input"
 msgstr ""
 
-#: dashboard/options.php:331
+#: dashboard/options.php:349
 msgid "Click here and see what happens."
 msgstr ""
 
-#: dashboard/options.php:337
+#: dashboard/options.php:355
 msgid "Hidden Text Input"
 msgstr ""
 
-#: dashboard/options.php:338
+#: dashboard/options.php:356
 msgid "This option is hidden unless activated by a checkbox click."
 msgstr ""
 
-#: dashboard/options.php:346
+#: dashboard/options.php:364
 msgid "Uploader Test"
 msgstr ""
 
-#: dashboard/options.php:347
+#: dashboard/options.php:365
 msgid "This creates a full size uploader that previews the image."
 msgstr ""
 
-#: dashboard/options.php:366
+#: dashboard/options.php:384
 msgid "Example Background"
 msgstr ""
 
-#: dashboard/options.php:367
+#: dashboard/options.php:385
 msgid "Change the background CSS."
 msgstr ""
 
-#: dashboard/options.php:374
+#: dashboard/options.php:392
 msgid "Multicheck"
 msgstr ""
 
-#: dashboard/options.php:375
+#: dashboard/options.php:393
 msgid "Multicheck description."
 msgstr ""
 
-#: dashboard/options.php:383
+#: dashboard/options.php:401
 msgid "Colorpicker"
 msgstr ""
 
-#: dashboard/options.php:384
+#: dashboard/options.php:402
 msgid "No color selected by default."
 msgstr ""
 
-#: dashboard/options.php:390
+#: dashboard/options.php:408
 msgid "Typography"
 msgstr ""
 
-#: dashboard/options.php:391
+#: dashboard/options.php:409
 msgid "Example typography."
 msgstr ""
 
-#: dashboard/options.php:398
+#: dashboard/options.php:416
 msgid "Custom Typography"
 msgstr ""
 
-#: dashboard/options.php:399
+#: dashboard/options.php:417
 msgid "Custom typography options."
 msgstr ""
 
-#: dashboard/options.php:407
+#: dashboard/options.php:425
 msgid "Text Editor"
 msgstr ""
 
-#: dashboard/options.php:426
+#: dashboard/options.php:444
 msgid "Default Text Editor"
 msgstr ""
 
-#: dashboard/options.php:427
+#: dashboard/options.php:445
 #, php-format
 msgid ""
 "You can also pass settings to the editor.  Read more about wp_editor in <a "

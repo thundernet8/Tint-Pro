@@ -21,6 +21,9 @@
 #optionsframework .group {
 	padding-bottom:40px;
 }
+#optionsframework .section .heading {
+	font-weight: 500;
+}
 #optionsframework .section .controls {
 	float: left;
 	min-width:350px;
@@ -31,7 +34,7 @@
 	max-width:38%;
 	float: left;
 	font-size: 12px;
-	line-height:16px;
+	line-height:29px;
 	color: #777;
 }
 #optionsframework .section-checkbox .controls {
@@ -39,6 +42,7 @@
 }
 #optionsframework .section-checkbox .explain {
 	max-width:94%;
+	line-height: 16px;
 }
 #optionsframework .controls input[type=text] {
 	width:100%;
@@ -195,6 +199,7 @@
 	left:-4px;
 	text-indent:-9999px;
 	width:16px;
+	cursor:pointer;
 }
 #optionsframework .screenshot .no_image .file_link {
 	margin-left: 20px;

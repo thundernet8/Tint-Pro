@@ -9,10 +9,12 @@
     <orderEntry type="module-library">
       <library name="PHP">
         <CLASSES>
-          <root url="file://$MODULE_DIR$/../../../WebServer/WWW/wordpress" />
+          <root url="file://$MODULE_DIR$/../../../WebServer/WWW/wordpress/wp-admin" />
+          <root url="file://$MODULE_DIR$/../../../WebServer/WWW/wordpress/wp-includes" />
         </CLASSES>
         <SOURCES>
-          <root url="file://$MODULE_DIR$/../../../WebServer/WWW/wordpress" />
+          <root url="file://$MODULE_DIR$/../../../WebServer/WWW/wordpress/wp-admin" />
+          <root url="file://$MODULE_DIR$/../../../WebServer/WWW/wordpress/wp-includes" />
         </SOURCES>
       </library>
     </orderEntry>

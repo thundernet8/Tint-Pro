@@ -49,6 +49,24 @@ function optionsframework_options() {
         'type' => 'text'
     );
 
+    // - 收藏夹图标
+    $options[] = array(
+        'name' => __( 'Favicon', 'tt' ),
+        'desc' => __( 'Please upload an ico file', 'tt' ),
+        'id' => 'tt_favicon',
+        'std' => THEME_ASSET . '/img/favicon.ico',
+        'type' => 'upload'
+    );
+
+    // - 收藏夹图标
+    $options[] = array(
+        'name' => __( 'Favicon(PNG)', 'tt' ),
+        'desc' => __( 'Please upload an png file', 'tt' ),
+        'id' => 'tt_png_favicon',
+        'std' => THEME_ASSET . '/img/favicon.png',
+        'type' => 'upload'
+    );
+
     // - 本地化语言
     $options[] = array(
         'name' => __( 'I18n', 'tt' ),
@@ -60,6 +78,15 @@ function optionsframework_options() {
             'zh_CN' => __( 'zh_cn', 'tt' ),
             'en_US' => __( 'en_us', 'tt' )
         )
+    );
+
+    // - Gravatar
+    $options[] = array(
+        'name' => __( 'Gravatar', 'tt' ),
+        'desc' => __( 'Gravatar support', 'tt' ),
+        'id' => 'tt_enable_gravatar',
+        'std' => false,
+        'type' => 'checkbox'
     );
 
 
@@ -89,7 +116,95 @@ function optionsframework_options() {
 	);
 
 
-	//
+    // - 开启QQ登录
+    $options[] = array(
+        'name' => __( 'QQ Login', 'tt' ),
+        'desc' => __( 'QQ login ', 'tt' ),
+        'id' => 'tt_enable_qq_login',
+        'std' => false,
+        'type' => 'checkbox'
+    );
+
+
+	// - QQ开放平台应用ID
+    $options[] = array(
+        'name' => __( 'QQ Open ID', 'tt' ),
+        'desc' => __( 'Your QQ open application ID', 'tt' ),
+        'id' => 'tt_qq_openid',
+        'std' => '',
+        'type' => 'text'
+    );
+
+
+    // - QQ开放平台应用KEY
+    $options[] = array(
+        'name' => __( 'QQ Open Key', 'tt' ),
+        'desc' => __( 'Your QQ open application key', 'tt' ),
+        'id' => 'tt_qq_openkey',
+        'std' => '',
+        'type' => 'text'
+    );
+
+
+    // - 开启微博登录
+    $options[] = array(
+        'name' => __( 'Weibo Login', 'tt' ),
+        'desc' => __( 'Weibo login access', 'tt' ),
+        'id' => 'tt_enable_weibo_login',
+        'std' => false,
+        'type' => 'checkbox'
+    );
+
+
+    // - 微博开放平台Key
+    $options[] = array(
+        'name' => __( 'Weibo Open Key', 'tt' ),
+        'desc' => __( 'Your weibo open application key', 'tt' ),
+        'id' => 'tt_weibo_openkey',
+        'std' => '',
+        'type' => 'text'
+    );
+
+
+    // - 微博开放平台Secret
+    $options[] = array(
+        'name' => __( 'Weibo Open Secret', 'tt' ),
+        'desc' => __( 'Your weibo open application secret', 'tt' ),
+        'id' => 'tt_weibo_opensecret',
+        'std' => '',
+        'type' => 'text'
+    );
+
+
+    // - 开启微信登录
+    $options[] = array(
+        'name' => __( 'Weixin Login', 'tt' ),
+        'desc' => __( 'Weixin login access', 'tt' ),
+        'id' => 'tt_enable_weixin_login',
+        'std' => false,
+        'type' => 'checkbox'
+    );
+
+
+    // - 微信开放平台Key
+    $options[] = array(
+        'name' => __( 'Weixin Open Key', 'tt' ),
+        'desc' => __( 'Your weixin open application key', 'tt' ),
+        'id' => 'tt_weixin_openkey',
+        'std' => '',
+        'type' => 'text'
+    );
+
+
+    // - 微信开放平台Secret
+    $options[] = array(
+        'name' => __( 'Weixin Open Secret', 'tt' ),
+        'desc' => __( 'Your weixin open application secret', 'tt' ),
+        'id' => 'tt_weixin_opensecret',
+        'std' => '',
+        'type' => 'text'
+    );
+
 
 
 	// 主题设置 - 广告设置
@@ -140,6 +255,25 @@ function optionsframework_options() {
 
 
     //
+
+
+
+    // 主题调试/更新
+    //TODO: 版本升级 升级日志
+    $options[] = array(
+        'name' => __( 'Update', 'tt' ),
+        'type' => 'heading'
+    );
+
+
+    // - 开启调试
+    $options[] = array(
+        'name' => __( 'Debug Mode', 'tt' ),
+        'desc' => __( 'Enable debug will call wp_die when catch a error', 'tt' ),
+        'id' => 'tt_theme_debug',
+        'std' => false,
+        'type' => 'checkbox'
+    );
 
 
 

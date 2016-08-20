@@ -19,6 +19,10 @@ if (!defined('ABSPATH')){
 }
 
 /* 定义全局常量 */
+if (!defined('HOME_URI')){
+    define('HOME_URI', get_home_url());
+}
+
 if (!defined('THEME_DIR')){
     define('THEME_DIR', get_template_directory());
 }
@@ -29,6 +33,10 @@ if (!defined('THEME_URI')){
 
 if (!defined('THEME_ASSET')){
 	define('THEME_ASSET', get_template_directory_uri().'/assets');
+}
+
+if (!defined('TRANSIENT_PREFIX')){
+    define('TRANSIENT_PREFIX', '_tt_transient');
 }
 
 if(!function_exists('load_dash')){

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-08-17 22:23+0800\n"
-"PO-Revision-Date: 2016-08-17 22:40+0800\n"
+"POT-Creation-Date: 2016-08-20 18:55+0800\n"
+"PO-Revision-Date: 2016-08-20 18:58+0800\n"
 "Last-Translator: Zhiyan <mail@webapproach.net>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -20,37 +20,37 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: core/classes/class.Utils.php:364
+#: core/classes/class.Utils.php:366
 msgid "刚刚"
-msgstr ""
-
-#: core/classes/class.Utils.php:367
-msgid "年前"
-msgstr ""
-
-#: core/classes/class.Utils.php:368
-msgid "个月前"
-msgstr ""
+msgstr "刚刚"
 
 #: core/classes/class.Utils.php:369
-msgid "周前"
-msgstr ""
+msgid "年前"
+msgstr "年前"
 
 #: core/classes/class.Utils.php:370
-msgid "天前"
-msgstr ""
+msgid "个月前"
+msgstr "月前"
 
 #: core/classes/class.Utils.php:371
-msgid "小时前"
-msgstr ""
+msgid "周前"
+msgstr "周前"
 
 #: core/classes/class.Utils.php:372
-msgid "分钟"
-msgstr ""
+msgid "天前"
+msgstr "天前"
 
 #: core/classes/class.Utils.php:373
+msgid "小时前"
+msgstr "小时"
+
+#: core/classes/class.Utils.php:374
+msgid "分钟"
+msgstr "分钟"
+
+#: core/classes/class.Utils.php:375
 msgid "秒前"
-msgstr ""
+msgstr "秒前"
 
 #: core/functions/func.Install.php:26
 msgid ""
@@ -206,266 +206,374 @@ msgid "Home page keywords meta information, good for SEO"
 msgstr "主页关键词元信息，SEO友好(多个关键词以英文逗号分隔)"
 
 #: dashboard/options.php:54
+msgid "Favicon"
+msgstr "Favicon"
+
+#: dashboard/options.php:55
+msgid "Please upload an ico file"
+msgstr "请上传ico文件"
+
+#: dashboard/options.php:63
+msgid "Favicon(PNG)"
+msgstr "Favicon(PNG)"
+
+#: dashboard/options.php:64
+msgid "Please upload an png file"
+msgstr "请上传png格式favicon"
+
+#: dashboard/options.php:72
 msgid "I18n"
 msgstr "国际化"
 
-#: dashboard/options.php:55
+#: dashboard/options.php:73
 msgid "Multi languages and I18n support"
 msgstr "多语言与国际化支持"
 
-#: dashboard/options.php:60
+#: dashboard/options.php:78
 msgid "zh_cn"
 msgstr "中文"
 
-#: dashboard/options.php:61
+#: dashboard/options.php:79
 msgid "en_us"
 msgstr "英语"
 
-#: dashboard/options.php:68
+#: dashboard/options.php:85
+msgid "Gravatar"
+msgstr "Gravatar头像"
+
+#: dashboard/options.php:86
+msgid "Gravatar support"
+msgstr "Gravatar 头像支持"
+
+#: dashboard/options.php:95
 msgid "Style"
 msgstr "样式"
 
-#: dashboard/options.php:77
+#: dashboard/options.php:104
 msgid "Sidebar"
 msgstr "边栏"
 
-#: dashboard/options.php:87
+#: dashboard/options.php:114
 msgid "Social"
 msgstr "社会化"
 
-#: dashboard/options.php:97
+#: dashboard/options.php:121
+msgid "QQ Login"
+msgstr "QQ 登录"
+
+#: dashboard/options.php:122
+msgid "QQ login "
+msgstr "QQ 登录"
+
+#: dashboard/options.php:131
+msgid "QQ Open ID"
+msgstr "QQ Open ID"
+
+#: dashboard/options.php:132
+msgid "Your QQ open application ID"
+msgstr "你的QQ开放平台应用ID"
+
+#: dashboard/options.php:141
+msgid "QQ Open Key"
+msgstr "QQ Open Key"
+
+#: dashboard/options.php:142
+msgid "Your QQ open application key"
+msgstr "你的QQ开放平台应用Key"
+
+#: dashboard/options.php:151
+msgid "Weibo Login"
+msgstr "微博登录"
+
+#: dashboard/options.php:152
+msgid "Weibo login access"
+msgstr "接入微博登录"
+
+#: dashboard/options.php:161
+msgid "Weibo Open Key"
+msgstr "微博 Open Key"
+
+#: dashboard/options.php:162
+msgid "Your weibo open application key"
+msgstr "你的微博开放平台应用Key"
+
+#: dashboard/options.php:171
+msgid "Weibo Open Secret"
+msgstr "微博 Open Secret"
+
+#: dashboard/options.php:172
+msgid "Your weibo open application secret"
+msgstr "你的微博开放平台应用Secret"
+
+#: dashboard/options.php:181
+msgid "Weixin Login"
+msgstr "微信登录"
+
+#: dashboard/options.php:182
+msgid "Weixin login access"
+msgstr "接入微信登录"
+
+#: dashboard/options.php:191
+msgid "Weixin Open Key"
+msgstr "微信 Open Key"
+
+#: dashboard/options.php:192
+msgid "Your weixin open application key"
+msgstr "你的微博开放平台应用Key"
+
+#: dashboard/options.php:201
+msgid "Weixin Open Secret"
+msgstr "微信 Open Secret"
+
+#: dashboard/options.php:202
+msgid "Your weixin open application secret"
+msgstr "你的微博开放平台应用Secret"
+
+#: dashboard/options.php:212
 msgid "Ad"
 msgstr "广告"
 
-#: dashboard/options.php:107
+#: dashboard/options.php:222
 msgid "Membership"
 msgstr "会员"
 
-#: dashboard/options.php:117
+#: dashboard/options.php:232
 msgid "Shop"
 msgstr "商店"
 
-#: dashboard/options.php:127
+#: dashboard/options.php:242
 msgid "Auxiliary"
 msgstr "辅助"
 
-#: dashboard/options.php:137
+#: dashboard/options.php:252
 msgid "Feedback"
 msgstr "反馈"
 
-#: dashboard/options.php:151
+#: dashboard/options.php:264
+msgid "Update"
+msgstr "更新"
+
+#: dashboard/options.php:271
+msgid "Debug Mode"
+msgstr "调试模式"
+
+#: dashboard/options.php:272
+msgid "Enable debug will call wp_die when catch a error"
+msgstr "启用调试将在遭遇错误时调用wp_die函数，输出提示信息"
+
+#: dashboard/options.php:285
 msgid "One"
 msgstr "一"
 
-#: dashboard/options.php:152
+#: dashboard/options.php:286
 msgid "Two"
 msgstr "二"
 
-#: dashboard/options.php:153
+#: dashboard/options.php:287
 msgid "Three"
 msgstr "三"
 
-#: dashboard/options.php:154
+#: dashboard/options.php:288
 msgid "Four"
 msgstr "四"
 
-#: dashboard/options.php:155
+#: dashboard/options.php:289
 msgid "Five"
 msgstr "五"
 
-#: dashboard/options.php:160
+#: dashboard/options.php:294
 msgid "French Toast"
 msgstr ""
 
-#: dashboard/options.php:161
+#: dashboard/options.php:295
 msgid "Pancake"
 msgstr ""
 
-#: dashboard/options.php:162
+#: dashboard/options.php:296
 msgid "Omelette"
 msgstr ""
 
-#: dashboard/options.php:163
+#: dashboard/options.php:297
 msgid "Crepe"
 msgstr ""
 
-#: dashboard/options.php:164
+#: dashboard/options.php:298
 msgid "Waffle"
 msgstr ""
 
-#: dashboard/options.php:222
+#: dashboard/options.php:356
 msgid "Input Text Mini"
 msgstr ""
 
-#: dashboard/options.php:223
+#: dashboard/options.php:357
 msgid "A mini text input field."
 msgstr ""
 
-#: dashboard/options.php:231
+#: dashboard/options.php:365
 msgid "Input Text"
 msgstr ""
 
-#: dashboard/options.php:232
+#: dashboard/options.php:366
 msgid "A text input field."
 msgstr ""
 
-#: dashboard/options.php:239
+#: dashboard/options.php:373
 msgid "Input with Placeholder"
 msgstr ""
 
-#: dashboard/options.php:240
+#: dashboard/options.php:374
 msgid "A text input field with an HTML5 placeholder."
 msgstr ""
 
-#: dashboard/options.php:247
+#: dashboard/options.php:381
 msgid "Textarea"
 msgstr ""
 
-#: dashboard/options.php:248
+#: dashboard/options.php:382
 msgid "Textarea description."
 msgstr ""
 
-#: dashboard/options.php:255
+#: dashboard/options.php:389
 msgid "Input Select Small"
 msgstr ""
 
-#: dashboard/options.php:256
+#: dashboard/options.php:390
 msgid "Small Select Box."
 msgstr ""
 
-#: dashboard/options.php:265
+#: dashboard/options.php:399
 msgid "Input Select Wide"
 msgstr ""
 
-#: dashboard/options.php:266
+#: dashboard/options.php:400
 msgid "A wider select box."
 msgstr ""
 
-#: dashboard/options.php:275
+#: dashboard/options.php:409
 msgid "Select a Category"
 msgstr ""
 
-#: dashboard/options.php:276
+#: dashboard/options.php:410
 msgid "Passed an array of categories with cat_ID and cat_name"
 msgstr ""
 
-#: dashboard/options.php:285
+#: dashboard/options.php:419
 msgid "Select a Tag"
 msgstr ""
 
-#: dashboard/options.php:286
+#: dashboard/options.php:420
 msgid "Passed an array of tags with term_id and term_name"
 msgstr ""
 
-#: dashboard/options.php:294
+#: dashboard/options.php:428
 msgid "Select a Page"
 msgstr ""
 
-#: dashboard/options.php:295
+#: dashboard/options.php:429
 msgid "Passed an pages with ID and post_title"
 msgstr ""
 
-#: dashboard/options.php:302
+#: dashboard/options.php:436
 msgid "Input Radio (one)"
 msgstr ""
 
-#: dashboard/options.php:303
+#: dashboard/options.php:437
 msgid "Radio select with default options \"one\"."
 msgstr ""
 
-#: dashboard/options.php:311
+#: dashboard/options.php:445
 msgid "Example Info"
 msgstr ""
 
-#: dashboard/options.php:312
+#: dashboard/options.php:446
 msgid "This is just some example information you can put in the panel."
 msgstr ""
 
-#: dashboard/options.php:317
+#: dashboard/options.php:451
 msgid "Input Checkbox"
 msgstr ""
 
-#: dashboard/options.php:318
+#: dashboard/options.php:452
 msgid "Example checkbox, defaults to true."
 msgstr ""
 
-#: dashboard/options.php:325
+#: dashboard/options.php:459
 msgid "Advanced Settings"
 msgstr ""
 
-#: dashboard/options.php:330
+#: dashboard/options.php:464
 msgid "Check to Show a Hidden Text Input"
 msgstr ""
 
-#: dashboard/options.php:331
+#: dashboard/options.php:465
 msgid "Click here and see what happens."
 msgstr ""
 
-#: dashboard/options.php:337
+#: dashboard/options.php:471
 msgid "Hidden Text Input"
 msgstr ""
 
-#: dashboard/options.php:338
+#: dashboard/options.php:472
 msgid "This option is hidden unless activated by a checkbox click."
 msgstr ""
 
-#: dashboard/options.php:346
+#: dashboard/options.php:480
 msgid "Uploader Test"
-msgstr ""
+msgstr "上传测试"
 
-#: dashboard/options.php:347
+#: dashboard/options.php:481
 msgid "This creates a full size uploader that previews the image."
 msgstr ""
 
-#: dashboard/options.php:366
+#: dashboard/options.php:500
 msgid "Example Background"
-msgstr ""
+msgstr "示例背景"
 
-#: dashboard/options.php:367
+#: dashboard/options.php:501
 msgid "Change the background CSS."
-msgstr ""
+msgstr "更改背景样式"
 
-#: dashboard/options.php:374
+#: dashboard/options.php:508
 msgid "Multicheck"
-msgstr ""
+msgstr "多选框"
 
-#: dashboard/options.php:375
+#: dashboard/options.php:509
 msgid "Multicheck description."
-msgstr ""
+msgstr "多选框描述"
 
-#: dashboard/options.php:383
+#: dashboard/options.php:517
 msgid "Colorpicker"
-msgstr ""
+msgstr "选色板"
 
-#: dashboard/options.php:384
+#: dashboard/options.php:518
 msgid "No color selected by default."
 msgstr ""
 
-#: dashboard/options.php:390
+#: dashboard/options.php:524
 msgid "Typography"
 msgstr ""
 
-#: dashboard/options.php:391
+#: dashboard/options.php:525
 msgid "Example typography."
 msgstr ""
 
-#: dashboard/options.php:398
+#: dashboard/options.php:532
 msgid "Custom Typography"
 msgstr ""
 
-#: dashboard/options.php:399
+#: dashboard/options.php:533
 msgid "Custom typography options."
 msgstr ""
 
-#: dashboard/options.php:407
+#: dashboard/options.php:541
 msgid "Text Editor"
 msgstr "文本编辑器"
 
-#: dashboard/options.php:426
+#: dashboard/options.php:560
 msgid "Default Text Editor"
 msgstr "默认文本编辑器"
 
-#: dashboard/options.php:427
+#: dashboard/options.php:561
 #, php-format
 msgid ""
 "You can also pass settings to the editor.  Read more about wp_editor in <a "
@@ -482,25 +590,36 @@ msgstr "WordPress内部错误"
 
 #. Theme Name of the plugin/theme
 msgid "TinT"
-msgstr ""
+msgstr "TinT"
 
 #. Theme URI of the plugin/theme
 msgid "https://www.webapproach.net/tint.html"
-msgstr ""
+msgstr "https://www.webapproach.net/tint.html"
 
 #. Description of the plugin/theme
 msgid ""
 "Tinection主题全新改版升级Tinection 2/Tinection Two(TinT)，WordPress多用户"
 "CMS主题，Designed for WebApproach."
 msgstr ""
+"Tinection主题全新改版升级Tinection 2/Tinection Two(TinT)，WordPress多用户"
+"CMS主题，Designed for WebApproach."
 
 #. Author of the plugin/theme
 msgid "Zhiyan"
-msgstr ""
+msgstr "Zhiyan"
 
 #. Author URI of the plugin/theme
 msgid "http://www.webapproach.net/"
-msgstr ""
+msgstr "http://www.webapproach.net/"
+
+#~ msgid "Gravatar Source"
+#~ msgstr "Gravatar 源"
+
+#~ msgid "HTTPS"
+#~ msgstr "HTTPS"
+
+#~ msgid "DUOSHUO"
+#~ msgstr "多说"
 
 #~ msgid "Theme options"
 #~ msgstr "主题选项"
