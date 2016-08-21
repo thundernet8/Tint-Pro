@@ -18,7 +18,7 @@
  *
  * @access  public
  * @param   string      $key        缓存键
- * @param   callback    $miss_cb    未命中缓存时的回调函数
+ * @param   callable    $miss_cb    未命中缓存时的回调函数
  * @param   string      $group      缓存数据分组
  * @param   int         $expire     缓存时间，单位为秒
  * @return  mixed

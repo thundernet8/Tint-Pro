@@ -105,6 +105,7 @@ load_func('func.I18n');
 load_func('func.Install');
 load_func('func.Kits');
 load_func('func.Optimization');
+load_func('func.Page');
 load_func('func.Schedule');
 load_func('func.Sidebar');
 

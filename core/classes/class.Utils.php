@@ -530,6 +530,49 @@ class Utils{
 
 
     /**
+     * 扫描文件夹
+     *
+     * @since   2.0.0
+     *
+     * @static
+     * @access  public
+     * @param   string              $path           要搜索的绝对路径
+     * @param   array|string|null   $extensions     文件扩展名
+     * @param   int                 $depth          搜索文件夹深度
+     * @param   string              $relative_path  basename, 控制返回路径文件名
+     * @return  array|false
+     */
+    public static function scandir( $path, $extensions = null, $depth = 0, $relative_path = '' ) {
+		if ( ! is_dir( $path ) )
+			return false;
+
+        $_extensions = $extensions ? implode( '|', (array) $extensions ) : '';
+
+        $relative_path = trailingslashit( $relative_path );
+        if ( '/' == $relative_path )
+            $relative_path = '';
+
+        $results = scandir( $path );
+        $files = array();
+
+        foreach ( $results as $result ) {
+            if ( '.' == $result[0] )
+                continue;
+            if ( is_dir( $path . '/' . $result ) ) {
+                if ( ! $depth || 'CVS' == $result )
+                    continue;
+                $found = Utils::scandir( $path . '/' . $result, $extensions, $depth - 1 , $relative_path . $result );
+                $files = array_merge_recursive( $files, $found );
+            } elseif ( ! $extensions || preg_match( '~\.(' . $_extensions . ')$~', $result ) ) {
+                $files[ $relative_path . $result ] = $path . '/' . $result;
+            }
+        }
+
+        return $files;
+    }
+
+
+    /**
      * 获取主题设置(别名函数)
      *
      * @since   2.0.0
