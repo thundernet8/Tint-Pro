@@ -244,7 +244,65 @@ function optionsframework_options() {
 	);
 
 
-	//
+	// - Memcache/redis/...内存对象缓存
+    $options[] = array(
+        'name' => __( 'Object Cache', 'tt' ),
+        'desc' => __( 'Object cache support, accelerate your site', 'tt' ),
+        'id' => 'tt_object_cache',
+        'std' => 'none',
+        'type' => 'select',
+        'options' => array(
+            'memcache' => __( 'Memcache', 'tt' ),  //TODO: add tutorial url
+            'redis' => __( 'Redis', 'tt' ),
+            'none'  => __('None', 'tt')
+        )
+    );
+
+
+    if (of_get_option('tt_object_cache')=='memcache'):
+    // - Memcache Host
+    $options[] = array(
+        'name' => __( 'Memcache Host', 'tt' ),
+        'desc' => __( 'Memcache server host', 'tt' ),
+        'id' => 'tt_memcached_host',
+        'std' => '127.0.0.1',
+        'type' => 'text'
+    );
+
+
+    // - Memcache Port
+    $options[] = array(
+        'name' => __( 'Memcache Port', 'tt' ),
+        'desc' => __( 'Memcache server port', 'tt' ),
+        'id' => 'tt_memcached_port',
+        'std' => 11211,
+        'class' => 'mini',
+        'type' => 'text'
+    );
+    endif;
+
+
+    if (of_get_option('tt_object_cache')=='redis'):
+    // - Redis Host
+    $options[] = array(
+        'name' => __( 'Redis Host', 'tt' ),
+        'desc' => __( 'Redis server host', 'tt' ),
+        'id' => 'tt_redis_host',
+        'std' => '127.0.0.1',
+        'type' => 'text'
+    );
+
+
+    // - Redis Port
+    $options[] = array(
+        'name' => __( 'Redis Port', 'tt' ),
+        'desc' => __( 'Redis server port', 'tt' ),
+        'id' => 'tt_redis_port',
+        'std' => 6379,
+        'class' => 'mini',
+        'type' => 'text'
+    );
+    endif;
 
 
     // 主题反馈

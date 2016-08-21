@@ -11,7 +11,8 @@
 
 <?php
 
-require_once '../classes/class.Avatar.php';
+require_once THEME_CLASS . '/class.Avatar.php';
+require_once 'func.Cache.php';
 
 /**
  * 获取头像
@@ -22,7 +23,23 @@ require_once '../classes/class.Avatar.php';
  * @return  string
  */
 function tt_get_avatar($id_or_email, $size='medium'){
-    //TODO: hit cache first
-    //like return Cached((new Avatar($id_or_email, $size))) ? Cached((new Avatar($id_or_email, $size))) : (new Avatar($id_or_email, $size))->getAvatar();
-    return (new Avatar($id_or_email, $size))->getAvatar();
+    $callback = function () use ($id_or_email, $size) {
+        return (new Avatar($id_or_email, $size))->getAvatar();
+    };
+    return tt_cached((new Avatar($id_or_email, $size))->cache_key, $callback, 'avatar', 60*60*24);
 }
+
+
+/**
+ * 清理Avatar transient缓存
+ *
+ * @since   2.0.0
+ * @return  void
+ */
+//function tt_daily_clear_avatar_cache(){
+//    // transient的avatar缓存在get_transient函数调用时会自动判断过期并决定是否删除，对于每个avatar url查询请求执行两次delete_option操作
+//    // 这里采用定时任务一次性删除多条隔天的过期缓存，减少delete_option操作
+//    global $wpdb;
+//    $wpdb->query( "DELETE FROM $wpdb->options WHERE `option_name` LIKE '_transient_tt_cache_daily_avatar_%' OR `option_name` LIKE '_transient_timeout_tt_cache_daily_avatar_%'" );
+//}
+//add_action('tt_setup_common_daily_event', 'tt_daily_clear_avatar_cache');

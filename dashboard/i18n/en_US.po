@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-08-19 20:39+0800\n"
-"PO-Revision-Date: 2016-08-19 20:39+0800\n"
+"POT-Creation-Date: 2016-08-21 17:03+0800\n"
+"PO-Revision-Date: 2016-08-21 17:03+0800\n"
 "Last-Translator: Zhiyan <mail@webapproach.net>\n"
 "Language-Team: Zhiyan <mail@webapproach.net>\n"
 "Language: en_US\n"
@@ -51,14 +51,27 @@ msgstr "minutes"
 msgid "秒前"
 msgstr "seconds"
 
-#: core/functions/func.Install.php:26
+#: core/functions/func.Install.php:27
 msgid ""
 "Create avatar upload folder failed, maybe check your php.ini to enable "
 "`mkdir` function.\\n"
 msgstr ""
 
-#: core/functions/func.Install.php:27
+#: core/functions/func.Install.php:27 core/functions/func.Install.php:47
 msgid "Caught exception: "
+msgstr ""
+
+#: core/functions/func.Install.php:28 core/functions/func.Install.php:48
+#: functions.php:18
+msgid "WordPress internal error"
+msgstr ""
+
+#: core/functions/func.Install.php:47
+msgid "Can not copy `memcache object-cache.php` to `wp-content` dir.\\n"
+msgstr ""
+
+#: core/functions/func.Schedule.php:25
+msgid "Weekly"
 msgstr ""
 
 #: dashboard/of_inc/includes/class-options-framework-admin.php:91
@@ -236,251 +249,395 @@ msgstr ""
 msgid "en_us"
 msgstr ""
 
+#: dashboard/options.php:85
+msgid "Gravatar"
+msgstr ""
+
 #: dashboard/options.php:86
-msgid "Style"
+msgid "Gravatar support"
 msgstr ""
 
 #: dashboard/options.php:95
+msgid "Style"
+msgstr ""
+
+#: dashboard/options.php:104
 msgid "Sidebar"
 msgstr ""
 
-#: dashboard/options.php:105
+#: dashboard/options.php:114
 msgid "Social"
 msgstr ""
 
-#: dashboard/options.php:115
-msgid "Ad"
+#: dashboard/options.php:121
+msgid "QQ Login"
 msgstr ""
 
-#: dashboard/options.php:125
-msgid "Membership"
+#: dashboard/options.php:122
+msgid "QQ login "
 msgstr ""
 
-#: dashboard/options.php:135
-msgid "Shop"
+#: dashboard/options.php:131
+msgid "QQ Open ID"
 msgstr ""
 
-#: dashboard/options.php:145
-msgid "Auxiliary"
+#: dashboard/options.php:132
+msgid "Your QQ open application ID"
 msgstr ""
 
-#: dashboard/options.php:155
-msgid "Feedback"
+#: dashboard/options.php:141
+msgid "QQ Open Key"
 msgstr ""
 
-#: dashboard/options.php:169
-msgid "One"
+#: dashboard/options.php:142
+msgid "Your QQ open application key"
 msgstr ""
 
-#: dashboard/options.php:170
-msgid "Two"
+#: dashboard/options.php:151
+msgid "Weibo Login"
+msgstr ""
+
+#: dashboard/options.php:152
+msgid "Weibo login access"
+msgstr ""
+
+#: dashboard/options.php:161
+msgid "Weibo Open Key"
+msgstr ""
+
+#: dashboard/options.php:162
+msgid "Your weibo open application key"
 msgstr ""
 
 #: dashboard/options.php:171
-msgid "Three"
+msgid "Weibo Open Secret"
 msgstr ""
 
 #: dashboard/options.php:172
-msgid "Four"
-msgstr ""
-
-#: dashboard/options.php:173
-msgid "Five"
-msgstr ""
-
-#: dashboard/options.php:178
-msgid "French Toast"
-msgstr ""
-
-#: dashboard/options.php:179
-msgid "Pancake"
-msgstr ""
-
-#: dashboard/options.php:180
-msgid "Omelette"
+msgid "Your weibo open application secret"
 msgstr ""
 
 #: dashboard/options.php:181
-msgid "Crepe"
+msgid "Weixin Login"
 msgstr ""
 
 #: dashboard/options.php:182
-msgid "Waffle"
+msgid "Weixin login access"
 msgstr ""
 
-#: dashboard/options.php:240
-msgid "Input Text Mini"
+#: dashboard/options.php:191
+msgid "Weixin Open Key"
 msgstr ""
 
-#: dashboard/options.php:241
-msgid "A mini text input field."
+#: dashboard/options.php:192
+msgid "Your weixin open application key"
+msgstr ""
+
+#: dashboard/options.php:201
+msgid "Weixin Open Secret"
+msgstr ""
+
+#: dashboard/options.php:202
+msgid "Your weixin open application secret"
+msgstr ""
+
+#: dashboard/options.php:212
+msgid "Ad"
+msgstr ""
+
+#: dashboard/options.php:222
+msgid "Membership"
+msgstr ""
+
+#: dashboard/options.php:232
+msgid "Shop"
+msgstr ""
+
+#: dashboard/options.php:242
+msgid "Auxiliary"
 msgstr ""
 
 #: dashboard/options.php:249
-msgid "Input Text"
+msgid "Object Cache"
 msgstr ""
 
 #: dashboard/options.php:250
-msgid "A text input field."
+msgid "Object cache support, accelerate your site"
+msgstr ""
+
+#: dashboard/options.php:255
+msgid "Memcache"
+msgstr ""
+
+#: dashboard/options.php:256
+msgid "Redis"
 msgstr ""
 
 #: dashboard/options.php:257
-msgid "Input with Placeholder"
-msgstr ""
-
-#: dashboard/options.php:258
-msgid "A text input field with an HTML5 placeholder."
+msgid "None"
 msgstr ""
 
 #: dashboard/options.php:265
-msgid "Textarea"
+msgid "Memcache Host"
 msgstr ""
 
 #: dashboard/options.php:266
-msgid "Textarea description."
+msgid "Memcache server host"
 msgstr ""
 
-#: dashboard/options.php:273
-msgid "Input Select Small"
+#: dashboard/options.php:275
+msgid "Memcache Port"
 msgstr ""
 
-#: dashboard/options.php:274
-msgid "Small Select Box."
+#: dashboard/options.php:276
+msgid "Memcache server port"
 msgstr ""
 
-#: dashboard/options.php:283
-msgid "Input Select Wide"
+#: dashboard/options.php:288
+msgid "Redis Host"
 msgstr ""
 
-#: dashboard/options.php:284
-msgid "A wider select box."
+#: dashboard/options.php:289
+msgid "Redis server host"
 msgstr ""
 
-#: dashboard/options.php:293
-msgid "Select a Category"
+#: dashboard/options.php:298
+msgid "Redis Port"
 msgstr ""
 
-#: dashboard/options.php:294
-msgid "Passed an array of categories with cat_ID and cat_name"
+#: dashboard/options.php:299
+msgid "Redis server port"
 msgstr ""
 
-#: dashboard/options.php:303
-msgid "Select a Tag"
+#: dashboard/options.php:310
+msgid "Feedback"
 msgstr ""
 
-#: dashboard/options.php:304
-msgid "Passed an array of tags with term_id and term_name"
-msgstr ""
-
-#: dashboard/options.php:312
-msgid "Select a Page"
-msgstr ""
-
-#: dashboard/options.php:313
-msgid "Passed an pages with ID and post_title"
-msgstr ""
-
-#: dashboard/options.php:320
-msgid "Input Radio (one)"
-msgstr ""
-
-#: dashboard/options.php:321
-msgid "Radio select with default options \"one\"."
+#: dashboard/options.php:322
+msgid "Update"
 msgstr ""
 
 #: dashboard/options.php:329
-msgid "Example Info"
+msgid "Debug Mode"
 msgstr ""
 
 #: dashboard/options.php:330
-msgid "This is just some example information you can put in the panel."
-msgstr ""
-
-#: dashboard/options.php:335
-msgid "Input Checkbox"
-msgstr ""
-
-#: dashboard/options.php:336
-msgid "Example checkbox, defaults to true."
+msgid "Enable debug will call wp_die when catch a error"
 msgstr ""
 
 #: dashboard/options.php:343
-msgid "Advanced Settings"
+msgid "One"
 msgstr ""
 
-#: dashboard/options.php:348
-msgid "Check to Show a Hidden Text Input"
+#: dashboard/options.php:344
+msgid "Two"
 msgstr ""
 
-#: dashboard/options.php:349
-msgid "Click here and see what happens."
+#: dashboard/options.php:345
+msgid "Three"
+msgstr ""
+
+#: dashboard/options.php:346
+msgid "Four"
+msgstr ""
+
+#: dashboard/options.php:347
+msgid "Five"
+msgstr ""
+
+#: dashboard/options.php:352
+msgid "French Toast"
+msgstr ""
+
+#: dashboard/options.php:353
+msgid "Pancake"
+msgstr ""
+
+#: dashboard/options.php:354
+msgid "Omelette"
 msgstr ""
 
 #: dashboard/options.php:355
-msgid "Hidden Text Input"
+msgid "Crepe"
 msgstr ""
 
 #: dashboard/options.php:356
+msgid "Waffle"
+msgstr ""
+
+#: dashboard/options.php:414
+msgid "Input Text Mini"
+msgstr ""
+
+#: dashboard/options.php:415
+msgid "A mini text input field."
+msgstr ""
+
+#: dashboard/options.php:423
+msgid "Input Text"
+msgstr ""
+
+#: dashboard/options.php:424
+msgid "A text input field."
+msgstr ""
+
+#: dashboard/options.php:431
+msgid "Input with Placeholder"
+msgstr ""
+
+#: dashboard/options.php:432
+msgid "A text input field with an HTML5 placeholder."
+msgstr ""
+
+#: dashboard/options.php:439
+msgid "Textarea"
+msgstr ""
+
+#: dashboard/options.php:440
+msgid "Textarea description."
+msgstr ""
+
+#: dashboard/options.php:447
+msgid "Input Select Small"
+msgstr ""
+
+#: dashboard/options.php:448
+msgid "Small Select Box."
+msgstr ""
+
+#: dashboard/options.php:457
+msgid "Input Select Wide"
+msgstr ""
+
+#: dashboard/options.php:458
+msgid "A wider select box."
+msgstr ""
+
+#: dashboard/options.php:467
+msgid "Select a Category"
+msgstr ""
+
+#: dashboard/options.php:468
+msgid "Passed an array of categories with cat_ID and cat_name"
+msgstr ""
+
+#: dashboard/options.php:477
+msgid "Select a Tag"
+msgstr ""
+
+#: dashboard/options.php:478
+msgid "Passed an array of tags with term_id and term_name"
+msgstr ""
+
+#: dashboard/options.php:486
+msgid "Select a Page"
+msgstr ""
+
+#: dashboard/options.php:487
+msgid "Passed an pages with ID and post_title"
+msgstr ""
+
+#: dashboard/options.php:494
+msgid "Input Radio (one)"
+msgstr ""
+
+#: dashboard/options.php:495
+msgid "Radio select with default options \"one\"."
+msgstr ""
+
+#: dashboard/options.php:503
+msgid "Example Info"
+msgstr ""
+
+#: dashboard/options.php:504
+msgid "This is just some example information you can put in the panel."
+msgstr ""
+
+#: dashboard/options.php:509
+msgid "Input Checkbox"
+msgstr ""
+
+#: dashboard/options.php:510
+msgid "Example checkbox, defaults to true."
+msgstr ""
+
+#: dashboard/options.php:517
+msgid "Advanced Settings"
+msgstr ""
+
+#: dashboard/options.php:522
+msgid "Check to Show a Hidden Text Input"
+msgstr ""
+
+#: dashboard/options.php:523
+msgid "Click here and see what happens."
+msgstr ""
+
+#: dashboard/options.php:529
+msgid "Hidden Text Input"
+msgstr ""
+
+#: dashboard/options.php:530
 msgid "This option is hidden unless activated by a checkbox click."
 msgstr ""
 
-#: dashboard/options.php:364
+#: dashboard/options.php:538
 msgid "Uploader Test"
 msgstr ""
 
-#: dashboard/options.php:365
+#: dashboard/options.php:539
 msgid "This creates a full size uploader that previews the image."
 msgstr ""
 
-#: dashboard/options.php:384
+#: dashboard/options.php:558
 msgid "Example Background"
 msgstr ""
 
-#: dashboard/options.php:385
+#: dashboard/options.php:559
 msgid "Change the background CSS."
 msgstr ""
 
-#: dashboard/options.php:392
+#: dashboard/options.php:566
 msgid "Multicheck"
 msgstr ""
 
-#: dashboard/options.php:393
+#: dashboard/options.php:567
 msgid "Multicheck description."
 msgstr ""
 
-#: dashboard/options.php:401
+#: dashboard/options.php:575
 msgid "Colorpicker"
 msgstr ""
 
-#: dashboard/options.php:402
+#: dashboard/options.php:576
 msgid "No color selected by default."
 msgstr ""
 
-#: dashboard/options.php:408
+#: dashboard/options.php:582
 msgid "Typography"
 msgstr ""
 
-#: dashboard/options.php:409
+#: dashboard/options.php:583
 msgid "Example typography."
 msgstr ""
 
-#: dashboard/options.php:416
+#: dashboard/options.php:590
 msgid "Custom Typography"
 msgstr ""
 
-#: dashboard/options.php:417
+#: dashboard/options.php:591
 msgid "Custom typography options."
 msgstr ""
 
-#: dashboard/options.php:425
+#: dashboard/options.php:599
 msgid "Text Editor"
 msgstr ""
 
-#: dashboard/options.php:444
+#: dashboard/options.php:618
 msgid "Default Text Editor"
 msgstr ""
 
-#: dashboard/options.php:445
+#: dashboard/options.php:619
 #, php-format
 msgid ""
 "You can also pass settings to the editor.  Read more about wp_editor in <a "
@@ -489,10 +646,6 @@ msgstr ""
 
 #: functions.php:18
 msgid "Lack of WordPress environment"
-msgstr ""
-
-#: functions.php:18
-msgid "WordPress internal error"
 msgstr ""
 
 #. Theme Name of the plugin/theme

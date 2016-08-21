@@ -39,7 +39,7 @@ add_action('load-themes.php', 'tt_add_avatar_folder');
  */
 function tt_copy_memcache_cache_plugin(){
     //TODO: maybe need check the file in wp-content is same with that in theme dir
-    if(!file_exists( WP_CONTENT_DIR . '/object-cache.php' ) && file_exists( THEME_DIR . '/dashboard/plugins/memcache/object-cache.php' && tt_get_option('tt_enable_memcache', false) )){
+    if(!file_exists( WP_CONTENT_DIR . '/object-cache.php' ) && file_exists( THEME_DIR . '/dashboard/plugins/memcache/object-cache.php') && tt_get_option('tt_object_cache', 'none') == 'memcache' ){
         try{
             copy(THEME_DIR . '/dashboard/plugins/memcache/object-cache.php', WP_CONTENT_DIR . '/object-cache.php');
         }catch (Exception $e){

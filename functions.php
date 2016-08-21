@@ -18,6 +18,9 @@ if (!defined('ABSPATH')){
     wp_die(__('Lack of WordPress environment', 'tt'), __('WordPress internal error', 'tt'), array('response'=>500));
 }
 
+/* 设置默认时区 */
+date_default_timezone_set('PRC');
+
 /* 定义全局常量 */
 if (!defined('HOME_URI')){
     define('HOME_URI', get_home_url());
@@ -32,11 +35,27 @@ if (!defined('THEME_URI')){
 }
 
 if (!defined('THEME_ASSET')){
-	define('THEME_ASSET', get_template_directory_uri().'/assets');
+	define('THEME_ASSET', get_template_directory_uri() . '/assets');
 }
 
-if (!defined('TRANSIENT_PREFIX')){
-    define('TRANSIENT_PREFIX', '_tt_transient');
+if (!defined('THEME_CLASS')){
+    define('THEME_CLASS', get_template_directory() . '/core/classes');
+}
+
+if (!defined('THEME_FUNC')){
+    define('THEME_FUNC', get_template_directory() . '/core/functions');
+}
+
+if (!defined('THEME_MOD')){
+    define('THEME_MOD', get_template_directory() . '/core/modules');
+}
+
+if (!defined('THEME_TPL')){
+    define('THEME_TPL', get_template_directory() . '/core/templates');
+}
+
+if (!defined('CACHE_PREFIX')){
+    define('CACHE_PREFIX', 'tt_cache');
 }
 
 if(!function_exists('load_dash')){
@@ -74,17 +93,20 @@ if( is_admin() ){
     load_dash('dash');
 }
 
-/* 载入功能函数 */
-load_func('func.I18n');
-load_func('func.Install');
-load_func('func.Kits');
-load_func('func.Optimization');
-load_func('func.Sidebar');
-
 /* 载入类 */
 load_class('class.Avatar');
 load_class('class.PostThumb');
 load_class('class.Utils');
+
+/* 载入功能函数 */
+load_func('func.Avatar');
+load_func('func.Cache');
+load_func('func.I18n');
+load_func('func.Install');
+load_func('func.Kits');
+load_func('func.Optimization');
+load_func('func.Schedule');
+load_func('func.Sidebar');
 
 /* 载入主题功能模块 */
 function tt_load() {

@@ -14,6 +14,11 @@
 require_once 'class.NameFirstChar.php';
 require_once 'class.Utils.php';
 
+
+if (!defined('LETTER_AVATAR_URI')){
+    define('LETTER_AVATAR_URI', get_template_directory_uri() . '/assets/img/avatar/letters/');
+}
+
 /**
  * 用户头像
  */
@@ -55,7 +60,7 @@ final class Avatar{
      * @access  private
      * @var     string
      */
-    private static $_gravatarAPI = "https://cn.gravatar.com/avatar/";
+    private static $_gravatarAPI = 'https://cn.gravatar.com/avatar/';
 
 
     /**
@@ -67,7 +72,7 @@ final class Avatar{
      * @access  private
      * @var     string
      */
-    private static $_letterAvatarAPI = THEME_ASSET . '/assets/img/avatar/letters/';  //https://ruby-china.org/system/letter_avatars/2/
+    private static $_letterAvatarAPI = LETTER_AVATAR_URI;  //php 5.6以上可以THEME_ASSET . '/img/avatar/letters/', 弱智的低版本不支持类中常量与字符串拼接
 
 
     /**
@@ -133,7 +138,7 @@ final class Avatar{
      * @access  public
      * @var     string
      */
-    public $transient_cache_key;
+    public $cache_key;
 
 
     /**
@@ -145,7 +150,7 @@ final class Avatar{
      * @param   int | string | object    $id_or_email    用户ID或用户邮箱或用户实例对象
      * @param   string | int    尺寸
      */
-    public function __construct($id_or_email, $size){
+    public function __construct($id_or_email, $size='medium'){
         if($id_or_email instanceof WP_User){
             $this->_user = $id_or_email;
         } elseif (is_email(strval($id_or_email))){
@@ -155,7 +160,8 @@ final class Avatar{
         }
         $this->_size = self::strSize($size);
         //为每个用户头像赋予一个专用缓存key
-        $this->transient_cache_key = TRANSIENT_PREFIX . '_daily' . '_avatar_' . md5(strval($this->_user->ID) . strval($this->_size) . Utils::getCurrentDateTimeStr('day'));
+        $key = CACHE_PREFIX . '_daily' . '_avatar_' . md5(strval($this->_user->ID) . strval($this->_size) . Utils::getCurrentDateTimeStr('day'));
+        $this->cache_key = $key;
     }
 
 
@@ -170,19 +176,19 @@ final class Avatar{
     public function getAvatar(){
         $type = $this->getUserAvatarType();
         switch ($type){
-            case "gravatar":
+            case 'gravatar':
                 return $this->getGravatar();
                 break;
-            case "qq":
+            case 'qq':
                 return self::$_qqAvatarAPI . tt_get_option('tt_qq_openid') . '/' . get_user_meta( $this->_user->ID, 'tt_qq_openid', true ) . '/100';
                 break;
-            case "weibo":
+            case 'weibo':
                 return self::$_weiboAvatarAPI . get_user_meta( $this->_user->ID, 'tt_weibo_openid', true ) . '/180/0/1';
                 break;
-            case "weixin":
+            case 'weixin':
                 return get_user_meta( $this->_user->ID, 'tt_weixin_avatar', true) ? get_user_meta( $this->_user->ID, 'tt_weixin_avatar', true) : $this->getLetterAvatar();
                 break;
-            case "custom":
+            case 'custom':
                 return HOME_URI . '/wp-content/uploads/avatars/' . $this->_user->ID . '.jpg';
             default:
                 return $this->getLetterAvatar();

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-08-20 18:55+0800\n"
-"PO-Revision-Date: 2016-08-20 18:58+0800\n"
+"POT-Creation-Date: 2016-08-21 17:03+0800\n"
+"PO-Revision-Date: 2016-08-21 17:06+0800\n"
 "Last-Translator: Zhiyan <mail@webapproach.net>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -52,15 +52,28 @@ msgstr "分钟"
 msgid "秒前"
 msgstr "秒前"
 
-#: core/functions/func.Install.php:26
+#: core/functions/func.Install.php:27
 msgid ""
 "Create avatar upload folder failed, maybe check your php.ini to enable "
 "`mkdir` function.\\n"
 msgstr "创建头像上传文件夹失败，或许可检查php.ini以启用`mkdir`函数.\\n"
 
-#: core/functions/func.Install.php:27
+#: core/functions/func.Install.php:27 core/functions/func.Install.php:47
 msgid "Caught exception: "
 msgstr "捕获异常: "
+
+#: core/functions/func.Install.php:28 core/functions/func.Install.php:48
+#: functions.php:18
+msgid "WordPress internal error"
+msgstr "WordPress内部错误"
+
+#: core/functions/func.Install.php:47
+msgid "Can not copy `memcache object-cache.php` to `wp-content` dir.\\n"
+msgstr ""
+
+#: core/functions/func.Schedule.php:25
+msgid "Weekly"
+msgstr ""
 
 #: dashboard/of_inc/includes/class-options-framework-admin.php:91
 #: dashboard/of_inc/includes/class-options-framework-admin.php:92
@@ -345,235 +358,287 @@ msgstr "商店"
 msgid "Auxiliary"
 msgstr "辅助"
 
-#: dashboard/options.php:252
+#: dashboard/options.php:249
+msgid "Object Cache"
+msgstr "对象缓存"
+
+#: dashboard/options.php:250
+msgid "Object cache support, accelerate your site"
+msgstr "对象缓存支持，加速网站"
+
+#: dashboard/options.php:255
+msgid "Memcache"
+msgstr "Memcache"
+
+#: dashboard/options.php:256
+msgid "Redis"
+msgstr "Redis"
+
+#: dashboard/options.php:257
+msgid "None"
+msgstr "无"
+
+#: dashboard/options.php:265
+msgid "Memcache Host"
+msgstr "Memcache主机"
+
+#: dashboard/options.php:266
+msgid "Memcache server host"
+msgstr "Memcache服务器的地址(IP或url)"
+
+#: dashboard/options.php:275
+msgid "Memcache Port"
+msgstr "Memcache端口"
+
+#: dashboard/options.php:276
+msgid "Memcache server port"
+msgstr "Memcache服务器端口"
+
+#: dashboard/options.php:288
+msgid "Redis Host"
+msgstr "Redis主机"
+
+#: dashboard/options.php:289
+msgid "Redis server host"
+msgstr "Redis服务器的地址(IP或url)"
+
+#: dashboard/options.php:298
+msgid "Redis Port"
+msgstr "Redis端口"
+
+#: dashboard/options.php:299
+msgid "Redis server port"
+msgstr "Redis服务器的端口"
+
+#: dashboard/options.php:310
 msgid "Feedback"
 msgstr "反馈"
 
-#: dashboard/options.php:264
+#: dashboard/options.php:322
 msgid "Update"
 msgstr "更新"
 
-#: dashboard/options.php:271
+#: dashboard/options.php:329
 msgid "Debug Mode"
 msgstr "调试模式"
 
-#: dashboard/options.php:272
+#: dashboard/options.php:330
 msgid "Enable debug will call wp_die when catch a error"
 msgstr "启用调试将在遭遇错误时调用wp_die函数，输出提示信息"
 
-#: dashboard/options.php:285
+#: dashboard/options.php:343
 msgid "One"
 msgstr "一"
 
-#: dashboard/options.php:286
+#: dashboard/options.php:344
 msgid "Two"
 msgstr "二"
 
-#: dashboard/options.php:287
+#: dashboard/options.php:345
 msgid "Three"
 msgstr "三"
 
-#: dashboard/options.php:288
+#: dashboard/options.php:346
 msgid "Four"
 msgstr "四"
 
-#: dashboard/options.php:289
+#: dashboard/options.php:347
 msgid "Five"
 msgstr "五"
 
-#: dashboard/options.php:294
+#: dashboard/options.php:352
 msgid "French Toast"
 msgstr ""
 
-#: dashboard/options.php:295
+#: dashboard/options.php:353
 msgid "Pancake"
 msgstr ""
 
-#: dashboard/options.php:296
+#: dashboard/options.php:354
 msgid "Omelette"
 msgstr ""
 
-#: dashboard/options.php:297
+#: dashboard/options.php:355
 msgid "Crepe"
 msgstr ""
 
-#: dashboard/options.php:298
+#: dashboard/options.php:356
 msgid "Waffle"
 msgstr ""
 
-#: dashboard/options.php:356
+#: dashboard/options.php:414
 msgid "Input Text Mini"
 msgstr ""
 
-#: dashboard/options.php:357
+#: dashboard/options.php:415
 msgid "A mini text input field."
 msgstr ""
 
-#: dashboard/options.php:365
+#: dashboard/options.php:423
 msgid "Input Text"
 msgstr ""
 
-#: dashboard/options.php:366
+#: dashboard/options.php:424
 msgid "A text input field."
 msgstr ""
 
-#: dashboard/options.php:373
+#: dashboard/options.php:431
 msgid "Input with Placeholder"
 msgstr ""
 
-#: dashboard/options.php:374
+#: dashboard/options.php:432
 msgid "A text input field with an HTML5 placeholder."
 msgstr ""
 
-#: dashboard/options.php:381
+#: dashboard/options.php:439
 msgid "Textarea"
 msgstr ""
 
-#: dashboard/options.php:382
+#: dashboard/options.php:440
 msgid "Textarea description."
 msgstr ""
 
-#: dashboard/options.php:389
+#: dashboard/options.php:447
 msgid "Input Select Small"
 msgstr ""
 
-#: dashboard/options.php:390
+#: dashboard/options.php:448
 msgid "Small Select Box."
 msgstr ""
 
-#: dashboard/options.php:399
+#: dashboard/options.php:457
 msgid "Input Select Wide"
 msgstr ""
 
-#: dashboard/options.php:400
+#: dashboard/options.php:458
 msgid "A wider select box."
 msgstr ""
 
-#: dashboard/options.php:409
+#: dashboard/options.php:467
 msgid "Select a Category"
 msgstr ""
 
-#: dashboard/options.php:410
+#: dashboard/options.php:468
 msgid "Passed an array of categories with cat_ID and cat_name"
 msgstr ""
 
-#: dashboard/options.php:419
+#: dashboard/options.php:477
 msgid "Select a Tag"
 msgstr ""
 
-#: dashboard/options.php:420
+#: dashboard/options.php:478
 msgid "Passed an array of tags with term_id and term_name"
 msgstr ""
 
-#: dashboard/options.php:428
+#: dashboard/options.php:486
 msgid "Select a Page"
 msgstr ""
 
-#: dashboard/options.php:429
+#: dashboard/options.php:487
 msgid "Passed an pages with ID and post_title"
 msgstr ""
 
-#: dashboard/options.php:436
+#: dashboard/options.php:494
 msgid "Input Radio (one)"
 msgstr ""
 
-#: dashboard/options.php:437
+#: dashboard/options.php:495
 msgid "Radio select with default options \"one\"."
 msgstr ""
 
-#: dashboard/options.php:445
+#: dashboard/options.php:503
 msgid "Example Info"
 msgstr ""
 
-#: dashboard/options.php:446
+#: dashboard/options.php:504
 msgid "This is just some example information you can put in the panel."
 msgstr ""
 
-#: dashboard/options.php:451
+#: dashboard/options.php:509
 msgid "Input Checkbox"
 msgstr ""
 
-#: dashboard/options.php:452
+#: dashboard/options.php:510
 msgid "Example checkbox, defaults to true."
 msgstr ""
 
-#: dashboard/options.php:459
+#: dashboard/options.php:517
 msgid "Advanced Settings"
 msgstr ""
 
-#: dashboard/options.php:464
+#: dashboard/options.php:522
 msgid "Check to Show a Hidden Text Input"
 msgstr ""
 
-#: dashboard/options.php:465
+#: dashboard/options.php:523
 msgid "Click here and see what happens."
 msgstr ""
 
-#: dashboard/options.php:471
+#: dashboard/options.php:529
 msgid "Hidden Text Input"
 msgstr ""
 
-#: dashboard/options.php:472
+#: dashboard/options.php:530
 msgid "This option is hidden unless activated by a checkbox click."
 msgstr ""
 
-#: dashboard/options.php:480
+#: dashboard/options.php:538
 msgid "Uploader Test"
 msgstr "上传测试"
 
-#: dashboard/options.php:481
+#: dashboard/options.php:539
 msgid "This creates a full size uploader that previews the image."
 msgstr ""
 
-#: dashboard/options.php:500
+#: dashboard/options.php:558
 msgid "Example Background"
 msgstr "示例背景"
 
-#: dashboard/options.php:501
+#: dashboard/options.php:559
 msgid "Change the background CSS."
 msgstr "更改背景样式"
 
-#: dashboard/options.php:508
+#: dashboard/options.php:566
 msgid "Multicheck"
 msgstr "多选框"
 
-#: dashboard/options.php:509
+#: dashboard/options.php:567
 msgid "Multicheck description."
 msgstr "多选框描述"
 
-#: dashboard/options.php:517
+#: dashboard/options.php:575
 msgid "Colorpicker"
 msgstr "选色板"
 
-#: dashboard/options.php:518
+#: dashboard/options.php:576
 msgid "No color selected by default."
 msgstr ""
 
-#: dashboard/options.php:524
+#: dashboard/options.php:582
 msgid "Typography"
 msgstr ""
 
-#: dashboard/options.php:525
+#: dashboard/options.php:583
 msgid "Example typography."
 msgstr ""
 
-#: dashboard/options.php:532
+#: dashboard/options.php:590
 msgid "Custom Typography"
 msgstr ""
 
-#: dashboard/options.php:533
+#: dashboard/options.php:591
 msgid "Custom typography options."
 msgstr ""
 
-#: dashboard/options.php:541
+#: dashboard/options.php:599
 msgid "Text Editor"
 msgstr "文本编辑器"
 
-#: dashboard/options.php:560
+#: dashboard/options.php:618
 msgid "Default Text Editor"
 msgstr "默认文本编辑器"
 
-#: dashboard/options.php:561
+#: dashboard/options.php:619
 #, php-format
 msgid ""
 "You can also pass settings to the editor.  Read more about wp_editor in <a "
@@ -583,10 +648,6 @@ msgstr ""
 #: functions.php:18
 msgid "Lack of WordPress environment"
 msgstr "缺少WordPress环境"
-
-#: functions.php:18
-msgid "WordPress internal error"
-msgstr "WordPress内部错误"
 
 #. Theme Name of the plugin/theme
 msgid "TinT"
