@@ -3,6 +3,7 @@
  * Copyright 2016, WebApproach.net
  * All right reserved.
  *
+ * @since 2.0.0
  * @author Zhiyan
  * @date 2016/08/21 23:19
  * @license GPL v3 LICENSE
@@ -111,7 +112,7 @@ function tt_page_attributes_meta_box($post) {
  *
  * @since   2.0.0
  *
- *
+ * @return  void
  */
 function tt_replace_page_attributes_meta_box(){
     remove_meta_box('pageparentdiv', 'page', 'side');
@@ -157,7 +158,7 @@ function tt_save_meta_box_page_template_data( $post_id ) {
         return;
     }
     // 是否页面
-    if ( !isset( $_POST['post_type'] ) || 'page' != $_POST['post_type'] ) {
+    if ( !isset( $_POST['post_type'] ) || 'page' != trim($_POST['post_type']) ) {
         return;
     }
 

@@ -108,6 +108,7 @@ load_func('func.Optimization');
 load_func('func.Page');
 load_func('func.Schedule');
 load_func('func.Sidebar');
+load_func('func.Template');
 
 /* 载入主题功能模块 */
 function tt_load() {
