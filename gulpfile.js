@@ -85,16 +85,17 @@ gulp.task('imagemin', function () {
 // js压缩合并发布
 gulp.task('scripts', function () {
     console.log('start scripts task');
+    console.log(process.cwd());
     gulp.src('./assets/js')
         .pipe(clean());
     gulp.src(['./src/js/*.js'])
-        .pipe(eslint())                                                           //- js代码检查
-        .pipe(eslint.format())
+        //.pipe(eslint())                                                           //- js代码检查
+        //.pipe(eslint.format())
         .pipe(webpack(require('./webpack.config.js')))                            //- webpack打包模块
         .pipe(uglify())                                                           //- js压缩
         .pipe(rev())                                                              //- 文件名加MD5后缀
         .pipe(header(banner, {pkg: pkg}))                                         //- 文档添加注释头
-        .pipe(gulp.dest('./dist/scripts'))                                        //- 输出文件至发布路径
+        .pipe(gulp.dest('./assets/js'))                                        //- 输出文件至发布路径
         .pipe(rev.manifest('src/rev/rev-manifest.json', {
             base: process.cwd() + '/src/rev',
             merge: true
@@ -121,10 +122,16 @@ gulp.task('watch', function () {
 // 构建
 gulp.task('build', ['less', 'scripts', 'imagemin'], function () {
     console.log('start build task');
-    gulp.src(['./src/rev/*.json', './src/php/header.php', './src/php/footer.php'])
+    gulp.src(['./src/rev/*.json', './src/php/header.php'])
         .pipe(revCollector())
-        .pipe(htmlmin())
-        .pipe(gulp.dest('./'));
+        //.pipe(htmlmin())
+        .pipe(rename('_pcs.Header.php'))
+        .pipe(gulp.dest('./core/templates/pieces'));
+    gulp.src(['./src/rev/*.json', './src/php/footer.php'])
+        .pipe(revCollector())
+        //.pipe(htmlmin())
+        .pipe(rename('_pcs.Footer.php'))
+        .pipe(gulp.dest('./core/templates/pieces'));
 });
 
 // 清理发布目录

@@ -14,6 +14,50 @@
 <?php
 
 /**
+ * 加载header模板
+ *
+ * @since 2.0.0
+ *
+ * @param string $name 特殊header的名字
+ */
+function tt_get_header( $name = null ) {
+    do_action( 'get_header', $name );
+
+    $templates = array();
+    $name = (string) $name;
+    if ( '' !== $name ) {
+        $templates[] = 'core/templates/pieces/_pcs.Header.' . ucfirst($name) . '.php';
+    }
+
+    $templates[] = 'core/templates/pieces/_pcs.Header.php';
+
+    locate_template( $templates, true );
+}
+
+
+/**
+ * 加载footer模板
+ *
+ * @since 2.0.0
+ *
+ * @param string $name 特殊footer的名字
+ */
+function tt_get_footer( $name = null ) {
+    do_action( 'get_footer', $name );
+
+    $templates = array();
+    $name = (string) $name;
+    if ( '' !== $name ) {
+        $templates[] = 'core/templates/pieces/_pcs.Footer.' . ucfirst($name) . '.php';
+    }
+
+    $templates[] = 'core/templates/pieces/_pcs.Footer.php';
+
+    locate_template( $templates, true );
+}
+
+
+/**
  * 重新定义文章、页面(非自定义模板页面)、分类、作者、归档、404等模板位置
  * https://developer.wordpress.org/themes/basics/template-hierarchy/
  * https://developer.wordpress.org/files/2014/10/template-hierarchy.png 了解WordPress模板系统

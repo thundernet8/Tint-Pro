@@ -9,13 +9,13 @@ var webpack = require('webpack');
 module.exports = {
     //plugins: [commonsPlugin],
     resolve: {
-        root: [path.dirname() + '/src', path.dirname() + 'node_modules'],
+        root: [path.dirname(process.cwd()) + '/src', path.dirname(process.cwd()) + '/node_modules'],
         alias: {},
         extensions: ['', '.js']
     },
 
     entry: {
-        main: './src/scripts/main.js'
+        main: './src/js/main.js'
     },
 
     output: {
