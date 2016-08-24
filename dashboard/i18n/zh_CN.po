@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-08-22 01:51+0800\n"
-"PO-Revision-Date: 2016-08-22 01:54+0800\n"
+"POT-Creation-Date: 2016-08-24 23:56+0800\n"
+"PO-Revision-Date: 2016-08-25 00:03+0800\n"
 "Last-Translator: Zhiyan <mail@webapproach.net>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -20,35 +20,35 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: core/classes/class.Utils.php:366
+#: core/classes/class.Utils.php:367
 msgid "刚刚"
 msgstr "刚刚"
 
-#: core/classes/class.Utils.php:369
+#: core/classes/class.Utils.php:370
 msgid "年前"
 msgstr "年前"
 
-#: core/classes/class.Utils.php:370
+#: core/classes/class.Utils.php:371
 msgid "个月前"
 msgstr "月前"
 
-#: core/classes/class.Utils.php:371
+#: core/classes/class.Utils.php:372
 msgid "周前"
 msgstr "周前"
 
-#: core/classes/class.Utils.php:372
+#: core/classes/class.Utils.php:373
 msgid "天前"
 msgstr "天前"
 
-#: core/classes/class.Utils.php:373
+#: core/classes/class.Utils.php:374
 msgid "小时前"
 msgstr "小时"
 
-#: core/classes/class.Utils.php:374
+#: core/classes/class.Utils.php:375
 msgid "分钟"
 msgstr "分钟"
 
-#: core/classes/class.Utils.php:375
+#: core/classes/class.Utils.php:376
 msgid "秒前"
 msgstr "秒前"
 
@@ -80,49 +80,81 @@ msgstr "WordPress内部错误"
 msgid "Can not copy `memcache object-cache.php` to `wp-content` dir.\\n"
 msgstr "Can not copy `memcache object-cache.php` to `wp-content` dir.\\n"
 
-#: core/functions/func.Page.php:69
+#: core/functions/func.Page.php:70
 msgid "(no parent)"
 msgstr "(没有父级)"
 
-#: core/functions/func.Page.php:78 core/functions/func.Page.php:79
+#: core/functions/func.Page.php:79 core/functions/func.Page.php:80
 msgid "Parent"
 msgstr "父级"
 
-#: core/functions/func.Page.php:88
+#: core/functions/func.Page.php:89
 msgid "Template"
 msgstr "模板"
 
-#: core/functions/func.Page.php:91
+#: core/functions/func.Page.php:92
 msgid "Page Template"
 msgstr "页面模板"
 
-#: core/functions/func.Page.php:93
+#: core/functions/func.Page.php:94
 msgid "Default Template"
 msgstr "默认模板"
 
-#: core/functions/func.Page.php:100 core/functions/func.Page.php:101
+#: core/functions/func.Page.php:101 core/functions/func.Page.php:102
 msgid "Order"
 msgstr "排序"
 
-#: core/functions/func.Page.php:103
+#: core/functions/func.Page.php:104
 msgid "Need help? Use the Help tab in the upper right of your screen."
 msgstr "需要帮助？请点击页面右上角的“帮助”选项卡"
 
-#: core/functions/func.Page.php:118
+#: core/functions/func.Page.php:119
 msgid "Page Attributes"
 msgstr "页面属性"
 
-#: core/functions/func.Page.php:171
+#: core/functions/func.Page.php:172
 msgid "The page template is invalid"
 msgstr "页面模板无效"
 
-#: core/functions/func.Page.php:171
+#: core/functions/func.Page.php:172
 msgid "Invalid Page Template"
 msgstr "无效的页面模板"
 
 #: core/functions/func.Schedule.php:25
 msgid "Weekly"
 msgstr "每周的"
+
+#: core/functions/func.Sidebar.php:58 dashboard/options.php:120
+msgid "Common Sidebar"
+msgstr "默认边栏"
+
+#: core/functions/func.Sidebar.php:59 dashboard/options.php:121
+msgid "Home Sidebar"
+msgstr "主页边栏"
+
+#: core/functions/func.Sidebar.php:60 dashboard/options.php:122
+msgid "Single Sidebar"
+msgstr "文章边栏"
+
+#: core/functions/func.Sidebar.php:61 dashboard/options.php:123
+msgid "Archive Sidebar"
+msgstr "归档边栏"
+
+#: core/functions/func.Sidebar.php:62 dashboard/options.php:124
+msgid "Category Sidebar"
+msgstr "分类边栏"
+
+#: core/functions/func.Sidebar.php:63 dashboard/options.php:125
+msgid "Search Sidebar"
+msgstr "搜索边栏"
+
+#: core/functions/func.Sidebar.php:64 dashboard/options.php:126
+msgid "404 Sidebar"
+msgstr "404边栏"
+
+#: core/functions/func.Sidebar.php:65 dashboard/options.php:127
+msgid "Page Sidebar"
+msgstr "页面边栏"
 
 #: dashboard/of_inc/includes/class-options-framework-admin.php:91
 #: dashboard/of_inc/includes/class-options-framework-admin.php:92
@@ -247,452 +279,337 @@ msgstr "粗体"
 msgid "Bold Italic"
 msgstr "斜体加粗"
 
-#: dashboard/options.php:30
+#: dashboard/options.php:33
 msgid "Basic"
 msgstr "基本"
 
-#: dashboard/options.php:36
+#: dashboard/options.php:39
 msgid "Home Page Description"
 msgstr "主页描述"
 
-#: dashboard/options.php:37
+#: dashboard/options.php:40
 msgid "Home page description meta information, good for SEO"
 msgstr "主页描述元信息，SEO友好"
 
-#: dashboard/options.php:45
+#: dashboard/options.php:48
 msgid "Home Page Keywords"
 msgstr "主页关键词"
 
-#: dashboard/options.php:46
+#: dashboard/options.php:49
 msgid "Home page keywords meta information, good for SEO"
 msgstr "主页关键词元信息，SEO友好(多个关键词以英文逗号分隔)"
 
-#: dashboard/options.php:54
+#: dashboard/options.php:57
 msgid "Favicon"
 msgstr "Favicon"
 
-#: dashboard/options.php:55
+#: dashboard/options.php:58
 msgid "Please upload an ico file"
 msgstr "请上传ico文件"
 
-#: dashboard/options.php:63
+#: dashboard/options.php:66
 msgid "Favicon(PNG)"
 msgstr "Favicon(PNG)"
 
-#: dashboard/options.php:64
+#: dashboard/options.php:67
 msgid "Please upload an png file"
 msgstr "请上传png格式favicon"
 
-#: dashboard/options.php:72
+#: dashboard/options.php:75
 msgid "I18n"
 msgstr "国际化"
 
-#: dashboard/options.php:73
+#: dashboard/options.php:76
 msgid "Multi languages and I18n support"
 msgstr "多语言与国际化支持"
 
-#: dashboard/options.php:78
+#: dashboard/options.php:81
 msgid "zh_cn"
 msgstr "中文"
 
-#: dashboard/options.php:79
+#: dashboard/options.php:82
 msgid "en_us"
 msgstr "英语"
 
-#: dashboard/options.php:85
+#: dashboard/options.php:88
 msgid "Gravatar"
 msgstr "Gravatar头像"
 
-#: dashboard/options.php:86
+#: dashboard/options.php:89
 msgid "Gravatar support"
 msgstr "Gravatar 头像支持"
 
-#: dashboard/options.php:95
+#: dashboard/options.php:98
 msgid "Style"
 msgstr "样式"
 
-#: dashboard/options.php:104
+#: dashboard/options.php:107
 msgid "Sidebar"
 msgstr "边栏"
 
 #: dashboard/options.php:114
+msgid "Register Sidebars"
+msgstr "注册边栏"
+
+#: dashboard/options.php:115
+msgid "Check the sidebars to register"
+msgstr "勾选需要注册的边栏"
+
+#: dashboard/options.php:134
 msgid "Social"
 msgstr "社会化"
 
-#: dashboard/options.php:121
+#: dashboard/options.php:141
 msgid "QQ Login"
 msgstr "QQ 登录"
 
-#: dashboard/options.php:122
+#: dashboard/options.php:142
 msgid "QQ login "
 msgstr "QQ 登录"
 
-#: dashboard/options.php:131
+#: dashboard/options.php:151
 msgid "QQ Open ID"
 msgstr "QQ Open ID"
 
-#: dashboard/options.php:132
+#: dashboard/options.php:152
 msgid "Your QQ open application ID"
 msgstr "你的QQ开放平台应用ID"
 
-#: dashboard/options.php:141
+#: dashboard/options.php:161
 msgid "QQ Open Key"
 msgstr "QQ Open Key"
 
-#: dashboard/options.php:142
+#: dashboard/options.php:162
 msgid "Your QQ open application key"
 msgstr "你的QQ开放平台应用Key"
 
-#: dashboard/options.php:151
+#: dashboard/options.php:171
 msgid "Weibo Login"
 msgstr "微博登录"
 
-#: dashboard/options.php:152
+#: dashboard/options.php:172
 msgid "Weibo login access"
 msgstr "接入微博登录"
 
-#: dashboard/options.php:161
+#: dashboard/options.php:181
 msgid "Weibo Open Key"
 msgstr "微博 Open Key"
 
-#: dashboard/options.php:162
+#: dashboard/options.php:182
 msgid "Your weibo open application key"
 msgstr "你的微博开放平台应用Key"
 
-#: dashboard/options.php:171
+#: dashboard/options.php:191
 msgid "Weibo Open Secret"
 msgstr "微博 Open Secret"
 
-#: dashboard/options.php:172
+#: dashboard/options.php:192
 msgid "Your weibo open application secret"
 msgstr "你的微博开放平台应用Secret"
 
-#: dashboard/options.php:181
+#: dashboard/options.php:201
 msgid "Weixin Login"
 msgstr "微信登录"
 
-#: dashboard/options.php:182
+#: dashboard/options.php:202
 msgid "Weixin login access"
 msgstr "接入微信登录"
 
-#: dashboard/options.php:191
+#: dashboard/options.php:211
 msgid "Weixin Open Key"
 msgstr "微信 Open Key"
 
-#: dashboard/options.php:192
+#: dashboard/options.php:212
 msgid "Your weixin open application key"
 msgstr "你的微博开放平台应用Key"
 
-#: dashboard/options.php:201
+#: dashboard/options.php:221
 msgid "Weixin Open Secret"
 msgstr "微信 Open Secret"
 
-#: dashboard/options.php:202
+#: dashboard/options.php:222
 msgid "Your weixin open application secret"
 msgstr "你的微博开放平台应用Secret"
 
-#: dashboard/options.php:212
+#: dashboard/options.php:232
 msgid "Ad"
 msgstr "广告"
 
-#: dashboard/options.php:222
+#: dashboard/options.php:242
 msgid "Membership"
 msgstr "会员"
 
-#: dashboard/options.php:232
+#: dashboard/options.php:252
 msgid "Shop"
 msgstr "商店"
 
-#: dashboard/options.php:242
+#: dashboard/options.php:262
 msgid "Auxiliary"
 msgstr "辅助"
 
-#: dashboard/options.php:249
+#: dashboard/options.php:269
 msgid "Object Cache"
 msgstr "对象缓存"
 
-#: dashboard/options.php:250
+#: dashboard/options.php:270
 msgid "Object cache support, accelerate your site"
 msgstr "对象缓存支持，加速网站"
 
-#: dashboard/options.php:255
+#: dashboard/options.php:275
 msgid "Memcache"
 msgstr "Memcache"
 
-#: dashboard/options.php:256
+#: dashboard/options.php:276
 msgid "Redis"
 msgstr "Redis"
 
-#: dashboard/options.php:257
+#: dashboard/options.php:277 dashboard/options.php:383
 msgid "None"
 msgstr "无"
 
-#: dashboard/options.php:265
+#: dashboard/options.php:285
 msgid "Memcache Host"
 msgstr "Memcache主机"
 
-#: dashboard/options.php:266
+#: dashboard/options.php:286
 msgid "Memcache server host"
 msgstr "Memcache服务器的地址(IP或url)"
 
-#: dashboard/options.php:275
+#: dashboard/options.php:295
 msgid "Memcache Port"
 msgstr "Memcache端口"
 
-#: dashboard/options.php:276
+#: dashboard/options.php:296
 msgid "Memcache server port"
 msgstr "Memcache服务器端口"
 
-#: dashboard/options.php:288
+#: dashboard/options.php:308
 msgid "Redis Host"
 msgstr "Redis主机"
 
-#: dashboard/options.php:289
+#: dashboard/options.php:309
 msgid "Redis server host"
 msgstr "Redis服务器的地址(IP或url)"
 
-#: dashboard/options.php:298
+#: dashboard/options.php:318
 msgid "Redis Port"
 msgstr "Redis端口"
 
-#: dashboard/options.php:299
+#: dashboard/options.php:319
 msgid "Redis server port"
 msgstr "Redis服务器的端口"
 
-#: dashboard/options.php:310
+#: dashboard/options.php:330
+msgid "Mailer Separator"
+msgstr ""
+
+#: dashboard/options.php:337
+msgid "SMTP/PHPMailer"
+msgstr "SMTP/PHPMailer"
+
+#: dashboard/options.php:338
+msgid "Use SMTP or PHPMail as default mailer"
+msgstr "使用SMTP或PHPMail作为默认邮件发送方式"
+
+#: dashboard/options.php:343
+msgid "PHP"
+msgstr "PHP"
+
+#: dashboard/options.php:344
+msgid "SMTP"
+msgstr "SMTP"
+
+#: dashboard/options.php:352
+msgid "SMTP Host"
+msgstr "SMTP 服务器"
+
+#: dashboard/options.php:353
+msgid "Your SMTP service host"
+msgstr "你的SMTP服务器主机地址"
+
+#: dashboard/options.php:363
+msgid "SMTP Port"
+msgstr "SMTP 端口"
+
+#: dashboard/options.php:364
+msgid "Your SMTP service port"
+msgstr "你的SMTP服务器服务端口"
+
+#: dashboard/options.php:374
+msgid "SMTP Secure"
+msgstr "SMTP安全"
+
+#: dashboard/options.php:375
+msgid "Your SMTP server secure protocol"
+msgstr "你的SMTP服务器安全协议"
+
+#: dashboard/options.php:380
+msgid "Auto"
+msgstr "自动"
+
+#: dashboard/options.php:381
+msgid "SSL"
+msgstr "SSL"
+
+#: dashboard/options.php:382
+msgid "TLS"
+msgstr "TLS"
+
+#: dashboard/options.php:390
+msgid "SMTP Username"
+msgstr "SMTP 用户名"
+
+#: dashboard/options.php:391
+msgid "Your SMTP username"
+msgstr "你的SMTP服务的登录用户名"
+
+#: dashboard/options.php:400
+msgid "SMTP Password"
+msgstr "SMTP 密码"
+
+#: dashboard/options.php:401
+msgid "Your SMTP password"
+msgstr "你的SMTP服务登录密码"
+
+#: dashboard/options.php:411
+msgid "Your Name"
+msgstr "发信姓名"
+
+#: dashboard/options.php:412
+msgid "Your display name as the sender"
+msgstr "你发送的邮件中显示的名称"
+
+#: dashboard/options.php:424
+msgid "PHP Mail Sender Display Name"
+msgstr "PHPMailer发信人名称"
+
+#: dashboard/options.php:425
+msgid "The Sender display name when using PHPMail send mail"
+msgstr "使用PHPMailer发送邮件的显示名"
+
+#: dashboard/options.php:435
+msgid "PHP Mail Sender Address"
+msgstr "PHPMailer 发信人地址"
+
+#: dashboard/options.php:436
+msgid "You can use fake mail address when use PHPMail"
+msgstr "当使用PHPMailer发信时可使用自定义的发信人地址"
+
+#: dashboard/options.php:452
 msgid "Feedback"
 msgstr "反馈"
 
-#: dashboard/options.php:322
+#: dashboard/options.php:464
 msgid "Update"
 msgstr "更新"
 
-#: dashboard/options.php:329
+#: dashboard/options.php:471
 msgid "Debug Mode"
 msgstr "调试模式"
 
-#: dashboard/options.php:330
+#: dashboard/options.php:472
 msgid "Enable debug will call wp_die when catch a error"
 msgstr "启用调试将在遭遇错误时调用wp_die函数，输出提示信息"
-
-#: dashboard/options.php:343
-msgid "One"
-msgstr "一"
-
-#: dashboard/options.php:344
-msgid "Two"
-msgstr "二"
-
-#: dashboard/options.php:345
-msgid "Three"
-msgstr "三"
-
-#: dashboard/options.php:346
-msgid "Four"
-msgstr "四"
-
-#: dashboard/options.php:347
-msgid "Five"
-msgstr "五"
-
-#: dashboard/options.php:352
-msgid "French Toast"
-msgstr ""
-
-#: dashboard/options.php:353
-msgid "Pancake"
-msgstr ""
-
-#: dashboard/options.php:354
-msgid "Omelette"
-msgstr ""
-
-#: dashboard/options.php:355
-msgid "Crepe"
-msgstr ""
-
-#: dashboard/options.php:356
-msgid "Waffle"
-msgstr ""
-
-#: dashboard/options.php:414
-msgid "Input Text Mini"
-msgstr ""
-
-#: dashboard/options.php:415
-msgid "A mini text input field."
-msgstr ""
-
-#: dashboard/options.php:423
-msgid "Input Text"
-msgstr ""
-
-#: dashboard/options.php:424
-msgid "A text input field."
-msgstr ""
-
-#: dashboard/options.php:431
-msgid "Input with Placeholder"
-msgstr ""
-
-#: dashboard/options.php:432
-msgid "A text input field with an HTML5 placeholder."
-msgstr ""
-
-#: dashboard/options.php:439
-msgid "Textarea"
-msgstr ""
-
-#: dashboard/options.php:440
-msgid "Textarea description."
-msgstr ""
-
-#: dashboard/options.php:447
-msgid "Input Select Small"
-msgstr ""
-
-#: dashboard/options.php:448
-msgid "Small Select Box."
-msgstr ""
-
-#: dashboard/options.php:457
-msgid "Input Select Wide"
-msgstr ""
-
-#: dashboard/options.php:458
-msgid "A wider select box."
-msgstr ""
-
-#: dashboard/options.php:467
-msgid "Select a Category"
-msgstr ""
-
-#: dashboard/options.php:468
-msgid "Passed an array of categories with cat_ID and cat_name"
-msgstr ""
-
-#: dashboard/options.php:477
-msgid "Select a Tag"
-msgstr ""
-
-#: dashboard/options.php:478
-msgid "Passed an array of tags with term_id and term_name"
-msgstr ""
-
-#: dashboard/options.php:486
-msgid "Select a Page"
-msgstr ""
-
-#: dashboard/options.php:487
-msgid "Passed an pages with ID and post_title"
-msgstr ""
-
-#: dashboard/options.php:494
-msgid "Input Radio (one)"
-msgstr ""
-
-#: dashboard/options.php:495
-msgid "Radio select with default options \"one\"."
-msgstr ""
-
-#: dashboard/options.php:503
-msgid "Example Info"
-msgstr ""
-
-#: dashboard/options.php:504
-msgid "This is just some example information you can put in the panel."
-msgstr ""
-
-#: dashboard/options.php:509
-msgid "Input Checkbox"
-msgstr ""
-
-#: dashboard/options.php:510
-msgid "Example checkbox, defaults to true."
-msgstr ""
-
-#: dashboard/options.php:517
-msgid "Advanced Settings"
-msgstr ""
-
-#: dashboard/options.php:522
-msgid "Check to Show a Hidden Text Input"
-msgstr ""
-
-#: dashboard/options.php:523
-msgid "Click here and see what happens."
-msgstr ""
-
-#: dashboard/options.php:529
-msgid "Hidden Text Input"
-msgstr ""
-
-#: dashboard/options.php:530
-msgid "This option is hidden unless activated by a checkbox click."
-msgstr ""
-
-#: dashboard/options.php:538
-msgid "Uploader Test"
-msgstr "上传测试"
-
-#: dashboard/options.php:539
-msgid "This creates a full size uploader that previews the image."
-msgstr ""
-
-#: dashboard/options.php:558
-msgid "Example Background"
-msgstr "示例背景"
-
-#: dashboard/options.php:559
-msgid "Change the background CSS."
-msgstr "更改背景样式"
-
-#: dashboard/options.php:566
-msgid "Multicheck"
-msgstr "多选框"
-
-#: dashboard/options.php:567
-msgid "Multicheck description."
-msgstr "多选框描述"
-
-#: dashboard/options.php:575
-msgid "Colorpicker"
-msgstr "选色板"
-
-#: dashboard/options.php:576
-msgid "No color selected by default."
-msgstr ""
-
-#: dashboard/options.php:582
-msgid "Typography"
-msgstr ""
-
-#: dashboard/options.php:583
-msgid "Example typography."
-msgstr ""
-
-#: dashboard/options.php:590
-msgid "Custom Typography"
-msgstr ""
-
-#: dashboard/options.php:591
-msgid "Custom typography options."
-msgstr ""
-
-#: dashboard/options.php:599
-msgid "Text Editor"
-msgstr "文本编辑器"
-
-#: dashboard/options.php:618
-msgid "Default Text Editor"
-msgstr "默认文本编辑器"
-
-#: dashboard/options.php:619
-#, php-format
-msgid ""
-"You can also pass settings to the editor.  Read more about wp_editor in <a "
-"href=\"%1$s\" target=\"_blank\">the WordPress codex</a>"
-msgstr ""
 
 #: functions.php:18
 msgid "Lack of WordPress environment"
@@ -721,6 +638,45 @@ msgstr "Zhiyan"
 #. Author URI of the plugin/theme
 msgid "http://www.webapproach.net/"
 msgstr "http://www.webapproach.net/"
+
+#~ msgid "One"
+#~ msgstr "一"
+
+#~ msgid "Two"
+#~ msgstr "二"
+
+#~ msgid "Three"
+#~ msgstr "三"
+
+#~ msgid "Four"
+#~ msgstr "四"
+
+#~ msgid "Five"
+#~ msgstr "五"
+
+#~ msgid "Uploader Test"
+#~ msgstr "上传测试"
+
+#~ msgid "Example Background"
+#~ msgstr "示例背景"
+
+#~ msgid "Change the background CSS."
+#~ msgstr "更改背景样式"
+
+#~ msgid "Multicheck"
+#~ msgstr "多选框"
+
+#~ msgid "Multicheck description."
+#~ msgstr "多选框描述"
+
+#~ msgid "Colorpicker"
+#~ msgstr "选色板"
+
+#~ msgid "Text Editor"
+#~ msgstr "文本编辑器"
+
+#~ msgid "Default Text Editor"
+#~ msgstr "默认文本编辑器"
 
 #~ msgid "Gravatar Source"
 #~ msgstr "Gravatar 源"

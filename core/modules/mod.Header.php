@@ -11,4 +11,4 @@
  */
 ?>
 
-<link rel="stylesheet" type="text/css" href="<?php echo THEME_URI.'/assets/css/main.css'; ?>"  />
+<link rel="stylesheet" type="text/css" href="<?php echo THEME_URI.'/assets/css/main-52da27661b.css'; ?>"  />

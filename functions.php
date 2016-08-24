@@ -104,6 +104,8 @@ load_func('func.Cache');
 load_func('func.I18n');
 load_func('func.Install');
 load_func('func.Kits');
+load_func('func.Mail');
+load_func('func.Module');
 load_func('func.Optimization');
 load_func('func.Page');
 load_func('func.Schedule');

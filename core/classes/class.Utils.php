@@ -13,6 +13,7 @@
 <?php
 
 require_once 'class.NameFirstChar.php';
+require_once THEME_CLASS . '/vender/class.TldExtract.php';
 
 class Utils{
     /**
@@ -45,7 +46,7 @@ class Utils{
         if(!$strict){
             return wp_is_mobile();
         }
-        return self::is_phone()||self::is_tablet();
+        return self::isPhone()||self::isTablet();
     }
 
 
@@ -441,6 +442,22 @@ class Utils{
         global $wp;
         $url = get_option('permalink_structure') == '' ? add_query_arg($wp->query_string, '', home_url($wp->request) ) : home_url(add_query_arg(array(), $wp->request));
         return $url;
+    }
+
+
+    /**
+     * 获取顶级域名
+     *
+     * @since   2.0.0
+     *
+     * @static
+     * @access  public
+     * @param   string  $url  需要解析的网址
+     * @return  string
+     */
+    public static function getTopDomain($url){
+        $components = tldextract($url);
+        return $components->domain . $components->tld;
     }
 
 

@@ -15,6 +15,12 @@
 	margin-bottom:0;
 	padding-bottom:10px;
 }
+
+#optionsframework input::-webkit-input-placeholde,
+#optionsframework input::-moz-placeholder {
+	font-style: italic;
+}
+
 #optionsframework .section {
 	padding:10px 10px 0;
 }
