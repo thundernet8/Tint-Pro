@@ -93,6 +93,16 @@ function optionsframework_options() {
     );
 
 
+    // - Timthumb
+    $options[] = array(
+        'name' => __( 'Timthumb Crop', 'tt' ),
+        'desc' => __( 'Timthumb crop support', 'tt' ),
+        'id' => 'tt_enable_timthumb',
+        'std' => false,
+        'type' => 'checkbox'
+    );
+
+
 	// 主题选项 - 样式设置
 	$options[] = array(
 		'name' => __( 'Style', 'tt' ),

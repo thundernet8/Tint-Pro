@@ -95,13 +95,14 @@ if( is_admin() ){
 
 /* 载入类 */
 load_class('class.Avatar');
-load_class('class.PostThumb');
+load_class('class.PostImage');
 load_class('class.Utils');
 
 /* 载入功能函数 */
 load_func('func.Avatar');
 load_func('func.Cache');
 load_func('func.I18n');
+load_func('func.Init');
 load_func('func.Install');
 load_func('func.Kits');
 load_func('func.Mail');
@@ -111,6 +112,7 @@ load_func('func.Page');
 load_func('func.Schedule');
 load_func('func.Sidebar');
 load_func('func.Template');
+load_func('func.Thumb');
 
 /* 载入主题功能模块 */
 function tt_load() {
@@ -171,30 +173,5 @@ function tt_load() {
 }
 //add_action( 'after_setup_theme', 'tt_load' );
 
-/* 主题扩展 */
-function tt_setup() {
-	// 开启自动feed地址
-	add_theme_support( 'automatic-feed-links' );
 
-	// 开启缩略图
-	add_theme_support( 'post-thumbnails' );
 
-	// 增加文章形式
-	add_theme_support( 'post-formats', array( 'audio', 'aside', 'chat', 'gallery', 'image', 'link', 'quote', 'status', 'video' ) );
-
-	// 图片上传时形成的缩略图尺寸
-	add_image_size( 'thumbnail', 225, 150, true );
-	add_image_size( 'medium', 375, 250, true );
-	add_image_size( 'large', 750, 500, true );
-
-	// 菜单区域
-	register_nav_menus( array(
-		'topBar' => '顶部菜单',
-		'footBar' => '底部菜单',
-		'shopBar' => '商城分类导航',
-		'pageBar' => '页面合并菜单',
-	) );
-}
-add_action( 'after_setup_theme', 'tt_setup' );
-
-// TODO: @since
