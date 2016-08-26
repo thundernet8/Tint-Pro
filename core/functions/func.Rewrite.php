@@ -71,3 +71,42 @@ function tt_rewrite_short_link(){
     return false;
 }
 add_action('template_redirect','tt_rewrite_short_link');
+
+
+/**
+ * 用户页路由(不同于作者页)
+ *
+ * @since   2.0.0
+ *
+ * @param   object  $wp_rewrite  Rewrite Rules
+ * @return  void
+ */
+function tt_set_user_page_rewrite_rules($wp_rewrite){
+    if($ps = get_option('permalink_structure')){
+        // TODO: 用户链接前缀 `u` 是否可以自定义
+        if(stripos('%postname', $ps) !== false){
+            $new_rules['u/([0-9]+)$']	= 'index.php?author=$matches[1]&uc=1';
+        }else{
+            $new_rules['u/([0-9A-Za-z_-]+)$']	= 'index.php?author_name=$matches[1]&uc=1';
+        }
+        $wp_rewrite->rules = $new_rules + $wp_rewrite->rules;
+    }
+}
+add_action('generate_rewrite_rules', 'tt_set_user_page_rewrite_rules');
+
+
+/**
+ * 为自定义的用户页添加query_var白名单，用于识别和区分用户页及作者页
+ *
+ * @since   2.0.0
+ *
+ * @param   object  $public_query_vars  公共全局query_vars
+ * @return  object
+ */
+function tt_add_user_page_query_vars($public_query_vars) {
+    if(!is_admin()){
+        $public_query_vars[] = 'uc'; // 添加参数白名单uc，代表是用户中心页，采用用户模板而非作者模板
+    }
+    return $public_query_vars;
+}
+add_filter('query_vars', 'tt_add_user_page_query_vars');

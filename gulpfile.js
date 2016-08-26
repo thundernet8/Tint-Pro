@@ -164,8 +164,8 @@ gulp.task('deploy', function () {
             .pipe(gulp.dest('D:/Dev/WebServer/WWW/wordpress/wp-content/themes/Tint/assets'));
         gulp.src(['./core/**/*.*'])
             .pipe(gulp.dest('D:/Dev/WebServer/WWW/wordpress/wp-content/themes/Tint/core'));
-        gulp.src(['./dashboard/**/*.*'])
-            .pipe(gulp.dest('D:/Dev/WebServer/WWW/wordpress/wp-content/themes/Tint/dashboard'));
+        gulp.src(['./dash/**/*.*'])
+            .pipe(gulp.dest('D:/Dev/WebServer/WWW/wordpress/wp-content/themes/Tint/dash'));
         gulp.src(['./*.php', './*.png', './*.css'])
             .pipe(gulp.dest('D:/Dev/WebServer/WWW/wordpress/wp-content/themes/Tint'));
     }, 2000);

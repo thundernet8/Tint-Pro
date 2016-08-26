@@ -24,7 +24,7 @@ function optionsframework_options() {
     $blog_name = trim(get_bloginfo('name'));
 
     // 定义选项面板图片引用路径
-    $imagepath =  THEME_URI . '/dashboard/of_inc/images/';
+    $imagepath =  THEME_URI . '/dash/of_inc/images/';
 
     $options = array();
 
@@ -74,7 +74,7 @@ function optionsframework_options() {
     $options[] = array(
         'name' => __( 'I18n', 'tt' ),
         'desc' => __( 'Multi languages and I18n support', 'tt' ),
-        'id' => 'tt_i18n',
+        'id' => 'tt_l10n',
         'std' => 'zh_CN',
         'type' => 'select',
         'options' => array(

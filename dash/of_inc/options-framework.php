@@ -27,7 +27,7 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 if ( ! defined( 'OPTIONS_FRAMEWORK_DIRECTORY' )) {
-    define( 'OPTIONS_FRAMEWORK_DIRECTORY', THEME_URI . '/dashboard/of_inc/');
+    define( 'OPTIONS_FRAMEWORK_DIRECTORY', THEME_URI . '/dash/of_inc/');
 }
 
 // Don't load if optionsframework_init is already defined

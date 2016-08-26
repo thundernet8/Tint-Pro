@@ -76,7 +76,7 @@ class Options_Framework {
 
 		if ( !$options ) {
 	        // Load options from options.php file (if it exists)
-	        $location = 'dashboard/options.php';
+	        $location = 'dash/options.php';
 	        if ( $optionsfile = locate_template( $location ) ) {
 	            $maybe_options = load_template( $optionsfile );
 	            if ( is_array( $maybe_options ) ) {

@@ -50,9 +50,9 @@ add_action('load-themes.php', 'tt_add_avatar_folder');
  */
 function tt_copy_memcache_cache_plugin(){
     //TODO: maybe need check the file in wp-content is same with that in theme dir
-    if(!file_exists( WP_CONTENT_DIR . '/object-cache.php' ) && file_exists( THEME_DIR . '/dashboard/plugins/memcache/object-cache.php') && tt_get_option('tt_object_cache', 'none') == 'memcache' ){
+    if(!file_exists( WP_CONTENT_DIR . '/object-cache.php' ) && file_exists( THEME_DIR . '/dash/plugins/memcache/object-cache.php') && tt_get_option('tt_object_cache', 'none') == 'memcache' ){
         try{
-            copy(THEME_DIR . '/dashboard/plugins/memcache/object-cache.php', WP_CONTENT_DIR . '/object-cache.php');
+            copy(THEME_DIR . '/dash/plugins/memcache/object-cache.php', WP_CONTENT_DIR . '/object-cache.php');
         }catch (Exception $e){
             if(tt_get_option('tt_theme_debug', false)){
                 $message = __('Can not copy `memcache object-cache.php` to `wp-content` dir.\n', 'tt') . __('Caught exception: ', 'tt') . $e->getMessage() . '\n';
@@ -89,8 +89,8 @@ function tt_copy_timthumb_cache_base(){
 
     if(is_dir($cache_dir)){
         try{
-            copy(THEME_DIR . '/dashboard/plugins/timthumb/index.html', WP_CONTENT_DIR . '/cache/timthumb/index.html');
-            copy(THEME_DIR . '/dashboard/plugins/timthumb/timthumb_cacheLastCleanTime.touch', WP_CONTENT_DIR . '/cache/timthumb/timthumb_cacheLastCleanTime.touch');
+            copy(THEME_DIR . '/dash/plugins/timthumb/index.html', WP_CONTENT_DIR . '/cache/timthumb/index.html');
+            copy(THEME_DIR . '/dash/plugins/timthumb/timthumb_cacheLastCleanTime.touch', WP_CONTENT_DIR . '/cache/timthumb/timthumb_cacheLastCleanTime.touch');
         }catch (Exception $e){
             if(tt_get_option('tt_theme_debug', false)){
                 $message = __('Can not copy `memcache object-cache.php` to `wp-content` dir.\n', 'tt') . __('Caught exception: ', 'tt') . $e->getMessage() . '\n';

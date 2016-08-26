@@ -1,55 +1,58 @@
+#, fuzzy
 msgid ""
 msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-08-25 00:03+0800\n"
-"PO-Revision-Date: 2016-08-25 00:03+0800\n"
-"Last-Translator: Zhiyan <mail@webapproach.net>\n"
+"POT-Creation-Date: 2016-08-27 02:14+0800\n"
+"PO-Revision-Date: 2016-08-17 21:40+0800\n"
+"Last-Translator: \n"
 "Language-Team: Zhiyan <mail@webapproach.net>\n"
-"Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.8.8\n"
-"X-Poedit-Basepath: .\n"
+"X-Poedit-Basepath: ../..\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
 "_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SearchPathExcluded-1: node_modules\n"
+"X-Poedit-SearchPathExcluded-2: src\n"
 
 #: core/classes/class.Utils.php:367
 msgid "刚刚"
-msgstr "just now"
+msgstr ""
 
 #: core/classes/class.Utils.php:370
 msgid "年前"
-msgstr "years ago"
+msgstr ""
 
 #: core/classes/class.Utils.php:371
 msgid "个月前"
-msgstr "months ago"
+msgstr ""
 
 #: core/classes/class.Utils.php:372
 msgid "周前"
-msgstr "weeks ago"
+msgstr ""
 
 #: core/classes/class.Utils.php:373
 msgid "天前"
-msgstr "days ago"
+msgstr ""
 
 #: core/classes/class.Utils.php:374
 msgid "小时前"
-msgstr "hours ago"
+msgstr ""
 
 #: core/classes/class.Utils.php:375
 msgid "分钟"
-msgstr "minutes"
+msgstr ""
 
 #: core/classes/class.Utils.php:376
 msgid "秒前"
-msgstr "seconds"
+msgstr ""
 
 #: core/functions/func.Cache.php:145
 #, php-format
@@ -60,23 +63,34 @@ msgstr ""
 msgid "<!-- Nav cache end -->"
 msgstr ""
 
-#: core/functions/func.Install.php:27
+#: core/functions/func.Install.php:34
 msgid ""
 "Create avatar upload folder failed, maybe check your php.ini to enable "
 "`mkdir` function.\\n"
 msgstr ""
 
-#: core/functions/func.Install.php:27 core/functions/func.Install.php:47
+#: core/functions/func.Install.php:34 core/functions/func.Install.php:58
+#: core/functions/func.Install.php:83 core/functions/func.Install.php:96
 msgid "Caught exception: "
 msgstr ""
 
-#: core/functions/func.Install.php:28 core/functions/func.Install.php:48
+#: core/functions/func.Install.php:35 core/functions/func.Install.php:97
 #: functions.php:18
 msgid "WordPress internal error"
 msgstr ""
 
-#: core/functions/func.Install.php:47
+#: core/functions/func.Install.php:58 core/functions/func.Install.php:96
 msgid "Can not copy `memcache object-cache.php` to `wp-content` dir.\\n"
+msgstr ""
+
+#: core/functions/func.Install.php:59 core/functions/func.Install.php:84
+msgid "Create folder error"
+msgstr ""
+
+#: core/functions/func.Install.php:83
+msgid ""
+"Create timthumb cache folder failed, maybe check your php.ini to enable "
+"`mkdir` function.\\n"
 msgstr ""
 
 #: core/functions/func.Page.php:70
@@ -123,490 +137,552 @@ msgstr ""
 msgid "Weekly"
 msgstr ""
 
-#: core/functions/func.Sidebar.php:58 dashboard/options.php:120
+#: core/functions/func.Sidebar.php:58 dash/options.php:130
+#: dash/options.php:144
 msgid "Common Sidebar"
 msgstr ""
 
-#: core/functions/func.Sidebar.php:59 dashboard/options.php:121
+#: core/functions/func.Sidebar.php:59 dash/options.php:131
+#: dash/options.php:145 dash/options.php:160
 msgid "Home Sidebar"
 msgstr ""
 
-#: core/functions/func.Sidebar.php:60 dashboard/options.php:122
+#: core/functions/func.Sidebar.php:60 dash/options.php:132
+#: dash/options.php:146 dash/options.php:170
 msgid "Single Sidebar"
 msgstr ""
 
-#: core/functions/func.Sidebar.php:61 dashboard/options.php:123
+#: core/functions/func.Sidebar.php:61 dash/options.php:133
+#: dash/options.php:147 dash/options.php:180
 msgid "Archive Sidebar"
 msgstr ""
 
-#: core/functions/func.Sidebar.php:62 dashboard/options.php:124
+#: core/functions/func.Sidebar.php:62 dash/options.php:134
+#: dash/options.php:148 dash/options.php:190
 msgid "Category Sidebar"
 msgstr ""
 
-#: core/functions/func.Sidebar.php:63 dashboard/options.php:125
+#: core/functions/func.Sidebar.php:63 dash/options.php:135
+#: dash/options.php:149 dash/options.php:200
 msgid "Search Sidebar"
 msgstr ""
 
-#: core/functions/func.Sidebar.php:64 dashboard/options.php:126
+#: core/functions/func.Sidebar.php:64 dash/options.php:136
+#: dash/options.php:150 dash/options.php:210
 msgid "404 Sidebar"
 msgstr ""
 
-#: core/functions/func.Sidebar.php:65 dashboard/options.php:127
+#: core/functions/func.Sidebar.php:65 dash/options.php:137
+#: dash/options.php:151 dash/options.php:220
 msgid "Page Sidebar"
 msgstr ""
 
-#: dashboard/of_inc/includes/class-options-framework-admin.php:91
-#: dashboard/of_inc/includes/class-options-framework-admin.php:92
+#: dash/of_inc/includes/class-options-framework-admin.php:91
+#: dash/of_inc/includes/class-options-framework-admin.php:92
 msgid "Theme Options"
-msgstr "Theme Options"
+msgstr ""
 
-#: dashboard/of_inc/includes/class-options-framework-admin.php:205
+#: dash/of_inc/includes/class-options-framework-admin.php:205
 msgid "Save Options"
-msgstr "Save Options"
+msgstr ""
 
-#: dashboard/of_inc/includes/class-options-framework-admin.php:206
+#: dash/of_inc/includes/class-options-framework-admin.php:206
 msgid "Restore Defaults"
-msgstr "Restore Defaults"
+msgstr ""
 
-#: dashboard/of_inc/includes/class-options-framework-admin.php:206
+#: dash/of_inc/includes/class-options-framework-admin.php:206
 msgid "Click OK to reset. Any theme settings will be lost!"
-msgstr "Click OK to reset. Any theme settings will be lost!"
+msgstr ""
 
-#: dashboard/of_inc/includes/class-options-framework-admin.php:237
+#: dash/of_inc/includes/class-options-framework-admin.php:237
 msgid "Default options restored."
-msgstr "Default options restored."
+msgstr ""
 
-#: dashboard/of_inc/includes/class-options-framework-admin.php:291
+#: dash/of_inc/includes/class-options-framework-admin.php:291
 msgid "Options saved."
-msgstr "Options saved."
+msgstr ""
 
-#: dashboard/of_inc/includes/class-options-media-uploader.php:62
+#: dash/of_inc/includes/class-options-media-uploader.php:62
 msgid "No file chosen"
-msgstr "No file chosen"
+msgstr ""
 
-#: dashboard/of_inc/includes/class-options-media-uploader.php:65
-#: dashboard/of_inc/includes/class-options-media-uploader.php:118
+#: dash/of_inc/includes/class-options-media-uploader.php:65
+#: dash/of_inc/includes/class-options-media-uploader.php:118
 msgid "Upload"
-msgstr "Upload"
+msgstr ""
 
-#: dashboard/of_inc/includes/class-options-media-uploader.php:67
-#: dashboard/of_inc/includes/class-options-media-uploader.php:119
+#: dash/of_inc/includes/class-options-media-uploader.php:67
+#: dash/of_inc/includes/class-options-media-uploader.php:119
 msgid "Remove"
-msgstr "Remove"
+msgstr ""
 
-#: dashboard/of_inc/includes/class-options-media-uploader.php:70
+#: dash/of_inc/includes/class-options-media-uploader.php:70
 msgid "Upgrade your version of WordPress for full media support."
-msgstr "Upgrade your version of WordPress for full media support."
+msgstr ""
 
-#: dashboard/of_inc/includes/class-options-media-uploader.php:94
+#: dash/of_inc/includes/class-options-media-uploader.php:94
 msgid "View File"
-msgstr "View File"
+msgstr ""
 
-#: dashboard/of_inc/includes/class-options-sanitization.php:316
+#: dash/of_inc/includes/class-options-sanitization.php:316
 msgid "No Repeat"
-msgstr "No Repeat"
+msgstr ""
 
-#: dashboard/of_inc/includes/class-options-sanitization.php:317
+#: dash/of_inc/includes/class-options-sanitization.php:317
 msgid "Repeat Horizontally"
-msgstr "Repeat Horizontally"
+msgstr ""
 
-#: dashboard/of_inc/includes/class-options-sanitization.php:318
+#: dash/of_inc/includes/class-options-sanitization.php:318
 msgid "Repeat Vertically"
-msgstr "Repeat Vertically"
+msgstr ""
 
-#: dashboard/of_inc/includes/class-options-sanitization.php:319
+#: dash/of_inc/includes/class-options-sanitization.php:319
 msgid "Repeat All"
-msgstr "Repeat All"
+msgstr ""
 
-#: dashboard/of_inc/includes/class-options-sanitization.php:331
+#: dash/of_inc/includes/class-options-sanitization.php:331
 msgid "Top Left"
-msgstr "Top Left"
+msgstr ""
 
-#: dashboard/of_inc/includes/class-options-sanitization.php:332
+#: dash/of_inc/includes/class-options-sanitization.php:332
 msgid "Top Center"
 msgstr ""
 
-#: dashboard/of_inc/includes/class-options-sanitization.php:333
+#: dash/of_inc/includes/class-options-sanitization.php:333
 msgid "Top Right"
 msgstr ""
 
-#: dashboard/of_inc/includes/class-options-sanitization.php:334
+#: dash/of_inc/includes/class-options-sanitization.php:334
 msgid "Middle Left"
 msgstr ""
 
-#: dashboard/of_inc/includes/class-options-sanitization.php:335
+#: dash/of_inc/includes/class-options-sanitization.php:335
 msgid "Middle Center"
 msgstr ""
 
-#: dashboard/of_inc/includes/class-options-sanitization.php:336
+#: dash/of_inc/includes/class-options-sanitization.php:336
 msgid "Middle Right"
 msgstr ""
 
-#: dashboard/of_inc/includes/class-options-sanitization.php:337
+#: dash/of_inc/includes/class-options-sanitization.php:337
 msgid "Bottom Left"
 msgstr ""
 
-#: dashboard/of_inc/includes/class-options-sanitization.php:338
+#: dash/of_inc/includes/class-options-sanitization.php:338
 msgid "Bottom Center"
 msgstr ""
 
-#: dashboard/of_inc/includes/class-options-sanitization.php:339
+#: dash/of_inc/includes/class-options-sanitization.php:339
 msgid "Bottom Right"
 msgstr ""
 
-#: dashboard/of_inc/includes/class-options-sanitization.php:351
+#: dash/of_inc/includes/class-options-sanitization.php:351
 msgid "Scroll Normally"
 msgstr ""
 
-#: dashboard/of_inc/includes/class-options-sanitization.php:352
+#: dash/of_inc/includes/class-options-sanitization.php:352
 msgid "Fixed in Place"
 msgstr ""
 
-#: dashboard/of_inc/includes/class-options-sanitization.php:424
+#: dash/of_inc/includes/class-options-sanitization.php:424
 msgid "Normal"
 msgstr ""
 
-#: dashboard/of_inc/includes/class-options-sanitization.php:425
+#: dash/of_inc/includes/class-options-sanitization.php:425
 msgid "Italic"
 msgstr ""
 
-#: dashboard/of_inc/includes/class-options-sanitization.php:426
+#: dash/of_inc/includes/class-options-sanitization.php:426
 msgid "Bold"
 msgstr ""
 
-#: dashboard/of_inc/includes/class-options-sanitization.php:427
+#: dash/of_inc/includes/class-options-sanitization.php:427
 msgid "Bold Italic"
 msgstr ""
 
-#: dashboard/options.php:33
+#: dash/options.php:33
 msgid "Basic"
 msgstr ""
 
-#: dashboard/options.php:39
+#: dash/options.php:39
 msgid "Home Page Description"
 msgstr ""
 
-#: dashboard/options.php:40
+#: dash/options.php:40
 msgid "Home page description meta information, good for SEO"
 msgstr ""
 
-#: dashboard/options.php:48
+#: dash/options.php:48
 msgid "Home Page Keywords"
 msgstr ""
 
-#: dashboard/options.php:49
+#: dash/options.php:49
 msgid "Home page keywords meta information, good for SEO"
 msgstr ""
 
-#: dashboard/options.php:57
+#: dash/options.php:57
 msgid "Favicon"
 msgstr ""
 
-#: dashboard/options.php:58
+#: dash/options.php:58
 msgid "Please upload an ico file"
 msgstr ""
 
-#: dashboard/options.php:66
+#: dash/options.php:66
 msgid "Favicon(PNG)"
 msgstr ""
 
-#: dashboard/options.php:67
+#: dash/options.php:67
 msgid "Please upload an png file"
 msgstr ""
 
-#: dashboard/options.php:75
+#: dash/options.php:75
 msgid "I18n"
 msgstr ""
 
-#: dashboard/options.php:76
+#: dash/options.php:76
 msgid "Multi languages and I18n support"
 msgstr ""
 
-#: dashboard/options.php:81
+#: dash/options.php:81
 msgid "zh_cn"
 msgstr ""
 
-#: dashboard/options.php:82
+#: dash/options.php:82
 msgid "en_us"
 msgstr ""
 
-#: dashboard/options.php:88
+#: dash/options.php:88
 msgid "Gravatar"
 msgstr ""
 
-#: dashboard/options.php:89
+#: dash/options.php:89
 msgid "Gravatar support"
 msgstr ""
 
-#: dashboard/options.php:98
+#: dash/options.php:98
+msgid "Timthumb Crop"
+msgstr ""
+
+#: dash/options.php:99
+msgid "Timthumb crop support"
+msgstr ""
+
+#: dash/options.php:108
 msgid "Style"
 msgstr ""
 
-#: dashboard/options.php:107
+#: dash/options.php:117
 msgid "Sidebar"
 msgstr ""
 
-#: dashboard/options.php:114
+#: dash/options.php:124
 msgid "Register Sidebars"
 msgstr ""
 
-#: dashboard/options.php:115
+#: dash/options.php:125
 msgid "Check the sidebars to register"
 msgstr ""
 
-#: dashboard/options.php:134
+#: dash/options.php:161
+msgid "Select a sidebar for homepage"
+msgstr ""
+
+#: dash/options.php:171
+msgid "Select a sidebar for single post page"
+msgstr ""
+
+#: dash/options.php:181
+msgid "Select a sidebar for archive page"
+msgstr ""
+
+#: dash/options.php:191
+msgid "Select a sidebar for category page"
+msgstr ""
+
+#: dash/options.php:201
+msgid "Select a sidebar for search page"
+msgstr ""
+
+#: dash/options.php:211
+msgid "Select a sidebar for 404 page"
+msgstr ""
+
+#: dash/options.php:221
+msgid "Select a sidebar for page"
+msgstr ""
+
+#: dash/options.php:232
 msgid "Social"
 msgstr ""
 
-#: dashboard/options.php:141
+#: dash/options.php:239
 msgid "QQ Login"
 msgstr ""
 
-#: dashboard/options.php:142
+#: dash/options.php:240
 msgid "QQ login "
 msgstr ""
 
-#: dashboard/options.php:151
+#: dash/options.php:249
 msgid "QQ Open ID"
 msgstr ""
 
-#: dashboard/options.php:152
+#: dash/options.php:250
 msgid "Your QQ open application ID"
 msgstr ""
 
-#: dashboard/options.php:161
+#: dash/options.php:259
 msgid "QQ Open Key"
 msgstr ""
 
-#: dashboard/options.php:162
+#: dash/options.php:260
 msgid "Your QQ open application key"
 msgstr ""
 
-#: dashboard/options.php:171
+#: dash/options.php:269
 msgid "Weibo Login"
 msgstr ""
 
-#: dashboard/options.php:172
+#: dash/options.php:270
 msgid "Weibo login access"
 msgstr ""
 
-#: dashboard/options.php:181
+#: dash/options.php:279
 msgid "Weibo Open Key"
 msgstr ""
 
-#: dashboard/options.php:182
+#: dash/options.php:280
 msgid "Your weibo open application key"
 msgstr ""
 
-#: dashboard/options.php:191
+#: dash/options.php:289
 msgid "Weibo Open Secret"
 msgstr ""
 
-#: dashboard/options.php:192
+#: dash/options.php:290
 msgid "Your weibo open application secret"
 msgstr ""
 
-#: dashboard/options.php:201
+#: dash/options.php:299
 msgid "Weixin Login"
 msgstr ""
 
-#: dashboard/options.php:202
+#: dash/options.php:300
 msgid "Weixin login access"
 msgstr ""
 
-#: dashboard/options.php:211
+#: dash/options.php:309
 msgid "Weixin Open Key"
 msgstr ""
 
-#: dashboard/options.php:212
+#: dash/options.php:310
 msgid "Your weixin open application key"
 msgstr ""
 
-#: dashboard/options.php:221
+#: dash/options.php:319
 msgid "Weixin Open Secret"
 msgstr ""
 
-#: dashboard/options.php:222
+#: dash/options.php:320
 msgid "Your weixin open application secret"
 msgstr ""
 
-#: dashboard/options.php:232
+#: dash/options.php:330
 msgid "Ad"
 msgstr ""
 
-#: dashboard/options.php:242
+#: dash/options.php:340
 msgid "Membership"
 msgstr ""
 
-#: dashboard/options.php:252
+#: dash/options.php:350
 msgid "Shop"
 msgstr ""
 
-#: dashboard/options.php:262
+#: dash/options.php:360
 msgid "Auxiliary"
 msgstr ""
 
-#: dashboard/options.php:269
+#: dash/options.php:367
 msgid "Object Cache"
 msgstr ""
 
-#: dashboard/options.php:270
+#: dash/options.php:368
 msgid "Object cache support, accelerate your site"
 msgstr ""
 
-#: dashboard/options.php:275
+#: dash/options.php:373
 msgid "Memcache"
 msgstr ""
 
-#: dashboard/options.php:276
+#: dash/options.php:374
 msgid "Redis"
 msgstr ""
 
-#: dashboard/options.php:277 dashboard/options.php:383
+#: dash/options.php:375 dash/options.php:481
 msgid "None"
 msgstr ""
 
-#: dashboard/options.php:285
+#: dash/options.php:383
 msgid "Memcache Host"
 msgstr ""
 
-#: dashboard/options.php:286
+#: dash/options.php:384
 msgid "Memcache server host"
 msgstr ""
 
-#: dashboard/options.php:295
+#: dash/options.php:393
 msgid "Memcache Port"
 msgstr ""
 
-#: dashboard/options.php:296
+#: dash/options.php:394
 msgid "Memcache server port"
 msgstr ""
 
-#: dashboard/options.php:308
+#: dash/options.php:406
 msgid "Redis Host"
 msgstr ""
 
-#: dashboard/options.php:309
+#: dash/options.php:407
 msgid "Redis server host"
 msgstr ""
 
-#: dashboard/options.php:318
+#: dash/options.php:416
 msgid "Redis Port"
 msgstr ""
 
-#: dashboard/options.php:319
+#: dash/options.php:417
 msgid "Redis server port"
 msgstr ""
 
-#: dashboard/options.php:330
+#: dash/options.php:428
 msgid "Mailer Separator"
 msgstr ""
 
-#: dashboard/options.php:337
+#: dash/options.php:435
 msgid "SMTP/PHPMailer"
 msgstr ""
 
-#: dashboard/options.php:338
+#: dash/options.php:436
 msgid "Use SMTP or PHPMail as default mailer"
 msgstr ""
 
-#: dashboard/options.php:343
+#: dash/options.php:441
 msgid "PHP"
 msgstr ""
 
-#: dashboard/options.php:344
+#: dash/options.php:442
 msgid "SMTP"
 msgstr ""
 
-#: dashboard/options.php:352
+#: dash/options.php:450
 msgid "SMTP Host"
 msgstr ""
 
-#: dashboard/options.php:353
+#: dash/options.php:451
 msgid "Your SMTP service host"
 msgstr ""
 
-#: dashboard/options.php:363
+#: dash/options.php:461
 msgid "SMTP Port"
 msgstr ""
 
-#: dashboard/options.php:364
+#: dash/options.php:462
 msgid "Your SMTP service port"
 msgstr ""
 
-#: dashboard/options.php:374
+#: dash/options.php:472
 msgid "SMTP Secure"
 msgstr ""
 
-#: dashboard/options.php:375
+#: dash/options.php:473
 msgid "Your SMTP server secure protocol"
 msgstr ""
 
-#: dashboard/options.php:380
+#: dash/options.php:478
 msgid "Auto"
 msgstr ""
 
-#: dashboard/options.php:381
+#: dash/options.php:479
 msgid "SSL"
 msgstr ""
 
-#: dashboard/options.php:382
+#: dash/options.php:480
 msgid "TLS"
 msgstr ""
 
-#: dashboard/options.php:390
+#: dash/options.php:488
 msgid "SMTP Username"
 msgstr ""
 
-#: dashboard/options.php:391
+#: dash/options.php:489
 msgid "Your SMTP username"
 msgstr ""
 
-#: dashboard/options.php:400
+#: dash/options.php:498
 msgid "SMTP Password"
 msgstr ""
 
-#: dashboard/options.php:401
+#: dash/options.php:499
 msgid "Your SMTP password"
 msgstr ""
 
-#: dashboard/options.php:411
+#: dash/options.php:509
 msgid "Your Name"
 msgstr ""
 
-#: dashboard/options.php:412
+#: dash/options.php:510
 msgid "Your display name as the sender"
 msgstr ""
 
-#: dashboard/options.php:424
+#: dash/options.php:522
 msgid "PHP Mail Sender Display Name"
 msgstr ""
 
-#: dashboard/options.php:425
+#: dash/options.php:523
 msgid "The Sender display name when using PHPMail send mail"
 msgstr ""
 
-#: dashboard/options.php:435
+#: dash/options.php:533
 msgid "PHP Mail Sender Address"
 msgstr ""
 
-#: dashboard/options.php:436
+#: dash/options.php:534
 msgid "You can use fake mail address when use PHPMail"
 msgstr ""
 
-#: dashboard/options.php:452
+#: dash/options.php:545
+msgid "Short Link Prefix"
+msgstr ""
+
+#: dash/options.php:546
+msgid ""
+"Use short link instead long link or even convert external link to internal "
+"link"
+msgstr ""
+
+#: dash/options.php:556
+msgid "Short Link Records"
+msgstr ""
+
+#: dash/options.php:557
+msgid "One line for one record, please conform to the sample"
+msgstr ""
+
+#: dash/options.php:570
 msgid "Feedback"
 msgstr ""
 
-#: dashboard/options.php:464
+#: dash/options.php:582
 msgid "Update"
 msgstr ""
 
-#: dashboard/options.php:471
+#: dash/options.php:589
 msgid "Debug Mode"
 msgstr ""
 
-#: dashboard/options.php:472
+#: dash/options.php:590
 msgid "Enable debug will call wp_die when catch a error"
 msgstr ""
 
@@ -635,7 +711,3 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "http://www.webapproach.net/"
 msgstr ""
-
-#, fuzzy
-#~ msgid "Theme options"
-#~ msgstr "Theme Options"

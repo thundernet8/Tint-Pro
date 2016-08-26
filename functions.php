@@ -64,7 +64,7 @@ if (!defined('CACHE_PREFIX')){
 
 if(!function_exists('load_dash')){
 	function load_dash($path){
-		load_template(THEME_DIR.'/dashboard/'.$path.'.php');
+		load_template(THEME_DIR.'/dash/'.$path.'.php');
 	}
 }
 
@@ -105,7 +105,7 @@ load_class('class.Utils');
 /* 载入功能函数 */
 load_func('func.Avatar');
 load_func('func.Cache');
-load_func('func.I18n');
+load_func('func.L10n');
 load_func('func.Init');
 load_func('func.Install');
 load_func('func.Kits');
@@ -168,7 +168,7 @@ function tt_load() {
 	}
 
 	// 载入语言包
-	//load_theme_textdomain( 'option-tree', THEME_DIR . '/dashboard/option/languages' );
+	//load_theme_textdomain( 'option-tree', THEME_DIR . '/dash/option/languages' );
 
 	// 移除自动保存和修订版本
 //	if ( ot_get_option( 'wp_auto_save' ) == 'on' ) {

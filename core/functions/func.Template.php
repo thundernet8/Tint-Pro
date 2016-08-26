@@ -111,13 +111,40 @@ function tt_get_author_template($template){
     $author = get_queried_object();
     $role = $author->roles[0];
 
-    $template = THEME_TPL . '/tpl.Author.php';
-    $role_template = locate_template( array( 'core/templates/tpl.Author.' . ucfirst($role) . '.php' ) );
-    if(!empty($role_template)) return $role_template;
+    // 判断是否用户中心页(因为用户中心页和默认的作者页采用了相同的wp_query_object)
+    if(get_query_var('uc') && intval(get_query_var('uc'))===1){
+        $template = apply_filters('user_template', $author);
+        if($template) return $template;
+    }
 
-    return $template;
+    $template = 'core/templates/tpl.Author.php';
+    return locate_template( array( 'core/templates/tpl.Author.' . ucfirst($role) . '.php', $template ) );
 }
 add_filter('author_template', 'tt_get_author_template', 10, 1);
+
+
+/**
+ * 获取用户页模板
+ * // 主题将用户与作者相区分，作者页沿用默认的WP设计，展示作者的文章列表，用户页重新设计为用户的各种信息以及前台用户中心
+ *
+ * @since   2.0.0
+ *
+ * @param   object  $user   WP_User对象
+ * @return  string
+ */
+function tt_get_user_template($user) {
+    $templates = array();
+
+    if ( $user instanceof WP_User ) {
+        $role = $user->roles[0];
+        $templates[] = 'core/templates/tpl.User.' . ucfirst($role) . '.php';
+        // TODO: maybe add membership templates
+    }
+    $templates[] = 'core/templates/tpl.User.php';
+
+    return locate_template($templates);
+}
+add_filter('user_template', 'tt_get_user_template', 10, 1);
 
 
 /**
@@ -191,7 +218,7 @@ add_filter('date_template', 'tt_get_date_template', 10, 1);
 function tt_get_page_template($template){
     if(!empty($template)) return $template;
     unset($template);
-    return THEME_TPL . '/tpl.Page.php';
+    return locate_template(array('core/templates/tpl.Page.php'));
 }
 add_filter('page_template', 'tt_get_page_template', 10, 1);
 
@@ -206,7 +233,7 @@ add_filter('page_template', 'tt_get_page_template', 10, 1);
  */
 function tt_get_search_template($template){
     unset($template);
-    return THEME_TPL . '/tpl.Search.php';
+    return locate_template(array('core/templates/tpl.Search.php'));
 }
 add_filter('search_template', 'tt_get_search_template', 10, 1);
 
@@ -237,7 +264,7 @@ add_filter('single_template', 'tt_get_single_template', 10, 1);
  */
 function tt_get_attachment_template($template){
     unset($template);
-    return THEME_TPL . '/tpl.Attachment.php';
+    return locate_template(array('core/templates/tpl.Attachment.php'));
 }
 add_filter('attachment_template', 'tt_get_attachment_template', 10, 1);
 
@@ -253,7 +280,7 @@ add_filter('attachment_template', 'tt_get_attachment_template', 10, 1);
 function tt_get_text_template($template){
     //TODO: other MIME types, e.g `video`
     unset($template);
-    return array(THEME_TPL . '/tpl.MIMEText.php', THEME_TPL . '/tpl.Attachment.php');
+    return locate_template(array('core/templates/tpl.MIMEText.php', 'core/templates/tpl.Attachment.php'));
 }
 add_filter('text_template', 'tt_get_text_template', 10, 1);
 add_filter('plain_template', 'tt_get_text_template', 10, 1);
@@ -290,3 +317,5 @@ function tt_get_embed_template($template){
     return THEME_TPL . '/tpl.Embed.php';
 }
 add_filter('embed_template', 'tt_get_embed_template', 10, 1);
+
+
