@@ -26,7 +26,7 @@ add_action( 'after_setup_theme', 'tt_load_languages');
  *
  * @since 2.0.0
  */
-function tt_theme_i18n(){
+function tt_theme_l10n(){
     return tt_get_option( 'tt_l10n', 'zh_CN');
 }
 add_filter('locale','tt_theme_l10n');
