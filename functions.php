@@ -46,6 +46,10 @@ if (!defined('THEME_FUNC')){
     define('THEME_FUNC', get_template_directory() . '/core/functions');
 }
 
+if (!defined('THEME_LIB')){
+    define('THEME_LIB', get_template_directory() . '/core/library');
+}
+
 if (!defined('THEME_MOD')){
     define('THEME_MOD', get_template_directory() . '/core/modules');
 }
@@ -109,6 +113,7 @@ load_func('func.Mail');
 load_func('func.Module');
 load_func('func.Optimization');
 load_func('func.Page');
+load_func('func.Rewrite');
 load_func('func.Schedule');
 load_func('func.Sidebar');
 load_func('func.Template');

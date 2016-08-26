@@ -30,5 +30,9 @@ function tt_get_thumb($post = null, $size = 'thumbnail'){
     }
     $post = get_post($post);
 
-    return (new PostImage($post))->getThumb($size);
+    // 优先利用缓存
+    $callback = function () use ($post, $size) {
+        return (new PostImage($post, $size))->getThumb();
+    };
+    return tt_cached((new PostImage($post, $size))->cache_key, $callback, 'thumb', 60*60*24*7);
 }

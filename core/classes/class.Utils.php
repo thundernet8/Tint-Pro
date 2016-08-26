@@ -13,7 +13,7 @@
 <?php
 
 require_once 'class.NameFirstChar.php';
-require_once THEME_CLASS . '/vender/class.TldExtract.php';
+require_once THEME_LIB . '/tldextract/TldExtract.php';
 
 class Utils{
     /**
@@ -439,6 +439,7 @@ class Utils{
      * @return  string
      */
     public static function getCurrentUrl(){
+        // TODO: can not get query string, e.g http://wptest.com/go/baidu?a=1 -> http://wptest.com/go/baidu
         global $wp;
         $url = get_option('permalink_structure') == '' ? add_query_arg($wp->query_string, '', home_url($wp->request) ) : home_url(add_query_arg(array(), $wp->request));
         return $url;
@@ -458,6 +459,43 @@ class Utils{
     public static function getTopDomain($url){
         $components = tldextract($url);
         return $components->domain . $components->tld;
+    }
+
+
+    /**
+     * 补全链接协议
+     * e.g www.baidu.com -> http://www.baidu.com
+     * e.g //www.baidu.com -> http://www.baidu.com
+     * 如果协议已经存在，将不会被参数$scheme覆盖
+     * 可使用esc_url替代了
+     *
+     * @since   2.0.0
+     *
+     * @static
+     * @access  public
+     * @param   string  $url    原始链接
+     * @param   string  $scheme 协议前缀(http|https|ftp等)
+     * @return  string
+     */
+    public static function getUrlWithScheme($url, $scheme = 'http'){
+        $components = wp_parse_url($url);
+        if(key_exists('scheme', $components)){
+            // 已存在http等协议前缀
+            return $url;
+        }
+
+        $scheme = strtolower($scheme);
+        if(!in_array($scheme, array('http', 'https', 'ftp', 'mailto', 'tel', 'fax', 'mms', 'rtsp', 'svn', 'feed', 'telnet'))){
+            $scheme = 'http';
+        }
+
+        if(key_exists('query', $components)){
+            $url = $scheme . '://' . $components['host'] . $components['path'] . '?' . $components['query'];
+        }else{
+            $url = $scheme . '://' . $components['host'] . $components['path'];
+        }
+
+        return $url;
     }
 
 

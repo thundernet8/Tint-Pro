@@ -11,9 +11,6 @@
 
 ?>
 <?php
-require_once 'class.NameFirstChar.php';
-require_once 'class.Utils.php';
-
 
 if (!defined('LETTER_AVATAR_URI')){
     define('LETTER_AVATAR_URI', get_template_directory_uri() . '/assets/img/avatar/letters/');

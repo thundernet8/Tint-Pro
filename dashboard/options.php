@@ -445,7 +445,7 @@ function optionsframework_options() {
 
 
     if (of_get_option('tt_default_mailer')==='smtp'):
-    // - SMTP Host
+    // - SMTP 主机
     $options[] = array(
         'name' => __( 'SMTP Host', 'tt' ),
         'desc' => __( 'Your SMTP service host', 'tt' ),
@@ -456,7 +456,7 @@ function optionsframework_options() {
     );
 
 
-    // - SMTP Port
+    // - SMTP 端口
     $options[] = array(
         'name' => __( 'SMTP Port', 'tt' ),
         'desc' => __( 'Your SMTP service port', 'tt' ),
@@ -467,7 +467,7 @@ function optionsframework_options() {
     );
 
 
-    // - SMTP Secure
+    // - SMTP 安全
     $options[] = array(
         'name' => __( 'SMTP Secure', 'tt' ),
         'desc' => __( 'Your SMTP server secure protocol', 'tt' ),
@@ -483,7 +483,7 @@ function optionsframework_options() {
     );
 
 
-    // - SMTP Username
+    // - SMTP 用户名
     $options[] = array(
         'name' => __( 'SMTP Username', 'tt' ),
         'desc' => __( 'Your SMTP username', 'tt' ),
@@ -493,7 +493,7 @@ function optionsframework_options() {
     );
 
 
-    // - SMTP Password
+    // - SMTP 密码
     $options[] = array(
         'name' => __( 'SMTP Password', 'tt' ),
         'desc' => __( 'Your SMTP password', 'tt' ),
@@ -504,7 +504,7 @@ function optionsframework_options() {
     );
 
 
-    // - Your Name
+    // - 你的姓名
     $options[] = array(
         'name' => __( 'Your Name', 'tt' ),
         'desc' => __( 'Your display name as the sender', 'tt' ),
@@ -517,7 +517,7 @@ function optionsframework_options() {
 
 
     if (of_get_option('tt_default_mailer')!=='smtp'):
-    // - PHP Mail Sender Display Name
+    // - PHP Mail 发信人姓名
     $options[] = array(
         'name' => __( 'PHP Mail Sender Display Name', 'tt' ),
         'desc' => __( 'The Sender display name when using PHPMail send mail', 'tt' ),
@@ -528,7 +528,7 @@ function optionsframework_options() {
     );
 
 
-    // - PHP Mail Sender Address
+    // - PHP Mail 发信人地址
     $options[] = array(
         'name' => __( 'PHP Mail Sender Address', 'tt' ),
         'desc' => __( 'You can use fake mail address when use PHPMail', 'tt' ),
@@ -539,6 +539,26 @@ function optionsframework_options() {
     );
     endif;
 
+
+    // - 短链接前缀
+    $options[] = array(
+        'name' => __( 'Short Link Prefix', 'tt' ),
+        'desc' => __( 'Use short link instead long link or even convert external link to internal link', 'tt' ),
+        'id' => 'tt_short_link_prefix',
+        'std' => 'go',
+        'class' => 'mini',
+        'type' => 'text'
+    );
+
+
+    // - 短链接记录
+    $options[] = array(
+        'name' => __( 'Short Link Records', 'tt' ),
+        'desc' => __( 'One line for one record, please conform to the sample', 'tt' ),
+        'id' => 'tt_short_link_records',
+        'std' => 'baidu | http://www.baidu.com' . PHP_EOL,
+        'type' => 'textarea'
+    );
 
 
 

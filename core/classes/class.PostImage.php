@@ -12,7 +12,7 @@
 ?>
 <?php
 
-class PostImage{
+final class PostImage{
     /**
      * 文章缩略图或图片处理操作相关
      */
@@ -28,6 +28,28 @@ class PostImage{
      */
     private $_post;
 
+
+    /**
+     * 图片尺寸
+     *
+     * @since   2.0.0
+     *
+     * @access  private
+     * @var     string | array
+     */
+    private $_size;
+
+
+    /**
+     * 缓存键
+     *
+     * @since   2.0.0
+     *
+     * @access  public
+     * @var     string
+     */
+    public $cache_key;
+
     /**
      * 构造器,获得该类的一个实例
      *
@@ -35,9 +57,13 @@ class PostImage{
      *
      * @access  public
      * @param   int | object    $post   WP_Post对象或Post_ID
+     * @param   string | array  $size   缩略图尺寸
      */
-    public function __construct($post){
+    public function __construct($post, $size = 'thumbnail'){
         $this->_post = get_post($post);
+        $this->_size = self::getFormatedSize($size);
+        $key = CACHE_PREFIX . '_weekly' . '_thumb_' . md5(strval($this->_post->ID) . strval($this->_size) . Utils::getCurrentDateTimeStr('week'));
+        $this->cache_key = $key;
     }
 
 
@@ -51,7 +77,11 @@ class PostImage{
      * @return  string
      */
     public function getThumb($size = 'thumbnail'){
-        if(is_array($size) && array_key_exists('str', $size)) $size = $size['str'];
+        if(!$size){
+            $size = $this->_size;
+        }else{
+            $size = self::getFormatedSize($size);
+        }
         $featured = self::getFeaturedImage($size);
         if($featured) return self::getOptimizedImageUrl($featured, $size);
 
@@ -62,7 +92,6 @@ class PostImage{
         // 无文章内部图像则采用随机图片
         $random_image = self::getRandomThumb();
         return self::getOptimizedImageUrl($random_image, $size);
-
     }
 
 
@@ -136,32 +165,15 @@ class PostImage{
      * @return  string
      */
     public static function getTimthumbImage($url, $size = 'thumbnail'){
-        $timthumb = THEME_URI . '/core/classes/vender/class.Timthumb.php';
+        $timthumb = THEME_URI . '/core/library/timthumb/Timthumb.php';
 
         // 不裁剪Gif，因为生成黑色无效图片
         $imgtype = strtolower(substr($url, strrpos($url, '.')));
         if($imgtype === 'gif') return $url;
 
-        if(is_array($size)){
-            $width = array_key_exists('width', $size) ? $size['width'] : 225;
-            $height = array_key_exists('height', $size) ? $size['height'] : 150;
-        }else{
-            switch ($size){
-                case 'medium':
-                    $width = 375;
-                    $height = 250;
-                    break;
-                case 'large':
-                    $width = 960;
-                    $height = 640;
-                    break;
-                default:
-                    $width = 225;
-                    $height = 150;
-            }
-        }
+        $size = self::getFormatedSize($size);
 
-        return $timthumb . '?src=' . $url . '&q=90&w=' . $width . '&h=' .$height . '&zc=1';
+        return $timthumb . '?src=' . $url . '&q=90&w=' . $size['width'] . '&h=' . $size['height'] . '&zc=1';
     }
 
 
@@ -178,26 +190,9 @@ class PostImage{
      */
     public static function getCdnPreparedImage($url, $size = 'thumbnail'){
 
-        if(is_array($size)){
-            $width = array_key_exists('width', $size) ? $size['width'] : 225;
-            $height = array_key_exists('height', $size) ? $size['height'] : 150;
-        }else{
-            switch ($size){
-                case 'medium':
-                    $width = 375;
-                    $height = 250;
-                    break;
-                case 'large':
-                    $width = 960;
-                    $height = 640;
-                    break;
-                default:
-                    $width = 225;
-                    $height = 150;
-            }
-        }
+        $size = self::getFormatedSize($size);
 
-        return $url . '?imageView2/1/w/' . $width .'/h/' . $height . '/q/100';
+        return $url . '?imageView2/1/w/' . $size['width'] .'/h/' . $size['height'] . '/q/100';
     }
 
 
@@ -217,6 +212,48 @@ class PostImage{
             return self::getTimthumbImage($url, $size);
         }
         return self::getCdnPreparedImage($url, $size);
+    }
+
+
+    /**
+     * 转换尺寸
+     *
+     * @since   2.0.0
+     *
+     * @static
+     * @access  private
+     * @param   string | array  $size   原始尺寸信息
+     * @return  array
+     */
+    private static function getFormatedSize($size){
+        if(is_array($size)){
+            $width = array_key_exists('width', $size) ? $size['width'] : 225;
+            $height = array_key_exists('height', $size) ? $size['height'] : 150;
+            $str = array_key_exists('str', $size) ? $size['str'] : 'thumbnail';
+        }else{
+            switch ($size){
+                case 'medium':
+                    $width = 375;
+                    $height = 250;
+                    $str = 'medium';
+                    break;
+                case 'large':
+                    $width = 960;
+                    $height = 640;
+                    $str = 'large';
+                    break;
+                default:
+                    $width = 225;
+                    $height = 150;
+                    $str = 'thumbnail';
+            }
+        }
+
+        return array(
+            'width'   =>  $width,
+            'height'  =>  $height,
+            'str'     =>  $str
+        );
     }
 
 }
