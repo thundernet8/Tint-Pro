@@ -307,7 +307,7 @@ add_filter('query_vars', 'tt_add_me_page_query_vars');
  */
 function tt_handle_action_page_rewrite_rules($wp_rewrite){
     if($ps = get_option('permalink_structure')){
-        //action (signin|signup|signout)
+        //action (signin|signup|signout|refresh)
         // m->move(action)
         $new_rules['m/([A-Za-z]+)$'] = 'index.php?action=$matches[1]';
         $wp_rewrite->rules = $new_rules + $wp_rewrite->rules;
@@ -352,3 +352,20 @@ function tt_handle_action_page_template(){
     }
 }
 add_action('template_redirect', 'tt_handle_action_page_template', 5);
+
+
+/**
+ * 刷新固定链接缓存
+ *
+ * @since   2.0.0
+ *
+ * @return  void
+ */
+function tt_refresh_rewrite(){
+    // 如果启用了memcache等对象缓存，固定链接的重写规则缓存对应清除
+    wp_cache_flush();
+
+    // 刷新固定链接
+    global $wp_rewrite;
+    $wp_rewrite->flush_rules();
+}

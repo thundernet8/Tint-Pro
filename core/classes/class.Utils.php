@@ -536,21 +536,6 @@ class Utils{
     }
 
 
-//    /**
-//     * 判断是否HTTPS连接
-//     *
-//     * @since   2.0.0
-//     *
-//     * @static
-//     * @access  public
-//     * @return bool
-//     */
-//    public static function isSSL(){
-//        return  isset($_SERVER['HTTPS']);
-//    }
-//    use is_ssl() instead
-
-
     /**
      * 获取名字首字符, 中文采用拼音首字母
      *

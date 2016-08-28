@@ -23,6 +23,9 @@ function optionsframework_options() {
     // 博客名
     $blog_name = trim(get_bloginfo('name'));
 
+    // 博客主页
+    $blog_home = home_url();
+
     // 定义选项面板图片引用路径
     $imagepath =  THEME_URI . '/dash/of_inc/images/';
 
@@ -591,6 +594,17 @@ function optionsframework_options() {
         'id' => 'tt_theme_debug',
         'std' => false,
         'type' => 'checkbox'
+    );
+
+
+    // - 主题专用私有Token
+    $options[] = array(
+        'name' => __('Tint Token', 'tt'),
+        'desc' => sprintf(__('Private token for theme, maybe useful somewhere. (e.g <a href="%1$s/m/refresh?token=%2$s" target="_blank">Refresh Rewrite</a>)', 'tt'), $blog_home, of_get_option('tt_private_token')),
+        'id' => 'tt_private_token',
+        'std' => Utils::generateRandomStr(5),
+        'class' => 'mini',
+        'type' => 'text'
     );
 
 

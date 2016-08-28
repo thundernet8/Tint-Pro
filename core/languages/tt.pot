@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-08-27 02:14+0800\n"
+"POT-Creation-Date: 2016-08-28 20:37+0800\n"
 "PO-Revision-Date: 2016-08-17 21:40+0800\n"
 "Last-Translator: \n"
 "Language-Team: Zhiyan <mail@webapproach.net>\n"
@@ -22,159 +22,177 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-1: node_modules\n"
 "X-Poedit-SearchPathExcluded-2: src\n"
 
-#: core/classes/class.Utils.php:367
+#: core/classes/class.Utils.php:369
 msgid "刚刚"
 msgstr ""
 
-#: core/classes/class.Utils.php:370
+#: core/classes/class.Utils.php:372
 msgid "年前"
 msgstr ""
 
-#: core/classes/class.Utils.php:371
+#: core/classes/class.Utils.php:373
 msgid "个月前"
 msgstr ""
 
-#: core/classes/class.Utils.php:372
+#: core/classes/class.Utils.php:374
 msgid "周前"
 msgstr ""
 
-#: core/classes/class.Utils.php:373
+#: core/classes/class.Utils.php:375
 msgid "天前"
 msgstr ""
 
-#: core/classes/class.Utils.php:374
+#: core/classes/class.Utils.php:376
 msgid "小时前"
 msgstr ""
 
-#: core/classes/class.Utils.php:375
+#: core/classes/class.Utils.php:377
 msgid "分钟"
 msgstr ""
 
-#: core/classes/class.Utils.php:376
+#: core/classes/class.Utils.php:378
 msgid "秒前"
 msgstr ""
 
-#: core/functions/func.Cache.php:145
+#: core/functions/func.Cache.php:149
 #, php-format
 msgid "<!-- Nav cached %s -->"
 msgstr ""
 
-#: core/functions/func.Cache.php:145
+#: core/functions/func.Cache.php:149
 msgid "<!-- Nav cache end -->"
 msgstr ""
 
-#: core/functions/func.Install.php:34
+#: core/functions/func.Install.php:36
 msgid ""
 "Create avatar upload folder failed, maybe check your php.ini to enable "
 "`mkdir` function.\\n"
 msgstr ""
 
-#: core/functions/func.Install.php:34 core/functions/func.Install.php:58
-#: core/functions/func.Install.php:83 core/functions/func.Install.php:96
+#: core/functions/func.Install.php:36 core/functions/func.Install.php:60
+#: core/functions/func.Install.php:85 core/functions/func.Install.php:98
 msgid "Caught exception: "
 msgstr ""
 
-#: core/functions/func.Install.php:35 core/functions/func.Install.php:97
-#: functions.php:18
+#: core/functions/func.Install.php:37 core/functions/func.Install.php:99
+#: functions.php:19
 msgid "WordPress internal error"
 msgstr ""
 
-#: core/functions/func.Install.php:58 core/functions/func.Install.php:96
+#: core/functions/func.Install.php:60 core/functions/func.Install.php:98
 msgid "Can not copy `memcache object-cache.php` to `wp-content` dir.\\n"
 msgstr ""
 
-#: core/functions/func.Install.php:59 core/functions/func.Install.php:84
+#: core/functions/func.Install.php:61 core/functions/func.Install.php:86
 msgid "Create folder error"
 msgstr ""
 
-#: core/functions/func.Install.php:83
+#: core/functions/func.Install.php:85
 msgid ""
 "Create timthumb cache folder failed, maybe check your php.ini to enable "
 "`mkdir` function.\\n"
 msgstr ""
 
-#: core/functions/func.Page.php:70
+#: core/functions/func.Page.php:73
 msgid "(no parent)"
 msgstr ""
 
-#: core/functions/func.Page.php:79 core/functions/func.Page.php:80
+#: core/functions/func.Page.php:82 core/functions/func.Page.php:83
 msgid "Parent"
 msgstr ""
 
-#: core/functions/func.Page.php:89
+#: core/functions/func.Page.php:92
 msgid "Template"
 msgstr ""
 
-#: core/functions/func.Page.php:92
+#: core/functions/func.Page.php:95
 msgid "Page Template"
 msgstr ""
 
-#: core/functions/func.Page.php:94
+#: core/functions/func.Page.php:97
 msgid "Default Template"
 msgstr ""
 
-#: core/functions/func.Page.php:101 core/functions/func.Page.php:102
+#: core/functions/func.Page.php:104 core/functions/func.Page.php:105
 msgid "Order"
 msgstr ""
 
-#: core/functions/func.Page.php:104
+#: core/functions/func.Page.php:107
 msgid "Need help? Use the Help tab in the upper right of your screen."
 msgstr ""
 
-#: core/functions/func.Page.php:119
+#: core/functions/func.Page.php:122
 msgid "Page Attributes"
 msgstr ""
 
-#: core/functions/func.Page.php:172
+#: core/functions/func.Page.php:175
 msgid "The page template is invalid"
 msgstr ""
 
-#: core/functions/func.Page.php:172
+#: core/functions/func.Page.php:175
 msgid "Invalid Page Template"
 msgstr ""
 
-#: core/functions/func.Schedule.php:25
+#: core/functions/func.Schedule.php:29
 msgid "Weekly"
 msgstr ""
 
-#: core/functions/func.Sidebar.php:58 dash/options.php:130
-#: dash/options.php:144
+#: core/functions/func.Sidebar.php:60 dash/options.php:133
+#: dash/options.php:147
 msgid "Common Sidebar"
 msgstr ""
 
-#: core/functions/func.Sidebar.php:59 dash/options.php:131
-#: dash/options.php:145 dash/options.php:160
+#: core/functions/func.Sidebar.php:61 dash/options.php:134
+#: dash/options.php:148 dash/options.php:163
 msgid "Home Sidebar"
 msgstr ""
 
-#: core/functions/func.Sidebar.php:60 dash/options.php:132
-#: dash/options.php:146 dash/options.php:170
+#: core/functions/func.Sidebar.php:62 dash/options.php:135
+#: dash/options.php:149 dash/options.php:173
 msgid "Single Sidebar"
 msgstr ""
 
-#: core/functions/func.Sidebar.php:61 dash/options.php:133
-#: dash/options.php:147 dash/options.php:180
+#: core/functions/func.Sidebar.php:63 dash/options.php:136
+#: dash/options.php:150 dash/options.php:183
 msgid "Archive Sidebar"
 msgstr ""
 
-#: core/functions/func.Sidebar.php:62 dash/options.php:134
-#: dash/options.php:148 dash/options.php:190
+#: core/functions/func.Sidebar.php:64 dash/options.php:137
+#: dash/options.php:151 dash/options.php:193
 msgid "Category Sidebar"
 msgstr ""
 
-#: core/functions/func.Sidebar.php:63 dash/options.php:135
-#: dash/options.php:149 dash/options.php:200
+#: core/functions/func.Sidebar.php:65 dash/options.php:138
+#: dash/options.php:152 dash/options.php:203
 msgid "Search Sidebar"
 msgstr ""
 
-#: core/functions/func.Sidebar.php:64 dash/options.php:136
-#: dash/options.php:150 dash/options.php:210
+#: core/functions/func.Sidebar.php:66 dash/options.php:139
+#: dash/options.php:153 dash/options.php:213
 msgid "404 Sidebar"
 msgstr ""
 
-#: core/functions/func.Sidebar.php:65 dash/options.php:137
-#: dash/options.php:151 dash/options.php:220
+#: core/functions/func.Sidebar.php:67 dash/options.php:140
+#: dash/options.php:154 dash/options.php:223
 msgid "Page Sidebar"
+msgstr ""
+
+#: core/templates/tpl.M.Refresh.php:19
+msgid "Refresh Rewrite"
+msgstr ""
+
+#: core/templates/tpl.M.Refresh.php:33
+msgid "Rewrite rules refresh successfully, <a href=\"$s\">back to home</a>"
+msgstr ""
+
+#: core/templates/tpl.M.Refresh.php:35
+msgid ""
+"Please customize your permalink structure, it's the basis of better theme "
+"functionality"
+msgstr ""
+
+#: core/templates/tpl.M.Refresh.php:38
+msgid "Forbidden Access"
 msgstr ""
 
 #: dash/of_inc/includes/class-options-framework-admin.php:91
@@ -198,7 +216,7 @@ msgstr ""
 msgid "Default options restored."
 msgstr ""
 
-#: dash/of_inc/includes/class-options-framework-admin.php:291
+#: dash/of_inc/includes/class-options-framework-admin.php:295
 msgid "Options saved."
 msgstr ""
 
@@ -300,393 +318,404 @@ msgstr ""
 msgid "Bold Italic"
 msgstr ""
 
-#: dash/options.php:33
+#: dash/options.php:36
 msgid "Basic"
 msgstr ""
 
-#: dash/options.php:39
+#: dash/options.php:42
 msgid "Home Page Description"
 msgstr ""
 
-#: dash/options.php:40
+#: dash/options.php:43
 msgid "Home page description meta information, good for SEO"
 msgstr ""
 
-#: dash/options.php:48
+#: dash/options.php:51
 msgid "Home Page Keywords"
 msgstr ""
 
-#: dash/options.php:49
+#: dash/options.php:52
 msgid "Home page keywords meta information, good for SEO"
 msgstr ""
 
-#: dash/options.php:57
+#: dash/options.php:60
 msgid "Favicon"
 msgstr ""
 
-#: dash/options.php:58
+#: dash/options.php:61
 msgid "Please upload an ico file"
 msgstr ""
 
-#: dash/options.php:66
+#: dash/options.php:69
 msgid "Favicon(PNG)"
 msgstr ""
 
-#: dash/options.php:67
+#: dash/options.php:70
 msgid "Please upload an png file"
 msgstr ""
 
-#: dash/options.php:75
+#: dash/options.php:78
 msgid "I18n"
 msgstr ""
 
-#: dash/options.php:76
+#: dash/options.php:79
 msgid "Multi languages and I18n support"
 msgstr ""
 
-#: dash/options.php:81
+#: dash/options.php:84
 msgid "zh_cn"
 msgstr ""
 
-#: dash/options.php:82
+#: dash/options.php:85
 msgid "en_us"
 msgstr ""
 
-#: dash/options.php:88
+#: dash/options.php:91
 msgid "Gravatar"
 msgstr ""
 
-#: dash/options.php:89
+#: dash/options.php:92
 msgid "Gravatar support"
 msgstr ""
 
-#: dash/options.php:98
+#: dash/options.php:101
 msgid "Timthumb Crop"
 msgstr ""
 
-#: dash/options.php:99
+#: dash/options.php:102
 msgid "Timthumb crop support"
 msgstr ""
 
-#: dash/options.php:108
+#: dash/options.php:111
 msgid "Style"
 msgstr ""
 
-#: dash/options.php:117
+#: dash/options.php:120
 msgid "Sidebar"
 msgstr ""
 
-#: dash/options.php:124
+#: dash/options.php:127
 msgid "Register Sidebars"
 msgstr ""
 
-#: dash/options.php:125
+#: dash/options.php:128
 msgid "Check the sidebars to register"
 msgstr ""
 
-#: dash/options.php:161
+#: dash/options.php:164
 msgid "Select a sidebar for homepage"
 msgstr ""
 
-#: dash/options.php:171
+#: dash/options.php:174
 msgid "Select a sidebar for single post page"
 msgstr ""
 
-#: dash/options.php:181
+#: dash/options.php:184
 msgid "Select a sidebar for archive page"
 msgstr ""
 
-#: dash/options.php:191
+#: dash/options.php:194
 msgid "Select a sidebar for category page"
 msgstr ""
 
-#: dash/options.php:201
+#: dash/options.php:204
 msgid "Select a sidebar for search page"
 msgstr ""
 
-#: dash/options.php:211
+#: dash/options.php:214
 msgid "Select a sidebar for 404 page"
 msgstr ""
 
-#: dash/options.php:221
+#: dash/options.php:224
 msgid "Select a sidebar for page"
 msgstr ""
 
-#: dash/options.php:232
+#: dash/options.php:235
 msgid "Social"
 msgstr ""
 
-#: dash/options.php:239
+#: dash/options.php:242
 msgid "QQ Login"
 msgstr ""
 
-#: dash/options.php:240
+#: dash/options.php:243
 msgid "QQ login "
 msgstr ""
 
-#: dash/options.php:249
+#: dash/options.php:252
 msgid "QQ Open ID"
 msgstr ""
 
-#: dash/options.php:250
+#: dash/options.php:253
 msgid "Your QQ open application ID"
 msgstr ""
 
-#: dash/options.php:259
+#: dash/options.php:262
 msgid "QQ Open Key"
 msgstr ""
 
-#: dash/options.php:260
+#: dash/options.php:263
 msgid "Your QQ open application key"
 msgstr ""
 
-#: dash/options.php:269
+#: dash/options.php:272
 msgid "Weibo Login"
 msgstr ""
 
-#: dash/options.php:270
+#: dash/options.php:273
 msgid "Weibo login access"
 msgstr ""
 
-#: dash/options.php:279
+#: dash/options.php:282
 msgid "Weibo Open Key"
 msgstr ""
 
-#: dash/options.php:280
+#: dash/options.php:283
 msgid "Your weibo open application key"
 msgstr ""
 
-#: dash/options.php:289
+#: dash/options.php:292
 msgid "Weibo Open Secret"
 msgstr ""
 
-#: dash/options.php:290
+#: dash/options.php:293
 msgid "Your weibo open application secret"
 msgstr ""
 
-#: dash/options.php:299
+#: dash/options.php:302
 msgid "Weixin Login"
 msgstr ""
 
-#: dash/options.php:300
+#: dash/options.php:303
 msgid "Weixin login access"
 msgstr ""
 
-#: dash/options.php:309
+#: dash/options.php:312
 msgid "Weixin Open Key"
 msgstr ""
 
-#: dash/options.php:310
+#: dash/options.php:313
 msgid "Your weixin open application key"
 msgstr ""
 
-#: dash/options.php:319
+#: dash/options.php:322
 msgid "Weixin Open Secret"
 msgstr ""
 
-#: dash/options.php:320
+#: dash/options.php:323
 msgid "Your weixin open application secret"
 msgstr ""
 
-#: dash/options.php:330
+#: dash/options.php:333
 msgid "Ad"
 msgstr ""
 
-#: dash/options.php:340
+#: dash/options.php:343
 msgid "Membership"
 msgstr ""
 
-#: dash/options.php:350
+#: dash/options.php:353
 msgid "Shop"
 msgstr ""
 
-#: dash/options.php:360
+#: dash/options.php:363
 msgid "Auxiliary"
 msgstr ""
 
-#: dash/options.php:367
+#: dash/options.php:370
 msgid "Object Cache"
 msgstr ""
 
-#: dash/options.php:368
+#: dash/options.php:371
 msgid "Object cache support, accelerate your site"
 msgstr ""
 
-#: dash/options.php:373
+#: dash/options.php:376
 msgid "Memcache"
 msgstr ""
 
-#: dash/options.php:374
+#: dash/options.php:377
 msgid "Redis"
 msgstr ""
 
-#: dash/options.php:375 dash/options.php:481
+#: dash/options.php:378 dash/options.php:484
 msgid "None"
 msgstr ""
 
-#: dash/options.php:383
+#: dash/options.php:386
 msgid "Memcache Host"
 msgstr ""
 
-#: dash/options.php:384
+#: dash/options.php:387
 msgid "Memcache server host"
 msgstr ""
 
-#: dash/options.php:393
+#: dash/options.php:396
 msgid "Memcache Port"
 msgstr ""
 
-#: dash/options.php:394
+#: dash/options.php:397
 msgid "Memcache server port"
 msgstr ""
 
-#: dash/options.php:406
+#: dash/options.php:409
 msgid "Redis Host"
 msgstr ""
 
-#: dash/options.php:407
+#: dash/options.php:410
 msgid "Redis server host"
 msgstr ""
 
-#: dash/options.php:416
+#: dash/options.php:419
 msgid "Redis Port"
 msgstr ""
 
-#: dash/options.php:417
+#: dash/options.php:420
 msgid "Redis server port"
 msgstr ""
 
-#: dash/options.php:428
+#: dash/options.php:431
 msgid "Mailer Separator"
 msgstr ""
 
-#: dash/options.php:435
+#: dash/options.php:438
 msgid "SMTP/PHPMailer"
 msgstr ""
 
-#: dash/options.php:436
+#: dash/options.php:439
 msgid "Use SMTP or PHPMail as default mailer"
 msgstr ""
 
-#: dash/options.php:441
+#: dash/options.php:444
 msgid "PHP"
 msgstr ""
 
-#: dash/options.php:442
+#: dash/options.php:445
 msgid "SMTP"
 msgstr ""
 
-#: dash/options.php:450
+#: dash/options.php:453
 msgid "SMTP Host"
 msgstr ""
 
-#: dash/options.php:451
+#: dash/options.php:454
 msgid "Your SMTP service host"
 msgstr ""
 
-#: dash/options.php:461
+#: dash/options.php:464
 msgid "SMTP Port"
 msgstr ""
 
-#: dash/options.php:462
+#: dash/options.php:465
 msgid "Your SMTP service port"
 msgstr ""
 
-#: dash/options.php:472
+#: dash/options.php:475
 msgid "SMTP Secure"
 msgstr ""
 
-#: dash/options.php:473
+#: dash/options.php:476
 msgid "Your SMTP server secure protocol"
 msgstr ""
 
-#: dash/options.php:478
+#: dash/options.php:481
 msgid "Auto"
 msgstr ""
 
-#: dash/options.php:479
+#: dash/options.php:482
 msgid "SSL"
 msgstr ""
 
-#: dash/options.php:480
+#: dash/options.php:483
 msgid "TLS"
 msgstr ""
 
-#: dash/options.php:488
+#: dash/options.php:491
 msgid "SMTP Username"
 msgstr ""
 
-#: dash/options.php:489
+#: dash/options.php:492
 msgid "Your SMTP username"
 msgstr ""
 
-#: dash/options.php:498
+#: dash/options.php:501
 msgid "SMTP Password"
 msgstr ""
 
-#: dash/options.php:499
+#: dash/options.php:502
 msgid "Your SMTP password"
 msgstr ""
 
-#: dash/options.php:509
+#: dash/options.php:512
 msgid "Your Name"
 msgstr ""
 
-#: dash/options.php:510
+#: dash/options.php:513
 msgid "Your display name as the sender"
 msgstr ""
 
-#: dash/options.php:522
+#: dash/options.php:525
 msgid "PHP Mail Sender Display Name"
 msgstr ""
 
-#: dash/options.php:523
+#: dash/options.php:526
 msgid "The Sender display name when using PHPMail send mail"
 msgstr ""
 
-#: dash/options.php:533
+#: dash/options.php:536
 msgid "PHP Mail Sender Address"
 msgstr ""
 
-#: dash/options.php:534
+#: dash/options.php:537
 msgid "You can use fake mail address when use PHPMail"
 msgstr ""
 
-#: dash/options.php:545
+#: dash/options.php:548
 msgid "Short Link Prefix"
 msgstr ""
 
-#: dash/options.php:546
+#: dash/options.php:549
 msgid ""
 "Use short link instead long link or even convert external link to internal "
 "link"
 msgstr ""
 
-#: dash/options.php:556
+#: dash/options.php:559
 msgid "Short Link Records"
 msgstr ""
 
-#: dash/options.php:557
+#: dash/options.php:560
 msgid "One line for one record, please conform to the sample"
 msgstr ""
 
-#: dash/options.php:570
+#: dash/options.php:573
 msgid "Feedback"
 msgstr ""
 
-#: dash/options.php:582
+#: dash/options.php:585
 msgid "Update"
 msgstr ""
 
-#: dash/options.php:589
+#: dash/options.php:592
 msgid "Debug Mode"
 msgstr ""
 
-#: dash/options.php:590
+#: dash/options.php:593
 msgid "Enable debug will call wp_die when catch a error"
 msgstr ""
 
-#: functions.php:18
+#: dash/options.php:602
+msgid "Tint Token"
+msgstr ""
+
+#: dash/options.php:603
+#, php-format
+msgid ""
+"Private token for theme, maybe useful somewhere. (e.g <a href=\"%1$s/m/"
+"refresh?token=%2$s\" target=\"_blank\">Refresh Rewrite</a>)"
+msgstr ""
+
+#: functions.php:19
 msgid "Lack of WordPress environment"
 msgstr ""
 

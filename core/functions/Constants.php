@@ -47,7 +47,7 @@ $uc_allow_tabs = json_encode(array('latest', 'comments', 'recommendations')); //
 defined('ALLOWED_UC_TABS') || define('ALLOWED_UC_TABS', $uc_allow_tabs);
 
 /* Allowed Action */
-$m_allow_actions = json_encode(array('signin', 'signup', 'signout'));
+$m_allow_actions = json_encode(array('signin', 'signup', 'signout', 'refresh'));
 defined('ALLOWED_M_ACTIONS') || define('ALLOWED_M_ACTIONS', $m_allow_actions);
 
 /* Allowed Me Routes */
