@@ -73,3 +73,7 @@ $me_allow_routes = json_encode(array(
     )
 ));
 defined('ALLOWED_ME_ROUTES') || define('ALLOWED_ME_ROUTES', $me_allow_routes);
+
+/* Allowed Site Utils */
+$site_allow_utils = json_encode(array('upgradebrowser'));
+defined('ALLOWED_SITE_UTILS') || define('ALLOWED_SITE_UTILS', $site_allow_utils);

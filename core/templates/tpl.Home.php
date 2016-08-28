@@ -13,6 +13,8 @@
  */
 ?>
 
+<?php tt_get_header(); ?>
+
 <?php
 
 echo 'home-page-template';
@@ -21,3 +23,7 @@ echo 'home-page-template';
 global $wp_query;
 
 var_dump($wp_query);
+
+?>
+
+<?php tt_get_footer(); ?>

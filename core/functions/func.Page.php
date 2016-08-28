@@ -33,7 +33,7 @@ function tt_get_page_templates( $post = null ) {
 
     if ( ! is_array( $page_templates ) ) {
         $page_templates = array();
-        $files = (array) Utils::scandir( THEME_TPL, 'php', 0 );
+        $files = (array) Utils::scandir( THEME_TPL . 'page', 'php', 0 ); // Note: 主要这里重新定义扫描模板的文件夹/core/templates/page
         foreach ( $files as $file => $full_path ) {
             if ( ! preg_match( '|Template Name:(.*)$|mi', file_get_contents( $full_path ), $header ) )
                 continue;
@@ -60,7 +60,7 @@ function tt_get_page_templates( $post = null ) {
  * @since   2.0.0
  *
  * @param   WP_Post   $post   页面实例
- * @return  string
+ * @return  void
  */
 function tt_page_attributes_meta_box($post) {
     $post_type_object = get_post_type_object($post->post_type);
@@ -136,7 +136,7 @@ function tt_page_template_dropdown( $default = '' ) {
     $templates = tt_get_page_templates( get_post() );
     ksort( $templates );
     foreach ( array_keys( $templates ) as $template ) {
-        $full_path = 'core/templates/' . $templates[ $template ];
+        $full_path = 'core/templates/page/' . $templates[ $template ];
         $selected = selected( $default, $full_path, false );
         echo "\n\t<option value='" . $full_path . "' $selected>$template</option>";
     }

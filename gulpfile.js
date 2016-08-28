@@ -69,6 +69,8 @@ gulp.task('less', function () {
 // 图片压缩发布
 gulp.task('imagemin', function () {
     console.log('start imagemin task');
+    gulp.src('./assets/img')
+        .pipe(clean());
     gulp.src('./src/img/**/*.{png,jpg,gif,ico}')
         .pipe(cache(
             imagemin({

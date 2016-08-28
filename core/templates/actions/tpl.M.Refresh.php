@@ -31,7 +31,7 @@ if(tt_get_option('tt_theme_debug') && isset($_GET['token']) && trim($_GET['token
     if($ps = get_option('permalink_structure')){
         //刷新固定链接缓存
         tt_refresh_rewrite();
-        echo sprintf(__('Rewrite rules refresh successfully, <a href="$s">back to home</a>', 'tt'), home_url());
+        echo sprintf(__('Rewrite rules refresh successfully, <a href="%1$s">back to home</a>', 'tt'), home_url());
     }else{
         echo __('Please customize your permalink structure, it\'s the basis of better theme functionality', 'tt');
     }

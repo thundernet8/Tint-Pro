@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-08-28 20:37+0800\n"
-"PO-Revision-Date: 2016-08-28 20:37+0800\n"
+"POT-Creation-Date: 2016-08-28 21:07+0800\n"
+"PO-Revision-Date: 2016-08-28 21:07+0800\n"
 "Last-Translator: Zhiyan <mail@webapproach.net>\n"
 "Language-Team: Zhiyan <mail@webapproach.net>\n"
 "Language: en_US\n"
@@ -173,21 +173,22 @@ msgstr ""
 msgid "Page Sidebar"
 msgstr ""
 
-#: core/templates/tpl.M.Refresh.php:19
+#: core/templates/tpl.M.Refresh.php:20
 msgid "Refresh Rewrite"
 msgstr ""
 
-#: core/templates/tpl.M.Refresh.php:33
-msgid "Rewrite rules refresh successfully, <a href=\"$s\">back to home</a>"
+#: core/templates/tpl.M.Refresh.php:34
+#, php-format
+msgid "Rewrite rules refresh successfully, <a href=\"%1$s\">back to home</a>"
 msgstr ""
 
-#: core/templates/tpl.M.Refresh.php:35
+#: core/templates/tpl.M.Refresh.php:36
 msgid ""
 "Please customize your permalink structure, it's the basis of better theme "
 "functionality"
 msgstr ""
 
-#: core/templates/tpl.M.Refresh.php:38
+#: core/templates/tpl.M.Refresh.php:39
 msgid "Forbidden Access"
 msgstr ""
 

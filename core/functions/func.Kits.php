@@ -34,3 +34,17 @@ function tt_get_option( $name, $default='' ){
 }
 
 // TODO: Utils::function_name -> tt_function_name
+
+// TODO: tt_url_for
+/**
+ * 获取各种Url
+ *
+ * @since   2.0.0
+ *
+ * @param   string  $key    待查找路径的关键字
+ * @return  string
+ */
+function tt_url_for($key){
+
+    return '';
+}

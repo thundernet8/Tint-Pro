@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-08-28 20:37+0800\n"
-"PO-Revision-Date: 2016-08-28 20:43+0800\n"
+"POT-Creation-Date: 2016-08-28 21:07+0800\n"
+"PO-Revision-Date: 2016-08-28 21:07+0800\n"
 "Last-Translator: Zhiyan <mail@webapproach.net>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -174,21 +174,22 @@ msgstr "404边栏"
 msgid "Page Sidebar"
 msgstr "页面边栏"
 
-#: core/templates/tpl.M.Refresh.php:19
+#: core/templates/tpl.M.Refresh.php:20
 msgid "Refresh Rewrite"
 msgstr "刷新固定链接规则"
 
-#: core/templates/tpl.M.Refresh.php:33
-msgid "Rewrite rules refresh successfully, <a href=\"$s\">back to home</a>"
-msgstr "成功刷新固定链接规则，<a href=\"$s\">返回首页</a>"
+#: core/templates/tpl.M.Refresh.php:34
+#, php-format
+msgid "Rewrite rules refresh successfully, <a href=\"%1$s\">back to home</a>"
+msgstr "成功刷新固定链接规则，<a href=\"%1$s\">返回首页</a>"
 
-#: core/templates/tpl.M.Refresh.php:35
+#: core/templates/tpl.M.Refresh.php:36
 msgid ""
 "Please customize your permalink structure, it's the basis of better theme "
 "functionality"
 msgstr "请自定义固定链接，其是主题高级功能的基础"
 
-#: core/templates/tpl.M.Refresh.php:38
+#: core/templates/tpl.M.Refresh.php:39
 msgid "Forbidden Access"
 msgstr "禁止访问"
 

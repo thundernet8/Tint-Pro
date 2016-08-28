@@ -11,3 +11,6 @@
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
  * @link https://www.webapproach.net/tint.html
  */
+?>
+</body>
+</html>

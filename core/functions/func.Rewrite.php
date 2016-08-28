@@ -270,7 +270,7 @@ function tt_handle_me_child_routes_template(){
                 return;
             }
         };
-        $template = THEME_TPL . '/tpl.Me.' . ucfirst(strtolower($me_child_route)) . '.php';
+        $template = THEME_TPL . '/me/tpl.Me.' . ucfirst(strtolower($me_child_route)) . '.php';
         load_template($template);
         exit;
     }
@@ -298,7 +298,7 @@ add_filter('query_vars', 'tt_add_me_page_query_vars');
 
 
 /**
- * 登录/注册/注销等动作页路由
+ * 登录/注册/注销等动作页路由(/m)
  *
  * @since   2.0.0
  *
@@ -346,12 +346,68 @@ function tt_handle_action_page_template(){
         global $wp_query;
         $wp_query->is_home = false;
         $wp_query->is_page = true; //将该模板改为页面属性，而非首页
-        $template = THEME_TPL . '/tpl.M.' . ucfirst(strtolower($action)) . '.php';
+        $template = THEME_TPL . '/actions/tpl.M.' . ucfirst(strtolower($action)) . '.php';
         load_template($template);
         exit;
     }
 }
 add_action('template_redirect', 'tt_handle_action_page_template', 5);
+
+
+/**
+ * 网站级工具页路由(如浏览器升级提示、全站通告等)(/site)
+ *
+ * @since   2.0.0
+ *
+ * @param   object  $wp_rewrite  WP_Rewrite
+ * @return  void
+ */
+function tt_handle_site_util_page_rewrite_rules($wp_rewrite){
+    if($ps = get_option('permalink_structure')){
+        //site_util (upgradeBrowser)
+        $new_rules['site/([A-Za-z]+)$'] = 'index.php?site_util=$matches[1]';
+        $wp_rewrite->rules = $new_rules + $wp_rewrite->rules;
+    }
+}
+add_action('generate_rewrite_rules', 'tt_handle_site_util_page_rewrite_rules');
+
+
+/**
+ * 为自定义的Site Util页添加query_var白名单
+ *
+ * @since   2.0.0
+ *
+ * @param   object  $public_query_vars  公共全局query_vars
+ * @return  object
+ */
+function tt_add_site_util_page_query_vars($public_query_vars) {
+    if(!is_admin()){
+        $public_query_vars[] = 'site_util'; // site_util，代表是网站级别的工具页面
+    }
+    return $public_query_vars;
+}
+add_filter('query_vars', 'tt_add_site_util_page_query_vars');
+
+
+/**
+ * 网站级工具页模板
+ *
+ * @since   2.0.0
+ *
+ * @return  void
+ */
+function tt_handle_site_util_page_template(){
+    $util = get_query_var('site_util');
+    if($util && in_array(strtolower($util), (array)json_decode(ALLOWED_SITE_UTILS))){
+        global $wp_query;
+        $wp_query->is_home = false;
+        $wp_query->is_page = true; //将该模板改为页面属性，而非首页
+        $template = THEME_TPL . '/site/tpl.' . ucfirst(strtolower($util)) . '.php';
+        load_template($template);
+        exit;
+    }
+}
+add_action('template_redirect', 'tt_handle_site_util_page_template', 5);
 
 
 /**

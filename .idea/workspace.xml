@@ -2,12 +2,64 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1212df9-9110-41ec-af9e-f8eb72c2514b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/templates/tpl.M.Refresh.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/templates/site/tpl.UpgradeBrowser.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/avatar.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/avatar_large.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/avatar_medium.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/avatar_small.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/img/avatar/avatar.png" afterPath="$PROJECT_DIR$/assets/img/avatar/avatar.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/img/avatar/avatar_large.png" afterPath="$PROJECT_DIR$/assets/img/avatar/avatar_large.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/img/avatar/avatar_medium.png" afterPath="$PROJECT_DIR$/assets/img/avatar/avatar_medium.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/img/avatar/avatar_small.png" afterPath="$PROJECT_DIR$/assets/img/avatar/avatar_small.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/languages/en_US.mo" afterPath="$PROJECT_DIR$/core/languages/en_US.mo" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/languages/zh_CN.mo" afterPath="$PROJECT_DIR$/core/languages/zh_CN.mo" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/img/avatar/avatar.png" afterPath="$PROJECT_DIR$/src/img/avatar/avatar.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/img/avatar/avatar_large.png" afterPath="$PROJECT_DIR$/src/img/avatar/avatar_large.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/img/avatar/avatar_medium.png" afterPath="$PROJECT_DIR$/src/img/avatar/avatar_medium.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/img/avatar/avatar_small.png" afterPath="$PROJECT_DIR$/src/img/avatar/avatar_small.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/classes/class.Utils.php" afterPath="$PROJECT_DIR$/core/classes/class.Utils.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/main-7c8eb13260.css" afterPath="$PROJECT_DIR$/assets/css/main-7c8eb13260.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/main-b81c81c854.js" afterPath="$PROJECT_DIR$/assets/js/main-b81c81c854.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/Constants.php" afterPath="$PROJECT_DIR$/core/functions/Constants.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/func.Kits.php" afterPath="$PROJECT_DIR$/core/functions/func.Kits.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/func.Page.php" afterPath="$PROJECT_DIR$/core/functions/func.Page.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/func.Rewrite.php" afterPath="$PROJECT_DIR$/core/functions/func.Rewrite.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dash/options.php" afterPath="$PROJECT_DIR$/dash/options.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/func.Template.php" afterPath="$PROJECT_DIR$/core/functions/func.Template.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/languages/en_US.po" afterPath="$PROJECT_DIR$/core/languages/en_US.po" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/languages/tt.pot" afterPath="$PROJECT_DIR$/core/languages/tt.pot" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/languages/zh_CN.po" afterPath="$PROJECT_DIR$/core/languages/zh_CN.po" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/mod.Footer.php" afterPath="$PROJECT_DIR$/core/modules/mod.Footer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/mod.Header.php" afterPath="$PROJECT_DIR$/core/modules/mod.Header.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/tpl.Home.php" afterPath="$PROJECT_DIR$/core/templates/tpl.Home.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/php/footer.php" afterPath="$PROJECT_DIR$/src/php/footer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/php/header.php" afterPath="$PROJECT_DIR$/src/php/header.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/core/templates/tpl.Archive.php" afterPath="$PROJECT_DIR$/core/templates/tax/tpl.Archive.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/core/templates/tpl.Attachment.php" afterPath="$PROJECT_DIR$/core/templates/attachments/tpl.Attachment.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/core/templates/tpl.Category.php" afterPath="$PROJECT_DIR$/core/templates/tax/tpl.Category.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/core/templates/tpl.Date.php" afterPath="$PROJECT_DIR$/core/templates/tax/tpl.Date.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/core/templates/tpl.M.Refresh.php" afterPath="$PROJECT_DIR$/core/templates/actions/tpl.M.Refresh.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/core/templates/tpl.M.Signin.php" afterPath="$PROJECT_DIR$/core/templates/actions/tpl.M.Signin.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/core/templates/tpl.M.Signout.php" afterPath="$PROJECT_DIR$/core/templates/actions/tpl.M.Signout.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/core/templates/tpl.M.Signup.php" afterPath="$PROJECT_DIR$/core/templates/actions/tpl.M.Signup.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/core/templates/tpl.MIMEText.php" afterPath="$PROJECT_DIR$/core/templates/attachments/tpl.MIMEText.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/core/templates/tpl.Me.Balance.php" afterPath="$PROJECT_DIR$/core/templates/me/tpl.Me.Balance.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/core/templates/tpl.Me.Messages.php" afterPath="$PROJECT_DIR$/core/templates/me/tpl.Me.Messages.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/core/templates/tpl.Me.Notifications.php" afterPath="$PROJECT_DIR$/core/templates/me/tpl.Me.Notifications.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/core/templates/tpl.Me.Order.php" afterPath="$PROJECT_DIR$/core/templates/me/tpl.Me.Order.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/core/templates/tpl.Me.Orders.php" afterPath="$PROJECT_DIR$/core/templates/me/tpl.Me.Orders.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/core/templates/tpl.Me.Setting.php" afterPath="$PROJECT_DIR$/core/templates/me/tpl.Me.Setting.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/core/templates/tpl.Me.Stars.php" afterPath="$PROJECT_DIR$/core/templates/me/tpl.Me.Stars.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/core/templates/tpl.Page.php" afterPath="$PROJECT_DIR$/core/templates/page/tpl.Page.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/core/templates/tpl.Single.php" afterPath="$PROJECT_DIR$/core/templates/single/tpl.Single.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/core/templates/tpl.Tag.php" afterPath="$PROJECT_DIR$/core/templates/tax/tpl.Tag.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/core/templates/tpl.Taxonomy.php" afterPath="$PROJECT_DIR$/core/templates/tax/tpl.Taxonomy.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/core/templates/tpl.Test.php" afterPath="$PROJECT_DIR$/core/templates/page/tpl.Test.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/core/templates/tpl.UC.Comments.php" afterPath="$PROJECT_DIR$/core/templates/uc/tpl.UC.Comments.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/core/templates/tpl.UC.Latest.php" afterPath="$PROJECT_DIR$/core/templates/uc/tpl.UC.Latest.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/core/templates/tpl.UC.Profile.php" afterPath="$PROJECT_DIR$/core/templates/uc/tpl.UC.Profile.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/core/templates/tpl.UC.Recommendations.php" afterPath="$PROJECT_DIR$/core/templates/uc/tpl.UC.Recommendations.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/core/templates/tpl.UC.php" afterPath="$PROJECT_DIR$/core/templates/uc/tpl.UC.php" />
     </list>
     <ignored path="Tinection 2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -46,127 +98,66 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="plugin.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../../WebServer/WWW/wordpress_map/wp-includes/plugin.php">
+      <file leaf-file-name="header.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/php/header.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="213" column="0" selection-start-line="213" selection-start-column="0" selection-end-line="213" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="load.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../../WebServer/WWW/wordpress_map/wp-includes/load.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="895" column="0" selection-start-line="895" selection-start-column="0" selection-end-line="895" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="wptestdb.wp_options" pinned="false" current-in-tab="false">
-        <entry file="dbDummy://dbtable:/e6913bc0/ce6ca006-3e99-4726-88be-2f7b0ddb2896/wptestdb.wp_options">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tpl.M.Refresh.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/core/templates/tpl.M.Refresh.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="335">
-              <caret line="18" column="49" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
+            <state relative-caret-position="629">
+              <caret line="55" column="23" selection-start-line="55" selection-start-column="23" selection-end-line="55" selection-end-column="23" />
               <folding>
                 <element signature="e#6#291#0#PHP" expanded="true" />
-                <element signature="e#482#541#0#PHP" expanded="true" />
+                <marker date="1472399084371" expanded="true" signature="2537:2630" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="functions.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../../WebServer/WWW/wordpress_map/wp-includes/functions.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="384" column="0" selection-start-line="384" selection-start-column="0" selection-end-line="384" selection-end-column="0" />
-              <folding>
-                <marker date="1461241108000" expanded="true" signature="17181:17285" ph="SELECT meta_... wp_postmeta" />
-                <marker date="1461241108000" expanded="true" signature="18343:18447" ph="SELECT post_... wp_postmeta" />
-                <marker date="1461241108000" expanded="true" signature="38331:38400" ph="SELECT optio... wp_options" />
-                <marker date="1461241108000" expanded="true" signature="131221:131269" ph="SELECT id FR... $" />
-                <marker date="1461241108000" expanded="true" signature="139658:139754" ph="SELECT post_... wp_postmeta" />
-                <marker date="1461241108000" expanded="true" signature="140217:140319" ph="SELECT comme... wp_commentmeta" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="func.Kits.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="func.Kits.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/functions/func.Kits.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+            <state relative-caret-position="536">
+              <caret line="48" column="14" selection-start-line="48" selection-start-column="14" selection-end-line="48" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="options-framework.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dash/of_inc/options-framework.php">
+      <file leaf-file-name="func.Rewrite.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/functions/func.Rewrite.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="95" column="0" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="option.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../../WebServer/WWW/wordpress_map/wp-includes/option.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="166">
-              <caret line="135" column="0" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
+            <state relative-caret-position="325">
+              <caret line="400" column="41" selection-start-line="400" selection-start-column="41" selection-end-line="400" selection-end-column="41" />
               <folding>
-                <marker date="1452280346000" expanded="true" signature="2735:2805" ph="SELECT optio... wp_options" />
-                <marker date="1452280346000" expanded="true" signature="3521:3591" ph="SELECT optio... wp_options" />
-                <marker date="1452280346000" expanded="true" signature="5771:5846" ph="SELECT optio... wp_options" />
-                <marker date="1452280346000" expanded="true" signature="5893:5931" ph="SELECT optio... wp_options" />
-                <marker date="1452280346000" expanded="true" signature="7113:7215" ph="SELECT meta_... wp_sitemeta" />
-                <marker date="1452280346000" expanded="true" signature="14662:14890" ph="INSERT INTO `wp_options`... " />
-                <marker date="1452280346000" expanded="true" signature="16706:16764" ph="SELECT autol... wp_options" />
-                <marker date="1452280346000" expanded="true" signature="35874:35949" ph="SELECT meta_... wp_sitemeta" />
-                <marker date="1452280346000" expanded="true" signature="41489:41563" ph="SELECT meta_... $" />
+                <element signature="e#6#291#0#PHP" expanded="true" />
+                <element signature="e#303#338#0#PHP" expanded="true" />
+                <element signature="n#tt_force_permalink#0;n#!!top" expanded="false" />
+                <element signature="e#655#718#0#PHP" expanded="false" />
+                <element signature="n#tt_rewrite_short_link#0;n#!!top" expanded="false" />
+                <element signature="e#1663#1772#0#PHP" expanded="false" />
+                <element signature="n#tt_set_user_page_rewrite_rules#0;n#!!top" expanded="false" />
+                <element signature="e#2964#3110#0#PHP" expanded="false" />
+                <element signature="e#3436#3568#0#PHP" expanded="false" />
+                <element signature="e#4074#4278#0#PHP" expanded="false" />
+                <element signature="n#tt_match_author_link_field#0;n#!!top" expanded="false" />
+                <element signature="e#5895#5955#0#PHP" expanded="false" />
+                <element signature="n#tt_redirect_me_main_route#0;n#!!top" expanded="false" />
+                <element signature="e#6404#6522#0#PHP" expanded="false" />
+                <element signature="n#tt_handle_me_child_routes_rewrite#0;n#!!top" expanded="false" />
+                <element signature="e#7520#7591#0#PHP" expanded="false" />
+                <element signature="n#tt_handle_me_child_routes_template#0;n#!!top" expanded="false" />
+                <element signature="e#9071#9208#0#PHP" expanded="false" />
+                <element signature="n#tt_add_me_page_query_vars#0;n#!!top" expanded="false" />
+                <element signature="e#9532#9646#0#PHP" expanded="false" />
+                <element signature="n#tt_handle_action_page_rewrite_rules#0;n#!!top" expanded="false" />
+                <element signature="e#10051#10186#0#PHP" expanded="false" />
+                <element signature="n#tt_add_action_page_query_vars#0;n#!!top" expanded="false" />
+                <element signature="e#10436#10502#0#PHP" expanded="false" />
+                <element signature="n#tt_handle_action_page_template#0;n#!!top" expanded="false" />
+                <element signature="e#12461#12521#0#PHP" expanded="false" />
+                <element signature="n#tt_refresh_rewrite#0;n#!!top" expanded="false" />
+                <marker date="1472399641471" expanded="true" signature="5403:5423" ph="SELECT user_... $" />
+                <marker date="1472399641471" expanded="true" signature="5403:5509" ph="SELECT user_... $" />
+                <marker date="1472399641471" expanded="true" signature="5403:5521" ph="SELECT user_... WHERE" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cache.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../../WebServer/WWW/wordpress_map/wp-includes/cache.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="550" column="0" selection-start-line="550" selection-start-column="0" selection-end-line="550" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="options.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dash/options.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="166">
-              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -188,36 +179,27 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/dashboard/of_inc/includes/class-options-framework-admin.php" />
-        <option value="$PROJECT_DIR$/core/functions/func.I18n.php" />
-        <option value="$PROJECT_DIR$/dashboard/options.php" />
         <option value="$PROJECT_DIR$/core/classes/class.Avatar.php" />
         <option value="$PROJECT_DIR$/core/classes/class.NameFirstChar.php" />
         <option value="$PROJECT_DIR$/core/classes/class.PostImage.php" />
         <option value="$PROJECT_DIR$/core/functions/func.Avatar.php" />
         <option value="$PROJECT_DIR$/core/functions/func.Cache.php" />
         <option value="$PROJECT_DIR$/core/functions/func.Install.php" />
-        <option value="$PROJECT_DIR$/core/functions/func.Kits.php" />
         <option value="$PROJECT_DIR$/core/functions/func.L10n.php" />
         <option value="$PROJECT_DIR$/core/functions/func.Mail.php" />
         <option value="$PROJECT_DIR$/core/functions/func.Module.php" />
         <option value="$PROJECT_DIR$/core/functions/func.Optimization.php" />
-        <option value="$PROJECT_DIR$/core/functions/func.Page.php" />
         <option value="$PROJECT_DIR$/core/functions/func.Schedule.php" />
         <option value="$PROJECT_DIR$/core/functions/func.Sidebar.php" />
-        <option value="$PROJECT_DIR$/src/php/header.php" />
-        <option value="$PROJECT_DIR$/src/php/footer.php" />
         <option value="$PROJECT_DIR$/dash/of_inc/includes/class-options-framework-admin.php" />
         <option value="$PROJECT_DIR$/core/templates/tpl.User.php" />
         <option value="$PROJECT_DIR$/core/templates/tpl.User.Administrator.php" />
-        <option value="$PROJECT_DIR$/core/templates/tpl.Home.php" />
         <option value="$PROJECT_DIR$/core/templates/tpl.Author.php" />
         <option value="dbtable:/e6913bc0/ce6ca006-3e99-4726-88be-2f7b0ddb2896/wptestdb.wp_usermeta" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/ce6ca006-3e99-4726-88be-2f7b0ddb2896/console.sql" />
         <option value="$PROJECT_DIR$/core/functions/func.Constants.php" />
         <option value="$PROJECT_DIR$/functions.php" />
         <option value="$PROJECT_DIR$/core/templates/tpl.404.php" />
-        <option value="$PROJECT_DIR$/core/functions/func.Template.php" />
         <option value="$PROJECT_DIR$/core/templates/tpl.UC.Profile.php" />
         <option value="$PROJECT_DIR$/core/templates/tpl.UC.Latest.php" />
         <option value="$PROJECT_DIR$/core/templates/tpl.UC.Comments.php" />
@@ -235,10 +217,19 @@
         <option value="$PROJECT_DIR$/core/templates/tpl.Me.Stars.php" />
         <option value="$PROJECT_DIR$/core/templates/tpl.M._refresh.php" />
         <option value="$PROJECT_DIR$/core/classes/class.Utils.php" />
-        <option value="$PROJECT_DIR$/core/functions/Constants.php" />
-        <option value="$PROJECT_DIR$/core/functions/func.Rewrite.php" />
         <option value="$PROJECT_DIR$/dash/options.php" />
         <option value="$PROJECT_DIR$/core/templates/tpl.M.Refresh.php" />
+        <option value="$PROJECT_DIR$/src/php/footer.php" />
+        <option value="$PROJECT_DIR$/core/templates/utils/tpl.UpgradBrowser.php" />
+        <option value="$PROJECT_DIR$/core/functions/func.Page.php" />
+        <option value="$PROJECT_DIR$/core/functions/func.Template.php" />
+        <option value="$PROJECT_DIR$/core/functions/func.Kits.php" />
+        <option value="$PROJECT_DIR$/src/php/header.php" />
+        <option value="$PROJECT_DIR$/core/templates/tpl.Home.php" />
+        <option value="$PROJECT_DIR$/core/functions/Constants.php" />
+        <option value="$PROJECT_DIR$/core/functions/func.Rewrite.php" />
+        <option value="$PROJECT_DIR$/gulpfile.js" />
+        <option value="$PROJECT_DIR$/core/templates/site/tpl.UpgradeBrowser.php" />
       </list>
     </option>
   </component>
@@ -386,24 +377,6 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="img" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tint" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tint" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="dash" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -463,6 +436,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tint" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tint" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="site" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -548,28 +543,6 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tint" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tint" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dash" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -590,16 +563,18 @@
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Dev\FrontEnd\Projects\Tint\core" />
-      <recent name="D:\Dev\FrontEnd\Projects\Tint\core\library\tldextract" />
-      <recent name="D:\Dev\FrontEnd\Projects\Tinection 2\core" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Dev\FrontEnd\Projects\Tint\src\img" />
       <recent name="D:\Dev\FrontEnd\Projects\Tint\core\library\timthumb" />
       <recent name="D:\Dev\FrontEnd\Projects\Tint\dashboard\plugins\timthumb" />
       <recent name="D:\Dev\FrontEnd\Projects\Tint\core\classes\vender" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Dev\FrontEnd\Projects\Tint\core\templates\tax" />
+      <recent name="D:\Dev\FrontEnd\Projects\Tint\core\templates\single" />
+      <recent name="D:\Dev\FrontEnd\Projects\Tint\core\templates\attachments" />
+      <recent name="D:\Dev\FrontEnd\Projects\Tint\core\templates\page" />
+      <recent name="D:\Dev\FrontEnd\Projects\Tint\core\templates\me" />
     </key>
   </component>
   <component name="RunManager" selected="PHP Web Application.WordPress">
@@ -731,12 +706,12 @@
       <workItem from="1472214407320" duration="20795000" />
       <workItem from="1472262143661" duration="632000" />
       <workItem from="1472263167048" duration="32947000" />
-      <workItem from="1472351832791" duration="28770000" />
+      <workItem from="1472351832791" duration="40077000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="290606000" />
+    <option name="totallyTimeSpent" value="301913000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -755,10 +730,11 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329718" sideWeight="0.4978678" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3991323" sideWeight="0.5021322" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13539445" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286334" sideWeight="0.4978701" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286334" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20824295" sideWeight="0.45095947" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20715836" sideWeight="0.45095947" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17430703" sideWeight="0.5072202" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3991323" sideWeight="0.4978678" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -767,7 +743,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329718" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286334" sideWeight="0.4978701" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -807,7 +782,7 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/core/templates/tpl.Single.php</url>
+          <url>file://$PROJECT_DIR$/core/templates/single/tpl.Single.php</url>
           <line>17</line>
           <option name="timeStamp" value="21" />
         </line-breakpoint>
@@ -841,92 +816,6 @@
     </PATH>
   </component>
   <component name="editorHistoryManager">
-    <entry file="dbDummy://dbtable:/e6913bc0/ce6ca006-3e99-4726-88be-2f7b0ddb2896/wptestdb.wp_usermeta">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../WebServer/WWW/wordpress_map/wp-includes/theme.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="2036" column="0" selection-start-line="2036" selection-start-column="0" selection-end-line="2036" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../WebServer/WWW/wordpress_map/wp-includes/class-wp-rewrite.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="1474" column="0" selection-start-line="1474" selection-start-column="0" selection-end-line="1474" selection-end-column="0" />
-          <folding>
-            <marker date="1457611288000" expanded="true" signature="9869:9977" ph="SELECT ID, p... wp_posts" />
-            <marker date="1457611288000" expanded="true" signature="10461:10564" ph="SELECT ID, p... wp_posts" />
-            <marker date="1457611288000" expanded="true" signature="47935:47978" ph="..." />
-            <marker date="1457611288000" expanded="true" signature="47955:47978" ph="..." />
-            <marker date="1457611288000" expanded="true" signature="47967:47978" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../WebServer/WWW/wordpress_map/wp-includes/class-wp.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="724" column="0" selection-start-line="724" selection-start-column="0" selection-end-line="724" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../WebServer/WWW/wordpress_map/wp-blog-header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../WebServer/WWW/wordpress/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../WebServer/WWW/wordpress_map/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../WebServer/WWW/wordpress_map/wp-includes/user.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="775" column="0" selection-start-line="775" selection-start-column="0" selection-end-line="775" selection-end-column="0" />
-          <folding>
-            <marker date="1458116486000" expanded="true" signature="10990:11024" ph="SELECT COUNT... wp_posts" />
-            <marker date="1458116486000" expanded="true" signature="12436:12541" ph="SELECT post_... wp_posts" />
-            <marker date="1458116486000" expanded="true" signature="26300:26397" ph="SELECT ${$se... wp_usermeta" />
-            <marker date="1458116486000" expanded="true" signature="26994:27078" ph="SELECT meta_... wp_usermeta" />
-            <marker date="1458116486000" expanded="true" signature="52288:52369" ph="SELECT ID FR... wp_users" />
-            <marker date="1458116486000" expanded="true" signature="52765:52846" ph="SELECT ID FR... wp_users" />
-            <marker date="1458116486000" expanded="true" signature="71540:71610" ph="SELECT ID, u... wp_users" />
-            <marker date="1458116486000" expanded="true" signature="76249:76256" ph="..." />
-            <marker date="1458116486000" expanded="true" signature="78180:78187" ph="..." />
-            <marker date="1458116486000" expanded="true" signature="78201:78209" ph="…" />
-            <marker date="1458116486000" expanded="true" signature="81048:81159" ph="SELECT user_... wp_usermeta" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../../WebServer/WWW/wordpress_map/wp-includes/meta.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="194">
@@ -1029,7 +918,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/templates/tpl.UC.Profile.php">
+    <entry file="file://$PROJECT_DIR$/core/templates/uc/tpl.UC.Profile.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
@@ -1039,7 +928,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/templates/tpl.UC.Latest.php">
+    <entry file="file://$PROJECT_DIR$/core/templates/uc/tpl.UC.Latest.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
@@ -1049,7 +938,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/templates/tpl.UC.Comments.php">
+    <entry file="file://$PROJECT_DIR$/core/templates/uc/tpl.UC.Comments.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
@@ -1059,7 +948,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/templates/tpl.UC.Recommendations.php">
+    <entry file="file://$PROJECT_DIR$/core/templates/uc/tpl.UC.Recommendations.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
@@ -1069,7 +958,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/templates/tpl.M.Signup.php">
+    <entry file="file://$PROJECT_DIR$/core/templates/actions/tpl.M.Signup.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
@@ -1079,7 +968,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/templates/tpl.M.Signout.php">
+    <entry file="file://$PROJECT_DIR$/core/templates/actions/tpl.M.Signout.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
@@ -1089,7 +978,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/templates/tpl.M.Signin.php">
+    <entry file="file://$PROJECT_DIR$/core/templates/actions/tpl.M.Signin.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="588">
           <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
@@ -1107,18 +996,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/functions/func.Template.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="644">
-          <caret line="158" column="1" selection-start-line="158" selection-start-column="1" selection-end-line="158" selection-end-column="1" />
-          <folding>
-            <element signature="e#6#291#0#PHP" expanded="true" />
-            <element signature="e#3097#3261#0#PHP" expanded="false" />
-            <element signature="n#tt_get_user_template#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/functions/tpl.Me.Order.Detail.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
@@ -1127,7 +1004,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/templates/tpl.Me.Order.php">
+    <entry file="file://$PROJECT_DIR$/core/templates/me/tpl.Me.Order.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
@@ -1137,7 +1014,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/templates/tpl.Me.Setting.php">
+    <entry file="file://$PROJECT_DIR$/core/templates/me/tpl.Me.Setting.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
@@ -1147,7 +1024,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/templates/tpl.Me.Balance.php">
+    <entry file="file://$PROJECT_DIR$/core/templates/me/tpl.Me.Balance.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
@@ -1157,7 +1034,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/templates/tpl.Me.Notifications.php">
+    <entry file="file://$PROJECT_DIR$/core/templates/me/tpl.Me.Notifications.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
@@ -1167,7 +1044,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/templates/tpl.Me.Messages.php">
+    <entry file="file://$PROJECT_DIR$/core/templates/me/tpl.Me.Messages.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
@@ -1177,7 +1054,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/templates/tpl.Me.Orders.php">
+    <entry file="file://$PROJECT_DIR$/core/templates/me/tpl.Me.Orders.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
@@ -1187,7 +1064,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/templates/tpl.Me.Stars.php">
+    <entry file="file://$PROJECT_DIR$/core/templates/me/tpl.Me.Stars.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
@@ -1274,61 +1151,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/functions/Constants.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="49" column="69" selection-start-line="49" selection-start-column="69" selection-end-line="49" selection-end-column="69" />
-          <folding>
-            <element signature="e#6#291#0#PHP" expanded="true" />
-            <element signature="e#303#338#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/functions/func.Rewrite.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="307" column="58" selection-start-line="307" selection-start-column="58" selection-end-line="307" selection-end-column="58" />
-          <folding>
-            <element signature="e#6#291#0#PHP" expanded="true" />
-            <element signature="e#303#338#0#PHP" expanded="true" />
-            <element signature="n#tt_force_permalink#0;n#!!top" expanded="false" />
-            <element signature="e#655#718#0#PHP" expanded="false" />
-            <element signature="n#tt_rewrite_short_link#0;n#!!top" expanded="false" />
-            <element signature="e#1663#1772#0#PHP" expanded="false" />
-            <element signature="n#tt_set_user_page_rewrite_rules#0;n#!!top" expanded="false" />
-            <element signature="e#2964#3110#0#PHP" expanded="false" />
-            <element signature="e#3436#3568#0#PHP" expanded="false" />
-            <element signature="e#4074#4278#0#PHP" expanded="false" />
-            <element signature="n#tt_match_author_link_field#0;n#!!top" expanded="false" />
-            <element signature="e#5895#5955#0#PHP" expanded="false" />
-            <element signature="n#tt_redirect_me_main_route#0;n#!!top" expanded="false" />
-            <element signature="e#6404#6522#0#PHP" expanded="false" />
-            <element signature="n#tt_handle_me_child_routes_rewrite#0;n#!!top" expanded="false" />
-            <element signature="e#7520#7591#0#PHP" expanded="false" />
-            <element signature="n#tt_handle_me_child_routes_template#0;n#!!top" expanded="false" />
-            <element signature="e#9068#9205#0#PHP" expanded="false" />
-            <element signature="n#tt_add_me_page_query_vars#0;n#!!top" expanded="false" />
-            <element signature="e#9529#9639#0#PHP" expanded="false" />
-            <element signature="n#tt_handle_action_page_rewrite_rules#0;n#!!top" expanded="false" />
-            <element signature="e#10044#10179#0#PHP" expanded="false" />
-            <element signature="n#tt_add_action_page_query_vars#0;n#!!top" expanded="false" />
-            <element signature="e#10429#10495#0#PHP" expanded="false" />
-            <marker date="1472386925372" expanded="true" signature="5403:5423" ph="SELECT user_... $" />
-            <marker date="1472386925372" expanded="true" signature="5403:5509" ph="SELECT user_... $" />
-            <marker date="1472386925372" expanded="true" signature="5403:5521" ph="SELECT user_... WHERE" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dash/options.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../../WebServer/WWW/wordpress_map/wp-includes/load.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="261">
@@ -1341,6 +1163,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="222">
           <caret line="550" column="0" selection-start-line="550" selection-start-column="0" selection-end-line="550" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../WebServer/WWW/wordpress_map/wp-includes/plugin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="213" column="0" selection-start-line="213" selection-start-column="0" selection-end-line="213" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dash/of_inc/options-framework.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="95" column="0" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1363,6 +1201,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dash/options.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-16566">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../../../WebServer/WWW/wordpress_map/wp-includes/functions.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="222">
@@ -1378,26 +1224,73 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../../WebServer/WWW/wordpress_map/wp-includes/plugin.php">
+    <entry file="file://$PROJECT_DIR$/core/templates/actions/tpl.M.Refresh.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="213" column="0" selection-start-line="213" selection-start-column="0" selection-end-line="213" selection-end-column="0" />
+        <state relative-caret-position="447">
+          <caret line="34" column="10" selection-start-line="34" selection-start-column="10" selection-end-line="34" selection-end-column="10" />
+          <folding>
+            <element signature="e#6#291#0#PHP" expanded="false" />
+            <element signature="e#482#541#0#PHP" expanded="false" />
+            <marker date="1472389572143" expanded="true" signature="665:1011" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/functions/func.Page.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3652">
+          <caret line="35" column="50" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="50" />
+          <folding>
+            <marker date="1472397300319" expanded="true" signature="3358:3421" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/functions/func.Template.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-249">
+          <caret line="216" column="88" selection-start-line="216" selection-start-column="88" selection-end-line="216" selection-end-column="88" />
+          <folding>
+            <element signature="e#6#291#0#PHP" expanded="true" />
+            <element signature="n#tt_get_author_template#0;n#!!top" expanded="false" />
+            <element signature="e#3101#3265#0#PHP" expanded="false" />
+            <element signature="n#tt_get_user_template#0;n#!!top" expanded="false" />
+            <element signature="e#5640#5775#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/templates/page/tpl.Test.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dash/of_inc/options-framework.php">
+    <entry file="file://$PROJECT_DIR$/src/php/footer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="95" column="0" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
+        <state relative-caret-position="112">
+          <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/functions/func.Kits.php">
+    <entry file="file://$PROJECT_DIR$/src/php/header.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+        <state relative-caret-position="629">
+          <caret line="55" column="23" selection-start-line="55" selection-start-column="23" selection-end-line="55" selection-end-column="23" />
+          <folding>
+            <element signature="e#6#291#0#PHP" expanded="true" />
+            <marker date="1472399084371" expanded="true" signature="2537:2630" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/templates/tpl.Home.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="25" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
           <folding />
         </state>
       </provider>
@@ -1415,14 +1308,85 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/templates/tpl.M.Refresh.php">
+    <entry file="file://$PROJECT_DIR$/core/functions/Constants.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="18" column="49" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
+        <state relative-caret-position="550">
+          <caret line="77" column="53" selection-start-line="77" selection-start-column="39" selection-end-line="77" selection-end-column="53" />
           <folding>
             <element signature="e#6#291#0#PHP" expanded="true" />
-            <element signature="e#482#541#0#PHP" expanded="true" />
+            <element signature="e#303#338#0#PHP" expanded="true" />
+            <element signature="e#1664#2031#1#PHP" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/functions/func.Rewrite.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="400" column="41" selection-start-line="400" selection-start-column="41" selection-end-line="400" selection-end-column="41" />
+          <folding>
+            <element signature="e#6#291#0#PHP" expanded="true" />
+            <element signature="e#303#338#0#PHP" expanded="true" />
+            <element signature="n#tt_force_permalink#0;n#!!top" expanded="false" />
+            <element signature="e#655#718#0#PHP" expanded="false" />
+            <element signature="n#tt_rewrite_short_link#0;n#!!top" expanded="false" />
+            <element signature="e#1663#1772#0#PHP" expanded="false" />
+            <element signature="n#tt_set_user_page_rewrite_rules#0;n#!!top" expanded="false" />
+            <element signature="e#2964#3110#0#PHP" expanded="false" />
+            <element signature="e#3436#3568#0#PHP" expanded="false" />
+            <element signature="e#4074#4278#0#PHP" expanded="false" />
+            <element signature="n#tt_match_author_link_field#0;n#!!top" expanded="false" />
+            <element signature="e#5895#5955#0#PHP" expanded="false" />
+            <element signature="n#tt_redirect_me_main_route#0;n#!!top" expanded="false" />
+            <element signature="e#6404#6522#0#PHP" expanded="false" />
+            <element signature="n#tt_handle_me_child_routes_rewrite#0;n#!!top" expanded="false" />
+            <element signature="e#7520#7591#0#PHP" expanded="false" />
+            <element signature="n#tt_handle_me_child_routes_template#0;n#!!top" expanded="false" />
+            <element signature="e#9071#9208#0#PHP" expanded="false" />
+            <element signature="n#tt_add_me_page_query_vars#0;n#!!top" expanded="false" />
+            <element signature="e#9532#9646#0#PHP" expanded="false" />
+            <element signature="n#tt_handle_action_page_rewrite_rules#0;n#!!top" expanded="false" />
+            <element signature="e#10051#10186#0#PHP" expanded="false" />
+            <element signature="n#tt_add_action_page_query_vars#0;n#!!top" expanded="false" />
+            <element signature="e#10436#10502#0#PHP" expanded="false" />
+            <element signature="n#tt_handle_action_page_template#0;n#!!top" expanded="false" />
+            <element signature="e#12461#12521#0#PHP" expanded="false" />
+            <element signature="n#tt_refresh_rewrite#0;n#!!top" expanded="false" />
+            <marker date="1472399641471" expanded="true" signature="5403:5423" ph="SELECT user_... $" />
+            <marker date="1472399641471" expanded="true" signature="5403:5509" ph="SELECT user_... $" />
+            <marker date="1472399641471" expanded="true" signature="5403:5521" ph="SELECT user_... WHERE" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/img/avatar.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gulpfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="616">
+          <caret line="85" column="0" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/templates/site/tpl.UpgradeBrowser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="57" column="122" selection-start-line="57" selection-start-column="122" selection-end-line="57" selection-end-column="122" />
+          <folding>
+            <element signature="e#6#291#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/functions/func.Kits.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="536">
+          <caret line="48" column="14" selection-start-line="48" selection-start-column="14" selection-end-line="48" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -92,7 +92,7 @@ add_filter('404_template', 'tt_get_404_template', 10, 1);
  */
 function tt_get_archive_template($template){
     unset($template);
-    return THEME_TPL . '/tpl.Archive.php';
+    return THEME_TPL . '/tax/tpl.Archive.php';
 }
 add_filter('archive_template', 'tt_get_archive_template', 10, 1);
 
@@ -143,17 +143,15 @@ function tt_get_user_template($user) {
             // 由于profile tab是默认tab，直接使用/@nickname主路由，对于/@nickname/profile的链接会重定向处理，因此不放至允许的tabs中
             $allow_tabs = json_decode(ALLOWED_UC_TABS);
             if(!in_array($uc_tab, $allow_tabs)) return 'header-404';
-             $templates[] = 'core/templates/tpl.UC.' . strtolower($uc_tab) . '.php';
+             $templates[] = 'core/templates/uc/tpl.UC.' . strtolower($uc_tab) . '.php';
         }else{
             //$role = $user->roles[0];
-            $templates[] = 'core/templates/tpl.UC.Profile.php';
-            //
-            //
+            $templates[] = 'core/templates/uc/tpl.UC.Profile.php';
             // Maybe dropped
             // TODO: maybe add membership templates
         }
     }
-    $templates[] = 'core/templates/tpl.UC.php';
+    $templates[] = 'core/templates/uc/tpl.UC.php';
 
     return locate_template($templates);
 }
@@ -170,7 +168,8 @@ add_filter('user_template', 'tt_get_user_template', 10, 1);
  */
 function tt_get_category_template($template){
     unset($template);
-    return locate_template(array('core/templates/tpl.Category.php', 'core/templates/tpl.Archive.php'));
+    // TODO: add category slug support
+    return locate_template(array('core/templates/tax/tpl.Category.php', 'core/templates/tax/tpl.Archive.php'));
 }
 add_filter('category_template', 'tt_get_category_template', 10, 1);
 
@@ -185,7 +184,7 @@ add_filter('category_template', 'tt_get_category_template', 10, 1);
  */
 function tt_get_tag_template($template){
     unset($template);
-    return locate_template(array('core/templates/tpl.Tag.php', 'core/templates/tpl.Archive.php'));
+    return locate_template(array('core/templates/tax/tpl.Tag.php', 'core/templates/tax/tpl.Archive.php'));
 }
 add_filter('tag_template', 'tt_get_tag_template', 10, 1);
 
@@ -200,7 +199,7 @@ add_filter('tag_template', 'tt_get_tag_template', 10, 1);
  */
 function tt_get_taxonomy_template($template){
     unset($template);
-    return locate_template(array('core/templates/tpl.Taxonomy.php', 'core/templates/tpl.Archive.php'));
+    return locate_template(array('core/templates/tax/tpl.Taxonomy.php', 'core/templates/tax/tpl.Archive.php'));
 }
 add_filter('taxonomy_template', 'tt_get_taxonomy_template', 10, 1);
 
@@ -215,7 +214,7 @@ add_filter('taxonomy_template', 'tt_get_taxonomy_template', 10, 1);
  */
 function tt_get_date_template($template){
     unset($template);
-    return locate_template(array('core/templates/tpl.Date.php', 'core/templates/tpl.Archive.php'));
+    return locate_template(array('core/templates/tax/tpl.Date.php', 'core/templates/tax/tpl.Archive.php'));
 }
 add_filter('date_template', 'tt_get_date_template', 10, 1);
 
@@ -231,7 +230,7 @@ add_filter('date_template', 'tt_get_date_template', 10, 1);
 function tt_get_page_template($template){
     if(!empty($template)) return $template;
     unset($template);
-    return locate_template(array('core/templates/tpl.Page.php'));
+    return locate_template(array('core/templates/page/tpl.Page.php'));
 }
 add_filter('page_template', 'tt_get_page_template', 10, 1);
 
@@ -262,7 +261,7 @@ add_filter('search_template', 'tt_get_search_template', 10, 1);
 function tt_get_single_template($template){
     unset($template);
     $single = get_queried_object();
-    return locate_template(array('core/templates/tpl.Single.' . $single->slug . '.php', 'core/templates/tpl.Single.' . $single->ID . '.php', 'core/templates/tpl.Single.php'));
+    return locate_template(array('core/templates/single/tpl.Single.' . $single->slug . '.php', 'core/templates/single/tpl.Single.' . $single->ID . '.php', 'core/templates/single/tpl.Single.php'));
 }
 add_filter('single_template', 'tt_get_single_template', 10, 1);
 
@@ -277,7 +276,7 @@ add_filter('single_template', 'tt_get_single_template', 10, 1);
  */
 function tt_get_attachment_template($template){
     unset($template);
-    return locate_template(array('core/templates/tpl.Attachment.php'));
+    return locate_template(array('core/templates/attachments/tpl.Attachment.php'));
 }
 add_filter('attachment_template', 'tt_get_attachment_template', 10, 1);
 
@@ -293,7 +292,7 @@ add_filter('attachment_template', 'tt_get_attachment_template', 10, 1);
 function tt_get_text_template($template){
     //TODO: other MIME types, e.g `video`
     unset($template);
-    return locate_template(array('core/templates/tpl.MIMEText.php', 'core/templates/tpl.Attachment.php'));
+    return locate_template(array('core/templates/attachments/tpl.MIMEText.php', 'core/templates/attachments/tpl.Attachment.php'));
 }
 add_filter('text_template', 'tt_get_text_template', 10, 1);
 add_filter('plain_template', 'tt_get_text_template', 10, 1);
