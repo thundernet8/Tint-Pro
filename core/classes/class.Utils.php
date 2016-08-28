@@ -1,14 +1,16 @@
 <?php
-
 /**
- * Copyright 2016, WebApproach.net
+ * Copyright (c) 2014-2016, WebApproach.net
  * All right reserved.
  *
+ * @since 2.0.0
+ * @package Tint
  * @author Zhiyan
- * @date 16/6/21 14:57
+ * @date 2016/06/21 14:57
  * @license GPL v3 LICENSE
+ * @license uri http://www.gnu.org/licenses/gpl-3.0.html
+ * @link https://www.webapproach.net/tint.html
  */
-
 ?>
 <?php
 
@@ -447,6 +449,23 @@ class Utils{
 
 
     /**
+     * 获取当前页面URL(利用$_SERVER)
+     *
+     * @since   2.0.0
+     *
+     * @static
+     * @access  public
+     * @return  string
+     */
+    public static function getPHPCurrentUrl(){
+        $scheme = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http';
+        $port_str = $_SERVER['SERVER_PORT'] != '80' ? ':' . $_SERVER['SERVER_PORT'] : '';
+        $url = $scheme . '://' . $_SERVER['HTTP_HOST'] . $port_str . $_SERVER["REQUEST_URI"];
+        return $url;
+    }
+
+
+    /**
      * 获取顶级域名
      *
      * @since   2.0.0
@@ -640,6 +659,25 @@ class Utils{
      */
     public static function getOption($name, $default){
         return of_get_option($name, $default);
+    }
+
+
+    /**
+     * 引导404
+     * // 通过设置全局的wp_query
+     *
+     * @since   2.0.0
+     *
+     * @static
+     * @access  public
+     * @return  void
+     */
+    public static function set404(){
+        global $wp_query;
+        $wp_query->is_home = false;
+        $wp_query->is_404 = true;
+        $wp_query->query = array('error'=>'404');
+        $wp_query->query_vars['error'] = '404';
     }
 
 }

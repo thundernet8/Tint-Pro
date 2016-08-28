@@ -14,53 +14,16 @@
 <?php
 
 /* 安全检测 */
+//defined( 'ABSPATH' ) || exit;
 if (!defined('ABSPATH')){
     wp_die(__('Lack of WordPress environment', 'tt'), __('WordPress internal error', 'tt'), array('response'=>500));
 }
 
+/* 引入常量 */
+require_once 'core/functions/Constants.php';
+
 /* 设置默认时区 */
 date_default_timezone_set('PRC');
-
-/* 定义全局常量 */
-if (!defined('HOME_URI')){
-    define('HOME_URI', get_home_url());
-}
-
-if (!defined('THEME_DIR')){
-    define('THEME_DIR', get_template_directory());
-}
-
-if (!defined('THEME_URI')){
-	define('THEME_URI', get_template_directory_uri()); // TODO: check ssl support
-}
-
-if (!defined('THEME_ASSET')){
-	define('THEME_ASSET', get_template_directory_uri() . '/assets');
-}
-
-if (!defined('THEME_CLASS')){
-    define('THEME_CLASS', get_template_directory() . '/core/classes');
-}
-
-if (!defined('THEME_FUNC')){
-    define('THEME_FUNC', get_template_directory() . '/core/functions');
-}
-
-if (!defined('THEME_LIB')){
-    define('THEME_LIB', get_template_directory() . '/core/library');
-}
-
-if (!defined('THEME_MOD')){
-    define('THEME_MOD', get_template_directory() . '/core/modules');
-}
-
-if (!defined('THEME_TPL')){
-    define('THEME_TPL', get_template_directory() . '/core/templates');
-}
-
-if (!defined('CACHE_PREFIX')){
-    define('CACHE_PREFIX', 'tt_cache');
-}
 
 if(!function_exists('load_dash')){
 	function load_dash($path){

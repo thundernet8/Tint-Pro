@@ -288,11 +288,11 @@ class Options_Framework_Admin {
 	 */
 
 	function save_options_notice() {
-		add_settings_error( 'options-framework', 'save_options', __( 'Options saved.', 'tt' ), 'updated fade' );
-
 		// 刷新固定链接缓存
 		global $wp_rewrite;
 		$wp_rewrite->flush_rules();
+
+		add_settings_error( 'options-framework', 'save_options', __( 'Options saved.', 'tt' ), 'updated fade' );
 	}
 
 	/**

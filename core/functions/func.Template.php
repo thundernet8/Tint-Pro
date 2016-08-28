@@ -1,13 +1,15 @@
 <?php
 /**
- * Copyright 2016, WebApproach.net
+ * Copyright (c) 2014-2016, WebApproach.net
  * All right reserved.
  *
  * @since 2.0.0
- *
+ * @package Tint
  * @author Zhiyan
  * @date 2016/08/22 20:42
  * @license GPL v3 LICENSE
+ * @license uri http://www.gnu.org/licenses/gpl-3.0.html
+ * @link https://www.webapproach.net/tint.html
  */
 ?>
 
@@ -114,10 +116,11 @@ function tt_get_author_template($template){
     // 判断是否用户中心页(因为用户中心页和默认的作者页采用了相同的wp_query_object)
     if(get_query_var('uc') && intval(get_query_var('uc'))===1){
         $template = apply_filters('user_template', $author);
+        if($template === 'header-404') return '';
         if($template) return $template;
     }
 
-    $template = 'core/templates/tpl.Author.php';
+    $template = 'core/templates/tpl.Author.php'; // TODO: 是否废弃 tpl.Author类似模板，Author已合并至UC
     return locate_template( array( 'core/templates/tpl.Author.' . ucfirst($role) . '.php', $template ) );
 }
 add_filter('author_template', 'tt_get_author_template', 10, 1);
@@ -136,11 +139,21 @@ function tt_get_user_template($user) {
     $templates = array();
 
     if ( $user instanceof WP_User ) {
-        $role = $user->roles[0];
-        $templates[] = 'core/templates/tpl.User.' . ucfirst($role) . '.php';
-        // TODO: maybe add membership templates
+        if($uc_tab = get_query_var('uctab')){
+            // 由于profile tab是默认tab，直接使用/@nickname主路由，对于/@nickname/profile的链接会重定向处理，因此不放至允许的tabs中
+            $allow_tabs = json_decode(ALLOWED_UC_TABS);
+            if(!in_array($uc_tab, $allow_tabs)) return 'header-404';
+             $templates[] = 'core/templates/tpl.UC.' . strtolower($uc_tab) . '.php';
+        }else{
+            //$role = $user->roles[0];
+            $templates[] = 'core/templates/tpl.UC.Profile.php';
+            //
+            //
+            // Maybe dropped
+            // TODO: maybe add membership templates
+        }
     }
-    $templates[] = 'core/templates/tpl.User.php';
+    $templates[] = 'core/templates/tpl.UC.php';
 
     return locate_template($templates);
 }

@@ -16,3 +16,7 @@
 <?php
 
 echo '404-page-template';
+
+global $wp_query;
+
+var_dump($wp_query);

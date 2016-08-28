@@ -17,4 +17,7 @@
 
 echo 'home-page-template';
 
-wp_mail('813920477@qq.com', 'title', 'message content');
+
+global $wp_query;
+
+var_dump($wp_query);

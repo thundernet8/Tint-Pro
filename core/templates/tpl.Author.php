@@ -16,3 +16,7 @@
 <?php
 
 echo 'author-template';
+
+global $wp_query;
+
+var_dump($wp_query);
