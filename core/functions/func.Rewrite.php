@@ -74,6 +74,8 @@ function tt_rewrite_short_link(){
 add_action('template_redirect','tt_rewrite_short_link');
 
 
+/* Route : UCenter - e.g /@nickname/latest */
+
 /**
  * 用户页路由(非默认作者页)
  *
@@ -101,7 +103,7 @@ function tt_set_user_page_rewrite_rules($wp_rewrite){
         $wp_rewrite->rules = $new_rules + $wp_rewrite->rules;
     }
 }
-add_action('generate_rewrite_rules', 'tt_set_user_page_rewrite_rules');
+add_action('generate_rewrite_rules', 'tt_set_user_page_rewrite_rules'); // filter `rewrite_rules_array` 也可用.
 
 
 /**
@@ -194,6 +196,8 @@ function tt_match_author_link_field($query_vars){
 }
 add_filter('request', 'tt_match_author_link_field', 10, 1);
 
+
+/* Route : Me - e.g /me/notifications/all */
 
 /**
  * /me主路由处理
@@ -297,6 +301,8 @@ function tt_add_me_page_query_vars($public_query_vars) {
 add_filter('query_vars', 'tt_add_me_page_query_vars');
 
 
+/* Route : Action - e.g /m/signin */
+
 /**
  * 登录/注册/注销等动作页路由(/m)
  *
@@ -354,6 +360,8 @@ function tt_handle_action_page_template(){
 add_action('template_redirect', 'tt_handle_action_page_template', 5);
 
 
+/* Route : Site - e.g /site/upgradebrowser */
+
 /**
  * 网站级工具页路由(如浏览器升级提示、全站通告等)(/site)
  *
@@ -408,6 +416,51 @@ function tt_handle_site_util_page_template(){
     }
 }
 add_action('template_redirect', 'tt_handle_site_util_page_template', 5);
+
+
+/* Route : Static - e.g /static/css/main.css */
+
+/**
+ * 静态路由，去除静态文件链接中的wp-content等字样(/static)
+ *
+ * @since   2.0.0
+ *
+ * @param   object  $wp_rewrite  WP_Rewrite
+ * @return  void
+ */
+function tt_handle_static_file_rewrite_rules($wp_rewrite){
+    if($ps = get_option('permalink_structure')){
+        $explode_path = explode('/themes/', THEME_DIR);
+        $theme_name = next($explode_path);
+        //static files route
+        $new_rules = array(
+            'static/(.*)' => 'wp-content/themes/' . $theme_name . '/assets/$1'
+        );
+        $wp_rewrite->non_wp_rules = $new_rules + $wp_rewrite->non_wp_rules;
+    }
+}
+//add_action('generate_rewrite_rules', 'tt_handle_static_file_rewrite_rules');  // TODO: 需要Apache支持，或者同样Nginx对应方法
+
+
+/* Route : API - e.g /api/post/1 */
+
+/**
+ * REST API路由，wp-json路由别名(/api)
+ *
+ * @since   2.0.0
+ *
+ * @param   object  $wp_rewrite  WP_Rewrite
+ * @return  void
+ */
+function tt_handle_api_rewrite_rules($wp_rewrite){
+    if($ps = get_option('permalink_structure')){
+        $new_rules = array();
+        $new_rules['^api/?$'] = 'index.php?rest_route=/';
+        $new_rules['^api/(.*)?'] = 'index.php?rest_route=/$matches[1]';
+        $wp_rewrite->rules = $new_rules + $wp_rewrite->rules;
+    }
+}
+//add_action('generate_rewrite_rules', 'tt_handle_api_rewrite_rules'); //直接用 `rest_url_prefix` 更改wp-json至api @see core/api/api.Config.php
 
 
 /**

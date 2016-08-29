@@ -31,6 +31,12 @@ if(!function_exists('load_dash')){
 	}
 }
 
+if(!function_exists('load_api')){
+    function load_api($path){
+        load_template(THEME_DIR.'/core/api/'.$path.'.php');
+    }
+}
+
 if(!function_exists('load_class')){
 	function load_class($path){
 		load_template(THEME_DIR.'/core/classes/'.$path.'.php');
@@ -59,6 +65,9 @@ load_dash('options');
 if( is_admin() ){
     load_dash('dash');
 }
+
+/* 载入REST API功能控制函数 */
+load_api('api.Config');
 
 /* 载入类 */
 load_class('class.Avatar');

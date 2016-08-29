@@ -77,3 +77,11 @@ defined('ALLOWED_ME_ROUTES') || define('ALLOWED_ME_ROUTES', $me_allow_routes);
 /* Allowed Site Utils */
 $site_allow_utils = json_encode(array('upgradebrowser'));
 defined('ALLOWED_SITE_UTILS') || define('ALLOWED_SITE_UTILS', $site_allow_utils);
+
+/* Some Routes */
+$site_routes = json_encode(array(
+    'upgrade_browser'   =>  'site/upgradebrowser',
+    'api_root'          =>  'api'
+    // TODO: Add more
+));
+defined('SITE_ROUTES') || define('SITE_ROUTES', $site_routes);

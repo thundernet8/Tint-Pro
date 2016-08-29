@@ -40,6 +40,7 @@
     <?php if($png_favicon = tt_get_option('tt_png_favicon')) { ?>
         <link rel="alternate icon" type="image/png" href="<?php echo $png_favicon; ?>" >
     <?php } ?>
+    <link rel='https://api.w.org/' href="<?php echo tt_url_for('api_root'); ?>" >
     <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
     <link rel="alternate" type="application/atom+xml" title="<?php bloginfo('name'); ?> Atom Feed" href="<?php bloginfo('atom_url'); ?>" />
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />

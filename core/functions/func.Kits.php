@@ -42,9 +42,13 @@ function tt_get_option( $name, $default='' ){
  * @since   2.0.0
  *
  * @param   string  $key    待查找路径的关键字
- * @return  string
+ * @param   bool    $relative   是否使用相对路径
+ * @return  string | false
  */
-function tt_url_for($key){
-
-    return '';
+function tt_url_for($key, $relative = false){
+    $routes = (array)json_decode(SITE_ROUTES);
+    if(array_key_exists($key, $routes)){
+        return $relative ? '/' . $routes[$key] : home_url('/' . $routes[$key]);
+    }
+    return false;
 }
