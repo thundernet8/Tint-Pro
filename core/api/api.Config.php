@@ -26,3 +26,6 @@ function tt_set_rest_api_prefix(){
     return 'api';
 }
 add_filter('rest_url_prefix', 'tt_set_rest_api_prefix');
+
+
+require_once THEME_API . '/api.Compatibility.php';

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-08-28 21:07+0800\n"
-"PO-Revision-Date: 2016-08-28 21:07+0800\n"
+"POT-Creation-Date: 2016-08-30 20:20+0800\n"
+"PO-Revision-Date: 2016-08-30 20:22+0800\n"
 "Last-Translator: Zhiyan <mail@webapproach.net>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -174,22 +174,22 @@ msgstr "404边栏"
 msgid "Page Sidebar"
 msgstr "页面边栏"
 
-#: core/templates/tpl.M.Refresh.php:20
+#: core/templates/actions/tpl.M.Refresh.php:20
 msgid "Refresh Rewrite"
 msgstr "刷新固定链接规则"
 
-#: core/templates/tpl.M.Refresh.php:34
+#: core/templates/actions/tpl.M.Refresh.php:34
 #, php-format
 msgid "Rewrite rules refresh successfully, <a href=\"%1$s\">back to home</a>"
 msgstr "成功刷新固定链接规则，<a href=\"%1$s\">返回首页</a>"
 
-#: core/templates/tpl.M.Refresh.php:36
+#: core/templates/actions/tpl.M.Refresh.php:36
 msgid ""
 "Please customize your permalink structure, it's the basis of better theme "
 "functionality"
 msgstr "请自定义固定链接，其是主题高级功能的基础"
 
-#: core/templates/tpl.M.Refresh.php:39
+#: core/templates/actions/tpl.M.Refresh.php:39
 msgid "Forbidden Access"
 msgstr "禁止访问"
 
@@ -691,8 +691,8 @@ msgid "Feedback"
 msgstr "反馈"
 
 #: dash/options.php:585
-msgid "Update"
-msgstr "更新"
+msgid "Others"
+msgstr "其他"
 
 #: dash/options.php:592
 msgid "Debug Mode"
@@ -707,13 +707,21 @@ msgid "Tint Token"
 msgstr "Tint Token"
 
 #: dash/options.php:603
+msgid "Private token for theme, maybe useful somewhere."
+msgstr "主题私有Token，在某些地方有用"
+
+#: dash/options.php:613
+msgid "Refresh Rewrite Rules"
+msgstr "刷新固定链接规则"
+
+#: dash/options.php:614
 #, php-format
 msgid ""
-"Private token for theme, maybe useful somewhere. (e.g <a href=\"%1$s/m/"
-"refresh?token=%2$s\" target=\"_blank\">Refresh Rewrite</a>)"
+"Please Click to <a href=\"%1$s/m/refresh?token=%2$s\" target=\"_blank"
+"\">Refresh Rewrite Rules</a> if you have encounter some 404 errors"
 msgstr ""
-"主题私有Token，在有些地方有用. (比如 <a href=\"%1$s/m/refresh?token=%2$s\" "
-"target=\"_blank\">刷新固定链接</a>)"
+"如果你遭遇一些404访问错误，请点击 <a href=\"%1$s/m/refresh?token=%2$s\" "
+"target=\"_blank\">刷新固定链接规则</a>。"
 
 #: functions.php:19
 msgid "Lack of WordPress environment"
@@ -742,6 +750,9 @@ msgstr "Zhiyan"
 #. Author URI of the plugin/theme
 msgid "http://www.webapproach.net/"
 msgstr "http://www.webapproach.net/"
+
+#~ msgid "Update"
+#~ msgstr "更新"
 
 #~ msgid "One"
 #~ msgstr "一"

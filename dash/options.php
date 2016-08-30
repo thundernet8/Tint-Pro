@@ -579,10 +579,10 @@ function optionsframework_options() {
 
 
 
-    // 主题调试/更新
+    // 其他 - 主题调试/更新
     //TODO: 版本升级 升级日志
     $options[] = array(
-        'name' => __( 'Update', 'tt' ),
+        'name' => __( 'Others', 'tt' ),
         'type' => 'heading'
     );
 
@@ -600,11 +600,18 @@ function optionsframework_options() {
     // - 主题专用私有Token
     $options[] = array(
         'name' => __('Tint Token', 'tt'),
-        'desc' => sprintf(__('Private token for theme, maybe useful somewhere. (e.g <a href="%1$s/m/refresh?token=%2$s" target="_blank">Refresh Rewrite</a>)', 'tt'), $blog_home, of_get_option('tt_private_token')),
+        'desc' => __('Private token for theme, maybe useful somewhere.', 'tt'),
         'id' => 'tt_private_token',
         'std' => Utils::generateRandomStr(5),
         'class' => 'mini',
         'type' => 'text'
+    );
+
+
+    // - 刷新固定链接链接
+    $options[] = array(
+        'name'  =>  __('Refresh Rewrite Rules', 'tt'),
+        'desc'  =>  sprintf(__('Please Click to <a href="%1$s/m/refresh?token=%2$s" target="_blank">Refresh Rewrite Rules</a> if you have encounter some 404 errors', 'tt'), $blog_home, of_get_option('tt_private_token'))
     );
 
 

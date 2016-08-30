@@ -71,17 +71,19 @@ gulp.task('imagemin', function () {
     console.log('start imagemin task');
     gulp.src('./assets/img')
         .pipe(clean());
-    gulp.src('./src/img/**/*.{png,jpg,gif,ico}')
-        .pipe(cache(
-            imagemin({
-                optimizationLevel: 5, // 类型：Number  默认：3  取值范围：0-7（优化等级）
-                progressive: true, // 类型：Boolean 默认：false 无损压缩jpg图片
-                interlaced: true, // 类型：Boolean 默认：false 隔行扫描gif进行渲染
-                multipass: true // 类型：Boolean 默认：false 多次优化svg直到完全优化
-            })
-        ))
-        .pipe(gulp.dest('./assets/img'));
+    setTimeout(function () {
+        gulp.src('./src/img/**/*.{png,jpg,gif,ico}')
+            .pipe(cache(
+                imagemin({
+                    optimizationLevel: 5, // 类型：Number  默认：3  取值范围：0-7（优化等级）
+                    progressive: true, // 类型：Boolean 默认：false 无损压缩jpg图片
+                    interlaced: true, // 类型：Boolean 默认：false 隔行扫描gif进行渲染
+                    multipass: true // 类型：Boolean 默认：false 多次优化svg直到完全优化
+                })
+            ))
+            .pipe(gulp.dest('./assets/img'));
         // .pipe(notify({ message: 'Images task complete' }));
+    }, 2000);
 });
 
 // js压缩合并发布
@@ -105,13 +107,13 @@ gulp.task('scripts', function () {
         .pipe(gulp.dest('./src/rev'));                                            // - 将 rev-manifest.json 保存到 rev 目录内
 });
 
-// php文件内资源文件引用路径替换
-gulp.task('rev', function () {
-    console.log('start rev task');
-    gulp.src(['./src/rev/*.json', './src/php/*.php'])
-        .pipe(revCollector())                       // - 收集rev-manifest.json文件内需要替换版本的文件信息并替换php模板内引用
-        .pipe(gulp.dest('./'));                     // - 输出php文件至视图目录
-});
+// php文件内资源文件引用路径替换 - see build task
+// gulp.task('rev', function () {
+//     console.log('start rev task');
+//     gulp.src(['./src/rev/*.json', './src/php/*.php'])
+//         .pipe(revCollector())                       // - 收集rev-manifest.json文件内需要替换版本的文件信息并替换php模板内引用
+//         .pipe(gulp.dest('./'));                     // - 输出php文件至视图目录
+// });
 
 // 监控
 gulp.task('watch', function () {
@@ -134,6 +136,10 @@ gulp.task('build', ['less', 'scripts', 'imagemin'], function () {
         // .pipe(htmlmin())
         .pipe(rename('mod.Footer.php'))
         .pipe(gulp.dest('./core/modules'));
+    gulp.src(['./src/rev/*.json', './src/php/script.php'])
+        .pipe(revCollector())
+        .pipe(rename('func.Script.php'))
+        .pipe(gulp.dest('./core/functions'));
 });
 
 // 清理发布目录

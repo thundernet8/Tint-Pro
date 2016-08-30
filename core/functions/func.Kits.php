@@ -42,13 +42,56 @@ function tt_get_option( $name, $default='' ){
  * @since   2.0.0
  *
  * @param   string  $key    待查找路径的关键字
+ * @param   mixed   $arg    接受一个参数，用于动态链接(如一个订单号，一个用户昵称，一个用户id或者一个用户对象)
  * @param   bool    $relative   是否使用相对路径
  * @return  string | false
  */
-function tt_url_for($key, $relative = false){
+function tt_url_for($key, $arg = null, $relative = false){
     $routes = (array)json_decode(SITE_ROUTES);
     if(array_key_exists($key, $routes)){
         return $relative ? '/' . $routes[$key] : home_url('/' . $routes[$key]);
+    }
+    $endpoint = null;
+    $uc_func = function($arg){
+        $nickname = null;
+        if(is_string($arg)){
+            $nickname = $arg;
+        }elseif(is_int($arg) && !!$arg){
+            $nickname = get_user_meta($arg, 'nickname', true);
+        }elseif($arg instanceof WP_User){
+            $nickname = get_user_meta($arg->ID, 'nickname', true);
+        }
+        return $nickname;
+    };
+    switch ($key){
+        case 'my_order':
+            $endpoint = 'order/' . (int)$arg;
+            break;
+        case 'uc_comments':
+            $nickname = call_user_func($uc_func, $arg);
+            if($nickname) $endpoint = '@' . $nickname . '/comments';
+            break;
+        case 'uc_profile':
+            $nickname = call_user_func($uc_func, $arg);
+            if($nickname) $endpoint = '@' . $nickname;
+            break;
+        case 'uc_me':
+            $nickname = get_user_meta(get_current_user_id(), 'nickname', true);
+            if($nickname) $endpoint = '@' . $nickname;
+            break;
+        case 'uc_latest':
+            $nickname = call_user_func($uc_func, $arg);
+            if($nickname) $endpoint = '@' . $nickname . '/latest';
+            break;
+        case 'uc_recommend':
+            $nickname = call_user_func($uc_func, $arg);
+            if($nickname) $endpoint = '@' . $nickname . '/recommendations';
+            break;
+        default:
+            $nickname = null;
+    }
+    if($endpoint){
+        return $relative ? '/' . $endpoint : home_url('/' . $endpoint);
     }
     return false;
 }

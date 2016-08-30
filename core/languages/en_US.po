@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-08-28 21:07+0800\n"
-"PO-Revision-Date: 2016-08-28 21:07+0800\n"
+"POT-Creation-Date: 2016-08-30 20:22+0800\n"
+"PO-Revision-Date: 2016-08-30 20:22+0800\n"
 "Last-Translator: Zhiyan <mail@webapproach.net>\n"
 "Language-Team: Zhiyan <mail@webapproach.net>\n"
 "Language: en_US\n"
@@ -173,22 +173,22 @@ msgstr ""
 msgid "Page Sidebar"
 msgstr ""
 
-#: core/templates/tpl.M.Refresh.php:20
+#: core/templates/actions/tpl.M.Refresh.php:20
 msgid "Refresh Rewrite"
 msgstr ""
 
-#: core/templates/tpl.M.Refresh.php:34
+#: core/templates/actions/tpl.M.Refresh.php:34
 #, php-format
 msgid "Rewrite rules refresh successfully, <a href=\"%1$s\">back to home</a>"
 msgstr ""
 
-#: core/templates/tpl.M.Refresh.php:36
+#: core/templates/actions/tpl.M.Refresh.php:36
 msgid ""
 "Please customize your permalink structure, it's the basis of better theme "
 "functionality"
 msgstr ""
 
-#: core/templates/tpl.M.Refresh.php:39
+#: core/templates/actions/tpl.M.Refresh.php:39
 msgid "Forbidden Access"
 msgstr ""
 
@@ -690,7 +690,7 @@ msgid "Feedback"
 msgstr ""
 
 #: dash/options.php:585
-msgid "Update"
+msgid "Others"
 msgstr ""
 
 #: dash/options.php:592
@@ -706,10 +706,18 @@ msgid "Tint Token"
 msgstr ""
 
 #: dash/options.php:603
+msgid "Private token for theme, maybe useful somewhere."
+msgstr ""
+
+#: dash/options.php:613
+msgid "Refresh Rewrite Rules"
+msgstr ""
+
+#: dash/options.php:614
 #, php-format
 msgid ""
-"Private token for theme, maybe useful somewhere. (e.g <a href=\"%1$s/m/"
-"refresh?token=%2$s\" target=\"_blank\">Refresh Rewrite</a>)"
+"Please Click to <a href=\"%1$s/m/refresh?token=%2$s\" target=\"_blank"
+"\">Refresh Rewrite Rules</a> if you have encounter some 404 errors"
 msgstr ""
 
 #: functions.php:19

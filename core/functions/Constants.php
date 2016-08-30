@@ -29,6 +29,8 @@ defined('THEME_URI') || define('THEME_URI', get_template_directory_uri());
 
 defined('THEME_ASSET') || define('THEME_ASSET', get_template_directory_uri() . '/assets');
 
+defined('THEME_API') || define('THEME_API', get_template_directory() . '/core/api');
+
 defined('THEME_CLASS') || define('THEME_CLASS', get_template_directory() . '/core/classes');
 
 defined('THEME_FUNC') || define('THEME_FUNC', get_template_directory() . '/core/functions');
@@ -81,7 +83,23 @@ defined('ALLOWED_SITE_UTILS') || define('ALLOWED_SITE_UTILS', $site_allow_utils)
 /* Some Routes */
 $site_routes = json_encode(array(
     'upgrade_browser'   =>  'site/upgradebrowser',
-    'api_root'          =>  'api'
+    'api_root'          =>  'api',
+    'signin'            =>  'm/signin',
+    'signup'            =>  'm/signup',
+    'signout'           =>  'm/signout',
+    'my_settings'       =>  'me/settings',
+    'balance'           =>  'me/balance',
+    'stars'             =>  'me/stars',
+    'in_msg'            =>  'me/messages/inbox',
+    'out_msg'           =>  'me/messages/sendbox',
+    'all_notify'        =>  'me/notifications/all',
+    'comment_notify'    =>  'me/notifications/comment',
+    'star_notify'       =>  'me/notifications/star',
+    'update_notify'     =>  'me/notifications/update',
+    'my_all_orders'     =>  'me/orders/all',
+    'my_gold_orders'    =>  'me/orders/gold',
+    'my_cash_orders'    =>  'me/orders/cash'
+
     // TODO: Add more
 ));
 defined('SITE_ROUTES') || define('SITE_ROUTES', $site_routes);
