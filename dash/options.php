@@ -611,7 +611,8 @@ function optionsframework_options() {
     // - 刷新固定链接链接
     $options[] = array(
         'name'  =>  __('Refresh Rewrite Rules', 'tt'),
-        'desc'  =>  sprintf(__('Please Click to <a href="%1$s/m/refresh?token=%2$s" target="_blank">Refresh Rewrite Rules</a> if you have encounter some 404 errors', 'tt'), $blog_home, of_get_option('tt_private_token'))
+        'desc'  =>  sprintf(__('Please Click to <a href="%1$s/m/refresh?token=%2$s" target="_blank">Refresh Rewrite Rules</a> if you have encounter some 404 errors', 'tt'), $blog_home, of_get_option('tt_private_token')),
+        'type'  => 'info'
     );
 
 

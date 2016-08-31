@@ -28,3 +28,6 @@ function tt_install_token_authentication($user_id){
     return false;
 }
 add_filter('determine_current_user', 'tt_install_token_authentication', 5, 1);
+
+remove_filter( 'determine_current_user', 'wp_validate_auth_cookie' );
+remove_filter( 'determine_current_user', 'wp_validate_logged_in_cookie', 20 );
