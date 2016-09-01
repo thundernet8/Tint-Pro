@@ -50,6 +50,7 @@ var banner = ['/**',
 
 // less 样式文件压缩发布
 gulp.task('less', function () {
+    // TODO: base64 small images
     console.log('start less task');
     gulp.src('./assets/css')
         .pipe(clean());
@@ -123,23 +124,29 @@ gulp.task('watch', function () {
     gulp.watch('./src/img/**/*.{png,jpg,gif,ico}', ['imagemin']);
 });
 
-// 构建
-gulp.task('build', ['less', 'scripts', 'imagemin'], function () {
-    console.log('start build task');
+// PHP文件修改发布
+gulp.task('php', function () {
+    console.log('start php task');
     gulp.src(['./src/rev/*.json', './src/php/header.php'])
         .pipe(revCollector())
-        // .pipe(htmlmin())
         .pipe(rename('mod.Header.php'))
         .pipe(gulp.dest('./core/modules'));
     gulp.src(['./src/rev/*.json', './src/php/footer.php'])
         .pipe(revCollector())
-        // .pipe(htmlmin())
         .pipe(rename('mod.Footer.php'))
         .pipe(gulp.dest('./core/modules'));
     gulp.src(['./src/rev/*.json', './src/php/script.php'])
         .pipe(revCollector())
         .pipe(rename('func.Script.php'))
         .pipe(gulp.dest('./core/functions'));
+});
+
+// 构建
+gulp.task('build', ['less', 'scripts', 'imagemin'], function () {
+    console.log('start build task');
+    setTimeout(function () {
+        gulp.run('php');
+    }, 5000);
 });
 
 // 清理发布目录

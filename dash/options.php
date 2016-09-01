@@ -105,6 +105,30 @@ function optionsframework_options() {
         'type' => 'checkbox'
     );
 
+    // - jQuery 源
+    $options[] = array(
+        'name' => __( 'jQuery Source', 'tt' ),
+        'desc' => __( 'Choose local or a CDN jQuery file', 'tt' ),
+        'id' => 'tt_jquery',
+        'std' => 'local_2',
+        'type' => 'select',
+        'options' => array(
+            'local_1' => _('Local v1.12', 'tt'),
+            'local_2' => __('Local v3.1', 'tt'),
+            'cdn_http' => __('CDN HTTP', 'tt'),
+            'cdn_https' => __('CDN HTTPS', 'tt')
+        )
+    );
+
+    // - jQuery 加载位置
+    $options[] = array(
+        'name' => __( 'jQuery Load Position', 'tt' ),
+        'desc' => __( 'Check to load jQuery on `body` end', 'tt' ),
+        'id' => 'tt_foot_jquery',
+        'std' => false,
+        'type' => 'checkbox'
+    );
+
 
 	// 主题选项 - 样式设置
 	$options[] = array(

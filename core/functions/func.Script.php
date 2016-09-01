@@ -24,7 +24,9 @@
  */
 function tt_register_scripts() {
     // TODO: if debug mode, use `min.js`
-    wp_register_script( 'tt_common', THEME_ASSET . '/js/main-b81c81c854.js', array(), null, true );
+    $jquery_url = json_decode(JQUERY_SOURCES)->{tt_get_option('tt_jquery', 'local_1')};
+    wp_register_script( 'tt_jquery', $jquery_url, array(), null, tt_get_option('tt_foot_jquery', false) );
+    wp_register_script( 'tt_common', THEME_ASSET . '/js/main-b244c002f0.js', array(), null, true );
 
     $data = array(
         'apiRoot'       => esc_url_raw( get_rest_url() ),
@@ -32,6 +34,7 @@ function tt_register_scripts() {
         'home'          => esc_url_raw( home_url() )
     );
     wp_localize_script( 'tt_common', 'TT', $data );
-    wp_enqueue_script( 'tt_common');
+    wp_enqueue_script( 'tt_jquery' );
+    wp_enqueue_script( 'tt_common' );
 }
 add_action( 'wp_enqueue_scripts', 'tt_register_scripts' );

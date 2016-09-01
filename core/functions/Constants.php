@@ -76,12 +76,16 @@ $me_allow_routes = json_encode(array(
 ));
 defined('ALLOWED_ME_ROUTES') || define('ALLOWED_ME_ROUTES', $me_allow_routes);
 
+/* Allowed Oauth Routes */
+$oauth_allow_routes = json_encode(array('qq', 'weibo', 'weixin'));  // TODO: more github..
+defined('ALLOWED_OAUTH_SITES') || define('ALLOWED_OAUTH_SITES', $oauth_allow_routes);
+
 /* Allowed Site Utils */
 $site_allow_utils = json_encode(array('upgradebrowser'));
 defined('ALLOWED_SITE_UTILS') || define('ALLOWED_SITE_UTILS', $site_allow_utils);
 
-/* Some Routes */
-$site_routes = json_encode(array(
+/* Some Endpoints */
+$site_endpoints = json_encode(array(
     'upgrade_browser'   =>  'site/upgradebrowser',
     'api_root'          =>  'api',
     'signin'            =>  'm/signin',
@@ -98,8 +102,20 @@ $site_routes = json_encode(array(
     'update_notify'     =>  'me/notifications/update',
     'my_all_orders'     =>  'me/orders/all',
     'my_gold_orders'    =>  'me/orders/gold',
-    'my_cash_orders'    =>  'me/orders/cash'
+    'my_cash_orders'    =>  'me/orders/cash',
+    'oauth_qq'          =>  'oauth/qq',
+    'oauth_weibo'       =>  'oauth/weibo',
+    'oauth_weixin'      =>  'oauth/weixin'
 
     // TODO: Add more
 ));
-defined('SITE_ROUTES') || define('SITE_ROUTES', $site_routes);
+defined('SITE_ROUTES') || define('SITE_ROUTES', $site_endpoints);
+
+/* jQuery Source */
+$jquery_srouces = json_encode(array(
+    'local_1' => THEME_ASSET . '/vender/js/jquery/1.12.4/jquery.min.js',
+    'local_2' => THEME_ASSET . '/vender/js/jquery/3.1.0/jquery.min.js',
+    'cdn_http' => 'http://cdn.staticfile.org/jquery/2.2.1/jquery.min.js',
+    'cdn_https' => 'https://staticfile.qnssl.com/jquery/2.2.1/jquery.min.js'
+));
+defined('JQUERY_SOURCES') || define('JQUERY_SOURCES', $jquery_srouces);

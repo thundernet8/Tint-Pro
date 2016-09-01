@@ -71,6 +71,7 @@ load_api('api.Config');
 
 /* 载入类 */
 load_class('class.Avatar');
+load_class('class.Open');
 load_class('class.PostImage');
 load_class('class.Utils');
 
@@ -86,6 +87,7 @@ load_func('func.Module');
 load_func('func.Optimization');
 load_func('func.Page');
 load_func('func.Rewrite');
+load_func('func.Robots');
 load_func('func.Schedule');
 load_func('func.Script');
 load_func('func.Sidebar');

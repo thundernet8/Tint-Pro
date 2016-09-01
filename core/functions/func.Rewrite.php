@@ -43,7 +43,7 @@ add_action('load-themes.php', 'tt_force_permalink');
  * @return  void | false
  */
 function tt_rewrite_short_link(){
-    // 短链接前缀, 如https://www.webapproach.net/go/xxx中的go，为了区分短链接
+    // 短链接前缀, 如https://www.webapproach.net/go/xxx中的go，为了便于识别短链接
     $prefix = tt_get_option('tt_short_link_prefix', 'go');
     //$url = Utils::getCurrentUrl(); //该方法需要利用wp的query
     $url = Utils::getPHPCurrentUrl();
@@ -248,9 +248,9 @@ add_filter('generate_rewrite_rules', 'tt_handle_me_child_routes_rewrite');
  * @return  void
  */
 function tt_handle_me_child_routes_template(){
-    $is_me_route = get_query_var('is_me_route');
-    $me_child_route = get_query_var('me_child_route');
-    $me_grandchild_route = get_query_var('me_grandchild_route');
+    $is_me_route = strtolower(get_query_var('is_me_route'));
+    $me_child_route = strtolower(get_query_var('me_child_route'));
+    $me_grandchild_route = strtolower(get_query_var('me_grandchild_route'));
     if($is_me_route && $me_child_route){
         $allow_routes = (array)json_decode(ALLOWED_ME_ROUTES);
         $allow_child = array_keys($allow_routes);
@@ -274,7 +274,7 @@ function tt_handle_me_child_routes_template(){
                 return;
             }
         };
-        $template = THEME_TPL . '/me/tpl.Me.' . ucfirst(strtolower($me_child_route)) . '.php';
+        $template = THEME_TPL . '/me/tpl.Me.' . ucfirst($me_child_route) . '.php';
         load_template($template);
         exit;
     }
@@ -347,17 +347,78 @@ add_filter('query_vars', 'tt_add_action_page_query_vars');
  * @return  void
  */
 function tt_handle_action_page_template(){
-    $action = get_query_var('action');
+    $action = strtolower(get_query_var('action'));
     if($action && in_array($action, (array)json_decode(ALLOWED_M_ACTIONS))){
         global $wp_query;
         $wp_query->is_home = false;
         $wp_query->is_page = true; //将该模板改为页面属性，而非首页
-        $template = THEME_TPL . '/actions/tpl.M.' . ucfirst(strtolower($action)) . '.php';
+        $template = THEME_TPL . '/actions/tpl.M.' . ucfirst($action) . '.php';
         load_template($template);
         exit;
     }
 }
 add_action('template_redirect', 'tt_handle_action_page_template', 5);
+
+
+/* Route : OAuth - e.g /oauth/qq */
+
+/**
+ * OAuth登录处理页路由(/oauth)
+ *
+ * @since   2.0.0
+ *
+ * @param   object  $wp_rewrite  WP_Rewrite
+ * @return  void
+ */
+function tt_handle_oauth_page_rewrite_rules($wp_rewrite){
+    if($ps = get_option('permalink_structure')){
+        //oauth (qq|weibo|weixin|...)
+        $new_rules['oauth/([A-Za-z]+)$'] = 'index.php?oauth=$matches[1]';
+        $new_rules['oauth/([A-Za-z]+)/last$'] = 'index.php?oauth=$matches[1]&oauth_last=1';
+        $wp_rewrite->rules = $new_rules + $wp_rewrite->rules;
+    }
+}
+add_action('generate_rewrite_rules', 'tt_handle_oauth_page_rewrite_rules');
+
+
+/**
+ * 为自定义的Action页添加query_var白名单
+ *
+ * @since   2.0.0
+ *
+ * @param   object  $public_query_vars  公共全局query_vars
+ * @return  object
+ */
+function tt_add_oauth_page_query_vars($public_query_vars) {
+    if(!is_admin()){
+        $public_query_vars[] = 'oauth'; // 添加参数白名单oauth，代表是各种OAuth登录处理页
+        $public_query_vars[] = 'oauth_last'; // OAuth登录最后一步，整合WP账户，自定义用户名
+    }
+    return $public_query_vars;
+}
+add_filter('query_vars', 'tt_add_oauth_page_query_vars');
+
+
+/**
+ * OAuth登录处理页模板
+ *
+ * @since   2.0.0
+ *
+ * @return  void
+ */
+function tt_handle_oauth_page_template(){
+    $oauth = strtolower(get_query_var('oauth'));
+    $oauth_last = get_query_var('oauth_last');
+    if($oauth && in_array($oauth, (array)json_decode(ALLOWED_OAUTH_SITES))){
+        global $wp_query;
+        $wp_query->is_home = false;
+        $wp_query->is_page = true; //将该模板改为页面属性，而非首页
+        $template = $oauth_last ? THEME_TPL . '/oauth/tpl.OAuth.Last.php' : THEME_TPL . '/oauth/tpl.OAuth.php';
+        load_template($template);
+        exit;
+    }
+}
+add_action('template_redirect', 'tt_handle_oauth_page_template', 5);
 
 
 /* Route : Site - e.g /site/upgradebrowser */
