@@ -141,7 +141,7 @@ function tt_get_user_template($user) {
     if ( $user instanceof WP_User ) {
         if($uc_tab = get_query_var('uctab')){
             // 由于profile tab是默认tab，直接使用/@nickname主路由，对于/@nickname/profile的链接会重定向处理，因此不放至允许的tabs中
-            $allow_tabs = json_decode(ALLOWED_UC_TABS);
+            $allow_tabs = (array)json_decode(ALLOWED_UC_TABS);
             if(!in_array($uc_tab, $allow_tabs)) return 'header-404';
              $templates[] = 'core/templates/uc/tpl.UC.' . strtolower($uc_tab) . '.php';
         }else{

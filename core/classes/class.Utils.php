@@ -417,11 +417,21 @@ class Utils{
      * @static
      * @access  public
      * @param   int     $len    随机字符串长度
+     * @param   string  $char_type  字符串类型(letter|number|letter_and_number)
      * @return  string
      */
-    public static function generateRandomStr($len=10){
+    public static function generateRandomStr($len=10, $char_type = 'letter_and_number'){
         $hash = '';
-        $chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz';
+        switch ($char_type){
+            case 'letter':
+                $chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+                break;
+            case 'number':
+                $chars = '01234567890';
+                break;
+            default:
+                $chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz';
+        }
         $max = strlen($chars) - 1;
         mt_srand((double)microtime() * 1000000);
         for($i = 0; $i < $len; $i++){

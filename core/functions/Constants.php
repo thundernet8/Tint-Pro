@@ -76,9 +76,13 @@ $me_allow_routes = json_encode(array(
 ));
 defined('ALLOWED_ME_ROUTES') || define('ALLOWED_ME_ROUTES', $me_allow_routes);
 
-/* Allowed Oauth Routes */
-$oauth_allow_routes = json_encode(array('qq', 'weibo', 'weixin'));  // TODO: more github..
-defined('ALLOWED_OAUTH_SITES') || define('ALLOWED_OAUTH_SITES', $oauth_allow_routes);
+/* Allowed Oauth Types */
+$oauth_allow_types = json_encode(array('qq', 'weibo', 'weixin'));  // TODO: more e.g github..
+defined('ALLOWED_OAUTH_TYPES') || define('ALLOWED_OAUTH_TYPES', $oauth_allow_types);
+
+/* Allowed Oauth Act */
+$oauth_allow_acts = json_encode(array('connect', 'disconnect', 'refresh'));
+defined('ALLOWED_OAUTH_ACTIONS') || define('ALLOWED_OAUTH_ACTIONS', $oauth_allow_acts);
 
 /* Allowed Site Utils */
 $site_allow_utils = json_encode(array('upgradebrowser'));

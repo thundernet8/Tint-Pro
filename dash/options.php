@@ -350,6 +350,21 @@ function optionsframework_options() {
         'type' => 'text'
     );
 
+    // - 开放平台接入新用户角色
+    $options[] = array(
+        'name' => __('Open User Default Role', 'tt'),
+        'desc' => __('Choose the role and capabilities for the new connected user from open', 'tt'),
+        'id' => 'tt_open_role',
+        'std' => 'contributor',
+        'type' => 'select',
+        'options' => array(
+            'editor' => __('Editor', 'tt'),
+            'author' => __('Author', 'tt'),
+            'contributor' => __('Contributor', 'tt'),
+            'subscriber' => __('Subscriber', 'tt'),
+        )
+    );
+
 
 
 	// 主题设置 - 广告设置

@@ -60,6 +60,8 @@ abstract class Open{
     /**
      * WP用户实例
      *
+     * @since   2.0.0
+     *
      * @var WP_User
      */
     protected $_user;
@@ -91,6 +93,17 @@ abstract class Open{
         }else{
             $this->_user = wp_get_current_user();
         }
+    }
+
+    /**
+     * 返回错误对象
+     *
+     * @since   2.0.0
+     *
+     * @return object
+     */
+    public function getError(){
+        return $this->_error;
     }
 
     /**
@@ -132,7 +145,7 @@ abstract class Open{
     protected static function setStateCookie($schema = null){
         $schema = $schema ? $schema : strval(rand());
         $state = md5(uniqid($schema, true));
-        setcookie(self::$_state_cookie_name, $state, time()+60*10);
+        setcookie(static::$_state_cookie_name, $state, time()+60*10);
         return $state;
     }
 
@@ -144,7 +157,8 @@ abstract class Open{
      * @return string
      */
     protected static function getCallbackUrl(){
-        return tt_url_for(static::$_callback_url_key);
+
+        return esc_url( add_query_arg('redirect', urlencode(self::getRedirect()), tt_url_for(static::$_callback_url_key)) );
     }
 
     /**
@@ -159,16 +173,22 @@ abstract class Open{
     }
 
     /**
-     * 判断用户是否已经连接过该开放平台
+     * 判断当前已登录用户是否已经连接过该开放平台
      *
      * @since   2.0.0
      *
+     * @param   int    $user_id    用户id
      * @return bool
      */
-    protected function isOpenConnected(){
-        // 判断该第三方账号是否已经授权过博客的登录
+    protected function isOpenConnected($user_id = 0){
+        // 判断该第三方账号是否已经授权过博客的登录(初始只能判断当前已登录的用户，对于开放平台连接了WP系统内其他用户的暂时无法判断，需要获取openid之后判断)
         $user = $this->_user;
-        if(!$user) return false;
+        if(!$user){
+            // 未登录用户时，不用管开放平台openid已被系统内任一用户使用
+            return false;
+        }elseif($user_id && $user->ID !== $user_id){
+            return true;
+        }
         return get_user_meta($user->ID, static::$_openid_meta_key, true) && get_user_meta($user->ID, static::$_access_token_meta_key, true);
     }
 
@@ -178,15 +198,16 @@ abstract class Open{
      * @since   2.0.0
      *
      * @param string $schema 检查类别
+     * @param int   $user_id    用户id
      * @return bool
      */
-    protected function checkOpen($schema = 'enable_check'){
+    protected function checkOpen($schema = 'enable_check', $user_id = 0){
         switch ($schema){
             case 'duplication_check':
 
                 if($this->isOpenConnected()){
                     $this->_error = (object)array(
-                        'title' => __('Can not bind QQ again', 'tt'),
+                        'title' => __('Can Not Bind QQ Again', 'tt'),
                         'message' => __('You have connected with QQ before, can not do it again, please unbind it before if need', 'tt'),
                         'code'  => 'duplicated_connect'
                     );
@@ -196,11 +217,23 @@ abstract class Open{
                 break;
             case 'enable_check':
 
-                if($this->isOpenAvailable()){
+                if( !($this->isOpenAvailable()) ){
                     $this->_error = (object)array(
-                        'title' => __('QQ login disabled', 'tt'),
+                        'title' => __('QQ Login Disabled', 'tt'),
                         'message' => __('You have not enabled QQ login, or the required information e.g OpenID, OpenKey missed', 'tt'),
                         'code'  => 'disabled_connect'
+                    );
+                    return false;
+                }
+                return true;
+                break;
+            case 'occupation_check':
+
+                if($this->isOpenConnected($user_id)){
+                    $this->_error = (object)array(
+                        'title' => __('QQ connected by other one', 'tt'),
+                        'message' => __('Someone in your WordPress user system have connected with this QQ before, please unbind it before if need', 'tt'),
+                        'code'  => 'occupied_connect'
                     );
                     return false;
                 }
@@ -240,19 +273,314 @@ abstract class Open{
         return true;
     }
 
-    abstract public function authenticate();
+    /**
+     * 鉴权，获取code
+     *
+     * @since   2.0.0
+     *
+     * @return bool
+     */
+    abstract protected function authenticate();
 
-    abstract public function authorize($code, $state);
+    /**
+     * 认证，获取access token，抓取用户信息并尝试接入登录
+     *
+     * @since   2.0.0
+     *
+     * @param string $code  鉴权阶段成功后返回的code，用于认证步骤
+     * @param string $state 状态码，加强CSRF防护
+     * @return bool
+     */
+    abstract protected function authorize($code, $state);
 
-    abstract public function getOpenUser($access_token);
+    /**
+     * 抓取开放平台用户信息
+     *
+     * @since   2.0.0
+     *
+     * @param   string  $access_token   Access Token
+     * @return array|bool|mixed|object
+     */
+    abstract protected function getOpenUser($access_token);
 
-    abstract public function openSignIn($openid, $access_token, $refresh_token, $expiration, $name);
+    /**
+     * 刷新Access Token
+     *
+     * @since   2.0.0
+     *
+     * @return mixed
+     */
+    abstract protected function refreshToken();
 
-    abstract public function refreshToken();
+    /**
+     * 获取必要的信息完成后尝试登入并连接WP用户系统
+     * @param $openid
+     * @param $access_token
+     * @param $refresh_token
+     * @param $expiration
+     * @param $name
+     * @return bool
+     */
+    protected function openSignIn($openid, $access_token, $refresh_token, $expiration, $name){
 
-    abstract public function openSignOut();
+        global $wpdb;
+        $user_exist = $wpdb->get_var( $wpdb->prepare("SELECT user_id FROM $wpdb->usermeta WHERE meta_key=%s AND meta_value=%s", static::$_openid_meta_key, $openid) );
 
-    abstract public function handle();
+        // 对于已登录了原WP系统的用户，在鉴权阶段就检查了是否存在openid，所以这里$user_exist不会为已登录用户id，无需为当前用户更新已获取的openid等信息
+        // 如果当前用户已登录，而$user_exist存在，即该开放平台账号连接被其他用户占用了，不能再重复绑定了
+        if( isset($user_exist) && !($this->checkOpen('occupation_check', $user_exist)) ) return false;
+
+        if( isset($user_exist) && (int)$user_exist>0 ){
+            // 该开放平台账号已连接过WP系统，再次使用它登录并更新相关信息
+            $insert_user_id = (int)$user_exist;
+            update_user_meta( $insert_user_id, static::$_openid_meta_key, $openid );
+            update_user_meta( $insert_user_id, static::$_access_token_meta_key, $access_token );
+            update_user_meta( $insert_user_id, static::$_refresh_token_meta_key, $refresh_token );
+            update_user_meta( $insert_user_id, static::$_token_expiration_meta_key, $expiration );
+
+            update_user_meta( $insert_user_id, 'tt_latest_login', current_time( 'mysql' ) ); // TODO: 记录登录时间
+            wp_set_current_user( $insert_user_id );
+            wp_set_auth_cookie( $insert_user_id );
+
+            $user_login = get_userdata($insert_user_id)->user_login;
+            do_action( 'wp_login', $user_login );  // 保证挂载的action执行
+
+            wp_safe_redirect(self::getRedirect());
+            exit;
+        }else{
+            // 该开放平台账号未连接过WP系统，使用它登录并分配和绑定一个WP本地新用户
+            // 为了方便用户自主定义一些用户信息，需跳转至/oauth/[type]/last页面提示用户输入必要信息(GET跳转)
+            // 安全起见， 数据序列化后保存在WP缓存中，由下个页面取出
+            $data = array(
+                'openid' => $openid,
+                'access_token' => $access_token,
+                'refresh_token' => $refresh_token,
+                'expiration' => $expiration,
+                'name' => $name
+            );
+            $_data_transient_key = 'tt_oauth_temp_data_' . strtolower(Utils::generateRandomStr(10, 'letter'));
+            set_transient($_data_transient_key, maybe_serialize($data), 60*10); // 10分钟缓存过期时间
+
+            session_start();
+
+            $_SESSION[static::$_oauth_data_session_key] = $_data_transient_key;
+
+            wp_safe_redirect(esc_url( add_query_arg('redirect', urlencode(self::getRedirect()), tt_url_for(static::$_oauth_last_url_key))));
+            exit;
+        }
+
+    }
+
+    /**
+     * 开放平台链接需要新建本地用户的，收集必要的信息(从之前步骤设置的缓存中)
+     *
+     * @since   2.0.0
+     *
+     * @param bool $delete_cache    是否删除缓存
+     * @return array|bool
+     */
+    protected function openSignUpPrepare($delete_cache = false){
+        // 尝试获取存放在缓存的OAuth数据，保证流程正确
+        session_start();
+        $_data_transient_key = isset($_SESSION[static::$_oauth_data_session_key]) ? $_SESSION[static::$_oauth_data_session_key] : '';
+        if($_data_transient_key && $cache_data = get_transient($_data_transient_key)){
+            $data = (array)maybe_unserialize($cache_data);
+            // $user_login = strtoupper(static::$_type) . $openid; // 有暴露openid风险
+            $user_login = strtoupper(static::$_type) . Utils::generateRandomStr(6, 'letter'); // 使用随机字符
+            $data['user_login'] = $user_login;
+
+            if($delete_cache){
+                // 删除OAuth数据缓存
+                delete_transient($_data_transient_key);
+            }
+
+            // 返回随机生成的用户名填充输入框默认值
+            return $data;
+        }
+        $this->_error = (object)array(
+            'title' => __('OAuth Data Not Exist', 'tt'),
+            'message' => __('Can not get oauth data, please retry the oauth steps', 'tt'),
+            'code' => 'oauth_cache_data_miss'
+        );
+
+        return false;
+    }
+
+    /**
+     * 处理开放平台连接需要新建本地用户请求
+     *
+     * @since   2.0.0
+     *
+     * @param   string  $user_login  用户登录名
+     * @param   string  $password   用户密码
+     * @return  bool|string
+     */
+    protected function openSignUp($user_login, $password){
+        // 获取缓存的OAuth数据
+        $data = $this->openSignUpPrepare();
+        if(!$data) return false;
+
+        // 开放平台连接并需要新建一个本地用户绑定
+        $insert_user_id = wp_insert_user( array(
+            'user_login'  => $user_login,
+            'nickname'  => $data['name'],
+            'display_name'  => $data['name'],
+            'user_pass' => $password
+        ) ) ;
+
+        if( is_wp_error($insert_user_id) ) {
+            $this->_error = (object)array(
+                'title' => __('Create New User Failed', 'tt'),
+                'message' => $insert_user_id->get_error_message(),
+                'code' => $insert_user_id->get_error_code()
+            );
+
+            return false;
+        }else{
+
+            // 将Open数据存储到对应用户meta
+            update_user_meta($insert_user_id, static::$_openid_meta_key, $data['openid']);
+            update_user_meta($insert_user_id, static::$_access_token_meta_key, $data['access_token']);
+            update_user_meta($insert_user_id, static::$_refresh_token_meta_key, $data['refresh_token']);
+            update_user_meta($insert_user_id, static::$_token_expiration_meta_key, $data['expiration']);
+
+            // 新用户直接使用开放平台头像
+            update_user_meta($insert_user_id, 'tt_avatar_type', static::$_type);
+
+            // 新用户角色
+            wp_update_user( array ('ID' => $insert_user_id, 'role' => tt_get_option('tt_open_role', 'contributor') ) );
+
+            // 发送消息
+            // add_tt_message( $insert_user_id, 'unread', current_time('mysql'),
+            // __('请完善账号信息','tt'), sprintf(__('欢迎来到%1$s，请<a href="%2$s">完善资料</a>','tt') ,
+            // get_bloginfo('name'), admin_url('profile.php')) ); // TODO
+
+            // 更新最新登录时间
+            update_user_meta( $insert_user_id, 'tt_latest_login', current_time( 'mysql' ) );
+
+            // 设置当前用户
+            wp_set_current_user( $insert_user_id, $user_login );
+            wp_set_auth_cookie( $insert_user_id );
+            do_action( 'wp_login', $user_login ); // TODO: 通过email发送欢迎邮件
+
+            //return wp_safe_redirect(self::getRedirect());
+            return self::getRedirect(); // TODO
+        }
+
+    }
+
+
+    // 针对 /oauth/[type]/last的公开handler，配合JS请求
+    /**
+     * 处理连接开放平台后新建本地用户请求(由客户端JS发送用户自定义的用户名、密码等，然后由该函数尝试新建本地关联用户，所以需要将openSignUp封装为public)
+     *
+     * @since   2.0.0
+     * @param   string  $user_login  用户名
+     * @param   string  $password   用户密码
+     * @return  bool|string
+     */
+    public function openHandleLast($user_login, $password){
+        return $this->openSignUp($user_login, $password);
+    }
+
+
+    // 针对 /oauth/[type]的公开handler(发生错误只会给出error对象，处理由页面模板选择，如wp_die的方式)
+    /**
+     * 链接/解绑开放平台/刷新Token(开放平台handler)
+     * // 发生的错误处理交由页面决定，这里不使用wp_die处理
+     *
+     * @since   2.0.0
+     *
+     * @return  mixed
+     */
+    public function openHandle(){
+        // Route /oauth/[type]?act=connect&redirect=xxx
+        $oauth = strtolower(get_query_var('oauth'));
+        if(!$oauth || !in_array($oauth, (array)json_decode(ALLOWED_OAUTH_TYPES))){
+            $this->_error = (object)array(
+                'title' => __('Unallowed Open Type', 'tt'),
+                'message' => __('The open connect type is not allowed', 'tt'),
+                'code' => 'unallowed_open_type'
+            );
+            return false;
+        }
+        if( !isset($_GET['act']) || !in_array(strtolower(trim($_GET['act'])), (array)json_decode(ALLOWED_OAUTH_ACTIONS)) ){
+            $act = 'connect';
+        }else{
+            $act = strtolower(trim($_GET['act']));
+        }
+
+        switch ($act){
+            case 'connect':
+                return $this->openConnect();
+                break;
+            case 'disconnect':
+                return $this->openDisconnect();
+                break;
+            case 'refresh':
+                return $this->openRefresh();
+                break;
+        }
+
+        return true;
+    }
+
+    protected function openConnect(){
+        // Case 1. 初始请求
+        if(!isset($_GET['code'])){
+            // 首先鉴权
+            if(!($ret = $this->authenticate())){
+                // $error = $this->getError();
+                // wp_die($error->message, $error->title, array('back_link'=>true));
+                return false;
+            }
+
+            // 鉴权成功跳转至开放平台的登录授权页面，完成后会回调，即进入Case 2环节
+        }
+
+        // Case 2. 开放平台的回调请求
+        $code = trim($_GET['code']);
+        $state = isset($_GET['state']) ? trim($_GET['state']) : '';
+        if(!($ret = $this->authorize($code, $state))){
+            // $error = $this->getError();
+            // wp_die($error->message, $error->title, array('back_link'=>true));
+            return false;
+        }
+        // authorize成功的条件下会完成数据请求和收集，并尝试登入
+        // 如果是老用户登入，则重定向至redirect标记的地址
+        // 如果是新建用户则重定向至oauth请求的最后一步页面，填写必要的用户名、密码等，这后面需要字段合法性验证，需要JS辅助完成，代码见对应的template文件
+        return true;
+    }
+
+    protected function openDisconnect(){
+        // Route /oauth/[type]?act=disconnect
+
+        self::setRedirectCookie();
+
+        if(!($this->_user)){
+            $this->_error = (object)array(
+                'title' => __('User Not Logged In', 'tt'),
+                'message' => __('You must be logged in and then log out', 'tt'),
+                'code' => 'unidentified_user'
+            );
+
+            return false;
+        }
+
+        update_user_meta($this->_user->ID, static::$_access_token_meta_key, '');
+        update_user_meta($this->_user->ID, static::$_refresh_token_meta_key, '');
+        update_user_meta($this->_user->ID, static::$_token_expiration_meta_key, '');
+
+        // 更换默认头像类型
+        update_user_meta($this->_user->ID, 'tt_avatar_type', '');
+
+        wp_safe_redirect(self::getRedirect());
+        exit;
+    }
+
+    protected function openRefresh(){
+        return $this->refreshToken();
+    }
 
 }
 
@@ -261,23 +589,29 @@ abstract class Open{
  */
 class OpenQQ extends Open{
 
-    private static $_status_option_name = 'tt_enable_qq_login';
+    protected static $_type = 'qq';
 
-    private static $_openkey_option_name = 'tt_qq_openid';
+    protected static $_status_option_name = 'tt_enable_qq_login';
 
-    private static $_opensecret_option_name = 'tt_qq_openkey';
+    protected static $_openkey_option_name = 'tt_qq_openid';
 
-    private static $_openid_meta_key = 'tt_qq_openid';
+    protected static $_opensecret_option_name = 'tt_qq_openkey';
 
-    private static $_access_token_meta_key = 'tt_qq_access_token';
+    protected static $_openid_meta_key = 'tt_qq_openid';
 
-    private static $_refresh_token_meta_key = 'tt_qq_refresh_token';
+    protected static $_access_token_meta_key = 'tt_qq_access_token';
 
-    private static $_token_expiration_meta_key = 'tt_qq_token_expiration';
+    protected static $_refresh_token_meta_key = 'tt_qq_refresh_token';
 
-    private static $_state_cookie_name = 'tt_qq_state';
+    protected static $_token_expiration_meta_key = 'tt_qq_token_expiration';
 
-    private static $_callback_url_key = 'oauth_qq';
+    protected static $_state_cookie_name = 'tt_qq_state';
+
+    protected static $_callback_url_key = 'oauth_qq';
+
+    protected static $_oauth_last_url_key = 'oauth_qq_last';
+
+    protected static $_oauth_data_session_key = 'tt_qq_oauth_data';
 
     /**
      * 鉴权，获取code
@@ -286,8 +620,8 @@ class OpenQQ extends Open{
      *
      * @return bool
      */
-    public function authenticate(){
-        if(!$this->checkOpen('duplication_check') || !$this->checkOpen('enable_check')) return false;
+    protected function authenticate(){
+        if( !($this->checkOpen('duplication_check')) || !($this->checkOpen('enable_check')) ) return false;
 
         self::setRedirectCookie();
 
@@ -305,7 +639,7 @@ class OpenQQ extends Open{
     }
 
     /**
-     * 认证，获取access token
+     * 认证，获取access token，抓取用户信息并尝试接入登录
      *
      * @since   2.0.0
      *
@@ -313,8 +647,8 @@ class OpenQQ extends Open{
      * @param string $state 状态码，加强CSRF防护
      * @return bool
      */
-    public function authorize($code, $state){
-        if(!$this->checkState()) return false;
+    protected function authorize($code, $state){
+        if( !($this->checkState()) ) return false;
 
         $params = array(
             'grant_type' => 'authorization_code',
@@ -345,12 +679,32 @@ class OpenQQ extends Open{
         }
 
         $params = array();
-        parse_str($response, $params);
+        parse_str($body, $params);
 
         // 使用access token获取openid
         $access_token = $params['access_token'];
         $expire_in = $params['expires_in'];
-        $refresh_token = $params['expires_in'];
+        $refresh_token = $params['refresh_token'];
+
+        // 获取用户openid以及昵称等
+        $info = $this->getOpenUser($access_token);
+        if(!$info) return false;
+
+        // 将QQ用户信息接入WP，尝试登入
+        $expiration = time() + $expire_in - 60*10;
+        return $this->openSignIn($info->openid, $access_token, $refresh_token, $expiration, $info->nickname);
+
+    }
+
+    /**
+     * 抓取开放平台用户信息
+     *
+     * @since   2.0.0
+     *
+     * @param   string  $access_token   Access Token
+     * @return array|bool|mixed|object
+     */
+    protected function getOpenUser($access_token){
 
         $graph_url = 'https://graph.qq.com/oauth2.0/me?access_token=' . $access_token;
 
@@ -397,45 +751,79 @@ class OpenQQ extends Open{
         if ($info->ret){
             $this->_error = (object)array(
                 'title' => 'Grant QQ User Info Failed',
-                'message' => $msg->error_description,
+                'message' => $info->msg,
                 'code'  => 'grant_user_info_error'
             );
             return false;
         }
 
-        // 将QQ用户信息接入WP，尝试登入
-        $expiration = time() + $expire_in - 60*10;
-        return $this->openSignIn($openid, $access_token, $refresh_token, $expiration, $info->nickname);
+        $info->openid = $openid;
 
-    }
-
-    public function getOpenUser($access_token){
-
+        return $info;
     }
 
     /**
-     * 获取必要的信息完成后尝试登入并连接WP用户系统
-     * @param $openid
-     * @param $access_token
-     * @param $refresh_token
-     * @param $expiration
-     * @param $name
+     * 刷新Access Token
+     *
+     * @since   2.0.0
+     *
      * @return bool
      */
-    public function openSignIn($openid, $access_token, $refresh_token, $expiration, $name){
+    protected function refreshToken(){
+        // Route /oauth/[type]?act=refresh
 
-        return false;
-    }
+        self::setRedirectCookie();
 
-    public function refreshToken(){
+        if( !($this->_user) ){
+            $this->_error = (object)array(
+                'title' => __('User Not Logged In', 'tt'),
+                'message' => __('You must log in to refresh your token', 'tt'),
+                'code' => 'unidentified_user'
+            );
 
-    }
+            return false;
+        }
 
-    public function openSignOut(){
+        $refresh_token = get_user_meta($this->_user->ID, self::$_refresh_token_meta_key, true);
 
-    }
+        if(!$refresh_token){
+            $this->_error = (object)array(
+                'title' => __('Refresh Token Miss', 'tt'),
+                'message' => __('A refresh token is required to get new access token', 'tt'),
+                'code' => 'refresh_token_miss'
+            );
 
-    public function handle(){
+            return false;
+        }
+
+        $params = array(
+            'grant_type' => 'refresh_token',
+            'client_id' => $this->_openkey,
+            'client_secret' => $this->_opensecret,
+            'refresh_token' => $refresh_token
+        );
+
+        $url = 'https://graph.qq.com/oauth2.0/token?' . http_build_query($params);
+
+        $response = wp_remote_get($url);
+
+        $body = wp_remote_retrieve_body($response);
+        // e.g access_token=xxx&expires_in=7776000&refresh_token=xxx    text/plain
+
+        $params = array();
+        parse_str($body, $params);
+
+        $access_token = $params['access_token'];
+        $expire_in = $params['expires_in'];
+        $refresh_token = $params['refresh_token'];
+        $expiration = time() + $expire_in - 60*10;
+
+        update_user_meta($this->_user->ID, static::$_access_token_meta_key, $access_token);
+        update_user_meta($this->_user->ID, static::$_refresh_token_meta_key, $refresh_token);
+        update_user_meta($this->_user->ID, static::$_token_expiration_meta_key, $expiration);
+
+        wp_safe_redirect(self::getRedirect());
+        exit;
 
     }
 

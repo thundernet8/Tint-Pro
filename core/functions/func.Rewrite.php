@@ -409,7 +409,7 @@ add_filter('query_vars', 'tt_add_oauth_page_query_vars');
 function tt_handle_oauth_page_template(){
     $oauth = strtolower(get_query_var('oauth'));
     $oauth_last = get_query_var('oauth_last');
-    if($oauth && in_array($oauth, (array)json_decode(ALLOWED_OAUTH_SITES))){
+    if($oauth && in_array($oauth, (array)json_decode(ALLOWED_OAUTH_TYPES))){
         global $wp_query;
         $wp_query->is_home = false;
         $wp_query->is_page = true; //将该模板改为页面属性，而非首页
