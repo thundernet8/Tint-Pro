@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1212df9-9110-41ec-af9e-f8eb72c2514b" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/classes/class.Member.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/metaKeys.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/classes/class.Open.php" afterPath="$PROJECT_DIR$/core/classes/class.Open.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/classes/class.Utils.php" afterPath="$PROJECT_DIR$/core/classes/class.Utils.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/Constants.php" afterPath="$PROJECT_DIR$/core/functions/Constants.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/func.Rewrite.php" afterPath="$PROJECT_DIR$/core/functions/func.Rewrite.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/func.Template.php" afterPath="$PROJECT_DIR$/core/functions/func.Template.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/oauth/tpl.OAuth.Last.php" afterPath="$PROJECT_DIR$/core/templates/oauth/tpl.OAuth.Last.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/oauth/tpl.OAuth.php" afterPath="$PROJECT_DIR$/core/templates/oauth/tpl.OAuth.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dash/options.php" afterPath="$PROJECT_DIR$/dash/options.php" />
     </list>
     <ignored path="Tinection 2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,10 +32,6 @@
         <option name="myItemId" />
         <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
       </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="MySQL - wptestdb@localhost" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
     </PATH>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
@@ -52,7 +43,7 @@
       <file leaf-file-name="Constants.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/functions/Constants.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="116">
+            <state relative-caret-position="1260">
               <caret line="79" column="85" selection-start-line="79" selection-start-column="85" selection-end-line="79" selection-end-column="85" />
               <folding>
                 <element signature="e#1750#2117#1#PHP" expanded="false" />
@@ -76,7 +67,7 @@
       <file leaf-file-name="func.Rewrite.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/functions/func.Rewrite.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
+            <state relative-caret-position="4004">
               <caret line="409" column="4" selection-start-line="409" selection-start-column="4" selection-end-line="411" selection-end-column="75" />
               <folding>
                 <element signature="e#6#291#0#PHP" expanded="true" />
@@ -127,13 +118,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="class.Open.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="class.Open.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/classes/class.Open.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="219" column="20" selection-start-line="219" selection-start-column="20" selection-end-line="219" selection-end-column="20" />
+            <state relative-caret-position="126">
+              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding>
                 <element signature="e#6#291#0#PHP" expanded="true" />
+                <element signature="n#Open#0;n#!!top" expanded="false" />
                 <element signature="e#358#462#0#PHP" expanded="false" />
                 <element signature="e#535#622#0#PHP" expanded="false" />
                 <element signature="e#666#755#0#PHP" expanded="false" />
@@ -141,6 +133,7 @@
                 <element signature="e#952#1033#0#PHP" expanded="false" />
                 <element signature="e#1061#1139#0#PHP" expanded="false" />
                 <element signature="e#1168#1278#0#PHP" expanded="false" />
+                <element signature="n#__construct#0;n#Open#0;n#!!top" expanded="false" />
                 <element signature="e#1791#1874#0#PHP" expanded="false" />
                 <element signature="n#getError#0;n#Open#0;n#!!top" expanded="false" />
                 <element signature="e#1948#2032#0#PHP" expanded="false" />
@@ -149,44 +142,99 @@
                 <element signature="n#setRedirectCookie#0;n#Open#0;n#!!top" expanded="false" />
                 <element signature="e#2865#3017#0#PHP" expanded="false" />
                 <element signature="n#setStateCookie#0;n#Open#0;n#!!top" expanded="false" />
-                <element signature="e#3283#3366#0#PHP" expanded="false" />
-                <element signature="e#3552#3640#0#PHP" expanded="false" />
+                <element signature="e#3283#3421#0#PHP" expanded="false" />
+                <element signature="n#getCallbackUrl#0;n#Open#0;n#!!top" expanded="false" />
+                <element signature="e#3775#3863#0#PHP" expanded="false" />
                 <element signature="n#isOpenAvailable#0;n#Open#0;n#!!top" expanded="false" />
-                <element signature="e#3772#3908#0#PHP" expanded="false" />
+                <element signature="e#3995#4131#0#PHP" expanded="false" />
                 <element signature="n#isOpenConnected#0;n#Open#0;n#!!top" expanded="false" />
-                <element signature="e#4415#4575#0#PHP" expanded="false" />
-                <element signature="e#6370#6455#0#PHP" expanded="false" />
+                <element signature="e#4638#4798#0#PHP" expanded="false" />
+                <element signature="n#checkOpen#0;n#Open#0;n#!!top" expanded="false" />
+                <element signature="e#6593#6678#0#PHP" expanded="false" />
                 <element signature="n#checkState#0;n#Open#0;n#!!top" expanded="false" />
-                <element signature="e#7240#7324#0#PHP" expanded="false" />
-                <element signature="e#7378#7575#0#PHP" expanded="false" />
-                <element signature="e#7639#7796#0#PHP" expanded="false" />
-                <element signature="e#7862#7952#0#PHP" expanded="false" />
-                <element signature="e#8006#8193#0#PHP" expanded="false" />
-                <element signature="e#10633#10793#0#PHP" expanded="false" />
-                <element signature="e#11915#12100#0#PHP" expanded="false" />
-                <element signature="e#14325#14565#0#PHP" expanded="false" />
+                <element signature="e#7463#7547#0#PHP" expanded="false" />
+                <element signature="e#7601#7798#0#PHP" expanded="false" />
+                <element signature="e#7862#8092#0#PHP" expanded="false" />
+                <element signature="e#8167#8257#0#PHP" expanded="false" />
+                <element signature="e#8311#8581#0#PHP" expanded="false" />
+                <element signature="n#openSignIn#0;n#Open#0;n#!!top" expanded="false" />
+                <element signature="e#11030#11190#0#PHP" expanded="false" />
+                <element signature="n#openSignUpPrepare#0;n#Open#0;n#!!top" expanded="false" />
+                <element signature="e#12420#12605#0#PHP" expanded="false" />
+                <element signature="e#16177#16473#0#PHP" expanded="false" />
                 <element signature="n#openHandleLast#0;n#Open#0;n#!!top" expanded="false" />
-                <element signature="e#14768#14913#0#PHP" expanded="false" />
+                <element signature="e#16839#16984#0#PHP" expanded="false" />
                 <element signature="n#openHandle#0;n#Open#0;n#!!top" expanded="false" />
                 <element signature="n#openConnect#0;n#Open#0;n#!!top" expanded="false" />
+                <element signature="n#openDisconnect#0;n#Open#0;n#!!top" expanded="false" />
                 <element signature="n#openRefresh#0;n#Open#0;n#!!top" expanded="false" />
-                <element signature="e#18709#18793#0#PHP" expanded="false" />
-                <element signature="e#19492#19689#0#PHP" expanded="false" />
-                <element signature="e#21415#21572#0#PHP" expanded="false" />
+                <element signature="n#OpenQQ#0;n#!!top" expanded="false" />
+                <element signature="e#21269#21353#0#PHP" expanded="false" />
+                <element signature="n#authenticate#0;n#OpenQQ#0;n#!!top" expanded="false" />
+                <element signature="e#22052#22249#0#PHP" expanded="false" />
+                <element signature="n#authorize#0;n#OpenQQ#0;n#!!top" expanded="false" />
+                <element signature="e#23928#24137#0#PHP" expanded="false" />
                 <element signature="n#getOpenUser#0;n#OpenQQ#0;n#!!top" expanded="false" />
-                <element signature="e#23462#23551#0#PHP" expanded="false" />
-                <marker date="1472834747837" expanded="true" signature="8366:8437" ph="SELECT user_... wp_usermeta" />
+                <element signature="e#24741#25179#0#PHP" expanded="false" />
+                <element signature="e#26063#26152#0#PHP" expanded="false" />
+                <element signature="n#refreshToken#0;n#OpenQQ#0;n#!!top" expanded="false" />
+                <element signature="n#OpenWeiXin#0;n#!!top" expanded="false" />
+                <element signature="e#28980#29064#0#PHP" expanded="false" />
+                <element signature="e#29801#29998#0#PHP" expanded="false" />
+                <element signature="n#authorize#0;n#OpenWeiXin#0;n#!!top" expanded="false" />
+                <element signature="e#32172#32381#0#PHP" expanded="false" />
+                <element signature="n#getOpenUser#0;n#OpenWeiXin#0;n#!!top" expanded="false" />
+                <element signature="e#34468#34557#0#PHP" expanded="false" />
+                <element signature="n#OpenWeibo#0;n#!!top" expanded="false" />
+                <element signature="e#38325#38409#0#PHP" expanded="false" />
+                <element signature="n#authenticate#0;n#OpenWeibo#0;n#!!top" expanded="false" />
+                <element signature="e#39134#39331#0#PHP" expanded="false" />
+                <element signature="n#authorize#0;n#OpenWeibo#0;n#!!top" expanded="false" />
+                <element signature="e#40817#41125#0#PHP" expanded="false" />
+                <element signature="e#40859#41088#0#PHP" expanded="false" />
+                <element signature="e#41661#41870#0#PHP" expanded="false" />
+                <element signature="e#42436#42440#0#PHP" expanded="false" />
+                <element signature="e#42619#43431#0#PHP" expanded="false" />
+                <element signature="e#43127#43431#0#PHP" expanded="false" />
+                <element signature="e#43169#43394#0#PHP" expanded="false" />
+                <element signature="e#43837#43841#0#PHP" expanded="false" />
+                <element signature="e#45597#45601#0#PHP" expanded="false" />
+                <element signature="e#45765#46593#0#PHP" expanded="false" />
+                <element signature="e#45875#46271#0#PHP" expanded="false" />
+                <element signature="e#46651#46784#0#PHP" expanded="false" />
+                <element signature="n#refreshToken#0;n#OpenWeibo#0;n#!!top" expanded="false" />
+                <element signature="e#48210#49038#0#PHP" expanded="false" />
+                <element signature="e#48768#49001#0#PHP" expanded="false" />
+                <marker date="1472894436531" expanded="true" signature="8754:8825" ph="SELECT user_... wp_usermeta" />
+                <marker date="1472894436531" expanded="false" signature="29103:29794" ph="..." />
+                <marker date="1472894436531" expanded="false" signature="34596:37456" ph="..." />
+                <marker date="1472894436531" expanded="false" signature="36204:36601" ph="..." />
+                <marker date="1472894436531" expanded="false" signature="36607:36910" ph="..." />
+                <marker date="1472894436531" expanded="false" signature="36650:36873" ph="..." />
+                <marker date="1472894436531" expanded="false" signature="41937:46644" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tpl.OAuth.Last.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/core/templates/oauth/tpl.OAuth.Last.php">
+      <file leaf-file-name="class.Avatar.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/classes/class.Avatar.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+            <state relative-caret-position="476">
+              <caret line="187" column="73" selection-start-line="187" selection-start-column="57" selection-end-line="187" selection-end-column="73" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="class.Member.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/classes/class.Member.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="253">
+              <caret line="21" column="45" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
+              <folding>
+                <element signature="e#6#291#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -194,11 +242,10 @@
       <file leaf-file-name="tpl.OAuth.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/templates/oauth/tpl.OAuth.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
+            <state relative-caret-position="476">
               <caret line="28" column="59" selection-start-line="28" selection-start-column="50" selection-end-line="28" selection-end-column="59" />
               <folding>
                 <element signature="e#6#291#0#PHP" expanded="true" />
-                <marker date="1472831535961" expanded="true" signature="471:576" ph="..." />
               </folding>
             </state>
           </provider>
@@ -219,7 +266,7 @@
       <file leaf-file-name="options.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dash/options.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="452">
+            <state relative-caret-position="10164">
               <caret line="363" column="33" selection-start-line="363" selection-start-column="33" selection-end-line="363" selection-end-column="33" />
               <folding />
             </state>
@@ -243,8 +290,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/core/templates/tpl.UC.Profile.php" />
-        <option value="$PROJECT_DIR$/core/templates/tpl.UC.Latest.php" />
         <option value="$PROJECT_DIR$/core/templates/tpl.UC.Comments.php" />
         <option value="$PROJECT_DIR$/core/templates/tpl.UC.Recommendations.php" />
         <option value="$PROJECT_DIR$/core/templates/tpl.M.Signup.php" />
@@ -292,8 +337,10 @@
         <option value="$PROJECT_DIR$/core/classes/class.Utils.php" />
         <option value="$PROJECT_DIR$/core/functions/Constants.php" />
         <option value="$PROJECT_DIR$/core/templates/oauth/tpl.OAuth.php" />
-        <option value="$PROJECT_DIR$/core/classes/class.Open.php" />
         <option value="$PROJECT_DIR$/core/templates/oauth/tpl.OAuth.Last.php" />
+        <option value="$PROJECT_DIR$/core/classes/class.Member.php" />
+        <option value="$PROJECT_DIR$/core/metaKeys.md" />
+        <option value="$PROJECT_DIR$/core/classes/class.Open.php" />
       </list>
     </option>
   </component>
@@ -375,6 +422,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -406,91 +455,13 @@
               <option name="myItemId" value="core" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tint" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tint" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="oauth" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tint" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tint" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tint" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tint" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="functions" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tint" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tint" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="classes" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
@@ -653,12 +624,14 @@
       <workItem from="1472558608235" duration="10342000" />
       <workItem from="1472646739331" duration="11305000" />
       <workItem from="1472731221447" duration="12167000" />
-      <workItem from="1472820193621" duration="12823000" />
+      <workItem from="1472820193621" duration="14843000" />
+      <workItem from="1472869312575" duration="305000" />
+      <workItem from="1472869642213" duration="11890000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="357940000" />
+    <option name="totallyTimeSpent" value="372155000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -673,13 +646,13 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24200426" sideWeight="0.4927798" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15511727" sideWeight="0.4927798" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329718" sideWeight="0.4978678" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3991323" sideWeight="0.5021322" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13539445" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20715836" sideWeight="0.52878463" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13539445" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286334" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20715836" sideWeight="0.45095947" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20715836" sideWeight="0.47121534" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17430703" sideWeight="0.5072202" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -742,7 +715,7 @@
           <properties />
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="60" />
+      <option name="time" value="61" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PhpWebAppRunConfigurationType">
@@ -763,20 +736,6 @@
     </PATH>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/core/templates/site/tpl.UpgradeBrowser.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="57" column="122" selection-start-line="57" selection-start-column="122" selection-end-line="57" selection-end-column="122" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../WebServer/WWW/wordpress/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../../WebServer/WWW/wordpress_map/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
@@ -795,11 +754,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="166">
           <caret line="3890" column="0" selection-start-line="3890" selection-start-column="0" selection-end-line="3890" selection-end-column="0" />
-          <folding>
-            <marker date="1466491926000" expanded="true" signature="85662:85691" ph="..." />
-            <marker date="1466491926000" expanded="true" signature="155458:155487" ph="..." />
-            <marker date="1466491926000" expanded="true" signature="156045:156074" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -814,7 +768,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
           <caret line="499" column="0" selection-start-line="499" selection-start-column="0" selection-end-line="499" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -829,7 +782,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="259">
           <caret line="175" column="0" selection-start-line="175" selection-start-column="0" selection-end-line="175" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -837,13 +789,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
           <caret line="1480" column="0" selection-start-line="1480" selection-start-column="0" selection-end-line="1480" selection-end-column="0" />
-          <folding>
-            <marker date="1457611288000" expanded="true" signature="9869:9977" ph="SELECT ID, p... wp_posts" />
-            <marker date="1457611288000" expanded="true" signature="10461:10564" ph="SELECT ID, p... wp_posts" />
-            <marker date="1457611288000" expanded="true" signature="47935:47978" ph="..." />
-            <marker date="1457611288000" expanded="true" signature="47955:47978" ph="..." />
-            <marker date="1457611288000" expanded="true" signature="47967:47978" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1068,39 +1013,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/functions/func.Kits.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2044">
-          <caret line="96" column="45" selection-start-line="96" selection-start-column="45" selection-end-line="96" selection-end-column="45" />
-          <folding>
-            <element signature="e#1161#1516#1#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dash/options.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
+        <state relative-caret-position="10164">
           <caret line="363" column="33" selection-start-line="363" selection-start-column="33" selection-end-line="363" selection-end-column="33" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/classes/class.Avatar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="251" column="62" selection-start-line="251" selection-start-column="48" selection-end-line="251" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/functions/Constants.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="79" column="85" selection-start-line="79" selection-start-column="85" selection-end-line="79" selection-end-column="85" />
-          <folding>
-            <element signature="e#1750#2117#1#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1120,7 +1037,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
@@ -1129,9 +1045,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/core/templates/oauth/tpl.OAuth.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="59" selection-start-line="28" selection-start-column="50" selection-end-line="28" selection-end-column="59" />
+          <folding>
+            <element signature="e#6#291#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/templates/oauth/tpl.OAuth.Last.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/functions/Constants.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1260">
+          <caret line="79" column="85" selection-start-line="79" selection-start-column="85" selection-end-line="79" selection-end-column="85" />
+          <folding>
+            <element signature="e#1750#2117#1#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/core/functions/func.Rewrite.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
+        <state relative-caret-position="4004">
           <caret line="409" column="4" selection-start-line="409" selection-start-column="4" selection-end-line="411" selection-end-column="75" />
           <folding>
             <element signature="e#6#291#0#PHP" expanded="true" />
@@ -1181,23 +1124,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/templates/oauth/tpl.OAuth.php">
+    <entry file="file://$PROJECT_DIR$/core/functions/func.Kits.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="28" column="59" selection-start-line="28" selection-start-column="50" selection-end-line="28" selection-end-column="59" />
+        <state relative-caret-position="2044">
+          <caret line="96" column="45" selection-start-line="96" selection-start-column="45" selection-end-line="96" selection-end-column="45" />
+          <folding>
+            <element signature="e#1161#1516#1#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/classes/class.Member.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="21" column="45" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
           <folding>
             <element signature="e#6#291#0#PHP" expanded="true" />
-            <marker date="1472831535961" expanded="true" signature="471:576" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/classes/class.Avatar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="187" column="73" selection-start-line="187" selection-start-column="57" selection-end-line="187" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/metaKeys.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="420">
+            <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/classes/class.Open.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="219" column="20" selection-start-line="219" selection-start-column="20" selection-end-line="219" selection-end-column="20" />
+        <state relative-caret-position="126">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding>
             <element signature="e#6#291#0#PHP" expanded="true" />
+            <element signature="n#Open#0;n#!!top" expanded="false" />
             <element signature="e#358#462#0#PHP" expanded="false" />
             <element signature="e#535#622#0#PHP" expanded="false" />
             <element signature="e#666#755#0#PHP" expanded="false" />
@@ -1205,6 +1177,7 @@
             <element signature="e#952#1033#0#PHP" expanded="false" />
             <element signature="e#1061#1139#0#PHP" expanded="false" />
             <element signature="e#1168#1278#0#PHP" expanded="false" />
+            <element signature="n#__construct#0;n#Open#0;n#!!top" expanded="false" />
             <element signature="e#1791#1874#0#PHP" expanded="false" />
             <element signature="n#getError#0;n#Open#0;n#!!top" expanded="false" />
             <element signature="e#1948#2032#0#PHP" expanded="false" />
@@ -1213,42 +1186,77 @@
             <element signature="n#setRedirectCookie#0;n#Open#0;n#!!top" expanded="false" />
             <element signature="e#2865#3017#0#PHP" expanded="false" />
             <element signature="n#setStateCookie#0;n#Open#0;n#!!top" expanded="false" />
-            <element signature="e#3283#3366#0#PHP" expanded="false" />
-            <element signature="e#3552#3640#0#PHP" expanded="false" />
+            <element signature="e#3283#3421#0#PHP" expanded="false" />
+            <element signature="n#getCallbackUrl#0;n#Open#0;n#!!top" expanded="false" />
+            <element signature="e#3775#3863#0#PHP" expanded="false" />
             <element signature="n#isOpenAvailable#0;n#Open#0;n#!!top" expanded="false" />
-            <element signature="e#3772#3908#0#PHP" expanded="false" />
+            <element signature="e#3995#4131#0#PHP" expanded="false" />
             <element signature="n#isOpenConnected#0;n#Open#0;n#!!top" expanded="false" />
-            <element signature="e#4415#4575#0#PHP" expanded="false" />
-            <element signature="e#6370#6455#0#PHP" expanded="false" />
+            <element signature="e#4638#4798#0#PHP" expanded="false" />
+            <element signature="n#checkOpen#0;n#Open#0;n#!!top" expanded="false" />
+            <element signature="e#6593#6678#0#PHP" expanded="false" />
             <element signature="n#checkState#0;n#Open#0;n#!!top" expanded="false" />
-            <element signature="e#7240#7324#0#PHP" expanded="false" />
-            <element signature="e#7378#7575#0#PHP" expanded="false" />
-            <element signature="e#7639#7796#0#PHP" expanded="false" />
-            <element signature="e#7862#7952#0#PHP" expanded="false" />
-            <element signature="e#8006#8193#0#PHP" expanded="false" />
-            <element signature="e#10633#10793#0#PHP" expanded="false" />
-            <element signature="e#11915#12100#0#PHP" expanded="false" />
-            <element signature="e#14325#14565#0#PHP" expanded="false" />
+            <element signature="e#7463#7547#0#PHP" expanded="false" />
+            <element signature="e#7601#7798#0#PHP" expanded="false" />
+            <element signature="e#7862#8092#0#PHP" expanded="false" />
+            <element signature="e#8167#8257#0#PHP" expanded="false" />
+            <element signature="e#8311#8581#0#PHP" expanded="false" />
+            <element signature="n#openSignIn#0;n#Open#0;n#!!top" expanded="false" />
+            <element signature="e#11030#11190#0#PHP" expanded="false" />
+            <element signature="n#openSignUpPrepare#0;n#Open#0;n#!!top" expanded="false" />
+            <element signature="e#12420#12605#0#PHP" expanded="false" />
+            <element signature="e#16177#16473#0#PHP" expanded="false" />
             <element signature="n#openHandleLast#0;n#Open#0;n#!!top" expanded="false" />
-            <element signature="e#14768#14913#0#PHP" expanded="false" />
+            <element signature="e#16839#16984#0#PHP" expanded="false" />
             <element signature="n#openHandle#0;n#Open#0;n#!!top" expanded="false" />
             <element signature="n#openConnect#0;n#Open#0;n#!!top" expanded="false" />
+            <element signature="n#openDisconnect#0;n#Open#0;n#!!top" expanded="false" />
             <element signature="n#openRefresh#0;n#Open#0;n#!!top" expanded="false" />
-            <element signature="e#18709#18793#0#PHP" expanded="false" />
-            <element signature="e#19492#19689#0#PHP" expanded="false" />
-            <element signature="e#21415#21572#0#PHP" expanded="false" />
+            <element signature="n#OpenQQ#0;n#!!top" expanded="false" />
+            <element signature="e#21269#21353#0#PHP" expanded="false" />
+            <element signature="n#authenticate#0;n#OpenQQ#0;n#!!top" expanded="false" />
+            <element signature="e#22052#22249#0#PHP" expanded="false" />
+            <element signature="n#authorize#0;n#OpenQQ#0;n#!!top" expanded="false" />
+            <element signature="e#23928#24137#0#PHP" expanded="false" />
             <element signature="n#getOpenUser#0;n#OpenQQ#0;n#!!top" expanded="false" />
-            <element signature="e#23462#23551#0#PHP" expanded="false" />
-            <marker date="1472834747837" expanded="true" signature="8366:8437" ph="SELECT user_... wp_usermeta" />
+            <element signature="e#24741#25179#0#PHP" expanded="false" />
+            <element signature="e#26063#26152#0#PHP" expanded="false" />
+            <element signature="n#refreshToken#0;n#OpenQQ#0;n#!!top" expanded="false" />
+            <element signature="n#OpenWeiXin#0;n#!!top" expanded="false" />
+            <element signature="e#28980#29064#0#PHP" expanded="false" />
+            <element signature="e#29801#29998#0#PHP" expanded="false" />
+            <element signature="n#authorize#0;n#OpenWeiXin#0;n#!!top" expanded="false" />
+            <element signature="e#32172#32381#0#PHP" expanded="false" />
+            <element signature="n#getOpenUser#0;n#OpenWeiXin#0;n#!!top" expanded="false" />
+            <element signature="e#34468#34557#0#PHP" expanded="false" />
+            <element signature="n#OpenWeibo#0;n#!!top" expanded="false" />
+            <element signature="e#38325#38409#0#PHP" expanded="false" />
+            <element signature="n#authenticate#0;n#OpenWeibo#0;n#!!top" expanded="false" />
+            <element signature="e#39134#39331#0#PHP" expanded="false" />
+            <element signature="n#authorize#0;n#OpenWeibo#0;n#!!top" expanded="false" />
+            <element signature="e#40817#41125#0#PHP" expanded="false" />
+            <element signature="e#40859#41088#0#PHP" expanded="false" />
+            <element signature="e#41661#41870#0#PHP" expanded="false" />
+            <element signature="e#42436#42440#0#PHP" expanded="false" />
+            <element signature="e#42619#43431#0#PHP" expanded="false" />
+            <element signature="e#43127#43431#0#PHP" expanded="false" />
+            <element signature="e#43169#43394#0#PHP" expanded="false" />
+            <element signature="e#43837#43841#0#PHP" expanded="false" />
+            <element signature="e#45597#45601#0#PHP" expanded="false" />
+            <element signature="e#45765#46593#0#PHP" expanded="false" />
+            <element signature="e#45875#46271#0#PHP" expanded="false" />
+            <element signature="e#46651#46784#0#PHP" expanded="false" />
+            <element signature="n#refreshToken#0;n#OpenWeibo#0;n#!!top" expanded="false" />
+            <element signature="e#48210#49038#0#PHP" expanded="false" />
+            <element signature="e#48768#49001#0#PHP" expanded="false" />
+            <marker date="1472894436531" expanded="true" signature="8754:8825" ph="SELECT user_... wp_usermeta" />
+            <marker date="1472894436531" expanded="false" signature="29103:29794" ph="..." />
+            <marker date="1472894436531" expanded="false" signature="34596:37456" ph="..." />
+            <marker date="1472894436531" expanded="false" signature="36204:36601" ph="..." />
+            <marker date="1472894436531" expanded="false" signature="36607:36910" ph="..." />
+            <marker date="1472894436531" expanded="false" signature="36650:36873" ph="..." />
+            <marker date="1472894436531" expanded="false" signature="41937:46644" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/templates/oauth/tpl.OAuth.Last.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1256,6 +1264,17 @@
   <component name="masterDetails">
     <states>
       <state key="Copyright.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
         <settings>
           <splitter-proportions>
             <option name="proportions">

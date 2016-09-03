@@ -154,11 +154,17 @@ abstract class Open{
      *
      * @since   2.0.0
      *
+     * @param   array  $args   额外的Redirect URL参数，键值对数组
      * @return string
      */
-    protected static function getCallbackUrl(){
+    protected static function getCallbackUrl($args = null){
 
-        return esc_url( add_query_arg('redirect', urlencode(self::getRedirect()), tt_url_for(static::$_callback_url_key)) );
+        if(is_array($args)){
+            $redirect = add_query_arg($args, self::getRedirect());
+        }else{
+            $redirect = self::getRedirect();
+        }
+        return esc_url( add_query_arg('redirect', urlencode($redirect), tt_url_for(static::$_callback_url_key)) );
     }
 
     /**
@@ -299,9 +305,10 @@ abstract class Open{
      * @since   2.0.0
      *
      * @param   string  $access_token   Access Token
+     * @param   string  $openid     用户在开放平台的openid(QQ的openid此时没有，微信可以提供)
      * @return array|bool|mixed|object
      */
-    abstract protected function getOpenUser($access_token);
+    abstract protected function getOpenUser($access_token, $openid);
 
     /**
      * 刷新Access Token
@@ -314,14 +321,14 @@ abstract class Open{
 
     /**
      * 获取必要的信息完成后尝试登入并连接WP用户系统
-     * @param $openid
-     * @param $access_token
-     * @param $refresh_token
-     * @param $expiration
-     * @param $name
+     * @param string $openid 用户openid
+     * @param string $access_token Access Token
+     * @param string $refresh_token Refresh Token
+     * @param int $expiration 过期时间戳
+     * @param object $info  获取的用户信息
      * @return bool
      */
-    protected function openSignIn($openid, $access_token, $refresh_token, $expiration, $name){
+    protected function openSignIn($openid, $access_token, $refresh_token, $expiration, $info){
 
         global $wpdb;
         $user_exist = $wpdb->get_var( $wpdb->prepare("SELECT user_id FROM $wpdb->usermeta WHERE meta_key=%s AND meta_value=%s", static::$_openid_meta_key, $openid) );
@@ -351,13 +358,12 @@ abstract class Open{
             // 该开放平台账号未连接过WP系统，使用它登录并分配和绑定一个WP本地新用户
             // 为了方便用户自主定义一些用户信息，需跳转至/oauth/[type]/last页面提示用户输入必要信息(GET跳转)
             // 安全起见， 数据序列化后保存在WP缓存中，由下个页面取出
-            $data = array(
-                'openid' => $openid,
-                'access_token' => $access_token,
-                'refresh_token' => $refresh_token,
-                'expiration' => $expiration,
-                'name' => $name
-            );
+            $data = (array)$info;
+            $data['openid'] = $openid;
+            $data['access_token'] = $access_token;
+            $data['refresh_token'] = $refresh_token;
+            $data['expiration'] = $expiration;
+            $data['name'] = $info->name;
             $_data_transient_key = 'tt_oauth_temp_data_' . strtolower(Utils::generateRandomStr(10, 'letter'));
             set_transient($_data_transient_key, maybe_serialize($data), 60*10); // 10分钟缓存过期时间
 
@@ -392,6 +398,8 @@ abstract class Open{
             if($delete_cache){
                 // 删除OAuth数据缓存
                 delete_transient($_data_transient_key);
+                // 删除Session中的cache key
+                unset($_SESSION[static::$_oauth_data_session_key]);
             }
 
             // 返回随机生成的用户名填充输入框默认值
@@ -417,7 +425,7 @@ abstract class Open{
      */
     protected function openSignUp($user_login, $password){
         // 获取缓存的OAuth数据
-        $data = $this->openSignUpPrepare();
+        $data = $this->openSignUpPrepare(true);
         if(!$data) return false;
 
         // 开放平台连接并需要新建一个本地用户绑定
@@ -444,8 +452,26 @@ abstract class Open{
             update_user_meta($insert_user_id, static::$_refresh_token_meta_key, $data['refresh_token']);
             update_user_meta($insert_user_id, static::$_token_expiration_meta_key, $data['expiration']);
 
+            if(static::$_type === 'weixin'){
+                update_user_meta($insert_user_id, 'tt_weixin_avatar', $data['headimgurl']);
+                update_user_meta($insert_user_id, 'tt_weixin_unionid', $data['unionid']);
+                update_user_meta($insert_user_id, 'tt_user_country', $data['country']); // 国家，如中国为CN
+                update_user_meta($insert_user_id, 'tt_user_province', $data['province']); // 普通用户个人资料填写的省份
+                update_user_meta($insert_user_id, 'tt_user_city', $data['city']); // 普通用户个人资料填写的城市
+                update_user_meta($insert_user_id, 'tt_user_sex', $data['sex']==2 ? 'female' : 'male'); // 普通用户性别，1为男性，2为女性
+            }
+
+            if(static::$_type === 'weibo'){
+                update_user_meta($insert_user_id, 'tt_weibo_avatar', $data['avatar_large']);
+                update_user_meta($insert_user_id, 'tt_weibo_profile_img', $data['profile_image_url']);
+                update_user_meta($insert_user_id, 'tt_weibo_id', $data['id']);
+                update_user_meta($insert_user_id, 'tt_user_description', $data['description']);
+                update_user_meta($insert_user_id, 'tt_user_location', $data['location']);
+                update_user_meta($insert_user_id, 'tt_user_sex', $data['sex']!='m' ? 'female' : 'male'); // 普通用户性别，m为男性，f为女性
+            }
+
             // 新用户直接使用开放平台头像
-            update_user_meta($insert_user_id, 'tt_avatar_type', static::$_type);
+            update_user_meta($insert_user_id, 'tt_avatar_type', static::$_type);  // TODO: 是否判断已有其他开放平台的头像
 
             // 新用户角色
             wp_update_user( array ('ID' => $insert_user_id, 'role' => tt_get_option('tt_open_role', 'contributor') ) );
@@ -477,9 +503,14 @@ abstract class Open{
      * @since   2.0.0
      * @param   string  $user_login  用户名
      * @param   string  $password   用户密码
+     * @param   bool    $is_get_data    是否仅获取缓存的OAuth信息
      * @return  bool|string
      */
-    public function openHandleLast($user_login, $password){
+    public function openHandleLast($user_login, $password, $is_get_data = true){
+        if($is_get_data){
+            // 仅获取缓存的OAuth信息，用于填充/oauth/[type]/last页面表单默认值
+            return $this->openSignUpPrepare();
+        }
         return $this->openSignUp($user_login, $password);
     }
 
@@ -504,6 +535,7 @@ abstract class Open{
             );
             return false;
         }
+
         if( !isset($_GET['act']) || !in_array(strtolower(trim($_GET['act'])), (array)json_decode(ALLOWED_OAUTH_ACTIONS)) ){
             $act = 'connect';
         }else{
@@ -527,7 +559,7 @@ abstract class Open{
 
     protected function openConnect(){
         // Case 1. 初始请求
-        if(!isset($_GET['code'])){
+        if(!isset($_GET['code']) && !isset($_GET['state'])){
             // 首先鉴权
             if(!($ret = $this->authenticate())){
                 // $error = $this->getError();
@@ -538,7 +570,18 @@ abstract class Open{
             // 鉴权成功跳转至开放平台的登录授权页面，完成后会回调，即进入Case 2环节
         }
 
-        // Case 2. 开放平台的回调请求
+        // Case 2.1 开放平台的回调请求(用户不同意授权，不会返回code，只会返回state)
+        if(!isset($_GET['code']) && isset($_GET['state'])){
+            $this->_error = (object)array(
+                'title' => __('User Authorization Canceled', 'tt'),
+                'message' => __('You should agree to authorize our application connecting your open account', 'tt'),
+                'code' => 'user_cancel_authorization'
+            );
+
+            return false;
+        }
+
+        // Case 2.2 开放平台的回调请求(用户同意授权)
         $code = trim($_GET['code']);
         $state = isset($_GET['state']) ? trim($_GET['state']) : '';
         if(!($ret = $this->authorize($code, $state))){
@@ -654,8 +697,7 @@ class OpenQQ extends Open{
             'grant_type' => 'authorization_code',
             'code' => $code,
             'client_id' => $this->_openkey,
-            'client_secret' => $this->_opensecret,
-            'redirect_uri' => self::getCallbackUrl()
+            'client_secret' => $this->_opensecret
         );
 
         $url = 'https://graph.qq.com/oauth2.0/token?' . http_build_query($params);
@@ -670,7 +712,7 @@ class OpenQQ extends Open{
             $msg = json_decode(trim($matches[1]));
             if(isset($msg->error)){
                 $this->_error = (object)array(
-                    'title' => 'Grant QQ Access Token Failed',
+                    'title' => __('Grant QQ Access Token Failed', 'tt'),
                     'message' => $msg->error_description,
                     'code'  => 'grant_access_token_error'
                 );
@@ -681,8 +723,8 @@ class OpenQQ extends Open{
         $params = array();
         parse_str($body, $params);
 
-        // 使用access token获取openid
-        $access_token = $params['access_token'];
+        // 获取到的access_token等参数
+        $access_token = $params['access_token']; // 有效期2个月
         $expire_in = $params['expires_in'];
         $refresh_token = $params['refresh_token'];
 
@@ -692,7 +734,7 @@ class OpenQQ extends Open{
 
         // 将QQ用户信息接入WP，尝试登入
         $expiration = time() + $expire_in - 60*10;
-        return $this->openSignIn($info->openid, $access_token, $refresh_token, $expiration, $info->nickname);
+        return $this->openSignIn($info->openid, $access_token, $refresh_token, $expiration, $info);
 
     }
 
@@ -702,9 +744,10 @@ class OpenQQ extends Open{
      * @since   2.0.0
      *
      * @param   string  $access_token   Access Token
-     * @return array|bool|mixed|object
+     * @param   string  $openid     用户在开放平台的openid
+     * @return  array|bool|mixed|object
      */
-    protected function getOpenUser($access_token){
+    protected function getOpenUser($access_token, $openid = null){
 
         $graph_url = 'https://graph.qq.com/oauth2.0/me?access_token=' . $access_token;
 
@@ -722,7 +765,7 @@ class OpenQQ extends Open{
             $msg = json_decode(trim($matches[1]));
             if(isset($msg->error)){
                 $this->_error = (object)array(
-                    'title' => 'Grant QQ OpenID Failed',
+                    'title' => __('Grant QQ OpenID Failed', 'tt'),
                     'message' => $msg->error_description,
                     'code'  => 'grant_openid_error'
                 );
@@ -750,7 +793,7 @@ class OpenQQ extends Open{
 
         if ($info->ret){
             $this->_error = (object)array(
-                'title' => 'Grant QQ User Info Failed',
+                'title' => __('Grant QQ User Info Failed', 'tt'),
                 'message' => $info->msg,
                 'code'  => 'grant_user_info_error'
             );
@@ -825,6 +868,642 @@ class OpenQQ extends Open{
         wp_safe_redirect(self::getRedirect());
         exit;
 
+    }
+
+}
+
+
+/**
+ * Class OpenWeiXin 微信开放平台登录
+ */
+class OpenWeiXin extends Open{
+
+    protected static $_type = 'weixin';
+
+    protected static $_status_option_name = 'tt_enable_weixin_login';
+
+    protected static $_openkey_option_name = 'tt_weixin_openid';
+
+    protected static $_opensecret_option_name = 'tt_weixin_openkey';
+
+    protected static $_openid_meta_key = 'tt_weixin_openid';
+
+    protected static $_access_token_meta_key = 'tt_weixin_access_token';
+
+    protected static $_refresh_token_meta_key = 'tt_weixin_refresh_token';
+
+    protected static $_token_expiration_meta_key = 'tt_weixin_token_expiration';
+
+    protected static $_state_cookie_name = 'tt_weixin_state';
+
+    protected static $_callback_url_key = 'oauth_weixin';
+
+    protected static $_oauth_last_url_key = 'oauth_weixin_last';
+
+    protected static $_oauth_data_session_key = 'tt_weixin_oauth_data';
+
+    /**
+     * 鉴权，获取code
+     *
+     * @since   2.0.0
+     *
+     * @return bool
+     */
+    protected function authenticate(){
+        // DOC https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&t=resource/res_list&verify=1&id=open1419316505&token=&lang=zh_CN
+        if( !($this->checkOpen('duplication_check')) || !($this->checkOpen('enable_check')) ) return false;
+
+        self::setRedirectCookie();
+
+        $params = array(
+            'response_type' => 'code',
+            'appid' => $this->_openkey,
+            'state' =>  self::setStateCookie(),
+            'scope'=>'snsapi_login',
+            'redirect_uri' => self::getCallbackUrl()
+        );
+
+        $auth_url = 'https://open.weixin.qq.com/connect/qrconnect?' . http_build_query($params);
+        wp_redirect($auth_url);
+        exit;
+    }
+
+    /**
+     * 认证，获取access token，抓取用户信息并尝试接入登录
+     *
+     * @since   2.0.0
+     *
+     * @param string $code  鉴权阶段成功后返回的code，用于认证步骤
+     * @param string $state 状态码，加强CSRF防护
+     * @return bool
+     */
+    protected function authorize($code, $state){
+        if( !($this->checkState()) ) return false;
+
+        $params = array(
+            'grant_type' => 'authorization_code',
+            'code' => $code,
+            'appid' => $this->_openkey,
+            'secret' => $this->_opensecret
+        );
+
+        $url = 'https://api.weixin.qq.com/sns/oauth2/access_token?' . http_build_query($params);
+
+        $response = wp_remote_get($url);
+
+        $body = wp_remote_retrieve_body($response);
+        // {
+            // "access_token":"ACCESS_TOKEN",
+            // "expires_in":7200,
+            // "refresh_token":"REFRESH_TOKEN",
+            // "openid":"OPENID",
+            // "scope":"SCOPE",
+            // "unionid": "o6_bmasdasdsad6_2sgVt7hMZOPfL"
+        // }
+
+        // {"errcode":40029,"errmsg":"invalid code"}
+
+        if(preg_match('/\{(.*)\}/', $body, $matches)){
+            $msg = json_decode(trim($matches[0]));
+            if(isset($msg->errcode)){
+                $this->_error = (object)array(
+                    'title' => 'Grant WeiXin Access Token Failed',
+                    'message' => $msg->errmsg,
+                    'code'  => 'grant_access_token_error_' . $msg->errcode
+                );
+                return false;
+            }
+        }else{
+            $this->_error = (object)array(
+                'title' => 'Grant WeiXin Access Token Failed',
+                'message' => __('The open server returned with a incorrect response', 'tt'),
+                'code'  => 'grant_access_token_error'
+            );
+            return false;
+        }
+
+        // 获取的openid等
+        $openid = $msg->openid;
+        $access_token = $msg->access_token; // 有效期2小时
+        $refresh_token = $msg->refresh_token; // 有效期30天
+        $expire_in = $msg->expires_in;
+        // $unionid = $msg->unionid; // 开发者最好保存用户unionID信息，以便以后在不同应用中进行用户信息互通
+
+        // 获取用户信息
+        $info = $this->getOpenUser($access_token, $openid);
+        if(!$info) return false;
+
+        // 将微信用户信息接入WP，尝试登入
+        $expiration = time() + $expire_in - 60*10;
+        return $this->openSignIn($info->openid, $access_token, $refresh_token, $expiration, $info);
+
+    }
+
+    /**
+     * 抓取开放平台用户信息
+     *
+     * @since   2.0.0
+     *
+     * @param   string  $access_token   Access Token
+     * @param   string  $openid     用户在开放平台的openid
+     * @return  array|bool|mixed|object
+     */
+    protected function getOpenUser($access_token, $openid){
+        // DOC https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&t=resource/res_list&verify=1&id=open1419316518&lang=zh_CN
+
+        $params = array(
+            'access_token' => $access_token,
+            'openid' => $openid
+        );
+
+        $graph_url = 'https://api.weixin.qq.com/sns/userinfo?' . http_build_query($params);
+
+        $response = wp_remote_get($graph_url);
+
+        $body = wp_remote_retrieve_body($response);
+
+        // {
+        //     "openid":"OPENID",
+        //     "nickname":"NICKNAME",
+        //     "sex":1,
+        //     "province":"PROVINCE",
+        //     "city":"CITY",
+        //     "country":"COUNTRY",
+        //     "headimgurl": "http://wx.qlogo.cn/mmopen/g3MonUZtNHkdmzicIlibx6iaFqAc56vxLSUfpb6n5WKSYVY0ChQKkiaJSgQ1dZuTOgvLLrhJbERQQ4eMsv84eavHiaiceqxibJxCfHe/0",
+        //     "privilege":[
+        //         "PRIVILEGE1",
+        //         "PRIVILEGE2"
+        //     ],
+        //    "unionid": " o6_bmasdasdsad6_2sgVt7hMZOPfL"
+        //
+        //}
+
+        // {
+            // "errcode":40003,"errmsg":"invalid openid"
+        // }
+        $msg = null;
+        if(preg_match('/\{(.*)\}/', $body, $matches)){
+            $msg = json_decode(trim($matches[0]));
+            if(isset($msg->errcode)){
+                $this->_error = (object)array(
+                    'title' => __('Get WeiXin Userinfo Failed', 'tt'),
+                    'message' => $msg->errmsg,
+                    'code'  => 'grant_userinfo_error_' . $msg->errcode
+                );
+                return false;
+            }
+        }else{
+            $this->_error = (object)array(
+                'title' => __('Get WeiXin Userinfo Failed', 'tt'),
+                'message' => __('The open server returned with a incorrect response', 'tt'),
+                'code'  => 'grant_userinfo_error'
+            );
+            return false;
+        }
+
+        // 正确的情况$msg就是用户信息
+        $info = $msg;
+        $info->name = $msg->nickname;  // 为了多个开放平台统一名称的key
+
+        return $info;
+    }
+
+    /**
+     * 刷新Access Token
+     *
+     * @since   2.0.0
+     *
+     * @return bool
+     */
+    protected function refreshToken(){
+        // Route /oauth/[type]?act=refresh
+
+        self::setRedirectCookie();
+
+        if( !($this->_user) ){
+            $this->_error = (object)array(
+                'title' => __('User Not Logged In', 'tt'),
+                'message' => __('You must log in to refresh your token', 'tt'),
+                'code' => 'unidentified_user'
+            );
+
+            return false;
+        }
+
+        $refresh_token = get_user_meta($this->_user->ID, self::$_refresh_token_meta_key, true);
+
+        if(!$refresh_token){
+            $this->_error = (object)array(
+                'title' => __('Refresh Token Miss', 'tt'),
+                'message' => __('A refresh token is required to get new access token', 'tt'),
+                'code' => 'refresh_token_miss'
+            );
+
+            return false;
+        }
+
+        $params = array(
+            'grant_type' => 'refresh_token',
+            'appid' => $this->_openkey,
+            'refresh_token' => $refresh_token
+        );
+
+        $url = 'https://api.weixin.qq.com/sns/oauth2/refresh_token?' . http_build_query($params);
+        $response = wp_remote_get($url);
+
+        $body = wp_remote_retrieve_body($response);
+
+        // {
+        //    "access_token":"ACCESS_TOKEN",
+        //    "expires_in":7200,
+        //    "refresh_token":"REFRESH_TOKEN",
+        //    "openid":"OPENID",
+        //    "scope":"SCOPE"
+        // }
+
+        // {
+        //    "errcode": 40030,
+        //    "errmsg": "invalid refresh_token, hints: [ req_id: 0HmTcA0011ssz2 ]"
+        // }
+
+        $msg = null;
+        if(preg_match('/\{(.*)\}/', $body, $matches)){
+            $msg = json_decode(trim($matches[0]));
+            if(isset($msg->errcode)){
+                $this->_error = (object)array(
+                    'title' => __('Refresh WeiXin Token Failed', 'tt'),
+                    'message' => $msg->errmsg,
+                    'code'  => 'refresh_token_error_' . $msg->errcode
+                );
+                return false;
+            }
+        }else{
+            $this->_error = (object)array(
+                'title' => __('Refresh WeiXin Token Failed', 'tt'),
+                'message' => __('The open server returned with a incorrect response', 'tt'),
+                'code'  => 'refresh_token_error'
+            );
+            return false;
+        }
+
+        $access_token = $params['access_token'];
+        $expire_in = $params['expires_in'];
+        $refresh_token = $params['refresh_token'];
+        $expiration = time() + $expire_in - 60*10;
+
+        update_user_meta($this->_user->ID, static::$_access_token_meta_key, $access_token);
+        update_user_meta($this->_user->ID, static::$_refresh_token_meta_key, $refresh_token);
+        update_user_meta($this->_user->ID, static::$_token_expiration_meta_key, $expiration);
+
+        wp_safe_redirect(self::getRedirect());
+        exit;
+
+    }
+
+}
+
+
+/**
+ * Class OpenWeibo 微博开放平台登录
+ */
+class OpenWeibo extends Open{
+
+    protected static $_type = 'weibo';
+
+    protected static $_status_option_name = 'tt_enable_weibo_login';
+
+    protected static $_openkey_option_name = 'tt_weibo_openid';
+
+    protected static $_opensecret_option_name = 'tt_weibo_openkey';
+
+    protected static $_openid_meta_key = 'tt_weibo_openid';
+
+    protected static $_access_token_meta_key = 'tt_weibo_access_token';
+
+    protected static $_refresh_token_meta_key = 'tt_weibo_refresh_token';
+
+    protected static $_token_expiration_meta_key = 'tt_weibo_token_expiration';
+
+    protected static $_state_cookie_name = 'tt_weibo_state';
+
+    protected static $_callback_url_key = 'oauth_weibo';
+
+    protected static $_oauth_last_url_key = 'oauth_weibo_last';
+
+    protected static $_oauth_data_session_key = 'tt_weibo_oauth_data';
+
+    /**
+     * 鉴权，获取code
+     *
+     * @since   2.0.0
+     *
+     * @return bool
+     */
+    protected function authenticate(){
+        // DOC http://open.weibo.com/wiki/%E6%8E%88%E6%9D%83%E6%9C%BA%E5%88%B6%E8%AF%B4%E6%98%8E
+        if( !($this->checkOpen('duplication_check')) || !($this->checkOpen('enable_check')) ) return false;
+
+        self::setRedirectCookie();
+
+        $state = self::setStateCookie();
+        $params = array(
+            'response_type' => 'code',
+            'client_id' => $this->_openkey,
+            'redirect_uri' => self::getCallbackUrl(array('state' => $state))  // 由于微博不需要state参数，也不会回调时返回state，为了统一，在生成回调地址上附上state参数
+        );
+
+        $auth_url = 'https://graph.qq.com/oauth2.0/authorize?' . http_build_query($params);
+        wp_redirect($auth_url);
+        exit;
+    }
+
+    /**
+     * 认证，获取access token，抓取用户信息并尝试接入登录
+     *
+     * @since   2.0.0
+     *
+     * @param string $code  鉴权阶段成功后返回的code，用于认证步骤
+     * @param string $state 状态码，加强CSRF防护
+     * @return bool
+     */
+    protected function authorize($code, $state){
+        // if( !($this->checkState()) ) return false; // 没有必要
+
+        $params = array(
+            'grant_type' => 'authorization_code',
+            'code' => $code,
+            'client_id' => $this->_openkey,
+            'client_secret' => $this->_opensecret,
+            'redirect_uri' => self::getCallbackUrl()
+        );
+
+        $url = 'https://api.weibo.com/oauth2/access_token?' . http_build_query($params);
+
+        $response = wp_remote_get($url);
+
+        $body = wp_remote_retrieve_body($response);
+        // {
+        //    "access_token": "SlAV32hkKG",
+        //    "remind_in": 3600,
+        //    "expires_in": 3600
+        // }
+
+        // {
+        //    "error": "unsupport_protocol",
+        //    "error_code": 21320,
+        //    "request": "/oauth2/access_token",
+        //    "error_uri": "/oauth2/access_token",
+        //    "error_description": "oauth2 must use https protocol." // optional
+        // }
+
+        if(preg_match('/\{(.*)\}/', $body, $matches)){
+            $msg = json_decode(trim($matches[0]));
+            if(isset($msg->error)){
+                $this->_error = (object)array(
+                    'title' => __('Grant Weibo Access Token Failed', 'tt'),
+                    'message' => isset($msg->error_description) ? $msg->error_description : $msg->error,
+                    'code'  => 'grant_access_token_error'
+                );
+                return false;
+            }
+        }else{
+            $this->_error = (object)array(
+                'title' => 'Grant Weibo Access Token Failed',
+                'message' => __('The open server returned with a incorrect response', 'tt'),
+                'code'  => 'grant_access_token_error'
+            );
+            return false;
+        }
+
+        // 获取到的access_token等参数
+        $access_token = $msg->access_token; // 通常过期时间为7天
+        $expire_in = $msg->expires_in;
+        $refresh_token = isset($msg->refresh_token) ? $msg->refresh_token : ''; // 仅对使用了微博移动SDK的移动应用有效
+
+        // 获取用户openid以及昵称等
+        $info = $this->getOpenUser($access_token);
+        if(!$info) return false;
+
+        // 将QQ用户信息接入WP，尝试登入
+        $expiration = time() + $expire_in - 60*10;
+        return $this->openSignIn($info->openid, $access_token, $refresh_token, $expiration, $info);
+
+    }
+
+    /**
+     * 抓取开放平台用户信息
+     *
+     * @since   2.0.0
+     *
+     * @param   string  $access_token   Access Token
+     * @param   string  $openid     用户在开放平台的openid
+     * @return  array|bool|mixed|object
+     */
+    protected function getOpenUser($access_token, $openid = null){
+
+        // Step 1. http://open.weibo.com/wiki/Oauth2/get_token_info
+        $graph_url = 'https://api.weibo.com/oauth2/get_token_info';  // POST请求
+        $response = wp_remote_post($graph_url, array('access_token' => $access_token));
+        $body = wp_remote_retrieve_body($response);
+
+        // {
+        //    "uid": 1073880650,
+        //    "appkey": 1352222456,
+        //    "scope": null,
+        //    "create_at": 1352267591,
+        //    "expire_in": 157679471
+        // }
+
+        // {
+        //    "error": "HTTP METHOD is not suported for this request!",
+        //    "error_code": 10021,
+        //    "request": "/oauth2/get_token_info"
+        // }
+        if(preg_match('/\{(.*)\}/', $body, $matches)){
+            $msg = json_decode(trim($matches[0]));
+            if(isset($msg->error)){
+                $this->_error = (object)array(
+                    'title' => __('Grant Weibo Token Info Failed', 'tt'),
+                    'message' => isset($msg->error_description) ? $msg->error_description : $msg->error,
+                    'code'  => 'grant_token_info_error_' . $msg->error_code
+                );
+                return false;
+            }
+        }else{
+            $this->_error = (object)array(
+                'title' => 'Grant Weibo Token Info Failed',
+                'message' => __('The open server returned with a incorrect response', 'tt'),
+                'code'  => 'grant_token_info_error'
+            );
+            return false;
+        }
+
+        $uid = $msg->uid;
+
+        // Step 2. http://open.weibo.com/wiki/2/users/show
+        $params = array(
+            'access_token' => $access_token,
+            'uid' => $uid
+        );
+        $graph_url = 'https://api.weibo.com/2/users/show.json?' . http_build_query($params);  // GET请求
+        $response = wp_remote_get($graph_url);
+        $body = wp_remote_retrieve_body($response);
+
+        // {
+        //    "id": 1404376560,
+        //    "screen_name": "zaku",
+        //    "name": "zaku",
+        //    "province": "11",
+        //    "city": "5",
+        //    "location": "北京 朝阳区",
+        //    "description": "人生五十年，乃如梦如幻；有生斯有死，壮士复何憾。",
+        //    "url": "http://blog.sina.com.cn/zaku",
+        //    "profile_image_url": "http://tp1.sinaimg.cn/1404376560/50/0/1",
+        //    "domain": "zaku",
+        //    "gender": "m",
+        //    "followers_count": 1204,
+        //    "friends_count": 447,
+        //    "statuses_count": 2908,
+        //    "favourites_count": 0,
+        //    "created_at": "Fri Aug 28 00:00:00 +0800 2009",
+        //    "following": false,
+        //    "allow_all_act_msg": false,
+        //    "geo_enabled": true,
+        //    "verified": false,
+        //    "status": {
+        //        "created_at": "Tue May 24 18:04:53 +0800 2011",
+        //        "id": 11142488790,
+        //        "text": "我的相机到了。",
+        //        "source": "<a href="http://weibo.com" rel="nofollow">新浪微博</a>",
+        //        "favorited": false,
+        //        "truncated": false,
+        //        "in_reply_to_status_id": "",
+        //        "in_reply_to_user_id": "",
+        //        "in_reply_to_screen_name": "",
+        //        "geo": null,
+        //        "mid": "5610221544300749636",
+        //        "annotations": [],
+        //        "reposts_count": 5,
+        //        "comments_count": 8
+        //    },
+        //    "allow_all_comment": true,
+        //    "avatar_large": "http://tp1.sinaimg.cn/1404376560/180/0/1",
+        //    "verified_reason": "",
+        //    "follow_me": false,
+        //    "online_status": 0,
+        //    "bi_followers_count": 215
+        // }
+
+        // {
+        //    "error": "source paramter(appkey) is missing",
+        //    "error_code": 10006,
+        //    "request": "/2/users/show.json"
+        // }
+        if(preg_match('/\{(.*)\}/', $body, $matches)){
+            $msg = json_decode(trim($matches[0]));
+            if(isset($msg->error)){
+                $this->_error = (object)array(
+                    'title' => __('Grant Weibo User Show Info Failed', 'tt'),
+                    'message' => isset($msg->error_description) ? $msg->error_description : $msg->error,
+                    'code'  => 'grant_user_show_info_error_' . $msg->error_code
+                );
+                return false;
+            }
+        }else{
+            $this->_error = (object)array(
+                'title' => 'Grant Weibo User Show Info Failed',
+                'message' => __('The open server returned with a incorrect response', 'tt'),
+                'code'  => 'grant_user_show_info_error'
+            );
+            return false;
+        }
+
+        $info = $msg;
+
+        return $info;
+    }
+
+    /**
+     * 刷新Access Token(当前仅对使用官方SDK的移动应用有效，其他的不提供refresh_token用于刷新)
+     *
+     * @since   2.0.0
+     *
+     * @return bool
+     */
+    protected function refreshToken(){
+        // Route /oauth/[type]?act=refresh
+
+        self::setRedirectCookie();
+
+        if( !($this->_user) ){
+            $this->_error = (object)array(
+                'title' => __('User Not Logged In', 'tt'),
+                'message' => __('You must log in to refresh your token', 'tt'),
+                'code' => 'unidentified_user'
+            );
+
+            return false;
+        }
+
+        $refresh_token = get_user_meta($this->_user->ID, self::$_refresh_token_meta_key, true);
+
+        if(!$refresh_token){
+            $this->_error = (object)array(
+                'title' => __('Refresh Token Miss', 'tt'),
+                'message' => __('A refresh token is required to get new access token', 'tt'),
+                'code' => 'refresh_token_miss'
+            );
+
+            return false;
+        }
+
+        $params = array(
+            'grant_type' => 'refresh_token',
+            'client_id' => $this->_openkey,
+            'client_secret' => $this->_opensecret,
+            'refresh_token' => $refresh_token,
+            'redirect_uri' => self::getCallbackUrl()
+        );
+
+        $url = 'https://api.weibo.com/oauth2/access_token?' . http_build_query($params);
+
+        $response = wp_remote_get($url);
+
+        $body = wp_remote_retrieve_body($response);
+        // {
+        //    "access_token": "SlAV32hkKG",
+        //    "expires_in": 3600
+        // }
+        if(preg_match('/\{(.*)\}/', $body, $matches)){
+            $msg = json_decode(trim($matches[0]));
+            if(isset($msg->error)){
+                $this->_error = (object)array(
+                    'title' => __('Refresh Weibo Access Token Failed', 'tt'),
+                    'message' => isset($msg->error_description) ? $msg->error_description : $msg->error,
+                    'code'  => 'refresh_access_token_error_' . $msg->error_code
+                );
+                return false;
+            }
+        }else{
+            $this->_error = (object)array(
+                'title' => 'Refresh Weibo Access Token Failed',
+                'message' => __('The open server returned with a incorrect response', 'tt'),
+                'code'  => 'refresh_access_token_error'
+            );
+            return false;
+        }
+
+        $access_token = $msg->access_token;
+        $expire_in = $msg->expire_in;
+        $expiration = time() + $expire_in - 60*10;
+
+        update_user_meta($this->_user->ID, static::$_access_token_meta_key, $access_token);
+        update_user_meta($this->_user->ID, static::$_token_expiration_meta_key, $expiration);
+
+        wp_safe_redirect(self::getRedirect());
+        exit;
+
+        // TODO: 是否要重新获取一些用户信息，如描述，地理位置并更新WP内的数据
     }
 
 }
