@@ -22,7 +22,7 @@ $open_type = get_query_var('oauth');
 
 $open = new OpenQQ(wp_get_current_user());
 
-$try = $open->openHandle(); // 成功会挑转，无需再执行处理
+$try = $open->openHandle(); // 成功会跳转，无需再执行处理
 
 if(!$try){
     $error = $open->getError();
@@ -30,5 +30,5 @@ if(!$try){
 }
 
 // 对于其他任意情况，一律如下处理
-$response_code = is_user_logged_in() ? '401' : '403';
+$response_code = is_user_logged_in() ? '403' : '401';
 wp_die(__('The request you have done is illegal, please retry', 'tt'), __('Illegal Request', 'tt'), array('response' => $response_code, 'back_link' => true));

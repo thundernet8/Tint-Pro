@@ -47,7 +47,7 @@ final class Avatar{
     private static $_sizeMap = array(
         'small'     =>  32,
         'medium'    =>  64,
-        'large'     =>  120
+        'large'     =>  96
     );
 
     /**
@@ -236,7 +236,7 @@ final class Avatar{
      */
     public static function getDefaultAvatar($size = 'medium'){
         $size = self::strSize($size);
-        return THEME_ASSET . '/img/avatar_' . $size . '.png';
+        return THEME_ASSET . '/img/avatar/avatar_' . $size . '.png';
     }
 
 
@@ -272,7 +272,7 @@ final class Avatar{
         if(is_int($size)){
             if($size>64){
                 $size = 'large';
-            } elseif ($size>32){
+            } elseif ($size>48){ // TODO 32?
                 $size = 'medium';
             }else{
                 $size = 'small';

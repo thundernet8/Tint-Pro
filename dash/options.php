@@ -136,7 +136,23 @@ function optionsframework_options() {
 		'type' => 'heading'
 	);
 
-	//
+    // - 网站 Logo
+    $options[] = array(
+        'name' => __( 'Site Logo', 'tt' ),
+        'desc' => __( 'Please upload an png file as site logo', 'tt' ),
+        'id' => 'tt_logo',
+        'std' => THEME_ASSET . '/img/logo.png',
+        'type' => 'upload'
+    );
+
+    // - 网站小 Logo
+    $options[] = array(
+        'name' => __( 'Site Small Logo', 'tt' ),
+        'desc' => __( 'Please upload an png file as site small logo', 'tt' ),
+        'id' => 'tt_small_logo',
+        'std' => THEME_ASSET . '/img/small-logo.png',
+        'type' => 'upload'
+    );
 
 
 	// 主题设置 - 边栏设置

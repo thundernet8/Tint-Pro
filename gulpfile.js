@@ -131,6 +131,14 @@ gulp.task('php', function () {
         .pipe(revCollector())
         .pipe(rename('mod.Header.php'))
         .pipe(gulp.dest('./core/modules'));
+    gulp.src(['./src/rev/*.json', './src/php/header-simple.php'])
+        .pipe(revCollector())
+        .pipe(rename('mod.Header.Simple.php'))
+        .pipe(gulp.dest('./core/modules'));
+    gulp.src(['./src/rev/*.json', './src/php/footer-simple.php'])
+        .pipe(revCollector())
+        .pipe(rename('mod.Footer.Simple.php'))
+        .pipe(gulp.dest('./core/modules'));
     gulp.src(['./src/rev/*.json', './src/php/footer.php'])
         .pipe(revCollector())
         .pipe(rename('mod.Footer.php'))

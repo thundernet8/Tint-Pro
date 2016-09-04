@@ -87,15 +87,6 @@ function tt_url_for($key, $arg = null, $relative = false){
             $nickname = call_user_func($uc_func, $arg);
             if($nickname) $endpoint = '@' . $nickname . '/recommendations';
             break;
-        case 'oauth_qq_last':
-            $endpoint = $routes['oauth_qq'] . '/last';
-            break;
-        case 'oauth_weibo_last':
-            $endpoint = $routes['oauth_weibo'] . '/last';
-            break;
-        case 'oauth_weixin_last':
-            $endpoint = $routes['oauth_weixin'] . '/last';
-            break;
     }
     if($endpoint){
         return $relative ? '/' . $endpoint : home_url('/' . $endpoint);

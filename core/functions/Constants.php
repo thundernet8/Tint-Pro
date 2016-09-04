@@ -49,7 +49,14 @@ $uc_allow_tabs = json_encode(array('latest', 'comments', 'recommendations')); //
 defined('ALLOWED_UC_TABS') || define('ALLOWED_UC_TABS', $uc_allow_tabs);
 
 /* Allowed Action */
-$m_allow_actions = json_encode(array('signin', 'signup', 'signout', 'refresh'));
+$m_allow_actions = json_encode(array(
+    'signin' => 'Signin',
+    'signup' => 'Signup',
+    'signout' => 'Signout',
+    'refresh' => 'Refresh',
+    'findpass' => 'Findpass',
+    'resetpass' => 'Resetpass'
+));
 defined('ALLOWED_M_ACTIONS') || define('ALLOWED_M_ACTIONS', $m_allow_actions);
 
 /* Allowed Me Routes */
@@ -85,31 +92,46 @@ $oauth_allow_acts = json_encode(array('connect', 'disconnect', 'refresh'));
 defined('ALLOWED_OAUTH_ACTIONS') || define('ALLOWED_OAUTH_ACTIONS', $oauth_allow_acts);
 
 /* Allowed Site Utils */
-$site_allow_utils = json_encode(array('upgradebrowser'));
+$site_allow_utils = json_encode(array(
+    'upgrade-browser' => 'UpgradeBrowser',
+    'privacy-terms-and-policies' => 'Privacy'
+));
 defined('ALLOWED_SITE_UTILS') || define('ALLOWED_SITE_UTILS', $site_allow_utils);
 
 /* Some Endpoints */
 $site_endpoints = json_encode(array(
-    'upgrade_browser'   =>  'site/upgradebrowser',
-    'api_root'          =>  'api',
-    'signin'            =>  'm/signin',
-    'signup'            =>  'm/signup',
-    'signout'           =>  'm/signout',
-    'my_settings'       =>  'me/settings',
-    'balance'           =>  'me/balance',
-    'stars'             =>  'me/stars',
-    'in_msg'            =>  'me/messages/inbox',
-    'out_msg'           =>  'me/messages/sendbox',
-    'all_notify'        =>  'me/notifications/all',
-    'comment_notify'    =>  'me/notifications/comment',
-    'star_notify'       =>  'me/notifications/star',
-    'update_notify'     =>  'me/notifications/update',
-    'my_all_orders'     =>  'me/orders/all',
-    'my_gold_orders'    =>  'me/orders/gold',
-    'my_cash_orders'    =>  'me/orders/cash',
-    'oauth_qq'          =>  'oauth/qq',
-    'oauth_weibo'       =>  'oauth/weibo',
-    'oauth_weixin'      =>  'oauth/weixin'
+    'upgrade_browser'           =>  'site/upgrade-browser',
+    'privacy'                   =>  'site/privacy-policies-and-terms',   // TODO: terms
+    'api_root'                  =>  'api',
+    'signin'                    =>  'm/signin',
+    'signup'                    =>  'm/signup',
+    'signout'                   =>  'm/signout',
+    'findpass'                  =>  'm/findpass',
+    'resetpass'                 =>  'm/resetpass',
+    'my_settings'               =>  'me/settings',
+    'balance'                   =>  'me/balance',
+    'stars'                     =>  'me/stars',
+    'in_msg'                    =>  'me/messages/inbox',
+    'out_msg'                   =>  'me/messages/sendbox',
+    'all_notify'                =>  'me/notifications/all',
+    'comment_notify'            =>  'me/notifications/comment',
+    'star_notify'               =>  'me/notifications/star',
+    'update_notify'             =>  'me/notifications/update',
+    'my_all_orders'             =>  'me/orders/all',
+    'my_gold_orders'            =>  'me/orders/gold',
+    'my_cash_orders'            =>  'me/orders/cash',
+    'oauth_qq'                  =>  'oauth/qq',
+    'oauth_weibo'               =>  'oauth/weibo',
+    'oauth_weixin'              =>  'oauth/weixin',
+    'oauth_qq_last'             =>  'oauth/qq/last',
+    'oauth_weibo_last'          =>  'oauth/weibo/last',
+    'oauth_weixin_last'         =>  'oauth/weixin/last',
+    'oauth_qq_disconnect'       =>  'oauth/qq?act=disconnect',
+    'oauth_weibo_disconnect'    =>  'oauth/weibo?act=disconnect',
+    'oauth_weixin_disconnect'   =>  'oauth/weixin?act=disconnect',
+    'oauth_qq_refresh'          =>  'oauth/qq?act=refresh',
+    'oauth_weibo_refresh'       =>  'oauth/weibo?act=refresh',
+    'oauth_weixin_refresh'      =>  'oauth/weixin?act=refresh'
 
     // TODO: Add more
 ));

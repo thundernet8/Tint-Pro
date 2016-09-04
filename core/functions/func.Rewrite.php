@@ -315,7 +315,7 @@ function tt_handle_action_page_rewrite_rules($wp_rewrite){
     if($ps = get_option('permalink_structure')){
         //action (signin|signup|signout|refresh)
         // m->move(action)
-        $new_rules['m/([A-Za-z]+)$'] = 'index.php?action=$matches[1]';
+        $new_rules['m/([A-Za-z_-]+)$'] = 'index.php?action=$matches[1]';
         $wp_rewrite->rules = $new_rules + $wp_rewrite->rules;
     }
 }
@@ -348,11 +348,12 @@ add_filter('query_vars', 'tt_add_action_page_query_vars');
  */
 function tt_handle_action_page_template(){
     $action = strtolower(get_query_var('action'));
-    if($action && in_array($action, (array)json_decode(ALLOWED_M_ACTIONS))){
+    $allowed_actions = (array)json_decode(ALLOWED_M_ACTIONS);
+    if($action && in_array($action, array_keys($allowed_actions))){
         global $wp_query;
         $wp_query->is_home = false;
         $wp_query->is_page = true; //将该模板改为页面属性，而非首页
-        $template = THEME_TPL . '/actions/tpl.M.' . ucfirst($action) . '.php';
+        $template = THEME_TPL . '/actions/tpl.M.' . ucfirst($allowed_actions[$action]) . '.php';
         load_template($template);
         exit;
     }
@@ -434,7 +435,7 @@ add_action('template_redirect', 'tt_handle_oauth_page_template', 5);
 function tt_handle_site_util_page_rewrite_rules($wp_rewrite){
     if($ps = get_option('permalink_structure')){
         //site_util (upgradeBrowser)
-        $new_rules['site/([A-Za-z]+)$'] = 'index.php?site_util=$matches[1]';
+        $new_rules['site/([A-Za-z_-]+)$'] = 'index.php?site_util=$matches[1]';
         $wp_rewrite->rules = $new_rules + $wp_rewrite->rules;
     }
 }
@@ -467,11 +468,12 @@ add_filter('query_vars', 'tt_add_site_util_page_query_vars');
  */
 function tt_handle_site_util_page_template(){
     $util = get_query_var('site_util');
-    if($util && in_array(strtolower($util), (array)json_decode(ALLOWED_SITE_UTILS))){
+    $allowed_utils = (array)json_decode(ALLOWED_SITE_UTILS);
+    if($util && in_array(strtolower($util), array_keys($allowed_utils))){
         global $wp_query;
         $wp_query->is_home = false;
         $wp_query->is_page = true; //将该模板改为页面属性，而非首页
-        $template = THEME_TPL . '/site/tpl.' . ucfirst(strtolower($util)) . '.php';
+        $template = THEME_TPL . '/site/tpl.' . ucfirst(strtolower($allowed_utils[$util])) . '.php';
         load_template($template);
         exit;
     }

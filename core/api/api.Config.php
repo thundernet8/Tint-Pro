@@ -29,3 +29,8 @@ add_filter('rest_url_prefix', 'tt_set_rest_api_prefix');
 
 
 require_once THEME_API . '/api.Compatibility.php';
+require_once THEME_API . '/api.Utils.php';
+
+// v1 api
+require_once THEME_API . '/v1/endpoints/class.Rest.Controller.php';
+require_once THEME_API . '/v1/endpoints/class.Rest.User.Controller.php';
