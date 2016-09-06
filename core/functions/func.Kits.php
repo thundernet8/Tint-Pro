@@ -93,3 +93,122 @@ function tt_url_for($key, $arg = null, $relative = false){
     }
     return false;
 }
+
+
+/**
+ * 可逆加密
+ *
+ * @since   2.0.0
+ *
+ * @param   mixed   $data   待加密数据
+ * @param   string  $key    加密密钥
+ * @return  string
+ */
+function tt_encrypt($data, $key) {
+    $data = maybe_serialize($data);
+    $key = md5($key);
+    $x = 0;
+    $len = strlen($data);
+    $l = strlen($key);
+    $char = $str = '';
+    for ($i = 0; $i < $len; $i++) {
+        if ($x == $l) {
+            $x = 0;
+        }
+        $char .= $key{$x};
+        $x++;
+    }
+    for ($i = 0; $i < $len; $i++) {
+        $str .= chr(ord($data{$i}) + (ord($char{$i})) % 256);
+    }
+    return base64_encode($str);
+}
+
+/**
+ * 解密
+ *
+ * @since   2.0.0
+ *
+ * @param   string  $data   待解密数据
+ * @param   string  $key    密钥
+ * @return  mixed
+ */
+function tt_decrypt($data, $key) {
+    $key = md5($key);
+    $x = 0;
+    $data = base64_decode($data);
+    $len = strlen($data);
+    $l = strlen($key);
+    $char = $str = '';
+    for ($i = 0; $i < $len; $i++) {
+        if ($x == $l) {
+            $x = 0;
+        }
+        $char .= substr($key, $x, 1);
+        $x++;
+    }
+    for ($i = 0; $i < $len; $i++) {
+        if (ord(substr($data, $i, 1)) < ord(substr($char, $i, 1))) {
+            $str .= chr((ord(substr($data, $i, 1)) + 256) - ord(substr($char, $i, 1)));
+        }else{
+            $str .= chr(ord(substr($data, $i, 1)) - ord(substr($char, $i, 1)));
+        }
+    }
+    return maybe_unserialize($str);
+}
+
+
+/**
+ * 加密解密数据
+ *
+ * @since   2.0.0
+ *
+ * @param   mixed   $data   待加密数据
+ * @param   string  $operation  操作(加密|解密)
+ * @param   string  $key    密钥
+ * @param   int     $expire     过期时间
+ * @return  string
+ */
+function tt_authdata($data, $operation = 'DECODE', $key = '', $expire = 0) {
+    if($operation != 'DECODE'){
+        $data = maybe_serialize($data);
+    }
+    $ckey_length = 4;
+    $key = md5($key ? $key : 'null');
+    $keya = md5(substr($key, 0, 16));
+    $keyb = md5(substr($key, 16, 16));
+    $keyc = $ckey_length ? ($operation == 'DECODE' ? substr($data, 0, $ckey_length): substr(md5(microtime()), -$ckey_length)) : '';
+    $cryptkey = $keya.md5($keya.$keyc);
+    $key_length = strlen($cryptkey);
+    $data = $operation == 'DECODE' ? base64_decode(substr($data, $ckey_length)) : sprintf('%010d', $expire ? $expire + time() : 0) . substr(md5($data . $keyb), 0, 16) . $data;
+    $string_length = strlen($data);
+    $result = '';
+    $box = range(0, 255);
+    $rndkey = array();
+    for($i = 0; $i <= 255; $i++) {
+        $rndkey[$i] = ord($cryptkey[$i % $key_length]);
+    }
+    for($j = $i = 0; $i < 256; $i++) {
+        $j = ($j + $box[$i] + $rndkey[$i]) % 256;
+        $tmp = $box[$i];
+        $box[$i] = $box[$j];
+        $box[$j] = $tmp;
+    }
+    for($a = $j = $i = 0; $i < $string_length; $i++) {
+        $a = ($a + 1) % 256;
+        $j = ($j + $box[$a]) % 256;
+        $tmp = $box[$a];
+        $box[$a] = $box[$j];
+        $box[$j] = $tmp;
+        $result .= chr(ord($data[$i]) ^ ($box[($box[$a] + $box[$j]) % 256]));
+    }
+    if($operation == 'DECODE') {
+        if((substr($result, 0, 10) == 0 || substr($result, 0, 10) - time() > 0) && substr($result, 10, 16) == substr(md5(substr($result, 26) . $keyb), 0, 16)) {
+            return maybe_unserialize(substr($result, 26));
+        } else {
+            return false;
+        }
+    } else {
+        return $keyc . str_replace('=', '', base64_encode($result));
+    }
+}

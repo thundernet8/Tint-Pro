@@ -117,21 +117,67 @@ add_action( 'rest_api_init', 'tt_create_initial_rest_routes', 0 );  // TODO cach
 
 
 /**
+ * REST请求的缓存键
+ *
+ * @since   2.0.0
+ *
+ * @param   WP_REST_Request  $request
+ * @return  string
+ */
+function tt_get_rest_request_cache_key($request) {
+    //$request_uri = esc_url( $_SERVER['REQUEST_URI'] );
+
+    $prefix = 'tt_rest_cache_';
+    $user_id = 0;
+
+    $method = $request->get_method();
+    $path = $request->get_route();
+    $params = $request->get_params();
+    $params_str = json_encode($params);
+    if(isset($params['user_diff']) && $params['user_diff']){  // TODO: user_diff
+        $user_id = get_current_user_id();
+    }
+
+    $cache_key = $prefix . md5(implode('_', array($method, $path, $params_str, $user_id)));
+
+    return $cache_key;
+}
+
+/**
  * 接口缓存 - GET
  *
  * @since   2.0.0
  *
  * @param   mixed   $result
- * @param   WP_REST_Server  $rest_server
+ * @param   WP_REST_Server  $server
  * @param   WP_REST_Request $request
- * @return WP_REST_Response
+ * @return  WP_REST_Response | false
  */
-function tt_get_rest_request_cache($result, $rest_server, $request) {
+function tt_rest_pre_dispatch_cache($result, $server, $request) {
 
-    // WP_REST_Response  - __construct( $data = null, $status = 200, $headers = array() )
-    return new WP_REST_Response(array('link' => '123')); // TODO
+    // 更改headers的filter
+    // add_filter( 'tt_rest_cache_headers', function( $headers ) {
+    // $headers['Cache-Control'] = 'public, max-age=3600';
+
+    //     return $headers;
+    // } );
+    $headers = apply_filters( 'tt_rest_cache_headers', array(), $server, $request );  //TODO `tt_rest_cache_headers` filter
+    if ( !empty( $headers ) ) {
+        $server->send_headers( $headers );
+    }
+
+    $cache_key = tt_get_rest_request_cache_key($request);
+
+    if($result = get_transient($cache_key)){
+        $result = maybe_unserialize($result);
+
+        return new WP_REST_Response($result); // WP_REST_Response  - __construct( $data = null, $status = 200, $headers = array() )
+    }
+
+    return false;
+
 }
-add_filter( 'rest_pre_dispatch', 'tt_get_rest_request_cache', 10, 3);
+add_filter('rest_pre_dispatch', 'tt_rest_pre_dispatch_cache', 10, 3);
 
 
 /**
@@ -145,12 +191,17 @@ add_filter( 'rest_pre_dispatch', 'tt_get_rest_request_cache', 10, 3);
  * @param   array     $handler
  * @return  WP_REST_Response
  */
-function tt_set_rest_request_cache($dispatch_result, $request, $route, $handler) {
-    $callback  = $handler['callback'];
-    $response = call_user_func($callback, $request);
+function tt_rest_dispatch_request_cache($dispatch_result, $request, $route, $handler) {
+    // 处理request
+    $callback = $handler['callback'];
+    $response = call_user_func( $callback, $request );
 
-    // 设置缓存 // TODO
+    // 设置cache
+    $cache_key = tt_get_rest_request_cache_key($request);
+    $expiration = isset($handler['cache_expiration']) ? (int)$handler['cache_expiration'] : 60*60*24; // TODO: cache_expiration
+    set_transient($cache_key, $response, $expiration);
+
 
     return $response;
 }
-add_filter('rest_dispatch_request', 'tt_set_rest_request_cache', 10, 4);
+add_filter( 'rest_dispatch_request', 'tt_rest_dispatch_request_cache', 10, 4 );

@@ -13,6 +13,10 @@
  */
 ?>
 
+
+<footer class="footer">
+    <!-- TODO -->
+</footer>
 <?php wp_footer(); ?>
 </body>
 </html>

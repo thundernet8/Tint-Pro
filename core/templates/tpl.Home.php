@@ -24,6 +24,8 @@ global $wp_query;
 
 var_dump($wp_query);
 
+
+
 ?>
 
 <?php tt_get_footer(); ?>

@@ -76,9 +76,11 @@ load_class('class.PostImage');
 load_class('class.Utils');
 
 /* 载入功能函数 */
+load_func('func.L10n');
+load_func('func.Account');
 load_func('func.Avatar');
 load_func('func.Cache');
-load_func('func.L10n');
+load_func('func.Email');
 load_func('func.Init');
 load_func('func.Install');
 load_func('func.Kits');

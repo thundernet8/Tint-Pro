@@ -84,7 +84,7 @@ class WP_REST_User_Controller extends WP_REST_Controller {
             'schema' => array( $this, 'get_public_item_schema' ),
         ));
 
-        register_rest_route( $this->namespace, '/' . $this->rest_base . '/(?P<email>[\S]+)', array(
+        register_rest_route( $this->namespace, '/' . $this->rest_base . '/email:(?P<email>[\S]+)', array(
             array(
                 'methods'         => WP_REST_Server::READABLE,
                 'callback'        => array( $this, 'get_item_by_email' ),
@@ -301,12 +301,20 @@ class WP_REST_User_Controller extends WP_REST_Controller {
         $email = base64_decode( $request['email'] );
         $user = get_user_by( 'email', $email );
 
-        if ( empty( $email ) || empty( $user->ID ) ) {
+        if ( !is_email( $email ) || empty( $user->ID ) ) {
             return new WP_Error( 'rest_user_invalid_email', __( 'Invalid resource email.', 'tt' ), array( 'status' => tt_rest_resource_not_found_code() ) );
         }
 
-        $user = $this->prepare_item_for_response( $user, $request );
+        //$user = $this->prepare_item_for_response( $user, $request );
         $response = rest_ensure_response( $user );
+
+        // GET参数act=findpass
+        $act = $request->get_param('act');
+        if($act === 'findpass'){
+            // 发送重置密码链接
+            $reset_link = tt_generate_reset_password_link($email, $user->ID);
+            tt_mail('', $email, '', array('email' => $email, 'user_id' => $user->ID, 'name' => $user->display_name), 'reset_pass');
+        }
 
         return $response;
     }

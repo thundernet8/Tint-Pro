@@ -15,13 +15,14 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,minimal-ui=yes">
     <title>Title</title> <!-- TODO: SEO -->
     <meta name="keywords" content="">
     <meta name="description" content="">
 <!--    <meta name="author" content="Your Name,Your Email">-->
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,minimal-ui=yes">
     <meta name="renderer" content="webkit">
     <meta http-equiv="Cache-Control" content="no-transform">
     <meta http-equiv="Cache-Control" content="no-siteapp"> <!-- 禁止移动端百度转码 -->

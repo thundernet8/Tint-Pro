@@ -148,7 +148,7 @@ function optionsframework_options() {
     // - 网站小 Logo
     $options[] = array(
         'name' => __( 'Site Small Logo', 'tt' ),
-        'desc' => __( 'Please upload an png file as site small logo', 'tt' ),
+        'desc' => __( 'Please upload an png file as site small logo', 'tt' ), // 用于邮件、登录页Logo等
         'id' => 'tt_small_logo',
         'std' => THEME_ASSET . '/img/small-logo.png',
         'type' => 'upload'
@@ -567,7 +567,7 @@ function optionsframework_options() {
         'name' => __( 'Your Name', 'tt' ),
         'desc' => __( 'Your display name as the sender', 'tt' ),
         'id' => 'tt_smtp_name',
-        'std' => '',
+        'std' => $blog_home,
         'class' => 'mini',
         'type' => 'text'
     );
