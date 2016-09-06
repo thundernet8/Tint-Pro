@@ -96,6 +96,50 @@ function tt_url_for($key, $arg = null, $relative = false){
 
 
 /**
+ * 登录的url
+ *
+ * @since   2.0.0
+ *
+ * @param   string  $redirect  重定向链接，未url encode
+ * @return  string
+ */
+function tt_signin_url($redirect) {
+    return tt_filter_default_login_url('', $redirect);
+}
+
+
+/**
+ * 注册的url
+ *
+ * @since   2.0.0
+ *
+ * @param   string  $redirect  重定向链接，未url encode
+ * @return  string
+ */
+function tt_signup_url($redirect) {
+    $signup_url = tt_url_for('signup');
+
+    if ( !empty($redirect) ) {
+        $signup_url = add_query_arg('redirect_to', urlencode($redirect), $signup_url);
+    }
+    return $signup_url;
+}
+
+
+/**
+ * 注销的url
+ *
+ * @since   2.0.0
+ *
+ * @param   string  $redirect  重定向链接，未url encode
+ * @return  string
+ */
+function tt_signout_url($redirect) {
+    return tt_filter_default_logout_url('', $redirect);
+}
+
+
+/**
  * 可逆加密
  *
  * @since   2.0.0
@@ -212,3 +256,67 @@ function tt_authdata($data, $operation = 'DECODE', $key = '', $expire = 0) {
         return $keyc . str_replace('=', '', base64_encode($result));
     }
 }
+
+
+/**
+ * 替换默认的wp_die处理函数
+ *
+ * @since   2.0.0
+ *
+ * @param   string | WP_Error  $message    错误消息
+ * @param   string  $title      错误标题
+ * @param   array   $args       其他参数
+ */
+function tt_wp_die_handler($message, $title = '', $args = array()) {
+    $defaults = array( 'response' => 500 );
+    $r = wp_parse_args($args, $defaults);
+
+    if ( function_exists( 'is_wp_error' ) && is_wp_error( $message ) ) {
+        if ( empty( $title ) ) {
+            $error_data = $message->get_error_data();
+            if ( is_array( $error_data ) && isset( $error_data['title'] ) )
+                $title = $error_data['title'];
+        }
+        $errors = $message->get_error_messages();
+        switch ( count( $errors ) ) {
+            case 0 :
+                $message = '';
+                break;
+            case 1 :
+                $message = "{$errors[0]}";
+                break;
+            default :
+                $message = "<ul>\n\t\t<li>" . join( "</li>\n\t\t<li>", $errors ) . "</li>\n\t</ul>";
+                break;
+        }
+    }
+
+    if ( ! did_action( 'admin_head' ) ) :
+        if ( !headers_sent() ) {
+            status_header( $r['response'] );
+            nocache_headers();
+            header( 'Content-Type: text/html; charset=utf-8' );
+        }
+
+        if ( empty($title) )
+            $title = __('WordPress &rsaquo; Error');
+
+        $text_direction = 'ltr';
+        if ( isset($r['text_direction']) && 'rtl' == $r['text_direction'] )
+            $text_direction = 'rtl';
+        elseif ( function_exists( 'is_rtl' ) && is_rtl() )
+            $text_direction = 'rtl';
+
+        // 引入自定义模板
+        global $wp_query;
+        $wp_query->query_vars['die_title'] = $title;
+        $wp_query->query_vars['die_msg'] = $message;
+        include_once THEME_TPL . '/tpl.Error.php';
+    endif;
+
+    die();
+}
+function tt_wp_die_handler_switch(){
+    return 'tt_wp_die_handler';
+}
+add_filter('wp_die_handler', 'tt_wp_die_handler_switch');

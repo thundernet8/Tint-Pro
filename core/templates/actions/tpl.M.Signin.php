@@ -18,11 +18,10 @@
 // 引入头部
 tt_get_header('simple');
 
-echo 'Action - SignIn';
-
-global $wp_query;
-
-var_dump($wp_query);
+if ( !get_option('users_can_register') ) {
+	wp_redirect( site_url('wp-login.php?registration=disabled') );
+	exit();
+}
 
 // 引入页脚
 tt_get_footer('simple');

@@ -15,19 +15,20 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,minimal-ui=yes">
     <title>Title</title> <!-- TODO: SEO -->
     <meta name="keywords" content="">
     <meta name="description" content="">
-<!--    <meta name="author" content="Your Name,Your Email">-->
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,minimal-ui=yes">
+    <!--    <meta name="author" content="Your Name,Your Email">-->
     <meta name="renderer" content="webkit">
     <meta http-equiv="Cache-Control" content="no-transform">
     <meta http-equiv="Cache-Control" content="no-siteapp"> <!-- 禁止移动端百度转码 -->
     <meta http-equiv="Cache-Control" content="private">
-<!--    <meta http-equiv="Cache-Control" content="max-age=0">-->
-<!--    <meta http-equiv="Cache-Control" content="must-revalidate">-->
+    <!--    <meta http-equiv="Cache-Control" content="max-age=0">-->
+    <!--    <meta http-equiv="Cache-Control" content="must-revalidate">-->
     <meta http-equiv="Page-Enter" content="revealTrans(duration=1.0,transtion=23)">
     <meta http-equiv="Page-Exit" content="revealTrans(duration=1.0,transtion=23)">
     <meta name="apple-mobile-web-app-title" content="<?php bloginfo('name'); ?>">
@@ -53,7 +54,7 @@
         window.location.href = "<?php echo tt_url_for('upgrade_browser'); ?>";
     </script>
     <![endif]-->
-    <link rel="stylesheet" type="text/css" href="<?php echo THEME_ASSET.'/css/main-7c8eb13260.css'; ?>"  />
+    <link rel="stylesheet" type="text/css" href="<?php echo THEME_ASSET.'/css/' . CSS_MAIN; ?>"  />
     <?php wp_head(); ?>
 </head>
 <body>

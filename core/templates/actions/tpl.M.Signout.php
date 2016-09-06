@@ -15,4 +15,14 @@
 
 <?php
 
-echo 'Action - SignOut';
+wp_logout();
+
+if ( !empty( $_REQUEST['redirect_to'] || !empty( $_REQUEST['redirect'] ) ) {
+	$redirect_to = $_REQUEST['redirect_to'] || $_REQUEST['redirect'];
+} else {
+	$redirect_to = '/';
+}
+
+wp_safe_redirect( $redirect_to );
+
+exit();

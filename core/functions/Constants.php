@@ -41,6 +41,9 @@ defined('THEME_MOD') || define('THEME_MOD', get_template_directory() . '/core/mo
 
 defined('THEME_TPL') || define('THEME_TPL', get_template_directory() . '/core/templates');
 
+/* Asset Names */
+include_once THEME_FUNC . '/asset.Constant.php';
+
 /* String */
 defined('CACHE_PREFIX') || define('CACHE_PREFIX', 'tt_cache');
 

@@ -127,25 +127,8 @@ gulp.task('watch', function () {
 // PHP文件修改发布
 gulp.task('php', function () {
     console.log('start php task');
-    gulp.src(['./src/rev/*.json', './src/php/header.php'])
+    gulp.src(['./src/rev/*.json', './src/php/asset.Constant.php'])
         .pipe(revCollector())
-        .pipe(rename('mod.Header.php'))
-        .pipe(gulp.dest('./core/modules'));
-    gulp.src(['./src/rev/*.json', './src/php/header-simple.php'])
-        .pipe(revCollector())
-        .pipe(rename('mod.Header.Simple.php'))
-        .pipe(gulp.dest('./core/modules'));
-    gulp.src(['./src/rev/*.json', './src/php/footer-simple.php'])
-        .pipe(revCollector())
-        .pipe(rename('mod.Footer.Simple.php'))
-        .pipe(gulp.dest('./core/modules'));
-    gulp.src(['./src/rev/*.json', './src/php/footer.php'])
-        .pipe(revCollector())
-        .pipe(rename('mod.Footer.php'))
-        .pipe(gulp.dest('./core/modules'));
-    gulp.src(['./src/rev/*.json', './src/php/script.php'])
-        .pipe(revCollector())
-        .pipe(rename('func.Script.php'))
         .pipe(gulp.dest('./core/functions'));
 });
 
