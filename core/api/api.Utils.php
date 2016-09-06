@@ -127,7 +127,7 @@ add_action( 'rest_api_init', 'tt_create_initial_rest_routes', 0 );  // TODO cach
 function tt_get_rest_request_cache_key($request) {
     //$request_uri = esc_url( $_SERVER['REQUEST_URI'] );
 
-    $prefix = 'tt_rest_cache_';
+    $prefix = 'tt_cache_rest_';
     $user_id = 0;
 
     $method = $request->get_method();

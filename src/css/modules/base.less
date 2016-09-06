@@ -1,3 +1,8 @@
+// font
+@font-face{font-family:"Titillium";src:url('../fonts/TitilliumWeb-Regular.ttf') format("opentype");font-weight:normal}
+@font-face{font-family:"Titillium";src:url('../fonts/TitilliumWeb-Italic.ttf') format("opentype");font-weight:normal;font-style:italic;}
+@font-face{font-family:"Titillium";src:url('../fonts/TitilliumWeb-SemiBold.ttf') format("opentype");font-weight:500;}
+
 // html
 html {
   font-size: 62.5%;
@@ -8,12 +13,13 @@ html {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  min-height: 100%;
+  height: 100%;
 }
 
 // body
 body {
-  font: 12px/1.5 "Lucida Sans Typewriter","Helvetica Neue",Helvetica,Arial,sans-serif,"\5FAE\8F6F\96C5\9ED1","Microsoft YaHei","\5B8B\4F53";
+  font: 12px/1.5 Titillium,"Lucida Sans Typewriter","Helvetica Neue",Helvetica,Arial,sans-serif,"\5FAE\8F6F\96C5\9ED1","Microsoft YaHei","\5B8B\4F53";
+  min-height: 100%;
 }
 
 // head title

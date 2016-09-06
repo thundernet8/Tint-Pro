@@ -19,7 +19,7 @@
 
 // CSS
 defined('CSS_MAIN') || define('CSS_MAIN', 'main-7c8eb13260.css');
-defined('CSS_ERROR_PAGE') || define('CSS_ERROR_PAGE', 'error-page-a21308da56.css');
+defined('CSS_ERROR_PAGE') || define('CSS_ERROR_PAGE', 'error-page-4c32911cd2.css');
 
 // JS
 defined('JS_COMMON') || define('JS_COMMON', 'common-daa1468b91.js');

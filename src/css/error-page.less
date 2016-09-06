@@ -4,6 +4,8 @@
 // start
 
 body {
+  height: 100%;
+
   &.error-page {
     header {
       max-width: 990px;
@@ -14,7 +16,7 @@ body {
 
     .wrapper {
       width: 100%;
-      height: auto;
+      height: calc(e('100% - 110px'));
       text-align: center;
 
       .main {
@@ -22,7 +24,7 @@ body {
 
         h1 {
           font-size: 4.6rem;
-          margin-bottom: 10px;
+          margin-bottom: 20px;
         }
 
         p {
@@ -37,6 +39,26 @@ body {
           display: inline-block;
           font-size: 2.4rem;
           color: #3292ff;
+        }
+      }
+    }
+
+    footer {
+      height: 40px;
+      line-height: 40px;
+      font-size: 1.4rem;
+      text-align: center;
+
+      p {
+        position: relative;
+
+        span{
+
+          &.copy {
+            position: relative;
+            top: 4px;
+            font-size: 2rem;
+          }
         }
       }
     }
