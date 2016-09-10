@@ -12,7 +12,6 @@
  * @link https://www.webapproach.net/tint.html
  */
 ?>
-
 <!DOCTYPE html>
 <html lang="zh">
 <head>
@@ -52,16 +51,18 @@
 
 </header>
 <div class="wrapper container no-aside">
-    <div class="main inner-wrap">
-        <h1>
-            <?php  $die_title = get_query_var('die_title'); if(isset($die_title)) { echo $die_title; }else{ _e('Error Happened!', 'tt'); } ?>
-        </h1>
-        <p class="die-msg">
-            <?php  $die_msg = get_query_var('die_msg'); if(isset($die_msg)) { echo $die_msg; }else{ _e('An error has happened on this page.', 'tt'); } ?>
-        </p>
-        <p>
-            <a class="btn btn-lg btn-success link-home" id="linkBackHome" href="<?php echo home_url(); ?>" title="<?php _e('Go Back Home', 'tt'); ?>" role="button"><?php _e('Go Back Home', 'tt'); ?></a>
-        </p>
+    <div class="row">
+        <div class="main inner-wrap">
+            <h1>
+                <?php  $die_title = get_query_var('die_title'); if(isset($die_title)) { echo $die_title; }else{ _e('Error Happened!', 'tt'); } ?>
+            </h1>
+            <p class="die-msg">
+                <?php  $die_msg = get_query_var('die_msg'); if(isset($die_msg)) { echo $die_msg; }else{ _e('An error has happened on this page.', 'tt'); } ?>
+            </p>
+            <p>
+                <a class="btn btn-lg btn-success link-home" id="linkBackHome" href="<?php echo home_url(); ?>" title="<?php _e('Go Back Home', 'tt'); ?>" role="button"><?php _e('Go Back Home', 'tt'); ?></a>
+            </p>
+        </div>
     </div>
 </div>
 <footer class="footer special-footer">

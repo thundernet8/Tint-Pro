@@ -1,0 +1,45 @@
+//
+// Progress bars
+// --------------------------------------------------
+
+// Outer container
+.progress {
+  background: mix(@brand-primary, white, 10%);
+  border-radius: 32px;
+  height: @progress-height;
+  box-shadow: none;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+// Bar of progress
+.progress-bar {
+  background: @brand-secondary;
+  line-height: @progress-height;
+  box-shadow: none;
+  float: left;
+  width: 0;
+  height: 100%;
+  font-size: 1.2rem;
+  color: #fff;
+  text-align: center;
+  -webkit-transition: width .6s ease;
+  -o-transition: width .6s ease;
+  transition: width .6s ease;
+}
+
+// Variations
+// -------------------------
+
+.progress-bar-success {
+  background-color: @brand-success;
+}
+.progress-bar-warning {
+  background-color: @brand-warning;
+}
+.progress-bar-danger {
+  background-color: @brand-danger;
+}
+.progress-bar-info {
+  background-color: @brand-info;
+}

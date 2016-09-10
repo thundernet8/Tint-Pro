@@ -13,4 +13,7 @@
 
 'use strict';
 
+require('./modules/bootstrap-flat');
+require('./modules/msgbox');
+
 console.log('home');

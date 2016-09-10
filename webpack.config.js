@@ -27,7 +27,7 @@ function getEntry () {
 // @see https://github.com/fwon/blog/issues/17
 module.exports = {
     cache: true,
-    devtool: 'cheap-module-eval-source-map',
+    // devtool: 'cheap-module-eval-source-map',
     entry: getEntry(),
     output: {
         path: path.join(assetsDir, '/js/'),
@@ -51,14 +51,20 @@ module.exports = {
     },
     plugins: [
         // 提供全局的变量，在模块中使用无需用require引入
-        new webpack.ProvidePlugin({
-            jQuery: 'jquery',
-            $: 'jquery'
-        }),
+        // new webpack.ProvidePlugin({
+        //     jQuery: 'jquery',
+        //     $: 'jquery'
+        // }),
+        // 压缩
+        // new webpack.optimize.UglifyJsPlugin({
+        //     compress: {
+        //         warnings: false
+        //     }
+        // }),
         // 将公共代码抽离出来合并为一个文件
         commonsPlugin
-    ]
-    // externals: {
-    //     'jquery': 'jQuery'
-    // }
+    ],
+    externals: {
+        'jquery': 'jQuery'
+    }
 };

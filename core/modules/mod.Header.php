@@ -54,7 +54,7 @@
         window.location.href = "<?php echo tt_url_for('upgrade_browser'); ?>";
     </script>
     <![endif]-->
-    <link rel="stylesheet" type="text/css" href="<?php echo THEME_ASSET.'/css/' . CSS_MAIN; ?>"  />
+    <link rel="stylesheet" type="text/css" href="<?php echo THEME_ASSET.'/css/' . CSS_HOME; ?>"  />
     <?php wp_head(); ?>
 </head>
 <body>

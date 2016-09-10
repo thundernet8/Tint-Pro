@@ -12,7 +12,6 @@
  * @link https://www.webapproach.net/tint.html
  */
 ?>
-
 <?php
 
 wp_no_robots();

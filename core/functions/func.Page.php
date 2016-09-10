@@ -12,7 +12,6 @@
  * @link https://www.webapproach.net/tint.html
  */
 ?>
-
 <?php
 
 /**
@@ -140,6 +139,7 @@ function tt_page_template_dropdown( $default = '' ) {
         $selected = selected( $default, $full_path, false );
         echo "\n\t<option value='" . $full_path . "' $selected>$template</option>";
     }
+    return '';
 }
 
 

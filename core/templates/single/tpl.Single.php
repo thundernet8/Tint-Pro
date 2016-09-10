@@ -12,7 +12,6 @@
  * @license GPL v3 LICENSE
  */
 ?>
-
 <?php
 
 echo 'single-template';

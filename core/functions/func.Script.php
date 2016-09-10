@@ -12,7 +12,6 @@
  * @link https://www.webapproach.net/tint.html
  */
 ?>
-
 <?php
 
 /**
@@ -27,8 +26,10 @@ function tt_register_scripts() {
     $jquery_url = json_decode(JQUERY_SOURCES)->{tt_get_option('tt_jquery', 'local_1')};
     wp_register_script( 'tt_jquery', $jquery_url, array(), null, tt_get_option('tt_foot_jquery', false) );
     wp_register_script( 'tt_common', THEME_ASSET . '/js/' . JS_COMMON, array(), null, true );
+    wp_register_script( 'tt_home', THEME_ASSET . '/js/' . JS_HOME, array(), null, true );
 
     $data = array(
+        'language'      => get_option('WPLANG', 'zh_CN'),
         'apiRoot'       => esc_url_raw( get_rest_url() ),
         'nonce'         => wp_create_nonce( 'wp_rest' ),
         'home'          => esc_url_raw( home_url() )
@@ -36,5 +37,8 @@ function tt_register_scripts() {
     wp_localize_script( 'tt_common', 'TT', $data );
     wp_enqueue_script( 'tt_jquery' );
     wp_enqueue_script( 'tt_common' );
+    if(is_home()) {
+        wp_enqueue_script( 'tt_home' );
+    }
 }
 add_action( 'wp_enqueue_scripts', 'tt_register_scripts' );

@@ -12,13 +12,12 @@
  * @link https://www.webapproach.net/tint.html
  */
 ?>
-
 <?php
 
 // 静态文件名常量，便于自动替换带特征值的文件名
 
 // CSS
-defined('CSS_MAIN') || define('CSS_MAIN', 'main.css');
+defined('CSS_HOME') || define('CSS_HOME', 'home.css');
 defined('CSS_ERROR_PAGE') || define('CSS_ERROR_PAGE', 'error-page.css');
 
 // JS

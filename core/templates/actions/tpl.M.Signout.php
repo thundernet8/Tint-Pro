@@ -12,12 +12,11 @@
  * @link https://www.webapproach.net/tint.html
  */
 ?>
-
 <?php
 
 wp_logout();
 
-if ( !empty( $_REQUEST['redirect_to'] || !empty( $_REQUEST['redirect'] ) ) {
+if ( !empty( $_REQUEST['redirect_to'] ) || !empty( $_REQUEST['redirect'] ) ){
 	$redirect_to = $_REQUEST['redirect_to'] || $_REQUEST['redirect'];
 } else {
 	$redirect_to = '/';

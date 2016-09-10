@@ -12,7 +12,6 @@
  * @link https://www.webapproach.net/tint.html
  */
 ?>
-
 <?php
 
 /**
@@ -110,7 +109,7 @@ function tt_cache_flush_weekly(){
     global $wpdb;
     $wpdb->query( "DELETE FROM $wpdb->options WHERE `option_name` LIKE '_transient_tt_cache_weekly_%' OR `option_name` LIKE '_transient_timeout_tt_cache__weekly%'" );
 }
-add_action('tt_setup_common_weekly_event', 'tt_cache_flush_weekly');
+add_action('tt_setup_common_weekly_event', 'tt_cache_flush_weekly');  // TODO rest api cache
 
 
 /**

@@ -12,7 +12,6 @@
  * @link https://www.webapproach.net/tint.html
  */
 ?>
-
 <?php
 
 require_once THEME_CLASS . '/class.Avatar.php';

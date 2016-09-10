@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-08-30 20:22+0800\n"
-"PO-Revision-Date: 2016-08-30 20:22+0800\n"
+"POT-Creation-Date: 2016-09-07 20:43+0800\n"
+"PO-Revision-Date: 2016-09-07 20:43+0800\n"
 "Last-Translator: Zhiyan <mail@webapproach.net>\n"
 "Language-Team: Zhiyan <mail@webapproach.net>\n"
 "Language: en_US\n"
@@ -18,6 +18,439 @@ msgstr ""
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
 "_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
+
+#: core/api/api.Compatibility.php:225
+#, php-format
+msgid "%s is not one of %s"
+msgstr ""
+
+#: core/api/api.Compatibility.php:230 core/api/api.Compatibility.php:234
+#, php-format
+msgid "%s is not of type %s"
+msgstr ""
+
+#: core/api/api.Compatibility.php:241
+msgid "The date you provided is invalid."
+msgstr ""
+
+#: core/api/api.Compatibility.php:247
+msgid "The email address you provided is invalid."
+msgstr ""
+
+#: core/api/api.Compatibility.php:256
+#, php-format
+msgid "%s must be greater than %d (exclusive)"
+msgstr ""
+
+#: core/api/api.Compatibility.php:258
+#, php-format
+msgid "%s must be greater than %d (inclusive)"
+msgstr ""
+
+#: core/api/api.Compatibility.php:262
+#, php-format
+msgid "%s must be less than %d (exclusive)"
+msgstr ""
+
+#: core/api/api.Compatibility.php:264
+#, php-format
+msgid "%s must be less than %d (inclusive)"
+msgstr ""
+
+#: core/api/api.Compatibility.php:269
+#, php-format
+msgid "%s must be between %d (exclusive) and %d (exclusive)"
+msgstr ""
+
+#: core/api/api.Compatibility.php:273
+#, php-format
+msgid "%s must be between %d (inclusive) and %d (exclusive)"
+msgstr ""
+
+#: core/api/api.Compatibility.php:277
+#, php-format
+msgid "%s must be between %d (exclusive) and %d (inclusive)"
+msgstr ""
+
+#: core/api/api.Compatibility.php:281
+#, php-format
+msgid "%s must be between %d (inclusive) and %d (inclusive)"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Controller.php:39
+msgid "The register_routes() method must be overriden"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Controller.php:49
+#: core/api/v1/endpoints/class.Rest.Controller.php:59
+#: core/api/v1/endpoints/class.Rest.Controller.php:69
+#: core/api/v1/endpoints/class.Rest.Controller.php:79
+#: core/api/v1/endpoints/class.Rest.Controller.php:89
+#: core/api/v1/endpoints/class.Rest.Controller.php:99
+#: core/api/v1/endpoints/class.Rest.Controller.php:109
+#: core/api/v1/endpoints/class.Rest.Controller.php:119
+#: core/api/v1/endpoints/class.Rest.Controller.php:129
+#: core/api/v1/endpoints/class.Rest.Controller.php:139
+#: core/api/v1/endpoints/class.Rest.Controller.php:149
+#: core/api/v1/endpoints/class.Rest.Controller.php:160
+#, php-format
+msgid "Method '%s' not implemented. Must be over-ridden in subclass."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Controller.php:262
+msgid "Current page of the collection."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Controller.php:270
+msgid "Maximum number of items to be returned in result set."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Controller.php:279
+msgid "Limit results to those matching a string."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Controller.php:297
+msgid ""
+"Scope under which the request is made; determines fields present in response."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:70
+msgid "Required to be true, as resource does not support trashing."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:118
+msgid "Sorry, you cannot filter by role."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:122
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:246
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:295
+msgid "Sorry, you cannot view this resource with edit context."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:238
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:265
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:468
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:551
+msgid "Invalid resource id."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:248
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:297
+msgid "Sorry, you cannot view this resource."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:287
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:314
+msgid "Invalid resource email."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:340
+msgid "You are not currently logged in."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:361
+msgid "Sorry, you are not allowed to create resource."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:375
+msgid "Cannot create existing resource."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:397
+msgid "Error creating new resource."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:447
+msgid "Sorry, you are not allowed to edit resource."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:451
+msgid "Sorry, you are not allowed to edit roles of this resource."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:472
+msgid "Email address is invalid."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:476
+msgid "Username isn't editable"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:480
+msgid "Slug is invalid."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:527
+msgid "Sorry, you are not allowed to delete this resource."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:546
+msgid "Users do not support trashing."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:556
+msgid "Invalid resource id for reassignment."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:569
+msgid "The resource cannot be deleted."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:770
+#, php-format
+msgid "The role %s does not exist."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:777
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:787
+msgid "You cannot give resource that role."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:807
+msgid "Unique identifier for the resource."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:813
+msgid "Login name for the resource."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:822
+msgid "Display name for the resource."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:830
+msgid "First name for the resource."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:838
+msgid "Last name for the resource."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:846
+msgid "The email address for the resource."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:853
+msgid "URL of the resource."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:859
+msgid "Description of the resource."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:867
+msgid "Author URL to the resource."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:874
+msgid "The nickname for the resource."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:882
+msgid "An alphanumeric identifier for the resource."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:890
+msgid "Registration date for the resource."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:896
+msgid "Roles assigned to the resource."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:901
+msgid "Password for the resource (never included)."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:907
+msgid "All capabilities assigned to the resource."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:912
+msgid "Any extra capabilities assigned to the resource."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:926
+#, php-format
+msgid "Avatar URL with image size of %d pixels."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:934
+msgid "Avatar URLs for the resource."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:957
+msgid "Ensure result set excludes specific ids."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:963
+msgid "Limit result set to specific ids."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:969
+msgid "Offset the result set by a specific number of items."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:976
+msgid "Order sort attribute ascending or descending."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:984
+msgid "Sort collection by object attribute."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:996
+msgid "Limit result set to resources with a specific slug."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:1001
+msgid ""
+"Limit result set to resources matching at least one specific role provided. "
+"Accepts csv list or single role."
+msgstr ""
+
+#: core/classes/class.Open.php:216
+msgid "Can Not Bind QQ Again"
+msgstr ""
+
+#: core/classes/class.Open.php:217
+msgid ""
+"You have connected with QQ before, can not do it again, please unbind it "
+"before if need"
+msgstr ""
+
+#: core/classes/class.Open.php:228
+msgid "QQ Login Disabled"
+msgstr ""
+
+#: core/classes/class.Open.php:229
+msgid ""
+"You have not enabled QQ login, or the required information e.g OpenID, "
+"OpenKey missed"
+msgstr ""
+
+#: core/classes/class.Open.php:240
+msgid "QQ connected by other one"
+msgstr ""
+
+#: core/classes/class.Open.php:241
+msgid ""
+"Someone in your WordPress user system have connected with this QQ before, "
+"please unbind it before if need"
+msgstr ""
+
+#: core/classes/class.Open.php:264
+msgid "State Missing"
+msgstr ""
+
+#: core/classes/class.Open.php:265
+msgid "The state parameter was not found in the url"
+msgstr ""
+
+#: core/classes/class.Open.php:272
+msgid "State Incorrect"
+msgstr ""
+
+#: core/classes/class.Open.php:273
+msgid "The state parameter in the url is incorrect"
+msgstr ""
+
+#: core/classes/class.Open.php:409
+msgid "OAuth Data Not Exist"
+msgstr ""
+
+#: core/classes/class.Open.php:410
+msgid "Can not get oauth data, please retry the oauth steps"
+msgstr ""
+
+#: core/classes/class.Open.php:441
+msgid "Create New User Failed"
+msgstr ""
+
+#: core/classes/class.Open.php:532
+msgid "Unallowed Open Type"
+msgstr ""
+
+#: core/classes/class.Open.php:533
+msgid "The open connect type is not allowed"
+msgstr ""
+
+#: core/classes/class.Open.php:576
+msgid "User Authorization Canceled"
+msgstr ""
+
+#: core/classes/class.Open.php:577
+msgid ""
+"You should agree to authorize our application connecting your open account"
+msgstr ""
+
+#: core/classes/class.Open.php:605 core/classes/class.Open.php:822
+#: core/classes/class.Open.php:1085 core/classes/class.Open.php:1440
+msgid "User Not Logged In"
+msgstr ""
+
+#: core/classes/class.Open.php:606
+msgid "You must be logged in and then log out"
+msgstr ""
+
+#: core/classes/class.Open.php:715
+msgid "Grant QQ Access Token Failed"
+msgstr ""
+
+#: core/classes/class.Open.php:768
+msgid "Grant QQ OpenID Failed"
+msgstr ""
+
+#: core/classes/class.Open.php:796
+msgid "Grant QQ User Info Failed"
+msgstr ""
+
+#: core/classes/class.Open.php:823 core/classes/class.Open.php:1086
+#: core/classes/class.Open.php:1441
+msgid "You must log in to refresh your token"
+msgstr ""
+
+#: core/classes/class.Open.php:834 core/classes/class.Open.php:1097
+#: core/classes/class.Open.php:1452
+msgid "Refresh Token Miss"
+msgstr ""
+
+#: core/classes/class.Open.php:835 core/classes/class.Open.php:1098
+#: core/classes/class.Open.php:1453
+msgid "A refresh token is required to get new access token"
+msgstr ""
+
+#: core/classes/class.Open.php:979 core/classes/class.Open.php:1058
+#: core/classes/class.Open.php:1143 core/classes/class.Open.php:1272
+#: core/classes/class.Open.php:1335 core/classes/class.Open.php:1415
+#: core/classes/class.Open.php:1490
+msgid "The open server returned with a incorrect response"
+msgstr ""
+
+#: core/classes/class.Open.php:1049 core/classes/class.Open.php:1057
+msgid "Get WeiXin Userinfo Failed"
+msgstr ""
+
+#: core/classes/class.Open.php:1134 core/classes/class.Open.php:1142
+msgid "Refresh WeiXin Token Failed"
+msgstr ""
+
+#: core/classes/class.Open.php:1263
+msgid "Grant Weibo Access Token Failed"
+msgstr ""
+
+#: core/classes/class.Open.php:1326
+msgid "Grant Weibo Token Info Failed"
+msgstr ""
+
+#: core/classes/class.Open.php:1406
+msgid "Grant Weibo User Show Info Failed"
+msgstr ""
+
+#: core/classes/class.Open.php:1481
+msgid "Refresh Weibo Access Token Failed"
+msgstr ""
 
 #: core/classes/class.Utils.php:369
 msgid "刚刚"
@@ -50,6 +483,14 @@ msgstr "minutes"
 #: core/classes/class.Utils.php:378
 msgid "秒前"
 msgstr "seconds"
+
+#: core/functions/func.Account.php:77
+msgid "The key is invalid."
+msgstr ""
+
+#: core/functions/func.Account.php:82
+msgid "Sorry, the user was not found."
+msgstr ""
 
 #: core/functions/func.Cache.php:149
 #, php-format
@@ -88,6 +529,10 @@ msgstr ""
 msgid ""
 "Create timthumb cache folder failed, maybe check your php.ini to enable "
 "`mkdir` function.\\n"
+msgstr ""
+
+#: core/functions/func.Kits.php:302
+msgid "WordPress &rsaquo; Error"
 msgstr ""
 
 #: core/functions/func.Page.php:73
@@ -134,43 +579,56 @@ msgstr ""
 msgid "Weekly"
 msgstr ""
 
-#: core/functions/func.Sidebar.php:60 dash/options.php:133 dash/options.php:147
+#: core/functions/func.Sidebar.php:60 dash/options.php:173 dash/options.php:187
 msgid "Common Sidebar"
 msgstr ""
 
-#: core/functions/func.Sidebar.php:61 dash/options.php:134 dash/options.php:148
-#: dash/options.php:163
+#: core/functions/func.Sidebar.php:61 dash/options.php:174 dash/options.php:188
+#: dash/options.php:203
 msgid "Home Sidebar"
 msgstr ""
 
-#: core/functions/func.Sidebar.php:62 dash/options.php:135 dash/options.php:149
-#: dash/options.php:173
+#: core/functions/func.Sidebar.php:62 dash/options.php:175 dash/options.php:189
+#: dash/options.php:213
 msgid "Single Sidebar"
 msgstr ""
 
-#: core/functions/func.Sidebar.php:63 dash/options.php:136 dash/options.php:150
-#: dash/options.php:183
+#: core/functions/func.Sidebar.php:63 dash/options.php:176 dash/options.php:190
+#: dash/options.php:223
 msgid "Archive Sidebar"
 msgstr ""
 
-#: core/functions/func.Sidebar.php:64 dash/options.php:137 dash/options.php:151
-#: dash/options.php:193
+#: core/functions/func.Sidebar.php:64 dash/options.php:177 dash/options.php:191
+#: dash/options.php:233
 msgid "Category Sidebar"
 msgstr ""
 
-#: core/functions/func.Sidebar.php:65 dash/options.php:138 dash/options.php:152
-#: dash/options.php:203
+#: core/functions/func.Sidebar.php:65 dash/options.php:178 dash/options.php:192
+#: dash/options.php:243
 msgid "Search Sidebar"
 msgstr ""
 
-#: core/functions/func.Sidebar.php:66 dash/options.php:139 dash/options.php:153
-#: dash/options.php:213
+#: core/functions/func.Sidebar.php:66 dash/options.php:179 dash/options.php:193
+#: dash/options.php:253
 msgid "404 Sidebar"
 msgstr ""
 
-#: core/functions/func.Sidebar.php:67 dash/options.php:140 dash/options.php:154
-#: dash/options.php:223
+#: core/functions/func.Sidebar.php:67 dash/options.php:180 dash/options.php:194
+#: dash/options.php:263
 msgid "Page Sidebar"
+msgstr ""
+
+#: core/templates/actions/tpl.M.Findpass.php:34
+msgid "Please input your account associated email"
+msgstr ""
+
+#: core/templates/actions/tpl.M.Findpass.php:36
+msgid "Email"
+msgstr ""
+
+#: core/templates/actions/tpl.M.Findpass.php:38
+#: core/templates/actions/tpl.M.Resetpass.php:48
+msgid "Submit"
 msgstr ""
 
 #: core/templates/actions/tpl.M.Refresh.php:20
@@ -190,6 +648,52 @@ msgstr ""
 
 #: core/templates/actions/tpl.M.Refresh.php:39
 msgid "Forbidden Access"
+msgstr ""
+
+#: core/templates/actions/tpl.M.Resetpass.php:21
+msgid "The link you visited is invalid or expired"
+msgstr ""
+
+#: core/templates/actions/tpl.M.Resetpass.php:21
+msgid "Link Error"
+msgstr ""
+
+#: core/templates/actions/tpl.M.Resetpass.php:38
+msgid "Please input your new password"
+msgstr ""
+
+#: core/templates/actions/tpl.M.Resetpass.php:39
+#: core/templates/actions/tpl.M.Resetpass.php:40
+#: core/templates/actions/tpl.M.Resetpass.php:42
+msgid "Password"
+msgstr ""
+
+#: core/templates/actions/tpl.M.Resetpass.php:41
+msgid "Repeat Password"
+msgstr ""
+
+#: core/templates/actions/tpl.M.Resetpass.php:45
+msgid "Remember me"
+msgstr ""
+
+#: core/templates/oauth/tpl.OAuth.php:34
+msgid "The request you have done is illegal, please retry"
+msgstr ""
+
+#: core/templates/oauth/tpl.OAuth.php:34
+msgid "Illegal Request"
+msgstr ""
+
+#: core/templates/tpl.Error.php:23 core/templates/tpl.Error.php:58
+msgid "Error Happened!"
+msgstr ""
+
+#: core/templates/tpl.Error.php:61
+msgid "An error has happened on this page."
+msgstr ""
+
+#: core/templates/tpl.Error.php:64
+msgid "Go Back Home"
 msgstr ""
 
 #: dash/of_inc/includes/class-options-framework-admin.php:91
@@ -383,337 +887,409 @@ msgstr ""
 msgid "Timthumb crop support"
 msgstr ""
 
+#: dash/options.php:110
+msgid "jQuery Source"
+msgstr ""
+
 #: dash/options.php:111
+msgid "Choose local or a CDN jQuery file"
+msgstr ""
+
+#: dash/options.php:116
+msgid "Local v1.12"
+msgstr ""
+
+#: dash/options.php:117
+msgid "Local v3.1"
+msgstr ""
+
+#: dash/options.php:118
+msgid "CDN HTTP"
+msgstr ""
+
+#: dash/options.php:119
+msgid "CDN HTTPS"
+msgstr ""
+
+#: dash/options.php:125
+msgid "jQuery Load Position"
+msgstr ""
+
+#: dash/options.php:126
+msgid "Check to load jQuery on `body` end"
+msgstr ""
+
+#: dash/options.php:135
 msgid "Style"
 msgstr ""
 
-#: dash/options.php:120
+#: dash/options.php:141
+msgid "Site Logo"
+msgstr ""
+
+#: dash/options.php:142
+msgid "Please upload an png file as site logo"
+msgstr ""
+
+#: dash/options.php:150
+msgid "Site Small Logo"
+msgstr ""
+
+#: dash/options.php:151
+msgid "Please upload an png file as site small logo"
+msgstr ""
+
+#: dash/options.php:160
 msgid "Sidebar"
 msgstr ""
 
-#: dash/options.php:127
+#: dash/options.php:167
 msgid "Register Sidebars"
 msgstr ""
 
-#: dash/options.php:128
+#: dash/options.php:168
 msgid "Check the sidebars to register"
 msgstr ""
 
-#: dash/options.php:164
+#: dash/options.php:204
 msgid "Select a sidebar for homepage"
 msgstr ""
 
-#: dash/options.php:174
+#: dash/options.php:214
 msgid "Select a sidebar for single post page"
 msgstr ""
 
-#: dash/options.php:184
+#: dash/options.php:224
 msgid "Select a sidebar for archive page"
 msgstr ""
 
-#: dash/options.php:194
+#: dash/options.php:234
 msgid "Select a sidebar for category page"
 msgstr ""
 
-#: dash/options.php:204
+#: dash/options.php:244
 msgid "Select a sidebar for search page"
 msgstr ""
 
-#: dash/options.php:214
+#: dash/options.php:254
 msgid "Select a sidebar for 404 page"
 msgstr ""
 
-#: dash/options.php:224
+#: dash/options.php:264
 msgid "Select a sidebar for page"
 msgstr ""
 
-#: dash/options.php:235
+#: dash/options.php:275
 msgid "Social"
 msgstr ""
 
-#: dash/options.php:242
+#: dash/options.php:282
 msgid "QQ Login"
 msgstr ""
 
-#: dash/options.php:243
+#: dash/options.php:283
 msgid "QQ login "
 msgstr ""
 
-#: dash/options.php:252
+#: dash/options.php:292
 msgid "QQ Open ID"
 msgstr ""
 
-#: dash/options.php:253
+#: dash/options.php:293
 msgid "Your QQ open application ID"
 msgstr ""
 
-#: dash/options.php:262
+#: dash/options.php:302
 msgid "QQ Open Key"
 msgstr ""
 
-#: dash/options.php:263
+#: dash/options.php:303
 msgid "Your QQ open application key"
 msgstr ""
 
-#: dash/options.php:272
+#: dash/options.php:312
 msgid "Weibo Login"
 msgstr ""
 
-#: dash/options.php:273
+#: dash/options.php:313
 msgid "Weibo login access"
 msgstr ""
 
-#: dash/options.php:282
+#: dash/options.php:322
 msgid "Weibo Open Key"
 msgstr ""
 
-#: dash/options.php:283
+#: dash/options.php:323
 msgid "Your weibo open application key"
 msgstr ""
 
-#: dash/options.php:292
+#: dash/options.php:332
 msgid "Weibo Open Secret"
 msgstr ""
 
-#: dash/options.php:293
+#: dash/options.php:333
 msgid "Your weibo open application secret"
 msgstr ""
 
-#: dash/options.php:302
+#: dash/options.php:342
 msgid "Weixin Login"
 msgstr ""
 
-#: dash/options.php:303
+#: dash/options.php:343
 msgid "Weixin login access"
 msgstr ""
 
-#: dash/options.php:312
+#: dash/options.php:352
 msgid "Weixin Open Key"
 msgstr ""
 
-#: dash/options.php:313
+#: dash/options.php:353
 msgid "Your weixin open application key"
 msgstr ""
 
-#: dash/options.php:322
+#: dash/options.php:362
 msgid "Weixin Open Secret"
 msgstr ""
 
-#: dash/options.php:323
+#: dash/options.php:363
 msgid "Your weixin open application secret"
 msgstr ""
 
-#: dash/options.php:333
-msgid "Ad"
-msgstr ""
-
-#: dash/options.php:343
-msgid "Membership"
-msgstr ""
-
-#: dash/options.php:353
-msgid "Shop"
-msgstr ""
-
-#: dash/options.php:363
-msgid "Auxiliary"
-msgstr ""
-
-#: dash/options.php:370
-msgid "Object Cache"
-msgstr ""
-
 #: dash/options.php:371
-msgid "Object cache support, accelerate your site"
+msgid "Open User Default Role"
 msgstr ""
 
-#: dash/options.php:376
-msgid "Memcache"
+#: dash/options.php:372
+msgid "Choose the role and capabilities for the new connected user from open"
 msgstr ""
 
 #: dash/options.php:377
-msgid "Redis"
+msgid "Editor"
 msgstr ""
 
-#: dash/options.php:378 dash/options.php:484
-msgid "None"
+#: dash/options.php:378
+msgid "Author"
 msgstr ""
 
-#: dash/options.php:386
-msgid "Memcache Host"
+#: dash/options.php:379
+msgid "Contributor"
 msgstr ""
 
-#: dash/options.php:387
-msgid "Memcache server host"
+#: dash/options.php:380
+msgid "Subscriber"
 msgstr ""
 
-#: dash/options.php:396
-msgid "Memcache Port"
+#: dash/options.php:388
+msgid "Ad"
 msgstr ""
 
-#: dash/options.php:397
-msgid "Memcache server port"
+#: dash/options.php:398
+msgid "Membership"
 msgstr ""
 
-#: dash/options.php:409
-msgid "Redis Host"
+#: dash/options.php:408
+msgid "Shop"
 msgstr ""
 
-#: dash/options.php:410
-msgid "Redis server host"
+#: dash/options.php:418
+msgid "Auxiliary"
 msgstr ""
 
-#: dash/options.php:419
-msgid "Redis Port"
+#: dash/options.php:425
+msgid "Object Cache"
 msgstr ""
 
-#: dash/options.php:420
-msgid "Redis server port"
+#: dash/options.php:426
+msgid "Object cache support, accelerate your site"
 msgstr ""
 
 #: dash/options.php:431
-msgid "Mailer Separator"
+msgid "Memcache"
 msgstr ""
 
-#: dash/options.php:438
-msgid "SMTP/PHPMailer"
+#: dash/options.php:432
+msgid "Redis"
 msgstr ""
 
-#: dash/options.php:439
-msgid "Use SMTP or PHPMail as default mailer"
+#: dash/options.php:433 dash/options.php:539
+msgid "None"
 msgstr ""
 
-#: dash/options.php:444
-msgid "PHP"
+#: dash/options.php:441
+msgid "Memcache Host"
 msgstr ""
 
-#: dash/options.php:445
-msgid "SMTP"
+#: dash/options.php:442
+msgid "Memcache server host"
 msgstr ""
 
-#: dash/options.php:453
-msgid "SMTP Host"
+#: dash/options.php:451
+msgid "Memcache Port"
 msgstr ""
 
-#: dash/options.php:454
-msgid "Your SMTP service host"
+#: dash/options.php:452
+msgid "Memcache server port"
 msgstr ""
 
 #: dash/options.php:464
-msgid "SMTP Port"
+msgid "Redis Host"
 msgstr ""
 
 #: dash/options.php:465
-msgid "Your SMTP service port"
+msgid "Redis server host"
+msgstr ""
+
+#: dash/options.php:474
+msgid "Redis Port"
 msgstr ""
 
 #: dash/options.php:475
+msgid "Redis server port"
+msgstr ""
+
+#: dash/options.php:486
+msgid "Mailer Separator"
+msgstr ""
+
+#: dash/options.php:493
+msgid "SMTP/PHPMailer"
+msgstr ""
+
+#: dash/options.php:494
+msgid "Use SMTP or PHPMail as default mailer"
+msgstr ""
+
+#: dash/options.php:499
+msgid "PHP"
+msgstr ""
+
+#: dash/options.php:500
+msgid "SMTP"
+msgstr ""
+
+#: dash/options.php:508
+msgid "SMTP Host"
+msgstr ""
+
+#: dash/options.php:509
+msgid "Your SMTP service host"
+msgstr ""
+
+#: dash/options.php:519
+msgid "SMTP Port"
+msgstr ""
+
+#: dash/options.php:520
+msgid "Your SMTP service port"
+msgstr ""
+
+#: dash/options.php:530
 msgid "SMTP Secure"
 msgstr ""
 
-#: dash/options.php:476
+#: dash/options.php:531
 msgid "Your SMTP server secure protocol"
 msgstr ""
 
-#: dash/options.php:481
+#: dash/options.php:536
 msgid "Auto"
 msgstr ""
 
-#: dash/options.php:482
+#: dash/options.php:537
 msgid "SSL"
 msgstr ""
 
-#: dash/options.php:483
+#: dash/options.php:538
 msgid "TLS"
 msgstr ""
 
-#: dash/options.php:491
+#: dash/options.php:546
 msgid "SMTP Username"
 msgstr ""
 
-#: dash/options.php:492
+#: dash/options.php:547
 msgid "Your SMTP username"
 msgstr ""
 
-#: dash/options.php:501
+#: dash/options.php:556
 msgid "SMTP Password"
 msgstr ""
 
-#: dash/options.php:502
+#: dash/options.php:557
 msgid "Your SMTP password"
 msgstr ""
 
-#: dash/options.php:512
+#: dash/options.php:567
 msgid "Your Name"
 msgstr ""
 
-#: dash/options.php:513
+#: dash/options.php:568
 msgid "Your display name as the sender"
 msgstr ""
 
-#: dash/options.php:525
+#: dash/options.php:580
 msgid "PHP Mail Sender Display Name"
 msgstr ""
 
-#: dash/options.php:526
+#: dash/options.php:581
 msgid "The Sender display name when using PHPMail send mail"
 msgstr ""
 
-#: dash/options.php:536
+#: dash/options.php:591
 msgid "PHP Mail Sender Address"
 msgstr ""
 
-#: dash/options.php:537
+#: dash/options.php:592
 msgid "You can use fake mail address when use PHPMail"
 msgstr ""
 
-#: dash/options.php:548
+#: dash/options.php:603
 msgid "Short Link Prefix"
 msgstr ""
 
-#: dash/options.php:549
+#: dash/options.php:604
 msgid ""
 "Use short link instead long link or even convert external link to internal "
 "link"
 msgstr ""
 
-#: dash/options.php:559
+#: dash/options.php:614
 msgid "Short Link Records"
 msgstr ""
 
-#: dash/options.php:560
+#: dash/options.php:615
 msgid "One line for one record, please conform to the sample"
 msgstr ""
 
-#: dash/options.php:573
+#: dash/options.php:628
 msgid "Feedback"
 msgstr ""
 
-#: dash/options.php:585
+#: dash/options.php:640
 msgid "Others"
 msgstr ""
 
-#: dash/options.php:592
+#: dash/options.php:647
 msgid "Debug Mode"
 msgstr ""
 
-#: dash/options.php:593
+#: dash/options.php:648
 msgid "Enable debug will call wp_die when catch a error"
 msgstr ""
 
-#: dash/options.php:602
+#: dash/options.php:657
 msgid "Tint Token"
 msgstr ""
 
-#: dash/options.php:603
+#: dash/options.php:658
 msgid "Private token for theme, maybe useful somewhere."
 msgstr ""
 
-#: dash/options.php:613
+#: dash/options.php:668
 msgid "Refresh Rewrite Rules"
 msgstr ""
 
-#: dash/options.php:614
+#: dash/options.php:669
 #, php-format
 msgid ""
 "Please Click to <a href=\"%1$s/m/refresh?token=%2$s\" target=\"_blank"

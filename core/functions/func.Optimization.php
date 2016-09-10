@@ -12,7 +12,6 @@
  * @link https://www.webapproach.net/tint.html
  */
 ?>
-
 <?php
 
 /* WordPress 后台禁用Google Open Sans字体，加速网站 */

@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Copyright 2016, WebApproach.net
  * All right reserved.
@@ -8,9 +7,7 @@
  * @date 16/5/27 16:30
  * @license GPL v3 LICENSE
  */
-
 ?>
-
 <?php
 
 /* 安全检测 */
@@ -80,7 +77,6 @@ load_func('func.L10n');
 load_func('func.Account');
 load_func('func.Avatar');
 load_func('func.Cache');
-load_func('func.Email');
 load_func('func.Init');
 load_func('func.Install');
 load_func('func.Kits');

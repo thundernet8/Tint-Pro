@@ -12,7 +12,6 @@
  * @link https://www.webapproach.net/tint.html
  */
 ?>
-
 <!-- SideBar Begin -->
 <aside class="sidebar" id="sidebar">
     <?php dynamic_sidebar(tt_dynamic_sidebar()); ?>

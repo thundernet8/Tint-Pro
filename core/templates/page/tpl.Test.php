@@ -10,5 +10,7 @@
  * @date 2016/08/21 23:51
  * @license GPL v3 LICENSE
  */
+?>
+<?php
 
 echo 1000;

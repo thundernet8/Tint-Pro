@@ -12,8 +12,6 @@
  * @link https://www.webapproach.net/tint.html
  */
 ?>
-
-
 <footer class="footer">
     <!-- TODO -->
 </footer>

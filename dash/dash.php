@@ -1,16 +1,17 @@
 <?php
-
 /**
- * Copyright 2016, WebApproach.net
+ * Copyright (c) 2014-2016, WebApproach.net
  * All right reserved.
  *
+ * @since 2.0.0
+ * @package Tint
  * @author Zhiyan
- * @date 16/5/27 17:33
+ * @date 2016/5/27 17:33
  * @license GPL v3 LICENSE
+ * @license uri http://www.gnu.org/licenses/gpl-3.0.html
+ * @link https://www.webapproach.net/tint.html
  */
-
 ?>
-
 <?php
 
 /* 后台编辑器预览样式 */
@@ -33,4 +34,3 @@ function tt_add_more_buttons($buttons){
 	return $buttons;
 }
 add_filter("mce_buttons_3", "tt_add_more_buttons");
-
