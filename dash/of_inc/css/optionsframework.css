@@ -29,6 +29,21 @@
 }
 #optionsframework .section .heading {
 	font-weight: 500;
+	border-left: 2px solid #38d;
+	padding-left: 10px;
+	color: #34495e;
+	font-size: 16px;
+}
+#optionsframework .section.section-info a {
+	color: #3292ff;
+	text-decoration: none;
+}
+#optionsframework .section.section-info a:hover {
+	color: #f74660;
+}
+#optionsframework .section.section-info a:focus {
+	outline: none;
+	box-shadow: none;
 }
 #optionsframework .section .controls {
 	float: left;
@@ -234,4 +249,8 @@
 }
 #optionsframework .section:after {
 	clear: both;
+}
+
+#optionsframework-wrap .nav-tab {
+	font-weight: normal;
 }

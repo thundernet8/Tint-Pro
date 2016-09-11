@@ -5,7 +5,7 @@
  * @since 2.0.0
  * @package Tint
  * @author Zhiyan
- * @date 2016/08/31 23:38
+ * @date 2016/09/11 14:08
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
  * @link https://www.webapproach.net/tint.html
@@ -13,9 +13,13 @@
 
 'use strict';
 
-require('./modules/loading');
-require('./modules/bootstrap-flat');
-require('./modules/msgbox');
-// require('./modules/smooth-scroll');
+var jQuery = require('jquery');
 
-console.log('home');
+jQuery(function ($) {
+  var body = $('body');
+  if(body.hasClass('is-loadingApp')) {
+    setTimeout(function () {
+      body.removeClass('is-loadingApp');
+    }, 2000);
+  }
+}.call(this, jQuery));

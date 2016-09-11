@@ -120,6 +120,13 @@
     .ripple(@btn-inverse-active-bg, @brand-primary);
   }
 }
+.btn-elegant {
+  .background();
+  .button-variant(@btn-default-color, @brand-elegant, @btn-elegant-hover-bg, @btn-elegant-active-bg);
+  &:active {
+    .ripple(@btn-elegant-active-bg, @brand-elegant);
+  }
+}
 .btn-embossed {
   box-shadow: inset 0 -2px 0 fade(black, 15%);
 

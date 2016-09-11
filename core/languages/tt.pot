@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-09-07 20:30+0800\n"
+"POT-Creation-Date: 2016-09-11 22:08+0800\n"
 "PO-Revision-Date: 2016-08-17 21:40+0800\n"
 "Last-Translator: \n"
 "Language-Team: Zhiyan <mail@webapproach.net>\n"
@@ -22,437 +22,437 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-1: node_modules\n"
 "X-Poedit-SearchPathExcluded-2: src\n"
 
-#: core/api/api.Compatibility.php:225
+#: core/api/api.Compatibility.php:224
 #, php-format
 msgid "%s is not one of %s"
 msgstr ""
 
-#: core/api/api.Compatibility.php:230 core/api/api.Compatibility.php:234
+#: core/api/api.Compatibility.php:229 core/api/api.Compatibility.php:233
 #, php-format
 msgid "%s is not of type %s"
 msgstr ""
 
-#: core/api/api.Compatibility.php:241
+#: core/api/api.Compatibility.php:240
 msgid "The date you provided is invalid."
 msgstr ""
 
-#: core/api/api.Compatibility.php:247
+#: core/api/api.Compatibility.php:246
 msgid "The email address you provided is invalid."
 msgstr ""
 
-#: core/api/api.Compatibility.php:256
+#: core/api/api.Compatibility.php:255
 #, php-format
 msgid "%s must be greater than %d (exclusive)"
 msgstr ""
 
-#: core/api/api.Compatibility.php:258
+#: core/api/api.Compatibility.php:257
 #, php-format
 msgid "%s must be greater than %d (inclusive)"
 msgstr ""
 
-#: core/api/api.Compatibility.php:262
+#: core/api/api.Compatibility.php:261
 #, php-format
 msgid "%s must be less than %d (exclusive)"
 msgstr ""
 
-#: core/api/api.Compatibility.php:264
+#: core/api/api.Compatibility.php:263
 #, php-format
 msgid "%s must be less than %d (inclusive)"
 msgstr ""
 
-#: core/api/api.Compatibility.php:269
+#: core/api/api.Compatibility.php:268
 #, php-format
 msgid "%s must be between %d (exclusive) and %d (exclusive)"
 msgstr ""
 
-#: core/api/api.Compatibility.php:273
+#: core/api/api.Compatibility.php:272
 #, php-format
 msgid "%s must be between %d (inclusive) and %d (exclusive)"
 msgstr ""
 
-#: core/api/api.Compatibility.php:277
+#: core/api/api.Compatibility.php:276
 #, php-format
 msgid "%s must be between %d (exclusive) and %d (inclusive)"
 msgstr ""
 
-#: core/api/api.Compatibility.php:281
+#: core/api/api.Compatibility.php:280
 #, php-format
 msgid "%s must be between %d (inclusive) and %d (inclusive)"
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Controller.php:39
+#: core/api/v1/endpoints/class.Rest.Controller.php:38
 msgid "The register_routes() method must be overriden"
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Controller.php:49
-#: core/api/v1/endpoints/class.Rest.Controller.php:59
-#: core/api/v1/endpoints/class.Rest.Controller.php:69
-#: core/api/v1/endpoints/class.Rest.Controller.php:79
-#: core/api/v1/endpoints/class.Rest.Controller.php:89
-#: core/api/v1/endpoints/class.Rest.Controller.php:99
-#: core/api/v1/endpoints/class.Rest.Controller.php:109
-#: core/api/v1/endpoints/class.Rest.Controller.php:119
-#: core/api/v1/endpoints/class.Rest.Controller.php:129
-#: core/api/v1/endpoints/class.Rest.Controller.php:139
-#: core/api/v1/endpoints/class.Rest.Controller.php:149
-#: core/api/v1/endpoints/class.Rest.Controller.php:160
+#: core/api/v1/endpoints/class.Rest.Controller.php:48
+#: core/api/v1/endpoints/class.Rest.Controller.php:58
+#: core/api/v1/endpoints/class.Rest.Controller.php:68
+#: core/api/v1/endpoints/class.Rest.Controller.php:78
+#: core/api/v1/endpoints/class.Rest.Controller.php:88
+#: core/api/v1/endpoints/class.Rest.Controller.php:98
+#: core/api/v1/endpoints/class.Rest.Controller.php:108
+#: core/api/v1/endpoints/class.Rest.Controller.php:118
+#: core/api/v1/endpoints/class.Rest.Controller.php:128
+#: core/api/v1/endpoints/class.Rest.Controller.php:138
+#: core/api/v1/endpoints/class.Rest.Controller.php:148
+#: core/api/v1/endpoints/class.Rest.Controller.php:159
 #, php-format
 msgid "Method '%s' not implemented. Must be over-ridden in subclass."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Controller.php:262
+#: core/api/v1/endpoints/class.Rest.Controller.php:261
 msgid "Current page of the collection."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Controller.php:270
+#: core/api/v1/endpoints/class.Rest.Controller.php:269
 msgid "Maximum number of items to be returned in result set."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Controller.php:279
+#: core/api/v1/endpoints/class.Rest.Controller.php:278
 msgid "Limit results to those matching a string."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Controller.php:297
+#: core/api/v1/endpoints/class.Rest.Controller.php:296
 msgid ""
 "Scope under which the request is made; determines fields present in "
 "response."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:70
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:69
 msgid "Required to be true, as resource does not support trashing."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:118
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:117
 msgid "Sorry, you cannot filter by role."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:122
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:246
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:295
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:121
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:245
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:294
 msgid "Sorry, you cannot view this resource with edit context."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:238
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:265
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:468
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:551
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:237
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:264
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:467
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:550
 msgid "Invalid resource id."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:248
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:297
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:247
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:296
 msgid "Sorry, you cannot view this resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:287
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:314
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:286
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:313
 msgid "Invalid resource email."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:340
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:339
 msgid "You are not currently logged in."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:361
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:360
 msgid "Sorry, you are not allowed to create resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:375
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:374
 msgid "Cannot create existing resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:397
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:396
 msgid "Error creating new resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:447
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:446
 msgid "Sorry, you are not allowed to edit resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:451
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:450
 msgid "Sorry, you are not allowed to edit roles of this resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:472
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:471
 msgid "Email address is invalid."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:476
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:475
 msgid "Username isn't editable"
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:480
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:479
 msgid "Slug is invalid."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:527
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:526
 msgid "Sorry, you are not allowed to delete this resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:546
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:545
 msgid "Users do not support trashing."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:556
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:555
 msgid "Invalid resource id for reassignment."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:569
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:568
 msgid "The resource cannot be deleted."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:770
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:769
 #, php-format
 msgid "The role %s does not exist."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:777
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:787
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:776
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:786
 msgid "You cannot give resource that role."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:807
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:806
 msgid "Unique identifier for the resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:813
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:812
 msgid "Login name for the resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:822
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:821
 msgid "Display name for the resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:830
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:829
 msgid "First name for the resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:838
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:837
 msgid "Last name for the resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:846
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:845
 msgid "The email address for the resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:853
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:852
 msgid "URL of the resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:859
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:858
 msgid "Description of the resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:867
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:866
 msgid "Author URL to the resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:874
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:873
 msgid "The nickname for the resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:882
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:881
 msgid "An alphanumeric identifier for the resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:890
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:889
 msgid "Registration date for the resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:896
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:895
 msgid "Roles assigned to the resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:901
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:900
 msgid "Password for the resource (never included)."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:907
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:906
 msgid "All capabilities assigned to the resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:912
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:911
 msgid "Any extra capabilities assigned to the resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:926
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:925
 #, php-format
 msgid "Avatar URL with image size of %d pixels."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:934
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:933
 msgid "Avatar URLs for the resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:957
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:956
 msgid "Ensure result set excludes specific ids."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:963
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:962
 msgid "Limit result set to specific ids."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:969
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:968
 msgid "Offset the result set by a specific number of items."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:976
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:975
 msgid "Order sort attribute ascending or descending."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:984
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:983
 msgid "Sort collection by object attribute."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:996
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:995
 msgid "Limit result set to resources with a specific slug."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:1001
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:1000
 msgid ""
 "Limit result set to resources matching at least one specific role "
 "provided. Accepts csv list or single role."
 msgstr ""
 
-#: core/classes/class.Open.php:216
+#: core/classes/class.Open.php:215
 msgid "Can Not Bind QQ Again"
 msgstr ""
 
-#: core/classes/class.Open.php:217
+#: core/classes/class.Open.php:216
 msgid ""
 "You have connected with QQ before, can not do it again, please unbind it "
 "before if need"
 msgstr ""
 
-#: core/classes/class.Open.php:228
+#: core/classes/class.Open.php:227
 msgid "QQ Login Disabled"
 msgstr ""
 
-#: core/classes/class.Open.php:229
+#: core/classes/class.Open.php:228
 msgid ""
 "You have not enabled QQ login, or the required information e.g OpenID, "
 "OpenKey missed"
 msgstr ""
 
-#: core/classes/class.Open.php:240
+#: core/classes/class.Open.php:239
 msgid "QQ connected by other one"
 msgstr ""
 
-#: core/classes/class.Open.php:241
+#: core/classes/class.Open.php:240
 msgid ""
 "Someone in your WordPress user system have connected with this QQ before, "
 "please unbind it before if need"
 msgstr ""
 
-#: core/classes/class.Open.php:264
+#: core/classes/class.Open.php:263
 msgid "State Missing"
 msgstr ""
 
-#: core/classes/class.Open.php:265
+#: core/classes/class.Open.php:264
 msgid "The state parameter was not found in the url"
 msgstr ""
 
-#: core/classes/class.Open.php:272
+#: core/classes/class.Open.php:271
 msgid "State Incorrect"
 msgstr ""
 
-#: core/classes/class.Open.php:273
+#: core/classes/class.Open.php:272
 msgid "The state parameter in the url is incorrect"
 msgstr ""
 
-#: core/classes/class.Open.php:409
+#: core/classes/class.Open.php:408
 msgid "OAuth Data Not Exist"
 msgstr ""
 
-#: core/classes/class.Open.php:410
+#: core/classes/class.Open.php:409
 msgid "Can not get oauth data, please retry the oauth steps"
 msgstr ""
 
-#: core/classes/class.Open.php:441
+#: core/classes/class.Open.php:440
 msgid "Create New User Failed"
 msgstr ""
 
-#: core/classes/class.Open.php:532
+#: core/classes/class.Open.php:531
 msgid "Unallowed Open Type"
 msgstr ""
 
-#: core/classes/class.Open.php:533
+#: core/classes/class.Open.php:532
 msgid "The open connect type is not allowed"
 msgstr ""
 
-#: core/classes/class.Open.php:576
+#: core/classes/class.Open.php:575
 msgid "User Authorization Canceled"
 msgstr ""
 
-#: core/classes/class.Open.php:577
+#: core/classes/class.Open.php:576
 msgid ""
 "You should agree to authorize our application connecting your open account"
 msgstr ""
 
-#: core/classes/class.Open.php:605 core/classes/class.Open.php:822
-#: core/classes/class.Open.php:1085 core/classes/class.Open.php:1440
+#: core/classes/class.Open.php:604 core/classes/class.Open.php:821
+#: core/classes/class.Open.php:1084 core/classes/class.Open.php:1439
 msgid "User Not Logged In"
 msgstr ""
 
-#: core/classes/class.Open.php:606
+#: core/classes/class.Open.php:605
 msgid "You must be logged in and then log out"
 msgstr ""
 
-#: core/classes/class.Open.php:715
+#: core/classes/class.Open.php:714
 msgid "Grant QQ Access Token Failed"
 msgstr ""
 
-#: core/classes/class.Open.php:768
+#: core/classes/class.Open.php:767
 msgid "Grant QQ OpenID Failed"
 msgstr ""
 
-#: core/classes/class.Open.php:796
+#: core/classes/class.Open.php:795
 msgid "Grant QQ User Info Failed"
 msgstr ""
 
-#: core/classes/class.Open.php:823 core/classes/class.Open.php:1086
-#: core/classes/class.Open.php:1441
+#: core/classes/class.Open.php:822 core/classes/class.Open.php:1085
+#: core/classes/class.Open.php:1440
 msgid "You must log in to refresh your token"
+msgstr ""
+
+#: core/classes/class.Open.php:833 core/classes/class.Open.php:1096
+#: core/classes/class.Open.php:1451
+msgid "Refresh Token Miss"
 msgstr ""
 
 #: core/classes/class.Open.php:834 core/classes/class.Open.php:1097
 #: core/classes/class.Open.php:1452
-msgid "Refresh Token Miss"
-msgstr ""
-
-#: core/classes/class.Open.php:835 core/classes/class.Open.php:1098
-#: core/classes/class.Open.php:1453
 msgid "A refresh token is required to get new access token"
 msgstr ""
 
-#: core/classes/class.Open.php:979 core/classes/class.Open.php:1058
-#: core/classes/class.Open.php:1143 core/classes/class.Open.php:1272
-#: core/classes/class.Open.php:1335 core/classes/class.Open.php:1415
-#: core/classes/class.Open.php:1490
+#: core/classes/class.Open.php:978 core/classes/class.Open.php:1057
+#: core/classes/class.Open.php:1142 core/classes/class.Open.php:1271
+#: core/classes/class.Open.php:1334 core/classes/class.Open.php:1414
+#: core/classes/class.Open.php:1489
 msgid "The open server returned with a incorrect response"
 msgstr ""
 
-#: core/classes/class.Open.php:1049 core/classes/class.Open.php:1057
+#: core/classes/class.Open.php:1048 core/classes/class.Open.php:1056
 msgid "Get WeiXin Userinfo Failed"
 msgstr ""
 
-#: core/classes/class.Open.php:1134 core/classes/class.Open.php:1142
+#: core/classes/class.Open.php:1133 core/classes/class.Open.php:1141
 msgid "Refresh WeiXin Token Failed"
 msgstr ""
 
-#: core/classes/class.Open.php:1263
+#: core/classes/class.Open.php:1262
 msgid "Grant Weibo Access Token Failed"
 msgstr ""
 
-#: core/classes/class.Open.php:1326
+#: core/classes/class.Open.php:1325
 msgid "Grant Weibo Token Info Failed"
 msgstr ""
 
-#: core/classes/class.Open.php:1406
+#: core/classes/class.Open.php:1405
 msgid "Grant Weibo User Show Info Failed"
 msgstr ""
 
-#: core/classes/class.Open.php:1481
+#: core/classes/class.Open.php:1480
 msgid "Refresh Weibo Access Token Failed"
 msgstr ""
 
@@ -488,48 +488,48 @@ msgstr ""
 msgid "秒前"
 msgstr ""
 
-#: core/functions/func.Account.php:77
+#: core/functions/func.Account.php:76
 msgid "The key is invalid."
 msgstr ""
 
-#: core/functions/func.Account.php:82
+#: core/functions/func.Account.php:81
 msgid "Sorry, the user was not found."
 msgstr ""
 
-#: core/functions/func.Cache.php:149
+#: core/functions/func.Cache.php:170
 #, php-format
 msgid "<!-- Nav cached %s -->"
 msgstr ""
 
-#: core/functions/func.Cache.php:149
+#: core/functions/func.Cache.php:170
 msgid "<!-- Nav cache end -->"
 msgstr ""
 
-#: core/functions/func.Install.php:36
+#: core/functions/func.Install.php:35
 msgid ""
 "Create avatar upload folder failed, maybe check your php.ini to enable "
 "`mkdir` function.\\n"
 msgstr ""
 
-#: core/functions/func.Install.php:36 core/functions/func.Install.php:60
-#: core/functions/func.Install.php:85 core/functions/func.Install.php:98
+#: core/functions/func.Install.php:35 core/functions/func.Install.php:59
+#: core/functions/func.Install.php:84 core/functions/func.Install.php:97
 msgid "Caught exception: "
 msgstr ""
 
-#: core/functions/func.Install.php:37 core/functions/func.Install.php:99
-#: functions.php:19
+#: core/functions/func.Install.php:36 core/functions/func.Install.php:98
+#: functions.php:16
 msgid "WordPress internal error"
 msgstr ""
 
-#: core/functions/func.Install.php:60 core/functions/func.Install.php:98
+#: core/functions/func.Install.php:59 core/functions/func.Install.php:97
 msgid "Can not copy `memcache object-cache.php` to `wp-content` dir.\\n"
 msgstr ""
 
-#: core/functions/func.Install.php:61 core/functions/func.Install.php:86
+#: core/functions/func.Install.php:60 core/functions/func.Install.php:85
 msgid "Create folder error"
 msgstr ""
 
-#: core/functions/func.Install.php:85
+#: core/functions/func.Install.php:84
 msgid ""
 "Create timthumb cache folder failed, maybe check your php.ini to enable "
 "`mkdir` function.\\n"
@@ -539,35 +539,35 @@ msgstr ""
 msgid "WordPress &rsaquo; Error"
 msgstr ""
 
-#: core/functions/func.Page.php:73
+#: core/functions/func.Page.php:72
 msgid "(no parent)"
 msgstr ""
 
-#: core/functions/func.Page.php:82 core/functions/func.Page.php:83
+#: core/functions/func.Page.php:81 core/functions/func.Page.php:82
 msgid "Parent"
 msgstr ""
 
-#: core/functions/func.Page.php:92
+#: core/functions/func.Page.php:91
 msgid "Template"
 msgstr ""
 
-#: core/functions/func.Page.php:95
+#: core/functions/func.Page.php:94
 msgid "Page Template"
 msgstr ""
 
-#: core/functions/func.Page.php:97
+#: core/functions/func.Page.php:96
 msgid "Default Template"
 msgstr ""
 
-#: core/functions/func.Page.php:104 core/functions/func.Page.php:105
+#: core/functions/func.Page.php:103 core/functions/func.Page.php:104
 msgid "Order"
 msgstr ""
 
-#: core/functions/func.Page.php:107
+#: core/functions/func.Page.php:106
 msgid "Need help? Use the Help tab in the upper right of your screen."
 msgstr ""
 
-#: core/functions/func.Page.php:122
+#: core/functions/func.Page.php:121
 msgid "Page Attributes"
 msgstr ""
 
@@ -579,60 +579,124 @@ msgstr ""
 msgid "Invalid Page Template"
 msgstr ""
 
-#: core/functions/func.Schedule.php:29
+#: core/functions/func.Schedule.php:28
 msgid "Weekly"
 msgstr ""
 
-#: core/functions/func.Sidebar.php:60 dash/options.php:173
+#: core/functions/func.Seo.php:30
+#, php-format
+msgid " - Page %d"
+msgstr ""
+
+#: core/functions/func.Seo.php:39
+#, php-format
+msgid "%s's Home Page"
+msgstr ""
+
+#: core/functions/func.Seo.php:43
+msgid "Y"
+msgstr ""
+
+#: core/functions/func.Seo.php:43 core/functions/func.Seo.php:45
+#: core/functions/func.Seo.php:47
+msgid "posts archive"
+msgstr ""
+
+#: core/functions/func.Seo.php:45
+msgid "Y.n"
+msgstr ""
+
+#: core/functions/func.Seo.php:47
+msgid "Y.n.j"
+msgstr ""
+
+#: core/functions/func.Seo.php:49
+msgid "Tag: "
+msgstr ""
+
+#: core/functions/func.Seo.php:51
+msgid "404 Error"
+msgstr ""
+
+#: core/functions/func.Seo.php:56
+#, php-format
+msgid " - Page %d "
+msgstr ""
+
+#: core/functions/func.Sidebar.php:59 dash/options.php:173
 #: dash/options.php:187
 msgid "Common Sidebar"
 msgstr ""
 
-#: core/functions/func.Sidebar.php:61 dash/options.php:174
+#: core/functions/func.Sidebar.php:60 dash/options.php:174
 #: dash/options.php:188 dash/options.php:203
 msgid "Home Sidebar"
 msgstr ""
 
-#: core/functions/func.Sidebar.php:62 dash/options.php:175
+#: core/functions/func.Sidebar.php:61 dash/options.php:175
 #: dash/options.php:189 dash/options.php:213
 msgid "Single Sidebar"
 msgstr ""
 
-#: core/functions/func.Sidebar.php:63 dash/options.php:176
+#: core/functions/func.Sidebar.php:62 dash/options.php:176
 #: dash/options.php:190 dash/options.php:223
 msgid "Archive Sidebar"
 msgstr ""
 
-#: core/functions/func.Sidebar.php:64 dash/options.php:177
+#: core/functions/func.Sidebar.php:63 dash/options.php:177
 #: dash/options.php:191 dash/options.php:233
 msgid "Category Sidebar"
 msgstr ""
 
-#: core/functions/func.Sidebar.php:65 dash/options.php:178
+#: core/functions/func.Sidebar.php:64 dash/options.php:178
 #: dash/options.php:192 dash/options.php:243
 msgid "Search Sidebar"
 msgstr ""
 
-#: core/functions/func.Sidebar.php:66 dash/options.php:179
+#: core/functions/func.Sidebar.php:65 dash/options.php:179
 #: dash/options.php:193 dash/options.php:253
 msgid "404 Sidebar"
 msgstr ""
 
-#: core/functions/func.Sidebar.php:67 dash/options.php:180
+#: core/functions/func.Sidebar.php:66 dash/options.php:180
 #: dash/options.php:194 dash/options.php:263
 msgid "Page Sidebar"
 msgstr ""
 
-#: core/templates/actions/tpl.M.Findpass.php:34
+#: core/modules/mod.Header.php:83
+msgid "New Post"
+msgstr ""
+
+#: core/modules/mod.Header.php:84
+msgid "My Posts"
+msgstr ""
+
+#: core/modules/mod.Header.php:85
+msgid "My Messages"
+msgstr ""
+
+#: core/modules/mod.Header.php:86
+msgid "My Settings"
+msgstr ""
+
+#: core/modules/mod.Header.php:88
+msgid "Sign Out"
+msgstr ""
+
+#: core/modules/mod.Header.php:93
+msgid "Sign In or Up"
+msgstr ""
+
+#: core/templates/actions/tpl.M.Findpass.php:33
 msgid "Please input your account associated email"
 msgstr ""
 
-#: core/templates/actions/tpl.M.Findpass.php:36
+#: core/templates/actions/tpl.M.Findpass.php:35
 msgid "Email"
 msgstr ""
 
-#: core/templates/actions/tpl.M.Findpass.php:38
-#: core/templates/actions/tpl.M.Resetpass.php:48
+#: core/templates/actions/tpl.M.Findpass.php:37
+#: core/templates/actions/tpl.M.Resetpass.php:47
 msgid "Submit"
 msgstr ""
 
@@ -655,50 +719,58 @@ msgstr ""
 msgid "Forbidden Access"
 msgstr ""
 
-#: core/templates/actions/tpl.M.Resetpass.php:21
+#: core/templates/actions/tpl.M.Resetpass.php:20
 msgid "The link you visited is invalid or expired"
 msgstr ""
 
-#: core/templates/actions/tpl.M.Resetpass.php:21
+#: core/templates/actions/tpl.M.Resetpass.php:20
 msgid "Link Error"
 msgstr ""
 
-#: core/templates/actions/tpl.M.Resetpass.php:38
+#: core/templates/actions/tpl.M.Resetpass.php:37
 msgid "Please input your new password"
 msgstr ""
 
+#: core/templates/actions/tpl.M.Resetpass.php:38
 #: core/templates/actions/tpl.M.Resetpass.php:39
-#: core/templates/actions/tpl.M.Resetpass.php:40
-#: core/templates/actions/tpl.M.Resetpass.php:42
+#: core/templates/actions/tpl.M.Resetpass.php:41
 msgid "Password"
 msgstr ""
 
-#: core/templates/actions/tpl.M.Resetpass.php:41
+#: core/templates/actions/tpl.M.Resetpass.php:40
 msgid "Repeat Password"
 msgstr ""
 
-#: core/templates/actions/tpl.M.Resetpass.php:45
+#: core/templates/actions/tpl.M.Resetpass.php:44
 msgid "Remember me"
 msgstr ""
 
-#: core/templates/oauth/tpl.OAuth.php:34
+#: core/templates/oauth/tpl.OAuth.php:33
 msgid "The request you have done is illegal, please retry"
 msgstr ""
 
-#: core/templates/oauth/tpl.OAuth.php:34
+#: core/templates/oauth/tpl.OAuth.php:33
 msgid "Illegal Request"
 msgstr ""
 
-#: core/templates/tpl.Error.php:23 core/templates/tpl.Error.php:58
+#: core/templates/tpl.Error.php:22 core/templates/tpl.Error.php:57
 msgid "Error Happened!"
 msgstr ""
 
-#: core/templates/tpl.Error.php:61
+#: core/templates/tpl.Error.php:60
 msgid "An error has happened on this page."
 msgstr ""
 
-#: core/templates/tpl.Error.php:64
+#: core/templates/tpl.Error.php:63
 msgid "Go Back Home"
+msgstr ""
+
+#: dash/dash.php:47
+msgid "Clear Cache"
+msgstr ""
+
+#: dash/dash.php:60
+msgid "All Cache Clear."
 msgstr ""
 
 #: dash/of_inc/includes/class-options-framework-admin.php:91
@@ -1301,7 +1373,23 @@ msgid ""
 "\">Refresh Rewrite Rules</a> if you have encounter some 404 errors"
 msgstr ""
 
-#: functions.php:19
+#: dash/options.php:676
+msgid "Head Custom Code"
+msgstr ""
+
+#: dash/options.php:677
+msgid "Custom code loaded on page head"
+msgstr ""
+
+#: dash/options.php:686
+msgid "Foot Custom Code"
+msgstr ""
+
+#: dash/options.php:687
+msgid "Custom code loaded on page foot"
+msgstr ""
+
+#: functions.php:16
 msgid "Lack of WordPress environment"
 msgstr ""
 

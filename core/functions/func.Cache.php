@@ -72,7 +72,7 @@ function tt_cache_flush_hourly(){
     // transient的缓存在get_transient函数调用时会自动判断过期并决定是否删除，对于每个查询请求执行两次delete_option操作
     // 这里采用定时任务一次性删除多条隔天的过期缓存，减少delete_option操作
     global $wpdb;
-    $wpdb->query( "DELETE FROM $wpdb->options WHERE `option_name` LIKE '_transient_tt_cache_hourly_%' OR `option_name` LIKE '_transient_timeout_tt_cache__hourly%'" );
+    $wpdb->query( "DELETE FROM $wpdb->options WHERE `option_name` LIKE '_transient_tt_cache_hourly_%' OR `option_name` LIKE '_transient_timeout_tt_cache_hourly%'" );
 }
 add_action('tt_setup_common_hourly_event', 'tt_cache_flush_hourly');
 
@@ -107,9 +107,31 @@ function tt_cache_flush_weekly(){
 
     // Transient cache
     global $wpdb;
-    $wpdb->query( "DELETE FROM $wpdb->options WHERE `option_name` LIKE '_transient_tt_cache_weekly_%' OR `option_name` LIKE '_transient_timeout_tt_cache__weekly%'" );
+    $wpdb->query( "DELETE FROM $wpdb->options WHERE `option_name` LIKE '_transient_tt_cache_weekly_%' OR `option_name` LIKE '_transient_timeout_tt_cache_weekly%'" );
 }
 add_action('tt_setup_common_weekly_event', 'tt_cache_flush_weekly');  // TODO rest api cache
+
+
+/**
+ * 清除所有缓存
+ *
+ * @since   2.0.0
+ * @return  void
+ */
+function tt_clear_all_cache() {
+    // Object Cache
+    wp_cache_flush();
+
+    // Rewrite rules Cache
+    global $wp_rewrite;
+    $wp_rewrite->flush_rules();
+
+    // Transient cache
+    // transient的缓存在get_transient函数调用时会自动判断过期并决定是否删除，对于每个查询请求执行两次delete_option操作
+    // 这里采用定时任务一次性删除多条隔天的过期缓存，减少delete_option操作
+    global $wpdb;
+    $wpdb->query( "DELETE FROM $wpdb->options WHERE `option_name` LIKE '_transient_tt_cache_%' OR `option_name` LIKE '_transient_timeout_tt_cache_%'" );
+}
 
 
 /**

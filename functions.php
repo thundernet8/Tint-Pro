@@ -88,6 +88,7 @@ load_func('func.Rewrite');
 load_func('func.Robots');
 load_func('func.Schedule');
 load_func('func.Script');
+load_func('func.Seo');
 load_func('func.Sidebar');
 load_func('func.Template');
 load_func('func.Thumb');

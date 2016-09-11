@@ -96,6 +96,21 @@ function tt_url_for($key, $arg = null, $relative = false){
 
 
 /**
+ * 获取当前页面url
+ *
+ * @since   2.0.0
+ * @param   string  $method    获取方法，分别为PHP的$_SERVER对象获取(php)和WordPress的全局wp_query对象获取(wp)
+ * @return  string
+ */
+function tt_get_current_url($method = 'php') {
+    if($method === 'wp') {
+        return Utils::getCurrentUrl();
+    }
+    return Utils::getPHPCurrentUrl();
+}
+
+
+/**
  * 登录的url
  *
  * @since   2.0.0
@@ -136,6 +151,22 @@ function tt_signup_url($redirect) {
  */
 function tt_signout_url($redirect) {
     return tt_filter_default_logout_url('', $redirect);
+}
+
+
+/**
+ * 为链接添加重定向链接
+ *
+ * @since   2.0.0
+ * @param   string  $url
+ * @param   string  $redirect
+ * @return  string
+ */
+function tt_add_redirect($url, $redirect) {
+    if($redirect) {
+        $url = add_query_arg('redirect_to', urlencode($redirect), $url);
+    }
+    return $url;
 }
 
 

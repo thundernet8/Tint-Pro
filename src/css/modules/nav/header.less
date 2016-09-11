@@ -1,0 +1,190 @@
+header {
+  position: relative;
+
+  .logo {
+    display: block;
+    width: auto;
+    height: 60px;
+    position: relative;
+    top: 6px;
+    left: 0;
+
+    &>img {
+      height: 100%;
+    }
+  }
+
+  nav {
+    height: 100%;
+
+    ul {
+      margin: 0;
+      padding-left: 0;
+      list-style: none;
+
+      li {
+        display: inline-block;
+      }
+    }
+  }
+
+  &.common-header {
+    width: 100%;
+    height: 72px;
+    z-index: 999;
+    box-shadow: rgba(0, 0, 0, 0.0980392) 0 1px 1px;
+    background: #FFFFFF;
+
+    nav {
+      &>.nav-col {
+        float: left;
+
+        &.pull-right {
+          float: right;
+        }
+      }
+
+      &>ul {
+
+        &>li {
+          position: relative;
+
+          &.current-menu-item {
+            &>a {
+              color: @nav-lin-hover-color;
+            }
+          }
+
+          &.menu-item-has-children {
+            &>a{
+              position: relative;
+              padding-right: 25px;
+
+              &:after {
+                font-family: @icon-font-name;
+                content: '\f107';
+                position: absolute;
+                font-size: 1.4rem;
+                right: 10px;
+              }
+            }
+
+            &:hover {
+
+              &>.sub-menu {
+                visibility: visible;
+                opacity: 1;
+                -webkit-transform: scale(1);
+                -ms-transform: scale(1);
+                transform: scale(1);
+                z-index: 100;
+                -webkit-transition: all 0.3s cubic-bezier(0.31, 0.57, 0.68, 1.36);
+                transition: all 0.3s cubic-bezier(0.31, 0.57, 0.68, 1.36);
+                padding: 10px 14px;
+              }
+            }
+
+            &>.sub-menu {
+              &>li {
+                display: block;
+
+                &>a {
+                  white-space: nowrap;
+                  line-height: 1.8;
+                }
+              }
+            }
+          }
+
+          &>a {
+            display: block;
+            padding: 0 15px;
+            margin: 0 5px;
+            line-height: 72px;
+            height: 72px;
+            overflow: hidden;
+          }
+
+          &>.sub-menu {
+            -webkit-transition: none;
+            transition: none;
+            -webkit-transform: scale(0);
+            -ms-transform: scale(0);
+            transform: scale(0);
+            -webkit-transform-origin: 90% 0;
+            transform-origin: 90% 0;
+            visibility: hidden;
+            position: absolute;
+            min-width: 136px;
+            left: 0;
+            margin-left: -50%;
+            top: 72px;
+            background: #FFFFFF;
+            border: 1px solid #dddddd;
+            padding: 20px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0 2px 3px;
+
+            &:before {
+              width: 10px;
+              height: 10px;
+              -webkit-transform: rotate(-45deg);
+              -ms-transform: rotate(-45deg);
+              transform: rotate(-45deg);
+              background: #FFFFFF;
+              border-style: solid;
+              border-color: #dddddd;
+              border-width: 1px 1px 0 0;
+              position: absolute;
+              top: -6px;
+              left: 50%;
+              margin-left: -5px;
+              content: ' ';
+            }
+          }
+        }
+
+        a {
+          color: @nav-link-color;
+          font-size: 1.6rem;
+
+          &:hover {
+            color: @nav-lin-hover-color;
+            text-decoration: none;
+          }
+        }
+      }
+
+      &>ul.header-tool-menu {
+        &>.nav-user {
+          &>a {
+            &>.avatar {
+              width: 32px;
+              height: 32px;
+              position: relative;
+              top: 10px;
+              margin-right: 5px;
+              border-radius: 16px;
+            }
+          }
+        }
+        .dropdown-menu {
+          min-width: 180px;
+          margin-top: 5px;
+          &>li {
+            display: block;
+            &>a {
+              position: relative;
+              text-align: center;
+              &>span {
+                position: absolute;
+                top: 12px;
+                left: 20px;
+                //margin-right: 8px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

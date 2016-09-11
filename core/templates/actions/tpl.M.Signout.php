@@ -14,10 +14,12 @@
 ?>
 <?php
 
-wp_logout();
+// wp_logout(); 包含 do_action( 'wp_logout' )，为了自定义跳转，需删除这个action，因此不使用wp_logout()
+wp_destroy_current_session();
+wp_clear_auth_cookie();
 
-if ( !empty( $_REQUEST['redirect_to'] ) || !empty( $_REQUEST['redirect'] ) ){
-	$redirect_to = $_REQUEST['redirect_to'] || $_REQUEST['redirect'];
+if ( !empty( $_REQUEST['redirect'] ) || !empty( $_REQUEST['redirect_to'] ) ){
+	$redirect_to = $_REQUEST['redirect'] ?  $_REQUEST['redirect'] : $_REQUEST['redirect_to'];
 } else {
 	$redirect_to = '/';
 }

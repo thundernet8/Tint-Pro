@@ -67,6 +67,7 @@ $me_allow_routes = json_encode(array(
     'balance'  => 'balance',
     'stars'    => 'stars',
     'order'    => 'order',
+    'newpost' => 'newpost',
     'notifications' => array(
         'all',
         'comment',
@@ -113,6 +114,7 @@ $site_endpoints = json_encode(array(
     'my_settings'               =>  'me/settings',
     'balance'                   =>  'me/balance',
     'stars'                     =>  'me/stars',
+    'new_post'                  =>  'me/newpost',
     'in_msg'                    =>  'me/messages/inbox',
     'out_msg'                   =>  'me/messages/sendbox',
     'all_notify'                =>  'me/notifications/all',

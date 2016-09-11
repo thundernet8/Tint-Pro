@@ -671,6 +671,26 @@ function optionsframework_options() {
     );
 
 
+    // - Head自定义代码
+    $options[] = array(
+        'name' => __( 'Head Custom Code', 'tt' ),
+        'desc' => __( 'Custom code loaded on page head', 'tt' ),
+        'id' => 'tt_head_code',
+        'std' => '',
+        'type' => 'textarea'
+    );
+
+
+    // - Foot自定义代码
+    $options[] = array(
+        'name' => __( 'Foot Custom Code', 'tt' ),
+        'desc' => __( 'Custom code loaded on page foot', 'tt' ),
+        'id' => 'tt_foot_code',
+        'std' => '',
+        'type' => 'textarea'
+    );
+
+
 
 
 	///////////////////////////////////////////////////////////////////////////

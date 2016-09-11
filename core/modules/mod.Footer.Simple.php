@@ -12,6 +12,7 @@
  * @link https://www.webapproach.net/tint.html
  */
 ?>
+<?php if(tt_get_option('tt_foot_code')) { echo tt_get_option('tt_foot_code'); } ?>
 <?php wp_footer(); ?>
 </body>
 </html>

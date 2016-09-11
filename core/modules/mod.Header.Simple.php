@@ -19,9 +19,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,minimal-ui=yes">
-    <title>Title</title> <!-- TODO: SEO -->
-    <meta name="keywords" content="">
-    <meta name="description" content="">
+    <title><?php echo tt_get_page_title(); ?></title>
+    <meta name="keywords" content=""><!-- TODO: SEO -->
+    <meta name="description" content=""><!-- TODO: SEO -->
     <!--    <meta name="author" content="Your Name,Your Email">-->
     <meta name="renderer" content="webkit">
     <meta http-equiv="Cache-Control" content="no-transform">
@@ -54,6 +54,7 @@
         window.location.href = "<?php echo tt_url_for('upgrade_browser'); ?>";
     </script>
     <![endif]-->
-    <link rel="stylesheet" type="text/css" href="<?php echo THEME_ASSET.'/css/' . CSS_MAIN; ?>"  />
+    <link rel="stylesheet" type="text/css" href="<?php echo THEME_ASSET.'/css/' . CSS_HOME; ?>"  />
+    <?php if(tt_get_option('tt_head_code')) { echo tt_get_option('tt_head_code'); } ?>
     <?php wp_head(); ?>
 </head>
