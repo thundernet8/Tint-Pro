@@ -54,7 +54,7 @@
         window.location.href = "<?php echo tt_url_for('upgrade_browser'); ?>";
     </script>
     <![endif]-->
-    <link rel="stylesheet" type="text/css" href="<?php echo THEME_ASSET.'/css/' . CSS_HOME; ?>"  />
+    <link rel="stylesheet" type="text/css" href="<?php echo tt_get_css(); ?>"  />
     <?php if(tt_get_option('tt_head_code')) { echo tt_get_option('tt_head_code'); } ?>
     <?php wp_head(); ?>
 </head>
@@ -71,7 +71,7 @@
             <!-- End Top Menu -->
             <!-- Header Right Tools -->
             <ul class="header-tool-menu nav-col pull-right">
-                <li class="nav-search"><a href="javascript:void(0)"><span class="tico-search"></span></a></li>
+                <li class="nav-search"><a href="javascript:void(0)"><span class="tico tico-search"></span></a></li>
                 <?php $user = wp_get_current_user(); ?>
                 <?php if($user && $user->ID) { ?>
                     <li class="nav-user dropdown">
@@ -81,12 +81,12 @@
                             <span class="tico-angle-down"></span>
                         </a>
                         <ul class="nav-user-menu dropdown-menu">
-                            <li><a href="<?php echo tt_url_for('new_post'); ?>"><span class="tico-quill"></span><?php _e('New Post', 'tt'); ?></a></li>
-                            <li><a href="<?php echo tt_url_for('uc_latest'); ?>"><span class="tico-user"></span><?php _e('My Posts', 'tt'); ?></a></li>
-                            <li><a href="<?php echo tt_url_for('in_msg'); ?>"><span class="tico-envelope"></span><?php _e('My Messages', 'tt'); ?></a></li>
-                            <li><a href="<?php echo tt_url_for('my_settings'); ?>"><span class="tico-equalizer"></span><?php _e('My Settings', 'tt'); ?></a></li>
+                            <li><a href="<?php echo tt_url_for('new_post'); ?>"><span class="tico tico-quill"></span><?php _e('New Post', 'tt'); ?></a></li>
+                            <li><a href="<?php echo tt_url_for('uc_latest'); ?>"><span class="tico tico-user"></span><?php _e('My Posts', 'tt'); ?></a></li>
+                            <li><a href="<?php echo tt_url_for('in_msg'); ?>"><span class="tico tico-envelope"></span><?php _e('My Messages', 'tt'); ?></a></li>
+                            <li><a href="<?php echo tt_url_for('my_settings'); ?>"><span class="tico tico-equalizer"></span><?php _e('My Settings', 'tt'); ?></a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="<?php echo tt_add_redirect(tt_url_for('signout'), tt_get_current_url()); ?>"><span class="tico-sign-out"></span><?php _e('Sign Out', 'tt'); ?></a></li>
+                            <li><a href="<?php echo tt_add_redirect(tt_url_for('signout'), tt_get_current_url()); ?>"><span class="tico tico-sign-out"></span><?php _e('Sign Out', 'tt'); ?></a></li>
                         </ul>
                     </li>
                 <?php }else{ ?>
@@ -97,4 +97,3 @@
             </ul>
         </nav>
     </header>
-

@@ -43,7 +43,7 @@
         window.location.href = "<?php echo tt_url_for('upgrade_browser'); ?>";
     </script>
     <![endif]-->
-    <link rel="stylesheet" type="text/css" href="<?php echo THEME_ASSET.'/css/' . CSS_ERROR_PAGE; ?>"  />
+    <link rel="stylesheet" type="text/css" href="<?php tt_get_css(CSS_ERROR_PAGE); ?>"  />
     <?php wp_head(); ?>
 </head>
 <body class="error error-page wp-die">

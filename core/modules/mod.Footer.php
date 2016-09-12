@@ -14,6 +14,9 @@
 ?>
 <footer class="footer">
     <!-- TODO -->
+    <div class="foot-copyright align-center">
+		&copy;&nbsp;<?php the_date('Y'); ?><?php echo ' ' . get_bloginfo('name') . ' All Right Reserved · Design by <a href="https://www.webapproach.net" title="WebApproach">WebApproach.</a>'; ?>
+	</div>
 </footer>
 <?php if(tt_get_option('tt_foot_code')) { echo tt_get_option('tt_foot_code'); } ?>
 <?php wp_footer(); ?>

@@ -12,6 +12,15 @@
  * @link https://www.webapproach.net/tint.html
  */
 ?>
+<!-- Footer -->
+<footer class="footer simple-footer">
+    <div class="foot-menu pull-left">
+        <!-- TODO menu -->
+    </div>
+    <div class="foot-copyright pull-right">
+        &copy;&nbsp;<?php the_date('Y'); ?><?php echo ' ' . get_bloginfo('name') . ' All Right Reserved · Design by <a href="https://www.webapproach.net" title="WebApproach">WebApproach.</a>'; ?>
+    </div>
+</footer>
 <?php if(tt_get_option('tt_foot_code')) { echo tt_get_option('tt_foot_code'); } ?>
 <?php wp_footer(); ?>
 </body>

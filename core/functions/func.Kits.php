@@ -351,3 +351,36 @@ function tt_wp_die_handler_switch(){
     return 'tt_wp_die_handler';
 }
 add_filter('wp_die_handler', 'tt_wp_die_handler_switch');
+
+
+/**
+ * 获取当前页面需要应用的样式链接
+ *
+ * @since   2.0.0
+ * @param   string  $filename  文件名
+ * @return  string
+ */
+function tt_get_css($filename = '') {
+    if($filename) {
+        return THEME_ASSET.'/css/' . $filename;
+    }
+
+    if(is_home()) {
+        $filename = CSS_HOME;
+    }elseif(is_single()) {
+        $filename = get_post_type()==='product' ? CSS_PRODUCT : CSS_SINGLE;
+    }elseif(is_archive()) {
+        $filename = get_post_type()==='product' ? CSS_PRODUCT_ARCHIVE : CSS_ARCHIVE;
+    }elseif(is_author()) {
+        $filename = CSS_UC;
+    }elseif(is_404()) {
+        $filename = CSS_404;
+    }elseif(get_query_var('is_me_route')) {
+        $filename = CSS_ME;
+    }elseif(get_query_var('action')) {
+        $filename = CSS_ACTION;
+    }elseif(is_front_page()) {
+        $filename = CSS_FRONT_PAGE;
+    }
+    return THEME_ASSET.'/css/' . $filename;
+}

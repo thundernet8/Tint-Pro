@@ -16,11 +16,86 @@
 
 // 引入头部
 tt_get_header('simple');
+?>
+<body class="is-loadingApp action-page signin">
+    <div class="loading-line"></div>
+    <header class="header simple-header">
+        <nav id="header-nav" class="navigation container clearfix" role="navigation">
 
-if ( !get_option('users_can_register') ) {
-	wp_redirect( site_url('wp-login.php?registration=disabled') );
-	exit();
-}
+        </nav>
+    </header>
+<!--	<div class="bg-layer"></div>-->
+    <div class="wrapper container no-aside">
+        <div class="main inner-wrap">
+            <form class="form-signin signin-modal">
+                <!-- Logo -->
+				<img class="logo" src="<?php echo tt_get_option('tt_logo'); ?>" alt="<?php echo get_bloginfo('name'); ?>">
+                <div class="local-signin">
+					<div class="input-container clearfix">
+						<label class="label" for="user_login-input"><?php _e('Email or username', 'tt'); ?></label>
+						<input autocomplete="off" name="user_login" type="text" class="input text-input" id="user_login-input" title="Account" required="required">
+						<div class="focus-line"></div>
+					</div>
+                    <div class="input-container clearfix input-focused">
+                        <label class="label" for="password-input"><?php _e('Password', 'tt'); ?></label>
+                        <input autocomplete="off" name="password" type="text" class="input password-input" id="password-input" title="Password" required="required" onclick="this.type='password'">
+                        <div class="focus-line"></div>
+                    </div>
+                    <!--span class="input-group-btn">
+                        <button class="btn btn-lg btn-primary btn-block" type="submit"><?php _e('Submit', 'tt'); ?></button>
+                    </span-->
+                </div>
+				<!-- Open Login -->
+                <?php
+                    $open_weibo = tt_get_option('tt_enable_weibo_login');
+                    $open_qq = tt_get_option('tt_enable_qq_login');
+                    $open_weixin = tt_get_option('tt_enable_weixin_login');
+                    $has_open_login = $open_weibo || $open_qq || $open_weixin;
+                ?>
+				<?php if($has_open_login) { ?>
+				<div class="open-login">
+					<p class="text-white mt5 mr10 pull-left hidden-xs"><?php _e('Quick SignIn'); ?></p>
+					<?php if($open_weibo) { ?>
+					<a href="<?php echo tt_add_redirect(tt_url_for('oauth_weibo'), tt_get_current_url()); ?>" class="btn btn-default btn-sm btn-sn-weibo">
+						<span class="tico tico-weibo"></span>
+						<strong class="visible-xs-inline"><?php _e('Signin with Sina weibo'); ?></strong>
+					</a>
+					<?php } ?>
+					<?php if($open_qq) { ?>
+					<a href="<?php echo tt_add_redirect(tt_url_for('oauth_qq'), tt_get_current_url()); ?>" class="btn btn-default btn-sm btn-sn-qq">
+						<span class="tico tico-qq"></span>
+						<strong class="visible-xs-inline"><?php _e('Signin with QQ'); ?></strong>
+					</a>
+					<?php } ?>
+					<?php if($open_weixin) { ?>
+					<a href="<?php echo tt_add_redirect(tt_url_for('oauth_weixin'), tt_get_current_url()); ?>" class="btn btn-default btn-sm btn-sn-weixin">
+						<span class="tico tico-weixin"></span>
+						<strong class="visible-xs-inline"><?php _e('Signin with Wechat'); ?></strong>
+					</a>
+					<?php } ?>
+				</div>
+				<?php } ?>
+				<!-- End Open Login -->
+				<div class="text-center mt30 login-help">
+					<a href="<?php echo tt_add_redirect(tt_url_for('signup'), tt_get_current_url()); ?>" id="go-register" class="mr20 register-link"><?php _e('Register Now', 'tt'); ?></a>
+					<span class="dot-separator" role="separator"></span>
+					<a href="<?php echo tt_add_redirect(tt_url_for('findpass'), tt_get_current_url()); ?>" id="go-findpass" class="ml20 findpass-link"><?php _e('Forgot your password?', 'tt'); ?></a>
+				</div>
+            </form>
+        </div>
+    </div>
+<?php if(isset($_GET['registration']) && $_GET['registration']==='disabled') { ?>
+<script>
+	<!-- Remind registration disabled -->
+	jQuery(function () {
+        App.MsgBox.alert({
+            text: <?php _e('The manager has disabled the new registration, please sign in if you already have a account', 'tt'); ?>,
+            timer: 2
+        });
+    });
+</script>
+<?php } ?>
+<?php
 
 // 引入页脚
 tt_get_footer('simple');

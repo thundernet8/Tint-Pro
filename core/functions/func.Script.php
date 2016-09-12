@@ -27,6 +27,15 @@ function tt_register_scripts() {
     wp_register_script( 'tt_jquery', $jquery_url, array(), null, tt_get_option('tt_foot_jquery', false) );
     wp_register_script( 'tt_common', THEME_ASSET . '/js/' . JS_COMMON, array(), null, true );
     wp_register_script( 'tt_home', THEME_ASSET . '/js/' . JS_HOME, array(), null, true );
+    wp_register_script( 'tt_front_page', THEME_ASSET . '/js/' . JS_FRONT_PAGE, array(), null, true );
+    wp_register_script( 'tt_single_page', THEME_ASSET . '/js/' . JS_SINGLE, array(), null, true );
+    wp_register_script( 'tt_archive_page', THEME_ASSET . '/js/' . JS_ARCHIVE, array(), null, true );
+    wp_register_script( 'tt_product_page', THEME_ASSET . '/js/' . JS_PRODUCT, array(), null, true );
+    wp_register_script( 'tt_products_page', THEME_ASSET . '/js/' . JS_PRODUCT_ARCHIVE, array(), null, true );
+    wp_register_script( 'tt_uc_page', THEME_ASSET . '/js/' . JS_UC, array(), null, true );
+    wp_register_script( 'tt_me_page', THEME_ASSET . '/js/' . JS_ME, array(), null, true );
+    wp_register_script( 'tt_action_page', THEME_ASSET . '/js/' . JS_ACTION, array(), null, true );
+    wp_register_script( 'tt_404_page', THEME_ASSET . '/js/' . JS_404, array(), null, true );
 
     $data = array(
         'language'      => get_option('WPLANG', 'zh_CN'),
@@ -39,6 +48,20 @@ function tt_register_scripts() {
     wp_enqueue_script( 'tt_common' );
     if(is_home()) {
         wp_enqueue_script( 'tt_home' );
+    }elseif(is_single()) {
+        wp_enqueue_script( get_post_type()==='product' ? 'tt_product_page' : 'tt_single_page' );
+    }elseif(is_archive()) {
+        wp_enqueue_script( get_post_type()==='product' ? 'tt_products_page' : 'tt_archive_page' );
+    }elseif(is_author()) {
+        wp_enqueue_script( 'tt_uc_page' );
+    }elseif(is_404()) {
+        wp_enqueue_script( 'tt_404_page' );
+    }elseif(get_query_var('is_me_route')) {
+        wp_enqueue_script( 'tt_me_page' );
+    }elseif(get_query_var('action')) {
+        wp_enqueue_script( 'tt_action_page' );
+    }elseif(is_front_page()) {
+        wp_enqueue_script( 'tt_front_page' );
     }
 }
 add_action( 'wp_enqueue_scripts', 'tt_register_scripts' );

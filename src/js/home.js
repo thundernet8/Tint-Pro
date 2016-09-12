@@ -18,4 +18,4 @@ require('./modules/bootstrap-flat');
 require('./modules/msgbox');
 // require('./modules/smooth-scroll');
 
-console.log('home');
+console.debug('home');

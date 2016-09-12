@@ -25,8 +25,7 @@ wp_no_robots();
 tt_get_header('simple');
 
 ?>
-
-<body class="action action-page findpass">
+<body class="is-loadingApp action-page findpass">
     <div class="wrapper container no-aside">
         <div class="main inner-wrap">
             <form class="form-findpass">

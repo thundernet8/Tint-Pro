@@ -29,8 +29,7 @@ if(!isset($_GET['key']) || empty($_GET['key']) || !tt_verify_reset_password_link
 tt_get_header('simple');
 
 ?>
-
-<body class="action action-page resetpass">
+<body class="is-loadingApp action-page resetpass">
     <div class="wrapper container no-aside">
         <div class="main inner-wrap">
             <form class="form-resetpass">
