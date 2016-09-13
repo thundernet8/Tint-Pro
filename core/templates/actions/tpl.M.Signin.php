@@ -27,7 +27,7 @@ tt_get_header('simple');
 <!--	<div class="bg-layer"></div>-->
     <div class="wrapper container no-aside">
         <div class="main inner-wrap">
-            <form class="form-signin signin-modal">
+            <form class="form-signin">
                 <!-- Logo -->
 				<img class="logo" src="<?php echo tt_get_option('tt_logo'); ?>" alt="<?php echo get_bloginfo('name'); ?>">
                 <div class="local-signin">
@@ -36,10 +36,11 @@ tt_get_header('simple');
 						<input autocomplete="off" name="user_login" type="text" class="input text-input" id="user_login-input" title="Account" required="required">
 						<div class="focus-line"></div>
 					</div>
-                    <div class="input-container clearfix input-focused">
+                    <div class="input-container clearfix">
                         <label class="label" for="password-input"><?php _e('Password', 'tt'); ?></label>
                         <input autocomplete="off" name="password" type="text" class="input password-input" id="password-input" title="Password" required="required" onclick="this.type='password'">
                         <div class="focus-line"></div>
+						<span class="indicator spinner tico tico-spinner3"></span>
                     </div>
                     <!--span class="input-group-btn">
                         <button class="btn btn-lg btn-primary btn-block" type="submit"><?php _e('Submit', 'tt'); ?></button>
@@ -53,22 +54,22 @@ tt_get_header('simple');
                     $has_open_login = $open_weibo || $open_qq || $open_weixin;
                 ?>
 				<?php if($has_open_login) { ?>
-				<div class="open-login">
-					<p class="text-white mt5 mr10 pull-left hidden-xs"><?php _e('Quick SignIn'); ?></p>
+				<div class="open-login clearfix">
+					<p class="text-white mt10 mr10 pull-left hidden-xs"><?php _e('Quick SignIn'); ?></p>
 					<?php if($open_weibo) { ?>
-					<a href="<?php echo tt_add_redirect(tt_url_for('oauth_weibo'), tt_get_current_url()); ?>" class="btn btn-default btn-sm btn-sn-weibo">
+					<a href="<?php echo tt_add_redirect(tt_url_for('oauth_weibo'), tt_get_current_url()); ?>" class="btn btn-lg btn-sn-weibo pull-left anchor-noborder">
 						<span class="tico tico-weibo"></span>
 						<strong class="visible-xs-inline"><?php _e('Signin with Sina weibo'); ?></strong>
 					</a>
 					<?php } ?>
 					<?php if($open_qq) { ?>
-					<a href="<?php echo tt_add_redirect(tt_url_for('oauth_qq'), tt_get_current_url()); ?>" class="btn btn-default btn-sm btn-sn-qq">
+					<a href="<?php echo tt_add_redirect(tt_url_for('oauth_qq'), tt_get_current_url()); ?>" class="btn btn-lg btn-sn-qq pull-left anchor-noborder">
 						<span class="tico tico-qq"></span>
 						<strong class="visible-xs-inline"><?php _e('Signin with QQ'); ?></strong>
 					</a>
 					<?php } ?>
 					<?php if($open_weixin) { ?>
-					<a href="<?php echo tt_add_redirect(tt_url_for('oauth_weixin'), tt_get_current_url()); ?>" class="btn btn-default btn-sm btn-sn-weixin">
+					<a href="<?php echo tt_add_redirect(tt_url_for('oauth_weixin'), tt_get_current_url()); ?>" class="btn btn-lg btn-sn-weixin pull-left anchor-noborder">
 						<span class="tico tico-weixin"></span>
 						<strong class="visible-xs-inline"><?php _e('Signin with Wechat'); ?></strong>
 					</a>

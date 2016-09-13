@@ -68,6 +68,7 @@ load_api('api.Config');
 
 /* 载入类 */
 load_class('class.Avatar');
+load_class('class.Captcha');
 load_class('class.Open');
 load_class('class.PostImage');
 load_class('class.Utils');
