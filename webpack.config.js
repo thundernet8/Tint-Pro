@@ -54,10 +54,11 @@ module.exports = {
     },
     plugins: [
         // 提供全局的变量，在模块中使用无需用require引入
-        // new webpack.ProvidePlugin({
-        //     jQuery: 'jquery',
-        //     $: 'jquery'
-        // }),
+        new webpack.ProvidePlugin({
+            jQuery: 'jquery',
+            $: 'jquery',
+            TT: 'tt'
+        }),
         // 压缩
         // new webpack.optimize.UglifyJsPlugin({
         //     compress: {
@@ -68,6 +69,7 @@ module.exports = {
         commonsPlugin
     ],
     externals: {
-        'jquery': 'jQuery'
+        'jquery': 'jQuery',
+        'tt': 'TT'
     }
 };

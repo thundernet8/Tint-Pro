@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-09-11 22:08+0800\n"
-"PO-Revision-Date: 2016-09-11 22:13+0800\n"
+"POT-Creation-Date: 2016-09-15 22:53+0800\n"
+"PO-Revision-Date: 2016-09-15 22:54+0800\n"
 "Last-Translator: Zhiyan <mail@webapproach.net>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -218,15 +218,15 @@ msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:821
 msgid "Display name for the resource."
-msgstr "资源的显示名"
+msgstr "用户的显示名"
 
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:829
 msgid "First name for the resource."
-msgstr "资源的名"
+msgstr "用户的名"
 
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:837
 msgid "Last name for the resource."
-msgstr "资源的姓"
+msgstr "用户的姓"
 
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:845
 msgid "The email address for the resource."
@@ -397,20 +397,20 @@ msgstr ""
 
 #: core/classes/class.Open.php:714
 msgid "Grant QQ Access Token Failed"
-msgstr ""
+msgstr "获取 QQ Access Token 失败"
 
 #: core/classes/class.Open.php:767
 msgid "Grant QQ OpenID Failed"
-msgstr ""
+msgstr "获取 QQ OpenID 失败"
 
 #: core/classes/class.Open.php:795
 msgid "Grant QQ User Info Failed"
-msgstr ""
+msgstr "获取 QQ 用户信息失败"
 
 #: core/classes/class.Open.php:822 core/classes/class.Open.php:1085
 #: core/classes/class.Open.php:1440
 msgid "You must log in to refresh your token"
-msgstr ""
+msgstr "你必须登录才能刷新Token"
 
 #: core/classes/class.Open.php:833 core/classes/class.Open.php:1096
 #: core/classes/class.Open.php:1451
@@ -420,38 +420,38 @@ msgstr "丢失Refresh Token"
 #: core/classes/class.Open.php:834 core/classes/class.Open.php:1097
 #: core/classes/class.Open.php:1452
 msgid "A refresh token is required to get new access token"
-msgstr ""
+msgstr "需要 Refresh Token 以获取新的 Access Token"
 
 #: core/classes/class.Open.php:978 core/classes/class.Open.php:1057
 #: core/classes/class.Open.php:1142 core/classes/class.Open.php:1271
 #: core/classes/class.Open.php:1334 core/classes/class.Open.php:1414
 #: core/classes/class.Open.php:1489
 msgid "The open server returned with a incorrect response"
-msgstr ""
+msgstr "开放平台服务器响应格式错误"
 
 #: core/classes/class.Open.php:1048 core/classes/class.Open.php:1056
 msgid "Get WeiXin Userinfo Failed"
-msgstr ""
+msgstr "获取微信用户信息失败"
 
 #: core/classes/class.Open.php:1133 core/classes/class.Open.php:1141
 msgid "Refresh WeiXin Token Failed"
-msgstr ""
+msgstr "刷新微信 Token 失败"
 
 #: core/classes/class.Open.php:1262
 msgid "Grant Weibo Access Token Failed"
-msgstr ""
+msgstr "获取微博 Access Token 失败"
 
 #: core/classes/class.Open.php:1325
 msgid "Grant Weibo Token Info Failed"
-msgstr ""
+msgstr "获取微博 Token 信息失败"
 
 #: core/classes/class.Open.php:1405
 msgid "Grant Weibo User Show Info Failed"
-msgstr ""
+msgstr "获取微博用户信息失败"
 
 #: core/classes/class.Open.php:1480
 msgid "Refresh Weibo Access Token Failed"
-msgstr ""
+msgstr "刷新微博 Access Token 失败"
 
 #: core/classes/class.Utils.php:369
 msgid "刚刚"
@@ -532,7 +532,7 @@ msgid ""
 "`mkdir` function.\\n"
 msgstr "创建Timthumb缓存文件夹失败，或许可检查php.ini以启用`mkdir`函数.\\n"
 
-#: core/functions/func.Kits.php:302
+#: core/functions/func.Kits.php:333
 msgid "WordPress &rsaquo; Error"
 msgstr "WordPress &rsaquo; 错误"
 
@@ -659,40 +659,42 @@ msgstr "404边栏"
 msgid "Page Sidebar"
 msgstr "页面边栏"
 
-#: core/modules/mod.Header.php:83
+#: core/modules/mod.Header.php:84
 msgid "New Post"
 msgstr "新建文章"
 
-#: core/modules/mod.Header.php:84
+#: core/modules/mod.Header.php:85
 msgid "My Posts"
 msgstr "我的文章"
 
-#: core/modules/mod.Header.php:85
+#: core/modules/mod.Header.php:86
 msgid "My Messages"
 msgstr "站内消息"
 
-#: core/modules/mod.Header.php:86
+#: core/modules/mod.Header.php:87
 msgid "My Settings"
 msgstr "个人设置"
 
-#: core/modules/mod.Header.php:88
+#: core/modules/mod.Header.php:89
 msgid "Sign Out"
 msgstr "注销"
 
-#: core/modules/mod.Header.php:93
+#: core/modules/mod.Header.php:94
 msgid "Sign In or Up"
 msgstr "登录/注册"
 
-#: core/templates/actions/tpl.M.Findpass.php:33
+#: core/templates/actions/tpl.M.Findpass.php:32
 msgid "Please input your account associated email"
 msgstr "请输入您账户关联的邮箱"
 
-#: core/templates/actions/tpl.M.Findpass.php:35
+#: core/templates/actions/tpl.M.Findpass.php:34
+#: core/templates/actions/tpl.M.Signup.php:57
 msgid "Email"
 msgstr "邮箱"
 
-#: core/templates/actions/tpl.M.Findpass.php:37
-#: core/templates/actions/tpl.M.Resetpass.php:47
+#: core/templates/actions/tpl.M.Findpass.php:36
+#: core/templates/actions/tpl.M.Resetpass.php:46
+#: core/templates/actions/tpl.M.Signin.php:42
 msgid "Submit"
 msgstr "提交"
 
@@ -723,23 +725,91 @@ msgstr "访问的链接无效或已过期"
 msgid "Link Error"
 msgstr "链接错误"
 
-#: core/templates/actions/tpl.M.Resetpass.php:37
+#: core/templates/actions/tpl.M.Resetpass.php:36
 msgid "Please input your new password"
 msgstr "请输入您的新密码"
 
+#: core/templates/actions/tpl.M.Resetpass.php:37
 #: core/templates/actions/tpl.M.Resetpass.php:38
-#: core/templates/actions/tpl.M.Resetpass.php:39
-#: core/templates/actions/tpl.M.Resetpass.php:41
+#: core/templates/actions/tpl.M.Resetpass.php:40
+#: core/templates/actions/tpl.M.Signin.php:38
+#: core/templates/actions/tpl.M.Signup.php:62
 msgid "Password"
 msgstr "密码"
 
-#: core/templates/actions/tpl.M.Resetpass.php:40
+#: core/templates/actions/tpl.M.Resetpass.php:39
 msgid "Repeat Password"
 msgstr "重复密码"
 
-#: core/templates/actions/tpl.M.Resetpass.php:44
+#: core/templates/actions/tpl.M.Resetpass.php:43
 msgid "Remember me"
 msgstr "记住我"
+
+#: core/templates/actions/tpl.M.Signin.php:35
+msgid "Email/Username"
+msgstr "邮箱或用户名"
+
+#: core/templates/actions/tpl.M.Signin.php:54
+msgid "Quick SignIn"
+msgstr "快速登录"
+
+#: core/templates/actions/tpl.M.Signin.php:58
+#: core/templates/actions/tpl.M.Signup.php:87
+msgid "Signin with Sina weibo"
+msgstr "微博登录"
+
+#: core/templates/actions/tpl.M.Signin.php:64
+#: core/templates/actions/tpl.M.Signup.php:95
+msgid "Signin with QQ"
+msgstr "QQ登录"
+
+#: core/templates/actions/tpl.M.Signin.php:70
+#: core/templates/actions/tpl.M.Signup.php:103
+msgid "Signin with Wechat"
+msgstr "微信登录"
+
+#: core/templates/actions/tpl.M.Signin.php:77
+msgid "Register Now"
+msgstr "现在注册"
+
+#: core/templates/actions/tpl.M.Signin.php:79
+msgid "Forgot your password?"
+msgstr "忘记密码?"
+
+#: core/templates/actions/tpl.M.Signin.php:93
+msgid ""
+"The manager has disabled the new registration, please sign in if you already "
+"have a account"
+msgstr "管理员已经禁止注册，如果你已有账号请 登录"
+
+#: core/templates/actions/tpl.M.Signup.php:38
+#: core/templates/actions/tpl.M.Signup.php:76
+msgid "Sign Up"
+msgstr "注册"
+
+#: core/templates/actions/tpl.M.Signup.php:40
+msgid "Already have an account? "
+msgstr "已有账号?"
+
+#: core/templates/actions/tpl.M.Signup.php:41
+msgid "Sign In"
+msgstr "登录"
+
+#: core/templates/actions/tpl.M.Signup.php:52
+msgid "Account"
+msgstr "账户"
+
+#: core/templates/actions/tpl.M.Signup.php:68
+msgid "Captcha"
+msgstr "验证码"
+
+#: core/templates/actions/tpl.M.Signup.php:73
+msgid "Click to refresh"
+msgstr "点击刷新"
+
+#: core/templates/actions/tpl.M.Signup.php:82
+msgid "Sign in using your social account"
+msgstr "使用社交账户登录"
 
 #: core/templates/oauth/tpl.OAuth.php:33
 msgid "The request you have done is illegal, please retry"

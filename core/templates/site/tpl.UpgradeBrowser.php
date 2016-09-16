@@ -54,8 +54,8 @@
             width: 100%;
             height: 630px;
             text-align: center;
-            filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="<?php echo THEME_ASSET . '/img/special_main_bg.jpg'; ?>", sizingMethod='scale');
-        -ms-filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="<?php echo THEME_ASSET . '/img/special_main_bg.jpg'; ?>", sizingMethod='scale');
+/*            filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="*/<?php //echo THEME_ASSET . '/img/special_main_bg.jpg'; ?>/*", sizingMethod='scale');*/
+/*        -ms-filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="*/<?php //echo THEME_ASSET . '/img/special_main_bg.jpg'; ?>/*", sizingMethod='scale');*/
         min-width: 990px;
         }
         .special-content {

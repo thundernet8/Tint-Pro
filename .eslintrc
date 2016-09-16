@@ -1,9 +1,16 @@
 {
   "env": {
     "browser": true,
-    "node": true,
-    "commonjs": true
+    "node": true
+    //"commonjs": true,
   },
+  "globals": {
+    // Put things like jQuery, etc
+    "jQuery": true,
+    "$": true,
+    "TT": true
+  },
+  "parser": "babel",
   "ecmaFeatures": {
     // lambda表达式
     "arrowFunctions": true,
@@ -119,7 +126,7 @@
     // 方法定义风格，参数：
     //    declaration: 强制使用方法声明的方式，function f(){} e.g [2, "declaration"]
     //    expression：强制使用方法表达式的方式，var f = function() {}  e.g [2, "expression"]
-    "allowArrowFunctions": [2, "declaration", { "allowArrowFunctions": true }], //declaration风格中允许箭头函数。 e.g [2, "declaration", { "allowArrowFunctions": true }]
+    // "allowArrowFunctions": [2, "declaration", { "allowArrowFunctions": true }], //declaration风格中允许箭头函数。 e.g [2, "declaration", { "allowArrowFunctions": true }]
     "func-style": 0,
     "generator-star-spacing": [2, { "before": true, "after": true }],
     "guard-for-in": 0,

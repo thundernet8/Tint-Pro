@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-09-11 22:08+0800\n"
+"POT-Creation-Date: 2016-09-16 21:42+0800\n"
 "PO-Revision-Date: 2016-08-17 21:40+0800\n"
 "Last-Translator: \n"
 "Language-Team: Zhiyan <mail@webapproach.net>\n"
@@ -118,8 +118,43 @@ msgid ""
 "response."
 msgstr ""
 
+#: core/api/v1/endpoints/class.Rest.Session.Controller.php:58
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:69
 msgid "Required to be true, as resource does not support trashing."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Session.Controller.php:94
+msgid "Verify the login nonce failed"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Session.Controller.php:110
+msgid "Welcome, you have signed in successfully"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Session.Controller.php:114
+msgid "There is no user matches the info you offered"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Session.Controller.php:127
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:526
+msgid "Sorry, you are not allowed to delete this resource."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Session.Controller.php:144
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:545
+msgid "Users do not support trashing."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Session.Controller.php:149
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:237
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:264
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:467
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:550
+msgid "Invalid resource id."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Session.Controller.php:157
+msgid "You have signed out successfully"
 msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:117
@@ -130,13 +165,6 @@ msgstr ""
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:245
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:294
 msgid "Sorry, you cannot view this resource with edit context."
-msgstr ""
-
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:237
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:264
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:467
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:550
-msgid "Invalid resource id."
 msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:247
@@ -183,14 +211,6 @@ msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:479
 msgid "Slug is invalid."
-msgstr ""
-
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:526
-msgid "Sorry, you are not allowed to delete this resource."
-msgstr ""
-
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:545
-msgid "Users do not support trashing."
 msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:555
@@ -535,7 +555,7 @@ msgid ""
 "`mkdir` function.\\n"
 msgstr ""
 
-#: core/functions/func.Kits.php:302
+#: core/functions/func.Kits.php:333
 msgid "WordPress &rsaquo; Error"
 msgstr ""
 
@@ -663,40 +683,42 @@ msgstr ""
 msgid "Page Sidebar"
 msgstr ""
 
-#: core/modules/mod.Header.php:83
+#: core/modules/mod.Header.php:84
 msgid "New Post"
 msgstr ""
 
-#: core/modules/mod.Header.php:84
+#: core/modules/mod.Header.php:85
 msgid "My Posts"
 msgstr ""
 
-#: core/modules/mod.Header.php:85
+#: core/modules/mod.Header.php:86
 msgid "My Messages"
 msgstr ""
 
-#: core/modules/mod.Header.php:86
+#: core/modules/mod.Header.php:87
 msgid "My Settings"
 msgstr ""
 
-#: core/modules/mod.Header.php:88
+#: core/modules/mod.Header.php:89
 msgid "Sign Out"
 msgstr ""
 
-#: core/modules/mod.Header.php:93
+#: core/modules/mod.Header.php:94
 msgid "Sign In or Up"
 msgstr ""
 
-#: core/templates/actions/tpl.M.Findpass.php:33
+#: core/templates/actions/tpl.M.Findpass.php:32
 msgid "Please input your account associated email"
 msgstr ""
 
-#: core/templates/actions/tpl.M.Findpass.php:35
+#: core/templates/actions/tpl.M.Findpass.php:34
+#: core/templates/actions/tpl.M.Signup.php:57
 msgid "Email"
 msgstr ""
 
-#: core/templates/actions/tpl.M.Findpass.php:37
-#: core/templates/actions/tpl.M.Resetpass.php:47
+#: core/templates/actions/tpl.M.Findpass.php:36
+#: core/templates/actions/tpl.M.Resetpass.php:46
+#: core/templates/actions/tpl.M.Signin.php:58
 msgid "Submit"
 msgstr ""
 
@@ -727,22 +749,99 @@ msgstr ""
 msgid "Link Error"
 msgstr ""
 
-#: core/templates/actions/tpl.M.Resetpass.php:37
+#: core/templates/actions/tpl.M.Resetpass.php:36
 msgid "Please input your new password"
 msgstr ""
 
+#: core/templates/actions/tpl.M.Resetpass.php:37
 #: core/templates/actions/tpl.M.Resetpass.php:38
-#: core/templates/actions/tpl.M.Resetpass.php:39
-#: core/templates/actions/tpl.M.Resetpass.php:41
+#: core/templates/actions/tpl.M.Resetpass.php:40
+#: core/templates/actions/tpl.M.Signin.php:53
+#: core/templates/actions/tpl.M.Signup.php:62
 msgid "Password"
 msgstr ""
 
-#: core/templates/actions/tpl.M.Resetpass.php:40
+#: core/templates/actions/tpl.M.Resetpass.php:39
 msgid "Repeat Password"
 msgstr ""
 
-#: core/templates/actions/tpl.M.Resetpass.php:44
+#: core/templates/actions/tpl.M.Resetpass.php:43
 msgid "Remember me"
+msgstr ""
+
+#: core/templates/actions/tpl.M.Signin.php:49
+msgid "Email/Username"
+msgstr ""
+
+#: core/templates/actions/tpl.M.Signin.php:70
+msgid "Quick SignIn"
+msgstr ""
+
+#: core/templates/actions/tpl.M.Signin.php:74
+#: core/templates/actions/tpl.M.Signup.php:87
+msgid "Signin with Sina weibo"
+msgstr ""
+
+#: core/templates/actions/tpl.M.Signin.php:80
+#: core/templates/actions/tpl.M.Signup.php:95
+msgid "Signin with QQ"
+msgstr ""
+
+#: core/templates/actions/tpl.M.Signin.php:86
+#: core/templates/actions/tpl.M.Signup.php:103
+msgid "Signin with Wechat"
+msgstr ""
+
+#: core/templates/actions/tpl.M.Signin.php:93
+msgid "Register Now"
+msgstr ""
+
+#: core/templates/actions/tpl.M.Signin.php:95
+msgid "Forgot your password?"
+msgstr ""
+
+#: core/templates/actions/tpl.M.Signin.php:109
+msgid ""
+"The manager has disabled the new registration, please sign in if you "
+"already have a account"
+msgstr ""
+
+#: core/templates/actions/tpl.M.Signout.php:54
+msgid "Sign Out Successfully"
+msgstr ""
+
+#: core/templates/actions/tpl.M.Signout.php:55
+#, php-format
+msgid "You will be redirected to %s in 2s"
+msgstr ""
+
+#: core/templates/actions/tpl.M.Signup.php:38
+#: core/templates/actions/tpl.M.Signup.php:76
+msgid "Sign Up"
+msgstr ""
+
+#: core/templates/actions/tpl.M.Signup.php:40
+msgid "Already have an account? "
+msgstr ""
+
+#: core/templates/actions/tpl.M.Signup.php:41
+msgid "Sign In"
+msgstr ""
+
+#: core/templates/actions/tpl.M.Signup.php:52
+msgid "Account"
+msgstr ""
+
+#: core/templates/actions/tpl.M.Signup.php:68
+msgid "Captcha"
+msgstr ""
+
+#: core/templates/actions/tpl.M.Signup.php:73
+msgid "Click to refresh"
+msgstr ""
+
+#: core/templates/actions/tpl.M.Signup.php:82
+msgid "Sign in using your social account"
 msgstr ""
 
 #: core/templates/oauth/tpl.OAuth.php:33

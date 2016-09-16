@@ -105,8 +105,12 @@ function tt_create_initial_rest_routes() {
 //    }
 
     // Users.
-    $controller = new WP_REST_User_Controller;
-    $controller->register_routes();
+    $user_controller = new WP_REST_User_Controller;
+    $user_controller->register_routes();
+
+    // Session
+    $session_controller = new WP_REST_Session_Controller;
+    $session_controller->register_routes();
 
     // Comments.
 //    $controller = new WP_REST_Comments_Controller;
@@ -133,7 +137,7 @@ function tt_get_rest_request_cache_key($request) {
     $path = $request->get_route();
     $params = $request->get_params();
     $params_str = json_encode($params);
-    if(isset($params['user_diff']) && $params['user_diff']){  // TODO: user_diff
+    if(isset($params['user_diff']) && $params['user_diff']){  // TODO: user_diff (表示该接口的值是用户相关的)
         $user_id = get_current_user_id();
     }
 
@@ -154,6 +158,11 @@ function tt_get_rest_request_cache_key($request) {
  */
 function tt_rest_pre_dispatch_cache($result, $server, $request) {
 
+    // 部分接口不缓存，如登录接口 //TODO more
+    if(in_array($request->get_route(), ['/v1/session'])) {
+        return false;
+    }
+
     // 更改headers的filter
     // add_filter( 'tt_rest_cache_headers', function( $headers ) {
     // $headers['Cache-Control'] = 'public, max-age=3600';
@@ -170,7 +179,7 @@ function tt_rest_pre_dispatch_cache($result, $server, $request) {
     if($result = get_transient($cache_key)){
         $result = maybe_unserialize($result);
 
-        return new WP_REST_Response($result); // WP_REST_Response  - __construct( $data = null, $status = 200, $headers = array() )
+        return rest_ensure_response($result);
     }
 
     return false;

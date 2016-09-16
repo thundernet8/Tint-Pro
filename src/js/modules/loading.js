@@ -13,13 +13,30 @@
 
 'use strict';
 
-var jQuery = require('jquery');
+import {jQuery} from 'jquery';
 
-jQuery(function ($) {
+// jQuery(function ($) {
+//   var body = $('body');
+//   if(body.hasClass('is-loadingApp')) {
+//     setTimeout(function () {
+//       body.removeClass('is-loadingApp');
+//     }, 2000);
+//   }
+// }.call(this, jQuery));
+
+
+// 顶部加载条
+var handleLineLoading = function () {
   var body = $('body');
   if(body.hasClass('is-loadingApp')) {
     setTimeout(function () {
       body.removeClass('is-loadingApp');
     }, 2000);
   }
-}.call(this, jQuery));
+};
+
+var handleSpinLoading = function () {
+  console.log('10000');
+};
+
+export {handleLineLoading, handleSpinLoading};
