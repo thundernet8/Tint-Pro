@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-09-15 22:53+0800\n"
-"PO-Revision-Date: 2016-09-15 22:54+0800\n"
+"POT-Creation-Date: 2016-09-16 21:43+0800\n"
+"PO-Revision-Date: 2016-09-16 23:31+0800\n"
 "Last-Translator: Zhiyan <mail@webapproach.net>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -100,11 +100,11 @@ msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.Controller.php:261
 msgid "Current page of the collection."
-msgstr ""
+msgstr "数据集的当前分页"
 
 #: core/api/v1/endpoints/class.Rest.Controller.php:269
 msgid "Maximum number of items to be returned in result set."
-msgstr ""
+msgstr "结果集中返回条目的最大数量"
 
 #: core/api/v1/endpoints/class.Rest.Controller.php:278
 msgid "Limit results to those matching a string."
@@ -115,9 +115,44 @@ msgid ""
 "Scope under which the request is made; determines fields present in response."
 msgstr ""
 
+#: core/api/v1/endpoints/class.Rest.Session.Controller.php:58
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:69
 msgid "Required to be true, as resource does not support trashing."
 msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Session.Controller.php:94
+msgid "Verify the login nonce failed"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Session.Controller.php:110
+msgid "Welcome, you have signed in successfully"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Session.Controller.php:114
+msgid "There is no user matches the info you offered"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Session.Controller.php:127
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:526
+msgid "Sorry, you are not allowed to delete this resource."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Session.Controller.php:144
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:545
+msgid "Users do not support trashing."
+msgstr "用户资源不支持删除"
+
+#: core/api/v1/endpoints/class.Rest.Session.Controller.php:149
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:237
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:264
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:467
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:550
+msgid "Invalid resource id."
+msgstr "无效的用户 id"
+
+#: core/api/v1/endpoints/class.Rest.Session.Controller.php:157
+msgid "You have signed out successfully"
+msgstr "你已成功登出"
 
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:117
 msgid "Sorry, you cannot filter by role."
@@ -129,13 +164,6 @@ msgstr ""
 msgid "Sorry, you cannot view this resource with edit context."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:237
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:264
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:467
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:550
-msgid "Invalid resource id."
-msgstr ""
-
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:247
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:296
 msgid "Sorry, you cannot view this resource."
@@ -144,7 +172,7 @@ msgstr ""
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:286
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:313
 msgid "Invalid resource email."
-msgstr ""
+msgstr "无效的用户 email"
 
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:339
 msgid "You are not currently logged in."
@@ -180,15 +208,7 @@ msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:479
 msgid "Slug is invalid."
-msgstr ""
-
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:526
-msgid "Sorry, you are not allowed to delete this resource."
-msgstr ""
-
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:545
-msgid "Users do not support trashing."
-msgstr ""
+msgstr "Slug 无效"
 
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:555
 msgid "Invalid resource id for reassignment."
@@ -201,12 +221,12 @@ msgstr ""
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:769
 #, php-format
 msgid "The role %s does not exist."
-msgstr ""
+msgstr "角色%s不存在"
 
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:776
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:786
 msgid "You cannot give resource that role."
-msgstr ""
+msgstr "你不能给予用户那种角色"
 
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:806
 msgid "Unique identifier for the resource."
@@ -214,7 +234,7 @@ msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:812
 msgid "Login name for the resource."
-msgstr ""
+msgstr "用户的登录名"
 
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:821
 msgid "Display name for the resource."
@@ -266,20 +286,20 @@ msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:906
 msgid "All capabilities assigned to the resource."
-msgstr ""
+msgstr "用户获得的所有权限"
 
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:911
 msgid "Any extra capabilities assigned to the resource."
-msgstr ""
+msgstr "用户获得的所有其他权限"
 
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:925
 #, php-format
 msgid "Avatar URL with image size of %d pixels."
-msgstr ""
+msgstr "尺寸为 %d 像素的头像链接"
 
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:933
 msgid "Avatar URLs for the resource."
-msgstr ""
+msgstr "用户的头像链接列表"
 
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:956
 msgid "Ensure result set excludes specific ids."
@@ -313,7 +333,7 @@ msgstr ""
 
 #: core/classes/class.Open.php:215
 msgid "Can Not Bind QQ Again"
-msgstr ""
+msgstr "不能重复绑定QQ"
 
 #: core/classes/class.Open.php:216
 msgid ""
@@ -343,7 +363,7 @@ msgstr ""
 
 #: core/classes/class.Open.php:263
 msgid "State Missing"
-msgstr ""
+msgstr "State交换码丢失"
 
 #: core/classes/class.Open.php:264
 msgid "The state parameter was not found in the url"
@@ -351,7 +371,7 @@ msgstr ""
 
 #: core/classes/class.Open.php:271
 msgid "State Incorrect"
-msgstr ""
+msgstr "State交换码错误"
 
 #: core/classes/class.Open.php:272
 msgid "The state parameter in the url is incorrect"
@@ -359,41 +379,41 @@ msgstr ""
 
 #: core/classes/class.Open.php:408
 msgid "OAuth Data Not Exist"
-msgstr ""
+msgstr "不存在OAuth数据"
 
 #: core/classes/class.Open.php:409
 msgid "Can not get oauth data, please retry the oauth steps"
-msgstr ""
+msgstr "无法获取 OAuth数据, 请重试授权步骤"
 
 #: core/classes/class.Open.php:440
 msgid "Create New User Failed"
-msgstr ""
+msgstr "创建新用户失败"
 
 #: core/classes/class.Open.php:531
 msgid "Unallowed Open Type"
-msgstr ""
+msgstr "不允许的开放平台登录类型"
 
 #: core/classes/class.Open.php:532
 msgid "The open connect type is not allowed"
-msgstr ""
+msgstr "不允许该开放平台登录"
 
 #: core/classes/class.Open.php:575
 msgid "User Authorization Canceled"
-msgstr ""
+msgstr "用户取消了授权"
 
 #: core/classes/class.Open.php:576
 msgid ""
 "You should agree to authorize our application connecting your open account"
-msgstr ""
+msgstr "你应该同意授权本应用连接你的开放平台账户"
 
 #: core/classes/class.Open.php:604 core/classes/class.Open.php:821
 #: core/classes/class.Open.php:1084 core/classes/class.Open.php:1439
 msgid "User Not Logged In"
-msgstr ""
+msgstr "用户未登录"
 
 #: core/classes/class.Open.php:605
 msgid "You must be logged in and then log out"
-msgstr ""
+msgstr "你必须登录了才能登出"
 
 #: core/classes/class.Open.php:714
 msgid "Grant QQ Access Token Failed"
@@ -694,7 +714,7 @@ msgstr "邮箱"
 
 #: core/templates/actions/tpl.M.Findpass.php:36
 #: core/templates/actions/tpl.M.Resetpass.php:46
-#: core/templates/actions/tpl.M.Signin.php:42
+#: core/templates/actions/tpl.M.Signin.php:58
 msgid "Submit"
 msgstr "提交"
 
@@ -732,7 +752,7 @@ msgstr "请输入您的新密码"
 #: core/templates/actions/tpl.M.Resetpass.php:37
 #: core/templates/actions/tpl.M.Resetpass.php:38
 #: core/templates/actions/tpl.M.Resetpass.php:40
-#: core/templates/actions/tpl.M.Signin.php:38
+#: core/templates/actions/tpl.M.Signin.php:53
 #: core/templates/actions/tpl.M.Signup.php:62
 msgid "Password"
 msgstr "密码"
@@ -745,42 +765,51 @@ msgstr "重复密码"
 msgid "Remember me"
 msgstr "记住我"
 
-#: core/templates/actions/tpl.M.Signin.php:35
+#: core/templates/actions/tpl.M.Signin.php:49
 msgid "Email/Username"
 msgstr "邮箱或用户名"
 
-#: core/templates/actions/tpl.M.Signin.php:54
+#: core/templates/actions/tpl.M.Signin.php:70
 msgid "Quick SignIn"
 msgstr "快速登录"
 
-#: core/templates/actions/tpl.M.Signin.php:58
+#: core/templates/actions/tpl.M.Signin.php:74
 #: core/templates/actions/tpl.M.Signup.php:87
 msgid "Signin with Sina weibo"
 msgstr "微博登录"
 
-#: core/templates/actions/tpl.M.Signin.php:64
+#: core/templates/actions/tpl.M.Signin.php:80
 #: core/templates/actions/tpl.M.Signup.php:95
 msgid "Signin with QQ"
 msgstr "QQ登录"
 
-#: core/templates/actions/tpl.M.Signin.php:70
+#: core/templates/actions/tpl.M.Signin.php:86
 #: core/templates/actions/tpl.M.Signup.php:103
 msgid "Signin with Wechat"
 msgstr "微信登录"
 
-#: core/templates/actions/tpl.M.Signin.php:77
+#: core/templates/actions/tpl.M.Signin.php:93
 msgid "Register Now"
 msgstr "现在注册"
 
-#: core/templates/actions/tpl.M.Signin.php:79
+#: core/templates/actions/tpl.M.Signin.php:95
 msgid "Forgot your password?"
 msgstr "忘记密码?"
 
-#: core/templates/actions/tpl.M.Signin.php:93
+#: core/templates/actions/tpl.M.Signin.php:109
 msgid ""
 "The manager has disabled the new registration, please sign in if you already "
 "have a account"
 msgstr "管理员已经禁止注册，如果你已有账号请 登录"
+
+#: core/templates/actions/tpl.M.Signout.php:54
+msgid "Sign Out Successfully"
+msgstr "登出成功"
+
+#: core/templates/actions/tpl.M.Signout.php:55
+#, php-format
+msgid "You will be redirected to %s in 2s"
+msgstr "你将在 2s 内被引导至 %s"
 
 #: core/templates/actions/tpl.M.Signup.php:38
 #: core/templates/actions/tpl.M.Signup.php:76
