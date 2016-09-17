@@ -162,11 +162,15 @@ function tt_signout_url($redirect) {
  * @param   string  $redirect
  * @return  string
  */
-function tt_add_redirect($url, $redirect) {
+function tt_add_redirect($url, $redirect = '') {
     if($redirect) {
         $url = add_query_arg('redirect_to', urlencode($redirect), $url);
+    }elseif(isset($_GET['redirect_to'])){
+        $url = add_query_arg('redirect_to', urlencode(esc_url_raw($_GET['redirect_to'])), $url);
+    }elseif(isset($_GET['redirect'])){
+        $url = add_query_arg('redirect_to', urlencode(esc_url_raw($_GET['redirect'])), $url);
     }
-    return $url;
+    return add_query_arg('redirect_to', urlencode(home_url()), $url);
 }
 
 

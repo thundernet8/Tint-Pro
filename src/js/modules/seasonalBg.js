@@ -63,12 +63,13 @@ var _getSeasonalBg = function () {
   return bgRootUrl + _getSeason(_date.getMonth() + 1).toLowerCase() + '/' + _getPeriod(_date.getHours()).toLowerCase() + '.jpg';
 };
 
-var _handleSeasonalBg = function () {
+var _handleSeasonalBg = function (sel) {
   var changeBg = function () {
-    $('body').css('background-image', 'url(' + _getSeasonalBg() + ')');
+    var bgLayer = sel ? sel : $('body');
+    bgLayer.css('background-image', 'url(' + _getSeasonalBg() + ')');
   };
-  changeBg();
-  setInterval(changeBg, 1000*60);
+  changeBg(sel);
+  setInterval(changeBg.bind(this, sel), 1000*60);
 };
 
 export {_handleSeasonalBg as handleSeasonalBg};

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-09-16 21:42+0800\n"
+"POT-Creation-Date: 2016-09-17 21:45+0800\n"
 "PO-Revision-Date: 2016-08-17 21:40+0800\n"
 "Last-Translator: \n"
 "Language-Team: Zhiyan <mail@webapproach.net>\n"
@@ -555,7 +555,7 @@ msgid ""
 "`mkdir` function.\\n"
 msgstr ""
 
-#: core/functions/func.Kits.php:333
+#: core/functions/func.Kits.php:337
 msgid "WordPress &rsaquo; Error"
 msgstr ""
 
@@ -603,42 +603,59 @@ msgstr ""
 msgid "Weekly"
 msgstr ""
 
-#: core/functions/func.Seo.php:30
+#: core/functions/func.Seo.php:28 core/templates/actions/tpl.M.Signup.php:95
+msgid "Sign In"
+msgstr ""
+
+#: core/functions/func.Seo.php:31 core/templates/actions/tpl.M.Signup.php:67
+msgid "Sign Up"
+msgstr ""
+
+#: core/functions/func.Seo.php:34 core/modules/mod.Header.php:92
+msgid "Sign Out"
+msgstr ""
+
+#: core/functions/func.Seo.php:37
+#: core/templates/actions/tpl.M.Findpass.php:40
+msgid "Find Password"
+msgstr ""
+
+#: core/functions/func.Seo.php:47
 #, php-format
 msgid " - Page %d"
 msgstr ""
 
-#: core/functions/func.Seo.php:39
+#: core/functions/func.Seo.php:56
 #, php-format
 msgid "%s's Home Page"
 msgstr ""
 
-#: core/functions/func.Seo.php:43
+#: core/functions/func.Seo.php:60
 msgid "Y"
 msgstr ""
 
-#: core/functions/func.Seo.php:43 core/functions/func.Seo.php:45
-#: core/functions/func.Seo.php:47
+#: core/functions/func.Seo.php:60 core/functions/func.Seo.php:62
+#: core/functions/func.Seo.php:64
 msgid "posts archive"
 msgstr ""
 
-#: core/functions/func.Seo.php:45
+#: core/functions/func.Seo.php:62
 msgid "Y.n"
 msgstr ""
 
-#: core/functions/func.Seo.php:47
+#: core/functions/func.Seo.php:64
 msgid "Y.n.j"
 msgstr ""
 
-#: core/functions/func.Seo.php:49
+#: core/functions/func.Seo.php:66
 msgid "Tag: "
 msgstr ""
 
-#: core/functions/func.Seo.php:51
+#: core/functions/func.Seo.php:68
 msgid "404 Error"
 msgstr ""
 
-#: core/functions/func.Seo.php:56
+#: core/functions/func.Seo.php:73
 #, php-format
 msgid " - Page %d "
 msgstr ""
@@ -683,40 +700,56 @@ msgstr ""
 msgid "Page Sidebar"
 msgstr ""
 
-#: core/modules/mod.Header.php:84
-msgid "New Post"
+#: core/modules/mod.Footer.Simple.php:18
+msgid "HOME"
+msgstr ""
+
+#: core/modules/mod.Footer.Simple.php:20
+msgid "TERMS AND POLICIES"
+msgstr ""
+
+#: core/modules/mod.Footer.Simple.php:22
+msgid "ABOUT"
+msgstr ""
+
+#: core/modules/mod.Footer.Simple.php:24
+msgid "CONTACT"
 msgstr ""
 
 #: core/modules/mod.Header.php:85
-msgid "My Posts"
-msgstr ""
-
-#: core/modules/mod.Header.php:86
-msgid "My Messages"
+msgid "Go Dashboard"
 msgstr ""
 
 #: core/modules/mod.Header.php:87
-msgid "My Settings"
+msgid "New Post"
+msgstr ""
+
+#: core/modules/mod.Header.php:88
+msgid "My Posts"
 msgstr ""
 
 #: core/modules/mod.Header.php:89
-msgid "Sign Out"
+msgid "My Messages"
 msgstr ""
 
-#: core/modules/mod.Header.php:94
+#: core/modules/mod.Header.php:90
+msgid "My Settings"
+msgstr ""
+
+#: core/modules/mod.Header.php:97
 msgid "Sign In or Up"
 msgstr ""
 
-#: core/templates/actions/tpl.M.Findpass.php:32
+#: core/templates/actions/tpl.M.Findpass.php:41
 msgid "Please input your account associated email"
 msgstr ""
 
-#: core/templates/actions/tpl.M.Findpass.php:34
-#: core/templates/actions/tpl.M.Signup.php:57
+#: core/templates/actions/tpl.M.Findpass.php:43
+#: core/templates/actions/tpl.M.Signup.php:52
 msgid "Email"
 msgstr ""
 
-#: core/templates/actions/tpl.M.Findpass.php:36
+#: core/templates/actions/tpl.M.Findpass.php:45
 #: core/templates/actions/tpl.M.Resetpass.php:46
 #: core/templates/actions/tpl.M.Signin.php:58
 msgid "Submit"
@@ -757,7 +790,7 @@ msgstr ""
 #: core/templates/actions/tpl.M.Resetpass.php:38
 #: core/templates/actions/tpl.M.Resetpass.php:40
 #: core/templates/actions/tpl.M.Signin.php:53
-#: core/templates/actions/tpl.M.Signup.php:62
+#: core/templates/actions/tpl.M.Signup.php:55
 msgid "Password"
 msgstr ""
 
@@ -774,21 +807,22 @@ msgid "Email/Username"
 msgstr ""
 
 #: core/templates/actions/tpl.M.Signin.php:70
+#: core/templates/actions/tpl.M.Signup.php:72
 msgid "Quick SignIn"
 msgstr ""
 
 #: core/templates/actions/tpl.M.Signin.php:74
-#: core/templates/actions/tpl.M.Signup.php:87
+#: core/templates/actions/tpl.M.Signup.php:76
 msgid "Signin with Sina weibo"
 msgstr ""
 
 #: core/templates/actions/tpl.M.Signin.php:80
-#: core/templates/actions/tpl.M.Signup.php:95
+#: core/templates/actions/tpl.M.Signup.php:82
 msgid "Signin with QQ"
 msgstr ""
 
 #: core/templates/actions/tpl.M.Signin.php:86
-#: core/templates/actions/tpl.M.Signup.php:103
+#: core/templates/actions/tpl.M.Signup.php:88
 msgid "Signin with Wechat"
 msgstr ""
 
@@ -816,32 +850,37 @@ msgid "You will be redirected to %s in 2s"
 msgstr ""
 
 #: core/templates/actions/tpl.M.Signup.php:38
-#: core/templates/actions/tpl.M.Signup.php:76
-msgid "Sign Up"
+msgid "Create Account"
 msgstr ""
 
 #: core/templates/actions/tpl.M.Signup.php:40
-msgid "Already have an account? "
+msgid ""
+"We will send you an email including a activation link to help to complete "
+"the registration steps."
 msgstr ""
 
-#: core/templates/actions/tpl.M.Signup.php:41
-msgid "Sign In"
-msgstr ""
-
-#: core/templates/actions/tpl.M.Signup.php:52
+#: core/templates/actions/tpl.M.Signup.php:49
 msgid "Account"
 msgstr ""
 
-#: core/templates/actions/tpl.M.Signup.php:68
+#: core/templates/actions/tpl.M.Signup.php:59
 msgid "Captcha"
 msgstr ""
 
-#: core/templates/actions/tpl.M.Signup.php:73
+#: core/templates/actions/tpl.M.Signup.php:63
 msgid "Click to refresh"
 msgstr ""
 
-#: core/templates/actions/tpl.M.Signup.php:82
-msgid "Sign in using your social account"
+#: core/templates/actions/tpl.M.Signup.php:95
+msgid "Already have an account? "
+msgstr ""
+
+#: core/templates/actions/tpl.M.Signup.php:97
+#, php-format
+msgid ""
+"* By signing up, you agree to our <a href=\"%s\" target=\"_blank\">Terms "
+"of Use, Privacy Policy</a> and to receive emails, newsletters &amp; "
+"updates."
 msgstr ""
 
 #: core/templates/oauth/tpl.OAuth.php:33

@@ -13,19 +13,19 @@ trim_trailing_whitespace = false
 
 [{lib,src,test}/**.js]
 indent_style = space
-indent_size = 2
+indent_size = 4
 
 [src/**.{h,cc}]
 indent_style = space
-indent_size = 2
+indent_size = 4
 
 [test/*.py]
 indent_style = space
-indent_size = 2
+indent_size = 4
 
 [configure]
 indent_style = space
-indent_size = 2
+indent_size = 4
 
 [Makefile]
 indent_style = tab

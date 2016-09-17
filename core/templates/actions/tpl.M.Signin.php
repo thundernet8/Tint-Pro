@@ -35,7 +35,7 @@ tt_get_header('simple');
 
         </nav>
     </header>
-<!--	<div class="bg-layer"></div>-->
+	<div class="bg-layer" id="bg-layer"></div>
     <div class="wrapper container no-aside">
         <div class="main inner-wrap">
 			<!-- Logo -->
@@ -69,19 +69,19 @@ tt_get_header('simple');
 				<div class="open-login clearfix">
 					<p class="text-white mt10 mr10 pull-left hidden-xs"><?php _e('Quick SignIn', 'tt'); ?></p>
 					<?php if($open_weibo) { ?>
-					<a href="<?php echo tt_add_redirect(tt_url_for('oauth_weibo'), tt_get_current_url()); ?>" class="btn btn-lg btn-sn-weibo pull-left anchor-noborder">
+					<a href="<?php echo tt_add_redirect(tt_url_for('oauth_weibo')); ?>" class="btn btn-lg btn-sn-weibo pull-left anchor-noborder">
 						<span class="tico tico-weibo"></span>
 						<strong class="visible-xs-inline"><?php _e('Signin with Sina weibo'); ?></strong>
 					</a>
 					<?php } ?>
 					<?php if($open_qq) { ?>
-					<a href="<?php echo tt_add_redirect(tt_url_for('oauth_qq'), tt_get_current_url()); ?>" class="btn btn-lg btn-sn-qq pull-left anchor-noborder">
+					<a href="<?php echo tt_add_redirect(tt_url_for('oauth_qq')); ?>" class="btn btn-lg btn-sn-qq pull-left anchor-noborder">
 						<span class="tico tico-qq"></span>
 						<strong class="visible-xs-inline"><?php _e('Signin with QQ'); ?></strong>
 					</a>
 					<?php } ?>
 					<?php if($open_weixin) { ?>
-					<a href="<?php echo tt_add_redirect(tt_url_for('oauth_weixin'), tt_get_current_url()); ?>" class="btn btn-lg btn-sn-weixin pull-left anchor-noborder">
+					<a href="<?php echo tt_add_redirect(tt_url_for('oauth_weixin')); ?>" class="btn btn-lg btn-sn-weixin pull-left anchor-noborder">
 						<span class="tico tico-weixin"></span>
 						<strong class="visible-xs-inline"><?php _e('Signin with Wechat'); ?></strong>
 					</a>
@@ -90,7 +90,7 @@ tt_get_header('simple');
 				<?php } ?>
 				<!-- End Open Login -->
 				<div class="text-center mt30 login-help">
-					<a href="<?php echo tt_url_for('signup'); ?>" id="go-register" class="mr20 register-link"><?php _e('Register Now', 'tt'); ?></a>
+					<a href="<?php echo tt_add_redirect(tt_url_for('signup')); ?>" id="go-register" class="mr20 register-link"><?php _e('Register Now', 'tt'); ?></a>
 					<span class="dot-separator" role="separator"></span>
 					<a href="<?php echo tt_url_for('findpass'); ?>" id="go-findpass" class="ml20 findpass-link"><?php _e('Forgot your password?', 'tt'); ?></a>
 				</div>

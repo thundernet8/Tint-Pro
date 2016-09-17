@@ -29,6 +29,7 @@
     position: relative;
     width: 100%;
     height: 100%;
+    padding: 0 0 61px;
     background: url("../img/login-bg2.jpg") top fixed / cover no-repeat;
     color: #ffffff;
 
@@ -41,6 +42,20 @@
       &:hover {
 
       }
+    }
+
+    &>header {
+      display: none;
+    }
+
+    &>#bg-layer {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,.2);
+      //-webkit-filter: blur(5px);
+      //filter: blur(5px);
+      background: url(../img/login-bg2.jpg) top/cover no-repeat fixed;
     }
 
     &>.wrapper {
@@ -163,6 +178,187 @@
       bottom: 0;
       width: 100%;
       padding: 20px 30px;
+
+      &>.foot-menu {
+        &>a {
+          text-decoration: none;
+          //font-size: 12px;
+        }
+        &>.sep {
+          display: inline-block;
+          height: 12px;
+          vertical-align: middle;
+          margin: 0 10px 2px;
+          border-right: 1px solid;
+        }
+      }
+
+      &>.foot-copyright {
+
+      }
+    }
+  }
+
+  &.signup,
+  &.findpass{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 72px 0 61px;
+
+    a {
+      color: @link-color;
+      &:before {
+        background-color: @link-color;
+      }
+
+      &:hover {
+
+      }
+    }
+
+    &>header {
+      position: absolute;
+      top: 0;
+    }
+
+    &>.wrapper {
+      position: relative;
+      height: 100%;
+      overflow: hidden;
+
+      &>.main {
+        position: relative;
+        top: 40%;
+        left: 50%;
+        width: 320px;
+        height: 360px;
+        margin-top: -180px;
+        margin-left: -160px;
+        text-align: center;
+      }
+    }
+
+    &>footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 20px 30px;
+
+      &>.foot-menu {
+        &>a {
+          text-decoration: none;
+          //font-size: 12px;
+        }
+        &>.sep {
+          display: inline-block;
+          height: 12px;
+          vertical-align: middle;
+          margin: 0 10px 2px;
+          border-right: 1px solid @link-color;
+        }
+      }
+
+      &>.foot-copyright {
+
+      }
+    }
+  }
+
+  &.signup {
+    &>.wrapper {
+      &>.main {
+        &>.form-signup {
+
+          &>.local-signup {
+
+            &>.input-container {
+              position: relative;
+              margin: 10px 0;
+
+              &>input {
+                display: block;
+                width: 100%;
+                outline: none;
+                font-size: 1.6rem;
+                line-height: 28px;
+              }
+
+              &>.pull-left {
+                position: relative;
+                width: 200px;
+
+                &.captcha-wrap {
+                  width: 100px;
+                  margin-left: 15px;
+
+                  &>img {
+                    width: 100%;
+                    height: 42px;
+                  }
+                }
+
+                &>#captcha-input {
+
+                }
+
+                &>.status-icon {
+                  position: absolute;
+                  right: 10px;
+                  top: 12px;
+                  width: 18px;
+                  height: 18px;
+                  background-repeat: no-repeat;
+                  background-size: cover;
+                }
+
+                &>.captcha {
+                  &:hover {
+                    cursor: pointer;
+                  }
+                }
+              }
+            }
+
+            &>#signup-btn {
+              width: 100%;
+              letter-spacing: 5px;
+            }
+          }
+
+          &>.open-login {
+            &>p {
+              line-height: 25px;
+            }
+
+            &>a {
+              padding: 10px;
+              font-size: 25px;
+            }
+
+            &>.btn-sn-qq {
+              color: @social-qq;
+            }
+
+            &>.btn-sn-weibo {
+              color: @social-weibo;
+            }
+
+            &>.btn-sn-weixin {
+              color: @social-weixin;
+            }
+          }
+
+          &>.note {
+            &>p {
+              &.terms-note {
+                font-size: 1rem;
+              }
+            }
+          }
+
+        }
+      }
     }
   }
 }

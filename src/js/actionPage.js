@@ -16,6 +16,7 @@
 import {handleLineLoading} from './modules/loading';
 import {popMsgbox, msgbox} from './modules/msgbox';
 import {pageSignIn} from './modules/signin';
+import {pageSignUp} from './modules/signup';
 import {handleSeasonalBg} from './modules/seasonalBg';
 
 // DOM Ready
@@ -32,10 +33,15 @@ jQuery(document).ready(function ($) {
     var body = $('body');
     if(body.hasClass('signin')) {
         // 为登录页设置可变背景
-        handleSeasonalBg();
+        handleSeasonalBg($('#bg-layer'));
 
         // 初始化登录处理
         pageSignIn.init();
+    }
+    
+    if(body.hasClass('signup')) {
+        // 初始化注册表单处理
+        pageSignUp.init();
     }
 
 });

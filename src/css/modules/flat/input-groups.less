@@ -105,9 +105,39 @@
     color: @gray-light;
     line-height: 18px;
     height: 42px;
+    white-space: nowrap;
   }
   .btn-default {
     .button-variant(@btn-default-color, @gray-light, @btn-hover-bg, @btn-active-bg);
+    border: 0;
+  }
+  .btn-primary {
+    .button-variant(@btn-default-color, @brand-secondary, @btn-primary-hover-bg, @btn-primary-active-bg);
+    border: 0;
+  }
+  .btn-info    {
+    .button-variant(@btn-default-color, @brand-info, @btn-info-hover-bg, @btn-info-active-bg);
+    border: 0;
+  }
+  .btn-danger  {
+    .button-variant(@btn-default-color, @brand-danger, @btn-danger-hover-bg, @btn-danger-active-bg);
+    border: 0;
+  }
+  .btn-success {
+    .button-variant(@btn-default-color, @brand-success, @btn-success-hover-bg, @btn-success-active-bg);
+    border: 0;
+  }
+  .btn-warning {
+    .button-variant(@btn-default-color, @brand-warning, @btn-warning-hover-bg, @btn-warning-active-bg);
+    border: 0;
+  }
+  .btn-inverse {
+    .button-variant(@btn-default-color, @brand-primary, @btn-inverse-hover-bg, @btn-inverse-active-bg);
+    border: 0;
+  }
+  .btn-elegant {
+    .button-variant(@btn-default-color, @brand-elegant, @btn-elegant-hover-bg, @btn-elegant-active-bg);
+    border: 0;
   }
   .input-group-hg & .btn {
     line-height: 31px;

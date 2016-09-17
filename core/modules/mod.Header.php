@@ -81,6 +81,9 @@
                             <span class="tico-angle-down"></span>
                         </a>
                         <ul class="nav-user-menu dropdown-menu">
+                            <?php if(current_user_can('edit_users')) { ?>
+                            <li><a href="<?php echo get_dashboard_url(); ?>"><span class="tico tico-meter"></span><?php _e('Go Dashboard', 'tt'); ?></a></li>
+                            <?php } ?>
                             <li><a href="<?php echo tt_url_for('new_post'); ?>"><span class="tico tico-quill"></span><?php _e('New Post', 'tt'); ?></a></li>
                             <li><a href="<?php echo tt_url_for('uc_latest'); ?>"><span class="tico tico-user"></span><?php _e('My Posts', 'tt'); ?></a></li>
                             <li><a href="<?php echo tt_url_for('in_msg'); ?>"><span class="tico tico-envelope"></span><?php _e('My Messages', 'tt'); ?></a></li>

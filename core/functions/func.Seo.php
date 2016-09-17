@@ -22,6 +22,23 @@
  */
 function tt_get_page_title() {
     $title = '';
+    if($action = get_query_var('action')) {
+        switch ($action) {
+            case 'signin':
+                $title = __('Sign In', 'tt');
+                break;
+            case 'signup':
+                $title = __('Sign Up', 'tt');
+                break;
+            case 'signout':
+                $title = __('Sign Out', 'tt');
+                break;
+            case 'findpass':
+                $title = __('Find Password', 'tt');
+                break;
+        }
+        return $title . ' - ' . get_bloginfo('name');
+    }
     if(is_home() || is_front_page()) {
         $title = get_bloginfo('name') . ' - ' . get_bloginfo('description');
     }elseif(is_single()) {

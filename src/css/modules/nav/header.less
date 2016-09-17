@@ -2,7 +2,7 @@ header {
   position: relative;
 
   .logo {
-    display: block;
+    display: inline-block;
     width: auto;
     height: 60px;
     position: relative;
@@ -186,5 +186,13 @@ header {
         }
       }
     }
+  }
+
+  &.simple-header {
+    width: 100%;
+    height: 72px;
+    z-index: 999;
+    box-shadow: rgba(0, 0, 0, 0.0980392) 0 1px 1px;
+    background: #FFFFFF;
   }
 }

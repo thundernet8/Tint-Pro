@@ -74,7 +74,7 @@ class Captcha{
      */
     private $_session;
 
-    function __construct($width = 120, $height = 30, $counts = 5, $distrubcode, $font){
+    function __construct($width = 120, $height = 30, $counts = 5, $distrubcode='', $font=''){
         // Check for GD library
         if( !function_exists('gd_info') ) {
             throw new Exception('Required GD library is missing', 'tt');
@@ -84,11 +84,13 @@ class Captcha{
         $this->_height = $height;
         $this->_counts = $counts;
         $this->_distrubcode = empty($distrubcode) ? "1235467890qwertyuipkjhgfdaszxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM" : $distrubcode;
-        $this->_font = empty($font) ? THEME_ASSET . DIRECTORY_SEPARATOR . 'fonts' . DIRECTORY_SEPARATOR . 'TitilliumWeb-Regular.ttf' : $font;
+        $this->_font = empty($font) ? THEME_DIR . DIRECTORY_SEPARATOR . 'assets' . DIRECTORY_SEPARATOR . 'fonts' . DIRECTORY_SEPARATOR . 'TitilliumWeb-Regular.ttf' : $font;
         $this->_session = $this->sessioncode();
 
         session_start();
         $_SESSION['tt_captcha'] = $this->_session;
+
+        $this->imageout();
     }
 
     /**
@@ -143,7 +145,7 @@ class Captcha{
      * @param resource  $im 画布资源
      * @return  void
      */
-    private function set_code($im){
+    private function set_code(&$image){
         $width=$this->_width;
         $counts=$this->_counts;
         $height=$this->_height;
@@ -156,8 +158,8 @@ class Captcha{
             $char=$scode[$i];
             $x=floor($width/$counts)*$i+8;
             $angle=rand(-20,30);
-            $color = imagecolorallocate($im, rand(0,50), rand(50,100), rand(100,140));
-            imagettftext($im, $fontsize, $angle, $x, $y, $color, $font, $char);
+            $color = imagecolorallocate($image, rand(0,50), rand(50,100), rand(100,140));
+            imagettftext($image, $fontsize, $angle, $x, $y, $color, $font, $char);
         }
     }
 
@@ -169,7 +171,7 @@ class Captcha{
      * @param resource  $im 画布资源
      * @return  void
      */
-    private function set_distrubecode($im){
+    private function set_distrubecode(&$image){
         $count_h=$this->_height;
         $cou=floor($count_h*2);
 
@@ -182,8 +184,8 @@ class Captcha{
             $originalcode = $this->_distrubcode;
             $countdistrub = strlen($originalcode);
             $dscode = $originalcode[rand(0, $countdistrub-1)];
-            $color = imagecolorallocate($im, rand(40,140), rand(40,140), rand(40,140));
-            imagettftext($im, $fontsize, $angle, $x, $y, $color, $font, $dscode);
+            $color = imagecolorallocate($image, rand(40,140), rand(40,140), rand(40,140));
+            imagettftext($image, $fontsize, $angle, $x, $y, $color, $font, $dscode);
         }
     }
 
@@ -194,7 +196,7 @@ class Captcha{
      * @access  private
      * @return  void
      */
-    function imageout(){
+    private function imageout(){
         $im = $this->create_imagesource();
         $this->set_backgroundcolor($im);
         $this->set_code($im);

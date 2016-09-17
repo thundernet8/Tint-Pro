@@ -26,10 +26,19 @@ tt_get_header('simple');
 
 ?>
 <body class="is-loadingApp action-page findpass">
+    <header class="header simple-header">
+        <nav id="header-nav" class="navigation container clearfix" role="navigation">
+            <!-- Logo -->
+            <a class="logo nav-col" href="<?php echo home_url(); ?>" title="<?php echo get_bloginfo('name'); ?>">
+                <img src="<?php echo tt_get_option('tt_logo'); ?>" alt="<?php echo get_bloginfo('name'); ?>">
+            </a>
+        </nav>
+    </header>
     <div class="wrapper container no-aside">
         <div class="main inner-wrap">
             <form class="form-findpass">
-                <h2 class="form-findpass-heading"><?php _e('Please input your account associated email', 'tt'); ?></h2>
+                <h2 class="mb30"><?php _e('Find Password', 'tt'); ?></h2>
+                <p class="form-findpass-heading"><?php _e('Please input your account associated email', 'tt'); ?></p>
                 <div class="input-group">
                     <input type="email" id="inputEmail" class="form-control" placeholder="<?php _e('Email', 'tt'); ?>" required="required">
                     <span class="input-group-btn">

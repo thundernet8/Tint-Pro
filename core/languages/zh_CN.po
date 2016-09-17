@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-09-16 21:43+0800\n"
-"PO-Revision-Date: 2016-09-16 23:31+0800\n"
+"POT-Creation-Date: 2016-09-17 21:46+0800\n"
+"PO-Revision-Date: 2016-09-17 21:47+0800\n"
 "Last-Translator: Zhiyan <mail@webapproach.net>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -552,7 +552,7 @@ msgid ""
 "`mkdir` function.\\n"
 msgstr "创建Timthumb缓存文件夹失败，或许可检查php.ini以启用`mkdir`函数.\\n"
 
-#: core/functions/func.Kits.php:333
+#: core/functions/func.Kits.php:337
 msgid "WordPress &rsaquo; Error"
 msgstr "WordPress &rsaquo; 错误"
 
@@ -600,42 +600,58 @@ msgstr "无效的页面模板"
 msgid "Weekly"
 msgstr "每周的"
 
-#: core/functions/func.Seo.php:30
+#: core/functions/func.Seo.php:28 core/templates/actions/tpl.M.Signup.php:95
+msgid "Sign In"
+msgstr "登录"
+
+#: core/functions/func.Seo.php:31 core/templates/actions/tpl.M.Signup.php:67
+msgid "Sign Up"
+msgstr "注册"
+
+#: core/functions/func.Seo.php:34 core/modules/mod.Header.php:92
+msgid "Sign Out"
+msgstr "注销"
+
+#: core/functions/func.Seo.php:37 core/templates/actions/tpl.M.Findpass.php:40
+msgid "Find Password"
+msgstr "找回密码"
+
+#: core/functions/func.Seo.php:47
 #, php-format
 msgid " - Page %d"
 msgstr " - 第 %d 页"
 
-#: core/functions/func.Seo.php:39
+#: core/functions/func.Seo.php:56
 #, php-format
 msgid "%s's Home Page"
 msgstr "%s's 个人中心"
 
-#: core/functions/func.Seo.php:43
+#: core/functions/func.Seo.php:60
 msgid "Y"
 msgstr "Y"
 
-#: core/functions/func.Seo.php:43 core/functions/func.Seo.php:45
-#: core/functions/func.Seo.php:47
+#: core/functions/func.Seo.php:60 core/functions/func.Seo.php:62
+#: core/functions/func.Seo.php:64
 msgid "posts archive"
 msgstr "文章归档"
 
-#: core/functions/func.Seo.php:45
+#: core/functions/func.Seo.php:62
 msgid "Y.n"
 msgstr "Y.n"
 
-#: core/functions/func.Seo.php:47
+#: core/functions/func.Seo.php:64
 msgid "Y.n.j"
 msgstr "Y.n.j"
 
-#: core/functions/func.Seo.php:49
+#: core/functions/func.Seo.php:66
 msgid "Tag: "
 msgstr "标签: "
 
-#: core/functions/func.Seo.php:51
+#: core/functions/func.Seo.php:68
 msgid "404 Error"
 msgstr "404错误"
 
-#: core/functions/func.Seo.php:56
+#: core/functions/func.Seo.php:73
 #, php-format
 msgid " - Page %d "
 msgstr " - 第 %d 页"
@@ -679,40 +695,56 @@ msgstr "404边栏"
 msgid "Page Sidebar"
 msgstr "页面边栏"
 
-#: core/modules/mod.Header.php:84
+#: core/modules/mod.Footer.Simple.php:18
+msgid "HOME"
+msgstr "首页"
+
+#: core/modules/mod.Footer.Simple.php:20
+msgid "TERMS AND POLICIES"
+msgstr "政策条款"
+
+#: core/modules/mod.Footer.Simple.php:22
+msgid "ABOUT"
+msgstr "关于"
+
+#: core/modules/mod.Footer.Simple.php:24
+msgid "CONTACT"
+msgstr "联系"
+
+#: core/modules/mod.Header.php:85
+msgid "Go Dashboard"
+msgstr "访问后台"
+
+#: core/modules/mod.Header.php:87
 msgid "New Post"
 msgstr "新建文章"
 
-#: core/modules/mod.Header.php:85
+#: core/modules/mod.Header.php:88
 msgid "My Posts"
 msgstr "我的文章"
 
-#: core/modules/mod.Header.php:86
+#: core/modules/mod.Header.php:89
 msgid "My Messages"
 msgstr "站内消息"
 
-#: core/modules/mod.Header.php:87
+#: core/modules/mod.Header.php:90
 msgid "My Settings"
 msgstr "个人设置"
 
-#: core/modules/mod.Header.php:89
-msgid "Sign Out"
-msgstr "注销"
-
-#: core/modules/mod.Header.php:94
+#: core/modules/mod.Header.php:97
 msgid "Sign In or Up"
 msgstr "登录/注册"
 
-#: core/templates/actions/tpl.M.Findpass.php:32
+#: core/templates/actions/tpl.M.Findpass.php:41
 msgid "Please input your account associated email"
 msgstr "请输入您账户关联的邮箱"
 
-#: core/templates/actions/tpl.M.Findpass.php:34
-#: core/templates/actions/tpl.M.Signup.php:57
+#: core/templates/actions/tpl.M.Findpass.php:43
+#: core/templates/actions/tpl.M.Signup.php:52
 msgid "Email"
 msgstr "邮箱"
 
-#: core/templates/actions/tpl.M.Findpass.php:36
+#: core/templates/actions/tpl.M.Findpass.php:45
 #: core/templates/actions/tpl.M.Resetpass.php:46
 #: core/templates/actions/tpl.M.Signin.php:58
 msgid "Submit"
@@ -753,7 +785,7 @@ msgstr "请输入您的新密码"
 #: core/templates/actions/tpl.M.Resetpass.php:38
 #: core/templates/actions/tpl.M.Resetpass.php:40
 #: core/templates/actions/tpl.M.Signin.php:53
-#: core/templates/actions/tpl.M.Signup.php:62
+#: core/templates/actions/tpl.M.Signup.php:55
 msgid "Password"
 msgstr "密码"
 
@@ -770,21 +802,22 @@ msgid "Email/Username"
 msgstr "邮箱或用户名"
 
 #: core/templates/actions/tpl.M.Signin.php:70
+#: core/templates/actions/tpl.M.Signup.php:72
 msgid "Quick SignIn"
 msgstr "快速登录"
 
 #: core/templates/actions/tpl.M.Signin.php:74
-#: core/templates/actions/tpl.M.Signup.php:87
+#: core/templates/actions/tpl.M.Signup.php:76
 msgid "Signin with Sina weibo"
 msgstr "微博登录"
 
 #: core/templates/actions/tpl.M.Signin.php:80
-#: core/templates/actions/tpl.M.Signup.php:95
+#: core/templates/actions/tpl.M.Signup.php:82
 msgid "Signin with QQ"
 msgstr "QQ登录"
 
 #: core/templates/actions/tpl.M.Signin.php:86
-#: core/templates/actions/tpl.M.Signup.php:103
+#: core/templates/actions/tpl.M.Signup.php:88
 msgid "Signin with Wechat"
 msgstr "微信登录"
 
@@ -812,33 +845,39 @@ msgid "You will be redirected to %s in 2s"
 msgstr "你将在 2s 内被引导至 %s"
 
 #: core/templates/actions/tpl.M.Signup.php:38
-#: core/templates/actions/tpl.M.Signup.php:76
-msgid "Sign Up"
-msgstr "注册"
+msgid "Create Account"
+msgstr "创建新账号"
 
 #: core/templates/actions/tpl.M.Signup.php:40
-msgid "Already have an account? "
-msgstr "已有账号?"
+msgid ""
+"We will send you an email including a activation link to help to complete "
+"the registration steps."
+msgstr "我们将发送一封验证邮件至你的邮箱, 请正确填写以完成账号注册和激活"
 
-#: core/templates/actions/tpl.M.Signup.php:41
-msgid "Sign In"
-msgstr "登录"
-
-#: core/templates/actions/tpl.M.Signup.php:52
+#: core/templates/actions/tpl.M.Signup.php:49
 msgid "Account"
 msgstr "账户"
 
-#: core/templates/actions/tpl.M.Signup.php:68
+#: core/templates/actions/tpl.M.Signup.php:59
 msgid "Captcha"
 msgstr "验证码"
 
-#: core/templates/actions/tpl.M.Signup.php:73
+#: core/templates/actions/tpl.M.Signup.php:63
 msgid "Click to refresh"
 msgstr "点击刷新"
 
-#: core/templates/actions/tpl.M.Signup.php:82
-msgid "Sign in using your social account"
-msgstr "使用社交账户登录"
+#: core/templates/actions/tpl.M.Signup.php:95
+msgid "Already have an account? "
+msgstr "已有账号? "
+
+#: core/templates/actions/tpl.M.Signup.php:97
+#, php-format
+msgid ""
+"* By signing up, you agree to our <a href=\"%s\" target=\"_blank\">Terms of "
+"Use, Privacy Policy</a> and to receive emails, newsletters &amp; updates."
+msgstr ""
+"* 提交注册代表您同意我们的<a href=\"%s\" target=\"_blank\">使用条款与隐私政策"
+"</a> 并接受来自网站的邮件、订阅信和其他同步信息."
 
 #: core/templates/oauth/tpl.OAuth.php:33
 msgid "The request you have done is illegal, please retry"
@@ -1513,6 +1552,9 @@ msgstr "Zhiyan"
 #. Author URI of the plugin/theme
 msgid "http://www.webapproach.net/"
 msgstr "http://www.webapproach.net/"
+
+#~ msgid "Sign in using your social account"
+#~ msgstr "使用社交账户登录"
 
 #~ msgid "Update"
 #~ msgstr "更新"

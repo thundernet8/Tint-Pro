@@ -15,5 +15,4 @@
 <?php
 
 header("Content-Type: image/png");
-$captcha = new  Captcha(90, 40, 4);
-$captcha->imageout();
+$captcha = new Captcha(90, 40, 4);
