@@ -1,5 +1,5 @@
 /**
- * Generated on Sat Sep 17 2016 23:47:21 GMT+0800 (中国标准时间) by Zhiyan
+ * Generated on Tue Sep 20 2016 00:25:22 GMT+0800 (中国标准时间) by Zhiyan
  *
  * @package   Tint
  * @version   v2.0.0
@@ -11,4 +11,4 @@
  *
 **/
  
-webpackJsonp([3,10],[function(c,n){"use strict"}]);
+webpackJsonp([2,10],[function(c,n){'use strict';}]);

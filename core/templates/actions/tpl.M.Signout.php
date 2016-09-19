@@ -33,12 +33,7 @@ $redirect_to = esc_url($redirect_to);
 tt_get_header('simple');
 ?>
 <body class="is-loadingApp action-page signout">
-    <div class="loading-line"></div>
-    <header class="header simple-header">
-        <nav id="header-nav" class="navigation container clearfix" role="navigation">
-
-        </nav>
-    </header>
+    <?php load_template(THEME_MOD . '/mod.LogoHeader.php'); ?>
     <!--	<div class="bg-layer"></div>-->
     <div class="wrapper container no-aside">
         <div class="main inner-wrap"></div>

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-09-17 21:45+0800\n"
+"POT-Creation-Date: 2016-09-20 00:23+0800\n"
 "PO-Revision-Date: 2016-08-17 21:40+0800\n"
 "Last-Translator: \n"
 "Language-Team: Zhiyan <mail@webapproach.net>\n"
@@ -136,20 +136,20 @@ msgid "There is no user matches the info you offered"
 msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.Session.Controller.php:127
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:526
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:587
 msgid "Sorry, you are not allowed to delete this resource."
 msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.Session.Controller.php:144
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:545
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:606
 msgid "Users do not support trashing."
 msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.Session.Controller.php:149
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:237
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:264
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:467
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:550
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:528
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:611
 msgid "Invalid resource id."
 msgstr ""
 
@@ -185,150 +185,178 @@ msgstr ""
 msgid "Sorry, you are not allowed to create resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:374
-msgid "Cannot create existing resource."
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:390
+msgid "Nonce verify failed"
 msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:396
-msgid "Error creating new resource."
+msgid ""
+"Password length does not match the requirement, must more than or equal to "
+"6."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:446
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:405
+msgid "Captcha does not match."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:411
+msgid "Invalid resource login name."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:415
+msgid "Login name is already existed."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:421
+msgid "Invalid email format."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:425
+msgid "Email is already used."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:434
+msgid ""
+"Send registration request successfully, please go to your email box to "
+"find and visit the activation link"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:507
 msgid "Sorry, you are not allowed to edit resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:450
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:511
 msgid "Sorry, you are not allowed to edit roles of this resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:471
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:532
 msgid "Email address is invalid."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:475
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:536
 msgid "Username isn't editable"
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:479
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:540
 msgid "Slug is invalid."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:555
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:616
 msgid "Invalid resource id for reassignment."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:568
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:629
 msgid "The resource cannot be deleted."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:769
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:830
 #, php-format
 msgid "The role %s does not exist."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:776
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:786
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:837
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:847
 msgid "You cannot give resource that role."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:806
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:867
 msgid "Unique identifier for the resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:812
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:873
 msgid "Login name for the resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:821
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:883
 msgid "Display name for the resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:829
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:891
 msgid "First name for the resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:837
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:899
 msgid "Last name for the resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:845
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:907
 msgid "The email address for the resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:852
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:914
 msgid "URL of the resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:858
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:920
 msgid "Description of the resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:866
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:928
 msgid "Author URL to the resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:873
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:935
 msgid "The nickname for the resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:881
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:943
 msgid "An alphanumeric identifier for the resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:889
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:951
 msgid "Registration date for the resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:895
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:957
 msgid "Roles assigned to the resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:900
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:962
 msgid "Password for the resource (never included)."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:906
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:968
 msgid "All capabilities assigned to the resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:911
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:973
 msgid "Any extra capabilities assigned to the resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:925
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:987
 #, php-format
 msgid "Avatar URL with image size of %d pixels."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:933
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:995
 msgid "Avatar URLs for the resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:956
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:1018
 msgid "Ensure result set excludes specific ids."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:962
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:1024
 msgid "Limit result set to specific ids."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:968
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:1030
 msgid "Offset the result set by a specific number of items."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:975
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:1037
 msgid "Order sort attribute ascending or descending."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:983
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:1045
 msgid "Sort collection by object attribute."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:995
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:1057
 msgid "Limit result set to resources with a specific slug."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:1000
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:1062
 msgid ""
 "Limit result set to resources matching at least one specific role "
 "provided. Accepts csv list or single role."
@@ -516,6 +544,14 @@ msgstr ""
 msgid "Sorry, the user was not found."
 msgstr ""
 
+#: core/functions/func.Account.php:125 core/functions/func.Account.php:129
+msgid "The registration activation key is invalid."
+msgstr ""
+
+#: core/functions/func.Account.php:145
+msgid "Activate the registration successfully"
+msgstr ""
+
 #: core/functions/func.Cache.php:170
 #, php-format
 msgid "<!-- Nav cached %s -->"
@@ -603,59 +639,63 @@ msgstr ""
 msgid "Weekly"
 msgstr ""
 
-#: core/functions/func.Seo.php:28 core/templates/actions/tpl.M.Signup.php:95
+#: core/functions/func.Seo.php:28 core/templates/actions/tpl.M.Signup.php:90
 msgid "Sign In"
 msgstr ""
 
-#: core/functions/func.Seo.php:31 core/templates/actions/tpl.M.Signup.php:67
+#: core/functions/func.Seo.php:31 core/templates/actions/tpl.M.Signup.php:62
 msgid "Sign Up"
 msgstr ""
 
-#: core/functions/func.Seo.php:34 core/modules/mod.Header.php:92
+#: core/functions/func.Seo.php:34
+msgid "Activate Registration"
+msgstr ""
+
+#: core/functions/func.Seo.php:37 core/modules/mod.Header.php:92
 msgid "Sign Out"
 msgstr ""
 
-#: core/functions/func.Seo.php:37
-#: core/templates/actions/tpl.M.Findpass.php:40
+#: core/functions/func.Seo.php:40
+#: core/templates/actions/tpl.M.Findpass.php:33
 msgid "Find Password"
 msgstr ""
 
-#: core/functions/func.Seo.php:47
+#: core/functions/func.Seo.php:50
 #, php-format
 msgid " - Page %d"
 msgstr ""
 
-#: core/functions/func.Seo.php:56
+#: core/functions/func.Seo.php:59
 #, php-format
 msgid "%s's Home Page"
 msgstr ""
 
-#: core/functions/func.Seo.php:60
+#: core/functions/func.Seo.php:63
 msgid "Y"
 msgstr ""
 
-#: core/functions/func.Seo.php:60 core/functions/func.Seo.php:62
-#: core/functions/func.Seo.php:64
+#: core/functions/func.Seo.php:63 core/functions/func.Seo.php:65
+#: core/functions/func.Seo.php:67
 msgid "posts archive"
 msgstr ""
 
-#: core/functions/func.Seo.php:62
+#: core/functions/func.Seo.php:65
 msgid "Y.n"
 msgstr ""
 
-#: core/functions/func.Seo.php:64
+#: core/functions/func.Seo.php:67
 msgid "Y.n.j"
 msgstr ""
 
-#: core/functions/func.Seo.php:66
+#: core/functions/func.Seo.php:69
 msgid "Tag: "
 msgstr ""
 
-#: core/functions/func.Seo.php:68
-msgid "404 Error"
+#: core/functions/func.Seo.php:71
+msgid "Page Not Found"
 msgstr ""
 
-#: core/functions/func.Seo.php:73
+#: core/functions/func.Seo.php:76
 #, php-format
 msgid " - Page %d "
 msgstr ""
@@ -740,17 +780,43 @@ msgstr ""
 msgid "Sign In or Up"
 msgstr ""
 
-#: core/templates/actions/tpl.M.Findpass.php:41
+#: core/templates/actions/tpl.M.Activate.php:21
+msgid "Can not activate your registration, the link your visit is incorrect."
+msgstr ""
+
+#: core/templates/actions/tpl.M.Activate.php:21
+msgid "Invalid Activation Link"
+msgstr ""
+
+#: core/templates/actions/tpl.M.Activate.php:32
+msgid ""
+"Can not activate your registration, please try again the registration "
+"steps."
+msgstr ""
+
+#: core/templates/actions/tpl.M.Activate.php:32
+msgid "Activate Registration Failed"
+msgstr ""
+
+#: core/templates/actions/tpl.M.Activate.php:54
+msgid "Activate Successfully"
+msgstr ""
+
+#: core/templates/actions/tpl.M.Activate.php:55
+msgid "You will be redirected to the signin page in 3s"
+msgstr ""
+
+#: core/templates/actions/tpl.M.Findpass.php:34
 msgid "Please input your account associated email"
 msgstr ""
 
-#: core/templates/actions/tpl.M.Findpass.php:43
-#: core/templates/actions/tpl.M.Signup.php:52
+#: core/templates/actions/tpl.M.Findpass.php:36
+#: core/templates/actions/tpl.M.Signup.php:46
 msgid "Email"
 msgstr ""
 
-#: core/templates/actions/tpl.M.Findpass.php:45
-#: core/templates/actions/tpl.M.Resetpass.php:46
+#: core/templates/actions/tpl.M.Findpass.php:38
+#: core/templates/actions/tpl.M.Resetpass.php:47
 #: core/templates/actions/tpl.M.Signin.php:58
 msgid "Submit"
 msgstr ""
@@ -782,23 +848,23 @@ msgstr ""
 msgid "Link Error"
 msgstr ""
 
-#: core/templates/actions/tpl.M.Resetpass.php:36
+#: core/templates/actions/tpl.M.Resetpass.php:37
 msgid "Please input your new password"
 msgstr ""
 
-#: core/templates/actions/tpl.M.Resetpass.php:37
 #: core/templates/actions/tpl.M.Resetpass.php:38
-#: core/templates/actions/tpl.M.Resetpass.php:40
+#: core/templates/actions/tpl.M.Resetpass.php:39
+#: core/templates/actions/tpl.M.Resetpass.php:41
 #: core/templates/actions/tpl.M.Signin.php:53
-#: core/templates/actions/tpl.M.Signup.php:55
+#: core/templates/actions/tpl.M.Signup.php:49
 msgid "Password"
 msgstr ""
 
-#: core/templates/actions/tpl.M.Resetpass.php:39
+#: core/templates/actions/tpl.M.Resetpass.php:40
 msgid "Repeat Password"
 msgstr ""
 
-#: core/templates/actions/tpl.M.Resetpass.php:43
+#: core/templates/actions/tpl.M.Resetpass.php:44
 msgid "Remember me"
 msgstr ""
 
@@ -807,22 +873,22 @@ msgid "Email/Username"
 msgstr ""
 
 #: core/templates/actions/tpl.M.Signin.php:70
-#: core/templates/actions/tpl.M.Signup.php:72
+#: core/templates/actions/tpl.M.Signup.php:67
 msgid "Quick SignIn"
 msgstr ""
 
 #: core/templates/actions/tpl.M.Signin.php:74
-#: core/templates/actions/tpl.M.Signup.php:76
+#: core/templates/actions/tpl.M.Signup.php:71
 msgid "Signin with Sina weibo"
 msgstr ""
 
 #: core/templates/actions/tpl.M.Signin.php:80
-#: core/templates/actions/tpl.M.Signup.php:82
+#: core/templates/actions/tpl.M.Signup.php:77
 msgid "Signin with QQ"
 msgstr ""
 
 #: core/templates/actions/tpl.M.Signin.php:86
-#: core/templates/actions/tpl.M.Signup.php:88
+#: core/templates/actions/tpl.M.Signup.php:83
 msgid "Signin with Wechat"
 msgstr ""
 
@@ -840,42 +906,42 @@ msgid ""
 "already have a account"
 msgstr ""
 
-#: core/templates/actions/tpl.M.Signout.php:54
+#: core/templates/actions/tpl.M.Signout.php:49
 msgid "Sign Out Successfully"
 msgstr ""
 
-#: core/templates/actions/tpl.M.Signout.php:55
+#: core/templates/actions/tpl.M.Signout.php:50
 #, php-format
 msgid "You will be redirected to %s in 2s"
 msgstr ""
 
-#: core/templates/actions/tpl.M.Signup.php:38
+#: core/templates/actions/tpl.M.Signup.php:32
 msgid "Create Account"
 msgstr ""
 
-#: core/templates/actions/tpl.M.Signup.php:40
+#: core/templates/actions/tpl.M.Signup.php:34
 msgid ""
 "We will send you an email including a activation link to help to complete "
 "the registration steps."
 msgstr ""
 
-#: core/templates/actions/tpl.M.Signup.php:49
+#: core/templates/actions/tpl.M.Signup.php:43
 msgid "Account"
 msgstr ""
 
-#: core/templates/actions/tpl.M.Signup.php:59
+#: core/templates/actions/tpl.M.Signup.php:53
 msgid "Captcha"
 msgstr ""
 
-#: core/templates/actions/tpl.M.Signup.php:63
+#: core/templates/actions/tpl.M.Signup.php:57
 msgid "Click to refresh"
 msgstr ""
 
-#: core/templates/actions/tpl.M.Signup.php:95
+#: core/templates/actions/tpl.M.Signup.php:90
 msgid "Already have an account? "
 msgstr ""
 
-#: core/templates/actions/tpl.M.Signup.php:97
+#: core/templates/actions/tpl.M.Signup.php:92
 #, php-format
 msgid ""
 "* By signing up, you agree to our <a href=\"%s\" target=\"_blank\">Terms "
@@ -891,16 +957,24 @@ msgstr ""
 msgid "Illegal Request"
 msgstr ""
 
+#: core/templates/tpl.404.php:22
+msgid "The page you were looking for doesn't exist"
+msgstr ""
+
+#: core/templates/tpl.404.php:24 core/templates/tpl.Error.php:63
+msgid "Go Back Home"
+msgstr ""
+
+#: core/templates/tpl.404.php:24
+msgid "Redirect to home after <span class=\"num\">5</span>s"
+msgstr ""
+
 #: core/templates/tpl.Error.php:22 core/templates/tpl.Error.php:57
 msgid "Error Happened!"
 msgstr ""
 
 #: core/templates/tpl.Error.php:60
 msgid "An error has happened on this page."
-msgstr ""
-
-#: core/templates/tpl.Error.php:63
-msgid "Go Back Home"
 msgstr ""
 
 #: dash/dash.php:47

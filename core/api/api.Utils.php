@@ -159,7 +159,8 @@ function tt_get_rest_request_cache_key($request) {
 function tt_rest_pre_dispatch_cache($result, $server, $request) {
 
     // 部分接口不缓存，如登录接口 //TODO more
-    if(in_array($request->get_route(), ['/v1/session'])) {
+    // POST请求不缓存
+    if($request->get_method() == 'POST' || in_array($request->get_route(), ['/v1/session'])) {
         return false;
     }
 

@@ -87,6 +87,77 @@ function tt_reset_password_by_key($key, $new_pass) {
 
 
 /**
+ * 生成包含注册信息的激活链接
+ *
+ * @since   2.0.0
+ * @param   string  $username
+ * @param   string  $email
+ * @param   string  $password
+ * @return  string
+ */
+function tt_generate_registration_activation_link ($username, $email, $password) {
+    $base_url = tt_url_for('activate');
+
+    $data = array(
+        'username' => $username,
+        'email' =>  $email,
+        'password' => $password
+    );
+
+    $key = tt_authdata($data, 'ENCODE', tt_get_option('tt_private_token'), 60*10); // 10分钟有效期
+
+    $link = add_query_arg('key', $key, $base_url);
+
+    return $link;
+}
+
+
+/**
+ * 验证并激活注册信息的链接中包含的key
+ *
+ * @since   2.0.0
+ *
+ * @param   string  $key
+ * @return  array | WP_Error
+ */
+function tt_activate_registration_from_link($key) {
+    if(empty($key)) {
+        return new WP_Error( 'invalid_key', __( 'The registration activation key is invalid.', 'tt' ), array( 'status' => 400 ) );
+    }
+    $data = tt_authdata($key, 'DECODE', tt_get_option('tt_private_token'));
+    if(!$data || !is_array($data) || !isset($data['username']) || !isset($data['email']) || !isset($data['password'])){
+        return new WP_Error( 'invalid_key', __( 'The registration activation key is invalid.', 'tt' ), array( 'status' => 400 ) );
+    }
+
+    // 开始激活(实际上在激活之前用户信息并没有插入到数据库中，为了防止恶意注册)
+    $userdata = array(
+        'user_login' => $data['username'],
+        'user_email' => $data['email'],
+        'user_pass' => $data['password']
+    );
+    $user_id = wp_insert_user($userdata);
+    if(is_wp_error($user_id)) {
+        return $user_id;
+    }
+
+    $result = array(
+        'success' => 1,
+        'message' => __('Activate the registration successfully', 'tt'),
+        'data' => array(
+            'username' => $data['username'],
+            'email' => $data['email'],
+            'id' => $user_id
+        )
+    );
+
+    // 发送激活成功与注册欢迎信
+    tt_mail('', $data['email'], '', array('email' => $data['email'], 'name' => $data['username'], 'user_id' => $userdata), 'register_activation_done');
+
+    return $result;
+}
+
+
+/**
  * 更改默认的登录链接
  *
  * @since   2.0.0

@@ -64,6 +64,12 @@ h6 {
   font-size: 1.2rem;
 }
 
+// list
+ul, ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
 // p
 p {
@@ -78,6 +84,23 @@ a {
   &:hover {
     text-decoration: underline;
   }
+}
+
+// button
+button {
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+// button textarea select
+button, input, optgroup, select, textarea {
+  color: inherit;
+  font: inherit;
 }
 
 // clearfix

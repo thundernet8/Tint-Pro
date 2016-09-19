@@ -30,6 +30,9 @@ function tt_get_page_title() {
             case 'signup':
                 $title = __('Sign Up', 'tt');
                 break;
+            case 'activate':
+                $title = __('Activate Registration', 'tt');
+                break;
             case 'signout':
                 $title = __('Sign Out', 'tt');
                 break;
@@ -65,7 +68,7 @@ function tt_get_page_title() {
     }elseif(is_tag()){
         $title = __('Tag: ', 'tt') . get_queried_object()->tag_name . ' - ' . get_bloginfo('name');
     }elseif(is_404()){
-        $title = __('404 Error', 'tt') . ' - ' . get_bloginfo('name');
+        $title = __('Page Not Found', 'tt') . ' - ' . get_bloginfo('name');
     }
 
     // paged

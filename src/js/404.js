@@ -13,5 +13,29 @@
 
 'use strict';
 
+import {handleLineLoading} from './modules/loading';
+import {} from './modules/bootstrap-flat';
+import {Utils} from './modules/utils'
 
- 
+// DOM Ready
+jQuery(document).ready(function ($) {
+    // 隐藏加载条
+    handleLineLoading();
+    
+    // 跳转计时
+    var _redirectBtn = $('#linkBackHome');
+    var _numSpan = _redirectBtn.children('span.num');
+    var _countNum = function (span) {
+        var sec = parseInt(span.text());
+        if(sec-1 <= 0) {
+            clearInterval(_interval);
+            _redirectBtn.html('跳转中...');
+            window.location.href = Utils.getSiteUrl();
+        }else{
+            span.text(sec-1);
+        }
+    };
+    
+    var _interval = setInterval(_countNum.bind(this, _numSpan), 1000);
+    
+});

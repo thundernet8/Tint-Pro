@@ -26,14 +26,7 @@ tt_get_header('simple');
 
 ?>
 <body class="is-loadingApp action-page findpass">
-    <header class="header simple-header">
-        <nav id="header-nav" class="navigation container clearfix" role="navigation">
-            <!-- Logo -->
-            <a class="logo nav-col" href="<?php echo home_url(); ?>" title="<?php echo get_bloginfo('name'); ?>">
-                <img src="<?php echo tt_get_option('tt_logo'); ?>" alt="<?php echo get_bloginfo('name'); ?>">
-            </a>
-        </nav>
-    </header>
+    <?php load_template(THEME_MOD . '/mod.LogoHeader.php'); ?>
     <div class="wrapper container no-aside">
         <div class="main inner-wrap">
             <form class="form-findpass">

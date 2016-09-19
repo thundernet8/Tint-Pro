@@ -15,6 +15,7 @@
 <?php
 
 wp_no_robots();
+
 if ( !get_option('users_can_register') ) {
 	wp_safe_redirect( add_query_arg('registration', 'disabled', tt_url_for('signin')));
 	exit();
@@ -24,14 +25,7 @@ if ( !get_option('users_can_register') ) {
 tt_get_header('simple');
 ?>
 <body class="is-loadingApp action-page signup">
-    <header class="header simple-header">
-        <nav id="header-nav" class="navigation container clearfix" role="navigation">
-            <!-- Logo -->
-            <a class="logo nav-col" href="<?php echo home_url(); ?>" title="<?php echo get_bloginfo('name'); ?>">
-                <img src="<?php echo tt_get_option('tt_logo'); ?>" alt="<?php echo get_bloginfo('name'); ?>">
-            </a>
-        </nav>
-    </header>
+    <?php load_template(THEME_MOD . '/mod.LogoHeader.php'); ?>
     <div class="wrapper container no-aside">
         <div class="main inner-wrap">
             <form class="form-signup">
@@ -46,7 +40,7 @@ tt_get_header('simple');
                 ?>
                 <div class="local-signup">
                     <div class="input-container clearfix">
-                        <input autofocus="" name="user_login" type="text" class="input text-input form-control" id="user_login-input" title="" placeholder="<?php _e('Account', 'tt'); ?>" required="required">
+                        <input autofocus="" name="username" type="text" class="input text-input form-control" id="user_login-input" title="" placeholder="<?php _e('Account', 'tt'); ?>" required="required">
                     </div>
                     <div class="input-container clearfix mt10">
                         <input autofocus="" name="email" type="email" class="input email-input form-control" id="email-input" title="" placeholder="<?php _e('Email', 'tt'); ?>" required="required">
@@ -64,6 +58,7 @@ tt_get_header('simple');
                         </div>
                     </div>
                     <input name="nonce" type="hidden" value="<?php echo wp_create_nonce('page-signup'); ?>">
+                    <input name="step" type="hidden" value=1>
                     <button class="btn btn-primary mt20 mb20" id="signup-btn" disabled><!--span class="indicator spinner tico tico-spinner3"></span--><?php _e('Sign Up', 'tt'); ?></button>
                 </div>
                 <?php if($has_open_login) { ?>

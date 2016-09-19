@@ -17,27 +17,27 @@
 // 静态文件名常量，便于自动替换带特征值的文件名
 
 // CSS
-defined('CSS_HOME') || define('CSS_HOME', 'home-e7fe9f6b36.css');
-defined('CSS_FRONT_PAGE') || define('CSS_FRONT_PAGE', 'front-page-d5f401c6ea.css');
-defined('CSS_SINGLE') || define('CSS_SINGLE', 'single-d5f401c6ea.css');
-defined('CSS_ARCHIVE') || define('CSS_ARCHIVE', 'archive-d5f401c6ea.css');
-defined('CSS_PRODUCT') || define('CSS_PRODUCT', 'product-d5f401c6ea.css');
-defined('CSS_PRODUCT_ARCHIVE') || define('CSS_PRODUCT_ARCHIVE', 'products-d5f401c6ea.css');
-defined('CSS_UC') || define('CSS_UC', 'uc-d5f401c6ea.css');
-defined('CSS_ME') || define('CSS_ME', 'me-d5f401c6ea.css');
-defined('CSS_ACTION') || define('CSS_ACTION', 'actions-b5e69e7da2.css');
-defined('CSS_404') || define('CSS_404', '404-d5f401c6ea.css');
-defined('CSS_ERROR_PAGE') || define('CSS_ERROR_PAGE', 'error-page-46ec23244c.css');
+defined('CSS_HOME') || define('CSS_HOME', 'home-b432692e6c.css');
+defined('CSS_FRONT_PAGE') || define('CSS_FRONT_PAGE', 'front-page-2f476677b4.css');
+defined('CSS_SINGLE') || define('CSS_SINGLE', 'single-2f476677b4.css');
+defined('CSS_ARCHIVE') || define('CSS_ARCHIVE', 'archive-2f476677b4.css');
+defined('CSS_PRODUCT') || define('CSS_PRODUCT', 'product-2f476677b4.css');
+defined('CSS_PRODUCT_ARCHIVE') || define('CSS_PRODUCT_ARCHIVE', 'products-2f476677b4.css');
+defined('CSS_UC') || define('CSS_UC', 'uc-2f476677b4.css');
+defined('CSS_ME') || define('CSS_ME', 'me-2f476677b4.css');
+defined('CSS_ACTION') || define('CSS_ACTION', 'actions-1f43e5c1ff.css');
+defined('CSS_404') || define('CSS_404', '404-45cb37067b.css');
+defined('CSS_ERROR_PAGE') || define('CSS_ERROR_PAGE', 'error-page-ec708a9372.css');
 
 // JS
-defined('JS_COMMON') || define('JS_COMMON', 'common-4841c3bac1.js');
-defined('JS_HOME') || define('JS_HOME', 'home-ea8eec4382.js');
-defined('JS_FRONT_PAGE') || define('JS_FRONT_PAGE', 'frontPage-0c205c31c1.js');
-defined('JS_SINGLE') || define('JS_SINGLE', 'single-11ffc22f97.js');
-defined('JS_ARCHIVE') || define('JS_ARCHIVE', 'archive-09124be891.js');
-defined('JS_PRODUCT') || define('JS_PRODUCT', 'product-62dd933402.js');
-defined('JS_PRODUCT_ARCHIVE') || define('JS_PRODUCT_ARCHIVE', 'products-604ef3797d.js');
-defined('JS_UC') || define('JS_UC', 'uc-fe72434958.js');
-defined('JS_ME') || define('JS_ME', 'me-5bdf401e43.js');
-defined('JS_ACTION') || define('JS_ACTION', 'actionPage-766029f10e.js');
-defined('JS_404') || define('JS_404', '404-eb55d1843e.js');
+defined('JS_COMMON') || define('JS_COMMON', 'common-ae6b8b7ccd.js');
+defined('JS_HOME') || define('JS_HOME', 'home-1aa662c7ac.js');
+defined('JS_FRONT_PAGE') || define('JS_FRONT_PAGE', 'frontPage-0a6c063ec3.js');
+defined('JS_SINGLE') || define('JS_SINGLE', 'single-d7a3fc14eb.js');
+defined('JS_ARCHIVE') || define('JS_ARCHIVE', 'archive-c98a606bca.js');
+defined('JS_PRODUCT') || define('JS_PRODUCT', 'product-a229b8cd71.js');
+defined('JS_PRODUCT_ARCHIVE') || define('JS_PRODUCT_ARCHIVE', 'products-9f57499202.js');
+defined('JS_UC') || define('JS_UC', 'uc-ddc3a2f074.js');
+defined('JS_ME') || define('JS_ME', 'me-98e0440a2e.js');
+defined('JS_ACTION') || define('JS_ACTION', 'actionPage-dcf5a1c4d9.js');
+defined('JS_404') || define('JS_404', '404-9fc5f407d9.js');

@@ -129,12 +129,12 @@ class Captcha{
      *
      * @since   2.0.0
      * @access  private
-     * @param resource  $im 画布资源
+     * @param   resource  $image 画布资源
      * @return void
      */
-    private function set_backgroundcolor($im){
-        $bgcolor = imagecolorallocate($im, rand(200,255), rand(200,255), rand(200,255));
-        imagefill($im, 0, 0, $bgcolor);
+    private function set_backgroundcolor($image){
+        $bgcolor = imagecolorallocate($image, rand(200,255), rand(200,255), rand(200,255));
+        imagefill($image, 0, 0, $bgcolor);
     }
 
     /**
@@ -142,7 +142,7 @@ class Captcha{
      *
      * @since   2.0.0
      * @access  private
-     * @param resource  $im 画布资源
+     * @param   resource  $image 画布资源
      * @return  void
      */
     private function set_code(&$image){
@@ -168,7 +168,7 @@ class Captcha{
      *
      * @since   2.0.0
      * @access  private
-     * @param resource  $im 画布资源
+     * @param   resource  $image 画布资源
      * @return  void
      */
     private function set_distrubecode(&$image){

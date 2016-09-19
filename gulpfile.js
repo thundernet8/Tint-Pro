@@ -23,8 +23,9 @@ var cache = require('gulp-cache'),
     rev = require('gulp-rev'),
     revCollector = require('gulp-rev-collector'),
     uglify = require('gulp-uglify'),
-    webpack = require('gulp-webpack');
+    webpack = require('gulp-webpack'),
     // notify = require('gulp-notify');
+    str2hex = require('gulp-str2hex');
 
 /**
  * 构建文件的注释头
@@ -94,13 +95,18 @@ gulp.task('scripts', function () {
     gulp.src('./assets/js')
         .pipe(clean());
     gulp.src(['./src/js/*.js'])
-        // .pipe(eslint())                                                           // - js代码检查
+        // .pipe(eslint())                                                        // - js代码检查
         // .pipe(eslint.format())
         .pipe(webpack(require('./webpack.config.js')))                            // - webpack打包模块
         .pipe(uglify())                                                           // - js压缩
+        .pipe(str2hex({
+            hexall: false,
+            placeholdMode: 0,
+            compress: true
+        }))                                                                       // - 混淆/中文转16进制
         .pipe(rev())                                                              // - 文件名加MD5后缀
         .pipe(header(banner, {pkg: pkg}))                                         // - 文档添加注释头
-        .pipe(gulp.dest('./assets/js'))                                        // - 输出文件至发布路径
+        .pipe(gulp.dest('./assets/js'))                                           // - 输出文件至发布路径
         .pipe(rev.manifest('src/rev/rev-manifest.json', {
             base: process.cwd() + '/src/rev',
             merge: true

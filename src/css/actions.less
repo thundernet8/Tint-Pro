@@ -18,10 +18,14 @@
 
 /* Msgbox */
 @import "modules/sweetAlert/sweet-alert";
+@import "modules/sweetAlert/msgbox";
 
 /* Header */
 @import "modules/loading/loading";
 @import "modules/nav/header";
+
+/* Footer */
+@import "modules/nav/footer-simple";
 
 // Begin
 .action-page {
@@ -200,7 +204,8 @@
   }
 
   &.signup,
-  &.findpass{
+  &.findpass,
+  &.activate{
     position: relative;
     width: 100%;
     height: 100%;
@@ -232,35 +237,10 @@
         top: 40%;
         left: 50%;
         width: 320px;
-        height: 360px;
+        height: auto;
         margin-top: -180px;
         margin-left: -160px;
         text-align: center;
-      }
-    }
-
-    &>footer {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      padding: 20px 30px;
-
-      &>.foot-menu {
-        &>a {
-          text-decoration: none;
-          //font-size: 12px;
-        }
-        &>.sep {
-          display: inline-block;
-          height: 12px;
-          vertical-align: middle;
-          margin: 0 10px 2px;
-          border-right: 1px solid @link-color;
-        }
-      }
-
-      &>.foot-copyright {
-
       }
     }
   }
@@ -268,6 +248,9 @@
   &.signup {
     &>.wrapper {
       &>.main {
+        top: 50%;
+        margin-top: -300px;
+
         &>.form-signup {
 
           &>.local-signup {
@@ -295,6 +278,7 @@
                   &>img {
                     width: 100%;
                     height: 42px;
+                    border-radius: 6px;
                   }
                 }
 
@@ -321,8 +305,20 @@
             }
 
             &>#signup-btn {
+              position: relative;
               width: 100%;
+              height: 42px;
               letter-spacing: 5px;
+
+              &>.indicator {
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                top: 13px;
+                left: 50%;
+                margin-left: -10px;
+                font-size: 2rem;
+              }
             }
           }
 

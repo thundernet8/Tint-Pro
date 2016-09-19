@@ -75,18 +75,22 @@ var _validateUserLogin = function (showMsg) {
         if(showMsg) {
             msgbox.show('请输入用户名', 'danger', _msgSibling);
         }
+        _userLoginInput.parent().addClass('has-error');
         return false;
     } else if (!Utils.isValidUserName(_userLoginInput.val()) && !Utils.isEmail(_userLoginInput.val())) {
         if(showMsg) {
             msgbox.show('用户名必须以字母开头, 英文/数字/下划线组合', 'danger', _msgSibling);
         }
+        _userLoginInput.parent().addClass('has-error');
         return false;
     } else if (_userLoginInput.val().length < 5) {
         if(showMsg) {
             msgbox.show('账户长度至少为 5', 'danger', _msgSibling);
         }
+        _userLoginInput.parent().addClass('has-error');
         return false;
     }
+    _userLoginInput.parent().removeClass('has-error');
     return true;
 };
 
@@ -95,13 +99,16 @@ var _validateEmail = function (showMsg) {
         if(showMsg) {
             msgbox.show('请填写邮箱', 'danger', _msgSibling);
         }
+        _emailInput.parent().addClass('has-error');
         return false;
     } else if(!(Utils.isEmail(_emailInput.val()))) {
         if(showMsg) {
             msgbox.show('邮箱格式不正确', 'danger', _msgSibling);
         }
+        _emailInput.parent().addClass('has-error');
         return false;
     }
+    _emailInput.parent().removeClass('has-error');
     return true;
 };
 
@@ -110,13 +117,16 @@ var _validatePassword = function (showMsg) {
         if(showMsg) {
             msgbox.show('请输入密码', 'danger', _msgSibling);
         }
+        _passwordInput.parent().addClass('has-error');
         return false;
     } else if (_passwordInput.val().length < 6) {
         if(showMsg) {
             msgbox.show('密码长度至少为 6', 'danger', _msgSibling);
         }
+        _passwordInput.parent().addClass('has-error');
         return false;
     }
+    _passwordInput.parent().removeClass('has-error');
     return true;
 };
 
@@ -125,13 +135,16 @@ var _validateCaptcha = function (showMsg) {
         if(showMsg) {
             msgbox.show('验证码不能为空', 'danger', _msgSibling);
         }
+        _captchaInput.parent().addClass('has-error');
         return false;
     } else if (_captchaInput.val().length != 4) {
         if(showMsg) {
             msgbox.show('验证码长度必须为 4 位', 'danger', _msgSibling);
         }
+        _captchaInput.parent().addClass('has-error');
         return false;
     }
+    _captchaInput.parent().removeClass('has-error');
     return true;
 };
  
@@ -144,59 +157,6 @@ var _handleInputStatus = function (disable) {
     _emailInput.prop('disabled', disable);
     _passwordInput.prop('disabled', disable);
     _captchaInput.prop('disabled', disable);
-};
-
-var _post = function () {
-    // TODO
-    // Register
-    var url = Utils.getAPIUrl('/users');
-    var beforeSend = function () {
-        _handleInputStatus(true);
-        _handleSubmitBtnStatus(true);
-        _submitting = true;
-        _handleSubmitBtnHtml(true);
-    };
-    var finishRequest = function () {
-        _handleInputStatus(false);
-        _handleSubmitBtnStatus(false);
-        _submitting = false;
-        _handleSubmitBtnHtml(false);
-    };
-    var success = function (data, textStatus, xhr) {
-        if(data.success && data.success == 1) {
-            var redirect = Utils.getUrlPara('redirect') ? Utils.getAbsUrl(decodeURIComponent(Utils.getUrlPara('redirect'))) : Utils.getSiteUrl();
-            popMsgbox.success({
-                title: '登录成功',
-                text: '将在 2s 内跳转至 ' + redirect,
-                timer: 2000,
-                showConfirmButton: false
-            });
-            setTimeout(function () {
-                window.location.href = redirect;
-            }, 2000);
-        }else{
-            popMsgbox.error({
-                title: '登录错误',
-                text: data.message
-            });
-            finishRequest();
-        }
-    };
-    var error = function (xhr, textStatus, err) {
-        popMsgbox.error({
-            title: '请求登录失败, 请重新尝试',
-            text: xhr.responseJSON.message
-        });
-        finishRequest();
-    };
-    $.post({
-        url: url,
-        data: _form.serialize(),
-        dataType: 'json',
-        beforeSend: beforeSend,
-        success: success,
-        error: error
-    });
 };
 
 // 刷新验证码
@@ -220,8 +180,66 @@ var _handleSubmitBtnHtml = function (submitting) {
     if(submitting) {
         _submitBtn.html('<span class="indicator spinner tico tico-spinner3"></span>')
     } else {
-        _submitBtn.html().text(_submitBtnText);
+        _submitBtn.html('').text(_submitBtnText);
     }
+};
+
+// 注册成功后移除表单显示提示信息
+var _handleSuccess = function () {
+    var title = '注册完成';
+    var message = '还差一步您就能正式拥有一个本站账户，请立即访问你注册时提供的邮箱，点击激活链接完成最终账户注册.<br>如果您没有收到邮件，请查看垃圾箱或邮箱拦截记录，如果仍未获得激活链接，请联系网站管理员.';
+    _form.html('<h2 class="title signup-title mb30">' + title + '</h2>' +
+               '<p id="default-tip">' + message + '</p>');
+};
+
+var _post = function () {
+    // TODO
+    // Register
+    var url = Utils.getAPIUrl('/users');
+    var beforeSend = function () {
+        _handleInputStatus(true);
+        _handleSubmitBtnStatus(true);
+        _submitting = true;
+        _handleSubmitBtnHtml(true);
+    };
+    var finishRequest = function () {
+        _handleInputStatus(false);
+        _handleSubmitBtnStatus(false);
+        _submitting = false;
+        _handleSubmitBtnHtml(false);
+    };
+    var success = function (data, textStatus, xhr) {
+        if(data.success && data.success == 1) {
+            var redirect = Utils.getUrlPara('redirect') ? Utils.getAbsUrl(decodeURIComponent(Utils.getUrlPara('redirect'))) : Utils.getSiteUrl();
+            popMsgbox.success({
+                title: '请求注册成功',
+                text: '请至您的邮箱查询并访问账户激活链接以最终完成账户的注册.',
+                showConfirmButton: true
+            });
+            _handleSuccess();
+        }else{
+            popMsgbox.error({
+                title: '登录错误',
+                text: data.message
+            });
+            finishRequest();
+        }
+    };
+    var error = function (xhr, textStatus, err) {
+        popMsgbox.error({
+            title: '请求登录失败, 请重新尝试',
+            text: xhr.responseJSON.message
+        });
+        finishRequest();
+    };
+    $.post({
+        url: url,
+        data: _form.serialize(),
+        dataType: 'json',
+        beforeSend: beforeSend,
+        success: success,
+        error: error
+    });
 };
 
 var pageSignUp = {

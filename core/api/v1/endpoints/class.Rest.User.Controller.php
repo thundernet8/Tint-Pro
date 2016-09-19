@@ -321,7 +321,7 @@ class WP_REST_User_Controller extends WP_REST_Controller {
         if($act === 'findpass'){
             // 发送重置密码链接
             $reset_link = tt_generate_reset_password_link($email, $user->ID);
-            tt_mail('', $email, '', array('email' => $email, 'user_id' => $user->ID, 'name' => $user->display_name), 'reset_pass');
+            tt_mail('', $email, '', array('email' => $email, 'user_id' => $user->ID, 'name' => $user->display_name, 'link' => $reset_link), 'reset_pass');
         }
 
         return $response;
@@ -356,7 +356,7 @@ class WP_REST_User_Controller extends WP_REST_Controller {
      */
     public function create_item_permissions_check( $request ) {
 
-        if ( ! current_user_can( 'create_users' ) ) {
+        if ( ! get_option('users_can_register') ) {
             return new WP_Error( 'rest_cannot_create_user', __( 'Sorry, you are not allowed to create resource.', 'tt' ), array( 'status' => tt_rest_authorization_required_code() ) );
         }
 
@@ -370,66 +370,127 @@ class WP_REST_User_Controller extends WP_REST_Controller {
      * @return WP_Error|WP_REST_Response
      */
     public function create_item( $request ) {
-        if ( ! empty( $request['id'] ) ) {
-            return new WP_Error( 'rest_user_exists', __( 'Cannot create existing resource.', 'tt' ), array( 'status' => 400 ) );
+//        if ( ! empty( $request['id'] ) ) {
+//            return new WP_Error( 'rest_user_exists', __( 'Cannot create existing resource.', 'tt' ), array( 'status' => 400 ) );
+//        }
+//
+//        if ( ! empty( $request['roles'] ) ) {
+//            $check_permission = $this->check_role_update( $request['id'], $request['roles'] );
+//            if ( is_wp_error( $check_permission ) ) {
+//                return $check_permission;
+//            }
+//        }
+
+        // 参数step=1 注册第一步, 第二步为激活
+        $step = $request->get_param('step');
+        if(intval($step) === 1){
+            // Nonce验证
+            $nonce = sanitize_text_field($request->get_param('nonce'));
+            if(!wp_verify_nonce($nonce, 'page-signup')) {
+                return new WP_Error( 'rest_invalid_nonce', __( 'Nonce verify failed', 'tt' ), array( 'status' => 400 ) );
+            }
+
+            // 密码检查
+            $password = sanitize_text_field($request->get_param('password'));
+            if(strlen($password) < 6) {
+                return new WP_Error( 'rest_user_invalid_password', __( 'Password length does not match the requirement, must more than or equal to 6.', 'tt' ), array( 'status' => 400 ) );
+            }
+
+            // 验证码
+            session_start();
+            $session_captcha = strtolower($_SESSION['tt_captcha']);
+            $captcha = strtolower($request->get_param('captcha'));
+
+            if($session_captcha != $captcha) {
+                return new WP_Error( 'rest_invalid_captcha', __( 'Captcha does not match.', 'tt' ), array( 'status' => tt_rest_resource_not_found_code() ) );
+            }
+
+            // 用户名检查
+            $username = sanitize_text_field($request->get_param('username'));
+            if (!$username || strlen($username) < 5) {
+                return new WP_Error( 'rest_user_invalid_login', __( 'Invalid resource login name.', 'tt' ), array( 'status' => 400 ) );
+            }
+
+            if (get_user_by('login', $username)) {
+                return new WP_Error( 'rest_user_invalid_login', __( 'Login name is already existed.', 'tt' ), array( 'status' => 400 ) );
+            }
+
+            // 邮箱检查
+            $email = sanitize_email($request->get_param('email'));
+            if(!is_email($email)) {
+                return new WP_Error( 'rest_user_invalid_email', __( 'Invalid email format.', 'tt' ), array( 'status' => 400 ) );
+            }
+
+            if (get_user_by('email', $email)) {
+                return new WP_Error( 'rest_user_invalid_email', __( 'Email is already used.', 'tt' ), array( 'status' => 400 ) );
+            }
+
+            // 发送激活链接
+            $activation_link = tt_generate_registration_activation_link($username, $email, $password);
+            tt_mail('', $email, '', array('email' => $email, 'name' => $username, 'link' => $activation_link), 'register_activation');
+
+            $response = rest_ensure_response(array(
+                'success' => 1,
+                'message' => __('Send registration request successfully, please go to your email box to find and visit the activation link', 'tt')
+            ));
+
+            return $response;
+        }else{
+            // 激活步骤
+            $key = $request->get_param('key');
+            $response = rest_ensure_response(tt_activate_registration_from_link($key));
+            return $response;
         }
 
-        if ( ! empty( $request['roles'] ) ) {
-            $check_permission = $this->check_role_update( $request['id'], $request['roles'] );
-            if ( is_wp_error( $check_permission ) ) {
-                return $check_permission;
-            }
-        }
+        // $user = $this->prepare_item_for_database( $request );
 
-        $user = $this->prepare_item_for_database( $request );
-
-        if ( is_multisite() ) {
-            $ret = wpmu_validate_user_signup( $user->user_login, $user->user_email );
-            if ( is_wp_error( $ret['errors'] ) && ! empty( $ret['errors']->errors ) ) {
-                return $ret['errors'];
-            }
-        }
-
-        if ( is_multisite() ) {
-            $user_id = wpmu_create_user( $user->user_login, $user->user_pass, $user->user_email );
-            if ( ! $user_id ) {
-                return new WP_Error( 'rest_user_create', __( 'Error creating new resource.', 'tt' ), array( 'status' => 500 ) );
-            }
-            $user->ID = $user_id;
-            $user_id = wp_update_user( $user );
-            if ( is_wp_error( $user_id ) ) {
-                return $user_id;
-            }
-        } else {
-            $user_id = wp_insert_user( $user );
-            if ( is_wp_error( $user_id ) ) {
-                return $user_id;
-            }
-        }
-
-        $user = get_user_by( 'id', $user_id );
-        if ( ! empty( $request['roles'] ) ) {
-            array_map( array( $user, 'add_role' ), $request['roles'] );
-        }
-
-        $this->update_additional_fields_for_object( $user, $request );
-
-        /**
-         * Fires after a user is created or updated via the REST API.
-         *
-         * @param WP_User         $user      Data used to create the user.
-         * @param WP_REST_Request $request   Request object.
-         * @param boolean         $creating  True when creating user, false when updating user.
-         */
-        do_action( 'rest_insert_user', $user, $request, true );
-
-        $request->set_param( 'context', 'edit' );
-        $response = $this->prepare_item_for_response( $user, $request );
-        $response = rest_ensure_response( $response );
-        $response->set_status( 201 );
-        $response->header( 'Location', rest_url( sprintf( '/%s/%s/%d', $this->namespace, $this->rest_base, $user_id ) ) );
-
-        return $response;
+//        if ( is_multisite() ) {
+//            $ret = wpmu_validate_user_signup( $user->user_login, $user->user_email );
+//            if ( is_wp_error( $ret['errors'] ) && ! empty( $ret['errors']->errors ) ) {
+//                return $ret['errors'];
+//            }
+//        }
+//
+//        if ( is_multisite() ) {
+//            $user_id = wpmu_create_user( $user->user_login, $user->user_pass, $user->user_email );
+//            if ( ! $user_id ) {
+//                return new WP_Error( 'rest_user_create', __( 'Error creating new resource.', 'tt' ), array( 'status' => 500 ) );
+//            }
+//            $user->ID = $user_id;
+//            $user_id = wp_update_user( $user );
+//            if ( is_wp_error( $user_id ) ) {
+//                return $user_id;
+//            }
+//        } else {
+//            $user_id = wp_insert_user( $user );
+//            if ( is_wp_error( $user_id ) ) {
+//                return $user_id;
+//            }
+//        }
+//
+//        $user = get_user_by( 'id', $user_id );
+//        if ( ! empty( $request['roles'] ) ) {
+//            array_map( array( $user, 'add_role' ), $request['roles'] );
+//        }
+//
+//        $this->update_additional_fields_for_object( $user, $request );
+//
+//        /**
+//         * Fires after a user is created or updated via the REST API.
+//         *
+//         * @param WP_User         $user      Data used to create the user.
+//         * @param WP_REST_Request $request   Request object.
+//         * @param boolean         $creating  True when creating user, false when updating user.
+//         */
+//        do_action( 'rest_insert_user', $user, $request, true );
+//
+//        $request->set_param( 'context', 'edit' );
+//        $response = $this->prepare_item_for_response( $user, $request );
+//        $response = rest_ensure_response( $response );
+//        $response->set_status( 201 );
+//        $response->header( 'Location', rest_url( sprintf( '/%s/%s/%d', $this->namespace, $this->rest_base, $user_id ) ) );
+//
+//        return $response;
     }
 
     /**
@@ -812,7 +873,8 @@ class WP_REST_User_Controller extends WP_REST_Controller {
                     'description' => __( 'Login name for the resource.', 'tt' ),
                     'type'        => 'string',
                     'context'     => array( 'edit' ),
-                    'required'    => true,
+                    //'required'    => true,  // TODO: modified
+                    'required'    => false,
                     'arg_options' => array(
                         'sanitize_callback' => 'sanitize_user',
                     ),
@@ -846,7 +908,7 @@ class WP_REST_User_Controller extends WP_REST_Controller {
                     'type'        => 'string',
                     'format'      => 'email',
                     'context'     => array( 'edit' ),
-                    'required'    => true,
+                    // 'required'    => true, // TODO: modified
                 ),
                 'url'         => array(
                     'description' => __( 'URL of the resource.', 'tt' ),
@@ -900,7 +962,7 @@ class WP_REST_User_Controller extends WP_REST_Controller {
                     'description' => __( 'Password for the resource (never included).', 'tt' ),
                     'type'        => 'string',
                     'context'     => array(), // Password is never displayed
-                    'required'    => true,
+                    // 'required'    => true, // TODO: modified
                 ),
                 'capabilities'    => array(
                     'description' => __( 'All capabilities assigned to the resource.', 'tt' ),

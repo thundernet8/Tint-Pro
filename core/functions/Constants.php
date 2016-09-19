@@ -54,6 +54,7 @@ defined('ALLOWED_UC_TABS') || define('ALLOWED_UC_TABS', $uc_allow_tabs);
 $m_allow_actions = json_encode(array(
     'signin' => 'Signin',
     'signup' => 'Signup',
+    'activate' => 'Activate',
     'signout' => 'Signout',
     'refresh' => 'Refresh',
     'findpass' => 'Findpass',
@@ -97,7 +98,7 @@ defined('ALLOWED_OAUTH_ACTIONS') || define('ALLOWED_OAUTH_ACTIONS', $oauth_allow
 /* Allowed Site Utils */
 $site_allow_utils = json_encode(array(
     'upgrade-browser' => 'UpgradeBrowser',
-    'privacy-terms-and-policies' => 'Privacy',
+    'privacy-policies-and-terms' => 'Privacy',
     'captcha'   =>  'Captcha'
 ));
 defined('ALLOWED_SITE_UTILS') || define('ALLOWED_SITE_UTILS', $site_allow_utils);
@@ -110,6 +111,7 @@ $site_endpoints = json_encode(array(
     'api_root'                  =>  'api',
     'signin'                    =>  'm/signin',
     'signup'                    =>  'm/signup',
+    'activate'                  =>  'm/activate',
     'signout'                   =>  'm/signout',
     'findpass'                  =>  'm/findpass',
     'resetpass'                 =>  'm/resetpass',
