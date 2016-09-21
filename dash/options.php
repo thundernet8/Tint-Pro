@@ -20,6 +20,8 @@ function optionsframework_options() {
     // 主题版本
     $theme_version = trim(wp_get_theme()->get('Version'));
 
+    $theme_pro = !!preg_match('/([0-9-\.]+)PRO/i', $theme_version);
+
     // 博客名
     $blog_name = trim(get_bloginfo('name'));
 
@@ -28,6 +30,13 @@ function optionsframework_options() {
 
     // 定义选项面板图片引用路径
     $imagepath =  THEME_URI . '/dash/of_inc/images/';
+
+    // 所有分类
+    $options_categories = array();
+	$options_categories_obj = get_categories();
+	foreach ($options_categories_obj as $category) {
+		$options_categories[$category->cat_ID] = $category->cat_name;
+	}
 
     $options = array();
 
@@ -152,6 +161,75 @@ function optionsframework_options() {
         'id' => 'tt_small_logo',
         'std' => THEME_ASSET . '/img/small-logo.png',
         'type' => 'upload'
+    );
+
+
+    // 主题选项 - 内容设置
+    $options[] = array(
+        'name' => __( 'Content', 'tt' ),
+        'type' => 'heading'
+    );
+
+    // - 幻灯文章ID列表
+    $options[] = array(
+        'name' => __( 'Slide Post IDs', 'tt' ),
+        'desc' => __( 'The post IDs for home slides, separate with comma', 'tt' ),
+        'id' => 'tt_home_slides',
+        'std' => '',
+        'type' => 'text'
+    );
+
+    // - 热门文章来源
+    $options[] = array(
+        'name' => __('Home Popular Posts Algorithm', 'tt'),
+        'desc' => __('Choose the method of retrieving popular posts for homepage', 'tt'),
+        'id' => 'tt_home_popular_algorithm',
+        'std' => 'latest_reviewed',
+        'type' => 'select',
+        'options' => array(
+            'most_viewed' => __('Most Viewed', 'tt'),
+            'most_reviewed' => __('Most Reviewed', 'tt'),
+            'latest_reviewed' => __('Latest Reviewed', 'tt')
+        )
+    );
+
+    // - 置顶分类1
+    $options[] = array(
+        'name' => __('Featured Category 1', 'tt'),
+        'desc' => __('Choose the first featured category for homepage', 'tt'),
+        'id' => 'tt_home_featured_category_one',
+        'std' => $options_categories[0],
+        'type' => 'select',
+        'options' => $options_categories
+    );
+
+    // - 置顶分类2
+    $options[] = array(
+        'name' => __('Featured Category 2', 'tt'),
+        'desc' => __('Choose the second featured category for homepage', 'tt'),
+        'id' => 'tt_home_featured_category_two',
+        'std' => $options_categories[min(1, count($options_categories)-1)],
+        'type' => 'select',
+        'options' => $options_categories
+    );
+
+    // - 置顶分类3
+    $options[] = array(
+        'name' => __('Featured Category 3', 'tt'),
+        'desc' => __('Choose the third featured category for homepage', 'tt'),
+        'id' => 'tt_home_featured_category_three',
+        'std' => $options_categories[min(2, count($options_categories)-1)],
+        'type' => 'select',
+        'options' => $options_categories
+    );
+
+    // - 商品推荐
+    $options[] = array(
+        'name' => __( 'Home Products Recommendation', 'tt' ),
+        'desc' => __( 'Enable products recommendation module for homepage', 'tt' ),
+        'id' => 'tt_home_products_recommendation',
+        'std' => false,
+        'type' => $theme_pro ? 'checkbox' : 'disabled'
     );
 
 

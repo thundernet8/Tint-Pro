@@ -70,7 +70,8 @@ class Options_Framework_Interface {
 
 				$output .= '<div id="' . esc_attr( $id ) .'" class="' . esc_attr( $class ) . '">'."\n";
 				if ( isset( $value['name'] ) ) {
-					$output .= '<h4 class="heading">' . esc_html( $value['name'] ) . '</h4>' . "\n";
+				    $_name = $value['type'] === 'disabled' ? $value['name'] . __(' (Function for Pro Edition Only)', 'tt') : $value['name'];
+					$output .= '<h4 class="heading">' . esc_html( $_name ) . '</h4>' . "\n";
 				}
 				if ( $value['type'] != 'editor' ) {
 					$output .= '<div class="option">' . "\n" . '<div class="controls">' . "\n";
@@ -119,6 +120,11 @@ class Options_Framework_Interface {
 			case 'text':
 				$output .= '<input id="' . esc_attr( $value['id'] ) . '" class="of-input" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" type="text" value="' . esc_attr( $val ) . '"' . $placeholder . ' />';
 				break;
+
+            // Basic text input used for disabled status
+            case 'disabled':
+                $output .= '<input id="' . esc_attr( $value['id'] ) . '" class="of-input disabled" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" type="text" value="' . __('Disabled', 'tt') . '"' . __('Disabled', 'tt') . ' disabled/>';
+                break;
 
 			// Password input
 			case 'password':

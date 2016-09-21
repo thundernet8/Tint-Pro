@@ -21,6 +21,11 @@
 	font-style: italic;
 }
 
+#optionsframework .controls input:focus, #optionsframework .controls select:focus, #optionsframework .controls textarea:focus {
+    border: 1px solid #3292ff;
+    box-shadow: none;
+}
+
 #optionsframework .section {
 	padding:10px 10px 0;
 }
@@ -68,6 +73,12 @@
 #optionsframework .controls input[type=text] {
 	width:100%;
 }
+#optionsframework .controls input.disabled {
+	border: 1px solid #ff1616;
+    color: #ff1616;
+    opacity: 0.36;
+    cursor: not-allowed;
+}
 #optionsframework .controls input[type=text].wp-color-picker {
     width: 65px;
 }
@@ -86,6 +97,9 @@
 	float:left;
 	clear:both;
 }
+ #optionsframework input.checkbox:before {
+    color: #3292ff!important;
+ }
 #optionsframework .section-typography .controls {
 	float:none;
 	width:auto;
@@ -242,6 +256,11 @@
 }
 #optionsframework .button-primary {
 	float:right;
+    background: #3292ff;
+    box-shadow: none;
+    border: none;
+    color: #fff;
+    text-shadow: none;
 }
 #optionsframework .section:after {
 	content: "";

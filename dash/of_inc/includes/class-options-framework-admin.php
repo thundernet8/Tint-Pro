@@ -253,7 +253,7 @@ class Options_Framework_Admin {
 				continue;
 			}
 
-			if ( ! isset( $option['type'] ) ) {
+			if ( ! isset( $option['type'] ) || $option['type'] === 'disabled' ) {
 				continue;
 			}
 
