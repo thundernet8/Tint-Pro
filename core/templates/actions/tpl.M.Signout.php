@@ -47,7 +47,7 @@ tt_get_footer('simple');
     jQuery(function () {
         App.PopMsgbox.alert({
             title: "<?php _e('Sign Out Successfully', 'tt'); ?>",
-            text: "<?php echo sprintf(__('You will be redirected to %s in 2s'), $redirect_to); ?>",
+            text: "<?php echo sprintf(__('You will be redirected to %s in 2s', 'tt'), $redirect_to); ?>",
             timer: 3000,
             showConfirmButton: false
         });

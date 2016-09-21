@@ -355,6 +355,10 @@ function tt_handle_action_page_template(){
         $template = THEME_TPL . '/actions/tpl.M.' . ucfirst($allowed_actions[$action]) . '.php';
         load_template($template);
         exit;
+    }elseif($action && !in_array($action, array_keys($allowed_actions))){
+        // 非法路由处理
+        Utils::set404();
+        return;
     }
 }
 add_action('template_redirect', 'tt_handle_action_page_template', 5);
@@ -409,13 +413,19 @@ add_filter('query_vars', 'tt_add_oauth_page_query_vars');
 function tt_handle_oauth_page_template(){
     $oauth = strtolower(get_query_var('oauth'));
     $oauth_last = get_query_var('oauth_last');
-    if($oauth && in_array($oauth, (array)json_decode(ALLOWED_OAUTH_TYPES))){
-        global $wp_query;
-        $wp_query->is_home = false;
-        $wp_query->is_page = true; //将该模板改为页面属性，而非首页
-        $template = $oauth_last ? THEME_TPL . '/oauth/tpl.OAuth.Last.php' : THEME_TPL . '/oauth/tpl.OAuth.php';
-        load_template($template);
-        exit;
+    if($oauth){
+        if(in_array($oauth, (array)json_decode(ALLOWED_OAUTH_TYPES))):
+            global $wp_query;
+            $wp_query->is_home = false;
+            $wp_query->is_page = true; //将该模板改为页面属性，而非首页
+            $template = $oauth_last ? THEME_TPL . '/oauth/tpl.OAuth.Last.php' : THEME_TPL . '/oauth/tpl.OAuth.php';
+            load_template($template);
+            exit;
+        else:
+            // 非法路由处理
+            Utils::set404();
+            return;
+        endif;
     }
 }
 add_action('template_redirect', 'tt_handle_oauth_page_template', 5);

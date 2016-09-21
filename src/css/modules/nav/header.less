@@ -4,7 +4,7 @@ header {
   .logo {
     display: inline-block;
     width: auto;
-    height: 60px;
+    height: 78px;
     position: relative;
     top: 6px;
     left: 0;
@@ -30,7 +30,7 @@ header {
 
   &.common-header {
     width: 100%;
-    height: 72px;
+    height: 90px;
     z-index: 999;
     box-shadow: rgba(0, 0, 0, 0.0980392) 0 1px 1px;
     background: #FFFFFF;
@@ -66,10 +66,20 @@ header {
                 position: absolute;
                 font-size: 1.4rem;
                 right: 10px;
+                -webkit-transition: transform .3s;
+                -moz-transition: transform .3s;
+                -ms-transition: transform .3s;
+                -o-transition: transform .3s;
               }
             }
 
             &:hover {
+
+              &>a {
+                &:after {
+                  transform: rotate(180deg);
+                }
+              }
 
               &>.sub-menu {
                 visibility: visible;
@@ -100,8 +110,8 @@ header {
             display: block;
             padding: 0 15px;
             margin: 0 5px;
-            line-height: 72px;
-            height: 72px;
+            line-height: 90px;
+            height: 90px;
             overflow: hidden;
           }
 
@@ -116,9 +126,9 @@ header {
             visibility: hidden;
             position: absolute;
             min-width: 136px;
-            left: 0;
-            margin-left: -50%;
-            top: 72px;
+            left: 50%;
+            margin-left: -68px;
+            top: 90px;
             background: #FFFFFF;
             border: 1px solid #dddddd;
             padding: 20px;
@@ -170,6 +180,7 @@ header {
         .dropdown-menu {
           min-width: 180px;
           margin-top: 5px;
+          background: #ffffff;
           &>li {
             display: block;
             &>a {
