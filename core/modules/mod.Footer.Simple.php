@@ -28,5 +28,6 @@
 </footer>
 <?php if(tt_get_option('tt_foot_code')) { echo tt_get_option('tt_foot_code'); } ?>
 <?php wp_footer(); ?>
+<!--<?php echo get_num_queries();?> queries in <?php timer_stop(1); ?> seconds.-->
 </body>
 </html>

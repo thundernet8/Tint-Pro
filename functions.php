@@ -35,20 +35,42 @@ if(!function_exists('load_api')){
 }
 
 if(!function_exists('load_class')){
-	function load_class($path){
-		load_template(THEME_DIR.'/core/classes/'.$path.'.php');
+	function load_class($path, $safe = false){
+		if($safe) {
+            @include_once(THEME_DIR.'/core/classes/'.$path.'.php');
+        }else{
+            load_template(THEME_DIR.'/core/classes/'.$path.'.php');
+        }
 	}
 }
 
 if(!function_exists('load_func')){
-    function load_func($path){
-        load_template(THEME_DIR.'/core/functions/'.$path.'.php');
+    function load_func($path, $safe = false){
+        if($safe){
+            @include_once(THEME_DIR.'/core/functions/'.$path.'.php');
+        }else{
+            load_template(THEME_DIR.'/core/functions/'.$path.'.php');
+        }
     }
 }
 
 if(!function_exists('load_mod')){
-    function load_mod($path){
-        load_template(THEME_DIR.'/core/modules/'.$path.'.php');
+    function load_mod($path, $safe = false){
+        if($safe) {
+            @include_once(THEME_DIR.'/core/modules/'.$path.'.php');
+        }else{
+            load_template(THEME_DIR.'/core/modules/'.$path.'.php');
+        }
+    }
+}
+
+if(!function_exists('load_vm')){
+    function load_vm($path, $safe = false){
+        if($safe) {
+            @include_once(THEME_DIR.'/core/viewModels/'.$path.'.php');
+        }else{
+            load_template(THEME_DIR.'/core/viewModels/'.$path.'.php');
+        }
     }
 }
 
@@ -93,6 +115,12 @@ load_func('func.Seo');
 load_func('func.Sidebar');
 load_func('func.Template');
 load_func('func.Thumb');
+
+/* 载入数据模型 */
+load_vm('vm.Base');
+load_vm('vm.Home.Slides');
+load_vm('vm.Home.Popular');
+load_vm('vm.Home.Latest');
 
 /* 载入主题功能模块 */
 function tt_load() {

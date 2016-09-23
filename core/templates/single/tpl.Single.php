@@ -15,3 +15,7 @@
 <?php
 
 echo 'single-template';
+
+echo '<br>';
+
+tt_clear_all_cache();

@@ -25,7 +25,13 @@
 @import "modules/unslide/unslider-dots";
 
 body  {
-  background: #f5f6f8;
+  &.home {
+    background: #f5f6f8;
+
+    &>header {
+      border-bottom: 1px solid #e5e5e5;
+    }
+  }
 }
 
 input::-webkit-input-placeholder,

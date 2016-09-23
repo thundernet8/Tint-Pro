@@ -78,7 +78,7 @@ final class PostImage{
      * @param   string | array  $size   图片尺寸
      * @return  string
      */
-    public function getThumb($size = 'thumbnail'){
+    public function getThumb($size = ''){
         if(!$size){
             $size = $this->_size;
         }else{
@@ -122,7 +122,7 @@ final class PostImage{
      * @return  string | false
      */
     private function getPostImage($position){
-        preg_match_all("/<img([^>]*)\s*src=['|\"]([^'\"]+)['|\"]/i", $this->_post->post_content, $matches);
+        preg_match_all("/<img([^>]*)\s*src=['|\"]([^'\"]+)['|\"]/i", $this->_post->post_content, $matches); //TODO [\s]+
 
         $img_links = $matches[2];
         if(!count($img_links)) return false;
