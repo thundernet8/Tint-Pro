@@ -44,6 +44,11 @@ abstract class BaseVM {
     protected $_cacheUpdateFrequency = 'hourly';
 
     /**
+     * @var int
+     */
+    protected $_cacheInterval = 3600;
+
+    /**
      * @var object
      */
     public $modelData;
@@ -59,7 +64,7 @@ abstract class BaseVM {
      * @return BaseVM
      */
     public static function getInstance() {
-        if(static::$_instance) {
+        if(static::$_instance && static::$_instance instanceof static) { // static::$_instance instanceof static防止子类都共用基类一个实例
             return static::$_instance;
         }
 
@@ -86,7 +91,15 @@ abstract class BaseVM {
      * @since   2.0.0
      * @return  void
      */
-    abstract protected function configInstance();
+    protected function configInstance() {
+        if($cache = $this->getDataFromCache()) {
+            $this->modelData = $cache;
+        }else{
+            $data = $this->getRealData();
+            $this->setDataToCache($data);
+            $this->modelData = $data;
+        }
+    }
 
     /**
      * 从缓存获取数据
@@ -95,7 +108,18 @@ abstract class BaseVM {
      * @access  protected
      * @return mixed
      */
-    abstract protected function getDataFromCache();
+    protected function getDataFromCache() {
+        $transient = get_transient($this->_cacheKey);
+        if(!$transient) {
+            return false;
+        }
+
+        $cacheObj = (object)maybe_unserialize($transient);
+        $this->cacheTime = $cacheObj->cacheTime;
+        $this->isCache = true;
+
+        return (object)$cacheObj->data;
+    }
 
     /**
      * 设置缓存
@@ -103,9 +127,20 @@ abstract class BaseVM {
      * @since   2.0.0
      * @access  protected
      * @param   mixed $data
-     * @return  mixed
+     * @return  void
      */
-    abstract protected function setDataToCache($data);
+    protected function setDataToCache($data) {
+        if(!$data) {
+            return;
+        }
+        $cacheTime = current_time('mysql');
+
+        $store = maybe_serialize(array(
+            'data' => $data,
+            'cacheTime' => $cacheTime
+        ));
+        set_transient($this->_cacheKey, $store, $this->_cacheInterval);
+    }
 
     /**
      * 获取实时数据

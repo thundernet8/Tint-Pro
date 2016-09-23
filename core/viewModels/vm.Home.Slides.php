@@ -14,45 +14,13 @@
 ?>
 <?php
 
+/**
+ * Class SlideVM
+ */
 class SlideVM extends BaseVM {
     protected function __construct() {
-
-    }
-
-    protected function configInstance() {
-        if($cache = $this->getDataFromCache()) {
-            $this->modelData = $cache;
-        }else{
-            $data = $this->getRealData();
-            $this->setDataToCache($data);
-            $this->modelData = $data;
-        }
-    }
-
-    protected function getDataFromCache() {
-        $transient = get_transient($this->_cacheKey);
-        if(!$transient) {
-            return false;
-        }
-
-        $cacheObj = (object)maybe_unserialize($transient);
-        $this->cacheTime = $cacheObj->cacheTime;
-        $this->isCache = true;
-
-        return (object)$cacheObj->data;
-    }
-
-    protected function setDataToCache($data) {
-        if(!$data) {
-            return;
-        }
-        $cacheTime = current_time('mysql');
-
-        $store = maybe_serialize(array(
-            'data' => $data,
-            'cacheTime' => $cacheTime
-        ));
-        set_transient($this->_cacheKey, $store, 3600);
+        $this->_cacheUpdateFrequency = 'daily';
+        $this->_cacheInterval = 3600*24;
     }
 
     protected function getRealData() {
@@ -90,6 +58,8 @@ class SlideVM extends BaseVM {
 
             $slide_posts[] = $slide_post;
         endwhile;
+
+        wp_reset_postdata();
 
         return $slide_posts;
     }

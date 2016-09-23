@@ -170,6 +170,16 @@ function optionsframework_options() {
         'type' => 'heading'
     );
 
+    // - 首页排除分类
+    $options[] = array(
+        'name' => __('Home Hide Categories', 'tt'),
+        'desc' => __('Choose categories those are not displayed in homepage', 'tt'),
+        'id' => 'tt_home_undisplay_cats',
+        'std' => array(),
+        'type' => 'multicheck',
+        'options' => $options_categories
+    );
+
     // - 幻灯文章ID列表
     $options[] = array(
         'name' => __( 'Slide Post IDs', 'tt' ),

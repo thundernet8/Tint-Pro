@@ -17,7 +17,7 @@
 <?php if($vm->isCache && $vm->cacheTime) { ?>
 <!-- Slide cached <?php echo $vm->cacheTime; ?> -->
 <?php } ?>
-<div id="slider" class="col-md-8">
+<div id="slider" class="col-md-8 block2">
     <?php if($data = $vm->modelData) { ?>
     <ul>
         <?php foreach ($data as $seq=>$slide) { ?>
