@@ -5,22 +5,24 @@
 
 		li {
 			display: inline-block;
-			width: 6px;
-			height: 6px;
+			width: 10px;
+			height: 10px;
 			margin: 0 4px;
 
-			background: transparent;
-			border-radius: 5px;
+            background: rgba(255, 255, 255, 0.6);
+			border-radius: 10px;
 
 			overflow: hidden;
 			text-indent: -999em;
 
-			border: 2px solid @unslider-dot-colour;
+			//border: 2px solid @unslider-dot-colour;
+            border: none;
+			box-sizing: content-box !important;
 
 			cursor: pointer;
 
 			&.unslider-active {
-				background: @unslider-dot-colour;
+                background: rgba(255, 255, 255, 0.9);
 				cursor: default;
 			}
 		}

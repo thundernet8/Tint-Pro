@@ -16,17 +16,35 @@
 import {handleLineLoading} from './modules/loading';
 import {popMsgbox} from './modules/msgbox';
 import {} from './modules/bootstrap-flat';
+import {} from './vender/unslider';
 // require('./modules/smooth-scroll');
 
 // DOM Ready
 jQuery(document).ready(function ($) {
-  // 隐藏加载条
-  handleLineLoading();
+    // 隐藏加载条
+    handleLineLoading();
 
-  // 初始化popMsgbox
-  popMsgbox.init();
-
-
+    // 初始化popMsgbox
+    popMsgbox.init();
+    
+    // 启动幻灯
+    (function () {
+        if(window.TT && TT.isHome) {
+            $('.slides-wrap').unslider({
+                autoplay: true,
+                animation: 'horizontal', //horizontal//vertical//fade
+                animateHeight: false,
+                delay: 6000,
+                arrows: false,
+                infinite: true,
+                keys: {
+                    prev: 37,
+                    next: 39,
+                    stop: 27 //  Example: pause when the Esc key is hit
+                }
+            });
+        }
+    })();
 
 
 });

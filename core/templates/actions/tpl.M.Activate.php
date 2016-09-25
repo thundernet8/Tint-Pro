@@ -37,7 +37,7 @@ tt_get_header('simple');
 ?>
 <body class="is-loadingApp action-page activate">
 <?php load_template(THEME_MOD . '/mod.LogoHeader.php'); ?>
-<div class="wrapper container no-aside">
+<div id="content" class="wrapper container no-aside">
     <div class="main inner-wrap">
 
     </div>

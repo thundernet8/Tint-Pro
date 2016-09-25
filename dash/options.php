@@ -122,7 +122,7 @@ function optionsframework_options() {
         'std' => 'local_2',
         'type' => 'select',
         'options' => array(
-            'local_1' => _('Local v1.12', 'tt'),
+            'local_1' => __('Local v1.12', 'tt'),
             'local_2' => __('Local v3.1', 'tt'),
             'cdn_http' => __('CDN HTTP', 'tt'),
             'cdn_https' => __('CDN HTTPS', 'tt')
@@ -208,7 +208,7 @@ function optionsframework_options() {
         'name' => __('Featured Category 1', 'tt'),
         'desc' => __('Choose the first featured category for homepage', 'tt'),
         'id' => 'tt_home_featured_category_one',
-        'std' => $options_categories[0],
+        'std' => array_keys($options_categories)[0],
         'type' => 'select',
         'options' => $options_categories
     );
@@ -218,7 +218,7 @@ function optionsframework_options() {
         'name' => __('Featured Category 2', 'tt'),
         'desc' => __('Choose the second featured category for homepage', 'tt'),
         'id' => 'tt_home_featured_category_two',
-        'std' => $options_categories[min(1, count($options_categories)-1)],
+        'std' => array_keys($options_categories)[min(1, count($options_categories)-1)],
         'type' => 'select',
         'options' => $options_categories
     );
@@ -228,7 +228,7 @@ function optionsframework_options() {
         'name' => __('Featured Category 3', 'tt'),
         'desc' => __('Choose the third featured category for homepage', 'tt'),
         'id' => 'tt_home_featured_category_three',
-        'std' => $options_categories[min(2, count($options_categories)-1)],
+        'std' => array_keys($options_categories)[min(2, count($options_categories)-1)],
         'type' => 'select',
         'options' => $options_categories
     );
@@ -584,7 +584,7 @@ function optionsframework_options() {
         'std' => 'php',
         'type' => 'select',
         'options' => array(
-            'php' => _('PHP', 'tt'),
+            'php' => __('PHP', 'tt'),
             'smtp' => __('SMTP', 'tt')
         )
     );
@@ -733,7 +733,7 @@ function optionsframework_options() {
     // - 开启调试
     $options[] = array(
         'name' => __( 'Debug Mode', 'tt' ),
-        'desc' => __( 'Enable debug will call wp_die when catch a error', 'tt' ),
+        'desc' => __( 'Enable debug will force display php errors, disable theme cache, enable some private links or functions, etc.', 'tt' ),
         'id' => 'tt_theme_debug',
         'std' => false,
         'type' => 'checkbox'

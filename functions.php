@@ -79,6 +79,14 @@ load_dash('of_inc/options-framework');
 
 /* 载入主题选项 */
 load_dash('options');
+/* 调试模式选项保存为全局变量 */
+defined('TT_DEBUG') || define('TT_DEBUG', of_get_option('tt_theme_debug', false));
+if(TT_DEBUG) {
+    ini_set("display_errors","On");
+    error_reporting(E_ALL);
+}else{
+    ini_set("display_errors","Off");
+}
 
 /* 载入后台相关处理逻辑 */
 if( is_admin() ){
@@ -121,6 +129,7 @@ load_vm('vm.Base');
 load_vm('vm.Home.Slides');
 load_vm('vm.Home.Popular');
 load_vm('vm.Home.Latest');
+load_vm('vm.Home.FeaturedCategory');
 
 /* 载入主题功能模块 */
 function tt_load() {

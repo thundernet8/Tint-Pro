@@ -70,7 +70,11 @@ class PopularVM extends BaseVM {
             //$popular_post['author'] = get_the_author(); //TODO add link
             $popular_post['time'] = get_post_time('F j, Y', false, $post, false); //get_post_time( string $d = 'U', bool $gmt = false, int|WP_Post $post = null, bool $translate = false )
             //$popular_post['datetime'] = get_the_time(DATE_W3C, $post);
-            $popular_post['thumb'] = tt_get_thumb($post, 'thumbnail');
+            $popular_post['thumb'] = tt_get_thumb($post, array(
+                'width' => 200,
+                'height' => 150,
+                'str' => 'thumbnail'
+            ));
 
             $popular_posts[] = $popular_post;
         endwhile;

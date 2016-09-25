@@ -42,7 +42,9 @@ function tt_register_scripts() {
         'apiRoot'       => esc_url_raw( get_rest_url() ),
         'nonce'         => wp_create_nonce( 'wp_rest' ),
         'home'          => esc_url_raw( home_url() ),
-        'themeRoot'     => THEME_URI
+        'themeRoot'     => THEME_URI,
+        'isHome'        => is_home(),
+        'isSingle'      => is_single()
     );
     wp_localize_script( 'tt_common', 'TT', $data );
     wp_enqueue_script( 'tt_jquery' );

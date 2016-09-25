@@ -1,0 +1,93 @@
+.posts-loop-rows {
+    article {
+        position: relative;
+        padding-bottom: 25px;
+        border-bottom: 1px solid #e9e9e9;
+        margin-bottom: 25px;
+        &.post {
+            &>.entry-thumb {
+                //position: absolute;
+                position: relative;
+                float: left;
+                left: 0;
+                top: 0;
+                //max-width: 250px;
+                width: 250px;
+                margin-right: 20px;
+                &>.shadow {
+                    display: block;
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0,0,0,.1);
+                    background: linear-gradient(135deg,rgba(0,0,0,.2) 0,rgba(0,0,0,.1) 100%);
+                }
+                &>a {
+                    &>img {
+                        width: 100%;
+                        height: auto;
+                        display: block;
+                    }
+
+                    &[rel="category tag"] {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        //background: rgba(0, 0, 0, 0.7);
+                        background: @brand-business;
+                        color: #FFFFFF;
+                        font-size: 11px;
+                        padding: 1px 10px 2px;
+                    }
+                }
+            }
+            &>.entry-detail {
+                width: 100%;
+                min-height: 170px;
+                //margin-left: 275px;
+                &>.entry-header {
+                    &>h2 {
+                        font-weight: 500;
+                        font-size: 1.8rem;
+                        margin-bottom: 5px;
+                        a {
+                            color: @brand-primary;
+                            &:hover {
+                                color: @link-color;
+                            }
+                        }
+                    }
+                    &>.entry-meta {
+                        &>span {
+                            margin-right: 12px;
+                        }
+                        &>.author {
+                            &>a {
+                                color: @brand-primary;
+                                font-weight: 500;
+                                &:hover {
+                                    color: @link-color;
+                                }
+                            }
+                        }
+                        &>.comments-link {
+                            float: right;
+                            margin-right: 0;
+                            //font-size: 1.2rem;
+                            &>i {
+                                margin-right: 5px;
+                            }
+                            &>a {
+                                color: @text-muted-color;
+                            }
+                        }
+                    }
+                }
+                &>.entry-excerpt {
+                    color: #777777;
+                    margin-top: 16px;
+                }
+            }
+        }
+    }
+}

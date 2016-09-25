@@ -13,6 +13,6 @@
  */
 ?>
 <!-- SideBar Begin -->
-<aside class="sidebar secondary" id="sidebar">
+<aside class="sidebar secondary col-md-4" id="sidebar">
     <?php dynamic_sidebar(tt_dynamic_sidebar()); ?>
 </aside>

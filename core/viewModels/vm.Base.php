@@ -75,9 +75,9 @@ abstract class BaseVM {
         }
         static::$_instance = new static();
 
-        if(!static::$_instance->_cacheKey) {
-            static::$_instance->_cacheKey = 'tt_cache_' . static::$_instance->_cacheUpdateFrequency . '_vm_' . static::class;
-        }
+//        if(!static::$_instance->_cacheKey) {
+//            static::$_instance->_cacheKey = 'tt_cache_' . static::$_instance->_cacheUpdateFrequency . '_vm_' . static::class;
+//        }
 
         static::$_instance->configInstance();
 
@@ -92,6 +92,11 @@ abstract class BaseVM {
      * @return  void
      */
     protected function configInstance() {
+        // cache key
+        if(!$this->_cacheKey) {
+            $this->_cacheKey = 'tt_cache_' . $this->_cacheUpdateFrequency . '_vm_' . static::class;
+        }
+
         if($cache = $this->getDataFromCache()) {
             $this->modelData = $cache;
         }else{
@@ -109,6 +114,11 @@ abstract class BaseVM {
      * @return mixed
      */
     protected function getDataFromCache() {
+        // DEBUG模式不使用缓存 //TODO
+        if(TT_DEBUG) {
+            return false;
+        }
+
         $transient = get_transient($this->_cacheKey);
         if(!$transient) {
             return false;
@@ -130,7 +140,7 @@ abstract class BaseVM {
      * @return  void
      */
     protected function setDataToCache($data) {
-        if(!$data) {
+        if(!$data || TT_DEBUG) {
             return;
         }
         $cacheTime = current_time('mysql');

@@ -36,7 +36,7 @@ tt_get_header('simple');
         </nav>
     </header>
 	<div class="bg-layer" id="bg-layer"></div>
-    <div class="wrapper container no-aside">
+    <div id="content" class="wrapper container no-aside">
         <div class="main inner-wrap">
 			<!-- Logo -->
 			<img class="logo" src="<?php echo tt_get_option('tt_small_logo'); ?>" alt="<?php echo get_bloginfo('name'); ?>">

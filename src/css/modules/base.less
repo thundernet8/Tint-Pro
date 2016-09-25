@@ -27,41 +27,41 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: inherit;
   font-weight: 500;
-  line-height: 1.1;
+  line-height: inherit;
 }
 
-h1, h2, h3 {
+h1, .h1, h2, .h2 h3, .h3 {
   margin-top: 20px;
   margin-bottom: 10px;
 }
 
-h4,h5,h6 {
+h4, .h4, h5, .h5, h6, .h6 {
   margin-top: 10px;
   margin-bottom: 10px
 }
 
-h1 {
+h1, .h1 {
   font-size: 3.6rem;
 }
 
-h2 {
+h2, .h2 {
   font-size: 3rem;
 }
 
-h3 {
+h3, .h3 {
   font-size: 2.4rem;
 }
 
-h4 {
+h4, .h4 {
   font-size: 1.8rem;
 }
 
-h5 {
-  font-size: 1.4rem;
+h5, .h5 {
+  font-size: 1.6rem;
 }
 
-h6 {
-  font-size: 1.2rem;
+h6, .h6 {
+  font-size: 1.4rem;
 }
 
 // list
@@ -78,11 +78,11 @@ p {
 
 // a
 a {
-  color: #3292ff;
+  color: @link-color;
   text-decoration: @link-hover-decoration;
 
   &:hover {
-    text-decoration: underline;
+    text-decoration: none;
   }
 }
 
@@ -122,32 +122,6 @@ button, input, optgroup, select, textarea {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-}
-
-// .container
-.container {
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto
-}
-
-@media (min-width: 768px) {
-  .container {
-    width:750px
-  }
-}
-
-@media (min-width: 992px) {
-  .container {
-    width:970px
-  }
-}
-
-@media (min-width: 1200px) {
-  .container {
-    width:1170px
-  }
 }
 
 // visibility
@@ -348,7 +322,7 @@ button, input, optgroup, select, textarea {
 
 // Color
 .text-muted {
-  color: @asbestos;
+  color: @text-muted-color;
 }
 
 // Hide/Visibility

@@ -29,7 +29,7 @@
 function tt_cached($key, $miss_cb, $group, $expire){
     // 无memcache等对象缓存组件时，使用临时的数据表缓存，只支持string|int内容 // 实际上get_transient|set_transient会自动判断有无wp-content下的object-cache.php， 但是直接使用该函数不支持group
     // https://core.trac.wordpress.org/browser/tags/4.5.3/src/wp-includes/option.php#L609
-    if(tt_get_option('tt_object_cache', 'none')=='none'){
+    if(tt_get_option('tt_object_cache', 'none')=='none' && !TT_DEBUG){
         $data = get_transient($key);
         if($data!==false){
             return $data;
@@ -42,7 +42,7 @@ function tt_cached($key, $miss_cb, $group, $expire){
         return false;
     }
     // 使用memcache或redis内存对象缓存
-    elseif(in_array(tt_get_option('tt_object_cache', 'none'), ['memcache', 'redis'])){
+    elseif(in_array(tt_get_option('tt_object_cache', 'none'), ['memcache', 'redis']) && !TT_DEBUG){
         $data = wp_cache_get($key, $group);
         if($data!==false){
             return $data;
@@ -143,6 +143,10 @@ function tt_clear_all_cache() {
  * @return  string
  */
 function tt_cached_menu($menu, $args){
+    if(TT_DEBUG) {
+        return $menu;
+    }
+
     global $wp_query;
     // 即使相同菜单位但是不同页面条件时菜单输出有细微区别，如当前active的子菜单, 利用$wp_query->query_vars_hash予以区分
     $cache_key = CACHE_PREFIX . '_hourly_nav_' . md5($args->theme_location . '_' . $wp_query->query_vars_hash);
@@ -165,6 +169,10 @@ add_filter('pre_wp_nav_menu', 'tt_cached_menu', 10, 2);
  * @return  string
  */
 function tt_cache_menu($menu, $args){
+    if(TT_DEBUG) {
+        return $menu;
+    }
+
     global $wp_query;
     $cache_key = CACHE_PREFIX . '_hourly_nav_' . md5($args->theme_location . '_' . $wp_query->query_vars_hash);
     set_transient($cache_key, sprintf(__('<!-- Nav cached %s -->', 'tt'), current_time('mysql')) . $menu . __('<!-- Nav cache end -->', 'tt'), 3600);

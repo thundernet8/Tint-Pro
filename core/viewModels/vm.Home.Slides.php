@@ -52,9 +52,14 @@ class SlideVM extends BaseVM {
             $slide_post['comment_count'] = $post->comment_count;
             $slide_post['category'] = get_the_category_list(' · ', '', $post->ID);
             $slide_post['author'] = get_the_author(); //TODO add link
+            $slide_post['author_url'] = home_url('/@' . $slide_post['author']);
             $slide_post['time'] = get_post_time('F j, Y', false, $post, false); //get_post_time( string $d = 'U', bool $gmt = false, int|WP_Post $post = null, bool $translate = false )
             $slide_post['datetime'] = get_the_time(DATE_W3C, $post);
-            $slide_post['thumb'] = tt_get_thumb($post, 'large');
+            $slide_post['thumb'] = tt_get_thumb($post, array(
+                'width' => 750,
+                'height' => 375,
+                'str' => 'large'
+            ));
 
             $slide_posts[] = $slide_post;
         endwhile;

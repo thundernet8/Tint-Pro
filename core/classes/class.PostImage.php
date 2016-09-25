@@ -64,7 +64,7 @@ final class PostImage{
     public function __construct($post, $size = 'thumbnail'){
         $this->_post = get_post($post);
         $this->_size = self::getFormatedSize($size);
-        $key = CACHE_PREFIX . '_weekly' . '_thumb_' . md5(strval($this->_post->ID) . strval($this->_size) . Utils::getCurrentDateTimeStr('week'));
+        $key = CACHE_PREFIX . '_weekly' . '_thumb_' . md5(strval($this->_post->ID) . strval($this->_size['width'] . 'x' . $this->_size['height']) . Utils::getCurrentDateTimeStr('week'));
         $this->cache_key = $key;
     }
 
@@ -84,7 +84,7 @@ final class PostImage{
         }else{
             $size = self::getFormatedSize($size);
         }
-        $featured = self::getFeaturedImage($size);
+        $featured = self::getFeaturedImage($size['str']);
         if($featured) return self::getOptimizedImageUrl($featured, $size);
 
         // 无特色图像则抓取第一张文章内图片

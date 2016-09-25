@@ -26,7 +26,7 @@ tt_get_header('simple');
 ?>
 <body class="is-loadingApp action-page signup">
     <?php load_template(THEME_MOD . '/mod.LogoHeader.php'); ?>
-    <div class="wrapper container no-aside">
+    <div id="content" class="wrapper container no-aside">
         <div class="main inner-wrap">
             <form class="form-signup">
                 <h2 class="title signup-title mb30"><?php _e('Create Account', 'tt'); ?></h2>
