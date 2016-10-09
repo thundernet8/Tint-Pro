@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-09-25 11:09+0800\n"
+"POT-Creation-Date: 2016-10-09 00:41+0800\n"
 "PO-Revision-Date: 2016-08-17 21:40+0800\n"
 "Last-Translator: \n"
 "Language-Team: Zhiyan <mail@webapproach.net>\n"
@@ -595,6 +595,18 @@ msgstr ""
 msgid "WordPress &rsaquo; Error"
 msgstr ""
 
+#: core/functions/func.Metabox.php:24
+msgid "Post Copyright Info"
+msgstr ""
+
+#: core/functions/func.Metabox.php:44
+msgid "Post Source Title"
+msgstr ""
+
+#: core/functions/func.Metabox.php:46
+msgid "Post Source Link, leaving empty means the post is original article"
+msgstr ""
+
 #: core/functions/func.Page.php:72
 msgid "(no parent)"
 msgstr ""
@@ -651,7 +663,7 @@ msgstr ""
 msgid "Activate Registration"
 msgstr ""
 
-#: core/functions/func.Seo.php:37 core/modules/mod.Header.php:92
+#: core/functions/func.Seo.php:37 core/modules/mod.Header.php:93
 msgid "Sign Out"
 msgstr ""
 
@@ -756,27 +768,27 @@ msgstr ""
 msgid "CONTACT"
 msgstr ""
 
-#: core/modules/mod.Header.php:85
+#: core/modules/mod.Header.php:86
 msgid "Go Dashboard"
 msgstr ""
 
-#: core/modules/mod.Header.php:87
+#: core/modules/mod.Header.php:88
 msgid "New Post"
 msgstr ""
 
-#: core/modules/mod.Header.php:88
+#: core/modules/mod.Header.php:89
 msgid "My Posts"
 msgstr ""
 
-#: core/modules/mod.Header.php:89
+#: core/modules/mod.Header.php:90
 msgid "My Messages"
 msgstr ""
 
-#: core/modules/mod.Header.php:90
+#: core/modules/mod.Header.php:91
 msgid "My Settings"
 msgstr ""
 
-#: core/modules/mod.Header.php:97
+#: core/modules/mod.Header.php:98
 msgid "Sign In or Up"
 msgstr ""
 
@@ -786,6 +798,54 @@ msgstr ""
 
 #: core/modules/mod.HomePopular.php:22
 msgid "Popular"
+msgstr ""
+
+#: core/modules/mod.ModalSearch.php:19
+msgid "Type a keyword"
+msgstr ""
+
+#: core/modules/mod.SinglePost.php:34
+msgid "Share to Weibo"
+msgstr ""
+
+#: core/modules/mod.SinglePost.php:35
+msgid "Share to QZone"
+msgstr ""
+
+#: core/modules/mod.SinglePost.php:36
+msgid "Share to QQ"
+msgstr ""
+
+#: core/modules/mod.SinglePost.php:37
+msgid "Share to Wechat"
+msgstr ""
+
+#: core/modules/mod.SinglePost.php:42
+msgid "Share to Douban"
+msgstr ""
+
+#: core/modules/mod.SinglePost.php:59
+msgid "Star It"
+msgstr ""
+
+#: core/modules/mod.SinglePost.php:65
+msgid "persons"
+msgstr ""
+
+#: core/modules/mod.SinglePost.php:65
+msgid "Stared"
+msgstr ""
+
+#: core/modules/mod.SinglePost.php:75
+msgid "Previous article"
+msgstr ""
+
+#: core/modules/mod.SinglePost.php:79
+msgid "Next article"
+msgstr ""
+
+#: core/modules/mod.SinglePost.php:86
+msgid "Related Articles"
 msgstr ""
 
 #: core/templates/actions/tpl.M.Activate.php:21
@@ -983,6 +1043,21 @@ msgstr ""
 
 #: core/templates/tpl.Error.php:60
 msgid "An error has happened on this page."
+msgstr ""
+
+#: core/viewModels/vm.Single.Post.php:79
+#, php-format
+msgid ""
+"All the posts are created by <a href=\"%1$s\" title=\"%2$s\" target="
+"\"_blank\">%2$s</a> if without special annotations, please mark the source "
+"as <a href=\"%3$s\" title=\"%4$s\">%3$s</a> when reprinting"
+msgstr ""
+
+#: core/viewModels/vm.Single.Post.php:80
+#, php-format
+msgid ""
+"The post is from: <a href=\"%1$s\" title=\"%2$s\" target=\"_blank\">%2$s</"
+"a>"
 msgstr ""
 
 #: dash/dash.php:47
@@ -1361,334 +1436,432 @@ msgid "Social"
 msgstr ""
 
 #: dash/options.php:370
-msgid "QQ Login"
+msgid "Site QQ"
 msgstr ""
 
 #: dash/options.php:371
-msgid "QQ login "
+msgid "The QQ which is dedicated for the site"
 msgstr ""
 
 #: dash/options.php:380
-msgid "QQ Open ID"
+msgid "Site QQ Group ID"
 msgstr ""
 
 #: dash/options.php:381
-msgid "Your QQ open application ID"
+msgid ""
+"The ID key of QQ group which is dedicated for the site, visit `http://"
+"shang.qq.com` for detail"
 msgstr ""
 
 #: dash/options.php:390
-msgid "QQ Open Key"
+msgid "Site Weibo"
 msgstr ""
 
 #: dash/options.php:391
-msgid "Your QQ open application key"
+msgid "The name of Weibo account which is dedicated for the site"
 msgstr ""
 
 #: dash/options.php:400
-msgid "Weibo Login"
+msgid "Site Facebook"
 msgstr ""
 
 #: dash/options.php:401
-msgid "Weibo login access"
+msgid "The name of Facebook account which is dedicated for the site"
 msgstr ""
 
 #: dash/options.php:410
-msgid "Weibo Open Key"
+msgid "Site Twitter"
 msgstr ""
 
 #: dash/options.php:411
-msgid "Your weibo open application key"
+msgid "The name of Twitter account which is dedicated for the site"
 msgstr ""
 
 #: dash/options.php:420
-msgid "Weibo Open Secret"
+msgid "Site Weixin"
 msgstr ""
 
 #: dash/options.php:421
-msgid "Your weibo open application secret"
+msgid "The qrcode image of Weixin account which is dedicated for the site"
 msgstr ""
 
 #: dash/options.php:430
-msgid "Weixin Login"
+msgid "Site Alipay"
 msgstr ""
 
 #: dash/options.php:431
-msgid "Weixin login access"
+msgid "The qrcode image of Alipay account which is dedicated for the site"
 msgstr ""
 
 #: dash/options.php:440
-msgid "Weixin Open Key"
+msgid "QQ Login"
 msgstr ""
 
 #: dash/options.php:441
-msgid "Your weixin open application key"
+msgid "QQ login "
 msgstr ""
 
 #: dash/options.php:450
-msgid "Weixin Open Secret"
+msgid "QQ Open ID"
 msgstr ""
 
 #: dash/options.php:451
-msgid "Your weixin open application secret"
-msgstr ""
-
-#: dash/options.php:459
-msgid "Open User Default Role"
+msgid "Your QQ open application ID"
 msgstr ""
 
 #: dash/options.php:460
-msgid "Choose the role and capabilities for the new connected user from open"
+msgid "QQ Open Key"
 msgstr ""
 
-#: dash/options.php:465
-msgid "Editor"
+#: dash/options.php:461
+msgid "Your QQ open application key"
 msgstr ""
 
-#: dash/options.php:466
-msgid "Author"
+#: dash/options.php:470
+msgid "Weibo Login"
 msgstr ""
 
-#: dash/options.php:467
-msgid "Contributor"
+#: dash/options.php:471
+msgid "Weibo login access"
 msgstr ""
 
-#: dash/options.php:468
-msgid "Subscriber"
+#: dash/options.php:480
+msgid "Weibo Open Key"
 msgstr ""
 
-#: dash/options.php:476
-msgid "Ad"
+#: dash/options.php:481
+msgid "Your weibo open application key"
 msgstr ""
 
-#: dash/options.php:486
-msgid "Membership"
+#: dash/options.php:490
+msgid "Weibo Open Secret"
 msgstr ""
 
-#: dash/options.php:496
-msgid "Shop"
+#: dash/options.php:491
+msgid "Your weibo open application secret"
 msgstr ""
 
-#: dash/options.php:506
-msgid "Auxiliary"
+#: dash/options.php:500
+msgid "Weixin Login"
 msgstr ""
 
-#: dash/options.php:513
-msgid "Object Cache"
+#: dash/options.php:501
+msgid "Weixin login access"
 msgstr ""
 
-#: dash/options.php:514
-msgid "Object cache support, accelerate your site"
+#: dash/options.php:510
+msgid "Weixin Open Key"
 msgstr ""
 
-#: dash/options.php:519
-msgid "Memcache"
+#: dash/options.php:511
+msgid "Your weixin open application key"
 msgstr ""
 
 #: dash/options.php:520
-msgid "Redis"
+msgid "Weixin Open Secret"
 msgstr ""
 
-#: dash/options.php:521 dash/options.php:627
-msgid "None"
+#: dash/options.php:521
+msgid "Your weixin open application secret"
 msgstr ""
 
 #: dash/options.php:529
-msgid "Memcache Host"
+msgid "Open User Default Role"
 msgstr ""
 
 #: dash/options.php:530
-msgid "Memcache server host"
+msgid "Choose the role and capabilities for the new connected user from open"
 msgstr ""
 
-#: dash/options.php:539
-msgid "Memcache Port"
+#: dash/options.php:535
+msgid "Editor"
 msgstr ""
 
-#: dash/options.php:540
-msgid "Memcache server port"
+#: dash/options.php:536
+msgid "Author"
 msgstr ""
 
-#: dash/options.php:552
-msgid "Redis Host"
+#: dash/options.php:537
+msgid "Contributor"
 msgstr ""
 
-#: dash/options.php:553
-msgid "Redis server host"
+#: dash/options.php:538
+msgid "Subscriber"
 msgstr ""
 
-#: dash/options.php:562
-msgid "Redis Port"
+#: dash/options.php:546
+msgid "Ad"
 msgstr ""
 
-#: dash/options.php:563
-msgid "Redis server port"
+#: dash/options.php:556
+msgid "Membership"
+msgstr ""
+
+#: dash/options.php:566
+msgid "Shop"
+msgstr ""
+
+#: dash/options.php:573
+msgid "Site Weixin Pay QR"
 msgstr ""
 
 #: dash/options.php:574
-msgid "Mailer Separator"
+msgid "The Weixin pay qrcode image for collection money"
 msgstr ""
 
-#: dash/options.php:581
-msgid "SMTP/PHPMailer"
+#: dash/options.php:583
+msgid "Site Alipay Pay QR"
 msgstr ""
 
-#: dash/options.php:582
-msgid "Use SMTP or PHPMail as default mailer"
+#: dash/options.php:584
+msgid "The Alipay pay qrcode image for collection money"
 msgstr ""
 
-#: dash/options.php:587
-msgid "PHP"
+#: dash/options.php:593
+msgid "Auxiliary"
 msgstr ""
 
-#: dash/options.php:588
-msgid "SMTP"
+#: dash/options.php:600
+msgid "Object Cache"
 msgstr ""
 
-#: dash/options.php:596
-msgid "SMTP Host"
+#: dash/options.php:601
+msgid "Object cache support, accelerate your site"
 msgstr ""
 
-#: dash/options.php:597
-msgid "Your SMTP service host"
+#: dash/options.php:606
+msgid "Memcache"
 msgstr ""
 
 #: dash/options.php:607
-msgid "SMTP Port"
+msgid "Redis"
 msgstr ""
 
-#: dash/options.php:608
-msgid "Your SMTP service port"
+#: dash/options.php:608 dash/options.php:714
+msgid "None"
 msgstr ""
 
-#: dash/options.php:618
-msgid "SMTP Secure"
+#: dash/options.php:616
+msgid "Memcache Host"
 msgstr ""
 
-#: dash/options.php:619
-msgid "Your SMTP server secure protocol"
-msgstr ""
-
-#: dash/options.php:624
-msgid "Auto"
-msgstr ""
-
-#: dash/options.php:625
-msgid "SSL"
+#: dash/options.php:617
+msgid "Memcache server host"
 msgstr ""
 
 #: dash/options.php:626
-msgid "TLS"
+msgid "Memcache Port"
 msgstr ""
 
-#: dash/options.php:634
-msgid "SMTP Username"
+#: dash/options.php:627
+msgid "Memcache server port"
 msgstr ""
 
-#: dash/options.php:635
-msgid "Your SMTP username"
+#: dash/options.php:639
+msgid "Redis Host"
 msgstr ""
 
-#: dash/options.php:644
-msgid "SMTP Password"
+#: dash/options.php:640
+msgid "Redis server host"
 msgstr ""
 
-#: dash/options.php:645
-msgid "Your SMTP password"
+#: dash/options.php:649
+msgid "Redis Port"
 msgstr ""
 
-#: dash/options.php:655
-msgid "Your Name"
+#: dash/options.php:650
+msgid "Redis server port"
 msgstr ""
 
-#: dash/options.php:656
-msgid "Your display name as the sender"
+#: dash/options.php:661
+msgid "Mailer Separator"
 msgstr ""
 
 #: dash/options.php:668
-msgid "PHP Mail Sender Display Name"
+msgid "SMTP/PHPMailer"
 msgstr ""
 
 #: dash/options.php:669
+msgid "Use SMTP or PHPMail as default mailer"
+msgstr ""
+
+#: dash/options.php:674
+msgid "PHP"
+msgstr ""
+
+#: dash/options.php:675
+msgid "SMTP"
+msgstr ""
+
+#: dash/options.php:683
+msgid "SMTP Host"
+msgstr ""
+
+#: dash/options.php:684
+msgid "Your SMTP service host"
+msgstr ""
+
+#: dash/options.php:694
+msgid "SMTP Port"
+msgstr ""
+
+#: dash/options.php:695
+msgid "Your SMTP service port"
+msgstr ""
+
+#: dash/options.php:705
+msgid "SMTP Secure"
+msgstr ""
+
+#: dash/options.php:706
+msgid "Your SMTP server secure protocol"
+msgstr ""
+
+#: dash/options.php:711
+msgid "Auto"
+msgstr ""
+
+#: dash/options.php:712
+msgid "SSL"
+msgstr ""
+
+#: dash/options.php:713
+msgid "TLS"
+msgstr ""
+
+#: dash/options.php:721
+msgid "SMTP Username"
+msgstr ""
+
+#: dash/options.php:722
+msgid "Your SMTP username"
+msgstr ""
+
+#: dash/options.php:731
+msgid "SMTP Password"
+msgstr ""
+
+#: dash/options.php:732
+msgid "Your SMTP password"
+msgstr ""
+
+#: dash/options.php:742
+msgid "Your Name"
+msgstr ""
+
+#: dash/options.php:743
+msgid "Your display name as the sender"
+msgstr ""
+
+#: dash/options.php:755
+msgid "PHP Mail Sender Display Name"
+msgstr ""
+
+#: dash/options.php:756
 msgid "The Sender display name when using PHPMail send mail"
 msgstr ""
 
-#: dash/options.php:679
+#: dash/options.php:766
 msgid "PHP Mail Sender Address"
 msgstr ""
 
-#: dash/options.php:680
+#: dash/options.php:767
 msgid "You can use fake mail address when use PHPMail"
 msgstr ""
 
-#: dash/options.php:691
+#: dash/options.php:778
 msgid "Short Link Prefix"
 msgstr ""
 
-#: dash/options.php:692
+#: dash/options.php:779
 msgid ""
 "Use short link instead long link or even convert external link to internal "
 "link"
 msgstr ""
 
-#: dash/options.php:702
+#: dash/options.php:789
 msgid "Short Link Records"
 msgstr ""
 
-#: dash/options.php:703
+#: dash/options.php:790
 msgid "One line for one record, please conform to the sample"
 msgstr ""
 
-#: dash/options.php:716
+#: dash/options.php:803
 msgid "Feedback"
 msgstr ""
 
-#: dash/options.php:728
+#: dash/options.php:815
 msgid "Others"
 msgstr ""
 
-#: dash/options.php:735
+#: dash/options.php:822
 msgid "Debug Mode"
 msgstr ""
 
-#: dash/options.php:736
+#: dash/options.php:823
 msgid ""
 "Enable debug will force display php errors, disable theme cache, enable "
 "some private links or functions, etc."
 msgstr ""
 
-#: dash/options.php:745
+#: dash/options.php:832
 msgid "Tint Token"
 msgstr ""
 
-#: dash/options.php:746
+#: dash/options.php:833
 msgid "Private token for theme, maybe useful somewhere."
 msgstr ""
 
-#: dash/options.php:756
+#: dash/options.php:843
 msgid "Refresh Rewrite Rules"
 msgstr ""
 
-#: dash/options.php:757
+#: dash/options.php:844
 #, php-format
 msgid ""
 "Please Click to <a href=\"%1$s/m/refresh?token=%2$s\" target=\"_blank"
 "\">Refresh Rewrite Rules</a> if you have encounter some 404 errors"
 msgstr ""
 
-#: dash/options.php:764
+#: dash/options.php:851
+msgid "QQ Mailme ID"
+msgstr ""
+
+#: dash/options.php:852
+msgid "The id of qq mailme, visit `http://open.mail.qq.com` for detail"
+msgstr ""
+
+#: dash/options.php:861
+msgid "QQ Mail list ID"
+msgstr ""
+
+#: dash/options.php:862
+msgid "The id of qq mailme, visit `http://list.qq.com` for detail"
+msgstr ""
+
+#: dash/options.php:871
 msgid "Head Custom Code"
 msgstr ""
 
-#: dash/options.php:765
+#: dash/options.php:872
 msgid "Custom code loaded on page head"
 msgstr ""
 
-#: dash/options.php:774
+#: dash/options.php:881
 msgid "Foot Custom Code"
 msgstr ""
 
-#: dash/options.php:775
+#: dash/options.php:882
 msgid "Custom code loaded on page foot"
+msgstr ""
+
+#: dash/options.php:890
+msgid "Foot Beian Text"
+msgstr ""
+
+#: dash/options.php:891
+msgid "IDC reference No. for regulations of China"
 msgstr ""
 
 #: functions.php:16

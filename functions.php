@@ -112,6 +112,7 @@ load_func('func.Init');
 load_func('func.Install');
 load_func('func.Kits');
 load_func('func.Mail');
+load_func('func.Metabox');
 load_func('func.Module');
 load_func('func.Optimization');
 load_func('func.Page');
@@ -130,64 +131,56 @@ load_vm('vm.Home.Slides');
 load_vm('vm.Home.Popular');
 load_vm('vm.Home.Latest');
 load_vm('vm.Home.FeaturedCategory');
+load_vm('vm.Single.Post');
 
 /* 载入主题功能模块 */
-function tt_load() {
-	//载入小工具
-	load_template( THEME_DIR . '/modules/widgets/tin-tabs.php' );
-	load_template( THEME_DIR . '/modules/widgets/tin-posts.php' );
-	load_template( THEME_DIR . '/modules/widgets/tin-posts-h.php' );
-	load_template( THEME_DIR . '/modules/widgets/tin-tagcloud.php' );
-	load_template( THEME_DIR . '/modules/widgets/tin-enhanced-text.php' );
-	load_template( THEME_DIR . '/modules/widgets/tin-readerwall.php' );
-	load_template( THEME_DIR . '/modules/widgets/tin-mailcontact.php' );
-	load_template( THEME_DIR . '/modules/widgets/tin-site.php' );
-	load_template( THEME_DIR . '/modules/widgets/tin-float-widget.php' );
-	load_template( THEME_DIR . '/modules/widgets/tin-bookmark.php' );
-	load_template( THEME_DIR . '/modules/widgets/tin-bookmark-h.php' );
-	load_template( THEME_DIR . '/modules/widgets/tin-subscribe.php' );
-	load_template( THEME_DIR . '/modules/widgets/tin-aboutsite.php' );
-	load_template( THEME_DIR . '/modules/widgets/tin-joinus.php' );
-	load_template( THEME_DIR . '/modules/widgets/tin-hotsearch.php' );
-	load_template( THEME_DIR . '/modules/widgets/tin-creditsrank.php' );
-	load_template( THEME_DIR . '/modules/widgets/tin-ucenter.php' );
-	load_template( THEME_DIR . '/modules/widgets/tin-donate.php' );
-	load_template( THEME_DIR . '/modules/widgets/tin-slider.php' );
-
-	// 载入功能
-	load_template( THEME_DIR . '/functions/open-social.php' );
-	load_template( THEME_DIR . '/functions/message.php' );
-	load_template( THEME_DIR . '/functions/credit.php' );
-	load_template( THEME_DIR . '/functions/recent-user.php' );
-	load_template( THEME_DIR . '/functions/tracker.php' );
-	load_template( THEME_DIR . '/functions/user-page.php' );
-	load_template( THEME_DIR . '/functions/meta.php' );
-	load_template( THEME_DIR . '/functions/comment.php' );
-	load_template( THEME_DIR . '/functions/shortcode.php' );
-	load_template( THEME_DIR . '/functions/IP.php' );
-	load_template( THEME_DIR . '/functions/mail.php' );
-	load_template( THEME_DIR . '/functions/meta-box.php' );
-	load_template( THEME_DIR . '/functions/newsletter.php' );
-	load_template( THEME_DIR . '/functions/ua.php' );
-	load_template( THEME_DIR . '/functions/download.php' );
-	load_template( THEME_DIR . '/functions/no_category_base.php' );
-	load_template( THEME_DIR . '/functions/shop.php' );
-	load_template( THEME_DIR . '/functions/membership.php' );
-	load_template( THEME_DIR . '/functions/auto-save-image.php' );
-	load_template( THEME_DIR . '/functions-customize.php' );
-	if ( is_admin() ) {
-		load_template( THEME_DIR . '/functions/class-tgm-plugin-activation.php' );
-	}
-
-	// 载入语言包
-	//load_theme_textdomain( 'option-tree', THEME_DIR . '/dash/option/languages' );
-
-	// 移除自动保存和修订版本
-//	if ( ot_get_option( 'wp_auto_save' ) == 'on' ) {
-//		add_action( 'wp_print_scripts', 'tin_disable_autosave' );
-//		remove_action( 'post_updated', 'wp_save_post_revision' );
+//function tt_load() {
+//	//载入小工具
+//	load_template( THEME_DIR . '/modules/widgets/tin-tabs.php' );
+//	load_template( THEME_DIR . '/modules/widgets/tin-posts.php' );
+//	load_template( THEME_DIR . '/modules/widgets/tin-posts-h.php' );
+//	load_template( THEME_DIR . '/modules/widgets/tin-tagcloud.php' );
+//	load_template( THEME_DIR . '/modules/widgets/tin-enhanced-text.php' );
+//	load_template( THEME_DIR . '/modules/widgets/tin-readerwall.php' );
+//	load_template( THEME_DIR . '/modules/widgets/tin-mailcontact.php' );
+//	load_template( THEME_DIR . '/modules/widgets/tin-site.php' );
+//	load_template( THEME_DIR . '/modules/widgets/tin-float-widget.php' );
+//	load_template( THEME_DIR . '/modules/widgets/tin-bookmark.php' );
+//	load_template( THEME_DIR . '/modules/widgets/tin-bookmark-h.php' );
+//	load_template( THEME_DIR . '/modules/widgets/tin-subscribe.php' );
+//	load_template( THEME_DIR . '/modules/widgets/tin-aboutsite.php' );
+//	load_template( THEME_DIR . '/modules/widgets/tin-joinus.php' );
+//	load_template( THEME_DIR . '/modules/widgets/tin-hotsearch.php' );
+//	load_template( THEME_DIR . '/modules/widgets/tin-creditsrank.php' );
+//	load_template( THEME_DIR . '/modules/widgets/tin-ucenter.php' );
+//	load_template( THEME_DIR . '/modules/widgets/tin-donate.php' );
+//	load_template( THEME_DIR . '/modules/widgets/tin-slider.php' );
+//
+//	// 载入功能
+//	load_template( THEME_DIR . '/functions/open-social.php' );
+//	load_template( THEME_DIR . '/functions/message.php' );
+//	load_template( THEME_DIR . '/functions/credit.php' );
+//	load_template( THEME_DIR . '/functions/recent-user.php' );
+//	load_template( THEME_DIR . '/functions/tracker.php' );
+//	load_template( THEME_DIR . '/functions/user-page.php' );
+//	load_template( THEME_DIR . '/functions/meta.php' );
+//	load_template( THEME_DIR . '/functions/comment.php' );
+//	load_template( THEME_DIR . '/functions/shortcode.php' );
+//	load_template( THEME_DIR . '/functions/IP.php' );
+//	load_template( THEME_DIR . '/functions/mail.php' );
+//	load_template( THEME_DIR . '/functions/meta-box.php' );
+//	load_template( THEME_DIR . '/functions/newsletter.php' );
+//	load_template( THEME_DIR . '/functions/ua.php' );
+//	load_template( THEME_DIR . '/functions/download.php' );
+//	load_template( THEME_DIR . '/functions/no_category_base.php' );
+//	load_template( THEME_DIR . '/functions/shop.php' );
+//	load_template( THEME_DIR . '/functions/membership.php' );
+//	load_template( THEME_DIR . '/functions/auto-save-image.php' );
+//	load_template( THEME_DIR . '/functions-customize.php' );
+//	if ( is_admin() ) {
+//		load_template( THEME_DIR . '/functions/class-tgm-plugin-activation.php' );
 //	}
-}
+// }
 //add_action( 'after_setup_theme', 'tt_load' );
 
 

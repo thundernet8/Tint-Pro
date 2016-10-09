@@ -90,9 +90,9 @@ tt_get_header('simple');
 				<?php } ?>
 				<!-- End Open Login -->
 				<div class="text-center mt30 login-help">
-					<a href="<?php echo tt_add_redirect(tt_url_for('signup')); ?>" id="go-register" class="mr20 register-link"><?php _e('Register Now', 'tt'); ?></a>
+					<a href="<?php echo tt_add_redirect(tt_url_for('signup')); ?>" id="go-register" class="mr20 register-link" rel="link"><?php _e('Register Now', 'tt'); ?></a>
 					<span class="dot-separator" role="separator"></span>
-					<a href="<?php echo tt_url_for('findpass'); ?>" id="go-findpass" class="ml20 findpass-link"><?php _e('Forgot your password?', 'tt'); ?></a>
+					<a href="<?php echo tt_url_for('findpass'); ?>" id="go-findpass" class="ml20 findpass-link" rel="link"><?php _e('Forgot your password?', 'tt'); ?></a>
 				</div>
             </form>
         </div>

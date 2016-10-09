@@ -13,6 +13,9 @@
 /* 引入Flat元素 */
 @import "modules/flat";
 
+/* 引入动画 */
+@import "modules/animation/animation";
+
 /* Msgbox */
 @import "modules/sweetAlert/sweet-alert";
 
@@ -30,12 +33,18 @@
 /* Sidebar */
 @import "modules/aside/sidebar";
 
+/* Footer */
+@import "modules/nav/footer";
+
+/* Modal Search */
+@import "modules/search/modal-search";
+
 body  {
   &.home {
     //background: #f5f6f8;
 
     &>header {
-      border-bottom: 1px solid #e5e5e5;
+      //border-bottom: 1px solid #e5e5e5;
     }
 
     &>#content {
@@ -312,8 +321,8 @@ body  {
 
                               img {
                                   width: 100%;
-                                  height: auto;
-                                  box-shadow: 0 0 0 1px rgba(0,0,0,.02);
+                                  max-height: 100%;
+                                  //box-shadow: 0 0 0 1px rgba(0,0,0,.02);
                               }
                           }
                           &>.entry-detail {
@@ -342,6 +351,7 @@ body  {
 
                           .post-excerpt {
                               color: #777777;
+                              height: 63px;
                           }
                       }
 

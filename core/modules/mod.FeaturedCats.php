@@ -29,13 +29,14 @@
                     <article class="block-item-large mb20">
                         <div class="entry-thumb">
                             <a href="<?php echo $cat_post['permalink']; ?>"><img width="375" height="250" src="<?php echo $cat_post['thumb']; ?>" class="thumb-medium wp-post-image" alt="<?php echo $cat_post['title']; ?>"></a>
+<!--                            <span class="shadow"></span>-->
                         </div>
                         <div class="entry-detail">
                             <header class="entry-header">
                                 <h2 class="h4 entry-title"><a href="<?php echo $cat_post['permalink']; ?>" rel="bookmark"><?php echo $cat_post['title']; ?></a></h2>
                                 <div class="entry-meta entry-meta-1">
                                     <span class="author vcard"><a class="url" href="<?php echo $cat_post['author_url']; ?>"><?php echo $cat_post['author']; ?></a></span>
-                                    <span class="entry-date text-muted"><time class="entry-date published updated" datetime="<?php echo $cat_post['datetime']; ?>" title="<?php echo $cat_post['datetime']; ?>"><?php echo $cat_post['time']; ?></time></span>
+                                    <span class="entry-date text-muted"><time class="entry-date" datetime="<?php echo $cat_post['datetime']; ?>" title="<?php echo $cat_post['datetime']; ?>"><?php echo $cat_post['time']; ?></time></span>
                                     <span class="comments-link text-muted"><i class="tico tico-comments-o"></i><a href="<?php echo $cat_post['permalink'] . '#respond'; ?>"><?php echo $cat_post['comment_count']; ?></a></span>
                                 </div>
                             </header>
@@ -48,11 +49,12 @@
                     <article class="block-item mb20">
                         <div class="entry-thumb">
                             <a href="<?php echo $cat_post['permalink']; ?>"><img width="100" height="75" src="<?php echo $cat_post['thumb']; ?>" class="thumb-small wp-post-image" alt="<?php echo $cat_post['title']; ?>"></a>
+<!--                            <span class="shadow"></span>-->
                         </div>
                         <div class="entry-detail">
                             <h2 class="h5 entry-title"><a href="<?php echo $cat_post['permalink']; ?>"><?php echo $cat_post['title']; ?></a></h2>
                             <div class="block-meta">
-                                <span class="entry-date text-muted"><time class="entry-date published" datetime="<?php echo $cat_post['datetime']; ?>" title="<?php echo $cat_post['datetime']; ?>"><?php echo $cat_post['time']; ?></time></span>
+                                <span class="entry-date text-muted"><time class="entry-date" datetime="<?php echo $cat_post['datetime']; ?>" title="<?php echo $cat_post['datetime']; ?>"><?php echo $cat_post['time']; ?></time></span>
                             </div>
                         </div>
                     </article>

@@ -87,7 +87,7 @@ tt_get_header('simple');
                     <!-- End Open Login -->
                 <?php } ?>
                 <div class="note">
-                    <p class="login-note"><?php _e('Already have an account? ', 'tt'); ?><a class="login-link" id="go-login" href="<?php echo tt_add_redirect(tt_url_for('signin')); ?>"><?php _e('Sign In', 'tt'); ?></a></p>
+                    <p class="login-note"><?php _e('Already have an account? ', 'tt'); ?><a class="login-link" id="go-login" href="<?php echo tt_add_redirect(tt_url_for('signin')); ?>" rel="link"><?php _e('Sign In', 'tt'); ?></a></p>
                     <!-- Terms -->
                     <p class="terms-note"><?php echo sprintf(__('* By signing up, you agree to our <a href="%s" target="_blank">Terms of Use, Privacy Policy</a> and to receive emails, newsletters &amp; updates.', 'tt'), tt_url_for('privacy')); ?></p>
                 </div>

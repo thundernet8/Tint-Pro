@@ -55,6 +55,7 @@
     </script>
     <![endif]-->
     <link rel="stylesheet" type="text/css" href="<?php echo tt_get_css(); ?>"  />
+    <!-- 页头自定义代码 -->
     <?php if(tt_get_option('tt_head_code')) { echo tt_get_option('tt_head_code'); } ?>
     <?php wp_head(); ?>
 </head>
@@ -71,7 +72,7 @@
             <!-- End Top Menu -->
             <!-- Header Right Tools -->
             <ul class="header-tool-menu nav-col pull-right">
-                <li class="nav-search"><a href="javascript:void(0)"><span class="tico tico-search"></span></a></li>
+                <li class="nav-search"><a href="javascript:void(0)" data-toggle="modal" data-target="#globalSearch" data-backdrop="1"><span class="tico tico-search"></span></a></li>
                 <?php $user = wp_get_current_user(); ?>
                 <?php if($user && $user->ID) { ?>
                     <li class="nav-user dropdown">

@@ -32,8 +32,9 @@ header {
     width: 100%;
     height: 90px;
     z-index: 999;
-    box-shadow: rgba(0, 0, 0, 0.0980392) 0 1px 1px;
-    //background: #FFFFFF;
+    //box-shadow: rgba(0, 0, 0, 0.0980392) 0 1px 1px;
+    background: @nav-bg; //#FFFFFF;
+      border: 0 !important;
 
     nav {
       &>.nav-col {
@@ -91,6 +92,7 @@ header {
                 -webkit-transition: all 0.3s cubic-bezier(0.31, 0.57, 0.68, 1.36);
                 transition: all 0.3s cubic-bezier(0.31, 0.57, 0.68, 1.36);
                 padding: 10px 14px;
+                background: @nav-bg;
               }
             }
 
@@ -100,7 +102,8 @@ header {
 
                 &>a {
                   white-space: nowrap;
-                  line-height: 1.8;
+                  line-height: 2;
+                    padding: 0 10px;
                 }
               }
             }
@@ -130,26 +133,26 @@ header {
             margin-left: -68px;
             top: 90px;
             background: #FFFFFF;
-            border: 1px solid #dddddd;
+            //border: 1px solid #dddddd;
             padding: 20px;
             box-shadow: rgba(0, 0, 0, 0.1) 0 2px 3px;
 
-            &:before {
-              width: 10px;
-              height: 10px;
-              -webkit-transform: rotate(-45deg);
-              -ms-transform: rotate(-45deg);
-              transform: rotate(-45deg);
-              background: #FFFFFF;
-              border-style: solid;
-              border-color: #dddddd;
-              border-width: 1px 1px 0 0;
-              position: absolute;
-              top: -6px;
-              left: 50%;
-              margin-left: -5px;
-              content: ' ';
-            }
+            //&:before {
+            //  width: 10px;
+            //  height: 10px;
+            //  -webkit-transform: rotate(-45deg);
+            //  -ms-transform: rotate(-45deg);
+            //  transform: rotate(-45deg);
+            //  background: @nav-bg;//#FFFFFF;
+            //  //border-style: solid;
+            //  //border-color: #dddddd;
+            //  //border-width: 1px 1px 0 0;
+            //  position: absolute;
+            //  top: -6px;
+            //  left: 50%;
+            //  margin-left: -5px;
+            //  content: ' ';
+            //}
           }
         }
 
@@ -165,6 +168,7 @@ header {
       }
 
       &>ul.header-tool-menu {
+        &>.nav-search {}
         &>.nav-user {
           &>a {
             &>.avatar {
@@ -180,7 +184,7 @@ header {
         .dropdown-menu {
           min-width: 180px;
           margin-top: 5px;
-          background: #ffffff;
+          //background: #ffffff;
           &>li {
             display: block;
             &>a {

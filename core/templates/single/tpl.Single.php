@@ -12,10 +12,13 @@
  * @license GPL v3 LICENSE
  */
 ?>
-<?php
-
-echo 'single-template';
-
-echo '<br>';
-
-tt_clear_all_cache();
+<?php tt_get_header(); ?>
+<div id="content" class="wrapper container right-aside">
+    <section id="mod-insideContent" class="main-wrap content-section clearfix">
+        <!-- 文章 -->
+        <?php load_mod('mod.SinglePost'); ?>
+        <!-- 边栏 -->
+        <?php load_mod('mod.Sidebar'); ?>
+    </section>
+</div>
+<?php tt_get_footer(); ?>

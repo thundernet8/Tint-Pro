@@ -365,6 +365,76 @@ function optionsframework_options() {
 	);
 
 
+    // - 站点服务QQ
+    $options[] = array(
+        'name' => __( 'Site QQ', 'tt' ),
+        'desc' => __( 'The QQ which is dedicated for the site', 'tt' ),
+        'id' => 'tt_site_qq',
+        'std' => '1990318877',
+        'type' => 'text'
+    );
+
+
+    // - 站点服务QQ群
+    $options[] = array(
+        'name' => __( 'Site QQ Group ID', 'tt' ),
+        'desc' => __( 'The ID key of QQ group which is dedicated for the site, visit `http://shang.qq.com` for detail', 'tt' ),
+        'id' => 'tt_site_qq_group',
+        'std' => 'c3d3931c2af9e1d8d16dbc9088dbfc2298df2b9e78bd0f4db09f0f4dea6052a1',
+        'type' => 'text'
+    );
+
+
+    // - 站点服务微博
+    $options[] = array(
+        'name' => __( 'Site Weibo', 'tt' ),
+        'desc' => __( 'The name of Weibo account which is dedicated for the site', 'tt' ),
+        'id' => 'tt_site_weibo',
+        'std' => 'touchumind',
+        'type' => 'text'
+    );
+
+
+    // - 站点服务Facebook
+    $options[] = array(
+        'name' => __( 'Site Facebook', 'tt' ),
+        'desc' => __( 'The name of Facebook account which is dedicated for the site', 'tt' ),
+        'id' => 'tt_site_facebook',
+        'std' => 'xueqian.wu',
+        'type' => 'text'
+    );
+
+
+    // - 站点服务Twitter
+    $options[] = array(
+        'name' => __( 'Site Twitter', 'tt' ),
+        'desc' => __( 'The name of Twitter account which is dedicated for the site', 'tt' ),
+        'id' => 'tt_site_twitter',
+        'std' => 'thundernet8',
+        'type' => 'text'
+    );
+
+
+    // - 站点服务微信
+    $options[] = array(
+        'name' => __( 'Site Weixin', 'tt' ),
+        'desc' => __( 'The qrcode image of Weixin account which is dedicated for the site', 'tt' ),
+        'id' => 'tt_site_weixin_qr',
+        'std' => THEME_ASSET . '/img/qr/weixin.png',
+        'type' => 'upload'
+    );
+
+
+    // - 站点服务支付宝
+    $options[] = array(
+        'name' => __( 'Site Alipay', 'tt' ),
+        'desc' => __( 'The qrcode image of Alipay account which is dedicated for the site', 'tt' ),
+        'id' => 'tt_site_alipay_qr',
+        'std' => THEME_ASSET . '/img/qr/alipay.png',
+        'type' => 'upload'
+    );
+
+
     // - 开启QQ登录
     $options[] = array(
         'name' => __( 'QQ Login', 'tt' ),
@@ -498,7 +568,24 @@ function optionsframework_options() {
 	);
 
 
-	//
+    // - 站点微信收款二维码
+    $options[] = array(
+        'name' => __( 'Site Weixin Pay QR', 'tt' ),
+        'desc' => __( 'The Weixin pay qrcode image for collection money', 'tt' ),
+        'id' => 'tt_weixin_pay_qr',
+        'std' => THEME_ASSET . '/img/qr/weixin_pay.png',
+        'type' => 'upload'
+    );
+
+
+    // - 站点支付宝收款二维码
+    $options[] = array(
+        'name' => __( 'Site Alipay Pay QR', 'tt' ),
+        'desc' => __( 'The Alipay pay qrcode image for collection money', 'tt' ),
+        'id' => 'tt_alipay_pay_qr',
+        'std' => THEME_ASSET . '/img/qr/alipay_pay.png',
+        'type' => 'upload'
+    );
 
 
 	// 主题设置 - 辅助设置(包含短链接、SMTP工具等)
@@ -759,6 +846,26 @@ function optionsframework_options() {
     );
 
 
+    // - QQ邮我链接ID
+    $options[] = array(
+        'name' => __( 'QQ Mailme ID', 'tt' ),
+        'desc' => __( 'The id of qq mailme, visit `http://open.mail.qq.com` for detail', 'tt' ),
+        'id' => 'tt_mailme_id',
+        'std' => '',
+        'type' => 'text'
+    );
+
+
+    // - QQ邮件列表ID
+    $options[] = array(
+        'name' => __( 'QQ Mail list ID', 'tt' ),
+        'desc' => __( 'The id of qq mailme, visit `http://list.qq.com` for detail', 'tt' ),
+        'id' => 'tt_maillist_id',
+        'std' => '',
+        'type' => 'text'
+    );
+
+
     // - Head自定义代码
     $options[] = array(
         'name' => __( 'Head Custom Code', 'tt' ),
@@ -777,6 +884,16 @@ function optionsframework_options() {
         'std' => '',
         'type' => 'textarea'
     );
+
+    // - Foot IDC备案文字
+    $options[] = array(
+        'name' => __( 'Foot Beian Text', 'tt' ),
+        'desc' => __( 'IDC reference No. for regulations of China', 'tt' ),
+        'id' => 'tt_beian',
+        'std' => '',
+        'type' => 'text'
+    );
+
 
 
 

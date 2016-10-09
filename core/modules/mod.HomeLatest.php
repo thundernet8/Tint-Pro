@@ -26,8 +26,8 @@
                 <?php foreach ($latest_posts as $latest_post) { ?>
                 <article id="<?php echo 'post-' . $latest_post['ID']; ?>" class="post type-post status-publish <?php echo 'format-' . $latest_post['format']; ?>">
                     <div class="entry-thumb">
-                        <span class="shadow"></span>
                         <a href="<?php echo $latest_post['permalink']; ?>"><img width="250" height="170" src="<?php echo $latest_post['thumb']; ?>" class="thumb-medium wp-post-image" alt="<?php echo $latest_post['title']; ?>"></a>
+<!--                        <span class="shadow"></span>-->
                         <!--a class="entry-category" href="">XXX</a-->
                         <?php echo $latest_post['category']; ?>
                     </div>
@@ -65,6 +65,11 @@
                         echo '<li class="page-item">' . $page_item . '</li>';
                     } ?>
                 </ul>
+                <div class="page-nums">
+                    Page&nbsp;<span class="current-page"><?php echo $pagination_args['current_page']; ?></span>
+                    <span class="separator">/</span>
+                    <span class="max-page"><?php echo $pagination_args['max_num_pages']; ?></span>
+                </div>
             </nav>
             <?php } ?>
             <?php } ?>

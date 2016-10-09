@@ -15,15 +15,15 @@
 <!-- Footer -->
 <footer class="footer simple-footer">
     <div class="foot-menu pull-left">
-        <a href="<?php echo home_url(); ?>" title="" target="_blank"><?php _e('HOME', 'tt'); ?></a>
+        <a href="<?php echo home_url(); ?>" title="" rel="link" target="_blank"><?php _e('HOME', 'tt'); ?></a>
         <span class="sep" role="separator"></span>
-        <a href="<?php echo tt_url_for('privacy'); ?>" title="" target="_blank"><?php _e('TERMS AND POLICIES', 'tt'); ?></a>
+        <a href="<?php echo tt_url_for('privacy'); ?>" title="" rel="link" target="_blank"><?php _e('TERMS AND POLICIES', 'tt'); ?></a>
         <span class="sep" role="separator"></span>
-        <a href="<?php echo home_url('/about'); ?>" title="" target="_blank"><?php _e('ABOUT', 'tt'); ?></a>
+        <a href="<?php echo home_url('/about'); ?>" title="" rel="link" target="_blank"><?php _e('ABOUT', 'tt'); ?></a>
         <span class="sep" role="separator"></span>
-        <a href="javascript:void(0)" title="" target="_blank"><?php _e('CONTACT', 'tt'); ?></a> <!-- TODO: 联系方式如二维码 -->
+        <a href="javascript:void(0)" title="" rel="link" target="_blank"><?php _e('CONTACT', 'tt'); ?></a> <!-- TODO: 联系方式如二维码 -->
     </div>
-    <div class="foot-copyright pull-right">&copy;&nbsp;<?php the_date('Y'); ?><?php echo ' ' . get_bloginfo('name') . ' All Right Reserved · Design by <a href="https://www.webapproach.net" title="WebApproach">WebApproach.</a>'; ?>
+    <div class="foot-copyright pull-right">&copy;&nbsp;<?php the_date('Y'); ?><?php echo ' ' . get_bloginfo('name') . ' All Right Reserved · Design by <a href="https://www.webapproach.net" rel="link" title="WebApproach">WebApproach.</a>'; ?>
     </div>
 </footer>
 <?php if(tt_get_option('tt_foot_code')) { echo tt_get_option('tt_foot_code'); } ?>
