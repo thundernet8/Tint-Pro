@@ -74,7 +74,7 @@ gulp.task('imagemin', function () {
     gulp.src('./assets/img')
         .pipe(clean());
     setTimeout(function () {
-        gulp.src('./src/img/**/*.{png,jpg,gif,ico}')
+        gulp.src('./src/img/**/*.{png,jpg,ico}')
             .pipe(cache(
                 imagemin({
                     optimizationLevel: 5, // 类型：Number  默认：3  取值范围：0-7（优化等级）

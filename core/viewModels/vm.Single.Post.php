@@ -56,6 +56,7 @@ class SinglePostVM extends BaseVM {
         $info['title'] = get_the_title($the_post);
         $info['permalink'] = get_permalink($the_post);
         $info['comment_count'] = $the_post->comment_count;
+        $info['comment_status'] = !($the_post->comment_status != 'open');
         $info['excerpt'] = get_the_excerpt($the_post);
         $content = get_the_content();
         $content = str_replace( ']]>', ']]&gt;', apply_filters( 'the_content', $content ) );
@@ -146,6 +147,9 @@ class SinglePostVM extends BaseVM {
 
         wp_reset_postdata();
 
+        // 当前用户
+        $uid = get_current_user_id();
+
         return (object)array_merge(
             $info,
             array(
@@ -158,7 +162,8 @@ class SinglePostVM extends BaseVM {
                 'likes'        => $stars,
                 'prev'         => $prev,
                 'next'         => $next,
-                'relates'      => $related_posts
+                'relates'      => $related_posts,
+                'uid'          => $uid
             )
         );
     }

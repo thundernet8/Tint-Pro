@@ -242,6 +242,16 @@ function optionsframework_options() {
         'type' => $theme_pro ? 'checkbox' : 'disabled'
     );
 
+    // - 文章评论数
+    $options[] = array(
+        'name' => __( 'Post Comments Count', 'tt' ),
+        'desc' => __( 'The num of comments per page for a post to display, leave empty or set 0 to show all comments', 'tt' ),
+        'id' => 'tt_comments_per_page',
+        'std' => 20,
+        'class' => 'mini',
+        'type' => 'text'
+    );
+
 
 	// 主题设置 - 边栏设置
 	$options[] = array(

@@ -24,6 +24,7 @@
         &>.weixin-qr {
             position: absolute;
             display: none;
+            visibility: hidden;
             left: -55px;
             top: 40px;
             //width: 260px;
@@ -43,7 +44,7 @@
         }
         &:hover {
             &>.weixin-qr {
-
+                visibility: visible;
             }
         }
     }
@@ -52,5 +53,17 @@
     }
     &>.share-douban {
         background-position: 0 -196px !important;
+    }
+    &>.share-facebook {
+        background-position: 0 -226px !important;
+    }
+    &>.share-twitter {
+        background-position: 0 -257px !important;
+    }
+    &>.share-googleplus {
+        background-position: 0 -288px !important;
+    }
+    &>.share-email {
+        background-position: 0 -382px !important;
     }
 }

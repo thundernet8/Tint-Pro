@@ -1,0 +1,183 @@
+#respond {
+    &>h3 {
+
+    }
+    .submit-box {
+        position: relative;
+        &>.text{
+            padding-right: 108px;
+            height: 100px;
+            &>textarea {
+                width: 100%;
+                height: 100%;
+                color: #adadad;
+                font-size: 1.4rem;
+                border: 1px solid #e8e8e8;
+                padding: 15px;
+                background: #f9f9f9;
+            }
+        }
+        &>#submit {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 108px;
+            height: 100px;
+            border-radius: 0;
+            font-size: 1.6rem;
+            color: #ffffff;
+        }
+        &>.comment-kits {
+            padding-top: 10px;
+        }
+        .emotion-ico {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 0;
+            cursor: pointer;
+            i {
+                font-size: 2rem;
+            }
+            &:hover {
+                color: @brand-hot;
+            }
+        }
+        .qqFace {
+            background: #ffffff;
+            padding: 2px;
+            border: 1px solid #dfe6f6;
+            &>table {
+                td {
+                    padding: 0;
+                    img {
+                        cursor: pointer;
+                        border: 1px solid #ffffff;
+                    }
+                }
+            }
+        }
+    }
+    &>#comments-wrap {
+
+    }
+    .comments-list {
+        li {
+            &.depth-1 {
+                padding: 20px 0 8px;
+                border-bottom: dashed 1px #ECECEC;
+            }
+            .comment-left {
+                width: 40px;
+                .avatar {
+                    border-radius: 50%;
+                }
+            }
+            .comment-body {
+                position: relative;
+                padding-left: 55px;
+                .comment-content {
+                    color: #666666;
+                    font-size: 1.4rem;
+                    padding-bottom: 10px;
+                    word-break: break-all;
+                    word-wrap: break-word;
+                    overflow: auto;
+                }
+                .comment-time {
+                    position: absolute;
+                    top: 5px;
+                    right: 20px;
+                    font-size: 1.2rem;
+                    color: #cccccc;
+                    height: 16px;
+                    line-height: 16px;
+                }
+                .comment-meta {
+                    font-size: 1.2rem;
+                    color: #cccccc;
+                    height: 16px;
+                    line-height: 16px;
+                    margin: 0 0 10px;
+                    .respond-coin {
+                        i.msg {
+                            display: inline-block;
+                            width: 17px;
+                            height: 16px;
+                            vertical-align: middle;
+                            background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAOCAYAAAAmL5yKAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NTc3MiwgMjAxNC8wMS8xMy0xOTo0NDowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjZFMEQyMUZDNTQ3QjExRTVCQTUxRTVBQkZFMDJCRjc4IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjZFMEQyMUZENTQ3QjExRTVCQTUxRTVBQkZFMDJCRjc4Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NkUwRDIxRkE1NDdCMTFFNUJBNTFFNUFCRkUwMkJGNzgiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NkUwRDIxRkI1NDdCMTFFNUJBNTFFNUFCRkUwMkJGNzgiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Xpt45AAAAj0lEQVR42mLcs2fP4Tdv3tgwkAFERESOMJGrGQRAepkYKAQsyJzw8HCiNK1cuRK7AcgSxAKKvTAaBkADQKmJXM1AvUcZ////jyHx5csX5V27dp39/fs3P4jPysr60c3NzYSHh+cOUV4AKrxrZWUVysjI+BeEgewwbJpBAKsLYODOnTuZIDUqKirTcKkBCDAAmDE1Ep0YViMAAAAASUVORK5CYII=") no-repeat;
+                        }
+                        em {
+                            color: #a0a0a0;
+                            font-size: 1.4rem;
+                            position: relative;
+                            margin-left: 8px;
+                        }
+                    }
+                    .like {
+                        i.zan {
+                            position: relative;
+                            display: inline-block;
+                            top: -2px;
+                            width: 15px;
+                            height: 14px;
+                            margin-left: 15px;
+                            margin-right: 8px;
+                            cursor: pointer;
+                            vertical-align: middle;
+                            background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAcCAYAAAC+lOV/AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NTc3MiwgMjAxNC8wMS8xMy0xOTo0NDowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NENFQjk4MUQ1NDg1MTFFNTk1NjlCNjVCMTQ0MzY2QTQiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NENFQjk4MUM1NDg1MTFFNTk1NjlCNjVCMTQ0MzY2QTQiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKFdpbmRvd3MpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NUQ0Nzk2ODM1NDdCMTFFNUIzMzRENzA0RTAxM0U5MjYiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NUQ0Nzk2ODQ1NDdCMTFFNUIzMzRENzA0RTAxM0U5MjYiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6D6x4ZAAABpklEQVR42pyTMWvCQBTH4yXBhAgSF8FJBMUt0EH8GA4Wwc1F7Reom5uDdBV0dRH8AH4EUVDpII6hg6igDmKERqOm70pTwpk06f3hN9zj/d/du7sXME2TcRLE0Wg06uu6HhVFcZ3JZEosy37aczjGRavVKrdcLvPWOp1ON2VZfrfnIJdd2cViUbfHbrebSOY5mrHxcDgo9pgkSR9k3sOxp9NpR1XVsj0WDAb30PfmwYz7ms/nDU3TUoVCIQDGCpnE8/wR4tXL5RI2DEO+Xq9SPB7vcuPxuHe/33nmD51OpwScqE0WRF5GNwmCsEYMpfCzUZk5jtMikciEyhyLxQYIIYPKnEwmW98nwBWsS9vVnhnmKe/V68x8exnu8A/LZrPFUCik+tkRNjorilKz1oHtq+tOuKU+EAXWQAnwN1WgHGCv3AS8pwrEAnUi5m+qfowKEfOeKlAHKBOxPbBxMuO+GkAKXyBQcSh4BKpAGL8WHm+gi809PCQer5QA2mRB5MPoJvqpws9Ga9aACa15ABi05pb1SYx/GmfA0DIXAdWn8Qz8TtWXAAMAlruMhNEiowwAAAAASUVORK5CYII=") no-repeat;
+                        }
+                        &.active {
+                            i.zan {
+
+                            }
+                        }
+                        .like-count {
+                            position: relative;
+                            font-size: 1.4rem;
+                        }
+                    }
+                }
+                .respond-submit {
+                    display: none;
+                    .text {
+                        position: relative;
+                        input {
+                            border-radius: 2px;
+                            padding-left: 10px;
+                            padding-right: 10px;
+                            width: 100%;
+                            height: 37px;
+                            font-size: 1.4rem;
+                            line-height: 14px;
+                            color: #5A5A5A;
+                            border: solid 1px #EEEEEE;
+                            background: #F7F7F7;
+                        }
+                        .tip {
+                            position: absolute;
+                            top: 8px;
+                            left: 10px;
+                            color: #999999;
+                            a {
+                                padding: 0 5px;
+                                color: @brand-primary;
+                            }
+                        }
+                    }
+                    .submit-box {
+                        padding-top: 10px;
+                        button {
+                            width: 85px;
+                            height: 34px;
+                            border-radius: 0;
+                            font-size: 1.4rem;
+                            line-height: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

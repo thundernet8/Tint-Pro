@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-10-09 00:42+0800\n"
-"PO-Revision-Date: 2016-10-09 00:42+0800\n"
+"POT-Creation-Date: 2016-10-09 14:11+0800\n"
+"PO-Revision-Date: 2016-10-09 14:27+0800\n"
 "Last-Translator: Zhiyan <mail@webapproach.net>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -818,29 +818,37 @@ msgstr "分享至微信"
 msgid "Share to Douban"
 msgstr "分享至豆瓣"
 
-#: core/modules/mod.SinglePost.php:59
+#: core/modules/mod.SinglePost.php:63
 msgid "Star It"
 msgstr "赞一下"
 
-#: core/modules/mod.SinglePost.php:65
+#: core/modules/mod.SinglePost.php:69
 msgid "persons"
 msgstr "个人"
 
-#: core/modules/mod.SinglePost.php:65
+#: core/modules/mod.SinglePost.php:69
 msgid "Stared"
 msgstr "点赞"
 
-#: core/modules/mod.SinglePost.php:75
+#: core/modules/mod.SinglePost.php:77
 msgid "Previous article"
 msgstr "上一篇"
 
-#: core/modules/mod.SinglePost.php:79
+#: core/modules/mod.SinglePost.php:81
 msgid "Next article"
 msgstr "下一篇"
 
-#: core/modules/mod.SinglePost.php:86
+#: core/modules/mod.SinglePost.php:88
 msgid "Related Articles"
 msgstr "相关文章"
+
+#: core/modules/mod.SinglePost.php:109
+msgid "LEAVE A REPLY"
+msgstr "参与评论"
+
+#: core/modules/mod.SinglePost.php:113
+msgid "COMMENTS CLOSED"
+msgstr "评论已关闭"
 
 #: core/templates/actions/tpl.M.Activate.php:21
 msgid "Can not activate your registration, the link your visit is incorrect."
@@ -1039,7 +1047,7 @@ msgstr "发生了错误！"
 msgid "An error has happened on this page."
 msgstr "页面发生了一个错误."
 
-#: core/viewModels/vm.Single.Post.php:79
+#: core/viewModels/vm.Single.Post.php:80
 #, php-format
 msgid ""
 "All the posts are created by <a href=\"%1$s\" title=\"%2$s\" target=\"_blank"
@@ -1049,7 +1057,7 @@ msgstr ""
 "除特别注明外，本站所有文章均为<a href=\"%1$s\" title=\"%2$s\" target=\"_blank"
 "\">%2$s</a>原创，转载请注明出处来自<a href=\"%3$s\" title=\"%4$s\">%3$s</a>"
 
-#: core/viewModels/vm.Single.Post.php:80
+#: core/viewModels/vm.Single.Post.php:81
 #, php-format
 msgid ""
 "The post is from: <a href=\"%1$s\" title=\"%2$s\" target=\"_blank\">%2$s</a>"

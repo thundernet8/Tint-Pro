@@ -154,8 +154,14 @@ final class Avatar{
             $this->_user = $id_or_email;
         } elseif (is_email(strval($id_or_email))){
             $this->_user = get_user_by('email', $id_or_email);
-        } else {
+        } elseif(intval($id_or_email) > 0) {
             $this->_user = get_user_by('id', $id_or_email);
+        }else{
+            $this->_user = (object)array(
+                'ID' => 0,
+                'display_name' => strval($id_or_email),
+                'user_email' => ''
+            );
         }
         $this->_size = self::strSize($size);
         //为每个用户头像赋予一个专用缓存key
@@ -249,7 +255,8 @@ final class Avatar{
      * @return  string
      */
     private function getUserAvatarType(){
-        $type = get_user_meta($this->_user->ID,'tt_avatar_type',true);
+        if($this->_user->ID == 0 && $this->_user->user_email == '') return 'letter';
+        $type = get_user_meta($this->_user->ID, 'tt_avatar_type', true);
         $type = in_array($type, self::$_avatarTypes) ? $type : 'gravatar';
         if($type=='gravatar'){
             return tt_get_option('tt_enable_gravatar') ? $type : 'letter';

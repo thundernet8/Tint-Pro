@@ -17,17 +17,17 @@
 // 静态文件名常量，便于自动替换带特征值的文件名
 
 // CSS
-defined('CSS_HOME') || define('CSS_HOME', 'home-6bf841f029.css');
-defined('CSS_FRONT_PAGE') || define('CSS_FRONT_PAGE', 'front-page-077b1204bb.css');
-defined('CSS_SINGLE') || define('CSS_SINGLE', 'single-7c267a562c.css');
-defined('CSS_ARCHIVE') || define('CSS_ARCHIVE', 'archive-077b1204bb.css');
-defined('CSS_PRODUCT') || define('CSS_PRODUCT', 'product-077b1204bb.css');
-defined('CSS_PRODUCT_ARCHIVE') || define('CSS_PRODUCT_ARCHIVE', 'products-077b1204bb.css');
-defined('CSS_UC') || define('CSS_UC', 'uc-077b1204bb.css');
-defined('CSS_ME') || define('CSS_ME', 'me-077b1204bb.css');
-defined('CSS_ACTION') || define('CSS_ACTION', 'actions-52efe98d87.css');
-defined('CSS_404') || define('CSS_404', '404-74284bd0d3.css');
-defined('CSS_ERROR_PAGE') || define('CSS_ERROR_PAGE', 'error-page-4cad56ea23.css');
+defined('CSS_HOME') || define('CSS_HOME', 'home-5b066ae06b.css');
+defined('CSS_FRONT_PAGE') || define('CSS_FRONT_PAGE', 'front-page-0a882b2a58.css');
+defined('CSS_SINGLE') || define('CSS_SINGLE', 'single-bbe835b2ba.css');
+defined('CSS_ARCHIVE') || define('CSS_ARCHIVE', 'archive-0a882b2a58.css');
+defined('CSS_PRODUCT') || define('CSS_PRODUCT', 'product-0a882b2a58.css');
+defined('CSS_PRODUCT_ARCHIVE') || define('CSS_PRODUCT_ARCHIVE', 'products-0a882b2a58.css');
+defined('CSS_UC') || define('CSS_UC', 'uc-0a882b2a58.css');
+defined('CSS_ME') || define('CSS_ME', 'me-0a882b2a58.css');
+defined('CSS_ACTION') || define('CSS_ACTION', 'actions-c4cd474a98.css');
+defined('CSS_404') || define('CSS_404', '404-a5ec248d1c.css');
+defined('CSS_ERROR_PAGE') || define('CSS_ERROR_PAGE', 'error-page-ff5e386575.css');
 
 // JS
 defined('JS_COMMON') || define('JS_COMMON', 'common-ae6b8b7ccd.js');
