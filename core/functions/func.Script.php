@@ -38,14 +38,15 @@ function tt_register_scripts() {
     wp_register_script( 'tt_404_page', THEME_ASSET . '/js/' . JS_404, array(), null, true );
 
     $data = array(
-        'uid'           => get_current_user_id(),
-        'language'      => get_option('WPLANG', 'zh_CN'),
-        'apiRoot'       => esc_url_raw( get_rest_url() ),
-        'nonce'         => wp_create_nonce( 'wp_rest' ),
-        'home'          => esc_url_raw( home_url() ),
-        'themeRoot'     => THEME_URI,
-        'isHome'        => is_home(),
-        'isSingle'      => is_single()
+        'uid'               => get_current_user_id(),
+        'language'          => get_option('WPLANG', 'zh_CN'),
+        'apiRoot'           => esc_url_raw( get_rest_url() ),
+        'nonce'             => wp_create_nonce( 'wp_rest' ),
+        'home'              => esc_url_raw( home_url() ),
+        'themeRoot'         => THEME_URI,
+        'isHome'            => is_home(),
+        'isSingle'          => is_single(),
+        'commentsPerPage'   => tt_get_option('tt_comments_per_page', 20)
     );
     wp_localize_script( 'tt_common', 'TT', $data );
     wp_enqueue_script( 'tt_jquery' );

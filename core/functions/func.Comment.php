@@ -14,7 +14,7 @@
 ?>
 <?php
 /**
- * 评论/更新/删除文章时添加评论时间字段
+ * 评论添加评论时间字段
  *
  * @since   2.0.0
  * @param   $comment_ID
@@ -29,7 +29,7 @@ function tt_update_post_latest_reviewed_meta($comment_ID, $comment_approved, $co
     $post_id = (int)$commentdata['comment_post_ID'];
     update_post_meta($post_id,'tt_latest_reviewed',time());
 }
-add_action('comment_post','tt_update_post_latest_reviewed_meta');
+add_action('comment_post','tt_update_post_latest_reviewed_meta', 10, 3);
 
 
 /**
@@ -43,7 +43,7 @@ add_action('comment_post','tt_update_post_latest_reviewed_meta');
 function tt_comment($comment, $args, $depth) {
     $GLOBALS['comment'] = $comment;
     ?>
-<li <?php comment_class(); ?> id="comment-<?php comment_ID() ?>" data-current-comment-id="<?php echo $comment->comment_ID; ?>" data-parent-comment-id="<?php echo $comment->comment_parent; ?>" data-member-id="<?php echo $comment->user_id; ?>">
+<li <?php comment_class(); ?> id="comment-<?php echo $comment->comment_ID;//comment_ID() ?>" data-current-comment-id="<?php echo $comment->comment_ID; ?>" data-parent-comment-id="<?php echo $comment->comment_parent; ?>" data-member-id="<?php echo $comment->user_id; ?>">
 
     <div class="comment-left pull-left">
         <?php if($comment->user_id > 0) { ?>
@@ -73,7 +73,7 @@ function tt_comment($comment, $args, $depth) {
                 <br />
             <?php endif; ?>
             <?php if ( $comment->comment_approved == '1' ) : ?>
-                <?php comment_text() ?>
+                <?php echo get_comment_text($comment->comment_ID) ?>
             <?php endif; ?>
         </div>
 
@@ -83,15 +83,15 @@ function tt_comment($comment, $args, $depth) {
             <span class="like"><i class="zan"></i><em class="like-count">(<?php echo (int)get_comment_meta($comment->comment_ID,'tt_comment_likes',true); ?>)</em></span>
         </div>
 
-        <ul class="csl-respond">
-        </ul>
+<!--        <ul class="csl-respond">-->
+<!--        </ul>-->
 
         <div class="respond-submit">
-            <div class="text"><input type="text"><div class="tip"><?php _e('Reply', 'tt'); ?><a><?php echo $comment->comment_author; ?></a>：</div></div>
+            <div class="text"><input id="<?php echo 'comment-replytext' . $comment->comment_ID; ?>" type="text"><div class="tip"><?php _e('Reply', 'tt'); ?><a><?php echo $comment->comment_author; ?></a>：</div></div>
             <div class="submit-box clearfix">
                 <span class="emotion-ico transition" data-emotion="0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="tico tico-smile-o"></i><?php _e('Emotion', 'tt'); ?></span>
-                <button class="btn btn-danger pull-right" id="reply-submit" type="submit" title="<?php _e('Submit', 'tt'); ?>"><?php _e('Submit', 'tt'); ?></button>
-                <div class="qqFace  dropdown-menu">
+                <button class="btn btn-danger pull-right" id="reply-submit" type="submit" title="<?php _e('Reply', 'tt'); ?>"><?php _e('Reply', 'tt'); ?></button>
+                <div class="qqFace  dropdown-menu" data-inputbox-id="<?php echo 'comment-replytext' . $comment->comment_ID; ?>">
                 </div>
             </div>
         </div>
@@ -102,3 +102,20 @@ function tt_comment($comment, $args, $depth) {
 function tt_end_comment() {
     echo '</li>';
 }
+
+
+/**
+ * 输出评论时转换表情代码为图片
+ *
+ * @since 2.0.0
+ * @param string $comment_text
+ * @param WP_Comment $comment
+ * @return string
+ */
+function tt_convert_comment_emotions ($comment_text, $comment) {
+    $emotion_basepath = THEME_ASSET . '/img/qqFace/';
+    $new_comment_text = preg_replace('/\[em_([0-9]+)\]/i', '<img class="em" src="' . $emotion_basepath . "$1" . '.gif">', $comment_text);
+    return wpautop($new_comment_text);
+}
+add_filter( 'comment_text', 'tt_convert_comment_emotions', 10, 2);
+add_filter( 'get_comment_text', 'tt_convert_comment_emotions', 10, 2);

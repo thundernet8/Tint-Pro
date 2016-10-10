@@ -64,13 +64,47 @@
     }
     .comments-list {
         li {
+            position: relative;
+            padding: 10px 0;
             &.depth-1 {
                 padding: 20px 0 8px;
                 border-bottom: dashed 1px #ECECEC;
             }
+            &.depth-2 {
+                margin-left: 30px; //TODO 加箭头
+            }
+            &.depth-3 {
+                margin-left: 60px;
+            }
+            &.depth-2,
+            &.depth-3 {
+                &:before {
+                    content: ' ';
+                    position: absolute;
+                    top: 15px;
+                    left: -20px;
+                    width: 20px;
+                    height: 20px;
+                    visibility: visible;
+                    opacity: 0;
+                    background: url("data:image/png;base64,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") no-repeat;
+                    background-size: 100%;
+                    -webkit-transition: all .3s ease;
+                    -moz-transition: all .3s ease;
+                    -ms-transition: all .3s ease;
+                    -o-transition: all .3s ease;
+                    transition: all .3s ease;
+                }
+                &:hover {
+                    &:before {
+                        opacity: 1;
+                    }
+                }
+            }
             .comment-left {
                 width: 40px;
                 .avatar {
+                    margin-top: 4px;
                     border-radius: 50%;
                 }
             }
@@ -84,6 +118,9 @@
                     word-break: break-all;
                     word-wrap: break-word;
                     overflow: auto;
+                    img.em {
+                        vertical-align: -5px;
+                    }
                 }
                 .comment-time {
                     position: absolute;

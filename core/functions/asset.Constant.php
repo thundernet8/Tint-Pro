@@ -19,7 +19,7 @@
 // CSS
 defined('CSS_HOME') || define('CSS_HOME', 'home-5b066ae06b.css');
 defined('CSS_FRONT_PAGE') || define('CSS_FRONT_PAGE', 'front-page-0a882b2a58.css');
-defined('CSS_SINGLE') || define('CSS_SINGLE', 'single-bbe835b2ba.css');
+defined('CSS_SINGLE') || define('CSS_SINGLE', 'single-3536db469b.css');
 defined('CSS_ARCHIVE') || define('CSS_ARCHIVE', 'archive-0a882b2a58.css');
 defined('CSS_PRODUCT') || define('CSS_PRODUCT', 'product-0a882b2a58.css');
 defined('CSS_PRODUCT_ARCHIVE') || define('CSS_PRODUCT_ARCHIVE', 'products-0a882b2a58.css');
@@ -30,14 +30,14 @@ defined('CSS_404') || define('CSS_404', '404-a5ec248d1c.css');
 defined('CSS_ERROR_PAGE') || define('CSS_ERROR_PAGE', 'error-page-ff5e386575.css');
 
 // JS
-defined('JS_COMMON') || define('JS_COMMON', 'common-ae6b8b7ccd.js');
-defined('JS_HOME') || define('JS_HOME', 'home-9f91eb3835.js');
-defined('JS_FRONT_PAGE') || define('JS_FRONT_PAGE', 'frontPage-0a6c063ec3.js');
-defined('JS_SINGLE') || define('JS_SINGLE', 'single-51baba28a0.js');
-defined('JS_ARCHIVE') || define('JS_ARCHIVE', 'archive-c98a606bca.js');
-defined('JS_PRODUCT') || define('JS_PRODUCT', 'product-a229b8cd71.js');
-defined('JS_PRODUCT_ARCHIVE') || define('JS_PRODUCT_ARCHIVE', 'products-9f57499202.js');
-defined('JS_UC') || define('JS_UC', 'uc-ddc3a2f074.js');
-defined('JS_ME') || define('JS_ME', 'me-98e0440a2e.js');
-defined('JS_ACTION') || define('JS_ACTION', 'actionPage-dcf5a1c4d9.js');
-defined('JS_404') || define('JS_404', '404-85922a86fd.js');
+defined('JS_COMMON') || define('JS_COMMON', 'common-caa0d2a669.js');
+defined('JS_HOME') || define('JS_HOME', 'home-70323e10db.js');
+defined('JS_FRONT_PAGE') || define('JS_FRONT_PAGE', 'frontPage-da6c2995c2.js');
+defined('JS_SINGLE') || define('JS_SINGLE', 'single-1db7a0f4d8.js');
+defined('JS_ARCHIVE') || define('JS_ARCHIVE', 'archive-207547a647.js');
+defined('JS_PRODUCT') || define('JS_PRODUCT', 'product-ef421887ff.js');
+defined('JS_PRODUCT_ARCHIVE') || define('JS_PRODUCT_ARCHIVE', 'products-67a6032e0a.js');
+defined('JS_UC') || define('JS_UC', 'uc-26c04c4e79.js');
+defined('JS_ME') || define('JS_ME', 'me-f1fc240a10.js');
+defined('JS_ACTION') || define('JS_ACTION', 'actionPage-d17506d851.js');
+defined('JS_404') || define('JS_404', '404-41260bb50f.js');

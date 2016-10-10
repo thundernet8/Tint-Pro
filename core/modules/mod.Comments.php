@@ -14,32 +14,11 @@
 ?>
 <?php
 global $postdata;
-
-$per_page = tt_get_option('tt_comments_per_page', 20);
-
-$the_comments = get_comments(array(
-    'status' => 'approve',
-    'type' => 'comment', // 'pings' (includes 'pingback' and 'trackback'),
-    'post_id'=> $postdata->ID,
-    //'meta_key' => 'tt_sticky_comment',
-    'orderby' => 'comment_date', //meta_value_num
-    'order' => 'DESC',
-    'number' => $per_page,
-    'offset' => 0
-));
-
-$comment_list = wp_list_comments(array(
-    'type'=>'all',
-    'callback'=>'tt_comment',
-    'end-callback'=>'tt_end_comment',
-    'max_depth'=>3,
-    'reverse_top_level'=>0,
-    'style'=>'div',
-    'page'=>1,
-    'per_page'=>$per_page,
-    'echo'=>false
-), $the_comments);
-?>
+$vm = PostCommentsVM::getInstance($postdata->ID);
+if($vm->isCache && $vm->cacheTime) { ?>
+    <!-- Comments cached <?php echo $vm->cacheTime; ?> -->
+<?php } ?>
+<?php $comment_list = $vm->modelData->list_html; ?>
 <div id="comments-wrap">
     <ul class="comments-list">
         <?php echo $comment_list; ?>

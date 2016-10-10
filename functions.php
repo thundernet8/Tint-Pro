@@ -134,6 +134,7 @@ load_vm('vm.Home.Popular');
 load_vm('vm.Home.Latest');
 load_vm('vm.Home.FeaturedCategory');
 load_vm('vm.Single.Post');
+load_vm('vm.Post.Comments');
 
 /* 载入主题功能模块 */
 //function tt_load() {

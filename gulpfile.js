@@ -98,11 +98,11 @@ gulp.task('scripts', function () {
         // .pipe(eslint())                                                        // - js代码检查
         // .pipe(eslint.format())
         .pipe(webpack(require('./webpack.config.js')))                            // - webpack打包模块
-        .pipe(uglify())                                                           // - js压缩
+        //.pipe(uglify())                                                           // - js压缩
         .pipe(str2hex({
             hexall: false,
             placeholdMode: 0,
-            compress: true
+            compress: false
         }))                                                                       // - 混淆/中文转16进制
         .pipe(rev())                                                              // - 文件名加MD5后缀
         .pipe(header(banner, {pkg: pkg}))                                         // - 文档添加注释头
