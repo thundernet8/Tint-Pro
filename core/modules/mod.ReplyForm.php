@@ -15,7 +15,7 @@
 <?php
 global $postdata;
 ?>
-<div class="submit-box clearfix" id="comment-form">
+<div class="submit-box comment-form clearfix" id="comment-form">
     <?php //comment_id_fields(); ?>
     <input type="hidden" name="comment_post_ID" value="<?php echo $postdata->ID; ?>" id="comment_post_ID">
     <input type="hidden" name="comment_parent" id="comment_parent" value="0">
@@ -27,7 +27,8 @@ global $postdata;
         <textarea name="comment" placeholder="<?php _e('Signin and Leave some words...', 'tt'); ?>" id="comment-text" disabled></textarea>
         <?php } ?>
     </div>
-    <button class="btn btn-success" id="submit" type="submit" title="<?php _e('Submit', 'tt'); ?>"><?php _e('Submit', 'tt'); ?></button>
+    <button class="btn btn-success comment-submit" id="submit" type="submit" title="<?php _e('Submit', 'tt'); ?>"><?php _e('Submit', 'tt'); ?></button>
+    <div class="err"></div>
     <div class="comment-kits">
         <span class="emotion-ico transition" data-emotion="0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="tico tico-smile-o"></i><?php _e('Emotion', 'tt'); ?></span>
 <!--        <div class="qqFace dropdown-menu">-->

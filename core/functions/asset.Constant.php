@@ -33,7 +33,7 @@ defined('CSS_ERROR_PAGE') || define('CSS_ERROR_PAGE', 'error-page-ff5e386575.css
 defined('JS_COMMON') || define('JS_COMMON', 'common-caa0d2a669.js');
 defined('JS_HOME') || define('JS_HOME', 'home-70323e10db.js');
 defined('JS_FRONT_PAGE') || define('JS_FRONT_PAGE', 'frontPage-da6c2995c2.js');
-defined('JS_SINGLE') || define('JS_SINGLE', 'single-1db7a0f4d8.js');
+defined('JS_SINGLE') || define('JS_SINGLE', 'single-1f4818c21e.js');
 defined('JS_ARCHIVE') || define('JS_ARCHIVE', 'archive-207547a647.js');
 defined('JS_PRODUCT') || define('JS_PRODUCT', 'product-ef421887ff.js');
 defined('JS_PRODUCT_ARCHIVE') || define('JS_PRODUCT_ARCHIVE', 'products-67a6032e0a.js');

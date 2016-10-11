@@ -86,11 +86,12 @@ function tt_comment($comment, $args, $depth) {
 <!--        <ul class="csl-respond">-->
 <!--        </ul>-->
 
-        <div class="respond-submit">
+        <div class="respond-submit reply-form">
             <div class="text"><input id="<?php echo 'comment-replytext' . $comment->comment_ID; ?>" type="text"><div class="tip"><?php _e('Reply', 'tt'); ?><a><?php echo $comment->comment_author; ?></a>：</div></div>
+            <div class="err"></div>
             <div class="submit-box clearfix">
                 <span class="emotion-ico transition" data-emotion="0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="tico tico-smile-o"></i><?php _e('Emotion', 'tt'); ?></span>
-                <button class="btn btn-danger pull-right" id="reply-submit" type="submit" title="<?php _e('Reply', 'tt'); ?>"><?php _e('Reply', 'tt'); ?></button>
+                <button class="btn btn-danger pull-right reply-submit" type="submit" title="<?php _e('Reply', 'tt'); ?>" ><?php _e('Reply', 'tt'); ?></button>
                 <div class="qqFace  dropdown-menu" data-inputbox-id="<?php echo 'comment-replytext' . $comment->comment_ID; ?>">
                 </div>
             </div>

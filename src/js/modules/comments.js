@@ -13,6 +13,8 @@
 
 'use strict';
 
+import modalSignBox from './modalSignBox';
+
 var _body = $('body');
 
 // 主评论框
@@ -127,14 +129,62 @@ var _qqFaceTable = '<table border="0" cellspacing="0" cellpadding="0">'
 var _commentsPerPage = TT.commentsPerPage || 20;
 var _currentCommentPage = 1;
 
-// AJAX 发表评论
+// 检查是否登录
+var _checkLogin = function () {
+   if(TT&&TT.uid&&parseInt(TT.uid)>0) {
+       return true;
+   }
+   modalSignBox.show();
+};
 
+// 评论内容检查
+var _validateComment = function (input) {
+    var content = input.val();
+    if(/^[\s]*$/.test(content)) {
+        _showError('评论内容不能为空', input.parent().siblings(_errSel)); //TODO more 日文韩文
+        return false;
+    }
+    return true;
+};
+
+var _showError = function (msg, errorBox) {
+    errorBox.hide().html(msg).slideDown('slow', function(){
+        setTimeout(function(){
+            errorBox.slideUp().html('');
+        }, 3000);
+    });
+};
+
+
+// 提交状态
+var _submitting = false;
+
+var _post = function () {
+    
+};
+
+// AJAX 发表评论/回复
+var _commentFormSel = '#respond .comment-form';
+var _replyFormSel = '#respond .reply-form';
+var _commentSubmitBtnSel = '.comment-form .comment-submit';
+var _replySumitBtnSel = '.reply-form .reply-submit';
+var _errSel = '.err';
+
+
+
+// 导出模块
 var postCommentsKit = {
     init: function () {
         // 绑定事件
         _body.on('click', _replyBtnSel, function () {
-            // Toggle 回复框
-            $(this).parent().parent('.comment-body').children(_replyWrapSel).slideToggle();
+            // Toggle 回复框(同时检查是否登录)
+            var $this = $(this);
+            var _currentReplyWrap = $this.parent().parent('.comment-body').children(_replyWrapSel);
+            _checkLogin();
+            if(_currentReplyWrap.css('display')!=='block'){
+                $('#respond '+_replyWrapSel).hide();
+            }
+            _currentReplyWrap.slideToggle();
         });
         _body.on('focus', _replyInputSel, function () {
             // 回复框输入光标位置
@@ -161,6 +211,30 @@ var postCommentsKit = {
                 _inputBox.val(_inputBox.val() + _emotionCode);
             }else{
                 _inputBox.text(_inputBox.text() + _emotionCode);
+            }
+        });
+        
+        _body.on('click', _commentTextarea, function () {
+            _checkLogin();
+        });
+        
+        _body.on('click', _commentSubmitBtnSel, function () {
+            // 主评论提交
+            var $this = $(this);
+            if(_submitting || $this.prop('disabled')) return;
+            var _textArea = $this.parent().find('textarea');
+            if(_validateComment(_textArea)) {
+                alert('ok');
+            }
+        });
+        
+        _body.on('click', _replySumitBtnSel, function () {
+            // 回复提交
+            var $this = $(this);
+            if(_submitting || $this.prop('disabled')) return;
+            var _input = $this.parent().parent().find('input');
+            if(_validateComment(_input)) {
+                alert('ok');
             }
         });
     }
