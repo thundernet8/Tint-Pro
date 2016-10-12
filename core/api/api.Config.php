@@ -34,3 +34,4 @@ require_once THEME_API . '/api.Utils.php';
 require_once THEME_API . '/v1/endpoints/class.Rest.Controller.php';
 require_once THEME_API . '/v1/endpoints/class.Rest.User.Controller.php';
 require_once THEME_API . '/v1/endpoints/class.Rest.Session.Controller.php';
+require_once THEME_API . '/v1/endpoints/class.Rest.Comment.Controller.php';

@@ -185,6 +185,3 @@ load_vm('vm.Post.Comments');
 //	}
 // }
 //add_action( 'after_setup_theme', 'tt_load' );
-
-
-

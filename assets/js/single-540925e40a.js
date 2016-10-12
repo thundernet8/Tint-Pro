@@ -1,5 +1,5 @@
 /**
- * Generated on Wed Oct 12 2016 00:02:17 GMT+0800 (中国标准时间) by Zhiyan
+ * Generated on Thu Oct 13 2016 01:38:42 GMT+0800 (中国标准时间) by Zhiyan
  *
  * @package   Tint
  * @version   v2.0.0
@@ -985,7 +985,84 @@ webpackJsonp([
             });
         }[['call']](undefined, jQuery));
     },
-    ,
+    function (module, exports, __webpack_require__) {
+        (function (TT) {
+            'use strict';
+            Object[['defineProperty']](exports, '__esModule', { value: true });
+            var _getUrlPara = function _getUrlPara(name, url) {
+                if (!url)
+                    url = window[['location']][['href']];
+                name = name[['replace']](/[\[]/, '\\[')[['replace']](/[\]]/, '\\]');
+                var regexS = '[\\?&]' + name + '=([^&#]*)';
+                var regex = new RegExp(regexS);
+                var results = regex[['exec']](url);
+                return results == null ? null : results[1];
+            };
+            var _getSiteUrl = function _getSiteUrl() {
+                return window[['location']][['protocol']] + '//' + window[['location']][['host']];
+            };
+            var _getAbsUrl = function _getAbsUrl(endpoint, base) {
+                if (!base) {
+                    base = _getSiteUrl();
+                }
+                if (/^http([s]?)/[['test']](endpoint)) {
+                    return endpoint;
+                }
+                if (/^\/\//[['test']](endpoint)) {
+                    return window[['location']][['protocol']] + endpoint;
+                }
+                if (/^\//[['test']](endpoint)) {
+                    return base + endpoint;
+                }
+                return base + '/' + endpoint;
+            };
+            var _getAPIUrl = function _getAPIUrl(endpoint) {
+                var base = TT && TT[['apiRoot']] ? TT[['apiRoot']] + 'v1' : window[['location']][['protocol']] + '//' + window[['location']][['host']] + '/api/v1';
+                if (endpoint) {
+                    return base + endpoint;
+                }
+                return base;
+            };
+            var _isPhoneNum = function _isPhoneNum(str) {
+                var reg = /^((13[0-9])|(147)|(15[^4,\D])|(17[0-9])|(18[0,0-9]))\d{8}$/;
+                if (typeof str === 'string')
+                    return reg[['test']](str);
+                return reg[['test']](str[['toString']]());
+            };
+            var _isEmail = function _isEmail(str) {
+                var reg = /[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}/;
+                if (typeof str === 'string')
+                    return reg[['test']](str);
+                return reg[['test']](str[['toString']]());
+            };
+            var _isUrl = function _isUrl(str) {
+                var reg = /^((http)|(https))+:[^\s]+\.[^\s]*$/;
+                if (typeof str === 'string')
+                    return reg[['test']](str);
+                return reg[['test']](str[['toString']]());
+            };
+            var _isValidUserName = function _isValidUserName(str) {
+                var reg = /^[A-Za-z][A-Za-z0-9_]{4,}$/;
+                return reg[['test']](str);
+            };
+            var _filterDataForRest = function _filterDataForRest(data) {
+                data[['_wpnonce']] = TT[['_wpnonce']];
+                return data;
+            };
+            var Utils = {
+                getUrlPara: _getUrlPara,
+                getSiteUrl: _getSiteUrl,
+                getAbsUrl: _getAbsUrl,
+                getAPIUrl: _getAPIUrl,
+                isPhoneNum: _isPhoneNum,
+                isEmail: _isEmail,
+                isUrl: _isUrl,
+                isValidUserName: _isValidUserName,
+                filterDataForRest: _filterDataForRest
+            };
+            exports[['default']] = Utils;
+        }[['call']](exports, __webpack_require__(5)));
+    },
     function (module, exports) {
         module[['exports']] = TT;
     },
@@ -2035,12 +2112,15 @@ webpackJsonp([
             Object[['defineProperty']](exports, '__esModule', { value: true });
             var _modalSignBox = __webpack_require__(14);
             var _modalSignBox2 = _interopRequireDefault(_modalSignBox);
+            var _utils = __webpack_require__(4);
+            var _utils2 = _interopRequireDefault(_utils);
             function _interopRequireDefault(obj) {
                 return obj && obj[['__esModule']] ? obj : { default: obj };
             }
             var _body = $('body');
             var _commentTextarea = $('#comment-text');
             var _mainSubmitBtn = $('#submit');
+            var _commentListSel = '#comments-wrap>.comments-list';
             var _replyBtnSel = '.comment-meta>.respond-coin';
             var _starBtnSel = '.comment-meta>.like';
             var _replyWrapSel = '.respond-submit';
@@ -2075,7 +2155,73 @@ webpackJsonp([
                 });
             };
             var _submitting = false;
-            var _post = function _post() {
+            var _currentInput = null;
+            var _clickedSubmitBtn = null;
+            var _originalSubmitBtnText = '';
+            var _submitBtnIcon = '<i class="tico tico-spin"></i>';
+            var _nonceInput = $('#comment_nonce');
+            var _unfilterCommentNonceInput = $('#_wp_unfiltered_html_comment_disabled');
+            var _postIdInput = $('#comment_post_ID');
+            var _postComment = function _postComment() {
+                var url = _utils2[['default']][['getAPIUrl']]('/comments');
+                var data = {
+                    commentNonce: _nonceInput ? _nonceInput[['val']]() : '',
+                    ksesNonce: _unfilterCommentNonceInput ? _unfilterCommentNonceInput[['val']]() : '',
+                    postId: _postIdInput ? _postIdInput[['val']]() : TT[['pid']],
+                    content: _currentInput ? _currentInput[['val']]() : '',
+                    parentId: _currentInput && _currentInput[['is']]('input') ? _currentInput[['parents']]('.comment')[['data']]('current-comment-id') : 0,
+                    commentType: ''
+                };
+                var beforeSend = function beforeSend() {
+                    if (_submitting)
+                        return;
+                    _submitting = true;
+                    if (_currentInput) {
+                        _currentInput[['prop']]('disabled', true);
+                    }
+                    if (_clickedSubmitBtn) {
+                        _originalSubmitBtnText = _clickedSubmitBtn[['text']]();
+                        _clickedSubmitBtn[['prop']]('disabled', true)[['html']](_submitBtnIcon);
+                    }
+                };
+                var finishRequest = function finishRequest() {
+                    if (!_submitting)
+                        return;
+                    _submitting = false;
+                    if (_currentInput) {
+                        _currentInput[['prop']]('disabled', false);
+                    }
+                    if (_clickedSubmitBtn) {
+                        _clickedSubmitBtn[['text']](_originalSubmitBtnText)[['prop']]('disabled', false);
+                    }
+                };
+                var success = function success(data, textStatus, xhr) {
+                    if (data[['success']] && data[['success']] == 1) {
+                        _appendComment(data[['message']], _currentInput);
+                    } else {
+                        _showError(data[['message']], _currentInput[['parent']]()[['siblings']](_errSel));
+                    }
+                    finishRequest();
+                };
+                var error = function error(xhr, textStatus, err) {
+                    _showError(xhr[['responseJSON']][['message']], _currentInput[['parent']]()[['siblings']](_errSel));
+                    finishRequest();
+                };
+                $[['post']]({
+                    url: url,
+                    data: _utils2[['default']][['filterDataForRest']](data),
+                    dataType: 'json',
+                    beforeSend: beforeSend,
+                    success: success,
+                    error: error
+                });
+            };
+            var _appendComment = function _appendComment(comment, input) {
+                if (input[['is']]('input')) {
+                    input[['parents']]('.comment')[['after']](comment);
+                } else {
+                    $(_commentListSel)[['prepend']](comment);
+                }
             };
             var _commentFormSel = '#respond .comment-form';
             var _replyFormSel = '#respond .reply-form';
@@ -2124,9 +2270,10 @@ webpackJsonp([
                         var $this = $(this);
                         if (_submitting || $this[['prop']]('disabled'))
                             return;
-                        var _textArea = $this[['parent']]()[['find']]('textarea');
-                        if (_validateComment(_textArea)) {
-                            alert('ok');
+                        if (_validateComment(_commentTextarea)) {
+                            _currentInput = _commentTextarea;
+                            _clickedSubmitBtn = $this;
+                            _postComment();
                         }
                     });
                     _body[['on']]('click', _replySumitBtnSel, function () {
@@ -2135,7 +2282,9 @@ webpackJsonp([
                             return;
                         var _input = $this[['parent']]()[['parent']]()[['find']]('input');
                         if (_validateComment(_input)) {
-                            alert('ok');
+                            _currentInput = _input;
+                            _clickedSubmitBtn = $this;
+                            _postComment();
                         }
                     });
                 }

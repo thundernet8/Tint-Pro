@@ -22,6 +22,9 @@ var _body = $('body');
 var _commentTextarea = $('#comment-text');
 var _mainSubmitBtn = $('#submit');
 
+// 评论列表
+var _commentListSel = '#comments-wrap>.comments-list';
+
 // 评论组件
 var _replyBtnSel = '.comment-meta>.respond-coin';
 var _starBtnSel = '.comment-meta>.like';
@@ -167,13 +170,21 @@ var _originalSubmitBtnText = '';
 var _submitBtnIcon = '<i class="tico tico-spin"></i>';
 
 // Hidden input
-var _nonceInput = $('#tt_comment_nonce');
+var _nonceInput = $('#comment_nonce');
+var _unfilterCommentNonceInput = $('#_wp_unfiltered_html_comment_disabled');
+var _postIdInput = $('#comment_post_ID');
 
-var _post = function () {
+// 提交评论
+var _postComment = function () {
     // 提交评论
     var url = Utils.getAPIUrl('/comments');
     var data = {
-
+        commentNonce: _nonceInput ? _nonceInput.val() : '',
+        ksesNonce: _unfilterCommentNonceInput ? _unfilterCommentNonceInput.val() : '',
+        postId: _postIdInput ? _postIdInput.val() : TT.pid,
+        content: _currentInput ? _currentInput.val() : '',
+        parentId: _currentInput && _currentInput.is('input') ? _currentInput.parents('.comment').data('current-comment-id') : 0,
+        commentType: ''
     };
     var beforeSend = function () {
         if(_submitting) return;
@@ -199,7 +210,7 @@ var _post = function () {
     var success = function (data, textStatus, xhr) {
         if(data.success && data.success == 1) {
             // TODO 嵌入评论
-
+            _appendComment(data.message, _currentInput);
         }else{
             _showError(data.message, _currentInput.parent().siblings(_errSel));
         }
@@ -211,12 +222,21 @@ var _post = function () {
     };
     $.post({
         url: url,
-        data: data,
+        data: Utils.filterDataForRest(data),
         dataType: 'json',
         beforeSend: beforeSend,
         success: success,
         error: error
     });
+};
+
+// 插入评论
+var _appendComment = function (comment, input) {
+    if(input.is('input')) {
+        input.parents('.comment').after(comment);
+    }else{
+        $(_commentListSel).prepend(comment);
+    }
 };
 
 // AJAX 发表评论/回复
@@ -278,9 +298,10 @@ var postCommentsKit = {
             // 主评论提交
             var $this = $(this);
             if(_submitting || $this.prop('disabled')) return;
-            var _textArea = $this.parent().find('textarea');
-            if(_validateComment(_textArea)) {
-                alert('ok');
+            if(_validateComment(_commentTextarea)) {
+                _currentInput = _commentTextarea;
+                _clickedSubmitBtn = $this;
+                _postComment();
             }
         });
         
@@ -290,7 +311,9 @@ var postCommentsKit = {
             if(_submitting || $this.prop('disabled')) return;
             var _input = $this.parent().parent().find('input');
             if(_validateComment(_input)) {
-                alert('ok');
+                _currentInput = _input;
+                _clickedSubmitBtn = $this;
+                _postComment();
             }
         });
     }

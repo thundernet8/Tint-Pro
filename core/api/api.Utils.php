@@ -113,8 +113,8 @@ function tt_create_initial_rest_routes() {
     $session_controller->register_routes();
 
     // Comments.
-//    $controller = new WP_REST_Comments_Controller;
-//    $controller->register_routes();
+    $controller = new WP_REST_Comment_Controller;
+    $controller->register_routes();
 }
 add_action( 'rest_api_init', 'tt_create_initial_rest_routes', 0 );  // TODO cached 接口
 
@@ -159,8 +159,8 @@ function tt_get_rest_request_cache_key($request) {
 function tt_rest_pre_dispatch_cache($result, $server, $request) {
 
     // 部分接口不缓存，如登录接口 //TODO more
-    // POST请求不缓存
-    if($request->get_method() == 'POST' || in_array($request->get_route(), ['/v1/session'])) {
+    // POST请求不缓存|DEBUG模式不緩存
+    if($request->get_method() == 'POST' || in_array($request->get_route(), ['/v1/session']) || tt_get_option('tt_theme_debug', false)) {
         return false;
     }
 
@@ -214,3 +214,56 @@ function tt_rest_dispatch_request_cache($dispatch_result, $request, $route, $han
     return $response;
 }
 add_filter( 'rest_dispatch_request', 'tt_rest_dispatch_request_cache', 10, 4 );
+
+
+/**
+ * 输出成功JSON响应
+ *
+ * @since 2.0.0
+ * @param string $message
+ * @param array|object $data
+ * @param string $status
+ * @param string $header_location
+ * @return WP_REST_Response
+ */
+function tt_api_success($message, $data = array(), $status = "200", $header_location = "") {
+    $response = array_merge(array(
+        'success' => true,
+        'message' => $message
+    ), (array)$data);
+    //echo json_encode($response);
+    //exit();
+    $response = rest_ensure_response($response);
+    $response->set_status( $status );
+    if($status=='301' || $status=='302') {
+        $response->header( 'Location', $header_location );
+    }
+
+    return $response;
+}
+
+/**
+ * 输出失败JSON响应
+ *
+ * @since 2.0.0
+ * @param string $message
+ * @param array|object $data
+ * @param string $status
+ * @param string $header_location
+ * @return WP_REST_Response
+ */
+function tt_api_fail($message, $data = array(), $status = "404", $header_location = "") {
+    $response = array_merge(array(
+        'success' => false,
+        'message' => $message
+    ), (array)$data);
+    //echo json_encode($response);
+    //exit();
+    $response = rest_ensure_response($response);
+    $response->set_status( $status );
+    if($status=='301' || $status=='302') {
+        $response->header( 'Location', $header_location );
+    }
+
+    return $response;
+}

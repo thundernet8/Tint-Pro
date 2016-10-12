@@ -41,13 +41,16 @@ function tt_register_scripts() {
         'uid'               => get_current_user_id(),
         'language'          => get_option('WPLANG', 'zh_CN'),
         'apiRoot'           => esc_url_raw( get_rest_url() ),
-        'nonce'             => wp_create_nonce( 'wp_rest' ),
+        '_wpnonce'          => wp_create_nonce( 'wp_rest' ), // REST_API服务验证该nonce, 如果不提供将清除登录用户信息  @see rest-api.php `rest_cookie_check_errors`
         'home'              => esc_url_raw( home_url() ),
         'themeRoot'         => THEME_URI,
         'isHome'            => is_home(),
-        'isSingle'          => is_single(),
         'commentsPerPage'   => tt_get_option('tt_comments_per_page', 20)
     );
+    if(is_single()) {
+        $data['isSingle'] = true;
+        $data['pid'] = get_queried_object_id();
+    }
     wp_localize_script( 'tt_common', 'TT', $data );
     wp_enqueue_script( 'tt_jquery' );
     wp_enqueue_script( 'tt_common' );

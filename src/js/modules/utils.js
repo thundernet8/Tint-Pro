@@ -86,15 +86,23 @@ var _isValidUserName = function (str) {
 };
 
 
+// AJAX请求的Data添加_wpnonce参数, REST_API需要
+var _filterDataForRest = function (data) {
+    data._wpnonce = TT._wpnonce; //TODO 如果TT._wpnonce不存在，去获取
+    return data;
+};
+
+
 var Utils = {
-  getUrlPara: _getUrlPara,
-  getSiteUrl: _getSiteUrl,
-  getAbsUrl: _getAbsUrl,
-  getAPIUrl: _getAPIUrl,
-  isPhoneNum: _isPhoneNum,
-  isEmail: _isEmail,
-  isUrl: _isUrl,
-  isValidUserName: _isValidUserName
+    getUrlPara: _getUrlPara,
+    getSiteUrl: _getSiteUrl,
+    getAbsUrl: _getAbsUrl,
+    getAPIUrl: _getAPIUrl,
+    isPhoneNum: _isPhoneNum,
+    isEmail: _isEmail,
+    isUrl: _isUrl,
+    isValidUserName: _isValidUserName,
+    filterDataForRest: _filterDataForRest
 };
 
 export default Utils;

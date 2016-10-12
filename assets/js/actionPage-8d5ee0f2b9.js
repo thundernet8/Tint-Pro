@@ -1,5 +1,5 @@
 /**
- * Generated on Wed Oct 12 2016 00:02:17 GMT+0800 (中国标准时间) by Zhiyan
+ * Generated on Thu Oct 13 2016 01:38:41 GMT+0800 (中国标准时间) by Zhiyan
  *
  * @package   Tint
  * @version   v2.0.0
@@ -123,6 +123,10 @@ webpackJsonp([
                 var reg = /^[A-Za-z][A-Za-z0-9_]{4,}$/;
                 return reg[['test']](str);
             };
+            var _filterDataForRest = function _filterDataForRest(data) {
+                data[['_wpnonce']] = TT[['_wpnonce']];
+                return data;
+            };
             var Utils = {
                 getUrlPara: _getUrlPara,
                 getSiteUrl: _getSiteUrl,
@@ -131,9 +135,10 @@ webpackJsonp([
                 isPhoneNum: _isPhoneNum,
                 isEmail: _isEmail,
                 isUrl: _isUrl,
-                isValidUserName: _isValidUserName
+                isValidUserName: _isValidUserName,
+                filterDataForRest: _filterDataForRest
             };
-            exports[['Utils']] = Utils;
+            exports[['default']] = Utils;
         }[['call']](exports, __webpack_require__(5)));
     },
     function (module, exports) {
@@ -1278,7 +1283,7 @@ webpackJsonp([
                 };
                 $[['post']]({
                     url: url,
-                    data: _form[['serialize']](),
+                    data: _utils[['Utils']][['filterDataForRest']](_form[['serialize']]()),
                     dataType: 'json',
                     beforeSend: beforeSend,
                     success: success,

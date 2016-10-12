@@ -85,7 +85,7 @@ function tt_comment($comment, $args, $depth) {
 
         <span class="comment-time"><?php echo Utils::getTimeDiffString(get_comment_time('Y-m-d G:i:s', true)); ?></span>
         <div class="comment-meta">
-            <?php if($comment_status) { ?><a href="javascript:;" class="respond-coin mr5" title="<?php _e('Reply', 'tt'); ?>"><i class="msg"></i><em><?php _e('Reply', 'tt'); ?></em></a><?php } ?>
+            <?php if($comment_open) { ?><a href="javascript:;" class="respond-coin mr5" title="<?php _e('Reply', 'tt'); ?>"><i class="msg"></i><em><?php _e('Reply', 'tt'); ?></em></a><?php } ?>
             <span class="like"><i class="zan"></i><em class="like-count">(<?php echo (int)get_comment_meta($comment->comment_ID,'tt_comment_likes',true); ?>)</em></span>
         </div>
 
@@ -119,7 +119,7 @@ function tt_end_comment() {
  * @param WP_Comment $comment
  * @return string
  */
-function tt_convert_comment_emotions ($comment_text, $comment) {
+function tt_convert_comment_emotions ($comment_text, $comment = null) {
     $emotion_basepath = THEME_ASSET . '/img/qqFace/';
     $new_comment_text = preg_replace('/\[em_([0-9]+)\]/i', '<img class="em" src="' . $emotion_basepath . "$1" . '.gif">', $comment_text);
     return wpautop($new_comment_text);

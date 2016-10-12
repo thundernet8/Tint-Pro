@@ -33,11 +33,11 @@ defined('CSS_ERROR_PAGE') || define('CSS_ERROR_PAGE', 'error-page-ff5e386575.css
 defined('JS_COMMON') || define('JS_COMMON', 'common-caa0d2a669.js');
 defined('JS_HOME') || define('JS_HOME', 'home-70323e10db.js');
 defined('JS_FRONT_PAGE') || define('JS_FRONT_PAGE', 'frontPage-da6c2995c2.js');
-defined('JS_SINGLE') || define('JS_SINGLE', 'single-1f4818c21e.js');
+defined('JS_SINGLE') || define('JS_SINGLE', 'single-540925e40a.js');
 defined('JS_ARCHIVE') || define('JS_ARCHIVE', 'archive-207547a647.js');
 defined('JS_PRODUCT') || define('JS_PRODUCT', 'product-ef421887ff.js');
 defined('JS_PRODUCT_ARCHIVE') || define('JS_PRODUCT_ARCHIVE', 'products-67a6032e0a.js');
 defined('JS_UC') || define('JS_UC', 'uc-26c04c4e79.js');
 defined('JS_ME') || define('JS_ME', 'me-f1fc240a10.js');
-defined('JS_ACTION') || define('JS_ACTION', 'actionPage-d17506d851.js');
-defined('JS_404') || define('JS_404', '404-41260bb50f.js');
+defined('JS_ACTION') || define('JS_ACTION', 'actionPage-8d5ee0f2b9.js');
+defined('JS_404') || define('JS_404', '404-a4edf8a8f0.js');

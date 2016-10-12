@@ -123,7 +123,7 @@ var _post = function () {
     };
     $.post({
         url: url,
-        data: _form.serialize(),
+        data: Utils.filterDataForRest(_form.serialize()),
         dataType: 'json',
         beforeSend: beforeSend,
         success: success,
