@@ -41,6 +41,12 @@ add_action('comment_post','tt_update_post_latest_reviewed_meta', 10, 3);
  * @param   $depth
  */
 function tt_comment($comment, $args, $depth) {
+    global $postdata;
+    if($postdata && property_exists($postdata, 'comment_status')) {
+        $comment_open = $postdata->comment_status;
+    }else{
+        $comment_open = comments_open($comment->comment_ID);
+    }
     $GLOBALS['comment'] = $comment;
     ?>
 <li <?php comment_class(); ?> id="comment-<?php echo $comment->comment_ID;//comment_ID() ?>" data-current-comment-id="<?php echo $comment->comment_ID; ?>" data-parent-comment-id="<?php echo $comment->comment_parent; ?>" data-member-id="<?php echo $comment->user_id; ?>">
@@ -79,7 +85,7 @@ function tt_comment($comment, $args, $depth) {
 
         <span class="comment-time"><?php echo Utils::getTimeDiffString(get_comment_time('Y-m-d G:i:s', true)); ?></span>
         <div class="comment-meta">
-            <a href="javascript:;" class="respond-coin mr5" title="<?php _e('Reply', 'tt'); ?>"><i class="msg"></i><em><?php _e('Reply', 'tt'); ?></em></a>
+            <?php if($comment_status) { ?><a href="javascript:;" class="respond-coin mr5" title="<?php _e('Reply', 'tt'); ?>"><i class="msg"></i><em><?php _e('Reply', 'tt'); ?></em></a><?php } ?>
             <span class="like"><i class="zan"></i><em class="like-count">(<?php echo (int)get_comment_meta($comment->comment_ID,'tt_comment_likes',true); ?>)</em></span>
         </div>
 

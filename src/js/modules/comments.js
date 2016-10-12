@@ -14,6 +14,7 @@
 'use strict';
 
 import modalSignBox from './modalSignBox';
+import Utils from './utils';
 
 var _body = $('body');
 
@@ -159,8 +160,63 @@ var _showError = function (msg, errorBox) {
 // 提交状态
 var _submitting = false;
 
+// 当前提交的input或textarea以及点击的按钮
+var _currentInput = null;
+var _clickedSubmitBtn = null;
+var _originalSubmitBtnText = '';
+var _submitBtnIcon = '<i class="tico tico-spin"></i>';
+
+// Hidden input
+var _nonceInput = $('#tt_comment_nonce');
+
 var _post = function () {
-    
+    // 提交评论
+    var url = Utils.getAPIUrl('/comments');
+    var data = {
+
+    };
+    var beforeSend = function () {
+        if(_submitting) return;
+        _submitting = true;
+        if(_currentInput) {
+            _currentInput.prop('disabled', true);
+        }
+        if(_clickedSubmitBtn) {
+            _originalSubmitBtnText = _clickedSubmitBtn.text();
+            _clickedSubmitBtn.prop('disabled', true).html(_submitBtnIcon);
+        }
+    };
+    var finishRequest = function () {
+        if(!_submitting) return;
+        _submitting = false;
+        if(_currentInput) {
+            _currentInput.prop('disabled', false);
+        }
+        if(_clickedSubmitBtn) {
+            _clickedSubmitBtn.text(_originalSubmitBtnText).prop('disabled', false);
+        }
+    };
+    var success = function (data, textStatus, xhr) {
+        if(data.success && data.success == 1) {
+            // TODO 嵌入评论
+
+        }else{
+            _showError(data.message, _currentInput.parent().siblings(_errSel));
+        }
+        finishRequest();
+    };
+    var error = function (xhr, textStatus, err) {
+        _showError(xhr.responseJSON.message, _currentInput.parent().siblings(_errSel));
+        finishRequest();
+    };
+    $.post({
+        url: url,
+        data: data,
+        dataType: 'json',
+        beforeSend: beforeSend,
+        success: success,
+        error: error
+    });
 };
 
 // AJAX 发表评论/回复

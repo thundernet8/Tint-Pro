@@ -19,12 +19,13 @@ global $postdata;
     <?php //comment_id_fields(); ?>
     <input type="hidden" name="comment_post_ID" value="<?php echo $postdata->ID; ?>" id="comment_post_ID">
     <input type="hidden" name="comment_parent" id="comment_parent" value="0">
+    <input type="hidden" name="tt_comment_nonce" id="comment_nonce" value="<?php echo wp_create_nonce('tt_comment_nonce'); ?>">
     <?php do_action('comment_form', $postdata->ID); ?>
     <div class="text">
         <?php if($postdata->uid) { ?>
-        <textarea name="comment" placeholder="<?php _e('Leave some words...', 'tt'); ?>" id="comment-text"></textarea>
+        <textarea name="comment" placeholder="<?php _e('Leave some words...', 'tt'); ?>" id="comment-text" required></textarea>
         <?php }else{ ?>
-        <textarea name="comment" placeholder="<?php _e('Signin and Leave some words...', 'tt'); ?>" id="comment-text" disabled></textarea>
+        <textarea name="comment" placeholder="<?php _e('Signin and Leave some words...', 'tt'); ?>" id="comment-text" required disabled></textarea>
         <?php } ?>
     </div>
     <button class="btn btn-success comment-submit" id="submit" type="submit" title="<?php _e('Submit', 'tt'); ?>"><?php _e('Submit', 'tt'); ?></button>

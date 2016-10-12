@@ -97,4 +97,4 @@ var Utils = {
   isValidUserName: _isValidUserName
 };
 
-export {Utils};
+export default Utils;
