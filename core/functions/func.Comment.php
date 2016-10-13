@@ -86,7 +86,7 @@ function tt_comment($comment, $args, $depth) {
         <span class="comment-time"><?php echo Utils::getTimeDiffString(get_comment_time('Y-m-d G:i:s', true)); ?></span>
         <div class="comment-meta">
             <?php if($comment_open) { ?><a href="javascript:;" class="respond-coin mr5" title="<?php _e('Reply', 'tt'); ?>"><i class="msg"></i><em><?php _e('Reply', 'tt'); ?></em></a><?php } ?>
-            <span class="like"><i class="zan"></i><em class="like-count">(<?php echo (int)get_comment_meta($comment->comment_ID,'tt_comment_likes',true); ?>)</em></span>
+            <span class="like"><i class="zan"></i><em class="like-count">(<?php echo (int)get_comment_meta($comment->comment_ID, 'tt_comment_likes', true); ?>)</em></span>
         </div>
 
 <!--        <ul class="csl-respond">-->
@@ -94,7 +94,7 @@ function tt_comment($comment, $args, $depth) {
 
         <div class="respond-submit reply-form">
             <div class="text"><input id="<?php echo 'comment-replytext' . $comment->comment_ID; ?>" type="text"><div class="tip"><?php _e('Reply', 'tt'); ?><a><?php echo $comment->comment_author; ?></a>：</div></div>
-            <div class="err"></div>
+            <div class="err text-danger"></div>
             <div class="submit-box clearfix">
                 <span class="emotion-ico transition" data-emotion="0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="tico tico-smile-o"></i><?php _e('Emotion', 'tt'); ?></span>
                 <button class="btn btn-danger pull-right reply-submit" type="submit" title="<?php _e('Reply', 'tt'); ?>" ><?php _e('Reply', 'tt'); ?></button>
@@ -126,3 +126,22 @@ function tt_convert_comment_emotions ($comment_text, $comment = null) {
 }
 add_filter( 'comment_text', 'tt_convert_comment_emotions', 10, 2);
 add_filter( 'get_comment_text', 'tt_convert_comment_emotions', 10, 2);
+
+
+/**
+ * 插入新评论时清理对应文章评论的缓存
+ *
+ * @since 2.0.0
+ * @param int $comment_ID
+ * @param int $comment_approved
+ * @param array $commentdata
+ * @return void
+ */
+function tt_clear_post_comments_cache ($comment_ID, $comment_approved, $commentdata) {
+    if(!$comment_approved) return;
+
+    $comment_post_ID = $commentdata['comment_post_ID'];
+    $cache_key = 'tt_cache_hourly_vm_PostCommentsVM_post' . $comment_post_ID . '_comments';
+    delete_transient($cache_key);
+}
+add_action('comment_post', 'tt_clear_post_comments_cache', 10, 3);

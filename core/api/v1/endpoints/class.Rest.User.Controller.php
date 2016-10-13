@@ -257,7 +257,7 @@ class WP_REST_User_Controller extends WP_REST_Controller {
      * @return WP_Error|WP_REST_Response
      */
     public function get_item( $request ) {
-        $id = (int) $request['id'];
+        $id = absint($request['id']);
         $user = get_userdata( $id );
 
         if ( empty( $id ) || empty( $user->ID ) ) {

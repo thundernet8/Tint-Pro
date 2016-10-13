@@ -22,14 +22,14 @@ global $postdata;
     <input type="hidden" name="tt_comment_nonce" id="comment_nonce" value="<?php echo wp_create_nonce('tt_comment_nonce'); ?>">
     <?php do_action('comment_form', $postdata->ID); ?>
     <div class="text">
-        <?php if($postdata->uid) { ?>
+        <?php if(is_user_logged_in()) { ?>
         <textarea name="comment" placeholder="<?php _e('Leave some words...', 'tt'); ?>" id="comment-text" required></textarea>
         <?php }else{ ?>
         <textarea name="comment" placeholder="<?php _e('Signin and Leave some words...', 'tt'); ?>" id="comment-text" required disabled></textarea>
         <?php } ?>
     </div>
     <button class="btn btn-success comment-submit" id="submit" type="submit" title="<?php _e('Submit', 'tt'); ?>"><?php _e('Submit', 'tt'); ?></button>
-    <div class="err"></div>
+    <div class="err text-danger"></div>
     <div class="comment-kits">
         <span class="emotion-ico transition" data-emotion="0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="tico tico-smile-o"></i><?php _e('Emotion', 'tt'); ?></span>
 <!--        <div class="qqFace dropdown-menu">-->

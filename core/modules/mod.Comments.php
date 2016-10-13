@@ -21,10 +21,12 @@ if($vm->isCache && $vm->cacheTime) { ?>
 <?php $comment_list = $vm->modelData->list_html; ?>
 <div id="comments-wrap">
     <ul class="comments-list">
+        <input type="hidden" id="comment_star_nonce" name="tt_comment_star_nonce" value="<?php echo wp_create_nonce('tt_comment_star_nonce'); ?>">
         <?php echo $comment_list; ?>
         <div class="pages"><?php //paginate_comments_links('prev_text=«&next_text=»&type=list'); ?></div>
     </ul>
-    <?php //$max_pages = get_comment_pages_count($wp_query->comments, $per_page); if($max_pages>1){ ?>
-    <div class="load-more" data-pages="<?php //echo $max_pages; ?>"><button class="btn btn-more">加载更多</button></div>
-    <?php //} ?>
+    <?php if($vm->modelData->list_count > 0){ ?>
+    <div class="load-more"><button class="btn btn-primary btn-wide btn-more"><?php _e('Load More Comments', 'tt'); ?></button></div>
+    <?php } ?>
+    <div class="err"></div>
 </div>

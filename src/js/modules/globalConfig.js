@@ -14,4 +14,16 @@
 'use strict';
 
 
- 
+import Utils from './utils';
+
+// API路由列表
+var routes = {
+    signIn: Utils.getAPIUrl('/session'),
+    session: Utils.getAPIUrl('/session'),
+    signUp: Utils.getAPIUrl('/users'),
+    users: Utils.getAPIUrl('/users'),
+    comments: Utils.getAPIUrl('/comments'),
+    commentStars: Utils.getAPIUrl('/comment/stars') //TODO more
+}
+
+export {routes as Routes};

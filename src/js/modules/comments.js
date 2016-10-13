@@ -13,13 +13,15 @@
 
 'use strict';
 
+import {Routes} from './globalConfig';
 import modalSignBox from './modalSignBox';
 import Utils from './utils';
 
 var _body = $('body');
 
 // 主评论框
-var _commentTextarea = $('#comment-text');
+var _commentTextareaSel = '#comment-text';
+var _commentTextarea = $(_commentTextareaSel);
 var _mainSubmitBtn = $('#submit');
 
 // 评论列表
@@ -129,9 +131,92 @@ var _qqFaceTable = '<table border="0" cellspacing="0" cellpadding="0">'
                     +    '</tbody>'
                     +'</table>';
 
-// AJAX 加载评论
+/* AJAX 加载评论 */
+/* ------------------------ */
 var _commentsPerPage = TT.commentsPerPage || 20;
 var _currentCommentPage = 1;
+var _loading = false;
+var _loadMoreBtn = $('#comments-wrap .btn-more');
+var _loadMoreBtnSpinIcon = '<i class="tico tico-spinner spinning"></i>';
+var _originLoadMoreBtnText = _loadMoreBtn.text();
+
+var _appendComments = function (comments) {
+    $(_commentListSel).append(comments);
+};
+
+var _maybeMorePages = function (fetchedCount, nextPage) {
+    if(fetchedCount < _commentsPerPage) {
+        _loadMoreBtn.remove();
+    }else{
+        _currentCommentPage = Math.max(nextPage-1, 2);
+    }
+};
+
+var _fetchComments = function () {
+    if(_loading) return false;
+
+    var url = Routes.comments;
+
+    var data = {
+        commentPage: _currentCommentPage + 1,
+        commentPostId: _postIdInput ? _postIdInput.val() : TT.pid
+    };
+
+    var beforeSend = function () {
+        if(_loading) return;
+        _loading = true;
+        if(_loadMoreBtn) {
+            _loadMoreBtn.prop('disabled', true);
+            _loadMoreBtn.html(_loadMoreBtnSpinIcon);
+        }
+    };
+
+    var finishRequest = function () {
+        if(!_loading) return;
+        if(_loadMoreBtn){
+            _loadMoreBtn.html(_originLoadMoreBtnText);
+            _loadMoreBtn.prop('disabled', false);
+        }
+        _loading = false;
+    };
+
+    var success = function (data, textStatus, xhr) {
+        if(data.success && data.success == 1) {
+            _appendComments(data.message);
+            _maybeMorePages(data.count, data.nextPage);
+        }else{
+            _showError(data.message, _loadMoreBtn.next('.err'));
+        }
+        finishRequest();
+    };
+    var error = function (xhr, textStatus, err) {
+        _showError(xhr.responseJSON ? xhr.responseJSON.message : xhr.responseText, _loadMoreBtn.next('.err'));
+        finishRequest();
+    };
+    $.ajax({
+        url: url,
+        method: 'GET',
+        data: Utils.filterDataForRest(data),
+        dataType: 'json',
+        beforeSend: beforeSend,
+        success: success,
+        error: error
+    });
+
+};
+
+
+
+
+
+/* AJAX 发表评论/回复 */
+/* ------------------------ */
+
+var _commentFormSel = '#respond .comment-form';
+var _replyFormSel = '#respond .reply-form';
+var _commentSubmitBtnSel = '.comment-form .comment-submit';
+var _replySumitBtnSel = '.reply-form .reply-submit';
+var _errSel = '.err';
 
 // 检查是否登录
 var _checkLogin = function () {
@@ -167,17 +252,26 @@ var _submitting = false;
 var _currentInput = null;
 var _clickedSubmitBtn = null;
 var _originalSubmitBtnText = '';
-var _submitBtnIcon = '<i class="tico tico-spin"></i>';
+var _submitBtnIcon = '<i class="tico tico-spinner9 spinning"></i>';
 
 // Hidden input
 var _nonceInput = $('#comment_nonce');
 var _unfilterCommentNonceInput = $('#_wp_unfiltered_html_comment_disabled');
 var _postIdInput = $('#comment_post_ID');
 
+// 新评论的depth
+var _getNewCommentDepth = function (input) {
+    if(input.is('textarea')) return 1;
+    var _parentDepthClassMatch = input.parents('.comment').attr('class').match(/depth-([0-9])/);
+    return _parentDepthClassMatch.length > 1 ? Math.min(_parentDepthClassMatch[1]+1, 3) : 2;
+};
+
 // 提交评论
 var _postComment = function () {
+    if(_submitting) return false;
+
     // 提交评论
-    var url = Utils.getAPIUrl('/comments');
+    var url = Routes.comments;
     var data = {
         commentNonce: _nonceInput ? _nonceInput.val() : '',
         ksesNonce: _unfilterCommentNonceInput ? _unfilterCommentNonceInput.val() : '',
@@ -201,6 +295,10 @@ var _postComment = function () {
         if(!_submitting) return;
         _submitting = false;
         if(_currentInput) {
+            _currentInput.val('');
+            if(_currentInput.is('input')) {
+                _currentInput.parents(_replyWrapSel).slideUp();
+            }
             _currentInput.prop('disabled', false);
         }
         if(_clickedSubmitBtn) {
@@ -217,7 +315,7 @@ var _postComment = function () {
         finishRequest();
     };
     var error = function (xhr, textStatus, err) {
-        _showError(xhr.responseJSON.message, _currentInput.parent().siblings(_errSel));
+        _showError(xhr.responseJSON ? xhr.responseJSON.message : xhr.responseText, _currentInput.parent().siblings(_errSel));
         finishRequest();
     };
     $.post({
@@ -232,6 +330,9 @@ var _postComment = function () {
 
 // 插入评论
 var _appendComment = function (comment, input) {
+
+    var commentDepthClass = 'depth-' + _getNewCommentDepth(input);
+    comment = comment.replace('depth-1', commentDepthClass);
     if(input.is('input')) {
         input.parents('.comment').after(comment);
     }else{
@@ -239,21 +340,91 @@ var _appendComment = function (comment, input) {
     }
 };
 
-// AJAX 发表评论/回复
-var _commentFormSel = '#respond .comment-form';
-var _replyFormSel = '#respond .reply-form';
-var _commentSubmitBtnSel = '.comment-form .comment-submit';
-var _replySumitBtnSel = '.reply-form .reply-submit';
-var _errSel = '.err';
+
+
+/* 点赞评论 */
+/* --------------------- */
+
+var _starBtnSel  = '.comment .like';
+var _clickedStarBtn = null;
+var _starCountSel = '.like-count';
+var _starNonceInput = $('#comment_star_nonce');
+var _staring = false;
+
+var _checkStared = function (commentId) {
+    return $.inArray(commentId, Utils.store('commentsStared')) > -1;
+};
+
+var _checkAllStared = function (comment) {
+    var commentsStared = Utils.store('commentsStared');
+    if(!commentsStared || !(commentsStared instanceof Array) || commentsStared.length == 0) return;
+
+    if($.inArray(comment.data('current-comment-id'), commentsStared) > -1) { // $.inArray 返回匹配项索引
+        comment.find('.like').addClass('active');
+    }
+};
+
+var _markStared = function (commentId, stars, starBtn) {
+
+    var commentsStared = Utils.store('commentsStared');
+    commentsStared instanceof Array ? commentsStared.push(commentId) : commentsStared = [commentId]; //Note: push返回的是添加的新数据，而不是改变后的数组
+    Utils.store('commentsStared', commentsStared);
+
+    if(starBtn) {
+        starBtn.addClass('active');
+        starBtn.children(_starCountSel).text('(' + parseInt(stars) + ')');
+    }
+};
+
+var _postStar = function (commentId) {
+    if(_staring) return false;
+
+    var url = Routes.commentStars + '/' + commentId;
+    var data = {
+        commentStarNonce: _starNonceInput ? _starNonceInput.val() : '',
+        commentId: commentId
+    };
+    var beforeSend = function () {
+        if(_staring || _checkStared(commentId)) return;
+        _staring = true;
+    };
+    var finishRequest = function () {
+        if(!_staring) return;
+        _staring = false;
+    };
+    var success = function (data, textStatus, xhr) {
+        if(data.success && data.success == 1) {
+            _markStared(commentId, data.stars, _clickedStarBtn);
+        }else{
+            // TODO
+        }
+        finishRequest();
+    };
+    var error = function (xhr, textStatus, err) {
+        // TODO
+        finishRequest();
+    };
+    $.post({
+        url: url,
+        data: Utils.filterDataForRest(data),
+        dataType: 'json',
+        beforeSend: beforeSend,
+        success: success,
+        error: error
+    });
+};
 
 
 
-// 导出模块
+/* 导出模块 */
+/* ---------------------- */
+
 var postCommentsKit = {
     init: function () {
-        // 绑定事件
+        /* 绑定事件 */
+
+        // Toggle 回复框(同时检查是否登录)
         _body.on('click', _replyBtnSel, function () {
-            // Toggle 回复框(同时检查是否登录)
             var $this = $(this);
             var _currentReplyWrap = $this.parent().parent('.comment-body').children(_replyWrapSel);
             _checkLogin();
@@ -262,21 +433,24 @@ var postCommentsKit = {
             }
             _currentReplyWrap.slideToggle();
         });
+
+        // 回复框输入光标位置
         _body.on('focus', _replyInputSel, function () {
-            // 回复框输入光标位置
             var $this = $(this);
             var _paddingLeft = $this.parents(_replyWrapSel).find(_replyTipSel).width() + 10;
             $this.css('padding-left', _paddingLeft + 'px');
         });
+
+        // 插入表情Table
         _body.on('click', _emotionIcoBtnSel, function () {
-            // 插入表情Table
             var _qqFaceWrap = $(this).parent().children(_emotionsWrapSel);
             if(!/[\S]+/.test(_qqFaceWrap.html())) {
                 _qqFaceWrap.html(_qqFaceTable);
             }
         });
+
+        // 输入表情
         _body.on('click', _emotionImgSel, function () {
-            // 输入表情
             var $this = $(this);
             var _qqFaceWrap = $this.parents(_emotionsWrapSel);
             var _inputBoxId = _qqFaceWrap.data('inputbox-id');
@@ -290,12 +464,12 @@ var postCommentsKit = {
             }
         });
         
-        _body.on('click', _commentTextarea, function () {
+        _body.on('click', _commentTextareaSel, function () {
             _checkLogin();
         });
-        
+
+        // 主评论提交
         _body.on('click', _commentSubmitBtnSel, function () {
-            // 主评论提交
             var $this = $(this);
             if(_submitting || $this.prop('disabled')) return;
             if(_validateComment(_commentTextarea)) {
@@ -304,9 +478,9 @@ var postCommentsKit = {
                 _postComment();
             }
         });
-        
+
+        // 回复提交
         _body.on('click', _replySumitBtnSel, function () {
-            // 回复提交
             var $this = $(this);
             if(_submitting || $this.prop('disabled')) return;
             var _input = $this.parent().parent().find('input');
@@ -315,6 +489,32 @@ var postCommentsKit = {
                 _clickedSubmitBtn = $this;
                 _postComment();
             }
+        });
+
+        // 评论点赞
+        _body.on('click', _starBtnSel, function () {
+            var $this = $(this);
+
+            if($this.hasClass('active')) return;
+
+            _clickedStarBtn = $this;
+
+            var commentId = $this.parents('.comment').data('current-comment-id');
+            commentId = parseInt(commentId);
+
+            _postStar(commentId);
+        });
+
+        // 已点赞评论的点赞按钮加active
+        $(_commentListSel + ' .comment').each(function () {
+            _checkAllStared($(this));
+        });
+
+        // 加载更多评论
+        _loadMoreBtn.on('click', function () {
+            if(_loading || $(this).prop('disabled')) return;
+
+            _fetchComments();
         });
     }
 };

@@ -88,8 +88,24 @@ var _isValidUserName = function (str) {
 
 // AJAX请求的Data添加_wpnonce参数, REST_API需要
 var _filterDataForRest = function (data) {
-    data._wpnonce = TT._wpnonce; //TODO 如果TT._wpnonce不存在，去获取
+    //TODO 如果TT._wpnonce不存在，去获取
+    if(typeof data == 'string') {
+        data += '&_wpnonce=' + TT._wpnonce;
+    }else if(typeof data == 'object') {
+        data._wpnonce = TT._wpnonce;
+    }
+
     return data;
+};
+
+// 利用本地存储实现配置等数据持久化
+var _store = function (namespace, data){
+    if(data){
+        return localStorage.setItem(namespace, JSON.stringify(data));
+    }
+
+    let store = localStorage.getItem(namespace);
+    return (store && JSON.parse(store)) || {};
 };
 
 
@@ -102,7 +118,8 @@ var Utils = {
     isEmail: _isEmail,
     isUrl: _isUrl,
     isValidUserName: _isValidUserName,
-    filterDataForRest: _filterDataForRest
+    filterDataForRest: _filterDataForRest,
+    store: _store
 };
 
 export default Utils;

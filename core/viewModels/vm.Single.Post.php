@@ -148,7 +148,7 @@ class SinglePostVM extends BaseVM {
         wp_reset_postdata();
 
         // 当前用户
-        $uid = get_current_user_id();
+        // $uid = get_current_user_id(); 导致登录后这个缓存的uid还是0
 
         return (object)array_merge(
             $info,
@@ -163,7 +163,7 @@ class SinglePostVM extends BaseVM {
                 'prev'         => $prev,
                 'next'         => $next,
                 'relates'      => $related_posts,
-                'uid'          => $uid
+                //'uid'          => $uid
             )
         );
     }

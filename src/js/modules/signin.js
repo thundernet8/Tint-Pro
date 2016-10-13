@@ -13,8 +13,9 @@
 
 'use strict';
 
+import {Routes} from './globalConfig';
 import {popMsgbox} from './msgbox';
-import {Utils} from './utils';
+import Utils from './utils';
 
 /**
  * 登录页登录表单
@@ -81,7 +82,7 @@ var _removeError = function (input) {
 
 var _post = function () {
     // Login
-    var url = Utils.getAPIUrl('/session');
+    var url = Routes.signIn;
     var beforeSend = function () {
         _form.addClass('submitting');
         _userLoginInput.prop('disabled', true);
@@ -117,7 +118,7 @@ var _post = function () {
     var error = function (xhr, textStatus, err) {
         popMsgbox.error({
             title: '请求登录失败, 请重新尝试',
-            text: xhr.responseJSON.message
+            text: xhr.responseJSON ? xhr.responseJSON.message : xhr.responseText
         });
         finishRequest();
     };

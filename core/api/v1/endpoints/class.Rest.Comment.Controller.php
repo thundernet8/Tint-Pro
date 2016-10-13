@@ -32,11 +32,21 @@ class WP_REST_Comment_Controller extends WP_REST_Controller
     public function register_routes(){
         register_rest_route($this->namespace, '/' . $this->rest_base, array(
             array(
+                'methods'         => WP_REST_Server::READABLE,
+                'callback'        => array( $this, 'get_items' ),
+                'permission_callback' => array( $this, 'get_items_permissions_check' ),
+                'args'            => $this->get_collection_params(),
+            ),
+            array(
                 'methods' => WP_REST_Server::CREATABLE,
                 'callback' => array($this, 'create_item'),
                 'permission_callback' => array($this, 'create_item_permissions_check'),
                 'args' => $this->get_endpoint_args_for_item_schema( WP_REST_Server::CREATABLE ),
             ),
+            'schema' => array($this, 'get_public_item_schema'),
+        ));
+
+        register_rest_route($this->namespace, '/' . $this->rest_base . '/(?P<comment_id>[\d]+)', array(
             array(
                 'methods' => WP_REST_Server::DELETABLE,
                 'callback' => array($this, 'delete_item'),
@@ -49,8 +59,69 @@ class WP_REST_Comment_Controller extends WP_REST_Controller
                     'reassign' => array(),
                 ),
             ),
-            'schema' => array($this, 'get_public_item_schema'),
         ));
+    }
+
+
+    /**
+     * 判断是否有权限读取评论
+     *
+     * @param WP_REST_Request $request
+     * @return boolean | WP_Error
+     */
+    function get_items_permissions_check ( $request ) {
+        return true;
+    }
+
+    /**
+     * 读取评论
+     *
+     * @param WP_REST_Request $request Full details about the request.
+     * @return WP_Error | WP_REST_Response
+     */
+    public function get_items( $request ) {
+        $comment_page = max(absint($request->get_param('commentPage')), 2);
+        $comments_per_page = tt_get_option('tt_comments_per_page', 20);
+        $comment_post_ID = absint($request->get_param('commentPostId'));
+        if(!$comment_post_ID) {
+            return tt_api_fail(__('Invalid post ID', 'tt'));
+        }
+
+        $nonce = $request->get_param('_wpnonce');
+
+        if(!wp_verify_nonce($nonce, 'wp_rest')) {
+            return tt_api_fail(__('Nonce verify failed', 'tt'), array(), '400');
+        }
+
+        $the_comments = get_comments(array(
+            'status' => 'approve',
+            'type' => 'comment', // 'pings' (includes 'pingback' and 'trackback'),
+            'post_id'=> $comment_post_ID,
+            //'meta_key' => 'tt_sticky_comment',
+            'orderby' => 'comment_date', //meta_value_num
+            'order' => 'DESC',
+            'number' => $comments_per_page,
+            'offset' => $comments_per_page * ($comment_page-1)
+        ));
+
+        $count = count(array($the_comments));
+        if(!$the_comments || $count == 0) {
+            return tt_api_fail(__('No more comments', 'tt'), array('count' => 0), '200');
+        }
+
+        $comment_list = wp_list_comments(array(
+            'type'=>'all',
+            'callback'=>'tt_comment',
+            'end-callback'=>'tt_end_comment',
+            'max_depth'=>3,
+            'reverse_top_level'=>0,
+            'style'=>'div',
+            'page'=>1,
+            'per_page'=>$comments_per_page,
+            'echo'=>false
+        ), $the_comments);
+
+        return tt_api_success($comment_list, array('count' => $count, 'nextPage' => $comment_page + 1));
     }
 
 
@@ -121,22 +192,22 @@ class WP_REST_Comment_Controller extends WP_REST_Controller
             return tt_api_fail(__('Comment cannot be blank', 'tt'));
         }
 
-        // 检测重复评论
-        global $wpdb;
-        $dupe = "SELECT comment_ID FROM $wpdb->comments WHERE comment_post_ID = '$comment_post_ID' AND comment_author = '$user_ID' AND comment_content = '$comment_content' LIMIT 1";
-        if ( $wpdb->get_var($dupe) ) {
-            return tt_api_fail(__('Duplicated comment', 'tt'));
-        }
+        // 检测重复评论 (由wp_new_comment内部机制去完成)
+//        global $wpdb;
+//        $dupe = "SELECT comment_ID FROM $wpdb->comments WHERE comment_post_ID = '$comment_post_ID' AND comment_author = '$user_ID' AND comment_content = '$comment_content' LIMIT 1";
+//        if ( $wpdb->get_var($dupe) ) {
+//            return tt_api_fail(__('Duplicated comment', 'tt'), array(), "409");
+//        }
 
-        // 检测评论频率
-        if ( $last_time = $wpdb->get_var( $wpdb->prepare("SELECT comment_date_gmt FROM $wpdb->comments WHERE comment_author = %s ORDER BY comment_date DESC LIMIT 1", $comment_author) ) ) {
-            $time_last_comment = mysql2date('U', $last_time, false);
-            $time_new_comment  = mysql2date('U', current_time('mysql', 1), false);
-            $flood_die = apply_filters('comment_flood_filter', false, $time_last_comment, $time_new_comment);
-            if ( $flood_die ) {
-                return tt_api_fail(__('Comment too fast', 'tt'));
-            }
-        }
+        // 检测评论频率 (由wp_new_comment内部机制去完成)
+//        if ( $last_time = $wpdb->get_var( $wpdb->prepare("SELECT comment_date_gmt FROM $wpdb->comments WHERE comment_author = %s ORDER BY comment_date DESC LIMIT 1", $comment_author) ) ) {
+//            $time_last_comment = mysql2date('U', $last_time, false);
+//            $time_new_comment  = mysql2date('U', current_time('mysql', 1), false);
+//            $flood_die = apply_filters('comment_flood_filter', false, $time_last_comment, $time_new_comment);
+//            if ( $flood_die ) {
+//                return tt_api_fail(__('Comment too fast', 'tt'));
+//            }
+//        }
 
         // 评论数据合并
         // -comment_approved
@@ -180,38 +251,20 @@ class WP_REST_Comment_Controller extends WP_REST_Controller
      */
     public function delete_item_permissions_check( $request ) {
 
-        if ( !is_user_logged_in() ) {
-            return new WP_Error( 'rest_session_cannot_delete', __( 'Sorry, you are not allowed to delete this resource.', 'tt' ), array( 'status' => tt_rest_authorization_required_code() ) );
+        if ( !is_user_logged_in() || !current_user_can('Administrator') ) {
+            return new WP_Error( 'rest_comment_cannot_delete', __( 'Sorry, you are not allowed to delete this resource.', 'tt' ), array( 'status' => tt_rest_authorization_required_code() ) );
         }
 
         return true;
     }
 
     /**
-     * 删除Session(登出)
+     * 删除评论
      *
      * @param WP_REST_Request $request Full details about the request.
      * @return WP_Error|WP_REST_Response
      */
     public function delete_item( $request ) {
-        $force = isset( $request['force'] ) ? (bool) $request['force'] : false;
 
-        // We don't support trashing for this type, error out
-        if ( ! $force ) {
-            return new WP_Error( 'rest_trash_not_supported', __( 'Users do not support trashing.', 'tt' ), array( 'status' => 501 ) );
-        }
-
-        $user = wp_get_current_user();
-        if ( ! $user ) {
-            return new WP_Error( 'rest_user_invalid_id', __( 'Invalid resource id.', 'tt' ), array( 'status' => 400 ) );
-        }
-
-        wp_destroy_current_session();
-        wp_clear_auth_cookie();
-
-        return rest_ensure_response(array(
-            'success' => 1,
-            'message' => __('You have signed out successfully', 'tt')
-        ));
     }
 }

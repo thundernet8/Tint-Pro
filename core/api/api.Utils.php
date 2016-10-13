@@ -113,10 +113,30 @@ function tt_create_initial_rest_routes() {
     $session_controller->register_routes();
 
     // Comments.
-    $controller = new WP_REST_Comment_Controller;
-    $controller->register_routes();
+    $comment_controller = new WP_REST_Comment_Controller;
+    $comment_controller->register_routes();
+
+    // Comment Stars
+    $comment_star_controller = new WP_REST_Comment_Star_Controller;
+    $comment_star_controller->register_routes();
 }
 add_action( 'rest_api_init', 'tt_create_initial_rest_routes', 0 );  // TODO cached 接口
+
+
+/**
+ * REST请求时设置DOING_AJAX为true
+ *
+ * @since 2.0.0
+ * @return void
+ */
+function tt_rest_set_doing_ajax () {
+    if(!defined('DOING_AJAX')) {
+        define('DOING_AJAX', true);
+    }
+
+    return true;
+}
+add_filter('rest_enabled', 'tt_rest_set_doing_ajax');
 
 
 /**
@@ -137,7 +157,7 @@ function tt_get_rest_request_cache_key($request) {
     $path = $request->get_route();
     $params = $request->get_params();
     $params_str = json_encode($params);
-    if(isset($params['user_diff']) && $params['user_diff']){  // TODO: user_diff (表示该接口的值是用户相关的)
+    if(isset($params['user_diff']) && $params['user_diff']){  // TODO: user_diff (表示该接口的值是用户相关的) // TODO no_cache 参数包含在请求中以阻止缓存
         $user_id = get_current_user_id();
     }
 

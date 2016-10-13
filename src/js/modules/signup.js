@@ -28,8 +28,9 @@
 
 'use strict';
 
+import {Routes} from './globalConfig';
 import {popMsgbox, msgbox} from './msgbox';
-import {Utils} from './utils';
+import Utils from './utils';
 
 /**
  * 注册页注册表单
@@ -195,7 +196,7 @@ var _handleSuccess = function () {
 var _post = function () {
     // TODO
     // Register
-    var url = Utils.getAPIUrl('/users');
+    var url = Routes.signUp;
     var beforeSend = function () {
         _handleInputStatus(true);
         _handleSubmitBtnStatus(true);

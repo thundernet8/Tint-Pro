@@ -70,7 +70,8 @@ class PostCommentsVM extends BaseVM {
         ), $the_comments);
 
         return (object)array(
-            'list_html' => $comment_list
+            'list_html' => $comment_list,
+            'list_count' => count($the_comments)
         );
     }
 }
