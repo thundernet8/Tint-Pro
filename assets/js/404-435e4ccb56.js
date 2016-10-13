@@ -1,5 +1,5 @@
 /**
- * Generated on Thu Oct 13 2016 16:35:17 GMT+0800 (China Standard Time) by Zhiyan
+ * Generated on Thu Oct 13 2016 22:30:08 GMT+0800 (中国标准时间) by Zhiyan
  *
  * @package   Tint
  * @version   v2.0.0
@@ -1000,6 +1000,11 @@ webpackJsonp([
             } : function (obj) {
                 return obj && typeof Symbol === 'function' && obj[['constructor']] === Symbol ? 'symbol' : typeof obj;
             };
+            var _modalSignBox = __webpack_require__(6);
+            var _modalSignBox2 = _interopRequireDefault(_modalSignBox);
+            function _interopRequireDefault(obj) {
+                return obj && obj[['__esModule']] ? obj : { default: obj };
+            }
             var _getUrlPara = function _getUrlPara(name, url) {
                 if (!url)
                     url = window[['location']][['href']];
@@ -1071,6 +1076,12 @@ webpackJsonp([
                 var store = localStorage[['getItem']](namespace);
                 return store && JSON[['parse']](store) || {};
             };
+            var _checkLogin = function _checkLogin() {
+                if (TT && TT[['uid']] && parseInt(TT[['uid']]) > 0) {
+                    return true;
+                }
+                _modalSignBox2[['default']][['show']]();
+            };
             var Utils = {
                 getUrlPara: _getUrlPara,
                 getSiteUrl: _getSiteUrl,
@@ -1081,12 +1092,25 @@ webpackJsonp([
                 isUrl: _isUrl,
                 isValidUserName: _isValidUserName,
                 filterDataForRest: _filterDataForRest,
-                store: _store
+                store: _store,
+                checkLogin: _checkLogin
             };
             exports[['default']] = Utils;
         }[['call']](exports, __webpack_require__(5)));
     },
     function (module, exports) {
         module[['exports']] = TT;
+    },
+    function (module, exports) {
+        'use strict';
+        Object[['defineProperty']](exports, '__esModule', { value: true });
+        var modalSignBox = {
+            show: function show() {
+                alert('need login');
+            },
+            hide: function hide() {
+            }
+        };
+        exports[['default']] = modalSignBox;
     }
 ]);

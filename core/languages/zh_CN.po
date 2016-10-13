@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-10-10 21:18+0800\n"
-"PO-Revision-Date: 2016-10-10 21:23+0800\n"
+"POT-Creation-Date: 2016-10-13 22:25+0800\n"
+"PO-Revision-Date: 2016-10-13 22:26+0800\n"
 "Last-Translator: Zhiyan <mail@webapproach.net>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -78,6 +78,73 @@ msgstr "%s必须介于%d(不包含)和%d(包含)之间"
 msgid "%s must be between %d (inclusive) and %d (inclusive)"
 msgstr "%s必须介于%d(包含)和%d(包含)之间"
 
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:57
+#: core/api/v1/endpoints/class.Rest.Session.Controller.php:58
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:69
+msgid "Required to be true, as resource does not support trashing."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:87
+msgid "Invalid post ID"
+msgstr "无效的文章ID"
+
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:93
+#: core/api/v1/endpoints/class.Rest.Comment.Star.Controller.php:102
+#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:99
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:390
+msgid "Nonce verify failed"
+msgstr "Nonce验证失败"
+
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:109
+msgid "No more comments"
+msgstr "没有更多评论了"
+
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:147
+msgid "Spam nonce check failed"
+msgstr "防垃圾Nonce验证失败"
+
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:151
+msgid "Comment closed for the post"
+msgstr "文章评论已关闭"
+
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:154
+msgid "Cannot comment a unpublished post"
+msgstr "不能评论未发布文章"
+
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:157
+msgid "Cannot comment a password protected post"
+msgstr "不能评论密码保护的文章"
+
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:187
+msgid "Sorry, you must be logged in to reply to a comment."
+msgstr "你必须登录才能评论"
+
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:192
+msgid "Comment cannot be blank"
+msgstr "评论内容不能为空"
+
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:225
+msgid "Add comment failed"
+msgstr "添加评论失败"
+
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:255
+#: core/api/v1/endpoints/class.Rest.Session.Controller.php:127
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:587
+msgid "Sorry, you are not allowed to delete this resource."
+msgstr "抱歉, 你无权删除该资源"
+
+#: core/api/v1/endpoints/class.Rest.Comment.Star.Controller.php:97
+msgid "Wrong comment id"
+msgstr "错误的评论ID"
+
+#: core/api/v1/endpoints/class.Rest.Comment.Star.Controller.php:110
+msgid "Star comment failed"
+msgstr "点赞评论失败"
+
+#: core/api/v1/endpoints/class.Rest.Comment.Star.Controller.php:115
+msgid "Star comment successfully"
+msgstr "点赞评论成功"
+
 #: core/api/v1/endpoints/class.Rest.Controller.php:38
 msgid "The register_routes() method must be overriden"
 msgstr "register_routes()方法必须被覆盖"
@@ -115,27 +182,33 @@ msgid ""
 "Scope under which the request is made; determines fields present in response."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Session.Controller.php:58
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:69
-msgid "Required to be true, as resource does not support trashing."
-msgstr ""
+#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:94
+msgid "Wrong post id"
+msgstr "错误的文章ID"
+
+#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:104
+msgid "You must be logged in to star a post"
+msgstr "你必须登录才能点赞文章"
+
+#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:113
+msgid "Star post failed"
+msgstr "点赞文章失败"
+
+#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:118
+msgid "Star post successfully"
+msgstr "点赞文章成功"
 
 #: core/api/v1/endpoints/class.Rest.Session.Controller.php:94
 msgid "Verify the login nonce failed"
-msgstr ""
+msgstr "验证登录Nonce失败"
 
 #: core/api/v1/endpoints/class.Rest.Session.Controller.php:110
 msgid "Welcome, you have signed in successfully"
-msgstr ""
+msgstr "欢迎, 你已成功登录"
 
 #: core/api/v1/endpoints/class.Rest.Session.Controller.php:114
 msgid "There is no user matches the info you offered"
-msgstr ""
-
-#: core/api/v1/endpoints/class.Rest.Session.Controller.php:127
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:587
-msgid "Sorry, you are not allowed to delete this resource."
-msgstr ""
+msgstr "未找到匹配用户"
 
 #: core/api/v1/endpoints/class.Rest.Session.Controller.php:144
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:606
@@ -176,24 +249,20 @@ msgstr "无效的用户 email"
 
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:339
 msgid "You are not currently logged in."
-msgstr ""
+msgstr "你现在尚未登录"
 
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:360
 msgid "Sorry, you are not allowed to create resource."
-msgstr ""
-
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:390
-msgid "Nonce verify failed"
-msgstr ""
+msgstr "抱歉, 你无权创建该资源"
 
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:396
 msgid ""
 "Password length does not match the requirement, must more than or equal to 6."
-msgstr ""
+msgstr "密码长度不满足要求, 长度必须至少为6"
 
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:405
 msgid "Captcha does not match."
-msgstr ""
+msgstr "验证码不匹配"
 
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:411
 msgid "Invalid resource login name."
@@ -227,7 +296,7 @@ msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:532
 msgid "Email address is invalid."
-msgstr ""
+msgstr "邮箱地址无效"
 
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:536
 msgid "Username isn't editable"
@@ -557,24 +626,18 @@ msgstr "<!-- Nav cached %s -->"
 msgid "<!-- Nav cache end -->"
 msgstr "<!-- Nav cache end -->"
 
-#: core/functions/func.Comment.php:72
+#: core/functions/func.Comment.php:78
 msgid "Your comment is under review..."
 msgstr "你的评论正在等待审核..."
 
-#: core/functions/func.Comment.php:82 core/functions/func.Comment.php:90
+#: core/functions/func.Comment.php:88 core/functions/func.Comment.php:96
+#: core/functions/func.Comment.php:100
 msgid "Reply"
 msgstr "回复"
 
-#: core/functions/func.Comment.php:92 core/modules/mod.ReplyForm.php:29
+#: core/functions/func.Comment.php:99 core/modules/mod.ReplyForm.php:34
 msgid "Emotion"
 msgstr "表情"
-
-#: core/functions/func.Comment.php:93 core/modules/mod.ReplyForm.php:27
-#: core/templates/actions/tpl.M.Findpass.php:38
-#: core/templates/actions/tpl.M.Resetpass.php:47
-#: core/templates/actions/tpl.M.Signin.php:58
-msgid "Submit"
-msgstr "提交"
 
 #: core/functions/func.Install.php:35
 msgid ""
@@ -765,6 +828,10 @@ msgstr "404边栏"
 msgid "Page Sidebar"
 msgstr "页面边栏"
 
+#: core/modules/mod.Comments.php:29
+msgid "Load More Comments"
+msgstr "加载更多"
+
 #: core/modules/mod.Footer.Simple.php:18
 msgid "HOME"
 msgstr "首页"
@@ -817,13 +884,20 @@ msgstr "Popular"
 msgid "Type a keyword"
 msgstr "键入关键词"
 
-#: core/modules/mod.ReplyForm.php:22
+#: core/modules/mod.ReplyForm.php:26
 msgid "Leave some words..."
 msgstr "说点什么吧..."
 
-#: core/modules/mod.ReplyForm.php:24
+#: core/modules/mod.ReplyForm.php:28
 msgid "Signin and Leave some words..."
 msgstr "登录并参与讨论..."
+
+#: core/modules/mod.ReplyForm.php:31
+#: core/templates/actions/tpl.M.Findpass.php:38
+#: core/templates/actions/tpl.M.Resetpass.php:47
+#: core/templates/actions/tpl.M.Signin.php:58
+msgid "Submit"
+msgstr "提交"
 
 #: core/modules/mod.SinglePost.php:34
 msgid "Share to Weibo"
@@ -845,35 +919,35 @@ msgstr "分享至微信"
 msgid "Share to Douban"
 msgstr "分享至豆瓣"
 
+#: core/modules/mod.SinglePost.php:63 core/modules/mod.SinglePost.php:68
+msgid "Stared"
+msgstr "已赞"
+
 #: core/modules/mod.SinglePost.php:63
 msgid "Star It"
 msgstr "赞一下"
 
-#: core/modules/mod.SinglePost.php:69
+#: core/modules/mod.SinglePost.php:68
 msgid "persons"
 msgstr "个人"
 
-#: core/modules/mod.SinglePost.php:69
-msgid "Stared"
-msgstr "点赞"
-
-#: core/modules/mod.SinglePost.php:77
+#: core/modules/mod.SinglePost.php:76
 msgid "Previous article"
 msgstr "上一篇"
 
-#: core/modules/mod.SinglePost.php:81
+#: core/modules/mod.SinglePost.php:80
 msgid "Next article"
 msgstr "下一篇"
 
-#: core/modules/mod.SinglePost.php:88
+#: core/modules/mod.SinglePost.php:87
 msgid "Related Articles"
 msgstr "相关文章"
 
-#: core/modules/mod.SinglePost.php:109
+#: core/modules/mod.SinglePost.php:108
 msgid "LEAVE A REPLY"
 msgstr "参与评论"
 
-#: core/modules/mod.SinglePost.php:113
+#: core/modules/mod.SinglePost.php:112
 msgid "COMMENTS CLOSED"
 msgstr "评论已关闭"
 

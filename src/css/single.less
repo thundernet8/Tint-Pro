@@ -133,6 +133,10 @@ body {
                         &:hover {
                             color: darken(@brand-primary, 10%);
                         }
+                        &.active {
+                            color: @brand-hot;
+                            cursor: default;
+                        }
                         i {
                             margin-right: 5px;
                             line-height: inherit;
@@ -354,9 +358,11 @@ body {
                 color: @brand-hot;
                 font-size: 15px;
                 line-height: 38px;
-                &:hover {
+                &:hover,
+                &.active{
                     background: @brand-hot;
                     color: #ffffff;
+                    cursor: default;
                 }
                 i {
                     display: inline-block;

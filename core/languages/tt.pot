@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-10-10 21:18+0800\n"
+"POT-Creation-Date: 2016-10-13 22:25+0800\n"
 "PO-Revision-Date: 2016-08-17 21:40+0800\n"
 "Last-Translator: \n"
 "Language-Team: Zhiyan <mail@webapproach.net>\n"
@@ -80,6 +80,73 @@ msgstr ""
 msgid "%s must be between %d (inclusive) and %d (inclusive)"
 msgstr ""
 
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:57
+#: core/api/v1/endpoints/class.Rest.Session.Controller.php:58
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:69
+msgid "Required to be true, as resource does not support trashing."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:87
+msgid "Invalid post ID"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:93
+#: core/api/v1/endpoints/class.Rest.Comment.Star.Controller.php:102
+#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:99
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:390
+msgid "Nonce verify failed"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:109
+msgid "No more comments"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:147
+msgid "Spam nonce check failed"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:151
+msgid "Comment closed for the post"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:154
+msgid "Cannot comment a unpublished post"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:157
+msgid "Cannot comment a password protected post"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:187
+msgid "Sorry, you must be logged in to reply to a comment."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:192
+msgid "Comment cannot be blank"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:225
+msgid "Add comment failed"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:255
+#: core/api/v1/endpoints/class.Rest.Session.Controller.php:127
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:587
+msgid "Sorry, you are not allowed to delete this resource."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Comment.Star.Controller.php:97
+msgid "Wrong comment id"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Comment.Star.Controller.php:110
+msgid "Star comment failed"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Comment.Star.Controller.php:115
+msgid "Star comment successfully"
+msgstr ""
+
 #: core/api/v1/endpoints/class.Rest.Controller.php:38
 msgid "The register_routes() method must be overriden"
 msgstr ""
@@ -118,9 +185,20 @@ msgid ""
 "response."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Session.Controller.php:58
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:69
-msgid "Required to be true, as resource does not support trashing."
+#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:94
+msgid "Wrong post id"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:104
+msgid "You must be logged in to star a post"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:113
+msgid "Star post failed"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:118
+msgid "Star post successfully"
 msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.Session.Controller.php:94
@@ -133,11 +211,6 @@ msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.Session.Controller.php:114
 msgid "There is no user matches the info you offered"
-msgstr ""
-
-#: core/api/v1/endpoints/class.Rest.Session.Controller.php:127
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:587
-msgid "Sorry, you are not allowed to delete this resource."
 msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.Session.Controller.php:144
@@ -183,10 +256,6 @@ msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:360
 msgid "Sorry, you are not allowed to create resource."
-msgstr ""
-
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:390
-msgid "Nonce verify failed"
 msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:396
@@ -561,23 +630,17 @@ msgstr ""
 msgid "<!-- Nav cache end -->"
 msgstr ""
 
-#: core/functions/func.Comment.php:72
+#: core/functions/func.Comment.php:78
 msgid "Your comment is under review..."
 msgstr ""
 
-#: core/functions/func.Comment.php:82 core/functions/func.Comment.php:90
+#: core/functions/func.Comment.php:88 core/functions/func.Comment.php:96
+#: core/functions/func.Comment.php:100
 msgid "Reply"
 msgstr ""
 
-#: core/functions/func.Comment.php:92 core/modules/mod.ReplyForm.php:29
+#: core/functions/func.Comment.php:99 core/modules/mod.ReplyForm.php:34
 msgid "Emotion"
-msgstr ""
-
-#: core/functions/func.Comment.php:93 core/modules/mod.ReplyForm.php:27
-#: core/templates/actions/tpl.M.Findpass.php:38
-#: core/templates/actions/tpl.M.Resetpass.php:47
-#: core/templates/actions/tpl.M.Signin.php:58
-msgid "Submit"
 msgstr ""
 
 #: core/functions/func.Install.php:35
@@ -771,6 +834,10 @@ msgstr ""
 msgid "Page Sidebar"
 msgstr ""
 
+#: core/modules/mod.Comments.php:29
+msgid "Load More Comments"
+msgstr ""
+
 #: core/modules/mod.Footer.Simple.php:18
 msgid "HOME"
 msgstr ""
@@ -823,12 +890,19 @@ msgstr ""
 msgid "Type a keyword"
 msgstr ""
 
-#: core/modules/mod.ReplyForm.php:22
+#: core/modules/mod.ReplyForm.php:26
 msgid "Leave some words..."
 msgstr ""
 
-#: core/modules/mod.ReplyForm.php:24
+#: core/modules/mod.ReplyForm.php:28
 msgid "Signin and Leave some words..."
+msgstr ""
+
+#: core/modules/mod.ReplyForm.php:31
+#: core/templates/actions/tpl.M.Findpass.php:38
+#: core/templates/actions/tpl.M.Resetpass.php:47
+#: core/templates/actions/tpl.M.Signin.php:58
+msgid "Submit"
 msgstr ""
 
 #: core/modules/mod.SinglePost.php:34
@@ -851,35 +925,35 @@ msgstr ""
 msgid "Share to Douban"
 msgstr ""
 
+#: core/modules/mod.SinglePost.php:63 core/modules/mod.SinglePost.php:68
+msgid "Stared"
+msgstr ""
+
 #: core/modules/mod.SinglePost.php:63
 msgid "Star It"
 msgstr ""
 
-#: core/modules/mod.SinglePost.php:69
+#: core/modules/mod.SinglePost.php:68
 msgid "persons"
 msgstr ""
 
-#: core/modules/mod.SinglePost.php:69
-msgid "Stared"
-msgstr ""
-
-#: core/modules/mod.SinglePost.php:77
+#: core/modules/mod.SinglePost.php:76
 msgid "Previous article"
 msgstr ""
 
-#: core/modules/mod.SinglePost.php:81
+#: core/modules/mod.SinglePost.php:80
 msgid "Next article"
 msgstr ""
 
-#: core/modules/mod.SinglePost.php:88
+#: core/modules/mod.SinglePost.php:87
 msgid "Related Articles"
 msgstr ""
 
-#: core/modules/mod.SinglePost.php:109
+#: core/modules/mod.SinglePost.php:108
 msgid "LEAVE A REPLY"
 msgstr ""
 
-#: core/modules/mod.SinglePost.php:113
+#: core/modules/mod.SinglePost.php:112
 msgid "COMMENTS CLOSED"
 msgstr ""
 

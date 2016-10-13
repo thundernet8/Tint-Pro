@@ -14,3 +14,12 @@
 * tt_weibo_avatar
 * tt_weibo_profile_img
 * tt_weibo_id
+
+### Post Meta
+* views (postViews插件)
+* tt_post_stars
+* tt_post_star_users (不唯一)
+
+
+### Comment Meta
+* tt_comment_likes

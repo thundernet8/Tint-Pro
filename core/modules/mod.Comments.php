@@ -28,5 +28,5 @@ if($vm->isCache && $vm->cacheTime) { ?>
     <?php if($vm->modelData->list_count > 0){ ?>
     <div class="load-more"><button class="btn btn-primary btn-wide btn-more"><?php _e('Load More Comments', 'tt'); ?></button></div>
     <?php } ?>
-    <div class="err"></div>
+    <div class="err text-primary text-center h3"></div>
 </div>

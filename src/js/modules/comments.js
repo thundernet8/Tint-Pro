@@ -14,7 +14,6 @@
 'use strict';
 
 import {Routes} from './globalConfig';
-import modalSignBox from './modalSignBox';
 import Utils from './utils';
 
 var _body = $('body');
@@ -185,12 +184,13 @@ var _fetchComments = function () {
             _appendComments(data.message);
             _maybeMorePages(data.count, data.nextPage);
         }else{
-            _showError(data.message, _loadMoreBtn.next('.err'));
+            _maybeMorePages(data.count, _currentCommentPage);
+            _showError(data.message, _loadMoreBtn.parent().next('.err'));
         }
         finishRequest();
     };
     var error = function (xhr, textStatus, err) {
-        _showError(xhr.responseJSON ? xhr.responseJSON.message : xhr.responseText, _loadMoreBtn.next('.err'));
+        _showError(xhr.responseJSON ? xhr.responseJSON.message : xhr.responseText, _loadMoreBtn.parent().next('.err'));
         finishRequest();
     };
     $.ajax({
@@ -217,14 +217,6 @@ var _replyFormSel = '#respond .reply-form';
 var _commentSubmitBtnSel = '.comment-form .comment-submit';
 var _replySumitBtnSel = '.reply-form .reply-submit';
 var _errSel = '.err';
-
-// 检查是否登录
-var _checkLogin = function () {
-   if(TT&&TT.uid&&parseInt(TT.uid)>0) {
-       return true;
-   }
-   modalSignBox.show();
-};
 
 // 评论内容检查
 var _validateComment = function (input) {
@@ -345,7 +337,7 @@ var _appendComment = function (comment, input) {
 /* 点赞评论 */
 /* --------------------- */
 
-var _starBtnSel  = '.comment .like';
+//var _starBtnSel  = '.comment .like';
 var _clickedStarBtn = null;
 var _starCountSel = '.like-count';
 var _starNonceInput = $('#comment_star_nonce');
@@ -427,7 +419,7 @@ var postCommentsKit = {
         _body.on('click', _replyBtnSel, function () {
             var $this = $(this);
             var _currentReplyWrap = $this.parent().parent('.comment-body').children(_replyWrapSel);
-            _checkLogin();
+            Utils.checkLogin();
             if(_currentReplyWrap.css('display')!=='block'){
                 $('#respond '+_replyWrapSel).hide();
             }
@@ -465,7 +457,7 @@ var postCommentsKit = {
         });
         
         _body.on('click', _commentTextareaSel, function () {
-            _checkLogin();
+            Utils.checkLogin();
         });
 
         // 主评论提交

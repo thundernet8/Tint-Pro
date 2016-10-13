@@ -50,7 +50,7 @@
                 <div class="post-meta">
                     <a class="post-meta-views" href="javascript: void(0)"><i class="tico tico-eye"></i><span class="num"><?php echo $postdata->views; ?></span></a>
                     <a class="post-meta-comments js-article-comment js-article-comment-count" href="#respond"><i class="tico tico-comment"></i><span class="num"><?php echo $postdata->comment_count; ?></span></a>
-                    <a class="post-meta-likes js-article-like js-article-like-count" href="javascript: void(0)"><i class="tico tico-favorite"></i><span class="num"><?php echo $postdata->stars; ?></span></a>
+                    <a class="post-meta-likes js-article-like <?php if(in_array(get_current_user_id(), $postdata->star_uids)) echo 'active'; ?>" href="javascript: void(0)" data-post-id="<?php echo $postdata->ID; ?>" data-nonce="<?php echo wp_create_nonce('tt_post_star_nonce'); ?>"><i class="tico tico-favorite"></i><span class="js-article-like-count num"><?php echo $postdata->stars; ?></span></a>
                 </div>
             </div>
             <article class="single-article"><?php echo $postdata->content; ?></article>
@@ -60,12 +60,11 @@
                 </div>
                 <div class="support-author"></div>
                 <div class="post-like">
-                    <a class="post-meta-likes js-article-like js-article-like-count" href="javascript: void(0)" data-post-id="<?php echo $postdata->ID; ?>"><i class="tico tico-favorite"></i><span class="text"><?php _e('Star It', 'tt'); ?></span></a>
+                    <a class="post-meta-likes js-article-like <?php if(in_array(get_current_user_id(), $postdata->star_uids)) echo 'active'; ?>" href="javascript: void(0)" data-post-id="<?php echo $postdata->ID; ?>" data-nonce="<?php echo wp_create_nonce('tt_post_star_nonce'); ?>"><i class="tico tico-favorite"></i><span class="text"><?php in_array(get_current_user_id(), $postdata->star_uids) ? _e('Stared', 'tt') : _e('Star It', 'tt'); ?></span></a>
                     <ul class="post-like-avatars">
-                        <?php foreach ($postdata->star_users as $id) { ?>
-                        <li class="post-like-user"><img src="<?php echo tt_get_avatar($id, 'small'); ?>" alt=""></li>
+                        <?php foreach ($postdata->star_users as $star_user) { ?>
+                        <li class="post-like-user"><img src="<?php echo $star_user->avatar; ?>" alt="<?php echo $star_user->name; ?>" title="<?php echo $star_user->name; ?>" data-user-id="<?php echo $star_user->uid; ?>"></li>
                         <?php } ?>
-                        <li class="post-like-user"><img src="<?php echo tt_get_avatar(1, 'small'); ?>" alt=""></li>
                         <li class="post-like-counter"><span><span class="js-article-like-count num"><?php echo $postdata->stars; ?></span> <?php _e('persons', 'tt'); ?></span><?php _e('Stared', 'tt'); ?></li>
                     </ul>
                 </div>

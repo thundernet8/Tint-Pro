@@ -84,9 +84,22 @@ class SinglePostVM extends BaseVM {
         $views = intval(get_post_meta( $the_post->ID, 'views', true ));
 
         // 点赞
-        $stars = intval(get_post_meta( $the_post->ID, 'tt_post_stars', true ));
+        //$stars = intval(get_post_meta( $the_post->ID, 'tt_post_stars', true )); // 可以直接count $star_users替代
 
-        $star_users = get_post_meta( $the_post->ID, 'tt_post_star_users', false);
+        $star_user_ids = array_unique(get_post_meta( $the_post->ID, 'tt_post_star_users', false)); //TODO 最多显示10个，最新的靠前(待确认) //TODO去重
+        $stars = count($star_user_ids);
+        $star_users = array();
+        $limit = min(count($star_user_ids), 10);
+        for ($i = 0; $i < $limit; $i++) {
+            $uid = $star_user_ids[$i];
+            $star_users[] = (object)array(
+                'uid' => $uid,
+                'name' => get_userdata($uid)->display_name,
+                'avatar' => tt_get_avatar($uid, 'small')
+            );
+        }
+
+        //$me_stared = in_array(get_current_user_id(), $star_user_ids); //缓存后会发生偏离
 
         // 上下篇文章
         $prev = get_previous_post_link('%link');
@@ -163,7 +176,9 @@ class SinglePostVM extends BaseVM {
                 'prev'         => $prev,
                 'next'         => $next,
                 'relates'      => $related_posts,
-                //'uid'          => $uid
+                //'uid'          => $uid,
+                //'me_stared'   => $me_stared,
+                'star_uids'    => $star_user_ids
             )
         );
     }

@@ -17,6 +17,7 @@ import {handleLineLoading} from './modules/loading';
 import {popMsgbox} from './modules/msgbox';
 import {} from './modules/bootstrap-flat';
 import postCommentsKit from './modules/comments';
+import postStarKit from './modules/postStar';
 
 // DOM Ready
 jQuery(document).ready(function ($) {
@@ -25,6 +26,9 @@ jQuery(document).ready(function ($) {
     
     // 初始化popMsgbox
     popMsgbox.init();
+    
+    // 初始化文章点赞
+    postStarKit.init();
   
     // 评论框初始化
     postCommentsKit.init();

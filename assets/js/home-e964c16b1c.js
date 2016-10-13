@@ -1,5 +1,5 @@
 /**
- * Generated on Thu Oct 13 2016 16:35:17 GMT+0800 (China Standard Time) by Zhiyan
+ * Generated on Thu Oct 13 2016 22:30:08 GMT+0800 (中国标准时间) by Zhiyan
  *
  * @package   Tint
  * @version   v2.0.0
@@ -19,9 +19,9 @@ webpackJsonp([
         (function (jQuery, TT) {
             'use strict';
             var _loading = __webpack_require__(2);
-            var _msgbox = __webpack_require__(6);
+            var _msgbox = __webpack_require__(7);
             __webpack_require__(3);
-            __webpack_require__(12);
+            __webpack_require__(13);
             jQuery(document)[['ready']](function ($) {
                 (0, _loading[['handleLineLoading']])();
                 _msgbox[['popMsgbox']][['init']]();
@@ -1001,11 +1001,12 @@ webpackJsonp([
     function (module, exports) {
         module[['exports']] = TT;
     },
+    ,
     function (module, exports, __webpack_require__) {
         (function (jQuery, $) {
             'use strict';
             Object[['defineProperty']](exports, '__esModule', { value: true });
-            var swal = __webpack_require__(7);
+            var swal = __webpack_require__(8);
             var app = window[['App']] || (window[['App']] = {});
             var popMsgbox = app[['PopMsgbox']] || (app[['PopMsgbox']] = {});
             var popMsgbox = {};
@@ -2367,7 +2368,7 @@ webpackJsonp([
                     });
                 };
             }));
-        }[['call']](exports, __webpack_require__(1), __webpack_require__(13)(module)));
+        }[['call']](exports, __webpack_require__(1), __webpack_require__(14)(module)));
     },
     function (module, exports) {
         'use strict';

@@ -68,7 +68,7 @@ class WP_REST_Comment_Star_Controller extends WP_REST_Controller
      * @return WP_Error | WP_REST_Response
      */
     public function get_item( $request ) {
-        $comment_id = absint($request['id']);
+        $comment_id = absint($request['comment_id']);
         $comment_stars = (int)get_comment_meta($comment_id, 'tt_comment_likes', true);
         return tt_api_success('', array('stars' => $comment_stars));
     }
@@ -103,7 +103,8 @@ class WP_REST_Comment_Star_Controller extends WP_REST_Controller
         }
 
         $pre_stars = get_comment_meta($comment_id, 'tt_comment_likes', true);
-        $stared = update_comment_meta($comment_id, 'tt_comment_likes', absint($pre_stars) + 1);
+        $stars = absint($pre_stars) + 1;
+        $stared = update_comment_meta($comment_id, 'tt_comment_likes', $stars);
 
         if(!$stared) {
             return tt_api_fail(__('Star comment failed', 'tt'), array(), '409');
@@ -111,6 +112,6 @@ class WP_REST_Comment_Star_Controller extends WP_REST_Controller
 
         do_action('tt_stared_comment', $comment_id); //TODO clear cache
 
-        return tt_api_success(__('Star comment successfully', 'tt'), array('stars' => absint(get_comment_meta($comment_id, 'tt_comment_likes', true))));
+        return tt_api_success(__('Star comment successfully', 'tt'), array('stars' => $stars));
     }
 }

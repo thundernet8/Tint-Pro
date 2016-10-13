@@ -144,7 +144,7 @@ class WP_REST_Comment_Controller extends WP_REST_Controller
     public function create_item( $request ) {
         $nonce = trim($_POST['commentNonce']);
         if(!wp_verify_nonce($nonce, 'tt_comment_nonce')) {
-            return tt_api_fail(__('Span nonce check failed', 'tt'));
+            return tt_api_fail(__('Spam nonce check failed', 'tt'));
         }
         $comment_post_ID = absint($_POST['postId']);
         if($comment_post_ID <= 0 || !comments_open($comment_post_ID)) {

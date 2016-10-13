@@ -119,6 +119,10 @@ function tt_create_initial_rest_routes() {
     // Comment Stars
     $comment_star_controller = new WP_REST_Comment_Star_Controller;
     $comment_star_controller->register_routes();
+
+    // Post Stars
+    $post_star_controller = new WP_REST_Post_Star_Controller;
+    $post_star_controller->register_routes();
 }
 add_action( 'rest_api_init', 'tt_create_initial_rest_routes', 0 );  // TODO cached 接口
 

@@ -23,7 +23,8 @@ var routes = {
     signUp: Utils.getAPIUrl('/users'),
     users: Utils.getAPIUrl('/users'),
     comments: Utils.getAPIUrl('/comments'),
-    commentStars: Utils.getAPIUrl('/comment/stars') //TODO more
-}
+    commentStars: Utils.getAPIUrl('/comment/stars'), //TODO more
+    postStars: Utils.getAPIUrl('/post/stars')
+};
 
 export {routes as Routes};

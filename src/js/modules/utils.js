@@ -13,6 +13,8 @@
 
 'use strict';
 
+import modalSignBox from './modalSignBox';
+
 // 获取 url 中的 get 参数
 var _getUrlPara = function (name ,url) {
   if (!url) url = window.location.href;
@@ -109,6 +111,15 @@ var _store = function (namespace, data){
 };
 
 
+// 检查是否登录
+var _checkLogin = function () {
+    if(TT&&TT.uid&&parseInt(TT.uid)>0) {
+        return true;
+    }
+    modalSignBox.show();
+};
+
+
 var Utils = {
     getUrlPara: _getUrlPara,
     getSiteUrl: _getSiteUrl,
@@ -119,7 +130,8 @@ var Utils = {
     isUrl: _isUrl,
     isValidUserName: _isValidUserName,
     filterDataForRest: _filterDataForRest,
-    store: _store
+    store: _store,
+    checkLogin: _checkLogin
 };
 
 export default Utils;
