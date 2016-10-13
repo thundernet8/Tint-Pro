@@ -330,3 +330,15 @@ function tt_get_embed_template($template){
 add_filter('embed_template', 'tt_get_embed_template', 10, 1);
 
 
+/**
+ * 在底部嵌入登录弹窗Form
+ *
+ * @since   2.0.0
+ * @return  void
+ */
+function tt_embed_modal_sign_form(){
+    if(!is_user_logged_in()) {
+        load_mod('mod.ModalLoginForm', true);
+    }
+}
+add_action('wp_footer', 'tt_embed_modal_sign_form');

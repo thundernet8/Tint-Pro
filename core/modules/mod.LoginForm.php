@@ -12,4 +12,6 @@
  * @link https://www.webapproach.net/tint.html
  */
 ?>
+<?php
+
 
