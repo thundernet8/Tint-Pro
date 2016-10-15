@@ -752,7 +752,7 @@ function optionsframework_options() {
         'name' => __( 'Your Name', 'tt' ),
         'desc' => __( 'Your display name as the sender', 'tt' ),
         'id' => 'tt_smtp_name',
-        'std' => $blog_home,
+        'std' => $blog_name,
         'class' => 'mini',
         'type' => 'text'
     );
