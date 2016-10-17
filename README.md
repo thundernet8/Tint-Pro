@@ -1,6 +1,6 @@
-## Tinection
+## Tint
 
-基于WordPress内容管理系统的主题
+基于WordPress内容管理系统的主题(Tinection 2)
 
 
 ### 使用的开源代码\资源
