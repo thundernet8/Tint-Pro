@@ -76,18 +76,20 @@
 						<?php if($amount<=0){ ?>
 						<a class="buy-btn sold-out"><i class="fa fa-shopping-cart"></i><?php _e('已售完','tinection'); ?></a>
 						<?php }else{ ?>
-							<?php if(is_user_logged_in()&&$discount_arr[5]>0){ ?>
-							<a class="buy-btn" data-top="true" data-pop="order"><i class="fa fa-shopping-cart"></i><?php _e('立即购买','tinection'); ?></a>
+							<?php if(get_post_meta($post->ID, 'product_taobao', true)) { ?>
+							<a class="buy-btn"><i class="fa fa-shopping-cart">&nbsp;</i><?php _e('淘宝购买','tinection'); ?></a>
+							<?php }elseif(is_user_logged_in()&&$discount_arr[5]>0){ ?>
+							<a class="buy-btn" data-top="true" data-pop="order"><i class="fa fa-shopping-cart">&nbsp;</i><?php _e('立即购买','tinection'); ?></a>
 							<?php }elseif($discount_arr[0]>0&&!is_user_logged_in()){ ?>
-							<a data-sign="0" class="user-signin buy-btn user-login"><i class="fa fa-shopping-cart"></i><?php _e('登录购买','tinection'); ?></a>
+							<a data-sign="0" class="user-signin buy-btn user-login"><i class="fa fa-shopping-cart">&nbsp;</i><?php _e('登录购买','tinection'); ?></a>
 							<?php }else{ ?>
-							<a class="buy-btn free-buy" data-top="false"><i class="fa fa-shopping-cart"></i><?php _e('立即购买','tinection'); ?></a>
+							<a class="buy-btn free-buy" data-top="false"><i class="fa fa-shopping-cart">&nbsp;</i><?php _e('立即购买','tinection'); ?></a>
 							<?php } ?>			
                         <?php } ?>
                     </div>
-					<div class="tips row">
+					<!--div class="tips row">
 						<p><?php _e('注意：本站为本商品唯一销售点，请勿在其他途径购买，以免遭受安全损失。','tinection'); ?></p>
-					</div>
+					</div-->
 				</div>
 				<div class="main-content">
 					<div class="shop-content">

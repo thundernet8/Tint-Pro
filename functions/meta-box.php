@@ -157,6 +157,7 @@ function tin_product_info_callback($post){
 	// 添加安全字段验证
 	wp_nonce_field( 'tin_meta_box', 'tin_meta_box_nonce' );
 	$currency = get_post_meta($post->ID,'pay_currency',true);
+	$taobao = get_post_meta($post->ID, 'product_taobao', true);
 	$price = get_post_meta($post->ID,'product_price',true);
 	$amount = get_post_meta($post->ID,'product_amount',true);
 	$vip_discount = json_decode(get_post_meta($post->ID,'product_vip_discount',true),true);
@@ -177,6 +178,9 @@ function tin_product_info_callback($post){
 </p>
 <p style="clear:both;font-weight:bold;border-bottom:1px solid #ddd;padding-bottom:8px;">
 <?php _e('基本信息','tinection'); ?>
+</p>
+<p ><?php _e( '淘宝购买链接', 'tinection' );?>
+<input name="product_taobao" class="large-text code" value="<?php echo $taobao;?>" style="width:100%;height: 28px;">
 </p>
 <p style="width:20%;float:left;"><?php _e( '选择支付币种', 'tinection' );?>
 	<select name="pay_currency">
@@ -285,6 +289,8 @@ function tin_save_meta_box_data( $post_id ) {
 	if ( isset( $_POST['pay_currency'] ) ) update_post_meta( $post_id, 'pay_currency', $_POST['pay_currency'] );
 
 	if ( isset( $_POST['product_price'] ) ) update_post_meta( $post_id, 'product_price', $_POST['product_price'] );
+
+	if ( isset( $_POST['product_taobao'] ) ) update_post_meta( $post_id, 'product_taobao', esc_url($_POST['product_price']) );
 	
 	if ( isset( $_POST['product_amount'] ) ) update_post_meta( $post_id, 'product_amount', $_POST['product_amount'] );
 	

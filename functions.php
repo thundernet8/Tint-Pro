@@ -1994,6 +1994,7 @@ function tin_author_page_title(){
 /* 替换文章或评论内容外链为内链
 /* ------------------------------ */
 function convert_to_internal_links($content){
+	if(ot_get_option('safe_external_link', 'off') == 'off') return $content;
 	preg_match_all('/\shref=(\'|\")(http[^\'\"#]*?)(\'|\")([\s]?)/',$content,$matches);
 	if($matches){
 		foreach($matches[2] as $val){

@@ -1432,6 +1432,15 @@ function custom_theme_options() {
             'std'       => '5',
             'section'   => 'credit'
         ),
+        // links: 是否外链转内链
+        array(
+            'id'        => 'safe_external_link',
+            'label'     => __('开启外链转内链','tinection'),
+            'desc'      => __('开启后，站内评论、文章内容的外链将转换为本站域名开头的内部链接','tinection'),
+            'type'      => 'on-off',
+            'std'       => 'off',
+            'section'   => 'links'
+        ),
         // links: 短链接前缀符
         array(
             'id'        => 'hop_links_baseurl',
