@@ -61,7 +61,7 @@
 </head>
 <body <?php body_class('is-loadingApp'); ?>>
     <div class="loading-line"></div>
-    <header class="header common-header">
+    <header class="header common-header white">
         <nav id="header-nav" class="navigation container clearfix" role="navigation">
             <!-- Logo -->
             <a class="logo nav-col" href="<?php echo home_url(); ?>" title="<?php echo get_bloginfo('name'); ?>">

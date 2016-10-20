@@ -41,7 +41,7 @@
 
 body  {
   &.home {
-    //background: #f5f6f8;
+    background: #f5f6f8;
 
     &>header {
       //border-bottom: 1px solid #e5e5e5;
@@ -53,6 +53,8 @@ body  {
       &>.content-section {
           padding-top: 20px;
           padding-bottom: 20px;
+
+          background: #ffffff;
       }
 
       &>.line {
@@ -62,6 +64,8 @@ body  {
       }
 
       &>#mod-show {
+          margin-bottom: 20px;
+          overflow: hidden;
         &>#slider {
           max-height: 380px;
           overflow: hidden;
@@ -157,12 +161,12 @@ body  {
         &>#popular {
           &>.block3-widget {
             position: relative;
-            overflow: hidden;
+            //overflow: hidden;
             &>h2 {
               position: absolute;
               width: 150px;
-              top: 16px;
-              right: -42px;
+              top: -5px;//16px;
+              right: -60px;//-42px;
               margin: 0;
               padding: 5px 20px;
               font-size: 16px;
@@ -254,7 +258,7 @@ body  {
                     font-size: 2rem;
                     margin-bottom: 15px;
                     a {
-                        font-weight: bold;
+                        font-weight: 500;
                         color: @link-color;
                         &:hover {
                             color: @brand-primary;
