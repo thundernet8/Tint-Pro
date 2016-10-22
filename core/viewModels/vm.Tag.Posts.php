@@ -6,7 +6,7 @@
  * @since 2.0.0
  * @package Tint
  * @author Zhiyan
- * @date 2016/10/20 22:56
+ * @date 2016/10/22 16:41
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
  * @link https://www.webapproach.net/tint.html
@@ -15,9 +15,9 @@
 <?php
 
 /**
- * Class CategoryPostsVM
+ * Class TagPostsVM
  */
-class CategoryPostsVM extends BaseVM {
+class TagPostsVM extends BaseVM {
 
     /**
      * @var int 分页号
@@ -25,9 +25,9 @@ class CategoryPostsVM extends BaseVM {
     private $_page = 1;
 
     /**
-     * @var int 分类ID
+     * @var int 标签ID
      */
-    private $_catID;
+    private $_tagID;
 
     protected function __construct() {
         $this->_cacheUpdateFrequency = 'daily';
@@ -42,20 +42,20 @@ class CategoryPostsVM extends BaseVM {
      * @return  static
      */
     public static function getInstance($page = 1) {
-        $cat_ID = absint(get_queried_object_id());
-        $instance = new static(); // 因为不同分页不同分类共用该模型，不采用单例模式
-        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . static::class . '_cat' . $cat_ID . '_page' . $page;
+        $tag_ID = absint(get_queried_object_id());
+        $instance = new static(); // 因为不同分页不同标签共用该模型，不采用单例模式
+        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . static::class . '_tag' . $tag_ID . '_page' . $page;
         $instance->_page = max(1, $page);
-        $instance->_catID = $cat_ID;
+        $instance->_tagID = $tag_ID;
         $instance->configInstance();
         return $instance;
     }
 
     protected function getRealData() {
-        $category_ID = $this->_catID;
-        $category = get_category($category_ID);
-        $category_link = get_category_link($category_ID);
-        $category->category_link = $category_link;
+        $tag_ID = $this->_tagID;
+        $tag = get_category($tag_ID);
+        $tag_link = get_tag_link($tag_ID);
+        $tag->tag_link = $tag_link;
         //$category_description = $category->description;//category_description();
 
 //        $args = array(
@@ -63,7 +63,7 @@ class CategoryPostsVM extends BaseVM {
 //            'post_status' => 'publish',
 //            'posts_per_page' => get_option('posts_per_page', 10),
 //            'paged' => $this->_page,
-//            'category_in' => $category_ID,
+//            'tag_in' => $tag_ID,
 //            'has_password' => false,
 //            'ignore_sticky_posts' => true,
 //            'orderby' => 'date', // modified - 如果按最新编辑时间排序
@@ -75,7 +75,7 @@ class CategoryPostsVM extends BaseVM {
         $query = $wp_query;
         //$GLOBALS['wp_query'] = $query; // 取代主循环(query_posts只返回posts，为了获取其他有用数据，使用WP_Query)
 
-        $category_posts = array();
+        $tag_posts = array();
 
         $big_page_link = get_pagenum_link(999999999);
         $pagination = array(
@@ -86,35 +86,35 @@ class CategoryPostsVM extends BaseVM {
         );
 
         while ($query->have_posts()) : $query->the_post();
-            $category_post = array();
+            $tag_post = array();
             global $post;
-            $category_post['ID'] = $post->ID;
-            $category_post['title'] = get_the_title($post);
-            $category_post['permalink'] = get_permalink($post);
-            $category_post['comment_count'] = $post->comment_count;
-            $category_post['excerpt'] = get_the_excerpt($post);
-            $category_post['category'] = sprintf('<a class="category" href="%1$s" rel="bookmark">%2$s</a>', $category_link, $category->cat_name);
-            $category_post['author'] = get_the_author();
-            $category_post['author_url'] = home_url('/@' . $category_post['author']); //TODO the link
-            $category_post['time'] = get_post_time('F j, Y', false, $post, false); //get_post_time( string $d = 'U', bool $gmt = false, int|WP_Post $post = null, bool $translate = false )
-            $category_post['timediff'] = Utils::getTimeDiffString(get_post_time('Y-m-d G:i:s', true));
-            $category_post['datetime'] = get_the_time(DATE_W3C, $post);
-            $category_post['thumb'] = tt_get_thumb($post, 'medium');
-            $category_post['format'] = get_post_format($post) ? : 'standard';
+            $tag_post['ID'] = $post->ID;
+            $tag_post['title'] = get_the_title($post);
+            $tag_post['permalink'] = get_permalink($post);
+            $tag_post['comment_count'] = $post->comment_count;
+            $tag_post['excerpt'] = get_the_excerpt($post);
+            $tag_post['category'] = get_the_category_list(' ', '', $post->ID);
+            $tag_post['author'] = get_the_author();
+            $tag_post['author_url'] = home_url('/@' . $tag_post['author']); //TODO the link
+            $tag_post['time'] = get_post_time('F j, Y', false, $post, false); //get_post_time( string $d = 'U', bool $gmt = false, int|WP_Post $post = null, bool $translate = false )
+            $tag_post['timediff'] = Utils::getTimeDiffString(get_post_time('Y-m-d G:i:s', true));
+            $tag_post['datetime'] = get_the_time(DATE_W3C, $post);
+            $tag_post['thumb'] = tt_get_thumb($post, 'medium');
+            $tag_post['format'] = get_post_format($post) ? : 'standard';
 
-            $star_user_ids = array_unique(get_post_meta( $post->ID, 'tt_post_star_users', false)); //TODO 最多显示10个，最新的靠前(待确认)
+            $star_user_ids = array_unique(get_post_meta( $post->ID, 'tt_post_star_users', false));
             $stars = count($star_user_ids);
-            $category_post['star_count'] = $stars;
+            $tag_post['star_count'] = $stars;
 
-            $category_posts[] = $category_post;
+            $tag_posts[] = $tag_post;
         endwhile;
 
         wp_reset_postdata();
 
         return (object)array(
-            'category' => (array)$category,
+            'tag' => (array)$tag,
             'pagination' => $pagination,
-            'category_posts' => $category_posts
+            'tag_posts' => $tag_posts
         );
     }
 }

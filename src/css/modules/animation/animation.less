@@ -1,6 +1,43 @@
 // Animation
 
 // - fadeZoomIn
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    -webkit-animation: fadeIn .3s forwards;
+    -o-animation: fadeIn .3s forwards;
+    animation: fadeIn .3s forwards;
+}
+
+// - fadeZoomIn
 @-webkit-keyframes fadeZoomIn {
   0% {
     opacity: 0;

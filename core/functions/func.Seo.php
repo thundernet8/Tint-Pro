@@ -73,7 +73,7 @@ function tt_get_page_title() {
 
     // paged
     if($paged = get_query_var('paged') && get_query_var('paged') > 1){
-        $title .= sprintf(__(' - Page %d ','tt'), $paged);
+        $title .= sprintf(__(' - Page %d ','tt'), $paged + 1);
     }
 
     return $title;

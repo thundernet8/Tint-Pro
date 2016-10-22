@@ -27,4 +27,9 @@ var routes = {
     postStars: Utils.getAPIUrl('/post/stars')
 };
 
-export {routes as Routes};
+// 特殊类名
+var classes = {
+   appLoading: 'is-loadingApp'
+};
+
+export {routes as Routes, classes as Classes};

@@ -12,7 +12,6 @@
  * @link https://www.webapproach.net/tint.html
  */
 ?>
-
 <?php
 
 class WP_REST_Post_Star_Controller extends WP_REST_Controller

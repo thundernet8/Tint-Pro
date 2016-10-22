@@ -1,5 +1,5 @@
 /**
- * Generated on Thu Oct 13 2016 22:30:08 GMT+0800 (中国标准时间) by Zhiyan
+ * Generated on Sat Oct 22 2016 16:24:37 GMT+0800 (中国标准时间) by Zhiyan
  *
  * @package   Tint
  * @version   v2.0.0
@@ -12,38 +12,30 @@
 **/
  
 webpackJsonp([
-    4,
+    2,
     10
 ], [
     function (module, exports, __webpack_require__) {
-        (function (jQuery, TT) {
+        (function (jQuery) {
             'use strict';
             var _loading = __webpack_require__(2);
             var _msgbox = __webpack_require__(7);
             __webpack_require__(3);
-            __webpack_require__(13);
+            var _comments = __webpack_require__(13);
+            var _comments2 = _interopRequireDefault(_comments);
+            var _postStar = __webpack_require__(14);
+            var _postStar2 = _interopRequireDefault(_postStar);
+            var _loadNextPage = __webpack_require__(15);
+            var _loadNextPage2 = _interopRequireDefault(_loadNextPage);
+            function _interopRequireDefault(obj) {
+                return obj && obj[['__esModule']] ? obj : { default: obj };
+            }
             jQuery(document)[['ready']](function ($) {
                 (0, _loading[['handleLineLoading']])();
                 _msgbox[['popMsgbox']][['init']]();
-                (function () {
-                    if (window[['TT']] && TT[['isHome']]) {
-                        $('.slides-wrap')[['unslider']]({
-                            autoplay: true,
-                            animation: 'horizontal',
-                            animateHeight: false,
-                            delay: 6000,
-                            arrows: false,
-                            infinite: true,
-                            keys: {
-                                prev: 37,
-                                next: 39,
-                                stop: 27
-                            }
-                        });
-                    }
-                }());
+                _loadNextPage2[['default']][['init']]();
             });
-        }[['call']](exports, __webpack_require__(1), __webpack_require__(5)));
+        }[['call']](exports, __webpack_require__(1)));
     },
     function (module, exports) {
         module[['exports']] = jQuery;
@@ -997,11 +989,128 @@ webpackJsonp([
             });
         }[['call']](undefined, jQuery));
     },
-    ,
+    function (module, exports, __webpack_require__) {
+        (function (TT) {
+            'use strict';
+            Object[['defineProperty']](exports, '__esModule', { value: true });
+            var _typeof = typeof Symbol === 'function' && typeof Symbol[['iterator']] === 'symbol' ? function (obj) {
+                return typeof obj;
+            } : function (obj) {
+                return obj && typeof Symbol === 'function' && obj[['constructor']] === Symbol ? 'symbol' : typeof obj;
+            };
+            var _modalSignBox = __webpack_require__(6);
+            var _modalSignBox2 = _interopRequireDefault(_modalSignBox);
+            function _interopRequireDefault(obj) {
+                return obj && obj[['__esModule']] ? obj : { default: obj };
+            }
+            var _getUrlPara = function _getUrlPara(name, url) {
+                if (!url)
+                    url = window[['location']][['href']];
+                name = name[['replace']](/[\[]/, '\\[')[['replace']](/[\]]/, '\\]');
+                var regexS = '[\\?&]' + name + '=([^&#]*)';
+                var regex = new RegExp(regexS);
+                var results = regex[['exec']](url);
+                return results == null ? null : results[1];
+            };
+            var _getSiteUrl = function _getSiteUrl() {
+                return window[['location']][['protocol']] + '//' + window[['location']][['host']];
+            };
+            var _getAbsUrl = function _getAbsUrl(endpoint, base) {
+                if (!base) {
+                    base = _getSiteUrl();
+                }
+                if (/^http([s]?)/[['test']](endpoint)) {
+                    return endpoint;
+                }
+                if (/^\/\//[['test']](endpoint)) {
+                    return window[['location']][['protocol']] + endpoint;
+                }
+                if (/^\//[['test']](endpoint)) {
+                    return base + endpoint;
+                }
+                return base + '/' + endpoint;
+            };
+            var _getAPIUrl = function _getAPIUrl(endpoint) {
+                var base = TT && TT[['apiRoot']] ? TT[['apiRoot']] + 'v1' : window[['location']][['protocol']] + '//' + window[['location']][['host']] + '/api/v1';
+                if (endpoint) {
+                    return base + endpoint;
+                }
+                return base;
+            };
+            var _isPhoneNum = function _isPhoneNum(str) {
+                var reg = /^((13[0-9])|(147)|(15[^4,\D])|(17[0-9])|(18[0,0-9]))\d{8}$/;
+                if (typeof str === 'string')
+                    return reg[['test']](str);
+                return reg[['test']](str[['toString']]());
+            };
+            var _isEmail = function _isEmail(str) {
+                var reg = /[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}/;
+                if (typeof str === 'string')
+                    return reg[['test']](str);
+                return reg[['test']](str[['toString']]());
+            };
+            var _isUrl = function _isUrl(str) {
+                var reg = /^((http)|(https))+:[^\s]+\.[^\s]*$/;
+                if (typeof str === 'string')
+                    return reg[['test']](str);
+                return reg[['test']](str[['toString']]());
+            };
+            var _isValidUserName = function _isValidUserName(str) {
+                var reg = /^[A-Za-z][A-Za-z0-9_]{4,}$/;
+                return reg[['test']](str);
+            };
+            var _filterDataForRest = function _filterDataForRest(data) {
+                if (typeof data == 'string') {
+                    data += '&_wpnonce=' + TT[['_wpnonce']];
+                } else if ((typeof data === 'undefined' ? 'undefined' : _typeof(data)) == 'object') {
+                    data[['_wpnonce']] = TT[['_wpnonce']];
+                }
+                return data;
+            };
+            var _store = function _store(namespace, data) {
+                if (data) {
+                    return localStorage[['setItem']](namespace, JSON[['stringify']](data));
+                }
+                var store = localStorage[['getItem']](namespace);
+                return store && JSON[['parse']](store) || {};
+            };
+            var _checkLogin = function _checkLogin() {
+                if (TT && TT[['uid']] && parseInt(TT[['uid']]) > 0) {
+                    return true;
+                }
+                _modalSignBox2[['default']][['show']]();
+            };
+            var Utils = {
+                getUrlPara: _getUrlPara,
+                getSiteUrl: _getSiteUrl,
+                getAbsUrl: _getAbsUrl,
+                getAPIUrl: _getAPIUrl,
+                isPhoneNum: _isPhoneNum,
+                isEmail: _isEmail,
+                isUrl: _isUrl,
+                isValidUserName: _isValidUserName,
+                filterDataForRest: _filterDataForRest,
+                store: _store,
+                checkLogin: _checkLogin
+            };
+            exports[['default']] = Utils;
+        }[['call']](exports, __webpack_require__(5)));
+    },
     function (module, exports) {
         module[['exports']] = TT;
     },
-    ,
+    function (module, exports) {
+        'use strict';
+        Object[['defineProperty']](exports, '__esModule', { value: true });
+        var modalSignBox = {
+            show: function show() {
+                alert('need login');
+            },
+            hide: function hide() {
+            }
+        };
+        exports[['default']] = modalSignBox;
+    },
     function (module, exports, __webpack_require__) {
         (function (jQuery, $) {
             'use strict';
@@ -2038,349 +2147,495 @@ webpackJsonp([
         }(window, document));
     },
     ,
-    ,
+    function (module, exports, __webpack_require__) {
+        'use strict';
+        Object[['defineProperty']](exports, '__esModule', { value: true });
+        exports[['Classes']] = exports[['Routes']] = undefined;
+        var _utils = __webpack_require__(4);
+        var _utils2 = _interopRequireDefault(_utils);
+        function _interopRequireDefault(obj) {
+            return obj && obj[['__esModule']] ? obj : { default: obj };
+        }
+        var routes = {
+            signIn: _utils2[['default']][['getAPIUrl']]('/session'),
+            session: _utils2[['default']][['getAPIUrl']]('/session'),
+            signUp: _utils2[['default']][['getAPIUrl']]('/users'),
+            users: _utils2[['default']][['getAPIUrl']]('/users'),
+            comments: _utils2[['default']][['getAPIUrl']]('/comments'),
+            commentStars: _utils2[['default']][['getAPIUrl']]('/comment/stars'),
+            postStars: _utils2[['default']][['getAPIUrl']]('/post/stars')
+        };
+        var classes = { appLoading: 'is-loadingApp' };
+        exports[['Routes']] = routes;
+        exports[['Classes']] = classes;
+    },
     ,
     ,
     function (module, exports, __webpack_require__) {
-        var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
-        (function (jQuery, module) {
+        (function ($, TT) {
             'use strict';
-            var _typeof = typeof Symbol === 'function' && typeof Symbol[['iterator']] === 'symbol' ? function (obj) {
-                return typeof obj;
-            } : function (obj) {
-                return obj && typeof Symbol === 'function' && obj[['constructor']] === Symbol ? 'symbol' : typeof obj;
-            };
-            (function (factory) {
-                if ((false ? 'undefined' : _typeof(module)) === 'object' && _typeof(module[['exports']]) === 'object') {
-                    factory(__webpack_require__(1));
-                } else if (true) {
-                    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_FACTORY__ = factory(window[['jQuery']]), __WEBPACK_AMD_DEFINE_RESULT__ = typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? __WEBPACK_AMD_DEFINE_FACTORY__[['apply']](exports, __WEBPACK_AMD_DEFINE_ARRAY__) : __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module[['exports']] = __WEBPACK_AMD_DEFINE_RESULT__));
-                } else {
-                    factory(window[['jQuery']]);
-                }
-            }(function ($) {
-                if (!$) {
-                    return console[['warn']]('Unslider needs jQuery');
-                }
-                $[['Unslider']] = function (context, options) {
-                    var self = this;
-                    self[['_']] = 'unslider';
-                    self[['defaults']] = {
-                        autoplay: false,
-                        delay: 3000,
-                        speed: 750,
-                        easing: 'swing',
-                        keys: {
-                            prev: 37,
-                            next: 39
-                        },
-                        nav: true,
-                        arrows: {
-                            prev: '<a class="' + self[['_']] + '-arrow prev">Prev</a>',
-                            next: '<a class="' + self[['_']] + '-arrow next">Next</a>'
-                        },
-                        animation: 'horizontal',
-                        selectors: {
-                            container: 'ul:first',
-                            slides: 'li'
-                        },
-                        animateHeight: false,
-                        activeClass: self[['_']] + '-active',
-                        swipe: true,
-                        swipeThreshold: 0.2
-                    };
-                    self[['$context']] = context;
-                    self[['options']] = {};
-                    self[['$parent']] = null;
-                    self[['$container']] = null;
-                    self[['$slides']] = null;
-                    self[['$nav']] = null;
-                    self[['$arrows']] = [];
-                    self[['total']] = 0;
-                    self[['current']] = 0;
-                    self[['prefix']] = self[['_']] + '-';
-                    self[['eventSuffix']] = '.' + self[['prefix']] + ~~(Math[['random']]() * 2000);
-                    self[['interval']] = null;
-                    self[['init']] = function (options) {
-                        self[['options']] = $[['extend']]({}, self[['defaults']], options);
-                        self[['$container']] = self[['$context']][['find']](self[['options']][['selectors']][['container']])[['addClass']](self[['prefix']] + 'wrap');
-                        self[['$slides']] = self[['$container']][['children']](self[['options']][['selectors']][['slides']]);
-                        self[['setup']]();
-                        $[['each']]([
-                            'nav',
-                            'arrows',
-                            'keys',
-                            'infinite'
-                        ], function (index, module) {
-                            self[['options']][module] && self['init' + $[['_ucfirst']](module)]();
-                        });
-                        if (jQuery[['event']][['special']][['swipe']] && self[['options']][['swipe']]) {
-                            self[['initSwipe']]();
-                        }
-                        self[['options']][['autoplay']] && self[['start']]();
-                        self[['calculateSlides']]();
-                        self[['$context']][['trigger']](self[['_']] + '.ready');
-                        return self[['animate']](self[['options']][['index']] || self[['current']], 'init');
-                    };
-                    self[['setup']] = function () {
-                        self[['$context']][['addClass']](self[['prefix']] + self[['options']][['animation']])[['wrap']]('<div class="' + self[['_']] + '" />');
-                        self[['$parent']] = self[['$context']][['parent']]('.' + self[['_']]);
-                        var position = self[['$context']][['css']]('position');
-                        if (position === 'static') {
-                            self[['$context']][['css']]('position', 'relative');
-                        }
-                        self[['$context']][['css']]('overflow', 'hidden');
-                    };
-                    self[['calculateSlides']] = function () {
-                        self[['$slides']] = self[['$container']][['children']](self[['options']][['selectors']][['slides']]);
-                        self[['total']] = self[['$slides']][['length']];
-                        if (self[['options']][['animation']] !== 'fade') {
-                            var prop = 'width';
-                            if (self[['options']][['animation']] === 'vertical') {
-                                prop = 'height';
-                            }
-                            self[['$container']][['css']](prop, self[['total']] * 100 + '%')[['addClass']](self[['prefix']] + 'carousel');
-                            self[['$slides']][['css']](prop, 100 / self[['total']] + '%');
-                        }
-                    };
-                    self[['start']] = function () {
-                        self[['interval']] = setTimeout(function () {
-                            self[['next']]();
-                        }, self[['options']][['delay']]);
-                        return self;
-                    };
-                    self[['stop']] = function () {
-                        clearTimeout(self[['interval']]);
-                        return self;
-                    };
-                    self[['initNav']] = function () {
-                        var $nav = $('<nav class="' + self[['prefix']] + 'nav"><ol /></nav>');
-                        self[['$slides']][['each']](function (key) {
-                            var label = this[['getAttribute']]('data-nav') || key + 1;
-                            if ($[['isFunction']](self[['options']][['nav']])) {
-                                label = self[['options']][['nav']][['call']](self[['$slides']][['eq']](key), key, label);
-                            }
-                            $nav[['children']]('ol')[['append']]('<li data-slide="' + key + '">' + label + '</li>');
-                        });
-                        self[['$nav']] = $nav[['insertAfter']](self[['$context']]);
-                        self[['$nav']][['find']]('li')[['on']]('click' + self[['eventSuffix']], function () {
-                            var $me = $(this)[['addClass']](self[['options']][['activeClass']]);
-                            $me[['siblings']]()[['removeClass']](self[['options']][['activeClass']]);
-                            self[['animate']]($me[['attr']]('data-slide'));
-                        });
-                    };
-                    self[['initArrows']] = function () {
-                        if (self[['options']][['arrows']] === true) {
-                            self[['options']][['arrows']] = self[['defaults']][['arrows']];
-                        }
-                        $[['each']](self[['options']][['arrows']], function (key, val) {
-                            self[['$arrows']][['push']]($(val)[['insertAfter']](self[['$context']])[['on']]('click' + self[['eventSuffix']], self[key]));
-                        });
-                    };
-                    self[['initKeys']] = function () {
-                        if (self[['options']][['keys']] === true) {
-                            self[['options']][['keys']] = self[['defaults']][['keys']];
-                        }
-                        $(document)[['on']]('keyup' + self[['eventSuffix']], function (e) {
-                            $[['each']](self[['options']][['keys']], function (key, val) {
-                                if (e[['which']] === val) {
-                                    $[['isFunction']](self[key]) && self[key][['call']](self);
-                                }
-                            });
-                        });
-                    };
-                    self[['initSwipe']] = function () {
-                        var width = self[['$slides']][['width']]();
-                        if (self[['options']][['animation']] !== 'fade') {
-                            self[['$container']][['on']]({
-                                movestart: function movestart(e) {
-                                    if (e[['distX']] > e[['distY']] && e[['distX']] < -e[['distY']] || e[['distX']] < e[['distY']] && e[['distX']] > -e[['distY']]) {
-                                        return !!e[['preventDefault']]();
-                                    }
-                                    self[['$container']][['css']]('position', 'relative');
-                                },
-                                move: function move(e) {
-                                    self[['$container']][['css']]('left', -(100 * self[['current']]) + 100 * e[['distX']] / width + '%');
-                                },
-                                moveend: function moveend(e) {
-                                    if (Math[['abs']](e[['distX']]) / width > self[['options']][['swipeThreshold']]) {
-                                        self[e[['distX']] < 0 ? 'next' : 'prev']();
-                                    } else {
-                                        self[['$container']][['animate']]({ left: -(100 * self[['current']]) + '%' }, self[['options']][['speed']] / 2);
-                                    }
-                                }
-                            });
-                        }
-                    };
-                    self[['initInfinite']] = function () {
-                        var pos = [
-                            'first',
-                            'last'
-                        ];
-                        $[['each']](pos, function (index, item) {
-                            self[['$slides']][['push']][['apply']](self[['$slides']], self[['$slides']][['filter']](':not(".' + self[['_']] + '-clone")')[item]()[['clone']]()[['addClass']](self[['_']] + '-clone')['insert' + (index === 0 ? 'After' : 'Before')](self[['$slides']][pos[~~!index]]()));
-                        });
-                    };
-                    self[['destroyArrows']] = function () {
-                        $[['each']](self[['$arrows']], function (i, $arrow) {
-                            $arrow[['remove']]();
-                        });
-                    };
-                    self[['destroySwipe']] = function () {
-                        self[['$container']][['off']]('movestart move moveend');
-                    };
-                    self[['destroyKeys']] = function () {
-                        $(document)[['off']]('keyup' + self[['eventSuffix']]);
-                    };
-                    self[['setIndex']] = function (to) {
-                        if (to < 0) {
-                            to = self[['total']] - 1;
-                        }
-                        self[['current']] = Math[['min']](Math[['max']](0, to), self[['total']] - 1);
-                        if (self[['options']][['nav']]) {
-                            self[['$nav']][['find']]('[data-slide="' + self[['current']] + '"]')[['_active']](self[['options']][['activeClass']]);
-                        }
-                        self[['$slides']][['eq']](self[['current']])[['_active']](self[['options']][['activeClass']]);
-                        return self;
-                    };
-                    self[['animate']] = function (to, dir) {
-                        if (to === 'first')
-                            to = 0;
-                        if (to === 'last')
-                            to = self[['total']];
-                        if (isNaN(to)) {
-                            return self;
-                        }
-                        if (self[['options']][['autoplay']]) {
-                            self[['stop']]()[['start']]();
-                        }
-                        self[['setIndex']](to);
-                        self[['$context']][['trigger']](self[['_']] + '.change', [
-                            to,
-                            self[['$slides']][['eq']](to)
-                        ]);
-                        var fn = 'animate' + $[['_ucfirst']](self[['options']][['animation']]);
-                        if ($[['isFunction']](self[fn])) {
-                            self[fn](self[['current']], dir);
-                        }
-                        return self;
-                    };
-                    self[['next']] = function () {
-                        var target = self[['current']] + 1;
-                        if (target >= self[['total']]) {
-                            target = 0;
-                        }
-                        return self[['animate']](target, 'next');
-                    };
-                    self[['prev']] = function () {
-                        return self[['animate']](self[['current']] - 1, 'prev');
-                    };
-                    self[['animateHorizontal']] = function (to) {
-                        var prop = 'left';
-                        if (self[['$context']][['attr']]('dir') === 'rtl') {
-                            prop = 'right';
-                        }
-                        if (self[['options']][['infinite']]) {
-                            self[['$container']][['css']]('margin-' + prop, '-100%');
-                        }
-                        return self[['slide']](prop, to);
-                    };
-                    self[['animateVertical']] = function (to) {
-                        self[['options']][['animateHeight']] = true;
-                        if (self[['options']][['infinite']]) {
-                            self[['$container']][['css']]('margin-top', -self[['$slides']][['outerHeight']]());
-                        }
-                        return self[['slide']]('top', to);
-                    };
-                    self[['slide']] = function (prop, to) {
-                        self[['animateHeight']](to);
-                        if (self[['options']][['infinite']]) {
-                            var dummy;
-                            if (to === self[['total']] - 1) {
-                                dummy = self[['total']] - 3;
-                                to = -1;
-                            }
-                            if (to === self[['total']] - 2) {
-                                dummy = 0;
-                                to = self[['total']] - 2;
-                            }
-                            if (typeof dummy === 'number') {
-                                self[['setIndex']](dummy);
-                                self[['$context']][['on']](self[['_']] + '.moved', function () {
-                                    if (self[['current']] === dummy) {
-                                        self[['$container']][['css']](prop, -(100 * dummy) + '%')[['off']](self[['_']] + '.moved');
-                                    }
-                                });
-                            }
-                        }
-                        var obj = {};
-                        obj[prop] = -(100 * to) + '%';
-                        return self[['_move']](self[['$container']], obj);
-                    };
-                    self[['animateFade']] = function (to) {
-                        self[['animateHeight']](to);
-                        var $active = self[['$slides']][['eq']](to)[['addClass']](self[['options']][['activeClass']]);
-                        self[['_move']]($active[['siblings']]()[['removeClass']](self[['options']][['activeClass']]), { opacity: 0 });
-                        self[['_move']]($active, { opacity: 1 }, false);
-                    };
-                    self[['animateHeight']] = function (to) {
-                        if (self[['options']][['animateHeight']]) {
-                            self[['_move']](self[['$context']], { height: self[['$slides']][['eq']](to)[['outerHeight']]() }, false);
-                        }
-                    };
-                    self[['_move']] = function ($el, obj, callback, speed) {
-                        if (callback !== false) {
-                            callback = function callback() {
-                                self[['$context']][['trigger']](self[['_']] + '.moved');
-                            };
-                        }
-                        return $el[['_move']](obj, speed || self[['options']][['speed']], self[['options']][['easing']], callback);
-                    };
-                    return self[['init']](options);
-                };
-                $[['fn']][['_active']] = function (className) {
-                    return this[['addClass']](className)[['siblings']]()[['removeClass']](className);
-                };
-                $[['_ucfirst']] = function (str) {
-                    return (str + '')[['toLowerCase']]()[['replace']](/^./, function (match) {
-                        return match[['toUpperCase']]();
-                    });
-                };
-                $[['fn']][['_move']] = function () {
-                    this[['stop']](true, true);
-                    return $[['fn']][$[['fn']][['velocity']] ? 'velocity' : 'animate'][['apply']](this, arguments);
-                };
-                $[['fn']][['unslider']] = function (opts) {
-                    return this[['each']](function (index, elem) {
-                        var $this = $(elem);
-                        var unslider = $(elem)[['data']]('unslider');
-                        if (unslider instanceof $[['Unslider']]) {
-                            return;
-                        }
-                        if (typeof opts === 'string' && $this[['data']]('unslider')) {
-                            opts = opts[['split']](':');
-                            var call = $this[['data']]('unslider')[opts[0]];
-                            if ($[['isFunction']](call)) {
-                                return call[['apply']]($this, opts[1] ? opts[1][['split']](',') : null);
-                            }
-                        }
-                        return $this[['data']]('unslider', new $[['Unslider']]($this, opts));
-                    });
-                };
-            }));
-        }[['call']](exports, __webpack_require__(1), __webpack_require__(14)(module)));
-    },
-    function (module, exports) {
-        'use strict';
-        module[['exports']] = function (module) {
-            if (!module[['webpackPolyfill']]) {
-                module[['deprecate']] = function () {
-                };
-                module[['paths']] = [];
-                module[['children']] = [];
-                module[['webpackPolyfill']] = 1;
+            Object[['defineProperty']](exports, '__esModule', { value: true });
+            var _globalConfig = __webpack_require__(10);
+            var _utils = __webpack_require__(4);
+            var _utils2 = _interopRequireDefault(_utils);
+            function _interopRequireDefault(obj) {
+                return obj && obj[['__esModule']] ? obj : { default: obj };
             }
-            return module;
-        };
+            var _body = $('body');
+            var _commentTextareaSel = '#comment-text';
+            var _commentTextarea = $(_commentTextareaSel);
+            var _mainSubmitBtn = $('#submit');
+            var _commentListSel = '#comments-wrap>.comments-list';
+            var _replyBtnSel = '.comment-meta>.respond-coin';
+            var _starBtnSel = '.comment-meta>.like';
+            var _replyWrapSel = '.respond-submit';
+            var _replyInputSel = '.respond-submit input';
+            var _replyTipSel = '.tip';
+            var _emotionIcoBtnSel = '.emotion-ico';
+            var _emotionsWrapSel = '.qqFace';
+            var _emotionImgSel = '.qqFace td>img';
+            var _qqFacePath = TT[['themeRoot']] + '/assets/img/qqFace/';
+            var _qqFaceTable = '<table border="0" cellspacing="0" cellpadding="0">' + '<tbody>' + '<tr>' + '<td><img src="' + _qqFacePath + '1.gif' + '" data-code="[em_1]"></td>' + '<td><img src="' + _qqFacePath + '2.gif' + '" data-code="[em_2]"></td>' + '<td><img src="' + _qqFacePath + '3.gif' + '" data-code="[em_3]"></td>' + '<td><img src="' + _qqFacePath + '4.gif' + '" data-code="[em_4]"></td>' + '<td><img src="' + _qqFacePath + '5.gif' + '" data-code="[em_5]"></td>' + '<td><img src="' + _qqFacePath + '6.gif' + '" data-code="[em_6]"></td>' + '<td><img src="' + _qqFacePath + '7.gif' + '" data-code="[em_7]"></td>' + '<td><img src="' + _qqFacePath + '8.gif' + '" data-code="[em_8]"></td>' + '<td><img src="' + _qqFacePath + '9.gif' + '" data-code="[em_9]"></td>' + '<td><img src="' + _qqFacePath + '10.gif' + '" data-code="[em_10]"></td>' + '<td><img src="' + _qqFacePath + '11.gif' + '" data-code="[em_11]"></td>' + '<td><img src="' + _qqFacePath + '12.gif' + '" data-code="[em_12]"></td>' + '<td><img src="' + _qqFacePath + '13.gif' + '" data-code="[em_13]"></td>' + '<td><img src="' + _qqFacePath + '14.gif' + '" data-code="[em_14]"></td>' + '<td><img src="' + _qqFacePath + '15.gif' + '" data-code="[em_15]"></td>' + '</tr>' + '<tr>' + '<td><img src="' + _qqFacePath + '16.gif' + '" data-code="[em_16]"></td>' + '<td><img src="' + _qqFacePath + '17.gif' + '" data-code="[em_17]"></td>' + '<td><img src="' + _qqFacePath + '18.gif' + '" data-code="[em_18]"></td>' + '<td><img src="' + _qqFacePath + '19.gif' + '" data-code="[em_19]"></td>' + '<td><img src="' + _qqFacePath + '20.gif' + '" data-code="[em_20]"></td>' + '<td><img src="' + _qqFacePath + '21.gif' + '" data-code="[em_21]"></td>' + '<td><img src="' + _qqFacePath + '22.gif' + '" data-code="[em_22]"></td>' + '<td><img src="' + _qqFacePath + '23.gif' + '" data-code="[em_23]"></td>' + '<td><img src="' + _qqFacePath + '24.gif' + '" data-code="[em_24]"></td>' + '<td><img src="' + _qqFacePath + '25.gif' + '" data-code="[em_25]"></td>' + '<td><img src="' + _qqFacePath + '26.gif' + '" data-code="[em_26]"></td>' + '<td><img src="' + _qqFacePath + '27.gif' + '" data-code="[em_27]"></td>' + '<td><img src="' + _qqFacePath + '28.gif' + '" data-code="[em_28]"></td>' + '<td><img src="' + _qqFacePath + '29.gif' + '" data-code="[em_29]"></td>' + '<td><img src="' + _qqFacePath + '30.gif' + '" data-code="[em_30]"></td>' + '</tr>' + '<tr>' + '<td><img src="' + _qqFacePath + '31.gif' + '" data-code="[em_31]"></td>' + '<td><img src="' + _qqFacePath + '32.gif' + '" data-code="[em_32]"></td>' + '<td><img src="' + _qqFacePath + '33.gif' + '" data-code="[em_33]"></td>' + '<td><img src="' + _qqFacePath + '34.gif' + '" data-code="[em_34]"></td>' + '<td><img src="' + _qqFacePath + '35.gif' + '" data-code="[em_35]"></td>' + '<td><img src="' + _qqFacePath + '36.gif' + '" data-code="[em_36]"></td>' + '<td><img src="' + _qqFacePath + '37.gif' + '" data-code="[em_37]"></td>' + '<td><img src="' + _qqFacePath + '38.gif' + '" data-code="[em_38]"></td>' + '<td><img src="' + _qqFacePath + '39.gif' + '" data-code="[em_39]"></td>' + '<td><img src="' + _qqFacePath + '40.gif' + '" data-code="[em_40]"></td>' + '<td><img src="' + _qqFacePath + '41.gif' + '" data-code="[em_41]"></td>' + '<td><img src="' + _qqFacePath + '42.gif' + '" data-code="[em_42]"></td>' + '<td><img src="' + _qqFacePath + '43.gif' + '" data-code="[em_43]"></td>' + '<td><img src="' + _qqFacePath + '44.gif' + '" data-code="[em_44]"></td>' + '<td><img src="' + _qqFacePath + '45.gif' + '" data-code="[em_45]"></td>' + '</tr>' + '<tr>' + '<td><img src="' + _qqFacePath + '46.gif' + '" data-code="[em_46]"></td>' + '<td><img src="' + _qqFacePath + '47.gif' + '" data-code="[em_47]"></td>' + '<td><img src="' + _qqFacePath + '48.gif' + '" data-code="[em_48]"></td>' + '<td><img src="' + _qqFacePath + '49.gif' + '" data-code="[em_49]"></td>' + '<td><img src="' + _qqFacePath + '50.gif' + '" data-code="[em_50]"></td>' + '<td><img src="' + _qqFacePath + '51.gif' + '" data-code="[em_51]"></td>' + '<td><img src="' + _qqFacePath + '52.gif' + '" data-code="[em_52]"></td>' + '<td><img src="' + _qqFacePath + '53.gif' + '" data-code="[em_53]"></td>' + '<td><img src="' + _qqFacePath + '54.gif' + '" data-code="[em_54]"></td>' + '<td><img src="' + _qqFacePath + '55.gif' + '" data-code="[em_55]"></td>' + '<td><img src="' + _qqFacePath + '56.gif' + '" data-code="[em_56]"></td>' + '<td><img src="' + _qqFacePath + '57.gif' + '" data-code="[em_57]"></td>' + '<td><img src="' + _qqFacePath + '58.gif' + '" data-code="[em_58]"></td>' + '<td><img src="' + _qqFacePath + '59.gif' + '" data-code="[em_59]"></td>' + '<td><img src="' + _qqFacePath + '60.gif' + '" data-code="[em_60]"></td>' + '</tr>' + '<tr>' + '<td><img src="' + _qqFacePath + '61.gif' + '" data-code="[em_61]"></td>' + '<td><img src="' + _qqFacePath + '62.gif' + '" data-code="[em_62]"></td>' + '<td><img src="' + _qqFacePath + '63.gif' + '" data-code="[em_63]"></td>' + '<td><img src="' + _qqFacePath + '64.gif' + '" data-code="[em_64]"></td>' + '<td><img src="' + _qqFacePath + '65.gif' + '" data-code="[em_65]"></td>' + '<td><img src="' + _qqFacePath + '66.gif' + '" data-code="[em_66]"></td>' + '<td><img src="' + _qqFacePath + '67.gif' + '" data-code="[em_67]"></td>' + '<td><img src="' + _qqFacePath + '68.gif' + '" data-code="[em_68]"></td>' + '<td><img src="' + _qqFacePath + '69.gif' + '" data-code="[em_69]"></td>' + '<td><img src="' + _qqFacePath + '70.gif' + '" data-code="[em_70]"></td>' + '<td><img src="' + _qqFacePath + '71.gif' + '" data-code="[em_71]"></td>' + '<td><img src="' + _qqFacePath + '72.gif' + '" data-code="[em_72]"></td>' + '<td><img src="' + _qqFacePath + '73.gif' + '" data-code="[em_73]"></td>' + '<td><img src="' + _qqFacePath + '74.gif' + '" data-code="[em_74]"></td>' + '<td><img src="' + _qqFacePath + '75.gif' + '" data-code="[em_75]"></td>' + '</tr>' + '</tbody>' + '</table>';
+            var _commentsPerPage = TT[['commentsPerPage']] || 20;
+            var _currentCommentPage = 1;
+            var _loading = false;
+            var _loadMoreBtn = $('#comments-wrap .btn-more');
+            var _loadMoreBtnSpinIcon = '<i class="tico tico-spinner spinning"></i>';
+            var _originLoadMoreBtnText = _loadMoreBtn[['text']]();
+            var _appendComments = function _appendComments(comments) {
+                $(_commentListSel)[['append']](comments);
+            };
+            var _maybeMorePages = function _maybeMorePages(fetchedCount, nextPage) {
+                if (fetchedCount < _commentsPerPage) {
+                    _loadMoreBtn[['remove']]();
+                } else {
+                    _currentCommentPage = Math[['max']](nextPage - 1, 2);
+                }
+            };
+            var _fetchComments = function _fetchComments() {
+                if (_loading)
+                    return false;
+                var url = _globalConfig[['Routes']][['comments']];
+                var data = {
+                    commentPage: _currentCommentPage + 1,
+                    commentPostId: _postIdInput ? _postIdInput[['val']]() : TT[['pid']]
+                };
+                var beforeSend = function beforeSend() {
+                    if (_loading)
+                        return;
+                    _loading = true;
+                    if (_loadMoreBtn) {
+                        _loadMoreBtn[['prop']]('disabled', true);
+                        _loadMoreBtn[['html']](_loadMoreBtnSpinIcon);
+                    }
+                };
+                var finishRequest = function finishRequest() {
+                    if (!_loading)
+                        return;
+                    if (_loadMoreBtn) {
+                        _loadMoreBtn[['html']](_originLoadMoreBtnText);
+                        _loadMoreBtn[['prop']]('disabled', false);
+                    }
+                    _loading = false;
+                };
+                var success = function success(data, textStatus, xhr) {
+                    if (data[['success']] && data[['success']] == 1) {
+                        _appendComments(data[['message']]);
+                        _maybeMorePages(data[['count']], data[['nextPage']]);
+                    } else {
+                        _maybeMorePages(data[['count']], _currentCommentPage);
+                        _showError(data[['message']], _loadMoreBtn[['parent']]()[['next']]('.err'));
+                    }
+                    finishRequest();
+                };
+                var error = function error(xhr, textStatus, err) {
+                    _showError(xhr[['responseJSON']] ? xhr[['responseJSON']][['message']] : xhr[['responseText']], _loadMoreBtn[['parent']]()[['next']]('.err'));
+                    finishRequest();
+                };
+                $[['ajax']]({
+                    url: url,
+                    method: 'GET',
+                    data: _utils2[['default']][['filterDataForRest']](data),
+                    dataType: 'json',
+                    beforeSend: beforeSend,
+                    success: success,
+                    error: error
+                });
+            };
+            var _commentFormSel = '#respond .comment-form';
+            var _replyFormSel = '#respond .reply-form';
+            var _commentSubmitBtnSel = '.comment-form .comment-submit';
+            var _replySumitBtnSel = '.reply-form .reply-submit';
+            var _errSel = '.err';
+            var _validateComment = function _validateComment(input) {
+                var content = input[['val']]();
+                if (/^[\s]*$/[['test']](content)) {
+                    _showError('\u8bc4\u8bba\u5185\u5bb9\u4e0d\u80fd\u4e3a\u7a7a', input[['parent']]()[['siblings']](_errSel));
+                    return false;
+                }
+                return true;
+            };
+            var _showError = function _showError(msg, errorBox) {
+                errorBox[['hide']]()[['html']](msg)[['slideDown']]('slow', function () {
+                    setTimeout(function () {
+                        errorBox[['slideUp']]()[['html']]('');
+                    }, 3000);
+                });
+            };
+            var _submitting = false;
+            var _currentInput = null;
+            var _clickedSubmitBtn = null;
+            var _originalSubmitBtnText = '';
+            var _submitBtnIcon = '<i class="tico tico-spinner9 spinning"></i>';
+            var _nonceInput = $('#comment_nonce');
+            var _unfilterCommentNonceInput = $('#_wp_unfiltered_html_comment_disabled');
+            var _postIdInput = $('#comment_post_ID');
+            var _getNewCommentDepth = function _getNewCommentDepth(input) {
+                if (input[['is']]('textarea'))
+                    return 1;
+                var _parentDepthClassMatch = input[['parents']]('.comment')[['attr']]('class')[['match']](/depth-([0-9])/);
+                return _parentDepthClassMatch[['length']] > 1 ? Math[['min']](_parentDepthClassMatch[1] + 1, 3) : 2;
+            };
+            var _postComment = function _postComment() {
+                if (_submitting)
+                    return false;
+                var url = _globalConfig[['Routes']][['comments']];
+                var data = {
+                    commentNonce: _nonceInput ? _nonceInput[['val']]() : '',
+                    ksesNonce: _unfilterCommentNonceInput ? _unfilterCommentNonceInput[['val']]() : '',
+                    postId: _postIdInput ? _postIdInput[['val']]() : TT[['pid']],
+                    content: _currentInput ? _currentInput[['val']]() : '',
+                    parentId: _currentInput && _currentInput[['is']]('input') ? _currentInput[['parents']]('.comment')[['data']]('current-comment-id') : 0,
+                    commentType: ''
+                };
+                var beforeSend = function beforeSend() {
+                    if (_submitting)
+                        return;
+                    _submitting = true;
+                    if (_currentInput) {
+                        _currentInput[['prop']]('disabled', true);
+                    }
+                    if (_clickedSubmitBtn) {
+                        _originalSubmitBtnText = _clickedSubmitBtn[['text']]();
+                        _clickedSubmitBtn[['prop']]('disabled', true)[['html']](_submitBtnIcon);
+                    }
+                };
+                var finishRequest = function finishRequest() {
+                    if (!_submitting)
+                        return;
+                    _submitting = false;
+                    if (_currentInput) {
+                        _currentInput[['val']]('');
+                        if (_currentInput[['is']]('input')) {
+                            _currentInput[['parents']](_replyWrapSel)[['slideUp']]();
+                        }
+                        _currentInput[['prop']]('disabled', false);
+                    }
+                    if (_clickedSubmitBtn) {
+                        _clickedSubmitBtn[['text']](_originalSubmitBtnText)[['prop']]('disabled', false);
+                    }
+                };
+                var success = function success(data, textStatus, xhr) {
+                    if (data[['success']] && data[['success']] == 1) {
+                        _appendComment(data[['message']], _currentInput);
+                    } else {
+                        _showError(data[['message']], _currentInput[['parent']]()[['siblings']](_errSel));
+                    }
+                    finishRequest();
+                };
+                var error = function error(xhr, textStatus, err) {
+                    _showError(xhr[['responseJSON']] ? xhr[['responseJSON']][['message']] : xhr[['responseText']], _currentInput[['parent']]()[['siblings']](_errSel));
+                    finishRequest();
+                };
+                $[['post']]({
+                    url: url,
+                    data: _utils2[['default']][['filterDataForRest']](data),
+                    dataType: 'json',
+                    beforeSend: beforeSend,
+                    success: success,
+                    error: error
+                });
+            };
+            var _appendComment = function _appendComment(comment, input) {
+                var commentDepthClass = 'depth-' + _getNewCommentDepth(input);
+                comment = comment[['replace']]('depth-1', commentDepthClass);
+                if (input[['is']]('input')) {
+                    input[['parents']]('.comment')[['after']](comment);
+                } else {
+                    $(_commentListSel)[['prepend']](comment);
+                }
+            };
+            var _clickedStarBtn = null;
+            var _starCountSel = '.like-count';
+            var _starNonceInput = $('#comment_star_nonce');
+            var _staring = false;
+            var _checkStared = function _checkStared(commentId) {
+                return $[['inArray']](commentId, _utils2[['default']][['store']]('commentsStared')) > -1;
+            };
+            var _checkAllStared = function _checkAllStared(comment) {
+                var commentsStared = _utils2[['default']][['store']]('commentsStared');
+                if (!commentsStared || !(commentsStared instanceof Array) || commentsStared[['length']] == 0)
+                    return;
+                if ($[['inArray']](comment[['data']]('current-comment-id'), commentsStared) > -1) {
+                    comment[['find']]('.like')[['addClass']]('active');
+                }
+            };
+            var _markStared = function _markStared(commentId, stars, starBtn) {
+                var commentsStared = _utils2[['default']][['store']]('commentsStared');
+                commentsStared instanceof Array ? commentsStared[['push']](commentId) : commentsStared = [commentId];
+                _utils2[['default']][['store']]('commentsStared', commentsStared);
+                if (starBtn) {
+                    starBtn[['addClass']]('active');
+                    starBtn[['children']](_starCountSel)[['text']]('(' + parseInt(stars) + ')');
+                }
+            };
+            var _postStar = function _postStar(commentId) {
+                if (_staring)
+                    return false;
+                var url = _globalConfig[['Routes']][['commentStars']] + '/' + commentId;
+                var data = {
+                    commentStarNonce: _starNonceInput ? _starNonceInput[['val']]() : '',
+                    commentId: commentId
+                };
+                var beforeSend = function beforeSend() {
+                    if (_staring || _checkStared(commentId))
+                        return;
+                    _staring = true;
+                };
+                var finishRequest = function finishRequest() {
+                    if (!_staring)
+                        return;
+                    _staring = false;
+                };
+                var success = function success(data, textStatus, xhr) {
+                    if (data[['success']] && data[['success']] == 1) {
+                        _markStared(commentId, data[['stars']], _clickedStarBtn);
+                    } else {
+                    }
+                    finishRequest();
+                };
+                var error = function error(xhr, textStatus, err) {
+                    finishRequest();
+                };
+                $[['post']]({
+                    url: url,
+                    data: _utils2[['default']][['filterDataForRest']](data),
+                    dataType: 'json',
+                    beforeSend: beforeSend,
+                    success: success,
+                    error: error
+                });
+            };
+            var postCommentsKit = {
+                init: function init() {
+                    _body[['on']]('click', _replyBtnSel, function () {
+                        var $this = $(this);
+                        var _currentReplyWrap = $this[['parent']]()[['parent']]('.comment-body')[['children']](_replyWrapSel);
+                        _utils2[['default']][['checkLogin']]();
+                        if (_currentReplyWrap[['css']]('display') !== 'block') {
+                            $('#respond ' + _replyWrapSel)[['hide']]();
+                        }
+                        _currentReplyWrap[['slideToggle']]();
+                    });
+                    _body[['on']]('focus', _replyInputSel, function () {
+                        var $this = $(this);
+                        var _paddingLeft = $this[['parents']](_replyWrapSel)[['find']](_replyTipSel)[['width']]() + 10;
+                        $this[['css']]('padding-left', _paddingLeft + 'px');
+                    });
+                    _body[['on']]('click', _emotionIcoBtnSel, function () {
+                        var _qqFaceWrap = $(this)[['parent']]()[['children']](_emotionsWrapSel);
+                        if (!/[\S]+/[['test']](_qqFaceWrap[['html']]())) {
+                            _qqFaceWrap[['html']](_qqFaceTable);
+                        }
+                    });
+                    _body[['on']]('click', _emotionImgSel, function () {
+                        var $this = $(this);
+                        var _qqFaceWrap = $this[['parents']](_emotionsWrapSel);
+                        var _inputBoxId = _qqFaceWrap[['data']]('inputbox-id');
+                        var _inputBox = $('#' + _inputBoxId);
+                        var _emotionCode = $this[['data']]('code');
+                        if (_inputBox[['is']]('input')) {
+                            _inputBox[['trigger']]('focus');
+                            _inputBox[['val']](_inputBox[['val']]() + _emotionCode);
+                        } else {
+                            _inputBox[['text']](_inputBox[['text']]() + _emotionCode);
+                        }
+                    });
+                    _body[['on']]('click', _commentTextareaSel, function () {
+                        _utils2[['default']][['checkLogin']]();
+                    });
+                    _body[['on']]('click', _commentSubmitBtnSel, function () {
+                        var $this = $(this);
+                        if (_submitting || $this[['prop']]('disabled'))
+                            return;
+                        if (_validateComment(_commentTextarea)) {
+                            _currentInput = _commentTextarea;
+                            _clickedSubmitBtn = $this;
+                            _postComment();
+                        }
+                    });
+                    _body[['on']]('click', _replySumitBtnSel, function () {
+                        var $this = $(this);
+                        if (_submitting || $this[['prop']]('disabled'))
+                            return;
+                        var _input = $this[['parent']]()[['parent']]()[['find']]('input');
+                        if (_validateComment(_input)) {
+                            _currentInput = _input;
+                            _clickedSubmitBtn = $this;
+                            _postComment();
+                        }
+                    });
+                    _body[['on']]('click', _starBtnSel, function () {
+                        var $this = $(this);
+                        if ($this[['hasClass']]('active'))
+                            return;
+                        _clickedStarBtn = $this;
+                        var commentId = $this[['parents']]('.comment')[['data']]('current-comment-id');
+                        commentId = parseInt(commentId);
+                        _postStar(commentId);
+                    });
+                    $(_commentListSel + ' .comment')[['each']](function () {
+                        _checkAllStared($(this));
+                    });
+                    _loadMoreBtn[['on']]('click', function () {
+                        if (_loading || $(this)[['prop']]('disabled'))
+                            return;
+                        _fetchComments();
+                    });
+                }
+            };
+            exports[['default']] = postCommentsKit;
+        }[['call']](exports, __webpack_require__(1), __webpack_require__(5)));
+    },
+    function (module, exports, __webpack_require__) {
+        (function ($) {
+            'use strict';
+            Object[['defineProperty']](exports, '__esModule', { value: true });
+            var _globalConfig = __webpack_require__(10);
+            var _utils = __webpack_require__(4);
+            var _utils2 = _interopRequireDefault(_utils);
+            function _interopRequireDefault(obj) {
+                return obj && obj[['__esModule']] ? obj : { default: obj };
+            }
+            var _body = $('body');
+            var _postStarBtnSel = '.post-meta-likes';
+            var _postStarCountSel = '.js-article-like-count';
+            var _postStaredUserWrapSel = '.post-like-avatars';
+            var _staring = false;
+            var _markStared = function _markStared(starCount, userInfo) {
+                $(_postStarBtnSel)[['addClass']]('active');
+                $(_postStarCountSel)[['text']](starCount[['toString']]());
+                var starUserImg = '<li class="post-like-user"><img src="' + userInfo[['avatar']] + '" alt="' + userInfo[['name']] + '" title="' + userInfo[['name']] + '" data-user-id="' + userInfo[['uid']] + '"></li>';
+                $(_postStaredUserWrapSel)[['prepend']](starUserImg);
+            };
+            var _postStar = function _postStar(btn) {
+                if (_staring || btn[['hasClass']]('active') || !_utils2[['default']][['checkLogin']]())
+                    return false;
+                var url = _globalConfig[['Routes']][['postStars']] + '/' + btn[['data']]('post-id');
+                var data = { postStarNonce: btn[['data']]('nonce') };
+                var beforeSend = function beforeSend() {
+                    if (_staring)
+                        return false;
+                    _staring = true;
+                };
+                var finishRequest = function finishRequest() {
+                    if (!_staring)
+                        return;
+                    _staring = false;
+                };
+                var success = function success(data, textStatus, xhr) {
+                    if (data[['success']] && data[['success']] == 1) {
+                        _markStared(data[['stars']], data);
+                    } else {
+                    }
+                    finishRequest();
+                };
+                var error = function error(xhr, textStatus, err) {
+                    finishRequest();
+                };
+                $[['post']]({
+                    url: url,
+                    data: _utils2[['default']][['filterDataForRest']](data),
+                    dataType: 'json',
+                    beforeSend: beforeSend,
+                    success: success,
+                    error: error
+                });
+            };
+            var postStarKit = {
+                init: function init() {
+                    _body[['on']]('click', _postStarBtnSel, function () {
+                        var $this = $(this);
+                        _postStar($this);
+                    });
+                }
+            };
+            exports[['default']] = postStarKit;
+        }[['call']](exports, __webpack_require__(1)));
+    },
+    function (module, exports, __webpack_require__) {
+        (function ($) {
+            'use strict';
+            Object[['defineProperty']](exports, '__esModule', { value: true });
+            var _globalConfig = __webpack_require__(10);
+            var _utils = __webpack_require__(4);
+            var _body = $('body');
+            var _postListCls = 'category-posts';
+            var _loadNextComponentID = 'loadNext';
+            var _loadingIcon = '<i class="tico tico-spinner2 spinning"></i>';
+            var _unLoadingIcon = '<i class="tico tico-angle-down"></i>';
+            var _isLoadingNext = false;
+            var _handlePageContent = function _handlePageContent(html, url) {
+                var doc = $(html);
+                var postList = $('.' + _postListCls);
+                if (doc && postList) {
+                    postList[['html']](doc[['find']]('.' + _postListCls)[['html']]());
+                    history[['pushState']]('200', doc[9][['innerText']], url);
+                    document[['title']] = doc[9][['innerText']];
+                }
+            };
+            var _ajaxLoadNext = function _ajaxLoadNext(btn) {
+                if (_isLoadingNext)
+                    return false;
+                var nextPageUrl = btn[['data']]('next-page-url');
+                if (!nextPageUrl)
+                    return false;
+                var beforeSend = function beforeSend() {
+                    _body[['addClass']](_globalConfig[['Classes']][['appLoading']]);
+                    _isLoadingNext = true;
+                    btn[['html']](_loadingIcon);
+                };
+                var finishRequest = function finishRequest() {
+                    _body[['removeClass']](_globalConfig[['Classes']][['appLoading']]);
+                    _isLoadingNext = false;
+                    btn[['html']](_unLoadingIcon);
+                };
+                var success = function success(data, textStatus, xhr) {
+                    if (data && xhr[['status']] == '200') {
+                        _handlePageContent(data, nextPageUrl);
+                    }
+                    finishRequest();
+                };
+                var error = function error(xhr, textStatus, err) {
+                    finishRequest();
+                };
+                $[['get']]({
+                    url: nextPageUrl,
+                    dataType: 'html',
+                    beforeSend: beforeSend,
+                    success: success,
+                    error: error
+                });
+            };
+            var loadNext = {
+                init: function init() {
+                    _body[['on']]('click', '[data-component=' + _loadNextComponentID + ']', function () {
+                        var $this = $(this);
+                        _ajaxLoadNext($this);
+                    });
+                }
+            };
+            exports[['default']] = loadNext;
+        }[['call']](exports, __webpack_require__(1)));
     }
 ]);

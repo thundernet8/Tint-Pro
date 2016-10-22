@@ -86,7 +86,7 @@ class SinglePostVM extends BaseVM {
         // 点赞
         //$stars = intval(get_post_meta( $the_post->ID, 'tt_post_stars', true )); // 可以直接count $star_users替代
 
-        $star_user_ids = array_unique(get_post_meta( $the_post->ID, 'tt_post_star_users', false)); //TODO 最多显示10个，最新的靠前(待确认) //TODO去重
+        $star_user_ids = array_unique(get_post_meta( $the_post->ID, 'tt_post_star_users', false)); //TODO 最多显示10个，最新的靠前(待确认)
         $stars = count($star_user_ids);
         $star_users = array();
         $limit = min(count($star_user_ids), 10);

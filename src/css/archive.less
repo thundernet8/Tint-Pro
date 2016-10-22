@@ -31,7 +31,166 @@
 
 // Begin
 body  {
-    &.category {
+    &.archive {
+        background: #fafafa;
+        &>header {
 
+        }
+        &>#content {
+            &>.billboard {
+                position: relative;
+                background-color: rgba(5,15,25,.2);
+                background-repeat: no-repeat;
+                background-size: cover;
+                height: 250px;
+                padding: 75px 20px 0;
+                &>.container {
+                    color: #ffffff;
+                    &>h1 {
+                        i {
+                            font-size: 2.8rem;
+                            margin-right: 10px;
+                            vertical-align: middle;
+                        }
+                    }
+                    &>p {
+                        border-top: 1px solid rgba(255,255,255,.2);
+                        padding-top: 10px;
+                    }
+                }
+            }
+
+            &>.archive-posts {
+                &>.posts-loop-grid {
+                    &>.col-md-3 {
+                        padding-left: 8px;
+                        padding-right: 8px;
+                    }
+                    article {
+                        position: relative;
+                        display: block;
+                        border: 1px solid rgba(0,0,0,.05);
+                        overflow: hidden;
+                        background: #ffffff;
+                        &:hover {
+                            box-shadow: 0 2px 4px rgba(0,0,0,.1);
+                            .wp-post-image {
+                                -webkit-transform: scale(1.1);
+                                -moz-transform: scale(1.1);
+                                -ms-transform: scale(1.1);
+                                -o-transform: scale(1.1);
+                                transform: scale(1.1);
+                            }
+                        }
+                        &>.entry-thumb {
+                            overflow: hidden;
+                            &>a:first-child {
+                                img {
+                                    display: block;
+                                    width: 100%;
+                                    height: auto;
+                                }
+                            }
+                            &>a:last-child {
+                                display: inline-block;
+                                min-width: 50px;
+                                padding: 0 10px;
+                                position: absolute;
+                                left: 10px;
+                                top: 10px;
+                                z-index: 2;
+                                color: #fff;
+                                background-color: rgba(0,0,0,.6);
+                                border-radius: 2px;
+                                font-size: 12px;
+                                line-height: 22px;
+                                text-align: center;
+                                &:hover {
+                                    background: rgba(0,0,0,.8);
+                                }
+                            }
+                        }
+                        &>.entry-detail {
+                            padding: 10px;
+                            &>header {
+                                &>h2 {
+                                    display: -webkit-box;
+                                    -webkit-box-orient: vertical;
+                                    padding: 0;
+                                    margin: 0 auto 10px;
+                                    font-size: 1.6rem;
+                                    font-weight: 500;
+                                    line-height: 20px;
+                                    height: 40px;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                    &>a {
+                                        color: @header-color;
+                                    }
+                                }
+                                &>.entry-meta {
+                                    &>span {
+                                        i {
+                                            margin-right: 5px;
+                                            vertical-align: -1px;
+                                        }
+                                        a {
+                                            color: @text-muted-color;
+                                        }
+                                    }
+                                    &>.author {
+                                        display: none;
+                                    }
+                                    &>.entry-date {
+
+                                    }
+                                    &>.likes-link {
+                                    }
+                                    &>.comments-link {
+                                    }
+                                }
+                            }
+                            &>.entry-excerpt {
+                                display: none;
+                                &>.post-excerpt {
+                                }
+                            }
+                        }
+                    }
+                }
+                &>.pagination-wrap {
+                    &>nav {
+
+                    }
+                }
+                &>.load-next {
+                    &>.btn-next {
+                        position: relative;
+                        height: 42px;
+                        i {
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            margin-top: -12px;
+                            margin-left: -8px;
+                            font-size: 2.4rem;
+                            height: 24px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.category {
+        .billboard {
+            background-image: url('../img/cat-header-bg.jpg');
+        }
+    }
+
+    &.tag {
+        .billboard {
+            background-image: url('../img/tag-header-bg.jpg');
+        }
     }
 }

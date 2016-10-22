@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-10-13 22:25+0800\n"
+"POT-Creation-Date: 2016-10-22 17:11+0800\n"
 "PO-Revision-Date: 2016-08-17 21:40+0800\n"
 "Last-Translator: \n"
 "Language-Team: Zhiyan <mail@webapproach.net>\n"
@@ -92,7 +92,7 @@ msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.Comment.Controller.php:93
 #: core/api/v1/endpoints/class.Rest.Comment.Star.Controller.php:102
-#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:99
+#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:101
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:390
 msgid "Nonce verify failed"
 msgstr ""
@@ -185,19 +185,19 @@ msgid ""
 "response."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:94
+#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:96
 msgid "Wrong post id"
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:104
+#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:106
 msgid "You must be logged in to star a post"
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:113
+#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:121
 msgid "Star post failed"
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:118
+#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:125
 msgid "Star post successfully"
 msgstr ""
 
@@ -886,6 +886,61 @@ msgstr ""
 msgid "Popular"
 msgstr ""
 
+#: core/modules/mod.ModalLoginForm.php:21
+#: core/templates/actions/tpl.M.Signin.php:49
+msgid "Email/Username"
+msgstr ""
+
+#: core/modules/mod.ModalLoginForm.php:24
+#: core/templates/actions/tpl.M.Resetpass.php:38
+#: core/templates/actions/tpl.M.Resetpass.php:39
+#: core/templates/actions/tpl.M.Resetpass.php:41
+#: core/templates/actions/tpl.M.Signin.php:53
+#: core/templates/actions/tpl.M.Signup.php:49
+msgid "Password"
+msgstr ""
+
+#: core/modules/mod.ModalLoginForm.php:29 core/modules/mod.ReplyForm.php:31
+#: core/templates/actions/tpl.M.Findpass.php:38
+#: core/templates/actions/tpl.M.Resetpass.php:47
+#: core/templates/actions/tpl.M.Signin.php:58
+msgid "Submit"
+msgstr ""
+
+#: core/modules/mod.ModalLoginForm.php:41
+#: core/templates/actions/tpl.M.Signin.php:70
+#: core/templates/actions/tpl.M.Signup.php:67
+msgid "Quick SignIn"
+msgstr ""
+
+#: core/modules/mod.ModalLoginForm.php:45
+#: core/templates/actions/tpl.M.Signin.php:74
+#: core/templates/actions/tpl.M.Signup.php:71
+msgid "Signin with Sina weibo"
+msgstr ""
+
+#: core/modules/mod.ModalLoginForm.php:51
+#: core/templates/actions/tpl.M.Signin.php:80
+#: core/templates/actions/tpl.M.Signup.php:77
+msgid "Signin with QQ"
+msgstr ""
+
+#: core/modules/mod.ModalLoginForm.php:57
+#: core/templates/actions/tpl.M.Signin.php:86
+#: core/templates/actions/tpl.M.Signup.php:83
+msgid "Signin with Wechat"
+msgstr ""
+
+#: core/modules/mod.ModalLoginForm.php:64
+#: core/templates/actions/tpl.M.Signin.php:93
+msgid "Register Now"
+msgstr ""
+
+#: core/modules/mod.ModalLoginForm.php:66
+#: core/templates/actions/tpl.M.Signin.php:95
+msgid "Forgot your password?"
+msgstr ""
+
 #: core/modules/mod.ModalSearch.php:19
 msgid "Type a keyword"
 msgstr ""
@@ -896,13 +951,6 @@ msgstr ""
 
 #: core/modules/mod.ReplyForm.php:28
 msgid "Signin and Leave some words..."
-msgstr ""
-
-#: core/modules/mod.ReplyForm.php:31
-#: core/templates/actions/tpl.M.Findpass.php:38
-#: core/templates/actions/tpl.M.Resetpass.php:47
-#: core/templates/actions/tpl.M.Signin.php:58
-msgid "Submit"
 msgstr ""
 
 #: core/modules/mod.SinglePost.php:34
@@ -1023,52 +1071,12 @@ msgstr ""
 msgid "Please input your new password"
 msgstr ""
 
-#: core/templates/actions/tpl.M.Resetpass.php:38
-#: core/templates/actions/tpl.M.Resetpass.php:39
-#: core/templates/actions/tpl.M.Resetpass.php:41
-#: core/templates/actions/tpl.M.Signin.php:53
-#: core/templates/actions/tpl.M.Signup.php:49
-msgid "Password"
-msgstr ""
-
 #: core/templates/actions/tpl.M.Resetpass.php:40
 msgid "Repeat Password"
 msgstr ""
 
 #: core/templates/actions/tpl.M.Resetpass.php:44
 msgid "Remember me"
-msgstr ""
-
-#: core/templates/actions/tpl.M.Signin.php:49
-msgid "Email/Username"
-msgstr ""
-
-#: core/templates/actions/tpl.M.Signin.php:70
-#: core/templates/actions/tpl.M.Signup.php:67
-msgid "Quick SignIn"
-msgstr ""
-
-#: core/templates/actions/tpl.M.Signin.php:74
-#: core/templates/actions/tpl.M.Signup.php:71
-msgid "Signin with Sina weibo"
-msgstr ""
-
-#: core/templates/actions/tpl.M.Signin.php:80
-#: core/templates/actions/tpl.M.Signup.php:77
-msgid "Signin with QQ"
-msgstr ""
-
-#: core/templates/actions/tpl.M.Signin.php:86
-#: core/templates/actions/tpl.M.Signup.php:83
-msgid "Signin with Wechat"
-msgstr ""
-
-#: core/templates/actions/tpl.M.Signin.php:93
-msgid "Register Now"
-msgstr ""
-
-#: core/templates/actions/tpl.M.Signin.php:95
-msgid "Forgot your password?"
 msgstr ""
 
 #: core/templates/actions/tpl.M.Signin.php:109
@@ -1126,6 +1134,10 @@ msgstr ""
 
 #: core/templates/oauth/tpl.OAuth.php:33
 msgid "Illegal Request"
+msgstr ""
+
+#: core/templates/tax/tpl.Category.php:84 core/templates/tax/tpl.Tag.php:82
+msgid "LOAD NEXT"
 msgstr ""
 
 #: core/templates/tpl.404.php:22

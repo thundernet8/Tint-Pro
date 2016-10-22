@@ -136,6 +136,7 @@ load_vm('vm.Home.FeaturedCategory');
 load_vm('vm.Single.Post');
 load_vm('vm.Post.Comments');
 load_vm('vm.Category.Posts');
+load_vm('vm.Tag.Posts');
 
 /* 载入主题功能模块 */
 //function tt_load() {

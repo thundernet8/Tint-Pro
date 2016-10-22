@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-10-13 22:25+0800\n"
-"PO-Revision-Date: 2016-10-13 22:26+0800\n"
+"POT-Creation-Date: 2016-10-22 17:11+0800\n"
+"PO-Revision-Date: 2016-10-22 17:12+0800\n"
 "Last-Translator: Zhiyan <mail@webapproach.net>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -90,7 +90,7 @@ msgstr "无效的文章ID"
 
 #: core/api/v1/endpoints/class.Rest.Comment.Controller.php:93
 #: core/api/v1/endpoints/class.Rest.Comment.Star.Controller.php:102
-#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:99
+#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:101
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:390
 msgid "Nonce verify failed"
 msgstr "Nonce验证失败"
@@ -182,19 +182,19 @@ msgid ""
 "Scope under which the request is made; determines fields present in response."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:94
+#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:96
 msgid "Wrong post id"
 msgstr "错误的文章ID"
 
-#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:104
+#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:106
 msgid "You must be logged in to star a post"
 msgstr "你必须登录才能点赞文章"
 
-#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:113
+#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:121
 msgid "Star post failed"
 msgstr "点赞文章失败"
 
-#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:118
+#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:125
 msgid "Star post successfully"
 msgstr "点赞文章成功"
 
@@ -880,6 +880,61 @@ msgstr "近期文章"
 msgid "Popular"
 msgstr "Popular"
 
+#: core/modules/mod.ModalLoginForm.php:21
+#: core/templates/actions/tpl.M.Signin.php:49
+msgid "Email/Username"
+msgstr "邮箱或用户名"
+
+#: core/modules/mod.ModalLoginForm.php:24
+#: core/templates/actions/tpl.M.Resetpass.php:38
+#: core/templates/actions/tpl.M.Resetpass.php:39
+#: core/templates/actions/tpl.M.Resetpass.php:41
+#: core/templates/actions/tpl.M.Signin.php:53
+#: core/templates/actions/tpl.M.Signup.php:49
+msgid "Password"
+msgstr "密码"
+
+#: core/modules/mod.ModalLoginForm.php:29 core/modules/mod.ReplyForm.php:31
+#: core/templates/actions/tpl.M.Findpass.php:38
+#: core/templates/actions/tpl.M.Resetpass.php:47
+#: core/templates/actions/tpl.M.Signin.php:58
+msgid "Submit"
+msgstr "提交"
+
+#: core/modules/mod.ModalLoginForm.php:41
+#: core/templates/actions/tpl.M.Signin.php:70
+#: core/templates/actions/tpl.M.Signup.php:67
+msgid "Quick SignIn"
+msgstr "快速登录"
+
+#: core/modules/mod.ModalLoginForm.php:45
+#: core/templates/actions/tpl.M.Signin.php:74
+#: core/templates/actions/tpl.M.Signup.php:71
+msgid "Signin with Sina weibo"
+msgstr "微博登录"
+
+#: core/modules/mod.ModalLoginForm.php:51
+#: core/templates/actions/tpl.M.Signin.php:80
+#: core/templates/actions/tpl.M.Signup.php:77
+msgid "Signin with QQ"
+msgstr "QQ登录"
+
+#: core/modules/mod.ModalLoginForm.php:57
+#: core/templates/actions/tpl.M.Signin.php:86
+#: core/templates/actions/tpl.M.Signup.php:83
+msgid "Signin with Wechat"
+msgstr "微信登录"
+
+#: core/modules/mod.ModalLoginForm.php:64
+#: core/templates/actions/tpl.M.Signin.php:93
+msgid "Register Now"
+msgstr "现在注册"
+
+#: core/modules/mod.ModalLoginForm.php:66
+#: core/templates/actions/tpl.M.Signin.php:95
+msgid "Forgot your password?"
+msgstr "忘记密码?"
+
 #: core/modules/mod.ModalSearch.php:19
 msgid "Type a keyword"
 msgstr "键入关键词"
@@ -891,13 +946,6 @@ msgstr "说点什么吧..."
 #: core/modules/mod.ReplyForm.php:28
 msgid "Signin and Leave some words..."
 msgstr "登录并参与讨论..."
-
-#: core/modules/mod.ReplyForm.php:31
-#: core/templates/actions/tpl.M.Findpass.php:38
-#: core/templates/actions/tpl.M.Resetpass.php:47
-#: core/templates/actions/tpl.M.Signin.php:58
-msgid "Submit"
-msgstr "提交"
 
 #: core/modules/mod.SinglePost.php:34
 msgid "Share to Weibo"
@@ -1016,14 +1064,6 @@ msgstr "链接错误"
 msgid "Please input your new password"
 msgstr "请输入您的新密码"
 
-#: core/templates/actions/tpl.M.Resetpass.php:38
-#: core/templates/actions/tpl.M.Resetpass.php:39
-#: core/templates/actions/tpl.M.Resetpass.php:41
-#: core/templates/actions/tpl.M.Signin.php:53
-#: core/templates/actions/tpl.M.Signup.php:49
-msgid "Password"
-msgstr "密码"
-
 #: core/templates/actions/tpl.M.Resetpass.php:40
 msgid "Repeat Password"
 msgstr "重复密码"
@@ -1031,38 +1071,6 @@ msgstr "重复密码"
 #: core/templates/actions/tpl.M.Resetpass.php:44
 msgid "Remember me"
 msgstr "记住我"
-
-#: core/templates/actions/tpl.M.Signin.php:49
-msgid "Email/Username"
-msgstr "邮箱或用户名"
-
-#: core/templates/actions/tpl.M.Signin.php:70
-#: core/templates/actions/tpl.M.Signup.php:67
-msgid "Quick SignIn"
-msgstr "快速登录"
-
-#: core/templates/actions/tpl.M.Signin.php:74
-#: core/templates/actions/tpl.M.Signup.php:71
-msgid "Signin with Sina weibo"
-msgstr "微博登录"
-
-#: core/templates/actions/tpl.M.Signin.php:80
-#: core/templates/actions/tpl.M.Signup.php:77
-msgid "Signin with QQ"
-msgstr "QQ登录"
-
-#: core/templates/actions/tpl.M.Signin.php:86
-#: core/templates/actions/tpl.M.Signup.php:83
-msgid "Signin with Wechat"
-msgstr "微信登录"
-
-#: core/templates/actions/tpl.M.Signin.php:93
-msgid "Register Now"
-msgstr "现在注册"
-
-#: core/templates/actions/tpl.M.Signin.php:95
-msgid "Forgot your password?"
-msgstr "忘记密码?"
 
 #: core/templates/actions/tpl.M.Signin.php:109
 msgid ""
@@ -1121,6 +1129,10 @@ msgstr "非法请求，请重试"
 #: core/templates/oauth/tpl.OAuth.php:33
 msgid "Illegal Request"
 msgstr "非法请求"
+
+#: core/templates/tax/tpl.Category.php:84 core/templates/tax/tpl.Tag.php:82
+msgid "LOAD NEXT"
+msgstr "继续加载"
 
 #: core/templates/tpl.404.php:22
 msgid "The page you were looking for doesn't exist"

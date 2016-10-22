@@ -13,5 +13,22 @@
 
 'use strict';
 
+import {handleLineLoading} from './modules/loading';
+import {popMsgbox} from './modules/msgbox';
+import {} from './modules/bootstrap-flat';
+import postCommentsKit from './modules/comments';
+import postStarKit from './modules/postStar';
+import loadNext from  './modules/loadNextPage';
 
+// DOM Ready
+jQuery(document).ready(function ($) {
+    // 隐藏加载条
+    handleLineLoading();
+    
+    // 初始化popMsgbox
+    popMsgbox.init();
+    
+    // 加载下一页
+    loadNext.init();
+});
  
