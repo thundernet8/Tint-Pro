@@ -159,12 +159,16 @@
 
       &:hover,
       &:focus {
-        background-color: @pagination-hover-bg;
+        background-color: @pag-link-hover-bg; //@pagination-hover-bg;
         color: @pagination-color;
       }
       &:active {
-        background-color: @pagination-hover-bg;
+        background-color: @pag-link-hover-bg; //@pagination-hover-bg;
         color: @pagination-color;
+      }
+      &.current {
+          background-color: @pag-link-hover-bg; //@pagination-hover-bg;
+          color: @pagination-color;
       }
     }
       >a {

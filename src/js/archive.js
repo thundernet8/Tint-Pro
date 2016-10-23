@@ -16,9 +16,8 @@
 import {handleLineLoading} from './modules/loading';
 import {popMsgbox} from './modules/msgbox';
 import {} from './modules/bootstrap-flat';
-import postCommentsKit from './modules/comments';
-import postStarKit from './modules/postStar';
 import loadNext from  './modules/loadNextPage';
+import ScrollHandler from './modules/scroll';
 
 // DOM Ready
 jQuery(document).ready(function ($) {
@@ -30,5 +29,8 @@ jQuery(document).ready(function ($) {
     
     // 加载下一页
     loadNext.init();
+    
+    // 滚动顶部底部
+    ScrollHandler.initScrollTo();
 });
  

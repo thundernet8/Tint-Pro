@@ -20,21 +20,21 @@
             <!-- Tag posts cached <?php echo $vm->cacheTime; ?> -->
         <?php } ?>
         <?php if($data = $vm->modelData) { $pagination_args = $data->pagination; $tag = $data->tag; $tag_posts = $data->tag_posts; ?>
-            <!-- 分类名及介绍信息 -->
+            <!-- 标签名及介绍信息 -->
             <section class="billboard tag-header">
                 <div class="container text-center">
                     <h1><i class="tico tico-price-tag"></i><?php echo $tag['name']; ?></h1>
                     <?php if($tag['description'] != ''){ ?><p><?php echo $tag['description']; ?></p><?php } ?>
                 </div>
             </section>
-            <!-- 分类文章 -->
+            <!-- 标签文章 -->
             <section class="container archive-posts category-posts">
                 <div class="row posts-loop-grid mt20 mb20 clearfix">
                     <?php foreach ($tag_posts as $tag_post) { ?>
                         <div class="col-md-3">
                             <article id="<?php echo 'post-' . $tag_post['ID']; ?>" class="post type-post status-publish <?php echo 'format-' . $tag_post['format']; ?>">
-                                <div class="entry-thumb">
-                                    <a href="<?php echo $tag_post['permalink']; ?>"><img width="250" height="170" src="<?php echo $tag_post['thumb']; ?>" class="thumb-medium wp-post-image transition fadeIn" alt="<?php echo $tag_post['title']; ?>"></a>
+                                <div class="entry-thumb hover-scale">
+                                    <a href="<?php echo $tag_post['permalink']; ?>"><img width="250" height="170" src="<?php echo $tag_post['thumb']; ?>" class="thumb-medium wp-post-image fadeIn" alt="<?php echo $tag_post['title']; ?>"></a>
                                     <?php echo $tag_post['category']; ?>
                                 </div>
                                 <div class="entry-detail">

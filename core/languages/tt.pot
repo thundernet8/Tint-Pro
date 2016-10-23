@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-10-22 17:11+0800\n"
+"POT-Creation-Date: 2016-10-23 16:30+0800\n"
 "PO-Revision-Date: 2016-08-17 21:40+0800\n"
 "Last-Translator: \n"
 "Language-Team: Zhiyan <mail@webapproach.net>\n"
@@ -92,7 +92,7 @@ msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.Comment.Controller.php:93
 #: core/api/v1/endpoints/class.Rest.Comment.Star.Controller.php:102
-#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:101
+#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:100
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:390
 msgid "Nonce verify failed"
 msgstr ""
@@ -185,19 +185,19 @@ msgid ""
 "response."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:96
+#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:95
 msgid "Wrong post id"
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:106
+#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:105
 msgid "You must be logged in to star a post"
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:121
+#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:120
 msgid "Star post failed"
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:125
+#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:124
 msgid "Star post successfully"
 msgstr ""
 
@@ -639,7 +639,7 @@ msgstr ""
 msgid "Reply"
 msgstr ""
 
-#: core/functions/func.Comment.php:99 core/modules/mod.ReplyForm.php:34
+#: core/functions/func.Comment.php:99 core/modules/mod.ReplyForm.php:35
 msgid "Emotion"
 msgstr ""
 
@@ -838,6 +838,14 @@ msgstr ""
 msgid "Load More Comments"
 msgstr ""
 
+#: core/modules/mod.FixedControls.php:17
+msgid "Scroll to top"
+msgstr ""
+
+#: core/modules/mod.FixedControls.php:18
+msgid "Scroll to bottom"
+msgstr ""
+
 #: core/modules/mod.Footer.Simple.php:18
 msgid "HOME"
 msgstr ""
@@ -900,7 +908,8 @@ msgstr ""
 msgid "Password"
 msgstr ""
 
-#: core/modules/mod.ModalLoginForm.php:29 core/modules/mod.ReplyForm.php:31
+#: core/modules/mod.ModalLoginForm.php:29 core/modules/mod.ReplyForm.php:32
+#: core/modules/mod.ReplyForm.php:129
 #: core/templates/actions/tpl.M.Findpass.php:38
 #: core/templates/actions/tpl.M.Resetpass.php:47
 #: core/templates/actions/tpl.M.Signin.php:58
@@ -1136,7 +1145,9 @@ msgstr ""
 msgid "Illegal Request"
 msgstr ""
 
-#: core/templates/tax/tpl.Category.php:84 core/templates/tax/tpl.Tag.php:82
+#: core/templates/tax/tpl.Archive.php:60
+#: core/templates/tax/tpl.Category.php:84 core/templates/tax/tpl.Date.php:82
+#: core/templates/tax/tpl.Tag.php:82
 msgid "LOAD NEXT"
 msgstr ""
 
@@ -1158,6 +1169,29 @@ msgstr ""
 
 #: core/templates/tpl.Error.php:60
 msgid "An error has happened on this page."
+msgstr ""
+
+#: core/viewModels/vm.Date.Archive.php:47
+msgid "DAY ARCHIVE"
+msgstr ""
+
+#: core/viewModels/vm.Date.Archive.php:49
+#: core/viewModels/vm.Date.Archive.php:54
+#, php-format
+msgid "All posts which were published in %s"
+msgstr ""
+
+#: core/viewModels/vm.Date.Archive.php:52
+msgid "MONTH ARCHIVE"
+msgstr ""
+
+#: core/viewModels/vm.Date.Archive.php:57
+msgid "YEAR ARCHIVE"
+msgstr ""
+
+#: core/viewModels/vm.Date.Archive.php:59
+#, php-format
+msgid "All posts which were published in year %s"
 msgstr ""
 
 #: core/viewModels/vm.Single.Post.php:80

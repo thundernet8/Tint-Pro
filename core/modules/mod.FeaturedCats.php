@@ -27,7 +27,7 @@
                     <?php foreach ($cat_posts as $seq=>$cat_post) { $i += 1; ?>
                     <?php if($i===1) : ?>
                     <article class="block-item-large mb20">
-                        <div class="entry-thumb">
+                        <div class="entry-thumb hover-overlay">
                             <a href="<?php echo $cat_post['permalink']; ?>"><img width="375" height="250" src="<?php echo $cat_post['thumb']; ?>" class="thumb-medium wp-post-image" alt="<?php echo $cat_post['title']; ?>"></a>
 <!--                            <span class="shadow"></span>-->
                         </div>

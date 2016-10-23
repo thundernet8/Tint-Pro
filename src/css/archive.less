@@ -23,6 +23,9 @@
 @import "modules/loading/loading";
 @import "modules/nav/header";
 
+/* Loop grid */
+@import "modules/loop/loop-grid";
+
 /* Footer */
 @import "modules/nav/footer";
 
@@ -32,9 +35,9 @@
 // Begin
 body  {
     &.archive {
-        background: #fafafa;
+        background: #f5f6f9;
         &>header {
-
+            box-shadow: none;
         }
         &>#content {
             &>.billboard {
@@ -44,7 +47,18 @@ body  {
                 background-size: cover;
                 height: 250px;
                 padding: 75px 20px 0;
+                &:before {
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    content: '';
+                    background-color: rgba(0,0,0,.5);
+                    z-index: 0;
+                }
                 &>.container {
+                    position: relative;
                     color: #ffffff;
                     &>h1 {
                         i {
@@ -67,94 +81,8 @@ body  {
                         padding-right: 8px;
                     }
                     article {
-                        position: relative;
-                        display: block;
-                        border: 1px solid rgba(0,0,0,.05);
-                        overflow: hidden;
-                        background: #ffffff;
                         &:hover {
                             box-shadow: 0 2px 4px rgba(0,0,0,.1);
-                            .wp-post-image {
-                                -webkit-transform: scale(1.1);
-                                -moz-transform: scale(1.1);
-                                -ms-transform: scale(1.1);
-                                -o-transform: scale(1.1);
-                                transform: scale(1.1);
-                            }
-                        }
-                        &>.entry-thumb {
-                            overflow: hidden;
-                            &>a:first-child {
-                                img {
-                                    display: block;
-                                    width: 100%;
-                                    height: auto;
-                                }
-                            }
-                            &>a:last-child {
-                                display: inline-block;
-                                min-width: 50px;
-                                padding: 0 10px;
-                                position: absolute;
-                                left: 10px;
-                                top: 10px;
-                                z-index: 2;
-                                color: #fff;
-                                background-color: rgba(0,0,0,.6);
-                                border-radius: 2px;
-                                font-size: 12px;
-                                line-height: 22px;
-                                text-align: center;
-                                &:hover {
-                                    background: rgba(0,0,0,.8);
-                                }
-                            }
-                        }
-                        &>.entry-detail {
-                            padding: 10px;
-                            &>header {
-                                &>h2 {
-                                    display: -webkit-box;
-                                    -webkit-box-orient: vertical;
-                                    padding: 0;
-                                    margin: 0 auto 10px;
-                                    font-size: 1.6rem;
-                                    font-weight: 500;
-                                    line-height: 20px;
-                                    height: 40px;
-                                    overflow: hidden;
-                                    text-overflow: ellipsis;
-                                    &>a {
-                                        color: @header-color;
-                                    }
-                                }
-                                &>.entry-meta {
-                                    &>span {
-                                        i {
-                                            margin-right: 5px;
-                                            vertical-align: -1px;
-                                        }
-                                        a {
-                                            color: @text-muted-color;
-                                        }
-                                    }
-                                    &>.author {
-                                        display: none;
-                                    }
-                                    &>.entry-date {
-
-                                    }
-                                    &>.likes-link {
-                                    }
-                                    &>.comments-link {
-                                    }
-                                }
-                            }
-                            &>.entry-excerpt {
-                                display: none;
-                                &>.post-excerpt {
-                                }
-                            }
                         }
                     }
                 }
@@ -191,6 +119,12 @@ body  {
     &.tag {
         .billboard {
             background-image: url('../img/tag-header-bg.jpg');
+        }
+    }
+
+    &.date {
+        .billboard {
+            background-image: url('../img/date-archive-header-bg.jpg');
         }
     }
 }

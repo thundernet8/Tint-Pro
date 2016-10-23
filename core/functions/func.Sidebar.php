@@ -74,7 +74,7 @@ function tt_register_sidebars(){
                 'id' => $key,
                 'before_widget' => '<div id="%1$s" class="widget %2$s">',
                 'after_widget' => '</div>',
-                'before_title' => '<h3><span class=widget-title>',
+                'before_title' => '<h3 class="widget-title"><span>',
                 'after_title' => '</span></h3>'
             )
         );

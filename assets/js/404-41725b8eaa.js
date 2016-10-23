@@ -1,5 +1,5 @@
 /**
- * Generated on Sat Oct 22 2016 16:24:37 GMT+0800 (中国标准时间) by Zhiyan
+ * Generated on Sun Oct 23 2016 18:22:24 GMT+0800 (中国标准时间) by Zhiyan
  *
  * @package   Tint
  * @version   v2.0.0
@@ -21,6 +21,10 @@ webpackJsonp([
             var _loading = __webpack_require__(2);
             __webpack_require__(3);
             var _utils = __webpack_require__(4);
+            var _utils2 = _interopRequireDefault(_utils);
+            function _interopRequireDefault(obj) {
+                return obj && obj[['__esModule']] ? obj : { default: obj };
+            }
             jQuery(document)[['ready']](function ($) {
                 (0, _loading[['handleLineLoading']])();
                 var _redirectBtn = $('#linkBackHome');
@@ -30,7 +34,7 @@ webpackJsonp([
                     if (sec - 1 <= 0) {
                         clearInterval(_interval);
                         _redirectBtn[['html']]('\u8df3\u8f6c\u4e2d...');
-                        window[['location']][['href']] = _utils[['Utils']][['getSiteUrl']]();
+                        window[['location']][['href']] = _utils2[['default']][['getSiteUrl']]();
                     } else {
                         span[['text']](sec - 1);
                     }

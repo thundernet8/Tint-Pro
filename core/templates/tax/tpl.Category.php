@@ -33,8 +33,8 @@
             <?php foreach ($category_posts as $category_post) { ?>
             <div class="col-md-3">
                 <article id="<?php echo 'post-' . $category_post['ID']; ?>" class="post type-post status-publish <?php echo 'format-' . $category_post['format']; ?>">
-                    <div class="entry-thumb">
-                        <a href="<?php echo $category_post['permalink']; ?>"><img width="250" height="170" src="<?php echo $category_post['thumb']; ?>" class="thumb-medium wp-post-image transition fadeIn" alt="<?php echo $category_post['title']; ?>"></a>
+                    <div class="entry-thumb hover-scale">
+                        <a href="<?php echo $category_post['permalink']; ?>"><img width="250" height="170" src="<?php echo $category_post['thumb']; ?>" class="thumb-medium wp-post-image fadeIn" alt="<?php echo $category_post['title']; ?>"></a>
                         <!--                        <span class="shadow"></span>-->
                         <!--a class="entry-category" href="">XXX</a-->
                         <?php echo $category_post['category']; ?>

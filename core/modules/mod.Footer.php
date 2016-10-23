@@ -13,7 +13,7 @@
  */
 ?>
 <footer class="footer">
-    <div class="footer-before"><img src="<?php echo THEME_ASSET . '/img/colorful-line.png'; ?>" ></div>
+    <!--div class="footer-before"><img src="<?php echo THEME_ASSET . '/img/colorful-line.png'; ?>" ></div-->
     <div class="footer-wrap">
         <!-- 页脚小工具区 -->
         <div class="footer-widgets">
@@ -91,8 +91,11 @@
         </div>
     </div>
 </footer>
+<?php load_mod('mod.FixedControls'); ?>
 <!-- 搜索模态框 -->
 <?php load_mod('mod.ModalSearch'); ?>
+<!-- 登录弹窗 -->
+<?php if(!is_user_logged_in()) load_mod('mod.ModalLoginForm'); ?>
 <!-- 页脚自定义代码 -->
 <?php if(tt_get_option('tt_foot_code')) { echo tt_get_option('tt_foot_code'); } ?>
 <?php wp_footer(); ?>

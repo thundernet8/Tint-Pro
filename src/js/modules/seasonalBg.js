@@ -13,7 +13,7 @@
 
 'use strict';
 
-import {Utils} from './utils';
+import Utils from './utils';
 
 // 季节判断
 var _getSeason = function (month) {

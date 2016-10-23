@@ -15,7 +15,7 @@
 
 import {handleLineLoading} from './modules/loading';
 import {} from './modules/bootstrap-flat';
-import {Utils} from './modules/utils'
+import Utils from './modules/utils'
 
 // DOM Ready
 jQuery(document).ready(function ($) {

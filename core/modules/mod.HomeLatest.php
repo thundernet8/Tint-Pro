@@ -25,7 +25,7 @@
             <div class="block5_widget_content block5_list posts-loop-rows">
                 <?php foreach ($latest_posts as $latest_post) { ?>
                 <article id="<?php echo 'post-' . $latest_post['ID']; ?>" class="post type-post status-publish <?php echo 'format-' . $latest_post['format']; ?>">
-                    <div class="entry-thumb">
+                    <div class="entry-thumb hover-scale">
                         <a href="<?php echo $latest_post['permalink']; ?>"><img width="250" height="170" src="<?php echo $latest_post['thumb']; ?>" class="thumb-medium wp-post-image" alt="<?php echo $latest_post['title']; ?>"></a>
 <!--                        <span class="shadow"></span>-->
                         <!--a class="entry-category" href="">XXX</a-->

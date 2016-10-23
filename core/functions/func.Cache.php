@@ -194,3 +194,35 @@ function tt_delete_menu_cache(){
 add_action('wp_update_nav_menu', 'tt_delete_menu_cache');
 
 //TODO 其他工具利用apply_filters do_action add_filter add_action调用或生成缓存
+
+/**
+ * 输出小工具前尝试检索缓存
+ *
+ * @since 2.0.0
+ * @param $value
+ * @param $type
+ * @return string|bool
+ */
+function tt_retrieve_widget_cache($value, $type) {
+    $cache_key = CACHE_PREFIX . '_daily_widget_' . $type;
+    $cache = get_transient($cache_key);
+    return $cache;
+}
+add_filter('tt_widget_retrieve_cache', 'tt_retrieve_widget_cache', 10 ,2);
+
+
+/**
+ * 将查询获得的小工具的结果缓存
+ *
+ * @since 2.0.0
+ * @param $value
+ * @param $type
+ * @param $expiration
+ * @return void
+ */
+function tt_create_widget_cache($value, $type, $expiration = 21600) {  // 21600 = 3600*6
+    $cache_key = CACHE_PREFIX . '_daily_widget_' . $type;
+    $value = '<!-- Widget cached ' . current_time('mysql') . ' -->' . $value;
+    set_transient($cache_key, $value, $expiration);
+}
+add_action('tt_widget_create_cache', 'tt_create_widget_cache', 10, 2);

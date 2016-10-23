@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-10-22 17:11+0800\n"
-"PO-Revision-Date: 2016-10-22 17:12+0800\n"
+"POT-Creation-Date: 2016-10-23 16:31+0800\n"
+"PO-Revision-Date: 2016-10-23 16:31+0800\n"
 "Last-Translator: Zhiyan <mail@webapproach.net>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -90,7 +90,7 @@ msgstr "无效的文章ID"
 
 #: core/api/v1/endpoints/class.Rest.Comment.Controller.php:93
 #: core/api/v1/endpoints/class.Rest.Comment.Star.Controller.php:102
-#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:101
+#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:100
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:390
 msgid "Nonce verify failed"
 msgstr "Nonce验证失败"
@@ -182,19 +182,19 @@ msgid ""
 "Scope under which the request is made; determines fields present in response."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:96
+#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:95
 msgid "Wrong post id"
 msgstr "错误的文章ID"
 
-#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:106
+#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:105
 msgid "You must be logged in to star a post"
 msgstr "你必须登录才能点赞文章"
 
-#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:121
+#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:120
 msgid "Star post failed"
 msgstr "点赞文章失败"
 
-#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:125
+#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:124
 msgid "Star post successfully"
 msgstr "点赞文章成功"
 
@@ -635,7 +635,7 @@ msgstr "你的评论正在等待审核..."
 msgid "Reply"
 msgstr "回复"
 
-#: core/functions/func.Comment.php:99 core/modules/mod.ReplyForm.php:34
+#: core/functions/func.Comment.php:99 core/modules/mod.ReplyForm.php:35
 msgid "Emotion"
 msgstr "表情"
 
@@ -832,6 +832,14 @@ msgstr "页面边栏"
 msgid "Load More Comments"
 msgstr "加载更多"
 
+#: core/modules/mod.FixedControls.php:17
+msgid "Scroll to top"
+msgstr "返回顶部"
+
+#: core/modules/mod.FixedControls.php:18
+msgid "Scroll to bottom"
+msgstr "返回底部"
+
 #: core/modules/mod.Footer.Simple.php:18
 msgid "HOME"
 msgstr "首页"
@@ -894,7 +902,8 @@ msgstr "邮箱或用户名"
 msgid "Password"
 msgstr "密码"
 
-#: core/modules/mod.ModalLoginForm.php:29 core/modules/mod.ReplyForm.php:31
+#: core/modules/mod.ModalLoginForm.php:29 core/modules/mod.ReplyForm.php:32
+#: core/modules/mod.ReplyForm.php:129
 #: core/templates/actions/tpl.M.Findpass.php:38
 #: core/templates/actions/tpl.M.Resetpass.php:47
 #: core/templates/actions/tpl.M.Signin.php:58
@@ -1130,7 +1139,8 @@ msgstr "非法请求，请重试"
 msgid "Illegal Request"
 msgstr "非法请求"
 
-#: core/templates/tax/tpl.Category.php:84 core/templates/tax/tpl.Tag.php:82
+#: core/templates/tax/tpl.Archive.php:60 core/templates/tax/tpl.Category.php:84
+#: core/templates/tax/tpl.Date.php:82 core/templates/tax/tpl.Tag.php:82
 msgid "LOAD NEXT"
 msgstr "继续加载"
 
@@ -1153,6 +1163,29 @@ msgstr "发生了错误！"
 #: core/templates/tpl.Error.php:60
 msgid "An error has happened on this page."
 msgstr "页面发生了一个错误."
+
+#: core/viewModels/vm.Date.Archive.php:47
+msgid "DAY ARCHIVE"
+msgstr "日归档"
+
+#: core/viewModels/vm.Date.Archive.php:49
+#: core/viewModels/vm.Date.Archive.php:54
+#, php-format
+msgid "All posts which were published in %s"
+msgstr "%s 发表的所有文章"
+
+#: core/viewModels/vm.Date.Archive.php:52
+msgid "MONTH ARCHIVE"
+msgstr "月归档"
+
+#: core/viewModels/vm.Date.Archive.php:57
+msgid "YEAR ARCHIVE"
+msgstr "年归档"
+
+#: core/viewModels/vm.Date.Archive.php:59
+#, php-format
+msgid "All posts which were published in year %s"
+msgstr "%s 年发表的所有文章"
 
 #: core/viewModels/vm.Single.Post.php:80
 #, php-format

@@ -64,6 +64,16 @@ if(!function_exists('load_mod')){
     }
 }
 
+if(!function_exists('load_widget')){
+    function load_widget($path, $safe = false){
+        if($safe) {
+            @include_once(THEME_DIR.'/core/modules/widgets/'.$path.'.php');
+        }else{
+            load_template(THEME_DIR.'/core/modules/widgets/'.$path.'.php');
+        }
+    }
+}
+
 if(!function_exists('load_vm')){
     function load_vm($path, $safe = false){
         if($safe) {
@@ -137,53 +147,8 @@ load_vm('vm.Single.Post');
 load_vm('vm.Post.Comments');
 load_vm('vm.Category.Posts');
 load_vm('vm.Tag.Posts');
+load_vm('vm.Date.Archive');
+load_vm('vm.Term.Posts');
 
-/* 载入主题功能模块 */
-//function tt_load() {
-//	//载入小工具
-//	load_template( THEME_DIR . '/modules/widgets/tin-tabs.php' );
-//	load_template( THEME_DIR . '/modules/widgets/tin-posts.php' );
-//	load_template( THEME_DIR . '/modules/widgets/tin-posts-h.php' );
-//	load_template( THEME_DIR . '/modules/widgets/tin-tagcloud.php' );
-//	load_template( THEME_DIR . '/modules/widgets/tin-enhanced-text.php' );
-//	load_template( THEME_DIR . '/modules/widgets/tin-readerwall.php' );
-//	load_template( THEME_DIR . '/modules/widgets/tin-mailcontact.php' );
-//	load_template( THEME_DIR . '/modules/widgets/tin-site.php' );
-//	load_template( THEME_DIR . '/modules/widgets/tin-float-widget.php' );
-//	load_template( THEME_DIR . '/modules/widgets/tin-bookmark.php' );
-//	load_template( THEME_DIR . '/modules/widgets/tin-bookmark-h.php' );
-//	load_template( THEME_DIR . '/modules/widgets/tin-subscribe.php' );
-//	load_template( THEME_DIR . '/modules/widgets/tin-aboutsite.php' );
-//	load_template( THEME_DIR . '/modules/widgets/tin-joinus.php' );
-//	load_template( THEME_DIR . '/modules/widgets/tin-hotsearch.php' );
-//	load_template( THEME_DIR . '/modules/widgets/tin-creditsrank.php' );
-//	load_template( THEME_DIR . '/modules/widgets/tin-ucenter.php' );
-//	load_template( THEME_DIR . '/modules/widgets/tin-donate.php' );
-//	load_template( THEME_DIR . '/modules/widgets/tin-slider.php' );
-//
-//	// 载入功能
-//	load_template( THEME_DIR . '/functions/open-social.php' );
-//	load_template( THEME_DIR . '/functions/message.php' );
-//	load_template( THEME_DIR . '/functions/credit.php' );
-//	load_template( THEME_DIR . '/functions/recent-user.php' );
-//	load_template( THEME_DIR . '/functions/tracker.php' );
-//	load_template( THEME_DIR . '/functions/user-page.php' );
-//	load_template( THEME_DIR . '/functions/meta.php' );
-//	load_template( THEME_DIR . '/functions/comment.php' );
-//	load_template( THEME_DIR . '/functions/shortcode.php' );
-//	load_template( THEME_DIR . '/functions/IP.php' );
-//	load_template( THEME_DIR . '/functions/mail.php' );
-//	load_template( THEME_DIR . '/functions/meta-box.php' );
-//	load_template( THEME_DIR . '/functions/newsletter.php' );
-//	load_template( THEME_DIR . '/functions/ua.php' );
-//	load_template( THEME_DIR . '/functions/download.php' );
-//	load_template( THEME_DIR . '/functions/no_category_base.php' );
-//	load_template( THEME_DIR . '/functions/shop.php' );
-//	load_template( THEME_DIR . '/functions/membership.php' );
-//	load_template( THEME_DIR . '/functions/auto-save-image.php' );
-//	load_template( THEME_DIR . '/functions-customize.php' );
-//	if ( is_admin() ) {
-//		load_template( THEME_DIR . '/functions/class-tgm-plugin-activation.php' );
-//	}
-// }
-//add_action( 'after_setup_theme', 'tt_load' );
+/* 载入小工具 */
+load_widget('wgt.TagCloud');
