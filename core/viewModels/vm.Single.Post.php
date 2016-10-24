@@ -38,7 +38,7 @@ class SinglePostVM extends BaseVM {
     public static function getInstance($post_id = 1) {
         $instance = new static(); // 因为不同分页共用该模型，不采用单例模式
         $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . static::class . '_post' . $post_id;
-        $instance->_postId = intval($post_id);
+        $instance->_postId = absint($post_id);
         $instance->configInstance();
         return $instance;
     }

@@ -14,10 +14,11 @@
 * tt_weibo_avatar
 * tt_weibo_profile_img
 * tt_weibo_id
+* tt_user_cover
 
 ### Post Meta
 * views (postViews插件)
-* tt_post_stars
+* tt_post_stars (废弃)
 * tt_post_star_users (不唯一)
 
 

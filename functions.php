@@ -136,6 +136,7 @@ load_func('func.Seo');
 load_func('func.Sidebar');
 load_func('func.Template');
 load_func('func.Thumb');
+load_func('func.User');
 
 /* 载入数据模型 */
 load_vm('vm.Base');
@@ -149,6 +150,8 @@ load_vm('vm.Category.Posts');
 load_vm('vm.Tag.Posts');
 load_vm('vm.Date.Archive');
 load_vm('vm.Term.Posts');
+load_vm('vm.Widget.Author');
 
 /* 载入小工具 */
 load_widget('wgt.TagCloud');
+load_widget('wgt.Author');
