@@ -81,7 +81,7 @@ class SinglePostVM extends BaseVM {
             : sprintf(__('The post is from: <a href="%1$s" title="%2$s" target="_blank">%2$s</a>', 'tt'), $source_link, $source_title);
 
         // 浏览数
-        $views = intval(get_post_meta( $the_post->ID, 'views', true ));
+        $views = absint(get_post_meta( $the_post->ID, 'views', true ));
 
         // 点赞
         //$stars = intval(get_post_meta( $the_post->ID, 'tt_post_stars', true )); // 可以直接count $star_users替代

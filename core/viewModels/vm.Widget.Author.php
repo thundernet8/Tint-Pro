@@ -76,20 +76,21 @@ class AuthorWidgetVM extends BaseVM {
         // 作者的文章收到的Star总数
         $author_posts_stars = tt_count_author_posts_stars($this->_authorId);
 
-        return (object)array_merge(
-            (array)$user,
-            array(
-                'nickname'          => $nickname,
-                'homepage'              => $author_home,
-                'avatar'            => $avatar,
-                'cover'             => $author_cover,
-                'cap'               => $author_cap,
-                'posts_count'       => $author_posts_count,
-                'following_count'   => $author_following_count,
-                'followers_count'   => $author_followers_count,
-                //'posts_views'       => $author_posts_views,
-                'posts_stars'       => $author_posts_stars
-            )
+        return (object)array(
+            'ID'                => $user->ID,
+            'user_login'        => $user->user_login,
+            'user_email'        => $user->user_email,
+            'display_name'      => $user->display_name,
+            'nickname'          => $nickname,
+            'homepage'          => $author_home,
+            'avatar'            => $avatar,
+            'cover'             => $author_cover,
+            'cap'               => $author_cap,
+            'posts_count'       => $author_posts_count,
+            'following_count'   => $author_following_count,
+            'followers_count'   => $author_followers_count,
+            //'posts_views'       => $author_posts_views,
+            'posts_stars'       => $author_posts_stars
         );
     }
 }

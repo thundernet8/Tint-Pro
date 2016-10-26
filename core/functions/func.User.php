@@ -108,3 +108,47 @@ function tt_count_author_posts_stars ($user_id) {
 
     return $count;
 }
+
+
+/**
+ * 获取一定数量特定角色用户
+ *
+ * @since 2.0.0
+ * @param $role
+ * @param $offset
+ * @param $limit
+ * @return array
+ */
+function tt_get_users_with_role ($role, $offset = 0, $limit = 20) {
+    // TODO $role 过滤
+    $user_query = new WP_User_Query(
+        array(
+            'role' => $role,
+            'orderby' => 'ID',
+            'order' => 'ASC',
+            'number' => $limit,
+            'offset' => $offset
+        )
+    );
+    $users = $user_query->get_results();
+    if (!empty($users)) {
+        return $users;
+    }
+    return [];
+}
+
+
+/**
+ * 获取管理员用户的ID
+ *
+ * @since 2.0.0
+ * @return array
+ */
+function tt_get_administrator_ids () {
+    $ids = [];
+    $administrators = tt_get_users_with_role('Administrator');
+    foreach ($administrators as $administrator) {
+        $ids[] = $administrator->ID;
+    }
+    return $ids;
+}

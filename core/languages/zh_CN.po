@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-10-23 16:31+0800\n"
-"PO-Revision-Date: 2016-10-23 16:31+0800\n"
+"POT-Creation-Date: 2016-10-26 23:24+0800\n"
+"PO-Revision-Date: 2016-10-26 23:25+0800\n"
 "Last-Translator: Zhiyan <mail@webapproach.net>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -828,6 +828,26 @@ msgstr "404边栏"
 msgid "Page Sidebar"
 msgstr "页面边栏"
 
+#: core/functions/func.User.php:26
+msgid "Site Manager"
+msgstr "站长"
+
+#: core/functions/func.User.php:29 dash/options.php:545
+msgid "Editor"
+msgstr "编辑"
+
+#: core/functions/func.User.php:32 dash/options.php:546
+msgid "Author"
+msgstr "作者"
+
+#: core/functions/func.User.php:35 dash/options.php:547
+msgid "Contributor"
+msgstr "投稿者"
+
+#: core/functions/func.User.php:37
+msgid "Reader"
+msgstr "读者"
+
 #: core/modules/mod.Comments.php:29
 msgid "Load More Comments"
 msgstr "加载更多"
@@ -1007,6 +1027,119 @@ msgstr "参与评论"
 #: core/modules/mod.SinglePost.php:112
 msgid "COMMENTS CLOSED"
 msgstr "评论已关闭"
+
+#: core/modules/widgets/wgt.Author.php:22
+msgid "TT-Author Widget"
+msgstr "TT-作者小工具"
+
+#: core/modules/widgets/wgt.Author.php:22
+msgid ""
+"TT-Show the post author information, only can be used in single post page"
+msgstr "TT-显示当前文章作者的信息, 只能在文章页使用"
+
+#: core/modules/widgets/wgt.Author.php:44
+msgid "Follow the author"
+msgstr "关注该作者"
+
+#: core/modules/widgets/wgt.Author.php:44
+msgid "Follow"
+msgstr "关注"
+
+#: core/modules/widgets/wgt.Author.php:45
+msgid "Send a message"
+msgstr "发送站内消息"
+
+#: core/modules/widgets/wgt.Author.php:45
+msgid "Chat"
+msgstr "私信"
+
+#: core/modules/widgets/wgt.Author.php:48
+msgid "POSTS"
+msgstr "文章"
+
+#: core/modules/widgets/wgt.Author.php:49
+msgid "STARS"
+msgstr "点赞"
+
+#: core/modules/widgets/wgt.Author.php:50
+msgid "FOLLOWING"
+msgstr "关注"
+
+#: core/modules/widgets/wgt.Author.php:51
+msgid "FOLLOWERS"
+msgstr "粉丝"
+
+#: core/modules/widgets/wgt.Author.php:65
+msgid ""
+"<strong>Warning: </strong>This widget has nothing to configure, and also do "
+"not use it"
+msgstr "<strong>警告: </strong>此小工具无需配置, 请不要使用它"
+
+#: core/modules/widgets/wgt.HotHits.Posts.php:22
+msgid "TT-Hot Hit Posts"
+msgstr "TT-热门点击文章"
+
+#: core/modules/widgets/wgt.HotHits.Posts.php:22
+msgid "TT-Show several most viewed posts"
+msgstr "TT-显示若干热门点击的文章"
+
+#: core/modules/widgets/wgt.HotHits.Posts.php:63
+msgid "HOT HITS"
+msgstr "热门点击"
+
+#: core/modules/widgets/wgt.HotHits.Posts.php:66
+#: core/modules/widgets/wgt.HotReviews.Posts.php:66
+#: core/modules/widgets/wgt.RecentComments.php:60
+#: core/modules/widgets/wgt.TagCloud.php:57
+msgid "Title："
+msgstr "标题: "
+
+#: core/modules/widgets/wgt.HotHits.Posts.php:67
+#: core/modules/widgets/wgt.HotReviews.Posts.php:67
+#: core/modules/widgets/wgt.RecentComments.php:61
+#: core/modules/widgets/wgt.TagCloud.php:58
+msgid "Number："
+msgstr "数量: "
+
+#: core/modules/widgets/wgt.HotReviews.Posts.php:22
+msgid "TT-Hot Reviewed Posts"
+msgstr "TT-热评文章"
+
+#: core/modules/widgets/wgt.HotReviews.Posts.php:22
+msgid "TT-Show several most reviewed posts"
+msgstr "TT-显示若干热门评论的文章"
+
+#: core/modules/widgets/wgt.HotReviews.Posts.php:63
+msgid "HOT REVIEWED"
+msgstr "热评文章"
+
+#: core/modules/widgets/wgt.RecentComments.php:22
+msgid "TT-Recent Comments"
+msgstr "TT-近期评论"
+
+#: core/modules/widgets/wgt.RecentComments.php:22
+msgid "TT-Show several recent comments"
+msgstr "TT-显示若干最新的文章评论"
+
+#: core/modules/widgets/wgt.RecentComments.php:40
+msgid "REVIEWED ON "
+msgstr "评论于 "
+
+#: core/modules/widgets/wgt.RecentComments.php:57
+msgid "RECENT COMMENTS"
+msgstr "最新评论"
+
+#: core/modules/widgets/wgt.TagCloud.php:22
+msgid "TT-Tag Cloud"
+msgstr "TT-标签云"
+
+#: core/modules/widgets/wgt.TagCloud.php:22
+msgid "TT-Show some site tags in tag cloud style"
+msgstr "TT-以标签云形式展现文章的标签"
+
+#: core/modules/widgets/wgt.TagCloud.php:54
+msgid "TAG CLOUD"
+msgstr "标签云"
 
 #: core/templates/actions/tpl.M.Activate.php:21
 msgid "Can not activate your registration, the link your visit is incorrect."
@@ -1725,18 +1858,6 @@ msgstr "社会化登录新用户默认角色"
 #: dash/options.php:540
 msgid "Choose the role and capabilities for the new connected user from open"
 msgstr "选择通过社会化登录新连接用户的默认角色和权限"
-
-#: dash/options.php:545
-msgid "Editor"
-msgstr "编辑"
-
-#: dash/options.php:546
-msgid "Author"
-msgstr "作者"
-
-#: dash/options.php:547
-msgid "Contributor"
-msgstr "投稿者"
 
 #: dash/options.php:548
 msgid "Subscriber"

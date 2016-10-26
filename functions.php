@@ -151,7 +151,13 @@ load_vm('vm.Tag.Posts');
 load_vm('vm.Date.Archive');
 load_vm('vm.Term.Posts');
 load_vm('vm.Widget.Author');
+load_vm('vm.Widget.HotHit.Posts');
+load_vm('vm.Widget.HotReviewed.Posts');
+load_vm('vm.Widget.Recent.Comments');
 
 /* 载入小工具 */
 load_widget('wgt.TagCloud');
 load_widget('wgt.Author');
+load_widget('wgt.HotHits.Posts');
+load_widget('wgt.HotReviews.Posts');
+load_widget('wgt.RecentComments');

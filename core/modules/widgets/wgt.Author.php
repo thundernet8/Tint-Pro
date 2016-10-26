@@ -31,16 +31,18 @@ class AuthorWidget extends WP_Widget {
         }
         $data = $vm->modelData;
         ?>
+        <?php echo $args['before_widget']; ?>
         <div class="widget-content">
             <a class="author-card_bg" href="<?php echo $data->homepage; ?>" style="background-image: url(<?php echo $data->cover; ?>)" tabindex="-1"></a>
             <div class="author-card_content">
                 <a class="author_avatar-link" href="<?php echo $data->homepage; ?>" title="<?php echo $data->display_name; ?>" tabindex="-1"><img class="avatar" src="<?php echo $data->avatar; ?>" alt=""></a>
                 <div class="author-fields">
-
+                    <span class="author-name"><?php echo $data->display_name; ?></span>
+                    <span class="author-user_level"><?php echo tt_get_user_cap_string($data->ID); ?></span>
                 </div>
                 <div class="author-interact">
                     <a class="follow-btn" href="javascript: void" title="<?php _e('Follow the author', 'tt'); ?>"><i class="tico tico-user-plus"></i><?php _e('Follow', 'tt'); ?></a>
-                    <a class="whisper-btn" href="<?php echo '/'; ?>" title="<?php _e('Send a message', 'tt'); ?>"><i class="tico tico-envelope"></i></a>
+                    <a class="whisper-btn" href="<?php echo '/'; ?>" title="<?php _e('Send a message', 'tt'); ?>"><i class="tico tico-envelope"></i><?php _e('Chat', 'tt'); ?></a>
                 </div>
                 <div class="author-stats">
                     <span class="posts"><?php echo $data->posts_count; ?><span class="unit"><?php _e('POSTS', 'tt'); ?></span></span>
@@ -50,6 +52,7 @@ class AuthorWidget extends WP_Widget {
                 </div>
             </div>
         </div>
+        <?php echo $args['after_widget']; ?>
         <?php
     }
 

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-10-23 16:30+0800\n"
+"POT-Creation-Date: 2016-10-26 23:24+0800\n"
 "PO-Revision-Date: 2016-08-17 21:40+0800\n"
 "Last-Translator: \n"
 "Language-Team: Zhiyan <mail@webapproach.net>\n"
@@ -834,6 +834,26 @@ msgstr ""
 msgid "Page Sidebar"
 msgstr ""
 
+#: core/functions/func.User.php:26
+msgid "Site Manager"
+msgstr ""
+
+#: core/functions/func.User.php:29 dash/options.php:545
+msgid "Editor"
+msgstr ""
+
+#: core/functions/func.User.php:32 dash/options.php:546
+msgid "Author"
+msgstr ""
+
+#: core/functions/func.User.php:35 dash/options.php:547
+msgid "Contributor"
+msgstr ""
+
+#: core/functions/func.User.php:37
+msgid "Reader"
+msgstr ""
+
 #: core/modules/mod.Comments.php:29
 msgid "Load More Comments"
 msgstr ""
@@ -1012,6 +1032,119 @@ msgstr ""
 
 #: core/modules/mod.SinglePost.php:112
 msgid "COMMENTS CLOSED"
+msgstr ""
+
+#: core/modules/widgets/wgt.Author.php:22
+msgid "TT-Author Widget"
+msgstr ""
+
+#: core/modules/widgets/wgt.Author.php:22
+msgid ""
+"TT-Show the post author information, only can be used in single post page"
+msgstr ""
+
+#: core/modules/widgets/wgt.Author.php:44
+msgid "Follow the author"
+msgstr ""
+
+#: core/modules/widgets/wgt.Author.php:44
+msgid "Follow"
+msgstr ""
+
+#: core/modules/widgets/wgt.Author.php:45
+msgid "Send a message"
+msgstr ""
+
+#: core/modules/widgets/wgt.Author.php:45
+msgid "Chat"
+msgstr ""
+
+#: core/modules/widgets/wgt.Author.php:48
+msgid "POSTS"
+msgstr ""
+
+#: core/modules/widgets/wgt.Author.php:49
+msgid "STARS"
+msgstr ""
+
+#: core/modules/widgets/wgt.Author.php:50
+msgid "FOLLOWING"
+msgstr ""
+
+#: core/modules/widgets/wgt.Author.php:51
+msgid "FOLLOWERS"
+msgstr ""
+
+#: core/modules/widgets/wgt.Author.php:65
+msgid ""
+"<strong>Warning: </strong>This widget has nothing to configure, and also "
+"do not use it"
+msgstr ""
+
+#: core/modules/widgets/wgt.HotHits.Posts.php:22
+msgid "TT-Hot Hit Posts"
+msgstr ""
+
+#: core/modules/widgets/wgt.HotHits.Posts.php:22
+msgid "TT-Show several most viewed posts"
+msgstr ""
+
+#: core/modules/widgets/wgt.HotHits.Posts.php:63
+msgid "HOT HITS"
+msgstr ""
+
+#: core/modules/widgets/wgt.HotHits.Posts.php:66
+#: core/modules/widgets/wgt.HotReviews.Posts.php:66
+#: core/modules/widgets/wgt.RecentComments.php:60
+#: core/modules/widgets/wgt.TagCloud.php:57
+msgid "Title："
+msgstr ""
+
+#: core/modules/widgets/wgt.HotHits.Posts.php:67
+#: core/modules/widgets/wgt.HotReviews.Posts.php:67
+#: core/modules/widgets/wgt.RecentComments.php:61
+#: core/modules/widgets/wgt.TagCloud.php:58
+msgid "Number："
+msgstr ""
+
+#: core/modules/widgets/wgt.HotReviews.Posts.php:22
+msgid "TT-Hot Reviewed Posts"
+msgstr ""
+
+#: core/modules/widgets/wgt.HotReviews.Posts.php:22
+msgid "TT-Show several most reviewed posts"
+msgstr ""
+
+#: core/modules/widgets/wgt.HotReviews.Posts.php:63
+msgid "HOT REVIEWED"
+msgstr ""
+
+#: core/modules/widgets/wgt.RecentComments.php:22
+msgid "TT-Recent Comments"
+msgstr ""
+
+#: core/modules/widgets/wgt.RecentComments.php:22
+msgid "TT-Show several recent comments"
+msgstr ""
+
+#: core/modules/widgets/wgt.RecentComments.php:40
+msgid "REVIEWED ON "
+msgstr ""
+
+#: core/modules/widgets/wgt.RecentComments.php:57
+msgid "RECENT COMMENTS"
+msgstr ""
+
+#: core/modules/widgets/wgt.TagCloud.php:22
+msgid "TT-Tag Cloud"
+msgstr ""
+
+#: core/modules/widgets/wgt.TagCloud.php:22
+msgid "TT-Show some site tags in tag cloud style"
+msgstr ""
+
+#: core/modules/widgets/wgt.TagCloud.php:54
+msgid "TAG CLOUD"
 msgstr ""
 
 #: core/templates/actions/tpl.M.Activate.php:21
@@ -1730,18 +1863,6 @@ msgstr ""
 
 #: dash/options.php:540
 msgid "Choose the role and capabilities for the new connected user from open"
-msgstr ""
-
-#: dash/options.php:545
-msgid "Editor"
-msgstr ""
-
-#: dash/options.php:546
-msgid "Author"
-msgstr ""
-
-#: dash/options.php:547
-msgid "Contributor"
 msgstr ""
 
 #: dash/options.php:548

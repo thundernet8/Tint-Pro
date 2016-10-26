@@ -204,6 +204,10 @@ add_action('wp_update_nav_menu', 'tt_delete_menu_cache');
  * @return string|bool
  */
 function tt_retrieve_widget_cache($value, $type) {
+    if(tt_get_option('tt_theme_debug', false)) {
+        return false;
+    }
+
     $cache_key = CACHE_PREFIX . '_daily_widget_' . $type;
     $cache = get_transient($cache_key);
     return $cache;
