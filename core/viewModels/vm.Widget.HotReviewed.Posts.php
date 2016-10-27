@@ -45,14 +45,16 @@ class HotReviewedPostsVM extends BaseVM {
     protected function getRealData() {
 //        // 排除分类
 //        $uncat = tt_get_option('tt_home_undisplay_cats', array());
-//        // 检索置顶用于排除
-//        $stickies = get_option('sticky_posts');
+        // 检索置顶用于排除
+        $stickies = get_option('sticky_posts');
 
         $args = array(
             'post_type' => 'post',
             'post_status' => 'publish',
             'posts_per_page' => -1,
             'has_password' => false,
+            'ignore_sticky_posts' => true,
+            'post__not_in' => $stickies,
             'showposts'	=> $this->_count,
             'orderby' => 'comment_count',
             'order'	=> 'desc'

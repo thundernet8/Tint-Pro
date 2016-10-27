@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-10-26 23:24+0800\n"
-"PO-Revision-Date: 2016-10-26 23:25+0800\n"
+"POT-Creation-Date: 2016-10-27 22:20+0800\n"
+"PO-Revision-Date: 2016-10-27 22:23+0800\n"
 "Last-Translator: Zhiyan <mail@webapproach.net>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -803,30 +803,20 @@ msgstr "主页边栏"
 msgid "Single Sidebar"
 msgstr "文章边栏"
 
-#: core/functions/func.Sidebar.php:62 dash/options.php:274 dash/options.php:288
-#: dash/options.php:321
-msgid "Archive Sidebar"
-msgstr "归档边栏"
-
-#: core/functions/func.Sidebar.php:63 dash/options.php:275 dash/options.php:289
-#: dash/options.php:331
-msgid "Category Sidebar"
-msgstr "分类边栏"
-
 #: core/functions/func.Sidebar.php:64 dash/options.php:276 dash/options.php:290
 #: dash/options.php:341
 msgid "Search Sidebar"
 msgstr "搜索边栏"
 
-#: core/functions/func.Sidebar.php:65 dash/options.php:277 dash/options.php:291
-#: dash/options.php:351
-msgid "404 Sidebar"
-msgstr "404边栏"
-
 #: core/functions/func.Sidebar.php:66 dash/options.php:278 dash/options.php:292
 #: dash/options.php:361
 msgid "Page Sidebar"
 msgstr "页面边栏"
+
+#: core/functions/func.Sidebar.php:88
+msgid ""
+"A container for placing some widgets, it will be float once exceed the vision"
+msgstr "放置若干小工具的容器, 一旦滚动超出视野范围将浮动重新显示"
 
 #: core/functions/func.User.php:26
 msgid "Site Manager"
@@ -1075,6 +1065,81 @@ msgid ""
 "not use it"
 msgstr "<strong>警告: </strong>此小工具无需配置, 请不要使用它"
 
+#: core/modules/widgets/wgt.Donate.php:22
+msgid "TT-Donate Me"
+msgstr "TT-赞助我"
+
+#: core/modules/widgets/wgt.Donate.php:22
+msgid "TT-Show alipay and wechat pay qr code images for visitors donating"
+msgstr "TT-展示用于网站收集打赏的微信以及支付宝收款二维码图片"
+
+#: core/modules/widgets/wgt.Donate.php:56
+msgid "DONATE ME"
+msgstr "赞助我"
+
+#: core/modules/widgets/wgt.Donate.php:58
+#: core/modules/widgets/wgt.HotHits.Posts.php:66
+#: core/modules/widgets/wgt.HotReviews.Posts.php:66
+#: core/modules/widgets/wgt.Latest.Posts.php:65
+#: core/modules/widgets/wgt.RecentComments.php:60
+#: core/modules/widgets/wgt.TagCloud.php:57 core/modules/widgets/wgt.UC.php:48
+msgid "Title："
+msgstr "标题: "
+
+#: core/modules/widgets/wgt.Donate.php:59
+msgid ""
+"The widget will auto query the qr code images from theme options, please "
+"configure it on `SHOP` tab of theme options page"
+msgstr "此小工具将从主题选项中查询收款二维码, 请至主题选项的商店选项卡进行配置"
+
+#: core/modules/widgets/wgt.EnhancedText.php:23
+msgid "Text, HTML, CSS, PHP, Flash, JavaScript, Shortcodes"
+msgstr "Text, HTML, CSS, PHP, Flash, JavaScript, Shortcodes"
+
+#: core/modules/widgets/wgt.EnhancedText.php:25
+msgid "TT-Enhanced Text"
+msgstr "TT-加强文本框"
+
+#: core/modules/widgets/wgt.EnhancedText.php:123
+msgid "Title"
+msgstr "标题: "
+
+#: core/modules/widgets/wgt.EnhancedText.php:127
+msgid "URL"
+msgstr "链接"
+
+#: core/modules/widgets/wgt.EnhancedText.php:131
+msgid "CSS Class"
+msgstr "CSS 类"
+
+#: core/modules/widgets/wgt.EnhancedText.php:135 dash/options.php:169
+msgid "Content"
+msgstr "内容"
+
+#: core/modules/widgets/wgt.EnhancedText.php:139
+msgid "Hide Title"
+msgstr "隐藏标题"
+
+#: core/modules/widgets/wgt.EnhancedText.php:143
+msgid "Link Opened in New Window"
+msgstr "新窗口打开链接"
+
+#: core/modules/widgets/wgt.EnhancedText.php:146
+msgid "Auto P tag"
+msgstr "自动加P标签"
+
+#: core/modules/widgets/wgt.EnhancedText.php:149
+msgid "Do Not echo before/after_widget/title"
+msgstr "不输出标题以及内容外包裹容器"
+
+#: core/modules/widgets/wgt.Float.php:22
+msgid "TT-Float Sidebar Placeholder"
+msgstr "TT-浮动边栏占位工具"
+
+#: core/modules/widgets/wgt.Float.php:22
+msgid "TT-Used to choose the position of float sidebar"
+msgstr "TT-用于选择浮动边栏的位置"
+
 #: core/modules/widgets/wgt.HotHits.Posts.php:22
 msgid "TT-Hot Hit Posts"
 msgstr "TT-热门点击文章"
@@ -1087,15 +1152,9 @@ msgstr "TT-显示若干热门点击的文章"
 msgid "HOT HITS"
 msgstr "热门点击"
 
-#: core/modules/widgets/wgt.HotHits.Posts.php:66
-#: core/modules/widgets/wgt.HotReviews.Posts.php:66
-#: core/modules/widgets/wgt.RecentComments.php:60
-#: core/modules/widgets/wgt.TagCloud.php:57
-msgid "Title："
-msgstr "标题: "
-
 #: core/modules/widgets/wgt.HotHits.Posts.php:67
 #: core/modules/widgets/wgt.HotReviews.Posts.php:67
+#: core/modules/widgets/wgt.Latest.Posts.php:66
 #: core/modules/widgets/wgt.RecentComments.php:61
 #: core/modules/widgets/wgt.TagCloud.php:58
 msgid "Number："
@@ -1112,6 +1171,20 @@ msgstr "TT-显示若干热门评论的文章"
 #: core/modules/widgets/wgt.HotReviews.Posts.php:63
 msgid "HOT REVIEWED"
 msgstr "热评文章"
+
+#: core/modules/widgets/wgt.Latest.Posts.php:22
+#: core/modules/widgets/wgt.UC.php:22
+msgid "TT-Latest Posts"
+msgstr "TT-近期文章"
+
+#: core/modules/widgets/wgt.Latest.Posts.php:22
+#: core/modules/widgets/wgt.UC.php:22
+msgid "TT-Show several latest posts"
+msgstr "TT-显示若干最近发布的文章"
+
+#: core/modules/widgets/wgt.Latest.Posts.php:62
+msgid "LATEST POSTS"
+msgstr "近期文章"
 
 #: core/modules/widgets/wgt.RecentComments.php:22
 msgid "TT-Recent Comments"
@@ -1140,6 +1213,10 @@ msgstr "TT-以标签云形式展现文章的标签"
 #: core/modules/widgets/wgt.TagCloud.php:54
 msgid "TAG CLOUD"
 msgstr "标签云"
+
+#: core/modules/widgets/wgt.UC.php:46
+msgid "USER MANAGEMENT"
+msgstr "用户管理"
 
 #: core/templates/actions/tpl.M.Activate.php:21
 msgid "Can not activate your registration, the link your visit is incorrect."
@@ -1595,10 +1672,6 @@ msgstr "网站小Logo"
 msgid "Please upload an png file as site small logo"
 msgstr "请上传PNG图片作为网站小Logo"
 
-#: dash/options.php:169
-msgid "Content"
-msgstr "内容"
-
 #: dash/options.php:175
 msgid "Home Hide Categories"
 msgstr "主页隐藏分类"
@@ -1688,6 +1761,18 @@ msgstr "注册边栏"
 #: dash/options.php:266
 msgid "Check the sidebars to register"
 msgstr "勾选需要注册的边栏"
+
+#: dash/options.php:274 dash/options.php:288 dash/options.php:321
+msgid "Archive Sidebar"
+msgstr "归档边栏"
+
+#: dash/options.php:275 dash/options.php:289 dash/options.php:331
+msgid "Category Sidebar"
+msgstr "分类边栏"
+
+#: dash/options.php:277 dash/options.php:291 dash/options.php:351
+msgid "404 Sidebar"
+msgstr "404边栏"
 
 #: dash/options.php:302
 msgid "Select a sidebar for homepage"

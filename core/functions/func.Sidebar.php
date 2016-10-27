@@ -59,10 +59,10 @@ function tt_register_sidebars(){
         'sidebar_common'    =>    __('Common Sidebar', 'tt'),
         'sidebar_home'      =>    __('Home Sidebar', 'tt'),
         'sidebar_single'    =>    __('Single Sidebar', 'tt'),
-        'sidebar_archive'   =>    __('Archive Sidebar', 'tt'),
-        'sidebar_category'  =>    __('Category Sidebar', 'tt'),
+        //'sidebar_archive'   =>    __('Archive Sidebar', 'tt'),
+        //'sidebar_category'  =>    __('Category Sidebar', 'tt'),
         'sidebar_search'    =>    __('Search Sidebar', 'tt'),
-        'sidebar_404'       =>    __('404 Sidebar', 'tt'),
+        //'sidebar_404'       =>    __('404 Sidebar', 'tt'),
         'sidebar_page'      =>    __('Page Sidebar', 'tt')
     );
     foreach ($sidebars as $key => $value){
@@ -79,6 +79,19 @@ function tt_register_sidebars(){
             )
         );
     }
+
+    // 注册浮动小工具容器边栏
+    register_sidebar(
+        array(
+            'name' => 'Float Widgets Container',
+            'id' => 'sidebar_float',
+            'description' => __("A container for placing some widgets, it will be float once exceed the vision", 'tt'),
+            'before_widget' => '<div id="%1$s" class="widget %2$s">',
+            'after_widget' => '</div>',
+            'before_title' => '<h3 class=widget-title><span>',
+            'after_title' => '</span></h3>'
+        )
+    );
 }
 add_action('widgets_init', 'tt_register_sidebars');
 

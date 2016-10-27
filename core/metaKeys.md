@@ -20,6 +20,7 @@
 * views (postViews插件)
 * tt_post_stars (废弃)
 * tt_post_star_users (不唯一)
+* tt_sidebar
 
 
 ### Comment Meta

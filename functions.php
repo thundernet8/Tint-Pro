@@ -154,6 +154,7 @@ load_vm('vm.Widget.Author');
 load_vm('vm.Widget.HotHit.Posts');
 load_vm('vm.Widget.HotReviewed.Posts');
 load_vm('vm.Widget.Recent.Comments');
+load_vm('vm.Widget.Latest.Posts');
 
 /* 载入小工具 */
 load_widget('wgt.TagCloud');
@@ -161,3 +162,8 @@ load_widget('wgt.Author');
 load_widget('wgt.HotHits.Posts');
 load_widget('wgt.HotReviews.Posts');
 load_widget('wgt.RecentComments');
+load_widget('wgt.Latest.Posts');
+load_widget('wgt.UC');
+load_widget('wgt.Float');
+load_widget('wgt.EnhancedText');
+load_widget('wgt.Donate');
