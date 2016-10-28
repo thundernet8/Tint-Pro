@@ -112,6 +112,9 @@ load_class('class.Captcha');
 load_class('class.Open');
 load_class('class.PostImage');
 load_class('class.Utils');
+if(is_admin()) {
+    load_class('class.Tgm.Plugin.Activation');
+}
 
 /* 载入功能函数 */
 load_func('func.L10n');

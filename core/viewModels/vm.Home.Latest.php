@@ -45,14 +45,14 @@ class HomeLatestVM extends BaseVM {
     }
 
     protected function getRealData() {
-        $featured_catIds = array(tt_get_option('tt_home_featured_category_one'), tt_get_option('tt_home_featured_category_two'), tt_get_option('tt_home_featured_category_three'));
+        //$featured_catIds = array(tt_get_option('tt_home_featured_category_one'), tt_get_option('tt_home_featured_category_two'), tt_get_option('tt_home_featured_category_three'));
 
         $args = array(
             'post_type' => 'post',
             'post_status' => 'publish',
             'posts_per_page' => get_option('posts_per_page', 10),
             'paged' => $this->_page,
-            'category__not_in' => $featured_catIds,
+            //'category__not_in' => $featured_catIds, // TODO: 第二页置顶分类隐藏了会仍然不显示这些分类的文章
             'has_password' => false,
             'ignore_sticky_posts' => true,
             'orderby' => 'date', // modified - 如果按最新编辑时间排序

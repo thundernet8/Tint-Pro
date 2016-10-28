@@ -17,23 +17,23 @@
 // 静态文件名常量，便于自动替换带特征值的文件名
 
 // CSS
-defined('CSS_HOME') || define('CSS_HOME', 'home-432cd40ac9.css');
-defined('CSS_FRONT_PAGE') || define('CSS_FRONT_PAGE', 'front-page-694ff93f42.css');
-defined('CSS_SINGLE') || define('CSS_SINGLE', 'single-da6f13d5dd.css');
-defined('CSS_ARCHIVE') || define('CSS_ARCHIVE', 'archive-4fe3ffb41a.css');
-defined('CSS_PRODUCT') || define('CSS_PRODUCT', 'product-694ff93f42.css');
-defined('CSS_PRODUCT_ARCHIVE') || define('CSS_PRODUCT_ARCHIVE', 'products-694ff93f42.css');
-defined('CSS_UC') || define('CSS_UC', 'uc-694ff93f42.css');
-defined('CSS_ME') || define('CSS_ME', 'me-694ff93f42.css');
-defined('CSS_ACTION') || define('CSS_ACTION', 'actions-7212a1fb1d.css');
-defined('CSS_404') || define('CSS_404', '404-0d0e52393c.css');
+defined('CSS_HOME') || define('CSS_HOME', 'home-ba4ccfb9ba.css');
+defined('CSS_FRONT_PAGE') || define('CSS_FRONT_PAGE', 'front-page-3c39af6543.css');
+defined('CSS_SINGLE') || define('CSS_SINGLE', 'single-96364ff616.css');
+defined('CSS_ARCHIVE') || define('CSS_ARCHIVE', 'archive-b5caaebbd9.css');
+defined('CSS_PRODUCT') || define('CSS_PRODUCT', 'product-3c39af6543.css');
+defined('CSS_PRODUCT_ARCHIVE') || define('CSS_PRODUCT_ARCHIVE', 'products-3c39af6543.css');
+defined('CSS_UC') || define('CSS_UC', 'uc-3c39af6543.css');
+defined('CSS_ME') || define('CSS_ME', 'me-3c39af6543.css');
+defined('CSS_ACTION') || define('CSS_ACTION', 'actions-c6bf08c10a.css');
+defined('CSS_404') || define('CSS_404', '404-7837f78ee6.css');
 defined('CSS_ERROR_PAGE') || define('CSS_ERROR_PAGE', 'error-page-b5392c81bb.css');
 
 // JS
 defined('JS_COMMON') || define('JS_COMMON', 'common-caa0d2a669.js');
 defined('JS_HOME') || define('JS_HOME', 'home-3044d81644.js');
 defined('JS_FRONT_PAGE') || define('JS_FRONT_PAGE', 'frontPage-da6c2995c2.js');
-defined('JS_SINGLE') || define('JS_SINGLE', 'single-1d007bdc04.js');
+defined('JS_SINGLE') || define('JS_SINGLE', 'single-6a8c4fb8a1.js');
 defined('JS_ARCHIVE') || define('JS_ARCHIVE', 'archive-726485769a.js');
 defined('JS_PRODUCT') || define('JS_PRODUCT', 'product-ef421887ff.js');
 defined('JS_PRODUCT_ARCHIVE') || define('JS_PRODUCT_ARCHIVE', 'products-67a6032e0a.js');

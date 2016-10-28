@@ -1,5 +1,5 @@
 /**
- * Generated on Sun Oct 23 2016 18:22:24 GMT+0800 (中国标准时间) by Zhiyan
+ * Generated on Thu Oct 27 2016 23:21:25 GMT+0800 (中国标准时间) by Zhiyan
  *
  * @package   Tint
  * @version   v2.0.0
@@ -27,6 +27,8 @@ webpackJsonp([
             var _postStar2 = _interopRequireDefault(_postStar);
             var _scroll = __webpack_require__(14);
             var _scroll2 = _interopRequireDefault(_scroll);
+            var _animateAnchor = __webpack_require__(19);
+            var _animateAnchor2 = _interopRequireDefault(_animateAnchor);
             function _interopRequireDefault(obj) {
                 return obj && obj[['__esModule']] ? obj : { default: obj };
             }
@@ -36,6 +38,7 @@ webpackJsonp([
                 _postStar2[['default']][['init']]();
                 _comments2[['default']][['init']]();
                 _scroll2[['default']][['initScrollTo']]();
+                (0, _animateAnchor2[['default']])();
             });
         }[['call']](exports, __webpack_require__(1)));
     },
@@ -2601,6 +2604,25 @@ webpackJsonp([
                 }
             };
             exports[['default']] = postStarKit;
+        }[['call']](exports, __webpack_require__(1)));
+    },
+    function (module, exports, __webpack_require__) {
+        (function ($) {
+            'use strict';
+            Object[['defineProperty']](exports, '__esModule', { value: true });
+            var AnimateAnchor = function AnimateAnchor() {
+                var body = $('body');
+                body[['on']]('click', 'a[href^="#"]', function (e) {
+                    e[['preventDefault']]();
+                    var sel = $(this)[['attr']]('href');
+                    var target = $(sel);
+                    if (target) {
+                        body[['animate']]({ scrollTop: target[['offset']]()[['top']] }, 'slow');
+                        window[['location']][['hash']] = sel[['substr']](1);
+                    }
+                });
+            };
+            exports[['default']] = AnimateAnchor;
         }[['call']](exports, __webpack_require__(1)));
     }
 ]);

@@ -217,7 +217,8 @@ class NameFirstChar {
      * @return  string
      */
     public function toUpperCase(){
-        return  strtoupper($this->firstChar);
+        //return  strtoupper($this->firstChar);
+        return ucfirst($this->firstChar); // Sharp
     }
 
 

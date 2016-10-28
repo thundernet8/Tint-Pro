@@ -19,6 +19,7 @@ import {} from './modules/bootstrap-flat';
 import postCommentsKit from './modules/comments';
 import postStarKit from './modules/postStar';
 import ScrollHandler from './modules/scroll';
+import AnimateAnchor from './modules/animateAnchor';
 
 // DOM Ready
 jQuery(document).ready(function ($) {
@@ -36,4 +37,7 @@ jQuery(document).ready(function ($) {
     
     // 滚动顶部底部
     ScrollHandler.initScrollTo();
+    
+    // 平滑锚点
+    AnimateAnchor();
 });

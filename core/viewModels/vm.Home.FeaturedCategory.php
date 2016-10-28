@@ -65,7 +65,7 @@ class FeaturedCategoryVM extends BaseVM {
             'cat' => $cat_Id,
             'has_password' => false,
             'ignore_sticky_posts' => true,
-            'orderby' => 'none',
+            'orderby' => 'date',
             'order' => 'DESC'   //TODO order customize
         );
 

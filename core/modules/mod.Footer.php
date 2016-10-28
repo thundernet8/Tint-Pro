@@ -68,9 +68,9 @@
                     </a>
                 <?php } ?>
                 <?php if($qq_mailme = tt_get_option('tt_mailme_id')) { ?>
-                    <a class="fts-weixin" href="<?php echo 'http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=' . $qq_mailme; ?>" target="_blank">
-                    <span class="tico tico-weixin">
-                      <span class="se-icon tico tico-weixin"></span>
+                    <a class="fts-email" href="<?php echo 'http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=' . $qq_mailme; ?>" target="_blank">
+                    <span class="tico tico-envelope">
+                      <span class="se-icon tico tico-envelope"></span>
                     </span>
                     </a>
                 <?php } ?>

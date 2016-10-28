@@ -271,10 +271,10 @@ function optionsframework_options() {
             'sidebar_common'    =>    __('Common Sidebar', 'tt'),
             'sidebar_home'      =>    __('Home Sidebar', 'tt'),
             'sidebar_single'    =>    __('Single Sidebar', 'tt'),
-            'sidebar_archive'   =>    __('Archive Sidebar', 'tt'),
-            'sidebar_category'  =>    __('Category Sidebar', 'tt'),
+            //'sidebar_archive'   =>    __('Archive Sidebar', 'tt'),
+            //'sidebar_category'  =>    __('Category Sidebar', 'tt'),
             'sidebar_search'    =>    __('Search Sidebar', 'tt'),
-            'sidebar_404'       =>    __('404 Sidebar', 'tt'),
+            //'sidebar_404'       =>    __('404 Sidebar', 'tt'),
             'sidebar_page'      =>    __('Page Sidebar', 'tt')
         )
     );

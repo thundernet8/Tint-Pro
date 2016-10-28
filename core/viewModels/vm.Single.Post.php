@@ -158,7 +158,7 @@ class SinglePostVM extends BaseVM {
             $related_posts[] = $related_post;
         endwhile;
 
-        wp_reset_postdata();
+        //wp_reset_postdata();
 
         // 当前用户
         // $uid = get_current_user_id(); 导致登录后这个缓存的uid还是0
