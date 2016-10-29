@@ -21,7 +21,7 @@ body {
 
 #sidebar {
     &>.widget {
-        padding: 15px 10px;
+        padding: 15px 20px;
         margin-bottom: 20px;
         border-radius: 3px;
         background: #ffffff;
@@ -35,6 +35,21 @@ body {
         &>.widget-content {
             position: relative;
         }
+    }
+    &>.widget_float-sidebar {
+        &>.widget {
+            &>.widget-title {
+                margin-top: 0;
+                margin-bottom: 15px;
+                font-size: 2rem;
+            }
+            &>.widget-content {
+                position: relative;
+            }
+        }
+    }
+    &>.float-widget-mirror {
+        position: relative;
     }
 }
 

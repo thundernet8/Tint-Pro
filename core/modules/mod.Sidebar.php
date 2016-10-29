@@ -16,4 +16,6 @@
 <aside class="sidebar secondary col-md-4" id="sidebar">
     <?php if(is_single()) the_widget('AuthorWidget'); ?>
     <?php dynamic_sidebar(tt_dynamic_sidebar()); ?>
+    <div class="widget float-widget-mirror">
+    </div>
 </aside>

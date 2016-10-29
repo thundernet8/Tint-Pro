@@ -2,19 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1212df9-9110-41ec-af9e-f8eb72c2514b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/functions/func.Content.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/css/modules/lightbox/lightbox.less" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/single-96364ff616.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/js/archive-726485769a.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/js/home-3044d81644.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/js/single-6a8c4fb8a1.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/home-ba4ccfb9ba.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/single-bca2bdf661.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/js/archive-ae676a9cc9.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/js/home-5215314b70.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/js/single-82601e4d6c.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/404-7837f78ee6.css" afterPath="$PROJECT_DIR$/assets/css/404-7837f78ee6.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/actions-c6bf08c10a.css" afterPath="$PROJECT_DIR$/assets/css/actions-c6bf08c10a.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/archive-b5caaebbd9.css" afterPath="$PROJECT_DIR$/assets/css/archive-b5caaebbd9.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/error-page-b5392c81bb.css" afterPath="$PROJECT_DIR$/assets/css/error-page-b5392c81bb.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/front-page-3c39af6543.css" afterPath="$PROJECT_DIR$/assets/css/front-page-3c39af6543.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/home-ba4ccfb9ba.css" afterPath="$PROJECT_DIR$/assets/css/home-ba4ccfb9ba.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/me-3c39af6543.css" afterPath="$PROJECT_DIR$/assets/css/me-3c39af6543.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/product-3c39af6543.css" afterPath="$PROJECT_DIR$/assets/css/product-3c39af6543.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/products-3c39af6543.css" afterPath="$PROJECT_DIR$/assets/css/products-3c39af6543.css" />
@@ -28,10 +26,9 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/products-67a6032e0a.js" afterPath="$PROJECT_DIR$/assets/js/products-67a6032e0a.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/uc-26c04c4e79.js" afterPath="$PROJECT_DIR$/assets/js/uc-26c04c4e79.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/asset.Constant.php" afterPath="$PROJECT_DIR$/core/functions/asset.Constant.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/func.Kits.php" afterPath="$PROJECT_DIR$/core/functions/func.Kits.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/functions.php" afterPath="$PROJECT_DIR$/functions.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/css/single.less" afterPath="$PROJECT_DIR$/src/css/single.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/mod.Sidebar.php" afterPath="$PROJECT_DIR$/core/modules/mod.Sidebar.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/css/modules/aside/sidebar.less" afterPath="$PROJECT_DIR$/src/css/modules/aside/sidebar.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/css/modules/aside/widgets/author-widget.less" afterPath="$PROJECT_DIR$/src/css/modules/aside/widgets/author-widget.less" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/modules/scroll.js" afterPath="$PROJECT_DIR$/src/js/modules/scroll.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/single.js" afterPath="$PROJECT_DIR$/src/js/single.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/rev/rev-manifest.json" afterPath="$PROJECT_DIR$/src/rev/rev-manifest.json" />
@@ -66,8 +63,8 @@
       <file leaf-file-name="single.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/js/single.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="532">
-              <caret line="49" column="28" selection-start-line="49" selection-start-column="28" selection-end-line="49" selection-end-column="28" />
+            <state relative-caret-position="420">
+              <caret line="45" column="36" selection-start-line="45" selection-start-column="36" selection-end-line="45" selection-end-column="36" />
               <folding>
                 <element signature="e#302#354#0" expanded="true" />
               </folding>
@@ -75,11 +72,51 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="lightbox.less" pinned="false" current-in-tab="true">
+      <file leaf-file-name="scroll.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/js/modules/scroll.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="334">
+              <caret line="113" column="92" selection-start-line="113" selection-start-column="92" selection-end-line="113" selection-end-column="92" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="lightbox.less" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/css/modules/lightbox/lightbox.less">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="196">
               <caret line="136" column="26" selection-start-line="136" selection-start-column="26" selection-end-line="136" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sidebar.less" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/css/modules/aside/sidebar.less">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="532">
+              <caret line="51" column="27" selection-start-line="51" selection-start-column="27" selection-end-line="51" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mod.Sidebar.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/modules/mod.Sidebar.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="196">
+              <caret line="18" column="42" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="author-widget.less" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/css/modules/aside/widgets/author-widget.less">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="56">
+              <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -124,7 +161,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/core/modules/mod.Sidebar.php" />
         <option value="$PROJECT_DIR$/src/css/modules/aside/widgets.less" />
         <option value="$PROJECT_DIR$/core/viewModels/vm.Widget.Author.php" />
         <option value="$PROJECT_DIR$/core/functions/func.Cache.php" />
@@ -138,7 +174,6 @@
         <option value="$PROJECT_DIR$/src/css/modules/base.less" />
         <option value="$PROJECT_DIR$/core/modules/widgets/wgt.RecentComments.php" />
         <option value="$PROJECT_DIR$/src/css/modules/aside/widgets/recent-comments.less" />
-        <option value="$PROJECT_DIR$/src/css/modules/aside/widgets/author-widget.less" />
         <option value="$PROJECT_DIR$/src/css/modules/aside/widgets/uc.less" />
         <option value="$PROJECT_DIR$/core/modules/widgets/wgt.Latest.Posts.php" />
         <option value="$PROJECT_DIR$/core/modules/widgets/wgt.UC.php" />
@@ -152,7 +187,6 @@
         <option value="$PROJECT_DIR$/core/viewModels/vm.Widget.HotHit.Posts.php" />
         <option value="$PROJECT_DIR$/core/viewModels/vm.Widget.HotReviewed.Posts.php" />
         <option value="$PROJECT_DIR$/core/viewModels/vm.Widget.Latest.Posts.php" />
-        <option value="$PROJECT_DIR$/src/css/modules/aside/sidebar.less" />
         <option value="$PROJECT_DIR$/core/classes/class.NameFirstChar.php" />
         <option value="$PROJECT_DIR$/src/js/modules/animateAchor.js" />
         <option value="$PROJECT_DIR$/src/js/modules/animateAnchor.js" />
@@ -166,15 +200,18 @@
         <option value="$PROJECT_DIR$/core/modules/widgets/wgt.Author.php" />
         <option value="$PROJECT_DIR$/core/functions/func.Init.php" />
         <option value="$PROJECT_DIR$/core/viewModels/vm.Home.Latest.php" />
-        <option value="$PROJECT_DIR$/src/js/modules/scroll.js" />
         <option value="$PROJECT_DIR$/core/functions/func.Kits.php" />
         <option value="$PROJECT_DIR$/functions.php" />
         <option value="$PROJECT_DIR$/core/modules/mod.SinglePost.php" />
         <option value="$PROJECT_DIR$/core/viewModels/vm.Single.Post.php" />
         <option value="$PROJECT_DIR$/src/css/single.less" />
         <option value="$PROJECT_DIR$/core/functions/func.Content.php" />
-        <option value="$PROJECT_DIR$/src/js/single.js" />
         <option value="$PROJECT_DIR$/src/css/modules/lightbox/lightbox.less" />
+        <option value="$PROJECT_DIR$/src/css/modules/aside/widgets/author-widget.less" />
+        <option value="$PROJECT_DIR$/core/modules/mod.Sidebar.php" />
+        <option value="$PROJECT_DIR$/src/js/single.js" />
+        <option value="$PROJECT_DIR$/src/css/modules/aside/sidebar.less" />
+        <option value="$PROJECT_DIR$/src/js/modules/scroll.js" />
       </list>
     </option>
   </component>
@@ -411,6 +448,62 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="lightbox" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tint" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tint" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="aside" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tint" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tint" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="aside" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="widgets" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -890,7 +983,7 @@
       <workItem from="1477482958119" duration="9575000" />
       <workItem from="1477569667212" duration="11301000" />
       <workItem from="1477638274029" duration="14951000" />
-      <workItem from="1477711373621" duration="10855000" />
+      <workItem from="1477711373621" duration="16292000" />
     </task>
     <task id="LOCAL-00001" summary="Add change log and contributing doc">
       <created>1476711242287</created>
@@ -910,7 +1003,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="973864000" />
+    <option name="totallyTimeSpent" value="979301000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1015,24 +1108,6 @@
     </PATH>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/core/modules/mod.Sidebar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="16" column="50" selection-start-line="16" selection-start-column="50" selection-end-line="16" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/metaKeys.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="616">
-            <caret line="22" column="12" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/functions/func.Sidebar.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -1127,6 +1202,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="840">
           <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1170,18 +1246,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/css/modules/aside/sidebar.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="52" column="22" selection-start-line="52" selection-start-column="22" selection-end-line="52" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/css/modules/loop/loop-grid.less">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-504">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1189,6 +1258,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
           <caret line="81" column="44" selection-start-line="81" selection-start-column="44" selection-end-line="81" selection-end-column="44" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1308,14 +1378,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/modules/scroll.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="446">
-          <caret line="69" column="65" selection-start-line="69" selection-start-column="49" selection-end-line="69" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/functions/func.Kits.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="490">
@@ -1411,16 +1473,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/single.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="49" column="28" selection-start-line="49" selection-start-column="28" selection-end-line="49" selection-end-column="28" />
-          <folding>
-            <element signature="e#302#354#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/functions/asset.Constant.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1433,6 +1485,48 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
           <caret line="136" column="26" selection-start-line="136" selection-start-column="26" selection-end-line="136" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/css/modules/aside/widgets/author-widget.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/modules/mod.Sidebar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="18" column="42" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/single.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="45" column="36" selection-start-line="45" selection-start-column="36" selection-end-line="45" selection-end-column="36" />
+          <folding>
+            <element signature="e#302#354#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/css/modules/aside/sidebar.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="51" column="27" selection-start-line="51" selection-start-column="27" selection-end-line="51" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/modules/scroll.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="113" column="92" selection-start-line="113" selection-start-column="92" selection-end-line="113" selection-end-column="92" />
           <folding />
         </state>
       </provider>

@@ -1,5 +1,5 @@
 /**
- * Generated on Sat Oct 29 2016 16:00:52 GMT+0800 (中国标准时间) by Zhiyan
+ * Generated on Sat Oct 29 2016 17:49:56 GMT+0800 (中国标准时间) by Zhiyan
  *
  * @package   Tint
  * @version   v2.0.0
@@ -40,6 +40,7 @@ webpackJsonp([
                 _comments2[['default']][['init']]();
                 _scroll2[['default']][['initScrollTo']]();
                 _scroll2[['default']][['initShareBar']]();
+                _scroll2[['default']][['initFloatWidget']]();
                 $('.lightbox-gallery')[['each']](function () {
                     var item = $(this);
                     var img = item[['find']]('img');
@@ -2191,6 +2192,7 @@ webpackJsonp([
             'use strict';
             Object[['defineProperty']](exports, '__esModule', { value: true });
             var _body = $('body');
+            var _document = $(document);
             var _scrollTopBottomAnchorCls = 'scroll-to';
             var _scrollTopAnchorCls = 'scroll-top';
             var _scrollBottomAnchorCls = 'scroll-bottom';
@@ -2213,7 +2215,6 @@ webpackJsonp([
             var _singleBodyTopY = 0;
             var _shareBarSel = '.single-body>.share-bar';
             var _shareBarHeight = 0;
-            var _document = null;
             var _shareBar = null;
             var _postWrap = null;
             var _singleBody = null;
@@ -2224,8 +2225,6 @@ webpackJsonp([
                     _singleBody = $(_singleBodySel);
                 if (!_postWrap)
                     _postWrap = $(_postWrapSel);
-                if (!_document)
-                    _document = $(document);
                 if (!_shareBarHeight)
                     _shareBarHeight = _shareBar[['height']]();
                 if (!_postWrapBottomY)
@@ -2241,8 +2240,6 @@ webpackJsonp([
                 return top;
             };
             var _initShareBar = function _initShareBar() {
-                if (!_document)
-                    _document = $(document);
                 _document[['on']]('scroll', function () {
                     var top = _calcTop();
                     if (!_shareBar)
@@ -2250,9 +2247,60 @@ webpackJsonp([
                     _shareBar[['css']]('top', top + 'px');
                 });
             };
+            var _originWidgetSel = '#sidebar>.widget_float-sidebar';
+            var _originWidget = null;
+            var _originWidgetTopY = 0;
+            var _originWidgetHeight = 0;
+            var _mirrorWidgetSel = '#sidebar>.float-widget-mirror';
+            var _mirrorWidget = null;
+            var _mirrorWidgetTopY = 0;
+            var _mainWrapSel = '.main-wrap';
+            var _mainWrap = null;
+            var _mainWrapTopY = 0;
+            var _mainWrapHeight = 0;
+            var _windowHeight = 0;
+            var _handleFloatWidget = function _handleFloatWidget() {
+                if (!_originWidget)
+                    _originWidget = $(_originWidgetSel);
+                if (_originWidget[['length']] == 0)
+                    return;
+                if (!_mirrorWidget)
+                    _mirrorWidget = $(_mirrorWidgetSel);
+                if (!_mainWrap)
+                    _mainWrap = $(_mainWrapSel);
+                if (!_originWidgetTopY)
+                    _originWidgetTopY = _originWidget[['offset']]()[['top']];
+                if (!_originWidgetHeight)
+                    _originWidgetHeight = _originWidget[['height']]();
+                if (!_mirrorWidgetTopY)
+                    _mirrorWidgetTopY = _mirrorWidget[['offset']]()[['top']];
+                if (!_mainWrapTopY)
+                    _mainWrapTopY = _mainWrap[['offset']]()[['top']];
+                if (!_mainWrapHeight)
+                    _mainWrapHeight = _mainWrap[['height']]();
+                if (!_windowHeight)
+                    _windowHeight = $(window)[['height']]();
+                var documentScrollTop = _document[['scrollTop']]();
+                if (documentScrollTop + _windowHeight + 20 > _mirrorWidgetTopY + _originWidgetHeight + 60) {
+                    if (_mirrorWidget[['html']]() == '') {
+                        _mirrorWidget[['prepend']](_originWidget[['html']]());
+                    }
+                    _mirrorWidget[['fadeIn']]('slow');
+                    var top = Math[['max']](0, documentScrollTop - _mirrorWidgetTopY + 100);
+                    _mirrorWidget[['css']]('top', top);
+                } else {
+                    _mirrorWidget[['html']]('')[['fadeOut']]('slow');
+                }
+            };
+            var _initFloatWidget = function _initFloatWidget() {
+                _document[['on']]('scroll', function () {
+                    _handleFloatWidget();
+                });
+            };
             var ScrollHandler = {
                 initScrollTo: _initScrollTo,
-                initShareBar: _initShareBar
+                initShareBar: _initShareBar,
+                initFloatWidget: _initFloatWidget
             };
             exports[['default']] = ScrollHandler;
         }[['call']](exports, __webpack_require__(1)));

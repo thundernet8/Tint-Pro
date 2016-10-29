@@ -42,6 +42,9 @@ jQuery(document).ready(function ($) {
     // 分享条自适应位置
     ScrollHandler.initShareBar();
     
+    // 浮动边栏
+    ScrollHandler.initFloatWidget();
+    
     //  Lightbox 获取图片的title属性
     $('.lightbox-gallery').each(function () {
         var item = $(this);
