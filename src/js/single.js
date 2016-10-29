@@ -20,6 +20,7 @@ import postCommentsKit from './modules/comments';
 import postStarKit from './modules/postStar';
 import ScrollHandler from './modules/scroll';
 import AnimateAnchor from './modules/animateAnchor';
+import {} from 'lightbox2';
 
 // DOM Ready
 jQuery(document).ready(function ($) {
@@ -37,6 +38,18 @@ jQuery(document).ready(function ($) {
     
     // 滚动顶部底部
     ScrollHandler.initScrollTo();
+    
+    // 分享条自适应位置
+    ScrollHandler.initShareBar();
+    
+    //  Lightbox 获取图片的title属性
+    $('.lightbox-gallery').each(function () {
+        var item = $(this);
+        var img = item.find('img');
+        if(img && img.attr('title')) {
+            item.attr('data-title', img.attr('title'));
+        }
+    });
     
     // 平滑锚点
     AnimateAnchor();

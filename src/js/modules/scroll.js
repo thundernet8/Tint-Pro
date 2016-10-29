@@ -41,13 +41,54 @@ var _initScrollTo = function () {
 
 
 /* 分享条 */
+var _postWrapSel = '#main>.post';
+var _postWrapBottomY = 0;
+var _singleBodySel = '.single-body';
+var _singleBodyTopY = 0;
+var _shareBarSel = '.single-body>.share-bar';
+var _shareBarHeight = 0;
+var _document = null;
+var _shareBar = null;
+var _postWrap = null;
+var _singleBody = null;
 
+var _calcTop = function () {
+    if(!_shareBar) _shareBar = $(_shareBarSel);
+    if(!_singleBody) _singleBody = $(_singleBodySel);
+    if(!_postWrap) _postWrap = $(_postWrapSel);
+    if(!_document) _document = $(document);
+    if(!_shareBarHeight) _shareBarHeight = _shareBar.height();
+    if(!_postWrapBottomY) _postWrapBottomY = _postWrap.offset().top + _postWrap.height() + 40;
+    if(!_singleBodyTopY) _singleBodyTopY = _singleBody.offset().top;
+    
+    var documentScrollTop = _document.scrollTop();
+    var top = 0;
+    // 顶部限制
+    top = Math.max(20, 80 + documentScrollTop - _singleBodyTopY);
+    
+    // 底部限制
+    if(_singleBodyTopY + top + _shareBarHeight > _postWrapBottomY) {
+        top = _postWrapBottomY -_shareBarHeight - _singleBodyTopY;
+    }
+    
+    return top;
+};
+
+var _initShareBar = function () {
+    if(!_document) _document = $(document);
+    _document.on('scroll', function () {
+        var top = _calcTop();
+        if(!_shareBar) _shareBar = $(_shareBarSel);
+        _shareBar.css('top', top + 'px');
+    })
+};
 
 /**
  * 导出模块
  */
 var ScrollHandler = {
-    initScrollTo: _initScrollTo
+    initScrollTo: _initScrollTo,
+    initShareBar: _initShareBar
 };
 
 export default ScrollHandler;

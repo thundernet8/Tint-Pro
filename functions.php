@@ -140,6 +140,7 @@ load_func('func.Sidebar');
 load_func('func.Template');
 load_func('func.Thumb');
 load_func('func.User');
+load_func('func.Content');
 
 /* 载入数据模型 */
 load_vm('vm.Base');
