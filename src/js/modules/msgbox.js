@@ -101,7 +101,7 @@ window.App = app;
 
 
 /**
- * 页内消息提示
+ * 页内消息提示(如注册框上提醒消息)
  */
 var msgbox = {};
 msgbox.show = function(str, type, beforeSel){

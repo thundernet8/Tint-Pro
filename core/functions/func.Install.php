@@ -124,3 +124,29 @@ add_action('load-themes.php', 'tt_reset_image_size');
 
 /* 建立数据表 */
 //TODO: add tables
+
+/**
+ * 新建粉丝和关注所用的数据表
+ *
+ * @since 2.0.0
+ * @return void
+ */
+function tt_install_follow_table () {
+    global $wpdb;
+    $table_name = $wpdb->prefix . 'tt_follow';
+    if( $wpdb->get_var("SHOW TABLES LIKE '$table_name'") != $table_name ) :
+        $sql = " CREATE TABLE `$table_name` (
+			`id` int NOT NULL AUTO_INCREMENT, 
+			PRIMARY KEY(id),
+			INDEX uid_index(user_id),
+			INDEX fuid_index(follow_user_id),
+			`user_id` int,
+			`follow_user_id` int,
+			`follow_status` int,
+			`follow_time` datetime
+		) ENGINE = MyISAM CHARSET=utf8;";
+        require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
+        dbDelta($sql);
+    endif;
+}
+add_action( 'load-themes.php', 'tt_install_follow_table' );

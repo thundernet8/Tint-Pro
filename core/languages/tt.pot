@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-10-27 22:20+0800\n"
+"POT-Creation-Date: 2016-10-29 23:00+0800\n"
 "PO-Revision-Date: 2016-08-17 21:40+0800\n"
 "Last-Translator: \n"
 "Language-Team: Zhiyan <mail@webapproach.net>\n"
@@ -573,6 +573,435 @@ msgstr ""
 msgid "Refresh Weibo Access Token Failed"
 msgstr ""
 
+#: core/classes/class.Tgm.Plugin.Activation.php:334
+#: core/functions/func.Init.php:77
+msgid "Install Required Plugins"
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:335
+#: core/functions/func.Init.php:78
+msgid "Install Plugins"
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:337
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:339
+#, php-format
+msgid "Updating Plugin: %s"
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:340
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:343
+#, php-format
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:349
+#, php-format
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:355
+#, php-format
+msgid ""
+"The following plugin needs to be updated to its latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgid_plural ""
+"The following plugins need to be updated to their latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:361
+#, php-format
+msgid "There is an update available for: %1$s."
+msgid_plural "There are updates available for the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:367
+#, php-format
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:373
+#, php-format
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural ""
+"The following recommended plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:378
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:383
+msgid "Begin updating plugin"
+msgid_plural "Begin updating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:388
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:392
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:393
+#: core/classes/class.Tgm.Plugin.Activation.php:920
+#: core/classes/class.Tgm.Plugin.Activation.php:2626
+#: core/classes/class.Tgm.Plugin.Activation.php:3673
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:394
+#: core/classes/class.Tgm.Plugin.Activation.php:3252
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:395
+#: core/classes/class.Tgm.Plugin.Activation.php:3045
+msgid "The following plugin was activated successfully:"
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] ""
+msgstr[1] ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:397
+#, php-format
+msgid "No action taken. Plugin %1$s was already active."
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:399
+#, php-format
+msgid ""
+"Plugin not activated. A higher version of %s is needed for this theme. "
+"Please update the plugin."
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:401
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:402
+msgid "Dismiss this notice"
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:403
+msgid ""
+"There are one or more required or recommended plugins to install, update "
+"or activate."
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:404
+msgid "Please contact the administrator of this site for help."
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:607
+msgid "This plugin needs to be updated to be compatible with your theme."
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:608
+msgid "Update Required"
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:725
+msgid "Set the parent_slug config variable instead."
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:1027
+msgid ""
+"The remote plugin package does not contain a folder with the desired slug "
+"and renaming did not work."
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:1027
+#: core/classes/class.Tgm.Plugin.Activation.php:1030
+msgid ""
+"Please contact the plugin provider and ask them to package their plugin "
+"according to the WordPress guidelines."
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:1030
+msgid ""
+"The remote plugin package consists of more than one file, but the files "
+"are not packaged in a folder."
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:1214
+#: core/classes/class.Tgm.Plugin.Activation.php:3041
+msgctxt "plugin A *and* plugin B"
+msgid "and"
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2075
+#, php-format
+msgid "TGMPA v%s"
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2366
+msgid "Required"
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2369
+msgid "Recommended"
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2385
+msgid "WordPress Repository"
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2388
+msgid "External Source"
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2391
+msgid "Pre-Packaged"
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2408
+msgid "Not Installed"
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2412
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2414
+msgid "Active"
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2420
+msgid "Required Update not Available"
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2423
+msgid "Requires Update"
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2426
+msgid "Update recommended"
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2435
+#, php-format
+msgctxt "Install/Update Status"
+msgid "%1$s, %2$s"
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2481
+#, php-format
+msgctxt "plugins"
+msgid "All <span class=\"count\">(%s)</span>"
+msgid_plural "All <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2485
+#, php-format
+msgid "To Install <span class=\"count\">(%s)</span>"
+msgid_plural "To Install <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2489
+#, php-format
+msgid "Update Available <span class=\"count\">(%s)</span>"
+msgid_plural "Update Available <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2493
+#, php-format
+msgid "To Activate <span class=\"count\">(%s)</span>"
+msgid_plural "To Activate <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2575
+msgctxt "as in: \"version nr unknown\""
+msgid "unknown"
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2583
+msgid "Installed version:"
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2591
+msgid "Minimum required version:"
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2603
+msgid "Available version:"
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2626
+msgid "No plugins to install, update or activate."
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2640
+msgid "Plugin"
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2641
+msgid "Source"
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2642
+msgid "Type"
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2646
+msgid "Version"
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2647
+msgid "Status"
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2696
+#, php-format
+msgid "Install %2$s"
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2701
+#, php-format
+msgid "Update %2$s"
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2707
+#, php-format
+msgid "Activate %2$s"
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2777
+msgid "Upgrade message from the plugin author:"
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2810
+msgid "Install"
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2816
+msgid "Update"
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2819
+msgid "Activate"
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2850
+msgid "No plugins were selected to be installed. No action taken."
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2852
+msgid "No plugins were selected to be updated. No action taken."
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2893
+msgid "No plugins are available to be installed at this time."
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2895
+msgid "No plugins are available to be updated at this time."
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:3001
+msgid "No plugins were selected to be activated. No action taken."
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:3027
+msgid "No plugins are available to be activated at this time."
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:3251
+msgid "Plugin activation failed."
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:3591
+#, php-format
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:3594
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:3596
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:3600
+msgid ""
+"The installation and activation process is starting. This process may take "
+"a while on some hosts, so please be patient."
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:3602
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:3602
+#: core/classes/class.Tgm.Plugin.Activation.php:3610
+msgid "Show Details"
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:3602
+#: core/classes/class.Tgm.Plugin.Activation.php:3610
+msgid "Hide Details"
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:3603
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:3605
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:3608
+msgid ""
+"The installation process is starting. This process may take a while on "
+"some hosts, so please be patient."
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:3610
+#, php-format
+msgid "%1$s installed successfully."
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:3611
+msgid "All installations have been completed."
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:3613
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
 #: core/classes/class.Utils.php:369
 msgid "刚刚"
 msgstr ""
@@ -641,6 +1070,148 @@ msgstr ""
 
 #: core/functions/func.Comment.php:99 core/modules/mod.ReplyForm.php:35
 msgid "Emotion"
+msgstr ""
+
+#: core/functions/func.Follow.php:106
+msgid "The user you are following not exist"
+msgstr ""
+
+#: core/functions/func.Follow.php:110
+msgid "You must sign in to follow someone"
+msgstr ""
+
+#: core/functions/func.Follow.php:113
+msgid "You cannot follow yourself"
+msgstr ""
+
+#: core/functions/func.Follow.php:127
+msgid "Unfollow user successfully"
+msgstr ""
+
+#: core/functions/func.Follow.php:132
+msgid "Unfollow user failed"
+msgstr ""
+
+#: core/functions/func.Follow.php:138
+msgid "Unfollow user failed, you do not have followed him"
+msgstr ""
+
+#: core/functions/func.Follow.php:152 core/functions/func.Follow.php:164
+msgid "Follow user successfully"
+msgstr ""
+
+#: core/functions/func.Follow.php:157 core/functions/func.Follow.php:169
+msgid "Follow user failed"
+msgstr ""
+
+#: core/functions/func.Follow.php:215 core/functions/func.Follow.php:217
+msgid "Unfollow"
+msgstr ""
+
+#: core/functions/func.Follow.php:215
+msgid "FOLLOWED EACH"
+msgstr ""
+
+#: core/functions/func.Follow.php:217
+msgid "FOLLOWED"
+msgstr ""
+
+#: core/functions/func.Follow.php:220
+msgid "Follow the user"
+msgstr ""
+
+#: core/functions/func.Follow.php:220
+msgid "FOLLOW"
+msgstr ""
+
+#: core/functions/func.Init.php:79
+#, php-format
+msgid "Installing: %s"
+msgstr ""
+
+#: core/functions/func.Init.php:80
+msgid "There is a problem with the plugin API"
+msgstr ""
+
+#: core/functions/func.Init.php:81
+#, php-format
+msgid "Tint require the plugin: %1$s."
+msgid_plural "Tint require these plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: core/functions/func.Init.php:82
+#, php-format
+msgid "Tint recommend the plugin: %1$s."
+msgid_plural "Tint recommend these plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: core/functions/func.Init.php:83
+#, php-format
+msgid "Permission denied while installing %s plugin."
+msgid_plural "Permission denied while installing %s plugins."
+msgstr[0] ""
+msgstr[1] ""
+
+#: core/functions/func.Init.php:84
+#, php-format
+msgid "The required plugin are not activated yet: %1$s"
+msgid_plural "These required plugins are not activated yet: %1$s"
+msgstr[0] ""
+msgstr[1] ""
+
+#: core/functions/func.Init.php:85
+#, php-format
+msgid "The recommended plugin are not activated yet: %1$s"
+msgid_plural "These recommended plugins are not activated yet: %1$s"
+msgstr[0] ""
+msgstr[1] ""
+
+#: core/functions/func.Init.php:86
+#, php-format
+msgid "Permission denied while activating the %s plugin."
+msgid_plural "Permission denied while activating the %s plugins."
+msgstr[0] ""
+msgstr[1] ""
+
+#: core/functions/func.Init.php:87
+#, php-format
+msgid "The plugin need update: %1$s."
+msgid_plural "These plugins need update: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: core/functions/func.Init.php:88
+#, php-format
+msgid "Permission denied while updating the %s plugin."
+msgid_plural "Permission denied while updating %s plugins."
+msgstr[0] ""
+msgstr[1] ""
+
+#: core/functions/func.Init.php:89
+msgid "Install the plugin"
+msgid_plural "Install the plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: core/functions/func.Init.php:90
+msgid "Activate the installed plugin"
+msgid_plural "Activate the installed plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: core/functions/func.Init.php:91
+msgid "return back"
+msgstr ""
+
+#: core/functions/func.Init.php:92
+msgid "Plugin activated"
+msgstr ""
+
+#: core/functions/func.Init.php:93
+#, php-format
+msgid "All plugins are installed and activated %s"
 msgstr ""
 
 #: core/functions/func.Install.php:35
@@ -794,28 +1365,28 @@ msgstr ""
 msgid " - Page %d "
 msgstr ""
 
-#: core/functions/func.Sidebar.php:59 dash/options.php:271
-#: dash/options.php:285
+#: core/functions/func.Sidebar.php:59 dash/options.php:281
+#: dash/options.php:295
 msgid "Common Sidebar"
 msgstr ""
 
-#: core/functions/func.Sidebar.php:60 dash/options.php:272
-#: dash/options.php:286 dash/options.php:301
+#: core/functions/func.Sidebar.php:60 dash/options.php:282
+#: dash/options.php:296 dash/options.php:311
 msgid "Home Sidebar"
 msgstr ""
 
-#: core/functions/func.Sidebar.php:61 dash/options.php:273
-#: dash/options.php:287 dash/options.php:311
+#: core/functions/func.Sidebar.php:61 dash/options.php:283
+#: dash/options.php:297 dash/options.php:321
 msgid "Single Sidebar"
 msgstr ""
 
-#: core/functions/func.Sidebar.php:64 dash/options.php:276
-#: dash/options.php:290 dash/options.php:341
+#: core/functions/func.Sidebar.php:64 dash/options.php:286
+#: dash/options.php:300 dash/options.php:351
 msgid "Search Sidebar"
 msgstr ""
 
-#: core/functions/func.Sidebar.php:66 dash/options.php:278
-#: dash/options.php:292 dash/options.php:361
+#: core/functions/func.Sidebar.php:66 dash/options.php:288
+#: dash/options.php:302 dash/options.php:371
 msgid "Page Sidebar"
 msgstr ""
 
@@ -829,15 +1400,15 @@ msgstr ""
 msgid "Site Manager"
 msgstr ""
 
-#: core/functions/func.User.php:29 dash/options.php:545
+#: core/functions/func.User.php:29 dash/options.php:555
 msgid "Editor"
 msgstr ""
 
-#: core/functions/func.User.php:32 dash/options.php:546
+#: core/functions/func.User.php:32 dash/options.php:556
 msgid "Author"
 msgstr ""
 
-#: core/functions/func.User.php:35 dash/options.php:547
+#: core/functions/func.User.php:35 dash/options.php:557
 msgid "Contributor"
 msgstr ""
 
@@ -1034,39 +1605,31 @@ msgid ""
 "TT-Show the post author information, only can be used in single post page"
 msgstr ""
 
-#: core/modules/widgets/wgt.Author.php:44
-msgid "Follow the author"
-msgstr ""
-
-#: core/modules/widgets/wgt.Author.php:44
-msgid "Follow"
-msgstr ""
-
-#: core/modules/widgets/wgt.Author.php:45
+#: core/modules/widgets/wgt.Author.php:47
 msgid "Send a message"
 msgstr ""
 
-#: core/modules/widgets/wgt.Author.php:45
+#: core/modules/widgets/wgt.Author.php:47
 msgid "Chat"
 msgstr ""
 
-#: core/modules/widgets/wgt.Author.php:48
+#: core/modules/widgets/wgt.Author.php:50
 msgid "POSTS"
 msgstr ""
 
-#: core/modules/widgets/wgt.Author.php:49
+#: core/modules/widgets/wgt.Author.php:51
 msgid "STARS"
 msgstr ""
 
-#: core/modules/widgets/wgt.Author.php:50
+#: core/modules/widgets/wgt.Author.php:52
 msgid "FOLLOWING"
 msgstr ""
 
-#: core/modules/widgets/wgt.Author.php:51
+#: core/modules/widgets/wgt.Author.php:53
 msgid "FOLLOWERS"
 msgstr ""
 
-#: core/modules/widgets/wgt.Author.php:65
+#: core/modules/widgets/wgt.Author.php:67
 msgid ""
 "<strong>Warning: </strong>This widget has nothing to configure, and also "
 "do not use it"
@@ -1758,476 +2321,484 @@ msgid ""
 "to show all comments"
 msgstr ""
 
+#: dash/options.php:257
+msgid "Excerpt Read More Text"
+msgstr ""
+
 #: dash/options.php:258
+msgid "The placeholder string at end of excerpt for indicating reading more"
+msgstr ""
+
+#: dash/options.php:268
 msgid "Sidebar"
 msgstr ""
 
-#: dash/options.php:265
+#: dash/options.php:275
 msgid "Register Sidebars"
 msgstr ""
 
-#: dash/options.php:266
+#: dash/options.php:276
 msgid "Check the sidebars to register"
 msgstr ""
 
-#: dash/options.php:274 dash/options.php:288 dash/options.php:321
+#: dash/options.php:298 dash/options.php:331
 msgid "Archive Sidebar"
 msgstr ""
 
-#: dash/options.php:275 dash/options.php:289 dash/options.php:331
+#: dash/options.php:299 dash/options.php:341
 msgid "Category Sidebar"
 msgstr ""
 
-#: dash/options.php:277 dash/options.php:291 dash/options.php:351
+#: dash/options.php:301 dash/options.php:361
 msgid "404 Sidebar"
 msgstr ""
 
-#: dash/options.php:302
+#: dash/options.php:312
 msgid "Select a sidebar for homepage"
 msgstr ""
 
-#: dash/options.php:312
+#: dash/options.php:322
 msgid "Select a sidebar for single post page"
 msgstr ""
 
-#: dash/options.php:322
+#: dash/options.php:332
 msgid "Select a sidebar for archive page"
 msgstr ""
 
-#: dash/options.php:332
+#: dash/options.php:342
 msgid "Select a sidebar for category page"
 msgstr ""
 
-#: dash/options.php:342
+#: dash/options.php:352
 msgid "Select a sidebar for search page"
 msgstr ""
 
-#: dash/options.php:352
+#: dash/options.php:362
 msgid "Select a sidebar for 404 page"
 msgstr ""
 
-#: dash/options.php:362
+#: dash/options.php:372
 msgid "Select a sidebar for page"
 msgstr ""
 
-#: dash/options.php:373
+#: dash/options.php:383
 msgid "Social"
 msgstr ""
 
-#: dash/options.php:380
+#: dash/options.php:390
 msgid "Site QQ"
 msgstr ""
 
-#: dash/options.php:381
+#: dash/options.php:391
 msgid "The QQ which is dedicated for the site"
 msgstr ""
 
-#: dash/options.php:390
+#: dash/options.php:400
 msgid "Site QQ Group ID"
 msgstr ""
 
-#: dash/options.php:391
+#: dash/options.php:401
 msgid ""
 "The ID key of QQ group which is dedicated for the site, visit `http://"
 "shang.qq.com` for detail"
 msgstr ""
 
-#: dash/options.php:400
+#: dash/options.php:410
 msgid "Site Weibo"
 msgstr ""
 
-#: dash/options.php:401
+#: dash/options.php:411
 msgid "The name of Weibo account which is dedicated for the site"
 msgstr ""
 
-#: dash/options.php:410
+#: dash/options.php:420
 msgid "Site Facebook"
 msgstr ""
 
-#: dash/options.php:411
+#: dash/options.php:421
 msgid "The name of Facebook account which is dedicated for the site"
 msgstr ""
 
-#: dash/options.php:420
+#: dash/options.php:430
 msgid "Site Twitter"
 msgstr ""
 
-#: dash/options.php:421
+#: dash/options.php:431
 msgid "The name of Twitter account which is dedicated for the site"
 msgstr ""
 
-#: dash/options.php:430
+#: dash/options.php:440
 msgid "Site Weixin"
 msgstr ""
 
-#: dash/options.php:431
+#: dash/options.php:441
 msgid "The qrcode image of Weixin account which is dedicated for the site"
 msgstr ""
 
-#: dash/options.php:440
+#: dash/options.php:450
 msgid "Site Alipay"
 msgstr ""
 
-#: dash/options.php:441
+#: dash/options.php:451
 msgid "The qrcode image of Alipay account which is dedicated for the site"
 msgstr ""
 
-#: dash/options.php:450
+#: dash/options.php:460
 msgid "QQ Login"
 msgstr ""
 
-#: dash/options.php:451
+#: dash/options.php:461
 msgid "QQ login "
 msgstr ""
 
-#: dash/options.php:460
+#: dash/options.php:470
 msgid "QQ Open ID"
 msgstr ""
 
-#: dash/options.php:461
+#: dash/options.php:471
 msgid "Your QQ open application ID"
 msgstr ""
 
-#: dash/options.php:470
+#: dash/options.php:480
 msgid "QQ Open Key"
 msgstr ""
 
-#: dash/options.php:471
+#: dash/options.php:481
 msgid "Your QQ open application key"
 msgstr ""
 
-#: dash/options.php:480
+#: dash/options.php:490
 msgid "Weibo Login"
 msgstr ""
 
-#: dash/options.php:481
+#: dash/options.php:491
 msgid "Weibo login access"
 msgstr ""
 
-#: dash/options.php:490
+#: dash/options.php:500
 msgid "Weibo Open Key"
 msgstr ""
 
-#: dash/options.php:491
+#: dash/options.php:501
 msgid "Your weibo open application key"
 msgstr ""
 
-#: dash/options.php:500
+#: dash/options.php:510
 msgid "Weibo Open Secret"
 msgstr ""
 
-#: dash/options.php:501
+#: dash/options.php:511
 msgid "Your weibo open application secret"
 msgstr ""
 
-#: dash/options.php:510
+#: dash/options.php:520
 msgid "Weixin Login"
 msgstr ""
 
-#: dash/options.php:511
+#: dash/options.php:521
 msgid "Weixin login access"
 msgstr ""
 
-#: dash/options.php:520
+#: dash/options.php:530
 msgid "Weixin Open Key"
 msgstr ""
 
-#: dash/options.php:521
+#: dash/options.php:531
 msgid "Your weixin open application key"
 msgstr ""
 
-#: dash/options.php:530
+#: dash/options.php:540
 msgid "Weixin Open Secret"
 msgstr ""
 
-#: dash/options.php:531
+#: dash/options.php:541
 msgid "Your weixin open application secret"
 msgstr ""
 
-#: dash/options.php:539
+#: dash/options.php:549
 msgid "Open User Default Role"
 msgstr ""
 
-#: dash/options.php:540
+#: dash/options.php:550
 msgid "Choose the role and capabilities for the new connected user from open"
 msgstr ""
 
-#: dash/options.php:548
+#: dash/options.php:558
 msgid "Subscriber"
 msgstr ""
 
-#: dash/options.php:556
+#: dash/options.php:566
 msgid "Ad"
 msgstr ""
 
-#: dash/options.php:566
+#: dash/options.php:576
 msgid "Membership"
 msgstr ""
 
-#: dash/options.php:576
+#: dash/options.php:586
 msgid "Shop"
 msgstr ""
 
-#: dash/options.php:583
+#: dash/options.php:593
 msgid "Site Weixin Pay QR"
 msgstr ""
 
-#: dash/options.php:584
+#: dash/options.php:594
 msgid "The Weixin pay qrcode image for collection money"
 msgstr ""
 
-#: dash/options.php:593
+#: dash/options.php:603
 msgid "Site Alipay Pay QR"
 msgstr ""
 
-#: dash/options.php:594
+#: dash/options.php:604
 msgid "The Alipay pay qrcode image for collection money"
 msgstr ""
 
-#: dash/options.php:603
+#: dash/options.php:613
 msgid "Auxiliary"
 msgstr ""
 
-#: dash/options.php:610
+#: dash/options.php:620
 msgid "Object Cache"
 msgstr ""
 
-#: dash/options.php:611
+#: dash/options.php:621
 msgid "Object cache support, accelerate your site"
 msgstr ""
 
-#: dash/options.php:616
+#: dash/options.php:626
 msgid "Memcache"
 msgstr ""
 
-#: dash/options.php:617
+#: dash/options.php:627
 msgid "Redis"
 msgstr ""
 
-#: dash/options.php:618 dash/options.php:724
+#: dash/options.php:628 dash/options.php:734
 msgid "None"
 msgstr ""
 
-#: dash/options.php:626
+#: dash/options.php:636
 msgid "Memcache Host"
 msgstr ""
 
-#: dash/options.php:627
+#: dash/options.php:637
 msgid "Memcache server host"
 msgstr ""
 
-#: dash/options.php:636
+#: dash/options.php:646
 msgid "Memcache Port"
 msgstr ""
 
-#: dash/options.php:637
+#: dash/options.php:647
 msgid "Memcache server port"
 msgstr ""
 
-#: dash/options.php:649
+#: dash/options.php:659
 msgid "Redis Host"
 msgstr ""
 
-#: dash/options.php:650
+#: dash/options.php:660
 msgid "Redis server host"
 msgstr ""
 
-#: dash/options.php:659
+#: dash/options.php:669
 msgid "Redis Port"
 msgstr ""
 
-#: dash/options.php:660
+#: dash/options.php:670
 msgid "Redis server port"
 msgstr ""
 
-#: dash/options.php:671
+#: dash/options.php:681
 msgid "Mailer Separator"
 msgstr ""
 
-#: dash/options.php:678
+#: dash/options.php:688
 msgid "SMTP/PHPMailer"
 msgstr ""
 
-#: dash/options.php:679
+#: dash/options.php:689
 msgid "Use SMTP or PHPMail as default mailer"
 msgstr ""
 
-#: dash/options.php:684
+#: dash/options.php:694
 msgid "PHP"
 msgstr ""
 
-#: dash/options.php:685
+#: dash/options.php:695
 msgid "SMTP"
 msgstr ""
 
-#: dash/options.php:693
+#: dash/options.php:703
 msgid "SMTP Host"
 msgstr ""
 
-#: dash/options.php:694
+#: dash/options.php:704
 msgid "Your SMTP service host"
 msgstr ""
 
-#: dash/options.php:704
+#: dash/options.php:714
 msgid "SMTP Port"
 msgstr ""
 
-#: dash/options.php:705
+#: dash/options.php:715
 msgid "Your SMTP service port"
 msgstr ""
 
-#: dash/options.php:715
+#: dash/options.php:725
 msgid "SMTP Secure"
 msgstr ""
 
-#: dash/options.php:716
+#: dash/options.php:726
 msgid "Your SMTP server secure protocol"
 msgstr ""
 
-#: dash/options.php:721
+#: dash/options.php:731
 msgid "Auto"
 msgstr ""
 
-#: dash/options.php:722
+#: dash/options.php:732
 msgid "SSL"
 msgstr ""
 
-#: dash/options.php:723
+#: dash/options.php:733
 msgid "TLS"
 msgstr ""
 
-#: dash/options.php:731
+#: dash/options.php:741
 msgid "SMTP Username"
 msgstr ""
 
-#: dash/options.php:732
+#: dash/options.php:742
 msgid "Your SMTP username"
 msgstr ""
 
-#: dash/options.php:741
+#: dash/options.php:751
 msgid "SMTP Password"
 msgstr ""
 
-#: dash/options.php:742
+#: dash/options.php:752
 msgid "Your SMTP password"
 msgstr ""
 
-#: dash/options.php:752
+#: dash/options.php:762
 msgid "Your Name"
 msgstr ""
 
-#: dash/options.php:753
+#: dash/options.php:763
 msgid "Your display name as the sender"
 msgstr ""
 
-#: dash/options.php:765
+#: dash/options.php:775
 msgid "PHP Mail Sender Display Name"
 msgstr ""
 
-#: dash/options.php:766
+#: dash/options.php:776
 msgid "The Sender display name when using PHPMail send mail"
 msgstr ""
 
-#: dash/options.php:776
+#: dash/options.php:786
 msgid "PHP Mail Sender Address"
 msgstr ""
 
-#: dash/options.php:777
+#: dash/options.php:787
 msgid "You can use fake mail address when use PHPMail"
 msgstr ""
 
-#: dash/options.php:788
+#: dash/options.php:798
 msgid "Short Link Prefix"
 msgstr ""
 
-#: dash/options.php:789
+#: dash/options.php:799
 msgid ""
 "Use short link instead long link or even convert external link to internal "
 "link"
 msgstr ""
 
-#: dash/options.php:799
+#: dash/options.php:809
 msgid "Short Link Records"
 msgstr ""
 
-#: dash/options.php:800
+#: dash/options.php:810
 msgid "One line for one record, please conform to the sample"
 msgstr ""
 
-#: dash/options.php:813
+#: dash/options.php:823
 msgid "Feedback"
 msgstr ""
 
-#: dash/options.php:825
+#: dash/options.php:835
 msgid "Others"
 msgstr ""
 
-#: dash/options.php:832
+#: dash/options.php:842
 msgid "Debug Mode"
 msgstr ""
 
-#: dash/options.php:833
+#: dash/options.php:843
 msgid ""
 "Enable debug will force display php errors, disable theme cache, enable "
 "some private links or functions, etc."
 msgstr ""
 
-#: dash/options.php:842
+#: dash/options.php:852
 msgid "Tint Token"
 msgstr ""
 
-#: dash/options.php:843
+#: dash/options.php:853
 msgid "Private token for theme, maybe useful somewhere."
 msgstr ""
 
-#: dash/options.php:853
+#: dash/options.php:863
 msgid "Refresh Rewrite Rules"
 msgstr ""
 
-#: dash/options.php:854
+#: dash/options.php:864
 #, php-format
 msgid ""
 "Please Click to <a href=\"%1$s/m/refresh?token=%2$s\" target=\"_blank"
 "\">Refresh Rewrite Rules</a> if you have encounter some 404 errors"
 msgstr ""
 
-#: dash/options.php:861
+#: dash/options.php:871
 msgid "QQ Mailme ID"
 msgstr ""
 
-#: dash/options.php:862
+#: dash/options.php:872
 msgid "The id of qq mailme, visit `http://open.mail.qq.com` for detail"
 msgstr ""
 
-#: dash/options.php:871
+#: dash/options.php:881
 msgid "QQ Mail list ID"
 msgstr ""
 
-#: dash/options.php:872
+#: dash/options.php:882
 msgid "The id of qq mailme, visit `http://list.qq.com` for detail"
 msgstr ""
 
-#: dash/options.php:881
+#: dash/options.php:891
 msgid "Head Custom Code"
 msgstr ""
 
-#: dash/options.php:882
+#: dash/options.php:892
 msgid "Custom code loaded on page head"
 msgstr ""
 
-#: dash/options.php:891
+#: dash/options.php:901
 msgid "Foot Custom Code"
 msgstr ""
 
-#: dash/options.php:892
+#: dash/options.php:902
 msgid "Custom code loaded on page foot"
 msgstr ""
 
-#: dash/options.php:900
+#: dash/options.php:910
 msgid "Foot Beian Text"
 msgstr ""
 
-#: dash/options.php:901
+#: dash/options.php:911
 msgid "IDC reference No. for regulations of China"
 msgstr ""
 

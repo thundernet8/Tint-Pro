@@ -252,6 +252,16 @@ function optionsframework_options() {
         'type' => 'text'
     );
 
+    // - 摘要阅读更多占位字符
+    $options[] = array(
+        'name' => __( 'Excerpt Read More Text', 'tt' ),
+        'desc' => __( 'The placeholder string at end of excerpt for indicating reading more', 'tt' ),
+        'id' => 'tt_read_more',
+        'std' => ' ···',
+        'class' => 'mini',
+        'type' => 'text'
+    );
+
 
 	// 主题设置 - 边栏设置
 	$options[] = array(

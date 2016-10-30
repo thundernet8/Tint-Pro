@@ -28,3 +28,15 @@ function tt_filter_content_for_lightbox ($content){
     return $content;
 }
 add_filter('the_content', 'tt_filter_content_for_lightbox', 98);
+
+
+/**
+ * 替换摘要more字样
+ * @param $more
+ * @return mixed
+ */
+function tt_excerpt_more($more) {
+    $read_more=tt_get_option('tt_read_more', ' ···');
+    return $read_more;
+}
+add_filter('excerpt_more', 'tt_excerpt_more');

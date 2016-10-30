@@ -29,7 +29,7 @@ class DonateWidget extends WP_Widget {
         if($instance['title']) { echo $args['before_title'] . $instance['title'] . $args['after_title']; } ?>
         <div class="widget-content">
             <div class="row">
-        <?php $wechat_pay = tt_get_option('tt_weixin_pay_qr'); $ali_pay = tt_get_option('tt_alipay_pay_qr'); if($wechat_pay && $ali_pay) {$col_class = 'qr-col col-md-6';} else {$col_class = 'qr-col';} ?>
+        <?php $wechat_pay = tt_get_option('tt_weixin_pay_qr'); $ali_pay = tt_get_option('tt_alipay_pay_qr'); if($wechat_pay && $ali_pay) {$col_class = 'qr-col col-md-6 col-sm-6 col-xs-6';} else {$col_class = 'qr-col';} ?>
             <?php if($wechat_pay) { ?>
                 <div class="<?php echo $col_class; ?>">
                     <i class="qr-type-icon qr-type-wechat tico tico-wechat"></i>

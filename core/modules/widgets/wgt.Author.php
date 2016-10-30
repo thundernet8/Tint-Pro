@@ -42,7 +42,8 @@ class AuthorWidget extends WP_Widget {
                     <span class="author-user_level"><?php echo tt_get_user_cap_string($data->ID); ?></span>
                 </div>
                 <div class="author-interact">
-                    <a class="follow-btn" href="javascript: void" title="<?php _e('Follow the author', 'tt'); ?>"><i class="tico tico-user-plus"></i><?php _e('Follow', 'tt'); ?></a>
+<!--                    <a class="follow-btn" href="javascript: void 0" title="--><?php //_e('Follow the author', 'tt'); ?><!--"><i class="tico tico-user-plus"></i>--><?php //_e('Follow', 'tt'); ?><!--</a>-->
+                    <?php echo tt_follow_button($data->ID); ?>
                     <a class="whisper-btn" href="<?php echo '/'; ?>" title="<?php _e('Send a message', 'tt'); ?>"><i class="tico tico-envelope"></i><?php _e('Chat', 'tt'); ?></a>
                 </div>
                 <div class="author-stats">

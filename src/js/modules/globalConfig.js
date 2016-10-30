@@ -24,7 +24,11 @@ var routes = {
     users: Utils.getAPIUrl('/users'),
     comments: Utils.getAPIUrl('/comments'),
     commentStars: Utils.getAPIUrl('/comment/stars'), //TODO more
-    postStars: Utils.getAPIUrl('/post/stars')
+    postStars: Utils.getAPIUrl('/post/stars'),
+    myFollower: Utils.getAPIUrl('/users/me/followers'),
+    myFollowing: Utils.getAPIUrl('/users/me/following'),
+    follower: Utils.getAPIUrl('/users/{{uid}}/followers'),
+    following: Utils.getAPIUrl('/users/{{uid}}/following')
 };
 
 // 特殊类名

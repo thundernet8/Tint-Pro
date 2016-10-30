@@ -18,6 +18,7 @@ import {popMsgbox} from './modules/msgbox';
 import {} from './modules/bootstrap-flat';
 import {} from './vender/unslider';
 import ScrollHandler from './modules/scroll';
+import FollowKit from './modules/follow';
 //import Scrollbar from 'perfect-scrollbar/jquery';
 // require('./modules/smooth-scroll');
 
@@ -35,6 +36,9 @@ jQuery(document).ready(function ($) {
     // 初始化Scrollbar - 对body 无效
     //Scrollbar(jQuery);
     //$('body').perfectScrollbar();
+    
+    // 粉丝和关注
+    FollowKit.init();
     
     // 启动幻灯
     (function () {

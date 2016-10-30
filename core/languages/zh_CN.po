@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-10-27 22:20+0800\n"
-"PO-Revision-Date: 2016-10-27 22:23+0800\n"
+"POT-Creation-Date: 2016-10-29 23:00+0800\n"
+"PO-Revision-Date: 2016-10-29 23:02+0800\n"
 "Last-Translator: Zhiyan <mail@webapproach.net>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -569,6 +569,420 @@ msgstr "获取微博用户信息失败"
 msgid "Refresh Weibo Access Token Failed"
 msgstr "刷新微博 Access Token 失败"
 
+#: core/classes/class.Tgm.Plugin.Activation.php:334
+#: core/functions/func.Init.php:77
+msgid "Install Required Plugins"
+msgstr "安装必须的插件"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:335
+#: core/functions/func.Init.php:78
+msgid "Install Plugins"
+msgstr "安装插件"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:337
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr "正在安装插件: %s"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:339
+#, php-format
+msgid "Updating Plugin: %s"
+msgstr "正在更新插件: %s"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:340
+msgid "Something went wrong with the plugin API."
+msgstr "插件API发生了一个错误"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:343
+#, php-format
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] "主题需要以下插件: %1$s"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:349
+#, php-format
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] "主题推荐以下插件: %1$s"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:355
+#, php-format
+msgid ""
+"The following plugin needs to be updated to its latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgid_plural ""
+"The following plugins need to be updated to their latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgstr[0] "下列插件需要更新至最新版以保持对主题的兼容性: %1$s"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:361
+#, php-format
+msgid "There is an update available for: %1$s."
+msgid_plural "There are updates available for the following plugins: %1$s."
+msgstr[0] "以下插件有可用更新: %1$s"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:367
+#, php-format
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] "下列必须插件目前未激活: %1$s"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:373
+#, php-format
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] "下列推荐插件目前未激活: %1$s"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:378
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] "开始安装插件"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:383
+msgid "Begin updating plugin"
+msgid_plural "Begin updating plugins"
+msgstr[0] "开始更新插件"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:388
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] "开始激活插件"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:392
+msgid "Return to Required Plugins Installer"
+msgstr "回到插件安装页面"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:393
+#: core/classes/class.Tgm.Plugin.Activation.php:920
+#: core/classes/class.Tgm.Plugin.Activation.php:2626
+#: core/classes/class.Tgm.Plugin.Activation.php:3673
+msgid "Return to the Dashboard"
+msgstr "返回控制板"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:394
+#: core/classes/class.Tgm.Plugin.Activation.php:3252
+msgid "Plugin activated successfully."
+msgstr "插件激活成功"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:395
+#: core/classes/class.Tgm.Plugin.Activation.php:3045
+msgid "The following plugin was activated successfully:"
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] "下列插件成功激活: "
+
+#: core/classes/class.Tgm.Plugin.Activation.php:397
+#, php-format
+msgid "No action taken. Plugin %1$s was already active."
+msgstr "动作未执行, 插件 %1$s 已经激活"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:399
+#, php-format
+msgid ""
+"Plugin not activated. A higher version of %s is needed for this theme. "
+"Please update the plugin."
+msgstr "插件未激活. 主题需要更高的 %s 版本的插件. 请更新该插件"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:401
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr "所有插件已安装并激活成功: %1$s"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:402
+msgid "Dismiss this notice"
+msgstr "忽略提醒"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:403
+msgid ""
+"There are one or more required or recommended plugins to install, update or "
+"activate."
+msgstr "有一个或多个必须或推荐的插件待安装、更新或激活"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:404
+msgid "Please contact the administrator of this site for help."
+msgstr "请联系网站管理员寻求支持"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:607
+msgid "This plugin needs to be updated to be compatible with your theme."
+msgstr "下列插件需要更新至最新版以保持对主题的兼容性."
+
+#: core/classes/class.Tgm.Plugin.Activation.php:608
+msgid "Update Required"
+msgstr "需要更新"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:725
+msgid "Set the parent_slug config variable instead."
+msgstr "设置 parent_slug 配置变量"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:1027
+msgid ""
+"The remote plugin package does not contain a folder with the desired slug "
+"and renaming did not work."
+msgstr "远程插件包不包含必须的slug的文件夹, 重命名失败"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:1027
+#: core/classes/class.Tgm.Plugin.Activation.php:1030
+msgid ""
+"Please contact the plugin provider and ask them to package their plugin "
+"according to the WordPress guidelines."
+msgstr "请联系插件提供方并请求按照WordPress指导文件更新插件"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:1030
+msgid ""
+"The remote plugin package consists of more than one file, but the files are "
+"not packaged in a folder."
+msgstr "远程插件包包含多个文件, 但这些文件未打包在一个文件夹"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:1214
+#: core/classes/class.Tgm.Plugin.Activation.php:3041
+msgctxt "plugin A *and* plugin B"
+msgid "and"
+msgstr "和"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2075
+#, php-format
+msgid "TGMPA v%s"
+msgstr "TGMPA v%s"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2366
+msgid "Required"
+msgstr "必须"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2369
+msgid "Recommended"
+msgstr "推荐"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2385
+msgid "WordPress Repository"
+msgstr "WordPress仓库"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2388
+msgid "External Source"
+msgstr "外部源"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2391
+msgid "Pre-Packaged"
+msgstr "预打包"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2408
+msgid "Not Installed"
+msgstr "未安装"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2412
+msgid "Installed But Not Activated"
+msgstr "安装但未激活"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2414
+msgid "Active"
+msgstr "激活"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2420
+msgid "Required Update not Available"
+msgstr "无必须的更新"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2423
+msgid "Requires Update"
+msgstr "需要更新"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2426
+msgid "Update recommended"
+msgstr "更新推荐"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2435
+#, php-format
+msgctxt "Install/Update Status"
+msgid "%1$s, %2$s"
+msgstr "%1$s, %2$s"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2481
+#, php-format
+msgctxt "plugins"
+msgid "All <span class=\"count\">(%s)</span>"
+msgid_plural "All <span class=\"count\">(%s)</span>"
+msgstr[0] "所有 <span class=\"count\">(%s)</span>"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2485
+#, php-format
+msgid "To Install <span class=\"count\">(%s)</span>"
+msgid_plural "To Install <span class=\"count\">(%s)</span>"
+msgstr[0] "安装 <span class=\"count\">(%s)</span>"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2489
+#, php-format
+msgid "Update Available <span class=\"count\">(%s)</span>"
+msgid_plural "Update Available <span class=\"count\">(%s)</span>"
+msgstr[0] "可更新 <span class=\"count\">(%s)</span>"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2493
+#, php-format
+msgid "To Activate <span class=\"count\">(%s)</span>"
+msgid_plural "To Activate <span class=\"count\">(%s)</span>"
+msgstr[0] "激活 <span class=\"count\">(%s)</span>"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2575
+msgctxt "as in: \"version nr unknown\""
+msgid "unknown"
+msgstr "未知"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2583
+msgid "Installed version:"
+msgstr "已安装版本: "
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2591
+msgid "Minimum required version:"
+msgstr "要求最低版本: "
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2603
+msgid "Available version:"
+msgstr "可用版本: "
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2626
+msgid "No plugins to install, update or activate."
+msgstr "没有插件需要安装、更新或激活"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2640
+msgid "Plugin"
+msgstr "插件"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2641
+msgid "Source"
+msgstr "来源"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2642
+msgid "Type"
+msgstr "类型"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2646
+msgid "Version"
+msgstr "版本"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2647
+msgid "Status"
+msgstr "状态"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2696
+#, php-format
+msgid "Install %2$s"
+msgstr "安装 %2$s"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2701
+#, php-format
+msgid "Update %2$s"
+msgstr "更新 %2$s"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2707
+#, php-format
+msgid "Activate %2$s"
+msgstr "激活 %2$s"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2777
+msgid "Upgrade message from the plugin author:"
+msgstr "来自插件作者的升级信息: "
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2810
+msgid "Install"
+msgstr "安装"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2816
+msgid "Update"
+msgstr "更新"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2819
+msgid "Activate"
+msgstr "激活"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2850
+msgid "No plugins were selected to be installed. No action taken."
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2852
+msgid "No plugins were selected to be updated. No action taken."
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2893
+msgid "No plugins are available to be installed at this time."
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:2895
+msgid "No plugins are available to be updated at this time."
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:3001
+msgid "No plugins were selected to be activated. No action taken."
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:3027
+msgid "No plugins are available to be activated at this time."
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:3251
+msgid "Plugin activation failed."
+msgstr "插件激活失败"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:3591
+#, php-format
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr "正在更新插件 %1$s (%2$d/%3$d)"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:3594
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:3596
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:3600
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:3602
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr "%1$s 安装并激活成功"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:3602
+#: core/classes/class.Tgm.Plugin.Activation.php:3610
+msgid "Show Details"
+msgstr "显示详细信息"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:3602
+#: core/classes/class.Tgm.Plugin.Activation.php:3610
+msgid "Hide Details"
+msgstr "隐藏详细信息"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:3603
+msgid "All installations and activations have been completed."
+msgstr "所有安装与激活已完成"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:3605
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr "正在安装和激活插件: %1$s (%2$d/%3$d)"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:3608
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+
+#: core/classes/class.Tgm.Plugin.Activation.php:3610
+#, php-format
+msgid "%1$s installed successfully."
+msgstr "%1$s 安装成功"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:3611
+msgid "All installations have been completed."
+msgstr "所有的安装已完成"
+
+#: core/classes/class.Tgm.Plugin.Activation.php:3613
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr "正在安装插件 %1$s (%2$d/%3$d)"
+
 #: core/classes/class.Utils.php:369
 msgid "刚刚"
 msgstr "刚刚"
@@ -638,6 +1052,138 @@ msgstr "回复"
 #: core/functions/func.Comment.php:99 core/modules/mod.ReplyForm.php:35
 msgid "Emotion"
 msgstr "表情"
+
+#: core/functions/func.Follow.php:106
+msgid "The user you are following not exist"
+msgstr "你要关注的用户不存在"
+
+#: core/functions/func.Follow.php:110
+msgid "You must sign in to follow someone"
+msgstr "你必须登录才能关注用户"
+
+#: core/functions/func.Follow.php:113
+msgid "You cannot follow yourself"
+msgstr "不能关注自己"
+
+#: core/functions/func.Follow.php:127
+msgid "Unfollow user successfully"
+msgstr "取消关注成功"
+
+#: core/functions/func.Follow.php:132
+msgid "Unfollow user failed"
+msgstr "取消关注失败"
+
+#: core/functions/func.Follow.php:138
+msgid "Unfollow user failed, you do not have followed him"
+msgstr "取消关注失败, 你没有关注他"
+
+#: core/functions/func.Follow.php:152 core/functions/func.Follow.php:164
+msgid "Follow user successfully"
+msgstr "关注用户成功"
+
+#: core/functions/func.Follow.php:157 core/functions/func.Follow.php:169
+msgid "Follow user failed"
+msgstr "关注用户失败"
+
+#: core/functions/func.Follow.php:215 core/functions/func.Follow.php:217
+msgid "Unfollow"
+msgstr "取消关注"
+
+#: core/functions/func.Follow.php:215
+msgid "FOLLOWED EACH"
+msgstr "互相关注"
+
+#: core/functions/func.Follow.php:217
+msgid "FOLLOWED"
+msgstr "已关注"
+
+#: core/functions/func.Follow.php:220
+msgid "Follow the user"
+msgstr "关注该用户"
+
+#: core/functions/func.Follow.php:220
+msgid "FOLLOW"
+msgstr "关注"
+
+#: core/functions/func.Init.php:79
+#, php-format
+msgid "Installing: %s"
+msgstr "正在安装: %s"
+
+#: core/functions/func.Init.php:80
+msgid "There is a problem with the plugin API"
+msgstr "插件API发生了问题"
+
+#: core/functions/func.Init.php:81
+#, php-format
+msgid "Tint require the plugin: %1$s."
+msgid_plural "Tint require these plugins: %1$s."
+msgstr[0] "Tint 需要下列插件: %1$s"
+
+#: core/functions/func.Init.php:82
+#, php-format
+msgid "Tint recommend the plugin: %1$s."
+msgid_plural "Tint recommend these plugins: %1$s."
+msgstr[0] "Tint 推荐下列插件: %1$s"
+
+#: core/functions/func.Init.php:83
+#, php-format
+msgid "Permission denied while installing %s plugin."
+msgid_plural "Permission denied while installing %s plugins."
+msgstr[0] "安装 %s 插件权限不足"
+
+#: core/functions/func.Init.php:84
+#, php-format
+msgid "The required plugin are not activated yet: %1$s"
+msgid_plural "These required plugins are not activated yet: %1$s"
+msgstr[0] "下列必须插件尚未激活: %1$s"
+
+#: core/functions/func.Init.php:85
+#, php-format
+msgid "The recommended plugin are not activated yet: %1$s"
+msgid_plural "These recommended plugins are not activated yet: %1$s"
+msgstr[0] "下列推荐插件尚未激活: %1$s"
+
+#: core/functions/func.Init.php:86
+#, php-format
+msgid "Permission denied while activating the %s plugin."
+msgid_plural "Permission denied while activating the %s plugins."
+msgstr[0] "激活 %s 插件权限不足"
+
+#: core/functions/func.Init.php:87
+#, php-format
+msgid "The plugin need update: %1$s."
+msgid_plural "These plugins need update: %1$s."
+msgstr[0] "插件需要更新: %1$s"
+
+#: core/functions/func.Init.php:88
+#, php-format
+msgid "Permission denied while updating the %s plugin."
+msgid_plural "Permission denied while updating %s plugins."
+msgstr[0] "更新 %s 插件权限不足"
+
+#: core/functions/func.Init.php:89
+msgid "Install the plugin"
+msgid_plural "Install the plugins"
+msgstr[0] "安装插件"
+
+#: core/functions/func.Init.php:90
+msgid "Activate the installed plugin"
+msgid_plural "Activate the installed plugins"
+msgstr[0] "激活安装的插件"
+
+#: core/functions/func.Init.php:91
+msgid "return back"
+msgstr "返回"
+
+#: core/functions/func.Init.php:92
+msgid "Plugin activated"
+msgstr "插件已激活"
+
+#: core/functions/func.Init.php:93
+#, php-format
+msgid "All plugins are installed and activated %s"
+msgstr "所有插件安装并激活 %s"
 
 #: core/functions/func.Install.php:35
 msgid ""
@@ -789,27 +1335,27 @@ msgstr "页面未找到"
 msgid " - Page %d "
 msgstr " - 第 %d 页"
 
-#: core/functions/func.Sidebar.php:59 dash/options.php:271 dash/options.php:285
+#: core/functions/func.Sidebar.php:59 dash/options.php:281 dash/options.php:295
 msgid "Common Sidebar"
 msgstr "默认边栏"
 
-#: core/functions/func.Sidebar.php:60 dash/options.php:272 dash/options.php:286
-#: dash/options.php:301
+#: core/functions/func.Sidebar.php:60 dash/options.php:282 dash/options.php:296
+#: dash/options.php:311
 msgid "Home Sidebar"
 msgstr "主页边栏"
 
-#: core/functions/func.Sidebar.php:61 dash/options.php:273 dash/options.php:287
-#: dash/options.php:311
+#: core/functions/func.Sidebar.php:61 dash/options.php:283 dash/options.php:297
+#: dash/options.php:321
 msgid "Single Sidebar"
 msgstr "文章边栏"
 
-#: core/functions/func.Sidebar.php:64 dash/options.php:276 dash/options.php:290
-#: dash/options.php:341
+#: core/functions/func.Sidebar.php:64 dash/options.php:286 dash/options.php:300
+#: dash/options.php:351
 msgid "Search Sidebar"
 msgstr "搜索边栏"
 
-#: core/functions/func.Sidebar.php:66 dash/options.php:278 dash/options.php:292
-#: dash/options.php:361
+#: core/functions/func.Sidebar.php:66 dash/options.php:288 dash/options.php:302
+#: dash/options.php:371
 msgid "Page Sidebar"
 msgstr "页面边栏"
 
@@ -822,15 +1368,15 @@ msgstr "放置若干小工具的容器, 一旦滚动超出视野范围将浮动�
 msgid "Site Manager"
 msgstr "站长"
 
-#: core/functions/func.User.php:29 dash/options.php:545
+#: core/functions/func.User.php:29 dash/options.php:555
 msgid "Editor"
 msgstr "编辑"
 
-#: core/functions/func.User.php:32 dash/options.php:546
+#: core/functions/func.User.php:32 dash/options.php:556
 msgid "Author"
 msgstr "作者"
 
-#: core/functions/func.User.php:35 dash/options.php:547
+#: core/functions/func.User.php:35 dash/options.php:557
 msgid "Contributor"
 msgstr "投稿者"
 
@@ -1027,39 +1573,31 @@ msgid ""
 "TT-Show the post author information, only can be used in single post page"
 msgstr "TT-显示当前文章作者的信息, 只能在文章页使用"
 
-#: core/modules/widgets/wgt.Author.php:44
-msgid "Follow the author"
-msgstr "关注该作者"
-
-#: core/modules/widgets/wgt.Author.php:44
-msgid "Follow"
-msgstr "关注"
-
-#: core/modules/widgets/wgt.Author.php:45
+#: core/modules/widgets/wgt.Author.php:47
 msgid "Send a message"
 msgstr "发送站内消息"
 
-#: core/modules/widgets/wgt.Author.php:45
+#: core/modules/widgets/wgt.Author.php:47
 msgid "Chat"
 msgstr "私信"
 
-#: core/modules/widgets/wgt.Author.php:48
+#: core/modules/widgets/wgt.Author.php:50
 msgid "POSTS"
 msgstr "文章"
 
-#: core/modules/widgets/wgt.Author.php:49
+#: core/modules/widgets/wgt.Author.php:51
 msgid "STARS"
 msgstr "点赞"
 
-#: core/modules/widgets/wgt.Author.php:50
+#: core/modules/widgets/wgt.Author.php:52
 msgid "FOLLOWING"
 msgstr "关注"
 
-#: core/modules/widgets/wgt.Author.php:51
+#: core/modules/widgets/wgt.Author.php:53
 msgid "FOLLOWERS"
 msgstr "粉丝"
 
-#: core/modules/widgets/wgt.Author.php:65
+#: core/modules/widgets/wgt.Author.php:67
 msgid ""
 "<strong>Warning: </strong>This widget has nothing to configure, and also do "
 "not use it"
@@ -1750,433 +2288,441 @@ msgid ""
 "show all comments"
 msgstr "每个评论分页最多显示的评论数量, 留空或设为0以显示所有评论"
 
+#: dash/options.php:257
+msgid "Excerpt Read More Text"
+msgstr "摘要Read More字符"
+
 #: dash/options.php:258
+msgid "The placeholder string at end of excerpt for indicating reading more"
+msgstr "位于摘要尾部的占位字符"
+
+#: dash/options.php:268
 msgid "Sidebar"
 msgstr "边栏"
 
-#: dash/options.php:265
+#: dash/options.php:275
 msgid "Register Sidebars"
 msgstr "注册边栏"
 
-#: dash/options.php:266
+#: dash/options.php:276
 msgid "Check the sidebars to register"
 msgstr "勾选需要注册的边栏"
 
-#: dash/options.php:274 dash/options.php:288 dash/options.php:321
+#: dash/options.php:298 dash/options.php:331
 msgid "Archive Sidebar"
 msgstr "归档边栏"
 
-#: dash/options.php:275 dash/options.php:289 dash/options.php:331
+#: dash/options.php:299 dash/options.php:341
 msgid "Category Sidebar"
 msgstr "分类边栏"
 
-#: dash/options.php:277 dash/options.php:291 dash/options.php:351
+#: dash/options.php:301 dash/options.php:361
 msgid "404 Sidebar"
 msgstr "404边栏"
 
-#: dash/options.php:302
+#: dash/options.php:312
 msgid "Select a sidebar for homepage"
 msgstr "为主页选择一个边栏"
 
-#: dash/options.php:312
+#: dash/options.php:322
 msgid "Select a sidebar for single post page"
 msgstr "为文章页选择一个边栏"
 
-#: dash/options.php:322
+#: dash/options.php:332
 msgid "Select a sidebar for archive page"
 msgstr "为归档页选择一个边栏"
 
-#: dash/options.php:332
+#: dash/options.php:342
 msgid "Select a sidebar for category page"
 msgstr "为分类页选择一个边栏"
 
-#: dash/options.php:342
+#: dash/options.php:352
 msgid "Select a sidebar for search page"
 msgstr "为搜索结果页选择一个边栏"
 
-#: dash/options.php:352
+#: dash/options.php:362
 msgid "Select a sidebar for 404 page"
 msgstr "为404页面选择一个边栏"
 
-#: dash/options.php:362
+#: dash/options.php:372
 msgid "Select a sidebar for page"
 msgstr "为普通页面选择一个边栏"
 
-#: dash/options.php:373
+#: dash/options.php:383
 msgid "Social"
 msgstr "社会化"
 
-#: dash/options.php:380
+#: dash/options.php:390
 msgid "Site QQ"
 msgstr "网站QQ"
 
-#: dash/options.php:381
+#: dash/options.php:391
 msgid "The QQ which is dedicated for the site"
 msgstr "站点服务专属QQ号码"
 
-#: dash/options.php:390
+#: dash/options.php:400
 msgid "Site QQ Group ID"
 msgstr "网站QQ群 ID Key"
 
-#: dash/options.php:391
+#: dash/options.php:401
 msgid ""
 "The ID key of QQ group which is dedicated for the site, visit `http://shang."
 "qq.com` for detail"
 msgstr "站点专属服务QQ群加群链接的ID Key, 非群号, 至`http://shang.qq.com`获取"
 
-#: dash/options.php:400
+#: dash/options.php:410
 msgid "Site Weibo"
 msgstr "网站微博名"
 
-#: dash/options.php:401
+#: dash/options.php:411
 msgid "The name of Weibo account which is dedicated for the site"
 msgstr "站点服务专属微博用户名"
 
-#: dash/options.php:410
+#: dash/options.php:420
 msgid "Site Facebook"
 msgstr "网站Facebook账户名"
 
-#: dash/options.php:411
+#: dash/options.php:421
 msgid "The name of Facebook account which is dedicated for the site"
 msgstr "站点服务专属的Facebook账户用户名"
 
-#: dash/options.php:420
+#: dash/options.php:430
 msgid "Site Twitter"
 msgstr "网站Twitter"
 
-#: dash/options.php:421
+#: dash/options.php:431
 msgid "The name of Twitter account which is dedicated for the site"
 msgstr "站点专属服务Twitter账号"
 
-#: dash/options.php:430
+#: dash/options.php:440
 msgid "Site Weixin"
 msgstr "网站微信"
 
-#: dash/options.php:431
+#: dash/options.php:441
 msgid "The qrcode image of Weixin account which is dedicated for the site"
 msgstr "站点服务专属微信号的二维码图片(可以是公众号二维码)"
 
-#: dash/options.php:440
+#: dash/options.php:450
 msgid "Site Alipay"
 msgstr "网站支付宝"
 
-#: dash/options.php:441
+#: dash/options.php:451
 msgid "The qrcode image of Alipay account which is dedicated for the site"
 msgstr "站点服务专属支付宝账号的二维码图片"
 
-#: dash/options.php:450
+#: dash/options.php:460
 msgid "QQ Login"
 msgstr "QQ 登录"
 
-#: dash/options.php:451
+#: dash/options.php:461
 msgid "QQ login "
 msgstr "QQ 登录"
 
-#: dash/options.php:460
+#: dash/options.php:470
 msgid "QQ Open ID"
 msgstr "QQ Open ID"
 
-#: dash/options.php:461
+#: dash/options.php:471
 msgid "Your QQ open application ID"
 msgstr "你的QQ开放平台应用ID"
 
-#: dash/options.php:470
+#: dash/options.php:480
 msgid "QQ Open Key"
 msgstr "QQ Open Key"
 
-#: dash/options.php:471
+#: dash/options.php:481
 msgid "Your QQ open application key"
 msgstr "你的QQ开放平台应用Key"
 
-#: dash/options.php:480
+#: dash/options.php:490
 msgid "Weibo Login"
 msgstr "微博登录"
 
-#: dash/options.php:481
+#: dash/options.php:491
 msgid "Weibo login access"
 msgstr "接入微博登录"
 
-#: dash/options.php:490
+#: dash/options.php:500
 msgid "Weibo Open Key"
 msgstr "微博 Open Key"
 
-#: dash/options.php:491
+#: dash/options.php:501
 msgid "Your weibo open application key"
 msgstr "你的微博开放平台应用Key"
 
-#: dash/options.php:500
+#: dash/options.php:510
 msgid "Weibo Open Secret"
 msgstr "微博 Open Secret"
 
-#: dash/options.php:501
+#: dash/options.php:511
 msgid "Your weibo open application secret"
 msgstr "你的微博开放平台应用Secret"
 
-#: dash/options.php:510
+#: dash/options.php:520
 msgid "Weixin Login"
 msgstr "微信登录"
 
-#: dash/options.php:511
+#: dash/options.php:521
 msgid "Weixin login access"
 msgstr "接入微信登录"
 
-#: dash/options.php:520
+#: dash/options.php:530
 msgid "Weixin Open Key"
 msgstr "微信 Open Key"
 
-#: dash/options.php:521
+#: dash/options.php:531
 msgid "Your weixin open application key"
 msgstr "你的微博开放平台应用Key"
 
-#: dash/options.php:530
+#: dash/options.php:540
 msgid "Weixin Open Secret"
 msgstr "微信 Open Secret"
 
-#: dash/options.php:531
+#: dash/options.php:541
 msgid "Your weixin open application secret"
 msgstr "你的微博开放平台应用Secret"
 
-#: dash/options.php:539
+#: dash/options.php:549
 msgid "Open User Default Role"
 msgstr "社会化登录新用户默认角色"
 
-#: dash/options.php:540
+#: dash/options.php:550
 msgid "Choose the role and capabilities for the new connected user from open"
 msgstr "选择通过社会化登录新连接用户的默认角色和权限"
 
-#: dash/options.php:548
+#: dash/options.php:558
 msgid "Subscriber"
 msgstr "订阅者"
 
-#: dash/options.php:556
+#: dash/options.php:566
 msgid "Ad"
 msgstr "广告"
 
-#: dash/options.php:566
+#: dash/options.php:576
 msgid "Membership"
 msgstr "会员"
 
-#: dash/options.php:576
+#: dash/options.php:586
 msgid "Shop"
 msgstr "商店"
 
-#: dash/options.php:583
+#: dash/options.php:593
 msgid "Site Weixin Pay QR"
 msgstr "网站微信收款二维码"
 
-#: dash/options.php:584
+#: dash/options.php:594
 msgid "The Weixin pay qrcode image for collection money"
 msgstr "用于网站收集打赏等的微信收款二维码图片"
 
-#: dash/options.php:593
+#: dash/options.php:603
 msgid "Site Alipay Pay QR"
 msgstr "网站支付宝收款二维码"
 
-#: dash/options.php:594
+#: dash/options.php:604
 msgid "The Alipay pay qrcode image for collection money"
 msgstr "用于网站收集打赏等的支付宝收款二维码图片"
 
-#: dash/options.php:603
+#: dash/options.php:613
 msgid "Auxiliary"
 msgstr "辅助"
 
-#: dash/options.php:610
+#: dash/options.php:620
 msgid "Object Cache"
 msgstr "对象缓存"
 
-#: dash/options.php:611
+#: dash/options.php:621
 msgid "Object cache support, accelerate your site"
 msgstr "对象缓存支持，加速网站"
 
-#: dash/options.php:616
+#: dash/options.php:626
 msgid "Memcache"
 msgstr "Memcache"
 
-#: dash/options.php:617
+#: dash/options.php:627
 msgid "Redis"
 msgstr "Redis"
 
-#: dash/options.php:618 dash/options.php:724
+#: dash/options.php:628 dash/options.php:734
 msgid "None"
 msgstr "无"
 
-#: dash/options.php:626
+#: dash/options.php:636
 msgid "Memcache Host"
 msgstr "Memcache主机"
 
-#: dash/options.php:627
+#: dash/options.php:637
 msgid "Memcache server host"
 msgstr "Memcache服务器的地址(IP或url)"
 
-#: dash/options.php:636
+#: dash/options.php:646
 msgid "Memcache Port"
 msgstr "Memcache端口"
 
-#: dash/options.php:637
+#: dash/options.php:647
 msgid "Memcache server port"
 msgstr "Memcache服务器端口"
 
-#: dash/options.php:649
+#: dash/options.php:659
 msgid "Redis Host"
 msgstr "Redis主机"
 
-#: dash/options.php:650
+#: dash/options.php:660
 msgid "Redis server host"
 msgstr "Redis服务器的地址(IP或url)"
 
-#: dash/options.php:659
+#: dash/options.php:669
 msgid "Redis Port"
 msgstr "Redis端口"
 
-#: dash/options.php:660
+#: dash/options.php:670
 msgid "Redis server port"
 msgstr "Redis服务器的端口"
 
-#: dash/options.php:671
+#: dash/options.php:681
 msgid "Mailer Separator"
 msgstr ""
 
-#: dash/options.php:678
+#: dash/options.php:688
 msgid "SMTP/PHPMailer"
 msgstr "SMTP/PHPMailer"
 
-#: dash/options.php:679
+#: dash/options.php:689
 msgid "Use SMTP or PHPMail as default mailer"
 msgstr "使用SMTP或PHPMail作为默认邮件发送方式"
 
-#: dash/options.php:684
+#: dash/options.php:694
 msgid "PHP"
 msgstr "PHP"
 
-#: dash/options.php:685
+#: dash/options.php:695
 msgid "SMTP"
 msgstr "SMTP"
 
-#: dash/options.php:693
+#: dash/options.php:703
 msgid "SMTP Host"
 msgstr "SMTP 服务器"
 
-#: dash/options.php:694
+#: dash/options.php:704
 msgid "Your SMTP service host"
 msgstr "你的SMTP服务器主机地址"
 
-#: dash/options.php:704
+#: dash/options.php:714
 msgid "SMTP Port"
 msgstr "SMTP 端口"
 
-#: dash/options.php:705
+#: dash/options.php:715
 msgid "Your SMTP service port"
 msgstr "你的SMTP服务器服务端口"
 
-#: dash/options.php:715
+#: dash/options.php:725
 msgid "SMTP Secure"
 msgstr "SMTP安全"
 
-#: dash/options.php:716
+#: dash/options.php:726
 msgid "Your SMTP server secure protocol"
 msgstr "你的SMTP服务器安全协议"
 
-#: dash/options.php:721
+#: dash/options.php:731
 msgid "Auto"
 msgstr "自动"
 
-#: dash/options.php:722
+#: dash/options.php:732
 msgid "SSL"
 msgstr "SSL"
 
-#: dash/options.php:723
+#: dash/options.php:733
 msgid "TLS"
 msgstr "TLS"
 
-#: dash/options.php:731
+#: dash/options.php:741
 msgid "SMTP Username"
 msgstr "SMTP 用户名"
 
-#: dash/options.php:732
+#: dash/options.php:742
 msgid "Your SMTP username"
 msgstr "你的SMTP服务的登录用户名"
 
-#: dash/options.php:741
+#: dash/options.php:751
 msgid "SMTP Password"
 msgstr "SMTP 密码"
 
-#: dash/options.php:742
+#: dash/options.php:752
 msgid "Your SMTP password"
 msgstr "你的SMTP服务登录密码"
 
-#: dash/options.php:752
+#: dash/options.php:762
 msgid "Your Name"
 msgstr "发信姓名"
 
-#: dash/options.php:753
+#: dash/options.php:763
 msgid "Your display name as the sender"
 msgstr "你发送的邮件中显示的名称"
 
-#: dash/options.php:765
+#: dash/options.php:775
 msgid "PHP Mail Sender Display Name"
 msgstr "PHPMailer发信人名称"
 
-#: dash/options.php:766
+#: dash/options.php:776
 msgid "The Sender display name when using PHPMail send mail"
 msgstr "使用PHPMailer发送邮件的显示名"
 
-#: dash/options.php:776
+#: dash/options.php:786
 msgid "PHP Mail Sender Address"
 msgstr "PHPMailer 发信人地址"
 
-#: dash/options.php:777
+#: dash/options.php:787
 msgid "You can use fake mail address when use PHPMail"
 msgstr "当使用PHPMailer发信时可使用自定义的发信人地址"
 
-#: dash/options.php:788
+#: dash/options.php:798
 msgid "Short Link Prefix"
 msgstr "短链接前缀标识"
 
-#: dash/options.php:789
+#: dash/options.php:799
 msgid ""
 "Use short link instead long link or even convert external link to internal "
 "link"
 msgstr "使用短链接代替长链接或站外链接转为站内链接"
 
-#: dash/options.php:799
+#: dash/options.php:809
 msgid "Short Link Records"
 msgstr "短链接记录"
 
-#: dash/options.php:800
+#: dash/options.php:810
 msgid "One line for one record, please conform to the sample"
 msgstr "一行一条记录，请参照样例格式"
 
-#: dash/options.php:813
+#: dash/options.php:823
 msgid "Feedback"
 msgstr "反馈"
 
-#: dash/options.php:825
+#: dash/options.php:835
 msgid "Others"
 msgstr "其他"
 
-#: dash/options.php:832
+#: dash/options.php:842
 msgid "Debug Mode"
 msgstr "调试模式"
 
-#: dash/options.php:833
+#: dash/options.php:843
 msgid ""
 "Enable debug will force display php errors, disable theme cache, enable some "
 "private links or functions, etc."
 msgstr "启用Debug将强制输出PHP错误，禁用主题缓存，启用一些私有链接或功能等"
 
-#: dash/options.php:842
+#: dash/options.php:852
 msgid "Tint Token"
 msgstr "Tint Token"
 
-#: dash/options.php:843
+#: dash/options.php:853
 msgid "Private token for theme, maybe useful somewhere."
 msgstr "主题私有Token，在某些地方有用"
 
-#: dash/options.php:853
+#: dash/options.php:863
 msgid "Refresh Rewrite Rules"
 msgstr "刷新固定链接规则"
 
-#: dash/options.php:854
+#: dash/options.php:864
 #, php-format
 msgid ""
 "Please Click to <a href=\"%1$s/m/refresh?token=%2$s\" target=\"_blank"
@@ -2185,43 +2731,43 @@ msgstr ""
 "如果你遭遇一些404访问错误，请点击 <a href=\"%1$s/m/refresh?token=%2$s\" "
 "target=\"_blank\">刷新固定链接规则</a>。"
 
-#: dash/options.php:861
+#: dash/options.php:871
 msgid "QQ Mailme ID"
 msgstr "QQ邮我按钮ID"
 
-#: dash/options.php:862
+#: dash/options.php:872
 msgid "The id of qq mailme, visit `http://open.mail.qq.com` for detail"
 msgstr "QQ邮我链接内的ID字段, 访问`http://open.mail.qq.com`获取"
 
-#: dash/options.php:871
+#: dash/options.php:881
 msgid "QQ Mail list ID"
 msgstr "QQ邮件列表ID"
 
-#: dash/options.php:872
+#: dash/options.php:882
 msgid "The id of qq mailme, visit `http://list.qq.com` for detail"
 msgstr "QQ邮件列表链接内的ID字段, 访问`http://list.qq.com`获取"
 
-#: dash/options.php:881
+#: dash/options.php:891
 msgid "Head Custom Code"
 msgstr "页头自定义代码"
 
-#: dash/options.php:882
+#: dash/options.php:892
 msgid "Custom code loaded on page head"
 msgstr "页面头部加载的自定义代码，位于head标签结束前"
 
-#: dash/options.php:891
+#: dash/options.php:901
 msgid "Foot Custom Code"
 msgstr "页脚自定义代码"
 
-#: dash/options.php:892
+#: dash/options.php:902
 msgid "Custom code loaded on page foot"
 msgstr "页面底部加载的自定义代码，位于body标签结束前"
 
-#: dash/options.php:900
+#: dash/options.php:910
 msgid "Foot Beian Text"
 msgstr "页脚备案文字"
 
-#: dash/options.php:901
+#: dash/options.php:911
 msgid "IDC reference No. for regulations of China"
 msgstr "工信部域名备案号码"
 
@@ -2253,6 +2799,47 @@ msgstr "Zhiyan"
 msgid "http://www.webapproach.net/"
 msgstr "http://www.webapproach.net/"
 
+#~ msgid ""
+#~ "Sorry, but you do not have the correct permissions to install the %s "
+#~ "plugin. Contact the administrator of this site for help on getting the "
+#~ "plugin installed."
+#~ msgid_plural ""
+#~ "Sorry, but you do not have the correct permissions to install the %s "
+#~ "plugins. Contact the administrator of this site for help on getting the "
+#~ "plugins installed."
+#~ msgstr[0] "抱歉, 你无权安装 %s 插件"
+
+#~ msgid ""
+#~ "Sorry, but you do not have the correct permissions to activate the %s "
+#~ "plugin. Contact the administrator of this site for help on getting the "
+#~ "plugin activated."
+#~ msgid_plural ""
+#~ "Sorry, but you do not have the correct permissions to activate the %s "
+#~ "plugins. Contact the administrator of this site for help on getting the "
+#~ "plugins activated."
+#~ msgstr[0] "抱歉, 你无权激活 %s 插件"
+
+#~ msgid ""
+#~ "Sorry, but you do not have the correct permissions to update the %s "
+#~ "plugin. Contact the administrator of this site for help on getting the "
+#~ "plugin updated."
+#~ msgid_plural ""
+#~ "Sorry, but you do not have the correct permissions to update the %s "
+#~ "plugins. Contact the administrator of this site for help on getting the "
+#~ "plugins updated."
+#~ msgstr[0] "抱歉, 你无权更新 %s 插件"
+
+#~ msgid "Activate installed plugin"
+#~ msgid_plural "Activate installed plugins"
+#~ msgstr[0] "激活已安装插件"
+
+#~ msgid "The following plugin was activated successfully: %s."
+#~ msgstr "下列插件成功激活: %s"
+
+#, fuzzy
+#~ msgid "Plugin installed successfully."
+#~ msgstr "登出成功"
+
 #~ msgid "Open Wechat and scan the qrcode image to share the article"
 #~ msgstr "打开微信，点击底部的“发现”，使用“扫一扫”即可将网页分享至朋友圈。"
 
@@ -2264,9 +2851,6 @@ msgstr "http://www.webapproach.net/"
 
 #~ msgid "Sign in using your social account"
 #~ msgstr "使用社交账户登录"
-
-#~ msgid "Update"
-#~ msgstr "更新"
 
 #~ msgid "One"
 #~ msgstr "一"

@@ -1,5 +1,5 @@
 /**
- * Generated on Sat Oct 29 2016 17:49:56 GMT+0800 (中国标准时间) by Zhiyan
+ * Generated on Sun Oct 30 2016 22:40:05 GMT+0800 (中国标准时间) by Zhiyan
  *
  * @package   Tint
  * @version   v2.0.0
@@ -12,7 +12,7 @@
 **/
  
 webpackJsonp([
-    8,
+    2,
     10
 ], [
     function (module, exports, __webpack_require__) {
@@ -21,34 +21,18 @@ webpackJsonp([
             var _loading = __webpack_require__(2);
             var _msgbox = __webpack_require__(7);
             __webpack_require__(3);
-            var _comments = __webpack_require__(17);
-            var _comments2 = _interopRequireDefault(_comments);
-            var _postStar = __webpack_require__(18);
-            var _postStar2 = _interopRequireDefault(_postStar);
+            var _loadNextPage = __webpack_require__(13);
+            var _loadNextPage2 = _interopRequireDefault(_loadNextPage);
             var _scroll = __webpack_require__(14);
             var _scroll2 = _interopRequireDefault(_scroll);
-            var _animateAnchor = __webpack_require__(19);
-            var _animateAnchor2 = _interopRequireDefault(_animateAnchor);
-            __webpack_require__(20);
             function _interopRequireDefault(obj) {
                 return obj && obj[['__esModule']] ? obj : { default: obj };
             }
             jQuery(document)[['ready']](function ($) {
                 (0, _loading[['handleLineLoading']])();
                 _msgbox[['popMsgbox']][['init']]();
-                _postStar2[['default']][['init']]();
-                _comments2[['default']][['init']]();
+                _loadNextPage2[['default']][['init']]();
                 _scroll2[['default']][['initScrollTo']]();
-                _scroll2[['default']][['initShareBar']]();
-                _scroll2[['default']][['initFloatWidget']]();
-                $('.lightbox-gallery')[['each']](function () {
-                    var item = $(this);
-                    var img = item[['find']]('img');
-                    if (img && img[['attr']]('title')) {
-                        item[['attr']]('data-title', img[['attr']]('title'));
-                    }
-                });
-                (0, _animateAnchor2[['default']])();
             });
         }[['call']](exports, __webpack_require__(1)));
     },
@@ -2178,7 +2162,11 @@ webpackJsonp([
             users: _utils2[['default']][['getAPIUrl']]('/users'),
             comments: _utils2[['default']][['getAPIUrl']]('/comments'),
             commentStars: _utils2[['default']][['getAPIUrl']]('/comment/stars'),
-            postStars: _utils2[['default']][['getAPIUrl']]('/post/stars')
+            postStars: _utils2[['default']][['getAPIUrl']]('/post/stars'),
+            myFollower: _utils2[['default']][['getAPIUrl']]('/users/me/followers'),
+            myFollowing: _utils2[['default']][['getAPIUrl']]('/users/me/following'),
+            follower: _utils2[['default']][['getAPIUrl']]('/users/{{uid}}/followers'),
+            following: _utils2[['default']][['getAPIUrl']]('/users/{{uid}}/following')
         };
         var classes = { appLoading: 'is-loadingApp' };
         exports[['Routes']] = routes;
@@ -2186,7 +2174,70 @@ webpackJsonp([
     },
     ,
     ,
-    ,
+    function (module, exports, __webpack_require__) {
+        (function ($) {
+            'use strict';
+            Object[['defineProperty']](exports, '__esModule', { value: true });
+            var _globalConfig = __webpack_require__(10);
+            var _body = $('body');
+            var _postListCls = 'archive-posts';
+            var _loadNextComponentID = 'loadNext';
+            var _loadingIcon = '<i class="tico tico-spinner2 spinning"></i>';
+            var _unLoadingIcon = '<i class="tico tico-angle-down"></i>';
+            var _isLoadingNext = false;
+            var _handlePageContent = function _handlePageContent(html, url) {
+                var doc = $(html);
+                var postList = $('.' + _postListCls);
+                if (doc && postList) {
+                    postList[['html']](doc[['find']]('.' + _postListCls)[['html']]());
+                    history[['pushState']]('200', doc[9][['innerText']], url);
+                    document[['title']] = doc[9][['innerText']];
+                }
+            };
+            var _ajaxLoadNext = function _ajaxLoadNext(btn) {
+                if (_isLoadingNext)
+                    return false;
+                var nextPageUrl = btn[['data']]('next-page-url');
+                if (!nextPageUrl)
+                    return false;
+                var beforeSend = function beforeSend() {
+                    _body[['addClass']](_globalConfig[['Classes']][['appLoading']]);
+                    _isLoadingNext = true;
+                    btn[['html']](_loadingIcon);
+                };
+                var finishRequest = function finishRequest() {
+                    _body[['removeClass']](_globalConfig[['Classes']][['appLoading']]);
+                    _isLoadingNext = false;
+                    btn[['html']](_unLoadingIcon);
+                };
+                var success = function success(data, textStatus, xhr) {
+                    if (data && xhr[['status']] == '200') {
+                        _handlePageContent(data, nextPageUrl);
+                    }
+                    finishRequest();
+                };
+                var error = function error(xhr, textStatus, err) {
+                    finishRequest();
+                };
+                $[['get']]({
+                    url: nextPageUrl,
+                    dataType: 'html',
+                    beforeSend: beforeSend,
+                    success: success,
+                    error: error
+                });
+            };
+            var loadNext = {
+                init: function init() {
+                    _body[['on']]('click', '[data-component=' + _loadNextComponentID + ']', function () {
+                        var $this = $(this);
+                        _ajaxLoadNext($this);
+                    });
+                }
+            };
+            exports[['default']] = loadNext;
+        }[['call']](exports, __webpack_require__(1)));
+    },
     function (module, exports, __webpack_require__) {
         (function ($) {
             'use strict';
@@ -2260,6 +2311,8 @@ webpackJsonp([
             var _mainWrapHeight = 0;
             var _windowHeight = 0;
             var _handleFloatWidget = function _handleFloatWidget() {
+                if ($(window)[['width']]() < 1000)
+                    return;
                 if (!_originWidget)
                     _originWidget = $(_originWidgetSel);
                 if (_originWidget[['length']] == 0)
@@ -2304,757 +2357,5 @@ webpackJsonp([
             };
             exports[['default']] = ScrollHandler;
         }[['call']](exports, __webpack_require__(1)));
-    },
-    ,
-    ,
-    function (module, exports, __webpack_require__) {
-        (function ($, TT) {
-            'use strict';
-            Object[['defineProperty']](exports, '__esModule', { value: true });
-            var _globalConfig = __webpack_require__(10);
-            var _utils = __webpack_require__(4);
-            var _utils2 = _interopRequireDefault(_utils);
-            function _interopRequireDefault(obj) {
-                return obj && obj[['__esModule']] ? obj : { default: obj };
-            }
-            var _body = $('body');
-            var _commentTextareaSel = '#comment-text';
-            var _commentTextarea = $(_commentTextareaSel);
-            var _mainSubmitBtn = $('#submit');
-            var _commentListSel = '#comments-wrap>.comments-list';
-            var _replyBtnSel = '.comment-meta>.respond-coin';
-            var _starBtnSel = '.comment-meta>.like';
-            var _replyWrapSel = '.respond-submit';
-            var _replyInputSel = '.respond-submit input';
-            var _replyTipSel = '.tip';
-            var _emotionIcoBtnSel = '.emotion-ico';
-            var _emotionsWrapSel = '.qqFace';
-            var _emotionImgSel = '.qqFace td>img';
-            var _qqFacePath = TT[['themeRoot']] + '/assets/img/qqFace/';
-            var _qqFaceTable = '<table border="0" cellspacing="0" cellpadding="0">' + '<tbody>' + '<tr>' + '<td><img src="' + _qqFacePath + '1.gif' + '" data-code="[em_1]"></td>' + '<td><img src="' + _qqFacePath + '2.gif' + '" data-code="[em_2]"></td>' + '<td><img src="' + _qqFacePath + '3.gif' + '" data-code="[em_3]"></td>' + '<td><img src="' + _qqFacePath + '4.gif' + '" data-code="[em_4]"></td>' + '<td><img src="' + _qqFacePath + '5.gif' + '" data-code="[em_5]"></td>' + '<td><img src="' + _qqFacePath + '6.gif' + '" data-code="[em_6]"></td>' + '<td><img src="' + _qqFacePath + '7.gif' + '" data-code="[em_7]"></td>' + '<td><img src="' + _qqFacePath + '8.gif' + '" data-code="[em_8]"></td>' + '<td><img src="' + _qqFacePath + '9.gif' + '" data-code="[em_9]"></td>' + '<td><img src="' + _qqFacePath + '10.gif' + '" data-code="[em_10]"></td>' + '<td><img src="' + _qqFacePath + '11.gif' + '" data-code="[em_11]"></td>' + '<td><img src="' + _qqFacePath + '12.gif' + '" data-code="[em_12]"></td>' + '<td><img src="' + _qqFacePath + '13.gif' + '" data-code="[em_13]"></td>' + '<td><img src="' + _qqFacePath + '14.gif' + '" data-code="[em_14]"></td>' + '<td><img src="' + _qqFacePath + '15.gif' + '" data-code="[em_15]"></td>' + '</tr>' + '<tr>' + '<td><img src="' + _qqFacePath + '16.gif' + '" data-code="[em_16]"></td>' + '<td><img src="' + _qqFacePath + '17.gif' + '" data-code="[em_17]"></td>' + '<td><img src="' + _qqFacePath + '18.gif' + '" data-code="[em_18]"></td>' + '<td><img src="' + _qqFacePath + '19.gif' + '" data-code="[em_19]"></td>' + '<td><img src="' + _qqFacePath + '20.gif' + '" data-code="[em_20]"></td>' + '<td><img src="' + _qqFacePath + '21.gif' + '" data-code="[em_21]"></td>' + '<td><img src="' + _qqFacePath + '22.gif' + '" data-code="[em_22]"></td>' + '<td><img src="' + _qqFacePath + '23.gif' + '" data-code="[em_23]"></td>' + '<td><img src="' + _qqFacePath + '24.gif' + '" data-code="[em_24]"></td>' + '<td><img src="' + _qqFacePath + '25.gif' + '" data-code="[em_25]"></td>' + '<td><img src="' + _qqFacePath + '26.gif' + '" data-code="[em_26]"></td>' + '<td><img src="' + _qqFacePath + '27.gif' + '" data-code="[em_27]"></td>' + '<td><img src="' + _qqFacePath + '28.gif' + '" data-code="[em_28]"></td>' + '<td><img src="' + _qqFacePath + '29.gif' + '" data-code="[em_29]"></td>' + '<td><img src="' + _qqFacePath + '30.gif' + '" data-code="[em_30]"></td>' + '</tr>' + '<tr>' + '<td><img src="' + _qqFacePath + '31.gif' + '" data-code="[em_31]"></td>' + '<td><img src="' + _qqFacePath + '32.gif' + '" data-code="[em_32]"></td>' + '<td><img src="' + _qqFacePath + '33.gif' + '" data-code="[em_33]"></td>' + '<td><img src="' + _qqFacePath + '34.gif' + '" data-code="[em_34]"></td>' + '<td><img src="' + _qqFacePath + '35.gif' + '" data-code="[em_35]"></td>' + '<td><img src="' + _qqFacePath + '36.gif' + '" data-code="[em_36]"></td>' + '<td><img src="' + _qqFacePath + '37.gif' + '" data-code="[em_37]"></td>' + '<td><img src="' + _qqFacePath + '38.gif' + '" data-code="[em_38]"></td>' + '<td><img src="' + _qqFacePath + '39.gif' + '" data-code="[em_39]"></td>' + '<td><img src="' + _qqFacePath + '40.gif' + '" data-code="[em_40]"></td>' + '<td><img src="' + _qqFacePath + '41.gif' + '" data-code="[em_41]"></td>' + '<td><img src="' + _qqFacePath + '42.gif' + '" data-code="[em_42]"></td>' + '<td><img src="' + _qqFacePath + '43.gif' + '" data-code="[em_43]"></td>' + '<td><img src="' + _qqFacePath + '44.gif' + '" data-code="[em_44]"></td>' + '<td><img src="' + _qqFacePath + '45.gif' + '" data-code="[em_45]"></td>' + '</tr>' + '<tr>' + '<td><img src="' + _qqFacePath + '46.gif' + '" data-code="[em_46]"></td>' + '<td><img src="' + _qqFacePath + '47.gif' + '" data-code="[em_47]"></td>' + '<td><img src="' + _qqFacePath + '48.gif' + '" data-code="[em_48]"></td>' + '<td><img src="' + _qqFacePath + '49.gif' + '" data-code="[em_49]"></td>' + '<td><img src="' + _qqFacePath + '50.gif' + '" data-code="[em_50]"></td>' + '<td><img src="' + _qqFacePath + '51.gif' + '" data-code="[em_51]"></td>' + '<td><img src="' + _qqFacePath + '52.gif' + '" data-code="[em_52]"></td>' + '<td><img src="' + _qqFacePath + '53.gif' + '" data-code="[em_53]"></td>' + '<td><img src="' + _qqFacePath + '54.gif' + '" data-code="[em_54]"></td>' + '<td><img src="' + _qqFacePath + '55.gif' + '" data-code="[em_55]"></td>' + '<td><img src="' + _qqFacePath + '56.gif' + '" data-code="[em_56]"></td>' + '<td><img src="' + _qqFacePath + '57.gif' + '" data-code="[em_57]"></td>' + '<td><img src="' + _qqFacePath + '58.gif' + '" data-code="[em_58]"></td>' + '<td><img src="' + _qqFacePath + '59.gif' + '" data-code="[em_59]"></td>' + '<td><img src="' + _qqFacePath + '60.gif' + '" data-code="[em_60]"></td>' + '</tr>' + '<tr>' + '<td><img src="' + _qqFacePath + '61.gif' + '" data-code="[em_61]"></td>' + '<td><img src="' + _qqFacePath + '62.gif' + '" data-code="[em_62]"></td>' + '<td><img src="' + _qqFacePath + '63.gif' + '" data-code="[em_63]"></td>' + '<td><img src="' + _qqFacePath + '64.gif' + '" data-code="[em_64]"></td>' + '<td><img src="' + _qqFacePath + '65.gif' + '" data-code="[em_65]"></td>' + '<td><img src="' + _qqFacePath + '66.gif' + '" data-code="[em_66]"></td>' + '<td><img src="' + _qqFacePath + '67.gif' + '" data-code="[em_67]"></td>' + '<td><img src="' + _qqFacePath + '68.gif' + '" data-code="[em_68]"></td>' + '<td><img src="' + _qqFacePath + '69.gif' + '" data-code="[em_69]"></td>' + '<td><img src="' + _qqFacePath + '70.gif' + '" data-code="[em_70]"></td>' + '<td><img src="' + _qqFacePath + '71.gif' + '" data-code="[em_71]"></td>' + '<td><img src="' + _qqFacePath + '72.gif' + '" data-code="[em_72]"></td>' + '<td><img src="' + _qqFacePath + '73.gif' + '" data-code="[em_73]"></td>' + '<td><img src="' + _qqFacePath + '74.gif' + '" data-code="[em_74]"></td>' + '<td><img src="' + _qqFacePath + '75.gif' + '" data-code="[em_75]"></td>' + '</tr>' + '</tbody>' + '</table>';
-            var _commentsPerPage = TT[['commentsPerPage']] || 20;
-            var _currentCommentPage = 1;
-            var _loading = false;
-            var _loadMoreBtn = $('#comments-wrap .btn-more');
-            var _loadMoreBtnSpinIcon = '<i class="tico tico-spinner spinning"></i>';
-            var _originLoadMoreBtnText = _loadMoreBtn[['text']]();
-            var _appendComments = function _appendComments(comments) {
-                $(_commentListSel)[['append']](comments);
-            };
-            var _maybeMorePages = function _maybeMorePages(fetchedCount, nextPage) {
-                if (fetchedCount < _commentsPerPage) {
-                    _loadMoreBtn[['remove']]();
-                } else {
-                    _currentCommentPage = Math[['max']](nextPage - 1, 2);
-                }
-            };
-            var _fetchComments = function _fetchComments() {
-                if (_loading)
-                    return false;
-                var url = _globalConfig[['Routes']][['comments']];
-                var data = {
-                    commentPage: _currentCommentPage + 1,
-                    commentPostId: _postIdInput ? _postIdInput[['val']]() : TT[['pid']]
-                };
-                var beforeSend = function beforeSend() {
-                    if (_loading)
-                        return;
-                    _loading = true;
-                    if (_loadMoreBtn) {
-                        _loadMoreBtn[['prop']]('disabled', true);
-                        _loadMoreBtn[['html']](_loadMoreBtnSpinIcon);
-                    }
-                };
-                var finishRequest = function finishRequest() {
-                    if (!_loading)
-                        return;
-                    if (_loadMoreBtn) {
-                        _loadMoreBtn[['html']](_originLoadMoreBtnText);
-                        _loadMoreBtn[['prop']]('disabled', false);
-                    }
-                    _loading = false;
-                };
-                var success = function success(data, textStatus, xhr) {
-                    if (data[['success']] && data[['success']] == 1) {
-                        _appendComments(data[['message']]);
-                        _maybeMorePages(data[['count']], data[['nextPage']]);
-                    } else {
-                        _maybeMorePages(data[['count']], _currentCommentPage);
-                        _showError(data[['message']], _loadMoreBtn[['parent']]()[['next']]('.err'));
-                    }
-                    finishRequest();
-                };
-                var error = function error(xhr, textStatus, err) {
-                    _showError(xhr[['responseJSON']] ? xhr[['responseJSON']][['message']] : xhr[['responseText']], _loadMoreBtn[['parent']]()[['next']]('.err'));
-                    finishRequest();
-                };
-                $[['ajax']]({
-                    url: url,
-                    method: 'GET',
-                    data: _utils2[['default']][['filterDataForRest']](data),
-                    dataType: 'json',
-                    beforeSend: beforeSend,
-                    success: success,
-                    error: error
-                });
-            };
-            var _commentFormSel = '#respond .comment-form';
-            var _replyFormSel = '#respond .reply-form';
-            var _commentSubmitBtnSel = '.comment-form .comment-submit';
-            var _replySumitBtnSel = '.reply-form .reply-submit';
-            var _errSel = '.err';
-            var _validateComment = function _validateComment(input) {
-                var content = input[['val']]();
-                if (/^[\s]*$/[['test']](content)) {
-                    _showError('\u8bc4\u8bba\u5185\u5bb9\u4e0d\u80fd\u4e3a\u7a7a', input[['parent']]()[['siblings']](_errSel));
-                    return false;
-                }
-                return true;
-            };
-            var _showError = function _showError(msg, errorBox) {
-                errorBox[['hide']]()[['html']](msg)[['slideDown']]('slow', function () {
-                    setTimeout(function () {
-                        errorBox[['slideUp']]()[['html']]('');
-                    }, 3000);
-                });
-            };
-            var _submitting = false;
-            var _currentInput = null;
-            var _clickedSubmitBtn = null;
-            var _originalSubmitBtnText = '';
-            var _submitBtnIcon = '<i class="tico tico-spinner9 spinning"></i>';
-            var _nonceInput = $('#comment_nonce');
-            var _unfilterCommentNonceInput = $('#_wp_unfiltered_html_comment_disabled');
-            var _postIdInput = $('#comment_post_ID');
-            var _getNewCommentDepth = function _getNewCommentDepth(input) {
-                if (input[['is']]('textarea'))
-                    return 1;
-                var _parentDepthClassMatch = input[['parents']]('.comment')[['attr']]('class')[['match']](/depth-([0-9])/);
-                return _parentDepthClassMatch[['length']] > 1 ? Math[['min']](_parentDepthClassMatch[1] + 1, 3) : 2;
-            };
-            var _postComment = function _postComment() {
-                if (_submitting)
-                    return false;
-                var url = _globalConfig[['Routes']][['comments']];
-                var data = {
-                    commentNonce: _nonceInput ? _nonceInput[['val']]() : '',
-                    ksesNonce: _unfilterCommentNonceInput ? _unfilterCommentNonceInput[['val']]() : '',
-                    postId: _postIdInput ? _postIdInput[['val']]() : TT[['pid']],
-                    content: _currentInput ? _currentInput[['val']]() : '',
-                    parentId: _currentInput && _currentInput[['is']]('input') ? _currentInput[['parents']]('.comment')[['data']]('current-comment-id') : 0,
-                    commentType: ''
-                };
-                var beforeSend = function beforeSend() {
-                    if (_submitting)
-                        return;
-                    _submitting = true;
-                    if (_currentInput) {
-                        _currentInput[['prop']]('disabled', true);
-                    }
-                    if (_clickedSubmitBtn) {
-                        _originalSubmitBtnText = _clickedSubmitBtn[['text']]();
-                        _clickedSubmitBtn[['prop']]('disabled', true)[['html']](_submitBtnIcon);
-                    }
-                };
-                var finishRequest = function finishRequest() {
-                    if (!_submitting)
-                        return;
-                    _submitting = false;
-                    if (_currentInput) {
-                        _currentInput[['val']]('');
-                        if (_currentInput[['is']]('input')) {
-                            _currentInput[['parents']](_replyWrapSel)[['slideUp']]();
-                        }
-                        _currentInput[['prop']]('disabled', false);
-                    }
-                    if (_clickedSubmitBtn) {
-                        _clickedSubmitBtn[['text']](_originalSubmitBtnText)[['prop']]('disabled', false);
-                    }
-                };
-                var success = function success(data, textStatus, xhr) {
-                    if (data[['success']] && data[['success']] == 1) {
-                        _appendComment(data[['message']], _currentInput);
-                    } else {
-                        _showError(data[['message']], _currentInput[['parent']]()[['siblings']](_errSel));
-                    }
-                    finishRequest();
-                };
-                var error = function error(xhr, textStatus, err) {
-                    _showError(xhr[['responseJSON']] ? xhr[['responseJSON']][['message']] : xhr[['responseText']], _currentInput[['parent']]()[['siblings']](_errSel));
-                    finishRequest();
-                };
-                $[['post']]({
-                    url: url,
-                    data: _utils2[['default']][['filterDataForRest']](data),
-                    dataType: 'json',
-                    beforeSend: beforeSend,
-                    success: success,
-                    error: error
-                });
-            };
-            var _appendComment = function _appendComment(comment, input) {
-                var commentDepthClass = 'depth-' + _getNewCommentDepth(input);
-                comment = comment[['replace']]('depth-1', commentDepthClass);
-                if (input[['is']]('input')) {
-                    input[['parents']]('.comment')[['after']](comment);
-                } else {
-                    $(_commentListSel)[['prepend']](comment);
-                }
-            };
-            var _clickedStarBtn = null;
-            var _starCountSel = '.like-count';
-            var _starNonceInput = $('#comment_star_nonce');
-            var _staring = false;
-            var _checkStared = function _checkStared(commentId) {
-                return $[['inArray']](commentId, _utils2[['default']][['store']]('commentsStared')) > -1;
-            };
-            var _checkAllStared = function _checkAllStared(comment) {
-                var commentsStared = _utils2[['default']][['store']]('commentsStared');
-                if (!commentsStared || !(commentsStared instanceof Array) || commentsStared[['length']] == 0)
-                    return;
-                if ($[['inArray']](comment[['data']]('current-comment-id'), commentsStared) > -1) {
-                    comment[['find']]('.like')[['addClass']]('active');
-                }
-            };
-            var _markStared = function _markStared(commentId, stars, starBtn) {
-                var commentsStared = _utils2[['default']][['store']]('commentsStared');
-                commentsStared instanceof Array ? commentsStared[['push']](commentId) : commentsStared = [commentId];
-                _utils2[['default']][['store']]('commentsStared', commentsStared);
-                if (starBtn) {
-                    starBtn[['addClass']]('active');
-                    starBtn[['children']](_starCountSel)[['text']]('(' + parseInt(stars) + ')');
-                }
-            };
-            var _postStar = function _postStar(commentId) {
-                if (_staring)
-                    return false;
-                var url = _globalConfig[['Routes']][['commentStars']] + '/' + commentId;
-                var data = {
-                    commentStarNonce: _starNonceInput ? _starNonceInput[['val']]() : '',
-                    commentId: commentId
-                };
-                var beforeSend = function beforeSend() {
-                    if (_staring || _checkStared(commentId))
-                        return;
-                    _staring = true;
-                };
-                var finishRequest = function finishRequest() {
-                    if (!_staring)
-                        return;
-                    _staring = false;
-                };
-                var success = function success(data, textStatus, xhr) {
-                    if (data[['success']] && data[['success']] == 1) {
-                        _markStared(commentId, data[['stars']], _clickedStarBtn);
-                    } else {
-                    }
-                    finishRequest();
-                };
-                var error = function error(xhr, textStatus, err) {
-                    finishRequest();
-                };
-                $[['post']]({
-                    url: url,
-                    data: _utils2[['default']][['filterDataForRest']](data),
-                    dataType: 'json',
-                    beforeSend: beforeSend,
-                    success: success,
-                    error: error
-                });
-            };
-            var postCommentsKit = {
-                init: function init() {
-                    _body[['on']]('click', _replyBtnSel, function () {
-                        var $this = $(this);
-                        var _currentReplyWrap = $this[['parent']]()[['parent']]('.comment-body')[['children']](_replyWrapSel);
-                        _utils2[['default']][['checkLogin']]();
-                        if (_currentReplyWrap[['css']]('display') !== 'block') {
-                            $('#respond ' + _replyWrapSel)[['hide']]();
-                        }
-                        _currentReplyWrap[['slideToggle']]();
-                    });
-                    _body[['on']]('focus', _replyInputSel, function () {
-                        var $this = $(this);
-                        var _paddingLeft = $this[['parents']](_replyWrapSel)[['find']](_replyTipSel)[['width']]() + 10;
-                        $this[['css']]('padding-left', _paddingLeft + 'px');
-                    });
-                    _body[['on']]('click', _emotionIcoBtnSel, function () {
-                        var _qqFaceWrap = $(this)[['parent']]()[['children']](_emotionsWrapSel);
-                        if (!/[\S]+/[['test']](_qqFaceWrap[['html']]())) {
-                            _qqFaceWrap[['html']](_qqFaceTable);
-                        }
-                    });
-                    _body[['on']]('click', _emotionImgSel, function () {
-                        var $this = $(this);
-                        var _qqFaceWrap = $this[['parents']](_emotionsWrapSel);
-                        var _inputBoxId = _qqFaceWrap[['data']]('inputbox-id');
-                        var _inputBox = $('#' + _inputBoxId);
-                        var _emotionCode = $this[['data']]('code');
-                        if (_inputBox[['is']]('input')) {
-                            _inputBox[['trigger']]('focus');
-                            _inputBox[['val']](_inputBox[['val']]() + _emotionCode);
-                        } else {
-                            _inputBox[['text']](_inputBox[['text']]() + _emotionCode);
-                        }
-                    });
-                    _body[['on']]('click', _commentTextareaSel, function () {
-                        _utils2[['default']][['checkLogin']]();
-                    });
-                    _body[['on']]('click', _commentSubmitBtnSel, function () {
-                        var $this = $(this);
-                        if (_submitting || $this[['prop']]('disabled'))
-                            return;
-                        if (_validateComment(_commentTextarea)) {
-                            _currentInput = _commentTextarea;
-                            _clickedSubmitBtn = $this;
-                            _postComment();
-                        }
-                    });
-                    _body[['on']]('click', _replySumitBtnSel, function () {
-                        var $this = $(this);
-                        if (_submitting || $this[['prop']]('disabled'))
-                            return;
-                        var _input = $this[['parent']]()[['parent']]()[['find']]('input');
-                        if (_validateComment(_input)) {
-                            _currentInput = _input;
-                            _clickedSubmitBtn = $this;
-                            _postComment();
-                        }
-                    });
-                    _body[['on']]('click', _starBtnSel, function () {
-                        var $this = $(this);
-                        if ($this[['hasClass']]('active'))
-                            return;
-                        _clickedStarBtn = $this;
-                        var commentId = $this[['parents']]('.comment')[['data']]('current-comment-id');
-                        commentId = parseInt(commentId);
-                        _postStar(commentId);
-                    });
-                    $(_commentListSel + ' .comment')[['each']](function () {
-                        _checkAllStared($(this));
-                    });
-                    _loadMoreBtn[['on']]('click', function () {
-                        if (_loading || $(this)[['prop']]('disabled'))
-                            return;
-                        _fetchComments();
-                    });
-                }
-            };
-            exports[['default']] = postCommentsKit;
-        }[['call']](exports, __webpack_require__(1), __webpack_require__(5)));
-    },
-    function (module, exports, __webpack_require__) {
-        (function ($) {
-            'use strict';
-            Object[['defineProperty']](exports, '__esModule', { value: true });
-            var _globalConfig = __webpack_require__(10);
-            var _utils = __webpack_require__(4);
-            var _utils2 = _interopRequireDefault(_utils);
-            function _interopRequireDefault(obj) {
-                return obj && obj[['__esModule']] ? obj : { default: obj };
-            }
-            var _body = $('body');
-            var _postStarBtnSel = '.post-meta-likes';
-            var _postStarCountSel = '.js-article-like-count';
-            var _postStaredUserWrapSel = '.post-like-avatars';
-            var _staring = false;
-            var _markStared = function _markStared(starCount, userInfo) {
-                $(_postStarBtnSel)[['addClass']]('active');
-                $(_postStarCountSel)[['text']](starCount[['toString']]());
-                var starUserImg = '<li class="post-like-user"><img src="' + userInfo[['avatar']] + '" alt="' + userInfo[['name']] + '" title="' + userInfo[['name']] + '" data-user-id="' + userInfo[['uid']] + '"></li>';
-                $(_postStaredUserWrapSel)[['prepend']](starUserImg);
-            };
-            var _postStar = function _postStar(btn) {
-                if (_staring || btn[['hasClass']]('active') || !_utils2[['default']][['checkLogin']]())
-                    return false;
-                var url = _globalConfig[['Routes']][['postStars']] + '/' + btn[['data']]('post-id');
-                var data = { postStarNonce: btn[['data']]('nonce') };
-                var beforeSend = function beforeSend() {
-                    if (_staring)
-                        return false;
-                    _staring = true;
-                };
-                var finishRequest = function finishRequest() {
-                    if (!_staring)
-                        return;
-                    _staring = false;
-                };
-                var success = function success(data, textStatus, xhr) {
-                    if (data[['success']] && data[['success']] == 1) {
-                        _markStared(data[['stars']], data);
-                    } else {
-                    }
-                    finishRequest();
-                };
-                var error = function error(xhr, textStatus, err) {
-                    finishRequest();
-                };
-                $[['post']]({
-                    url: url,
-                    data: _utils2[['default']][['filterDataForRest']](data),
-                    dataType: 'json',
-                    beforeSend: beforeSend,
-                    success: success,
-                    error: error
-                });
-            };
-            var postStarKit = {
-                init: function init() {
-                    _body[['on']]('click', _postStarBtnSel, function () {
-                        var $this = $(this);
-                        _postStar($this);
-                    });
-                }
-            };
-            exports[['default']] = postStarKit;
-        }[['call']](exports, __webpack_require__(1)));
-    },
-    function (module, exports, __webpack_require__) {
-        (function ($) {
-            'use strict';
-            Object[['defineProperty']](exports, '__esModule', { value: true });
-            var AnimateAnchor = function AnimateAnchor() {
-                var body = $('body');
-                body[['on']]('click', 'a[href^="#"]', function (e) {
-                    e[['preventDefault']]();
-                    var sel = $(this)[['attr']]('href');
-                    var target = $(sel);
-                    if (target) {
-                        body[['animate']]({ scrollTop: target[['offset']]()[['top']] }, 'slow');
-                        window[['location']][['hash']] = sel[['substr']](1);
-                    }
-                });
-            };
-            exports[['default']] = AnimateAnchor;
-        }[['call']](exports, __webpack_require__(1)));
-    },
-    function (module, exports, __webpack_require__) {
-        var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
-        'use strict';
-        var _typeof = typeof Symbol === 'function' && typeof Symbol[['iterator']] === 'symbol' ? function (obj) {
-            return typeof obj;
-        } : function (obj) {
-            return obj && typeof Symbol === 'function' && obj[['constructor']] === Symbol ? 'symbol' : typeof obj;
-        };
-        (function (root, factory) {
-            if (true) {
-                !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(1)], __WEBPACK_AMD_DEFINE_FACTORY__ = factory, __WEBPACK_AMD_DEFINE_RESULT__ = typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? __WEBPACK_AMD_DEFINE_FACTORY__[['apply']](exports, __WEBPACK_AMD_DEFINE_ARRAY__) : __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module[['exports']] = __WEBPACK_AMD_DEFINE_RESULT__));
-            } else if ((typeof exports === 'undefined' ? 'undefined' : _typeof(exports)) === 'object') {
-                module[['exports']] = factory(require('jquery'));
-            } else {
-                root[['lightbox']] = factory(root[['jQuery']]);
-            }
-        }(undefined, function ($) {
-            function Lightbox(options) {
-                this[['album']] = [];
-                this[['currentImageIndex']] = void 0;
-                this[['init']]();
-                this[['options']] = $[['extend']]({}, this[['constructor']][['defaults']]);
-                this[['option']](options);
-            }
-            Lightbox[['defaults']] = {
-                albumLabel: 'Image %1 of %2',
-                alwaysShowNavOnTouchDevices: false,
-                fadeDuration: 500,
-                fitImagesInViewport: true,
-                positionFromTop: 50,
-                resizeDuration: 700,
-                showImageNumberLabel: true,
-                wrapAround: false
-            };
-            Lightbox[['prototype']][['option']] = function (options) {
-                $[['extend']](this[['options']], options);
-            };
-            Lightbox[['prototype']][['imageCountLabel']] = function (currentImageNum, totalImages) {
-                return this[['options']][['albumLabel']][['replace']](/%1/g, currentImageNum)[['replace']](/%2/g, totalImages);
-            };
-            Lightbox[['prototype']][['init']] = function () {
-                this[['enable']]();
-                this[['build']]();
-            };
-            Lightbox[['prototype']][['enable']] = function () {
-                var self = this;
-                $('body')[['on']]('click', 'a[rel^=lightbox], area[rel^=lightbox], a[data-lightbox], area[data-lightbox]', function (event) {
-                    self[['start']]($(event[['currentTarget']]));
-                    return false;
-                });
-            };
-            Lightbox[['prototype']][['build']] = function () {
-                var self = this;
-                $('<div id="lightboxOverlay" class="lightboxOverlay"></div><div id="lightbox" class="lightbox"><div class="lb-outerContainer"><div class="lb-container"><img class="lb-image" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" /><div class="lb-nav"><a class="lb-prev" href="" ></a><a class="lb-next" href="" ></a></div><div class="lb-loader"><a class="lb-cancel"></a></div></div></div><div class="lb-dataContainer"><div class="lb-data"><div class="lb-details"><span class="lb-caption"></span><span class="lb-number"></span></div><div class="lb-closeContainer"><a class="lb-close"></a></div></div></div></div>')[['appendTo']]($('body'));
-                this[['$lightbox']] = $('#lightbox');
-                this[['$overlay']] = $('#lightboxOverlay');
-                this[['$outerContainer']] = this[['$lightbox']][['find']]('.lb-outerContainer');
-                this[['$container']] = this[['$lightbox']][['find']]('.lb-container');
-                this[['containerTopPadding']] = parseInt(this[['$container']][['css']]('padding-top'), 10);
-                this[['containerRightPadding']] = parseInt(this[['$container']][['css']]('padding-right'), 10);
-                this[['containerBottomPadding']] = parseInt(this[['$container']][['css']]('padding-bottom'), 10);
-                this[['containerLeftPadding']] = parseInt(this[['$container']][['css']]('padding-left'), 10);
-                this[['$overlay']][['hide']]()[['on']]('click', function () {
-                    self[['end']]();
-                    return false;
-                });
-                this[['$lightbox']][['hide']]()[['on']]('click', function (event) {
-                    if ($(event[['target']])[['attr']]('id') === 'lightbox') {
-                        self[['end']]();
-                    }
-                    return false;
-                });
-                this[['$outerContainer']][['on']]('click', function (event) {
-                    if ($(event[['target']])[['attr']]('id') === 'lightbox') {
-                        self[['end']]();
-                    }
-                    return false;
-                });
-                this[['$lightbox']][['find']]('.lb-prev')[['on']]('click', function () {
-                    if (self[['currentImageIndex']] === 0) {
-                        self[['changeImage']](self[['album']][['length']] - 1);
-                    } else {
-                        self[['changeImage']](self[['currentImageIndex']] - 1);
-                    }
-                    return false;
-                });
-                this[['$lightbox']][['find']]('.lb-next')[['on']]('click', function () {
-                    if (self[['currentImageIndex']] === self[['album']][['length']] - 1) {
-                        self[['changeImage']](0);
-                    } else {
-                        self[['changeImage']](self[['currentImageIndex']] + 1);
-                    }
-                    return false;
-                });
-                this[['$lightbox']][['find']]('.lb-loader, .lb-close')[['on']]('click', function () {
-                    self[['end']]();
-                    return false;
-                });
-            };
-            Lightbox[['prototype']][['start']] = function ($link) {
-                var self = this;
-                var $window = $(window);
-                $window[['on']]('resize', $[['proxy']](this[['sizeOverlay']], this));
-                $('select, object, embed')[['css']]({ visibility: 'hidden' });
-                this[['sizeOverlay']]();
-                this[['album']] = [];
-                var imageNumber = 0;
-                function addToAlbum($link) {
-                    self[['album']][['push']]({
-                        link: $link[['attr']]('href'),
-                        title: $link[['attr']]('data-title') || $link[['attr']]('title')
-                    });
-                }
-                var dataLightboxValue = $link[['attr']]('data-lightbox');
-                var $links;
-                if (dataLightboxValue) {
-                    $links = $($link[['prop']]('tagName') + '[data-lightbox="' + dataLightboxValue + '"]');
-                    for (var i = 0; i < $links[['length']]; i = ++i) {
-                        addToAlbum($($links[i]));
-                        if ($links[i] === $link[0]) {
-                            imageNumber = i;
-                        }
-                    }
-                } else {
-                    if ($link[['attr']]('rel') === 'lightbox') {
-                        addToAlbum($link);
-                    } else {
-                        $links = $($link[['prop']]('tagName') + '[rel="' + $link[['attr']]('rel') + '"]');
-                        for (var j = 0; j < $links[['length']]; j = ++j) {
-                            addToAlbum($($links[j]));
-                            if ($links[j] === $link[0]) {
-                                imageNumber = j;
-                            }
-                        }
-                    }
-                }
-                var top = $window[['scrollTop']]() + this[['options']][['positionFromTop']];
-                var left = $window[['scrollLeft']]();
-                this[['$lightbox']][['css']]({
-                    top: top + 'px',
-                    left: left + 'px'
-                })[['fadeIn']](this[['options']][['fadeDuration']]);
-                this[['changeImage']](imageNumber);
-            };
-            Lightbox[['prototype']][['changeImage']] = function (imageNumber) {
-                var self = this;
-                this[['disableKeyboardNav']]();
-                var $image = this[['$lightbox']][['find']]('.lb-image');
-                this[['$overlay']][['fadeIn']](this[['options']][['fadeDuration']]);
-                $('.lb-loader')[['fadeIn']]('slow');
-                this[['$lightbox']][['find']]('.lb-image, .lb-nav, .lb-prev, .lb-next, .lb-dataContainer, .lb-numbers, .lb-caption')[['hide']]();
-                this[['$outerContainer']][['addClass']]('animating');
-                var preloader = new Image();
-                preloader[['onload']] = function () {
-                    var $preloader;
-                    var imageHeight;
-                    var imageWidth;
-                    var maxImageHeight;
-                    var maxImageWidth;
-                    var windowHeight;
-                    var windowWidth;
-                    $image[['attr']]('src', self[['album']][imageNumber][['link']]);
-                    $preloader = $(preloader);
-                    $image[['width']](preloader[['width']]);
-                    $image[['height']](preloader[['height']]);
-                    if (self[['options']][['fitImagesInViewport']]) {
-                        windowWidth = $(window)[['width']]();
-                        windowHeight = $(window)[['height']]();
-                        maxImageWidth = windowWidth - self[['containerLeftPadding']] - self[['containerRightPadding']] - 20;
-                        maxImageHeight = windowHeight - self[['containerTopPadding']] - self[['containerBottomPadding']] - 120;
-                        if (self[['options']][['maxWidth']] && self[['options']][['maxWidth']] < maxImageWidth) {
-                            maxImageWidth = self[['options']][['maxWidth']];
-                        }
-                        if (self[['options']][['maxHeight']] && self[['options']][['maxHeight']] < maxImageWidth) {
-                            maxImageHeight = self[['options']][['maxHeight']];
-                        }
-                        if (preloader[['width']] > maxImageWidth || preloader[['height']] > maxImageHeight) {
-                            if (preloader[['width']] / maxImageWidth > preloader[['height']] / maxImageHeight) {
-                                imageWidth = maxImageWidth;
-                                imageHeight = parseInt(preloader[['height']] / (preloader[['width']] / imageWidth), 10);
-                                $image[['width']](imageWidth);
-                                $image[['height']](imageHeight);
-                            } else {
-                                imageHeight = maxImageHeight;
-                                imageWidth = parseInt(preloader[['width']] / (preloader[['height']] / imageHeight), 10);
-                                $image[['width']](imageWidth);
-                                $image[['height']](imageHeight);
-                            }
-                        }
-                    }
-                    self[['sizeContainer']]($image[['width']](), $image[['height']]());
-                };
-                preloader[['src']] = this[['album']][imageNumber][['link']];
-                this[['currentImageIndex']] = imageNumber;
-            };
-            Lightbox[['prototype']][['sizeOverlay']] = function () {
-                this[['$overlay']][['width']]($(window)[['width']]())[['height']]($(document)[['height']]());
-            };
-            Lightbox[['prototype']][['sizeContainer']] = function (imageWidth, imageHeight) {
-                var self = this;
-                var oldWidth = this[['$outerContainer']][['outerWidth']]();
-                var oldHeight = this[['$outerContainer']][['outerHeight']]();
-                var newWidth = imageWidth + this[['containerLeftPadding']] + this[['containerRightPadding']];
-                var newHeight = imageHeight + this[['containerTopPadding']] + this[['containerBottomPadding']];
-                function postResize() {
-                    self[['$lightbox']][['find']]('.lb-dataContainer')[['width']](newWidth);
-                    self[['$lightbox']][['find']]('.lb-prevLink')[['height']](newHeight);
-                    self[['$lightbox']][['find']]('.lb-nextLink')[['height']](newHeight);
-                    self[['showImage']]();
-                }
-                if (oldWidth !== newWidth || oldHeight !== newHeight) {
-                    this[['$outerContainer']][['animate']]({
-                        width: newWidth,
-                        height: newHeight
-                    }, this[['options']][['resizeDuration']], 'swing', function () {
-                        postResize();
-                    });
-                } else {
-                    postResize();
-                }
-            };
-            Lightbox[['prototype']][['showImage']] = function () {
-                this[['$lightbox']][['find']]('.lb-loader')[['stop']](true)[['hide']]();
-                this[['$lightbox']][['find']]('.lb-image')[['fadeIn']]('slow');
-                this[['updateNav']]();
-                this[['updateDetails']]();
-                this[['preloadNeighboringImages']]();
-                this[['enableKeyboardNav']]();
-            };
-            Lightbox[['prototype']][['updateNav']] = function () {
-                var alwaysShowNav = false;
-                try {
-                    document[['createEvent']]('TouchEvent');
-                    alwaysShowNav = this[['options']][['alwaysShowNavOnTouchDevices']] ? true : false;
-                } catch (e) {
-                }
-                this[['$lightbox']][['find']]('.lb-nav')[['show']]();
-                if (this[['album']][['length']] > 1) {
-                    if (this[['options']][['wrapAround']]) {
-                        if (alwaysShowNav) {
-                            this[['$lightbox']][['find']]('.lb-prev, .lb-next')[['css']]('opacity', '1');
-                        }
-                        this[['$lightbox']][['find']]('.lb-prev, .lb-next')[['show']]();
-                    } else {
-                        if (this[['currentImageIndex']] > 0) {
-                            this[['$lightbox']][['find']]('.lb-prev')[['show']]();
-                            if (alwaysShowNav) {
-                                this[['$lightbox']][['find']]('.lb-prev')[['css']]('opacity', '1');
-                            }
-                        }
-                        if (this[['currentImageIndex']] < this[['album']][['length']] - 1) {
-                            this[['$lightbox']][['find']]('.lb-next')[['show']]();
-                            if (alwaysShowNav) {
-                                this[['$lightbox']][['find']]('.lb-next')[['css']]('opacity', '1');
-                            }
-                        }
-                    }
-                }
-            };
-            Lightbox[['prototype']][['updateDetails']] = function () {
-                var self = this;
-                if (typeof this[['album']][this[['currentImageIndex']]][['title']] !== 'undefined' && this[['album']][this[['currentImageIndex']]][['title']] !== '') {
-                    this[['$lightbox']][['find']]('.lb-caption')[['html']](this[['album']][this[['currentImageIndex']]][['title']])[['fadeIn']]('fast')[['find']]('a')[['on']]('click', function (event) {
-                        if ($(this)[['attr']]('target') !== undefined) {
-                            window[['open']]($(this)[['attr']]('href'), $(this)[['attr']]('target'));
-                        } else {
-                            location[['href']] = $(this)[['attr']]('href');
-                        }
-                    });
-                }
-                if (this[['album']][['length']] > 1 && this[['options']][['showImageNumberLabel']]) {
-                    var labelText = this[['imageCountLabel']](this[['currentImageIndex']] + 1, this[['album']][['length']]);
-                    this[['$lightbox']][['find']]('.lb-number')[['text']](labelText)[['fadeIn']]('fast');
-                } else {
-                    this[['$lightbox']][['find']]('.lb-number')[['hide']]();
-                }
-                this[['$outerContainer']][['removeClass']]('animating');
-                this[['$lightbox']][['find']]('.lb-dataContainer')[['fadeIn']](this[['options']][['resizeDuration']], function () {
-                    return self[['sizeOverlay']]();
-                });
-            };
-            Lightbox[['prototype']][['preloadNeighboringImages']] = function () {
-                if (this[['album']][['length']] > this[['currentImageIndex']] + 1) {
-                    var preloadNext = new Image();
-                    preloadNext[['src']] = this[['album']][this[['currentImageIndex']] + 1][['link']];
-                }
-                if (this[['currentImageIndex']] > 0) {
-                    var preloadPrev = new Image();
-                    preloadPrev[['src']] = this[['album']][this[['currentImageIndex']] - 1][['link']];
-                }
-            };
-            Lightbox[['prototype']][['enableKeyboardNav']] = function () {
-                $(document)[['on']]('keyup.keyboard', $[['proxy']](this[['keyboardAction']], this));
-            };
-            Lightbox[['prototype']][['disableKeyboardNav']] = function () {
-                $(document)[['off']]('.keyboard');
-            };
-            Lightbox[['prototype']][['keyboardAction']] = function (event) {
-                var KEYCODE_ESC = 27;
-                var KEYCODE_LEFTARROW = 37;
-                var KEYCODE_RIGHTARROW = 39;
-                var keycode = event[['keyCode']];
-                var key = String[['fromCharCode']](keycode)[['toLowerCase']]();
-                if (keycode === KEYCODE_ESC || key[['match']](/x|o|c/)) {
-                    this[['end']]();
-                } else if (key === 'p' || keycode === KEYCODE_LEFTARROW) {
-                    if (this[['currentImageIndex']] !== 0) {
-                        this[['changeImage']](this[['currentImageIndex']] - 1);
-                    } else if (this[['options']][['wrapAround']] && this[['album']][['length']] > 1) {
-                        this[['changeImage']](this[['album']][['length']] - 1);
-                    }
-                } else if (key === 'n' || keycode === KEYCODE_RIGHTARROW) {
-                    if (this[['currentImageIndex']] !== this[['album']][['length']] - 1) {
-                        this[['changeImage']](this[['currentImageIndex']] + 1);
-                    } else if (this[['options']][['wrapAround']] && this[['album']][['length']] > 1) {
-                        this[['changeImage']](0);
-                    }
-                }
-            };
-            Lightbox[['prototype']][['end']] = function () {
-                this[['disableKeyboardNav']]();
-                $(window)[['off']]('resize', this[['sizeOverlay']]);
-                this[['$lightbox']][['fadeOut']](this[['options']][['fadeDuration']]);
-                this[['$overlay']][['fadeOut']](this[['options']][['fadeDuration']]);
-                $('select, object, embed')[['css']]({ visibility: 'visible' });
-            };
-            return new Lightbox();
-        }));
     }
 ]);

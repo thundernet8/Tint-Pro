@@ -1,5 +1,5 @@
 /**
- * Generated on Sat Oct 29 2016 17:49:56 GMT+0800 (中国标准时间) by Zhiyan
+ * Generated on Sun Oct 30 2016 22:40:05 GMT+0800 (中国标准时间) by Zhiyan
  *
  * @package   Tint
  * @version   v2.0.0
@@ -1369,7 +1369,11 @@ webpackJsonp([
             users: _utils2[['default']][['getAPIUrl']]('/users'),
             comments: _utils2[['default']][['getAPIUrl']]('/comments'),
             commentStars: _utils2[['default']][['getAPIUrl']]('/comment/stars'),
-            postStars: _utils2[['default']][['getAPIUrl']]('/post/stars')
+            postStars: _utils2[['default']][['getAPIUrl']]('/post/stars'),
+            myFollower: _utils2[['default']][['getAPIUrl']]('/users/me/followers'),
+            myFollowing: _utils2[['default']][['getAPIUrl']]('/users/me/following'),
+            follower: _utils2[['default']][['getAPIUrl']]('/users/{{uid}}/followers'),
+            following: _utils2[['default']][['getAPIUrl']]('/users/{{uid}}/following')
         };
         var classes = { appLoading: 'is-loadingApp' };
         exports[['Routes']] = routes;

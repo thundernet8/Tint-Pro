@@ -96,6 +96,9 @@ var _mainWrapHeight = 0;
 var _windowHeight = 0;
 
 var _handleFloatWidget = function () {
+    //sidebar不和主内容并列的情况不处理
+    if($(window).width() < 1000) return;
+    
     if(!_originWidget) _originWidget = $(_originWidgetSel);
     if(_originWidget.length == 0) return; // 没有需要浮动的小工具
     
