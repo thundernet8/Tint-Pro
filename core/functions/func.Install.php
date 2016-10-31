@@ -150,3 +150,38 @@ function tt_install_follow_table () {
     endif;
 }
 add_action( 'load-themes.php', 'tt_install_follow_table' );
+
+
+/**
+ * 新建消息所用的数据表
+ *
+ * @since 2.0.0
+ * @return void
+ */
+function tt_install_message_table () {
+    global $wpdb;
+    $table_name = $wpdb->prefix . 'tt_message';
+    if( $wpdb->get_var("SHOW TABLES LIKE '$table_name'") != $table_name ) :
+        $sql = " CREATE TABLE `$table_name` (
+			`msg_id` int NOT NULL AUTO_INCREMENT, 
+			PRIMARY KEY(msg_id),
+			INDEX uid_index(user_id),
+			INDEX sid_index(sender_id),
+			INDEX mtype_index(msg_type),
+			INDEX mdate_index(msg_date),
+			INDEX mstatus_index(msg_read),
+			`user_id` int,
+			`sender_id` int,
+			`sender`  varchar(50),
+			`msg_type` varchar(20),
+			`msg_date` datetime,
+			`msg_title` tinytext,
+			`msg_content` text,
+			`msg_read`  boolean DEFAULT 0,
+			`msg_status`  varchar(20)
+		) ENGINE = MyISAM CHARSET=utf8;";
+        require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
+        dbDelta($sql);
+    endif;
+}
+add_action( 'load-themes.php', 'tt_install_message_table' );

@@ -142,6 +142,7 @@ load_func('func.Thumb');
 load_func('func.User');
 load_func('func.Content');
 load_func('func.Follow');
+load_func('func.Message');
 
 /* 载入数据模型 */
 load_vm('vm.Base');
