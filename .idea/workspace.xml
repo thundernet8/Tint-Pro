@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1212df9-9110-41ec-af9e-f8eb72c2514b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/functions/func.Message.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/templates/uc/tpl.UC.Chat.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/func.Install.php" afterPath="$PROJECT_DIR$/core/functions/func.Install.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/functions.php" afterPath="$PROJECT_DIR$/functions.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/Constants.php" afterPath="$PROJECT_DIR$/core/functions/Constants.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/func.Rewrite.php" afterPath="$PROJECT_DIR$/core/functions/func.Rewrite.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/func.Template.php" afterPath="$PROJECT_DIR$/core/functions/func.Template.php" />
     </list>
     <ignored path="Tinection 2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -104,21 +105,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mod.SinglePost.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/core/modules/mod.SinglePost.php">
+      <file leaf-file-name="Constants.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/functions/Constants.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="55" column="75" selection-start-line="55" selection-start-column="75" selection-end-line="55" selection-end-column="75" />
+            <state relative-caret-position="567">
+              <caret line="66" column="76" selection-start-line="66" selection-start-column="76" selection-end-line="66" selection-end-column="76" />
+              <folding>
+                <element signature="e#1640#1847#1#PHP" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tpl.UC.Profile.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/templates/uc/tpl.UC.Profile.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="class.Rest.Follow.Controller.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/api/v1/endpoints/class.Rest.Follow.Controller.php">
+      <file leaf-file-name="tpl.UC.Chat.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/templates/uc/tpl.UC.Chat.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3276">
-              <caret line="128" column="0" selection-start-line="128" selection-start-column="2" selection-end-line="133" selection-end-column="16" />
+            <state relative-caret-position="448">
+              <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
               <folding>
                 <element signature="e#6#291#0#PHP" expanded="true" />
               </folding>
@@ -126,31 +139,38 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="func.Follow.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/functions/func.Follow.php">
+      <file leaf-file-name="tpl.UC.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/templates/uc/tpl.UC.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="223" column="238" selection-start-line="223" selection-start-column="238" selection-end-line="223" selection-end-column="238" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="func.Rewrite.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/functions/func.Rewrite.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="250">
+              <caret line="484" column="65" selection-start-line="484" selection-start-column="55" selection-end-line="484" selection-end-column="65" />
               <folding>
-                <element signature="e#6#291#0#PHP" expanded="true" />
-                <element signature="e#2200#2350#0#PHP" expanded="false" />
-                <marker date="1477838243246" expanded="true" signature="698:812" ph="SELECT * FRO... ${$table_name}" />
-                <marker date="1477838243246" expanded="true" signature="698:824" ph="SELECT * FRO... " />
-                <marker date="1477838243246" expanded="true" signature="1148:1230" ph="SELECT COUNT... ${$table_name}" />
-                <marker date="1477838243246" expanded="true" signature="1650:1769" ph="SELECT * FRO... ${$table_name}" />
-                <marker date="1477838243246" expanded="true" signature="2087:2166" ph="SELECT COUNT... ${$table_name}" />
-                <marker date="1477838243246" expanded="true" signature="3139:3214" ph="SELECT COUNT... ${$table_name}" />
-                <marker date="1477838243246" expanded="true" signature="3296:3399" ph="SELECT COUNT... ${$table_name}" />
-                <marker date="1477838243246" expanded="true" signature="3554:3636" ph="UPDATE ${$ta... " />
-                <marker date="1477838243246" expanded="true" signature="3726:3804" ph="UPDATE ${$ta... " />
-                <marker date="1477838243246" expanded="true" signature="4449:4524" ph="SELECT COUNT... ${$table_name}" />
-                <marker date="1477838243246" expanded="true" signature="4606:4709" ph="SELECT COUNT... ${$table_name}" />
-                <marker date="1477838243246" expanded="true" signature="4917:5021" ph="UPDATE ${$ta... " />
-                <marker date="1477838243246" expanded="true" signature="5117:5201" ph="UPDATE ${$ta... " />
-                <marker date="1477838243246" expanded="true" signature="5695:5796" ph="INSERT INTO ${$table_name}... " />
-                <marker date="1477838243246" expanded="true" signature="5892:5976" ph="UPDATE ${$ta... " />
-                <marker date="1477838243246" expanded="true" signature="7026:7122" ph="SELECT * FRO... ${$table_name}" />
+                <element signature="n#tt_rewrite_short_link#0;n#!!top" expanded="false" />
+                <element signature="n#tt_custom_author_link#0;n#!!top" expanded="false" />
+                <element signature="n#tt_redirect_me_main_route#0;n#!!top" expanded="false" />
+                <element signature="n#tt_handle_me_child_routes_rewrite#0;n#!!top" expanded="false" />
+                <marker date="1477931061714" expanded="true" signature="5488:5606" ph="SELECT user_... $" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="func.Template.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/core/functions/func.Template.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="144" column="84" selection-start-line="144" selection-start-column="84" selection-end-line="144" selection-end-column="84" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -172,10 +192,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/css/modules/aside/widgets/uc.less" />
-        <option value="$PROJECT_DIR$/core/modules/widgets/wgt.Latest.Posts.php" />
-        <option value="$PROJECT_DIR$/core/modules/widgets/wgt.UC.php" />
-        <option value="$PROJECT_DIR$/core/functions/func.Sidebar.php" />
         <option value="$PROJECT_DIR$/core/metaKeys.md" />
         <option value="$PROJECT_DIR$/core/modules/widgets/wgt.Float.php" />
         <option value="$PROJECT_DIR$/src/css/modules/vars.less" />
@@ -223,6 +239,10 @@
         <option value="$PROJECT_DIR$/functions.php" />
         <option value="$PROJECT_DIR$/core/functions/func.Install.php" />
         <option value="$PROJECT_DIR$/core/functions/func.Message.php" />
+        <option value="$PROJECT_DIR$/core/functions/Constants.php" />
+        <option value="$PROJECT_DIR$/core/templates/uc/tpl.UC.Chat.php" />
+        <option value="$PROJECT_DIR$/core/functions/func.Rewrite.php" />
+        <option value="$PROJECT_DIR$/core/functions/func.Template.php" />
       </list>
     </option>
   </component>
@@ -537,6 +557,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tint" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tint" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uc" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -1033,7 +1075,7 @@
       <workItem from="1477711373621" duration="16292000" />
       <workItem from="1477744145740" duration="8097000" />
       <workItem from="1477814006444" duration="14092000" />
-      <workItem from="1477914676278" duration="11581000" />
+      <workItem from="1477914676278" duration="14612000" />
     </task>
     <task id="LOCAL-00001" summary="Add change log and contributing doc">
       <created>1476711242287</created>
@@ -1053,7 +1095,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1013071000" />
+    <option name="totallyTimeSpent" value="1016102000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1158,59 +1200,6 @@
     </PATH>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/core/classes/class.NameFirstChar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="226" column="6" selection-start-line="226" selection-start-column="6" selection-end-line="226" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/css/modules/loop/loop-grid.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-504">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/css/archive.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="81" column="44" selection-start-line="81" selection-start-column="44" selection-end-line="81" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/css/modules/vars.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/css/modules/nav/footer.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-442">
-          <caret line="55" column="32" selection-start-line="55" selection-start-column="30" selection-end-line="55" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/css/modules/aside/widgets/tag-cloud.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="12" column="46" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/modules/mod.Footer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="65" column="68" selection-start-line="65" selection-start-column="68" selection-end-line="65" selection-end-column="68" />
-          <folding>
-            <marker date="1477643353069" expanded="true" signature="4196:4202" ph=" " />
-            <marker date="1477643353069" expanded="true" signature="4339:4345" ph=" " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/modules/widgets/wgt.UC.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="469">
@@ -1560,6 +1549,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/core/modules/mod.SinglePost.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="55" column="75" selection-start-line="55" selection-start-column="75" selection-end-line="55" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/core/functions/func.Message.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="522">
@@ -1604,10 +1601,72 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/modules/mod.SinglePost.php">
+    <entry file="file://$PROJECT_DIR$/core/templates/uc/tpl.UC.Profile.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="55" column="75" selection-start-line="55" selection-start-column="75" selection-end-line="55" selection-end-column="75" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/templates/uc/tpl.UC.Chat.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
+          <folding>
+            <element signature="e#6#291#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/templates/uc/tpl.UC.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/functions/Constants.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="66" column="76" selection-start-line="66" selection-start-column="76" selection-end-line="66" selection-end-column="76" />
+          <folding>
+            <element signature="e#1640#1847#1#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/functions/func.User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1477492380662" expanded="true" signature="1764:1940" ph="SELECT SUM(m... wp_postmeta" />
+            <marker date="1477492380662" expanded="true" signature="2154:2277" ph="SELECT COUNT... wp_postmeta" />
+            <marker date="1477492380662" expanded="true" signature="2228:2276" ph="SELECT ID FR... wp_posts" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/functions/func.Rewrite.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="484" column="65" selection-start-line="484" selection-start-column="55" selection-end-line="484" selection-end-column="65" />
+          <folding>
+            <element signature="n#tt_rewrite_short_link#0;n#!!top" expanded="false" />
+            <element signature="n#tt_custom_author_link#0;n#!!top" expanded="false" />
+            <element signature="n#tt_redirect_me_main_route#0;n#!!top" expanded="false" />
+            <element signature="n#tt_handle_me_child_routes_rewrite#0;n#!!top" expanded="false" />
+            <marker date="1477931061714" expanded="true" signature="5488:5606" ph="SELECT user_... $" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/functions/func.Template.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="144" column="84" selection-start-line="144" selection-start-column="84" selection-end-line="144" selection-end-column="84" />
           <folding />
         </state>
       </provider>

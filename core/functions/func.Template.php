@@ -127,7 +127,7 @@ add_filter('author_template', 'tt_get_author_template', 10, 1);
 
 /**
  * 获取用户页模板
- * // 主题将用户与作者相区分，作者页沿用默认的WP设计，展示作者的文章列表，用户页重新设计为用户的各种信息以及前台用户中心
+ * // 主题将用户与作者相区分，作者页沿用默认的WP设计，展示作者的文章列表，用户页重新设计为用户的各种信息以及前台用户中心 //TODO 现在合并了, 废弃WP原有作者文章列表页(基础版无UC时才有)
  *
  * @since   2.0.0
  *
@@ -142,7 +142,7 @@ function tt_get_user_template($user) {
             // 由于profile tab是默认tab，直接使用/@nickname主路由，对于/@nickname/profile的链接会重定向处理，因此不放至允许的tabs中
             $allow_tabs = (array)json_decode(ALLOWED_UC_TABS);
             if(!in_array($uc_tab, $allow_tabs)) return 'header-404';
-             $templates[] = 'core/templates/uc/tpl.UC.' . strtolower($uc_tab) . '.php';
+             $templates[] = 'core/templates/uc/tpl.UC.' . ucfirst(strtolower($uc_tab)) . '.php';
         }else{
             //$role = $user->roles[0];
             $templates[] = 'core/templates/uc/tpl.UC.Profile.php';
@@ -151,7 +151,6 @@ function tt_get_user_template($user) {
         }
     }
     $templates[] = 'core/templates/uc/tpl.UC.php';
-
     return locate_template($templates);
 }
 add_filter('user_template', 'tt_get_user_template', 10, 1);

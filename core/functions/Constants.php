@@ -47,7 +47,7 @@ include_once THEME_FUNC . '/asset.Constant.php';
 defined('CACHE_PREFIX') || define('CACHE_PREFIX', 'tt_cache');
 
 /* Allowed UC Tabs */
-$uc_allow_tabs = json_encode(array('latest', 'comments', 'recommendations')); //TODO: add more - e.g followers/followings/activities/timelines
+$uc_allow_tabs = json_encode(array('latest', 'comments', 'recommendations', 'chat')); //TODO: add more - e.g followers/followings/activities/timelines
 defined('ALLOWED_UC_TABS') || define('ALLOWED_UC_TABS', $uc_allow_tabs);
 
 /* Allowed Action */
@@ -64,7 +64,7 @@ defined('ALLOWED_M_ACTIONS') || define('ALLOWED_M_ACTIONS', $m_allow_actions);
 
 /* Allowed Me Routes */
 $me_allow_routes = json_encode(array(
-    'settings' => 'settings',
+    'settings' => 'settings', //profile设置等, @xxx/profile只提供profile资料查阅, 不可编辑
     'balance'  => 'balance',
     'stars'    => 'stars',
     'order'    => 'order',
