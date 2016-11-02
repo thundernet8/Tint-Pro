@@ -52,6 +52,25 @@ function tt_create_message( $user_id=0, $sender_id=0, $sender, $type='', $title=
 
 
 /**
+ * 创建一条私信
+ *
+ * @param $receiver_id
+ * @param $sender
+ * @param $text
+ * @return bool
+ */
+function tt_create_pm($receiver_id, $sender, $text) {
+    if($sender instanceof WP_User && $sender->ID) {
+        return tt_create_message($receiver_id, $sender->ID, $sender->display_name, 'chat', $text);
+    }elseif(is_int($sender)){
+        $sender = get_user_by('ID', $sender);
+        return tt_create_message($receiver_id, $sender->ID, $sender->display_name, 'chat', $text);
+    }
+    return false;
+}
+
+
+/**
  * 标记消息阅读状态
  *
  * @since 2.0.0

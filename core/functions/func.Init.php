@@ -67,8 +67,8 @@ function tt_setup() {
         $config = array(
             'domain'       		=> 'tt',         	// Text domain - likely want to be the same as your theme.
             'default_path' 		=> THEME_DIR .'/dash/plugins',                         	// Default absolute path to pre-packaged plugins
-            'parent_menu_slug' 	=> 'themes.php', 				// Default parent menu slug
-            'parent_url_slug' 	=> 'themes.php', 				// Default parent URL slug
+            //'parent_menu_slug' 	=> 'themes.php', 				// Default parent menu slug(deprecated)
+            //'parent_url_slug' 	=> 'themes.php', 				// Default parent URL slug(deprecated)
             'menu'         		=> 'install-required-plugins', 	// Menu slug
             'has_notices'      	=> true,                       	// Show admin notices or not
             'is_automatic'    	=> false,					   	// Automatically activate plugins after installation or not

@@ -1,5 +1,5 @@
 /**
- * Generated on Sun Oct 30 2016 22:40:06 GMT+0800 (中国标准时间) by Zhiyan
+ * Generated on Wed Nov 02 2016 23:48:29 GMT+0800 (中国标准时间) by Zhiyan
  *
  * @package   Tint
  * @version   v2.0.0
@@ -32,6 +32,8 @@ webpackJsonp([
             __webpack_require__(21);
             var _follow = __webpack_require__(17);
             var _follow2 = _interopRequireDefault(_follow);
+            var _pm = __webpack_require__(22);
+            var _pm2 = _interopRequireDefault(_pm);
             function _interopRequireDefault(obj) {
                 return obj && obj[['__esModule']] ? obj : { default: obj };
             }
@@ -44,6 +46,7 @@ webpackJsonp([
                 _scroll2[['default']][['initShareBar']]();
                 _scroll2[['default']][['initFloatWidget']]();
                 _follow2[['default']][['init']]();
+                _pm2[['default']][['initModalPm']]();
                 $('.lightbox-gallery')[['each']](function () {
                     var item = $(this);
                     var img = item[['find']]('img');
@@ -2185,7 +2188,8 @@ webpackJsonp([
             myFollower: _utils2[['default']][['getAPIUrl']]('/users/me/followers'),
             myFollowing: _utils2[['default']][['getAPIUrl']]('/users/me/following'),
             follower: _utils2[['default']][['getAPIUrl']]('/users/{{uid}}/followers'),
-            following: _utils2[['default']][['getAPIUrl']]('/users/{{uid}}/following')
+            following: _utils2[['default']][['getAPIUrl']]('/users/{{uid}}/following'),
+            pm: _utils2[['default']][['getAPIUrl']]('/messages')
         };
         var classes = { appLoading: 'is-loadingApp' };
         exports[['Routes']] = routes;
@@ -2330,7 +2334,7 @@ webpackJsonp([
             var _btnSel = '.follow-btn';
             var _followAct = 'follow';
             var _unfollowAct = 'unfollow';
-            var _spinnerClass = 'tico tico-spinner spinning';
+            var _spinnerClass = 'tico tico-spinner2 spinning';
             var _unfollowedIconClass = 'tico tico-user-plus';
             var _unfollowedText = '\u5173\u6ce8';
             var _followedIconClass = 'tico tico-user-check';
@@ -3181,5 +3185,232 @@ webpackJsonp([
             };
             return new Lightbox();
         }));
+    },
+    function (module, exports, __webpack_require__) {
+        (function ($) {
+            'use strict';
+            Object[['defineProperty']](exports, '__esModule', { value: true });
+            var _utils = __webpack_require__(4);
+            var _utils2 = _interopRequireDefault(_utils);
+            var _globalConfig = __webpack_require__(10);
+            var _msgbox = __webpack_require__(7);
+            function _interopRequireDefault(obj) {
+                return obj && obj[['__esModule']] ? obj : { default: obj };
+            }
+            var _modalPmAnchorSel = '.pm-btn';
+            var _modalPmBoxSel = '#pmBox';
+            var _modalPmBoxReceiverSel = '.pm-info_receiver';
+            var _normalPmBoxSel = '#pmForm';
+            var _receiverIdInputSel = '.receiver-id';
+            var _pmBoxNonceSel = '.pm_nonce';
+            var _pmBoxTextareaSel = '.pm-text';
+            var _cancelSel = '.cancel';
+            var _sendSel = '.confirm';
+            var _spinner = '<i class="tico tico-spinner2 spinning"></i>';
+            var _originSendBtnText = '';
+            var _receiverId;
+            var _body = $('body');
+            var _pmModalBox = $(_modalPmBoxSel);
+            var _pmModalBoxReceiverEle = null;
+            var _pmReceiverIdInput;
+            var _pmNonceInput;
+            var _pmTextArea;
+            var _sending = false;
+            var _showModalPmBox = function _showModalPmBox(btn) {
+                var receiver = btn[['data']]('receiver');
+                var receiverId = btn[['data']]('receiver-id');
+                if (!receiver || !receiverId)
+                    return false;
+                _receiverId = receiverId;
+                if (!_pmModalBoxReceiverEle)
+                    _pmModalBoxReceiverEle = $(_modalPmBoxSel + ' ' + _modalPmBoxReceiverSel);
+                _pmModalBoxReceiverEle[['text']](receiver);
+                _pmModalBox[['modal']]('show');
+            };
+            var _closeModalPmBox = function _closeModalPmBox() {
+                if (!_pmModalBoxReceiverEle)
+                    _pmModalBoxReceiverEle = $(_modalPmBoxSel + ' ' + _modalPmBoxReceiverSel);
+                _pmModalBoxReceiverEle[['text']]('');
+                _pmModalBox[['modal']]('hide');
+            };
+            var _sendMsgInModalBox = function _sendMsgInModalBox(btn) {
+                if (_sending || !_receiverId || !_utils2[['default']][['checkLogin']]())
+                    return false;
+                _pmNonceInput = $(_modalPmBoxSel + ' ' + _pmBoxNonceSel);
+                _pmTextArea = $(_modalPmBoxSel + ' ' + _pmBoxTextareaSel);
+                if (!_pmNonceInput || !_pmTextArea)
+                    return false;
+                var nonce = _pmNonceInput[['val']]();
+                var message = _pmTextArea[['val']]();
+                if (nonce[['length']] == 0)
+                    return false;
+                if (message[['length']] == 0) {
+                    _pmTextArea[['focus']]();
+                    _pmTextArea[['addClass']]('error');
+                    setTimeout(function () {
+                        _pmTextArea[['removeClass']]('error');
+                    }, 2000);
+                    return false;
+                }
+                var url = _globalConfig[['Routes']][['pm']];
+                var data = {
+                    receiverId: _receiverId,
+                    pmNonce: nonce,
+                    message: message
+                };
+                var beforeSend = function beforeSend() {
+                    if (_sending)
+                        return;
+                    _originSendBtnText = btn[['text']]();
+                    btn[['html']](_spinner);
+                    btn[['prop']]('disabled', true);
+                    _pmTextArea[['prop']]('disabled', true);
+                    _sending = true;
+                };
+                var finishRequest = function finishRequest() {
+                    if (!_sending)
+                        return;
+                    btn[['text']](_originSendBtnText);
+                    btn[['prop']]('disabled', false);
+                    _pmTextArea[['prop']]('disabled', false)[['val']]('');
+                    _closeModalPmBox();
+                    _sending = false;
+                };
+                var success = function success(data, textStatus, xhr) {
+                    finishRequest();
+                    if (data[['success']] && data[['success']] == 1) {
+                        _msgbox[['popMsgbox']][['success']]({
+                            title: data[['message']],
+                            text: '<a href="' + data[['data']]['chatUrl'] + '">\u67e5\u770b\u5bf9\u8bdd</a>',
+                            html: true,
+                            showConfirmButton: true
+                        });
+                    } else {
+                        _msgbox[['popMsgbox']][['error']]({
+                            title: data[['message']],
+                            timer: 2000,
+                            showConfirmButton: true
+                        });
+                    }
+                };
+                var error = function error(xhr, textStatus, err) {
+                    finishRequest();
+                    _msgbox[['popMsgbox']][['error']]({
+                        title: xhr[['responseJSON']] ? xhr[['responseJSON']][['message']] : xhr[['responseText']],
+                        timer: 2000,
+                        showConfirmButton: true
+                    });
+                };
+                $[['post']]({
+                    url: url,
+                    data: _utils2[['default']][['filterDataForRest']](data),
+                    dataType: 'json',
+                    beforeSend: beforeSend,
+                    success: success,
+                    error: error
+                });
+            };
+            var _sendMsgInNormalForm = function _sendMsgInNormalForm(btn) {
+                if (_sending || !_utils2[['default']][['checkLogin']]())
+                    return false;
+                _pmReceiverIdInput = $(_normalPmBoxSel + ' ' + _receiverIdInputSel);
+                _pmNonceInput = $(_normalPmBoxSel + ' ' + _pmBoxNonceSel);
+                _pmTextArea = $(_normalPmBoxSel + ' ' + _pmBoxTextareaSel);
+                if (!_pmReceiverIdInput || !_pmNonceInput || !_pmTextArea)
+                    return false;
+                var receiverId = _pmReceiverIdInput[['val']]();
+                var nonce = _pmNonceInput[['val']]();
+                var message = _pmTextArea[['val']]();
+                if (!receiverId || nonce[['length']] == 0)
+                    return false;
+                if (message[['length']] == 0) {
+                    _pmTextArea[['focus']]();
+                    _pmTextArea[['addClass']]('error');
+                    setTimeout(function () {
+                        _pmTextArea[['removeClass']]('error');
+                    }, 2000);
+                    return false;
+                }
+                var url = _globalConfig[['Routes']][['pm']];
+                var data = {
+                    receiverId: receiverId,
+                    pmNonce: nonce,
+                    message: message
+                };
+                var beforeSend = function beforeSend() {
+                    if (_sending)
+                        return;
+                    _originSendBtnText = btn[['text']]();
+                    btn[['html']](_spinner);
+                    btn[['prop']]('disabled', true);
+                    _pmTextArea[['prop']]('disabled', true);
+                };
+                var finishRequest = function finishRequest() {
+                    if (!_sending)
+                        return;
+                    btn[['text']](_originSendBtnText);
+                    btn[['prop']]('disabled', false);
+                    _pmTextArea[['prop']]('disabled', false)[['val']]('');
+                };
+                var success = function success(data, textStatus, xhr) {
+                    finishRequest();
+                    if (data[['success']] && data[['success']] == 1) {
+                        _msgbox[['popMsgbox']][['success']]({
+                            title: data[['message']],
+                            timer: 2000,
+                            showConfirmButton: true
+                        });
+                        _prependNewMsg(data[['data']]);
+                    } else {
+                        _msgbox[['popMsgbox']][['error']]({
+                            title: data[['message']],
+                            timer: 2000,
+                            showConfirmButton: true
+                        });
+                    }
+                };
+                var error = function error(xhr, textStatus, err) {
+                    finishRequest();
+                    _msgbox[['popMsgbox']][['error']]({
+                        title: xhr[['responseJSON']] ? xhr[['responseJSON']][['message']] : xhr[['responseText']],
+                        timer: 2000,
+                        showConfirmButton: true
+                    });
+                };
+                $[['post']]({
+                    url: url,
+                    data: _utils2[['default']][['filterDataForRest']](data),
+                    dataType: 'json',
+                    beforeSend: beforeSend,
+                    success: success,
+                    error: error
+                });
+            };
+            var _prependNewMsg = function _prependNewMsg(msg) {
+            };
+            var PmKit = {
+                initModalPm: function initModalPm() {
+                    _body[['on']]('click', _modalPmAnchorSel, function (e) {
+                        e[['preventDefault']]();
+                        var $this = $(this);
+                        _showModalPmBox($this);
+                    });
+                    _body[['on']]('click', _modalPmBoxSel + ' ' + _cancelSel, function () {
+                        _closeModalPmBox();
+                    });
+                    _body[['on']]('click', _modalPmBoxSel + ' ' + _sendSel, function () {
+                        var $this = $(this);
+                        _sendMsgInModalBox($this);
+                    });
+                },
+                initNormalPm: function initNormalPm() {
+                    _body[['on']]('click', _normalPmBoxSel + ' ' + _sendSel, function () {
+                        var $this = $(this);
+                        _sendMsgInNormalForm($this);
+                    });
+                }
+            };
+            exports[['default']] = PmKit;
+        }[['call']](exports, __webpack_require__(1)));
     }
 ]);

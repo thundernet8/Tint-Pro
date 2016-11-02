@@ -175,7 +175,7 @@ function tt_install_message_table () {
 			`sender`  varchar(50),
 			`msg_type` varchar(20),
 			`msg_date` datetime,
-			`msg_title` tinytext,
+			`msg_title` text,
 			`msg_content` text,
 			`msg_read`  boolean DEFAULT 0,
 			`msg_status`  varchar(20)

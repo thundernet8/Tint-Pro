@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-10-29 23:00+0800\n"
-"PO-Revision-Date: 2016-10-29 23:02+0800\n"
+"POT-Creation-Date: 2016-11-02 23:49+0800\n"
+"PO-Revision-Date: 2016-11-02 23:52+0800\n"
 "Last-Translator: Zhiyan <mail@webapproach.net>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -79,6 +79,7 @@ msgid "%s must be between %d (inclusive) and %d (inclusive)"
 msgstr "%s必须介于%d(包含)和%d(包含)之间"
 
 #: core/api/v1/endpoints/class.Rest.Comment.Controller.php:57
+#: core/api/v1/endpoints/class.Rest.Message.Controller.php:73
 #: core/api/v1/endpoints/class.Rest.Session.Controller.php:58
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:69
 msgid "Required to be true, as resource does not support trashing."
@@ -90,8 +91,8 @@ msgstr "无效的文章ID"
 
 #: core/api/v1/endpoints/class.Rest.Comment.Controller.php:93
 #: core/api/v1/endpoints/class.Rest.Comment.Star.Controller.php:102
-#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:100
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:390
+#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:103
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:391
 msgid "Nonce verify failed"
 msgstr "Nonce验证失败"
 
@@ -129,7 +130,7 @@ msgstr "添加评论失败"
 
 #: core/api/v1/endpoints/class.Rest.Comment.Controller.php:255
 #: core/api/v1/endpoints/class.Rest.Session.Controller.php:127
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:587
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:588
 msgid "Sorry, you are not allowed to delete this resource."
 msgstr "抱歉, 你无权删除该资源"
 
@@ -182,19 +183,83 @@ msgid ""
 "Scope under which the request is made; determines fields present in response."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:95
+#: core/api/v1/endpoints/class.Rest.Follow.Controller.php:218
+msgid "Sorry, you cannot follow or unfollow without signing in."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Message.Controller.php:92
+msgid "Sorry, you cannot view messages without signing in."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Message.Controller.php:111
+msgid "Retrieve messages failed"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Message.Controller.php:128
+msgid "Sorry, you cannot create message without signing in."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Message.Controller.php:150
+msgid "Verify nonce failed"
+msgstr "验证Nonce失败"
+
+#: core/api/v1/endpoints/class.Rest.Message.Controller.php:155
+msgid "Invalid receiver"
+msgstr "无效的接收者"
+
+#: core/api/v1/endpoints/class.Rest.Message.Controller.php:160
+msgid "Message content cannot be blank"
+msgstr "消息内容不能为空"
+
+#: core/api/v1/endpoints/class.Rest.Message.Controller.php:166
+msgid "Send message failed"
+msgstr "发送消息失败"
+
+#: core/api/v1/endpoints/class.Rest.Message.Controller.php:169
+msgid "Send message successfully"
+msgstr "发送消息成功"
+
+#: core/api/v1/endpoints/class.Rest.Message.Controller.php:181
+msgid "Sorry, you cannot view message without signing in."
+msgstr "抱歉, 必须登录才能查看消息"
+
+#: core/api/v1/endpoints/class.Rest.Message.Controller.php:196
+msgid "Cannot get the message specified"
+msgstr "不能获取指定消息"
+
+#: core/api/v1/endpoints/class.Rest.Message.Controller.php:234
+msgid "Sorry, you cannot delete message without signing in."
+msgstr "抱歉, 必须登录才能删除消息"
+
+#: core/api/v1/endpoints/class.Rest.Message.Controller.php:238
+msgid "Sorry, the message is not found."
+msgstr "抱歉，未发现指定消息"
+
+#: core/api/v1/endpoints/class.Rest.Message.Controller.php:242
+msgid "Sorry, you cannot delete message not belong to you."
+msgstr "抱歉, 你不能删除与自己无关消息"
+
+#: core/api/v1/endpoints/class.Rest.Message.Controller.php:259
+msgid "The message cannot be deleted."
+msgstr "消息不可删除"
+
+#: core/api/v1/endpoints/class.Rest.Message.Controller.php:262
+msgid "delete message successfully"
+msgstr "删除消息成功"
+
+#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:98
 msgid "Wrong post id"
 msgstr "错误的文章ID"
 
-#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:105
+#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:108
 msgid "You must be logged in to star a post"
 msgstr "你必须登录才能点赞文章"
 
-#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:120
+#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:123
 msgid "Star post failed"
 msgstr "点赞文章失败"
 
-#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:124
+#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:127
 msgid "Star post successfully"
 msgstr "点赞文章成功"
 
@@ -211,15 +276,15 @@ msgid "There is no user matches the info you offered"
 msgstr "未找到匹配用户"
 
 #: core/api/v1/endpoints/class.Rest.Session.Controller.php:144
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:606
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:607
 msgid "Users do not support trashing."
 msgstr "用户资源不支持删除"
 
 #: core/api/v1/endpoints/class.Rest.Session.Controller.php:149
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:237
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:264
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:528
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:611
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:238
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:265
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:529
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:612
 msgid "Invalid resource id."
 msgstr "无效的用户 id"
 
@@ -227,201 +292,201 @@ msgstr "无效的用户 id"
 msgid "You have signed out successfully"
 msgstr "你已成功登出"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:117
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:118
 msgid "Sorry, you cannot filter by role."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:121
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:245
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:294
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:122
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:246
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:295
 msgid "Sorry, you cannot view this resource with edit context."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:247
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:296
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:248
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:297
 msgid "Sorry, you cannot view this resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:286
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:313
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:287
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:314
 msgid "Invalid resource email."
 msgstr "无效的用户 email"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:339
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:340
 msgid "You are not currently logged in."
 msgstr "你现在尚未登录"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:360
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:361
 msgid "Sorry, you are not allowed to create resource."
 msgstr "抱歉, 你无权创建该资源"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:396
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:397
 msgid ""
 "Password length does not match the requirement, must more than or equal to 6."
 msgstr "密码长度不满足要求, 长度必须至少为6"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:405
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:406
 msgid "Captcha does not match."
 msgstr "验证码不匹配"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:411
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:412
 msgid "Invalid resource login name."
 msgstr "无效的用户名"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:415
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:416
 msgid "Login name is already existed."
 msgstr "用户名已存在"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:421
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:422
 msgid "Invalid email format."
 msgstr "无效的邮箱格式"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:425
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:426
 msgid "Email is already used."
 msgstr "邮箱已存在"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:434
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:435
 msgid ""
 "Send registration request successfully, please go to your email box to find "
 "and visit the activation link"
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:507
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:508
 msgid "Sorry, you are not allowed to edit resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:511
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:512
 msgid "Sorry, you are not allowed to edit roles of this resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:532
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:533
 msgid "Email address is invalid."
 msgstr "邮箱地址无效"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:536
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:537
 msgid "Username isn't editable"
 msgstr "用户名不可编辑"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:540
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:541
 msgid "Slug is invalid."
 msgstr "Slug 无效"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:616
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:617
 msgid "Invalid resource id for reassignment."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:629
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:630
 msgid "The resource cannot be deleted."
 msgstr "用户不可删除"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:830
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:831
 #, php-format
 msgid "The role %s does not exist."
 msgstr "角色%s不存在"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:837
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:847
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:838
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:848
 msgid "You cannot give resource that role."
 msgstr "你不能给予用户那种角色"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:867
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:868
 msgid "Unique identifier for the resource."
 msgstr "用户的唯一id"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:873
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:874
 msgid "Login name for the resource."
 msgstr "用户的登录名"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:883
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:884
 msgid "Display name for the resource."
 msgstr "用户的显示名"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:891
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:892
 msgid "First name for the resource."
 msgstr "用户的名"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:899
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:900
 msgid "Last name for the resource."
 msgstr "用户的姓"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:907
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:908
 msgid "The email address for the resource."
 msgstr "用户的邮箱地址"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:914
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:915
 msgid "URL of the resource."
 msgstr "用户的主页"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:920
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:921
 msgid "Description of the resource."
 msgstr "用户的描述"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:928
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:929
 msgid "Author URL to the resource."
 msgstr "用户的作者页"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:935
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:936
 msgid "The nickname for the resource."
 msgstr "用户的昵称"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:943
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:944
 msgid "An alphanumeric identifier for the resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:951
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:952
 msgid "Registration date for the resource."
 msgstr "用户注册日期"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:957
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:958
 msgid "Roles assigned to the resource."
 msgstr "赋予用户的角色"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:962
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:963
 msgid "Password for the resource (never included)."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:968
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:969
 msgid "All capabilities assigned to the resource."
 msgstr "用户获得的所有权限"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:973
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:974
 msgid "Any extra capabilities assigned to the resource."
 msgstr "用户获得的所有其他权限"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:987
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:988
 #, php-format
 msgid "Avatar URL with image size of %d pixels."
 msgstr "尺寸为 %d 像素的头像链接"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:995
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:996
 msgid "Avatar URLs for the resource."
 msgstr "用户的头像链接列表"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:1018
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:1019
 msgid "Ensure result set excludes specific ids."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:1024
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:1025
 msgid "Limit result set to specific ids."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:1030
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:1031
 msgid "Offset the result set by a specific number of items."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:1037
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:1038
 msgid "Order sort attribute ascending or descending."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:1045
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:1046
 msgid "Sort collection by object attribute."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:1057
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:1058
 msgid "Limit result set to resources with a specific slug."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:1062
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:1063
 msgid ""
 "Limit result set to resources matching at least one specific role provided. "
 "Accepts csv list or single role."
@@ -1065,43 +1130,43 @@ msgstr "你必须登录才能关注用户"
 msgid "You cannot follow yourself"
 msgstr "不能关注自己"
 
-#: core/functions/func.Follow.php:127
+#: core/functions/func.Follow.php:128
 msgid "Unfollow user successfully"
 msgstr "取消关注成功"
 
-#: core/functions/func.Follow.php:132
+#: core/functions/func.Follow.php:133
 msgid "Unfollow user failed"
 msgstr "取消关注失败"
 
-#: core/functions/func.Follow.php:138
+#: core/functions/func.Follow.php:139
 msgid "Unfollow user failed, you do not have followed him"
 msgstr "取消关注失败, 你没有关注他"
 
-#: core/functions/func.Follow.php:152 core/functions/func.Follow.php:164
+#: core/functions/func.Follow.php:153 core/functions/func.Follow.php:167
 msgid "Follow user successfully"
 msgstr "关注用户成功"
 
-#: core/functions/func.Follow.php:157 core/functions/func.Follow.php:169
+#: core/functions/func.Follow.php:159 core/functions/func.Follow.php:173
 msgid "Follow user failed"
 msgstr "关注用户失败"
 
-#: core/functions/func.Follow.php:215 core/functions/func.Follow.php:217
+#: core/functions/func.Follow.php:219 core/functions/func.Follow.php:221
 msgid "Unfollow"
 msgstr "取消关注"
 
-#: core/functions/func.Follow.php:215
+#: core/functions/func.Follow.php:219
 msgid "FOLLOWED EACH"
 msgstr "互相关注"
 
-#: core/functions/func.Follow.php:217
+#: core/functions/func.Follow.php:221
 msgid "FOLLOWED"
 msgstr "已关注"
 
-#: core/functions/func.Follow.php:220
+#: core/functions/func.Follow.php:224
 msgid "Follow the user"
 msgstr "关注该用户"
 
-#: core/functions/func.Follow.php:220
+#: core/functions/func.Follow.php:224
 msgid "FOLLOW"
 msgstr "关注"
 
@@ -1444,12 +1509,12 @@ msgstr "近期文章"
 msgid "Popular"
 msgstr "Popular"
 
-#: core/modules/mod.ModalLoginForm.php:21
+#: core/modules/mod.ModalLoginForm.php:22
 #: core/templates/actions/tpl.M.Signin.php:49
 msgid "Email/Username"
 msgstr "邮箱或用户名"
 
-#: core/modules/mod.ModalLoginForm.php:24
+#: core/modules/mod.ModalLoginForm.php:25
 #: core/templates/actions/tpl.M.Resetpass.php:38
 #: core/templates/actions/tpl.M.Resetpass.php:39
 #: core/templates/actions/tpl.M.Resetpass.php:41
@@ -1458,7 +1523,7 @@ msgstr "邮箱或用户名"
 msgid "Password"
 msgstr "密码"
 
-#: core/modules/mod.ModalLoginForm.php:29 core/modules/mod.ReplyForm.php:32
+#: core/modules/mod.ModalLoginForm.php:30 core/modules/mod.ReplyForm.php:32
 #: core/modules/mod.ReplyForm.php:129
 #: core/templates/actions/tpl.M.Findpass.php:38
 #: core/templates/actions/tpl.M.Resetpass.php:47
@@ -1466,41 +1531,61 @@ msgstr "密码"
 msgid "Submit"
 msgstr "提交"
 
-#: core/modules/mod.ModalLoginForm.php:41
+#: core/modules/mod.ModalLoginForm.php:42
 #: core/templates/actions/tpl.M.Signin.php:70
 #: core/templates/actions/tpl.M.Signup.php:67
 msgid "Quick SignIn"
 msgstr "快速登录"
 
-#: core/modules/mod.ModalLoginForm.php:45
+#: core/modules/mod.ModalLoginForm.php:46
 #: core/templates/actions/tpl.M.Signin.php:74
 #: core/templates/actions/tpl.M.Signup.php:71
 msgid "Signin with Sina weibo"
 msgstr "微博登录"
 
-#: core/modules/mod.ModalLoginForm.php:51
+#: core/modules/mod.ModalLoginForm.php:52
 #: core/templates/actions/tpl.M.Signin.php:80
 #: core/templates/actions/tpl.M.Signup.php:77
 msgid "Signin with QQ"
 msgstr "QQ登录"
 
-#: core/modules/mod.ModalLoginForm.php:57
+#: core/modules/mod.ModalLoginForm.php:58
 #: core/templates/actions/tpl.M.Signin.php:86
 #: core/templates/actions/tpl.M.Signup.php:83
 msgid "Signin with Wechat"
 msgstr "微信登录"
 
-#: core/modules/mod.ModalLoginForm.php:64
+#: core/modules/mod.ModalLoginForm.php:65
 #: core/templates/actions/tpl.M.Signin.php:93
 msgid "Register Now"
 msgstr "现在注册"
 
-#: core/modules/mod.ModalLoginForm.php:66
+#: core/modules/mod.ModalLoginForm.php:67
 #: core/templates/actions/tpl.M.Signin.php:95
 msgid "Forgot your password?"
 msgstr "忘记密码?"
 
-#: core/modules/mod.ModalSearch.php:19
+#: core/modules/mod.ModalPmBox.php:18
+msgid "Send Message"
+msgstr "发送私信"
+
+#: core/modules/mod.ModalPmBox.php:23
+msgid "Send to:"
+msgstr "发给:"
+
+#: core/modules/mod.ModalPmBox.php:27
+msgid "Write your message here."
+msgstr "消息内容..."
+
+#: core/modules/mod.ModalPmBox.php:31
+msgid "CANCEL"
+msgstr "取消"
+
+#: core/modules/mod.ModalPmBox.php:32
+msgid "SEND"
+msgstr "发送"
+
+#: core/modules/mod.ModalSearch.php:20
 msgid "Type a keyword"
 msgstr "键入关键词"
 
@@ -1573,31 +1658,31 @@ msgid ""
 "TT-Show the post author information, only can be used in single post page"
 msgstr "TT-显示当前文章作者的信息, 只能在文章页使用"
 
-#: core/modules/widgets/wgt.Author.php:47
+#: core/modules/widgets/wgt.Author.php:48
 msgid "Send a message"
 msgstr "发送站内消息"
 
-#: core/modules/widgets/wgt.Author.php:47
+#: core/modules/widgets/wgt.Author.php:48
 msgid "Chat"
 msgstr "私信"
 
-#: core/modules/widgets/wgt.Author.php:50
+#: core/modules/widgets/wgt.Author.php:52
 msgid "POSTS"
 msgstr "文章"
 
-#: core/modules/widgets/wgt.Author.php:51
+#: core/modules/widgets/wgt.Author.php:53
 msgid "STARS"
 msgstr "点赞"
 
-#: core/modules/widgets/wgt.Author.php:52
+#: core/modules/widgets/wgt.Author.php:54
 msgid "FOLLOWING"
 msgstr "关注"
 
-#: core/modules/widgets/wgt.Author.php:53
+#: core/modules/widgets/wgt.Author.php:55
 msgid "FOLLOWERS"
 msgstr "粉丝"
 
-#: core/modules/widgets/wgt.Author.php:67
+#: core/modules/widgets/wgt.Author.php:69
 msgid ""
 "<strong>Warning: </strong>This widget has nothing to configure, and also do "
 "not use it"

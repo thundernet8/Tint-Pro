@@ -65,8 +65,7 @@ function tt_get_user_cover ($user_id, $size = 'full') {
  * @return int
  */
 function tt_count_user_following ($user_id) {
-
-    return 1; //TODO
+    return tt_count_following($user_id);
 }
 
 /**
@@ -77,8 +76,7 @@ function tt_count_user_following ($user_id) {
  * @return int
  */
 function tt_count_user_followers ($user_id) {
-
-    return 20; //TODO
+    return tt_count_followers($user_id);
 }
 
 
@@ -92,7 +90,6 @@ function tt_count_user_followers ($user_id) {
  */
 function tt_count_author_posts_views ($user_id, $view_key = 'views') {
     global $wpdb;
-    $table_prefix = $wpdb->prefix;
     $sql = $wpdb->prepare("SELECT SUM(meta_value) FROM $wpdb->postmeta RIGHT JOIN $wpdb->posts ON $wpdb->postmeta.meta_key='%s' AND $wpdb->posts.post_author=%d AND $wpdb->postmeta.post_id=$wpdb->posts.ID", $view_key, $user_id);
     $count = $wpdb->get_var($sql);
 
@@ -102,7 +99,6 @@ function tt_count_author_posts_views ($user_id, $view_key = 'views') {
 
 function tt_count_author_posts_stars ($user_id) {
     global $wpdb;
-    $table_prefix = $wpdb->prefix;
     $sql = $wpdb->prepare("SELECT COUNT(*) FROM $wpdb->postmeta  WHERE meta_key='%s' AND post_id IN (SELECT ID FROM $wpdb->posts WHERE post_author=%d)", 'tt_post_star_users', $user_id);
     $count = $wpdb->get_var($sql);
 
@@ -151,4 +147,16 @@ function tt_get_administrator_ids () {
         $ids[] = $administrator->ID;
     }
     return $ids;
+}
+
+
+/**
+ * 获取用户私信对话地址
+ *
+ * @since 2.0.0
+ * @param $user_id
+ * @return string
+ */
+function tt_get_user_chat_url($user_id) {
+    return get_author_posts_url($user_id) . '/chat';
 }

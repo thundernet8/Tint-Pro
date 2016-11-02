@@ -20,7 +20,7 @@ import {popMsgbox} from './msgbox';
 var _btnSel = '.follow-btn';
 var _followAct = 'follow';
 var _unfollowAct = 'unfollow';
-var _spinnerClass = 'tico tico-spinner spinning';
+var _spinnerClass = 'tico tico-spinner2 spinning';
 var _unfollowedIconClass = 'tico tico-user-plus';
 var _unfollowedText = '关注';
 var _followedIconClass = 'tico tico-user-check';

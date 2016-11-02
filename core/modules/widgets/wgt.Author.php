@@ -41,11 +41,13 @@ class AuthorWidget extends WP_Widget {
                     <span class="author-name"><?php echo $data->display_name; ?></span>
                     <span class="author-user_level"><?php echo tt_get_user_cap_string($data->ID); ?></span>
                 </div>
+                <?php if(get_current_user_id() != $data->ID) { ?>
                 <div class="author-interact">
 <!--                    <a class="follow-btn" href="javascript: void 0" title="--><?php //_e('Follow the author', 'tt'); ?><!--"><i class="tico tico-user-plus"></i>--><?php //_e('Follow', 'tt'); ?><!--</a>-->
                     <?php echo tt_follow_button($data->ID); ?>
-                    <a class="whisper-btn" href="<?php echo '/'; ?>" title="<?php _e('Send a message', 'tt'); ?>"><i class="tico tico-envelope"></i><?php _e('Chat', 'tt'); ?></a>
+                    <a class="pm-btn" href="javascript: void 0" data-receiver="<?php echo $data->display_name; ?>" data-receiver-id="<?php echo $data->ID; ?>" title="<?php _e('Send a message', 'tt'); ?>"><i class="tico tico-envelope"></i><?php _e('Chat', 'tt'); ?></a>
                 </div>
+                <?php } ?>
                 <div class="author-stats">
                     <span class="posts"><?php echo $data->posts_count; ?><span class="unit"><?php _e('POSTS', 'tt'); ?></span></span>
                     <span class="stars"><?php echo $data->posts_stars; ?><span class="unit"><?php _e('STARS', 'tt'); ?></span></span>

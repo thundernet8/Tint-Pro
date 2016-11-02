@@ -1,5 +1,5 @@
 /**
- * Generated on Sun Oct 30 2016 22:40:05 GMT+0800 (中国标准时间) by Zhiyan
+ * Generated on Wed Nov 02 2016 23:48:29 GMT+0800 (中国标准时间) by Zhiyan
  *
  * @package   Tint
  * @version   v2.0.0
@@ -2184,7 +2184,8 @@ webpackJsonp([
             myFollower: _utils2[['default']][['getAPIUrl']]('/users/me/followers'),
             myFollowing: _utils2[['default']][['getAPIUrl']]('/users/me/following'),
             follower: _utils2[['default']][['getAPIUrl']]('/users/{{uid}}/followers'),
-            following: _utils2[['default']][['getAPIUrl']]('/users/{{uid}}/following')
+            following: _utils2[['default']][['getAPIUrl']]('/users/{{uid}}/following'),
+            pm: _utils2[['default']][['getAPIUrl']]('/messages')
         };
         var classes = { appLoading: 'is-loadingApp' };
         exports[['Routes']] = routes;
@@ -2669,7 +2670,7 @@ webpackJsonp([
             var _btnSel = '.follow-btn';
             var _followAct = 'follow';
             var _unfollowAct = 'unfollow';
-            var _spinnerClass = 'tico tico-spinner spinning';
+            var _spinnerClass = 'tico tico-spinner2 spinning';
             var _unfollowedIconClass = 'tico tico-user-plus';
             var _unfollowedText = '\u5173\u6ce8';
             var _followedIconClass = 'tico tico-user-check';

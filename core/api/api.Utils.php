@@ -127,6 +127,10 @@ function tt_create_initial_rest_routes() {
     // Follow
     $follow_controller = new WP_REST_User_Follow_Controller;
     $follow_controller->register_routes();
+
+    // Messages
+    $message_controller = new WP_REST_Message_Controller;
+    $message_controller->register_routes();
 }
 add_action( 'rest_api_init', 'tt_create_initial_rest_routes', 0 );  // TODO cached 接口
 

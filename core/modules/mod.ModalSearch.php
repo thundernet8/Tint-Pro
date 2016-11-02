@@ -12,6 +12,7 @@
  * @link https://www.webapproach.net/tint.html
  */
 ?>
+<!-- 搜索模态框 -->
 <div id="globalSearch" class="js-search search-form search-form-modal fadeZoomIn" role="dialog" aria-hidden="true">
     <form method="get" action="<?php echo home_url(); ?>" role="search">
         <div class="search-form-inner">

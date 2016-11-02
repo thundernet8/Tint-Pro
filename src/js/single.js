@@ -22,6 +22,7 @@ import ScrollHandler from './modules/scroll';
 import AnimateAnchor from './modules/animateAnchor';
 import {} from 'lightbox2';
 import FollowKit from './modules/follow';
+import Pmkit from './modules/pm';
 
 // DOM Ready
 jQuery(document).ready(function ($) {
@@ -48,6 +49,9 @@ jQuery(document).ready(function ($) {
     
     // 粉丝和关注
     FollowKit.init();
+    
+    // 私信
+    Pmkit.initModalPm();
     
     //  Lightbox 获取图片的title属性
     $('.lightbox-gallery').each(function () {

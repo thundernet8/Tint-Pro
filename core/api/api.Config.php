@@ -38,3 +38,4 @@ require_once THEME_API . '/v1/endpoints/class.Rest.Comment.Controller.php';
 require_once THEME_API . '/v1/endpoints/class.Rest.Comment.Star.Controller.php';
 require_once THEME_API . '/v1/endpoints/class.Rest.Post.Star.Controller.php';
 require_once THEME_API . '/v1/endpoints/class.Rest.Follow.Controller.php';
+require_once THEME_API . '/v1/endpoints/class.Rest.Message.Controller.php';

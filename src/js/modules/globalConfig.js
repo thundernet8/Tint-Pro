@@ -28,7 +28,8 @@ var routes = {
     myFollower: Utils.getAPIUrl('/users/me/followers'),
     myFollowing: Utils.getAPIUrl('/users/me/following'),
     follower: Utils.getAPIUrl('/users/{{uid}}/followers'),
-    following: Utils.getAPIUrl('/users/{{uid}}/following')
+    following: Utils.getAPIUrl('/users/{{uid}}/following'),
+    pm: Utils.getAPIUrl('/messages'),
 };
 
 // 特殊类名

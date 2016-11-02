@@ -92,9 +92,8 @@
     </div>
 </footer>
 <?php load_mod('mod.FixedControls'); ?>
-<!-- 搜索模态框 -->
 <?php load_mod('mod.ModalSearch'); ?>
-<!-- 登录弹窗 -->
+<?php load_mod('mod.ModalPmBox'); ?>
 <?php if(!is_user_logged_in()) load_mod('mod.ModalLoginForm'); ?>
 <!-- 页脚自定义代码 -->
 <?php if(tt_get_option('tt_foot_code')) { echo tt_get_option('tt_foot_code'); } ?>
