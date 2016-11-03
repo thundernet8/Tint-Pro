@@ -1,5 +1,5 @@
 /**
- * Generated on Wed Nov 02 2016 23:48:29 GMT+0800 (中国标准时间) by Zhiyan
+ * Generated on Thu Nov 03 2016 23:53:23 GMT+0800 (中国标准时间) by Zhiyan
  *
  * @package   Tint
  * @version   v2.0.0
@@ -19,7 +19,7 @@ webpackJsonp([
         (function (jQuery) {
             'use strict';
             var _loading = __webpack_require__(2);
-            var _msgbox = __webpack_require__(7);
+            var _msgbox = __webpack_require__(8);
             __webpack_require__(3);
             var _comments = __webpack_require__(18);
             var _comments2 = _interopRequireDefault(_comments);
@@ -30,10 +30,13 @@ webpackJsonp([
             var _animateAnchor = __webpack_require__(20);
             var _animateAnchor2 = _interopRequireDefault(_animateAnchor);
             __webpack_require__(21);
-            var _follow = __webpack_require__(17);
+            var _follow = __webpack_require__(22);
             var _follow2 = _interopRequireDefault(_follow);
-            var _pm = __webpack_require__(22);
+            var _pm = __webpack_require__(23);
             var _pm2 = _interopRequireDefault(_pm);
+            var _modalSignBox = __webpack_require__(6);
+            var _modalSignBox2 = _interopRequireDefault(_modalSignBox);
+            __webpack_require__(17);
             function _interopRequireDefault(obj) {
                 return obj && obj[['__esModule']] ? obj : { default: obj };
             }
@@ -47,6 +50,7 @@ webpackJsonp([
                 _scroll2[['default']][['initFloatWidget']]();
                 _follow2[['default']][['init']]();
                 _pm2[['default']][['initModalPm']]();
+                _modalSignBox2[['default']][['init']]();
                 $('.lightbox-gallery')[['each']](function () {
                     var item = $(this);
                     var img = item[['find']]('img');
@@ -1058,6 +1062,15 @@ webpackJsonp([
                 }
                 return base;
             };
+            var _addRedirectUrl = function _addRedirectUrl(base, redirect) {
+                if (!base) {
+                    base = _getSiteUrl();
+                }
+                if (/^(.*)\?(.*)$/[['test']](base)) {
+                    return base + '&redirect=' + encodeURIComponent(redirect);
+                }
+                return base + '?redirect=' + encodeURIComponent(redirect);
+            };
             var _isPhoneNum = function _isPhoneNum(str) {
                 var reg = /^((13[0-9])|(147)|(15[^4,\D])|(17[0-9])|(18[0,0-9]))\d{8}$/;
                 if (typeof str === 'string')
@@ -1100,12 +1113,14 @@ webpackJsonp([
                     return true;
                 }
                 _modalSignBox2[['default']][['show']]();
+                return false;
             };
             var Utils = {
                 getUrlPara: _getUrlPara,
                 getSiteUrl: _getSiteUrl,
                 getAbsUrl: _getAbsUrl,
                 getAPIUrl: _getAPIUrl,
+                addRedirectUrl: _addRedirectUrl,
                 isPhoneNum: _isPhoneNum,
                 isEmail: _isEmail,
                 isUrl: _isUrl,
@@ -1120,23 +1135,201 @@ webpackJsonp([
     function (module, exports) {
         module[['exports']] = TT;
     },
-    function (module, exports) {
+    function (module, exports, __webpack_require__) {
+        (function ($) {
+            'use strict';
+            Object[['defineProperty']](exports, '__esModule', { value: true });
+            var _utils = __webpack_require__(4);
+            var _utils2 = _interopRequireDefault(_utils);
+            var _globalConfig = __webpack_require__(7);
+            var _msgbox = __webpack_require__(8);
+            function _interopRequireDefault(obj) {
+                return obj && obj[['__esModule']] ? obj : { default: obj };
+            }
+            var _body = $('body');
+            var _modalSignBoxSel = '#modalSignBox';
+            var _modalSignBox = $('#modalSignBox');
+            var _userLoginInput = $('#user_login-input');
+            var _passwordInput = $('#password-input');
+            var _tipSel = '.tip';
+            var _submitBtnSel = _modalSignBoxSel + ' button.submit';
+            var _originSubmitBtnText = '';
+            var _spinner = '<i class="tico tico-spinner3 spinning"></i>';
+            var _submitting = false;
+            var _validate = function _validate(input) {
+                if (!input) {
+                    var userLoginValidated = _validateUserLogin();
+                    var passwordValidated = _validatePassword();
+                    return userLoginValidated && passwordValidated;
+                } else if (input[['attr']]('name') === 'user_login') {
+                    return _validateUserLogin();
+                } else if (input[['attr']]('name') === 'password') {
+                    return _validatePassword();
+                }
+                return false;
+            };
+            var _validateUserLogin = function _validateUserLogin() {
+                if (_userLoginInput[['val']]() === '') {
+                    _showError(_userLoginInput, '\u8bf7\u8f93\u5165\u8d26\u53f7');
+                    return false;
+                } else if (!_utils2[['default']][['isValidUserName']](_userLoginInput[['val']]()) && !_utils2[['default']][['isEmail']](_userLoginInput[['val']]())) {
+                    _showError(_userLoginInput, '\u90ae\u7bb1\u6216\u5b57\u6bcd\u5f00\u5934\u7528\u6237\u540d');
+                    return false;
+                } else if (_userLoginInput[['val']]()[['length']] < 5) {
+                    _showError(_userLoginInput, '\u8d26\u6237\u957f\u5ea6\u81f3\u5c11\u4e3a5');
+                    return false;
+                }
+                _removeError(_userLoginInput);
+                return true;
+            };
+            var _validatePassword = function _validatePassword() {
+                if (_passwordInput[['val']]() === '') {
+                    _showError(_passwordInput, '\u8bf7\u8f93\u5165\u5bc6\u7801');
+                    return false;
+                } else if (_passwordInput[['val']]()[['length']] < 6) {
+                    _showError(_passwordInput, '\u5bc6\u7801\u957f\u5ea6\u81f3\u5c11\u4e3a6');
+                    return false;
+                }
+                _removeError(_passwordInput);
+                return true;
+            };
+            var _showError = function _showError(input, msg) {
+                var inputName = input[['attr']]('name');
+                switch (inputName) {
+                case 'user_login':
+                    _removeError(_userLoginInput);
+                    break;
+                case 'password':
+                    _removeError(_passwordInput);
+                    break;
+                }
+                input[['next']](_tipSel)[['text']](msg)[['show']]();
+            };
+            var _removeError = function _removeError(input) {
+                input[['next']](_tipSel)[['hide']]()[['text']]('');
+            };
+            var _post = function _post(submitBtn) {
+                var url = _globalConfig[['Routes']][['signIn']];
+                var beforeSend = function beforeSend() {
+                    _modalSignBox[['addClass']]('submitting');
+                    _userLoginInput[['prop']]('disabled', true);
+                    _passwordInput[['prop']]('disabled', true);
+                    _originSubmitBtnText = submitBtn[['text']]();
+                    submitBtn[['prop']]('disabled', true)[['html']](_spinner);
+                    _submitting = true;
+                };
+                var finishRequest = function finishRequest() {
+                    _modalSignBox[['removeClass']]('submitting');
+                    _userLoginInput[['prop']]('disabled', false);
+                    _passwordInput[['prop']]('disabled', false);
+                    submitBtn[['text']](_originSubmitBtnText)[['prop']]('disabled', false);
+                    _submitting = false;
+                };
+                var success = function success(data, textStatus, xhr) {
+                    if (data[['success']] && data[['success']] == 1) {
+                        var redirect = _utils2[['default']][['getUrlPara']]('redirect') ? _utils2[['default']][['getAbsUrl']](decodeURIComponent(_utils2[['default']][['getUrlPara']]('redirect'))) : '';
+                        _msgbox[['popMsgbox']][['success']]({
+                            title: '\u767b\u5f55\u6210\u529f',
+                            text: redirect ? '\u5c06\u5728 2s \u5185\u8df3\u8f6c\u81f3 ' + redirect : '\u5c06\u5728 2s \u5185\u5237\u65b0\u9875\u9762',
+                            timer: 2000,
+                            showConfirmButton: false
+                        });
+                        setTimeout(function () {
+                            window[['location']][['href']] = redirect ? redirect : location[['href']];
+                        }, 2000);
+                    } else {
+                        _msgbox[['popMsgbox']][['error']]({
+                            title: '\u767b\u5f55\u9519\u8bef',
+                            text: data[['message']]
+                        });
+                        finishRequest();
+                    }
+                };
+                var error = function error(xhr, textStatus, err) {
+                    _msgbox[['popMsgbox']][['error']]({
+                        title: '\u8bf7\u6c42\u767b\u5f55\u5931\u8d25, \u8bf7\u91cd\u65b0\u5c1d\u8bd5',
+                        text: xhr[['responseJSON']] ? xhr[['responseJSON']][['message']] : xhr[['responseText']]
+                    });
+                    finishRequest();
+                };
+                $[['post']]({
+                    url: url,
+                    data: _utils2[['default']][['filterDataForRest']](_modalSignBox[['serialize']]()),
+                    dataType: 'json',
+                    beforeSend: beforeSend,
+                    success: success,
+                    error: error
+                });
+            };
+            var _showBox = function _showBox() {
+                if ($(window)[['width']]() < 640) {
+                    window[['location']][['href']] = _utils2[['default']][['addRedirectUrl']](_globalConfig[['Urls']][['signIn']], window[['location']][['href']]);
+                    return;
+                }
+                _modalSignBox[['modal']]('show');
+            };
+            var _hideBox = function _hideBox() {
+                _modalSignBox[['modal']]('hide');
+            };
+            var ModalSignBox = {
+                init: function init() {
+                    _body[['on']]('click', '.modal-backdrop', function () {
+                        _hideBox();
+                    });
+                    _userLoginInput[['on']]('input', function () {
+                        _validate($(this));
+                    });
+                    _passwordInput[['on']]('input', function () {
+                        _validate($(this));
+                    });
+                    _body[['on']]('click', _submitBtnSel, function () {
+                        _post($(this));
+                    });
+                },
+                show: function show() {
+                    _showBox();
+                },
+                hide: function hide() {
+                    _hideBox();
+                }
+            };
+            exports[['default']] = ModalSignBox;
+        }[['call']](exports, __webpack_require__(1)));
+    },
+    function (module, exports, __webpack_require__) {
         'use strict';
         Object[['defineProperty']](exports, '__esModule', { value: true });
-        var modalSignBox = {
-            show: function show() {
-                alert('need login');
-            },
-            hide: function hide() {
-            }
+        exports[['Classes']] = exports[['Urls']] = exports[['Routes']] = undefined;
+        var _utils = __webpack_require__(4);
+        var _utils2 = _interopRequireDefault(_utils);
+        function _interopRequireDefault(obj) {
+            return obj && obj[['__esModule']] ? obj : { default: obj };
+        }
+        var routes = {
+            signIn: _utils2[['default']][['getAPIUrl']]('/session'),
+            session: _utils2[['default']][['getAPIUrl']]('/session'),
+            signUp: _utils2[['default']][['getAPIUrl']]('/users'),
+            users: _utils2[['default']][['getAPIUrl']]('/users'),
+            comments: _utils2[['default']][['getAPIUrl']]('/comments'),
+            commentStars: _utils2[['default']][['getAPIUrl']]('/comment/stars'),
+            postStars: _utils2[['default']][['getAPIUrl']]('/post/stars'),
+            myFollower: _utils2[['default']][['getAPIUrl']]('/users/me/followers'),
+            myFollowing: _utils2[['default']][['getAPIUrl']]('/users/me/following'),
+            follower: _utils2[['default']][['getAPIUrl']]('/users/{{uid}}/followers'),
+            following: _utils2[['default']][['getAPIUrl']]('/users/{{uid}}/following'),
+            pm: _utils2[['default']][['getAPIUrl']]('/messages')
         };
-        exports[['default']] = modalSignBox;
+        var urls = { signIn: _utils2[['default']][['getSiteUrl']]() + '/m/signin' };
+        var classes = { appLoading: 'is-loadingApp' };
+        exports[['Routes']] = routes;
+        exports[['Urls']] = urls;
+        exports[['Classes']] = classes;
     },
     function (module, exports, __webpack_require__) {
         (function (jQuery, $) {
             'use strict';
             Object[['defineProperty']](exports, '__esModule', { value: true });
-            var swal = __webpack_require__(8);
+            var swal = __webpack_require__(9);
             var app = window[['App']] || (window[['App']] = {});
             var popMsgbox = app[['PopMsgbox']] || (app[['PopMsgbox']] = {});
             var popMsgbox = {};
@@ -1228,9 +1421,9 @@ webpackJsonp([
         }[['call']](exports, __webpack_require__(1), __webpack_require__(1)));
     },
     function (module, exports, __webpack_require__) {
+        var require;
+        var require;
         var __WEBPACK_AMD_DEFINE_RESULT__;
-        var require;
-        var require;
         'use strict';
         var _typeof = typeof Symbol === 'function' && typeof Symbol[['iterator']] === 'symbol' ? function (obj) {
             return typeof obj;
@@ -2168,33 +2361,6 @@ webpackJsonp([
         }(window, document));
     },
     ,
-    function (module, exports, __webpack_require__) {
-        'use strict';
-        Object[['defineProperty']](exports, '__esModule', { value: true });
-        exports[['Classes']] = exports[['Routes']] = undefined;
-        var _utils = __webpack_require__(4);
-        var _utils2 = _interopRequireDefault(_utils);
-        function _interopRequireDefault(obj) {
-            return obj && obj[['__esModule']] ? obj : { default: obj };
-        }
-        var routes = {
-            signIn: _utils2[['default']][['getAPIUrl']]('/session'),
-            session: _utils2[['default']][['getAPIUrl']]('/session'),
-            signUp: _utils2[['default']][['getAPIUrl']]('/users'),
-            users: _utils2[['default']][['getAPIUrl']]('/users'),
-            comments: _utils2[['default']][['getAPIUrl']]('/comments'),
-            commentStars: _utils2[['default']][['getAPIUrl']]('/comment/stars'),
-            postStars: _utils2[['default']][['getAPIUrl']]('/post/stars'),
-            myFollower: _utils2[['default']][['getAPIUrl']]('/users/me/followers'),
-            myFollowing: _utils2[['default']][['getAPIUrl']]('/users/me/following'),
-            follower: _utils2[['default']][['getAPIUrl']]('/users/{{uid}}/followers'),
-            following: _utils2[['default']][['getAPIUrl']]('/users/{{uid}}/following'),
-            pm: _utils2[['default']][['getAPIUrl']]('/messages')
-        };
-        var classes = { appLoading: 'is-loadingApp' };
-        exports[['Routes']] = routes;
-        exports[['Classes']] = classes;
-    },
     ,
     ,
     ,
@@ -2321,126 +2487,181 @@ webpackJsonp([
     ,
     ,
     function (module, exports, __webpack_require__) {
-        (function ($) {
+        (function (jQuery) {
             'use strict';
-            Object[['defineProperty']](exports, '__esModule', { value: true });
-            var _utils = __webpack_require__(4);
-            var _utils2 = _interopRequireDefault(_utils);
-            var _globalConfig = __webpack_require__(10);
-            var _msgbox = __webpack_require__(7);
-            function _interopRequireDefault(obj) {
-                return obj && obj[['__esModule']] ? obj : { default: obj };
-            }
-            var _btnSel = '.follow-btn';
-            var _followAct = 'follow';
-            var _unfollowAct = 'unfollow';
-            var _spinnerClass = 'tico tico-spinner2 spinning';
-            var _unfollowedIconClass = 'tico tico-user-plus';
-            var _unfollowedText = '\u5173\u6ce8';
-            var _followedIconClass = 'tico tico-user-check';
-            var _followedText = '\u5df2\u5173\u6ce8';
-            var _followEachIconClass = 'tico tico-exchange';
-            var _followEachText = '\u4e92\u76f8\u5173\u6ce8';
-            var _originIconClass = '';
-            var _body = $('body');
-            var _followActing = false;
-            var _markFollowed = function _markFollowed(btn) {
-                var followEach = arguments[['length']] <= 1 || arguments[1] === undefined ? false : arguments[1];
-                btn[['removeClass']]('unfollowed')[['addClass']]('followed')[['data']]('act', _unfollowAct)[['attr']]('title', '');
-                var icon = btn[['children']]('i');
-                if (followEach) {
-                    icon[['attr']]('class', _followEachIconClass);
-                    btn[['children']]('span')[['text']](_followEachText);
-                } else {
-                    icon[['attr']]('class', _followedIconClass);
-                    btn[['children']]('span')[['text']](_followedText);
-                }
-            };
-            var _markUnfollowed = function _markUnfollowed(btn) {
-                btn[['removeClass']]('followed')[['addClass']]('unfollowed')[['data']]('act', _followAct)[['attr']]('title', '');
-                var icon = btn[['children']]('i');
-                icon[['attr']]('class', _unfollowedIconClass);
-                btn[['children']]('span')[['text']](_unfollowedText);
-            };
-            var _restoreIcon = function _restoreIcon(btn) {
-                btn[['children']]('i')[['attr']]('class', _originIconClass);
-            };
-            var _doFollow = function _doFollow(btn) {
-                if (_followActing || !btn[['data']]('uid') || !_utils2[['default']][['checkLogin']]())
-                    return false;
-                var followedUid = parseInt(btn[['data']]('uid'));
-                var action = btn[['data']]('act') == _unfollowAct ? _unfollowAct : _followAct;
-                var url = _globalConfig[['Routes']][['follower']][['replace']]('{{uid}}', followedUid);
-                var data = { action: action };
-                var beforeSend = function beforeSend() {
-                    if (_followActing)
-                        return false;
-                    _followActing = true;
-                    var icon = btn[['children']]('i');
-                    _originIconClass = icon[['attr']]('class');
-                    icon[['attr']]('class', _spinnerClass);
-                };
-                var finishRequest = function finishRequest() {
-                    if (!_followActing)
-                        return;
-                    _followActing = false;
-                };
-                var success = function success(data, textStatus, xhr) {
-                    if (data[['success']] && data[['success']] == 1) {
-                        if (action == _unfollowAct) {
-                            _markUnfollowed(btn);
-                        } else {
-                            _markFollowed(btn, data[['hasOwnProperty']]('followEach') && data['followEach']);
-                        }
-                        _msgbox[['popMsgbox']][['success']]({
-                            title: data[['message']],
-                            timer: 2000,
-                            showConfirmButton: true
+            (function ($, window, document, undefined) {
+                var $window = $(window);
+                $[['fn']][['lazyload']] = function (options) {
+                    var elements = this;
+                    var $container;
+                    var settings = {
+                        threshold: 0,
+                        failure_limit: 0,
+                        event: 'scroll',
+                        effect: 'show',
+                        container: window,
+                        data_attribute: 'original',
+                        skip_invisible: true,
+                        appear: null,
+                        load: null
+                    };
+                    function update() {
+                        var counter = 0;
+                        elements[['each']](function () {
+                            var $this = $(this);
+                            if (settings[['skip_invisible']] && !$this[['is']](':visible')) {
+                                return;
+                            }
+                            if ($[['abovethetop']](this, settings) || $[['leftofbegin']](this, settings)) {
+                            } else if (!$[['belowthefold']](this, settings) && !$[['rightoffold']](this, settings)) {
+                                $this[['trigger']]('appear');
+                                counter = 0;
+                            } else {
+                                if (++counter > settings[['failure_limit']]) {
+                                    return false;
+                                }
+                            }
                         });
-                    } else {
-                        _msgbox[['popMsgbox']][['error']]({
-                            title: data[['message']],
-                            timer: 2000,
-                            showConfirmButton: true
-                        });
-                        _restoreIcon(btn);
                     }
-                    finishRequest();
-                };
-                var error = function error(xhr, textStatus, err) {
-                    _msgbox[['popMsgbox']][['error']]({
-                        title: xhr[['responseJSON']] ? xhr[['responseJSON']][['message']] : xhr[['responseText']],
-                        timer: 2000,
-                        showConfirmButton: true
+                    if (options) {
+                        if (undefined !== options[['failurelimit']]) {
+                            options[['failure_limit']] = options[['failurelimit']];
+                            delete options[['failurelimit']];
+                        }
+                        if (undefined !== options[['effectspeed']]) {
+                            options[['effect_speed']] = options[['effectspeed']];
+                            delete options[['effectspeed']];
+                        }
+                        $[['extend']](settings, options);
+                    }
+                    $container = settings[['container']] === undefined || settings[['container']] === window ? $window : $(settings[['container']]);
+                    if (0 === settings[['event']][['indexOf']]('scroll')) {
+                        $container[['bind']](settings[['event']], function (event) {
+                            return update();
+                        });
+                    }
+                    this[['each']](function () {
+                        var self = this;
+                        var $self = $(self);
+                        self[['loaded']] = false;
+                        $self[['one']]('appear', function () {
+                            if (!this[['loaded']]) {
+                                if (settings[['appear']]) {
+                                    var elements_left = elements[['length']];
+                                    settings[['appear']][['call']](self, elements_left, settings);
+                                }
+                                $('<img />')[['bind']]('load', function () {
+                                    $self[['hide']]()[['attr']]('src', $self[['data']](settings[['data_attribute']]))[settings[['effect']]](settings[['effect_speed']]);
+                                    self[['loaded']] = true;
+                                    var temp = $[['grep']](elements, function (element) {
+                                        return !element[['loaded']];
+                                    });
+                                    elements = $(temp);
+                                    if (settings[['load']]) {
+                                        var elements_left = elements[['length']];
+                                        settings[['load']][['call']](self, elements_left, settings);
+                                    }
+                                })[['attr']]('src', $self[['data']](settings[['data_attribute']]));
+                            }
+                        });
+                        if (0 !== settings[['event']][['indexOf']]('scroll')) {
+                            $self[['bind']](settings[['event']], function (event) {
+                                if (!self[['loaded']]) {
+                                    $self[['trigger']]('appear');
+                                }
+                            });
+                        }
                     });
-                    _restoreIcon(btn);
-                    finishRequest();
+                    $window[['bind']]('resize', function (event) {
+                        update();
+                    });
+                    if (/iphone|ipod|ipad.*os 5/gi[['test']](navigator[['appVersion']])) {
+                        $window[['bind']]('pageshow', function (event) {
+                            if (event[['originalEvent']][['persisted']]) {
+                                elements[['each']](function () {
+                                    $(this)[['trigger']]('appear');
+                                });
+                            }
+                        });
+                    }
+                    $(window)[['load']](function () {
+                        update();
+                    });
+                    return this;
                 };
-                $[['post']]({
-                    url: url,
-                    data: _utils2[['default']][['filterDataForRest']](data),
-                    dataType: 'json',
-                    beforeSend: beforeSend,
-                    success: success,
-                    error: error
+                $[['belowthefold']] = function (element, settings) {
+                    var fold;
+                    if (settings[['container']] === undefined || settings[['container']] === window) {
+                        fold = $window[['height']]() + $window[['scrollTop']]();
+                    } else {
+                        fold = $(settings[['container']])[['offset']]()[['top']] + $(settings[['container']])[['height']]();
+                    }
+                    return fold <= $(element)[['offset']]()[['top']] - settings[['threshold']];
+                };
+                $[['rightoffold']] = function (element, settings) {
+                    var fold;
+                    if (settings[['container']] === undefined || settings[['container']] === window) {
+                        fold = $window[['width']]() + $window[['scrollLeft']]();
+                    } else {
+                        fold = $(settings[['container']])[['offset']]()[['left']] + $(settings[['container']])[['width']]();
+                    }
+                    return fold <= $(element)[['offset']]()[['left']] - settings[['threshold']];
+                };
+                $[['abovethetop']] = function (element, settings) {
+                    var fold;
+                    if (settings[['container']] === undefined || settings[['container']] === window) {
+                        fold = $window[['scrollTop']]();
+                    } else {
+                        fold = $(settings[['container']])[['offset']]()[['top']];
+                    }
+                    return fold >= $(element)[['offset']]()[['top']] + settings[['threshold']] + $(element)[['height']]();
+                };
+                $[['leftofbegin']] = function (element, settings) {
+                    var fold;
+                    if (settings[['container']] === undefined || settings[['container']] === window) {
+                        fold = $window[['scrollLeft']]();
+                    } else {
+                        fold = $(settings[['container']])[['offset']]()[['left']];
+                    }
+                    return fold >= $(element)[['offset']]()[['left']] + settings[['threshold']] + $(element)[['width']]();
+                };
+                $[['inviewport']] = function (element, settings) {
+                    return !$[['rightoffold']](element, settings) && !$[['leftofbegin']](element, settings) && !$[['belowthefold']](element, settings) && !$[['abovethetop']](element, settings);
+                };
+                $[['extend']]($[['expr']][':'], {
+                    'below-the-fold': function belowTheFold(a) {
+                        return $[['belowthefold']](a, { threshold: 0 });
+                    },
+                    'above-the-top': function aboveTheTop(a) {
+                        return !$[['belowthefold']](a, { threshold: 0 });
+                    },
+                    'right-of-screen': function rightOfScreen(a) {
+                        return $[['rightoffold']](a, { threshold: 0 });
+                    },
+                    'left-of-screen': function leftOfScreen(a) {
+                        return !$[['rightoffold']](a, { threshold: 0 });
+                    },
+                    'in-viewport': function inViewport(a) {
+                        return $[['inviewport']](a, { threshold: 0 });
+                    },
+                    'above-the-fold': function aboveTheFold(a) {
+                        return !$[['belowthefold']](a, { threshold: 0 });
+                    },
+                    'right-of-fold': function rightOfFold(a) {
+                        return $[['rightoffold']](a, { threshold: 0 });
+                    },
+                    'left-of-fold': function leftOfFold(a) {
+                        return !$[['rightoffold']](a, { threshold: 0 });
+                    }
                 });
-            };
-            var FollowKit = {
-                init: function init() {
-                    _body[['on']]('click', _btnSel, function () {
-                        var $this = $(this);
-                        _doFollow($this);
-                    });
-                }
-            };
-            exports[['default']] = FollowKit;
+            }(jQuery, window, document));
         }[['call']](exports, __webpack_require__(1)));
     },
     function (module, exports, __webpack_require__) {
         (function ($, TT) {
             'use strict';
             Object[['defineProperty']](exports, '__esModule', { value: true });
-            var _globalConfig = __webpack_require__(10);
+            var _globalConfig = __webpack_require__(7);
             var _utils = __webpack_require__(4);
             var _utils2 = _interopRequireDefault(_utils);
             function _interopRequireDefault(obj) {
@@ -2776,7 +2997,7 @@ webpackJsonp([
         (function ($) {
             'use strict';
             Object[['defineProperty']](exports, '__esModule', { value: true });
-            var _globalConfig = __webpack_require__(10);
+            var _globalConfig = __webpack_require__(7);
             var _utils = __webpack_require__(4);
             var _utils2 = _interopRequireDefault(_utils);
             function _interopRequireDefault(obj) {
@@ -3192,8 +3413,124 @@ webpackJsonp([
             Object[['defineProperty']](exports, '__esModule', { value: true });
             var _utils = __webpack_require__(4);
             var _utils2 = _interopRequireDefault(_utils);
-            var _globalConfig = __webpack_require__(10);
-            var _msgbox = __webpack_require__(7);
+            var _globalConfig = __webpack_require__(7);
+            var _msgbox = __webpack_require__(8);
+            function _interopRequireDefault(obj) {
+                return obj && obj[['__esModule']] ? obj : { default: obj };
+            }
+            var _btnSel = '.follow-btn';
+            var _followAct = 'follow';
+            var _unfollowAct = 'unfollow';
+            var _spinnerClass = 'tico tico-spinner2 spinning';
+            var _unfollowedIconClass = 'tico tico-user-plus';
+            var _unfollowedText = '\u5173\u6ce8';
+            var _followedIconClass = 'tico tico-user-check';
+            var _followedText = '\u5df2\u5173\u6ce8';
+            var _followEachIconClass = 'tico tico-exchange';
+            var _followEachText = '\u4e92\u76f8\u5173\u6ce8';
+            var _originIconClass = '';
+            var _body = $('body');
+            var _followActing = false;
+            var _markFollowed = function _markFollowed(btn) {
+                var followEach = arguments[['length']] <= 1 || arguments[1] === undefined ? false : arguments[1];
+                btn[['removeClass']]('unfollowed')[['addClass']]('followed')[['data']]('act', _unfollowAct)[['attr']]('title', '');
+                var icon = btn[['children']]('i');
+                if (followEach) {
+                    icon[['attr']]('class', _followEachIconClass);
+                    btn[['children']]('span')[['text']](_followEachText);
+                } else {
+                    icon[['attr']]('class', _followedIconClass);
+                    btn[['children']]('span')[['text']](_followedText);
+                }
+            };
+            var _markUnfollowed = function _markUnfollowed(btn) {
+                btn[['removeClass']]('followed')[['addClass']]('unfollowed')[['data']]('act', _followAct)[['attr']]('title', '');
+                var icon = btn[['children']]('i');
+                icon[['attr']]('class', _unfollowedIconClass);
+                btn[['children']]('span')[['text']](_unfollowedText);
+            };
+            var _restoreIcon = function _restoreIcon(btn) {
+                btn[['children']]('i')[['attr']]('class', _originIconClass);
+            };
+            var _doFollow = function _doFollow(btn) {
+                if (_followActing || !btn[['data']]('uid') || !_utils2[['default']][['checkLogin']]())
+                    return false;
+                var followedUid = parseInt(btn[['data']]('uid'));
+                var action = btn[['data']]('act') == _unfollowAct ? _unfollowAct : _followAct;
+                var url = _globalConfig[['Routes']][['follower']][['replace']]('{{uid}}', followedUid);
+                var data = { action: action };
+                var beforeSend = function beforeSend() {
+                    if (_followActing)
+                        return false;
+                    _followActing = true;
+                    var icon = btn[['children']]('i');
+                    _originIconClass = icon[['attr']]('class');
+                    icon[['attr']]('class', _spinnerClass);
+                };
+                var finishRequest = function finishRequest() {
+                    if (!_followActing)
+                        return;
+                    _followActing = false;
+                };
+                var success = function success(data, textStatus, xhr) {
+                    if (data[['success']] && data[['success']] == 1) {
+                        if (action == _unfollowAct) {
+                            _markUnfollowed(btn);
+                        } else {
+                            _markFollowed(btn, data[['hasOwnProperty']]('followEach') && data['followEach']);
+                        }
+                        _msgbox[['popMsgbox']][['success']]({
+                            title: data[['message']],
+                            timer: 2000,
+                            showConfirmButton: true
+                        });
+                    } else {
+                        _msgbox[['popMsgbox']][['error']]({
+                            title: data[['message']],
+                            timer: 2000,
+                            showConfirmButton: true
+                        });
+                        _restoreIcon(btn);
+                    }
+                    finishRequest();
+                };
+                var error = function error(xhr, textStatus, err) {
+                    _msgbox[['popMsgbox']][['error']]({
+                        title: xhr[['responseJSON']] ? xhr[['responseJSON']][['message']] : xhr[['responseText']],
+                        timer: 2000,
+                        showConfirmButton: true
+                    });
+                    _restoreIcon(btn);
+                    finishRequest();
+                };
+                $[['post']]({
+                    url: url,
+                    data: _utils2[['default']][['filterDataForRest']](data),
+                    dataType: 'json',
+                    beforeSend: beforeSend,
+                    success: success,
+                    error: error
+                });
+            };
+            var FollowKit = {
+                init: function init() {
+                    _body[['on']]('click', _btnSel, function () {
+                        var $this = $(this);
+                        _doFollow($this);
+                    });
+                }
+            };
+            exports[['default']] = FollowKit;
+        }[['call']](exports, __webpack_require__(1)));
+    },
+    function (module, exports, __webpack_require__) {
+        (function ($) {
+            'use strict';
+            Object[['defineProperty']](exports, '__esModule', { value: true });
+            var _utils = __webpack_require__(4);
+            var _utils2 = _interopRequireDefault(_utils);
+            var _globalConfig = __webpack_require__(7);
+            var _msgbox = __webpack_require__(8);
             function _interopRequireDefault(obj) {
                 return obj && obj[['__esModule']] ? obj : { default: obj };
             }
@@ -3217,6 +3554,8 @@ webpackJsonp([
             var _pmTextArea;
             var _sending = false;
             var _showModalPmBox = function _showModalPmBox(btn) {
+                if (!_utils2[['default']][['checkLogin']]())
+                    return false;
                 var receiver = btn[['data']]('receiver');
                 var receiverId = btn[['data']]('receiver-id');
                 if (!receiver || !receiverId)

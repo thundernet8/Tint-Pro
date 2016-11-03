@@ -49,6 +49,8 @@ var _sending = false;
 
 // 打开模态消息框
 var _showModalPmBox = function (btn) {
+    if(!Utils.checkLogin()) return false;
+    
     var receiver = btn.data('receiver');
     var receiverId = btn.data('receiver-id');
     if(!receiver || !receiverId) return false;

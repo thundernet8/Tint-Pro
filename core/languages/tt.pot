@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-11-02 23:49+0800\n"
+"POT-Creation-Date: 2016-11-03 21:17+0800\n"
 "PO-Revision-Date: 2016-08-17 21:40+0800\n"
 "Last-Translator: \n"
 "Language-Team: Zhiyan <mail@webapproach.net>\n"
@@ -1369,7 +1369,8 @@ msgstr ""
 msgid "Weekly"
 msgstr ""
 
-#: core/functions/func.Seo.php:28 core/templates/actions/tpl.M.Signup.php:90
+#: core/functions/func.Seo.php:28 core/modules/mod.ModalLoginForm.php:17
+#: core/templates/actions/tpl.M.Signup.php:90
 msgid "Sign In"
 msgstr ""
 
@@ -1541,12 +1542,12 @@ msgstr ""
 msgid "Popular"
 msgstr ""
 
-#: core/modules/mod.ModalLoginForm.php:22
+#: core/modules/mod.ModalLoginForm.php:23
 #: core/templates/actions/tpl.M.Signin.php:49
 msgid "Email/Username"
 msgstr ""
 
-#: core/modules/mod.ModalLoginForm.php:25
+#: core/modules/mod.ModalLoginForm.php:26
 #: core/templates/actions/tpl.M.Resetpass.php:38
 #: core/templates/actions/tpl.M.Resetpass.php:39
 #: core/templates/actions/tpl.M.Resetpass.php:41
@@ -1555,7 +1556,7 @@ msgstr ""
 msgid "Password"
 msgstr ""
 
-#: core/modules/mod.ModalLoginForm.php:30 core/modules/mod.ReplyForm.php:32
+#: core/modules/mod.ModalLoginForm.php:29 core/modules/mod.ReplyForm.php:32
 #: core/modules/mod.ReplyForm.php:129
 #: core/templates/actions/tpl.M.Findpass.php:38
 #: core/templates/actions/tpl.M.Resetpass.php:47
@@ -1563,38 +1564,18 @@ msgstr ""
 msgid "Submit"
 msgstr ""
 
-#: core/modules/mod.ModalLoginForm.php:42
-#: core/templates/actions/tpl.M.Signin.php:70
-#: core/templates/actions/tpl.M.Signup.php:67
-msgid "Quick SignIn"
-msgstr ""
-
-#: core/modules/mod.ModalLoginForm.php:46
-#: core/templates/actions/tpl.M.Signin.php:74
-#: core/templates/actions/tpl.M.Signup.php:71
-msgid "Signin with Sina weibo"
-msgstr ""
-
-#: core/modules/mod.ModalLoginForm.php:52
-#: core/templates/actions/tpl.M.Signin.php:80
-#: core/templates/actions/tpl.M.Signup.php:77
-msgid "Signin with QQ"
-msgstr ""
-
-#: core/modules/mod.ModalLoginForm.php:58
-#: core/templates/actions/tpl.M.Signin.php:86
-#: core/templates/actions/tpl.M.Signup.php:83
-msgid "Signin with Wechat"
-msgstr ""
-
-#: core/modules/mod.ModalLoginForm.php:65
+#: core/modules/mod.ModalLoginForm.php:31
 #: core/templates/actions/tpl.M.Signin.php:93
 msgid "Register Now"
 msgstr ""
 
-#: core/modules/mod.ModalLoginForm.php:67
+#: core/modules/mod.ModalLoginForm.php:33
 #: core/templates/actions/tpl.M.Signin.php:95
 msgid "Forgot your password?"
+msgstr ""
+
+#: core/modules/mod.ModalLoginForm.php:45
+msgid "SignIn with Social Account"
 msgstr ""
 
 #: core/modules/mod.ModalPmBox.php:18
@@ -1946,6 +1927,26 @@ msgstr ""
 
 #: core/templates/actions/tpl.M.Resetpass.php:44
 msgid "Remember me"
+msgstr ""
+
+#: core/templates/actions/tpl.M.Signin.php:70
+#: core/templates/actions/tpl.M.Signup.php:67
+msgid "Quick SignIn"
+msgstr ""
+
+#: core/templates/actions/tpl.M.Signin.php:74
+#: core/templates/actions/tpl.M.Signup.php:71
+msgid "Signin with Sina weibo"
+msgstr ""
+
+#: core/templates/actions/tpl.M.Signin.php:80
+#: core/templates/actions/tpl.M.Signup.php:77
+msgid "Signin with QQ"
+msgstr ""
+
+#: core/templates/actions/tpl.M.Signin.php:86
+#: core/templates/actions/tpl.M.Signup.php:83
+msgid "Signin with Wechat"
 msgstr ""
 
 #: core/templates/actions/tpl.M.Signin.php:109

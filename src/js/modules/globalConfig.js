@@ -32,9 +32,14 @@ var routes = {
     pm: Utils.getAPIUrl('/messages'),
 };
 
+// URL列表
+var urls = {
+    signIn: Utils.getSiteUrl() + '/m/signin'
+};
+
 // 特殊类名
 var classes = {
    appLoading: 'is-loadingApp'
 };
 
-export {routes as Routes, classes as Classes};
+export {routes as Routes, urls as Urls, classes as Classes};

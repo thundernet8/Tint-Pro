@@ -13,7 +13,7 @@
 
 'use strict';
 
-import modalSignBox from './modalSignBox';
+import ModalSignBox from './modalSignBox';
 
 // 获取 url 中的 get 参数
 var _getUrlPara = function (name ,url) {
@@ -56,6 +56,17 @@ var _getAPIUrl = function (endpoint) {
     return base + endpoint;
   }
   return base;
+};
+
+// 添加重定向链接参数
+var _addRedirectUrl = function (base, redirect) {
+    if(!base){
+        base = _getSiteUrl();
+    }
+    if(/^(.*)\?(.*)$/.test(base)) {
+        return base + '&redirect=' + encodeURIComponent(redirect);
+    }
+    return base + '?redirect=' + encodeURIComponent(redirect);
 };
 
 // 手机号码验证
@@ -116,7 +127,8 @@ var _checkLogin = function () {
     if(TT&&TT.uid&&parseInt(TT.uid)>0) {
         return true;
     }
-    modalSignBox.show();
+    ModalSignBox.show();
+    return false;
 };
 
 
@@ -125,6 +137,7 @@ var Utils = {
     getSiteUrl: _getSiteUrl,
     getAbsUrl: _getAbsUrl,
     getAPIUrl: _getAPIUrl,
+    addRedirectUrl: _addRedirectUrl,
     isPhoneNum: _isPhoneNum,
     isEmail: _isEmail,
     isUrl: _isUrl,

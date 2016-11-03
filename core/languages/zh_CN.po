@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-11-02 23:49+0800\n"
-"PO-Revision-Date: 2016-11-02 23:52+0800\n"
+"POT-Creation-Date: 2016-11-03 21:17+0800\n"
+"PO-Revision-Date: 2016-11-03 21:17+0800\n"
 "Last-Translator: Zhiyan <mail@webapproach.net>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -1340,7 +1340,8 @@ msgstr "无效的页面模板"
 msgid "Weekly"
 msgstr "每周的"
 
-#: core/functions/func.Seo.php:28 core/templates/actions/tpl.M.Signup.php:90
+#: core/functions/func.Seo.php:28 core/modules/mod.ModalLoginForm.php:17
+#: core/templates/actions/tpl.M.Signup.php:90
 msgid "Sign In"
 msgstr "登录"
 
@@ -1509,12 +1510,12 @@ msgstr "近期文章"
 msgid "Popular"
 msgstr "Popular"
 
-#: core/modules/mod.ModalLoginForm.php:22
+#: core/modules/mod.ModalLoginForm.php:23
 #: core/templates/actions/tpl.M.Signin.php:49
 msgid "Email/Username"
 msgstr "邮箱或用户名"
 
-#: core/modules/mod.ModalLoginForm.php:25
+#: core/modules/mod.ModalLoginForm.php:26
 #: core/templates/actions/tpl.M.Resetpass.php:38
 #: core/templates/actions/tpl.M.Resetpass.php:39
 #: core/templates/actions/tpl.M.Resetpass.php:41
@@ -1523,7 +1524,7 @@ msgstr "邮箱或用户名"
 msgid "Password"
 msgstr "密码"
 
-#: core/modules/mod.ModalLoginForm.php:30 core/modules/mod.ReplyForm.php:32
+#: core/modules/mod.ModalLoginForm.php:29 core/modules/mod.ReplyForm.php:32
 #: core/modules/mod.ReplyForm.php:129
 #: core/templates/actions/tpl.M.Findpass.php:38
 #: core/templates/actions/tpl.M.Resetpass.php:47
@@ -1531,39 +1532,19 @@ msgstr "密码"
 msgid "Submit"
 msgstr "提交"
 
-#: core/modules/mod.ModalLoginForm.php:42
-#: core/templates/actions/tpl.M.Signin.php:70
-#: core/templates/actions/tpl.M.Signup.php:67
-msgid "Quick SignIn"
-msgstr "快速登录"
-
-#: core/modules/mod.ModalLoginForm.php:46
-#: core/templates/actions/tpl.M.Signin.php:74
-#: core/templates/actions/tpl.M.Signup.php:71
-msgid "Signin with Sina weibo"
-msgstr "微博登录"
-
-#: core/modules/mod.ModalLoginForm.php:52
-#: core/templates/actions/tpl.M.Signin.php:80
-#: core/templates/actions/tpl.M.Signup.php:77
-msgid "Signin with QQ"
-msgstr "QQ登录"
-
-#: core/modules/mod.ModalLoginForm.php:58
-#: core/templates/actions/tpl.M.Signin.php:86
-#: core/templates/actions/tpl.M.Signup.php:83
-msgid "Signin with Wechat"
-msgstr "微信登录"
-
-#: core/modules/mod.ModalLoginForm.php:65
+#: core/modules/mod.ModalLoginForm.php:31
 #: core/templates/actions/tpl.M.Signin.php:93
 msgid "Register Now"
 msgstr "现在注册"
 
-#: core/modules/mod.ModalLoginForm.php:67
+#: core/modules/mod.ModalLoginForm.php:33
 #: core/templates/actions/tpl.M.Signin.php:95
 msgid "Forgot your password?"
 msgstr "忘记密码?"
+
+#: core/modules/mod.ModalLoginForm.php:45
+msgid "SignIn with Social Account"
+msgstr "使用社交账户登录"
 
 #: core/modules/mod.ModalPmBox.php:18
 msgid "Send Message"
@@ -1913,6 +1894,26 @@ msgstr "重复密码"
 #: core/templates/actions/tpl.M.Resetpass.php:44
 msgid "Remember me"
 msgstr "记住我"
+
+#: core/templates/actions/tpl.M.Signin.php:70
+#: core/templates/actions/tpl.M.Signup.php:67
+msgid "Quick SignIn"
+msgstr "快速登录"
+
+#: core/templates/actions/tpl.M.Signin.php:74
+#: core/templates/actions/tpl.M.Signup.php:71
+msgid "Signin with Sina weibo"
+msgstr "微博登录"
+
+#: core/templates/actions/tpl.M.Signin.php:80
+#: core/templates/actions/tpl.M.Signup.php:77
+msgid "Signin with QQ"
+msgstr "QQ登录"
+
+#: core/templates/actions/tpl.M.Signin.php:86
+#: core/templates/actions/tpl.M.Signup.php:83
+msgid "Signin with Wechat"
+msgstr "微信登录"
 
 #: core/templates/actions/tpl.M.Signin.php:109
 msgid ""
@@ -2933,9 +2934,6 @@ msgstr "http://www.webapproach.net/"
 
 #~ msgid "404 Error"
 #~ msgstr "404错误"
-
-#~ msgid "Sign in using your social account"
-#~ msgstr "使用社交账户登录"
 
 #~ msgid "One"
 #~ msgstr "一"

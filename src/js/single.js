@@ -23,6 +23,8 @@ import AnimateAnchor from './modules/animateAnchor';
 import {} from 'lightbox2';
 import FollowKit from './modules/follow';
 import Pmkit from './modules/pm';
+import ModalSignBox from './modules/modalSignBox';
+import {} from 'lazyload/jquery.lazyload';
 
 // DOM Ready
 jQuery(document).ready(function ($) {
@@ -52,6 +54,9 @@ jQuery(document).ready(function ($) {
     
     // 私信
     Pmkit.initModalPm();
+    
+    // 登录弹窗
+    ModalSignBox.init();
     
     //  Lightbox 获取图片的title属性
     $('.lightbox-gallery').each(function () {

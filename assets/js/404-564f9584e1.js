@@ -1,5 +1,5 @@
 /**
- * Generated on Wed Nov 02 2016 23:48:29 GMT+0800 (中国标准时间) by Zhiyan
+ * Generated on Thu Nov 03 2016 23:53:23 GMT+0800 (中国标准时间) by Zhiyan
  *
  * @package   Tint
  * @version   v2.0.0
@@ -12,27 +12,34 @@
 **/
  
 webpackJsonp([
-    2,
+    0,
     10
 ], [
     function (module, exports, __webpack_require__) {
         (function (jQuery) {
             'use strict';
             var _loading = __webpack_require__(2);
-            var _msgbox = __webpack_require__(7);
             __webpack_require__(3);
-            var _loadNextPage = __webpack_require__(13);
-            var _loadNextPage2 = _interopRequireDefault(_loadNextPage);
-            var _scroll = __webpack_require__(14);
-            var _scroll2 = _interopRequireDefault(_scroll);
+            var _utils = __webpack_require__(4);
+            var _utils2 = _interopRequireDefault(_utils);
             function _interopRequireDefault(obj) {
                 return obj && obj[['__esModule']] ? obj : { default: obj };
             }
             jQuery(document)[['ready']](function ($) {
                 (0, _loading[['handleLineLoading']])();
-                _msgbox[['popMsgbox']][['init']]();
-                _loadNextPage2[['default']][['init']]();
-                _scroll2[['default']][['initScrollTo']]();
+                var _redirectBtn = $('#linkBackHome');
+                var _numSpan = _redirectBtn[['children']]('span.num');
+                var _countNum = function _countNum(span) {
+                    var sec = parseInt(span[['text']]());
+                    if (sec - 1 <= 0) {
+                        clearInterval(_interval);
+                        _redirectBtn[['html']]('\u8df3\u8f6c\u4e2d...');
+                        window[['location']][['href']] = _utils2[['default']][['getSiteUrl']]();
+                    } else {
+                        span[['text']](sec - 1);
+                    }
+                };
+                var _interval = setInterval(_countNum[['bind']](this, _numSpan), 1000);
             });
         }[['call']](exports, __webpack_require__(1)));
     },
@@ -1036,6 +1043,15 @@ webpackJsonp([
                 }
                 return base;
             };
+            var _addRedirectUrl = function _addRedirectUrl(base, redirect) {
+                if (!base) {
+                    base = _getSiteUrl();
+                }
+                if (/^(.*)\?(.*)$/[['test']](base)) {
+                    return base + '&redirect=' + encodeURIComponent(redirect);
+                }
+                return base + '?redirect=' + encodeURIComponent(redirect);
+            };
             var _isPhoneNum = function _isPhoneNum(str) {
                 var reg = /^((13[0-9])|(147)|(15[^4,\D])|(17[0-9])|(18[0,0-9]))\d{8}$/;
                 if (typeof str === 'string')
@@ -1078,12 +1094,14 @@ webpackJsonp([
                     return true;
                 }
                 _modalSignBox2[['default']][['show']]();
+                return false;
             };
             var Utils = {
                 getUrlPara: _getUrlPara,
                 getSiteUrl: _getSiteUrl,
                 getAbsUrl: _getAbsUrl,
                 getAPIUrl: _getAPIUrl,
+                addRedirectUrl: _addRedirectUrl,
                 isPhoneNum: _isPhoneNum,
                 isEmail: _isEmail,
                 isUrl: _isUrl,
@@ -1098,23 +1116,201 @@ webpackJsonp([
     function (module, exports) {
         module[['exports']] = TT;
     },
-    function (module, exports) {
+    function (module, exports, __webpack_require__) {
+        (function ($) {
+            'use strict';
+            Object[['defineProperty']](exports, '__esModule', { value: true });
+            var _utils = __webpack_require__(4);
+            var _utils2 = _interopRequireDefault(_utils);
+            var _globalConfig = __webpack_require__(7);
+            var _msgbox = __webpack_require__(8);
+            function _interopRequireDefault(obj) {
+                return obj && obj[['__esModule']] ? obj : { default: obj };
+            }
+            var _body = $('body');
+            var _modalSignBoxSel = '#modalSignBox';
+            var _modalSignBox = $('#modalSignBox');
+            var _userLoginInput = $('#user_login-input');
+            var _passwordInput = $('#password-input');
+            var _tipSel = '.tip';
+            var _submitBtnSel = _modalSignBoxSel + ' button.submit';
+            var _originSubmitBtnText = '';
+            var _spinner = '<i class="tico tico-spinner3 spinning"></i>';
+            var _submitting = false;
+            var _validate = function _validate(input) {
+                if (!input) {
+                    var userLoginValidated = _validateUserLogin();
+                    var passwordValidated = _validatePassword();
+                    return userLoginValidated && passwordValidated;
+                } else if (input[['attr']]('name') === 'user_login') {
+                    return _validateUserLogin();
+                } else if (input[['attr']]('name') === 'password') {
+                    return _validatePassword();
+                }
+                return false;
+            };
+            var _validateUserLogin = function _validateUserLogin() {
+                if (_userLoginInput[['val']]() === '') {
+                    _showError(_userLoginInput, '\u8bf7\u8f93\u5165\u8d26\u53f7');
+                    return false;
+                } else if (!_utils2[['default']][['isValidUserName']](_userLoginInput[['val']]()) && !_utils2[['default']][['isEmail']](_userLoginInput[['val']]())) {
+                    _showError(_userLoginInput, '\u90ae\u7bb1\u6216\u5b57\u6bcd\u5f00\u5934\u7528\u6237\u540d');
+                    return false;
+                } else if (_userLoginInput[['val']]()[['length']] < 5) {
+                    _showError(_userLoginInput, '\u8d26\u6237\u957f\u5ea6\u81f3\u5c11\u4e3a5');
+                    return false;
+                }
+                _removeError(_userLoginInput);
+                return true;
+            };
+            var _validatePassword = function _validatePassword() {
+                if (_passwordInput[['val']]() === '') {
+                    _showError(_passwordInput, '\u8bf7\u8f93\u5165\u5bc6\u7801');
+                    return false;
+                } else if (_passwordInput[['val']]()[['length']] < 6) {
+                    _showError(_passwordInput, '\u5bc6\u7801\u957f\u5ea6\u81f3\u5c11\u4e3a6');
+                    return false;
+                }
+                _removeError(_passwordInput);
+                return true;
+            };
+            var _showError = function _showError(input, msg) {
+                var inputName = input[['attr']]('name');
+                switch (inputName) {
+                case 'user_login':
+                    _removeError(_userLoginInput);
+                    break;
+                case 'password':
+                    _removeError(_passwordInput);
+                    break;
+                }
+                input[['next']](_tipSel)[['text']](msg)[['show']]();
+            };
+            var _removeError = function _removeError(input) {
+                input[['next']](_tipSel)[['hide']]()[['text']]('');
+            };
+            var _post = function _post(submitBtn) {
+                var url = _globalConfig[['Routes']][['signIn']];
+                var beforeSend = function beforeSend() {
+                    _modalSignBox[['addClass']]('submitting');
+                    _userLoginInput[['prop']]('disabled', true);
+                    _passwordInput[['prop']]('disabled', true);
+                    _originSubmitBtnText = submitBtn[['text']]();
+                    submitBtn[['prop']]('disabled', true)[['html']](_spinner);
+                    _submitting = true;
+                };
+                var finishRequest = function finishRequest() {
+                    _modalSignBox[['removeClass']]('submitting');
+                    _userLoginInput[['prop']]('disabled', false);
+                    _passwordInput[['prop']]('disabled', false);
+                    submitBtn[['text']](_originSubmitBtnText)[['prop']]('disabled', false);
+                    _submitting = false;
+                };
+                var success = function success(data, textStatus, xhr) {
+                    if (data[['success']] && data[['success']] == 1) {
+                        var redirect = _utils2[['default']][['getUrlPara']]('redirect') ? _utils2[['default']][['getAbsUrl']](decodeURIComponent(_utils2[['default']][['getUrlPara']]('redirect'))) : '';
+                        _msgbox[['popMsgbox']][['success']]({
+                            title: '\u767b\u5f55\u6210\u529f',
+                            text: redirect ? '\u5c06\u5728 2s \u5185\u8df3\u8f6c\u81f3 ' + redirect : '\u5c06\u5728 2s \u5185\u5237\u65b0\u9875\u9762',
+                            timer: 2000,
+                            showConfirmButton: false
+                        });
+                        setTimeout(function () {
+                            window[['location']][['href']] = redirect ? redirect : location[['href']];
+                        }, 2000);
+                    } else {
+                        _msgbox[['popMsgbox']][['error']]({
+                            title: '\u767b\u5f55\u9519\u8bef',
+                            text: data[['message']]
+                        });
+                        finishRequest();
+                    }
+                };
+                var error = function error(xhr, textStatus, err) {
+                    _msgbox[['popMsgbox']][['error']]({
+                        title: '\u8bf7\u6c42\u767b\u5f55\u5931\u8d25, \u8bf7\u91cd\u65b0\u5c1d\u8bd5',
+                        text: xhr[['responseJSON']] ? xhr[['responseJSON']][['message']] : xhr[['responseText']]
+                    });
+                    finishRequest();
+                };
+                $[['post']]({
+                    url: url,
+                    data: _utils2[['default']][['filterDataForRest']](_modalSignBox[['serialize']]()),
+                    dataType: 'json',
+                    beforeSend: beforeSend,
+                    success: success,
+                    error: error
+                });
+            };
+            var _showBox = function _showBox() {
+                if ($(window)[['width']]() < 640) {
+                    window[['location']][['href']] = _utils2[['default']][['addRedirectUrl']](_globalConfig[['Urls']][['signIn']], window[['location']][['href']]);
+                    return;
+                }
+                _modalSignBox[['modal']]('show');
+            };
+            var _hideBox = function _hideBox() {
+                _modalSignBox[['modal']]('hide');
+            };
+            var ModalSignBox = {
+                init: function init() {
+                    _body[['on']]('click', '.modal-backdrop', function () {
+                        _hideBox();
+                    });
+                    _userLoginInput[['on']]('input', function () {
+                        _validate($(this));
+                    });
+                    _passwordInput[['on']]('input', function () {
+                        _validate($(this));
+                    });
+                    _body[['on']]('click', _submitBtnSel, function () {
+                        _post($(this));
+                    });
+                },
+                show: function show() {
+                    _showBox();
+                },
+                hide: function hide() {
+                    _hideBox();
+                }
+            };
+            exports[['default']] = ModalSignBox;
+        }[['call']](exports, __webpack_require__(1)));
+    },
+    function (module, exports, __webpack_require__) {
         'use strict';
         Object[['defineProperty']](exports, '__esModule', { value: true });
-        var modalSignBox = {
-            show: function show() {
-                alert('need login');
-            },
-            hide: function hide() {
-            }
+        exports[['Classes']] = exports[['Urls']] = exports[['Routes']] = undefined;
+        var _utils = __webpack_require__(4);
+        var _utils2 = _interopRequireDefault(_utils);
+        function _interopRequireDefault(obj) {
+            return obj && obj[['__esModule']] ? obj : { default: obj };
+        }
+        var routes = {
+            signIn: _utils2[['default']][['getAPIUrl']]('/session'),
+            session: _utils2[['default']][['getAPIUrl']]('/session'),
+            signUp: _utils2[['default']][['getAPIUrl']]('/users'),
+            users: _utils2[['default']][['getAPIUrl']]('/users'),
+            comments: _utils2[['default']][['getAPIUrl']]('/comments'),
+            commentStars: _utils2[['default']][['getAPIUrl']]('/comment/stars'),
+            postStars: _utils2[['default']][['getAPIUrl']]('/post/stars'),
+            myFollower: _utils2[['default']][['getAPIUrl']]('/users/me/followers'),
+            myFollowing: _utils2[['default']][['getAPIUrl']]('/users/me/following'),
+            follower: _utils2[['default']][['getAPIUrl']]('/users/{{uid}}/followers'),
+            following: _utils2[['default']][['getAPIUrl']]('/users/{{uid}}/following'),
+            pm: _utils2[['default']][['getAPIUrl']]('/messages')
         };
-        exports[['default']] = modalSignBox;
+        var urls = { signIn: _utils2[['default']][['getSiteUrl']]() + '/m/signin' };
+        var classes = { appLoading: 'is-loadingApp' };
+        exports[['Routes']] = routes;
+        exports[['Urls']] = urls;
+        exports[['Classes']] = classes;
     },
     function (module, exports, __webpack_require__) {
         (function (jQuery, $) {
             'use strict';
             Object[['defineProperty']](exports, '__esModule', { value: true });
-            var swal = __webpack_require__(8);
+            var swal = __webpack_require__(9);
             var app = window[['App']] || (window[['App']] = {});
             var popMsgbox = app[['PopMsgbox']] || (app[['PopMsgbox']] = {});
             var popMsgbox = {};
@@ -1206,9 +1402,9 @@ webpackJsonp([
         }[['call']](exports, __webpack_require__(1), __webpack_require__(1)));
     },
     function (module, exports, __webpack_require__) {
+        var require;
+        var require;
         var __WEBPACK_AMD_DEFINE_RESULT__;
-        var require;
-        var require;
         'use strict';
         var _typeof = typeof Symbol === 'function' && typeof Symbol[['iterator']] === 'symbol' ? function (obj) {
             return typeof obj;
@@ -2144,219 +2340,5 @@ webpackJsonp([
                 module[['exports']] = sweetAlert;
             }
         }(window, document));
-    },
-    ,
-    function (module, exports, __webpack_require__) {
-        'use strict';
-        Object[['defineProperty']](exports, '__esModule', { value: true });
-        exports[['Classes']] = exports[['Routes']] = undefined;
-        var _utils = __webpack_require__(4);
-        var _utils2 = _interopRequireDefault(_utils);
-        function _interopRequireDefault(obj) {
-            return obj && obj[['__esModule']] ? obj : { default: obj };
-        }
-        var routes = {
-            signIn: _utils2[['default']][['getAPIUrl']]('/session'),
-            session: _utils2[['default']][['getAPIUrl']]('/session'),
-            signUp: _utils2[['default']][['getAPIUrl']]('/users'),
-            users: _utils2[['default']][['getAPIUrl']]('/users'),
-            comments: _utils2[['default']][['getAPIUrl']]('/comments'),
-            commentStars: _utils2[['default']][['getAPIUrl']]('/comment/stars'),
-            postStars: _utils2[['default']][['getAPIUrl']]('/post/stars'),
-            myFollower: _utils2[['default']][['getAPIUrl']]('/users/me/followers'),
-            myFollowing: _utils2[['default']][['getAPIUrl']]('/users/me/following'),
-            follower: _utils2[['default']][['getAPIUrl']]('/users/{{uid}}/followers'),
-            following: _utils2[['default']][['getAPIUrl']]('/users/{{uid}}/following'),
-            pm: _utils2[['default']][['getAPIUrl']]('/messages')
-        };
-        var classes = { appLoading: 'is-loadingApp' };
-        exports[['Routes']] = routes;
-        exports[['Classes']] = classes;
-    },
-    ,
-    ,
-    function (module, exports, __webpack_require__) {
-        (function ($) {
-            'use strict';
-            Object[['defineProperty']](exports, '__esModule', { value: true });
-            var _globalConfig = __webpack_require__(10);
-            var _body = $('body');
-            var _postListCls = 'archive-posts';
-            var _loadNextComponentID = 'loadNext';
-            var _loadingIcon = '<i class="tico tico-spinner2 spinning"></i>';
-            var _unLoadingIcon = '<i class="tico tico-angle-down"></i>';
-            var _isLoadingNext = false;
-            var _handlePageContent = function _handlePageContent(html, url) {
-                var doc = $(html);
-                var postList = $('.' + _postListCls);
-                if (doc && postList) {
-                    postList[['html']](doc[['find']]('.' + _postListCls)[['html']]());
-                    history[['pushState']]('200', doc[9][['innerText']], url);
-                    document[['title']] = doc[9][['innerText']];
-                }
-            };
-            var _ajaxLoadNext = function _ajaxLoadNext(btn) {
-                if (_isLoadingNext)
-                    return false;
-                var nextPageUrl = btn[['data']]('next-page-url');
-                if (!nextPageUrl)
-                    return false;
-                var beforeSend = function beforeSend() {
-                    _body[['addClass']](_globalConfig[['Classes']][['appLoading']]);
-                    _isLoadingNext = true;
-                    btn[['html']](_loadingIcon);
-                };
-                var finishRequest = function finishRequest() {
-                    _body[['removeClass']](_globalConfig[['Classes']][['appLoading']]);
-                    _isLoadingNext = false;
-                    btn[['html']](_unLoadingIcon);
-                };
-                var success = function success(data, textStatus, xhr) {
-                    if (data && xhr[['status']] == '200') {
-                        _handlePageContent(data, nextPageUrl);
-                    }
-                    finishRequest();
-                };
-                var error = function error(xhr, textStatus, err) {
-                    finishRequest();
-                };
-                $[['get']]({
-                    url: nextPageUrl,
-                    dataType: 'html',
-                    beforeSend: beforeSend,
-                    success: success,
-                    error: error
-                });
-            };
-            var loadNext = {
-                init: function init() {
-                    _body[['on']]('click', '[data-component=' + _loadNextComponentID + ']', function () {
-                        var $this = $(this);
-                        _ajaxLoadNext($this);
-                    });
-                }
-            };
-            exports[['default']] = loadNext;
-        }[['call']](exports, __webpack_require__(1)));
-    },
-    function (module, exports, __webpack_require__) {
-        (function ($) {
-            'use strict';
-            Object[['defineProperty']](exports, '__esModule', { value: true });
-            var _body = $('body');
-            var _document = $(document);
-            var _scrollTopBottomAnchorCls = 'scroll-to';
-            var _scrollTopAnchorCls = 'scroll-top';
-            var _scrollBottomAnchorCls = 'scroll-bottom';
-            var _handleScrollTo = function _handleScrollTo(btn) {
-                if (btn[['hasClass']](_scrollBottomAnchorCls)) {
-                    _body[['animate']]({ scrollTop: $(document)[['height']]() }, 'slow');
-                } else if (btn[['hasClass']](_scrollTopAnchorCls)) {
-                    _body[['animate']]({ scrollTop: 0 }, 'slow');
-                }
-                return false;
-            };
-            var _initScrollTo = function _initScrollTo() {
-                _body[['on']]('click', '.' + _scrollTopBottomAnchorCls, function () {
-                    _handleScrollTo($(this));
-                });
-            };
-            var _postWrapSel = '#main>.post';
-            var _postWrapBottomY = 0;
-            var _singleBodySel = '.single-body';
-            var _singleBodyTopY = 0;
-            var _shareBarSel = '.single-body>.share-bar';
-            var _shareBarHeight = 0;
-            var _shareBar = null;
-            var _postWrap = null;
-            var _singleBody = null;
-            var _calcTop = function _calcTop() {
-                if (!_shareBar)
-                    _shareBar = $(_shareBarSel);
-                if (!_singleBody)
-                    _singleBody = $(_singleBodySel);
-                if (!_postWrap)
-                    _postWrap = $(_postWrapSel);
-                if (!_shareBarHeight)
-                    _shareBarHeight = _shareBar[['height']]();
-                if (!_postWrapBottomY)
-                    _postWrapBottomY = _postWrap[['offset']]()[['top']] + _postWrap[['height']]() + 40;
-                if (!_singleBodyTopY)
-                    _singleBodyTopY = _singleBody[['offset']]()[['top']];
-                var documentScrollTop = _document[['scrollTop']]();
-                var top = 0;
-                top = Math[['max']](20, 80 + documentScrollTop - _singleBodyTopY);
-                if (_singleBodyTopY + top + _shareBarHeight > _postWrapBottomY) {
-                    top = _postWrapBottomY - _shareBarHeight - _singleBodyTopY;
-                }
-                return top;
-            };
-            var _initShareBar = function _initShareBar() {
-                _document[['on']]('scroll', function () {
-                    var top = _calcTop();
-                    if (!_shareBar)
-                        _shareBar = $(_shareBarSel);
-                    _shareBar[['css']]('top', top + 'px');
-                });
-            };
-            var _originWidgetSel = '#sidebar>.widget_float-sidebar';
-            var _originWidget = null;
-            var _originWidgetTopY = 0;
-            var _originWidgetHeight = 0;
-            var _mirrorWidgetSel = '#sidebar>.float-widget-mirror';
-            var _mirrorWidget = null;
-            var _mirrorWidgetTopY = 0;
-            var _mainWrapSel = '.main-wrap';
-            var _mainWrap = null;
-            var _mainWrapTopY = 0;
-            var _mainWrapHeight = 0;
-            var _windowHeight = 0;
-            var _handleFloatWidget = function _handleFloatWidget() {
-                if ($(window)[['width']]() < 1000)
-                    return;
-                if (!_originWidget)
-                    _originWidget = $(_originWidgetSel);
-                if (_originWidget[['length']] == 0)
-                    return;
-                if (!_mirrorWidget)
-                    _mirrorWidget = $(_mirrorWidgetSel);
-                if (!_mainWrap)
-                    _mainWrap = $(_mainWrapSel);
-                if (!_originWidgetTopY)
-                    _originWidgetTopY = _originWidget[['offset']]()[['top']];
-                if (!_originWidgetHeight)
-                    _originWidgetHeight = _originWidget[['height']]();
-                if (!_mirrorWidgetTopY)
-                    _mirrorWidgetTopY = _mirrorWidget[['offset']]()[['top']];
-                if (!_mainWrapTopY)
-                    _mainWrapTopY = _mainWrap[['offset']]()[['top']];
-                if (!_mainWrapHeight)
-                    _mainWrapHeight = _mainWrap[['height']]();
-                if (!_windowHeight)
-                    _windowHeight = $(window)[['height']]();
-                var documentScrollTop = _document[['scrollTop']]();
-                if (documentScrollTop + _windowHeight + 20 > _mirrorWidgetTopY + _originWidgetHeight + 60) {
-                    if (_mirrorWidget[['html']]() == '') {
-                        _mirrorWidget[['prepend']](_originWidget[['html']]());
-                    }
-                    _mirrorWidget[['fadeIn']]('slow');
-                    var top = Math[['max']](0, documentScrollTop - _mirrorWidgetTopY + 100);
-                    _mirrorWidget[['css']]('top', top);
-                } else {
-                    _mirrorWidget[['html']]('')[['fadeOut']]('slow');
-                }
-            };
-            var _initFloatWidget = function _initFloatWidget() {
-                _document[['on']]('scroll', function () {
-                    _handleFloatWidget();
-                });
-            };
-            var ScrollHandler = {
-                initScrollTo: _initScrollTo,
-                initShareBar: _initShareBar,
-                initFloatWidget: _initFloatWidget
-            };
-            exports[['default']] = ScrollHandler;
-        }[['call']](exports, __webpack_require__(1)));
     }
 ]);

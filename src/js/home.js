@@ -18,7 +18,8 @@ import {popMsgbox} from './modules/msgbox';
 import {} from './modules/bootstrap-flat';
 import {} from './vender/unslider';
 import ScrollHandler from './modules/scroll';
-import FollowKit from './modules/follow';
+import ModalSignBox from './modules/modalSignBox';
+import {} from 'lazyload/jquery.lazyload';
 //import Scrollbar from 'perfect-scrollbar/jquery';
 // require('./modules/smooth-scroll');
 
@@ -37,8 +38,8 @@ jQuery(document).ready(function ($) {
     //Scrollbar(jQuery);
     //$('body').perfectScrollbar();
     
-    // 粉丝和关注
-    FollowKit.init();
+    // 登录弹窗
+    ModalSignBox.init();
     
     // 启动幻灯
     (function () {
