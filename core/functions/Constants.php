@@ -153,3 +153,7 @@ $jquery_srouces = json_encode(array(
     'cdn_https' => 'https://staticfile.qnssl.com/jquery/2.2.1/jquery.min.js'
 ));
 defined('JQUERY_SOURCES') || define('JQUERY_SOURCES', $jquery_srouces);
+
+/* Lazy pending image */
+defined('LAZY_PENDING_IMAGE') || define('LAZY_PENDING_IMAGE', THEME_ASSET . '/img/image-pending.gif');
+defined('LAZY_PENDING_AVATAR') || define('LAZY_PENDING_AVATAR', THEME_ASSET . '/img/avatar/avatar.png');

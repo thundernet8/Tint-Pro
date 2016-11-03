@@ -37,7 +37,7 @@ class RecentComments extends WP_Widget {
             <?php foreach ($recent_comments as $recent_comment) { ?>
                 <li class="comment">
                     <div class="comment-title" title="<?php echo $recent_comment['comment_date_diff']; ?>">
-                        <span class="comment-author"><img class="avatar" src="<?php echo $recent_comment['author_avatar']; ?>"><?php echo $recent_comment['author_name']; ?></span><?php _e('REVIEWED ON ', 'tt'); ?><a href="<?php echo $recent_comment['post_permalink']; ?>"><?php echo $recent_comment['post_title']; ?></a>
+                        <span class="comment-author"><img class="avatar lazy" src="<?php echo LAZY_PENDING_AVATAR; ?>" data-original="<?php echo $recent_comment['author_avatar']; ?>"><?php echo $recent_comment['author_name']; ?></span><?php _e('REVIEWED ON ', 'tt'); ?><a href="<?php echo $recent_comment['post_permalink']; ?>"><?php echo $recent_comment['post_title']; ?></a>
                     </div>
                     <div class="comment-content"><?php echo $recent_comment['comment_text']; ?></div>
                 </li>

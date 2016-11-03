@@ -28,7 +28,7 @@
                     <?php if($i===1) : ?>
                     <article class="block-item-large mb20">
                         <div class="entry-thumb hover-overlay">
-                            <a href="<?php echo $cat_post['permalink']; ?>"><img width="375" height="250" src="<?php echo $cat_post['thumb']; ?>" class="thumb-medium wp-post-image" alt="<?php echo $cat_post['title']; ?>"></a>
+                            <a href="<?php echo $cat_post['permalink']; ?>"><img width="375" height="250" src="<?php echo LAZY_PENDING_IMAGE; ?>" data-original="<?php echo $cat_post['thumb']; ?>" class="thumb-medium wp-post-image lazy" alt="<?php echo $cat_post['title']; ?>"></a>
 <!--                            <span class="shadow"></span>-->
                         </div>
                         <div class="entry-detail">
@@ -48,7 +48,7 @@
                     <?php else : ?>
                     <article class="block-item mb20">
                         <div class="entry-thumb">
-                            <a href="<?php echo $cat_post['permalink']; ?>"><img width="100" height="75" src="<?php echo $cat_post['thumb']; ?>" class="thumb-small wp-post-image" alt="<?php echo $cat_post['title']; ?>"></a>
+                            <a href="<?php echo $cat_post['permalink']; ?>"><img width="100" height="75" src="<?php echo LAZY_PENDING_IMAGE; ?>" data-original="<?php echo $cat_post['thumb']; ?>" class="thumb-small wp-post-image lazy" alt="<?php echo $cat_post['title']; ?>"></a>
 <!--                            <span class="shadow"></span>-->
                         </div>
                         <div class="entry-detail">

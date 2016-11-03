@@ -25,7 +25,7 @@
             <?php foreach ($data as $seq=>$popular) { ?>
             <article class="block-item">
                 <div class="entry-thumb">
-                    <a href="<?php echo $popular['permalink']; ?>"><img width="100" height="75" src="<?php echo $popular['thumb']; ?>" class="thumb-small wp-post-image" alt="<?php echo $popular['title']; ?>"></a>
+                    <a href="<?php echo $popular['permalink']; ?>"><img width="100" height="75" src="<?php echo LAZY_PENDING_IMAGE; ?>" data-original="<?php echo $popular['thumb']; ?>" class="thumb-small wp-post-image lazy" alt="<?php echo $popular['title']; ?>"></a>
                 </div>
                 <div class="entry-detail">
                     <h2 class="h5 entry-title">

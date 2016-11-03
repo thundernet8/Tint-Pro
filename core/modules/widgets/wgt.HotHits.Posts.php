@@ -37,7 +37,7 @@ class HotHitPosts extends WP_Widget {
         <?php foreach ($hothit_posts as $hothit_post) { ?>
             <article id="<?php echo 'post-' . $hothit_post['ID']; ?>" class="post type-post status-publish hothit-post">
                 <div class="entry-thumb hover-scale">
-                    <a href="<?php echo $hothit_post['permalink']; ?>"><img width="200" height="136" src="<?php echo $hothit_post['thumb']; ?>" class="thumb-small wp-post-image" alt="<?php echo $hothit_post['title']; ?>"></a>
+                    <a href="<?php echo $hothit_post['permalink']; ?>"><img width="200" height="136" src="<?php echo LAZY_PENDING_IMAGE; ?>" data-original="<?php echo $hothit_post['thumb']; ?>" class="thumb-small wp-post-image lazy" alt="<?php echo $hothit_post['title']; ?>"></a>
                 </div>
                 <div class="entry-detail">
                     <h2 class="entry-title"><a href="<?php echo $hothit_post['permalink']; ?>" rel="bookmark"><?php echo $hothit_post['title']; ?></a></h2>

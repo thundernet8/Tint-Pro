@@ -31,7 +31,7 @@ defined('CSS_ERROR_PAGE') || define('CSS_ERROR_PAGE', 'error-page-b5392c81bb.css
 
 // JS
 defined('JS_COMMON') || define('JS_COMMON', 'common-caa0d2a669.js');
-defined('JS_HOME') || define('JS_HOME', 'home-c9ab9b234a.js');
+defined('JS_HOME') || define('JS_HOME', 'home-288dbf23ae.js');
 defined('JS_FRONT_PAGE') || define('JS_FRONT_PAGE', 'frontPage-da6c2995c2.js');
 defined('JS_SINGLE') || define('JS_SINGLE', 'single-49785163bb.js');
 defined('JS_ARCHIVE') || define('JS_ARCHIVE', 'archive-8516e0cb83.js');

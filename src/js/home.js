@@ -60,5 +60,9 @@ jQuery(document).ready(function ($) {
         }
     })();
 
-
+    // 延迟加载图片
+    $('img.lazy').lazyload({
+        effect: "fadeIn",
+        threshold: 0
+    });
 });
