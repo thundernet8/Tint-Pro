@@ -416,3 +416,17 @@ function tt_conditional_class($base_class, $condition, $active_class = 'active')
     }
     return $base_class;
 }
+
+
+/**
+ * 二维码API
+ *
+ * @since 2.0.0
+ * @param $text
+ * @param $size
+ * @return string
+ */
+function tt_qrcode($text, $size) {
+    //TODO size
+    return tt_url_for('qr') . '?text=' . $text;
+}

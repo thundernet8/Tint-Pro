@@ -99,7 +99,8 @@ defined('ALLOWED_OAUTH_ACTIONS') || define('ALLOWED_OAUTH_ACTIONS', $oauth_allow
 $site_allow_utils = json_encode(array(
     'upgrade-browser' => 'UpgradeBrowser',
     'privacy-policies-and-terms' => 'Privacy',
-    'captcha'   =>  'Captcha'
+    'captcha'   =>  'Captcha',
+    'qr' => 'QrCode'
 ));
 defined('ALLOWED_SITE_UTILS') || define('ALLOWED_SITE_UTILS', $site_allow_utils);
 
@@ -108,6 +109,7 @@ $site_endpoints = json_encode(array(
     'upgrade_browser'           =>  'site/upgrade-browser',
     'privacy'                   =>  'site/privacy-policies-and-terms',   // TODO: terms
     'captcha'                   =>  'site/captcha',
+    'qr'                        =>  'site/qr',
     'api_root'                  =>  'api',
     'signin'                    =>  'm/signin',
     'signup'                    =>  'm/signup',

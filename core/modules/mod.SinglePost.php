@@ -36,7 +36,7 @@
                 <a class="share-btn share-qq" href="<?php echo 'http://connect.qq.com/widget/shareqq/index.html?url=' . $postdata->permalink . '&title=' . $postdata->title . ' - ' . get_bloginfo('name') . '&summary=' . $postdata->excerpt . '&pics=' . urlencode($postdata->thumb) . '&flash=&site=' . get_bloginfo('name') . '&desc='; ?>" title="<?php _e('Share to QQ', 'tt'); ?>" target="_blank"></a>
                 <a class="share-btn share-weixin" href="javascript: void(0)" title="<?php _e('Share to Wechat', 'tt'); ?>" target="_blank">
                     <div class="weixin-qr transition">
-                        <img src="<?php echo 'http://qr.liantu.com/api.php?text=' . $postdata->permalink; ?>" width="120">
+                        <img src="<?php echo tt_qrcode($postdata->permalink, 120); ?>" width="120">
                     </div>
                 </a>
                 <a class="share-btn share-douban" href="<?php echo 'https://www.douban.com/share/service?href=' . $postdata->permalink . '&name=' . $postdata->title . ' - ' . get_bloginfo('name') . '&text=' . $postdata->excerpt . '&image=' . urlencode($postdata->thumb); ?>" title="<?php _e('Share to Douban', 'tt'); ?>" target="_blank"></a>

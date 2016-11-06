@@ -482,9 +482,13 @@ function tt_handle_site_util_page_template(){
         global $wp_query;
         $wp_query->is_home = false;
         $wp_query->is_page = true; //将该模板改为页面属性，而非首页
-        $template = THEME_TPL . '/site/tpl.' . ucfirst(strtolower($allowed_utils[$util])) . '.php';
+        $template = THEME_TPL . '/site/tpl.' . ucfirst($allowed_utils[$util]) . '.php';
         load_template($template);
         exit;
+    } elseif ($util) {
+        // 非法路由处理
+        Utils::set404();
+        return;
     }
 }
 add_action('template_redirect', 'tt_handle_site_util_page_template', 5);
