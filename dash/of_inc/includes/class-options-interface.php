@@ -142,8 +142,14 @@ class Options_Framework_Interface {
 					}
 				}
 
-				$val = stripslashes( $val );
-				$output .= '<textarea id="' . esc_attr( $value['id'] ) . '" class="of-input" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" rows="' . $rows . '"' . $placeholder . '>' . esc_textarea( $val ) . '</textarea>';
+				if ( isset( $value['settings']['raw'] ) && $value['settings']['raw'] ) {
+				    $text = $val;
+                }else{
+                    $val = stripslashes( $val );
+                    $text = esc_textarea($val);
+                }
+
+				$output .= '<textarea id="' . esc_attr( $value['id'] ) . '" class="of-input" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" rows="' . $rows . '"' . $placeholder . '>' . $text . '</textarea>';
 				break;
 
 			// Select Box

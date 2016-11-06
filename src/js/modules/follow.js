@@ -13,8 +13,8 @@
 
 'use strict';
 
-import Utils from './utils';
 import {Routes} from './globalConfig';
+import Utils from './utils';
 import {popMsgbox} from './msgbox';
 
 var _btnSel = '.follow-btn';

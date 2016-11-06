@@ -268,7 +268,7 @@ function tt_handle_me_child_routes_template(){
                 exit;
             }
             // 非法孙路由处理
-            if(!in_array($me_grandchild_route, $allow_grandchild)) {
+            if(is_array($allow_grandchild) && !in_array($me_grandchild_route, $allow_grandchild)) {
                 Utils::set404();
                 return;
             }

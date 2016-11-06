@@ -20,6 +20,7 @@ import {} from './vender/unslider';
 import ScrollHandler from './modules/scroll';
 import ModalSignBox from './modules/modalSignBox';
 import {} from 'lazyload/jquery.lazyload';
+import SignHelp from './modules/signHelp';
 //import Scrollbar from 'perfect-scrollbar/jquery';
 // require('./modules/smooth-scroll');
 
@@ -40,6 +41,9 @@ jQuery(document).ready(function ($) {
     
     // 登录弹窗
     ModalSignBox.init();
+    
+    // 登录界面显示方式
+    SignHelp.init();
     
     // 启动幻灯
     (function () {
@@ -63,6 +67,11 @@ jQuery(document).ready(function ($) {
     // 延迟加载图片
     $('img.lazy').lazyload({
         effect: "fadeIn",
+        threshold: 50
+    });
+    $('.sidebar img.lazy').lazyload({
+        effect: "fadeIn",
         threshold: 0
     });
+    
 });

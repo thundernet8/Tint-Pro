@@ -66,7 +66,7 @@ module.exports = {
         //     }
         // }),
         // 将公共代码抽离出来合并为一个文件
-        commonsPlugin
+        //commonsPlugin
     ],
     externals: {
         'jquery': 'jQuery',

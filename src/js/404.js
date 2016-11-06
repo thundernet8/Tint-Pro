@@ -13,9 +13,9 @@
 
 'use strict';
 
+import {Urls} from './modules/globalConfig'
 import {handleLineLoading} from './modules/loading';
 import {} from './modules/bootstrap-flat';
-import Utils from './modules/utils'
 
 // DOM Ready
 jQuery(document).ready(function ($) {
@@ -30,7 +30,7 @@ jQuery(document).ready(function ($) {
         if(sec-1 <= 0) {
             clearInterval(_interval);
             _redirectBtn.html('跳转中...');
-            window.location.href = Utils.getSiteUrl();
+            window.location.href = Urls.site;
         }else{
             span.text(sec-1);
         }

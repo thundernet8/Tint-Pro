@@ -13,7 +13,6 @@
 
 'use strict';
 
-
 import Utils from './utils';
 
 // API路由列表
@@ -34,6 +33,7 @@ var routes = {
 
 // URL列表
 var urls = {
+    site: Utils.getSiteUrl(),
     signIn: Utils.getSiteUrl() + '/m/signin'
 };
 

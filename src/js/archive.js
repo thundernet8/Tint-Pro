@@ -18,6 +18,7 @@ import {popMsgbox} from './modules/msgbox';
 import {} from './modules/bootstrap-flat';
 import loadNext from  './modules/loadNextPage';
 import ScrollHandler from './modules/scroll';
+import SignHelp from './modules/signHelp';
 
 // DOM Ready
 jQuery(document).ready(function ($) {
@@ -32,5 +33,8 @@ jQuery(document).ready(function ($) {
     
     // 滚动顶部底部
     ScrollHandler.initScrollTo();
+    
+    // 登录界面显示方式
+    SignHelp.init();
 });
  

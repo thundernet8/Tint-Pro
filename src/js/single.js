@@ -25,6 +25,7 @@ import FollowKit from './modules/follow';
 import Pmkit from './modules/pm';
 import ModalSignBox from './modules/modalSignBox';
 import {} from 'lazyload/jquery.lazyload';
+import SignHelp from './modules/signHelp';
 
 // DOM Ready
 jQuery(document).ready(function ($) {
@@ -58,6 +59,9 @@ jQuery(document).ready(function ($) {
     // 登录弹窗
     ModalSignBox.init();
     
+    // 登录界面显示方式
+    SignHelp.init();
+    
     //  Lightbox 获取图片的title属性
     $('.lightbox-gallery').each(function () {
         var item = $(this);
@@ -65,6 +69,16 @@ jQuery(document).ready(function ($) {
         if(img && img.attr('title')) {
             item.attr('data-title', img.attr('title'));
         }
+    });
+    
+    // 延迟加载图片
+    $('img.lazy').lazyload({
+        effect: "fadeIn",
+        threshold: 50
+    });
+    $('.sidebar img.lazy').lazyload({
+        effect: "fadeIn",
+        threshold: 0
     });
     
     // 平滑锚点

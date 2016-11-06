@@ -83,9 +83,21 @@ function tt_url_for($key, $arg = null, $relative = false){
             $nickname = call_user_func($uc_func, $arg);
             if($nickname) $endpoint = '@' . $nickname . '/latest';
             break;
-        case 'uc_recommend':
+        case 'uc_stars':
             $nickname = call_user_func($uc_func, $arg);
-            if($nickname) $endpoint = '@' . $nickname . '/recommendations';
+            if($nickname) $endpoint = '@' . $nickname . '/stars';
+            break;
+        case 'uc_followers':
+            $nickname = call_user_func($uc_func, $arg);
+            if($nickname) $endpoint = '@' . $nickname . '/followers';
+            break;
+        case 'uc_following':
+            $nickname = call_user_func($uc_func, $arg);
+            if($nickname) $endpoint = '@' . $nickname . '/following';
+            break;
+        case 'uc_activities':
+            $nickname = call_user_func($uc_func, $arg);
+            if($nickname) $endpoint = '@' . $nickname . '/activities';
             break;
     }
     if($endpoint){
@@ -373,7 +385,7 @@ function tt_get_css($filename = '') {
         $filename = CSS_HOME;
     }elseif(is_single()) {
         $filename = get_post_type()==='product' ? CSS_PRODUCT : CSS_SINGLE;
-    }elseif(is_archive()) {
+    }elseif(is_archive() && !is_author()) {
         $filename = get_post_type()==='product' ? CSS_PRODUCT_ARCHIVE : CSS_ARCHIVE;
     }elseif(is_author()) {
         $filename = CSS_UC;
@@ -387,4 +399,20 @@ function tt_get_css($filename = '') {
         $filename = CSS_FRONT_PAGE;
     }
     return THEME_ASSET.'/css/' . $filename;
+}
+
+
+/**
+ * 条件判断类名
+ *
+ * @param $base_class
+ * @param $condition
+ * @param string $active_class
+ * @return string
+ */
+function tt_conditional_class($base_class, $condition, $active_class = 'active') {
+    if($condition) {
+        return $base_class . ' ' . $active_class;
+    }
+    return $base_class;
 }

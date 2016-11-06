@@ -13,8 +13,6 @@
 
 'use strict';
 
-import {jQuery} from 'jquery';
-
 // jQuery(function ($) {
 //   var body = $('body');
 //   if(body.hasClass('is-loadingApp')) {

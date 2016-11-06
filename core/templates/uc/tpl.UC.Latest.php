@@ -12,6 +12,15 @@
  * @link https://www.webapproach.net/tint.html
  */
 ?>
-<?php
-
-echo 'UC-Latest';
+<?php tt_get_header(); ?>
+<div id="content" class="wrapper">
+    <?php load_mod('uc/uc.TopPane'); ?>
+    <!-- 主要内容区 -->
+    <section class="container author-area">
+        <div class="inner">
+            <?php load_mod('uc/uc.NavTabs'); ?>
+            <?php load_mod('uc/uc.Tab.Latest'); ?>
+        </div>
+    </section>
+</div>
+<?php tt_get_footer(); ?>

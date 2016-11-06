@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-11-03 21:17+0800\n"
+"POT-Creation-Date: 2016-11-06 22:50+0800\n"
 "PO-Revision-Date: 2016-08-17 21:40+0800\n"
 "Last-Translator: \n"
 "Language-Team: Zhiyan <mail@webapproach.net>\n"
@@ -1309,7 +1309,7 @@ msgid ""
 "`mkdir` function.\\n"
 msgstr ""
 
-#: core/functions/func.Kits.php:337
+#: core/functions/func.Kits.php:349
 msgid "WordPress &rsaquo; Error"
 msgstr ""
 
@@ -1547,7 +1547,7 @@ msgstr ""
 msgid "Email/Username"
 msgstr ""
 
-#: core/modules/mod.ModalLoginForm.php:26
+#: core/modules/mod.ModalLoginForm.php:27
 #: core/templates/actions/tpl.M.Resetpass.php:38
 #: core/templates/actions/tpl.M.Resetpass.php:39
 #: core/templates/actions/tpl.M.Resetpass.php:41
@@ -1556,7 +1556,7 @@ msgstr ""
 msgid "Password"
 msgstr ""
 
-#: core/modules/mod.ModalLoginForm.php:29 core/modules/mod.ReplyForm.php:32
+#: core/modules/mod.ModalLoginForm.php:31 core/modules/mod.ReplyForm.php:32
 #: core/modules/mod.ReplyForm.php:129
 #: core/templates/actions/tpl.M.Findpass.php:38
 #: core/templates/actions/tpl.M.Resetpass.php:47
@@ -1564,17 +1564,17 @@ msgstr ""
 msgid "Submit"
 msgstr ""
 
-#: core/modules/mod.ModalLoginForm.php:31
+#: core/modules/mod.ModalLoginForm.php:33
 #: core/templates/actions/tpl.M.Signin.php:93
 msgid "Register Now"
 msgstr ""
 
-#: core/modules/mod.ModalLoginForm.php:33
+#: core/modules/mod.ModalLoginForm.php:35
 #: core/templates/actions/tpl.M.Signin.php:95
 msgid "Forgot your password?"
 msgstr ""
 
-#: core/modules/mod.ModalLoginForm.php:45
+#: core/modules/mod.ModalLoginForm.php:47
 msgid "SignIn with Social Account"
 msgstr ""
 
@@ -1662,6 +1662,46 @@ msgstr ""
 msgid "COMMENTS CLOSED"
 msgstr ""
 
+#: core/modules/uc/uc.NavTabs.php:17
+msgid "PROFILE"
+msgstr ""
+
+#: core/modules/uc/uc.NavTabs.php:18
+msgid "ARTICLES"
+msgstr ""
+
+#: core/modules/uc/uc.NavTabs.php:19
+msgid "COMMENTS"
+msgstr ""
+
+#: core/modules/uc/uc.NavTabs.php:20
+msgid "MY STARS"
+msgstr ""
+
+#: core/modules/uc/uc.NavTabs.php:21 core/modules/widgets/wgt.Author.php:55
+msgid "FOLLOWERS"
+msgstr ""
+
+#: core/modules/uc/uc.NavTabs.php:22 core/modules/widgets/wgt.Author.php:54
+msgid "FOLLOWING"
+msgstr ""
+
+#: core/modules/uc/uc.NavTabs.php:23
+msgid "ACTIVITIES"
+msgstr ""
+
+#: core/modules/uc/uc.NavTabs.php:24
+msgid "CHAT"
+msgstr ""
+
+#: core/modules/uc/uc.TopPane.php:28 core/modules/widgets/wgt.Author.php:48
+msgid "Send a message"
+msgstr ""
+
+#: core/modules/uc/uc.TopPane.php:28 core/modules/widgets/wgt.Author.php:48
+msgid "Chat"
+msgstr ""
+
 #: core/modules/widgets/wgt.Author.php:22
 msgid "TT-Author Widget"
 msgstr ""
@@ -1671,28 +1711,12 @@ msgid ""
 "TT-Show the post author information, only can be used in single post page"
 msgstr ""
 
-#: core/modules/widgets/wgt.Author.php:48
-msgid "Send a message"
-msgstr ""
-
-#: core/modules/widgets/wgt.Author.php:48
-msgid "Chat"
-msgstr ""
-
 #: core/modules/widgets/wgt.Author.php:52
 msgid "POSTS"
 msgstr ""
 
 #: core/modules/widgets/wgt.Author.php:53
 msgid "STARS"
-msgstr ""
-
-#: core/modules/widgets/wgt.Author.php:54
-msgid "FOLLOWING"
-msgstr ""
-
-#: core/modules/widgets/wgt.Author.php:55
-msgid "FOLLOWERS"
 msgstr ""
 
 #: core/modules/widgets/wgt.Author.php:69
@@ -2133,79 +2157,79 @@ msgstr ""
 msgid "View File"
 msgstr ""
 
-#: dash/of_inc/includes/class-options-sanitization.php:316
+#: dash/of_inc/includes/class-options-sanitization.php:320
 msgid "No Repeat"
 msgstr ""
 
-#: dash/of_inc/includes/class-options-sanitization.php:317
+#: dash/of_inc/includes/class-options-sanitization.php:321
 msgid "Repeat Horizontally"
 msgstr ""
 
-#: dash/of_inc/includes/class-options-sanitization.php:318
+#: dash/of_inc/includes/class-options-sanitization.php:322
 msgid "Repeat Vertically"
 msgstr ""
 
-#: dash/of_inc/includes/class-options-sanitization.php:319
+#: dash/of_inc/includes/class-options-sanitization.php:323
 msgid "Repeat All"
 msgstr ""
 
-#: dash/of_inc/includes/class-options-sanitization.php:331
+#: dash/of_inc/includes/class-options-sanitization.php:335
 msgid "Top Left"
 msgstr ""
 
-#: dash/of_inc/includes/class-options-sanitization.php:332
+#: dash/of_inc/includes/class-options-sanitization.php:336
 msgid "Top Center"
 msgstr ""
 
-#: dash/of_inc/includes/class-options-sanitization.php:333
+#: dash/of_inc/includes/class-options-sanitization.php:337
 msgid "Top Right"
 msgstr ""
 
-#: dash/of_inc/includes/class-options-sanitization.php:334
+#: dash/of_inc/includes/class-options-sanitization.php:338
 msgid "Middle Left"
 msgstr ""
 
-#: dash/of_inc/includes/class-options-sanitization.php:335
+#: dash/of_inc/includes/class-options-sanitization.php:339
 msgid "Middle Center"
 msgstr ""
 
-#: dash/of_inc/includes/class-options-sanitization.php:336
+#: dash/of_inc/includes/class-options-sanitization.php:340
 msgid "Middle Right"
 msgstr ""
 
-#: dash/of_inc/includes/class-options-sanitization.php:337
+#: dash/of_inc/includes/class-options-sanitization.php:341
 msgid "Bottom Left"
 msgstr ""
 
-#: dash/of_inc/includes/class-options-sanitization.php:338
+#: dash/of_inc/includes/class-options-sanitization.php:342
 msgid "Bottom Center"
 msgstr ""
 
-#: dash/of_inc/includes/class-options-sanitization.php:339
+#: dash/of_inc/includes/class-options-sanitization.php:343
 msgid "Bottom Right"
 msgstr ""
 
-#: dash/of_inc/includes/class-options-sanitization.php:351
+#: dash/of_inc/includes/class-options-sanitization.php:355
 msgid "Scroll Normally"
 msgstr ""
 
-#: dash/of_inc/includes/class-options-sanitization.php:352
+#: dash/of_inc/includes/class-options-sanitization.php:356
 msgid "Fixed in Place"
 msgstr ""
 
-#: dash/of_inc/includes/class-options-sanitization.php:424
+#: dash/of_inc/includes/class-options-sanitization.php:428
 msgid "Normal"
 msgstr ""
 
-#: dash/of_inc/includes/class-options-sanitization.php:425
+#: dash/of_inc/includes/class-options-sanitization.php:429
 msgid "Italic"
 msgstr ""
 
-#: dash/of_inc/includes/class-options-sanitization.php:426
+#: dash/of_inc/includes/class-options-sanitization.php:430
 msgid "Bold"
 msgstr ""
 
-#: dash/of_inc/includes/class-options-sanitization.php:427
+#: dash/of_inc/includes/class-options-sanitization.php:431
 msgid "Bold Italic"
 msgstr ""
 
@@ -2872,19 +2896,19 @@ msgstr ""
 msgid "Custom code loaded on page head"
 msgstr ""
 
-#: dash/options.php:901
+#: dash/options.php:902
 msgid "Foot Custom Code"
 msgstr ""
 
-#: dash/options.php:902
+#: dash/options.php:903
 msgid "Custom code loaded on page foot"
 msgstr ""
 
-#: dash/options.php:910
+#: dash/options.php:912
 msgid "Foot Beian Text"
 msgstr ""
 
-#: dash/options.php:911
+#: dash/options.php:913
 msgid "IDC reference No. for regulations of China"
 msgstr ""
 

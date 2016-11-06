@@ -46,14 +46,18 @@ add_filter( 'of_sanitize_images', 'of_sanitize_enum', 10, 2 );
  * Sanitization for textarea field
  *
  * @param $input string
+ * @param $option array
  * @return $output sanitized string
  */
-function of_sanitize_textarea( $input ) {
+function of_sanitize_textarea( $input, $option ) {
+    if(isset($option['raw']) && $option['raw']) {
+        return $input;
+    }
 	global $allowedposttags;
 	$output = wp_kses( $input, $allowedposttags );
 	return $output;
 }
-add_filter( 'of_sanitize_textarea', 'of_sanitize_textarea' );
+add_filter( 'of_sanitize_textarea', 'of_sanitize_textarea', 10, 2 );
 
 /**
  * Sanitization for checkbox input

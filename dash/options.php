@@ -390,7 +390,7 @@ function optionsframework_options() {
         'name' => __( 'Site QQ', 'tt' ),
         'desc' => __( 'The QQ which is dedicated for the site', 'tt' ),
         'id' => 'tt_site_qq',
-        'std' => '1990318877',
+        'std' => '813920477',
         'type' => 'text'
     );
 
@@ -892,7 +892,8 @@ function optionsframework_options() {
         'desc' => __( 'Custom code loaded on page head', 'tt' ),
         'id' => 'tt_head_code',
         'std' => '',
-        'type' => 'textarea'
+        'type' => 'textarea',
+        'raw' => true
     );
 
 
@@ -902,7 +903,8 @@ function optionsframework_options() {
         'desc' => __( 'Custom code loaded on page foot', 'tt' ),
         'id' => 'tt_foot_code',
         'std' => '',
-        'type' => 'textarea'
+        'type' => 'textarea',
+        'raw' => true
     );
 
     // - Foot IDC备案文字

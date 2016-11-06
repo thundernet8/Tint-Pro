@@ -54,11 +54,11 @@ function tt_comment($comment, $args, $depth) {
     <div class="comment-left pull-left">
         <?php if($comment->user_id > 0) { ?>
         <a rel="nofollow" href="<?php echo get_author_posts_url($comment->user_id); ?>">
-            <img class="avatar" src="<?php echo tt_get_avatar( $comment->user_id, 50 ); ?>">
+            <img class="avatar lazy" src="<?php echo LAZY_PENDING_AVATAR; ?>" data-original="<?php echo tt_get_avatar( $comment->user_id, 50 ); ?>">
         </a>
         <?php }else{ ?>
         <a rel="nofollow" href="javascript: void(0)">
-            <img class="avatar" src="<?php echo tt_get_avatar( $comment->comment_author, 50 ); ?>">
+            <img class="avatar lazy" src="<?php echo LAZY_PENDING_AVATAR; ?>" data-original="<?php echo tt_get_avatar( $comment->comment_author, 50 ); ?>">
         </a>
         <?php } ?>
     </div>

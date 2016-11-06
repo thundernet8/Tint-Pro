@@ -13,9 +13,180 @@
 /* 引入Flat元素 */
 @import "modules/flat";
 
+/* 引入动画 */
+@import "modules/animation/animation";
+
 /* Msgbox */
 @import "modules/sweetAlert/sweet-alert";
 
 /* Header */
 @import "modules/loading/loading";
 @import "modules/nav/header";
+
+/* Footer */
+@import "modules/nav/footer";
+
+/* Modal Search */
+@import "modules/search/modal-search";
+
+/* PM */
+@import "modules/pm/pm";
+
+/* Modal Signbox */
+@import "modules/modalSign/sign-box";
+
+/* Thumb */
+@import "modules/loop/thumb";
+
+
+body.author {
+    background: #f5f6f8;
+    //&>header {
+    //    position: absolute;
+    //    top: 0;
+    //    background: transparent;
+    //    box-shadow: none;
+    //}
+    &>#content {
+        &>.billboard {
+            position: relative;
+            background-color: rgba(5,15,25,.2);
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 280px;
+            padding: 20px 20px 0;
+            //&:before {
+            //    position: absolute;
+            //    top: 0;
+            //    bottom: 0;
+            //    left: 0;
+            //    right: 0;
+            //    content: '';
+            //    background-color: rgba(0,0,0,.5);
+            //    z-index: 0;
+            //}
+            &>.container {
+                position: relative;
+                color: #ffffff;
+                &>.avatar-wrap {
+                    width: 98px;
+                    height: 98px;
+                    padding: 4px;
+                    margin: 10px auto;
+                    border-radius: 50%;
+                    background: rgba(255,255,255,0.3);
+                    img {
+                        width: 90px;
+                        height: 90px;
+                        border-radius: 50%;
+                    }
+                }
+                &>h2 {
+                    margin-top: 0;
+                    font-size: 2.4rem;
+                    line-height: 1;
+                    i {
+                        font-size: 2.0rem;
+                        margin-left: 5px;
+                    }
+                }
+                &>p {
+                    //border-top: 1px solid rgba(255,255,255,.2);
+                    //padding-top: 10px;
+                    line-height: 1.2;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                }
+                &>.author-interact {
+                    margin-top: 15px;
+                    text-align: center;
+                    &>a {
+                        display: inline-block;
+                        width: 104px;
+                        height: 34px;
+                        padding: 0 !important;
+                        margin: 0 5px;
+                        white-space: nowrap;
+                        border-radius: 2px;
+                        font-size: 1.4rem;
+                        line-height: 34px;
+                        color: #fff;
+                        background: lighten(@brand-secondary, 5%);
+                        background: -moz-linear-gradient(top, lighten(@brand-secondary, 5%) 0%, @brand-secondary 100%);
+                        background: -webkit-linear-gradient(top, lighten(@brand-secondary, 5%) 0%, @brand-secondary 100%);
+                        background: -o-linear-gradient(top, lighten(@brand-secondary, 5%) 0%, @brand-secondary 100%);
+                        background: -ms-linear-gradient(top, lighten(@brand-secondary, 5%) 0%, @brand-secondary 100%);
+                        background: linear-gradient(top, lighten(@brand-secondary, 5%) 0%, @brand-secondary 100%);
+                        box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+                        &:hover {
+                            background: lighten(@brand-secondary, 2%);
+                            background: -moz-linear-gradient(top, lighten(@brand-secondary, 2%) 0%, darken(@brand-secondary, 2%) 100%);
+                            background: -webkit-linear-gradient(top, lighten(@brand-secondary, 2%) 0%, darken(@brand-secondary, 2%) 100%);
+                            background: -o-linear-gradient(top, lighten(@brand-secondary, 2%) 0%, darken(@brand-secondary, 2%) 100%);
+                            background: -ms-linear-gradient(top, lighten(@brand-secondary, 2%) 0%, darken(@brand-secondary, 2%) 100%);
+                            background: linear-gradient(top, lighten(@brand-secondary, 2%) 0%, darken(@brand-secondary, 2%) 100%);
+                        }
+                        &.followed, &.pm-btn {
+                            background: lighten(@brand-primary, 35%);
+                            background: -moz-linear-gradient(top, lighten(@brand-primary, 35%) 0%, lighten(@brand-primary, 30%) 100%);
+                            background: -webkit-linear-gradient(top, lighten(@brand-primary, 35%) 0%, lighten(@brand-primary, 30%) 100%);
+                            background: -o-linear-gradient(top, lighten(@brand-primary, 35%) 0%, lighten(@brand-primary, 30%) 100%);
+                            background: -ms-linear-gradient(top, lighten(@brand-primary, 35%) 0%, lighten(@brand-primary, 30%) 100%);
+                            background: linear-gradient(top, lighten(@brand-primary, 35%) 0%, lighten(@brand-primary, 30%) 100%);
+                            &:hover {
+                                background: lighten(@brand-primary, 20%);
+                                background: -moz-linear-gradient(top, lighten(@brand-primary, 30%) 0%, lighten(@brand-primary, 25%) 100%);
+                                background: -webkit-linear-gradient(top, lighten(@brand-primary, 30%) 0%, lighten(@brand-primary, 25%) 100%);
+                                background: -o-linear-gradient(top, lighten(@brand-primary, 30%) 0%, lighten(@brand-primary, 25%) 100%);
+                                background: -ms-linear-gradient(top, lighten(@brand-primary, 30%) 0%, lighten(@brand-primary, 25%) 100%);
+                                background: linear-gradient(top, lighten(@brand-primary, 30%) 0%, lighten(@brand-primary, 25%) 100%);
+                            }
+                        }
+                        i {
+                            margin-right: 5px;
+                            vertical-align: -1px;
+                        }
+                    }
+                }
+            }
+        }
+
+        &>.author-area {
+            &>.inner {
+                max-width: 880px;
+                margin: 0 auto;
+                text-align: center;
+                &>.author-tabs {
+                    margin-bottom: 20px;
+                    font-size: 0; //去除空隙
+                    -webkit-text-size-adjust:none;
+                    &>a {
+                        display: inline-block;
+                        width: 90px;
+                        padding: 5px 0;
+                        border: 1px solid #cccccc;
+                        margin-right: -1px;
+                        font-size: 1.5rem;
+                        color: #666666;
+                        background: #f7f7f7;
+                        &:first-child {
+                            border-top-left-radius: 4px;
+                            border-bottom-left-radius: 4px;
+                        }
+                        &:last-child {
+                            border-top-right-radius: 4px;
+                            border-bottom-right-radius: 4px;
+                        }
+                        &.active {
+                            background: lighten(@brand-primary, 20%);
+                            /* box-shadow: 1px 1px 4px #34495e inset; */
+                            border-color: lighten(@brand-primary, 20%);
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
