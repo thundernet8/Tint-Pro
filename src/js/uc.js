@@ -22,6 +22,7 @@ import Pmkit from './modules/pm';
 import ModalSignBox from './modules/modalSignBox';
 import {} from 'lazyload/jquery.lazyload';
 import SignHelp from './modules/signHelp';
+import FixFooter from './modules/fixFooter';
 
 
 // DOM Ready
@@ -53,4 +54,6 @@ jQuery(document).ready(function ($) {
         threshold: 50
     });
     
+    // 修正Footer位置
+    FixFooter();
 });

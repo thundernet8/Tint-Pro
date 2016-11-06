@@ -1,5 +1,5 @@
 /**
- * Generated on Sun Nov 06 2016 22:11:44 GMT+0800 (中国标准时间) by Zhiyan
+ * Generated on Sun Nov 06 2016 23:59:20 GMT+0800 (中国标准时间) by Zhiyan
  *
  * @package   Tint
  * @version   v2.0.0
@@ -31,20 +31,17 @@
     return __webpack_require__(0);
 }([
     function (module, exports, __webpack_require__) {
-        (function (jQuery) {
+        (function (jQuery, TT) {
             'use strict';
             var _loading = __webpack_require__(8);
             var _msgbox = __webpack_require__(6);
             __webpack_require__(9);
+            __webpack_require__(17);
             var _scroll = __webpack_require__(14);
             var _scroll2 = _interopRequireDefault(_scroll);
-            var _follow = __webpack_require__(23);
-            var _follow2 = _interopRequireDefault(_follow);
-            var _pm = __webpack_require__(24);
-            var _pm2 = _interopRequireDefault(_pm);
             var _modalSignBox = __webpack_require__(5);
             var _modalSignBox2 = _interopRequireDefault(_modalSignBox);
-            __webpack_require__(18);
+            __webpack_require__(19);
             var _signHelp = __webpack_require__(15);
             var _signHelp2 = _interopRequireDefault(_signHelp);
             function _interopRequireDefault(obj) {
@@ -54,16 +51,35 @@
                 (0, _loading[['handleLineLoading']])();
                 _msgbox[['popMsgbox']][['init']]();
                 _scroll2[['default']][['initScrollTo']]();
-                _follow2[['default']][['init']]();
-                _pm2[['default']][['initModalPm']]();
                 _modalSignBox2[['default']][['init']]();
                 _signHelp2[['default']][['init']]();
+                (function () {
+                    if (window[['TT']] && TT[['isHome']]) {
+                        $('.slides-wrap')[['unslider']]({
+                            autoplay: true,
+                            animation: 'horizontal',
+                            animateHeight: false,
+                            delay: 6000,
+                            arrows: false,
+                            infinite: true,
+                            keys: {
+                                prev: 37,
+                                next: 39,
+                                stop: 27
+                            }
+                        });
+                    }
+                }());
                 $('img.lazy')[['lazyload']]({
                     effect: 'fadeIn',
                     threshold: 50
                 });
+                $('.sidebar img.lazy')[['lazyload']]({
+                    effect: 'fadeIn',
+                    threshold: 0
+                });
             });
-        }[['call']](exports, __webpack_require__(1)));
+        }[['call']](exports, __webpack_require__(1), __webpack_require__(4)));
     },
     function (module, exports) {
         module[['exports']] = jQuery;
@@ -369,7 +385,9 @@
                         _validate($(this));
                     });
                     _body[['on']]('click', _submitBtnSel, function () {
-                        _post($(this));
+                        if (_validate()) {
+                            _post($(this));
+                        }
                     });
                 },
                 show: function show() {
@@ -2512,7 +2530,348 @@
         }[['call']](exports, __webpack_require__(1)));
     },
     ,
-    ,
+    function (module, exports, __webpack_require__) {
+        var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
+        (function (jQuery, module) {
+            'use strict';
+            var _typeof = typeof Symbol === 'function' && typeof Symbol[['iterator']] === 'symbol' ? function (obj) {
+                return typeof obj;
+            } : function (obj) {
+                return obj && typeof Symbol === 'function' && obj[['constructor']] === Symbol ? 'symbol' : typeof obj;
+            };
+            (function (factory) {
+                if ((false ? 'undefined' : _typeof(module)) === 'object' && _typeof(module[['exports']]) === 'object') {
+                    factory(__webpack_require__(1));
+                } else if (true) {
+                    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_FACTORY__ = factory(window[['jQuery']]), __WEBPACK_AMD_DEFINE_RESULT__ = typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? __WEBPACK_AMD_DEFINE_FACTORY__[['apply']](exports, __WEBPACK_AMD_DEFINE_ARRAY__) : __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module[['exports']] = __WEBPACK_AMD_DEFINE_RESULT__));
+                } else {
+                    factory(window[['jQuery']]);
+                }
+            }(function ($) {
+                if (!$) {
+                    return console[['warn']]('Unslider needs jQuery');
+                }
+                $[['Unslider']] = function (context, options) {
+                    var self = this;
+                    self[['_']] = 'unslider';
+                    self[['defaults']] = {
+                        autoplay: false,
+                        delay: 3000,
+                        speed: 750,
+                        easing: 'swing',
+                        keys: {
+                            prev: 37,
+                            next: 39
+                        },
+                        nav: true,
+                        arrows: {
+                            prev: '<a class="' + self[['_']] + '-arrow prev">Prev</a>',
+                            next: '<a class="' + self[['_']] + '-arrow next">Next</a>'
+                        },
+                        animation: 'horizontal',
+                        selectors: {
+                            container: 'ul:first',
+                            slides: 'li'
+                        },
+                        animateHeight: false,
+                        activeClass: self[['_']] + '-active',
+                        swipe: true,
+                        swipeThreshold: 0.2
+                    };
+                    self[['$context']] = context;
+                    self[['options']] = {};
+                    self[['$parent']] = null;
+                    self[['$container']] = null;
+                    self[['$slides']] = null;
+                    self[['$nav']] = null;
+                    self[['$arrows']] = [];
+                    self[['total']] = 0;
+                    self[['current']] = 0;
+                    self[['prefix']] = self[['_']] + '-';
+                    self[['eventSuffix']] = '.' + self[['prefix']] + ~~(Math[['random']]() * 2000);
+                    self[['interval']] = null;
+                    self[['init']] = function (options) {
+                        self[['options']] = $[['extend']]({}, self[['defaults']], options);
+                        self[['$container']] = self[['$context']][['find']](self[['options']][['selectors']][['container']])[['addClass']](self[['prefix']] + 'wrap');
+                        self[['$slides']] = self[['$container']][['children']](self[['options']][['selectors']][['slides']]);
+                        self[['setup']]();
+                        $[['each']]([
+                            'nav',
+                            'arrows',
+                            'keys',
+                            'infinite'
+                        ], function (index, module) {
+                            self[['options']][module] && self['init' + $[['_ucfirst']](module)]();
+                        });
+                        if (jQuery[['event']][['special']][['swipe']] && self[['options']][['swipe']]) {
+                            self[['initSwipe']]();
+                        }
+                        self[['options']][['autoplay']] && self[['start']]();
+                        self[['calculateSlides']]();
+                        self[['$context']][['trigger']](self[['_']] + '.ready');
+                        return self[['animate']](self[['options']][['index']] || self[['current']], 'init');
+                    };
+                    self[['setup']] = function () {
+                        self[['$context']][['addClass']](self[['prefix']] + self[['options']][['animation']])[['wrap']]('<div class="' + self[['_']] + '" />');
+                        self[['$parent']] = self[['$context']][['parent']]('.' + self[['_']]);
+                        var position = self[['$context']][['css']]('position');
+                        if (position === 'static') {
+                            self[['$context']][['css']]('position', 'relative');
+                        }
+                        self[['$context']][['css']]('overflow', 'hidden');
+                    };
+                    self[['calculateSlides']] = function () {
+                        self[['$slides']] = self[['$container']][['children']](self[['options']][['selectors']][['slides']]);
+                        self[['total']] = self[['$slides']][['length']];
+                        if (self[['options']][['animation']] !== 'fade') {
+                            var prop = 'width';
+                            if (self[['options']][['animation']] === 'vertical') {
+                                prop = 'height';
+                            }
+                            self[['$container']][['css']](prop, self[['total']] * 100 + '%')[['addClass']](self[['prefix']] + 'carousel');
+                            self[['$slides']][['css']](prop, 100 / self[['total']] + '%');
+                        }
+                    };
+                    self[['start']] = function () {
+                        self[['interval']] = setTimeout(function () {
+                            self[['next']]();
+                        }, self[['options']][['delay']]);
+                        return self;
+                    };
+                    self[['stop']] = function () {
+                        clearTimeout(self[['interval']]);
+                        return self;
+                    };
+                    self[['initNav']] = function () {
+                        var $nav = $('<nav class="' + self[['prefix']] + 'nav"><ol /></nav>');
+                        self[['$slides']][['each']](function (key) {
+                            var label = this[['getAttribute']]('data-nav') || key + 1;
+                            if ($[['isFunction']](self[['options']][['nav']])) {
+                                label = self[['options']][['nav']][['call']](self[['$slides']][['eq']](key), key, label);
+                            }
+                            $nav[['children']]('ol')[['append']]('<li data-slide="' + key + '">' + label + '</li>');
+                        });
+                        self[['$nav']] = $nav[['insertAfter']](self[['$context']]);
+                        self[['$nav']][['find']]('li')[['on']]('click' + self[['eventSuffix']], function () {
+                            var $me = $(this)[['addClass']](self[['options']][['activeClass']]);
+                            $me[['siblings']]()[['removeClass']](self[['options']][['activeClass']]);
+                            self[['animate']]($me[['attr']]('data-slide'));
+                        });
+                    };
+                    self[['initArrows']] = function () {
+                        if (self[['options']][['arrows']] === true) {
+                            self[['options']][['arrows']] = self[['defaults']][['arrows']];
+                        }
+                        $[['each']](self[['options']][['arrows']], function (key, val) {
+                            self[['$arrows']][['push']]($(val)[['insertAfter']](self[['$context']])[['on']]('click' + self[['eventSuffix']], self[key]));
+                        });
+                    };
+                    self[['initKeys']] = function () {
+                        if (self[['options']][['keys']] === true) {
+                            self[['options']][['keys']] = self[['defaults']][['keys']];
+                        }
+                        $(document)[['on']]('keyup' + self[['eventSuffix']], function (e) {
+                            $[['each']](self[['options']][['keys']], function (key, val) {
+                                if (e[['which']] === val) {
+                                    $[['isFunction']](self[key]) && self[key][['call']](self);
+                                }
+                            });
+                        });
+                    };
+                    self[['initSwipe']] = function () {
+                        var width = self[['$slides']][['width']]();
+                        if (self[['options']][['animation']] !== 'fade') {
+                            self[['$container']][['on']]({
+                                movestart: function movestart(e) {
+                                    if (e[['distX']] > e[['distY']] && e[['distX']] < -e[['distY']] || e[['distX']] < e[['distY']] && e[['distX']] > -e[['distY']]) {
+                                        return !!e[['preventDefault']]();
+                                    }
+                                    self[['$container']][['css']]('position', 'relative');
+                                },
+                                move: function move(e) {
+                                    self[['$container']][['css']]('left', -(100 * self[['current']]) + 100 * e[['distX']] / width + '%');
+                                },
+                                moveend: function moveend(e) {
+                                    if (Math[['abs']](e[['distX']]) / width > self[['options']][['swipeThreshold']]) {
+                                        self[e[['distX']] < 0 ? 'next' : 'prev']();
+                                    } else {
+                                        self[['$container']][['animate']]({ left: -(100 * self[['current']]) + '%' }, self[['options']][['speed']] / 2);
+                                    }
+                                }
+                            });
+                        }
+                    };
+                    self[['initInfinite']] = function () {
+                        var pos = [
+                            'first',
+                            'last'
+                        ];
+                        $[['each']](pos, function (index, item) {
+                            self[['$slides']][['push']][['apply']](self[['$slides']], self[['$slides']][['filter']](':not(".' + self[['_']] + '-clone")')[item]()[['clone']]()[['addClass']](self[['_']] + '-clone')['insert' + (index === 0 ? 'After' : 'Before')](self[['$slides']][pos[~~!index]]()));
+                        });
+                    };
+                    self[['destroyArrows']] = function () {
+                        $[['each']](self[['$arrows']], function (i, $arrow) {
+                            $arrow[['remove']]();
+                        });
+                    };
+                    self[['destroySwipe']] = function () {
+                        self[['$container']][['off']]('movestart move moveend');
+                    };
+                    self[['destroyKeys']] = function () {
+                        $(document)[['off']]('keyup' + self[['eventSuffix']]);
+                    };
+                    self[['setIndex']] = function (to) {
+                        if (to < 0) {
+                            to = self[['total']] - 1;
+                        }
+                        self[['current']] = Math[['min']](Math[['max']](0, to), self[['total']] - 1);
+                        if (self[['options']][['nav']]) {
+                            self[['$nav']][['find']]('[data-slide="' + self[['current']] + '"]')[['_active']](self[['options']][['activeClass']]);
+                        }
+                        self[['$slides']][['eq']](self[['current']])[['_active']](self[['options']][['activeClass']]);
+                        return self;
+                    };
+                    self[['animate']] = function (to, dir) {
+                        if (to === 'first')
+                            to = 0;
+                        if (to === 'last')
+                            to = self[['total']];
+                        if (isNaN(to)) {
+                            return self;
+                        }
+                        if (self[['options']][['autoplay']]) {
+                            self[['stop']]()[['start']]();
+                        }
+                        self[['setIndex']](to);
+                        self[['$context']][['trigger']](self[['_']] + '.change', [
+                            to,
+                            self[['$slides']][['eq']](to)
+                        ]);
+                        var fn = 'animate' + $[['_ucfirst']](self[['options']][['animation']]);
+                        if ($[['isFunction']](self[fn])) {
+                            self[fn](self[['current']], dir);
+                        }
+                        return self;
+                    };
+                    self[['next']] = function () {
+                        var target = self[['current']] + 1;
+                        if (target >= self[['total']]) {
+                            target = 0;
+                        }
+                        return self[['animate']](target, 'next');
+                    };
+                    self[['prev']] = function () {
+                        return self[['animate']](self[['current']] - 1, 'prev');
+                    };
+                    self[['animateHorizontal']] = function (to) {
+                        var prop = 'left';
+                        if (self[['$context']][['attr']]('dir') === 'rtl') {
+                            prop = 'right';
+                        }
+                        if (self[['options']][['infinite']]) {
+                            self[['$container']][['css']]('margin-' + prop, '-100%');
+                        }
+                        return self[['slide']](prop, to);
+                    };
+                    self[['animateVertical']] = function (to) {
+                        self[['options']][['animateHeight']] = true;
+                        if (self[['options']][['infinite']]) {
+                            self[['$container']][['css']]('margin-top', -self[['$slides']][['outerHeight']]());
+                        }
+                        return self[['slide']]('top', to);
+                    };
+                    self[['slide']] = function (prop, to) {
+                        self[['animateHeight']](to);
+                        if (self[['options']][['infinite']]) {
+                            var dummy;
+                            if (to === self[['total']] - 1) {
+                                dummy = self[['total']] - 3;
+                                to = -1;
+                            }
+                            if (to === self[['total']] - 2) {
+                                dummy = 0;
+                                to = self[['total']] - 2;
+                            }
+                            if (typeof dummy === 'number') {
+                                self[['setIndex']](dummy);
+                                self[['$context']][['on']](self[['_']] + '.moved', function () {
+                                    if (self[['current']] === dummy) {
+                                        self[['$container']][['css']](prop, -(100 * dummy) + '%')[['off']](self[['_']] + '.moved');
+                                    }
+                                });
+                            }
+                        }
+                        var obj = {};
+                        obj[prop] = -(100 * to) + '%';
+                        return self[['_move']](self[['$container']], obj);
+                    };
+                    self[['animateFade']] = function (to) {
+                        self[['animateHeight']](to);
+                        var $active = self[['$slides']][['eq']](to)[['addClass']](self[['options']][['activeClass']]);
+                        self[['_move']]($active[['siblings']]()[['removeClass']](self[['options']][['activeClass']]), { opacity: 0 });
+                        self[['_move']]($active, { opacity: 1 }, false);
+                    };
+                    self[['animateHeight']] = function (to) {
+                        if (self[['options']][['animateHeight']]) {
+                            self[['_move']](self[['$context']], { height: self[['$slides']][['eq']](to)[['outerHeight']]() }, false);
+                        }
+                    };
+                    self[['_move']] = function ($el, obj, callback, speed) {
+                        if (callback !== false) {
+                            callback = function callback() {
+                                self[['$context']][['trigger']](self[['_']] + '.moved');
+                            };
+                        }
+                        return $el[['_move']](obj, speed || self[['options']][['speed']], self[['options']][['easing']], callback);
+                    };
+                    return self[['init']](options);
+                };
+                $[['fn']][['_active']] = function (className) {
+                    return this[['addClass']](className)[['siblings']]()[['removeClass']](className);
+                };
+                $[['_ucfirst']] = function (str) {
+                    return (str + '')[['toLowerCase']]()[['replace']](/^./, function (match) {
+                        return match[['toUpperCase']]();
+                    });
+                };
+                $[['fn']][['_move']] = function () {
+                    this[['stop']](true, true);
+                    return $[['fn']][$[['fn']][['velocity']] ? 'velocity' : 'animate'][['apply']](this, arguments);
+                };
+                $[['fn']][['unslider']] = function (opts) {
+                    return this[['each']](function (index, elem) {
+                        var $this = $(elem);
+                        var unslider = $(elem)[['data']]('unslider');
+                        if (unslider instanceof $[['Unslider']]) {
+                            return;
+                        }
+                        if (typeof opts === 'string' && $this[['data']]('unslider')) {
+                            opts = opts[['split']](':');
+                            var call = $this[['data']]('unslider')[opts[0]];
+                            if ($[['isFunction']](call)) {
+                                return call[['apply']]($this, opts[1] ? opts[1][['split']](',') : null);
+                            }
+                        }
+                        return $this[['data']]('unslider', new $[['Unslider']]($this, opts));
+                    });
+                };
+            }));
+        }[['call']](exports, __webpack_require__(1), __webpack_require__(18)(module)));
+    },
+    function (module, exports) {
+        'use strict';
+        module[['exports']] = function (module) {
+            if (!module[['webpackPolyfill']]) {
+                module[['deprecate']] = function () {
+                };
+                module[['paths']] = [];
+                module[['children']] = [];
+                module[['webpackPolyfill']] = 1;
+            }
+            return module;
+        };
+    },
     function (module, exports, __webpack_require__) {
         (function (jQuery) {
             'use strict';
@@ -2682,355 +3041,6 @@
                     }
                 });
             }(jQuery, window, document));
-        }[['call']](exports, __webpack_require__(1)));
-    },
-    ,
-    ,
-    ,
-    ,
-    function (module, exports, __webpack_require__) {
-        (function ($) {
-            'use strict';
-            Object[['defineProperty']](exports, '__esModule', { value: true });
-            var _globalConfig = __webpack_require__(2);
-            var _utils = __webpack_require__(3);
-            var _utils2 = _interopRequireDefault(_utils);
-            var _msgbox = __webpack_require__(6);
-            function _interopRequireDefault(obj) {
-                return obj && obj[['__esModule']] ? obj : { default: obj };
-            }
-            var _btnSel = '.follow-btn';
-            var _followAct = 'follow';
-            var _unfollowAct = 'unfollow';
-            var _spinnerClass = 'tico tico-spinner2 spinning';
-            var _unfollowedIconClass = 'tico tico-user-plus';
-            var _unfollowedText = '\u5173\u6ce8';
-            var _followedIconClass = 'tico tico-user-check';
-            var _followedText = '\u5df2\u5173\u6ce8';
-            var _followEachIconClass = 'tico tico-exchange';
-            var _followEachText = '\u4e92\u76f8\u5173\u6ce8';
-            var _originIconClass = '';
-            var _body = $('body');
-            var _followActing = false;
-            var _markFollowed = function _markFollowed(btn) {
-                var followEach = arguments[['length']] <= 1 || arguments[1] === undefined ? false : arguments[1];
-                btn[['removeClass']]('unfollowed')[['addClass']]('followed')[['data']]('act', _unfollowAct)[['attr']]('title', '');
-                var icon = btn[['children']]('i');
-                if (followEach) {
-                    icon[['attr']]('class', _followEachIconClass);
-                    btn[['children']]('span')[['text']](_followEachText);
-                } else {
-                    icon[['attr']]('class', _followedIconClass);
-                    btn[['children']]('span')[['text']](_followedText);
-                }
-            };
-            var _markUnfollowed = function _markUnfollowed(btn) {
-                btn[['removeClass']]('followed')[['addClass']]('unfollowed')[['data']]('act', _followAct)[['attr']]('title', '');
-                var icon = btn[['children']]('i');
-                icon[['attr']]('class', _unfollowedIconClass);
-                btn[['children']]('span')[['text']](_unfollowedText);
-            };
-            var _restoreIcon = function _restoreIcon(btn) {
-                btn[['children']]('i')[['attr']]('class', _originIconClass);
-            };
-            var _doFollow = function _doFollow(btn) {
-                if (_followActing || !btn[['data']]('uid') || !_utils2[['default']][['checkLogin']]())
-                    return false;
-                var followedUid = parseInt(btn[['data']]('uid'));
-                var action = btn[['data']]('act') == _unfollowAct ? _unfollowAct : _followAct;
-                var url = _globalConfig[['Routes']][['follower']][['replace']]('{{uid}}', followedUid);
-                var data = { action: action };
-                var beforeSend = function beforeSend() {
-                    if (_followActing)
-                        return false;
-                    _followActing = true;
-                    var icon = btn[['children']]('i');
-                    _originIconClass = icon[['attr']]('class');
-                    icon[['attr']]('class', _spinnerClass);
-                };
-                var finishRequest = function finishRequest() {
-                    if (!_followActing)
-                        return;
-                    _followActing = false;
-                };
-                var success = function success(data, textStatus, xhr) {
-                    if (data[['success']] && data[['success']] == 1) {
-                        if (action == _unfollowAct) {
-                            _markUnfollowed(btn);
-                        } else {
-                            _markFollowed(btn, data[['hasOwnProperty']]('followEach') && data['followEach']);
-                        }
-                        _msgbox[['popMsgbox']][['success']]({
-                            title: data[['message']],
-                            timer: 2000,
-                            showConfirmButton: true
-                        });
-                    } else {
-                        _msgbox[['popMsgbox']][['error']]({
-                            title: data[['message']],
-                            timer: 2000,
-                            showConfirmButton: true
-                        });
-                        _restoreIcon(btn);
-                    }
-                    finishRequest();
-                };
-                var error = function error(xhr, textStatus, err) {
-                    _msgbox[['popMsgbox']][['error']]({
-                        title: xhr[['responseJSON']] ? xhr[['responseJSON']][['message']] : xhr[['responseText']],
-                        timer: 2000,
-                        showConfirmButton: true
-                    });
-                    _restoreIcon(btn);
-                    finishRequest();
-                };
-                $[['post']]({
-                    url: url,
-                    data: _utils2[['default']][['filterDataForRest']](data),
-                    dataType: 'json',
-                    beforeSend: beforeSend,
-                    success: success,
-                    error: error
-                });
-            };
-            var FollowKit = {
-                init: function init() {
-                    _body[['on']]('click', _btnSel, function () {
-                        var $this = $(this);
-                        _doFollow($this);
-                    });
-                }
-            };
-            exports[['default']] = FollowKit;
-        }[['call']](exports, __webpack_require__(1)));
-    },
-    function (module, exports, __webpack_require__) {
-        (function ($) {
-            'use strict';
-            Object[['defineProperty']](exports, '__esModule', { value: true });
-            var _globalConfig = __webpack_require__(2);
-            var _utils = __webpack_require__(3);
-            var _utils2 = _interopRequireDefault(_utils);
-            var _msgbox = __webpack_require__(6);
-            function _interopRequireDefault(obj) {
-                return obj && obj[['__esModule']] ? obj : { default: obj };
-            }
-            var _modalPmAnchorSel = '.pm-btn';
-            var _modalPmBoxSel = '#pmBox';
-            var _modalPmBoxReceiverSel = '.pm-info_receiver';
-            var _normalPmBoxSel = '#pmForm';
-            var _receiverIdInputSel = '.receiver-id';
-            var _pmBoxNonceSel = '.pm_nonce';
-            var _pmBoxTextareaSel = '.pm-text';
-            var _cancelSel = '.cancel';
-            var _sendSel = '.confirm';
-            var _spinner = '<i class="tico tico-spinner2 spinning"></i>';
-            var _originSendBtnText = '';
-            var _receiverId;
-            var _body = $('body');
-            var _pmModalBox = $(_modalPmBoxSel);
-            var _pmModalBoxReceiverEle = null;
-            var _pmReceiverIdInput;
-            var _pmNonceInput;
-            var _pmTextArea;
-            var _sending = false;
-            var _showModalPmBox = function _showModalPmBox(btn) {
-                if (!_utils2[['default']][['checkLogin']]())
-                    return false;
-                var receiver = btn[['data']]('receiver');
-                var receiverId = btn[['data']]('receiver-id');
-                if (!receiver || !receiverId)
-                    return false;
-                _receiverId = receiverId;
-                if (!_pmModalBoxReceiverEle)
-                    _pmModalBoxReceiverEle = $(_modalPmBoxSel + ' ' + _modalPmBoxReceiverSel);
-                _pmModalBoxReceiverEle[['text']](receiver);
-                _pmModalBox[['modal']]('show');
-            };
-            var _closeModalPmBox = function _closeModalPmBox() {
-                if (!_pmModalBoxReceiverEle)
-                    _pmModalBoxReceiverEle = $(_modalPmBoxSel + ' ' + _modalPmBoxReceiverSel);
-                _pmModalBoxReceiverEle[['text']]('');
-                _pmModalBox[['modal']]('hide');
-            };
-            var _sendMsgInModalBox = function _sendMsgInModalBox(btn) {
-                if (_sending || !_receiverId || !_utils2[['default']][['checkLogin']]())
-                    return false;
-                _pmNonceInput = $(_modalPmBoxSel + ' ' + _pmBoxNonceSel);
-                _pmTextArea = $(_modalPmBoxSel + ' ' + _pmBoxTextareaSel);
-                if (!_pmNonceInput || !_pmTextArea)
-                    return false;
-                var nonce = _pmNonceInput[['val']]();
-                var message = _pmTextArea[['val']]();
-                if (nonce[['length']] == 0)
-                    return false;
-                if (message[['length']] == 0) {
-                    _pmTextArea[['focus']]();
-                    _pmTextArea[['addClass']]('error');
-                    setTimeout(function () {
-                        _pmTextArea[['removeClass']]('error');
-                    }, 2000);
-                    return false;
-                }
-                var url = _globalConfig[['Routes']][['pm']];
-                var data = {
-                    receiverId: _receiverId,
-                    pmNonce: nonce,
-                    message: message
-                };
-                var beforeSend = function beforeSend() {
-                    if (_sending)
-                        return;
-                    _originSendBtnText = btn[['text']]();
-                    btn[['html']](_spinner);
-                    btn[['prop']]('disabled', true);
-                    _pmTextArea[['prop']]('disabled', true);
-                    _sending = true;
-                };
-                var finishRequest = function finishRequest() {
-                    if (!_sending)
-                        return;
-                    btn[['text']](_originSendBtnText);
-                    btn[['prop']]('disabled', false);
-                    _pmTextArea[['prop']]('disabled', false)[['val']]('');
-                    _closeModalPmBox();
-                    _sending = false;
-                };
-                var success = function success(data, textStatus, xhr) {
-                    finishRequest();
-                    if (data[['success']] && data[['success']] == 1) {
-                        _msgbox[['popMsgbox']][['success']]({
-                            title: data[['message']],
-                            text: '<a href="' + data[['data']]['chatUrl'] + '">\u67e5\u770b\u5bf9\u8bdd</a>',
-                            html: true,
-                            showConfirmButton: true
-                        });
-                    } else {
-                        _msgbox[['popMsgbox']][['error']]({
-                            title: data[['message']],
-                            timer: 2000,
-                            showConfirmButton: true
-                        });
-                    }
-                };
-                var error = function error(xhr, textStatus, err) {
-                    finishRequest();
-                    _msgbox[['popMsgbox']][['error']]({
-                        title: xhr[['responseJSON']] ? xhr[['responseJSON']][['message']] : xhr[['responseText']],
-                        timer: 2000,
-                        showConfirmButton: true
-                    });
-                };
-                $[['post']]({
-                    url: url,
-                    data: _utils2[['default']][['filterDataForRest']](data),
-                    dataType: 'json',
-                    beforeSend: beforeSend,
-                    success: success,
-                    error: error
-                });
-            };
-            var _sendMsgInNormalForm = function _sendMsgInNormalForm(btn) {
-                if (_sending || !_utils2[['default']][['checkLogin']]())
-                    return false;
-                _pmReceiverIdInput = $(_normalPmBoxSel + ' ' + _receiverIdInputSel);
-                _pmNonceInput = $(_normalPmBoxSel + ' ' + _pmBoxNonceSel);
-                _pmTextArea = $(_normalPmBoxSel + ' ' + _pmBoxTextareaSel);
-                if (!_pmReceiverIdInput || !_pmNonceInput || !_pmTextArea)
-                    return false;
-                var receiverId = _pmReceiverIdInput[['val']]();
-                var nonce = _pmNonceInput[['val']]();
-                var message = _pmTextArea[['val']]();
-                if (!receiverId || nonce[['length']] == 0)
-                    return false;
-                if (message[['length']] == 0) {
-                    _pmTextArea[['focus']]();
-                    _pmTextArea[['addClass']]('error');
-                    setTimeout(function () {
-                        _pmTextArea[['removeClass']]('error');
-                    }, 2000);
-                    return false;
-                }
-                var url = _globalConfig[['Routes']][['pm']];
-                var data = {
-                    receiverId: receiverId,
-                    pmNonce: nonce,
-                    message: message
-                };
-                var beforeSend = function beforeSend() {
-                    if (_sending)
-                        return;
-                    _originSendBtnText = btn[['text']]();
-                    btn[['html']](_spinner);
-                    btn[['prop']]('disabled', true);
-                    _pmTextArea[['prop']]('disabled', true);
-                };
-                var finishRequest = function finishRequest() {
-                    if (!_sending)
-                        return;
-                    btn[['text']](_originSendBtnText);
-                    btn[['prop']]('disabled', false);
-                    _pmTextArea[['prop']]('disabled', false)[['val']]('');
-                };
-                var success = function success(data, textStatus, xhr) {
-                    finishRequest();
-                    if (data[['success']] && data[['success']] == 1) {
-                        _msgbox[['popMsgbox']][['success']]({
-                            title: data[['message']],
-                            timer: 2000,
-                            showConfirmButton: true
-                        });
-                        _prependNewMsg(data[['data']]);
-                    } else {
-                        _msgbox[['popMsgbox']][['error']]({
-                            title: data[['message']],
-                            timer: 2000,
-                            showConfirmButton: true
-                        });
-                    }
-                };
-                var error = function error(xhr, textStatus, err) {
-                    finishRequest();
-                    _msgbox[['popMsgbox']][['error']]({
-                        title: xhr[['responseJSON']] ? xhr[['responseJSON']][['message']] : xhr[['responseText']],
-                        timer: 2000,
-                        showConfirmButton: true
-                    });
-                };
-                $[['post']]({
-                    url: url,
-                    data: _utils2[['default']][['filterDataForRest']](data),
-                    dataType: 'json',
-                    beforeSend: beforeSend,
-                    success: success,
-                    error: error
-                });
-            };
-            var _prependNewMsg = function _prependNewMsg(msg) {
-            };
-            var PmKit = {
-                initModalPm: function initModalPm() {
-                    _body[['on']]('click', _modalPmAnchorSel, function (e) {
-                        e[['preventDefault']]();
-                        var $this = $(this);
-                        _showModalPmBox($this);
-                    });
-                    _body[['on']]('click', _modalPmBoxSel + ' ' + _cancelSel, function () {
-                        _closeModalPmBox();
-                    });
-                    _body[['on']]('click', _modalPmBoxSel + ' ' + _sendSel, function () {
-                        var $this = $(this);
-                        _sendMsgInModalBox($this);
-                    });
-                },
-                initNormalPm: function initNormalPm() {
-                    _body[['on']]('click', _normalPmBoxSel + ' ' + _sendSel, function () {
-                        var $this = $(this);
-                        _sendMsgInNormalForm($this);
-                    });
-                }
-            };
-            exports[['default']] = PmKit;
         }[['call']](exports, __webpack_require__(1)));
     }
 ]));

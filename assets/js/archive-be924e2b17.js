@@ -1,5 +1,5 @@
 /**
- * Generated on Sun Nov 06 2016 22:11:43 GMT+0800 (中国标准时间) by Zhiyan
+ * Generated on Sun Nov 06 2016 23:59:20 GMT+0800 (中国标准时间) by Zhiyan
  *
  * @package   Tint
  * @version   v2.0.0
@@ -40,8 +40,12 @@
             var _loadNextPage2 = _interopRequireDefault(_loadNextPage);
             var _scroll = __webpack_require__(14);
             var _scroll2 = _interopRequireDefault(_scroll);
+            var _modalSignBox = __webpack_require__(5);
+            var _modalSignBox2 = _interopRequireDefault(_modalSignBox);
             var _signHelp = __webpack_require__(15);
             var _signHelp2 = _interopRequireDefault(_signHelp);
+            var _fixFooter = __webpack_require__(16);
+            var _fixFooter2 = _interopRequireDefault(_fixFooter);
             function _interopRequireDefault(obj) {
                 return obj && obj[['__esModule']] ? obj : { default: obj };
             }
@@ -50,7 +54,9 @@
                 _msgbox[['popMsgbox']][['init']]();
                 _loadNextPage2[['default']][['init']]();
                 _scroll2[['default']][['initScrollTo']]();
+                _modalSignBox2[['default']][['init']]();
                 _signHelp2[['default']][['init']]();
+                (0, _fixFooter2[['default']])();
             });
         }[['call']](exports, __webpack_require__(1)));
     },
@@ -358,7 +364,9 @@
                         _validate($(this));
                     });
                     _body[['on']]('click', _submitBtnSel, function () {
-                        _post($(this));
+                        if (_validate()) {
+                            _post($(this));
+                        }
                     });
                 },
                 show: function show() {
@@ -2561,6 +2569,19 @@
                 }
             };
             exports[['default']] = SignHelp;
+        }[['call']](exports, __webpack_require__(1)));
+    },
+    function (module, exports, __webpack_require__) {
+        (function ($) {
+            'use strict';
+            Object[['defineProperty']](exports, '__esModule', { value: true });
+            exports[['default']] = function () {
+                var footer = $('body>footer');
+                var diffH = $(window)[['height']]() - footer[['offset']]()[['top']] - footer[['height']]();
+                if (diffH > 0) {
+                    footer[['css']]('position', 'relative')[['css']]('top', diffH);
+                }
+            };
         }[['call']](exports, __webpack_require__(1)));
     }
 ]));

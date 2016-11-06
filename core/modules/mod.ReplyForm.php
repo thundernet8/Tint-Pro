@@ -25,7 +25,7 @@ global $postdata;
         <?php if(is_user_logged_in()) { ?>
         <textarea name="comment" placeholder="<?php _e('Leave some words...', 'tt'); ?>" id="comment-text" required></textarea>
         <?php }else{ ?>
-        <textarea name="comment" placeholder="<?php _e('Signin and Leave some words...', 'tt'); ?>" id="comment-text" required disabled></textarea>
+        <textarea name="comment" placeholder="<?php _e('Signin and Leave some words...', 'tt'); ?>" id="comment-text" required></textarea>
         <?php } ?>
     </div>
     <?php if(is_user_logged_in()) { ?>

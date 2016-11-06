@@ -2,80 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1212df9-9110-41ec-af9e-f8eb72c2514b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/modules/uc/uc.NavTabs.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/modules/uc/uc.Tab.Activities.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/modules/uc/uc.Tab.Chat.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/modules/uc/uc.Tab.Comments.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/modules/uc/uc.Tab.Followers.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/modules/uc/uc.Tab.Following.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/modules/uc/uc.Tab.Latest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/modules/uc/uc.Tab.Profile.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/modules/uc/uc.Tab.Stars.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/modules/uc/uc.TopPane.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/templates/uc/tpl.UC.Activities.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/templates/uc/tpl.UC.Followers.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/templates/uc/tpl.UC.Following.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/js/modules/signHelp.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/archive-d34aeb088a.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/single-40601fd24c.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/uc-3c39af6543.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/js/404-564f9584e1.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/js/actionPage-943f533861.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/js/archive-8516e0cb83.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/js/common-caa0d2a669.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/js/frontPage-da6c2995c2.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/js/home-288dbf23ae.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/js/me-f1fc240a10.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/js/product-ef421887ff.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/js/products-67a6032e0a.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/js/single-49785163bb.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/js/uc-26c04c4e79.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/img/user-default-cover-full.jpg" afterPath="$PROJECT_DIR$/assets/img/user-default-cover-full.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/img/user-default-cover-mini.jpg" afterPath="$PROJECT_DIR$/assets/img/user-default-cover-mini.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/languages/zh_CN.mo" afterPath="$PROJECT_DIR$/core/languages/zh_CN.mo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/img/user-default-cover-full.jpg" afterPath="$PROJECT_DIR$/src/img/user-default-cover-full.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/js/modules/fixFooter.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/404-7837f78ee6.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/actions-827150e91c.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/archive-2488e67bce.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/error-page-b5392c81bb.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/front-page-3c39af6543.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/home-1262d770b8.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/me-3c39af6543.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/product-3c39af6543.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/products-3c39af6543.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/single-aeb1d92b29.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/uc-9b6b707371.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/js/404-9a2302cf46.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/js/actionPage-fde4b6f41b.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/js/archive-a3a70d9d9a.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/js/home-dcc87e0784.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/js/single-3c935d5823.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/js/uc-34eaceec23.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/404-7837f78ee6.css" afterPath="$PROJECT_DIR$/assets/css/404-7837f78ee6.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/actions-827150e91c.css" afterPath="$PROJECT_DIR$/assets/css/actions-827150e91c.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/error-page-b5392c81bb.css" afterPath="$PROJECT_DIR$/assets/css/error-page-b5392c81bb.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/front-page-3c39af6543.css" afterPath="$PROJECT_DIR$/assets/css/front-page-3c39af6543.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/home-1262d770b8.css" afterPath="$PROJECT_DIR$/assets/css/home-1262d770b8.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/me-3c39af6543.css" afterPath="$PROJECT_DIR$/assets/css/me-3c39af6543.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/product-3c39af6543.css" afterPath="$PROJECT_DIR$/assets/css/product-3c39af6543.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/products-3c39af6543.css" afterPath="$PROJECT_DIR$/assets/css/products-3c39af6543.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/Constants.php" afterPath="$PROJECT_DIR$/core/functions/Constants.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/frontPage-6407430b6a.js" afterPath="$PROJECT_DIR$/assets/js/frontPage-6407430b6a.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/me-6407430b6a.js" afterPath="$PROJECT_DIR$/assets/js/me-6407430b6a.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/product-6407430b6a.js" afterPath="$PROJECT_DIR$/assets/js/product-6407430b6a.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/products-6407430b6a.js" afterPath="$PROJECT_DIR$/assets/js/products-6407430b6a.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/asset.Constant.php" afterPath="$PROJECT_DIR$/core/functions/asset.Constant.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/func.Comment.php" afterPath="$PROJECT_DIR$/core/functions/func.Comment.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/func.Kits.php" afterPath="$PROJECT_DIR$/core/functions/func.Kits.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/func.Rewrite.php" afterPath="$PROJECT_DIR$/core/functions/func.Rewrite.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/func.Script.php" afterPath="$PROJECT_DIR$/core/functions/func.Script.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/languages/tt.pot" afterPath="$PROJECT_DIR$/core/languages/tt.pot" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/languages/zh_CN.po" afterPath="$PROJECT_DIR$/core/languages/zh_CN.po" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/mod.Footer.php" afterPath="$PROJECT_DIR$/core/modules/mod.Footer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/uc/tpl.UC.Chat.php" afterPath="$PROJECT_DIR$/core/templates/uc/tpl.UC.Chat.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/uc/tpl.UC.Comments.php" afterPath="$PROJECT_DIR$/core/templates/uc/tpl.UC.Comments.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/uc/tpl.UC.Latest.php" afterPath="$PROJECT_DIR$/core/templates/uc/tpl.UC.Latest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/uc/tpl.UC.Profile.php" afterPath="$PROJECT_DIR$/core/templates/uc/tpl.UC.Profile.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dash/of_inc/includes/class-options-interface.php" afterPath="$PROJECT_DIR$/dash/of_inc/includes/class-options-interface.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dash/of_inc/includes/class-options-sanitization.php" afterPath="$PROJECT_DIR$/dash/of_inc/includes/class-options-sanitization.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dash/options.php" afterPath="$PROJECT_DIR$/dash/options.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/css/archive.less" afterPath="$PROJECT_DIR$/src/css/archive.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/css/modules/vars.less" afterPath="$PROJECT_DIR$/src/css/modules/vars.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/css/single.less" afterPath="$PROJECT_DIR$/src/css/single.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/css/uc.less" afterPath="$PROJECT_DIR$/src/css/uc.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/404.js" afterPath="$PROJECT_DIR$/src/js/404.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/mod.ReplyForm.php" afterPath="$PROJECT_DIR$/core/modules/mod.ReplyForm.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/css/404.less" afterPath="$PROJECT_DIR$/src/css/404.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/css/modules/base.less" afterPath="$PROJECT_DIR$/src/css/modules/base.less" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/archive.js" afterPath="$PROJECT_DIR$/src/js/archive.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/home.js" afterPath="$PROJECT_DIR$/src/js/home.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/modules/follow.js" afterPath="$PROJECT_DIR$/src/js/modules/follow.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/modules/globalConfig.js" afterPath="$PROJECT_DIR$/src/js/modules/globalConfig.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/modules/loading.js" afterPath="$PROJECT_DIR$/src/js/modules/loading.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/modules/pm.js" afterPath="$PROJECT_DIR$/src/js/modules/pm.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/single.js" afterPath="$PROJECT_DIR$/src/js/single.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/modules/comments.js" afterPath="$PROJECT_DIR$/src/js/modules/comments.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/modules/modalSignBox.js" afterPath="$PROJECT_DIR$/src/js/modules/modalSignBox.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/uc.js" afterPath="$PROJECT_DIR$/src/js/uc.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/rev/rev-manifest.json" afterPath="$PROJECT_DIR$/src/rev/rev-manifest.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webpack.config.js" afterPath="$PROJECT_DIR$/webpack.config.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/templates/me/tpl.Me.Setting.php" afterPath="$PROJECT_DIR$/core/templates/me/tpl.Me.Settings.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/templates/uc/tpl.UC.Recommendations.php" afterPath="$PROJECT_DIR$/core/templates/uc/tpl.UC.Stars.php" />
     </list>
     <ignored path="Tinection 2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -119,17 +77,67 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.less" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/css/home.less">
+      <file leaf-file-name="uc.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/js/uc.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="347">
-              <caret line="49" column="23" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="23" />
+            <state relative-caret-position="299">
+              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="44" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="uc.NavTabs.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="mod.ReplyForm.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/modules/mod.ReplyForm.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="448">
+              <caret line="27" column="126" selection-start-line="27" selection-start-column="126" selection-end-line="27" selection-end-column="126" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="comments.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/js/modules/comments.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="248">
+              <caret line="419" column="45" selection-start-line="419" selection-start-column="45" selection-end-line="419" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base.less" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/css/modules/base.less">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="161">
+              <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="single.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/js/single.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="448">
+              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="archive.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/js/archive.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="299">
+              <caret line="20" column="50" selection-start-line="20" selection-start-column="50" selection-end-line="20" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="uc.NavTabs.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/modules/uc/uc.NavTabs.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="84">
@@ -141,22 +149,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="func.Kits.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/functions/func.Kits.php">
+      <file leaf-file-name="modalSignBox.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/js/modules/modalSignBox.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="70" column="47" selection-start-line="70" selection-start-column="39" selection-end-line="70" selection-end-column="47" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Constants.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/functions/Constants.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="159">
-              <caret line="49" column="136" selection-start-line="49" selection-start-column="136" selection-end-line="49" selection-end-column="136" />
-              <folding />
+            <state relative-caret-position="588">
+              <caret line="174" column="13" selection-start-line="174" selection-start-column="13" selection-end-line="174" selection-end-column="13" />
+              <folding>
+                <element signature="e#302#330#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -167,18 +167,6 @@
             <state relative-caret-position="211">
               <caret line="45" column="40" selection-start-line="45" selection-start-column="29" selection-end-line="45" selection-end-column="40" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="uc.TopPane.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/modules/uc/uc.TopPane.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="22" column="203" selection-start-line="22" selection-start-column="203" selection-end-line="22" selection-end-column="203" />
-              <folding>
-                <element signature="n#style#0;n#section#0;n#!!top" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -200,11 +188,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/css/modules/modalSign/sign-box.less" />
-        <option value="$PROJECT_DIR$/core/modules/mod.FeaturedCats.php" />
-        <option value="$PROJECT_DIR$/core/modules/mod.HomeLatest.php" />
-        <option value="$PROJECT_DIR$/core/modules/mod.HomePopular.php" />
-        <option value="$PROJECT_DIR$/core/modules/widgets/wgt.HotHits.Posts.php" />
         <option value="$PROJECT_DIR$/core/modules/widgets/wgt.HotReviews.Posts.php" />
         <option value="$PROJECT_DIR$/core/modules/widgets/wgt.Latest.Posts.php" />
         <option value="$PROJECT_DIR$/core/modules/widgets/wgt.RecentComments.php" />
@@ -235,15 +218,12 @@
         <option value="$PROJECT_DIR$/src/js/modules/pm.js" />
         <option value="$PROJECT_DIR$/src/js/modules/follow.js" />
         <option value="$PROJECT_DIR$/src/css/modules/vars.less" />
-        <option value="$PROJECT_DIR$/src/js/uc.js" />
         <option value="$PROJECT_DIR$/src/js/single.js" />
         <option value="$PROJECT_DIR$/src/js/home.js" />
-        <option value="$PROJECT_DIR$/src/js/archive.js" />
         <option value="$PROJECT_DIR$/src/js/modules/signHelp.js" />
         <option value="$PROJECT_DIR$/core/modules/uc/uc.TopPane.php" />
         <option value="$PROJECT_DIR$/src/js/modules/loading.js" />
         <option value="$PROJECT_DIR$/core/modules/mod.Footer.php" />
-        <option value="$PROJECT_DIR$/src/js/modules/modalSignBox.js" />
         <option value="$PROJECT_DIR$/src/js/modules/globalConfig.js" />
         <option value="$PROJECT_DIR$/src/js/404.js" />
         <option value="$PROJECT_DIR$/core/functions/func.Rewrite.php" />
@@ -251,6 +231,14 @@
         <option value="$PROJECT_DIR$/core/functions/Constants.php" />
         <option value="$PROJECT_DIR$/src/css/uc.less" />
         <option value="$PROJECT_DIR$/core/modules/uc/uc.NavTabs.php" />
+        <option value="$PROJECT_DIR$/src/js/modules/modalSignBox.js" />
+        <option value="$PROJECT_DIR$/src/css/404.less" />
+        <option value="$PROJECT_DIR$/src/js/modules/fixFooter.js" />
+        <option value="$PROJECT_DIR$/src/js/uc.js" />
+        <option value="$PROJECT_DIR$/src/js/archive.js" />
+        <option value="$PROJECT_DIR$/core/modules/mod.ReplyForm.php" />
+        <option value="$PROJECT_DIR$/src/js/modules/comments.js" />
+        <option value="$PROJECT_DIR$/src/css/modules/base.less" />
       </list>
     </option>
   </component>
@@ -1022,7 +1010,7 @@
       <workItem from="1478172965230" duration="15518000" />
       <workItem from="1478259728570" duration="4868000" />
       <workItem from="1478350781510" duration="1212000" />
-      <workItem from="1478403507760" duration="22285000" />
+      <workItem from="1478403507760" duration="25047000" />
     </task>
     <task id="LOCAL-00001" summary="Add change log and contributing doc">
       <created>1476711242287</created>
@@ -1042,7 +1030,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1079775000" />
+    <option name="totallyTimeSpent" value="1082537000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1055,9 +1043,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1932" height="1047" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22702992" sideWeight="0.4927798" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22702992" sideWeight="0.4927798" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329718" sideWeight="0.4978678" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21149674" sideWeight="0.53411514" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13272922" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1147,52 +1135,6 @@
     </PATH>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/core/modules/uc/uc.Tab.Followers.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
-          <folding>
-            <element signature="e#6#291#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/modules/uc/uc.Tab.Following.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
-          <folding>
-            <element signature="e#6#291#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/modules/uc/uc.Tab.Activities.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="14" column="37" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
-          <folding>
-            <element signature="e#6#291#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/templates/uc/tpl.UC.Profile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/templates/uc/tpl.UC.Stars.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="21" column="43" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/templates/uc/tpl.UC.Comments.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="392">
@@ -1361,16 +1303,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/modules/comments.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding>
-            <element signature="e#302#340#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/css/archive.less">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="319">
@@ -1389,51 +1321,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/single.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="62" column="20" selection-start-line="62" selection-start-column="20" selection-end-line="62" selection-end-column="20" />
-          <folding>
-            <element signature="e#302#354#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="45" column="20" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="20" />
-          <folding>
-            <element signature="e#1153#1670#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/archive.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="20" column="42" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
-          <folding>
-            <element signature="e#302#354#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/js/modules/signHelp.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="411">
           <caret line="22" column="32" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/uc.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="46" column="4" selection-start-line="46" selection-start-column="4" selection-end-line="47" selection-end-column="20" />
-          <folding>
-            <element signature="e#302#354#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1479,14 +1371,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/modules/modalSignBox.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
           <folding />
         </state>
       </provider>
@@ -1559,7 +1443,7 @@
         <state relative-caret-position="280">
           <caret line="22" column="203" selection-start-line="22" selection-start-column="203" selection-end-line="22" selection-end-column="203" />
           <folding>
-            <element signature="n#style#0;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1580,6 +1464,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/core/modules/uc/uc.NavTabs.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="14" column="81" selection-start-line="14" selection-start-column="81" selection-end-line="14" selection-end-column="81" />
+          <folding>
+            <marker date="1478444859765" expanded="true" signature="601:648" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/modules/modalSignBox.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="588">
+          <caret line="174" column="13" selection-start-line="174" selection-start-column="13" selection-end-line="174" selection-end-column="13" />
+          <folding>
+            <element signature="e#302#330#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1027">
+          <caret line="45" column="20" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="20" />
+          <folding>
+            <element signature="e#1153#1670#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/css/404.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="33" column="19" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/modules/fixFooter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="19" column="61" selection-start-line="19" selection-start-column="61" selection-end-line="19" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/css/uc.less">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="581">
@@ -1593,13 +1523,59 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/modules/uc/uc.NavTabs.php">
+    <entry file="file://$PROJECT_DIR$/src/js/me.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="14" column="81" selection-start-line="14" selection-start-column="81" selection-end-line="14" selection-end-column="81" />
-          <folding>
-            <marker date="1478444859765" expanded="true" signature="601:648" ph="..." />
-          </folding>
+        <state relative-caret-position="420">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/single.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/archive.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="20" column="50" selection-start-line="20" selection-start-column="50" selection-end-line="20" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/uc.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/modules/mod.ReplyForm.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="27" column="126" selection-start-line="27" selection-start-column="126" selection-end-line="27" selection-end-column="126" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/modules/comments.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="419" column="45" selection-start-line="419" selection-start-column="45" selection-end-line="419" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/css/modules/base.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -417,9 +417,9 @@ var postCommentsKit = {
 
         // Toggle 回复框(同时检查是否登录)
         _body.on('click', _replyBtnSel, function () {
+            if(!(Utils.checkLogin())) return;
             var $this = $(this);
             var _currentReplyWrap = $this.parent().parent('.comment-body').children(_replyWrapSel);
-            Utils.checkLogin();
             if(_currentReplyWrap.css('display')!=='block'){
                 $('#respond '+_replyWrapSel).hide();
             }

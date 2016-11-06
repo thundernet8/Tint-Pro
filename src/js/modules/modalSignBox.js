@@ -170,7 +170,9 @@ var ModalSignBox = {
             _validate($(this));
         });
         _body.on('click', _submitBtnSel, function () {
-            _post($(this));
+            if(_validate()){
+                _post($(this));
+            }
         });
     },
     show: function() {
