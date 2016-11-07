@@ -161,6 +161,8 @@ load_vm('vm.Widget.HotHit.Posts');
 load_vm('vm.Widget.HotReviewed.Posts');
 load_vm('vm.Widget.Recent.Comments');
 load_vm('vm.Widget.Latest.Posts');
+load_vm('vm.UC.Latest');
+load_vm('vm.UC.Stars');
 
 /* 载入小工具 */
 load_widget('wgt.TagCloud');

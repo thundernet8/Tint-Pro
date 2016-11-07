@@ -97,12 +97,42 @@ function tt_count_author_posts_views ($user_id, $view_key = 'views') {
 }
 
 
+/**
+ * 统计某个作者的文章被赞的总次数
+ *
+ * @since 2.0.0
+ * @param $user_id
+ * @return null|string
+ */
 function tt_count_author_posts_stars ($user_id) {
     global $wpdb;
     $sql = $wpdb->prepare("SELECT COUNT(*) FROM $wpdb->postmeta  WHERE meta_key='%s' AND post_id IN (SELECT ID FROM $wpdb->posts WHERE post_author=%d)", 'tt_post_star_users', $user_id);
     $count = $wpdb->get_var($sql);
 
     return $count;
+}
+
+
+/**
+ * 获取用户点赞的所有文章ID
+ *
+ * @since 2.0.0
+ * @param $user_id
+ * @return array
+ */
+function tt_get_user_star_post_ids ($user_id) {
+    global $wpdb;
+    $sql = $wpdb->prepare("SELECT `post_id` FROM $wpdb->postmeta  WHERE `meta_key`='%s' AND `meta_value`=%d", 'tt_post_star_users', $user_id);
+    $results = $wpdb->get_results($sql);
+    //ARRAY_A -> array(3) { [0]=> array(1) { [0]=> string(4) "1420" } [1]=> array(1) { [0]=> string(3) "242" } [2]=> array(1) { [0]=> string(4) "1545" } }
+    //OBJECT -> array(3) { [0]=> object(stdClass)#3862 (1) { ["post_id"]=> string(4) "1420" } [1]=> object(stdClass)#3863 (1) { ["post_id"]=> string(3) "242" } [2]=> object(stdClass)#3864 (1) { ["post_id"]=> string(4) "1545" } }
+    $ids = array();
+    foreach ($results as $result) {
+        $ids[] = intval($result->post_id);
+    }
+    $ids = array_unique($ids);
+    rsort($ids); //从大到小排序
+    return $ids;
 }
 
 

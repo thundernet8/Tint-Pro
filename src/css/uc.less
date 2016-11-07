@@ -35,8 +35,8 @@
 /* Modal Signbox */
 @import "modules/modalSign/sign-box";
 
-/* Thumb */
-@import "modules/loop/thumb";
+/* Loop row */
+@import "modules/loop/loop-rows";
 
 
 body.author {
@@ -86,7 +86,7 @@ body.author {
                     font-size: 2.4rem;
                     line-height: 1;
                     i {
-                        font-size: 2.0rem;
+                        font-size: 1.6rem;
                         margin-left: 5px;
                     }
                 }
@@ -156,11 +156,12 @@ body.author {
             &>.inner {
                 max-width: 880px;
                 margin: 0 auto;
-                text-align: center;
+                //text-align: center;
                 &>.author-tabs {
                     margin-bottom: 20px;
                     font-size: 0; //去除空隙
                     -webkit-text-size-adjust:none;
+                    text-align: center;
                     &>a {
                         display: inline-block;
                         width: 90px;
@@ -183,6 +184,27 @@ body.author {
                             /* box-shadow: 1px 1px 4px #34495e inset; */
                             border-color: lighten(@brand-primary, 20%);
                             color: #fff;
+                        }
+                    }
+                }
+                &>.author-tab-box {
+                    position: relative;
+                    padding: 20px;
+                    margin-bottom: 50px;
+                    background: #fff;
+                    border-radius: 5px;
+                    &>.tab-content {
+                        &>.empty-content {
+                            padding: 30px 0;
+                            text-align: center;
+                            font-size: 2rem;
+                            &>.tico {
+                                font-size: 6rem;
+                                color: #dddddd;
+                            }
+                            &>p {
+                                margin: 40px auto 20px;
+                            }
                         }
                     }
                 }

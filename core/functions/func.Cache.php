@@ -135,6 +135,20 @@ function tt_clear_all_cache() {
 
 
 /**
+ * 模糊匹配键值删除transient的缓存
+ *
+ * @since 2.0.0
+ * @param $key
+ */
+function tt_clear_cache_key_like($key) {
+    global $wpdb;
+    $like1 = '_transient_' . $key . '%';
+    $like2 = '_transient_timeout_' . $key . '%';
+    $wpdb->query( $wpdb->prepare("DELETE FROM $wpdb->options WHERE `option_name` LIKE %s OR `option_name` LIKE %s", $like1, $like2) );
+}
+
+
+/**
  * 预读取菜单时寻找缓存
  *
  * @since   2.0.0
@@ -193,7 +207,39 @@ function tt_delete_menu_cache(){
 }
 add_action('wp_update_nav_menu', 'tt_delete_menu_cache');
 
-//TODO 其他工具利用apply_filters do_action add_filter add_action调用或生成缓存
+//TODO 其他工具利用apply_filters do_action add_filter add_action调用或生成或删除缓存
+
+/**
+ * 文章点赞或取消赞时删除对应缓存
+ *
+ * @since   2.0.0
+ * @param   int $post_ID
+ * @return  void
+ */
+function tt_clear_cache_for_stared_or_unstar_post($post_ID) {
+    $cache_key = 'tt_cache_daily_vm_SinglePostVM_post' . $post_ID;
+    delete_transient($cache_key);
+}
+add_action('tt_stared_post', 'tt_clear_cache_for_stared_or_unstar_post', 10 , 1);
+add_action('tt_unstared_post', 'tt_clear_cache_for_stared_or_unstar_post', 10, 1);
+
+
+/**
+ * 文章点赞或取消赞时删除对应用户的UC Stars缓存
+ *
+ * @since   2.0.0
+ * @param   int $post_ID
+ * @param   int $author_id
+ * @return  void
+ */
+function tt_clear_cache_for_uc_stars($post_ID, $author_id) {
+    $cache_key = 'tt_cache_daily_vm_UCStarsVM_author' . $author_id . '_page'; //模糊键值
+    //delete_transient($cache_key);
+    tt_clear_cache_key_like($cache_key);
+}
+add_action('tt_stared_post', 'tt_clear_cache_for_uc_stars', 10 , 2);
+add_action('tt_unstared_post', 'tt_clear_cache_for_uc_stars', 10, 2);
+
 
 /**
  * 输出小工具前尝试检索缓存

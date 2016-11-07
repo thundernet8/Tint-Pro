@@ -61,7 +61,7 @@ abstract class BaseVM {
      * @since   2.0.0
      * @static
      * @access  public
-     * @return BaseVM
+     * @return  BaseVM
      */
     public static function getInstance() {
         if(static::$_instance && static::$_instance instanceof static) { // static::$_instance instanceof static防止子类都共用基类一个实例

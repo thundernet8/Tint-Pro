@@ -45,6 +45,18 @@ class WP_REST_Post_Star_Controller extends WP_REST_Controller
                 'permission_callback' => array( $this, 'update_item_permissions_check' ),
                 'args'            => $this->get_endpoint_args_for_item_schema( WP_REST_Server::EDITABLE ),
             ),
+            array(
+                'methods' => WP_REST_Server::DELETABLE,
+                'callback' => array( $this, 'delete_item' ),
+                'permission_callback' => array( $this, 'delete_item_permissions_check' ),
+                'args' => array(
+                    'force'    => array(
+                        'default'     => false,
+                        'description' => __( 'Required to be true, as resource does not support trashing.' ),
+                    ),
+                    'reassign' => array(),
+                ),
+            ),
             'schema' => array( $this, 'get_public_item_schema' ),
         ) );
     }
@@ -118,12 +130,55 @@ class WP_REST_Post_Star_Controller extends WP_REST_Controller
             $post_stars = count($star_user_ids) + 1;
             $add = add_post_meta($post_id, 'tt_post_star_users', $user->ID); // Note: tt_post_star_users不唯一
             if($add) {
-                do_action('tt_stared_post', $post_id); //TODO clear cache
+                do_action('tt_stared_post', $post_id, $user->ID); //TODO clear cache
             }else{
                 return tt_api_fail(__('Star post failed', 'tt'), array(), '409');
             }
         }
 
         return tt_api_success(__('Star post successfully', 'tt'), array('stars' => $post_stars, 'uid' => $user->ID, 'name' => $user->display_name, 'avatar' => tt_get_avatar($user->ID, 'small')));
+    }
+
+
+    /**
+     * 检查请求是否有删除指定文章点赞(取消收藏)的权限
+     *
+     * @param  WP_REST_Request $request Full details about the request.
+     * @return boolean | WP_Error
+     */
+    public function delete_item_permissions_check( $request ) {
+
+        $current_uid = get_current_user_id();
+
+        if (!$current_uid) {
+            return new WP_Error('rest_star_cannot_delete', __('Sorry, you cannot unstar post without signing in.', 'tt'), array('status' => tt_rest_authorization_required_code()));
+        }
+
+        return true;
+    }
+
+    /**
+     * 删除点赞(取消收藏)
+     *
+     * @param WP_REST_Request $request Full details about the request.
+     * @return WP_Error|WP_REST_Response
+     */
+    public function delete_item( $request ) {
+        $post_id = absint($request['post_id']);
+        if(!$post_id) {
+            return tt_api_fail(__('Wrong post id', 'tt'));
+        }
+
+        $user_id = get_current_user_id();
+
+        $delete = delete_post_meta($post_id, 'tt_post_star_users', $user_id); // Note: tt_post_star_users不唯一, 必须提供第三个参数, 否则该文章下的tt_post_star_users的meta全部被删除
+        if($delete) {
+            do_action('tt_unstared_post', $post_id, $user_id);
+        }else{
+            return tt_api_fail(__('Unstar post failed', 'tt'), array(), '409');
+        }
+
+        return tt_api_success(__('Unstar post successfully', 'tt'), array());
+
     }
 }

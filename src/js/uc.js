@@ -23,6 +23,7 @@ import ModalSignBox from './modules/modalSignBox';
 import {} from 'lazyload/jquery.lazyload';
 import SignHelp from './modules/signHelp';
 import FixFooter from './modules/fixFooter';
+import UnstarKit from './modules/unstar';
 
 
 // DOM Ready
@@ -56,4 +57,7 @@ jQuery(document).ready(function ($) {
     
     // 修正Footer位置
     FixFooter();
+    
+    // 取消收藏
+    UnstarKit.init();
 });

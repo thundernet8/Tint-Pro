@@ -1,5 +1,5 @@
 /**
- * Generated on Sun Nov 06 2016 23:59:21 GMT+0800 (中国标准时间) by Zhiyan
+ * Generated on Tue Nov 08 2016 00:36:35 GMT+0800 (中国标准时间) by Zhiyan
  *
  * @package   Tint
  * @version   v2.0.0
@@ -49,6 +49,8 @@
             var _signHelp2 = _interopRequireDefault(_signHelp);
             var _fixFooter = __webpack_require__(16);
             var _fixFooter2 = _interopRequireDefault(_fixFooter);
+            var _unstar = __webpack_require__(26);
+            var _unstar2 = _interopRequireDefault(_unstar);
             function _interopRequireDefault(obj) {
                 return obj && obj[['__esModule']] ? obj : { default: obj };
             }
@@ -65,6 +67,7 @@
                     threshold: 50
                 });
                 (0, _fixFooter2[['default']])();
+                _unstar2[['default']][['init']]();
             });
         }[['call']](exports, __webpack_require__(1)));
     },
@@ -3049,6 +3052,73 @@
                 }
             };
             exports[['default']] = PmKit;
+        }[['call']](exports, __webpack_require__(1)));
+    },
+    function (module, exports, __webpack_require__) {
+        (function ($) {
+            'use strict';
+            Object[['defineProperty']](exports, '__esModule', { value: true });
+            var _globalConfig = __webpack_require__(2);
+            var _utils = __webpack_require__(3);
+            var _utils2 = _interopRequireDefault(_utils);
+            function _interopRequireDefault(obj) {
+                return obj && obj[['__esModule']] ? obj : { default: obj };
+            }
+            var _body = $('body');
+            var _unstarBtnSel = '.unstar-link>a';
+            var _unstaring = false;
+            var _removeUnstared = function _removeUnstared(postId) {
+                var articleBoxSel = '#post-' + postId[['toString']]();
+                var article = $(articleBoxSel);
+                if (article) {
+                    article[['slideUp']][['remove']]();
+                }
+            };
+            var _unstar = function _unstar(btn) {
+                if (_unstaring || !_utils2[['default']][['checkLogin']]())
+                    return false;
+                var postId = btn[['data']]('post-id');
+                var url = _globalConfig[['Routes']][['postStars']] + '/' + postId;
+                var data = { unstarNonce: '123' };
+                var beforeSend = function beforeSend() {
+                    if (_unstaring)
+                        return false;
+                    _unstaring = true;
+                };
+                var finishRequest = function finishRequest() {
+                    if (!_unstaring)
+                        return;
+                    _unstaring = false;
+                };
+                var success = function success(data, textStatus, xhr) {
+                    if (data[['success']] && data[['success']] == 1) {
+                        _removeUnstared(postId);
+                    } else {
+                    }
+                    finishRequest();
+                };
+                var error = function error(xhr, textStatus, err) {
+                    finishRequest();
+                };
+                $[['post']]({
+                    url: url,
+                    type: 'DELETE',
+                    data: _utils2[['default']][['filterDataForRest']](data),
+                    dataType: 'json',
+                    beforeSend: beforeSend,
+                    success: success,
+                    error: error
+                });
+            };
+            var UnstarKit = {
+                init: function init() {
+                    _body[['on']]('click', _unstarBtnSel, function () {
+                        var $this = $(this);
+                        _unstar($this);
+                    });
+                }
+            };
+            exports[['default']] = UnstarKit;
         }[['call']](exports, __webpack_require__(1)));
     }
 ]));

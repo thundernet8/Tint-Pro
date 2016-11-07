@@ -41,17 +41,3 @@ function tt_delete_post_review_fields($post_ID) {
     }
 }
 add_action('delete_post', 'tt_delete_post_review_fields');
-
-
-/**
- * 文章点赞时删除对应缓存
- *
- * @since   2.0.0
- * @param   int $post_ID
- * @return  void
- */
-function tt_clear_cache_for_stared_post($post_ID) {
-    $cache_key = 'tt_cache_daily_vm_SinglePostVM_post' . $post_ID;
-    delete_transient($cache_key);
-}
-add_action('tt_stared_post', 'tt_clear_cache_for_stared_post', 10 ,1);
