@@ -60,7 +60,7 @@ class HomeLatestVM extends BaseVM {
         );
 
         $query = new WP_Query($args);
-        $GLOBALS['wp_query'] = $query; // 取代主循环(query_posts只返回posts，为了获取其他有用数据，使用WP_Query)
+        $GLOBALS['wp_query'] = $query; // 取代主循环(query_posts只返回posts，为了获取其他有用数据，使用WP_Query) //TODO 缓存时无效
 
         $latest_posts = array();
         $pagination = array(

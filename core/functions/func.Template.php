@@ -110,7 +110,7 @@ function tt_get_author_template($template){
     // 为不同角色用户定义不同模板
     // https://developer.wordpress.org/themes/basics/template-hierarchy/#example
     $author = get_queried_object();
-    $role = $author->roles[0];
+    $role = count($author->roles) ? $author->roles[0] : 'subscriber';
 
     // 判断是否用户中心页(因为用户中心页和默认的作者页采用了相同的wp_query_object)
     if(get_query_var('uc') && intval(get_query_var('uc'))===1){
