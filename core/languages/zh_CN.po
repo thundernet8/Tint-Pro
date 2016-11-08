@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-11-07 23:40+0800\n"
-"PO-Revision-Date: 2016-11-07 23:40+0800\n"
+"POT-Creation-Date: 2016-11-08 21:35+0800\n"
+"PO-Revision-Date: 2016-11-08 21:35+0800\n"
 "Last-Translator: Zhiyan <mail@webapproach.net>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -80,6 +80,7 @@ msgstr "%s必须介于%d(包含)和%d(包含)之间"
 
 #: core/api/v1/endpoints/class.Rest.Comment.Controller.php:57
 #: core/api/v1/endpoints/class.Rest.Message.Controller.php:73
+#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:55
 #: core/api/v1/endpoints/class.Rest.Session.Controller.php:58
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:69
 msgid "Required to be true, as resource does not support trashing."
@@ -91,7 +92,7 @@ msgstr "无效的文章ID"
 
 #: core/api/v1/endpoints/class.Rest.Comment.Controller.php:93
 #: core/api/v1/endpoints/class.Rest.Comment.Star.Controller.php:102
-#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:103
+#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:115
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:391
 msgid "Nonce verify failed"
 msgstr "Nonce验证失败"
@@ -247,21 +248,34 @@ msgstr "消息不可删除"
 msgid "delete message successfully"
 msgstr "删除消息成功"
 
-#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:98
+#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:110
+#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:169
 msgid "Wrong post id"
 msgstr "错误的文章ID"
 
-#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:108
+#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:120
 msgid "You must be logged in to star a post"
 msgstr "你必须登录才能点赞文章"
 
-#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:123
+#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:135
 msgid "Star post failed"
 msgstr "点赞文章失败"
 
-#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:127
+#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:139
 msgid "Star post successfully"
 msgstr "点赞文章成功"
+
+#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:154
+msgid "Sorry, you cannot unstar post without signing in."
+msgstr "抱歉, 必须登录才能取消收藏文章"
+
+#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:178
+msgid "Unstar post failed"
+msgstr "删除收藏失败"
+
+#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:181
+msgid "Unstar post successfully"
+msgstr "删除收藏成功"
 
 #: core/api/v1/endpoints/class.Rest.Session.Controller.php:94
 msgid "Verify the login nonce failed"
@@ -1096,12 +1110,12 @@ msgstr "注册激活密钥无效"
 msgid "Activate the registration successfully"
 msgstr "激活注册成功"
 
-#: core/functions/func.Cache.php:178
+#: core/functions/func.Cache.php:192
 #, php-format
 msgid "<!-- Nav cached %s -->"
 msgstr "<!-- Nav cached %s -->"
 
-#: core/functions/func.Cache.php:178
+#: core/functions/func.Cache.php:192
 msgid "<!-- Nav cache end -->"
 msgstr "<!-- Nav cache end -->"
 
@@ -1662,15 +1676,26 @@ msgstr "动态"
 msgid "CHAT"
 msgstr "对话"
 
-#: core/modules/uc/uc.Tab.Latest.php:75 core/modules/uc/uc.Tab.Stars.php:76
+#: core/modules/uc/uc.Tab.Comments.php:23
+#, php-format
+msgid "%d comments in total, %d comments approved and %d comments under review"
+msgstr "共发表了 %d 条评论, 其中 %d 条评论已获准, %d 条评论正在等待审核."
+
+#: core/modules/uc/uc.Tab.Comments.php:29
+msgid "REVIEW"
+msgstr "评论"
+
+#: core/modules/uc/uc.Tab.Comments.php:63 core/modules/uc/uc.Tab.Latest.php:75
+#: core/modules/uc/uc.Tab.Stars.php:79
 msgid "Nothing found here"
 msgstr "这里什么都没有..."
 
-#: core/modules/uc/uc.Tab.Latest.php:76 core/modules/uc/uc.Tab.Stars.php:77
+#: core/modules/uc/uc.Tab.Comments.php:64 core/modules/uc/uc.Tab.Latest.php:76
+#: core/modules/uc/uc.Tab.Stars.php:80
 msgid "Back to home"
 msgstr "去首页看看"
 
-#: core/modules/uc/uc.Tab.Stars.php:38
+#: core/modules/uc/uc.Tab.Stars.php:40
 msgid "Unstar"
 msgstr "取消收藏"
 

@@ -32,7 +32,9 @@ var _removeUnstared = function (postId) {
     var articleBoxSel = '#post-' + postId.toString();
     var article = $(articleBoxSel);
     if(article) {
-        article.slideUp.remove();
+        article.slideUp('slow', function () {
+            article.remove();
+        });
     }
 };
 
@@ -42,7 +44,7 @@ var _unstar = function (btn) {
     var postId = btn.data('post-id');
     var url = Routes.postStars + '/' + postId;
     var data = {
-        unstarNonce: ''
+        //unstarNonce: ''
     };
     
     var beforeSend = function () {
@@ -67,9 +69,9 @@ var _unstar = function (btn) {
         finishRequest();
     };
     $.post({
-        url: url,
+        url: url + '?' + $.param(Utils.filterDataForRest(data)), //NOTE: http://stackoverflow.com/questions/15088955/how-to-pass-data-in-the-ajax-delete-request-other-than-headers
         type: 'DELETE',
-        data: Utils.filterDataForRest(data),
+        //data: Utils.filterDataForRest(data),
         dataType: 'json',
         beforeSend: beforeSend,
         success: success,

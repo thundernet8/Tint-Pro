@@ -21,7 +21,8 @@
     <div class="tab-content star-posts">
         <?php if($data = $vm->modelData) { $pagination_args = $data->pagination; $uc_star_posts = $data->uc_star_posts; ?>
             <?php if(count($uc_star_posts) > 0) { ?>
-                <div class="posts-loop-rows">
+                <?php $logged_user_id = get_current_user_id(); ?>
+                <div class="loop-rows posts-loop-rows">
                     <?php foreach ($uc_star_posts as $uc_star_post) { ?>
                         <article id="<?php echo 'post-' . $uc_star_post['ID']; ?>" class="post type-post status-publish <?php echo 'format-' . $uc_star_post['format']; ?>">
                             <div class="entry-thumb hover-scale">
@@ -35,7 +36,9 @@
                                         <span class="author vcard"><a class="url" href="<?php echo $uc_star_post['author_url']; ?>"><?php echo $uc_star_post['author']; ?></a></span>
                                         <span class="entry-date text-muted"><time class="entry-date" datetime="<?php echo $uc_star_post['datetime']; ?>" title="<?php echo $uc_star_post['datetime']; ?>"><?php echo $uc_star_post['time']; ?></time></span>
                                         <span class="comments-link text-muted"><i class="tico tico-comments-o"></i><a href="<?php echo $uc_star_post['permalink'] . '#respond'; ?>"><?php echo $uc_star_post['comment_count']; ?></a></span>
+                                        <?php if($logged_user_id && $logged_user_id == $tt_author_id) { ?>
                                         <span class="unstar-link text-muted"><i class="tico tico-favorite"></i><a href="javascript: void 0" data-post-id="<?php echo $uc_star_post['ID']; ?>"><?php _e('Unstar', 'tt'); ?></a></span>
+                                        <?php } ?>
                                     </div>
                                 </header>
                                 <div class="entry-excerpt">

@@ -206,6 +206,75 @@ body.author {
                                 margin: 40px auto 20px;
                             }
                         }
+                        &>.tip {
+                            margin: 10px 0 30px;
+                            color: #222;
+                            font-size: 1.5rem;
+                        }
+                    }
+
+                    &>.author-comments {
+                        &>.loop-rows {
+                            &>.comment {
+                                position: relative;
+                                margin-bottom: 15px;
+                                padding-bottom: 15px;
+                                border-bottom: 1px solid #f5f6f8;
+                                &>.comment-title {
+                                    white-space: nowrap;
+                                    text-overflow: ellipsis;
+                                    overflow: hidden;
+                                    //font-size: 1.4rem;
+                                    color: #757f90;
+                                    &>.comment-author {
+                                        margin-right: 5px;
+                                        color: @brand-primary;
+                                        img {
+                                            position: absolute;
+                                            top: 33px;
+                                            width: 36px;
+                                            height: 36px;
+                                            border-radius: 50%;
+                                            margin-right: 5px;
+                                        }
+                                    }
+                                    a {
+                                        padding-left: 5px;
+                                        //color: lighten(@brand-primary, 5%);
+                                        &:hover {
+                                            //color: @link-color;
+                                        }
+                                    }
+                                }
+                                &>.comment-content {
+                                    position: relative;
+                                    padding: 10px 20px;
+                                    margin-top: 10px;
+                                    margin-left: 50px;
+                                    border-radius: 3px;
+                                    font-size: 1.3rem;
+                                    line-height: 1.5;
+                                    word-break: break-all;
+                                    color: @brand-primary;
+                                    background-color: @light-blue-bg;
+                                    &:before {
+                                        content: " ";
+                                        height: 0;
+                                        width: 0;
+                                        border: 5px solid transparent;
+                                        border-right-color: @light-blue-bg;
+                                        position: absolute;
+                                        left: -10px;
+                                        top: 12px;
+                                    }
+                                    p {
+                                        &:last-child {
+                                            margin-bottom: 0;
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }

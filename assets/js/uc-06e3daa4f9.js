@@ -1,5 +1,5 @@
 /**
- * Generated on Tue Nov 08 2016 00:36:35 GMT+0800 (中国标准时间) by Zhiyan
+ * Generated on Tue Nov 08 2016 19:59:35 GMT+0800 (中国标准时间) by Zhiyan
  *
  * @package   Tint
  * @version   v2.0.0
@@ -3071,7 +3071,9 @@
                 var articleBoxSel = '#post-' + postId[['toString']]();
                 var article = $(articleBoxSel);
                 if (article) {
-                    article[['slideUp']][['remove']]();
+                    article[['slideUp']]('slow', function () {
+                        article[['remove']]();
+                    });
                 }
             };
             var _unstar = function _unstar(btn) {
@@ -3079,7 +3081,7 @@
                     return false;
                 var postId = btn[['data']]('post-id');
                 var url = _globalConfig[['Routes']][['postStars']] + '/' + postId;
-                var data = { unstarNonce: '123' };
+                var data = {};
                 var beforeSend = function beforeSend() {
                     if (_unstaring)
                         return false;
@@ -3101,9 +3103,8 @@
                     finishRequest();
                 };
                 $[['post']]({
-                    url: url,
+                    url: url + '?' + $[['param']](_utils2[['default']][['filterDataForRest']](data)),
                     type: 'DELETE',
-                    data: _utils2[['default']][['filterDataForRest']](data),
                     dataType: 'json',
                     beforeSend: beforeSend,
                     success: success,

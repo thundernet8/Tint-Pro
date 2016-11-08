@@ -29,7 +29,7 @@
             </section>
             <!-- 归档文章 -->
             <section class="container archive-posts category-posts">
-                <div class="row posts-loop-grid mt20 mb20 clearfix">
+                <div class="row loop-grid posts-loop-grid mt20 mb20 clearfix">
                     <?php foreach ($term_posts as $term_post) { ?>
                         <div class="col-md-3">
                             <article id="<?php echo 'post-' . $term_post['ID']; ?>" class="post type-post status-publish <?php echo 'format-' . $term_post['format']; ?>">

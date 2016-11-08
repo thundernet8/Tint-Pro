@@ -12,7 +12,7 @@
  * @link https://www.webapproach.net/tint.html
  */
 ?>
-<?php global $tt_author_vars; global $wp_query; $query_vars=$wp_query->query_vars; $uc_tab = $query_vars['uctab']; $uc_tab = isset($uc_tab) && in_array($uc_tab, (array)json_decode(ALLOWED_UC_TABS)) ? $query_vars['uctab'] : 'profile'; $tt_author_vars['uctab'] = $uc_tab; ?>
+<?php global $tt_author_vars; global $wp_query; $query_vars=$wp_query->query_vars; $uc_tab = isset($query_vars['uctab']) && in_array($query_vars['uctab'], (array)json_decode(ALLOWED_UC_TABS)) ? $query_vars['uctab'] : 'profile'; $tt_author_vars['uctab'] = $uc_tab; ?>
 <nav class="author-tabs clearfix">
     <a class="<?php echo tt_conditional_class('author_tab profile', $uc_tab == 'profile'); ?>" href="<?php echo tt_url_for('uc_profile', $tt_author_vars['tt_author_id']); ?>"><?php _e('PROFILE', 'tt'); ?></a>
     <a class="<?php echo tt_conditional_class('author_tab latest', $uc_tab == 'latest'); ?>" href="<?php echo tt_url_for('uc_latest', $tt_author_vars['tt_author_id']); ?>"><?php _e('ARTICLES', 'tt'); ?></a>

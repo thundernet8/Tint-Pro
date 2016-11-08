@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-11-07 23:40+0800\n"
+"POT-Creation-Date: 2016-11-08 21:35+0800\n"
 "PO-Revision-Date: 2016-08-17 21:40+0800\n"
 "Last-Translator: \n"
 "Language-Team: Zhiyan <mail@webapproach.net>\n"
@@ -82,6 +82,7 @@ msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.Comment.Controller.php:57
 #: core/api/v1/endpoints/class.Rest.Message.Controller.php:73
+#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:55
 #: core/api/v1/endpoints/class.Rest.Session.Controller.php:58
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:69
 msgid "Required to be true, as resource does not support trashing."
@@ -93,7 +94,7 @@ msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.Comment.Controller.php:93
 #: core/api/v1/endpoints/class.Rest.Comment.Star.Controller.php:102
-#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:103
+#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:115
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:391
 msgid "Nonce verify failed"
 msgstr ""
@@ -250,20 +251,33 @@ msgstr ""
 msgid "delete message successfully"
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:98
+#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:110
+#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:169
 msgid "Wrong post id"
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:108
+#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:120
 msgid "You must be logged in to star a post"
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:123
+#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:135
 msgid "Star post failed"
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:127
+#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:139
 msgid "Star post successfully"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:154
+msgid "Sorry, you cannot unstar post without signing in."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:178
+msgid "Unstar post failed"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:181
+msgid "Unstar post successfully"
 msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.Session.Controller.php:94
@@ -1115,12 +1129,12 @@ msgstr ""
 msgid "Activate the registration successfully"
 msgstr ""
 
-#: core/functions/func.Cache.php:178
+#: core/functions/func.Cache.php:192
 #, php-format
 msgid "<!-- Nav cached %s -->"
 msgstr ""
 
-#: core/functions/func.Cache.php:178
+#: core/functions/func.Cache.php:192
 msgid "<!-- Nav cache end -->"
 msgstr ""
 
@@ -1694,15 +1708,27 @@ msgstr ""
 msgid "CHAT"
 msgstr ""
 
-#: core/modules/uc/uc.Tab.Latest.php:75 core/modules/uc/uc.Tab.Stars.php:76
+#: core/modules/uc/uc.Tab.Comments.php:23
+#, php-format
+msgid ""
+"%d comments in total, %d comments approved and %d comments under review"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Comments.php:29
+msgid "REVIEW"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Comments.php:63
+#: core/modules/uc/uc.Tab.Latest.php:75 core/modules/uc/uc.Tab.Stars.php:79
 msgid "Nothing found here"
 msgstr ""
 
-#: core/modules/uc/uc.Tab.Latest.php:76 core/modules/uc/uc.Tab.Stars.php:77
+#: core/modules/uc/uc.Tab.Comments.php:64
+#: core/modules/uc/uc.Tab.Latest.php:76 core/modules/uc/uc.Tab.Stars.php:80
 msgid "Back to home"
 msgstr ""
 
-#: core/modules/uc/uc.Tab.Stars.php:38
+#: core/modules/uc/uc.Tab.Stars.php:40
 msgid "Unstar"
 msgstr ""
 

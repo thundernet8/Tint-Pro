@@ -21,7 +21,7 @@
     <div class="tab-content latest-posts">
     <?php if($data = $vm->modelData) { $pagination_args = $data->pagination; $uc_latest_posts = $data->uc_latest_posts; ?>
         <?php if(count($uc_latest_posts) > 0) { ?>
-        <div class="posts-loop-rows">
+        <div class="loop-rows posts-loop-rows">
             <?php foreach ($uc_latest_posts as $uc_latest_post) { ?>
                 <article id="<?php echo 'post-' . $uc_latest_post['ID']; ?>" class="post type-post status-publish <?php echo 'format-' . $uc_latest_post['format']; ?>">
                     <div class="entry-thumb hover-scale">

@@ -32,10 +32,11 @@
                 padding: 10px 20px;
                 margin-top: 10px;
                 border-radius: 3px;
-                background-color: @light-blue-bg;
+                word-break: break-all;
                 font-size: 1.3rem;
                 line-height: 1.5;
                 color: @brand-primary;
+                background-color: @light-blue-bg;
                 &:before {
                     content: " ";
                     height: 0;
@@ -47,7 +48,9 @@
                     top: -10px;
                 }
                 &>p {
-                    margin-bottom: 0;
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
                 }
             }
         }

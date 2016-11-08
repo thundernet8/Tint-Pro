@@ -22,7 +22,7 @@
         <aside class="block5-widget">
             <h2 class="widget-title"><?php _e('Latest Posts', 'tt'); ?></h2>
             <?php if($data = $vm->modelData) { $pagination_args = $data->pagination; $latest_posts = $data->latest_posts; ?>
-            <div class="block5_widget_content block5_list posts-loop-rows">
+            <div class="block5_widget_content block5_list loop-rows posts-loop-rows">
                 <?php foreach ($latest_posts as $latest_post) { ?>
                 <article id="<?php echo 'post-' . $latest_post['ID']; ?>" class="post type-post status-publish <?php echo 'format-' . $latest_post['format']; ?>">
                     <div class="entry-thumb hover-scale">
