@@ -44,16 +44,17 @@ function tt_get_user_cap_string ($user_id) {
  * @since 2.0.0
  * @param $user_id
  * @param $size
+ * @param $default
  * @return string
  */
-function tt_get_user_cover ($user_id, $size = 'full') {
+function tt_get_user_cover ($user_id, $size = 'full', $default = '') {
     if(!in_array($size, ['full', 'mini'])) {
         $size = 'full';
     }
     if($cover = get_user_meta($user_id, 'tt_user_cover', true)) {
         return $cover; // TODO size
     }
-    return THEME_ASSET . '/img/user-default-cover-' . $size . '.jpg';
+    return $default ? $default : THEME_ASSET . '/img/user-default-cover-' . $size . '.jpg';
 }
 
 

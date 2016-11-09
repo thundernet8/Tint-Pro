@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-11-08 21:35+0800\n"
+"POT-Creation-Date: 2016-11-10 00:57+0800\n"
 "PO-Revision-Date: 2016-08-17 21:40+0800\n"
 "Last-Translator: \n"
 "Language-Team: Zhiyan <mail@webapproach.net>\n"
@@ -1692,11 +1692,13 @@ msgstr ""
 msgid "MY STARS"
 msgstr ""
 
-#: core/modules/uc/uc.NavTabs.php:21 core/modules/widgets/wgt.Author.php:55
+#: core/modules/uc/uc.NavTabs.php:21 core/modules/uc/uc.Tab.Followers.php:37
+#: core/modules/widgets/wgt.Author.php:55
 msgid "FOLLOWERS"
 msgstr ""
 
-#: core/modules/uc/uc.NavTabs.php:22 core/modules/widgets/wgt.Author.php:54
+#: core/modules/uc/uc.NavTabs.php:22 core/modules/uc/uc.Tab.Followers.php:36
+#: core/modules/widgets/wgt.Author.php:54
 msgid "FOLLOWING"
 msgstr ""
 
@@ -1719,25 +1721,54 @@ msgid "REVIEW"
 msgstr ""
 
 #: core/modules/uc/uc.Tab.Comments.php:63
+#: core/modules/uc/uc.Tab.Followers.php:62
 #: core/modules/uc/uc.Tab.Latest.php:75 core/modules/uc/uc.Tab.Stars.php:79
 msgid "Nothing found here"
 msgstr ""
 
 #: core/modules/uc/uc.Tab.Comments.php:64
+#: core/modules/uc/uc.Tab.Followers.php:63
 #: core/modules/uc/uc.Tab.Latest.php:76 core/modules/uc/uc.Tab.Stars.php:80
 msgid "Back to home"
 msgstr ""
 
-#: core/modules/uc/uc.Tab.Stars.php:40
-msgid "Unstar"
+#: core/modules/uc/uc.Tab.Followers.php:32
+msgid "Brief Intro : "
 msgstr ""
 
-#: core/modules/uc/uc.TopPane.php:28 core/modules/widgets/wgt.Author.php:48
+#: core/modules/uc/uc.Tab.Followers.php:38
+#: core/modules/widgets/wgt.Author.php:52
+msgid "POSTS"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Followers.php:43 core/modules/uc/uc.TopPane.php:28
+#: core/modules/widgets/wgt.Author.php:48
 msgid "Send a message"
 msgstr ""
 
-#: core/modules/uc/uc.TopPane.php:28 core/modules/widgets/wgt.Author.php:48
+#: core/modules/uc/uc.Tab.Followers.php:43 core/modules/uc/uc.TopPane.php:28
+#: core/modules/widgets/wgt.Author.php:48
 msgid "Chat"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Followers.php:47
+msgid "View Homepage"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Followers.php:48
+msgid "His Posts"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Followers.php:49
+msgid "His Comments"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Followers.php:51
+msgid "Check Activities"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Stars.php:40
+msgid "Unstar"
 msgstr ""
 
 #: core/modules/widgets/wgt.Author.php:22
@@ -1747,10 +1778,6 @@ msgstr ""
 #: core/modules/widgets/wgt.Author.php:22
 msgid ""
 "TT-Show the post author information, only can be used in single post page"
-msgstr ""
-
-#: core/modules/widgets/wgt.Author.php:52
-msgid "POSTS"
 msgstr ""
 
 #: core/modules/widgets/wgt.Author.php:53

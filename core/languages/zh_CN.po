@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-11-08 21:35+0800\n"
-"PO-Revision-Date: 2016-11-08 21:35+0800\n"
+"POT-Creation-Date: 2016-11-10 00:57+0800\n"
+"PO-Revision-Date: 2016-11-10 00:57+0800\n"
 "Last-Translator: Zhiyan <mail@webapproach.net>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -1660,11 +1660,13 @@ msgstr "评论"
 msgid "MY STARS"
 msgstr "收藏"
 
-#: core/modules/uc/uc.NavTabs.php:21 core/modules/widgets/wgt.Author.php:55
+#: core/modules/uc/uc.NavTabs.php:21 core/modules/uc/uc.Tab.Followers.php:37
+#: core/modules/widgets/wgt.Author.php:55
 msgid "FOLLOWERS"
 msgstr "粉丝"
 
-#: core/modules/uc/uc.NavTabs.php:22 core/modules/widgets/wgt.Author.php:54
+#: core/modules/uc/uc.NavTabs.php:22 core/modules/uc/uc.Tab.Followers.php:36
+#: core/modules/widgets/wgt.Author.php:54
 msgid "FOLLOWING"
 msgstr "关注"
 
@@ -1685,27 +1687,56 @@ msgstr "共发表了 %d 条评论, 其中 %d 条评论已获准, %d 条评论正
 msgid "REVIEW"
 msgstr "评论"
 
-#: core/modules/uc/uc.Tab.Comments.php:63 core/modules/uc/uc.Tab.Latest.php:75
+#: core/modules/uc/uc.Tab.Comments.php:63
+#: core/modules/uc/uc.Tab.Followers.php:62 core/modules/uc/uc.Tab.Latest.php:75
 #: core/modules/uc/uc.Tab.Stars.php:79
 msgid "Nothing found here"
 msgstr "这里什么都没有..."
 
-#: core/modules/uc/uc.Tab.Comments.php:64 core/modules/uc/uc.Tab.Latest.php:76
+#: core/modules/uc/uc.Tab.Comments.php:64
+#: core/modules/uc/uc.Tab.Followers.php:63 core/modules/uc/uc.Tab.Latest.php:76
 #: core/modules/uc/uc.Tab.Stars.php:80
 msgid "Back to home"
 msgstr "去首页看看"
 
-#: core/modules/uc/uc.Tab.Stars.php:40
-msgid "Unstar"
-msgstr "取消收藏"
+#: core/modules/uc/uc.Tab.Followers.php:32
+msgid "Brief Intro : "
+msgstr "简介 : "
 
-#: core/modules/uc/uc.TopPane.php:28 core/modules/widgets/wgt.Author.php:48
+#: core/modules/uc/uc.Tab.Followers.php:38
+#: core/modules/widgets/wgt.Author.php:52
+msgid "POSTS"
+msgstr "文章"
+
+#: core/modules/uc/uc.Tab.Followers.php:43 core/modules/uc/uc.TopPane.php:28
+#: core/modules/widgets/wgt.Author.php:48
 msgid "Send a message"
 msgstr "发送站内消息"
 
-#: core/modules/uc/uc.TopPane.php:28 core/modules/widgets/wgt.Author.php:48
+#: core/modules/uc/uc.Tab.Followers.php:43 core/modules/uc/uc.TopPane.php:28
+#: core/modules/widgets/wgt.Author.php:48
 msgid "Chat"
 msgstr "私信"
+
+#: core/modules/uc/uc.Tab.Followers.php:47
+msgid "View Homepage"
+msgstr "访问主页"
+
+#: core/modules/uc/uc.Tab.Followers.php:48
+msgid "His Posts"
+msgstr "他的文章"
+
+#: core/modules/uc/uc.Tab.Followers.php:49
+msgid "His Comments"
+msgstr "他的评论"
+
+#: core/modules/uc/uc.Tab.Followers.php:51
+msgid "Check Activities"
+msgstr "关注动态"
+
+#: core/modules/uc/uc.Tab.Stars.php:40
+msgid "Unstar"
+msgstr "取消收藏"
 
 #: core/modules/widgets/wgt.Author.php:22
 msgid "TT-Author Widget"
@@ -1715,10 +1746,6 @@ msgstr "TT-作者小工具"
 msgid ""
 "TT-Show the post author information, only can be used in single post page"
 msgstr "TT-显示当前文章作者的信息, 只能在文章页使用"
-
-#: core/modules/widgets/wgt.Author.php:52
-msgid "POSTS"
-msgstr "文章"
 
 #: core/modules/widgets/wgt.Author.php:53
 msgid "STARS"

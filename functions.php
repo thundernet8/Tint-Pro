@@ -164,6 +164,8 @@ load_vm('vm.Widget.Latest.Posts');
 load_vm('vm.UC.Latest');
 load_vm('vm.UC.Stars');
 load_vm('vm.UC.Comments');
+load_vm('vm.UC.Followers');
+load_vm('vm.UC.Following');
 
 /* 载入小工具 */
 load_widget('wgt.TagCloud');
