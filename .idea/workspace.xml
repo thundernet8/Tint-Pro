@@ -2,7 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1212df9-9110-41ec-af9e-f8eb72c2514b" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/js/single-62e45d17d4.js" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/viewModels/vm.UC.Chat.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/404-73a6377f73.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/actions-894e225514.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/archive-5c52175b21.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/error-page-dfb7d9308e.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/front-page-d8d631e15e.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/home-df46e9c76f.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/me-d8d631e15e.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/product-d8d631e15e.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/products-d8d631e15e.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/single-c9a06c1c57.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/uc-573278f740.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/js/single-f4117f7f91.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/js/uc-06e3daa4f9.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/languages/zh_CN.mo" afterPath="$PROJECT_DIR$/core/languages/zh_CN.mo" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/404-7b4f70c705.js" afterPath="$PROJECT_DIR$/assets/js/404-7b4f70c705.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/actionPage-1bfaa2ef9b.js" afterPath="$PROJECT_DIR$/assets/js/actionPage-1bfaa2ef9b.js" />
@@ -12,9 +26,19 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/me-6407430b6a.js" afterPath="$PROJECT_DIR$/assets/js/me-6407430b6a.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/product-6407430b6a.js" afterPath="$PROJECT_DIR$/assets/js/product-6407430b6a.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/products-6407430b6a.js" afterPath="$PROJECT_DIR$/assets/js/products-6407430b6a.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/uc-06e3daa4f9.js" afterPath="$PROJECT_DIR$/assets/js/uc-06e3daa4f9.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/api/v1/endpoints/class.Rest.Message.Controller.php" afterPath="$PROJECT_DIR$/core/api/v1/endpoints/class.Rest.Message.Controller.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/Constants.php" afterPath="$PROJECT_DIR$/core/functions/Constants.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/asset.Constant.php" afterPath="$PROJECT_DIR$/core/functions/asset.Constant.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/modules/comments.js" afterPath="$PROJECT_DIR$/src/js/modules/comments.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/func.Message.php" afterPath="$PROJECT_DIR$/core/functions/func.Message.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/func.Rewrite.php" afterPath="$PROJECT_DIR$/core/functions/func.Rewrite.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/languages/tt.pot" afterPath="$PROJECT_DIR$/core/languages/tt.pot" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/languages/zh_CN.po" afterPath="$PROJECT_DIR$/core/languages/zh_CN.po" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/uc/uc.Tab.Chat.php" afterPath="$PROJECT_DIR$/core/modules/uc/uc.Tab.Chat.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/functions.php" afterPath="$PROJECT_DIR$/functions.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/css/modules/base.less" afterPath="$PROJECT_DIR$/src/css/modules/base.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/css/uc.less" afterPath="$PROJECT_DIR$/src/css/uc.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/modules/pm.js" afterPath="$PROJECT_DIR$/src/js/modules/pm.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/uc.js" afterPath="$PROJECT_DIR$/src/js/uc.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/rev/rev-manifest.json" afterPath="$PROJECT_DIR$/src/rev/rev-manifest.json" />
     </list>
     <ignored path="Tinection 2.iws" />
@@ -42,6 +66,24 @@
         <option name="myItemId" />
         <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
       </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="MySQL - wptestdb@localhost" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="MySQL - wptestdb@localhost" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="tint" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
     </PATH>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
@@ -53,127 +95,105 @@
       <file leaf-file-name="uc.less" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/css/uc.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="371">
-              <caret line="55" column="39" selection-start-line="55" selection-start-column="12" selection-end-line="55" selection-end-column="39" />
+            <state relative-caret-position="114">
+              <caret line="495" column="62" selection-start-line="495" selection-start-column="62" selection-end-line="495" selection-end-column="62" />
               <folding>
+                <element signature="e#846#6508#0" expanded="false" />
                 <element signature="e#1543#1964#0" expanded="false" />
                 <element signature="e#2267#2555#0" expanded="false" />
                 <element signature="e#2591#6484#0" expanded="false" />
                 <element signature="e#6693#7964#0" expanded="false" />
                 <element signature="e#8379#8829#0" expanded="false" />
                 <element signature="e#9088#12325#0" expanded="false" />
+                <element signature="e#12364#20757#0" expanded="false" />
                 <element signature="e#12644#20679#0" expanded="false" />
+                <element signature="e#22926#23310#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mod.SinglePost.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/modules/mod.SinglePost.php">
+      <file leaf-file-name="pm.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/js/modules/pm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-252">
-              <caret line="59" column="22" selection-start-line="59" selection-start-column="22" selection-end-line="59" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="comments.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/js/modules/comments.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="335">
-              <caret line="145" column="20" selection-start-line="145" selection-start-column="20" selection-end-line="145" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="single.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/js/single.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="78" column="4" selection-start-line="78" selection-start-column="4" selection-end-line="81" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="uc.Tab.Following.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/modules/uc/uc.Tab.Following.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-308">
-              <caret line="18" column="10" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="vm.UC.Following.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/viewModels/vm.UC.Following.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="64" column="74" selection-start-line="64" selection-start-column="74" selection-end-line="64" selection-end-column="74" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="uc.Tab.Comments.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/modules/uc/uc.Tab.Comments.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1268">
-              <caret line="60" column="16" selection-start-line="60" selection-start-column="16" selection-end-line="64" selection-end-column="22" />
+            <state relative-caret-position="259">
+              <caret line="269" column="16" selection-start-line="269" selection-start-column="16" selection-end-line="269" selection-end-column="16" />
               <folding>
-                <element signature="n#div#2;n#div#0;n#div#0;n#!!top" expanded="false" />
+                <element signature="e#4281#6620#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="uc.TopPane.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/modules/uc/uc.TopPane.php">
+      <file leaf-file-name="class.Rest.Message.Controller.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/core/api/v1/endpoints/class.Rest.Message.Controller.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="27" column="301" selection-start-line="27" selection-start-column="275" selection-end-line="27" selection-end-column="301" />
+            <state relative-caret-position="326">
+              <caret line="169" column="361" selection-start-line="169" selection-start-column="361" selection-end-line="169" selection-end-column="361" />
               <folding>
-                <element signature="n#style#0;n#section#0;n#!!top" expanded="true" />
+                <marker date="1478801649435" expanded="true" signature="5755:6193" ph="..." />
+                <marker date="1478801649435" expanded="true" signature="5893:6139" ph="..." />
+                <marker date="1478801649435" expanded="true" signature="5893:6140" ph="..." />
+                <marker date="1478801649435" expanded="true" signature="5893:6187" ph="..." />
+                <marker date="1478801649435" expanded="true" signature="5918:5948" ph="..." />
+                <marker date="1478801649435" expanded="true" signature="5918:5949" ph="..." />
+                <marker date="1478801649435" expanded="true" signature="5918:5969" ph="..." />
+                <marker date="1478801649435" expanded="true" signature="5918:5970" ph="..." />
+                <marker date="1478801649435" expanded="true" signature="5918:6061" ph="..." />
+                <marker date="1478801649435" expanded="true" signature="5918:6065" ph="..." />
+                <marker date="1478801649435" expanded="true" signature="5918:6083" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="func.Follow.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/functions/func.Follow.php">
+      <file leaf-file-name="vm.UC.Chat.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/viewModels/vm.UC.Chat.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="46" column="27" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="27" />
+            <state relative-caret-position="170">
+              <caret line="99" column="119" selection-start-line="99" selection-start-column="75" selection-end-line="99" selection-end-column="119" />
               <folding>
-                <marker date="1477838243246" expanded="true" signature="698:824" ph="SELECT * FRO... ${$table_name}" />
-                <marker date="1477838243246" expanded="true" signature="1148:1230" ph="SELECT COUNT... ${$table_name}" />
-                <marker date="1477838243246" expanded="true" signature="1650:1769" ph="SELECT * FRO... ${$table_name}" />
-                <marker date="1477838243246" expanded="true" signature="2087:2166" ph="SELECT COUNT... ${$table_name}" />
-                <marker date="1477838243246" expanded="true" signature="3139:3214" ph="SELECT COUNT... ${$table_name}" />
-                <marker date="1477838243246" expanded="true" signature="3296:3399" ph="SELECT COUNT... ${$table_name}" />
-                <marker date="1477838243246" expanded="true" signature="3554:3636" ph="UPDATE ${$ta... " />
-                <marker date="1477838243246" expanded="true" signature="3726:3804" ph="UPDATE ${$ta... " />
-                <marker date="1477838243246" expanded="true" signature="4449:4524" ph="SELECT COUNT... ${$table_name}" />
-                <marker date="1477838243246" expanded="true" signature="4606:4709" ph="SELECT COUNT... ${$table_name}" />
-                <marker date="1477838243246" expanded="true" signature="4917:5021" ph="UPDATE ${$ta... " />
-                <marker date="1477838243246" expanded="true" signature="5117:5201" ph="UPDATE ${$ta... " />
-                <marker date="1477838243246" expanded="true" signature="5695:5796" ph="INSERT INTO ${$table_name}... " />
-                <marker date="1477838243246" expanded="true" signature="5892:5976" ph="UPDATE ${$ta... " />
-                <marker date="1477838243246" expanded="true" signature="7026:7122" ph="SELECT * FRO... ${$table_name}" />
+                <element signature="e#6#291#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="vm.Home.Latest.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/viewModels/vm.Home.Latest.php">
+      <file leaf-file-name="func.Message.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/functions/func.Message.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="355">
-              <caret line="89" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="97" selection-end-column="1" />
-              <folding />
+            <state relative-caret-position="449">
+              <caret line="132" column="143" selection-start-line="132" selection-start-column="143" selection-end-line="132" selection-end-column="143" />
+              <folding>
+                <element signature="n#tt_create_pm#0;n#!!top" expanded="false" />
+                <element signature="n#tt_mark_message#0;n#!!top" expanded="false" />
+                <element signature="n#tt_mark_all_message_read#0;n#!!top" expanded="false" />
+                <marker date="1478801514698" expanded="true" signature="1231:1393" ph="INSERT INTO ${$table_name}... " />
+                <marker date="1478801514698" expanded="true" signature="2415:2492" ph="UPDATE ${$ta... " />
+                <marker date="1478801514698" expanded="true" signature="2842:2919" ph="UPDATE ${$ta... " />
+                <marker date="1478801514698" expanded="true" signature="3289:3367" ph="SELECT * FRO... ${$table_name}" />
+                <marker date="1478801514698" expanded="true" signature="4248:4404" ph="SELECT %s FR... " />
+                <marker date="1478801514698" expanded="true" signature="7130:7214" ph="UPDATE ${$ta... " />
+                <marker date="1478801514698" expanded="true" signature="7271:7357" ph="UPDATE ${$ta... " />
+                <marker date="1478801514698" expanded="true" signature="7745:7831" ph="UPDATE ${$ta... " />
+                <marker date="1478801514698" expanded="true" signature="8680:8865" ph="SELECT %s FR... " />
+                <marker date="1478801514698" expanded="true" signature="9059:9131" ph="SELECT * FRO... wp_tt_message" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="uc.Tab.Chat.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/modules/uc/uc.Tab.Chat.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="550">
+              <caret line="61" column="56" selection-start-line="61" selection-start-column="45" selection-end-line="61" selection-end-column="56" />
+              <folding>
+                <element signature="e#4329#5783#0#PHP" expanded="false" />
+                <marker date="1478797632534" expanded="true" signature="3161:3252" ph="..." />
+                <marker date="1478797632534" expanded="true" signature="4429:4580" ph="..." />
+                <marker date="1478797632534" expanded="true" signature="4477:4580" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -195,12 +215,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/css/modules/vars.less" />
-        <option value="$PROJECT_DIR$/src/js/single.js" />
-        <option value="$PROJECT_DIR$/src/js/home.js" />
-        <option value="$PROJECT_DIR$/src/js/modules/signHelp.js" />
-        <option value="$PROJECT_DIR$/src/js/modules/loading.js" />
-        <option value="$PROJECT_DIR$/core/modules/mod.Footer.php" />
         <option value="$PROJECT_DIR$/src/js/modules/globalConfig.js" />
         <option value="$PROJECT_DIR$/src/js/404.js" />
         <option value="$PROJECT_DIR$/src/js/modules/modalSignBox.js" />
@@ -208,9 +222,7 @@
         <option value="$PROJECT_DIR$/src/js/modules/fixFooter.js" />
         <option value="$PROJECT_DIR$/src/js/archive.js" />
         <option value="$PROJECT_DIR$/core/modules/mod.ReplyForm.php" />
-        <option value="$PROJECT_DIR$/src/css/modules/base.less" />
         <option value="$PROJECT_DIR$/core/classes/class.QRcode.php" />
-        <option value="$PROJECT_DIR$/core/functions/Constants.php" />
         <option value="$PROJECT_DIR$/core/functions/func.Kits.php" />
         <option value="$PROJECT_DIR$/core/templates/site/tpl.QrCode.php" />
         <option value="$PROJECT_DIR$/core/viewModels/vm.Base.php" />
@@ -218,7 +230,6 @@
         <option value="$PROJECT_DIR$/core/viewModels/vm.UC.Stars.php" />
         <option value="$PROJECT_DIR$/core/functions/func.PostMeta.php" />
         <option value="$PROJECT_DIR$/core/functions/func.Cache.php" />
-        <option value="$PROJECT_DIR$/src/js/uc.js" />
         <option value="$PROJECT_DIR$/core/modules/widgets/wgt.Float.php" />
         <option value="$PROJECT_DIR$/core/api/v1/endpoints/class.Rest.Post.Star.Controller.php" />
         <option value="$PROJECT_DIR$/src/js/modules/unstar.js" />
@@ -236,16 +247,25 @@
         <option value="$PROJECT_DIR$/core/functions/func.Template.php" />
         <option value="$PROJECT_DIR$/core/viewModels/vm.UC.Comments.php" />
         <option value="$PROJECT_DIR$/core/modules/uc/uc.Tab.Comments.php" />
-        <option value="$PROJECT_DIR$/core/functions/func.Rewrite.php" />
-        <option value="$PROJECT_DIR$/functions.php" />
         <option value="$PROJECT_DIR$/core/functions/func.User.php" />
         <option value="$PROJECT_DIR$/core/viewModels/vm.UC.Followers.php" />
         <option value="$PROJECT_DIR$/core/modules/uc/uc.Tab.Followers.php" />
         <option value="$PROJECT_DIR$/core/modules/uc/uc.Tab.Following.php" />
         <option value="$PROJECT_DIR$/core/viewModels/vm.UC.Following.php" />
-        <option value="$PROJECT_DIR$/src/css/uc.less" />
         <option value="$PROJECT_DIR$/core/modules/mod.SinglePost.php" />
         <option value="$PROJECT_DIR$/src/js/modules/comments.js" />
+        <option value="$PROJECT_DIR$/core/functions/Constants.php" />
+        <option value="$PROJECT_DIR$/core/functions/func.Rewrite.php" />
+        <option value="$PROJECT_DIR$/functions.php" />
+        <option value="$PROJECT_DIR$/src/css/modules/base.less" />
+        <option value="$PROJECT_DIR$/src/js/uc.js" />
+        <option value="$PROJECT_DIR$/core/modules/mod.ModalPmBox.php" />
+        <option value="$PROJECT_DIR$/core/modules/uc/uc.Tab.Chat.php" />
+        <option value="$PROJECT_DIR$/core/viewModels/vm.UC.Chat.php" />
+        <option value="$PROJECT_DIR$/src/css/uc.less" />
+        <option value="$PROJECT_DIR$/src/js/modules/pm.js" />
+        <option value="$PROJECT_DIR$/core/functions/func.Message.php" />
+        <option value="$PROJECT_DIR$/core/api/v1/endpoints/class.Rest.Message.Controller.php" />
       </list>
     </option>
   </component>
@@ -283,7 +303,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1936" />
+    <option name="width" value="1932" />
     <option name="height" value="1056" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -327,6 +347,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -394,7 +415,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -799,7 +819,8 @@
       <workItem from="1478403507760" duration="29062000" />
       <workItem from="1478519228494" duration="12589000" />
       <workItem from="1478605184524" duration="14804000" />
-      <workItem from="1478691082903" duration="16866000" />
+      <workItem from="1478691082903" duration="17097000" />
+      <workItem from="1478783330768" duration="17276000" />
     </task>
     <task id="LOCAL-00001" summary="Add change log and contributing doc">
       <created>1476711242287</created>
@@ -819,7 +840,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1130811000" />
+    <option name="totallyTimeSpent" value="1148318000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -831,13 +852,13 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1932" height="1056" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23400854" sideWeight="0.4927798" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2366453" sideWeight="0.4927798" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32968238" sideWeight="0.4978678" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20932755" sideWeight="0.5362473" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13219616" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13194445" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19088937" sideWeight="0.4728145" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3264642" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -924,129 +945,6 @@
     </PATH>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/core/viewModels/vm.Single.Post.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="116" column="22" selection-start-line="116" selection-start-column="13" selection-end-line="116" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/functions/func.PostMeta.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="497">
-          <caret line="42" column="58" selection-start-line="42" selection-start-column="58" selection-end-line="42" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/functions/func.Cache.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6440">
-          <caret line="241" column="0" selection-start-line="241" selection-start-column="0" selection-end-line="241" selection-end-column="0" />
-          <folding>
-            <marker date="1478535029103" expanded="true" signature="2087:2229" ph="DELETE FROM " />
-            <marker date="1478535029103" expanded="true" signature="2549:2690" ph="DELETE FROM " />
-            <marker date="1478535029103" expanded="true" signature="2966:3108" ph="DELETE FROM " />
-            <marker date="1478535029103" expanded="true" signature="3614:3743" ph="DELETE FROM " />
-            <marker date="1478535029103" expanded="true" signature="4001:4078" ph="DELETE FROM " />
-            <marker date="1478535029103" expanded="true" signature="4001:4080" ph="DELETE FROM " />
-            <marker date="1478535029103" expanded="true" signature="5440:5591" ph="DELETE FROM " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../WebServer/WWW/wordpress_map/wp-includes/rest-api/class-wp-rest-server.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="46" column="10" selection-start-line="46" selection-start-column="10" selection-end-line="46" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/modules/postStar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="526">
-          <caret line="71" column="44" selection-start-line="71" selection-start-column="14" selection-end-line="71" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/modules/widgets/wgt.Float.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="65" selection-start-line="28" selection-start-column="65" selection-end-line="28" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/api/v1/endpoints/class.Rest.Message.Controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5955">
-          <caret line="230" column="8" selection-start-line="230" selection-start-column="8" selection-end-line="234" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/modules/utils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2940">
-          <caret line="105" column="26" selection-start-line="105" selection-start-column="18" selection-end-line="105" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/api/v1/endpoints/class.Rest.User.Controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="582" column="49" selection-start-line="582" selection-start-column="20" selection-end-line="582" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/api/v1/endpoints/class.Rest.Post.Star.Controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="56">
-          <caret line="150" column="45" selection-start-line="150" selection-start-column="45" selection-end-line="150" selection-end-column="45" />
-          <folding>
-            <element signature="n#update_item#0;n#WP_REST_Post_Star_Controller#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/modules/unstar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="35" column="29" selection-start-line="35" selection-start-column="29" selection-end-line="35" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/viewModels/vm.UC.Stars.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="47" column="113" selection-start-line="47" selection-start-column="106" selection-end-line="47" selection-end-column="113" />
-          <folding>
-            <element signature="e#6#291#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/modules/uc/uc.NavTabs.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="14" column="153" selection-start-line="14" selection-start-column="153" selection-end-line="14" selection-end-column="153" />
-          <folding>
-            <marker date="1478606738772" expanded="true" signature="595:642" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/viewModels/vm.Post.Comments.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="581">
-          <caret line="76" column="1" selection-start-line="76" selection-start-column="1" selection-end-line="76" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/viewModels/vm.UC.Latest.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -1132,13 +1030,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/uc.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="61" column="21" selection-start-line="61" selection-start-column="21" selection-end-line="61" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/viewModels/vm.Widget.Latest.Posts.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1161,7 +1052,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="532">
           <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1173,37 +1063,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/functions/func.Rewrite.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="114" column="58" selection-start-line="114" selection-start-column="58" selection-end-line="114" selection-end-column="58" />
-          <folding>
-            <marker date="1478621993385" expanded="true" signature="5950:6068" ph="SELECT user_... $" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/functions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="167" column="27" selection-start-line="167" selection-start-column="27" selection-end-line="167" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/templates/uc/tpl.UC.Comments.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/viewModels/vm.Home.Latest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="89" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="97" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1229,7 +1092,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="353">
           <caret line="39" column="117" selection-start-line="39" selection-start-column="83" selection-end-line="39" selection-end-column="117" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1237,7 +1099,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
           <caret line="51" column="107" selection-start-line="51" selection-start-column="102" selection-end-line="51" selection-end-column="107" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1259,7 +1120,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1267,33 +1127,57 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-84">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/modules/uc/uc.Tab.Followers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="19" column="33" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
+          <folding>
+            <marker date="1478711024878" expanded="true" signature="1802:1887" ph="..." />
+            <marker date="1478711024878" expanded="true" signature="2373:2422" ph="..." />
+            <marker date="1478711024878" expanded="true" signature="3089:3160" ph="..." />
+            <marker date="1478711024878" expanded="true" signature="3997:4090" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/modules/mod.SinglePost.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1344">
+          <caret line="59" column="22" selection-start-line="59" selection-start-column="22" selection-end-line="59" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/viewModels/vm.UC.Followers.php">
+    <entry file="file://$PROJECT_DIR$/src/js/modules/comments.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="618">
-          <caret line="98" column="1" selection-start-line="19" selection-start-column="0" selection-end-line="98" selection-end-column="1" />
-          <folding>
-            <element signature="e#6#291#0#PHP" expanded="false" />
-          </folding>
+        <state relative-caret-position="28">
+          <caret line="145" column="20" selection-start-line="145" selection-start-column="20" selection-end-line="145" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/modules/uc/uc.Tab.Comments.php">
+    <entry file="file://$PROJECT_DIR$/src/js/single.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1268">
-          <caret line="60" column="16" selection-start-line="60" selection-start-column="16" selection-end-line="64" selection-end-column="22" />
-          <folding>
-            <element signature="n#div#2;n#div#0;n#div#0;n#!!top" expanded="false" />
-          </folding>
+        <state relative-caret-position="1848">
+          <caret line="78" column="4" selection-start-line="78" selection-start-column="4" selection-end-line="81" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/modules/uc/uc.Tab.Following.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="18" column="10" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/functions/func.Follow.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
+        <state relative-caret-position="980">
           <caret line="46" column="27" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="27" />
           <folding>
             <marker date="1477838243246" expanded="true" signature="698:824" ph="SELECT * FRO... ${$table_name}" />
@@ -1315,82 +1199,243 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/modules/uc/uc.TopPane.php">
+    <entry file="file://$PROJECT_DIR$/core/viewModels/vm.Home.Latest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="27" column="301" selection-start-line="27" selection-start-column="275" selection-end-line="27" selection-end-column="301" />
+        <state relative-caret-position="2184">
+          <caret line="89" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="97" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/functions/Constants.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="49" column="111" selection-start-line="49" selection-start-column="111" selection-end-line="49" selection-end-column="111" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/functions/func.Rewrite.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="194" column="140" selection-start-line="194" selection-start-column="140" selection-end-line="194" selection-end-column="140" />
           <folding>
-            <element signature="n#style#0;n#section#0;n#!!top" expanded="true" />
+            <marker date="1478784345606" expanded="true" signature="5052:5170" ph="SELECT user_... $" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/modules/uc/uc.Tab.Followers.php">
+    <entry file="file://$PROJECT_DIR$/core/modules/mod.Footer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="19" column="33" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1478711024878" expanded="true" signature="1802:1887" ph="..." />
-            <marker date="1478711024878" expanded="true" signature="2373:2422" ph="..." />
-            <marker date="1478711024878" expanded="true" signature="3089:3160" ph="..." />
-            <marker date="1478711024878" expanded="true" signature="3997:4090" ph="..." />
+            <marker date="1478440083575" expanded="true" signature="4196:4202" ph=" " />
+            <marker date="1478440083575" expanded="true" signature="4339:4345" ph=" " />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/modules/uc/uc.Tab.Following.php">
+    <entry file="file://$PROJECT_DIR$/core/viewModels/vm.UC.Followers.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-308">
-          <caret line="18" column="10" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+        <state relative-caret-position="168">
+          <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/viewModels/vm.UC.Following.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
+        <state relative-caret-position="1484">
           <caret line="64" column="74" selection-start-line="64" selection-start-column="74" selection-end-line="64" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="168" column="22" selection-start-line="168" selection-start-column="22" selection-end-line="168" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/e6913bc0/ce6ca006-3e99-4726-88be-2f7b0ddb2896/tint.wp_tt_message">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/modules/uc/uc.TopPane.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="16" column="34" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/modules/uc/uc.Tab.Comments.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="22" column="199" selection-start-line="22" selection-start-column="199" selection-end-line="22" selection-end-column="199" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/css/modules/vars.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28">
+          <caret line="1" column="35" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/css/modules/base.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="152" column="24" selection-start-line="152" selection-start-column="24" selection-end-line="152" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/uc.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="44" column="25" selection-start-line="44" selection-start-column="25" selection-end-line="44" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/modules/mod.ModalPmBox.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="23" column="54" selection-start-line="23" selection-start-column="54" selection-end-line="23" selection-end-column="54" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/css/uc.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="55" column="39" selection-start-line="55" selection-start-column="12" selection-end-line="55" selection-end-column="39" />
+        <state relative-caret-position="114">
+          <caret line="495" column="62" selection-start-line="495" selection-start-column="62" selection-end-line="495" selection-end-column="62" />
           <folding>
+            <element signature="e#846#6508#0" expanded="false" />
             <element signature="e#1543#1964#0" expanded="false" />
             <element signature="e#2267#2555#0" expanded="false" />
             <element signature="e#2591#6484#0" expanded="false" />
             <element signature="e#6693#7964#0" expanded="false" />
             <element signature="e#8379#8829#0" expanded="false" />
             <element signature="e#9088#12325#0" expanded="false" />
+            <element signature="e#12364#20757#0" expanded="false" />
             <element signature="e#12644#20679#0" expanded="false" />
+            <element signature="e#22926#23310#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/modules/mod.SinglePost.php">
+    <entry file="file://$PROJECT_DIR$/core/viewModels/vm.UC.Chat.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-252">
-          <caret line="59" column="22" selection-start-line="59" selection-start-column="22" selection-end-line="59" selection-end-column="22" />
+        <state relative-caret-position="170">
+          <caret line="99" column="119" selection-start-line="99" selection-start-column="75" selection-end-line="99" selection-end-column="119" />
+          <folding>
+            <element signature="e#6#291#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/modules/unstar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="72" column="8" selection-start-line="72" selection-start-column="8" selection-end-line="72" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/single.js">
+    <entry file="file://$PROJECT_DIR$/assets/js/uc-41835a99e3.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="78" column="4" selection-start-line="78" selection-start-column="4" selection-end-line="81" selection-end-column="7" />
+        <state relative-caret-position="233">
+          <caret line="98" column="12" selection-start-line="98" selection-start-column="12" selection-end-line="98" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/modules/comments.js">
+    <entry file="file://$PROJECT_DIR$/src/js/modules/globalConfig.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="145" column="20" selection-start-line="145" selection-start-column="20" selection-end-line="145" selection-end-column="20" />
+        <state relative-caret-position="233">
+          <caret line="30" column="4" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/modules/uc/uc.Tab.Chat.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="61" column="56" selection-start-line="61" selection-start-column="45" selection-end-line="61" selection-end-column="56" />
+          <folding>
+            <element signature="e#4329#5783#0#PHP" expanded="false" />
+            <marker date="1478797632534" expanded="true" signature="3161:3252" ph="..." />
+            <marker date="1478797632534" expanded="true" signature="4429:4580" ph="..." />
+            <marker date="1478797632534" expanded="true" signature="4477:4580" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/modules/pm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="269" column="16" selection-start-line="269" selection-start-column="16" selection-end-line="269" selection-end-column="16" />
+          <folding>
+            <element signature="e#4281#6620#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/functions/func.Message.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="449">
+          <caret line="132" column="143" selection-start-line="132" selection-start-column="143" selection-end-line="132" selection-end-column="143" />
+          <folding>
+            <element signature="n#tt_create_pm#0;n#!!top" expanded="false" />
+            <element signature="n#tt_mark_message#0;n#!!top" expanded="false" />
+            <element signature="n#tt_mark_all_message_read#0;n#!!top" expanded="false" />
+            <marker date="1478801514698" expanded="true" signature="1231:1393" ph="INSERT INTO ${$table_name}... " />
+            <marker date="1478801514698" expanded="true" signature="2415:2492" ph="UPDATE ${$ta... " />
+            <marker date="1478801514698" expanded="true" signature="2842:2919" ph="UPDATE ${$ta... " />
+            <marker date="1478801514698" expanded="true" signature="3289:3367" ph="SELECT * FRO... ${$table_name}" />
+            <marker date="1478801514698" expanded="true" signature="4248:4404" ph="SELECT %s FR... " />
+            <marker date="1478801514698" expanded="true" signature="7130:7214" ph="UPDATE ${$ta... " />
+            <marker date="1478801514698" expanded="true" signature="7271:7357" ph="UPDATE ${$ta... " />
+            <marker date="1478801514698" expanded="true" signature="7745:7831" ph="UPDATE ${$ta... " />
+            <marker date="1478801514698" expanded="true" signature="8680:8865" ph="SELECT %s FR... " />
+            <marker date="1478801514698" expanded="true" signature="9059:9131" ph="SELECT * FRO... wp_tt_message" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/api/v1/endpoints/class.Rest.Message.Controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="326">
+          <caret line="169" column="361" selection-start-line="169" selection-start-column="361" selection-end-line="169" selection-end-column="361" />
+          <folding>
+            <marker date="1478801649435" expanded="true" signature="5755:6193" ph="..." />
+            <marker date="1478801649435" expanded="true" signature="5893:6139" ph="..." />
+            <marker date="1478801649435" expanded="true" signature="5893:6140" ph="..." />
+            <marker date="1478801649435" expanded="true" signature="5893:6187" ph="..." />
+            <marker date="1478801649435" expanded="true" signature="5918:5948" ph="..." />
+            <marker date="1478801649435" expanded="true" signature="5918:5949" ph="..." />
+            <marker date="1478801649435" expanded="true" signature="5918:5969" ph="..." />
+            <marker date="1478801649435" expanded="true" signature="5918:5970" ph="..." />
+            <marker date="1478801649435" expanded="true" signature="5918:6061" ph="..." />
+            <marker date="1478801649435" expanded="true" signature="5918:6065" ph="..." />
+            <marker date="1478801649435" expanded="true" signature="5918:6083" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1422,6 +1467,6 @@
     </states>
   </component>
   <component name="webServersAuthStorage">
-    <data>AAAAcLR5yCWdNw9+ntc/F4z7Qk1u5UB6qw8oMWxL8R+G16f7puCl2zlgX7bU0n5bq7H3ArRlfeLr6iR7okiaetctWjQHgBuTE+BRUlZhmHl+bICbTBGrlyNFvwsGZyMqxIRM3FNIfVuiSF4BqZjV44LD5oCjV/DLD2q702KM2OsNYV6h</data>
+    <data>AAAAcCqqKzI+L0le5/TAkbposjQucF1ggd1uD1JVjxJ4mpq3Ozt4+bnczFSkA1HGAkVyxtbNbAKhG96OFtarSOAsxPSFFxi496nN7RphV2cJ+71hS6KI567owHRhn5ruOnSq4touk64HVGi7QReL04ubnXUTX+mwgWtzywQEZdfZChmq</data>
   </component>
 </project>

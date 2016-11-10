@@ -31,6 +31,12 @@ var _pmBoxTextareaSel = '.pm-text';
 var _cancelSel = '.cancel';
 var _sendSel = '.confirm';
 
+var _msgsLoopWrapSel = '.messages-loop-rows';
+var _msgItemSel = '.message';
+var _msgActReplySel = '.msg-act-reply';
+var _msgActDeleteSel = '.msg-act-delete';
+var _msgActMarkSel = '.msg-act-mark';
+
 var _spinner = '<i class="tico tico-spinner2 spinning"></i>';
 var _originSendBtnText = '';
 
@@ -193,6 +199,7 @@ var _sendMsgInNormalForm = function (btn) {
         btn.html(_spinner);
         btn.prop('disabled', true);
         _pmTextArea.prop('disabled', true);
+        _sending = true;
     };
     
     var finishRequest = function () {
@@ -200,6 +207,7 @@ var _sendMsgInNormalForm = function (btn) {
         btn.text(_originSendBtnText);
         btn.prop('disabled', false);
         _pmTextArea.prop('disabled', false).val('');
+        _sending = false;
     };
     
     var success = function (data, textStatus, xhr) {
@@ -210,7 +218,7 @@ var _sendMsgInNormalForm = function (btn) {
                 timer: 2000,
                 showConfirmButton: true
             });
-            _prependNewMsg(data.data);
+            _prependNewMsg(data.data.msgHtml);
         }else{
             popMsgbox.error({
                 title: data.message,
@@ -239,7 +247,144 @@ var _sendMsgInNormalForm = function (btn) {
 };
 
 var _prependNewMsg = function (msg) {
-    //TODO prepend new pm to the message list
+    var msgsWrap = $(_msgsLoopWrapSel);
+    if(msgsWrap) {
+        msgsWrap.prepend(msg);
+    }
+};
+
+
+// 删除消息
+var _deleteMsgUnderNormalForm = function (btn) {
+    if(_sending || !Utils.checkLogin()) return false;
+    
+    var msgWrap = btn.parents(_msgItemSel);
+    
+    if(!msgWrap) return false;
+    
+    var msgId = btn.data('msg-id');
+    
+    if(!msgId) return false;
+    
+    var url = Routes.pm + '/' + msgId;
+    var data = {};
+    
+    var beforeSend = function () {
+        if(_sending) return;
+        _sending = true;
+    };
+    
+    var finishRequest = function () {
+        if(!_sending) return;
+        _sending = false;
+    };
+    
+    var success = function (data, textStatus, xhr) {
+        finishRequest();
+        if(data.success && data.success == 1) {
+            popMsgbox.success({
+                title: data.message,
+                timer: 2000,
+                showConfirmButton: true
+            });
+            msgWrap.slideUp('slow', function () {
+                msgWrap.remove();
+            });
+        }else{
+            popMsgbox.error({
+                title: data.message,
+                timer: 2000,
+                showConfirmButton: true
+            });
+        }
+    };
+    var error = function (xhr, textStatus, err) {
+        finishRequest();
+        popMsgbox.error({
+            title: xhr.responseJSON ? xhr.responseJSON.message : xhr.responseText,
+            timer: 2000,
+            showConfirmButton: true
+        });
+    };
+    
+    $.post({
+        url: url + '?' + $.param(Utils.filterDataForRest(data)),
+        type: 'DELETE',
+        dataType: 'json',
+        beforeSend: beforeSend,
+        success: success,
+        error: error
+    });
+};
+
+
+// 标记已读
+var _markMsgReadUnderNormalForm = function (btn) {
+    if(_sending || !Utils.checkLogin()) return false;
+    
+    var msgWrap = btn.parents(_msgItemSel);
+    
+    if(!msgWrap) return false;
+    
+    var msgId = btn.data('msg-id');
+    
+    if(!msgId) return false;
+    
+    var url = Routes.pm + '/' + msgId;
+    var data = {
+        action: 'markRead'
+    };
+    
+    var beforeSend = function () {
+        if(_sending) return;
+        _sending = true;
+    };
+    
+    var finishRequest = function () {
+        if(!_sending) return;
+        _sending = false;
+    };
+    
+    var success = function (data, textStatus, xhr) {
+        finishRequest();
+        if(data.success && data.success == 1) {
+            popMsgbox.success({
+                title: data.message,
+                timer: 2000,
+                showConfirmButton: true
+            });
+            _markRead(msgWrap);
+        }else{
+            popMsgbox.error({
+                title: data.message,
+                timer: 2000,
+                showConfirmButton: true
+            });
+        }
+    };
+    var error = function (xhr, textStatus, err) {
+        finishRequest();
+        popMsgbox.error({
+            title: xhr.responseJSON ? xhr.responseJSON.message : xhr.responseText,
+            timer: 2000,
+            showConfirmButton: true
+        });
+    };
+    
+    $.post({
+        url: url,
+        data: Utils.filterDataForRest(data),
+        dataType: 'json',
+        beforeSend: beforeSend,
+        success: success,
+        error: error
+    });
+};
+
+var _markRead = function (msgWrap) {
+    msgWrap.removeClass('unread-message');
+    var mark = msgWrap.find('.unread-mark');
+    if(mark)mark.remove();
 };
 
 
@@ -265,6 +410,20 @@ var PmKit = {
         _body.on('click', _normalPmBoxSel + ' ' + _sendSel, function () {
             var $this = $(this);
             _sendMsgInNormalForm($this);
+        });
+        
+        // 消息列表中的act按钮
+        _body.on('click', _msgItemSel + ' ' + _msgActReplySel, function () {
+            var pmTextArea = $(_normalPmBoxSel + ' ' + _pmBoxTextareaSel);
+            if(pmTextArea) {
+                pmTextArea.focus();
+            }
+        });
+        _body.on('click', _msgItemSel + ' ' + _msgActDeleteSel, function () {
+            _deleteMsgUnderNormalForm($(this));
+        });
+        _body.on('click', _msgItemSel + ' ' + _msgActMarkSel, function () {
+            _markMsgReadUnderNormalForm($(this));
         });
     }
 };

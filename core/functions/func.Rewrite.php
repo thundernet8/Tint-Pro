@@ -176,6 +176,10 @@ add_filter('author_link', 'tt_custom_author_link', 10, 2);
 function tt_match_author_link_field($query_vars){
     if(array_key_exists('author_name', $query_vars)){
         $nickname = $query_vars['author_name'];
+        global $wpdb;
+        $author_id = $wpdb->get_var($wpdb->prepare("SELECT user_id FROM {$wpdb->usermeta} WHERE `meta_key` = 'nickname' AND `meta_value` = %s ORDER BY user_id ASC LIMIT 1", sanitize_text_field($nickname)));
+        $logged_user_id = get_current_user_id();
+
         // 如果是原始author链接访问，重定向至新的自定义链接 /author/nickname -> /@nickname
         if(!array_key_exists('uc', $query_vars)){
             wp_redirect(home_url('/@' . $nickname), 301);
@@ -188,7 +192,7 @@ function tt_match_author_link_field($query_vars){
                 // @see func.Template.php - tt_get_user_template
                 wp_redirect(home_url('/@' . $nickname), 301);
                 exit;
-            }elseif(!in_array($uc_tab, (array)json_decode(ALLOWED_UC_TABS))){
+            }elseif(!in_array($uc_tab, (array)json_decode(ALLOWED_UC_TABS)) || ($uc_tab === 'chat' && (!$logged_user_id || $logged_user_id == $author_id))){
                 unset($query_vars['author_name']);
                 unset($query_vars['uctab']);
                 unset($query_vars['uc']);
@@ -198,8 +202,6 @@ function tt_match_author_link_field($query_vars){
         }
 
         // 新链接访问时 /@nickname
-        global $wpdb;
-        $author_id = $wpdb->get_var($wpdb->prepare("SELECT user_id FROM {$wpdb->usermeta} WHERE `meta_key` = 'nickname' AND `meta_value` = %s ORDER BY user_id ASC LIMIT 1", sanitize_text_field($nickname)));
         if($author_id){
             $query_vars['author'] = $author_id;
             unset($query_vars['author_name']);

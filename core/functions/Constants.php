@@ -47,7 +47,7 @@ include_once THEME_FUNC . '/asset.Constant.php';
 defined('CACHE_PREFIX') || define('CACHE_PREFIX', 'tt_cache');
 
 /* Allowed UC Tabs */
-$uc_allow_tabs = json_encode(array('latest', 'comments', 'stars', 'followers', 'following', 'activities')); //TODO: add more - e.g /chat/timeline
+$uc_allow_tabs = json_encode(array('latest', 'comments', 'stars', 'followers', 'following', 'activities', 'chat')); //TODO: add more - e.g /timeline
 defined('ALLOWED_UC_TABS') || define('ALLOWED_UC_TABS', $uc_allow_tabs);
 
 /* Allowed Action */

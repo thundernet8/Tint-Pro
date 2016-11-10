@@ -57,12 +57,12 @@ class WP_REST_Message_Controller extends WP_REST_Controller
                     'context'          => $this->get_context_param( array( 'default' => 'view' ) ),
                 ),
             ),
-//            array(
-//                'methods'         => WP_REST_Server::EDITABLE,
-//                'callback'        => array( $this, 'update_item' ),
-//                'permission_callback' => array( $this, 'update_item_permissions_check' ),
-//                'args'            => $this->get_endpoint_args_for_item_schema( WP_REST_Server::EDITABLE ),
-//            ),
+            array(
+                'methods'         => WP_REST_Server::EDITABLE,
+                'callback'        => array( $this, 'update_item' ),
+                'permission_callback' => array( $this, 'update_item_permissions_check' ),
+                'args'            => $this->get_endpoint_args_for_item_schema( WP_REST_Server::EDITABLE ),
+            ),
             array(
                 'methods' => WP_REST_Server::DELETABLE,
                 'callback' => array( $this, 'delete_item' ),
@@ -166,7 +166,15 @@ class WP_REST_Message_Controller extends WP_REST_Controller
             return tt_api_fail(__('Send message failed', 'tt'), array(), 400);
         }
 
-        return tt_api_success(__('Send message successfully', 'tt'), array('data' => array('chatUrl' => tt_get_user_chat_url($receiver_id))));
+        $people_url = get_author_posts_url($current_uid);
+        $msg_html = '<div class="message chat-message"><a class="people-link" href="' . $people_url . '"><img class="avatar" src="' . tt_get_avatar($current_uid) . '"></a><div class="msg-main"><div class="msg-content"><a class="sender-label" href="' . $people_url . '">' . sprintf(__('You to %s', 'tt'), get_user_by('ID', $receiver_id)->display_name) . '</a> : ' . $message . '</div><div class="msg-meta"><span class="msg-date text-muted">' . current_time('mysql') . '</span></div></div></div>';
+
+        return tt_api_success(__('Send message successfully', 'tt'), array(
+            'data' => array(
+                'chatUrl' => tt_get_user_chat_url($receiver_id),
+                'msgHtml' => $msg_html
+            )
+        ));
     }
 
 
@@ -205,9 +213,12 @@ class WP_REST_Message_Controller extends WP_REST_Controller
      * @param  WP_REST_Request $request Full details about the request.
      * @return boolean | WP_Error
      */
-//    public function update_item_permissions_check( $request ) {
-//        return true;
-//    }
+    public function update_item_permissions_check( $request ) {
+        if (!is_user_logged_in()) {
+            return new WP_Error('rest_message_cannot_update', __('Sorry, you cannot update message without signing in.', 'tt'), array('status' => tt_rest_authorization_required_code()));
+        }
+        return true;
+    }
 
     /**
      * 更新单条消息
@@ -215,9 +226,18 @@ class WP_REST_Message_Controller extends WP_REST_Controller
      * @param WP_REST_Request $request Full details about the request.
      * @return WP_Error|WP_REST_Response
      */
-//    public function update_item( $request ) {
-//        return null;
-//    }
+    public function update_item( $request ) {
+        $msg_id = absint($request['id']);
+        $action = $request->get_param('action');
+        if($action == 'markRead') {
+            $result = tt_mark_message($msg_id);
+            if($result) {
+                return tt_api_success('Mark message read successfully', 'tt');
+            }
+            return tt_api_fail('Mark message read failed');
+        }
+        return null;
+    }
 
     /**
      * 检查请求是否有删除指定消息的权限

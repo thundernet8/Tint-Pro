@@ -130,7 +130,7 @@ function tt_get_message($msg_id) {
     global $wpdb;
     $table_name = $wpdb->prefix . 'tt_message';
 
-    $row = $wpdb->get_row($wpdb->prepare("SELECT * FROM $table_name WHERE `user_id`=%d AND `msg_id`=%d", $user_id, $msg_id));
+    $row = $wpdb->get_row(sprintf("SELECT * FROM $table_name WHERE `msg_id`=%d AND `user_id`=%d OR `sender_id`=%d", $msg_id, $user_id, $user_id));
     if($row) return $row;
     return false;
 }
@@ -167,9 +167,9 @@ function tt_get_messages( $type = 'chat', $limit = 20, $offset = 0, $read = 0, $
     global $wpdb;
     $table_name = $wpdb->prefix . 'tt_message';
 
-    $sql = $wpdb->prepare("SELECT %s FROM $table_name WHERE `user_id`=%d%s AND `msg_type` IN($type)%s%s ORDER BY (CASE WHEN `msg_read`='all' THEN 1 ELSE 0 END) DESC, `msg_date` DESC%s", $count ? "COUNT(*)" : "*", $user_id, $sender_id ? " AND `sender_id`=$sender_id" : "", $read!='all' ? " AND `msg_read`='$read'" : "", $msg_status!='all' ? " AND `msg_status`='$msg_status'" : "", $count ? "" : " LIMIT $offset, $limit");
+    $sql = sprintf("SELECT %s FROM $table_name WHERE `user_id`=%d%s AND `msg_type` IN($type)%s%s ORDER BY (CASE WHEN `msg_read`='all' THEN 1 ELSE 0 END) DESC, `msg_date` DESC%s", $count ? "COUNT(*)" : "*", $user_id, $sender_id ? " AND `sender_id`=$sender_id" : "", $read!='all' ? " AND `msg_read`='$read'" : "", $msg_status!='all' ? " AND `msg_status`='$msg_status'" : "", $count ? "" : " LIMIT $offset, $limit");
 
-    $results = $count ? $wpdb->get_results($sql) : $wpdb->get_var($sql);
+    $results = $count ? $wpdb->get_var($sql) : $wpdb->get_results($sql);
 
     if($results){
         return $results;
@@ -270,7 +270,7 @@ function tt_get_pm($sender_id, $limit = 20, $offset = 0, $read = 0) {
  * @return array|bool|int|null|object
  */
 function tt_count_pm($sender_id = 0, $read = 0) {
-    return tt_get_messages('chat', $read, 'publish', $sender_id);
+    return tt_count_messages('chat', $read, 'publish', $sender_id);
 }
 
 
@@ -288,7 +288,7 @@ function tt_trash_message($msg_id) {
     global $wpdb;
     $table_name = $wpdb->prefix . 'tt_message';
 
-    if($wpdb->query( $wpdb->prepare("UPDATE $table_name SET `msg_status` = 'trash' WHERE `msg_id` = %d AND `user_id` = %d", $msg_id, $user_id) )) {
+    if($wpdb->query( $wpdb->prepare("UPDATE $table_name SET `msg_status` = 'trash' WHERE `msg_id` = %d AND `user_id` = %d", $msg_id, $user_id) ) || $wpdb->query( $wpdb->prepare("UPDATE $table_name SET `msg_status` = 'trash' WHERE `msg_id` = %d AND `sender_id` = %d", $msg_id, $user_id) )) { //TODO optimize
         return true;
     }
     return false;
@@ -313,4 +313,42 @@ function tt_restore_message($msg_id) { //NOTE: 应该不用
         return true;
     }
     return false;
+}
+
+
+/**
+ * 获取对话(双向消息)
+ *
+ * @since 2.0.0
+ * @param $one_uid
+ * @param int $limit
+ * @param int $offset
+ * @param int $read
+ * @param string $msg_status
+ * @param bool $count
+ * @return array|bool|int|null|object|string
+ */
+function tt_get_bothway_chat( $one_uid, $limit = 20, $offset = 0, $read = 0, $msg_status = 'publish', $count = false ) {
+    $user_id = get_current_user_id();
+
+    if(!$user_id) return false;
+
+    if(!in_array($read, [0, 1, 'all'])) {
+        $read = 0;
+    }
+    if(!in_array($msg_status, ['publish', 'trash', 'all'])) {
+        $msg_status = 'publish';
+    }
+
+    global $wpdb;
+    $table_name = $wpdb->prefix . 'tt_message';
+    $concat_id_str = '\'' . $one_uid . '_' . $user_id . '\',' . '\'' . $user_id . '_' . $one_uid . '\'';
+
+    $sql = sprintf("SELECT %s FROM $table_name WHERE CONCAT_WS('_', `user_id`, `sender_id`) IN (%s) AND `msg_type`='chat'%s%s ORDER BY (CASE WHEN `msg_read`='all' THEN 1 ELSE 0 END) DESC, `msg_date` DESC%s", $count ? "COUNT(*)" : "*", $concat_id_str, $read!='all' ? " AND `msg_read`='$read'" : "", $msg_status!='all' ? " AND `msg_status`='$msg_status'" : "", $count ? "" : " LIMIT $offset, $limit");
+    $results = $count ? $wpdb->get_var($sql) : $wpdb->get_results($sql);
+
+    if($results){
+        return $results;
+    }
+    return 0;
 }

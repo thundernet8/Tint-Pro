@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-11-10 00:57+0800\n"
-"PO-Revision-Date: 2016-11-10 00:57+0800\n"
+"POT-Creation-Date: 2016-11-11 00:06+0800\n"
+"PO-Revision-Date: 2016-11-11 00:28+0800\n"
 "Last-Translator: Zhiyan <mail@webapproach.net>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -1564,11 +1564,11 @@ msgstr "使用社交账户登录"
 msgid "Send Message"
 msgstr "发送私信"
 
-#: core/modules/mod.ModalPmBox.php:23
+#: core/modules/mod.ModalPmBox.php:23 core/modules/uc/uc.Tab.Chat.php:30
 msgid "Send to:"
 msgstr "发给:"
 
-#: core/modules/mod.ModalPmBox.php:27
+#: core/modules/mod.ModalPmBox.php:27 core/modules/uc/uc.Tab.Chat.php:34
 msgid "Write your message here."
 msgstr "消息内容..."
 
@@ -1576,7 +1576,7 @@ msgstr "消息内容..."
 msgid "CANCEL"
 msgstr "取消"
 
-#: core/modules/mod.ModalPmBox.php:32
+#: core/modules/mod.ModalPmBox.php:32 core/modules/uc/uc.Tab.Chat.php:38
 msgid "SEND"
 msgstr "发送"
 
@@ -1661,11 +1661,13 @@ msgid "MY STARS"
 msgstr "收藏"
 
 #: core/modules/uc/uc.NavTabs.php:21 core/modules/uc/uc.Tab.Followers.php:37
+#: core/modules/uc/uc.Tab.Following.php:37
 #: core/modules/widgets/wgt.Author.php:55
 msgid "FOLLOWERS"
 msgstr "粉丝"
 
 #: core/modules/uc/uc.NavTabs.php:22 core/modules/uc/uc.Tab.Followers.php:36
+#: core/modules/uc/uc.Tab.Following.php:36
 #: core/modules/widgets/wgt.Author.php:54
 msgid "FOLLOWING"
 msgstr "关注"
@@ -1678,6 +1680,23 @@ msgstr "动态"
 msgid "CHAT"
 msgstr "对话"
 
+#: core/modules/uc/uc.Tab.Chat.php:43
+#, php-format
+msgid "%d messages in total, %d new income messages (with green mark)"
+msgstr "共有 %d 条对话消息, 其中 %d 条未读消息 (绿色标注)"
+
+#: core/modules/uc/uc.Tab.Chat.php:54
+msgid "DELETE"
+msgstr "删除"
+
+#: core/modules/uc/uc.Tab.Chat.php:55
+msgid "REPLY"
+msgstr "回复"
+
+#: core/modules/uc/uc.Tab.Chat.php:57
+msgid "MARK READ"
+msgstr "标记已读"
+
 #: core/modules/uc/uc.Tab.Comments.php:23
 #, php-format
 msgid "%d comments in total, %d comments approved and %d comments under review"
@@ -1688,49 +1707,59 @@ msgid "REVIEW"
 msgstr "评论"
 
 #: core/modules/uc/uc.Tab.Comments.php:63
-#: core/modules/uc/uc.Tab.Followers.php:62 core/modules/uc/uc.Tab.Latest.php:75
+#: core/modules/uc/uc.Tab.Followers.php:62
+#: core/modules/uc/uc.Tab.Following.php:62 core/modules/uc/uc.Tab.Latest.php:75
 #: core/modules/uc/uc.Tab.Stars.php:79
 msgid "Nothing found here"
 msgstr "这里什么都没有..."
 
 #: core/modules/uc/uc.Tab.Comments.php:64
-#: core/modules/uc/uc.Tab.Followers.php:63 core/modules/uc/uc.Tab.Latest.php:76
+#: core/modules/uc/uc.Tab.Followers.php:63
+#: core/modules/uc/uc.Tab.Following.php:63 core/modules/uc/uc.Tab.Latest.php:76
 #: core/modules/uc/uc.Tab.Stars.php:80
 msgid "Back to home"
 msgstr "去首页看看"
 
 #: core/modules/uc/uc.Tab.Followers.php:32
+#: core/modules/uc/uc.Tab.Following.php:32
 msgid "Brief Intro : "
 msgstr "简介 : "
 
 #: core/modules/uc/uc.Tab.Followers.php:38
+#: core/modules/uc/uc.Tab.Following.php:38
 #: core/modules/widgets/wgt.Author.php:52
 msgid "POSTS"
 msgstr "文章"
 
-#: core/modules/uc/uc.Tab.Followers.php:43 core/modules/uc/uc.TopPane.php:28
+#: core/modules/uc/uc.Tab.Followers.php:43
+#: core/modules/uc/uc.Tab.Following.php:43 core/modules/uc/uc.TopPane.php:28
 #: core/modules/widgets/wgt.Author.php:48
 msgid "Send a message"
 msgstr "发送站内消息"
 
-#: core/modules/uc/uc.Tab.Followers.php:43 core/modules/uc/uc.TopPane.php:28
+#: core/modules/uc/uc.Tab.Followers.php:43
+#: core/modules/uc/uc.Tab.Following.php:43 core/modules/uc/uc.TopPane.php:28
 #: core/modules/widgets/wgt.Author.php:48
 msgid "Chat"
 msgstr "私信"
 
 #: core/modules/uc/uc.Tab.Followers.php:47
+#: core/modules/uc/uc.Tab.Following.php:47
 msgid "View Homepage"
 msgstr "访问主页"
 
 #: core/modules/uc/uc.Tab.Followers.php:48
+#: core/modules/uc/uc.Tab.Following.php:48
 msgid "His Posts"
 msgstr "他的文章"
 
 #: core/modules/uc/uc.Tab.Followers.php:49
+#: core/modules/uc/uc.Tab.Following.php:49
 msgid "His Comments"
 msgstr "他的评论"
 
 #: core/modules/uc/uc.Tab.Followers.php:51
+#: core/modules/uc/uc.Tab.Following.php:51
 msgid "Check Activities"
 msgstr "关注动态"
 
@@ -2140,6 +2169,11 @@ msgstr ""
 msgid ""
 "The post is from: <a href=\"%1$s\" title=\"%2$s\" target=\"_blank\">%2$s</a>"
 msgstr "原文链接: <a href=\"%1$s\" title=\"%2$s\" target=\"_blank\">%2$s</a>"
+
+#: core/viewModels/vm.UC.Chat.php:100
+#, php-format
+msgid "You to %s"
+msgstr "你对 %s"
 
 #: dash/dash.php:47
 msgid "Clear Cache"

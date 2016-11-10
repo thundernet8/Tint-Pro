@@ -42,6 +42,7 @@ jQuery(document).ready(function ($) {
     
     // 私信
     Pmkit.initModalPm();
+    Pmkit.initNormalPm();
     
     // 登录弹窗
     ModalSignBox.init();

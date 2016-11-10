@@ -149,12 +149,18 @@ button, input, optgroup, select, textarea {
 
 // input
 input, textarea{
+    font-size: inherit;
+    line-height: inherit;
+    border: 1px solid #ddd;
+    border-radius: 3px;
     &:focus {
         outline: none;
+        border-color: @blue;
     }
 }
 
 textarea {
+    color: #222;
     resize: none;
 }
 
