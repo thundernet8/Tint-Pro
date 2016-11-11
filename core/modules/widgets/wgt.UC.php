@@ -29,7 +29,7 @@ class UCWidget extends WP_Widget {
         if($instance['title']) { echo $args['before_title'] . $instance['title'] . $args['after_title']; } ?>
         <div class="widget-content">
         <?php if(is_user_logged_in()) { ?>
-
+            // TODO
         <?php }else{ ?>
 
         <?php } ?>

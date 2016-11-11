@@ -63,3 +63,65 @@ function tt_clear_cache_callback_on_admin_menu_bar(){
 }
 //add_action('optionsframework_after', 'tt_clear_cache_callback_on_admin_menu_bar', 999);
 add_action('admin_init', 'tt_clear_cache_callback_on_admin_menu_bar', 999);
+
+
+/**
+ * 后台用户列表显示昵称
+ *
+ * @since 2.0.0
+ * @param $columns
+ * @return mixed
+ */
+function tt_display_name_column( $columns ) {
+    $columns['tt_display_name'] = __('Display Name', 'tt');
+    unset($columns['name']);
+    return $columns;
+}
+add_filter( 'manage_users_columns', 'tt_display_name_column' );
+
+function tt_display_name_column_callback( $value, $column_name, $user_id ) {
+
+    if( 'tt_display_name' == $column_name ){
+        $user = get_user_by( 'id', $user_id );
+        $value = ( $user->display_name ) ? $user->display_name : '';
+    }
+
+    return $value;
+}
+add_action( 'manage_users_custom_column', 'tt_display_name_column_callback', 10, 3 );
+
+
+/**
+ * 后台用户列表显示最近登录时间
+ *
+ * @since 2.0.0
+ * @param $columns
+ * @return mixed
+ */
+function tt_latest_login_column( $columns ) {
+    $columns['tt_latest_login'] = __('Last Login', 'tt');
+    return $columns;
+}
+add_filter( 'manage_users_columns', 'tt_latest_login_column' );
+
+function tt_latest_login_column_callback( $value, $column_name, $user_id ) {
+    if('tt_latest_login' == $column_name){
+        $value = get_user_meta($user_id, 'tt_latest_login', true) ? : __('No Record','tt');
+    }
+    return $value;
+}
+add_action( 'manage_users_custom_column', 'tt_latest_login_column_callback', 10, 3 );
+
+
+/**
+ * 后台页脚
+ *
+ * @since 2.0.0
+ * @param $text
+ * @return string
+ */
+function left_admin_footer_text($text) {
+    $text = sprintf(__('<span id="footer-thankyou">Thanks for using %s to help your creation, %s theme style your website</span>', 'tt'), '<a href=http://cn.wordpress.org/ >WordPress</a>', '<a href="https://www.webapproach.net/tint.html">Tint</a>');
+    return $text;
+}
+add_filter('admin_footer_text','left_admin_footer_text');

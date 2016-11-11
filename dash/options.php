@@ -262,6 +262,26 @@ function optionsframework_options() {
         'type' => 'text'
     );
 
+    // - 摘要长度
+    $options[] = array(
+        'name' => __( 'Excerpt Length', 'tt' ),
+        'desc' => '',
+        'id' => 'tt_excerpt_length',
+        'std' => 100,
+        'class' => 'mini',
+        'type' => 'text'
+    );
+
+
+    // - 外链转内链
+    $options[] = array(
+        'name' => __( 'Disable External Links', 'tt' ),
+        'desc' => __( 'Convert external links in post content, excerpt or comments to internal links', 'tt' ),
+        'id' => 'tt_disable_external_links',
+        'std' => false,
+        'type' => 'checkbox'
+    );
+
 
 	// 主题设置 - 边栏设置
 	$options[] = array(
@@ -913,6 +933,16 @@ function optionsframework_options() {
         'desc' => __( 'IDC reference No. for regulations of China', 'tt' ),
         'id' => 'tt_beian',
         'std' => '',
+        'type' => 'text'
+    );
+
+
+    $options[] = array(
+        'name' => __( 'Site Open Date', 'tt' ),
+        'desc' => __('The date of when site opened, use `YYYY-mm-dd` format', 'tt'),
+        'id' => 'tt_site_open_date',
+        'std' => date('Y-m-d'),//(new DateTime())->format('Y-m-d'),
+        //'class' => 'mini',
         'type' => 'text'
     );
 

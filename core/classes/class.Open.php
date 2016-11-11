@@ -481,7 +481,7 @@ abstract class Open{
             // get_bloginfo('name'), admin_url('profile.php')) ); // TODO
 
             // 更新最新登录时间
-            update_user_meta( $insert_user_id, 'tt_latest_login', current_time( 'mysql' ) );
+            // update_user_meta( $insert_user_id, 'tt_latest_login', current_time( 'mysql' ) ); // Note: 由wp_login钩子去做
 
             // 设置当前用户
             wp_set_current_user( $insert_user_id, $user_login );

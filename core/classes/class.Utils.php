@@ -469,7 +469,7 @@ class Utils{
      */
     public static function getPHPCurrentUrl(){
         $scheme = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http';
-        $port_str = $_SERVER['SERVER_PORT'] != '80' ? ':' . $_SERVER['SERVER_PORT'] : '';
+        $port_str = ($_SERVER['SERVER_PORT'] == '80' && $scheme == 'http') || ($_SERVER['SERVER_PORT'] == '443' && $scheme == 'https') ? '' : ':' . $_SERVER['SERVER_PORT'];
         $url = $scheme . '://' . $_SERVER['HTTP_HOST'] . $port_str . $_SERVER["REQUEST_URI"];
         return $url;
     }

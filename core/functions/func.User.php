@@ -191,3 +191,97 @@ function tt_get_administrator_ids () {
 function tt_get_user_chat_url($user_id) {
     return get_author_posts_url($user_id) . '/chat';
 }
+
+
+/**
+ * 将用户的资料编辑页面链接改至前台
+ *
+ * @since 2.0.0
+ * @param $url
+ * @return mixed
+ */
+function tt_custom_profile_edit_link( $url ) {
+    return is_admin() ? $url : tt_url_for('my_settings');
+}
+add_filter( 'edit_profile_url', 'tt_custom_profile_edit_link' );
+
+
+/**
+ * 将普通用户的文章编辑链接改至前台
+ *
+ * @since 2.0.0
+ * @param $url
+ * @param $post_id
+ * @return string
+ */
+function tt_frontend_edit_post_link($url, $post_id){
+    if( !current_user_can('edit_users') ){
+        $url = add_query_arg(array('id'=>$post_id), tt_url_for('new_post'));
+    }
+    return $url;
+}
+add_filter('get_edit_post_link', 'tt_frontend_edit_post_link', 10, 2);
+
+
+/**
+ * 拒绝普通用户访问后台
+ *
+ * @since 2.0.0
+ * @return void
+ */
+function tt_redirect_wp_admin(){
+    if( is_admin() && is_user_logged_in() && !current_user_can('edit_users') && ( !defined('DOING_AJAX') || !DOING_AJAX )  ){
+        wp_redirect( tt_url_for('my_settings') );
+        exit;
+    }
+}
+add_action( 'init', 'tt_redirect_wp_admin' );
+
+
+/**
+ * 记录用户登录时间、IP等信息
+ *
+ * @since 2.0.0
+ * @param $login
+ * @param $user
+ */
+function tt_update_user_latest_login( $login, $user ) {
+    if(!$user) $user = get_user_by( 'login', $login );
+    $latest_login = get_user_meta( $user->ID, 'tt_latest_login', true );
+    $latest_ip = get_user_meta( $user->ID, 'tt_latest_login_ip', true );
+    update_user_meta( $user->ID, 'tt_latest_login_before', $latest_login );
+    update_user_meta( $user->ID, 'tt_latest_ip_before', $latest_ip );
+    update_user_meta( $user->ID, 'tt_latest_login', current_time( 'mysql' ) );
+    update_user_meta( $user->ID, 'tt_latest_login_ip', $_SERVER['REMOTE_ADDR'] );
+}
+add_action( 'wp_login', 'tt_update_user_latest_login', 10, 2 );
+
+
+/**
+ * 获取用户的真实IP
+ *
+ * @since 2.0.0
+ * @return void
+ */
+function tt_get_true_ip(){
+    if (isset($_SERVER)){
+        if (isset($_SERVER["HTTP_X_FORWARDED_FOR"])){
+            $realIP = explode(',', $_SERVER["HTTP_X_FORWARDED_FOR"]);
+            $realIP = $realIP[0];
+        } else if (isset($_SERVER["HTTP_CLIENT_IP"])) {
+            $realIP = $_SERVER["HTTP_CLIENT_IP"];
+        } else {
+            $realIP = $_SERVER["REMOTE_ADDR"];
+        }
+    } else {
+        if (getenv("HTTP_X_FORWARDED_FOR")){
+            $realIP = getenv("HTTP_X_FORWARDED_FOR");
+        } else if (getenv("HTTP_CLIENT_IP")) {
+            $realIP = getenv("HTTP_CLIENT_IP");
+        } else {
+            $realIP = getenv("REMOTE_ADDR");
+        }
+    }
+    $_SERVER['REMOTE_ADDR'] = $realIP;
+}
+add_action( 'init', 'tt_get_true_ip' );

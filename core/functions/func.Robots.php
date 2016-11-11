@@ -44,4 +44,4 @@ function tt_add_noindex_meta(){
         wp_no_robots();
     }
 }
-//add_action('wp_head', 'tt_add_noindex_meta');  // TODO
+add_action('wp_head', 'tt_add_noindex_meta');

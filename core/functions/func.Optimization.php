@@ -167,3 +167,119 @@ function tt_disable_embeds_flush_rewrite_rules() {
     flush_rewrite_rules();
 }
 add_action('after_switch_theme', 'tt_disable_embeds_flush_rewrite_rules');
+
+
+/**
+ * 搜索结果排除页面
+ *
+ * @since 2.0.0
+ * @param WP_Query $query
+ * @return WP_Query
+ */
+function tt_search_filter_page($query) {
+    if ($query->is_search) {
+        $query->set('post_type', 'post');
+    }
+    return $query;
+}
+add_filter('pre_get_posts','tt_search_filter_page');
+
+
+/**
+ * 摘要长度
+ *
+ * @since 2.0.0
+ * @param $length
+ * @return mixed
+ */
+function tt_excerpt_length( $length ) {
+    return tt_get_option('tt_excerpt_length', $length);
+}
+add_filter( 'excerpt_length', 'tt_excerpt_length', 999 );
+
+/* 去除正文P标签包裹 */
+//remove_filter( 'the_content', 'wpautop' );
+
+/* 去除摘要P标签包裹 */
+remove_filter( 'the_excerpt', 'wpautop' );
+
+/* HTML转义 */
+//取消内容转义
+remove_filter('the_content', 'wptexturize');
+//取消摘要转义
+//remove_filter('the_excerpt', 'wptexturize');
+//取消评论转义
+//remove_filter('comment_text', 'wptexturize');
+
+
+/* 找回上传图片路径设置 */
+if(get_option('upload_path') == 'wp-content/uploads' || get_option('upload_path') == null){
+    update_option('upload_path','wp-content/uploads');
+}
+
+/**
+ * 中文名文件上传改名
+ *
+ * @since 2.0.0
+ * @param $file
+ * @return mixed
+ */
+function tt_custom_upload_name($file){
+    if(preg_match('/[一-龥]/u',$file['name'])):
+        $ext=ltrim(strrchr($file['name'],'.'),'.');
+        $file['name'] = preg_replace('#^www\.#', '', strtolower($_SERVER['SERVER_NAME'])) . '_' . date('Y-m-d_H-i-s') . '.' . $ext;
+    endif;
+    return $file;
+}
+add_filter('wp_handle_upload_prefilter','tt_custom_upload_name', 5, 1);
+
+
+/**
+ * 替换文章或评论内容外链为内链
+ *
+ * @since 2.0.0
+ * @param $content
+ * @return mixed
+ */
+function tt_convert_to_internal_links($content){
+    if(!tt_get_option('tt_disable_external_links', false)) {
+        return $content;
+    }
+    preg_match_all('/\shref=(\'|\")(http[^\'\"#]*?)(\'|\")([\s]?)/', $content, $matches);
+    if($matches){
+        $home = home_url();
+        foreach($matches[2] as $val){
+            if(strpos($val, $home)===false){
+                $rep = $matches[1][0].$val.$matches[3][0];
+                $new = '"'. $home . '/redirect/' . base64_encode($val). '" target="_blank"';
+                $content = str_replace("$rep", "$new", $content);
+            }
+        }
+    }
+    return $content;
+}
+add_filter('the_content', 'tt_convert_to_internal_links', 99);
+add_filter('comment_text', 'tt_convert_to_internal_links', 99);
+add_filter('get_comment_author_link', 'tt_convert_to_internal_links', 99);
+
+
+/**
+ * 转换为内链的外链跳转处理
+ *
+ * @return bool
+ */
+function tt_handle_external_links_redirect() {
+    $base_url = home_url('/redirect/');
+    $request_url = Utils::getPHPCurrentUrl();
+    if (substr($request_url, 0, strlen($base_url)) != $base_url) {
+        return false;
+    }
+    $key = str_ireplace($base_url, '', $request_url);
+    if (!empty($key)) {
+        $external_url = base64_decode($key);
+        wp_redirect( $external_url, 302 );
+        exit;
+    }
+    return false;
+}
+add_action('template_redirect', 'tt_handle_external_links_redirect');

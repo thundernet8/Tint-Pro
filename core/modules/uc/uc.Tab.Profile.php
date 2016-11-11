@@ -12,6 +12,13 @@
  * @link https://www.webapproach.net/tint.html
  */
 ?>
+<?php global $tt_author_vars; $tt_author_id = $tt_author_vars['tt_author_id']; $logged_user_id = get_current_user_id(); ?>
+<?php $vm = UCProfileVM::getInstance($tt_author_id); ?>
+<?php if($vm->isCache && $vm->cacheTime) { ?>
+    <!-- Author profile cached <?php echo $vm->cacheTime; ?> -->
+<?php } ?>
 <div class="author-tab-box profile-tab">
+    <div class="tab-content author-profile">
 
+    </div>
 </div>

@@ -15,6 +15,10 @@
 * tt_weibo_profile_img
 * tt_weibo_id
 * tt_user_cover
+* tt_latest_login
+* tt_latest_login_ip
+* tt_latest_login_before
+* tt_latest_ip_before
 
 ### Post Meta
 * views (postViews插件)

@@ -17,7 +17,7 @@
 // 静态文件名常量，便于自动替换带特征值的文件名
 
 // CSS
-defined('CSS_HOME') || define('CSS_HOME', 'home-c7ebcc00bc.css');
+defined('CSS_HOME') || define('CSS_HOME', 'home-c408ac5696.css');
 defined('CSS_FRONT_PAGE') || define('CSS_FRONT_PAGE', 'front-page-643683c0d6.css');
 defined('CSS_SINGLE') || define('CSS_SINGLE', 'single-690ace94fd.css');
 defined('CSS_ARCHIVE') || define('CSS_ARCHIVE', 'archive-83eb1c3bba.css');

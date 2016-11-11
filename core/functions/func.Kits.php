@@ -430,3 +430,17 @@ function tt_qrcode($text, $size) {
     //TODO size
     return tt_url_for('qr') . '?text=' . $text;
 }
+
+/**
+ * 页脚年份
+ *
+ * @since 2.0.0
+ * @return string
+ */
+function tt_copyright_year(){
+    $now_year = date('Y');
+    $open_date = tt_get_option('tt_site_open_date', $now_year);
+    $open_year = substr($open_date, 0, 4);
+
+    return $open_year . '-' . $now_year . '&nbsp;&nbsp;';
+}

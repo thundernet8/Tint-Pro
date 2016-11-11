@@ -167,6 +167,7 @@ load_vm('vm.UC.Comments');
 load_vm('vm.UC.Followers');
 load_vm('vm.UC.Following');
 load_vm('vm.UC.Chat');
+load_vm('vm.UC.Profile');
 
 /* 载入小工具 */
 load_widget('wgt.TagCloud');

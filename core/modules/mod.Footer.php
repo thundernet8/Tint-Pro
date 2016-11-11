@@ -82,7 +82,7 @@
 
             </div>
             <div class="footer-copy">
-                &copy;&nbsp;<?php the_date('Y'); ?><?php echo ' ' . get_bloginfo('name') . ' All Right Reserved '; ?>
+                &copy;&nbsp;<?php echo tt_copyright_year(); ?><?php echo ' ' . get_bloginfo('name') . ' All Right Reserved '; ?>
                 <?php if($beian = tt_get_option('tt_beian')){
                     echo '·&nbsp;<a href="http://www.miitbeian.gov.cn/" rel="link" target="_blank">' . $beian . '</a>';
                 } ?>
