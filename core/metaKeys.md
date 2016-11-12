@@ -19,6 +19,9 @@
 * tt_latest_login_ip
 * tt_latest_login_before
 * tt_latest_ip_before
+* tt_banned
+* tt_banned_reason
+* tt_banned_time
 
 ### Post Meta
 * views (postViews插件)

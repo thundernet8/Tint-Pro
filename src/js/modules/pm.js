@@ -67,7 +67,11 @@ var _showModalPmBox = function (btn) {
     
     _pmModalBoxReceiverEle.text(receiver);
     
-    _pmModalBox.modal('show');
+    if(_pmModalBox.length) {
+        _pmModalBox.modal('show');
+        return true;
+    }
+    return false;
 };
 
 // 关闭模态消息框

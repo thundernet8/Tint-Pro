@@ -93,6 +93,7 @@
 </footer>
 <?php load_mod('mod.FixedControls'); ?>
 <?php load_mod('mod.ModalSearch'); ?>
+<?php if(is_author() && current_user_can('edit_users'))load_mod('mod.ModalBanBox'); ?>
 <?php if(is_home() || is_single() || is_author())load_mod('mod.ModalPmBox'); ?>
 <?php if(!is_user_logged_in()) load_mod('mod.ModalLoginForm'); ?>
 <!-- 页脚自定义代码 -->

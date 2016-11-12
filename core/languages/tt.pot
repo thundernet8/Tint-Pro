@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-11-12 19:25+0800\n"
+"POT-Creation-Date: 2016-11-13 00:58+0800\n"
 "PO-Revision-Date: 2016-08-17 21:40+0800\n"
 "Last-Translator: \n"
 "Language-Team: Zhiyan <mail@webapproach.net>\n"
@@ -204,6 +204,7 @@ msgid "Sorry, you cannot create message without signing in."
 msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.Message.Controller.php:150
+#: core/api/v1/endpoints/class.Rest.UserStatus.Controller.php:110
 msgid "Verify nonce failed"
 msgstr ""
 
@@ -242,22 +243,27 @@ msgid "Sorry, you cannot update message without signing in."
 msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.Message.Controller.php:254
+#: core/api/v1/endpoints/class.Rest.UserStatus.Controller.php:149
 msgid "Sorry, you cannot delete message without signing in."
 msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.Message.Controller.php:258
+#: core/api/v1/endpoints/class.Rest.UserStatus.Controller.php:153
 msgid "Sorry, the message is not found."
 msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.Message.Controller.php:262
+#: core/api/v1/endpoints/class.Rest.UserStatus.Controller.php:157
 msgid "Sorry, you cannot delete message not belong to you."
 msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.Message.Controller.php:279
+#: core/api/v1/endpoints/class.Rest.UserStatus.Controller.php:174
 msgid "The message cannot be deleted."
 msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.Message.Controller.php:282
+#: core/api/v1/endpoints/class.Rest.UserStatus.Controller.php:177
 msgid "delete message successfully"
 msgstr ""
 
@@ -518,6 +524,28 @@ msgstr ""
 msgid ""
 "Limit result set to resources matching at least one specific role "
 "provided. Accepts csv list or single role."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.UserStatus.Controller.php:57
+msgid "Sorry, you cannot view user account status without signing in."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.UserStatus.Controller.php:72
+#: core/api/v1/endpoints/class.Rest.UserStatus.Controller.php:104
+#: core/functions/func.User.php:347 core/functions/func.User.php:381
+msgid "The specified user is not existed"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.UserStatus.Controller.php:86
+msgid "Sorry, you cannot update user account status without signing in."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.UserStatus.Controller.php:89
+msgid "Sorry, you have no authority to update user account status."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.UserStatus.Controller.php:118
+msgid "A reason is required"
 msgstr ""
 
 #: core/classes/class.Open.php:215
@@ -1506,6 +1534,31 @@ msgstr ""
 msgid "Reader"
 msgstr ""
 
+#: core/functions/func.User.php:298
+#, php-format
+msgid "Your account is banned for reason: %s"
+msgstr ""
+
+#: core/functions/func.User.php:298
+msgid "Account Banned"
+msgstr ""
+
+#: core/functions/func.User.php:358
+msgid "The specified user is banned"
+msgstr ""
+
+#: core/functions/func.User.php:363
+msgid "Error occurs when banning the user"
+msgstr ""
+
+#: core/functions/func.User.php:391
+msgid "The specified user is unlocked"
+msgstr ""
+
+#: core/functions/func.User.php:396
+msgid "Error occurs when unlock the user"
+msgstr ""
+
 #: core/modules/mod.Comments.php:29
 msgid "Load More Comments"
 msgstr ""
@@ -1566,6 +1619,22 @@ msgstr ""
 msgid "Popular"
 msgstr ""
 
+#: core/modules/mod.ModalBanBox.php:18 core/modules/uc/uc.Tab.Profile.php:107
+msgid "Account Management"
+msgstr ""
+
+#: core/modules/mod.ModalBanBox.php:23
+msgid "Write your reason here."
+msgstr ""
+
+#: core/modules/mod.ModalBanBox.php:27 core/modules/mod.ModalPmBox.php:31
+msgid "CANCEL"
+msgstr ""
+
+#: core/modules/mod.ModalBanBox.php:28
+msgid "CONFIRM"
+msgstr ""
+
 #: core/modules/mod.ModalLoginForm.php:23
 #: core/templates/actions/tpl.M.Signin.php:49
 msgid "Email/Username"
@@ -1612,10 +1681,6 @@ msgstr ""
 
 #: core/modules/mod.ModalPmBox.php:27 core/modules/uc/uc.Tab.Chat.php:35
 msgid "Write your message here."
-msgstr ""
-
-#: core/modules/mod.ModalPmBox.php:31
-msgid "CANCEL"
 msgstr ""
 
 #: core/modules/mod.ModalPmBox.php:32 core/modules/uc/uc.Tab.Chat.php:39
@@ -1885,54 +1950,54 @@ msgstr ""
 msgid "Google+"
 msgstr ""
 
-#: core/modules/uc/uc.Tab.Profile.php:86
+#: core/modules/uc/uc.Tab.Profile.php:85
 msgid "Donate Info"
 msgstr ""
 
-#: core/modules/uc/uc.Tab.Profile.php:86
+#: core/modules/uc/uc.Tab.Profile.php:85
 msgid "Donate to me"
 msgstr ""
 
-#: core/modules/uc/uc.Tab.Profile.php:87
+#: core/modules/uc/uc.Tab.Profile.php:88
 msgid "Donate via Alipay"
 msgstr ""
 
-#: core/modules/uc/uc.Tab.Profile.php:90
+#: core/modules/uc/uc.Tab.Profile.php:91
 msgid "Donate via Wechat"
 msgstr ""
 
-#: core/modules/uc/uc.Tab.Profile.php:96
+#: core/modules/uc/uc.Tab.Profile.php:98
 msgid "Referral Info"
 msgstr ""
 
-#: core/modules/uc/uc.Tab.Profile.php:98
+#: core/modules/uc/uc.Tab.Profile.php:100
 msgid "Referral Link"
 msgstr ""
 
-#: core/modules/uc/uc.Tab.Profile.php:105
-msgid "Account Management"
+#: core/modules/uc/uc.Tab.Profile.php:101
+msgid "COPY"
 msgstr ""
 
-#: core/modules/uc/uc.Tab.Profile.php:105
+#: core/modules/uc/uc.Tab.Profile.php:107
 msgid "Visible for administrator"
 msgstr ""
 
-#: core/modules/uc/uc.Tab.Profile.php:108
-msgid "This action will enable the account to normal functions"
-msgstr ""
-
-#: core/modules/uc/uc.Tab.Profile.php:109
+#: core/modules/uc/uc.Tab.Profile.php:110
 msgid "Unlock Account"
 msgstr ""
 
 #: core/modules/uc/uc.Tab.Profile.php:111
+msgid "This action will enable the account to normal functions"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Profile.php:113
+msgid "Ban Account"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Profile.php:114
 msgid ""
 "Warning: this action will ban the account, the all features is not "
 "accessible until manual unlock"
-msgstr ""
-
-#: core/modules/uc/uc.Tab.Profile.php:112
-msgid "Ban Account"
 msgstr ""
 
 #: core/modules/uc/uc.Tab.Stars.php:40

@@ -29,6 +29,7 @@ var routes = {
     follower: Utils.getAPIUrl('/users/{{uid}}/followers'),
     following: Utils.getAPIUrl('/users/{{uid}}/following'),
     pm: Utils.getAPIUrl('/messages'),
+    accountStatus: Utils.getAPIUrl('/users/status')
 };
 
 // URL列表

@@ -248,8 +248,10 @@ add_action( 'init', 'tt_redirect_wp_admin' );
 function tt_update_user_latest_login( $login, $user ) {
     if(!$user) $user = get_user_by( 'login', $login );
     $latest_login = get_user_meta( $user->ID, 'tt_latest_login', true );
+    $latest_login_ip = get_user_meta( $user->ID, 'tt_latest_login_ip', true );
     update_user_meta( $user->ID, 'tt_latest_login_before', $latest_login );
     update_user_meta( $user->ID, 'tt_latest_login', current_time( 'mysql' ) );
+    update_user_meta( $user->ID, 'tt_latest_ip_before', $latest_login_ip );
     update_user_meta( $user->ID, 'tt_latest_login_ip', $_SERVER['REMOTE_ADDR'] );
 }
 add_action( 'wp_login', 'tt_update_user_latest_login', 10, 2 );
@@ -292,11 +294,107 @@ add_action( 'init', 'tt_get_true_ip' );
  * @return  void
  */
 function tt_handle_banned_user(){
-    if($user_id = get_current_user_id()) {
+    if($user_id = get_current_user_id()) { //TODO 忽略管理员
         $ban_status = get_user_meta($user_id, 'tt_banned', true);
         if($ban_status) {
-            wp_die(sprintf(__('Your account is banned for reason: %s', 'tt'), get_user_meta($user_id, 'banned_reason', true)), __('Account Banned', 'tt'), 404); //TODO add banned time
+            wp_die(sprintf(__('Your account is banned for reason: %s', 'tt'), get_user_meta($user_id, 'tt_banned_reason', true)), __('Account Banned', 'tt'), 404); //TODO add banned time
         }
     }
 }
 add_action('template_redirect', 'tt_handle_banned_user');
+
+
+/**
+ * 获取用户账户状态
+ *
+ * @since 2.0.0
+ * @param $user_id
+ * @param $return
+ * @return array|bool
+ */
+function tt_get_account_status($user_id, $return = 'bool') {
+    $ban = get_user_meta($user_id, 'tt_banned', true);
+    if($ban) {
+        if($return == 'bool') {
+            return true;
+        }
+        $reason = get_user_meta($user_id, 'tt_banned_reason', true);
+        $time = get_user_meta($user_id, 'tt_banned_time', true);
+        return array(
+            'banned' => true,
+            'banned_reason' => strval($reason),
+            'banned_time' => strval($time)
+        );
+    }
+    return $return == 'bool' ? false : array(
+        'banned' => false
+    );
+}
+
+
+/**
+ * 封禁用户
+ *
+ * @since 2.0.0
+ * @param $user_id
+ * @param string $reason
+ * @param string $return
+ * @return array|bool
+ */
+function tt_ban_user($user_id, $reason = '', $return = 'bool') {
+    $user = get_user_by('ID', $user_id);
+    if(!$user) {
+        return $return == 'bool' ? false : array(
+            'success' => false,
+            'message' => __('The specified user is not existed', 'tt')
+        );
+    }
+    if(update_user_meta($user_id, 'tt_banned', 1)) {
+        update_user_meta($user_id, 'tt_banned_reason', $reason);
+        update_user_meta($user_id, 'tt_banned_time', current_time('mysql'));
+        // 清理Profile缓存
+        tt_clear_cache_key_like('tt_cache_daily_vm_UCProfileVM');
+
+        return $return == 'bool' ? true : array(
+            'success' => true,
+            'message' => __('The specified user is banned', 'tt')
+        );
+    }
+    return $return == 'bool' ? false : array(
+        'success' => false,
+        'message' => __('Error occurs when banning the user', 'tt')
+    );
+}
+
+
+/**
+ * 解禁用户
+ *
+ * @since 2.0.0
+ * @param $user_id
+ * @param string $return
+ * @return array|bool
+ */
+function tt_unban_user($user_id, $return = 'bool') {
+    $user = get_user_by('ID', $user_id);
+    if(!$user) {
+        return $return == 'bool' ? false : array(
+            'success' => false,
+            'message' => __('The specified user is not existed', 'tt')
+        );
+    }
+    if(update_user_meta($user_id, 'tt_banned', 0)) {
+        //update_user_meta($user_id, 'tt_banned_reason', '');
+        //update_user_meta($user_id, 'tt_banned_time', '');
+        // 清理Profile缓存
+        tt_clear_cache_key_like('tt_cache_daily_vm_UCProfileVM');
+        return $return == 'bool' ? true : array(
+            'success' => true,
+            'message' => __('The specified user is unlocked', 'tt')
+        );
+    }
+    return $return == 'bool' ? false : array(
+        'success' => false,
+        'message' => __('Error occurs when unlock the user', 'tt')
+    );
+}

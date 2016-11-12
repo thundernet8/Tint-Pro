@@ -1,5 +1,5 @@
 body {
-    #pmBox {
+    #banBox {
         position: fixed;
         display: none;
         z-index: 9999;
@@ -11,24 +11,15 @@ body {
         border-radius: 5px;
         background: #fff;
         width: 400px;
-        &>.pm-header {
+        &>.ban-header {
             &>h2 {
                 margin-top: 0;
                 font-size: 1.6rem;
             }
         }
-        &>.pm-content {
-            &>.pm-inner {
-                &>.pm-info {
-                    position: relative;
-                    &>.pm-info_label {
-                        margin-right: 6px;
-                    }
-                    &>.pm-info_receiver {
-
-                    }
-                }
-                &>.pm-text {
+        &>.ban-content {
+            &>.ban-inner {
+                &>.ban-text {
                     width: 100%;
                     height: 80px;
                     border: 1px solid #ddd;
@@ -46,7 +37,7 @@ body {
             ;
             }
         }
-        &>.pm-btns {
+        &>.ban-btns {
             text-align: right;
             &>button {
                 position: relative;
@@ -70,12 +61,6 @@ body {
                     color: @gray;
                 }
             }
-        }
-    }
-
-    &.modal-open {
-        #pmBox {
-            //display: block;
         }
     }
 }

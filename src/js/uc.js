@@ -24,6 +24,7 @@ import {} from 'lazyload/jquery.lazyload';
 import SignHelp from './modules/signHelp';
 import FixFooter from './modules/fixFooter';
 import UnstarKit from './modules/unstar';
+import Bankit from './modules/ban';
 
 
 // DOM Ready
@@ -66,4 +67,7 @@ jQuery(document).ready(function ($) {
     $('.popover-qr').popover({
         html: true
     });
+    
+    // 封禁/解锁账户操作
+    Bankit.initModalBan();
 });

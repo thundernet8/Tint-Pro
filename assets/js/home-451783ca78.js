@@ -1,5 +1,5 @@
 /**
- * Generated on Sat Nov 12 2016 21:23:14 GMT+0800 (中国标准时间) by Zhiyan
+ * Generated on Sun Nov 13 2016 00:57:51 GMT+0800 (中国标准时间) by Zhiyan
  *
  * @package   Tint
  * @version   v2.0.0
@@ -105,7 +105,8 @@
             myFollowing: _utils2[['default']][['getAPIUrl']]('/users/me/following'),
             follower: _utils2[['default']][['getAPIUrl']]('/users/{{uid}}/followers'),
             following: _utils2[['default']][['getAPIUrl']]('/users/{{uid}}/following'),
-            pm: _utils2[['default']][['getAPIUrl']]('/messages')
+            pm: _utils2[['default']][['getAPIUrl']]('/messages'),
+            accountStatus: _utils2[['default']][['getAPIUrl']]('/users/status')
         };
         var urls = {
             site: _utils2[['default']][['getSiteUrl']](),

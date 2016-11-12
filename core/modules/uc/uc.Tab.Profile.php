@@ -107,10 +107,10 @@
             <header><h2><?php _e('Account Management', 'tt'); ?><small><?php _e('Visible for administrator', 'tt'); ?></small></h2></header>
             <div class="info-group clearfix">
                 <?php if($info->banned) { ?>
+                <a class="btn btn-wide btn-border-success ban-btn" href="javascript:void 0" data-action="unban" data-uid="<?php echo $info->ID; ?>"><?php _e('Unlock Account', 'tt'); ?></a>
                 <p><?php _e('This action will enable the account to normal functions', 'tt'); ?></p>
-                <a class="btn btn-border-danger" href="javascript:void 0" data-action="unlock" data-uid="<?php echo $info->ID; ?>"><?php _e('Unlock Account', 'tt'); ?></a>
                 <?php }else{ ?>
-                <a class="btn btn-wide btn-border-danger ban-act" href="javascript:void 0" data-action="ban" data-uid="<?php echo $info->ID; ?>"><?php _e('Ban Account', 'tt'); ?></a>
+                <a class="btn btn-wide btn-border-danger ban-btn" href="javascript:void 0" data-action="ban" data-uid="<?php echo $info->ID; ?>"><?php _e('Ban Account', 'tt'); ?></a>
                 <p><?php _e('Warning: this action will ban the account, the all features is not accessible until manual unlock', 'tt'); ?></p>
                 <?php } ?>
             </div>
