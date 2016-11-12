@@ -248,9 +248,7 @@ add_action( 'init', 'tt_redirect_wp_admin' );
 function tt_update_user_latest_login( $login, $user ) {
     if(!$user) $user = get_user_by( 'login', $login );
     $latest_login = get_user_meta( $user->ID, 'tt_latest_login', true );
-    $latest_ip = get_user_meta( $user->ID, 'tt_latest_login_ip', true );
     update_user_meta( $user->ID, 'tt_latest_login_before', $latest_login );
-    update_user_meta( $user->ID, 'tt_latest_ip_before', $latest_ip );
     update_user_meta( $user->ID, 'tt_latest_login', current_time( 'mysql' ) );
     update_user_meta( $user->ID, 'tt_latest_login_ip', $_SERVER['REMOTE_ADDR'] );
 }
@@ -285,3 +283,20 @@ function tt_get_true_ip(){
     $_SERVER['REMOTE_ADDR'] = $realIP;
 }
 add_action( 'init', 'tt_get_true_ip' );
+
+
+/**
+ * 对封禁账户处理
+ *
+ * @since   2.0.0
+ * @return  void
+ */
+function tt_handle_banned_user(){
+    if($user_id = get_current_user_id()) {
+        $ban_status = get_user_meta($user_id, 'tt_banned', true);
+        if($ban_status) {
+            wp_die(sprintf(__('Your account is banned for reason: %s', 'tt'), get_user_meta($user_id, 'banned_reason', true)), __('Account Banned', 'tt'), 404); //TODO add banned time
+        }
+    }
+}
+add_action('template_redirect', 'tt_handle_banned_user');

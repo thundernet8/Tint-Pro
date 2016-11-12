@@ -125,3 +125,31 @@ function left_admin_footer_text($text) {
     return $text;
 }
 add_filter('admin_footer_text','left_admin_footer_text');
+
+
+/**
+ * 增加用户资料字段
+ *
+ * @since 2.0.0
+ * @param array $contactmethods
+ * @return array
+ */
+function tt_add_contact_fields($contactmethods){
+    $contactmethods['tt_qq'] = 'QQ';
+    $contactmethods['tt_weibo'] = __('Sina Weibo','tt');
+    $contactmethods['tt_weixin'] = __('Wechat','tt');
+    $contactmethods['tt_twitter'] = __('Twitter','tt');
+    $contactmethods['tt_facebook'] = 'Facebook';
+    $contactmethods['tt_googleplus'] = 'Google+';
+    $contactmethods['tt_alipay_email'] = __('Alipay Account','tt');
+    $contactmethods['tt_alipay_pay_qr'] = __('Alipay Pay Qrcode','tt');
+    $contactmethods['tt_wechat_pay_qr'] = __('Wechat Pay Qrcode','tt');
+
+    // 删除无用字段
+    unset($contactmethods['yim']);
+    unset($contactmethods['aim']);
+    unset($contactmethods['jabber']);
+
+    return $contactmethods;
+}
+add_filter('user_contactmethods', 'tt_add_contact_fields');

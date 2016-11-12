@@ -61,4 +61,9 @@ jQuery(document).ready(function ($) {
     
     // 取消收藏
     UnstarKit.init();
+    
+    // 微信等二维码弹出
+    $('.popover-qr').popover({
+        html: true
+    });
 });

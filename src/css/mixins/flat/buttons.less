@@ -84,3 +84,17 @@
   background-size: 200% 200%;
   background-position: 50%;
 }
+
+// border button
+.border-button(@color) {
+    border: 1px solid @color;
+    color: @color;
+    background: #ffffff;
+    &:focus {
+        color: @color;
+    }
+    &:hover {
+        background: @color;
+        color: #ffffff;
+    }
+}

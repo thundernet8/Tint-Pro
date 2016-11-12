@@ -1,5 +1,5 @@
 /**
- * Generated on Fri Nov 11 2016 02:07:11 GMT+0800 (中国标准时间) by Zhiyan
+ * Generated on Sat Nov 12 2016 21:23:15 GMT+0800 (中国标准时间) by Zhiyan
  *
  * @package   Tint
  * @version   v2.0.0
@@ -69,6 +69,7 @@
                 });
                 (0, _fixFooter2[['default']])();
                 _unstar2[['default']][['init']]();
+                $('.popover-qr')[['popover']]({ html: true });
             });
         }[['call']](exports, __webpack_require__(1)));
     },

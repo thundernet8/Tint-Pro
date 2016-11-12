@@ -45,52 +45,45 @@ class UCProfileVM extends BaseVM {
     }
 
     protected function getRealData() {
-        $args = array(
-            'post_type' => 'post',
-            'post_status' => 'publish',
-            'posts_per_page' => get_option('posts_per_page', 10),
-            'paged' => $this->_page,
-            'author' => $this->_authorId,
-            'has_password' => false,
-            'ignore_sticky_posts' => false,
-            'orderby' => 'date', // modified - 如果按最新编辑时间排序
-            'order' => 'DESC'
-        );
+        //$author = get_user_by('ID', $this->_authorId);
+        $data = get_userdata($this->_authorId);
+        if(!$data) return null;
 
-        $query = new WP_Query($args);
-        //$GLOBALS['wp_query'] = $query; // 取代主循环(query_posts只返回posts，为了获取其他有用数据，使用WP_Query)
+        $author_info = array();
+        $author_info['ID'] = $this->_authorId;
+        $author_info['display_name'] = $data->display_name;
+        $author_info['nickname'] = $data->nickname; //get_user_meta($author->ID, 'nickname', true);
+        $author_info['email'] = $data->user_email;
+        $author_info['member_since'] = mysql2date('Y/m/d', $data->user_registered);
+        $author_info['member_days'] = max(1, round(( strtotime(date('Y-m-d')) - strtotime( $data->user_registered ) ) /3600/24));
+        $author_info['site'] = $data->user_url;
+        $author_info['description'] = $data->description;
 
-        $uc_latest_posts = array();
-        $pagination = array(
-            'max_num_pages' => $query->max_num_pages,
-            'current_page' => $this->_page,
-            'base' => str_replace('999999999', '%#%', get_pagenum_link(999999999))
-        );
+        $author_info['avatar'] = tt_get_avatar($data->ID, 'medium');
 
-        while ($query->have_posts()) : $query->the_post();
-            $uc_latest_post = array();
-            global $post;
-            $uc_latest_post['ID'] = $post->ID;
-            $uc_latest_post['title'] = get_the_title($post);
-            $uc_latest_post['permalink'] = get_permalink($post);
-            $uc_latest_post['comment_count'] = $post->comment_count;
-            $uc_latest_post['excerpt'] = get_the_excerpt($post);
-            $uc_latest_post['category'] = get_the_category_list(' ', '', $post->ID);
-            $uc_latest_post['author'] = get_the_author();
-            $uc_latest_post['author_url'] = home_url('/@' . $uc_latest_post['author']); //TODO the link
-            $uc_latest_post['time'] = get_post_time('F j, Y', false, $post, false); //get_post_time( string $d = 'U', bool $gmt = false, int|WP_Post $post = null, bool $translate = false )
-            $uc_latest_post['datetime'] = get_the_time(DATE_W3C, $post);
-            $uc_latest_post['thumb'] = tt_get_thumb($post, 'medium');
-            $uc_latest_post['format'] = get_post_format($post) ? : 'standard';
+        $author_info['latest_login'] = mysql2date('Y/m/d g:i:s A', $data->tt_latest_login);
+        $author_info['latest_login_before'] = mysql2date('Y/m/d g:i:s A', $data->tt_latest_login_before);
+        $author_info['last_login_ip'] = $data->tt_latest_ip_before;
+        $author_info['this_login_ip'] = $data->tt_latest_login_ip;
 
-            $uc_latest_posts[] = $uc_latest_post;
-        endwhile;
 
-        wp_reset_postdata();
+        $author_info['qq'] = $data->tt_qq ? 'http://wpa.qq.com/msgrd?v=3&uin=' . $data->tt_qq . '&site=qq&menu=yes' : ''; //get_user_meta($author->ID, 'tt_qq', true);
+        $author_info['weibo'] = $data->tt_weibo ? 'http://weibo.com/' . $data->tt_weibo : ''; //get_user_meta($author->ID, 'tt_weibo', true);
+        $author_info['weixin'] = $data->tt_weixin; //get_user_meta($author->ID, 'tt_weixin', true);
+        $author_info['twitter'] = $data->tt_twitter ? 'https://twitter.com/' . $data->tt_twitter : ''; //get_user_meta($author->ID, 'tt_twitter', true);
+        $author_info['facebook'] = $data->tt_facebook ? 'https://www.facebook.com/' . $data->tt_facebook : ''; //get_user_meta($author->ID, 'tt_facebook', true);
+        $author_info['googleplus'] = $data->tt_googleplus ? 'https://plus.google.com/u/0/' . $data->tt_googleplus : ''; //get_user_meta($author->ID, 'tt_googleplus', true);
+        //$author_info['alipay_email'] = $data->tt_alipay_email; //get_user_meta($author->ID, 'tt_alipay_email', true);
+        $author_info['alipay_pay'] = $data->tt_alipay_pay_qr; //get_user_meta($author->ID, 'tt_alipay_pay_qr', true);
+        $author_info['wechat_pay'] = $data->tt_wechat_pay_qr; //get_user_meta($author->ID, 'tt_wechat_pay_qr', true);
 
-        return (object)array(
-            'pagination' => $pagination,
-            'uc_latest_posts' => $uc_latest_posts
-        );
+        //$author_info['cover'] = tt_get_user_cover($data->ID, 'full');
+
+        $author_info['referral'] = tt_get_referral_link($data->ID);
+        $author_info['banned'] = $data->tt_banned;
+        //$author_info['banned_time'] = mysql2date('Y/m/d g:i:s A', $data->tt_banned_time);
+        //$author_info['banned_reason'] = $data->tt_banned_reason;
+
+        return (object)$author_info;
     }
 }

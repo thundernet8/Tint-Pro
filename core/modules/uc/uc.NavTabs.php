@@ -20,6 +20,6 @@
     <a class="<?php echo tt_conditional_class('author_tab stars', $uc_tab == 'stars'); ?>" href="<?php echo tt_url_for('uc_stars', $tt_author_vars['tt_author_id']); ?>"><?php _e('MY STARS', 'tt'); ?></a>
     <a class="<?php echo tt_conditional_class('author_tab followers', $uc_tab == 'followers'); ?>" href="<?php echo tt_url_for('uc_followers', $tt_author_vars['tt_author_id']); ?>"><?php _e('FOLLOWERS', 'tt'); ?></a>
     <a class="<?php echo tt_conditional_class('author_tab following', $uc_tab == 'following'); ?>" href="<?php echo tt_url_for('uc_following', $tt_author_vars['tt_author_id']); ?>"><?php _e('FOLLOWING', 'tt'); ?></a>
-    <a class="<?php echo tt_conditional_class('author_tab activities', $uc_tab == 'activities'); ?>" href="<?php echo tt_url_for('uc_activities', $tt_author_vars['tt_author_id']); ?>"><?php _e('ACTIVITIES', 'tt'); ?></a>
+    <!--a class="<?php echo tt_conditional_class('author_tab activities', $uc_tab == 'activities'); ?>" href="<?php echo tt_url_for('uc_activities', $tt_author_vars['tt_author_id']); ?>"><?php _e('ACTIVITIES', 'tt'); ?></a-->
     <!--a class="<?php echo tt_conditional_class('author_tab chat', $uc_tab == 'chat'); ?>" href="<?php echo tt_url_for('uc_chat', $tt_author_vars['tt_author_id']); ?>"><?php _e('CHAT', 'tt'); ?></a-->
 </nav>

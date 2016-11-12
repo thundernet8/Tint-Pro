@@ -444,3 +444,18 @@ function tt_copyright_year(){
 
     return $open_year . '-' . $now_year . '&nbsp;&nbsp;';
 }
+
+
+/**
+ * 生成推广链接
+ *
+ * @param int $user_id
+ * @param string $base_link
+ * @return string
+ */
+function tt_get_referral_link($user_id = 0, $base_link = ''){
+    if(!$base_link) $base_link = home_url();
+    if(!$user_id) $user_id = get_current_user_id();
+
+    return add_query_arg(array('ref' => $user_id), $base_link);
+}
