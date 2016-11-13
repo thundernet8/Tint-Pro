@@ -638,8 +638,8 @@ function optionsframework_options() {
         'type' => $theme_pro ? 'select' : 'disabled',
         'class' => 'mini',
         'options' => array(
-            'id' => __( 'Post ID', 'tt' ),
-            'name' => __( 'Post Name', 'tt' )
+            'post_id' => __( 'Post ID', 'tt' ),
+            'post_name' => __( 'Post Name', 'tt' )
         )
     );
 

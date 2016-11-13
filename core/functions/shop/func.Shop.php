@@ -66,12 +66,12 @@ function tt_include_shop_template_function( $template_path ) {
     if ( get_post_type() == 'product' ) {
         if ( is_single() ) {
             //指定单个商品模板
-            if ( $theme_file = locate_template( array ( 'core/templates/shop/product.php' ) ) ) {
+            if ( $theme_file = locate_template( array ( 'core/templates/shop/tpl.Product.php' ) ) ) {
                 $template_path = $theme_file;
             }
         }elseif(is_archive()){
             //指定商品分类模板
-            if ( $theme_file = locate_template( array ( 'core/templates/shop/product-archives.php' ) ) ) {
+            if ( $theme_file = locate_template( array ( 'core/templates/shop/tpl.Product.Archive.php' ) ) ) {
                 $template_path = $theme_file;
             }
         }
@@ -158,7 +158,7 @@ function tt_custom_product_link( $link, $post = null ){
     $shop_slug = tt_get_option('tt_product_archives_slug', 'shop');
     $product_slug = tt_get_option('tt_product_link_mode')=='post_name' ? $post->post_name : $post->ID;
     if ( $post->post_type == 'product' ){
-        return home_url( $shop_slug . $product_slug . '.html' );
+        return home_url( $shop_slug . '/' . $product_slug . '.html' );
     } else {
         return $link;
     }
