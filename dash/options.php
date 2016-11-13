@@ -20,7 +20,7 @@ function optionsframework_options() {
     // 主题版本
     $theme_version = trim(wp_get_theme()->get('Version'));
 
-    $theme_pro = !!preg_match('/([0-9-\.]+)PRO/i', $theme_version);
+    $theme_pro = defined('TT_PRO') ? TT_PRO : !!preg_match('/([0-9-\.]+)PRO/i', $theme_version);
 
     // 博客名
     $blog_name = trim(get_bloginfo('name'));
@@ -606,6 +606,42 @@ function optionsframework_options() {
 		'name' => __( 'Shop', 'tt' ),
 		'type' => 'heading'
 	);
+
+
+    // - 开启商品系统
+    $options[] = array(
+        'name' => __( 'Enable Shop', 'tt' ),
+        'desc' => __( 'After enable this, users can create orders and buy something those the site provided', 'tt' ),
+        'id' => 'tt_enable_shop',
+        'std' => false,
+        'type' => $theme_pro ? 'checkbox' : 'disabled'
+    );
+
+
+    // - 商品链接的链接前缀
+    $options[] = array(
+        'name' => __( 'Products Archive Link Slug', 'tt' ),
+        'desc' => __( 'The special prefix in product archive link', 'tt' ),
+        'id' => 'tt_product_archives_slug',
+        'std' => 'shop',
+        'class' => 'mini',
+        'type' => $theme_pro ? 'text' : 'disabled'
+    );
+
+
+    // - 商品链接模式
+    $options[] = array(
+        'name' => __( 'Product Permalink Mode', 'tt' ),
+        'desc' => __( 'The link mode for the rewrite product permalink', 'tt' ),
+        'id' => 'tt_product_link_mode',
+        'std' => 'name',
+        'type' => $theme_pro ? 'select' : 'disabled',
+        'class' => 'mini',
+        'options' => array(
+            'id' => __( 'Post ID', 'tt' ),
+            'name' => __( 'Post Name', 'tt' )
+        )
+    );
 
 
     // - 站点微信收款二维码

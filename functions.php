@@ -144,6 +144,11 @@ load_func('func.Content');
 load_func('func.Follow');
 load_func('func.Message');
 load_func('func.Referral');
+if(TT_PRO && tt_get_option('tt_enable_shop', false)){
+    load_func('shop/func.Shop');
+    load_func('shop/func.Shop.Orders');
+    load_func('shop/func.Shop.Coupon');
+}
 
 /* 载入数据模型 */
 load_vm('vm.Base');

@@ -40,6 +40,9 @@ defined('THEME_MOD') || define('THEME_MOD', get_template_directory() . '/core/mo
 
 defined('THEME_TPL') || define('THEME_TPL', get_template_directory() . '/core/templates');
 
+/* Theme Version */
+defined('TT_PRO') || define('TT_PRO', !!preg_match('/([0-9-\.]+)PRO/i', trim(wp_get_theme()->get('Version'))));
+
 /* Asset Names */
 include_once THEME_FUNC . '/asset.Constant.php';
 

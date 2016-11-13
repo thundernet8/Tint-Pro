@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-11-13 00:58+0800\n"
+"POT-Creation-Date: 2016-11-13 21:41+0800\n"
 "PO-Revision-Date: 2016-08-17 21:40+0800\n"
 "Last-Translator: \n"
 "Language-Team: Zhiyan <mail@webapproach.net>\n"
@@ -532,7 +532,7 @@ msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.UserStatus.Controller.php:72
 #: core/api/v1/endpoints/class.Rest.UserStatus.Controller.php:104
-#: core/functions/func.User.php:347 core/functions/func.User.php:381
+#: core/functions/func.User.php:349 core/functions/func.User.php:383
 msgid "The specified user is not existed"
 msgstr ""
 
@@ -1434,7 +1434,8 @@ msgstr ""
 msgid "Activate Registration"
 msgstr ""
 
-#: core/functions/func.Seo.php:37 core/modules/mod.Header.php:93
+#: core/functions/func.Seo.php:37 core/modules/mod.Header.Shop.php:93
+#: core/modules/mod.Header.php:93
 msgid "Sign Out"
 msgstr ""
 
@@ -1534,29 +1535,244 @@ msgstr ""
 msgid "Reader"
 msgstr ""
 
-#: core/functions/func.User.php:298
+#: core/functions/func.User.php:300
 #, php-format
 msgid "Your account is banned for reason: %s"
 msgstr ""
 
-#: core/functions/func.User.php:298
+#: core/functions/func.User.php:300
 msgid "Account Banned"
 msgstr ""
 
-#: core/functions/func.User.php:358
+#: core/functions/func.User.php:360
 msgid "The specified user is banned"
 msgstr ""
 
-#: core/functions/func.User.php:363
+#: core/functions/func.User.php:365
 msgid "Error occurs when banning the user"
 msgstr ""
 
-#: core/functions/func.User.php:391
+#: core/functions/func.User.php:393
 msgid "The specified user is unlocked"
 msgstr ""
 
-#: core/functions/func.User.php:396
+#: core/functions/func.User.php:398
 msgid "Error occurs when unlock the user"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:28
+msgctxt "taxonomy general name"
+msgid "Products"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:29
+msgctxt "taxonomy singular name"
+msgid "Product"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:30
+msgid "Add New"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:31
+msgid "Add New Product"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:32
+msgid "Edit"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:33
+msgid "Edit Product"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:34
+msgid "Add Product"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:35
+msgid "View"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:36
+msgid "All Products"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:37
+msgid "View Product"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:38
+msgid "Search Product"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:39
+msgid "Product not found"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:40
+msgid "Product not found in trash"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:41
+msgid "Parent Product"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:42
+msgid "Shop and Products"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:94
+msgctxt "taxonomy general name"
+msgid "Products Categories"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:95
+msgctxt "taxonomy singular name"
+msgid "Products Category"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:96
+msgid "Search Products Categories"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:97
+msgid "All Products Categories"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:98
+msgid "Parent Products Category"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:99
+msgid "Parent Products Category:"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:100
+msgid "Edit Products Category"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:101
+msgid "Update Products Category"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:102
+msgid "Add New Products Category"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:103
+msgid "Name of New Products Category"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:104
+msgid "Products Categories"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:118
+msgctxt "taxonomy general name"
+msgid "Product Tags"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:119
+msgctxt "taxonomy singular name"
+msgid "Product Tag"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:120
+msgid "Search Product Tags"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:121
+msgid "Popular Product Tags"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:122
+msgid "All Product Tags"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:125
+msgid "Edit Product Tag"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:126
+msgid "Update Product Tag"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:127
+msgid "Add New Product Tag"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:128
+msgid "Name of New Product Tag"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:129
+msgid "Separate Product Tags with Commas"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:130
+msgid "Add or Remove Product Tag"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:131
+msgid "Choose from Most Used Product Tags"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:132
+msgid "Product Tags"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:200
+#: core/functions/shop/func.Shop.php:252
+msgid "Product ID"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:201
+#: core/functions/shop/func.Shop.php:253
+msgid "Price"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:202
+#: core/functions/shop/func.Shop.php:254
+msgid "Quantities"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:203
+#: core/functions/shop/func.Shop.php:255
+msgid "Sales"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:206
+msgid "Product Name"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:209
+msgid "Publisher"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:212
+msgid "Hot Hits"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:228
+msgid "Credit"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:230
+msgid "RMB YUAN"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:236
+#: core/functions/shop/func.Shop.php:239
+msgid "pieces"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:285
+msgid "Show all categories"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:287
+msgid "Product Category"
 msgstr ""
 
 #: core/modules/mod.Comments.php:29
@@ -1587,27 +1803,27 @@ msgstr ""
 msgid "CONTACT"
 msgstr ""
 
-#: core/modules/mod.Header.php:86
+#: core/modules/mod.Header.Shop.php:86 core/modules/mod.Header.php:86
 msgid "Go Dashboard"
 msgstr ""
 
-#: core/modules/mod.Header.php:88
+#: core/modules/mod.Header.Shop.php:88 core/modules/mod.Header.php:88
 msgid "New Post"
 msgstr ""
 
-#: core/modules/mod.Header.php:89
+#: core/modules/mod.Header.Shop.php:89 core/modules/mod.Header.php:89
 msgid "My Posts"
 msgstr ""
 
-#: core/modules/mod.Header.php:90
+#: core/modules/mod.Header.Shop.php:90 core/modules/mod.Header.php:90
 msgid "My Messages"
 msgstr ""
 
-#: core/modules/mod.Header.php:91
+#: core/modules/mod.Header.Shop.php:91 core/modules/mod.Header.php:91
 msgid "My Settings"
 msgstr ""
 
-#: core/modules/mod.Header.php:98
+#: core/modules/mod.Header.Shop.php:98 core/modules/mod.Header.php:98
 msgid "Sign In or Up"
 msgstr ""
 
@@ -1619,7 +1835,7 @@ msgstr ""
 msgid "Popular"
 msgstr ""
 
-#: core/modules/mod.ModalBanBox.php:18 core/modules/uc/uc.Tab.Profile.php:107
+#: core/modules/mod.ModalBanBox.php:18 core/modules/uc/uc.Tab.Profile.php:110
 msgid "Account Management"
 msgstr ""
 
@@ -1896,105 +2112,106 @@ msgid "This Login IP %s"
 msgstr ""
 
 #: core/modules/uc/uc.Tab.Profile.php:31
+#: core/modules/uc/uc.Tab.Profile.php:34
 #, php-format
 msgid "Last Login IP %s"
 msgstr ""
 
-#: core/modules/uc/uc.Tab.Profile.php:38
+#: core/modules/uc/uc.Tab.Profile.php:41
 msgid "Basic Info"
 msgstr ""
 
-#: core/modules/uc/uc.Tab.Profile.php:40
+#: core/modules/uc/uc.Tab.Profile.php:43
 msgid "Nickname"
 msgstr ""
 
-#: core/modules/uc/uc.Tab.Profile.php:45
+#: core/modules/uc/uc.Tab.Profile.php:48
 #: core/templates/actions/tpl.M.Findpass.php:36
 #: core/templates/actions/tpl.M.Signup.php:46
 msgid "Email"
 msgstr ""
 
-#: core/modules/uc/uc.Tab.Profile.php:50
+#: core/modules/uc/uc.Tab.Profile.php:53
 msgid "Site"
 msgstr ""
 
-#: core/modules/uc/uc.Tab.Profile.php:54
+#: core/modules/uc/uc.Tab.Profile.php:57
 msgid "Description"
 msgstr ""
 
-#: core/modules/uc/uc.Tab.Profile.php:60
+#: core/modules/uc/uc.Tab.Profile.php:63
 msgid "Extended Info"
 msgstr ""
 
-#: core/modules/uc/uc.Tab.Profile.php:63
+#: core/modules/uc/uc.Tab.Profile.php:66
 msgid "Talk with QQ"
 msgstr ""
 
-#: core/modules/uc/uc.Tab.Profile.php:66
+#: core/modules/uc/uc.Tab.Profile.php:69
 msgid "Follow on Weibo"
 msgstr ""
 
-#: core/modules/uc/uc.Tab.Profile.php:69
+#: core/modules/uc/uc.Tab.Profile.php:72
 msgid "Talk with Wechat"
 msgstr ""
 
-#: core/modules/uc/uc.Tab.Profile.php:72
+#: core/modules/uc/uc.Tab.Profile.php:75
 msgid "Follow on Twitter"
 msgstr ""
 
-#: core/modules/uc/uc.Tab.Profile.php:75
+#: core/modules/uc/uc.Tab.Profile.php:78
 msgid "Find on Facebook"
 msgstr ""
 
-#: core/modules/uc/uc.Tab.Profile.php:78
+#: core/modules/uc/uc.Tab.Profile.php:81
 msgid "Google+"
 msgstr ""
 
-#: core/modules/uc/uc.Tab.Profile.php:85
+#: core/modules/uc/uc.Tab.Profile.php:88
 msgid "Donate Info"
 msgstr ""
 
-#: core/modules/uc/uc.Tab.Profile.php:85
+#: core/modules/uc/uc.Tab.Profile.php:88
 msgid "Donate to me"
 msgstr ""
 
-#: core/modules/uc/uc.Tab.Profile.php:88
+#: core/modules/uc/uc.Tab.Profile.php:91
 msgid "Donate via Alipay"
 msgstr ""
 
-#: core/modules/uc/uc.Tab.Profile.php:91
+#: core/modules/uc/uc.Tab.Profile.php:94
 msgid "Donate via Wechat"
 msgstr ""
 
-#: core/modules/uc/uc.Tab.Profile.php:98
+#: core/modules/uc/uc.Tab.Profile.php:101
 msgid "Referral Info"
 msgstr ""
 
-#: core/modules/uc/uc.Tab.Profile.php:100
+#: core/modules/uc/uc.Tab.Profile.php:103
 msgid "Referral Link"
 msgstr ""
 
-#: core/modules/uc/uc.Tab.Profile.php:101
+#: core/modules/uc/uc.Tab.Profile.php:104
 msgid "COPY"
 msgstr ""
 
-#: core/modules/uc/uc.Tab.Profile.php:107
+#: core/modules/uc/uc.Tab.Profile.php:110
 msgid "Visible for administrator"
 msgstr ""
 
-#: core/modules/uc/uc.Tab.Profile.php:110
+#: core/modules/uc/uc.Tab.Profile.php:113
 msgid "Unlock Account"
 msgstr ""
 
-#: core/modules/uc/uc.Tab.Profile.php:111
+#: core/modules/uc/uc.Tab.Profile.php:114
 msgid "This action will enable the account to normal functions"
 msgstr ""
 
-#: core/modules/uc/uc.Tab.Profile.php:113
+#: core/modules/uc/uc.Tab.Profile.php:116
 msgid "Ban Account"
 msgstr ""
 
-#: core/modules/uc/uc.Tab.Profile.php:114
+#: core/modules/uc/uc.Tab.Profile.php:117
 msgid ""
 "Warning: this action will ban the account, the all features is not "
 "accessible until manual unlock"
@@ -3016,273 +3233,307 @@ msgid "Shop"
 msgstr ""
 
 #: dash/options.php:613
-msgid "Site Weixin Pay QR"
+msgid "Enable Shop"
 msgstr ""
 
 #: dash/options.php:614
-msgid "The Weixin pay qrcode image for collection money"
+msgid ""
+"After enable this, users can create orders and buy something those the "
+"site provided"
 msgstr ""
 
 #: dash/options.php:623
-msgid "Site Alipay Pay QR"
+msgid "Products Archive Link Slug"
 msgstr ""
 
 #: dash/options.php:624
-msgid "The Alipay pay qrcode image for collection money"
+msgid "The special prefix in product archive link"
 msgstr ""
 
-#: dash/options.php:633
-msgid "Auxiliary"
+#: dash/options.php:634
+msgid "Product Permalink Mode"
 msgstr ""
 
-#: dash/options.php:640
-msgid "Object Cache"
+#: dash/options.php:635
+msgid "The link mode for the rewrite product permalink"
 msgstr ""
 
 #: dash/options.php:641
+msgid "Post ID"
+msgstr ""
+
+#: dash/options.php:642
+msgid "Post Name"
+msgstr ""
+
+#: dash/options.php:649
+msgid "Site Weixin Pay QR"
+msgstr ""
+
+#: dash/options.php:650
+msgid "The Weixin pay qrcode image for collection money"
+msgstr ""
+
+#: dash/options.php:659
+msgid "Site Alipay Pay QR"
+msgstr ""
+
+#: dash/options.php:660
+msgid "The Alipay pay qrcode image for collection money"
+msgstr ""
+
+#: dash/options.php:669
+msgid "Auxiliary"
+msgstr ""
+
+#: dash/options.php:676
+msgid "Object Cache"
+msgstr ""
+
+#: dash/options.php:677
 msgid "Object cache support, accelerate your site"
 msgstr ""
 
-#: dash/options.php:646
+#: dash/options.php:682
 msgid "Memcache"
 msgstr ""
 
-#: dash/options.php:647
+#: dash/options.php:683
 msgid "Redis"
 msgstr ""
 
-#: dash/options.php:648 dash/options.php:754
+#: dash/options.php:684 dash/options.php:790
 msgid "None"
 msgstr ""
 
-#: dash/options.php:656
+#: dash/options.php:692
 msgid "Memcache Host"
 msgstr ""
 
-#: dash/options.php:657
+#: dash/options.php:693
 msgid "Memcache server host"
 msgstr ""
 
-#: dash/options.php:666
+#: dash/options.php:702
 msgid "Memcache Port"
 msgstr ""
 
-#: dash/options.php:667
+#: dash/options.php:703
 msgid "Memcache server port"
 msgstr ""
 
-#: dash/options.php:679
+#: dash/options.php:715
 msgid "Redis Host"
 msgstr ""
 
-#: dash/options.php:680
+#: dash/options.php:716
 msgid "Redis server host"
 msgstr ""
 
-#: dash/options.php:689
+#: dash/options.php:725
 msgid "Redis Port"
 msgstr ""
 
-#: dash/options.php:690
+#: dash/options.php:726
 msgid "Redis server port"
 msgstr ""
 
-#: dash/options.php:701
+#: dash/options.php:737
 msgid "Mailer Separator"
 msgstr ""
 
-#: dash/options.php:708
+#: dash/options.php:744
 msgid "SMTP/PHPMailer"
 msgstr ""
 
-#: dash/options.php:709
+#: dash/options.php:745
 msgid "Use SMTP or PHPMail as default mailer"
 msgstr ""
 
-#: dash/options.php:714
+#: dash/options.php:750
 msgid "PHP"
 msgstr ""
 
-#: dash/options.php:715
+#: dash/options.php:751
 msgid "SMTP"
 msgstr ""
 
-#: dash/options.php:723
+#: dash/options.php:759
 msgid "SMTP Host"
 msgstr ""
 
-#: dash/options.php:724
+#: dash/options.php:760
 msgid "Your SMTP service host"
 msgstr ""
 
-#: dash/options.php:734
+#: dash/options.php:770
 msgid "SMTP Port"
 msgstr ""
 
-#: dash/options.php:735
+#: dash/options.php:771
 msgid "Your SMTP service port"
 msgstr ""
 
-#: dash/options.php:745
+#: dash/options.php:781
 msgid "SMTP Secure"
 msgstr ""
 
-#: dash/options.php:746
+#: dash/options.php:782
 msgid "Your SMTP server secure protocol"
 msgstr ""
 
-#: dash/options.php:751
+#: dash/options.php:787
 msgid "Auto"
 msgstr ""
 
-#: dash/options.php:752
+#: dash/options.php:788
 msgid "SSL"
 msgstr ""
 
-#: dash/options.php:753
+#: dash/options.php:789
 msgid "TLS"
 msgstr ""
 
-#: dash/options.php:761
+#: dash/options.php:797
 msgid "SMTP Username"
 msgstr ""
 
-#: dash/options.php:762
+#: dash/options.php:798
 msgid "Your SMTP username"
 msgstr ""
 
-#: dash/options.php:771
+#: dash/options.php:807
 msgid "SMTP Password"
 msgstr ""
 
-#: dash/options.php:772
+#: dash/options.php:808
 msgid "Your SMTP password"
 msgstr ""
 
-#: dash/options.php:782
+#: dash/options.php:818
 msgid "Your Name"
 msgstr ""
 
-#: dash/options.php:783
+#: dash/options.php:819
 msgid "Your display name as the sender"
 msgstr ""
 
-#: dash/options.php:795
+#: dash/options.php:831
 msgid "PHP Mail Sender Display Name"
 msgstr ""
 
-#: dash/options.php:796
+#: dash/options.php:832
 msgid "The Sender display name when using PHPMail send mail"
 msgstr ""
 
-#: dash/options.php:806
+#: dash/options.php:842
 msgid "PHP Mail Sender Address"
 msgstr ""
 
-#: dash/options.php:807
+#: dash/options.php:843
 msgid "You can use fake mail address when use PHPMail"
 msgstr ""
 
-#: dash/options.php:818
+#: dash/options.php:854
 msgid "Short Link Prefix"
 msgstr ""
 
-#: dash/options.php:819
+#: dash/options.php:855
 msgid ""
 "Use short link instead long link or even convert external link to internal "
 "link"
 msgstr ""
 
-#: dash/options.php:829
+#: dash/options.php:865
 msgid "Short Link Records"
 msgstr ""
 
-#: dash/options.php:830
+#: dash/options.php:866
 msgid "One line for one record, please conform to the sample"
 msgstr ""
 
-#: dash/options.php:843
+#: dash/options.php:879
 msgid "Feedback"
 msgstr ""
 
-#: dash/options.php:855
+#: dash/options.php:891
 msgid "Others"
 msgstr ""
 
-#: dash/options.php:862
+#: dash/options.php:898
 msgid "Debug Mode"
 msgstr ""
 
-#: dash/options.php:863
+#: dash/options.php:899
 msgid ""
 "Enable debug will force display php errors, disable theme cache, enable "
 "some private links or functions, etc."
 msgstr ""
 
-#: dash/options.php:872
+#: dash/options.php:908
 msgid "Tint Token"
 msgstr ""
 
-#: dash/options.php:873
+#: dash/options.php:909
 msgid "Private token for theme, maybe useful somewhere."
 msgstr ""
 
-#: dash/options.php:883
+#: dash/options.php:919
 msgid "Refresh Rewrite Rules"
 msgstr ""
 
-#: dash/options.php:884
+#: dash/options.php:920
 #, php-format
 msgid ""
 "Please Click to <a href=\"%1$s/m/refresh?token=%2$s\" target=\"_blank"
 "\">Refresh Rewrite Rules</a> if you have encounter some 404 errors"
 msgstr ""
 
-#: dash/options.php:891
+#: dash/options.php:927
 msgid "QQ Mailme ID"
 msgstr ""
 
-#: dash/options.php:892
+#: dash/options.php:928
 msgid "The id of qq mailme, visit `http://open.mail.qq.com` for detail"
 msgstr ""
 
-#: dash/options.php:901
+#: dash/options.php:937
 msgid "QQ Mail list ID"
 msgstr ""
 
-#: dash/options.php:902
+#: dash/options.php:938
 msgid "The id of qq mailme, visit `http://list.qq.com` for detail"
 msgstr ""
 
-#: dash/options.php:911
+#: dash/options.php:947
 msgid "Head Custom Code"
 msgstr ""
 
-#: dash/options.php:912
+#: dash/options.php:948
 msgid "Custom code loaded on page head"
 msgstr ""
 
-#: dash/options.php:922
+#: dash/options.php:958
 msgid "Foot Custom Code"
 msgstr ""
 
-#: dash/options.php:923
+#: dash/options.php:959
 msgid "Custom code loaded on page foot"
 msgstr ""
 
-#: dash/options.php:932
+#: dash/options.php:968
 msgid "Foot Beian Text"
 msgstr ""
 
-#: dash/options.php:933
+#: dash/options.php:969
 msgid "IDC reference No. for regulations of China"
 msgstr ""
 
-#: dash/options.php:941
+#: dash/options.php:977
 msgid "Site Open Date"
 msgstr ""
 
-#: dash/options.php:942
+#: dash/options.php:978
 msgid "The date of when site opened, use `YYYY-mm-dd` format"
 msgstr ""
 

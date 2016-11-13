@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-11-13 00:58+0800\n"
-"PO-Revision-Date: 2016-11-13 01:01+0800\n"
+"POT-Creation-Date: 2016-11-13 21:42+0800\n"
+"PO-Revision-Date: 2016-11-13 21:42+0800\n"
 "Last-Translator: Zhiyan <mail@webapproach.net>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -528,7 +528,7 @@ msgstr "抱歉, 必须登录才能查看用户账户状态"
 
 #: core/api/v1/endpoints/class.Rest.UserStatus.Controller.php:72
 #: core/api/v1/endpoints/class.Rest.UserStatus.Controller.php:104
-#: core/functions/func.User.php:347 core/functions/func.User.php:381
+#: core/functions/func.User.php:349 core/functions/func.User.php:383
 msgid "The specified user is not existed"
 msgstr "指定的用户不存在"
 
@@ -1405,7 +1405,8 @@ msgstr "注册"
 msgid "Activate Registration"
 msgstr "激活注册"
 
-#: core/functions/func.Seo.php:37 core/modules/mod.Header.php:93
+#: core/functions/func.Seo.php:37 core/modules/mod.Header.Shop.php:93
+#: core/modules/mod.Header.php:93
 msgid "Sign Out"
 msgstr "注销"
 
@@ -1502,30 +1503,240 @@ msgstr "投稿者"
 msgid "Reader"
 msgstr "读者"
 
-#: core/functions/func.User.php:298
+#: core/functions/func.User.php:300
 #, php-format
 msgid "Your account is banned for reason: %s"
 msgstr "你的账户已被封禁, 理由为: %s"
 
-#: core/functions/func.User.php:298
+#: core/functions/func.User.php:300
 msgid "Account Banned"
 msgstr "账户冻结"
 
-#: core/functions/func.User.php:358
+#: core/functions/func.User.php:360
 msgid "The specified user is banned"
 msgstr "指定的用户已被封禁"
 
-#: core/functions/func.User.php:363
+#: core/functions/func.User.php:365
 msgid "Error occurs when banning the user"
 msgstr "当封禁用户时发生了错误"
 
-#: core/functions/func.User.php:391
+#: core/functions/func.User.php:393
 msgid "The specified user is unlocked"
 msgstr "指定的用户已解禁"
 
-#: core/functions/func.User.php:396
+#: core/functions/func.User.php:398
 msgid "Error occurs when unlock the user"
 msgstr "当解禁用户时发生了错误"
+
+#: core/functions/shop/func.Shop.php:28
+msgctxt "taxonomy general name"
+msgid "Products"
+msgstr "商品"
+
+#: core/functions/shop/func.Shop.php:29
+msgctxt "taxonomy singular name"
+msgid "Product"
+msgstr "商品"
+
+#: core/functions/shop/func.Shop.php:30
+msgid "Add New"
+msgstr "新建商品"
+
+#: core/functions/shop/func.Shop.php:31
+msgid "Add New Product"
+msgstr "新建商品"
+
+#: core/functions/shop/func.Shop.php:32
+msgid "Edit"
+msgstr "编辑"
+
+#: core/functions/shop/func.Shop.php:33
+msgid "Edit Product"
+msgstr "编辑商品"
+
+#: core/functions/shop/func.Shop.php:34
+msgid "Add Product"
+msgstr "添加商品"
+
+#: core/functions/shop/func.Shop.php:35
+msgid "View"
+msgstr "浏览"
+
+#: core/functions/shop/func.Shop.php:36
+msgid "All Products"
+msgstr "所有商品"
+
+#: core/functions/shop/func.Shop.php:37
+msgid "View Product"
+msgstr "查看商品"
+
+#: core/functions/shop/func.Shop.php:38
+msgid "Search Product"
+msgstr "搜索商品"
+
+#: core/functions/shop/func.Shop.php:39
+msgid "Product not found"
+msgstr "未找到商品"
+
+#: core/functions/shop/func.Shop.php:40
+msgid "Product not found in trash"
+msgstr "回收站未找到商品"
+
+#: core/functions/shop/func.Shop.php:41
+msgid "Parent Product"
+msgstr "父级商品"
+
+#: core/functions/shop/func.Shop.php:42
+msgid "Shop and Products"
+msgstr "商店和商品"
+
+#: core/functions/shop/func.Shop.php:94
+msgctxt "taxonomy general name"
+msgid "Products Categories"
+msgstr "商品分类"
+
+#: core/functions/shop/func.Shop.php:95
+msgctxt "taxonomy singular name"
+msgid "Products Category"
+msgstr "商品分类"
+
+#: core/functions/shop/func.Shop.php:96
+msgid "Search Products Categories"
+msgstr "搜索商品分类"
+
+#: core/functions/shop/func.Shop.php:97
+msgid "All Products Categories"
+msgstr "所有商品分类"
+
+#: core/functions/shop/func.Shop.php:98
+msgid "Parent Products Category"
+msgstr "父级商品分类"
+
+#: core/functions/shop/func.Shop.php:99
+msgid "Parent Products Category:"
+msgstr "父级商品分类: "
+
+#: core/functions/shop/func.Shop.php:100
+msgid "Edit Products Category"
+msgstr "编辑商品分类"
+
+#: core/functions/shop/func.Shop.php:101
+msgid "Update Products Category"
+msgstr "更新商品分类"
+
+#: core/functions/shop/func.Shop.php:102
+msgid "Add New Products Category"
+msgstr "添加商品分类"
+
+#: core/functions/shop/func.Shop.php:103
+msgid "Name of New Products Category"
+msgstr "新商品分类的名称"
+
+#: core/functions/shop/func.Shop.php:104
+msgid "Products Categories"
+msgstr "商品分类"
+
+#: core/functions/shop/func.Shop.php:118
+msgctxt "taxonomy general name"
+msgid "Product Tags"
+msgstr "商品标签"
+
+#: core/functions/shop/func.Shop.php:119
+msgctxt "taxonomy singular name"
+msgid "Product Tag"
+msgstr "商品标签"
+
+#: core/functions/shop/func.Shop.php:120
+msgid "Search Product Tags"
+msgstr "搜索商品标签"
+
+#: core/functions/shop/func.Shop.php:121
+msgid "Popular Product Tags"
+msgstr "热门商品标签"
+
+#: core/functions/shop/func.Shop.php:122
+msgid "All Product Tags"
+msgstr "所有商品标签"
+
+#: core/functions/shop/func.Shop.php:125
+msgid "Edit Product Tag"
+msgstr "编辑商品标签"
+
+#: core/functions/shop/func.Shop.php:126
+msgid "Update Product Tag"
+msgstr "更新商品标签"
+
+#: core/functions/shop/func.Shop.php:127
+msgid "Add New Product Tag"
+msgstr "添加新商品标签"
+
+#: core/functions/shop/func.Shop.php:128
+msgid "Name of New Product Tag"
+msgstr "新商品标签的名称"
+
+#: core/functions/shop/func.Shop.php:129
+msgid "Separate Product Tags with Commas"
+msgstr "逗号分隔商品标签"
+
+#: core/functions/shop/func.Shop.php:130
+msgid "Add or Remove Product Tag"
+msgstr "添加或移除商品标签"
+
+#: core/functions/shop/func.Shop.php:131
+msgid "Choose from Most Used Product Tags"
+msgstr "从常用商品标签中选择"
+
+#: core/functions/shop/func.Shop.php:132
+msgid "Product Tags"
+msgstr "商品标签"
+
+#: core/functions/shop/func.Shop.php:200 core/functions/shop/func.Shop.php:252
+msgid "Product ID"
+msgstr "商品ID"
+
+#: core/functions/shop/func.Shop.php:201 core/functions/shop/func.Shop.php:253
+msgid "Price"
+msgstr "价格"
+
+#: core/functions/shop/func.Shop.php:202 core/functions/shop/func.Shop.php:254
+msgid "Quantities"
+msgstr "数量"
+
+#: core/functions/shop/func.Shop.php:203 core/functions/shop/func.Shop.php:255
+msgid "Sales"
+msgstr "销量"
+
+#: core/functions/shop/func.Shop.php:206
+msgid "Product Name"
+msgstr "商品名称"
+
+#: core/functions/shop/func.Shop.php:209
+msgid "Publisher"
+msgstr "发布者"
+
+#: core/functions/shop/func.Shop.php:212
+msgid "Hot Hits"
+msgstr "热度"
+
+#: core/functions/shop/func.Shop.php:228
+msgid "Credit"
+msgstr "积分"
+
+#: core/functions/shop/func.Shop.php:230
+msgid "RMB YUAN"
+msgstr "元"
+
+#: core/functions/shop/func.Shop.php:236 core/functions/shop/func.Shop.php:239
+msgid "pieces"
+msgstr "件"
+
+#: core/functions/shop/func.Shop.php:285
+msgid "Show all categories"
+msgstr "显示所有分类"
+
+#: core/functions/shop/func.Shop.php:287
+msgid "Product Category"
+msgstr "商品分类"
 
 #: core/modules/mod.Comments.php:29
 msgid "Load More Comments"
@@ -1555,27 +1766,27 @@ msgstr "关于"
 msgid "CONTACT"
 msgstr "联系"
 
-#: core/modules/mod.Header.php:86
+#: core/modules/mod.Header.Shop.php:86 core/modules/mod.Header.php:86
 msgid "Go Dashboard"
 msgstr "访问后台"
 
-#: core/modules/mod.Header.php:88
+#: core/modules/mod.Header.Shop.php:88 core/modules/mod.Header.php:88
 msgid "New Post"
 msgstr "新建文章"
 
-#: core/modules/mod.Header.php:89
+#: core/modules/mod.Header.Shop.php:89 core/modules/mod.Header.php:89
 msgid "My Posts"
 msgstr "我的文章"
 
-#: core/modules/mod.Header.php:90
+#: core/modules/mod.Header.Shop.php:90 core/modules/mod.Header.php:90
 msgid "My Messages"
 msgstr "站内消息"
 
-#: core/modules/mod.Header.php:91
+#: core/modules/mod.Header.Shop.php:91 core/modules/mod.Header.php:91
 msgid "My Settings"
 msgstr "个人设置"
 
-#: core/modules/mod.Header.php:98
+#: core/modules/mod.Header.Shop.php:98 core/modules/mod.Header.php:98
 msgid "Sign In or Up"
 msgstr "登录/注册"
 
@@ -1587,7 +1798,7 @@ msgstr "近期文章"
 msgid "Popular"
 msgstr "Popular"
 
-#: core/modules/mod.ModalBanBox.php:18 core/modules/uc/uc.Tab.Profile.php:107
+#: core/modules/mod.ModalBanBox.php:18 core/modules/uc/uc.Tab.Profile.php:110
 msgid "Account Management"
 msgstr "账户管理"
 
@@ -1862,106 +2073,106 @@ msgstr "最近登录 %s"
 msgid "This Login IP %s"
 msgstr "本次登录IP %s"
 
-#: core/modules/uc/uc.Tab.Profile.php:31
+#: core/modules/uc/uc.Tab.Profile.php:31 core/modules/uc/uc.Tab.Profile.php:34
 #, php-format
 msgid "Last Login IP %s"
 msgstr "上次登录IP %s"
 
-#: core/modules/uc/uc.Tab.Profile.php:38
+#: core/modules/uc/uc.Tab.Profile.php:41
 msgid "Basic Info"
 msgstr "基本信息"
 
-#: core/modules/uc/uc.Tab.Profile.php:40
+#: core/modules/uc/uc.Tab.Profile.php:43
 msgid "Nickname"
 msgstr "昵称"
 
-#: core/modules/uc/uc.Tab.Profile.php:45
+#: core/modules/uc/uc.Tab.Profile.php:48
 #: core/templates/actions/tpl.M.Findpass.php:36
 #: core/templates/actions/tpl.M.Signup.php:46
 msgid "Email"
 msgstr "邮箱"
 
-#: core/modules/uc/uc.Tab.Profile.php:50
+#: core/modules/uc/uc.Tab.Profile.php:53
 msgid "Site"
 msgstr "网站"
 
-#: core/modules/uc/uc.Tab.Profile.php:54
+#: core/modules/uc/uc.Tab.Profile.php:57
 msgid "Description"
 msgstr "个人描述"
 
-#: core/modules/uc/uc.Tab.Profile.php:60
+#: core/modules/uc/uc.Tab.Profile.php:63
 msgid "Extended Info"
 msgstr "扩展信息"
 
-#: core/modules/uc/uc.Tab.Profile.php:63
+#: core/modules/uc/uc.Tab.Profile.php:66
 msgid "Talk with QQ"
 msgstr "QQ交谈"
 
-#: core/modules/uc/uc.Tab.Profile.php:66
+#: core/modules/uc/uc.Tab.Profile.php:69
 msgid "Follow on Weibo"
 msgstr "微博"
 
-#: core/modules/uc/uc.Tab.Profile.php:69
+#: core/modules/uc/uc.Tab.Profile.php:72
 msgid "Talk with Wechat"
 msgstr "微信"
 
-#: core/modules/uc/uc.Tab.Profile.php:72
+#: core/modules/uc/uc.Tab.Profile.php:75
 msgid "Follow on Twitter"
 msgstr "Twitter"
 
-#: core/modules/uc/uc.Tab.Profile.php:75
+#: core/modules/uc/uc.Tab.Profile.php:78
 msgid "Find on Facebook"
 msgstr "Facebook"
 
-#: core/modules/uc/uc.Tab.Profile.php:78
+#: core/modules/uc/uc.Tab.Profile.php:81
 msgid "Google+"
 msgstr "Google+"
 
-#: core/modules/uc/uc.Tab.Profile.php:85
+#: core/modules/uc/uc.Tab.Profile.php:88
 msgid "Donate Info"
 msgstr "收款信息"
 
-#: core/modules/uc/uc.Tab.Profile.php:85
+#: core/modules/uc/uc.Tab.Profile.php:88
 msgid "Donate to me"
 msgstr "打赏我"
 
-#: core/modules/uc/uc.Tab.Profile.php:88
+#: core/modules/uc/uc.Tab.Profile.php:91
 msgid "Donate via Alipay"
 msgstr "支付宝打赏"
 
-#: core/modules/uc/uc.Tab.Profile.php:91
+#: core/modules/uc/uc.Tab.Profile.php:94
 msgid "Donate via Wechat"
 msgstr "微信打赏"
 
-#: core/modules/uc/uc.Tab.Profile.php:98
+#: core/modules/uc/uc.Tab.Profile.php:101
 msgid "Referral Info"
 msgstr "推广信息"
 
-#: core/modules/uc/uc.Tab.Profile.php:100
+#: core/modules/uc/uc.Tab.Profile.php:103
 msgid "Referral Link"
 msgstr "推广链接"
 
-#: core/modules/uc/uc.Tab.Profile.php:101
+#: core/modules/uc/uc.Tab.Profile.php:104
 msgid "COPY"
-msgstr ""
+msgstr "复制"
 
-#: core/modules/uc/uc.Tab.Profile.php:107
+#: core/modules/uc/uc.Tab.Profile.php:110
 msgid "Visible for administrator"
 msgstr "仅管理员可见"
 
-#: core/modules/uc/uc.Tab.Profile.php:110
+#: core/modules/uc/uc.Tab.Profile.php:113
 msgid "Unlock Account"
 msgstr "解禁账户"
 
-#: core/modules/uc/uc.Tab.Profile.php:111
+#: core/modules/uc/uc.Tab.Profile.php:114
 msgid "This action will enable the account to normal functions"
 msgstr "此操作将恢复该账户的正常功能"
 
-#: core/modules/uc/uc.Tab.Profile.php:113
+#: core/modules/uc/uc.Tab.Profile.php:116
 msgid "Ban Account"
 msgstr "封禁账户"
 
-#: core/modules/uc/uc.Tab.Profile.php:114
+#: core/modules/uc/uc.Tab.Profile.php:117
 msgid ""
 "Warning: this action will ban the account, the all features is not "
 "accessible until manual unlock"
@@ -2399,33 +2610,28 @@ msgstr ""
 "span>"
 
 #: dash/dash.php:139
-#, fuzzy
 msgid "Sina Weibo"
-msgstr "网站微博名"
+msgstr "新浪微博"
 
 #: dash/dash.php:140
-#, fuzzy
 msgid "Wechat"
-msgstr "微信打赏"
+msgstr "微信"
 
 #: dash/dash.php:141
-#, fuzzy
 msgid "Twitter"
-msgstr "网站Twitter"
+msgstr "Twitter"
 
 #: dash/dash.php:144
-#, fuzzy
 msgid "Alipay Account"
-msgstr "账户"
+msgstr "支付宝账户"
 
 #: dash/dash.php:145
-#, fuzzy
 msgid "Alipay Pay Qrcode"
-msgstr "网站支付宝收款二维码"
+msgstr "支付宝收款码"
 
 #: dash/dash.php:146
 msgid "Wechat Pay Qrcode"
-msgstr ""
+msgstr "微信收款码"
 
 #: dash/of_inc/includes/class-options-framework-admin.php:91
 #: dash/of_inc/includes/class-options-framework-admin.php:92
@@ -2988,222 +3194,256 @@ msgid "Shop"
 msgstr "商店"
 
 #: dash/options.php:613
+msgid "Enable Shop"
+msgstr "开启商品系统"
+
+#: dash/options.php:614
+msgid ""
+"After enable this, users can create orders and buy something those the site "
+"provided"
+msgstr "启用此选项以支持商品创建, 用户订单创建以及购买提供的商品"
+
+#: dash/options.php:623
+msgid "Products Archive Link Slug"
+msgstr "商品归档固定链接Slug"
+
+#: dash/options.php:624
+msgid "The special prefix in product archive link"
+msgstr "商品归档页固定链接的标识, 商品详情页固定链接前缀也将使用此字符"
+
+#: dash/options.php:634
+msgid "Product Permalink Mode"
+msgstr "商品固定链接模式"
+
+#: dash/options.php:635
+msgid "The link mode for the rewrite product permalink"
+msgstr "商品固定链接Rewrite的模式, 请保持与全站的固定链接模式一致"
+
+#: dash/options.php:641
+msgid "Post ID"
+msgstr "Post ID"
+
+#: dash/options.php:642
+msgid "Post Name"
+msgstr "Post Name"
+
+#: dash/options.php:649
 msgid "Site Weixin Pay QR"
 msgstr "网站微信收款二维码"
 
-#: dash/options.php:614
+#: dash/options.php:650
 msgid "The Weixin pay qrcode image for collection money"
 msgstr "用于网站收集打赏等的微信收款二维码图片"
 
-#: dash/options.php:623
+#: dash/options.php:659
 msgid "Site Alipay Pay QR"
 msgstr "网站支付宝收款二维码"
 
-#: dash/options.php:624
+#: dash/options.php:660
 msgid "The Alipay pay qrcode image for collection money"
 msgstr "用于网站收集打赏等的支付宝收款二维码图片"
 
-#: dash/options.php:633
+#: dash/options.php:669
 msgid "Auxiliary"
 msgstr "辅助"
 
-#: dash/options.php:640
+#: dash/options.php:676
 msgid "Object Cache"
 msgstr "对象缓存"
 
-#: dash/options.php:641
+#: dash/options.php:677
 msgid "Object cache support, accelerate your site"
 msgstr "对象缓存支持，加速网站"
 
-#: dash/options.php:646
+#: dash/options.php:682
 msgid "Memcache"
 msgstr "Memcache"
 
-#: dash/options.php:647
+#: dash/options.php:683
 msgid "Redis"
 msgstr "Redis"
 
-#: dash/options.php:648 dash/options.php:754
+#: dash/options.php:684 dash/options.php:790
 msgid "None"
 msgstr "无"
 
-#: dash/options.php:656
+#: dash/options.php:692
 msgid "Memcache Host"
 msgstr "Memcache主机"
 
-#: dash/options.php:657
+#: dash/options.php:693
 msgid "Memcache server host"
 msgstr "Memcache服务器的地址(IP或url)"
 
-#: dash/options.php:666
+#: dash/options.php:702
 msgid "Memcache Port"
 msgstr "Memcache端口"
 
-#: dash/options.php:667
+#: dash/options.php:703
 msgid "Memcache server port"
 msgstr "Memcache服务器端口"
 
-#: dash/options.php:679
+#: dash/options.php:715
 msgid "Redis Host"
 msgstr "Redis主机"
 
-#: dash/options.php:680
+#: dash/options.php:716
 msgid "Redis server host"
 msgstr "Redis服务器的地址(IP或url)"
 
-#: dash/options.php:689
+#: dash/options.php:725
 msgid "Redis Port"
 msgstr "Redis端口"
 
-#: dash/options.php:690
+#: dash/options.php:726
 msgid "Redis server port"
 msgstr "Redis服务器的端口"
 
-#: dash/options.php:701
+#: dash/options.php:737
 msgid "Mailer Separator"
 msgstr ""
 
-#: dash/options.php:708
+#: dash/options.php:744
 msgid "SMTP/PHPMailer"
 msgstr "SMTP/PHPMailer"
 
-#: dash/options.php:709
+#: dash/options.php:745
 msgid "Use SMTP or PHPMail as default mailer"
 msgstr "使用SMTP或PHPMail作为默认邮件发送方式"
 
-#: dash/options.php:714
+#: dash/options.php:750
 msgid "PHP"
 msgstr "PHP"
 
-#: dash/options.php:715
+#: dash/options.php:751
 msgid "SMTP"
 msgstr "SMTP"
 
-#: dash/options.php:723
+#: dash/options.php:759
 msgid "SMTP Host"
 msgstr "SMTP 服务器"
 
-#: dash/options.php:724
+#: dash/options.php:760
 msgid "Your SMTP service host"
 msgstr "你的SMTP服务器主机地址"
 
-#: dash/options.php:734
+#: dash/options.php:770
 msgid "SMTP Port"
 msgstr "SMTP 端口"
 
-#: dash/options.php:735
+#: dash/options.php:771
 msgid "Your SMTP service port"
 msgstr "你的SMTP服务器服务端口"
 
-#: dash/options.php:745
+#: dash/options.php:781
 msgid "SMTP Secure"
 msgstr "SMTP安全"
 
-#: dash/options.php:746
+#: dash/options.php:782
 msgid "Your SMTP server secure protocol"
 msgstr "你的SMTP服务器安全协议"
 
-#: dash/options.php:751
+#: dash/options.php:787
 msgid "Auto"
 msgstr "自动"
 
-#: dash/options.php:752
+#: dash/options.php:788
 msgid "SSL"
 msgstr "SSL"
 
-#: dash/options.php:753
+#: dash/options.php:789
 msgid "TLS"
 msgstr "TLS"
 
-#: dash/options.php:761
+#: dash/options.php:797
 msgid "SMTP Username"
 msgstr "SMTP 用户名"
 
-#: dash/options.php:762
+#: dash/options.php:798
 msgid "Your SMTP username"
 msgstr "你的SMTP服务的登录用户名"
 
-#: dash/options.php:771
+#: dash/options.php:807
 msgid "SMTP Password"
 msgstr "SMTP 密码"
 
-#: dash/options.php:772
+#: dash/options.php:808
 msgid "Your SMTP password"
 msgstr "你的SMTP服务登录密码"
 
-#: dash/options.php:782
+#: dash/options.php:818
 msgid "Your Name"
 msgstr "发信姓名"
 
-#: dash/options.php:783
+#: dash/options.php:819
 msgid "Your display name as the sender"
 msgstr "你发送的邮件中显示的名称"
 
-#: dash/options.php:795
+#: dash/options.php:831
 msgid "PHP Mail Sender Display Name"
 msgstr "PHPMailer发信人名称"
 
-#: dash/options.php:796
+#: dash/options.php:832
 msgid "The Sender display name when using PHPMail send mail"
 msgstr "使用PHPMailer发送邮件的显示名"
 
-#: dash/options.php:806
+#: dash/options.php:842
 msgid "PHP Mail Sender Address"
 msgstr "PHPMailer 发信人地址"
 
-#: dash/options.php:807
+#: dash/options.php:843
 msgid "You can use fake mail address when use PHPMail"
 msgstr "当使用PHPMailer发信时可使用自定义的发信人地址"
 
-#: dash/options.php:818
+#: dash/options.php:854
 msgid "Short Link Prefix"
 msgstr "短链接前缀标识"
 
-#: dash/options.php:819
+#: dash/options.php:855
 msgid ""
 "Use short link instead long link or even convert external link to internal "
 "link"
 msgstr "使用短链接代替长链接或站外链接转为站内链接"
 
-#: dash/options.php:829
+#: dash/options.php:865
 msgid "Short Link Records"
 msgstr "短链接记录"
 
-#: dash/options.php:830
+#: dash/options.php:866
 msgid "One line for one record, please conform to the sample"
 msgstr "一行一条记录，请参照样例格式"
 
-#: dash/options.php:843
+#: dash/options.php:879
 msgid "Feedback"
 msgstr "反馈"
 
-#: dash/options.php:855
+#: dash/options.php:891
 msgid "Others"
 msgstr "其他"
 
-#: dash/options.php:862
+#: dash/options.php:898
 msgid "Debug Mode"
 msgstr "调试模式"
 
-#: dash/options.php:863
+#: dash/options.php:899
 msgid ""
 "Enable debug will force display php errors, disable theme cache, enable some "
 "private links or functions, etc."
 msgstr "启用Debug将强制输出PHP错误，禁用主题缓存，启用一些私有链接或功能等"
 
-#: dash/options.php:872
+#: dash/options.php:908
 msgid "Tint Token"
 msgstr "Tint Token"
 
-#: dash/options.php:873
+#: dash/options.php:909
 msgid "Private token for theme, maybe useful somewhere."
 msgstr "主题私有Token，在某些地方有用"
 
-#: dash/options.php:883
+#: dash/options.php:919
 msgid "Refresh Rewrite Rules"
 msgstr "刷新固定链接规则"
 
-#: dash/options.php:884
+#: dash/options.php:920
 #, php-format
 msgid ""
 "Please Click to <a href=\"%1$s/m/refresh?token=%2$s\" target=\"_blank"
@@ -3212,51 +3452,51 @@ msgstr ""
 "如果你遭遇一些404访问错误，请点击 <a href=\"%1$s/m/refresh?token=%2$s\" "
 "target=\"_blank\">刷新固定链接规则</a>。"
 
-#: dash/options.php:891
+#: dash/options.php:927
 msgid "QQ Mailme ID"
 msgstr "QQ邮我按钮ID"
 
-#: dash/options.php:892
+#: dash/options.php:928
 msgid "The id of qq mailme, visit `http://open.mail.qq.com` for detail"
 msgstr "QQ邮我链接内的ID字段, 访问`http://open.mail.qq.com`获取"
 
-#: dash/options.php:901
+#: dash/options.php:937
 msgid "QQ Mail list ID"
 msgstr "QQ邮件列表ID"
 
-#: dash/options.php:902
+#: dash/options.php:938
 msgid "The id of qq mailme, visit `http://list.qq.com` for detail"
 msgstr "QQ邮件列表链接内的ID字段, 访问`http://list.qq.com`获取"
 
-#: dash/options.php:911
+#: dash/options.php:947
 msgid "Head Custom Code"
 msgstr "页头自定义代码"
 
-#: dash/options.php:912
+#: dash/options.php:948
 msgid "Custom code loaded on page head"
 msgstr "页面头部加载的自定义代码，位于head标签结束前"
 
-#: dash/options.php:922
+#: dash/options.php:958
 msgid "Foot Custom Code"
 msgstr "页脚自定义代码"
 
-#: dash/options.php:923
+#: dash/options.php:959
 msgid "Custom code loaded on page foot"
 msgstr "页面底部加载的自定义代码，位于body标签结束前"
 
-#: dash/options.php:932
+#: dash/options.php:968
 msgid "Foot Beian Text"
 msgstr "页脚备案文字"
 
-#: dash/options.php:933
+#: dash/options.php:969
 msgid "IDC reference No. for regulations of China"
 msgstr "工信部域名备案号码"
 
-#: dash/options.php:941
+#: dash/options.php:977
 msgid "Site Open Date"
 msgstr "建站日期"
 
-#: dash/options.php:942
+#: dash/options.php:978
 msgid "The date of when site opened, use `YYYY-mm-dd` format"
 msgstr "网站开放的日期, 使用`YYYY-mm-dd`格式"
 
@@ -3290,6 +3530,9 @@ msgstr "Zhiyan"
 #, fuzzy
 msgid "https://www.webapproach.net/@zhiyan"
 msgstr "http://www.webapproach.net/"
+
+#~ msgid "Submitter"
+#~ msgstr "发布者"
 
 #~ msgid ""
 #~ "Sorry, but you do not have the correct permissions to install the %s "
