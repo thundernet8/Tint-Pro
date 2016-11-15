@@ -69,8 +69,18 @@ function tt_include_shop_template_function( $template_path ) {
             if ( $theme_file = locate_template( array ( 'core/templates/shop/tpl.Product.php' ) ) ) {
                 $template_path = $theme_file;
             }
-        }elseif(is_archive()){
+        }elseif(tt_is_product_category()){
             //指定商品分类模板
+            if ( $theme_file = locate_template( array ( 'core/templates/shop/tpl.Product.Category.php' ) ) ) {
+                $template_path = $theme_file;
+            }
+        }elseif(tt_is_product_tag()){
+            //指定商品标签模板
+            if ( $theme_file = locate_template( array ( 'core/templates/shop/tpl.Product.Tag.php' ) ) ) {
+                $template_path = $theme_file;
+            }
+        }elseif(is_archive()){
+            //指定商店首页模板
             if ( $theme_file = locate_template( array ( 'core/templates/shop/tpl.Product.Archive.php' ) ) ) {
                 $template_path = $theme_file;
             }
@@ -90,7 +100,7 @@ add_filter( 'template_include', 'tt_include_shop_template_function', 1 );
 function tt_create_product_taxonomies() {
     $shop_slug = tt_get_option('tt_product_archives_slug', 'shop');
     // Categories
-    $products_category_labels = array(
+    $product_category_labels = array(
         'name' => _x( 'Products Categories', 'taxonomy general name', 'tt' ),
         'singular_name' => _x( 'Products Category', 'taxonomy singular name', 'tt' ),
         'search_items' => __( 'Search Products Categories', 'tt' ),
@@ -103,9 +113,9 @@ function tt_create_product_taxonomies() {
         'new_item_name' => __( 'Name of New Products Category', 'tt' ),
         'menu_name' => __( 'Products Categories', 'tt' ),
     );
-    register_taxonomy( 'products_category', 'product', array(
+    register_taxonomy( 'product_category', 'product', array(
         'hierarchical'  => true,
-        'labels'        => $products_category_labels,
+        'labels'        => $product_category_labels,
         'show_ui'       => true,
         'query_var'     => true,
         'rewrite'       => array(
@@ -114,7 +124,7 @@ function tt_create_product_taxonomies() {
         ),
     ) );
     // Tags
-    $products_tag_labels = array(
+    $product_tag_labels = array(
         'name' => _x( 'Product Tags', 'taxonomy general name', 'tt' ),
         'singular_name' => _x( 'Product Tag', 'taxonomy singular name', 'tt' ),
         'search_items' => __( 'Search Product Tags', 'tt' ),
@@ -132,9 +142,9 @@ function tt_create_product_taxonomies() {
         'menu_name' => __( 'Product Tags', 'tt' ),
     );
 
-    register_taxonomy('products_tag', 'product', array(
+    register_taxonomy('product_tag', 'product', array(
         'hierarchical'  => false,
-        'labels'        => $products_tag_labels,
+        'labels'        => $product_tag_labels,
         'show_ui'       => true,
         'update_count_callback' => '_update_post_term_count',
         'query_var'     => true,
@@ -307,3 +317,102 @@ function tt_perform_products_filtering( $query ) {
 add_filter( 'parse_query','tt_perform_products_filtering' );
 
 
+/**
+ * 统计不同支付和价格类型的商品数量
+ *
+ * @since 2.0.0
+ * @param $type
+ * @return int
+ */
+function tt_count_products_by_price_type($type = 'free') {
+    switch ($type) {
+        case 'free':
+            $query = new WP_Query( array(
+                'post_type' => 'product',
+                'post_status' => 'publish',
+                'meta_query' => array(
+                    'relation' => 'AND',
+                    array(
+                        'key' => 'tt_product_price',
+                        'value' => 0.01,
+                        'compare' => '<'
+                    )
+                )
+            ));
+            return absint($query->found_posts);
+            break;
+        case 'credit':
+            $query = new WP_Query( array(
+                'post_type' => 'product',
+                'post_status' => 'publish',
+                'meta_query' => array(
+                    'relation' => 'AND',
+                    array(
+                        'key' => 'tt_pay_currency',
+                        'value' => 0,
+                        'compare' => '='
+                    ),
+                    array(
+                        'key' => 'tt_product_price',
+                        'value' => '0.00',
+                        'compare' => '>'
+                    )
+                )
+            ));
+            return absint($query->found_posts);
+            break;
+        case 'cash':
+            $query = new WP_Query( array(
+                'post_type' => 'product',
+                'post_status' => 'publish',
+                'meta_query' => array(
+                    'relation' => 'AND',
+                    array(
+                        'key' => 'tt_pay_currency',
+                        'value' => 1,
+                        'compare' => '='
+                    ),
+
+                    array(
+                        'key' => 'tt_product_price',
+                        'value' => '0.00',
+                        'compare' => '>'
+                    )
+                )
+            ));
+            return absint($query->found_posts);
+            break;
+        default:
+            return 1;
+    }
+}
+
+
+/**
+ * 判断当前页面是否为商品分类
+ *
+ * @since 2.0.0
+ * @return bool
+ */
+function tt_is_product_category() {
+    $object =get_queried_object();
+    if($object instanceof WP_Term && $object->taxonomy == 'product_category') {
+        return true;
+    }
+    return false;
+}
+
+
+/**
+ * 判断当前页面是否为商品标签
+ *
+ * @since 2.0.0
+ * @return bool
+ */
+function tt_is_product_tag() {
+    $object =get_queried_object();
+    if($object instanceof WP_Term && $object->taxonomy == 'product_tag') {
+        return true;
+    }
+    return false;
+}

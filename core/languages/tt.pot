@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-11-13 21:41+0800\n"
+"POT-Creation-Date: 2016-11-15 22:50+0800\n"
 "PO-Revision-Date: 2016-08-17 21:40+0800\n"
 "Last-Translator: \n"
 "Language-Team: Zhiyan <mail@webapproach.net>\n"
@@ -221,7 +221,7 @@ msgid "Send message failed"
 msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.Message.Controller.php:170
-#: core/viewModels/vm.UC.Chat.php:100
+#: core/viewModels/uc/vm.UC.Chat.php:100
 #, php-format
 msgid "You to %s"
 msgstr ""
@@ -1361,7 +1361,7 @@ msgid ""
 "`mkdir` function.\\n"
 msgstr ""
 
-#: core/functions/func.Kits.php:349
+#: core/functions/func.Kits.php:351
 msgid "WordPress &rsaquo; Error"
 msgstr ""
 
@@ -1434,8 +1434,8 @@ msgstr ""
 msgid "Activate Registration"
 msgstr ""
 
-#: core/functions/func.Seo.php:37 core/modules/mod.Header.Shop.php:93
-#: core/modules/mod.Header.php:93
+#: core/functions/func.Seo.php:37 core/modules/mod.Header.Shop.php:82
+#: core/modules/mod.Header.php:47
 msgid "Sign Out"
 msgstr ""
 
@@ -1558,6 +1558,30 @@ msgstr ""
 
 #: core/functions/func.User.php:398
 msgid "Error occurs when unlock the user"
+msgstr ""
+
+#: core/functions/shop/func.Shop.Orders.php:86
+msgid "Wait Payment"
+msgstr ""
+
+#: core/functions/shop/func.Shop.Orders.php:89
+msgid "Payed, Wait Delivery"
+msgstr ""
+
+#: core/functions/shop/func.Shop.Orders.php:92
+msgid "Delivered, Wait Confirm"
+msgstr ""
+
+#: core/functions/shop/func.Shop.Orders.php:95
+msgid "Trade Succeed"
+msgstr ""
+
+#: core/functions/shop/func.Shop.Orders.php:98
+msgid "Trade Closed"
+msgstr ""
+
+#: core/functions/shop/func.Shop.Orders.php:101
+msgid "Order Created"
 msgstr ""
 
 #: core/functions/shop/func.Shop.php:28
@@ -1728,7 +1752,7 @@ msgid "Product ID"
 msgstr ""
 
 #: core/functions/shop/func.Shop.php:201
-#: core/functions/shop/func.Shop.php:253
+#: core/functions/shop/func.Shop.php:253 core/modules/mod.Header.Shop.php:114
 msgid "Price"
 msgstr ""
 
@@ -1803,28 +1827,64 @@ msgstr ""
 msgid "CONTACT"
 msgstr ""
 
-#: core/modules/mod.Header.Shop.php:86 core/modules/mod.Header.php:86
+#: core/modules/mod.Header.Shop.php:26
+msgid "Market"
+msgstr ""
+
+#: core/modules/mod.Header.Shop.php:35
+msgid "Search for something..."
+msgstr ""
+
+#: core/modules/mod.Header.Shop.php:48
+msgid "Notifications"
+msgstr ""
+
+#: core/modules/mod.Header.Shop.php:58
+msgid "Shopping Cart"
+msgstr ""
+
+#: core/modules/mod.Header.Shop.php:74 core/modules/mod.Header.php:40
 msgid "Go Dashboard"
 msgstr ""
 
-#: core/modules/mod.Header.Shop.php:88 core/modules/mod.Header.php:88
-msgid "New Post"
+#: core/modules/mod.Header.Shop.php:78
+msgid "My Orders"
 msgstr ""
 
-#: core/modules/mod.Header.Shop.php:89 core/modules/mod.Header.php:89
-msgid "My Posts"
-msgstr ""
-
-#: core/modules/mod.Header.Shop.php:90 core/modules/mod.Header.php:90
+#: core/modules/mod.Header.Shop.php:79 core/modules/mod.Header.php:44
 msgid "My Messages"
 msgstr ""
 
-#: core/modules/mod.Header.Shop.php:91 core/modules/mod.Header.php:91
+#: core/modules/mod.Header.Shop.php:80 core/modules/mod.Header.php:45
 msgid "My Settings"
 msgstr ""
 
-#: core/modules/mod.Header.Shop.php:98 core/modules/mod.Header.php:98
+#: core/modules/mod.Header.Shop.php:87 core/modules/mod.Header.php:52
 msgid "Sign In or Up"
+msgstr ""
+
+#: core/modules/mod.Header.Shop.php:104
+msgid "Categories"
+msgstr ""
+
+#: core/modules/mod.Header.Shop.php:124
+msgid "Tags"
+msgstr ""
+
+#: core/modules/mod.Header.Shop.php:134
+msgid "Most Popular"
+msgstr ""
+
+#: core/modules/mod.Header.Shop.php:137
+msgid "Latest"
+msgstr ""
+
+#: core/modules/mod.Header.php:42
+msgid "New Post"
+msgstr ""
+
+#: core/modules/mod.Header.php:43
+msgid "My Posts"
 msgstr ""
 
 #: core/modules/mod.HomeLatest.php:23
@@ -2580,6 +2640,18 @@ msgstr ""
 
 #: core/templates/tpl.Error.php:60
 msgid "An error has happened on this page."
+msgstr ""
+
+#: core/viewModels/shop/vm.Shop.Header.SubNav.php:77
+msgid "Free Products"
+msgstr ""
+
+#: core/viewModels/shop/vm.Shop.Header.SubNav.php:83
+msgid "Credit Paid Products"
+msgstr ""
+
+#: core/viewModels/shop/vm.Shop.Header.SubNav.php:89
+msgid "Cash Paid Products"
 msgstr ""
 
 #: core/viewModels/vm.Date.Archive.php:47

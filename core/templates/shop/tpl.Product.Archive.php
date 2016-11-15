@@ -13,6 +13,23 @@
  */
 ?>
 <?php tt_get_header('shop'); ?>
-product archive
+    <!-- Left Menu -->
+    <div class="menu_wrapper">
 
+    </div>
+    <div class="wrapper">
+        <div class="content text-center">
+            <div class="billboard" style="background-image: url(<?php echo THEME_ASSET . '/img/shop-billboard.gif'; ?>)">
+                <div class="billboard-text">
+                    <h1>Shop quality products</h1>
+                    <p>Themes - Plugins - Services</p>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="row">
+
+            </div>
+        </div>
+    </div>
 <?php tt_get_footer(); ?>

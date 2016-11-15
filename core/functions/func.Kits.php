@@ -99,6 +99,8 @@ function tt_url_for($key, $arg = null, $relative = false){
             $nickname = call_user_func($uc_func, $arg);
             if($nickname) $endpoint = '@' . $nickname . '/activities';
             break;
+        case 'shop_archive':
+            $endpoint = tt_get_option('tt_product_archives_slug', 'shop');
     }
     if($endpoint){
         return $relative ? '/' . $endpoint : home_url('/' . $endpoint);

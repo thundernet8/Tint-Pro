@@ -30,5 +30,11 @@
 * tt_sidebar
 
 
+### Post Meta(Product)
+* tt_product_price
+* tt_product_quantity
+* tt_pay_currency (0->credit 1->cash)
+
+
 ### Comment Meta
 * tt_comment_likes

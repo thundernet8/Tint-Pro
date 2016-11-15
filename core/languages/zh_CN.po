@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-11-13 21:42+0800\n"
-"PO-Revision-Date: 2016-11-13 21:42+0800\n"
+"POT-Creation-Date: 2016-11-15 22:50+0800\n"
+"PO-Revision-Date: 2016-11-15 22:50+0800\n"
 "Last-Translator: Zhiyan <mail@webapproach.net>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -218,7 +218,7 @@ msgid "Send message failed"
 msgstr "发送消息失败"
 
 #: core/api/v1/endpoints/class.Rest.Message.Controller.php:170
-#: core/viewModels/vm.UC.Chat.php:100
+#: core/viewModels/uc/vm.UC.Chat.php:100
 #, php-format
 msgid "You to %s"
 msgstr "你对 %s"
@@ -1332,7 +1332,7 @@ msgid ""
 "`mkdir` function.\\n"
 msgstr "创建Timthumb缓存文件夹失败，或许可检查php.ini以启用`mkdir`函数.\\n"
 
-#: core/functions/func.Kits.php:349
+#: core/functions/func.Kits.php:351
 msgid "WordPress &rsaquo; Error"
 msgstr "WordPress &rsaquo; 错误"
 
@@ -1405,8 +1405,8 @@ msgstr "注册"
 msgid "Activate Registration"
 msgstr "激活注册"
 
-#: core/functions/func.Seo.php:37 core/modules/mod.Header.Shop.php:93
-#: core/modules/mod.Header.php:93
+#: core/functions/func.Seo.php:37 core/modules/mod.Header.Shop.php:82
+#: core/modules/mod.Header.php:47
 msgid "Sign Out"
 msgstr "注销"
 
@@ -1527,6 +1527,30 @@ msgstr "指定的用户已解禁"
 #: core/functions/func.User.php:398
 msgid "Error occurs when unlock the user"
 msgstr "当解禁用户时发生了错误"
+
+#: core/functions/shop/func.Shop.Orders.php:86
+msgid "Wait Payment"
+msgstr "等待买家付款"
+
+#: core/functions/shop/func.Shop.Orders.php:89
+msgid "Payed, Wait Delivery"
+msgstr "已付款，等待卖家发货"
+
+#: core/functions/shop/func.Shop.Orders.php:92
+msgid "Delivered, Wait Confirm"
+msgstr "已发货，等待买家确认"
+
+#: core/functions/shop/func.Shop.Orders.php:95
+msgid "Trade Succeed"
+msgstr "交易成功"
+
+#: core/functions/shop/func.Shop.Orders.php:98
+msgid "Trade Closed"
+msgstr "交易关闭"
+
+#: core/functions/shop/func.Shop.Orders.php:101
+msgid "Order Created"
+msgstr "订单创建成功"
 
 #: core/functions/shop/func.Shop.php:28
 msgctxt "taxonomy general name"
@@ -1695,6 +1719,7 @@ msgid "Product ID"
 msgstr "商品ID"
 
 #: core/functions/shop/func.Shop.php:201 core/functions/shop/func.Shop.php:253
+#: core/modules/mod.Header.Shop.php:114
 msgid "Price"
 msgstr "价格"
 
@@ -1766,29 +1791,65 @@ msgstr "关于"
 msgid "CONTACT"
 msgstr "联系"
 
-#: core/modules/mod.Header.Shop.php:86 core/modules/mod.Header.php:86
+#: core/modules/mod.Header.Shop.php:26
+msgid "Market"
+msgstr "商店"
+
+#: core/modules/mod.Header.Shop.php:35
+msgid "Search for something..."
+msgstr "搜索点什么..."
+
+#: core/modules/mod.Header.Shop.php:48
+msgid "Notifications"
+msgstr "通知"
+
+#: core/modules/mod.Header.Shop.php:58
+msgid "Shopping Cart"
+msgstr "购物车"
+
+#: core/modules/mod.Header.Shop.php:74 core/modules/mod.Header.php:40
 msgid "Go Dashboard"
 msgstr "访问后台"
 
-#: core/modules/mod.Header.Shop.php:88 core/modules/mod.Header.php:88
-msgid "New Post"
-msgstr "新建文章"
+#: core/modules/mod.Header.Shop.php:78
+msgid "My Orders"
+msgstr "我的订单"
 
-#: core/modules/mod.Header.Shop.php:89 core/modules/mod.Header.php:89
-msgid "My Posts"
-msgstr "我的文章"
-
-#: core/modules/mod.Header.Shop.php:90 core/modules/mod.Header.php:90
+#: core/modules/mod.Header.Shop.php:79 core/modules/mod.Header.php:44
 msgid "My Messages"
 msgstr "站内消息"
 
-#: core/modules/mod.Header.Shop.php:91 core/modules/mod.Header.php:91
+#: core/modules/mod.Header.Shop.php:80 core/modules/mod.Header.php:45
 msgid "My Settings"
 msgstr "个人设置"
 
-#: core/modules/mod.Header.Shop.php:98 core/modules/mod.Header.php:98
+#: core/modules/mod.Header.Shop.php:87 core/modules/mod.Header.php:52
 msgid "Sign In or Up"
 msgstr "登录/注册"
+
+#: core/modules/mod.Header.Shop.php:104
+msgid "Categories"
+msgstr "分类"
+
+#: core/modules/mod.Header.Shop.php:124
+msgid "Tags"
+msgstr "标签"
+
+#: core/modules/mod.Header.Shop.php:134
+msgid "Most Popular"
+msgstr "热门"
+
+#: core/modules/mod.Header.Shop.php:137
+msgid "Latest"
+msgstr "最新添加"
+
+#: core/modules/mod.Header.php:42
+msgid "New Post"
+msgstr "新建文章"
+
+#: core/modules/mod.Header.php:43
+msgid "My Posts"
+msgstr "我的文章"
 
 #: core/modules/mod.HomeLatest.php:23
 msgid "Latest Posts"
@@ -2540,6 +2601,18 @@ msgstr "发生了错误！"
 #: core/templates/tpl.Error.php:60
 msgid "An error has happened on this page."
 msgstr "页面发生了一个错误."
+
+#: core/viewModels/shop/vm.Shop.Header.SubNav.php:77
+msgid "Free Products"
+msgstr "免费商品"
+
+#: core/viewModels/shop/vm.Shop.Header.SubNav.php:83
+msgid "Credit Paid Products"
+msgstr "积分商品"
+
+#: core/viewModels/shop/vm.Shop.Header.SubNav.php:89
+msgid "Cash Paid Products"
+msgstr "现金商品"
 
 #: core/viewModels/vm.Date.Archive.php:47
 msgid "DAY ARCHIVE"

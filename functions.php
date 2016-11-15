@@ -162,18 +162,21 @@ load_vm('vm.Category.Posts');
 load_vm('vm.Tag.Posts');
 load_vm('vm.Date.Archive');
 load_vm('vm.Term.Posts');
-load_vm('vm.Widget.Author');
-load_vm('vm.Widget.HotHit.Posts');
-load_vm('vm.Widget.HotReviewed.Posts');
-load_vm('vm.Widget.Recent.Comments');
-load_vm('vm.Widget.Latest.Posts');
-load_vm('vm.UC.Latest');
-load_vm('vm.UC.Stars');
-load_vm('vm.UC.Comments');
-load_vm('vm.UC.Followers');
-load_vm('vm.UC.Following');
-load_vm('vm.UC.Chat');
-load_vm('vm.UC.Profile');
+load_vm('widgets/vm.Widget.Author');
+load_vm('widgets/vm.Widget.HotHit.Posts');
+load_vm('widgets/vm.Widget.HotReviewed.Posts');
+load_vm('widgets/vm.Widget.Recent.Comments');
+load_vm('widgets/vm.Widget.Latest.Posts');
+load_vm('uc/vm.UC.Latest');
+load_vm('uc/vm.UC.Stars');
+load_vm('uc/vm.UC.Comments');
+load_vm('uc/vm.UC.Followers');
+load_vm('uc/vm.UC.Following');
+load_vm('uc/vm.UC.Chat');
+load_vm('uc/vm.UC.Profile');
+if(TT_PRO && tt_get_option('tt_enable_shop', false)){
+    load_vm('shop/vm.Shop.Header.SubNav');
+}
 
 /* 载入小工具 */
 load_widget('wgt.TagCloud');

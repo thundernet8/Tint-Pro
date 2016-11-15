@@ -13,6 +13,5 @@
  */
 ?>
 <?php tt_get_header('shop'); ?>
-single product
 
 <?php tt_get_footer(); ?>

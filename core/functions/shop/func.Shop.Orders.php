@@ -72,3 +72,33 @@ function tt_generate_order_num(){
     $orderNum = mt_rand(10,25) . time() . mt_rand(1000,9999);
     return strval($orderNum);
 }
+
+/**
+ * 获取订单状态文字
+ *
+ * @since 2.0.0
+ * @param $code
+ * @return string
+ */
+function tt_get_order_status_text($code){
+    switch($code){
+        case 1:
+            $status_text = __('Wait Payment'); //等待买家付款
+            break;
+        case 2:
+            $status_text = __('Payed, Wait Delivery'); //已付款，等待卖家发货
+            break;
+        case 3:
+            $status_text = __('Delivered, Wait Confirm'); //已发货，等待买家确认
+            break;
+        case 4:
+            $status_text = __('Trade Succeed'); //交易成功
+            break;
+        case 9:
+            $status_text = __('Trade Closed', 'tt'); //交易关闭
+            break;
+        default:
+            $status_text = __('Order Created', 'tt'); //订单创建成功
+    }
+    return $status_text;
+}
