@@ -22,7 +22,7 @@ defined('CSS_FRONT_PAGE') || define('CSS_FRONT_PAGE', 'front-page-1b1656215b.css
 defined('CSS_SINGLE') || define('CSS_SINGLE', 'single-f9cc319c3e.css');
 defined('CSS_ARCHIVE') || define('CSS_ARCHIVE', 'archive-6737f753ae.css');
 defined('CSS_PRODUCT') || define('CSS_PRODUCT', 'product-93186e46bb.css');
-defined('CSS_PRODUCT_ARCHIVE') || define('CSS_PRODUCT_ARCHIVE', 'products-32836bcbb2.css');
+defined('CSS_PRODUCT_ARCHIVE') || define('CSS_PRODUCT_ARCHIVE', 'products-ec752cd7d5.css');
 defined('CSS_UC') || define('CSS_UC', 'uc-fa215ef631.css');
 defined('CSS_ME') || define('CSS_ME', 'me-1b1656215b.css');
 defined('CSS_ACTION') || define('CSS_ACTION', 'actions-d6646eeabf.css');

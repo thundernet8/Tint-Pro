@@ -34,6 +34,7 @@
 * tt_product_price
 * tt_product_quantity
 * tt_pay_currency (0->credit 1->cash)
+* tt_product_sales
 
 
 ### Comment Meta

@@ -644,6 +644,26 @@ function optionsframework_options() {
     );
 
 
+    // - 商品首页横幅大标题
+    $options[] = array(
+        'name' => __( 'Shop Home Banner Title', 'tt' ),
+        'desc' => __( 'The main title displayed in the banner of shop homepage', 'tt' ),
+        'id' => 'tt_shop_title',
+        'std' => __('Shop Quality Products', 'tt'),
+        'type' => $theme_pro ? 'text' : 'disabled'
+    );
+
+
+    // - 商品首页横幅小标题
+    $options[] = array(
+        'name' => __( 'Shop Home Banner Sub Title', 'tt' ),
+        'desc' => __( 'The sub title displayed in the banner of shop homepage', 'tt' ),
+        'id' => 'tt_shop_sub_title',
+        'std' => __('Themes - Plugins - Services', 'tt'),
+        'type' => $theme_pro ? 'text' : 'disabled'
+    );
+
+
     // - 站点微信收款二维码
     $options[] = array(
         'name' => __( 'Site Weixin Pay QR', 'tt' ),

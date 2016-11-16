@@ -106,22 +106,6 @@ add_action('generate_rewrite_rules', 'tt_set_user_page_rewrite_rules'); // filte
 
 
 /**
- * 在主查询生成前过滤参数(因为使用了原生paged分页参数, 作者页文章以外其他tab的分页不能超过文章分页数量, 否则404)
- *
- * @since 2.0.0
- * @param WP_Query $q
- * @return void
- */
-function tt_reset_uc_pre_get_posts( $q ) { //TODO 分页不存在时返回404
-    if(is_author() && !in_array(get_query_var('uctab'), array('profile', 'latest')) && $q->is_main_query()) {
-        $q->set( 'posts_per_page', 1 );
-        $q->set( 'offset', 0 ); //此时paged参数不起作用
-    }
-}
-add_action( 'pre_get_posts', 'tt_reset_uc_pre_get_posts' );
-
-
-/**
  * 为自定义的用户页添加query_var白名单，用于识别和区分用户页及作者页
  *
  * @since   2.0.0

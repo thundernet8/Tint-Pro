@@ -144,6 +144,7 @@ load_func('func.Content');
 load_func('func.Follow');
 load_func('func.Message');
 load_func('func.Referral');
+load_func('func.Query');
 if(TT_PRO && tt_get_option('tt_enable_shop', false)){
     load_func('shop/func.Shop');
     load_func('shop/func.Shop.Orders');
@@ -176,6 +177,9 @@ load_vm('uc/vm.UC.Chat');
 load_vm('uc/vm.UC.Profile');
 if(TT_PRO && tt_get_option('tt_enable_shop', false)){
     load_vm('shop/vm.Shop.Header.SubNav');
+    load_vm('shop/vm.Shop.Home');
+    load_vm('shop/vm.Shop.Category');
+    load_vm('shop/vm.Shop.Tag');
 }
 
 /* 载入小工具 */
