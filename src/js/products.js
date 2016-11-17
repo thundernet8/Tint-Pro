@@ -21,6 +21,7 @@ import ScrollHandler from './modules/scroll';
 import ModalSignBox from './modules/modalSignBox';
 import SignHelp from './modules/signHelp';
 import FixFooter from './modules/fixFooter';
+import Toggle from './modules/toggle';
 
 // DOM Ready
 jQuery(document).ready(function ($) {
@@ -44,4 +45,10 @@ jQuery(document).ready(function ($) {
     
     // 修正Footer位置
     FixFooter();
+    
+    // 根据滚动方向折叠或显示二级菜单
+    ScrollHandler.initShopSubNavCollapse();
+    
+    // 折叠左菜单
+    Toggle.initShopLeftMenuToggle();
 });

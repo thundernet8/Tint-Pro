@@ -243,6 +243,9 @@ add_filter('page_template', 'tt_get_page_template', 10, 1);
  */
 function tt_get_search_template($template){
     unset($template);
+    if(isset($_GET['in_shop']) && $_GET['in_shop'] == 1) {
+        return locate_template(array('core/templates/shop/tpl.Product.Search.php'));
+    }
     return locate_template(array('core/templates/tpl.Search.php'));
 }
 add_filter('search_template', 'tt_get_search_template', 10, 1);

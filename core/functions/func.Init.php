@@ -32,12 +32,15 @@ function tt_setup() {
     add_theme_support( 'post-formats', array( 'audio', 'aside', 'chat', 'gallery', 'image', 'link', 'quote', 'status', 'video' ) );
 
     // 菜单区域
-    register_nav_menus( array(
-        'header-menu' => '顶部菜单',
-        'footer-menu' => '底部菜单',
-        'shop-menu' => '商城分类导航',
-        'page-menu' => '页面合并菜单',
-    ) );
+    $menus = array(
+        'header-menu' => __('Top Menu', 'tt'), //顶部菜单
+        'footer-menu' => __('Foot Menu', 'tt'), //底部菜单
+        //'page-menu' => __('Pages Menu', 'tt') //页面合并菜单
+    );
+    if(TT_PRO && tt_get_option('tt_enable_shop', false)) {
+        $menus['shop-menu'] = __('Shop Left Menu', 'tt');
+    }
+    register_nav_menus($menus);
 
     // 必须和推荐插件安装提醒
     function tt_register_required_plugins() {

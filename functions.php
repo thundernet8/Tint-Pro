@@ -180,6 +180,7 @@ if(TT_PRO && tt_get_option('tt_enable_shop', false)){
     load_vm('shop/vm.Shop.Home');
     load_vm('shop/vm.Shop.Category');
     load_vm('shop/vm.Shop.Tag');
+    load_vm('shop/vm.Shop.Search');
 }
 
 /* 载入小工具 */

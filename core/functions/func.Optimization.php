@@ -170,7 +170,7 @@ add_action('after_switch_theme', 'tt_disable_embeds_flush_rewrite_rules');
 
 
 /**
- * 搜索结果排除页面
+ * 搜索结果排除页面(商店的搜素结果不处理)
  *
  * @since 2.0.0
  * @param WP_Query $query
@@ -178,6 +178,7 @@ add_action('after_switch_theme', 'tt_disable_embeds_flush_rewrite_rules');
  */
 function tt_search_filter_page($query) {
     if ($query->is_search) {
+        if(isset($query->query['post_type']) && $query->query['post_type'] == 'product') return $query;
         $query->set('post_type', 'post');
     }
     return $query;

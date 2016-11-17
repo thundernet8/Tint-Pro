@@ -15,6 +15,7 @@
 <?php load_mod('mod.Head'); ?>
 <body <?php body_class('is-loadingApp'); ?>>
 <div class="loading-line"></div>
+<?php load_mod('mod.ModalQrCodes'); ?>
 <header class="header shop-header blue">
     <nav class="header primary-nav">
         <div class="primary-nav-inner clearfix">
@@ -83,7 +84,7 @@
                         </ul>
                     </li>
                 <?php }else{ ?>
-                    <li class="login-actions">
+                    <li class="header_menu-item login-actions">
                         <a href="<?php echo tt_add_redirect(tt_url_for('signin'), tt_get_current_url()); ?>" class="login-link bind-redirect"><span><?php _e('Sign In or Up', 'tt'); ?></span></a>
                     </li>
                 <?php } ?>

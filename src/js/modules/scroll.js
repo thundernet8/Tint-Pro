@@ -133,13 +133,35 @@ var _initFloatWidget = function () {
 };
 
 
+// 商店页面折叠二级菜单
+var _prevTop = 0;
+var _currTop = 0;
+var _handleShopSubNavCollapse = function () {
+    _currTop = _document.scrollTop();
+    if (_currTop < _prevTop) { //判断小于则为向上滚动
+        _body.removeClass('collapse-subnav');
+    } else {
+        _body.addClass('collapse-subnav');
+    }
+    //_prevTop = _currTop; //IE下有BUG，所以用以下方式
+    setTimeout(function(){_prevTop = _currTop}, 0);
+};
+
+var _initShopSubNavCollapse = function () {
+    _document.on('scroll', function () {
+        _handleShopSubNavCollapse();
+    });
+};
+
+
 /**
  * 导出模块
  */
 var ScrollHandler = {
     initScrollTo: _initScrollTo,
     initShareBar: _initShareBar,
-    initFloatWidget: _initFloatWidget
+    initFloatWidget: _initFloatWidget,
+    initShopSubNavCollapse: _initShopSubNavCollapse
 };
 
 export default ScrollHandler;

@@ -32,24 +32,13 @@
 /* Modal Signbox */
 @import "modules/modalSign/sign-box";
 
+/* Shop Public */
+@import "modules/shop/public";
+
 // Begin
 body {
-    &>#globalSearch {
-        display: none;
-    }
-    &.without-menu {
-        &>.wrapper {
-            padding-left: 0;
-        }
-    }
     &>.wrapper {
-        height: auto;
-        padding: 0 0 0 200px;
-        -webkit-transition: padding .2s ease;
-        transition: padding .2s ease;
-        position: relative;
         &>.content {
-            max-width: 1060px;
             padding: 30px 0;
             margin: 0 auto;
             &>.billboard {
@@ -78,6 +67,7 @@ body {
                         }
                     }
                     p {
+                        min-height: 20px;
                         margin-top: 20px;
                         font-size: 1.4rem;
                         opacity: .9;
@@ -165,7 +155,7 @@ body {
                                     text-align: center;
                                     line-height: 40px;
                                     color: #ffffff;
-                                    background-color: #53d769;
+                                    background-color: @brand-elegant; //#53d769;
                                     cursor: pointer;
                                     a {
                                         color: #ffffff;
@@ -224,6 +214,12 @@ body {
                             }
                         }
                     }
+                }
+            }
+
+            &>.pagination-wrap {
+                &>nav {
+                    text-align: center;
                 }
             }
         }

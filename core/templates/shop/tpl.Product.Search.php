@@ -6,38 +6,38 @@
  * @since 2.0.0
  * @package Tint
  * @author Zhiyan
- * @date 2016/11/15 23:17
+ * @date 2016/11/17 20:05
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
  * @link https://www.webapproach.net/tint
  */
 ?>
-<?php $tag = get_queried_object(); ?>
+<?php $search = get_search_query(); ?>
 <?php $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1; ?>
 <?php tt_get_header('shop'); ?>
 <!-- Left Menu -->
 <div class="menu_wrapper" style="margin-top: 55px;">
-        <div class="menu">
-            <?php wp_nav_menu( array( 'theme_location' => 'shop-menu', 'container' => '', 'menu_id'=> 'shop-menu-items', 'menu_class' => 'menu-items', 'depth' => '1', 'fallback_cb' => false  ) ); ?>
-        </div>
-        <div class="icons">
-            <a href="javascript:;" data-toggle="modal" data-target="#siteQrcodes" data-trigger="click"><span class="tico tico-qrcode"></span></a>
-            <a href="<?php echo 'mailto:' . get_option('admin_email'); ?>"><span class="tico tico-envelope"></span></a>
-            <a href="<?php echo tt_url_for('shop_archive') . '/feed'; ?>"><span class="tico tico-rss"></span></a>
-        </div>
+    <div class="menu">
+        <?php wp_nav_menu( array( 'theme_location' => 'shop-menu', 'container' => '', 'menu_id'=> 'shop-menu-items', 'menu_class' => 'menu-items', 'depth' => '1', 'fallback_cb' => false  ) ); ?>
     </div>
+    <div class="icons">
+        <a href="javascript:;" data-toggle="modal" data-target="#siteQrcodes" data-trigger="click"><span class="tico tico-qrcode"></span></a>
+        <a href="<?php echo 'mailto:' . get_option('admin_email'); ?>"><span class="tico tico-envelope"></span></a>
+        <a href="<?php echo tt_url_for('shop_archive') . '/feed'; ?>"><span class="tico tico-rss"></span></a>
+    </div>
+</div>
 <div class="wrapper">
     <div class="content text-center">
         <div class="billboard" style="background-image: url(<?php echo THEME_ASSET . '/img/shop-banner.jpg'; ?>)">
             <div class="billboard-text">
-                <h1><i class="tico tico-price-tag"></i><?php echo $tag->name; ?></h1>
-                <p><?php echo $tag->description; ?></p>
+                <h1><i class="tico tico-search"></i><?php printf(__('Searching: %s'), $search); ?></h1>
+                <p></p>
             </div>
         </div>
     </div>
-    <?php $vm = ShopTagVM::getInstance($paged, $tag->term_id); ?>
+    <?php $vm = ShopSearchVM::getInstance($paged, $search); ?>
     <?php if($vm->isCache && $vm->cacheTime) { ?>
-        <!-- Products tag cached <?php echo $vm->cacheTime; ?> -->
+        <!-- Products search cached <?php echo $vm->cacheTime; ?> -->
     <?php } ?>
     <div class="content">
         <?php if($data = $vm->modelData) { $pagination_args = $data->pagination; $products = $data->products; ?>
@@ -101,11 +101,6 @@
                                 echo '<li class="page-item">' . $page_item . '</li>';
                             } ?>
                         </ul>
-<!--                        <div class="page-nums">-->
-<!--                            Page&nbsp;<span class="current-page">--><?php //echo $pagination_args['current_page']; ?><!--</span>-->
-<!--                            <span class="separator">/</span>-->
-<!--                            <span class="max-page">--><?php //echo $pagination_args['max_num_pages']; ?><!--</span>-->
-<!--                        </div>-->
                     </nav>
                 </div>
             <?php } ?>

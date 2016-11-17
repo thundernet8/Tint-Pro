@@ -27,6 +27,8 @@ function tt_reset_uc_pre_get_posts( $q ) { //TODO 分页不存在时返回404
         $q->set( 'offset', 0 ); //此时paged参数不起作用
     }elseif(get_post_type() == 'product'){
         $q->set( 'posts_per_page', 12 ); //商品archive页默认12篇每页
+    }elseif(is_search() && isset($_GET['in_shop']) && $_GET['in_shop'] == 1){
+        $q->set( 'posts_per_page', 12 ); //商品搜索页默认12篇每页
     }
 }
 add_action( 'pre_get_posts', 'tt_reset_uc_pre_get_posts' );

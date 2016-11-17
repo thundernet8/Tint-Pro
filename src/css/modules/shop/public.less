@@ -1,0 +1,114 @@
+body {
+    &>#globalSearch {
+        display: none;
+    }
+    &>#siteQrcodes {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: 0 0;
+        display: none;
+        z-index: 1050;
+        -webkit-backface-visibility: hidden;
+        &>.qr-wrap {
+            position: absolute;
+            width: 400px;
+            top: 50%;
+            left: 50%;
+            margin-left: -200px;
+            margin-top: -100px;
+            &>.qrcode {
+                &>.wx-qr,
+                &>.ali-qr {
+                    img {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+            }
+        }
+    }
+
+    &.without-menu {
+        &>.menu_wrapper {
+            left: -200px;
+        }
+        &>.wrapper {
+            padding-left: 0;
+        }
+    }
+
+    &>.menu_wrapper {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 200px;
+        height: auto;
+        overflow: visible;
+        padding: 15px 0;
+        margin-top: 100px;
+        z-index: 20;
+        -webkit-transition: all .2s ease;
+        transition: all .2s ease;
+        &>.menu {
+            &>.menu-items {
+                padding: 0 0 10px;
+                margin: 0;
+                border-bottom: 1px solid hsla(210,8%,66%,.2);
+                &>li {
+                    list-style: none;
+                    padding: 0 0 0 30px;
+                    margin: 0;
+                    border-radius: 3px;
+                    &> a {
+                        display: block;
+                        font-size: 1.5rem;
+                        font-weight: 400;
+                        line-height: 45px;
+                        text-decoration: none;
+                        color: #6c7c83;
+                        i {
+                            position: relative;
+                            float: left;
+                            top: 12px;
+                            width: 24px;
+                            height: 24px;
+                            margin-right: 30px;
+                            font-size: 2rem;
+                        }
+                        span {
+
+                        }
+                    }
+                    &:hover,
+                    &.current-menu-item {
+                        background-color: #e4e8eb;
+                    }
+                }
+            }
+        }
+        &>.icons {
+            text-align: center;
+            margin: 10px auto;
+            &> a {
+                padding: 0 4px;
+                font-size: 1.6rem;
+                color: #6c7c83;
+            }
+        }
+    }
+
+    &>.wrapper {
+        height: auto;
+        padding: 0 0 0 200px;
+        -webkit-transition: padding .2s ease;
+        transition: padding .2s ease;
+        position: relative;
+        &>.content {
+            max-width: 1060px;
+        }
+    }
+}

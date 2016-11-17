@@ -1,5 +1,5 @@
 /**
- * Generated on Sun Nov 13 2016 23:42:11 GMT+0800 (中国标准时间) by Zhiyan
+ * Generated on Thu Nov 17 2016 22:45:42 GMT+0800 (中国标准时间) by Zhiyan
  *
  * @package   Tint
  * @version   v2.0.0
@@ -49,9 +49,9 @@
             var _signHelp2 = _interopRequireDefault(_signHelp);
             var _fixFooter = __webpack_require__(16);
             var _fixFooter2 = _interopRequireDefault(_fixFooter);
-            var _unstar = __webpack_require__(26);
+            var _unstar = __webpack_require__(27);
             var _unstar2 = _interopRequireDefault(_unstar);
-            var _ban = __webpack_require__(27);
+            var _ban = __webpack_require__(28);
             var _ban2 = _interopRequireDefault(_ban);
             function _interopRequireDefault(obj) {
                 return obj && obj[['__esModule']] ? obj : { default: obj };
@@ -2494,10 +2494,29 @@
                     _handleFloatWidget();
                 });
             };
+            var _prevTop = 0;
+            var _currTop = 0;
+            var _handleShopSubNavCollapse = function _handleShopSubNavCollapse() {
+                _currTop = _document[['scrollTop']]();
+                if (_currTop < _prevTop) {
+                    _body[['removeClass']]('collapse-subnav');
+                } else {
+                    _body[['addClass']]('collapse-subnav');
+                }
+                setTimeout(function () {
+                    _prevTop = _currTop;
+                }, 0);
+            };
+            var _initShopSubNavCollapse = function _initShopSubNavCollapse() {
+                _document[['on']]('scroll', function () {
+                    _handleShopSubNavCollapse();
+                });
+            };
             var ScrollHandler = {
                 initScrollTo: _initScrollTo,
                 initShareBar: _initShareBar,
-                initFloatWidget: _initFloatWidget
+                initFloatWidget: _initFloatWidget,
+                initShopSubNavCollapse: _initShopSubNavCollapse
             };
             exports[['default']] = ScrollHandler;
         }[['call']](exports, __webpack_require__(1)));
@@ -3205,6 +3224,7 @@
             exports[['default']] = PmKit;
         }[['call']](exports, __webpack_require__(1)));
     },
+    ,
     function (module, exports, __webpack_require__) {
         (function ($) {
             'use strict';

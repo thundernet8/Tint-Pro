@@ -22,7 +22,7 @@
                 <img src="<?php echo tt_get_option('tt_logo'); ?>" alt="<?php echo get_bloginfo('name'); ?>">
             </a>
             <!-- Top Menu -->
-            <?php wp_nav_menu( array( 'theme_location' => 'header-menu', 'container' => '', 'menu_class' => 'header-menu nav-col', 'depth' => '2', 'fallback_cb' => false  ) ); ?>
+            <?php wp_nav_menu( array( 'theme_location' => 'header-menu', 'container' => '', 'menu_id'=> 'header-menu', 'menu_class' => 'header-menu nav-col', 'depth' => '2', 'fallback_cb' => false  ) ); ?>
             <!-- End Top Menu -->
             <!-- Header Right Tools -->
             <ul class="header-tool-menu nav-col pull-right">

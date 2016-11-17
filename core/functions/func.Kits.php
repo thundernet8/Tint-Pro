@@ -387,8 +387,8 @@ function tt_get_css($filename = '') {
         $filename = CSS_HOME;
     }elseif(is_single()) {
         $filename = get_post_type()==='product' ? CSS_PRODUCT : CSS_SINGLE;
-    }elseif(is_archive() && !is_author()) {
-        $filename = get_post_type()==='product' ? CSS_PRODUCT_ARCHIVE : CSS_ARCHIVE;
+    }elseif((is_archive() && !is_author()) || (is_search() && isset($_GET['in_shop']) && $_GET['in_shop'] == 1)) {
+        $filename = get_post_type()==='product' || (is_search() && isset($_GET['in_shop']) && $_GET['in_shop'] == 1) ? CSS_PRODUCT_ARCHIVE : CSS_ARCHIVE;
     }elseif(is_author()) {
         $filename = CSS_UC;
     }elseif(is_404()) {

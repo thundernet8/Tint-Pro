@@ -12,21 +12,28 @@
  * @link https://www.webapproach.net/tint
  */
 ?>
+<?php $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1; ?>
 <?php tt_get_header('shop'); ?>
     <!-- Left Menu -->
     <div class="menu_wrapper">
-
+        <div class="menu">
+            <?php wp_nav_menu( array( 'theme_location' => 'shop-menu', 'container' => '', 'menu_id'=> 'shop-menu-items', 'menu_class' => 'menu-items', 'depth' => '1', 'fallback_cb' => false  ) ); ?>
+        </div>
+        <div class="icons">
+            <a href="javascript:;" data-toggle="modal" data-target="#siteQrcodes" data-trigger="click"><span class="tico tico-qrcode"></span></a>
+            <a href="<?php echo 'mailto:' . get_option('admin_email'); ?>"><span class="tico tico-envelope"></span></a>
+            <a href="<?php echo tt_url_for('shop_archive') . '/feed'; ?>"><span class="tico tico-rss"></span></a>
+        </div>
     </div>
-    <div class="wrapper">
+    <div class="wrapper" style="padding-top: 45px;">
         <div class="content text-center">
-            <div class="billboard" style="background-image: url(<?php echo THEME_ASSET . '/img/shop-billboard.gif'; ?>)">
+            <div class="billboard" style="background-image: url(<?php echo THEME_ASSET . '/img/shop-banner.jpg'; ?>)">
                 <div class="billboard-text">
                     <h1><?php echo tt_get_option('tt_shop_title', 'Shop Quality Products'); ?></h1>
                     <p><?php echo tt_get_option('tt_shop_sub_title', 'Themes - Plugins - Services'); ?></p>
                 </div>
             </div>
         </div>
-        <?php $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1; ?>
         <?php $vm = ShopHomeVM::getInstance($paged, isset($_GET['sort']) ? $_GET['sort'] : 'latest'); ?>
         <?php if($vm->isCache && $vm->cacheTime) { ?>
             <!-- Products cached <?php echo $vm->cacheTime; ?> -->
@@ -93,11 +100,11 @@
                             echo '<li class="page-item">' . $page_item . '</li>';
                         } ?>
                     </ul>
-                    <div class="page-nums">
-                        Page&nbsp;<span class="current-page"><?php echo $pagination_args['current_page']; ?></span>
-                        <span class="separator">/</span>
-                        <span class="max-page"><?php echo $pagination_args['max_num_pages']; ?></span>
-                    </div>
+<!--                    <div class="page-nums">-->
+<!--                        Page&nbsp;<span class="current-page">--><?php //echo $pagination_args['current_page']; ?><!--</span>-->
+<!--                        <span class="separator">/</span>-->
+<!--                        <span class="max-page">--><?php //echo $pagination_args['max_num_pages']; ?><!--</span>-->
+<!--                    </div>-->
                 </nav>
             </div>
             <?php } ?>

@@ -26,6 +26,8 @@ import Pmkit from './modules/pm';
 import ModalSignBox from './modules/modalSignBox';
 import {} from 'lazyload/jquery.lazyload';
 import SignHelp from './modules/signHelp';
+import FixFooter from './modules/fixFooter';
+import Toggle from './modules/toggle';
 
 // DOM Ready
 jQuery(document).ready(function ($) {
@@ -83,4 +85,10 @@ jQuery(document).ready(function ($) {
     
     // 平滑锚点
     AnimateAnchor();
+    
+    // 修正Footer位置
+    FixFooter();
+    
+    // 折叠左菜单
+    Toggle.initShopLeftMenuToggle();
 });

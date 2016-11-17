@@ -1,5 +1,5 @@
 /**
- * Generated on Sun Nov 13 2016 23:42:10 GMT+0800 (中国标准时间) by Zhiyan
+ * Generated on Thu Nov 17 2016 22:45:42 GMT+0800 (中国标准时间) by Zhiyan
  *
  * @package   Tint
  * @version   v2.0.0
@@ -54,6 +54,10 @@
             __webpack_require__(19);
             var _signHelp = __webpack_require__(15);
             var _signHelp2 = _interopRequireDefault(_signHelp);
+            var _fixFooter = __webpack_require__(16);
+            var _fixFooter2 = _interopRequireDefault(_fixFooter);
+            var _toggle = __webpack_require__(26);
+            var _toggle2 = _interopRequireDefault(_toggle);
             function _interopRequireDefault(obj) {
                 return obj && obj[['__esModule']] ? obj : { default: obj };
             }
@@ -84,6 +88,8 @@
                     threshold: 0
                 });
                 (0, _animateAnchor2[['default']])();
+                (0, _fixFooter2[['default']])();
+                _toggle2[['default']][['initShopLeftMenuToggle']]();
             });
         }[['call']](exports, __webpack_require__(1)));
     },
@@ -2505,10 +2511,29 @@
                     _handleFloatWidget();
                 });
             };
+            var _prevTop = 0;
+            var _currTop = 0;
+            var _handleShopSubNavCollapse = function _handleShopSubNavCollapse() {
+                _currTop = _document[['scrollTop']]();
+                if (_currTop < _prevTop) {
+                    _body[['removeClass']]('collapse-subnav');
+                } else {
+                    _body[['addClass']]('collapse-subnav');
+                }
+                setTimeout(function () {
+                    _prevTop = _currTop;
+                }, 0);
+            };
+            var _initShopSubNavCollapse = function _initShopSubNavCollapse() {
+                _document[['on']]('scroll', function () {
+                    _handleShopSubNavCollapse();
+                });
+            };
             var ScrollHandler = {
                 initScrollTo: _initScrollTo,
                 initShareBar: _initShareBar,
-                initFloatWidget: _initFloatWidget
+                initFloatWidget: _initFloatWidget,
+                initShopSubNavCollapse: _initShopSubNavCollapse
             };
             exports[['default']] = ScrollHandler;
         }[['call']](exports, __webpack_require__(1)));
@@ -2536,7 +2561,19 @@
             exports[['default']] = SignHelp;
         }[['call']](exports, __webpack_require__(1)));
     },
-    ,
+    function (module, exports, __webpack_require__) {
+        (function ($) {
+            'use strict';
+            Object[['defineProperty']](exports, '__esModule', { value: true });
+            exports[['default']] = function () {
+                var footer = $('body>footer');
+                var diffH = $(window)[['height']]() - footer[['offset']]()[['top']] - footer[['height']]();
+                if (diffH > 0) {
+                    footer[['css']]('position', 'relative')[['css']]('top', diffH);
+                }
+            };
+        }[['call']](exports, __webpack_require__(1)));
+    },
     ,
     ,
     function (module, exports, __webpack_require__) {
@@ -3953,6 +3990,21 @@
                 }
             };
             exports[['default']] = PmKit;
+        }[['call']](exports, __webpack_require__(1)));
+    },
+    function (module, exports, __webpack_require__) {
+        (function ($) {
+            'use strict';
+            Object[['defineProperty']](exports, '__esModule', { value: true });
+            var _body = $('body');
+            var _shopMenuToggleAnchorSel = '.hamburger';
+            var _initShopLeftMenuToggle = function _initShopLeftMenuToggle() {
+                _body[['on']]('click', _shopMenuToggleAnchorSel, function () {
+                    _body[['toggleClass']]('without-menu');
+                });
+            };
+            var Toggle = { initShopLeftMenuToggle: _initShopLeftMenuToggle };
+            exports[['default']] = Toggle;
         }[['call']](exports, __webpack_require__(1)));
     }
 ]));
