@@ -644,6 +644,16 @@ function optionsframework_options() {
     );
 
 
+    // - 商品首页关键词
+    $options[] = array(
+        'name' => __( 'Shop Home Keywords', 'tt' ),
+        'desc' => __( 'The keywords of shop homepage, good for SEO', 'tt' ),
+        'id' => 'tt_shop_keywords',
+        'std' => __('Market', 'tt'),
+        'type' => $theme_pro ? 'text' : 'disabled'
+    );
+
+
     // - 商品首页横幅大标题
     $options[] = array(
         'name' => __( 'Shop Home Banner Title', 'tt' ),

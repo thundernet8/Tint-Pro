@@ -12,6 +12,7 @@
  * @link https://www.webapproach.net/tint.html
  */
 ?>
+<?php $keywords_description = tt_get_keywords_and_description(); ?>
 <!DOCTYPE html>
 <html lang="zh">
 <head>
@@ -20,8 +21,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,minimal-ui=yes">
     <title><?php echo tt_get_page_title(); ?></title>
-    <meta name="keywords" content=""><!-- TODO: SEO -->
-    <meta name="description" content=""><!-- TODO: SEO -->
+    <meta name="keywords" content="<?php echo $keywords_description['keywords']; ?>">
+    <meta name="description" content="<?php echo $keywords_description['description']; ?>">
     <meta name="renderer" content="webkit">
     <meta http-equiv="Cache-Control" content="no-transform">
     <meta http-equiv="Cache-Control" content="no-siteapp"> <!-- 禁止移动端百度转码 -->

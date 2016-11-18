@@ -36,6 +36,10 @@
 * tt_pay_currency (0->credit 1->cash)
 * tt_product_sales
 
+### Post Meta(Page)
+* tt_keywords
+* tt_description
+
 
 ### Comment Meta
 * tt_comment_likes
