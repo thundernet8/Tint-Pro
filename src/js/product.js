@@ -47,7 +47,7 @@ jQuery(document).ready(function ($) {
     ScrollHandler.initScrollTo();
     
     // 分享条自适应位置
-    ScrollHandler.initShareBar();
+    //ScrollHandler.initShareBar();
     
     // 浮动边栏
     //ScrollHandler.initFloatWidget();
@@ -74,11 +74,15 @@ jQuery(document).ready(function ($) {
     });
     
     // 延迟加载图片
-    $('img.lazy').lazyload({
+    $('#primary img.lazy').lazyload({
         effect: "fadeIn",
         threshold: 50
     });
-    $('.sidebar img.lazy').lazyload({
+    $('#secondary img.lazy').lazyload({
+        effect: "fadeIn",
+        threshold: 0
+    });
+    $('#tertiary img.lazy').lazyload({
         effect: "fadeIn",
         threshold: 0
     });

@@ -1,5 +1,5 @@
 /**
- * Generated on Thu Nov 17 2016 22:45:41 GMT+0800 (中国标准时间) by Zhiyan
+ * Generated on Sun Nov 20 2016 21:47:26 GMT+0800 (中国标准时间) by Zhiyan
  *
  * @package   Tint
  * @version   v2.0.0
@@ -33,24 +33,46 @@
     function (module, exports, __webpack_require__) {
         (function (jQuery) {
             'use strict';
-            var _globalConfig = __webpack_require__(2);
             var _loading = __webpack_require__(8);
+            var _msgbox = __webpack_require__(6);
             __webpack_require__(9);
+            var _scroll = __webpack_require__(14);
+            var _scroll2 = _interopRequireDefault(_scroll);
+            var _follow = __webpack_require__(24);
+            var _follow2 = _interopRequireDefault(_follow);
+            var _pm = __webpack_require__(25);
+            var _pm2 = _interopRequireDefault(_pm);
+            var _modalSignBox = __webpack_require__(5);
+            var _modalSignBox2 = _interopRequireDefault(_modalSignBox);
+            __webpack_require__(19);
+            var _signHelp = __webpack_require__(15);
+            var _signHelp2 = _interopRequireDefault(_signHelp);
+            var _fixFooter = __webpack_require__(16);
+            var _fixFooter2 = _interopRequireDefault(_fixFooter);
+            var _unstar = __webpack_require__(27);
+            var _unstar2 = _interopRequireDefault(_unstar);
+            var _ban = __webpack_require__(28);
+            var _ban2 = _interopRequireDefault(_ban);
+            function _interopRequireDefault(obj) {
+                return obj && obj[['__esModule']] ? obj : { default: obj };
+            }
             jQuery(document)[['ready']](function ($) {
                 (0, _loading[['handleLineLoading']])();
-                var _redirectBtn = $('#linkBackHome');
-                var _numSpan = _redirectBtn[['children']]('span.num');
-                var _countNum = function _countNum(span) {
-                    var sec = parseInt(span[['text']]());
-                    if (sec - 1 <= 0) {
-                        clearInterval(_interval);
-                        _redirectBtn[['html']]('\u8df3\u8f6c\u4e2d...');
-                        window[['location']][['href']] = _globalConfig[['Urls']][['site']];
-                    } else {
-                        span[['text']](sec - 1);
-                    }
-                };
-                var _interval = setInterval(_countNum[['bind']](this, _numSpan), 1000);
+                _msgbox[['popMsgbox']][['init']]();
+                _scroll2[['default']][['initScrollTo']]();
+                _follow2[['default']][['init']]();
+                _pm2[['default']][['initModalPm']]();
+                _pm2[['default']][['initNormalPm']]();
+                _modalSignBox2[['default']][['init']]();
+                _signHelp2[['default']][['init']]();
+                $('img.lazy')[['lazyload']]({
+                    effect: 'fadeIn',
+                    threshold: 50
+                });
+                (0, _fixFooter2[['default']])();
+                _unstar2[['default']][['init']]();
+                $('.popover-qr')[['popover']]({ html: true });
+                _ban2[['default']][['initModalBan']]();
             });
         }[['call']](exports, __webpack_require__(1)));
     },
@@ -470,9 +492,9 @@
         }[['call']](exports, __webpack_require__(1), __webpack_require__(1)));
     },
     function (module, exports, __webpack_require__) {
-        var require;
-        var require;
         var __WEBPACK_AMD_DEFINE_RESULT__;
+        var require;
+        var require;
         'use strict';
         var _typeof = typeof Symbol === 'function' && typeof Symbol[['iterator']] === 'symbol' ? function (obj) {
             return typeof obj;
@@ -2328,6 +2350,78 @@
                 Plugin[['call']]($target, option, this);
             });
         }(jQuery);
+        (function ($) {
+            'use strict';
+            var Tab = function Tab(element) {
+                this[['element']] = $(element);
+            };
+            Tab[['VERSION']] = '3.2.0';
+            Tab[['prototype']][['show']] = function () {
+                var $this = this[['element']];
+                var $ul = $this[['closest']]('ul:not(.dropdown-menu)');
+                var selector = $this[['data']]('target');
+                if (!selector) {
+                    selector = $this[['attr']]('href');
+                    selector = selector && selector[['replace']](/.*(?=#[^\s]*$)/, '');
+                }
+                if ($this[['parent']]('li')[['hasClass']]('active'))
+                    return;
+                var previous = $ul[['find']]('.active:last a')[0];
+                var e = $[['Event']]('show.bs.tab', { relatedTarget: previous });
+                $this[['trigger']](e);
+                if (e[['isDefaultPrevented']]())
+                    return;
+                var $target = $(selector);
+                this[['activate']]($this[['closest']]('li'), $ul);
+                this[['activate']]($target, $target[['parent']](), function () {
+                    $this[['trigger']]({
+                        type: 'shown.bs.tab',
+                        relatedTarget: previous
+                    });
+                });
+            };
+            Tab[['prototype']][['activate']] = function (element, container, callback) {
+                var $active = container[['find']]('> .active');
+                var transition = callback && $[['support']][['transition']] && $active[['hasClass']]('fade');
+                function next() {
+                    $active[['removeClass']]('active')[['find']]('> .dropdown-menu > .active')[['removeClass']]('active');
+                    element[['addClass']]('active');
+                    if (transition) {
+                        element[0][['offsetWidth']];
+                        element[['addClass']]('in');
+                    } else {
+                        element[['removeClass']]('fade');
+                    }
+                    if (element[['parent']]('.dropdown-menu')) {
+                        element[['closest']]('li.dropdown')[['addClass']]('active');
+                    }
+                    callback && callback();
+                }
+                transition ? $active[['one']]('bsTransitionEnd', next)[['emulateTransitionEnd']](150) : next();
+                $active[['removeClass']]('in');
+            };
+            function Plugin(option) {
+                return this[['each']](function () {
+                    var $this = $(this);
+                    var data = $this[['data']]('bs.tab');
+                    if (!data)
+                        $this[['data']]('bs.tab', data = new Tab(this));
+                    if (typeof option == 'string')
+                        data[option]();
+                });
+            }
+            var old = $[['fn']][['tab']];
+            $[['fn']][['tab']] = Plugin;
+            $[['fn']][['tab']][['Constructor']] = Tab;
+            $[['fn']][['tab']][['noConflict']] = function () {
+                $[['fn']][['tab']] = old;
+                return this;
+            };
+            $(document)[['on']]('click.bs.tab.data-api', '[data-toggle="tab"], [data-toggle="pill"]', function (e) {
+                e[['preventDefault']]();
+                Plugin[['call']]($(this), 'show');
+            });
+        }(jQuery));
         (function (global, $) {
             $('.input-group')[['on']]('focus', '.form-control', function () {
                 $(this)[['closest']]('.input-group, .form-group')[['addClass']]('focus');
@@ -2355,5 +2449,1066 @@
                 $(this)[['siblings']]()[['removeClass']]('active')[['end']]()[['addClass']]('active');
             });
         }[['call']](undefined, jQuery));
+    },
+    ,
+    ,
+    ,
+    ,
+    function (module, exports, __webpack_require__) {
+        (function ($) {
+            'use strict';
+            Object[['defineProperty']](exports, '__esModule', { value: true });
+            var _body = $('body');
+            var _document = $(document);
+            var _scrollTopBottomAnchorCls = 'scroll-to';
+            var _scrollTopAnchorCls = 'scroll-top';
+            var _scrollBottomAnchorCls = 'scroll-bottom';
+            var _handleScrollTo = function _handleScrollTo(btn) {
+                if (btn[['hasClass']](_scrollBottomAnchorCls)) {
+                    _body[['animate']]({ scrollTop: $(document)[['height']]() }, 'slow');
+                } else if (btn[['hasClass']](_scrollTopAnchorCls)) {
+                    _body[['animate']]({ scrollTop: 0 }, 'slow');
+                }
+                return false;
+            };
+            var _initScrollTo = function _initScrollTo() {
+                _body[['on']]('click', '.' + _scrollTopBottomAnchorCls, function () {
+                    _handleScrollTo($(this));
+                });
+            };
+            var _postWrapSel = '#main>.post';
+            var _postWrapBottomY = 0;
+            var _singleBodySel = '.single-body';
+            var _singleBodyTopY = 0;
+            var _shareBarSel = '.single-body>.share-bar';
+            var _shareBarHeight = 0;
+            var _shareBar = null;
+            var _postWrap = null;
+            var _singleBody = null;
+            var _calcTop = function _calcTop() {
+                if (!_shareBar)
+                    _shareBar = $(_shareBarSel);
+                if (!_singleBody)
+                    _singleBody = $(_singleBodySel);
+                if (!_postWrap)
+                    _postWrap = $(_postWrapSel);
+                if (!_shareBarHeight)
+                    _shareBarHeight = _shareBar[['height']]();
+                if (!_postWrapBottomY)
+                    _postWrapBottomY = _postWrap[['offset']]()[['top']] + _postWrap[['height']]() + 40;
+                if (!_singleBodyTopY)
+                    _singleBodyTopY = _singleBody[['offset']]()[['top']];
+                var documentScrollTop = _document[['scrollTop']]();
+                var top = 0;
+                top = Math[['max']](20, 80 + documentScrollTop - _singleBodyTopY);
+                if (_singleBodyTopY + top + _shareBarHeight > _postWrapBottomY) {
+                    top = _postWrapBottomY - _shareBarHeight - _singleBodyTopY;
+                }
+                return top;
+            };
+            var _initShareBar = function _initShareBar() {
+                _document[['on']]('scroll', function () {
+                    var top = _calcTop();
+                    if (!_shareBar)
+                        _shareBar = $(_shareBarSel);
+                    _shareBar[['css']]('top', top + 'px');
+                });
+            };
+            var _originWidgetSel = '#sidebar>.widget_float-sidebar';
+            var _originWidget = null;
+            var _originWidgetTopY = 0;
+            var _originWidgetHeight = 0;
+            var _mirrorWidgetSel = '#sidebar>.float-widget-mirror';
+            var _mirrorWidget = null;
+            var _mirrorWidgetTopY = 0;
+            var _mainWrapSel = '.main-wrap';
+            var _mainWrap = null;
+            var _mainWrapTopY = 0;
+            var _mainWrapHeight = 0;
+            var _windowHeight = 0;
+            var _handleFloatWidget = function _handleFloatWidget() {
+                if ($(window)[['width']]() < 1000)
+                    return;
+                if (!_originWidget)
+                    _originWidget = $(_originWidgetSel);
+                if (_originWidget[['length']] == 0)
+                    return;
+                if (!_mirrorWidget)
+                    _mirrorWidget = $(_mirrorWidgetSel);
+                if (!_mainWrap)
+                    _mainWrap = $(_mainWrapSel);
+                if (!_originWidgetTopY)
+                    _originWidgetTopY = _originWidget[['offset']]()[['top']];
+                if (!_originWidgetHeight)
+                    _originWidgetHeight = _originWidget[['height']]();
+                if (!_mirrorWidgetTopY)
+                    _mirrorWidgetTopY = _mirrorWidget[['offset']]()[['top']];
+                if (!_mainWrapTopY)
+                    _mainWrapTopY = _mainWrap[['offset']]()[['top']];
+                if (!_mainWrapHeight)
+                    _mainWrapHeight = _mainWrap[['height']]();
+                if (!_windowHeight)
+                    _windowHeight = $(window)[['height']]();
+                var documentScrollTop = _document[['scrollTop']]();
+                if (documentScrollTop + _windowHeight + 20 > _mirrorWidgetTopY + _originWidgetHeight + 60) {
+                    if (_mirrorWidget[['html']]() == '') {
+                        _mirrorWidget[['prepend']](_originWidget[['html']]());
+                    }
+                    _mirrorWidget[['fadeIn']]('slow');
+                    var top = Math[['max']](0, documentScrollTop - _mirrorWidgetTopY + 100);
+                    _mirrorWidget[['css']]('top', top);
+                } else {
+                    _mirrorWidget[['html']]('')[['fadeOut']]('slow');
+                }
+            };
+            var _initFloatWidget = function _initFloatWidget() {
+                _document[['on']]('scroll', function () {
+                    _handleFloatWidget();
+                });
+            };
+            var _prevTop = 0;
+            var _currTop = 0;
+            var _handleShopSubNavCollapse = function _handleShopSubNavCollapse() {
+                _currTop = _document[['scrollTop']]();
+                if (_currTop < _prevTop) {
+                    _body[['removeClass']]('collapse-subnav');
+                } else {
+                    _body[['addClass']]('collapse-subnav');
+                }
+                setTimeout(function () {
+                    _prevTop = _currTop;
+                }, 0);
+            };
+            var _initShopSubNavCollapse = function _initShopSubNavCollapse() {
+                _document[['on']]('scroll', function () {
+                    _handleShopSubNavCollapse();
+                });
+            };
+            var ScrollHandler = {
+                initScrollTo: _initScrollTo,
+                initShareBar: _initShareBar,
+                initFloatWidget: _initFloatWidget,
+                initShopSubNavCollapse: _initShopSubNavCollapse
+            };
+            exports[['default']] = ScrollHandler;
+        }[['call']](exports, __webpack_require__(1)));
+    },
+    function (module, exports, __webpack_require__) {
+        (function ($) {
+            'use strict';
+            Object[['defineProperty']](exports, '__esModule', { value: true });
+            var _utils = __webpack_require__(3);
+            var _utils2 = _interopRequireDefault(_utils);
+            function _interopRequireDefault(obj) {
+                return obj && obj[['__esModule']] ? obj : { default: obj };
+            }
+            var _signInLinkSel = '.login-link';
+            var SignHelp = {
+                init: function init() {
+                    $('body')[['on']]('click', _signInLinkSel, function (e) {
+                        if ($(window)[['width']]() >= 640) {
+                            e[['preventDefault']]();
+                            _utils2[['default']][['checkLogin']]();
+                        }
+                    });
+                }
+            };
+            exports[['default']] = SignHelp;
+        }[['call']](exports, __webpack_require__(1)));
+    },
+    function (module, exports, __webpack_require__) {
+        (function ($) {
+            'use strict';
+            Object[['defineProperty']](exports, '__esModule', { value: true });
+            exports[['default']] = function () {
+                var footer = $('body>footer');
+                var diffH = $(window)[['height']]() - footer[['offset']]()[['top']] - footer[['height']]();
+                if (diffH > 0) {
+                    footer[['css']]('position', 'relative')[['css']]('top', diffH);
+                }
+            };
+        }[['call']](exports, __webpack_require__(1)));
+    },
+    ,
+    ,
+    function (module, exports, __webpack_require__) {
+        (function (jQuery) {
+            'use strict';
+            (function ($, window, document, undefined) {
+                var $window = $(window);
+                $[['fn']][['lazyload']] = function (options) {
+                    var elements = this;
+                    var $container;
+                    var settings = {
+                        threshold: 0,
+                        failure_limit: 0,
+                        event: 'scroll',
+                        effect: 'show',
+                        container: window,
+                        data_attribute: 'original',
+                        skip_invisible: true,
+                        appear: null,
+                        load: null
+                    };
+                    function update() {
+                        var counter = 0;
+                        elements[['each']](function () {
+                            var $this = $(this);
+                            if (settings[['skip_invisible']] && !$this[['is']](':visible')) {
+                                return;
+                            }
+                            if ($[['abovethetop']](this, settings) || $[['leftofbegin']](this, settings)) {
+                            } else if (!$[['belowthefold']](this, settings) && !$[['rightoffold']](this, settings)) {
+                                $this[['trigger']]('appear');
+                                counter = 0;
+                            } else {
+                                if (++counter > settings[['failure_limit']]) {
+                                    return false;
+                                }
+                            }
+                        });
+                    }
+                    if (options) {
+                        if (undefined !== options[['failurelimit']]) {
+                            options[['failure_limit']] = options[['failurelimit']];
+                            delete options[['failurelimit']];
+                        }
+                        if (undefined !== options[['effectspeed']]) {
+                            options[['effect_speed']] = options[['effectspeed']];
+                            delete options[['effectspeed']];
+                        }
+                        $[['extend']](settings, options);
+                    }
+                    $container = settings[['container']] === undefined || settings[['container']] === window ? $window : $(settings[['container']]);
+                    if (0 === settings[['event']][['indexOf']]('scroll')) {
+                        $container[['bind']](settings[['event']], function (event) {
+                            return update();
+                        });
+                    }
+                    this[['each']](function () {
+                        var self = this;
+                        var $self = $(self);
+                        self[['loaded']] = false;
+                        $self[['one']]('appear', function () {
+                            if (!this[['loaded']]) {
+                                if (settings[['appear']]) {
+                                    var elements_left = elements[['length']];
+                                    settings[['appear']][['call']](self, elements_left, settings);
+                                }
+                                $('<img />')[['bind']]('load', function () {
+                                    $self[['hide']]()[['attr']]('src', $self[['data']](settings[['data_attribute']]))[settings[['effect']]](settings[['effect_speed']]);
+                                    self[['loaded']] = true;
+                                    var temp = $[['grep']](elements, function (element) {
+                                        return !element[['loaded']];
+                                    });
+                                    elements = $(temp);
+                                    if (settings[['load']]) {
+                                        var elements_left = elements[['length']];
+                                        settings[['load']][['call']](self, elements_left, settings);
+                                    }
+                                })[['attr']]('src', $self[['data']](settings[['data_attribute']]));
+                            }
+                        });
+                        if (0 !== settings[['event']][['indexOf']]('scroll')) {
+                            $self[['bind']](settings[['event']], function (event) {
+                                if (!self[['loaded']]) {
+                                    $self[['trigger']]('appear');
+                                }
+                            });
+                        }
+                    });
+                    $window[['bind']]('resize', function (event) {
+                        update();
+                    });
+                    if (/iphone|ipod|ipad.*os 5/gi[['test']](navigator[['appVersion']])) {
+                        $window[['bind']]('pageshow', function (event) {
+                            if (event[['originalEvent']][['persisted']]) {
+                                elements[['each']](function () {
+                                    $(this)[['trigger']]('appear');
+                                });
+                            }
+                        });
+                    }
+                    $(window)[['load']](function () {
+                        update();
+                    });
+                    return this;
+                };
+                $[['belowthefold']] = function (element, settings) {
+                    var fold;
+                    if (settings[['container']] === undefined || settings[['container']] === window) {
+                        fold = $window[['height']]() + $window[['scrollTop']]();
+                    } else {
+                        fold = $(settings[['container']])[['offset']]()[['top']] + $(settings[['container']])[['height']]();
+                    }
+                    return fold <= $(element)[['offset']]()[['top']] - settings[['threshold']];
+                };
+                $[['rightoffold']] = function (element, settings) {
+                    var fold;
+                    if (settings[['container']] === undefined || settings[['container']] === window) {
+                        fold = $window[['width']]() + $window[['scrollLeft']]();
+                    } else {
+                        fold = $(settings[['container']])[['offset']]()[['left']] + $(settings[['container']])[['width']]();
+                    }
+                    return fold <= $(element)[['offset']]()[['left']] - settings[['threshold']];
+                };
+                $[['abovethetop']] = function (element, settings) {
+                    var fold;
+                    if (settings[['container']] === undefined || settings[['container']] === window) {
+                        fold = $window[['scrollTop']]();
+                    } else {
+                        fold = $(settings[['container']])[['offset']]()[['top']];
+                    }
+                    return fold >= $(element)[['offset']]()[['top']] + settings[['threshold']] + $(element)[['height']]();
+                };
+                $[['leftofbegin']] = function (element, settings) {
+                    var fold;
+                    if (settings[['container']] === undefined || settings[['container']] === window) {
+                        fold = $window[['scrollLeft']]();
+                    } else {
+                        fold = $(settings[['container']])[['offset']]()[['left']];
+                    }
+                    return fold >= $(element)[['offset']]()[['left']] + settings[['threshold']] + $(element)[['width']]();
+                };
+                $[['inviewport']] = function (element, settings) {
+                    return !$[['rightoffold']](element, settings) && !$[['leftofbegin']](element, settings) && !$[['belowthefold']](element, settings) && !$[['abovethetop']](element, settings);
+                };
+                $[['extend']]($[['expr']][':'], {
+                    'below-the-fold': function belowTheFold(a) {
+                        return $[['belowthefold']](a, { threshold: 0 });
+                    },
+                    'above-the-top': function aboveTheTop(a) {
+                        return !$[['belowthefold']](a, { threshold: 0 });
+                    },
+                    'right-of-screen': function rightOfScreen(a) {
+                        return $[['rightoffold']](a, { threshold: 0 });
+                    },
+                    'left-of-screen': function leftOfScreen(a) {
+                        return !$[['rightoffold']](a, { threshold: 0 });
+                    },
+                    'in-viewport': function inViewport(a) {
+                        return $[['inviewport']](a, { threshold: 0 });
+                    },
+                    'above-the-fold': function aboveTheFold(a) {
+                        return !$[['belowthefold']](a, { threshold: 0 });
+                    },
+                    'right-of-fold': function rightOfFold(a) {
+                        return $[['rightoffold']](a, { threshold: 0 });
+                    },
+                    'left-of-fold': function leftOfFold(a) {
+                        return !$[['rightoffold']](a, { threshold: 0 });
+                    }
+                });
+            }(jQuery, window, document));
+        }[['call']](exports, __webpack_require__(1)));
+    },
+    ,
+    ,
+    ,
+    ,
+    function (module, exports, __webpack_require__) {
+        (function ($) {
+            'use strict';
+            Object[['defineProperty']](exports, '__esModule', { value: true });
+            var _globalConfig = __webpack_require__(2);
+            var _utils = __webpack_require__(3);
+            var _utils2 = _interopRequireDefault(_utils);
+            var _msgbox = __webpack_require__(6);
+            function _interopRequireDefault(obj) {
+                return obj && obj[['__esModule']] ? obj : { default: obj };
+            }
+            var _btnSel = '.follow-btn';
+            var _followAct = 'follow';
+            var _unfollowAct = 'unfollow';
+            var _spinnerClass = 'tico tico-spinner2 spinning';
+            var _unfollowedIconClass = 'tico tico-user-plus';
+            var _unfollowedText = '\u5173\u6ce8';
+            var _followedIconClass = 'tico tico-user-check';
+            var _followedText = '\u5df2\u5173\u6ce8';
+            var _followEachIconClass = 'tico tico-exchange';
+            var _followEachText = '\u4e92\u76f8\u5173\u6ce8';
+            var _originIconClass = '';
+            var _body = $('body');
+            var _followActing = false;
+            var _markFollowed = function _markFollowed(btn) {
+                var followEach = arguments[['length']] <= 1 || arguments[1] === undefined ? false : arguments[1];
+                btn[['removeClass']]('unfollowed')[['addClass']]('followed')[['data']]('act', _unfollowAct)[['attr']]('title', '');
+                var icon = btn[['children']]('i');
+                if (followEach) {
+                    icon[['attr']]('class', _followEachIconClass);
+                    btn[['children']]('span')[['text']](_followEachText);
+                } else {
+                    icon[['attr']]('class', _followedIconClass);
+                    btn[['children']]('span')[['text']](_followedText);
+                }
+            };
+            var _markUnfollowed = function _markUnfollowed(btn) {
+                btn[['removeClass']]('followed')[['addClass']]('unfollowed')[['data']]('act', _followAct)[['attr']]('title', '');
+                var icon = btn[['children']]('i');
+                icon[['attr']]('class', _unfollowedIconClass);
+                btn[['children']]('span')[['text']](_unfollowedText);
+            };
+            var _restoreIcon = function _restoreIcon(btn) {
+                btn[['children']]('i')[['attr']]('class', _originIconClass);
+            };
+            var _doFollow = function _doFollow(btn) {
+                if (_followActing || !btn[['data']]('uid') || !_utils2[['default']][['checkLogin']]())
+                    return false;
+                var followedUid = parseInt(btn[['data']]('uid'));
+                var action = btn[['data']]('act') == _unfollowAct ? _unfollowAct : _followAct;
+                var url = _globalConfig[['Routes']][['follower']][['replace']]('{{uid}}', followedUid);
+                var data = { action: action };
+                var beforeSend = function beforeSend() {
+                    if (_followActing)
+                        return false;
+                    _followActing = true;
+                    var icon = btn[['children']]('i');
+                    _originIconClass = icon[['attr']]('class');
+                    icon[['attr']]('class', _spinnerClass);
+                };
+                var finishRequest = function finishRequest() {
+                    if (!_followActing)
+                        return;
+                    _followActing = false;
+                };
+                var success = function success(data, textStatus, xhr) {
+                    if (data[['success']] && data[['success']] == 1) {
+                        if (action == _unfollowAct) {
+                            _markUnfollowed(btn);
+                        } else {
+                            _markFollowed(btn, data[['hasOwnProperty']]('followEach') && data['followEach']);
+                        }
+                        _msgbox[['popMsgbox']][['success']]({
+                            title: data[['message']],
+                            timer: 2000,
+                            showConfirmButton: true
+                        });
+                    } else {
+                        _msgbox[['popMsgbox']][['error']]({
+                            title: data[['message']],
+                            timer: 2000,
+                            showConfirmButton: true
+                        });
+                        _restoreIcon(btn);
+                    }
+                    finishRequest();
+                };
+                var error = function error(xhr, textStatus, err) {
+                    _msgbox[['popMsgbox']][['error']]({
+                        title: xhr[['responseJSON']] ? xhr[['responseJSON']][['message']] : xhr[['responseText']],
+                        timer: 2000,
+                        showConfirmButton: true
+                    });
+                    _restoreIcon(btn);
+                    finishRequest();
+                };
+                $[['post']]({
+                    url: url,
+                    data: _utils2[['default']][['filterDataForRest']](data),
+                    dataType: 'json',
+                    beforeSend: beforeSend,
+                    success: success,
+                    error: error
+                });
+            };
+            var FollowKit = {
+                init: function init() {
+                    _body[['on']]('click', _btnSel, function () {
+                        var $this = $(this);
+                        _doFollow($this);
+                    });
+                }
+            };
+            exports[['default']] = FollowKit;
+        }[['call']](exports, __webpack_require__(1)));
+    },
+    function (module, exports, __webpack_require__) {
+        (function ($) {
+            'use strict';
+            Object[['defineProperty']](exports, '__esModule', { value: true });
+            var _globalConfig = __webpack_require__(2);
+            var _utils = __webpack_require__(3);
+            var _utils2 = _interopRequireDefault(_utils);
+            var _msgbox = __webpack_require__(6);
+            function _interopRequireDefault(obj) {
+                return obj && obj[['__esModule']] ? obj : { default: obj };
+            }
+            var _modalPmAnchorSel = '.pm-btn';
+            var _modalPmBoxSel = '#pmBox';
+            var _modalPmBoxReceiverSel = '.pm-info_receiver';
+            var _normalPmBoxSel = '#pmForm';
+            var _receiverIdInputSel = '.receiver-id';
+            var _pmBoxNonceSel = '.pm_nonce';
+            var _pmBoxTextareaSel = '.pm-text';
+            var _cancelSel = '.cancel';
+            var _sendSel = '.confirm';
+            var _msgsLoopWrapSel = '.messages-loop-rows';
+            var _msgItemSel = '.message';
+            var _msgActReplySel = '.msg-act-reply';
+            var _msgActDeleteSel = '.msg-act-delete';
+            var _msgActMarkSel = '.msg-act-mark';
+            var _spinner = '<i class="tico tico-spinner2 spinning"></i>';
+            var _originSendBtnText = '';
+            var _receiverId;
+            var _body = $('body');
+            var _pmModalBox = $(_modalPmBoxSel);
+            var _pmModalBoxReceiverEle = null;
+            var _pmReceiverIdInput;
+            var _pmNonceInput;
+            var _pmTextArea;
+            var _sending = false;
+            var _showModalPmBox = function _showModalPmBox(btn) {
+                if (!_utils2[['default']][['checkLogin']]())
+                    return false;
+                var receiver = btn[['data']]('receiver');
+                var receiverId = btn[['data']]('receiver-id');
+                if (!receiver || !receiverId)
+                    return false;
+                _receiverId = receiverId;
+                if (!_pmModalBoxReceiverEle)
+                    _pmModalBoxReceiverEle = $(_modalPmBoxSel + ' ' + _modalPmBoxReceiverSel);
+                _pmModalBoxReceiverEle[['text']](receiver);
+                if (_pmModalBox[['length']]) {
+                    _pmModalBox[['modal']]('show');
+                    return true;
+                }
+                return false;
+            };
+            var _closeModalPmBox = function _closeModalPmBox() {
+                if (!_pmModalBoxReceiverEle)
+                    _pmModalBoxReceiverEle = $(_modalPmBoxSel + ' ' + _modalPmBoxReceiverSel);
+                _pmModalBoxReceiverEle[['text']]('');
+                _pmModalBox[['modal']]('hide');
+            };
+            var _sendMsgInModalBox = function _sendMsgInModalBox(btn) {
+                if (_sending || !_receiverId || !_utils2[['default']][['checkLogin']]())
+                    return false;
+                _pmNonceInput = $(_modalPmBoxSel + ' ' + _pmBoxNonceSel);
+                _pmTextArea = $(_modalPmBoxSel + ' ' + _pmBoxTextareaSel);
+                if (!_pmNonceInput || !_pmTextArea)
+                    return false;
+                var nonce = _pmNonceInput[['val']]();
+                var message = _pmTextArea[['val']]();
+                if (nonce[['length']] == 0)
+                    return false;
+                if (message[['length']] == 0) {
+                    _pmTextArea[['focus']]();
+                    _pmTextArea[['addClass']]('error');
+                    setTimeout(function () {
+                        _pmTextArea[['removeClass']]('error');
+                    }, 2000);
+                    return false;
+                }
+                var url = _globalConfig[['Routes']][['pm']];
+                var data = {
+                    receiverId: _receiverId,
+                    pmNonce: nonce,
+                    message: message
+                };
+                var beforeSend = function beforeSend() {
+                    if (_sending)
+                        return;
+                    _originSendBtnText = btn[['text']]();
+                    btn[['html']](_spinner);
+                    btn[['prop']]('disabled', true);
+                    _pmTextArea[['prop']]('disabled', true);
+                    _sending = true;
+                };
+                var finishRequest = function finishRequest() {
+                    if (!_sending)
+                        return;
+                    btn[['text']](_originSendBtnText);
+                    btn[['prop']]('disabled', false);
+                    _pmTextArea[['prop']]('disabled', false)[['val']]('');
+                    _closeModalPmBox();
+                    _sending = false;
+                };
+                var success = function success(data, textStatus, xhr) {
+                    finishRequest();
+                    if (data[['success']] && data[['success']] == 1) {
+                        _msgbox[['popMsgbox']][['success']]({
+                            title: data[['message']],
+                            text: '<a href="' + data[['data']]['chatUrl'] + '">\u67e5\u770b\u5bf9\u8bdd</a>',
+                            html: true,
+                            showConfirmButton: true
+                        });
+                    } else {
+                        _msgbox[['popMsgbox']][['error']]({
+                            title: data[['message']],
+                            timer: 2000,
+                            showConfirmButton: true
+                        });
+                    }
+                };
+                var error = function error(xhr, textStatus, err) {
+                    finishRequest();
+                    _msgbox[['popMsgbox']][['error']]({
+                        title: xhr[['responseJSON']] ? xhr[['responseJSON']][['message']] : xhr[['responseText']],
+                        timer: 2000,
+                        showConfirmButton: true
+                    });
+                };
+                $[['post']]({
+                    url: url,
+                    data: _utils2[['default']][['filterDataForRest']](data),
+                    dataType: 'json',
+                    beforeSend: beforeSend,
+                    success: success,
+                    error: error
+                });
+            };
+            var _sendMsgInNormalForm = function _sendMsgInNormalForm(btn) {
+                if (_sending || !_utils2[['default']][['checkLogin']]())
+                    return false;
+                _pmReceiverIdInput = $(_normalPmBoxSel + ' ' + _receiverIdInputSel);
+                _pmNonceInput = $(_normalPmBoxSel + ' ' + _pmBoxNonceSel);
+                _pmTextArea = $(_normalPmBoxSel + ' ' + _pmBoxTextareaSel);
+                if (!_pmReceiverIdInput || !_pmNonceInput || !_pmTextArea)
+                    return false;
+                var receiverId = _pmReceiverIdInput[['val']]();
+                var nonce = _pmNonceInput[['val']]();
+                var message = _pmTextArea[['val']]();
+                if (!receiverId || nonce[['length']] == 0)
+                    return false;
+                if (message[['length']] == 0) {
+                    _pmTextArea[['focus']]();
+                    _pmTextArea[['addClass']]('error');
+                    setTimeout(function () {
+                        _pmTextArea[['removeClass']]('error');
+                    }, 2000);
+                    return false;
+                }
+                var url = _globalConfig[['Routes']][['pm']];
+                var data = {
+                    receiverId: receiverId,
+                    pmNonce: nonce,
+                    message: message
+                };
+                var beforeSend = function beforeSend() {
+                    if (_sending)
+                        return;
+                    _originSendBtnText = btn[['text']]();
+                    btn[['html']](_spinner);
+                    btn[['prop']]('disabled', true);
+                    _pmTextArea[['prop']]('disabled', true);
+                    _sending = true;
+                };
+                var finishRequest = function finishRequest() {
+                    if (!_sending)
+                        return;
+                    btn[['text']](_originSendBtnText);
+                    btn[['prop']]('disabled', false);
+                    _pmTextArea[['prop']]('disabled', false)[['val']]('');
+                    _sending = false;
+                };
+                var success = function success(data, textStatus, xhr) {
+                    finishRequest();
+                    if (data[['success']] && data[['success']] == 1) {
+                        _msgbox[['popMsgbox']][['success']]({
+                            title: data[['message']],
+                            timer: 2000,
+                            showConfirmButton: true
+                        });
+                        _prependNewMsg(data[['data']][['msgHtml']]);
+                    } else {
+                        _msgbox[['popMsgbox']][['error']]({
+                            title: data[['message']],
+                            timer: 2000,
+                            showConfirmButton: true
+                        });
+                    }
+                };
+                var error = function error(xhr, textStatus, err) {
+                    finishRequest();
+                    _msgbox[['popMsgbox']][['error']]({
+                        title: xhr[['responseJSON']] ? xhr[['responseJSON']][['message']] : xhr[['responseText']],
+                        timer: 2000,
+                        showConfirmButton: true
+                    });
+                };
+                $[['post']]({
+                    url: url,
+                    data: _utils2[['default']][['filterDataForRest']](data),
+                    dataType: 'json',
+                    beforeSend: beforeSend,
+                    success: success,
+                    error: error
+                });
+            };
+            var _prependNewMsg = function _prependNewMsg(msg) {
+                var msgsWrap = $(_msgsLoopWrapSel);
+                if (msgsWrap) {
+                    msgsWrap[['prepend']](msg);
+                }
+            };
+            var _deleteMsgUnderNormalForm = function _deleteMsgUnderNormalForm(btn) {
+                if (_sending || !_utils2[['default']][['checkLogin']]())
+                    return false;
+                var msgWrap = btn[['parents']](_msgItemSel);
+                if (!msgWrap)
+                    return false;
+                var msgId = btn[['data']]('msg-id');
+                if (!msgId)
+                    return false;
+                var url = _globalConfig[['Routes']][['pm']] + '/' + msgId;
+                var data = {};
+                var beforeSend = function beforeSend() {
+                    if (_sending)
+                        return;
+                    _sending = true;
+                };
+                var finishRequest = function finishRequest() {
+                    if (!_sending)
+                        return;
+                    _sending = false;
+                };
+                var success = function success(data, textStatus, xhr) {
+                    finishRequest();
+                    if (data[['success']] && data[['success']] == 1) {
+                        _msgbox[['popMsgbox']][['success']]({
+                            title: data[['message']],
+                            timer: 2000,
+                            showConfirmButton: true
+                        });
+                        msgWrap[['slideUp']]('slow', function () {
+                            msgWrap[['remove']]();
+                        });
+                    } else {
+                        _msgbox[['popMsgbox']][['error']]({
+                            title: data[['message']],
+                            timer: 2000,
+                            showConfirmButton: true
+                        });
+                    }
+                };
+                var error = function error(xhr, textStatus, err) {
+                    finishRequest();
+                    _msgbox[['popMsgbox']][['error']]({
+                        title: xhr[['responseJSON']] ? xhr[['responseJSON']][['message']] : xhr[['responseText']],
+                        timer: 2000,
+                        showConfirmButton: true
+                    });
+                };
+                $[['post']]({
+                    url: url + '?' + $[['param']](_utils2[['default']][['filterDataForRest']](data)),
+                    type: 'DELETE',
+                    dataType: 'json',
+                    beforeSend: beforeSend,
+                    success: success,
+                    error: error
+                });
+            };
+            var _markMsgReadUnderNormalForm = function _markMsgReadUnderNormalForm(btn) {
+                if (_sending || !_utils2[['default']][['checkLogin']]())
+                    return false;
+                var msgWrap = btn[['parents']](_msgItemSel);
+                if (!msgWrap)
+                    return false;
+                var msgId = btn[['data']]('msg-id');
+                if (!msgId)
+                    return false;
+                var url = _globalConfig[['Routes']][['pm']] + '/' + msgId;
+                var data = { action: 'markRead' };
+                var beforeSend = function beforeSend() {
+                    if (_sending)
+                        return;
+                    _sending = true;
+                };
+                var finishRequest = function finishRequest() {
+                    if (!_sending)
+                        return;
+                    _sending = false;
+                };
+                var success = function success(data, textStatus, xhr) {
+                    finishRequest();
+                    if (data[['success']] && data[['success']] == 1) {
+                        _msgbox[['popMsgbox']][['success']]({
+                            title: data[['message']],
+                            timer: 2000,
+                            showConfirmButton: true
+                        });
+                        _markRead(msgWrap);
+                    } else {
+                        _msgbox[['popMsgbox']][['error']]({
+                            title: data[['message']],
+                            timer: 2000,
+                            showConfirmButton: true
+                        });
+                    }
+                };
+                var error = function error(xhr, textStatus, err) {
+                    finishRequest();
+                    _msgbox[['popMsgbox']][['error']]({
+                        title: xhr[['responseJSON']] ? xhr[['responseJSON']][['message']] : xhr[['responseText']],
+                        timer: 2000,
+                        showConfirmButton: true
+                    });
+                };
+                $[['post']]({
+                    url: url,
+                    data: _utils2[['default']][['filterDataForRest']](data),
+                    dataType: 'json',
+                    beforeSend: beforeSend,
+                    success: success,
+                    error: error
+                });
+            };
+            var _markRead = function _markRead(msgWrap) {
+                msgWrap[['removeClass']]('unread-message');
+                var mark = msgWrap[['find']]('.unread-mark');
+                if (mark)
+                    mark[['remove']]();
+            };
+            var PmKit = {
+                initModalPm: function initModalPm() {
+                    _body[['on']]('click', _modalPmAnchorSel, function (e) {
+                        e[['preventDefault']]();
+                        var $this = $(this);
+                        _showModalPmBox($this);
+                    });
+                    _body[['on']]('click', _modalPmBoxSel + ' ' + _cancelSel, function () {
+                        _closeModalPmBox();
+                    });
+                    _body[['on']]('click', _modalPmBoxSel + ' ' + _sendSel, function () {
+                        var $this = $(this);
+                        _sendMsgInModalBox($this);
+                    });
+                },
+                initNormalPm: function initNormalPm() {
+                    _body[['on']]('click', _normalPmBoxSel + ' ' + _sendSel, function () {
+                        var $this = $(this);
+                        _sendMsgInNormalForm($this);
+                    });
+                    _body[['on']]('click', _msgItemSel + ' ' + _msgActReplySel, function () {
+                        var pmTextArea = $(_normalPmBoxSel + ' ' + _pmBoxTextareaSel);
+                        if (pmTextArea) {
+                            pmTextArea[['focus']]();
+                        }
+                    });
+                    _body[['on']]('click', _msgItemSel + ' ' + _msgActDeleteSel, function () {
+                        _deleteMsgUnderNormalForm($(this));
+                    });
+                    _body[['on']]('click', _msgItemSel + ' ' + _msgActMarkSel, function () {
+                        _markMsgReadUnderNormalForm($(this));
+                    });
+                }
+            };
+            exports[['default']] = PmKit;
+        }[['call']](exports, __webpack_require__(1)));
+    },
+    ,
+    function (module, exports, __webpack_require__) {
+        (function ($) {
+            'use strict';
+            Object[['defineProperty']](exports, '__esModule', { value: true });
+            var _globalConfig = __webpack_require__(2);
+            var _utils = __webpack_require__(3);
+            var _utils2 = _interopRequireDefault(_utils);
+            function _interopRequireDefault(obj) {
+                return obj && obj[['__esModule']] ? obj : { default: obj };
+            }
+            var _body = $('body');
+            var _unstarBtnSel = '.unstar-link>a';
+            var _unstaring = false;
+            var _removeUnstared = function _removeUnstared(postId) {
+                var articleBoxSel = '#post-' + postId[['toString']]();
+                var article = $(articleBoxSel);
+                if (article) {
+                    article[['slideUp']]('slow', function () {
+                        article[['remove']]();
+                    });
+                }
+            };
+            var _unstar = function _unstar(btn) {
+                if (_unstaring || !_utils2[['default']][['checkLogin']]())
+                    return false;
+                var postId = btn[['data']]('post-id');
+                var url = _globalConfig[['Routes']][['postStars']] + '/' + postId;
+                var data = {};
+                var beforeSend = function beforeSend() {
+                    if (_unstaring)
+                        return false;
+                    _unstaring = true;
+                };
+                var finishRequest = function finishRequest() {
+                    if (!_unstaring)
+                        return;
+                    _unstaring = false;
+                };
+                var success = function success(data, textStatus, xhr) {
+                    if (data[['success']] && data[['success']] == 1) {
+                        _removeUnstared(postId);
+                    } else {
+                    }
+                    finishRequest();
+                };
+                var error = function error(xhr, textStatus, err) {
+                    finishRequest();
+                };
+                $[['post']]({
+                    url: url + '?' + $[['param']](_utils2[['default']][['filterDataForRest']](data)),
+                    type: 'DELETE',
+                    dataType: 'json',
+                    beforeSend: beforeSend,
+                    success: success,
+                    error: error
+                });
+            };
+            var UnstarKit = {
+                init: function init() {
+                    _body[['on']]('click', _unstarBtnSel, function () {
+                        var $this = $(this);
+                        _unstar($this);
+                    });
+                }
+            };
+            exports[['default']] = UnstarKit;
+        }[['call']](exports, __webpack_require__(1)));
+    },
+    function (module, exports, __webpack_require__) {
+        (function ($) {
+            'use strict';
+            Object[['defineProperty']](exports, '__esModule', { value: true });
+            var _globalConfig = __webpack_require__(2);
+            var _utils = __webpack_require__(3);
+            var _utils2 = _interopRequireDefault(_utils);
+            var _msgbox = __webpack_require__(6);
+            function _interopRequireDefault(obj) {
+                return obj && obj[['__esModule']] ? obj : { default: obj };
+            }
+            var _modalBanAnchorSel = '.ban-btn';
+            var _modalBanBoxSel = '#banBox';
+            var _banBoxNonceSel = '.ban-nonce';
+            var _banBoxTextareaSel = '.ban-text';
+            var _cancelSel = '.cancel';
+            var _sendSel = '.confirm';
+            var _spinner = '<i class="tico tico-spinner2 spinning"></i>';
+            var _originSendBtnText = '';
+            var _body = $('body');
+            var _banModalBox = $(_modalBanBoxSel);
+            var _banNonceInput;
+            var _banTextArea;
+            var _action;
+            var _uid;
+            var _sending = false;
+            var _showModalBanBox = function _showModalBanBox(btn) {
+                if (!_utils2[['default']][['checkLogin']]())
+                    return false;
+                if (_banModalBox[['length']]) {
+                    _banModalBox[['modal']]('show');
+                    _action = btn[['data']]('action');
+                    _action = _action == 'ban' || _action == 'unban' ? _action : 'unban';
+                    _uid = btn[['data']]('uid');
+                    return true;
+                }
+                return false;
+            };
+            var _closeModalBanBox = function _closeModalBanBox() {
+                if (_banModalBox[['length']]) {
+                    _uid = 0;
+                    _action = null;
+                    _banModalBox[['modal']]('hide');
+                }
+            };
+            var _banOrUnbanUser = function _banOrUnbanUser(btn) {
+                if (_sending || !_utils2[['default']][['checkLogin']]())
+                    return false;
+                _banNonceInput = $(_modalBanBoxSel + ' ' + _banBoxNonceSel);
+                _banTextArea = $(_modalBanBoxSel + ' ' + _banBoxTextareaSel);
+                if (!_banNonceInput || !_banTextArea)
+                    return false;
+                var nonce = _banNonceInput[['val']]();
+                var reason = _banTextArea[['val']]();
+                if (nonce[['length']] == 0)
+                    return false;
+                if (reason[['length']] == 0 && _action == 'ban') {
+                    _banTextArea[['focus']]();
+                    _banTextArea[['addClass']]('error');
+                    setTimeout(function () {
+                        _banTextArea[['removeClass']]('error');
+                    }, 2000);
+                    return false;
+                }
+                if (!_uid) {
+                    return false;
+                }
+                var url = _globalConfig[['Routes']][['accountStatus']] + '/' + _uid;
+                var data = {
+                    action: _action,
+                    banNonce: nonce,
+                    reason: reason
+                };
+                var beforeSend = function beforeSend() {
+                    if (_sending)
+                        return;
+                    _originSendBtnText = btn[['text']]();
+                    btn[['html']](_spinner);
+                    btn[['prop']]('disabled', true);
+                    _banTextArea[['prop']]('disabled', true);
+                    _sending = true;
+                };
+                var finishRequest = function finishRequest() {
+                    if (!_sending)
+                        return;
+                    btn[['text']](_originSendBtnText);
+                    btn[['prop']]('disabled', false);
+                    _banTextArea[['prop']]('disabled', false)[['val']]('');
+                    _closeModalBanBox();
+                    _sending = false;
+                };
+                var success = function success(data, textStatus, xhr) {
+                    finishRequest();
+                    if (data[['success']] && data[['success']] == 1) {
+                        _msgbox[['popMsgbox']][['success']]({
+                            title: data[['message']],
+                            timer: 2000,
+                            showConfirmButton: true
+                        });
+                        setTimeout(function () {
+                            window[['location']][['replace']](location[['href']]);
+                        }, 2000);
+                    } else {
+                        _msgbox[['popMsgbox']][['error']]({
+                            title: data[['message']],
+                            timer: 2000,
+                            showConfirmButton: true
+                        });
+                    }
+                };
+                var error = function error(xhr, textStatus, err) {
+                    finishRequest();
+                    _msgbox[['popMsgbox']][['error']]({
+                        title: xhr[['responseJSON']] ? xhr[['responseJSON']][['message']] : xhr[['responseText']],
+                        timer: 2000,
+                        showConfirmButton: true
+                    });
+                };
+                $[['post']]({
+                    url: url,
+                    data: _utils2[['default']][['filterDataForRest']](data),
+                    dataType: 'json',
+                    beforeSend: beforeSend,
+                    success: success,
+                    error: error
+                });
+            };
+            var BanKit = {
+                initModalBan: function initModalBan() {
+                    _body[['on']]('click', _modalBanAnchorSel, function (e) {
+                        e[['preventDefault']]();
+                        var $this = $(this);
+                        _showModalBanBox($this);
+                    });
+                    _body[['on']]('click', _modalBanBoxSel + ' ' + _cancelSel, function () {
+                        _closeModalBanBox();
+                    });
+                    _body[['on']]('click', _modalBanBoxSel + ' ' + _sendSel, function () {
+                        var $this = $(this);
+                        _banOrUnbanUser($this);
+                    });
+                }
+            };
+            exports[['default']] = BanKit;
+        }[['call']](exports, __webpack_require__(1)));
     }
 ]));

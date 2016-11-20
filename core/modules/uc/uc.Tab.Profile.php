@@ -69,7 +69,7 @@
                     <a class="btn btn-wide btn-social-weibo" href="<?php echo $info->weibo; ?>" target="_blank"><i class="tico tico-weibo"></i><?php _e('Follow on Weibo', 'tt'); ?></a>
                 <?php } ?>
                 <?php if($info->weixin) { ?>
-                    <a class="btn btn-wide btn-social-weixin popover-qr" href="javascript: void 0" data-trigger="focus" data-container=".info-extends" data-toggle="" data-placement="top" data-content='<?php echo '<img src="' . $info->weixin . '">'; ?>'><i class="tico tico-wechat"></i><?php _e('Talk with Wechat', 'tt'); ?></a>
+                    <a class="btn btn-wide btn-social-weixin popover-qr" href="javascript: void 0" data-trigger="focus" data-container=".info-extends" data-toggle="" data-placement="top" data-content='<?php echo '<img width=175 height=175 src="' . $info->weixin . '">'; ?>'><i class="tico tico-wechat"></i><?php _e('Talk with Wechat', 'tt'); ?></a>
                 <?php } ?>
                 <?php if($info->twitter) { ?>
                     <a class="btn btn-wide btn-social-twitter" href="<?php echo $info->twitter; ?>" target="_blank"><i class="tico tico-twitter"></i><?php _e('Follow on Twitter', 'tt'); ?></a>
@@ -88,10 +88,10 @@
             <header><h2><?php _e('Donate Info', 'tt'); ?><small><?php _e('Donate to me', 'tt'); ?></small></h2></header>
             <div class="info-group clearfix">
                 <?php if($info->alipay_pay) { ?>
-                    <a class="btn btn-wide btn-alipay_pay popover-qr" href="javascript: void 0" data-trigger="focus" data-container=".info-donate" data-toggle="" data-placement="top" data-content='<?php echo '<img src="' . $info->alipay_pay . '">'; ?>'><?php _e('Donate via Alipay', 'tt'); ?></a>
+                    <a class="btn btn-wide btn-alipay_pay popover-qr" href="javascript: void 0" data-trigger="focus" data-container=".info-donate" data-toggle="" data-placement="top" data-content='<?php echo '<img width=225 height=275 src="' . $info->alipay_pay . '">'; ?>'><?php _e('Donate via Alipay', 'tt'); ?></a>
                 <?php } ?>
                 <?php if($info->wechat_pay) { ?>
-                    <a class="btn btn-wide btn-wechat_pay popover-qr" href="javascript: void 0" data-trigger="focus" data-container=".info-donate" data-toggle="" data-placement="top" data-content='<?php echo '<img src="' . $info->wechat_pay . '">'; ?>'><?php _e('Donate via Wechat', 'tt'); ?></a>
+                    <a class="btn btn-wide btn-wechat_pay popover-qr" href="javascript: void 0" data-trigger="focus" data-container=".info-donate" data-toggle="" data-placement="top" data-content='<?php echo '<img width=225 height=275 src="' . $info->wechat_pay . '">'; ?>'><?php _e('Donate via Wechat', 'tt'); ?></a>
                 <?php } ?>
             </div>
         </section>

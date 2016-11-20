@@ -109,6 +109,9 @@ class ShopHomeVM extends BaseVM {
             // 单位
             $product['price_unit'] = $product['currency'] == 'cash' ? __('YUAN', 'tt') : __('CREDITS', 'tt');
 
+            // 价格图标
+            $product['price_icon'] = !($product['price'] > 0) ? '' : $product['currency'] == 'cash' ? '<i class="tico tico-cny"></i>' : '<i class="tico tico-diamond"></i>';
+
             // 点赞
             $star_user_ids = array_unique(get_post_meta( $post->ID, 'tt_post_star_users', false));
             $product['stars'] = count($star_user_ids);

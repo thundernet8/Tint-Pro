@@ -83,6 +83,7 @@ class WP_REST_Comment_Controller extends WP_REST_Controller
         $comment_page = max(absint($request->get_param('commentPage')), 2);
         $comments_per_page = tt_get_option('tt_comments_per_page', 20);
         $comment_post_ID = absint($request->get_param('commentPostId'));
+        $post_type = get_post_type($comment_post_ID);
         if(!$comment_post_ID) {
             return tt_api_fail(__('Invalid post ID', 'tt'));
         }
@@ -111,7 +112,7 @@ class WP_REST_Comment_Controller extends WP_REST_Controller
 
         $comment_list = wp_list_comments(array(
             'type'=>'all',
-            'callback'=>'tt_comment',
+            'callback'=>$post_type=='product' ? 'tt_shop_comment' : 'tt_comment',
             'end-callback'=>'tt_end_comment',
             'max_depth'=>3,
             'reverse_top_level'=>0,
@@ -162,6 +163,7 @@ class WP_REST_Comment_Controller extends WP_REST_Controller
         $comment_type = isset( $_POST['commentType'] ) ? trim( $_POST['commentType'] ) : '';
         $ksesNonce = trim( $_POST['ksesNonce'] );
         $comment_parent = absint($_POST['parentId']);
+        $product_rating = absint($request->get_param('productRating'));
 
         $user_ID = 0;
         $comment_author = '';
@@ -223,6 +225,15 @@ class WP_REST_Comment_Controller extends WP_REST_Controller
 
         if(!$comment_id) {
             return tt_api_fail(__('Add comment failed', 'tt'));
+        }
+
+        // add comment meta(rating for product)
+        if($product_rating) {
+            update_comment_meta($comment_id, 'tt_rating_product', $product_rating);
+            $product_ratings_raw = get_post_meta($comment_post_ID, 'tt_post_ratings', true);
+            $product_ratings = $product_ratings_raw ? (array)maybe_unserialize($product_ratings_raw) : array();
+            $product_ratings[] = $product_rating;
+            update_post_meta($comment_post_ID, 'tt_post_ratings', maybe_serialize($product_ratings));
         }
 
         $comment = get_comment($comment_id);

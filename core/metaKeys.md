@@ -35,6 +35,9 @@
 * tt_product_quantity
 * tt_pay_currency (0->credit 1->cash)
 * tt_product_sales
+* tt_product_discount (array, 折扣使用百分数的数值部分)
+* tt_buy_channel (instation/taobao)
+* tt_taobao_link
 
 ### Post Meta(Page)
 * tt_keywords
@@ -43,3 +46,6 @@
 
 ### Comment Meta
 * tt_comment_likes
+
+### Comment Meta(Product)
+* tt_rating_product (购买的用户可通过评论对product rating, 记录在commentMeta)

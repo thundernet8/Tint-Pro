@@ -22,6 +22,7 @@ var _body = $('body');
 var _commentTextareaSel = '#comment-text';
 var _commentTextarea = $(_commentTextareaSel);
 var _mainSubmitBtn = $('#submit');
+var _starRatingSel = '#comment-form>.rating-radios';
 
 // 评论列表
 var _commentListSel = '#comments-wrap>.comments-list';
@@ -240,6 +241,14 @@ var _showError = function (msg, errorBox) {
     });
 };
 
+var _getProductRating = function () {
+    var ratingRadios = $(_starRatingSel);
+    if(!ratingRadios.length) {
+        return false;
+    }
+    return ratingRadios.find('input[type="radio"]:checked').val();
+};
+
 
 // 提交状态
 var _submitting = false;
@@ -276,6 +285,10 @@ var _postComment = function () {
         parentId: _currentInput && _currentInput.is('input') ? _currentInput.parents('.comment').data('current-comment-id') : 0,
         commentType: ''
     };
+    var rating = _getProductRating();
+    if(rating) {
+        data.productRating = parseInt(rating);
+    }
     var beforeSend = function () {
         if(_submitting) return;
         _submitting = true;

@@ -60,11 +60,8 @@
                                     <a href="<?php echo $product['permalink']; ?>" title="<?php if($product['price'] > 0) : printf('%d %s', $product['price'], $product['price_unit']); else : echo __('Free', 'tt'); endif; ?>">
                                         <?php if(!($product['price'] > 0)) { ?>
                                         <span><?php echo __('FREE', 'tt'); ?></span>
-                                        <?php }elseif($product['currency'] == 'credit') { ?>
-                                            <i class="tico tico-diamond"></i>
-                                            <span><?php echo (int)$product['price']; ?></span>
                                         <?php }else{ ?>
-                                            <i class="tico tico-cny"></i>
+                                            <?php echo $product['price_icon']; ?>
                                             <span><?php echo $product['price']; ?></span>
                                         <?php } ?>
                                     </a>

@@ -6,15 +6,15 @@
  * @since 2.0.0
  * @package Tint
  * @author Zhiyan
- * @date 2016/10/09 13:28
+ * @date 2016/11/20 19:56
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
- * @link https://www.webapproach.net/tint.html
+ * @link https://www.webapproach.net/tint
  */
 ?>
 <?php
-global $postdata;
-$vm = PostCommentsVM::getInstance($postdata->ID);
+global $productdata;
+$vm = ProductCommentsVM::getInstance($productdata->ID);
 if($vm->isCache && $vm->cacheTime) { ?>
     <!-- Comments cached <?php echo $vm->cacheTime; ?> -->
 <?php } ?>
@@ -26,7 +26,7 @@ if($vm->isCache && $vm->cacheTime) { ?>
         <div class="pages"><?php //paginate_comments_links('prev_text=«&next_text=»&type=list'); ?></div>
     </ul>
     <?php if($vm->modelData->list_count > 0){ ?>
-    <div class="load-more"><button class="btn btn-primary btn-wide btn-more"><?php _e('Load More Comments', 'tt'); ?></button></div>
+        <div class="load-more"><button class="btn btn-primary btn-wide btn-more"><?php _e('Load More Comments', 'tt'); ?></button></div>
     <?php } ?>
     <div class="err text-primary text-center h3"></div>
 </div>
