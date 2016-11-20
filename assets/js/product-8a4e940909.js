@@ -1,5 +1,5 @@
 /**
- * Generated on Sun Nov 20 2016 21:47:26 GMT+0800 (中国标准时间) by Zhiyan
+ * Generated on Sun Nov 20 2016 23:59:02 GMT+0800 (中国标准时间) by Zhiyan
  *
  * @package   Tint
  * @version   v2.0.0
@@ -90,9 +90,16 @@
                     effect: 'fadeIn',
                     threshold: 0
                 });
-                (0, _animateAnchor2[['default']])();
+                (0, _animateAnchor2[['default']])(120, false);
                 (0, _fixFooter2[['default']])();
                 _toggle2[['default']][['initShopLeftMenuToggle']]();
+                var hash = location[['hash']];
+                if (hash == '#tab-description' || hash == '#tab-reviews') {
+                    $('a[data-target="' + hash + '"]')[['tab']]('show');
+                }
+                $('a[href="#reviews"]')[['on']]('click', function () {
+                    $('a[data-target="#tab-reviews"]')[['tab']]('show');
+                });
             });
         }[['call']](exports, __webpack_require__(1)));
     },
@@ -3246,14 +3253,18 @@
             'use strict';
             Object[['defineProperty']](exports, '__esModule', { value: true });
             var AnimateAnchor = function AnimateAnchor() {
+                var marginTop = arguments[['length']] > 0 ? arguments[0] : 60;
+                var changeUrlHash = arguments[['length']] > 1 ? arguments[1] : true;
                 var body = $('body');
                 body[['on']]('click', 'a[href^="#"]', function (e) {
                     e[['preventDefault']]();
                     var sel = $(this)[['attr']]('href');
                     var target = $(sel);
                     if (target) {
-                        body[['animate']]({ scrollTop: target[['offset']]()[['top']] }, 'slow');
-                        window[['location']][['hash']] = sel[['substr']](1);
+                        body[['animate']]({ scrollTop: target[['offset']]()[['top']] - marginTop }, 'slow');
+                        if (changeUrlHash) {
+                            window[['location']][['hash']] = sel[['substr']](1);
+                        }
                     }
                 });
             };

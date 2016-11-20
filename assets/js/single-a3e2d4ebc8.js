@@ -1,5 +1,5 @@
 /**
- * Generated on Sun Nov 20 2016 21:47:26 GMT+0800 (中国标准时间) by Zhiyan
+ * Generated on Sun Nov 20 2016 23:59:02 GMT+0800 (中国标准时间) by Zhiyan
  *
  * @package   Tint
  * @version   v2.0.0
@@ -3226,14 +3226,18 @@
             'use strict';
             Object[['defineProperty']](exports, '__esModule', { value: true });
             var AnimateAnchor = function AnimateAnchor() {
+                var marginTop = arguments[['length']] > 0 ? arguments[0] : 60;
+                var changeUrlHash = arguments[['length']] > 1 ? arguments[1] : true;
                 var body = $('body');
                 body[['on']]('click', 'a[href^="#"]', function (e) {
                     e[['preventDefault']]();
                     var sel = $(this)[['attr']]('href');
                     var target = $(sel);
                     if (target) {
-                        body[['animate']]({ scrollTop: target[['offset']]()[['top']] }, 'slow');
-                        window[['location']][['hash']] = sel[['substr']](1);
+                        body[['animate']]({ scrollTop: target[['offset']]()[['top']] - marginTop }, 'slow');
+                        if (changeUrlHash) {
+                            window[['location']][['hash']] = sel[['substr']](1);
+                        }
                     }
                 });
             };

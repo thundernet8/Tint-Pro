@@ -88,11 +88,20 @@ jQuery(document).ready(function ($) {
     });
     
     // 平滑锚点
-    AnimateAnchor();
+    AnimateAnchor(120, false); // 顶部保留120px高度,不显示hash值在url中
     
     // 修正Footer位置
     FixFooter();
     
     // 折叠左菜单
     Toggle.initShopLeftMenuToggle();
+    
+    // Tab Show
+    var hash = location.hash;
+    if(hash=='#tab-description' || hash=='#tab-reviews') {
+        $('a[data-target="' + hash + '"]').tab('show');
+    }
+    $('a[href="#reviews"]').on('click', function () {
+        $('a[data-target="#tab-reviews"]').tab('show');
+    });
 });

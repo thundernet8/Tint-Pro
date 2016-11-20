@@ -14,6 +14,8 @@
 'use strict';
  
 var AnimateAnchor = function () {
+    var marginTop = arguments.length > 0 ? arguments[0] : 60;
+    var changeUrlHash = arguments.length > 1 ? arguments[1] : true;
     var body = $('body');
     body.on('click', 'a[href^="#"]', function (e) {
         e.preventDefault();
@@ -21,9 +23,11 @@ var AnimateAnchor = function () {
         var target = $(sel);
         if(target) {
             body.animate({
-                scrollTop: target.offset().top
+                scrollTop: target.offset().top - marginTop
             }, 'slow');
-            window.location.hash = sel.substr(1);
+            if(changeUrlHash) {
+                window.location.hash = sel.substr(1);
+            }
         }
     });
 };
