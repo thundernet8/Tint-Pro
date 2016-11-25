@@ -59,7 +59,6 @@ body  {
       &>.content-section {
           padding-top: 20px;
           padding-bottom: 20px;
-
           background: #ffffff;
       }
 
@@ -72,6 +71,10 @@ body  {
       &>#mod-show {
           margin-bottom: 20px;
           overflow: hidden;
+          border-radius: 2px;
+          -webkit-box-shadow: 0 0 6px 0 rgba(0,0,0,0.1);
+          -moz-box-shadow: 0 0 6px 0 rgba(0,0,0,0.1);
+          box-shadow: 0 0 6px 0 rgba(0,0,0,0.1);
         &>#slider {
           max-height: 380px;
           overflow: hidden;
@@ -253,6 +256,12 @@ body  {
       }
 
       &>#mod-featuredCats {
+          padding-bottom: 0;
+          margin-bottom: 20px;
+          border-radius: 2px;
+          -webkit-box-shadow: 0 0 6px 0 rgba(0,0,0,0.1);
+          -moz-box-shadow: 0 0 6px 0 rgba(0,0,0,0.1);
+          box-shadow: 0 0 6px 0 rgba(0,0,0,0.1);
         &>.row {
           margin-left: 0;
           margin-right: 0;
@@ -266,9 +275,9 @@ body  {
                     margin-bottom: 15px;
                     a {
                         font-weight: 500;
-                        color: @link-color;
+                        color: @brand-primary;
                         &:hover {
-                            color: @brand-primary;
+                            color: @link-color;
                         }
                     }
                 }
@@ -377,12 +386,29 @@ body  {
       }
 
         &>#mod-insideContent {
+            padding-top: 0;
+            padding-bottom: 0;
+            background: transparent;
             &>.main {
+                border-radius: 2px;
+                background-color: #ffffff;
+                -webkit-box-shadow: 0 0 6px 0 rgba(0,0,0,0.1);
+                -moz-box-shadow: 0 0 6px 0 rgba(0,0,0,0.1);
+                box-shadow: 0 0 6px 0 rgba(0,0,0,0.1);
                 .block5-widget {
                     &>.widget-title {
                         font-size: 2rem;
                         color: @brand-primary;
                     }
+                }
+            }
+            &>.sidebar {
+                padding-right: 0;
+                &>.widget {
+                    border-radius: 2px;
+                    -webkit-box-shadow: 0 0 6px 0 rgba(0,0,0,0.1);
+                    -moz-box-shadow: 0 0 6px 0 rgba(0,0,0,0.1);
+                    box-shadow: 0 0 6px 0 rgba(0,0,0,0.1);
                 }
             }
         }

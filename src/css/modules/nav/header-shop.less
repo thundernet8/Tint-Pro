@@ -221,6 +221,17 @@ body {
                     }
                     &>.dropdown-menu {
                         &>.shopcart {
+                            &>ul {
+                                display: none;
+                            }
+                            &.active {
+                                &>ul {
+                                    display: block;
+                                }
+                                &>.shopcart_footer {
+                                    display: none;
+                                }
+                            }
                             &>.shopcart_header {
                                 text-transform: uppercase;
                                 text-align: center;

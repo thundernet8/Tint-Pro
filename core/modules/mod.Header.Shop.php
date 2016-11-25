@@ -42,22 +42,36 @@
 
             <!-- Menu tools -->
             <ul class="header_menu-items">
-                <li class="header_menu-item header_menu-item--notification">
-                    <a href="<?php echo tt_url_for('in_msg'); ?>" data-toggle="dropdown" class="dropdown-toggle dropdown-toggle--notifications"><i class="tico tico-bell-o"></i></a>
-                    <div class="notifications_preview dropdown-menu dropdown-menu--large">
-                        <div class="notification">
-                            <div class="notification_header"><?php _e('Notifications', 'tt'); ?></div>
-                            <div class="notification_footer">You don't have any notifications yet.</div>
-                        </div>
-                    </div>
-                </li>
+<!--                <li class="header_menu-item header_menu-item--notification">-->
+<!--                    <a href="--><?php //echo tt_url_for('in_msg'); ?><!--" data-toggle="dropdown" class="dropdown-toggle dropdown-toggle--notifications"><i class="tico tico-bell-o"></i></a>-->
+<!--                    <div class="notifications_preview dropdown-menu dropdown-menu--large">-->
+<!--                        <div class="notification">-->
+<!--                            <div class="notification_header">--><?php //_e('Notifications', 'tt'); ?><!--</div>-->
+<!--                            <div class="notification_footer">You don't have any notifications yet.</div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </li>-->
 
                 <li class="header_menu-item header_menu-item--shopcart">
                     <a href="<?php echo tt_url_for('in_msg'); ?>" data-toggle="dropdown" class="dropdown-toggle dropdown-toggle--shopcart"><i class="tico tico-cart"></i></a>
                     <div class="cart_preview dropdown-menu dropdown-menu--large">
-                        <div class="shopcart">
+                        <?php global $cart_items; $cart_items = tt_get_cart(); $display_cart = $cart_items && count($cart_items) > 0; ?>
+                        <div class="shopcart header_shopping_cart <?php if($display_cart) echo 'active'; ?>">
                             <div class="shopcart_header"><?php _e('Shopping Cart', 'tt'); ?></div>
-                            <div class="shopcart_footer">The shopping cart is empty.</div>
+                            <ul class="header_shopping_cart-list">
+                                <?php $total = 0; foreach ($cart_items as $cart_item) { $total += $cart_item['price'] * $cart_item['quantity'] ?>
+                                    <li class="cart-item" data-product-id="<?php echo $cart_item['id']; ?>">
+                                        <a href="<?php echo $cart_item['permalink']; ?>" title="<?php echo $cart_item['name']; ?>">
+                                            <img class="thumbnail" src="<?php echo $cart_item['thumb']; ?>">
+                                            <span class="product-title"><?php echo $cart_item['name']; ?></span>
+                                        </a>
+                                        <div class="price"><i class="tico tico-cny"></i><?php echo $cart_item['price'] . ' x ' . $cart_item['quantity']; ?></div>
+                                        <i class="tico tico-close delete"></i>
+                                    </li>
+                                <?php } ?>
+                                <div class="cart-amount"><?php echo __('TOTAL: '); ?><i class="tico tico-cny"></i><span><?php echo $total; ?></span></div>
+                            </ul>
+                            <div class="shopcart_footer"><?php if(!$display_cart) _e('The shopping cart is empty.', 'tt'); ?></div>
                         </div>
                     </div>
                 </li>

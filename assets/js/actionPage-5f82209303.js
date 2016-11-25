@@ -1,5 +1,5 @@
 /**
- * Generated on Sun Nov 20 2016 23:59:01 GMT+0800 (中国标准时间) by Zhiyan
+ * Generated on Fri Nov 25 2016 23:11:27 GMT+0800 (中国标准时间) by Zhiyan
  *
  * @package   Tint
  * @version   v2.0.0
@@ -78,11 +78,15 @@
             follower: _utils2[['default']][['getAPIUrl']]('/users/{{uid}}/followers'),
             following: _utils2[['default']][['getAPIUrl']]('/users/{{uid}}/following'),
             pm: _utils2[['default']][['getAPIUrl']]('/messages'),
-            accountStatus: _utils2[['default']][['getAPIUrl']]('/users/status')
+            accountStatus: _utils2[['default']][['getAPIUrl']]('/users/status'),
+            userMeta: _utils2[['default']][['getAPIUrl']]('/users/metas'),
+            shoppingCart: _utils2[['default']][['getAPIUrl']]('/shoppingcart')
         };
         var urls = {
             site: _utils2[['default']][['getSiteUrl']](),
-            signIn: _utils2[['default']][['getSiteUrl']]() + '/m/signin'
+            signIn: _utils2[['default']][['getSiteUrl']]() + '/m/signin',
+            cartCheckOut: _utils2[['default']][['getSiteUrl']]() + '/site/cartcheckout',
+            checkOut: _utils2[['default']][['getSiteUrl']]() + '/site/checkout'
         };
         var classes = { appLoading: 'is-loadingApp' };
         exports[['Routes']] = routes;

@@ -23,11 +23,14 @@
 * tt_banned_reason
 * tt_banned_time
 
+* tt_view_product_history (array<product id>) //cookie use same key
+
 ### Post Meta
 * views (postViews插件)
 * tt_post_stars (废弃)
 * tt_post_star_users (不唯一)
 * tt_sidebar
+* tt_latest_reviewed
 
 
 ### Post Meta(Product)
@@ -38,6 +41,7 @@
 * tt_product_discount (array, 折扣使用百分数的数值部分)
 * tt_buy_channel (instation/taobao)
 * tt_taobao_link
+* tt_latest_rated
 
 ### Post Meta(Page)
 * tt_keywords

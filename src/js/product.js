@@ -28,6 +28,9 @@ import {} from 'lazyload/jquery.lazyload';
 import SignHelp from './modules/signHelp';
 import FixFooter from './modules/fixFooter';
 import Toggle from './modules/toggle';
+import {} from './modules/cookie';
+import Usermeta from './modules/usermeta';
+import Buy from './modules/buy';
 
 // DOM Ready
 jQuery(document).ready(function ($) {
@@ -104,4 +107,31 @@ jQuery(document).ready(function ($) {
     $('a[href="#reviews"]').on('click', function () {
         $('a[data-target="#tab-reviews"]').tab('show');
     });
+    
+    // 设置浏览历史至cookie
+    var viewHistory = $.cookie('tt_view_product_history');
+    if(viewHistory && viewHistory.length) {
+        var pids = viewHistory.split('_');
+        var index = viewHistory.indexOf(TT.pid);
+        if(index > -1){
+            pids.splice(index, 1);
+        }
+        pids.unshift(TT.pid);
+        var newViewHistory = pids.join('_');
+        $.cookie('tt_view_product_history', newViewHistory, {expires: 365, path: '/'});
+        if(viewHistory != newViewHistory) {
+            Usermeta.updateMeta('tt_view_product_history', newViewHistory);
+        }
+    }else{
+        $.cookie('tt_view_product_history', TT.pid, {expires: 365, path: '/'});
+        Usermeta.updateMeta('tt_view_product_history', TT.pid);
+    }
+    
+    // 同步购物车数据
+    
+    
+    // 购买动作
+    Buy.initAddCartOrImmediatelyBuy();
+    Buy.initQuantityInput();
+    Buy.initCartHandle();
 });

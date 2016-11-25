@@ -28,6 +28,12 @@ abstract class BaseVM {
      */
     protected $_cacheKey;
 
+
+    /**
+     * @var bool
+     */
+    protected $_enableCache = true;
+
     /**
      * @var string
      */
@@ -115,7 +121,7 @@ abstract class BaseVM {
      */
     protected function getDataFromCache() {
         // DEBUG模式不使用缓存 //TODO
-        if(TT_DEBUG) {
+        if(TT_DEBUG || !($this->_enableCache)) {
             return false;
         }
 

@@ -61,7 +61,7 @@ class ShopProductVM extends BaseVM {
         $content = get_the_content();
         $content = str_replace( ']]>', ']]&gt;', apply_filters( 'the_content', $content ) );
         $info['content'] =  $content; //$the_product->post_content;
-        $info['category'] = get_the_category_list(' ', '', $the_product->ID);
+        //$info['category'] = get_the_category_list(' ', '', $the_product->ID);
         //$info['author'] = get_the_author();
         //$info['author_url'] = home_url('/@' . $info['author']); //TODO the link
         $info['time'] = get_post_time('F j, Y', false, $the_product, false); //get_post_time( string $d = 'U', bool $gmt = false, int|WP_Post $post = null, bool $translate = false )
@@ -74,19 +74,21 @@ class ShopProductVM extends BaseVM {
         $tag_terms = get_the_terms($the_product, 'product_tag');
         $tagIDs = array();
         $tags = array();
-        foreach ($tag_terms as $tag_term){
-            $tagIDs[] = $tag_term->term_id;
+        if($tag_terms) {
+            foreach ($tag_terms as $tag_term){
+                $tagIDs[] = $tag_term->term_id;
 
-            $tag = array();
-            $tag['ID'] = $tag_term->term_id;
-            $tag['slug'] = $tag_term->slug;
-            $tag['name'] = $tag_term->name;
-            $tag['description'] = $tag_term->description;
-            $tag['parent'] = $tag_term->parent;
-            $tag['count'] = $tag_term->count;
-            $tag['permalink'] = get_term_link($tag_term, 'product_tag');
+                $tag = array();
+                $tag['ID'] = $tag_term->term_id;
+                $tag['slug'] = $tag_term->slug;
+                $tag['name'] = $tag_term->name;
+                $tag['description'] = $tag_term->description;
+                $tag['parent'] = $tag_term->parent;
+                $tag['count'] = $tag_term->count;
+                $tag['permalink'] = get_term_link($tag_term, 'product_tag');
 
-            $tags[] = $tag;
+                $tags[] = $tag;
+            }
         }
 
         // 分类
@@ -122,6 +124,9 @@ class ShopProductVM extends BaseVM {
 
         // 折扣
         $info['discount'] = maybe_unserialize(get_post_meta($the_product->ID, 'tt_product_discount', true)); // array 第1项为普通折扣, 第2项为会员(月付)折扣, 第3项为会员(年付)折扣, 第4项为会员(终身)折扣
+
+        // 总量
+        $info['amount'] = (int)get_post_meta($the_product->ID, 'tt_product_quantity', true);
 
         // 销量
         $info['sales'] = get_post_meta($the_product->ID, 'tt_product_sales', true);
@@ -184,17 +189,17 @@ class ShopProductVM extends BaseVM {
         if(count($tagIDs) > 0 && ($the_query = new WP_Query($relates_query_args))->have_posts()) {
             $relates_query = $the_query;
         }else{
-            $cats = get_the_terms($the_product, 'product_category');
-            $catIDs = array();
-            foreach ($cats as $cat){
-                $catIDs[] = $cat->term_id;
+            $r_cats = get_the_terms($the_product, 'product_category');
+            $r_catIDs = array();
+            foreach ($r_cats as $r_cat){
+                $r_catIDs[] = $r_cat->term_id;
             }
             $relates_query_args = array(
                 'tax_query' => array(
                     array(
                         'taxonomy' => 'product_category',
                         'field' => 'term_id',
-                        'terms' => $catIDs
+                        'terms' => $r_catIDs
                     )
                 ),
                 'post__not_in'=>array($the_product->ID),
@@ -267,11 +272,11 @@ class ShopProductVM extends BaseVM {
             $rand_product['thumb'] = tt_get_thumb($post, array(
                 'width' => 100,
                 'height' => 100,
-                'str' => 'small'
+                'str' => 'thumbnail'
             ));
             $rand_product['sales'] = get_post_meta($post->ID, 'tt_product_sales', true);
             $rand_product['currency'] = get_post_meta( $post->ID, 'tt_pay_currency', true) ? 'cash' : 'credit';
-            $rand_product['price'] = $rand_product['currency'] == 'cash' ? sprintf('%0.2f', get_post_meta($post->ID, 'tt_product_price', true)) : (int)get_post_meta($the_product->ID, 'tt_product_price', true);
+            $rand_product['price'] = $rand_product['currency'] == 'cash' ? sprintf('%0.2f', get_post_meta($post->ID, 'tt_product_price', true)) : (int)get_post_meta($post->ID, 'tt_product_price', true);
             $rand_product['price_unit'] = $rand_product['currency'] == 'cash' ? __('YUAN', 'tt') : __('CREDITS', 'tt');
             $rand_product['price_icon'] = !($rand_product['price'] > 0) ? '' : $rand_product['currency'] == 'cash' ? '<i class="tico tico-cny"></i>' : '<i class="tico tico-diamond"></i>';
             $rand_product['discount'] = maybe_unserialize(get_post_meta($post->ID, 'tt_product_discount', true)); // array 第1项为普通折扣, 第2项为会员(月付)折扣, 第3项为会员(年付)折扣, 第4项为会员(终身)折扣
@@ -297,7 +302,7 @@ class ShopProductVM extends BaseVM {
                 'next'         => $next,
                 'relates'      => $related_products,
                 'tags'         => $tags,
-                'category'     => $cats,
+                'cats'         => $cats,
                 'catIDs'       => $catIDs,
                 'rands'        => $rand_products,
                 'star_uids'    => $star_user_ids

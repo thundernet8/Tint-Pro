@@ -234,6 +234,7 @@ class WP_REST_Comment_Controller extends WP_REST_Controller
             $product_ratings = $product_ratings_raw ? (array)maybe_unserialize($product_ratings_raw) : array();
             $product_ratings[] = $product_rating;
             update_post_meta($comment_post_ID, 'tt_post_ratings', maybe_serialize($product_ratings));
+            update_post_meta($comment_post_ID, 'tt_latest_rated', time());
         }
 
         $comment = get_comment($comment_id);

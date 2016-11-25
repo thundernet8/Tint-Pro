@@ -4,7 +4,10 @@
             list-style: none;
             margin-bottom: 15px;
             padding-bottom: 15px;
-            border-bottom: 1px solid #f5f6f8;
+            border-bottom: 1px solid #fcfcfc;
+            &:last-child {
+                border-bottom: none;
+            }
             &>.comment-title {
                 font-size: 1.2rem;
                 color: #757f90;
@@ -33,9 +36,9 @@
                 margin-top: 10px;
                 border-radius: 3px;
                 word-break: break-all;
-                font-size: 1.3rem;
+                font-size: 1.4rem;
                 line-height: 1.5;
-                color: @brand-primary;
+                color: darken(@brand-primary, 10%);
                 background-color: @light-blue-bg;
                 &:before {
                     content: " ";

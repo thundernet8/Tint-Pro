@@ -232,9 +232,9 @@ class WP_REST_Message_Controller extends WP_REST_Controller
         if($action == 'markRead') {
             $result = tt_mark_message($msg_id);
             if($result) {
-                return tt_api_success('Mark message read successfully', 'tt');
+                return tt_api_success(__('Mark message read successfully', 'tt'));
             }
-            return tt_api_fail('Mark message read failed');
+            return tt_api_fail(__('Mark message read failed', 'tt'));
         }
         return null;
     }

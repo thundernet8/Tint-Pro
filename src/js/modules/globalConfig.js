@@ -29,13 +29,17 @@ var routes = {
     follower: Utils.getAPIUrl('/users/{{uid}}/followers'),
     following: Utils.getAPIUrl('/users/{{uid}}/following'),
     pm: Utils.getAPIUrl('/messages'),
-    accountStatus: Utils.getAPIUrl('/users/status')
+    accountStatus: Utils.getAPIUrl('/users/status'),
+    userMeta: Utils.getAPIUrl('/users/metas'),
+    shoppingCart: Utils.getAPIUrl('/shoppingcart')
 };
 
 // URL列表
 var urls = {
     site: Utils.getSiteUrl(),
-    signIn: Utils.getSiteUrl() + '/m/signin'
+    signIn: Utils.getSiteUrl() + '/m/signin',
+    cartCheckOut: Utils.getSiteUrl() + '/site/cartcheckout',
+    checkOut: Utils.getSiteUrl() + '/site/checkout'
 };
 
 // 特殊类名

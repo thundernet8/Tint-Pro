@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-11-20 21:49+0800\n"
-"PO-Revision-Date: 2016-11-20 21:49+0800\n"
+"POT-Creation-Date: 2016-11-21 04:36+0800\n"
+"PO-Revision-Date: 2016-11-21 04:36+0800\n"
 "Last-Translator: Zhiyan <mail@webapproach.net>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -86,50 +86,50 @@ msgstr "%s必须介于%d(包含)和%d(包含)之间"
 msgid "Required to be true, as resource does not support trashing."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:87
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:88
 msgid "Invalid post ID"
 msgstr "无效的文章ID"
 
-#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:93
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:94
 #: core/api/v1/endpoints/class.Rest.Comment.Star.Controller.php:102
 #: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:115
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:391
 msgid "Nonce verify failed"
 msgstr "Nonce验证失败"
 
-#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:109
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:110
 msgid "No more comments"
 msgstr "没有更多评论了"
 
-#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:147
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:148
 msgid "Spam nonce check failed"
 msgstr "防垃圾Nonce验证失败"
 
-#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:151
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:152
 msgid "Comment closed for the post"
 msgstr "文章评论已关闭"
 
-#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:154
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:155
 msgid "Cannot comment a unpublished post"
 msgstr "不能评论未发布文章"
 
-#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:157
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:158
 msgid "Cannot comment a password protected post"
 msgstr "不能评论密码保护的文章"
 
-#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:188
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:189
 msgid "Sorry, you must be logged in to reply to a comment."
 msgstr "你必须登录才能评论"
 
-#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:193
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:194
 msgid "Comment cannot be blank"
 msgstr "评论内容不能为空"
 
-#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:226
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:227
 msgid "Add comment failed"
 msgstr "添加评论失败"
 
-#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:259
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:267
 #: core/api/v1/endpoints/class.Rest.Session.Controller.php:127
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:588
 msgid "Sorry, you are not allowed to delete this resource."
@@ -1157,23 +1157,23 @@ msgstr "<!-- Nav cached %s -->"
 msgid "<!-- Nav cache end -->"
 msgstr "<!-- Nav cache end -->"
 
-#: core/functions/func.Comment.php:78 core/functions/func.Comment.php:150
+#: core/functions/func.Comment.php:79 core/functions/func.Comment.php:152
 msgid "Your comment is under review..."
 msgstr "你的评论正在等待审核..."
 
-#: core/functions/func.Comment.php:88 core/functions/func.Comment.php:96
-#: core/functions/func.Comment.php:100 core/functions/func.Comment.php:163
-#: core/functions/func.Comment.php:167 core/functions/func.Comment.php:171
+#: core/functions/func.Comment.php:89 core/functions/func.Comment.php:97
+#: core/functions/func.Comment.php:101 core/functions/func.Comment.php:165
+#: core/functions/func.Comment.php:169 core/functions/func.Comment.php:173
 msgid "Reply"
 msgstr "回复"
 
-#: core/functions/func.Comment.php:99 core/functions/func.Comment.php:170
+#: core/functions/func.Comment.php:100 core/functions/func.Comment.php:172
 #: core/modules/mod.ReplyForm.php:35
-#: core/modules/shop/mod.Shop.ReplyForm.php:61
+#: core/modules/shop/mod.Shop.ReplyForm.php:60
 msgid "Emotion"
 msgstr "表情"
 
-#: core/functions/func.Comment.php:158
+#: core/functions/func.Comment.php:160
 #, php-format
 msgid "Rated %d out of 5"
 msgstr "评分 %d (满分5)"
@@ -1946,8 +1946,8 @@ msgstr "密码"
 
 #: core/modules/mod.ModalLoginForm.php:31 core/modules/mod.ReplyForm.php:32
 #: core/modules/mod.ReplyForm.php:129
-#: core/modules/shop/mod.Shop.ReplyForm.php:58
-#: core/modules/shop/mod.Shop.ReplyForm.php:65
+#: core/modules/shop/mod.Shop.ReplyForm.php:57
+#: core/modules/shop/mod.Shop.ReplyForm.php:64
 #: core/templates/actions/tpl.M.Findpass.php:38
 #: core/templates/actions/tpl.M.Resetpass.php:47
 #: core/templates/actions/tpl.M.Signin.php:58
@@ -1993,12 +1993,12 @@ msgid "Type a keyword"
 msgstr "键入关键词"
 
 #: core/modules/mod.ReplyForm.php:26
-#: core/modules/shop/mod.Shop.ReplyForm.php:52
+#: core/modules/shop/mod.Shop.ReplyForm.php:51
 msgid "Leave some words..."
 msgstr "说点什么吧..."
 
 #: core/modules/mod.ReplyForm.php:28
-#: core/modules/shop/mod.Shop.ReplyForm.php:54
+#: core/modules/shop/mod.Shop.ReplyForm.php:53
 msgid "Signin and Leave some words..."
 msgstr "登录并参与讨论..."
 
@@ -2059,12 +2059,14 @@ msgid "Related Products"
 msgstr "相关商品"
 
 #: core/modules/shop/mod.Shop.Relates.php:26
+#: core/modules/shop/mod.Shop.Sidebar.Right.php:34
 #: core/templates/shop/tpl.Product.php:82
 #, php-format
 msgid "Rated %0.1f out of 5"
 msgstr "平均评分 %0.1f (满分5)"
 
 #: core/modules/shop/mod.Shop.Relates.php:28
+#: core/modules/shop/mod.Shop.Sidebar.Right.php:36
 #: core/templates/shop/tpl.Product.php:84
 #, php-format
 msgid ""
@@ -2086,13 +2088,25 @@ msgstr ""
 msgid "FREE"
 msgstr "FREE"
 
-#: core/modules/shop/mod.Shop.ReplyForm.php:27
+#: core/modules/shop/mod.Shop.ReplyForm.php:26
 msgid "RATING"
 msgstr "评分"
 
 #: core/modules/shop/mod.Shop.Sidebar.Left.php:30
 msgid "Products"
 msgstr "商品"
+
+#: core/modules/shop/mod.Shop.Sidebar.Right.php:19
+msgid "CART"
+msgstr "购物车"
+
+#: core/modules/shop/mod.Shop.Sidebar.Right.php:26
+msgid "Recent Rated"
+msgstr "近期评价"
+
+#: core/modules/shop/mod.Shop.Sidebar.Right.php:46
+msgid "Recent Viewed Products"
+msgstr "浏览记录"
 
 #: core/modules/uc/uc.NavTabs.php:17
 msgid "PROFILE"
@@ -2792,9 +2806,10 @@ msgstr "页面发生了一个错误."
 
 #: core/viewModels/shop/vm.Shop.Category.php:117
 #: core/viewModels/shop/vm.Shop.Home.php:110
+#: core/viewModels/shop/vm.Shop.LatestRated.php:61
 #: core/viewModels/shop/vm.Shop.Product.php:118
-#: core/viewModels/shop/vm.Shop.Product.php:227
-#: core/viewModels/shop/vm.Shop.Product.php:273
+#: core/viewModels/shop/vm.Shop.Product.php:228
+#: core/viewModels/shop/vm.Shop.Product.php:275
 #: core/viewModels/shop/vm.Shop.Search.php:111
 #: core/viewModels/shop/vm.Shop.Tag.php:117
 msgid "YUAN"
@@ -2802,9 +2817,10 @@ msgstr "元"
 
 #: core/viewModels/shop/vm.Shop.Category.php:117
 #: core/viewModels/shop/vm.Shop.Home.php:110
+#: core/viewModels/shop/vm.Shop.LatestRated.php:61
 #: core/viewModels/shop/vm.Shop.Product.php:118
-#: core/viewModels/shop/vm.Shop.Product.php:227
-#: core/viewModels/shop/vm.Shop.Product.php:273
+#: core/viewModels/shop/vm.Shop.Product.php:228
+#: core/viewModels/shop/vm.Shop.Product.php:275
 #: core/viewModels/shop/vm.Shop.Search.php:111
 #: core/viewModels/shop/vm.Shop.Tag.php:117
 msgid "CREDITS"

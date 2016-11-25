@@ -1,5 +1,5 @@
 /**
- * Generated on Sun Nov 20 2016 23:59:01 GMT+0800 (中国标准时间) by Zhiyan
+ * Generated on Fri Nov 25 2016 23:11:28 GMT+0800 (中国标准时间) by Zhiyan
  *
  * @package   Tint
  * @version   v2.0.0
@@ -33,24 +33,34 @@
     function (module, exports, __webpack_require__) {
         (function (jQuery) {
             'use strict';
-            var _globalConfig = __webpack_require__(2);
             var _loading = __webpack_require__(8);
+            var _msgbox = __webpack_require__(6);
             __webpack_require__(9);
+            var _loadNextPage = __webpack_require__(13);
+            var _loadNextPage2 = _interopRequireDefault(_loadNextPage);
+            var _scroll = __webpack_require__(14);
+            var _scroll2 = _interopRequireDefault(_scroll);
+            var _modalSignBox = __webpack_require__(5);
+            var _modalSignBox2 = _interopRequireDefault(_modalSignBox);
+            var _signHelp = __webpack_require__(15);
+            var _signHelp2 = _interopRequireDefault(_signHelp);
+            var _fixFooter = __webpack_require__(16);
+            var _fixFooter2 = _interopRequireDefault(_fixFooter);
+            var _toggle = __webpack_require__(26);
+            var _toggle2 = _interopRequireDefault(_toggle);
+            function _interopRequireDefault(obj) {
+                return obj && obj[['__esModule']] ? obj : { default: obj };
+            }
             jQuery(document)[['ready']](function ($) {
                 (0, _loading[['handleLineLoading']])();
-                var _redirectBtn = $('#linkBackHome');
-                var _numSpan = _redirectBtn[['children']]('span.num');
-                var _countNum = function _countNum(span) {
-                    var sec = parseInt(span[['text']]());
-                    if (sec - 1 <= 0) {
-                        clearInterval(_interval);
-                        _redirectBtn[['html']]('\u8df3\u8f6c\u4e2d...');
-                        window[['location']][['href']] = _globalConfig[['Urls']][['site']];
-                    } else {
-                        span[['text']](sec - 1);
-                    }
-                };
-                var _interval = setInterval(_countNum[['bind']](this, _numSpan), 1000);
+                _msgbox[['popMsgbox']][['init']]();
+                _loadNextPage2[['default']][['init']]();
+                _scroll2[['default']][['initScrollTo']]();
+                _modalSignBox2[['default']][['init']]();
+                _signHelp2[['default']][['init']]();
+                (0, _fixFooter2[['default']])();
+                _scroll2[['default']][['initShopSubNavCollapse']]();
+                _toggle2[['default']][['initShopLeftMenuToggle']]();
             });
         }[['call']](exports, __webpack_require__(1)));
     },
@@ -79,11 +89,15 @@
             follower: _utils2[['default']][['getAPIUrl']]('/users/{{uid}}/followers'),
             following: _utils2[['default']][['getAPIUrl']]('/users/{{uid}}/following'),
             pm: _utils2[['default']][['getAPIUrl']]('/messages'),
-            accountStatus: _utils2[['default']][['getAPIUrl']]('/users/status')
+            accountStatus: _utils2[['default']][['getAPIUrl']]('/users/status'),
+            userMeta: _utils2[['default']][['getAPIUrl']]('/users/metas'),
+            shoppingCart: _utils2[['default']][['getAPIUrl']]('/shoppingcart')
         };
         var urls = {
             site: _utils2[['default']][['getSiteUrl']](),
-            signIn: _utils2[['default']][['getSiteUrl']]() + '/m/signin'
+            signIn: _utils2[['default']][['getSiteUrl']]() + '/m/signin',
+            cartCheckOut: _utils2[['default']][['getSiteUrl']]() + '/site/cartcheckout',
+            checkOut: _utils2[['default']][['getSiteUrl']]() + '/site/checkout'
         };
         var classes = { appLoading: 'is-loadingApp' };
         exports[['Routes']] = routes;
@@ -470,9 +484,9 @@
         }[['call']](exports, __webpack_require__(1), __webpack_require__(1)));
     },
     function (module, exports, __webpack_require__) {
-        var require;
-        var require;
         var __WEBPACK_AMD_DEFINE_RESULT__;
+        var require;
+        var require;
         'use strict';
         var _typeof = typeof Symbol === 'function' && typeof Symbol[['iterator']] === 'symbol' ? function (obj) {
             return typeof obj;
@@ -2427,5 +2441,271 @@
                 $(this)[['siblings']]()[['removeClass']]('active')[['end']]()[['addClass']]('active');
             });
         }[['call']](undefined, jQuery));
+    },
+    ,
+    ,
+    ,
+    function (module, exports, __webpack_require__) {
+        (function ($) {
+            'use strict';
+            Object[['defineProperty']](exports, '__esModule', { value: true });
+            var _globalConfig = __webpack_require__(2);
+            var _body = $('body');
+            var _postListCls = 'archive-posts';
+            var _loadNextComponentID = 'loadNext';
+            var _loadingIcon = '<i class="tico tico-spinner2 spinning"></i>';
+            var _unLoadingIcon = '<i class="tico tico-angle-down"></i>';
+            var _isLoadingNext = false;
+            var _handlePageContent = function _handlePageContent(html, url) {
+                var doc = $(html);
+                var postList = $('.' + _postListCls);
+                if (doc && postList) {
+                    postList[['html']](doc[['find']]('.' + _postListCls)[['html']]());
+                    history[['pushState']]('200', doc[9][['innerText']], url);
+                    document[['title']] = doc[9][['innerText']];
+                }
+            };
+            var _ajaxLoadNext = function _ajaxLoadNext(btn) {
+                if (_isLoadingNext)
+                    return false;
+                var nextPageUrl = btn[['data']]('next-page-url');
+                if (!nextPageUrl)
+                    return false;
+                var beforeSend = function beforeSend() {
+                    _body[['addClass']](_globalConfig[['Classes']][['appLoading']]);
+                    _isLoadingNext = true;
+                    btn[['html']](_loadingIcon);
+                };
+                var finishRequest = function finishRequest() {
+                    _body[['removeClass']](_globalConfig[['Classes']][['appLoading']]);
+                    _isLoadingNext = false;
+                    btn[['html']](_unLoadingIcon);
+                };
+                var success = function success(data, textStatus, xhr) {
+                    if (data && xhr[['status']] == '200') {
+                        _handlePageContent(data, nextPageUrl);
+                    }
+                    finishRequest();
+                };
+                var error = function error(xhr, textStatus, err) {
+                    finishRequest();
+                };
+                $[['get']]({
+                    url: nextPageUrl,
+                    dataType: 'html',
+                    beforeSend: beforeSend,
+                    success: success,
+                    error: error
+                });
+            };
+            var loadNext = {
+                init: function init() {
+                    _body[['on']]('click', '[data-component=' + _loadNextComponentID + ']', function () {
+                        var $this = $(this);
+                        _ajaxLoadNext($this);
+                    });
+                }
+            };
+            exports[['default']] = loadNext;
+        }[['call']](exports, __webpack_require__(1)));
+    },
+    function (module, exports, __webpack_require__) {
+        (function ($) {
+            'use strict';
+            Object[['defineProperty']](exports, '__esModule', { value: true });
+            var _body = $('body');
+            var _document = $(document);
+            var _scrollTopBottomAnchorCls = 'scroll-to';
+            var _scrollTopAnchorCls = 'scroll-top';
+            var _scrollBottomAnchorCls = 'scroll-bottom';
+            var _handleScrollTo = function _handleScrollTo(btn) {
+                if (btn[['hasClass']](_scrollBottomAnchorCls)) {
+                    _body[['animate']]({ scrollTop: $(document)[['height']]() }, 'slow');
+                } else if (btn[['hasClass']](_scrollTopAnchorCls)) {
+                    _body[['animate']]({ scrollTop: 0 }, 'slow');
+                }
+                return false;
+            };
+            var _initScrollTo = function _initScrollTo() {
+                _body[['on']]('click', '.' + _scrollTopBottomAnchorCls, function () {
+                    _handleScrollTo($(this));
+                });
+            };
+            var _postWrapSel = '#main>.post';
+            var _postWrapBottomY = 0;
+            var _singleBodySel = '.single-body';
+            var _singleBodyTopY = 0;
+            var _shareBarSel = '.single-body>.share-bar';
+            var _shareBarHeight = 0;
+            var _shareBar = null;
+            var _postWrap = null;
+            var _singleBody = null;
+            var _calcTop = function _calcTop() {
+                if (!_shareBar)
+                    _shareBar = $(_shareBarSel);
+                if (!_singleBody)
+                    _singleBody = $(_singleBodySel);
+                if (!_postWrap)
+                    _postWrap = $(_postWrapSel);
+                if (!_shareBarHeight)
+                    _shareBarHeight = _shareBar[['height']]();
+                if (!_postWrapBottomY)
+                    _postWrapBottomY = _postWrap[['offset']]()[['top']] + _postWrap[['height']]() + 40;
+                if (!_singleBodyTopY)
+                    _singleBodyTopY = _singleBody[['offset']]()[['top']];
+                var documentScrollTop = _document[['scrollTop']]();
+                var top = 0;
+                top = Math[['max']](20, 80 + documentScrollTop - _singleBodyTopY);
+                if (_singleBodyTopY + top + _shareBarHeight > _postWrapBottomY) {
+                    top = _postWrapBottomY - _shareBarHeight - _singleBodyTopY;
+                }
+                return top;
+            };
+            var _initShareBar = function _initShareBar() {
+                _document[['on']]('scroll', function () {
+                    var top = _calcTop();
+                    if (!_shareBar)
+                        _shareBar = $(_shareBarSel);
+                    _shareBar[['css']]('top', top + 'px');
+                });
+            };
+            var _originWidgetSel = '#sidebar>.widget_float-sidebar';
+            var _originWidget = null;
+            var _originWidgetTopY = 0;
+            var _originWidgetHeight = 0;
+            var _mirrorWidgetSel = '#sidebar>.float-widget-mirror';
+            var _mirrorWidget = null;
+            var _mirrorWidgetTopY = 0;
+            var _mainWrapSel = '.main-wrap';
+            var _mainWrap = null;
+            var _mainWrapTopY = 0;
+            var _mainWrapHeight = 0;
+            var _windowHeight = 0;
+            var _handleFloatWidget = function _handleFloatWidget() {
+                if ($(window)[['width']]() < 1000)
+                    return;
+                if (!_originWidget)
+                    _originWidget = $(_originWidgetSel);
+                if (_originWidget[['length']] == 0)
+                    return;
+                if (!_mirrorWidget)
+                    _mirrorWidget = $(_mirrorWidgetSel);
+                if (!_mainWrap)
+                    _mainWrap = $(_mainWrapSel);
+                if (!_originWidgetTopY)
+                    _originWidgetTopY = _originWidget[['offset']]()[['top']];
+                if (!_originWidgetHeight)
+                    _originWidgetHeight = _originWidget[['height']]();
+                if (!_mirrorWidgetTopY)
+                    _mirrorWidgetTopY = _mirrorWidget[['offset']]()[['top']];
+                if (!_mainWrapTopY)
+                    _mainWrapTopY = _mainWrap[['offset']]()[['top']];
+                if (!_mainWrapHeight)
+                    _mainWrapHeight = _mainWrap[['height']]();
+                if (!_windowHeight)
+                    _windowHeight = $(window)[['height']]();
+                var documentScrollTop = _document[['scrollTop']]();
+                if (documentScrollTop + _windowHeight + 20 > _mirrorWidgetTopY + _originWidgetHeight + 60) {
+                    if (_mirrorWidget[['html']]() == '') {
+                        _mirrorWidget[['prepend']](_originWidget[['html']]());
+                    }
+                    _mirrorWidget[['fadeIn']]('slow');
+                    var top = Math[['max']](0, documentScrollTop - _mirrorWidgetTopY + 100);
+                    _mirrorWidget[['css']]('top', top);
+                } else {
+                    _mirrorWidget[['html']]('')[['fadeOut']]('slow');
+                }
+            };
+            var _initFloatWidget = function _initFloatWidget() {
+                _document[['on']]('scroll', function () {
+                    _handleFloatWidget();
+                });
+            };
+            var _prevTop = 0;
+            var _currTop = 0;
+            var _handleShopSubNavCollapse = function _handleShopSubNavCollapse() {
+                _currTop = _document[['scrollTop']]();
+                if (_currTop < _prevTop) {
+                    _body[['removeClass']]('collapse-subnav');
+                } else {
+                    _body[['addClass']]('collapse-subnav');
+                }
+                setTimeout(function () {
+                    _prevTop = _currTop;
+                }, 0);
+            };
+            var _initShopSubNavCollapse = function _initShopSubNavCollapse() {
+                _document[['on']]('scroll', function () {
+                    _handleShopSubNavCollapse();
+                });
+            };
+            var ScrollHandler = {
+                initScrollTo: _initScrollTo,
+                initShareBar: _initShareBar,
+                initFloatWidget: _initFloatWidget,
+                initShopSubNavCollapse: _initShopSubNavCollapse
+            };
+            exports[['default']] = ScrollHandler;
+        }[['call']](exports, __webpack_require__(1)));
+    },
+    function (module, exports, __webpack_require__) {
+        (function ($) {
+            'use strict';
+            Object[['defineProperty']](exports, '__esModule', { value: true });
+            var _utils = __webpack_require__(3);
+            var _utils2 = _interopRequireDefault(_utils);
+            function _interopRequireDefault(obj) {
+                return obj && obj[['__esModule']] ? obj : { default: obj };
+            }
+            var _signInLinkSel = '.login-link';
+            var SignHelp = {
+                init: function init() {
+                    $('body')[['on']]('click', _signInLinkSel, function (e) {
+                        if ($(window)[['width']]() >= 640) {
+                            e[['preventDefault']]();
+                            _utils2[['default']][['checkLogin']]();
+                        }
+                    });
+                }
+            };
+            exports[['default']] = SignHelp;
+        }[['call']](exports, __webpack_require__(1)));
+    },
+    function (module, exports, __webpack_require__) {
+        (function ($) {
+            'use strict';
+            Object[['defineProperty']](exports, '__esModule', { value: true });
+            exports[['default']] = function () {
+                var footer = $('body>footer');
+                var diffH = $(window)[['height']]() - footer[['offset']]()[['top']] - footer[['height']]();
+                if (diffH > 0) {
+                    footer[['css']]('position', 'relative')[['css']]('top', diffH);
+                }
+            };
+        }[['call']](exports, __webpack_require__(1)));
+    },
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    function (module, exports, __webpack_require__) {
+        (function ($) {
+            'use strict';
+            Object[['defineProperty']](exports, '__esModule', { value: true });
+            var _body = $('body');
+            var _shopMenuToggleAnchorSel = '.hamburger';
+            var _initShopLeftMenuToggle = function _initShopLeftMenuToggle() {
+                _body[['on']]('click', _shopMenuToggleAnchorSel, function () {
+                    _body[['toggleClass']]('without-menu');
+                });
+            };
+            var Toggle = { initShopLeftMenuToggle: _initShopLeftMenuToggle };
+            exports[['default']] = Toggle;
+        }[['call']](exports, __webpack_require__(1)));
     }
 ]));

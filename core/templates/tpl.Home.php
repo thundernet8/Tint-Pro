@@ -24,7 +24,7 @@
     <section id="mod-featuredCats" class="content-section clearfix">
         <?php load_mod('mod.FeaturedCats'); ?>
     </section>
-    <div class="line clearfix"></div>
+    <!--div class="line clearfix"></div-->
     <?php endif; ?>
     <!-- 近期文章与边栏 -->
     <section id="mod-insideContent" class="main-wrap content-section clearfix">

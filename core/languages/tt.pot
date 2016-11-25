@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-11-20 21:49+0800\n"
+"POT-Creation-Date: 2016-11-21 04:35+0800\n"
 "PO-Revision-Date: 2016-08-17 21:40+0800\n"
 "Last-Translator: \n"
 "Language-Team: Zhiyan <mail@webapproach.net>\n"
@@ -88,50 +88,50 @@ msgstr ""
 msgid "Required to be true, as resource does not support trashing."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:87
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:88
 msgid "Invalid post ID"
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:93
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:94
 #: core/api/v1/endpoints/class.Rest.Comment.Star.Controller.php:102
 #: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:115
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:391
 msgid "Nonce verify failed"
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:109
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:110
 msgid "No more comments"
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:147
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:148
 msgid "Spam nonce check failed"
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:151
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:152
 msgid "Comment closed for the post"
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:154
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:155
 msgid "Cannot comment a unpublished post"
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:157
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:158
 msgid "Cannot comment a password protected post"
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:188
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:189
 msgid "Sorry, you must be logged in to reply to a comment."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:193
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:194
 msgid "Comment cannot be blank"
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:226
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:227
 msgid "Add comment failed"
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:259
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:267
 #: core/api/v1/endpoints/class.Rest.Session.Controller.php:127
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:588
 msgid "Sorry, you are not allowed to delete this resource."
@@ -1176,23 +1176,23 @@ msgstr ""
 msgid "<!-- Nav cache end -->"
 msgstr ""
 
-#: core/functions/func.Comment.php:78 core/functions/func.Comment.php:150
+#: core/functions/func.Comment.php:79 core/functions/func.Comment.php:152
 msgid "Your comment is under review..."
 msgstr ""
 
-#: core/functions/func.Comment.php:88 core/functions/func.Comment.php:96
-#: core/functions/func.Comment.php:100 core/functions/func.Comment.php:163
-#: core/functions/func.Comment.php:167 core/functions/func.Comment.php:171
+#: core/functions/func.Comment.php:89 core/functions/func.Comment.php:97
+#: core/functions/func.Comment.php:101 core/functions/func.Comment.php:165
+#: core/functions/func.Comment.php:169 core/functions/func.Comment.php:173
 msgid "Reply"
 msgstr ""
 
-#: core/functions/func.Comment.php:99 core/functions/func.Comment.php:170
+#: core/functions/func.Comment.php:100 core/functions/func.Comment.php:172
 #: core/modules/mod.ReplyForm.php:35
-#: core/modules/shop/mod.Shop.ReplyForm.php:61
+#: core/modules/shop/mod.Shop.ReplyForm.php:60
 msgid "Emotion"
 msgstr ""
 
-#: core/functions/func.Comment.php:158
+#: core/functions/func.Comment.php:160
 #, php-format
 msgid "Rated %d out of 5"
 msgstr ""
@@ -1981,8 +1981,8 @@ msgstr ""
 
 #: core/modules/mod.ModalLoginForm.php:31 core/modules/mod.ReplyForm.php:32
 #: core/modules/mod.ReplyForm.php:129
-#: core/modules/shop/mod.Shop.ReplyForm.php:58
-#: core/modules/shop/mod.Shop.ReplyForm.php:65
+#: core/modules/shop/mod.Shop.ReplyForm.php:57
+#: core/modules/shop/mod.Shop.ReplyForm.php:64
 #: core/templates/actions/tpl.M.Findpass.php:38
 #: core/templates/actions/tpl.M.Resetpass.php:47
 #: core/templates/actions/tpl.M.Signin.php:58
@@ -2028,12 +2028,12 @@ msgid "Type a keyword"
 msgstr ""
 
 #: core/modules/mod.ReplyForm.php:26
-#: core/modules/shop/mod.Shop.ReplyForm.php:52
+#: core/modules/shop/mod.Shop.ReplyForm.php:51
 msgid "Leave some words..."
 msgstr ""
 
 #: core/modules/mod.ReplyForm.php:28
-#: core/modules/shop/mod.Shop.ReplyForm.php:54
+#: core/modules/shop/mod.Shop.ReplyForm.php:53
 msgid "Signin and Leave some words..."
 msgstr ""
 
@@ -2094,12 +2094,14 @@ msgid "Related Products"
 msgstr ""
 
 #: core/modules/shop/mod.Shop.Relates.php:26
+#: core/modules/shop/mod.Shop.Sidebar.Right.php:34
 #: core/templates/shop/tpl.Product.php:82
 #, php-format
 msgid "Rated %0.1f out of 5"
 msgstr ""
 
 #: core/modules/shop/mod.Shop.Relates.php:28
+#: core/modules/shop/mod.Shop.Sidebar.Right.php:36
 #: core/templates/shop/tpl.Product.php:84
 #, php-format
 msgid ""
@@ -2118,12 +2120,24 @@ msgstr ""
 msgid "FREE"
 msgstr ""
 
-#: core/modules/shop/mod.Shop.ReplyForm.php:27
+#: core/modules/shop/mod.Shop.ReplyForm.php:26
 msgid "RATING"
 msgstr ""
 
 #: core/modules/shop/mod.Shop.Sidebar.Left.php:30
 msgid "Products"
+msgstr ""
+
+#: core/modules/shop/mod.Shop.Sidebar.Right.php:19
+msgid "CART"
+msgstr ""
+
+#: core/modules/shop/mod.Shop.Sidebar.Right.php:26
+msgid "Recent Rated"
+msgstr ""
+
+#: core/modules/shop/mod.Shop.Sidebar.Right.php:46
+msgid "Recent Viewed Products"
 msgstr ""
 
 #: core/modules/uc/uc.NavTabs.php:17
@@ -2828,9 +2842,10 @@ msgstr ""
 
 #: core/viewModels/shop/vm.Shop.Category.php:117
 #: core/viewModels/shop/vm.Shop.Home.php:110
+#: core/viewModels/shop/vm.Shop.LatestRated.php:61
 #: core/viewModels/shop/vm.Shop.Product.php:118
-#: core/viewModels/shop/vm.Shop.Product.php:227
-#: core/viewModels/shop/vm.Shop.Product.php:273
+#: core/viewModels/shop/vm.Shop.Product.php:228
+#: core/viewModels/shop/vm.Shop.Product.php:275
 #: core/viewModels/shop/vm.Shop.Search.php:111
 #: core/viewModels/shop/vm.Shop.Tag.php:117
 msgid "YUAN"
@@ -2838,9 +2853,10 @@ msgstr ""
 
 #: core/viewModels/shop/vm.Shop.Category.php:117
 #: core/viewModels/shop/vm.Shop.Home.php:110
+#: core/viewModels/shop/vm.Shop.LatestRated.php:61
 #: core/viewModels/shop/vm.Shop.Product.php:118
-#: core/viewModels/shop/vm.Shop.Product.php:227
-#: core/viewModels/shop/vm.Shop.Product.php:273
+#: core/viewModels/shop/vm.Shop.Product.php:228
+#: core/viewModels/shop/vm.Shop.Product.php:275
 #: core/viewModels/shop/vm.Shop.Search.php:111
 #: core/viewModels/shop/vm.Shop.Tag.php:117
 msgid "CREDITS"

@@ -30,7 +30,7 @@
         <?php if($vm->isCache && $vm->cacheTime) { ?>
             <!-- Product cached <?php echo $vm->cacheTime; ?> -->
         <?php } ?>
-        <?php global $productdata; $productdata = $vm->modelData; $categories = $productdata->category; $tags = $productdata->tags; ?>
+        <?php global $productdata; $productdata = $vm->modelData; $categories = $productdata->cats; $tags = $productdata->tags; ?>
         <div class="row">
             <!-- Main content in middle -->
             <div class="content-area col-sm-12 col-md-7 col-md-push-2 col-lg-7 col-lg-push-2 boundary-column" id="primary">
@@ -42,7 +42,7 @@
                         <a href="<?php echo home_url(); ?>"><?php _e('SHOP', 'tt'); ?></a>
                         <span class="breadcrumb-delimeter">/</span>
                         <?php $cat_breads = array(); foreach($categories as $category) { ?>
-                        <?php $cat_breads[] = '<a href="' . $category['permalink'] . '">' . $category['name'] . '</a>'; ?>
+                        <?php $category = (array)$category; $cat_breads[] = '<a href="' . $category['permalink'] . '">' . $category['name'] . '</a>'; ?>
                         <?php } ?>
                         <?php echo implode(', ', $cat_breads); ?>
                         <span class="breadcrumb-delimeter">/</span>
@@ -108,22 +108,28 @@
                             <!-- Description -->
                             <div class="commerce-product-description" itemprop="description"><p><?php echo $productdata->excerpt; ?></p></div>
                             <!-- Quantity and Action button -->
-                            <form class="variations_form cart" data-product-id="<?php echo $productdata->ID; ?>">
+                            <div class="variations_form cart" data-product-id="<?php echo $productdata->ID; ?>">
                                 <div class="single_variation_wrap">
                                     <div class="variations_button">
-                                        <?php if($productdata->channel == 'taobao') { ?><!-- Link to Taobao -->
-                                        <a href="<?php echo $productdata->taobao; ?>" class="btn btn-info btn-buy" data-channel="taobao"><?php _e('Purchase in Taobao', 'tt'); ?></a>
+                                        <?php if($productdata->amount < 1) { ?>
+                                        <a href="javascript:;" class="btn btn-info btn-buy" data-buy-action="contact" data-msg-title="<?php _e('SOLD OUT', 'tt'); ?>" data-msg-text="<?php echo __('Please contact the site manager via: ', 'tt') . get_option('admin_email'); ?>"><?php _e('SOLD OUT', 'tt'); ?></a>
+                                        <div class="quantity">
+                                            <input type="number" step="1" min="1" name="quantity" value="0" title="<?php _e('Qty', 'tt'); ?>" class="input-text qty text" size="4">
+                                        </div>
+                                        <?php }elseif($productdata->channel == 'taobao') { ?><!-- Link to Taobao -->
+                                        <a href="<?php echo $productdata->taobao; ?>" class="btn btn-info btn-buy" data-channel="taobao" target="_blank"><?php _e('Purchase in Taobao', 'tt'); ?></a>
                                         <?php }else{ ?>
                                         <a href="javascript:;" class="btn btn-success btn-buy" data-buy-action="checkout"><?php _e('CHECK OUT', 'tt'); ?></a>
-                                        <a href="javascript:;" class="btn btn-danger btn-buy" data-buy-action="addcart"><?php _e('ADD TO CART', 'tt'); ?></a>
+                                        <?php if($productdata->currency=='cash') { ?><a href="javascript:;" class="btn btn-danger btn-buy" data-buy-action="addcart"><?php _e('ADD TO CART', 'tt'); ?></a><?php } ?>
                                         <div class="quantity">
                                             <input type="number" step="1" min="1" name="quantity" value="1" title="<?php _e('Qty', 'tt'); ?>" class="input-text qty text" size="4">
                                         </div>
                                         <?php } ?>
-                                        <input type="hidden" name="product_id" value="40">
+                                        <input type="hidden" name="product_id" value="<?php echo $productdata->ID; ?>">
+                                        <input type="hidden" name="product_amount" value="<?php echo $productdata->amount; ?>">
                                     </div>
                                 </div>
-                            </form>
+                            </div>
                             <!-- Product meta -->
                             <div class="product_meta">
                                 <span class="sku_wrapper"><?php _e('SKU: ', 'tt'); ?><span class="sku" itemprop="sku"><?php echo $productdata->ID; ?></span></span>
@@ -171,7 +177,7 @@
             </div>
             <!-- Right aside -->
             <div class="widget-area col-sm-6 col-md-3 col-md-push-2 col-lg-3 col-lg-push-2" id="secondary" role="complementary">
-
+                <?php load_mod('shop/mod.Shop.Sidebar.Right'); ?>
             </div>
             <!-- Left aside -->
             <div class="widget-area col-sm-6 col-md-2 col-md-pull-10 col-lg-2 col-lg-pull-10" id="tertiary" role="complementary">

@@ -92,10 +92,10 @@ load_dash('options');
 /* 调试模式选项保存为全局变量 */
 defined('TT_DEBUG') || define('TT_DEBUG', of_get_option('tt_theme_debug', false));
 if(TT_DEBUG) {
-    //ini_set("display_errors","On");
-    //error_reporting(E_ALL);
+    ini_set("display_errors","On");
+    error_reporting(E_ALL);
 }else{
-    //ini_set("display_errors","Off");
+    ini_set("display_errors","Off");
 }
 
 /* 载入后台相关处理逻辑 */
@@ -149,6 +149,7 @@ if(TT_PRO && tt_get_option('tt_enable_shop', false)){
     load_func('shop/func.Shop');
     load_func('shop/func.Shop.Orders');
     load_func('shop/func.Shop.Coupon');
+    load_func('shop/func.Shop.Cart');
 }
 
 /* 载入数据模型 */
@@ -183,6 +184,8 @@ if(TT_PRO && tt_get_option('tt_enable_shop', false)){
     load_vm('shop/vm.Shop.Search');
     load_vm('shop/vm.Shop.Product');
     load_vm('shop/vm.Shop.Comment');
+    load_vm('shop/vm.Shop.LatestRated');
+    load_vm('shop/vm.Shop.ViewHistory');
 }
 
 /* 载入小工具 */

@@ -135,6 +135,14 @@ function tt_create_initial_rest_routes() {
     // User Status
     $user_status_controller = new WP_REST_User_Status_Controller;
     $user_status_controller->register_routes();
+
+    // User meta
+    $user_meta_controller = new WP_REST_Usermeta_Controller;
+    $user_meta_controller->register_routes();
+
+    // Shopping cart
+    $shop_cart_controller = new WP_REST_ShoppingCart_Controller;
+    $shop_cart_controller->register_routes();
 }
 add_action( 'rest_api_init', 'tt_create_initial_rest_routes', 0 );  // TODO cached 接口
 

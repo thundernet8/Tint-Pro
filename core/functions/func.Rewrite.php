@@ -208,9 +208,13 @@ add_filter('request', 'tt_match_author_link_field', 10, 1);
  * @return  void
  */
 function tt_redirect_me_main_route(){
-    if(is_user_logged_in() && preg_match('/^\/me([^\/]*)$/i', $_SERVER['REQUEST_URI'])){
-        $nickname = get_user_meta(get_current_user_id(), 'nickname', true);
-        wp_redirect(home_url('/@' . $nickname), 302);
+    if(preg_match('/^\/me([^\/]*)$/i', $_SERVER['REQUEST_URI'])){
+        if($user_id = get_current_user_id()){
+            $nickname = get_user_meta(get_current_user_id(), 'nickname', true);
+            wp_redirect(home_url('/@' . $nickname), 302);
+        }else{
+            wp_redirect(tt_signin_url(tt_get_current_url()), 302);
+        }
         exit;
     }
 }
