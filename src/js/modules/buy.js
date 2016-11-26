@@ -123,12 +123,20 @@ var _updateSidebarCart = function (data) {
     if(widgetContainer.length){
         widgetContainer.html(dom);
         parent = widgetContainer.parent();
-        parent.addClass(parent.hasClass('active') ? '':'active');
+        if(widgetContainer.children('li').length < 1){
+            parent.removeClass('active');
+        }else{
+            parent.addClass(parent.hasClass('active') ? '':'active');
+        }
     }
     if(headerContainer.length){
         headerContainer.html(dom);
         parent = headerContainer.parent();
-        parent.addClass(parent.hasClass('active') ? '':'active');
+        if(headerContainer.children('li').length < 1){
+            parent.removeClass('active');
+        }else{
+            parent.addClass(parent.hasClass('active') ? '':'active');
+        }
     }
 };
 
@@ -253,7 +261,7 @@ var _handleCartItemsRemove = function () {
         type: 'DELETE',
         dataType: 'json',
         //beforeSend: beforeSend,
-        success: success,
+        //success: success,
         //error: error
     });
 };

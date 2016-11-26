@@ -223,9 +223,80 @@ body {
                         &>.shopcart {
                             &>ul {
                                 display: none;
+                                padding: 0 10px;
+                                &>li {
+                                    position: relative;
+                                    padding: 10px 0;
+                                    clear: both;
+                                    &>a {
+                                        color: @main-color;
+                                        &:hover {
+                                            color: @main-link-color;
+                                        }
+                                        img {
+                                            position: absolute;
+                                            top: 10px;
+                                            left: 0;
+                                            width: 60px;
+                                            height: 60px;
+                                            float: left;
+                                            margin-right: 8px;
+                                            border-radius: 3px;
+                                        }
+                                        &>span {
+                                            display: block;
+                                            padding-left: 68px;
+                                            height: 40px;
+                                            margin-right: 5px;
+                                            margin-bottom: 20px;
+                                            overflow: hidden;
+                                            font-size: 1.2rem;
+                                            font-weight: 500;
+                                            line-height: 16px;
+                                            word-break: break-all;
+                                        }
+                                    }
+                                    &>.price {
+                                        position: absolute;
+                                        left: 68px;
+                                        bottom: 10px;
+                                        font-size: 1.6rem;
+                                        line-height: 1;
+                                        color: @price-color;
+                                        i {
+                                            vertical-align: -2px;
+                                        }
+                                    }
+                                    &>.delete {
+                                        position: absolute;
+                                        right: 2px;
+                                        bottom: 12px;
+                                        font-size: 1.6rem;
+                                        cursor: pointer;
+                                        color: @caption-muted-color;
+                                        &:hover {
+                                            color: @brand-danger;
+                                        }
+                                    }
+                                }
+                                &>.cart-amount {
+                                    padding: 5px 0;
+                                    margin-top: 10px;
+                                    font-size: 1.5rem;
+                                    line-height: 2;
+                                    border-top: 1px solid #f5f5f5;
+                                    color: @brand-primary;
+                                    i {
+                                        vertical-align: -2px;
+                                        margin-right: 5px;
+                                    }
+                                }
                             }
                             &.active {
                                 &>ul {
+                                    display: block;
+                                }
+                                &>.cart-actions {
                                     display: block;
                                 }
                                 &>.shopcart_footer {
@@ -239,6 +310,19 @@ body {
                                 font-weight: 500;
                                 color: @dark-font-color;
                                 font-size: 1.3rem;
+                            }
+                            &>.cart-actions {
+                                display: none;
+                                padding: 10px;
+                                text-align: center;
+                                &>a {
+                                    padding: 8px 12px;
+                                    margin-left: 3px;
+                                    margin-right: 3px;
+                                    border-radius: 0;
+                                    font-size: 1.4rem;
+                                    line-height: 1;
+                                }
                             }
                             &>.shopcart_footer {
                                 display: block;

@@ -13,7 +13,7 @@
  */
 ?>
 <?php load_mod('mod.Head'); ?>
-<body <?php body_class('is-loadingApp'); ?>>
+<body <?php body_class(is_single() ? 'is-loadingApp without-menu' : 'is-loadingApp'); ?>>
 <div class="loading-line"></div>
 <?php load_mod('mod.ModalQrCodes'); ?>
 <header class="header shop-header blue">
@@ -21,9 +21,11 @@
         <div class="primary-nav-inner clearfix">
             <!-- Logo -->
             <div class="header_logo-wrap clearfix">
+                <?php if(!is_single()) { ?>
                 <a href="javascript:;" class="hamburger" data-action="toggleMenu">
                     <i class="tico tico-list"></i>
                 </a>
+                <?php } ?>
                 <a class="logo" href="<?php echo tt_url_for('shop_archive'); ?>" title="<?php echo get_bloginfo('name') . '-' . __('Market', 'tt'); ?>">
                     <img src="<?php echo tt_get_option('tt_small_logo'); ?>" alt="Logo">
                 </a>
@@ -71,7 +73,11 @@
                                 <?php } ?>
                                 <div class="cart-amount"><?php echo __('TOTAL: '); ?><i class="tico tico-cny"></i><span><?php echo $total; ?></span></div>
                             </ul>
-                            <div class="shopcart_footer"><?php if(!$display_cart) _e('The shopping cart is empty.', 'tt'); ?></div>
+                            <div class="cart-actions">
+                                <a class="btn btn-border-success cart-act check-act" href="javascript:;"><?php _e('Check Out Now', 'tt'); ?></a>
+                                <a class="btn btn-border-danger cart-act clear-act" href="javascript:;"><?php _e('Clear All', 'tt'); ?></a>
+                            </div>
+                            <div class="shopcart_footer"><?php _e('The shopping cart is empty.', 'tt'); ?></div>
                         </div>
                     </div>
                 </li>

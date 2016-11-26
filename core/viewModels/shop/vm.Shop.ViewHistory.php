@@ -62,7 +62,7 @@ class ShopViewedHistoryVM extends BaseVM {
         if(!$ids || count($ids) < 1) {
             return array();
         }
-        $ids = array_unique($ids);
+        $ids = array_splice(array_unique($ids), 0, 5);
 
         $args = array(
             'post_type' => 'product',

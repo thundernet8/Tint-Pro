@@ -62,7 +62,7 @@ function tt_add_cart($product_id, $quantity = 1, $rest = false) {
     }
 
     $product = get_post($product_id);
-    if(!$product){
+    if(!$product || intval(get_post_meta($product_id, 'tt_product_quantity', true)) < $quantity){ //TODO
         return $rest ? new WP_Error('product_not_found', __('The product you are adding to cart is not found or available', 'tt'), 404) : false;
     }
 

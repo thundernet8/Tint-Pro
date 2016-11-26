@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-11-21 04:36+0800\n"
-"PO-Revision-Date: 2016-11-21 04:36+0800\n"
+"POT-Creation-Date: 2016-11-26 15:53+0800\n"
+"PO-Revision-Date: 2016-11-26 15:59+0800\n"
 "Last-Translator: Zhiyan <mail@webapproach.net>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -82,7 +82,10 @@ msgstr "%s必须介于%d(包含)和%d(包含)之间"
 #: core/api/v1/endpoints/class.Rest.Message.Controller.php:73
 #: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:55
 #: core/api/v1/endpoints/class.Rest.Session.Controller.php:58
+#: core/api/v1/endpoints/class.Rest.ShoppingCart.Controller.php:49
+#: core/api/v1/endpoints/class.Rest.ShoppingCart.Controller.php:71
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:69
+#: core/api/v1/endpoints/class.Rest.Usermeta.Controller.php:52
 msgid "Required to be true, as resource does not support trashing."
 msgstr ""
 
@@ -198,7 +201,7 @@ msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.Message.Controller.php:128
 msgid "Sorry, you cannot create message without signing in."
-msgstr ""
+msgstr "抱歉, 你必须登录才能发送消息"
 
 #: core/api/v1/endpoints/class.Rest.Message.Controller.php:150
 #: core/api/v1/endpoints/class.Rest.UserStatus.Controller.php:110
@@ -236,8 +239,18 @@ msgid "Cannot get the message specified"
 msgstr "不能获取指定消息"
 
 #: core/api/v1/endpoints/class.Rest.Message.Controller.php:218
+#: core/api/v1/endpoints/class.Rest.ShoppingCart.Controller.php:121
+#: core/api/v1/endpoints/class.Rest.Usermeta.Controller.php:101
 msgid "Sorry, you cannot update message without signing in."
 msgstr "抱歉, 必须登录才能更新消息"
+
+#: core/api/v1/endpoints/class.Rest.Message.Controller.php:235
+msgid "Mark message read successfully"
+msgstr "标记已读消息成功"
+
+#: core/api/v1/endpoints/class.Rest.Message.Controller.php:237
+msgid "Mark message read failed"
+msgstr "标记已读消息失败"
 
 #: core/api/v1/endpoints/class.Rest.Message.Controller.php:254
 #: core/api/v1/endpoints/class.Rest.UserStatus.Controller.php:149
@@ -322,9 +335,33 @@ msgstr "无效的用户 id"
 msgid "You have signed out successfully"
 msgstr "你已成功登出"
 
+#: core/api/v1/endpoints/class.Rest.ShoppingCart.Controller.php:91
+msgid "Sorry, you cannot view shopping cart without signing in."
+msgstr "抱歉, 你必须登录才能查看购物车"
+
+#: core/api/v1/endpoints/class.Rest.ShoppingCart.Controller.php:139
+msgid "Add to cart successfully"
+msgstr "添加至购物车成功"
+
+#: core/api/v1/endpoints/class.Rest.ShoppingCart.Controller.php:153
+msgid "Sorry, you cannot delete cart item without signing in."
+msgstr "抱歉, 你必须登录才能删除购物车内容"
+
+#: core/api/v1/endpoints/class.Rest.ShoppingCart.Controller.php:171
+msgid "Delete item from cart successfully"
+msgstr "删除购物车内容成功"
+
+#: core/api/v1/endpoints/class.Rest.ShoppingCart.Controller.php:186
+msgid "Sorry, you cannot delete cart items without signing in."
+msgstr "抱歉, 你必须登录才能清空购物车"
+
+#: core/api/v1/endpoints/class.Rest.ShoppingCart.Controller.php:202
+msgid "Delete items from cart successfully"
+msgstr "清空购物车成功"
+
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:118
 msgid "Sorry, you cannot filter by role."
-msgstr ""
+msgstr "抱歉, 你不能以角色过滤"
 
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:122
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:246
@@ -543,6 +580,30 @@ msgstr "抱歉, 你无权更新用户账户状态"
 #: core/api/v1/endpoints/class.Rest.UserStatus.Controller.php:118
 msgid "A reason is required"
 msgstr "需要理由"
+
+#: core/api/v1/endpoints/class.Rest.Usermeta.Controller.php:70
+msgid "Sorry, you cannot retrieve usermeta without signing in."
+msgstr "抱歉, 你必须登录才能检索用户元数据"
+
+#: core/api/v1/endpoints/class.Rest.Usermeta.Controller.php:87
+msgid "Cannot get the usermeta specified"
+msgstr "不能获取指定用户元数据"
+
+#: core/api/v1/endpoints/class.Rest.Usermeta.Controller.php:123
+msgid "Cannot update or create the usermeta specified"
+msgstr "不能更新或创建指定的用户元数据"
+
+#: core/api/v1/endpoints/class.Rest.Usermeta.Controller.php:139
+msgid "Sorry, you cannot delete usermeta without signing in."
+msgstr "抱歉, 你必须登录才能删除用户元数据"
+
+#: core/api/v1/endpoints/class.Rest.Usermeta.Controller.php:157
+msgid "The usermeta cannot be deleted."
+msgstr "该用户元数据不可删除"
+
+#: core/api/v1/endpoints/class.Rest.Usermeta.Controller.php:160
+msgid "delete usermeta successfully"
+msgstr "删除用户元数据成功"
 
 #: core/classes/class.Open.php:215
 msgid "Can Not Bind QQ Again"
@@ -1428,7 +1489,7 @@ msgid "Activate Registration"
 msgstr "激活注册"
 
 #: core/functions/func.Seo.php:37 core/functions/func.Seo.php:118
-#: core/modules/mod.Header.Shop.php:83 core/modules/mod.Header.php:47
+#: core/modules/mod.Header.Shop.php:101 core/modules/mod.Header.php:47
 msgid "Sign Out"
 msgstr "注销"
 
@@ -1588,6 +1649,21 @@ msgstr "指定的用户已解禁"
 #: core/functions/func.User.php:398
 msgid "Error occurs when unlock the user"
 msgstr "当解禁用户时发生了错误"
+
+#: core/functions/shop/func.Shop.Cart.php:30
+msgid "You need sign in to view the shopping cart"
+msgstr "你必须登录才能查看购物车"
+
+#: core/functions/shop/func.Shop.Cart.php:52
+#: core/functions/shop/func.Shop.Cart.php:102
+#: core/functions/shop/func.Shop.Cart.php:152
+msgid "You need sign in to update shopping cart"
+msgstr "你必须登录才能更新购物车"
+
+#: core/functions/shop/func.Shop.Cart.php:66
+#: core/functions/shop/func.Shop.Cart.php:118
+msgid "The product you are adding to cart is not found or available"
+msgstr "待添加至购物车的商品不存在或不可用"
 
 #: core/functions/shop/func.Shop.Orders.php:86
 msgid "Wait Payment"
@@ -1781,7 +1857,7 @@ msgid "Product ID"
 msgstr "商品ID"
 
 #: core/functions/shop/func.Shop.php:211 core/functions/shop/func.Shop.php:263
-#: core/modules/mod.Header.Shop.php:116
+#: core/modules/mod.Header.Shop.php:134
 msgid "Price"
 msgstr "价格"
 
@@ -1853,48 +1929,63 @@ msgstr "联系"
 msgid "Search for something..."
 msgstr "搜索点什么..."
 
-#: core/modules/mod.Header.Shop.php:49
-msgid "Notifications"
-msgstr "通知"
-
-#: core/modules/mod.Header.Shop.php:59
+#: core/modules/mod.Header.Shop.php:60
 msgid "Shopping Cart"
 msgstr "购物车"
 
-#: core/modules/mod.Header.Shop.php:75 core/modules/mod.Header.php:40
+#: core/modules/mod.Header.Shop.php:72
+#: core/modules/shop/mod.Shop.Sidebar.Right.php:33
+msgid "TOTAL: "
+msgstr "合计: "
+
+#: core/modules/mod.Header.Shop.php:75
+#: core/modules/shop/mod.Shop.Sidebar.Right.php:36
+msgid "Check Out Now"
+msgstr "结算"
+
+#: core/modules/mod.Header.Shop.php:76
+#: core/modules/shop/mod.Shop.Sidebar.Right.php:37
+msgid "Clear All"
+msgstr "清空"
+
+#: core/modules/mod.Header.Shop.php:78
+msgid "The shopping cart is empty."
+msgstr "购物车空空如也."
+
+#: core/modules/mod.Header.Shop.php:93 core/modules/mod.Header.php:40
 msgid "Go Dashboard"
 msgstr "访问后台"
 
-#: core/modules/mod.Header.Shop.php:79
+#: core/modules/mod.Header.Shop.php:97
 msgid "My Orders"
 msgstr "我的订单"
 
-#: core/modules/mod.Header.Shop.php:80 core/modules/mod.Header.php:44
+#: core/modules/mod.Header.Shop.php:98 core/modules/mod.Header.php:44
 msgid "My Messages"
 msgstr "站内消息"
 
-#: core/modules/mod.Header.Shop.php:81 core/modules/mod.Header.php:45
+#: core/modules/mod.Header.Shop.php:99 core/modules/mod.Header.php:45
 msgid "My Settings"
 msgstr "个人设置"
 
-#: core/modules/mod.Header.Shop.php:88 core/modules/mod.Header.php:52
+#: core/modules/mod.Header.Shop.php:106 core/modules/mod.Header.php:52
 msgid "Sign In or Up"
 msgstr "登录/注册"
 
-#: core/modules/mod.Header.Shop.php:106
+#: core/modules/mod.Header.Shop.php:124
 #: core/modules/shop/mod.Shop.Sidebar.Left.php:19
 msgid "Categories"
 msgstr "分类"
 
-#: core/modules/mod.Header.Shop.php:126
+#: core/modules/mod.Header.Shop.php:144
 msgid "Tags"
 msgstr "标签"
 
-#: core/modules/mod.Header.Shop.php:136
+#: core/modules/mod.Header.Shop.php:154
 msgid "Most Popular"
 msgstr "热门"
 
-#: core/modules/mod.Header.Shop.php:139
+#: core/modules/mod.Header.Shop.php:157
 msgid "Latest"
 msgstr "最新上架"
 
@@ -2059,14 +2150,14 @@ msgid "Related Products"
 msgstr "相关商品"
 
 #: core/modules/shop/mod.Shop.Relates.php:26
-#: core/modules/shop/mod.Shop.Sidebar.Right.php:34
+#: core/modules/shop/mod.Shop.Sidebar.Right.php:51
 #: core/templates/shop/tpl.Product.php:82
 #, php-format
 msgid "Rated %0.1f out of 5"
 msgstr "平均评分 %0.1f (满分5)"
 
 #: core/modules/shop/mod.Shop.Relates.php:28
-#: core/modules/shop/mod.Shop.Sidebar.Right.php:36
+#: core/modules/shop/mod.Shop.Sidebar.Right.php:53
 #: core/templates/shop/tpl.Product.php:84
 #, php-format
 msgid ""
@@ -2080,6 +2171,7 @@ msgstr ""
 
 #: core/modules/shop/mod.Shop.Relates.php:33
 #: core/modules/shop/mod.Shop.Sidebar.Left.php:39
+#: core/modules/shop/mod.Shop.Sidebar.Right.php:75
 #: core/templates/shop/tpl.Product.Archive.php:62
 #: core/templates/shop/tpl.Product.Category.php:63
 #: core/templates/shop/tpl.Product.Search.php:63
@@ -2096,15 +2188,15 @@ msgstr "评分"
 msgid "Products"
 msgstr "商品"
 
-#: core/modules/shop/mod.Shop.Sidebar.Right.php:19
+#: core/modules/shop/mod.Shop.Sidebar.Right.php:21
 msgid "CART"
 msgstr "购物车"
 
-#: core/modules/shop/mod.Shop.Sidebar.Right.php:26
+#: core/modules/shop/mod.Shop.Sidebar.Right.php:43
 msgid "Recent Rated"
 msgstr "近期评价"
 
-#: core/modules/shop/mod.Shop.Sidebar.Right.php:46
+#: core/modules/shop/mod.Shop.Sidebar.Right.php:66
 msgid "Recent Viewed Products"
 msgstr "浏览记录"
 
@@ -2721,44 +2813,53 @@ msgid ""
 msgstr "<span itemprop=\"reviewCount\" class=\"count\">%d</span> 个客户评价"
 
 #: core/templates/shop/tpl.Product.php:115
-msgid "Purchase in Taobao"
-msgstr "淘宝购买"
+msgid "SOLD OUT"
+msgstr "售罄"
+
+#: core/templates/shop/tpl.Product.php:115
+msgid "Please contact the site manager via: "
+msgstr "请联系网站管理员: "
 
 #: core/templates/shop/tpl.Product.php:117
-msgid "CHECK OUT"
-msgstr "立即购买"
-
-#: core/templates/shop/tpl.Product.php:118
-msgid "ADD TO CART"
-msgstr "加入购物车"
-
-#: core/templates/shop/tpl.Product.php:120
+#: core/templates/shop/tpl.Product.php:125
 msgid "Qty"
 msgstr "数量"
 
-#: core/templates/shop/tpl.Product.php:129
+#: core/templates/shop/tpl.Product.php:120
+msgid "Purchase in Taobao"
+msgstr "淘宝购买"
+
+#: core/templates/shop/tpl.Product.php:122
+msgid "CHECK OUT"
+msgstr "立即购买"
+
+#: core/templates/shop/tpl.Product.php:123
+msgid "ADD TO CART"
+msgstr "加入购物车"
+
+#: core/templates/shop/tpl.Product.php:135
 msgid "SKU: "
 msgstr "商品编号: "
 
-#: core/templates/shop/tpl.Product.php:130
+#: core/templates/shop/tpl.Product.php:136
 msgid "Categories: "
 msgstr "分类: "
 
-#: core/templates/shop/tpl.Product.php:137
-#: core/templates/shop/tpl.Product.php:149
+#: core/templates/shop/tpl.Product.php:143
+#: core/templates/shop/tpl.Product.php:155
 msgid "Product Description"
 msgstr "商品介绍"
 
-#: core/templates/shop/tpl.Product.php:140
+#: core/templates/shop/tpl.Product.php:146
 #, php-format
 msgid "Reviews (%d)"
 msgstr "评价 (%d)"
 
-#: core/templates/shop/tpl.Product.php:143
+#: core/templates/shop/tpl.Product.php:149
 msgid "History"
 msgstr "订单历史"
 
-#: core/templates/shop/tpl.Product.php:155
+#: core/templates/shop/tpl.Product.php:161
 #, php-format
 msgid "%d reviews for the product"
 msgstr "%d 条商品评价"
@@ -2806,23 +2907,23 @@ msgstr "页面发生了一个错误."
 
 #: core/viewModels/shop/vm.Shop.Category.php:117
 #: core/viewModels/shop/vm.Shop.Home.php:110
-#: core/viewModels/shop/vm.Shop.LatestRated.php:61
-#: core/viewModels/shop/vm.Shop.Product.php:118
-#: core/viewModels/shop/vm.Shop.Product.php:228
-#: core/viewModels/shop/vm.Shop.Product.php:275
+#: core/viewModels/shop/vm.Shop.Product.php:120
+#: core/viewModels/shop/vm.Shop.Product.php:233
+#: core/viewModels/shop/vm.Shop.Product.php:280
 #: core/viewModels/shop/vm.Shop.Search.php:111
 #: core/viewModels/shop/vm.Shop.Tag.php:117
+#: core/viewModels/shop/vm.Shop.ViewHistory.php:98
 msgid "YUAN"
 msgstr "元"
 
 #: core/viewModels/shop/vm.Shop.Category.php:117
 #: core/viewModels/shop/vm.Shop.Home.php:110
-#: core/viewModels/shop/vm.Shop.LatestRated.php:61
-#: core/viewModels/shop/vm.Shop.Product.php:118
-#: core/viewModels/shop/vm.Shop.Product.php:228
-#: core/viewModels/shop/vm.Shop.Product.php:275
+#: core/viewModels/shop/vm.Shop.Product.php:120
+#: core/viewModels/shop/vm.Shop.Product.php:233
+#: core/viewModels/shop/vm.Shop.Product.php:280
 #: core/viewModels/shop/vm.Shop.Search.php:111
 #: core/viewModels/shop/vm.Shop.Tag.php:117
+#: core/viewModels/shop/vm.Shop.ViewHistory.php:98
 msgid "CREDITS"
 msgstr "积分"
 
@@ -3856,6 +3957,9 @@ msgstr "Zhiyan"
 #. Author URI of the plugin/theme
 msgid "https://www.webapproach.net/@zhiyan"
 msgstr "https://www.webapproach.net/@zhiyan"
+
+#~ msgid "Notifications"
+#~ msgstr "通知"
 
 #~ msgid "Submitter"
 #~ msgstr "发布者"

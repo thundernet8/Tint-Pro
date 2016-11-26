@@ -1,5 +1,5 @@
 /**
- * Generated on Fri Nov 25 2016 23:11:28 GMT+0800 (中国标准时间) by Zhiyan
+ * Generated on Sat Nov 26 2016 15:49:47 GMT+0800 (中国标准时间) by Zhiyan
  *
  * @package   Tint
  * @version   v2.0.0
@@ -4368,12 +4368,20 @@
                 if (widgetContainer[['length']]) {
                     widgetContainer[['html']](dom);
                     parent = widgetContainer[['parent']]();
-                    parent[['addClass']](parent[['hasClass']]('active') ? '' : 'active');
+                    if (widgetContainer[['children']]('li')[['length']] < 1) {
+                        parent[['removeClass']]('active');
+                    } else {
+                        parent[['addClass']](parent[['hasClass']]('active') ? '' : 'active');
+                    }
                 }
                 if (headerContainer[['length']]) {
                     headerContainer[['html']](dom);
                     parent = headerContainer[['parent']]();
-                    parent[['addClass']](parent[['hasClass']]('active') ? '' : 'active');
+                    if (headerContainer[['children']]('li')[['length']] < 1) {
+                        parent[['removeClass']]('active');
+                    } else {
+                        parent[['addClass']](parent[['hasClass']]('active') ? '' : 'active');
+                    }
                 }
             };
             var _initQuantityInput = function _initQuantityInput() {
@@ -4445,8 +4453,7 @@
                 $[['post']]({
                     url: url + '?' + $[['param']](_utils2[['default']][['filterDataForRest']](data)),
                     type: 'DELETE',
-                    dataType: 'json',
-                    success: success
+                    dataType: 'json'
                 });
             };
             var _initCartCheckOut = function _initCartCheckOut() {

@@ -33,8 +33,8 @@
         <div class="cart-amount"><?php echo __('TOTAL: '); ?><i class="tico tico-cny"></i><span><?php echo $total; ?></span></div>
     </ul>
     <div class="cart-actions">
-        <a class="btn btn-primary cart-act check-act" href="javascript:;"><?php _e('Check Out Now', 'tt'); ?></a>
-        <a class="btn btn-primary cart-act clear-act" href="javascript:;"><?php _e('Clear All', 'tt'); ?></a>
+        <a class="btn btn-border-success cart-act check-act" href="javascript:;"><?php _e('Check Out Now', 'tt'); ?></a>
+        <a class="btn btn-border-danger cart-act clear-act" href="javascript:;"><?php _e('Clear All', 'tt'); ?></a>
     </div>
 </aside>
 <!-- Latest rated products -->

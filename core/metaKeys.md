@@ -22,6 +22,7 @@
 * tt_banned
 * tt_banned_reason
 * tt_banned_time
+* tt_default_address_id
 
 * tt_view_product_history (array<product id>) //cookie use same key
 

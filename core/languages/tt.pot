@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-11-21 04:35+0800\n"
+"POT-Creation-Date: 2016-11-26 15:53+0800\n"
 "PO-Revision-Date: 2016-08-17 21:40+0800\n"
 "Last-Translator: \n"
 "Language-Team: Zhiyan <mail@webapproach.net>\n"
@@ -84,7 +84,10 @@ msgstr ""
 #: core/api/v1/endpoints/class.Rest.Message.Controller.php:73
 #: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:55
 #: core/api/v1/endpoints/class.Rest.Session.Controller.php:58
+#: core/api/v1/endpoints/class.Rest.ShoppingCart.Controller.php:49
+#: core/api/v1/endpoints/class.Rest.ShoppingCart.Controller.php:71
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:69
+#: core/api/v1/endpoints/class.Rest.Usermeta.Controller.php:52
 msgid "Required to be true, as resource does not support trashing."
 msgstr ""
 
@@ -239,7 +242,17 @@ msgid "Cannot get the message specified"
 msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.Message.Controller.php:218
+#: core/api/v1/endpoints/class.Rest.ShoppingCart.Controller.php:121
+#: core/api/v1/endpoints/class.Rest.Usermeta.Controller.php:101
 msgid "Sorry, you cannot update message without signing in."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Message.Controller.php:235
+msgid "Mark message read successfully"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Message.Controller.php:237
+msgid "Mark message read failed"
 msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.Message.Controller.php:254
@@ -323,6 +336,30 @@ msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.Session.Controller.php:157
 msgid "You have signed out successfully"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.ShoppingCart.Controller.php:91
+msgid "Sorry, you cannot view shopping cart without signing in."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.ShoppingCart.Controller.php:139
+msgid "Add to cart successfully"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.ShoppingCart.Controller.php:153
+msgid "Sorry, you cannot delete cart item without signing in."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.ShoppingCart.Controller.php:171
+msgid "Delete item from cart successfully"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.ShoppingCart.Controller.php:186
+msgid "Sorry, you cannot delete cart items without signing in."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.ShoppingCart.Controller.php:202
+msgid "Delete items from cart successfully"
 msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:118
@@ -546,6 +583,30 @@ msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.UserStatus.Controller.php:118
 msgid "A reason is required"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Usermeta.Controller.php:70
+msgid "Sorry, you cannot retrieve usermeta without signing in."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Usermeta.Controller.php:87
+msgid "Cannot get the usermeta specified"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Usermeta.Controller.php:123
+msgid "Cannot update or create the usermeta specified"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Usermeta.Controller.php:139
+msgid "Sorry, you cannot delete usermeta without signing in."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Usermeta.Controller.php:157
+msgid "The usermeta cannot be deleted."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Usermeta.Controller.php:160
+msgid "delete usermeta successfully"
 msgstr ""
 
 #: core/classes/class.Open.php:215
@@ -1457,7 +1518,7 @@ msgid "Activate Registration"
 msgstr ""
 
 #: core/functions/func.Seo.php:37 core/functions/func.Seo.php:118
-#: core/modules/mod.Header.Shop.php:83 core/modules/mod.Header.php:47
+#: core/modules/mod.Header.Shop.php:101 core/modules/mod.Header.php:47
 msgid "Sign Out"
 msgstr ""
 
@@ -1616,6 +1677,21 @@ msgstr ""
 
 #: core/functions/func.User.php:398
 msgid "Error occurs when unlock the user"
+msgstr ""
+
+#: core/functions/shop/func.Shop.Cart.php:30
+msgid "You need sign in to view the shopping cart"
+msgstr ""
+
+#: core/functions/shop/func.Shop.Cart.php:52
+#: core/functions/shop/func.Shop.Cart.php:102
+#: core/functions/shop/func.Shop.Cart.php:152
+msgid "You need sign in to update shopping cart"
+msgstr ""
+
+#: core/functions/shop/func.Shop.Cart.php:66
+#: core/functions/shop/func.Shop.Cart.php:118
+msgid "The product you are adding to cart is not found or available"
 msgstr ""
 
 #: core/functions/shop/func.Shop.Orders.php:86
@@ -1811,7 +1887,7 @@ msgid "Product ID"
 msgstr ""
 
 #: core/functions/shop/func.Shop.php:211
-#: core/functions/shop/func.Shop.php:263 core/modules/mod.Header.Shop.php:116
+#: core/functions/shop/func.Shop.php:263 core/modules/mod.Header.Shop.php:134
 msgid "Price"
 msgstr ""
 
@@ -1888,48 +1964,63 @@ msgstr ""
 msgid "Search for something..."
 msgstr ""
 
-#: core/modules/mod.Header.Shop.php:49
-msgid "Notifications"
-msgstr ""
-
-#: core/modules/mod.Header.Shop.php:59
+#: core/modules/mod.Header.Shop.php:60
 msgid "Shopping Cart"
 msgstr ""
 
-#: core/modules/mod.Header.Shop.php:75 core/modules/mod.Header.php:40
+#: core/modules/mod.Header.Shop.php:72
+#: core/modules/shop/mod.Shop.Sidebar.Right.php:33
+msgid "TOTAL: "
+msgstr ""
+
+#: core/modules/mod.Header.Shop.php:75
+#: core/modules/shop/mod.Shop.Sidebar.Right.php:36
+msgid "Check Out Now"
+msgstr ""
+
+#: core/modules/mod.Header.Shop.php:76
+#: core/modules/shop/mod.Shop.Sidebar.Right.php:37
+msgid "Clear All"
+msgstr ""
+
+#: core/modules/mod.Header.Shop.php:78
+msgid "The shopping cart is empty."
+msgstr ""
+
+#: core/modules/mod.Header.Shop.php:93 core/modules/mod.Header.php:40
 msgid "Go Dashboard"
 msgstr ""
 
-#: core/modules/mod.Header.Shop.php:79
+#: core/modules/mod.Header.Shop.php:97
 msgid "My Orders"
 msgstr ""
 
-#: core/modules/mod.Header.Shop.php:80 core/modules/mod.Header.php:44
+#: core/modules/mod.Header.Shop.php:98 core/modules/mod.Header.php:44
 msgid "My Messages"
 msgstr ""
 
-#: core/modules/mod.Header.Shop.php:81 core/modules/mod.Header.php:45
+#: core/modules/mod.Header.Shop.php:99 core/modules/mod.Header.php:45
 msgid "My Settings"
 msgstr ""
 
-#: core/modules/mod.Header.Shop.php:88 core/modules/mod.Header.php:52
+#: core/modules/mod.Header.Shop.php:106 core/modules/mod.Header.php:52
 msgid "Sign In or Up"
 msgstr ""
 
-#: core/modules/mod.Header.Shop.php:106
+#: core/modules/mod.Header.Shop.php:124
 #: core/modules/shop/mod.Shop.Sidebar.Left.php:19
 msgid "Categories"
 msgstr ""
 
-#: core/modules/mod.Header.Shop.php:126
+#: core/modules/mod.Header.Shop.php:144
 msgid "Tags"
 msgstr ""
 
-#: core/modules/mod.Header.Shop.php:136
+#: core/modules/mod.Header.Shop.php:154
 msgid "Most Popular"
 msgstr ""
 
-#: core/modules/mod.Header.Shop.php:139
+#: core/modules/mod.Header.Shop.php:157
 msgid "Latest"
 msgstr ""
 
@@ -2094,14 +2185,14 @@ msgid "Related Products"
 msgstr ""
 
 #: core/modules/shop/mod.Shop.Relates.php:26
-#: core/modules/shop/mod.Shop.Sidebar.Right.php:34
+#: core/modules/shop/mod.Shop.Sidebar.Right.php:51
 #: core/templates/shop/tpl.Product.php:82
 #, php-format
 msgid "Rated %0.1f out of 5"
 msgstr ""
 
 #: core/modules/shop/mod.Shop.Relates.php:28
-#: core/modules/shop/mod.Shop.Sidebar.Right.php:36
+#: core/modules/shop/mod.Shop.Sidebar.Right.php:53
 #: core/templates/shop/tpl.Product.php:84
 #, php-format
 msgid ""
@@ -2112,6 +2203,7 @@ msgstr ""
 
 #: core/modules/shop/mod.Shop.Relates.php:33
 #: core/modules/shop/mod.Shop.Sidebar.Left.php:39
+#: core/modules/shop/mod.Shop.Sidebar.Right.php:75
 #: core/templates/shop/tpl.Product.Archive.php:62
 #: core/templates/shop/tpl.Product.Category.php:63
 #: core/templates/shop/tpl.Product.Search.php:63
@@ -2128,15 +2220,15 @@ msgstr ""
 msgid "Products"
 msgstr ""
 
-#: core/modules/shop/mod.Shop.Sidebar.Right.php:19
+#: core/modules/shop/mod.Shop.Sidebar.Right.php:21
 msgid "CART"
 msgstr ""
 
-#: core/modules/shop/mod.Shop.Sidebar.Right.php:26
+#: core/modules/shop/mod.Shop.Sidebar.Right.php:43
 msgid "Recent Rated"
 msgstr ""
 
-#: core/modules/shop/mod.Shop.Sidebar.Right.php:46
+#: core/modules/shop/mod.Shop.Sidebar.Right.php:66
 msgid "Recent Viewed Products"
 msgstr ""
 
@@ -2756,44 +2848,53 @@ msgid ""
 msgstr ""
 
 #: core/templates/shop/tpl.Product.php:115
-msgid "Purchase in Taobao"
+msgid "SOLD OUT"
+msgstr ""
+
+#: core/templates/shop/tpl.Product.php:115
+msgid "Please contact the site manager via: "
 msgstr ""
 
 #: core/templates/shop/tpl.Product.php:117
-msgid "CHECK OUT"
-msgstr ""
-
-#: core/templates/shop/tpl.Product.php:118
-msgid "ADD TO CART"
-msgstr ""
-
-#: core/templates/shop/tpl.Product.php:120
+#: core/templates/shop/tpl.Product.php:125
 msgid "Qty"
 msgstr ""
 
-#: core/templates/shop/tpl.Product.php:129
+#: core/templates/shop/tpl.Product.php:120
+msgid "Purchase in Taobao"
+msgstr ""
+
+#: core/templates/shop/tpl.Product.php:122
+msgid "CHECK OUT"
+msgstr ""
+
+#: core/templates/shop/tpl.Product.php:123
+msgid "ADD TO CART"
+msgstr ""
+
+#: core/templates/shop/tpl.Product.php:135
 msgid "SKU: "
 msgstr ""
 
-#: core/templates/shop/tpl.Product.php:130
+#: core/templates/shop/tpl.Product.php:136
 msgid "Categories: "
 msgstr ""
 
-#: core/templates/shop/tpl.Product.php:137
-#: core/templates/shop/tpl.Product.php:149
+#: core/templates/shop/tpl.Product.php:143
+#: core/templates/shop/tpl.Product.php:155
 msgid "Product Description"
 msgstr ""
 
-#: core/templates/shop/tpl.Product.php:140
+#: core/templates/shop/tpl.Product.php:146
 #, php-format
 msgid "Reviews (%d)"
 msgstr ""
 
-#: core/templates/shop/tpl.Product.php:143
+#: core/templates/shop/tpl.Product.php:149
 msgid "History"
 msgstr ""
 
-#: core/templates/shop/tpl.Product.php:155
+#: core/templates/shop/tpl.Product.php:161
 #, php-format
 msgid "%d reviews for the product"
 msgstr ""
@@ -2842,23 +2943,23 @@ msgstr ""
 
 #: core/viewModels/shop/vm.Shop.Category.php:117
 #: core/viewModels/shop/vm.Shop.Home.php:110
-#: core/viewModels/shop/vm.Shop.LatestRated.php:61
-#: core/viewModels/shop/vm.Shop.Product.php:118
-#: core/viewModels/shop/vm.Shop.Product.php:228
-#: core/viewModels/shop/vm.Shop.Product.php:275
+#: core/viewModels/shop/vm.Shop.Product.php:120
+#: core/viewModels/shop/vm.Shop.Product.php:233
+#: core/viewModels/shop/vm.Shop.Product.php:280
 #: core/viewModels/shop/vm.Shop.Search.php:111
 #: core/viewModels/shop/vm.Shop.Tag.php:117
+#: core/viewModels/shop/vm.Shop.ViewHistory.php:98
 msgid "YUAN"
 msgstr ""
 
 #: core/viewModels/shop/vm.Shop.Category.php:117
 #: core/viewModels/shop/vm.Shop.Home.php:110
-#: core/viewModels/shop/vm.Shop.LatestRated.php:61
-#: core/viewModels/shop/vm.Shop.Product.php:118
-#: core/viewModels/shop/vm.Shop.Product.php:228
-#: core/viewModels/shop/vm.Shop.Product.php:275
+#: core/viewModels/shop/vm.Shop.Product.php:120
+#: core/viewModels/shop/vm.Shop.Product.php:233
+#: core/viewModels/shop/vm.Shop.Product.php:280
 #: core/viewModels/shop/vm.Shop.Search.php:111
 #: core/viewModels/shop/vm.Shop.Tag.php:117
+#: core/viewModels/shop/vm.Shop.ViewHistory.php:98
 msgid "CREDITS"
 msgstr ""
 
