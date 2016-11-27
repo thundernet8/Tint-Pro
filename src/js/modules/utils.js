@@ -132,6 +132,29 @@ var _checkLogin = function () {
 };
 
 
+// 全屏加载动画
+var _showFullLoader = function (icon, text) {
+    var loaderContainer = $('#fullLoader-container');
+    if(!loaderContainer.length){
+        $('<div id="fullLoader-container"><div class="loader"><i class="tico ' + icon + '"></i></div><p>' + text + '</p></div>').appendTo('body').fadeIn();
+    }else{
+        loaderContainer.children('p').text(text);
+        var iconEle = loaderContainer.find('i');
+        iconEle.attr('class', 'tico ' + icon);
+        loaderContainer.fadeIn();
+    }
+};
+
+var _hideFullLoader = function () {
+    var loaderContainer = $('#fullLoader-container');
+    if(loaderContainer.length){
+        loaderContainer.fadeOut(500, function () {
+            loaderContainer.remove();
+        });
+    }
+};
+
+
 var Utils = {
     getUrlPara: _getUrlPara,
     getSiteUrl: _getSiteUrl,
@@ -144,7 +167,9 @@ var Utils = {
     isValidUserName: _isValidUserName,
     filterDataForRest: _filterDataForRest,
     store: _store,
-    checkLogin: _checkLogin
+    checkLogin: _checkLogin,
+    showFullLoader: _showFullLoader,
+    hideFullLoader: _hideFullLoader
 };
 
 export default Utils;

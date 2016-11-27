@@ -28,6 +28,7 @@ defined('CSS_ME') || define('CSS_ME', 'me.css');
 defined('CSS_ACTION') || define('CSS_ACTION', 'actions.css');
 defined('CSS_404') || define('CSS_404', '404.css');
 defined('CSS_ERROR_PAGE') || define('CSS_ERROR_PAGE', 'error-page.css');
+defined('CSS_SITE_UTILS') || define('CSS_SITE_UTILS', 'site-utils.css');
 
 // JS
 defined('JS_COMMON') || define('JS_COMMON', 'common.js');
@@ -41,3 +42,4 @@ defined('JS_UC') || define('JS_UC', 'uc.js');
 defined('JS_ME') || define('JS_ME', 'me.js');
 defined('JS_ACTION') || define('JS_ACTION', 'actionPage.js');
 defined('JS_404') || define('JS_404', '404.js');
+defined('JS_SITE_UTILS') || define('JS_SITE_UTILS', 'site-utils.js');

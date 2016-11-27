@@ -14,9 +14,14 @@
 ?>
 <?php
 
+/**
+ * Class Member
+ */
 class Member{
 
     private $_user;
+
+    public $vip_type = 'normal';
 
     public function __construct($user_or_id){
         if($user_or_id instanceof WP_User){
@@ -27,10 +32,18 @@ class Member{
             // TODO: error
         }
 
-        if($this->_user){
-            foreach (get_object_vars($this->_user) as $key => $value){
-                $this->{$key} = $value;
-            }
-        }
+//        if($this->_user){
+//            foreach (get_object_vars($this->_user) as $key => $value){
+//                $this->{$key} = $value;
+//            }
+//        }
+    }
+
+    public function is_vip(){
+        return true; //TODO
+    }
+
+    public function is_monthly_vip(){
+        return true; //TODO
     }
 }

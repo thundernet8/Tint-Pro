@@ -143,6 +143,10 @@ function tt_create_initial_rest_routes() {
     // Shopping cart
     $shop_cart_controller = new WP_REST_ShoppingCart_Controller;
     $shop_cart_controller->register_routes();
+
+    // Order
+    $order_controller = new WP_REST_Order_Controller;
+    $order_controller->register_routes();
 }
 add_action( 'rest_api_init', 'tt_create_initial_rest_routes', 0 );  // TODO cached 接口
 

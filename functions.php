@@ -112,6 +112,7 @@ load_class('class.Captcha');
 load_class('class.Open');
 load_class('class.PostImage');
 load_class('class.Utils');
+load_class('class.Member');
 if(is_admin()) {
     load_class('class.Tgm.Plugin.Activation');
 }

@@ -33,7 +33,7 @@ function tt_get_cart($user_id = 0, $rest = false) {
     if(!$meta) {
         return array();
     }
-    $cart_items = maybe_unserialize($meta); // $cart_item{id:xxx,name:xxx,price:xxx,quantity:xxx,date:xxx}
+    $cart_items = maybe_unserialize($meta); // $cart_item{id:xxx,name:xxx,price:xxx,quantity:xxx,date:xxx,thumb:xxx,permalink:xxx}
     return $cart_items;
 }
 

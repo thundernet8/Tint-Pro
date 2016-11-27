@@ -1,5 +1,5 @@
 /**
- * Generated on Sat Nov 26 2016 15:49:47 GMT+0800 (中国标准时间) by Zhiyan
+ * Generated on Sun Nov 27 2016 22:22:07 GMT+0800 (中国标准时间) by Zhiyan
  *
  * @package   Tint
  * @version   v2.0.0
@@ -80,7 +80,8 @@
             pm: _utils2[['default']][['getAPIUrl']]('/messages'),
             accountStatus: _utils2[['default']][['getAPIUrl']]('/users/status'),
             userMeta: _utils2[['default']][['getAPIUrl']]('/users/metas'),
-            shoppingCart: _utils2[['default']][['getAPIUrl']]('/shoppingcart')
+            shoppingCart: _utils2[['default']][['getAPIUrl']]('/shoppingcart'),
+            orders: _utils2[['default']][['getAPIUrl']]('/orders')
         };
         var urls = {
             site: _utils2[['default']][['getSiteUrl']](),
@@ -94,7 +95,7 @@
         exports[['Classes']] = classes;
     },
     function (module, exports, __webpack_require__) {
-        (function (TT) {
+        (function (TT, $) {
             'use strict';
             Object[['defineProperty']](exports, '__esModule', { value: true });
             var _typeof = typeof Symbol === 'function' && typeof Symbol[['iterator']] === 'symbol' ? function (obj) {
@@ -194,6 +195,25 @@
                 _modalSignBox2[['default']][['show']]();
                 return false;
             };
+            var _showFullLoader = function _showFullLoader(icon, text) {
+                var loaderContainer = $('#fullLoader-container');
+                if (!loaderContainer[['length']]) {
+                    $('<div id="fullLoader-container"><div class="loader"><i class="tico ' + icon + '"></i></div><p>' + text + '</p></div>')[['appendTo']]('body')[['fadeIn']]();
+                } else {
+                    loaderContainer[['children']]('p')[['text']](text);
+                    var iconEle = loaderContainer[['find']]('i');
+                    iconEle[['attr']]('class', 'tico ' + icon);
+                    loaderContainer[['fadeIn']]();
+                }
+            };
+            var _hideFullLoader = function _hideFullLoader() {
+                var loaderContainer = $('#fullLoader-container');
+                if (loaderContainer[['length']]) {
+                    loaderContainer[['fadeOut']](500, function () {
+                        loaderContainer[['remove']]();
+                    });
+                }
+            };
             var Utils = {
                 getUrlPara: _getUrlPara,
                 getSiteUrl: _getSiteUrl,
@@ -206,10 +226,12 @@
                 isValidUserName: _isValidUserName,
                 filterDataForRest: _filterDataForRest,
                 store: _store,
-                checkLogin: _checkLogin
+                checkLogin: _checkLogin,
+                showFullLoader: _showFullLoader,
+                hideFullLoader: _hideFullLoader
             };
             exports[['default']] = Utils;
-        }[['call']](exports, __webpack_require__(4)));
+        }[['call']](exports, __webpack_require__(4), __webpack_require__(1)));
     },
     function (module, exports) {
         module[['exports']] = TT;

@@ -42,6 +42,15 @@ function tt_get_page_title() {
         }
         return $title . ' - ' . get_bloginfo('name');
     }
+    if($site_util = get_query_var('site_util')){
+        switch ($site_util){
+            case 'checkout':
+                $title = __('Check Out Orders', 'tt');
+                break;
+            // TODO more
+        }
+        return $title . ' - ' . get_bloginfo('name');
+    }
     if(is_home() || is_front_page()) {
         $title = get_bloginfo('name') . ' - ' . get_bloginfo('description');
     }elseif(is_single()&&get_post_type() != 'product') {

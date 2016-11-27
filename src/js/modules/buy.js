@@ -150,9 +150,79 @@ var _initQuantityInput = function () {
 };
 
 
-//
+// 立即购买(单个商品)
 var _initImmediatelyBuy = function (btn) {
-    //TODO
+    if(_sending || !Utils.checkLogin()) return false;
+    
+    var productId = parseInt(_productIDInput.val());
+    
+    if(!productId) return false;
+    
+    var quantity = Math.abs(parseInt(_quantityInput.val()));
+    if(!quantity){
+        quantity = 1;
+    }
+    
+    var url = Routes.orders;
+    var data = {
+        productId: quantity,
+        productName: '',
+        orderQuantity: quantity
+    };
+    
+    var beforeSend = function () {
+        if(_sending) return;
+        _originSendBtnText = btn.text();
+        btn.html(_spinner);
+        btn.parent().children('.btn-buy').prop('disabled', true);
+        _sending = true;
+    };
+    
+    var finishRequest = function () {
+        if(!_sending) return;
+        btn.text(_originSendBtnText);
+        btn.parent().children('.btn-buy').prop('disabled', false);
+        _sending = false;
+    };
+    
+    var success = function (data, textStatus, xhr) {
+        finishRequest();
+        if(data.success && data.success == 1) {
+            popMsgbox.success({
+                title: data.message,
+                text: '订单创建成功, 将跳转至结算页面',
+                showConfirmButton: true
+            });
+            var create = data.data;
+            var checkOutUrl = create.url;
+            setTimeout(function () {
+                location.href = checkOutUrl;
+            }, 2000);
+        }else{
+            popMsgbox.error({
+                title: data.message,
+                timer: 2000,
+                showConfirmButton: true
+            });
+        }
+    };
+    var error = function (xhr, textStatus, err) {
+        finishRequest();
+        popMsgbox.error({
+            title: xhr.responseJSON ? xhr.responseJSON.message : xhr.responseText,
+            timer: 2000,
+            showConfirmButton: true
+        });
+    };
+    
+    $.post({
+        url: url,
+        data: Utils.filterDataForRest(data),
+        dataType: 'json',
+        beforeSend: beforeSend,
+        success: success,
+        error: error
+    });
 };
 
 
@@ -269,9 +339,70 @@ var _handleCartItemsRemove = function () {
 // 结算购物车
 var _initCartCheckOut = function () {
     _body.on('click', _cartCheckOutSel, function () {
-        location.href = Urls.cartCheckOut;
+        _handleCartCheckOut($(this));
     });
 };
+
+var _handleCartCheckOut = function (btn) {
+    if(_sending || !Utils.checkLogin()) return false;
+    
+    var url = Routes.orders;
+    var data = {
+        from: 'cart'
+    };
+    
+    var beforeSend = function () {
+        if(_sending) return;
+        Utils.showFullLoader('tico-spinner spinning', '正在创建订单...');
+        _sending = true;
+    };
+    
+    var finishRequest = function () {
+        if(!_sending) return;
+        Utils.hideFullLoader();
+        _sending = false;
+    };
+    
+    var success = function (data, textStatus, xhr) {
+        finishRequest();
+        if(data.success && data.success == 1) {
+            popMsgbox.success({
+                title: data.message,
+                text: '订单创建成功, 将跳转至结算页面',
+                showConfirmButton: true
+            });
+            var create = data.data;
+            var checkOutUrl = create.url;
+            setTimeout(function () {
+                location.href = checkOutUrl;
+            }, 2000);
+        }else{
+            popMsgbox.error({
+                title: data.message,
+                timer: 2000,
+                showConfirmButton: true
+            });
+        }
+    };
+    var error = function (xhr, textStatus, err) {
+        finishRequest();
+        popMsgbox.error({
+            title: xhr.responseJSON ? xhr.responseJSON.message : xhr.responseText,
+            timer: 2000,
+            showConfirmButton: true
+        });
+    };
+    
+    $.post({
+        url: url,
+        data: Utils.filterDataForRest(data),
+        dataType: 'json',
+        beforeSend: beforeSend,
+        success: success,
+        error: error
+    });
+};
+
 
 var _initCartHandle = function () {
     _initCartItemRemove();

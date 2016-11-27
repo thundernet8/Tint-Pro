@@ -399,6 +399,8 @@ function tt_get_css($filename = '') {
         $filename = CSS_ACTION;
     }elseif(is_front_page()) {
         $filename = CSS_FRONT_PAGE;
+    }elseif(get_query_var('site_util')){
+        $filename = CSS_SITE_UTILS;
     }
     return THEME_ASSET.'/css/' . $filename;
 }

@@ -103,7 +103,8 @@ $site_allow_utils = json_encode(array(
     'upgrade-browser' => 'UpgradeBrowser',
     'privacy-policies-and-terms' => 'Privacy',
     'captcha'   =>  'Captcha',
-    'qr' => 'QrCode'
+    'qr' => 'QrCode',
+    'checkout' => 'CheckOut'
 ));
 defined('ALLOWED_SITE_UTILS') || define('ALLOWED_SITE_UTILS', $site_allow_utils);
 
@@ -113,6 +114,7 @@ $site_endpoints = json_encode(array(
     'privacy'                   =>  'site/privacy-policies-and-terms',   // TODO: terms
     'captcha'                   =>  'site/captcha',
     'qr'                        =>  'site/qr',
+    'checkout'                  =>  'site/checkout',
     'api_root'                  =>  'api',
     'signin'                    =>  'm/signin',
     'signup'                    =>  'm/signup',

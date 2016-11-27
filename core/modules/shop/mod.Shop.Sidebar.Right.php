@@ -17,7 +17,7 @@
 <?php global $cart_items; if(!$cart_items)$cart_items = tt_get_cart(); ?>
 <!-- Shopping cart -->
 <?php $display_cart = $cart_items && count($cart_items) > 0; ?>
-<aside class="commerce-widget widget_shopping_cart <?php if($display_cart) echo 'active'; ?>">
+<aside class="commerce-widget shopcart widget_shopping_cart <?php if($display_cart) echo 'active'; ?>">
     <h3 class="widget-title"><?php _e('CART', 'tt'); ?></h3>
     <ul class="widget-content widget_shopping_cart-list">
         <?php $total = 0; foreach ($cart_items as $cart_item) { $total += $cart_item['price'] * $cart_item['quantity'] ?>

@@ -118,7 +118,7 @@ class WP_REST_ShoppingCart_Controller extends WP_REST_Controller
      */
     public function create_item_permissions_check( $request ) {
         if (!is_user_logged_in()) {
-            return new WP_Error('rest_message_cannot_update', __('Sorry, you cannot update message without signing in.', 'tt'), array('status' => tt_rest_authorization_required_code()));
+            return new WP_Error('rest_cart_cannot_update', __('Sorry, you cannot update cart without signing in.', 'tt'), array('status' => tt_rest_authorization_required_code()));
         }
         return true;
     }

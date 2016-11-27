@@ -31,7 +31,8 @@ var routes = {
     pm: Utils.getAPIUrl('/messages'),
     accountStatus: Utils.getAPIUrl('/users/status'),
     userMeta: Utils.getAPIUrl('/users/metas'),
-    shoppingCart: Utils.getAPIUrl('/shoppingcart')
+    shoppingCart: Utils.getAPIUrl('/shoppingcart'),
+    orders: Utils.getAPIUrl('/orders')
 };
 
 // URL列表
