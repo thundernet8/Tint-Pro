@@ -85,14 +85,14 @@ if($order->parent_id == -1){
                         <span class="col-md-5 td td-name"><h2><?php echo $order_item->product_name; ?></h2></span>
                         <span class="col-md-1 td td-price">
                             <?php if(($order_item->order_price * $order_item->order_quantity - $order_item->order_total_price) > 0.01) { ?>
-                            <span class="td-inner td-origin-price"><del><?php if($order_item->order_currency == 'cash') { ?><i class="tico tico-cny"></i><?php printf('%0.2f', $order_item->order_price); ?><?php }else{ ?><i class="tico tico-diamond"></i><?php absint($order_item->order_price); ?><?php } ?></del></span>
-                            <span class="td-inner td-discount-price"><?php if($order_item->order_currency == 'cash') { ?><i class="tico tico-cny"></i><?php printf('%0.2f', $order_item->order_total_price / $order_item->order_quantity); ?><?php }else{ ?><i class="tico tico-diamond"></i><?php absint($order_item->order_total_price / $order_item->order_quantity); ?><?php } ?></span>
+                            <span class="td-inner td-origin-price"><del><?php if($order_item->order_currency == 'cash') { ?><i class="tico tico-cny"></i><?php printf('%0.2f', $order_item->order_price); ?><?php }else{ ?><i class="tico tico-diamond"></i><?php echo absint($order_item->order_price); ?><?php } ?></del></span>
+                            <span class="td-inner td-discount-price"><?php if($order_item->order_currency == 'cash') { ?><i class="tico tico-cny"></i><?php printf('%0.2f', $order_item->order_total_price / $order_item->order_quantity); ?><?php }else{ ?><i class="tico tico-diamond"></i><?php echo absint($order_item->order_total_price / $order_item->order_quantity); ?><?php } ?></span>
                             <?php }else{ ?>
-                            <span class="td-inner td-origin-price"><?php if($order_item->order_currency == 'cash') { ?><i class="tico tico-cny"></i><?php printf('%0.2f', $order_item->order_price); ?><?php }else{ ?><i class="tico tico-diamond"></i><?php absint($order_item->order_price); ?><?php } ?></span>
+                            <span class="td-inner td-origin-price"><?php if($order_item->order_currency == 'cash') { ?><i class="tico tico-cny"></i><?php printf('%0.2f', $order_item->order_price); ?><?php }else{ ?><i class="tico tico-diamond"></i><?php echo absint($order_item->order_price); ?><?php } ?></span>
                             <?php } ?>
                         </span>
                         <span class="col-md-1 td td-quantity"><?php echo 'x ' . absint($order_item->order_quantity); ?></span>
-                        <span class="col-md-1 td td-total-price"><?php if($order_item->order_currency == 'cash') { ?><i class="tico tico-cny"></i><?php printf('%0.2f', $order_item->order_total_price); ?><?php }else{ ?><i class="tico tico-diamond"></i><?php absint($order_item->order_total_price); ?><?php } ?></span>
+                        <span class="col-md-1 td td-total-price"><?php if($order_item->order_currency == 'cash') { ?><i class="tico tico-cny"></i><?php printf('%0.2f', $order_item->order_total_price); ?><?php }else{ ?><i class="tico tico-diamond"></i><?php echo absint($order_item->order_total_price); ?><?php } ?></span>
                         <span class="col-md-2 td td-view"><a class="product-link" href="<?php echo get_permalink($order_item->product_id); ?>" target="_blank"><?php _e('View Details', 'tt'); ?></a></span>
                     </li>
                     <?php } ?>
