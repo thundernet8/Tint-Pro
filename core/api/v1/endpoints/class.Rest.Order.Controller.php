@@ -140,6 +140,7 @@ class WP_REST_Order_Controller extends WP_REST_Controller
                 $order_quantities[] = absint($cart_item['quantity']);
             }
             $create = tt_create_combine_orders($product_ids, $order_quantities);
+            tt_clear_cart(); // 创建订单成功后清空购物车
         }else{
             $product_id = $request->get_param('productId');
             $product_name = $request->get_param('productName');

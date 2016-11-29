@@ -14,4 +14,29 @@
 'use strict';
 
 
- 
+'use strict';
+
+import {handleLineLoading} from './modules/loading';
+import {popMsgbox, msgbox} from './modules/msgbox';
+import ScrollHandler from './modules/scroll';
+import {} from './modules/bootstrap-flat';
+
+// DOM Ready
+jQuery(document).ready(function ($) {
+    // 隐藏加载条
+    handleLineLoading();
+    
+    // 初始化popMsgbox
+    popMsgbox.init();
+    
+    // 初始化msgbox
+    //msgbox.init();
+    
+    // 滚动顶部底部
+    ScrollHandler.initScrollTo();
+    
+    var body = $('body');
+
+    
+    
+});

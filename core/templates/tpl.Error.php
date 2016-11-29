@@ -66,7 +66,7 @@
     </div>
 </div>
 <footer class="footer special-footer">
-    <p><span class="copy">&copy;</span>&nbsp;<?php echo date("Y") . '&nbsp;' . get_bloginfo('name'); ?></p>
+    <p><span class="copy">&copy;</span>&nbsp;<?php echo tt_copyright_year() . '&nbsp;' . get_bloginfo('name'); ?></p>
 </footer>
 </body>
 </html>

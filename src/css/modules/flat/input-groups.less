@@ -46,7 +46,7 @@
   text-align: center;
   background-color: @gray-light;
   border: 2px solid @gray-light;
-  border-radius: @border-radius-large;
+  border-radius: @border-radius-small;
   transition: border .25s linear, color .25s linear, background-color .25s linear;
   width: 1%;
   white-space: nowrap;
@@ -71,10 +71,11 @@
 // Focus State
 // -------------------------
 .form-group.focus,
+.input-group.active,
 .input-group.focus {
   .input-group-addon {
-    background-color: @brand-secondary;
-    border-color: @brand-secondary;
+    background-color: @brand-ico; //@brand-secondary;
+    border-color: @brand-ico; //@brand-secondary;
   }
   .input-group-btn {
     > .btn-default + .btn-default {
@@ -86,7 +87,8 @@
       color: @brand-secondary;
     }
     .btn-default {
-      .button-variant(@btn-default-color, @brand-secondary, @btn-primary-hover-bg, @btn-primary-active-bg);
+      border-color: @brand-ico;
+      .button-variant(@btn-default-color, @brand-ico, lighten(@brand-ico, 5%), lighten(@brand-ico, 5%));
     }
   }
 }
@@ -97,7 +99,7 @@
   display: table-cell;
   width: 1%;
   white-space: nowrap;
-  vertical-align: middle;
+  vertical-align: bottom; //middle;
 
   .btn {
     background-color: @inverse;

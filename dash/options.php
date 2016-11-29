@@ -674,6 +674,51 @@ function optionsframework_options() {
     );
 
 
+    // - 支付宝收款帐户
+    $options[] = array(
+        'name' => __( '支付宝收款帐户邮箱', 'tt' ),
+        'desc' => __( '支付宝收款帐户邮箱,要收款必填并务必保持正确', 'tt' ),
+        'id' => 'tt_alipay_email',
+        'std' => '',
+        'type' => $theme_pro ? 'text' : 'disabled'
+    );
+
+
+    // - 支付宝商家身份ID
+    $options[] = array(
+        'name' => __( '支付宝商家身份ID', 'tt' ),
+        'desc' => __( '合作身份者id，以2088开头的16位纯数字', 'tt' ),
+        'id' => 'tt_alipay_partner',
+        'std' => '',
+        'type' => $theme_pro ? 'text' : 'disabled'
+    );
+
+
+    // - 支付宝商家身份key
+    $options[] = array(
+        'name' => __( '支付宝商家身份key', 'tt' ),
+        'desc' => __( '支付宝商家身份安全检验码，以数字和字母组成的32位字符', 'tt' ),
+        'id' => 'tt_alipay_key',
+        'std' => '',
+        'type' => $theme_pro ? 'text' : 'disabled'
+    );
+
+
+    // - 支付宝商家收款类型
+    $options[] = array(
+        'name' => __( '支付宝商家收款类型', 'tt' ),
+        'desc' => __( '支付宝商家收款类型, 支持即时到账, 双功能和担保交易, 注意：切换类型后必须对应修改商家身份key', 'tt' ),
+        'id' => 'tt_alipay_service',
+        'std' => 'create_direct_pay_by_user',
+        'type' => $theme_pro ? 'select' : 'disabled',
+        'options' => array(
+            'create_direct_pay_by_user' => __( 'Memcache', 'tt' ),  // 即时到账
+            'trade_create_by_buyer' => __( 'Redis', 'tt' ), // 双功能
+            'create_partner_trade_by_buyer'  => __('None', 'tt') // 担保交易
+        )
+    );
+
+
     // - 站点微信收款二维码
     $options[] = array(
         'name' => __( 'Site Weixin Pay QR', 'tt' ),

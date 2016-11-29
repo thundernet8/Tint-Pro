@@ -1,5 +1,5 @@
 /**
- * Generated on Sun Nov 27 2016 22:22:08 GMT+0800 (中国标准时间) by Zhiyan
+ * Generated on Tue Nov 29 2016 20:53:33 GMT+0800 (中国标准时间) by Zhiyan
  *
  * @package   Tint
  * @version   v2.0.0

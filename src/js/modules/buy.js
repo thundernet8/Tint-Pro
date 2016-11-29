@@ -165,7 +165,7 @@ var _initImmediatelyBuy = function (btn) {
     
     var url = Routes.orders;
     var data = {
-        productId: quantity,
+        productId: productId,
         productName: '',
         orderQuantity: quantity
     };
