@@ -181,24 +181,25 @@ class WP_REST_Order_Controller extends WP_REST_Controller
      */
     public function update_item( $request ) {
         $order_id = $request['id'];
+        $order = tt_get_order($order_id);
         if($coupon = $request->get_param('coupon')){
             $update = tt_update_order_by_coupon($order_id, $coupon);
-        }else{
+        }elseif($request->get_param('checkout')){
+            // 如果提交了地址信息, 创建一条新的地址记录
+            $address_id = 0;
+            if($request->get_param('receiverName') && $request->get_param('receiverEmail')) {
+                $name = htmlspecialchars(trim($request->get_param('receiverName')));
+                $email = htmlspecialchars(trim($request->get_param('receiverEmail')));
+                $cellphone = htmlspecialchars(trim($request->get_param('receiverPhone')));
+                $address = htmlspecialchars(trim($request->get_param('receiverAddr')));
+                $zip = htmlspecialchars(trim($request->get_param('receiverZip')));
+                $address_id = tt_add_address($name, $address, $cellphone, $zip, $email);
+            }
+
+            //
             $data = array();
             $format = array();
-            if($trade_no = $request->get_param('tradeNo') !== null){
-                $data['trade_no'] = $trade_no;
-                $format[] = '%s';
-            }
-            if($order_success_time = $request->get_param('orderSuccessTime') !== null){
-                $data['order_success_time'] = $order_success_time;
-                $format[] = '%s';
-            }
-            if($order_status = $request->get_param('orderStatus') !== null){
-                $data['order_status'] = $order_status;
-                $format[] = '%d';
-            }
-            if($address_id = $request->get_param('addressId') !== null){
+            if($address_id || $address_id = $request->get_param('addressId') !== null){
                 $data['address_id'] = $address_id;
                 $format[] = '%d';
             }
@@ -206,10 +207,63 @@ class WP_REST_Order_Controller extends WP_REST_Controller
                 $data['user_message'] = $user_message;
                 $format[] = '%s';
             }
-            if($user_alipay = $request->get_param('userAlipay') !== null){
-                $data['user_alipay'] = $user_alipay;
-                $format[] = '%s';
+
+            $update = tt_update_order($order_id, $data, $format); // 把用户留言和地址更新到订单
+
+            // 如果是积分订单,立即支付
+            if($order->order_currency == 'credit'){
+                $pay = tt_credit_pay($order->order_total_price, true);
+                if($pay instanceof WP_Error) return $pay;
+                if($pay) {
+                    return tt_api_success('', array('data' => array(
+                        'orderId' => $order_id,
+                        'url' => add_query_arg(array('oid' => $order_id, 'spm' => wp_create_nonce('pay_result')), tt_url_for('payresult'))
+                        //TODO 添加积分充值链接
+                    )));
+                }
+            }else{  // 如果是现金订单,返回信息包含支付url
+                $pay_method = $request->get_param('payMethod') == 'alipay' ? 'alipay' : 'qrcode';
+                switch ($pay_method){
+                    case 'alipay':
+                        return tt_api_success('', array('data' => array( // 返回payment gateway url
+                            'orderId' => $order_id,
+                            'url' => add_query_arg(array('oid' => $order_id, 'spm' => wp_create_nonce('pay_gateway'), 'channel' => 'alipay'), tt_url_for('paygateway'))
+                        )));
+                    default: //qrcode
+                        return tt_api_success('', array('data' => array( // 直接返回扫码支付url,后面手动修改订单
+                            'orderId' => $order_id,
+                            'url' => add_query_arg(array('oid' => $order_id), tt_url_for('qrpay'))
+                        )));
+                }
             }
+        }else{
+            // 此条件一般是用户自己或管理员管理订单,需要操作orderStatus信息
+            $data = array();
+            $format = array();
+//            if($trade_no = $request->get_param('tradeNo') !== null){
+//                $data['trade_no'] = $trade_no;
+//                $format[] = '%s';
+//            }
+//            if($order_success_time = $request->get_param('orderSuccessTime') !== null){
+//                $data['order_success_time'] = $order_success_time;
+//                $format[] = '%s';
+//            }
+            if($order_status = $request->get_param('orderStatus') !== null){
+                $data['order_status'] = $order_status;
+                $format[] = '%d';
+            }
+//            if($address_id = $request->get_param('addressId') !== null){
+//                $data['address_id'] = $address_id;
+//                $format[] = '%d';
+//            }
+//            if($user_message = $request->get_param('userMessage') !== null){
+//                $data['user_message'] = $user_message;
+//                $format[] = '%s';
+//            }
+//            if($user_alipay = $request->get_param('userAlipay') !== null){
+//                $data['user_alipay'] = $user_alipay;
+//                $format[] = '%s';
+//            }
             $update = tt_update_order($order_id, $data, $format);
         }
         if($update instanceof WP_Error) {
@@ -217,9 +271,15 @@ class WP_REST_Order_Controller extends WP_REST_Controller
         }elseif(!$update){
             return new WP_Error('order_update_failed', __('Update order failed', 'tt'));
         }
-        return tt_api_success('', array('data' => array(
-            'order_id' => $order_id
-        )));
+
+        $data = array(
+            'orderId' => $order_id
+        );
+        if(isset($coupon)) {
+            $order = tt_get_order($order_id);
+            $data['realPrice'] = sprintf('%0.2f', $order->order_total_price);
+        }
+        return tt_api_success('', array('data' => $data));
     }
 
 

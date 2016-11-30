@@ -43,6 +43,8 @@ if($order->parent_id == -1){
     $sub_orders = tt_get_sub_orders($order->id);
 }
 
+$current_user = wp_get_current_user();
+
 ?>
 <?php tt_get_header('simple'); ?>
 <body class="is-loadingApp site-page checkout">
@@ -78,6 +80,16 @@ if($order->parent_id == -1){
                 <h3><?php _e('Order Details', 'tt'); ?></h3>
                 <?php $order_list = count($sub_orders) ? $sub_orders : array($order); $total_price = 0; ?>
                 <ul class="order-items">
+                    <?php if(count($order_list)) { ?>
+                        <li class="order-head clearfix" id="">
+                            <span class="col-md-2 th th-thumb"></span>
+                            <span class="col-md-5 th th-name"><?php _e('Product Name', 'tt'); ?></span>
+                            <span class="col-md-1 th th-price"><?php _e('Single Price', 'tt'); ?></span>
+                            <span class="col-md-1 th th-quantity"><?php _e('Quantity', 'tt'); ?></span>
+                            <span class="col-md-1 th th-total-price"><?php _e('Gross', 'tt'); ?></span>
+                            <span class="col-md-2 th th-action"><?php _e('Actions', 'tt'); ?></span>
+                        </li>
+                    <?php } ?>
                     <?php foreach ($order_list as $order_item){ ?>
                     <?php $total_price += $order_item->order_total_price; ?>
                     <li class="order-item clearfix" id="<?php echo 'order-' . $order_item->id; ?>" data-order-id="<?php echo $order_item->order_id; ?>">
@@ -99,17 +111,17 @@ if($order->parent_id == -1){
                 </ul>
                 <div class="order-memo">
                     <label class="memo-name" for="memo-textarea"><?php _e('Message sent to vendor: ', 'tt'); ?></label>
-                    <div class="memo-detail"><textarea id="memo-textarea" placeholder="<?php _e('Optional, please leave some remind note for this deal to the vendor', 'tt'); ?>"></textarea></div>
+                    <div class="memo-detail"><textarea id="memo-textarea" name="order-memo" placeholder="<?php _e('Optional, please leave some remind note for this deal to the vendor', 'tt'); ?>"></textarea></div>
                 </div>
             </section>
-            <section class="address">
+            <section class="address clearfix">
                 <h3><?php _e('Address Info', 'tt'); ?></h3>
                 <?php $addresses = tt_get_addresses(); ?>
                 <?php if(count($addresses)) { ?>
                     <?php $default_address_id = (int)get_user_meta($user_id, 'tt_default_address_id', true); ?>
-                    <ul class="address-list">
+                    <ul class="address-list row">
                         <?php foreach ($addresses as $address) { ?>
-                        <li class="<?php if($default_address_id == $address->id) echo 'address suggest-address'; else echo 'address'; ?>" id="<?php echo 'address-' . $address->id; ?>" data-address-id="<?php echo $address->id; ?>">
+                        <li class="<?php if($default_address_id == $address->id) echo 'address col-md-3 active'; else echo 'address col-md-3'; ?>" id="<?php echo 'address-' . $address->id; ?>" data-address-id="<?php echo $address->id; ?>">
                             <div class="inner">
                                 <div class="addr-hd"><?php printf(__('Receiver: %s', 'tt'), $address->user_name); ?></div>
                                 <div class="addr-bd">
@@ -125,7 +137,7 @@ if($order->parent_id == -1){
                         </li>
                         <?php } ?>
                     </ul>
-                    <a class="add-new-address"><?php _e('Add New', 'tt'); ?></a>
+                    <a class="add-new-address" data-show-sel=".address-input-group" data-hide-sel=".address-list"><?php _e('Use New Address', 'tt'); ?></a>
                     <?php $address_input_class = 'address-input-group row'; ?>
                 <?php }else{ ?>
                     <?php $address_input_class = 'address-input-group row active'; ?>
@@ -134,11 +146,11 @@ if($order->parent_id == -1){
                         <!-- Name Email Phone Address Zip -->
                         <div class="input-group col-md-3">
                             <span class="input-group-addon required" id="receiver-name"><?php _e('Name', 'tt'); ?></span>
-                            <input type="text" class="form-control" name="receiver-name" aria-describedby="receiver-name" required>
+                            <input type="text" class="form-control" name="receiver-name" aria-describedby="receiver-name" value="<?php echo $current_user->display_name; ?>" required>
                         </div>
                         <div class="input-group col-md-5">
                             <span class="input-group-addon required" id="receiver-email"><?php _e('Email', 'tt'); ?></span>
-                            <input type="text" class="form-control" name="receiver-email" aria-describedby="receiver-email" required>
+                            <input type="text" class="form-control" name="receiver-email" aria-describedby="receiver-email" value="<?php echo $current_user->user_email; ?>" required>
                         </div>
                         <div class="input-group col-md-4">
                             <span class="input-group-addon" id="receiver-phone"><?php _e('Phone', 'tt'); ?></span>
@@ -156,7 +168,7 @@ if($order->parent_id == -1){
             </section>
             <?php if($currency=='cash' && tt_get_option('tt_alipay_email') && tt_get_option('tt_alipay_partner')) { ?>
             <section class="pay-method">
-                <h3><?php _e('Pay', 'tt'); ?></h3>
+                <h3><?php _e('Pay Methods', 'tt'); ?></h3>
                 <ul class="pay-method-list">
                     <li>
                         <label class="radio alipay-radio">
@@ -168,7 +180,7 @@ if($order->parent_id == -1){
             </section>
             <?php }elseif($currency!='cash'){ ?>
                 <section class="pay-method">
-                    <h3><?php _e('Pay', 'tt'); ?></h3>
+                    <h3><?php _e('Pay Methods', 'tt'); ?></h3>
                     <ul class="pay-method-list">
                         <li>
                             <label class="radio credit-radio">
@@ -186,8 +198,8 @@ if($order->parent_id == -1){
                         <span><?php _e('Coupon: ', 'tt'); ?></span>
                         <input type="text" class="form-control" name="coupon">
                         <span class="input-group-btn">
-                                <button class="btn btn-default" type="button"><?php _e('Apply', 'tt'); ?></button>
-                            </span>
+                            <button class="btn btn-default" id="apply-coupon" data-order-id="<?php echo $order->order_id; ?>" type="button"><?php _e('Apply', 'tt'); ?></button>
+                        </span>
                     </div>
                     <?php } ?>
                     <div class="order-realPay">
@@ -196,7 +208,7 @@ if($order->parent_id == -1){
                         <span class="real-price"><?php echo $currency == 'cash' ? sprintf('%0.2f', $total_price) : intval($total_price); ?></span>
                     </div>
                 </div>
-                <a role="button" title="<?php _e('Submit Order', 'tt'); ?>" class="btn btn-wide btn-danger btn-submit pull-right" id="submit-order"><?php _e('Submit Order', 'tt'); ?></a>
+                <a role="button" title="<?php _e('Submit Order', 'tt'); ?>" class="btn btn-wide btn-danger btn-submit pull-right" id="submit-order" data-order-id="<?php echo $order->order_id; ?>"><?php _e('Submit Order', 'tt'); ?></a>
             </section>
         </div>
     </div>

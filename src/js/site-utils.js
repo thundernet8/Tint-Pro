@@ -13,13 +13,11 @@
 
 'use strict';
 
-
-'use strict';
-
 import {handleLineLoading} from './modules/loading';
 import {popMsgbox, msgbox} from './modules/msgbox';
 import ScrollHandler from './modules/scroll';
 import {} from './modules/bootstrap-flat';
+import Checkout from './modules/checkout';
 
 // DOM Ready
 jQuery(document).ready(function ($) {
@@ -34,9 +32,8 @@ jQuery(document).ready(function ($) {
     
     // 滚动顶部底部
     ScrollHandler.initScrollTo();
-    
-    var body = $('body');
 
-    
+    // 确认订单详情和结算(输入地址信息、应用优惠码等)
+    Checkout.init();
     
 });

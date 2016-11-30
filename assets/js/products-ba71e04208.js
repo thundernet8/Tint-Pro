@@ -1,5 +1,5 @@
 /**
- * Generated on Tue Nov 29 2016 20:53:32 GMT+0800 (中国标准时间) by Zhiyan
+ * Generated on Wed Nov 30 2016 23:33:17 GMT+0800 (中国标准时间) by Zhiyan
  *
  * @package   Tint
  * @version   v2.0.0
@@ -46,6 +46,8 @@
             var _signHelp2 = _interopRequireDefault(_signHelp);
             var _fixFooter = __webpack_require__(16);
             var _fixFooter2 = _interopRequireDefault(_fixFooter);
+            var _toggle = __webpack_require__(26);
+            var _toggle2 = _interopRequireDefault(_toggle);
             function _interopRequireDefault(obj) {
                 return obj && obj[['__esModule']] ? obj : { default: obj };
             }
@@ -57,6 +59,8 @@
                 _modalSignBox2[['default']][['init']]();
                 _signHelp2[['default']][['init']]();
                 (0, _fixFooter2[['default']])();
+                _scroll2[['default']][['initShopSubNavCollapse']]();
+                _toggle2[['default']][['initShopLeftMenuToggle']]();
             });
         }[['call']](exports, __webpack_require__(1)));
     },
@@ -88,7 +92,8 @@
             accountStatus: _utils2[['default']][['getAPIUrl']]('/users/status'),
             userMeta: _utils2[['default']][['getAPIUrl']]('/users/metas'),
             shoppingCart: _utils2[['default']][['getAPIUrl']]('/shoppingcart'),
-            orders: _utils2[['default']][['getAPIUrl']]('/orders')
+            orders: _utils2[['default']][['getAPIUrl']]('/orders'),
+            coupons: _utils2[['default']][['getAPIUrl']]('/coupons')
         };
         var urls = {
             site: _utils2[['default']][['getSiteUrl']](),
@@ -502,9 +507,9 @@
         }[['call']](exports, __webpack_require__(1), __webpack_require__(1)));
     },
     function (module, exports, __webpack_require__) {
-        var require;
-        var require;
         var __WEBPACK_AMD_DEFINE_RESULT__;
+        var require;
+        var require;
         'use strict';
         var _typeof = typeof Symbol === 'function' && typeof Symbol[['iterator']] === 'symbol' ? function (obj) {
             return typeof obj;
@@ -2700,6 +2705,30 @@
                     footer[['css']]('position', 'relative')[['css']]('top', diffH);
                 }
             };
+        }[['call']](exports, __webpack_require__(1)));
+    },
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    function (module, exports, __webpack_require__) {
+        (function ($) {
+            'use strict';
+            Object[['defineProperty']](exports, '__esModule', { value: true });
+            var _body = $('body');
+            var _shopMenuToggleAnchorSel = '.hamburger';
+            var _initShopLeftMenuToggle = function _initShopLeftMenuToggle() {
+                _body[['on']]('click', _shopMenuToggleAnchorSel, function () {
+                    _body[['toggleClass']]('without-menu');
+                });
+            };
+            var Toggle = { initShopLeftMenuToggle: _initShopLeftMenuToggle };
+            exports[['default']] = Toggle;
         }[['call']](exports, __webpack_require__(1)));
     }
 ]));

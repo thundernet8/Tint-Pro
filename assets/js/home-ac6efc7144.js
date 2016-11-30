@@ -1,5 +1,5 @@
 /**
- * Generated on Tue Nov 29 2016 20:53:33 GMT+0800 (中国标准时间) by Zhiyan
+ * Generated on Wed Nov 30 2016 23:33:17 GMT+0800 (中国标准时间) by Zhiyan
  *
  * @package   Tint
  * @version   v2.0.0
@@ -31,14 +31,19 @@
     return __webpack_require__(0);
 }([
     function (module, exports, __webpack_require__) {
-        (function (jQuery) {
-            'use strict';
+        (function (jQuery, TT) {
             'use strict';
             var _loading = __webpack_require__(8);
             var _msgbox = __webpack_require__(6);
+            __webpack_require__(9);
+            __webpack_require__(17);
             var _scroll = __webpack_require__(14);
             var _scroll2 = _interopRequireDefault(_scroll);
-            __webpack_require__(9);
+            var _modalSignBox = __webpack_require__(5);
+            var _modalSignBox2 = _interopRequireDefault(_modalSignBox);
+            __webpack_require__(19);
+            var _signHelp = __webpack_require__(15);
+            var _signHelp2 = _interopRequireDefault(_signHelp);
             function _interopRequireDefault(obj) {
                 return obj && obj[['__esModule']] ? obj : { default: obj };
             }
@@ -46,17 +51,383 @@
                 (0, _loading[['handleLineLoading']])();
                 _msgbox[['popMsgbox']][['init']]();
                 _scroll2[['default']][['initScrollTo']]();
-                var body = $('body');
+                _modalSignBox2[['default']][['init']]();
+                _signHelp2[['default']][['init']]();
+                (function () {
+                    if (window[['TT']] && TT[['isHome']]) {
+                        $('.slides-wrap')[['unslider']]({
+                            autoplay: true,
+                            animation: 'horizontal',
+                            animateHeight: false,
+                            delay: 6000,
+                            arrows: false,
+                            infinite: true,
+                            keys: {
+                                prev: 37,
+                                next: 39,
+                                stop: 27
+                            }
+                        });
+                    }
+                }());
+                $('img.lazy')[['lazyload']]({
+                    effect: 'fadeIn',
+                    threshold: 50
+                });
+                $('.sidebar img.lazy')[['lazyload']]({
+                    effect: 'fadeIn',
+                    threshold: 0
+                });
             });
-        }[['call']](exports, __webpack_require__(1)));
+        }[['call']](exports, __webpack_require__(1), __webpack_require__(4)));
     },
     function (module, exports) {
         module[['exports']] = jQuery;
     },
-    ,
-    ,
-    ,
-    ,
+    function (module, exports, __webpack_require__) {
+        'use strict';
+        Object[['defineProperty']](exports, '__esModule', { value: true });
+        exports[['Classes']] = exports[['Urls']] = exports[['Routes']] = undefined;
+        var _utils = __webpack_require__(3);
+        var _utils2 = _interopRequireDefault(_utils);
+        function _interopRequireDefault(obj) {
+            return obj && obj[['__esModule']] ? obj : { default: obj };
+        }
+        var routes = {
+            signIn: _utils2[['default']][['getAPIUrl']]('/session'),
+            session: _utils2[['default']][['getAPIUrl']]('/session'),
+            signUp: _utils2[['default']][['getAPIUrl']]('/users'),
+            users: _utils2[['default']][['getAPIUrl']]('/users'),
+            comments: _utils2[['default']][['getAPIUrl']]('/comments'),
+            commentStars: _utils2[['default']][['getAPIUrl']]('/comment/stars'),
+            postStars: _utils2[['default']][['getAPIUrl']]('/post/stars'),
+            myFollower: _utils2[['default']][['getAPIUrl']]('/users/me/followers'),
+            myFollowing: _utils2[['default']][['getAPIUrl']]('/users/me/following'),
+            follower: _utils2[['default']][['getAPIUrl']]('/users/{{uid}}/followers'),
+            following: _utils2[['default']][['getAPIUrl']]('/users/{{uid}}/following'),
+            pm: _utils2[['default']][['getAPIUrl']]('/messages'),
+            accountStatus: _utils2[['default']][['getAPIUrl']]('/users/status'),
+            userMeta: _utils2[['default']][['getAPIUrl']]('/users/metas'),
+            shoppingCart: _utils2[['default']][['getAPIUrl']]('/shoppingcart'),
+            orders: _utils2[['default']][['getAPIUrl']]('/orders'),
+            coupons: _utils2[['default']][['getAPIUrl']]('/coupons')
+        };
+        var urls = {
+            site: _utils2[['default']][['getSiteUrl']](),
+            signIn: _utils2[['default']][['getSiteUrl']]() + '/m/signin',
+            cartCheckOut: _utils2[['default']][['getSiteUrl']]() + '/site/cartcheckout',
+            checkOut: _utils2[['default']][['getSiteUrl']]() + '/site/checkout'
+        };
+        var classes = { appLoading: 'is-loadingApp' };
+        exports[['Routes']] = routes;
+        exports[['Urls']] = urls;
+        exports[['Classes']] = classes;
+    },
+    function (module, exports, __webpack_require__) {
+        (function (TT, $) {
+            'use strict';
+            Object[['defineProperty']](exports, '__esModule', { value: true });
+            var _typeof = typeof Symbol === 'function' && typeof Symbol[['iterator']] === 'symbol' ? function (obj) {
+                return typeof obj;
+            } : function (obj) {
+                return obj && typeof Symbol === 'function' && obj[['constructor']] === Symbol ? 'symbol' : typeof obj;
+            };
+            var _modalSignBox = __webpack_require__(5);
+            var _modalSignBox2 = _interopRequireDefault(_modalSignBox);
+            function _interopRequireDefault(obj) {
+                return obj && obj[['__esModule']] ? obj : { default: obj };
+            }
+            var _getUrlPara = function _getUrlPara(name, url) {
+                if (!url)
+                    url = window[['location']][['href']];
+                name = name[['replace']](/[\[]/, '\\[')[['replace']](/[\]]/, '\\]');
+                var regexS = '[\\?&]' + name + '=([^&#]*)';
+                var regex = new RegExp(regexS);
+                var results = regex[['exec']](url);
+                return results == null ? null : results[1];
+            };
+            var _getSiteUrl = function _getSiteUrl() {
+                return window[['location']][['protocol']] + '//' + window[['location']][['host']];
+            };
+            var _getAbsUrl = function _getAbsUrl(endpoint, base) {
+                if (!base) {
+                    base = _getSiteUrl();
+                }
+                if (/^http([s]?)/[['test']](endpoint)) {
+                    return endpoint;
+                }
+                if (/^\/\//[['test']](endpoint)) {
+                    return window[['location']][['protocol']] + endpoint;
+                }
+                if (/^\//[['test']](endpoint)) {
+                    return base + endpoint;
+                }
+                return base + '/' + endpoint;
+            };
+            var _getAPIUrl = function _getAPIUrl(endpoint) {
+                var base = TT && TT[['apiRoot']] ? TT[['apiRoot']] + 'v1' : window[['location']][['protocol']] + '//' + window[['location']][['host']] + '/api/v1';
+                if (endpoint) {
+                    return base + endpoint;
+                }
+                return base;
+            };
+            var _addRedirectUrl = function _addRedirectUrl(base, redirect) {
+                if (!base) {
+                    base = _getSiteUrl();
+                }
+                if (/^(.*)\?(.*)$/[['test']](base)) {
+                    return base + '&redirect=' + encodeURIComponent(redirect);
+                }
+                return base + '?redirect=' + encodeURIComponent(redirect);
+            };
+            var _isPhoneNum = function _isPhoneNum(str) {
+                var reg = /^((13[0-9])|(147)|(15[^4,\D])|(17[0-9])|(18[0,0-9]))\d{8}$/;
+                if (typeof str === 'string')
+                    return reg[['test']](str);
+                return reg[['test']](str[['toString']]());
+            };
+            var _isEmail = function _isEmail(str) {
+                var reg = /[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}/;
+                if (typeof str === 'string')
+                    return reg[['test']](str);
+                return reg[['test']](str[['toString']]());
+            };
+            var _isUrl = function _isUrl(str) {
+                var reg = /^((http)|(https))+:[^\s]+\.[^\s]*$/;
+                if (typeof str === 'string')
+                    return reg[['test']](str);
+                return reg[['test']](str[['toString']]());
+            };
+            var _isValidUserName = function _isValidUserName(str) {
+                var reg = /^[A-Za-z][A-Za-z0-9_]{4,}$/;
+                return reg[['test']](str);
+            };
+            var _filterDataForRest = function _filterDataForRest(data) {
+                if (typeof data == 'string') {
+                    data += '&_wpnonce=' + TT[['_wpnonce']];
+                } else if ((typeof data === 'undefined' ? 'undefined' : _typeof(data)) == 'object') {
+                    data[['_wpnonce']] = TT[['_wpnonce']];
+                }
+                return data;
+            };
+            var _store = function _store(namespace, data) {
+                if (data) {
+                    return localStorage[['setItem']](namespace, JSON[['stringify']](data));
+                }
+                var store = localStorage[['getItem']](namespace);
+                return store && JSON[['parse']](store) || {};
+            };
+            var _checkLogin = function _checkLogin() {
+                if (TT && TT[['uid']] && parseInt(TT[['uid']]) > 0) {
+                    return true;
+                }
+                _modalSignBox2[['default']][['show']]();
+                return false;
+            };
+            var _showFullLoader = function _showFullLoader(icon, text) {
+                var loaderContainer = $('#fullLoader-container');
+                if (!loaderContainer[['length']]) {
+                    $('<div id="fullLoader-container"><div class="loader"><i class="tico ' + icon + '"></i></div><p>' + text + '</p></div>')[['appendTo']]('body')[['fadeIn']]();
+                } else {
+                    loaderContainer[['children']]('p')[['text']](text);
+                    var iconEle = loaderContainer[['find']]('i');
+                    iconEle[['attr']]('class', 'tico ' + icon);
+                    loaderContainer[['fadeIn']]();
+                }
+            };
+            var _hideFullLoader = function _hideFullLoader() {
+                var loaderContainer = $('#fullLoader-container');
+                if (loaderContainer[['length']]) {
+                    loaderContainer[['fadeOut']](500, function () {
+                        loaderContainer[['remove']]();
+                    });
+                }
+            };
+            var Utils = {
+                getUrlPara: _getUrlPara,
+                getSiteUrl: _getSiteUrl,
+                getAbsUrl: _getAbsUrl,
+                getAPIUrl: _getAPIUrl,
+                addRedirectUrl: _addRedirectUrl,
+                isPhoneNum: _isPhoneNum,
+                isEmail: _isEmail,
+                isUrl: _isUrl,
+                isValidUserName: _isValidUserName,
+                filterDataForRest: _filterDataForRest,
+                store: _store,
+                checkLogin: _checkLogin,
+                showFullLoader: _showFullLoader,
+                hideFullLoader: _hideFullLoader
+            };
+            exports[['default']] = Utils;
+        }[['call']](exports, __webpack_require__(4), __webpack_require__(1)));
+    },
+    function (module, exports) {
+        module[['exports']] = TT;
+    },
+    function (module, exports, __webpack_require__) {
+        (function ($) {
+            'use strict';
+            Object[['defineProperty']](exports, '__esModule', { value: true });
+            var _utils = __webpack_require__(3);
+            var _utils2 = _interopRequireDefault(_utils);
+            var _globalConfig = __webpack_require__(2);
+            var _msgbox = __webpack_require__(6);
+            function _interopRequireDefault(obj) {
+                return obj && obj[['__esModule']] ? obj : { default: obj };
+            }
+            var _body = $('body');
+            var _modalSignBoxSel = '#modalSignBox';
+            var _modalSignBox = $('#modalSignBox');
+            var _userLoginInput = $('#user_login-input');
+            var _passwordInput = $('#password-input');
+            var _tipSel = '.tip';
+            var _submitBtnSel = _modalSignBoxSel + ' button.submit';
+            var _originSubmitBtnText = '';
+            var _spinner = '<i class="tico tico-spinner3 spinning"></i>';
+            var _submitting = false;
+            var _validate = function _validate(input) {
+                if (!input) {
+                    var userLoginValidated = _validateUserLogin();
+                    var passwordValidated = _validatePassword();
+                    return userLoginValidated && passwordValidated;
+                } else if (input[['attr']]('name') === 'user_login') {
+                    return _validateUserLogin();
+                } else if (input[['attr']]('name') === 'password') {
+                    return _validatePassword();
+                }
+                return false;
+            };
+            var _validateUserLogin = function _validateUserLogin() {
+                if (_userLoginInput[['val']]() === '') {
+                    _showError(_userLoginInput, '\u8bf7\u8f93\u5165\u8d26\u53f7');
+                    return false;
+                } else if (!_utils2[['default']][['isValidUserName']](_userLoginInput[['val']]()) && !_utils2[['default']][['isEmail']](_userLoginInput[['val']]())) {
+                    _showError(_userLoginInput, '\u90ae\u7bb1\u6216\u5b57\u6bcd\u5f00\u5934\u7528\u6237\u540d');
+                    return false;
+                } else if (_userLoginInput[['val']]()[['length']] < 5) {
+                    _showError(_userLoginInput, '\u8d26\u6237\u957f\u5ea6\u81f3\u5c11\u4e3a5');
+                    return false;
+                }
+                _removeError(_userLoginInput);
+                return true;
+            };
+            var _validatePassword = function _validatePassword() {
+                if (_passwordInput[['val']]() === '') {
+                    _showError(_passwordInput, '\u8bf7\u8f93\u5165\u5bc6\u7801');
+                    return false;
+                } else if (_passwordInput[['val']]()[['length']] < 6) {
+                    _showError(_passwordInput, '\u5bc6\u7801\u957f\u5ea6\u81f3\u5c11\u4e3a6');
+                    return false;
+                }
+                _removeError(_passwordInput);
+                return true;
+            };
+            var _showError = function _showError(input, msg) {
+                var inputName = input[['attr']]('name');
+                switch (inputName) {
+                case 'user_login':
+                    _removeError(_userLoginInput);
+                    break;
+                case 'password':
+                    _removeError(_passwordInput);
+                    break;
+                }
+                input[['next']](_tipSel)[['text']](msg)[['show']]();
+            };
+            var _removeError = function _removeError(input) {
+                input[['next']](_tipSel)[['hide']]()[['text']]('');
+            };
+            var _post = function _post(submitBtn) {
+                var url = _globalConfig[['Routes']][['signIn']];
+                var beforeSend = function beforeSend() {
+                    _modalSignBox[['addClass']]('submitting');
+                    _userLoginInput[['prop']]('disabled', true);
+                    _passwordInput[['prop']]('disabled', true);
+                    _originSubmitBtnText = submitBtn[['text']]();
+                    submitBtn[['prop']]('disabled', true)[['html']](_spinner);
+                    _submitting = true;
+                };
+                var finishRequest = function finishRequest() {
+                    _modalSignBox[['removeClass']]('submitting');
+                    _userLoginInput[['prop']]('disabled', false);
+                    _passwordInput[['prop']]('disabled', false);
+                    submitBtn[['text']](_originSubmitBtnText)[['prop']]('disabled', false);
+                    _submitting = false;
+                };
+                var success = function success(data, textStatus, xhr) {
+                    if (data[['success']] && data[['success']] == 1) {
+                        var redirect = _utils2[['default']][['getUrlPara']]('redirect') ? _utils2[['default']][['getAbsUrl']](decodeURIComponent(_utils2[['default']][['getUrlPara']]('redirect'))) : '';
+                        _msgbox[['popMsgbox']][['success']]({
+                            title: '\u767b\u5f55\u6210\u529f',
+                            text: redirect ? '\u5c06\u5728 2s \u5185\u8df3\u8f6c\u81f3 ' + redirect : '\u5c06\u5728 2s \u5185\u5237\u65b0\u9875\u9762',
+                            timer: 2000,
+                            showConfirmButton: false
+                        });
+                        setTimeout(function () {
+                            window[['location']][['href']] = redirect ? redirect : location[['href']];
+                        }, 2000);
+                    } else {
+                        _msgbox[['popMsgbox']][['error']]({
+                            title: '\u767b\u5f55\u9519\u8bef',
+                            text: data[['message']]
+                        });
+                        finishRequest();
+                    }
+                };
+                var error = function error(xhr, textStatus, err) {
+                    _msgbox[['popMsgbox']][['error']]({
+                        title: '\u8bf7\u6c42\u767b\u5f55\u5931\u8d25, \u8bf7\u91cd\u65b0\u5c1d\u8bd5',
+                        text: xhr[['responseJSON']] ? xhr[['responseJSON']][['message']] : xhr[['responseText']]
+                    });
+                    finishRequest();
+                };
+                $[['post']]({
+                    url: url,
+                    data: _utils2[['default']][['filterDataForRest']](_modalSignBox[['serialize']]()),
+                    dataType: 'json',
+                    beforeSend: beforeSend,
+                    success: success,
+                    error: error
+                });
+            };
+            var _showBox = function _showBox() {
+                if ($(window)[['width']]() < 640) {
+                    window[['location']][['href']] = _utils2[['default']][['addRedirectUrl']](_globalConfig[['Urls']][['signIn']], window[['location']][['href']]);
+                    return;
+                }
+                _modalSignBox[['modal']]('show');
+            };
+            var _hideBox = function _hideBox() {
+                _modalSignBox[['modal']]('hide');
+            };
+            var ModalSignBox = {
+                init: function init() {
+                    _body[['on']]('click', '.modal-backdrop', function () {
+                        _hideBox();
+                    });
+                    _userLoginInput[['on']]('input', function () {
+                        _validate($(this));
+                    });
+                    _passwordInput[['on']]('input', function () {
+                        _validate($(this));
+                    });
+                    _body[['on']]('click', _submitBtnSel, function () {
+                        if (_validate()) {
+                            _post($(this));
+                        }
+                    });
+                },
+                show: function show() {
+                    _showBox();
+                },
+                hide: function hide() {
+                    _hideBox();
+                }
+            };
+            exports[['default']] = ModalSignBox;
+        }[['call']](exports, __webpack_require__(1)));
+    },
     function (module, exports, __webpack_require__) {
         (function (jQuery, $) {
             'use strict';
@@ -2252,6 +2623,543 @@
                 initShopSubNavCollapse: _initShopSubNavCollapse
             };
             exports[['default']] = ScrollHandler;
+        }[['call']](exports, __webpack_require__(1)));
+    },
+    function (module, exports, __webpack_require__) {
+        (function ($) {
+            'use strict';
+            Object[['defineProperty']](exports, '__esModule', { value: true });
+            var _utils = __webpack_require__(3);
+            var _utils2 = _interopRequireDefault(_utils);
+            function _interopRequireDefault(obj) {
+                return obj && obj[['__esModule']] ? obj : { default: obj };
+            }
+            var _signInLinkSel = '.login-link';
+            var SignHelp = {
+                init: function init() {
+                    $('body')[['on']]('click', _signInLinkSel, function (e) {
+                        if ($(window)[['width']]() >= 640) {
+                            e[['preventDefault']]();
+                            _utils2[['default']][['checkLogin']]();
+                        }
+                    });
+                }
+            };
+            exports[['default']] = SignHelp;
+        }[['call']](exports, __webpack_require__(1)));
+    },
+    ,
+    function (module, exports, __webpack_require__) {
+        var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
+        (function (jQuery, module) {
+            'use strict';
+            var _typeof = typeof Symbol === 'function' && typeof Symbol[['iterator']] === 'symbol' ? function (obj) {
+                return typeof obj;
+            } : function (obj) {
+                return obj && typeof Symbol === 'function' && obj[['constructor']] === Symbol ? 'symbol' : typeof obj;
+            };
+            (function (factory) {
+                if ((false ? 'undefined' : _typeof(module)) === 'object' && _typeof(module[['exports']]) === 'object') {
+                    factory(__webpack_require__(1));
+                } else if (true) {
+                    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_FACTORY__ = factory(window[['jQuery']]), __WEBPACK_AMD_DEFINE_RESULT__ = typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? __WEBPACK_AMD_DEFINE_FACTORY__[['apply']](exports, __WEBPACK_AMD_DEFINE_ARRAY__) : __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module[['exports']] = __WEBPACK_AMD_DEFINE_RESULT__));
+                } else {
+                    factory(window[['jQuery']]);
+                }
+            }(function ($) {
+                if (!$) {
+                    return console[['warn']]('Unslider needs jQuery');
+                }
+                $[['Unslider']] = function (context, options) {
+                    var self = this;
+                    self[['_']] = 'unslider';
+                    self[['defaults']] = {
+                        autoplay: false,
+                        delay: 3000,
+                        speed: 750,
+                        easing: 'swing',
+                        keys: {
+                            prev: 37,
+                            next: 39
+                        },
+                        nav: true,
+                        arrows: {
+                            prev: '<a class="' + self[['_']] + '-arrow prev">Prev</a>',
+                            next: '<a class="' + self[['_']] + '-arrow next">Next</a>'
+                        },
+                        animation: 'horizontal',
+                        selectors: {
+                            container: 'ul:first',
+                            slides: 'li'
+                        },
+                        animateHeight: false,
+                        activeClass: self[['_']] + '-active',
+                        swipe: true,
+                        swipeThreshold: 0.2
+                    };
+                    self[['$context']] = context;
+                    self[['options']] = {};
+                    self[['$parent']] = null;
+                    self[['$container']] = null;
+                    self[['$slides']] = null;
+                    self[['$nav']] = null;
+                    self[['$arrows']] = [];
+                    self[['total']] = 0;
+                    self[['current']] = 0;
+                    self[['prefix']] = self[['_']] + '-';
+                    self[['eventSuffix']] = '.' + self[['prefix']] + ~~(Math[['random']]() * 2000);
+                    self[['interval']] = null;
+                    self[['init']] = function (options) {
+                        self[['options']] = $[['extend']]({}, self[['defaults']], options);
+                        self[['$container']] = self[['$context']][['find']](self[['options']][['selectors']][['container']])[['addClass']](self[['prefix']] + 'wrap');
+                        self[['$slides']] = self[['$container']][['children']](self[['options']][['selectors']][['slides']]);
+                        self[['setup']]();
+                        $[['each']]([
+                            'nav',
+                            'arrows',
+                            'keys',
+                            'infinite'
+                        ], function (index, module) {
+                            self[['options']][module] && self['init' + $[['_ucfirst']](module)]();
+                        });
+                        if (jQuery[['event']][['special']][['swipe']] && self[['options']][['swipe']]) {
+                            self[['initSwipe']]();
+                        }
+                        self[['options']][['autoplay']] && self[['start']]();
+                        self[['calculateSlides']]();
+                        self[['$context']][['trigger']](self[['_']] + '.ready');
+                        return self[['animate']](self[['options']][['index']] || self[['current']], 'init');
+                    };
+                    self[['setup']] = function () {
+                        self[['$context']][['addClass']](self[['prefix']] + self[['options']][['animation']])[['wrap']]('<div class="' + self[['_']] + '" />');
+                        self[['$parent']] = self[['$context']][['parent']]('.' + self[['_']]);
+                        var position = self[['$context']][['css']]('position');
+                        if (position === 'static') {
+                            self[['$context']][['css']]('position', 'relative');
+                        }
+                        self[['$context']][['css']]('overflow', 'hidden');
+                    };
+                    self[['calculateSlides']] = function () {
+                        self[['$slides']] = self[['$container']][['children']](self[['options']][['selectors']][['slides']]);
+                        self[['total']] = self[['$slides']][['length']];
+                        if (self[['options']][['animation']] !== 'fade') {
+                            var prop = 'width';
+                            if (self[['options']][['animation']] === 'vertical') {
+                                prop = 'height';
+                            }
+                            self[['$container']][['css']](prop, self[['total']] * 100 + '%')[['addClass']](self[['prefix']] + 'carousel');
+                            self[['$slides']][['css']](prop, 100 / self[['total']] + '%');
+                        }
+                    };
+                    self[['start']] = function () {
+                        self[['interval']] = setTimeout(function () {
+                            self[['next']]();
+                        }, self[['options']][['delay']]);
+                        return self;
+                    };
+                    self[['stop']] = function () {
+                        clearTimeout(self[['interval']]);
+                        return self;
+                    };
+                    self[['initNav']] = function () {
+                        var $nav = $('<nav class="' + self[['prefix']] + 'nav"><ol /></nav>');
+                        self[['$slides']][['each']](function (key) {
+                            var label = this[['getAttribute']]('data-nav') || key + 1;
+                            if ($[['isFunction']](self[['options']][['nav']])) {
+                                label = self[['options']][['nav']][['call']](self[['$slides']][['eq']](key), key, label);
+                            }
+                            $nav[['children']]('ol')[['append']]('<li data-slide="' + key + '">' + label + '</li>');
+                        });
+                        self[['$nav']] = $nav[['insertAfter']](self[['$context']]);
+                        self[['$nav']][['find']]('li')[['on']]('click' + self[['eventSuffix']], function () {
+                            var $me = $(this)[['addClass']](self[['options']][['activeClass']]);
+                            $me[['siblings']]()[['removeClass']](self[['options']][['activeClass']]);
+                            self[['animate']]($me[['attr']]('data-slide'));
+                        });
+                    };
+                    self[['initArrows']] = function () {
+                        if (self[['options']][['arrows']] === true) {
+                            self[['options']][['arrows']] = self[['defaults']][['arrows']];
+                        }
+                        $[['each']](self[['options']][['arrows']], function (key, val) {
+                            self[['$arrows']][['push']]($(val)[['insertAfter']](self[['$context']])[['on']]('click' + self[['eventSuffix']], self[key]));
+                        });
+                    };
+                    self[['initKeys']] = function () {
+                        if (self[['options']][['keys']] === true) {
+                            self[['options']][['keys']] = self[['defaults']][['keys']];
+                        }
+                        $(document)[['on']]('keyup' + self[['eventSuffix']], function (e) {
+                            $[['each']](self[['options']][['keys']], function (key, val) {
+                                if (e[['which']] === val) {
+                                    $[['isFunction']](self[key]) && self[key][['call']](self);
+                                }
+                            });
+                        });
+                    };
+                    self[['initSwipe']] = function () {
+                        var width = self[['$slides']][['width']]();
+                        if (self[['options']][['animation']] !== 'fade') {
+                            self[['$container']][['on']]({
+                                movestart: function movestart(e) {
+                                    if (e[['distX']] > e[['distY']] && e[['distX']] < -e[['distY']] || e[['distX']] < e[['distY']] && e[['distX']] > -e[['distY']]) {
+                                        return !!e[['preventDefault']]();
+                                    }
+                                    self[['$container']][['css']]('position', 'relative');
+                                },
+                                move: function move(e) {
+                                    self[['$container']][['css']]('left', -(100 * self[['current']]) + 100 * e[['distX']] / width + '%');
+                                },
+                                moveend: function moveend(e) {
+                                    if (Math[['abs']](e[['distX']]) / width > self[['options']][['swipeThreshold']]) {
+                                        self[e[['distX']] < 0 ? 'next' : 'prev']();
+                                    } else {
+                                        self[['$container']][['animate']]({ left: -(100 * self[['current']]) + '%' }, self[['options']][['speed']] / 2);
+                                    }
+                                }
+                            });
+                        }
+                    };
+                    self[['initInfinite']] = function () {
+                        var pos = [
+                            'first',
+                            'last'
+                        ];
+                        $[['each']](pos, function (index, item) {
+                            self[['$slides']][['push']][['apply']](self[['$slides']], self[['$slides']][['filter']](':not(".' + self[['_']] + '-clone")')[item]()[['clone']]()[['addClass']](self[['_']] + '-clone')['insert' + (index === 0 ? 'After' : 'Before')](self[['$slides']][pos[~~!index]]()));
+                        });
+                    };
+                    self[['destroyArrows']] = function () {
+                        $[['each']](self[['$arrows']], function (i, $arrow) {
+                            $arrow[['remove']]();
+                        });
+                    };
+                    self[['destroySwipe']] = function () {
+                        self[['$container']][['off']]('movestart move moveend');
+                    };
+                    self[['destroyKeys']] = function () {
+                        $(document)[['off']]('keyup' + self[['eventSuffix']]);
+                    };
+                    self[['setIndex']] = function (to) {
+                        if (to < 0) {
+                            to = self[['total']] - 1;
+                        }
+                        self[['current']] = Math[['min']](Math[['max']](0, to), self[['total']] - 1);
+                        if (self[['options']][['nav']]) {
+                            self[['$nav']][['find']]('[data-slide="' + self[['current']] + '"]')[['_active']](self[['options']][['activeClass']]);
+                        }
+                        self[['$slides']][['eq']](self[['current']])[['_active']](self[['options']][['activeClass']]);
+                        return self;
+                    };
+                    self[['animate']] = function (to, dir) {
+                        if (to === 'first')
+                            to = 0;
+                        if (to === 'last')
+                            to = self[['total']];
+                        if (isNaN(to)) {
+                            return self;
+                        }
+                        if (self[['options']][['autoplay']]) {
+                            self[['stop']]()[['start']]();
+                        }
+                        self[['setIndex']](to);
+                        self[['$context']][['trigger']](self[['_']] + '.change', [
+                            to,
+                            self[['$slides']][['eq']](to)
+                        ]);
+                        var fn = 'animate' + $[['_ucfirst']](self[['options']][['animation']]);
+                        if ($[['isFunction']](self[fn])) {
+                            self[fn](self[['current']], dir);
+                        }
+                        return self;
+                    };
+                    self[['next']] = function () {
+                        var target = self[['current']] + 1;
+                        if (target >= self[['total']]) {
+                            target = 0;
+                        }
+                        return self[['animate']](target, 'next');
+                    };
+                    self[['prev']] = function () {
+                        return self[['animate']](self[['current']] - 1, 'prev');
+                    };
+                    self[['animateHorizontal']] = function (to) {
+                        var prop = 'left';
+                        if (self[['$context']][['attr']]('dir') === 'rtl') {
+                            prop = 'right';
+                        }
+                        if (self[['options']][['infinite']]) {
+                            self[['$container']][['css']]('margin-' + prop, '-100%');
+                        }
+                        return self[['slide']](prop, to);
+                    };
+                    self[['animateVertical']] = function (to) {
+                        self[['options']][['animateHeight']] = true;
+                        if (self[['options']][['infinite']]) {
+                            self[['$container']][['css']]('margin-top', -self[['$slides']][['outerHeight']]());
+                        }
+                        return self[['slide']]('top', to);
+                    };
+                    self[['slide']] = function (prop, to) {
+                        self[['animateHeight']](to);
+                        if (self[['options']][['infinite']]) {
+                            var dummy;
+                            if (to === self[['total']] - 1) {
+                                dummy = self[['total']] - 3;
+                                to = -1;
+                            }
+                            if (to === self[['total']] - 2) {
+                                dummy = 0;
+                                to = self[['total']] - 2;
+                            }
+                            if (typeof dummy === 'number') {
+                                self[['setIndex']](dummy);
+                                self[['$context']][['on']](self[['_']] + '.moved', function () {
+                                    if (self[['current']] === dummy) {
+                                        self[['$container']][['css']](prop, -(100 * dummy) + '%')[['off']](self[['_']] + '.moved');
+                                    }
+                                });
+                            }
+                        }
+                        var obj = {};
+                        obj[prop] = -(100 * to) + '%';
+                        return self[['_move']](self[['$container']], obj);
+                    };
+                    self[['animateFade']] = function (to) {
+                        self[['animateHeight']](to);
+                        var $active = self[['$slides']][['eq']](to)[['addClass']](self[['options']][['activeClass']]);
+                        self[['_move']]($active[['siblings']]()[['removeClass']](self[['options']][['activeClass']]), { opacity: 0 });
+                        self[['_move']]($active, { opacity: 1 }, false);
+                    };
+                    self[['animateHeight']] = function (to) {
+                        if (self[['options']][['animateHeight']]) {
+                            self[['_move']](self[['$context']], { height: self[['$slides']][['eq']](to)[['outerHeight']]() }, false);
+                        }
+                    };
+                    self[['_move']] = function ($el, obj, callback, speed) {
+                        if (callback !== false) {
+                            callback = function callback() {
+                                self[['$context']][['trigger']](self[['_']] + '.moved');
+                            };
+                        }
+                        return $el[['_move']](obj, speed || self[['options']][['speed']], self[['options']][['easing']], callback);
+                    };
+                    return self[['init']](options);
+                };
+                $[['fn']][['_active']] = function (className) {
+                    return this[['addClass']](className)[['siblings']]()[['removeClass']](className);
+                };
+                $[['_ucfirst']] = function (str) {
+                    return (str + '')[['toLowerCase']]()[['replace']](/^./, function (match) {
+                        return match[['toUpperCase']]();
+                    });
+                };
+                $[['fn']][['_move']] = function () {
+                    this[['stop']](true, true);
+                    return $[['fn']][$[['fn']][['velocity']] ? 'velocity' : 'animate'][['apply']](this, arguments);
+                };
+                $[['fn']][['unslider']] = function (opts) {
+                    return this[['each']](function (index, elem) {
+                        var $this = $(elem);
+                        var unslider = $(elem)[['data']]('unslider');
+                        if (unslider instanceof $[['Unslider']]) {
+                            return;
+                        }
+                        if (typeof opts === 'string' && $this[['data']]('unslider')) {
+                            opts = opts[['split']](':');
+                            var call = $this[['data']]('unslider')[opts[0]];
+                            if ($[['isFunction']](call)) {
+                                return call[['apply']]($this, opts[1] ? opts[1][['split']](',') : null);
+                            }
+                        }
+                        return $this[['data']]('unslider', new $[['Unslider']]($this, opts));
+                    });
+                };
+            }));
+        }[['call']](exports, __webpack_require__(1), __webpack_require__(18)(module)));
+    },
+    function (module, exports) {
+        'use strict';
+        module[['exports']] = function (module) {
+            if (!module[['webpackPolyfill']]) {
+                module[['deprecate']] = function () {
+                };
+                module[['paths']] = [];
+                module[['children']] = [];
+                module[['webpackPolyfill']] = 1;
+            }
+            return module;
+        };
+    },
+    function (module, exports, __webpack_require__) {
+        (function (jQuery) {
+            'use strict';
+            (function ($, window, document, undefined) {
+                var $window = $(window);
+                $[['fn']][['lazyload']] = function (options) {
+                    var elements = this;
+                    var $container;
+                    var settings = {
+                        threshold: 0,
+                        failure_limit: 0,
+                        event: 'scroll',
+                        effect: 'show',
+                        container: window,
+                        data_attribute: 'original',
+                        skip_invisible: true,
+                        appear: null,
+                        load: null
+                    };
+                    function update() {
+                        var counter = 0;
+                        elements[['each']](function () {
+                            var $this = $(this);
+                            if (settings[['skip_invisible']] && !$this[['is']](':visible')) {
+                                return;
+                            }
+                            if ($[['abovethetop']](this, settings) || $[['leftofbegin']](this, settings)) {
+                            } else if (!$[['belowthefold']](this, settings) && !$[['rightoffold']](this, settings)) {
+                                $this[['trigger']]('appear');
+                                counter = 0;
+                            } else {
+                                if (++counter > settings[['failure_limit']]) {
+                                    return false;
+                                }
+                            }
+                        });
+                    }
+                    if (options) {
+                        if (undefined !== options[['failurelimit']]) {
+                            options[['failure_limit']] = options[['failurelimit']];
+                            delete options[['failurelimit']];
+                        }
+                        if (undefined !== options[['effectspeed']]) {
+                            options[['effect_speed']] = options[['effectspeed']];
+                            delete options[['effectspeed']];
+                        }
+                        $[['extend']](settings, options);
+                    }
+                    $container = settings[['container']] === undefined || settings[['container']] === window ? $window : $(settings[['container']]);
+                    if (0 === settings[['event']][['indexOf']]('scroll')) {
+                        $container[['bind']](settings[['event']], function (event) {
+                            return update();
+                        });
+                    }
+                    this[['each']](function () {
+                        var self = this;
+                        var $self = $(self);
+                        self[['loaded']] = false;
+                        $self[['one']]('appear', function () {
+                            if (!this[['loaded']]) {
+                                if (settings[['appear']]) {
+                                    var elements_left = elements[['length']];
+                                    settings[['appear']][['call']](self, elements_left, settings);
+                                }
+                                $('<img />')[['bind']]('load', function () {
+                                    $self[['hide']]()[['attr']]('src', $self[['data']](settings[['data_attribute']]))[settings[['effect']]](settings[['effect_speed']]);
+                                    self[['loaded']] = true;
+                                    var temp = $[['grep']](elements, function (element) {
+                                        return !element[['loaded']];
+                                    });
+                                    elements = $(temp);
+                                    if (settings[['load']]) {
+                                        var elements_left = elements[['length']];
+                                        settings[['load']][['call']](self, elements_left, settings);
+                                    }
+                                })[['attr']]('src', $self[['data']](settings[['data_attribute']]));
+                            }
+                        });
+                        if (0 !== settings[['event']][['indexOf']]('scroll')) {
+                            $self[['bind']](settings[['event']], function (event) {
+                                if (!self[['loaded']]) {
+                                    $self[['trigger']]('appear');
+                                }
+                            });
+                        }
+                    });
+                    $window[['bind']]('resize', function (event) {
+                        update();
+                    });
+                    if (/iphone|ipod|ipad.*os 5/gi[['test']](navigator[['appVersion']])) {
+                        $window[['bind']]('pageshow', function (event) {
+                            if (event[['originalEvent']][['persisted']]) {
+                                elements[['each']](function () {
+                                    $(this)[['trigger']]('appear');
+                                });
+                            }
+                        });
+                    }
+                    $(window)[['load']](function () {
+                        update();
+                    });
+                    return this;
+                };
+                $[['belowthefold']] = function (element, settings) {
+                    var fold;
+                    if (settings[['container']] === undefined || settings[['container']] === window) {
+                        fold = $window[['height']]() + $window[['scrollTop']]();
+                    } else {
+                        fold = $(settings[['container']])[['offset']]()[['top']] + $(settings[['container']])[['height']]();
+                    }
+                    return fold <= $(element)[['offset']]()[['top']] - settings[['threshold']];
+                };
+                $[['rightoffold']] = function (element, settings) {
+                    var fold;
+                    if (settings[['container']] === undefined || settings[['container']] === window) {
+                        fold = $window[['width']]() + $window[['scrollLeft']]();
+                    } else {
+                        fold = $(settings[['container']])[['offset']]()[['left']] + $(settings[['container']])[['width']]();
+                    }
+                    return fold <= $(element)[['offset']]()[['left']] - settings[['threshold']];
+                };
+                $[['abovethetop']] = function (element, settings) {
+                    var fold;
+                    if (settings[['container']] === undefined || settings[['container']] === window) {
+                        fold = $window[['scrollTop']]();
+                    } else {
+                        fold = $(settings[['container']])[['offset']]()[['top']];
+                    }
+                    return fold >= $(element)[['offset']]()[['top']] + settings[['threshold']] + $(element)[['height']]();
+                };
+                $[['leftofbegin']] = function (element, settings) {
+                    var fold;
+                    if (settings[['container']] === undefined || settings[['container']] === window) {
+                        fold = $window[['scrollLeft']]();
+                    } else {
+                        fold = $(settings[['container']])[['offset']]()[['left']];
+                    }
+                    return fold >= $(element)[['offset']]()[['left']] + settings[['threshold']] + $(element)[['width']]();
+                };
+                $[['inviewport']] = function (element, settings) {
+                    return !$[['rightoffold']](element, settings) && !$[['leftofbegin']](element, settings) && !$[['belowthefold']](element, settings) && !$[['abovethetop']](element, settings);
+                };
+                $[['extend']]($[['expr']][':'], {
+                    'below-the-fold': function belowTheFold(a) {
+                        return $[['belowthefold']](a, { threshold: 0 });
+                    },
+                    'above-the-top': function aboveTheTop(a) {
+                        return !$[['belowthefold']](a, { threshold: 0 });
+                    },
+                    'right-of-screen': function rightOfScreen(a) {
+                        return $[['rightoffold']](a, { threshold: 0 });
+                    },
+                    'left-of-screen': function leftOfScreen(a) {
+                        return !$[['rightoffold']](a, { threshold: 0 });
+                    },
+                    'in-viewport': function inViewport(a) {
+                        return $[['inviewport']](a, { threshold: 0 });
+                    },
+                    'above-the-fold': function aboveTheFold(a) {
+                        return !$[['belowthefold']](a, { threshold: 0 });
+                    },
+                    'right-of-fold': function rightOfFold(a) {
+                        return $[['rightoffold']](a, { threshold: 0 });
+                    },
+                    'left-of-fold': function leftOfFold(a) {
+                        return !$[['rightoffold']](a, { threshold: 0 });
+                    }
+                });
+            }(jQuery, window, document));
         }[['call']](exports, __webpack_require__(1)));
     }
 ]));

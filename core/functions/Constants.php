@@ -104,7 +104,10 @@ $site_allow_utils = json_encode(array(
     'privacy-policies-and-terms' => 'Privacy',
     'captcha'   =>  'Captcha',
     'qr' => 'QrCode',
-    'checkout' => 'CheckOut'
+    'checkout' => 'CheckOut',
+    'payresult' => 'PayResult',
+    'qrpay' => 'QrPay',
+    'paygateway' => 'PayGateway'
 ));
 defined('ALLOWED_SITE_UTILS') || define('ALLOWED_SITE_UTILS', $site_allow_utils);
 
@@ -115,6 +118,9 @@ $site_endpoints = json_encode(array(
     'captcha'                   =>  'site/captcha',
     'qr'                        =>  'site/qr',
     'checkout'                  =>  'site/checkout',
+    'payresult'                 =>  'site/payresult',
+    'qrpay'                     =>  'site/qrpay',
+    'paygateway'                =>  'site/paygateway',
     'api_root'                  =>  'api',
     'signin'                    =>  'm/signin',
     'signup'                    =>  'm/signup',

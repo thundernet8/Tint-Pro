@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-11-29 22:47+0800\n"
-"PO-Revision-Date: 2016-11-29 22:55+0800\n"
+"POT-Creation-Date: 2016-11-30 23:35+0800\n"
+"PO-Revision-Date: 2016-11-30 23:35+0800\n"
 "Last-Translator: Zhiyan <mail@webapproach.net>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -287,46 +287,46 @@ msgstr "抱歉, 必须登录才能查看消息"
 msgid "Sorry, you cannot create order without signing in."
 msgstr "抱歉, 你必须登录才能发送消息"
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:153
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:154
 #, fuzzy
 msgid "Create order failed"
 msgstr "创建新用户失败"
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:158
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:159
 #, fuzzy
 msgid "Create order successfully"
 msgstr "标记已读消息成功"
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:170
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:171
 #, fuzzy
 msgid "Sorry, you cannot update order without signing in."
 msgstr "抱歉, 必须登录才能更新消息"
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:217
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:272
 #, fuzzy
 msgid "Update order failed"
 msgstr "需要更新"
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:236
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:297
 #, fuzzy
 msgid "Sorry, you cannot delete order without signing in."
 msgstr "抱歉, 你必须登录才能删除用户元数据"
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:253
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:314
 msgid "Delete order failed"
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:255
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:316
 #, fuzzy
 msgid "Delete order successfully"
 msgstr "删除用户元数据成功"
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:270
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:331
 #: core/api/v1/endpoints/class.Rest.ShoppingCart.Controller.php:186
 msgid "Sorry, you cannot delete cart items without signing in."
 msgstr "抱歉, 你必须登录才能清空购物车"
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:286
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:347
 #: core/api/v1/endpoints/class.Rest.ShoppingCart.Controller.php:202
 msgid "Delete items from cart successfully"
 msgstr "清空购物车成功"
@@ -1290,6 +1290,14 @@ msgstr "表情"
 msgid "Rated %d out of 5"
 msgstr "评分 %d (满分5)"
 
+#: core/functions/func.Credit.php:21
+msgid "You must sign in before payment"
+msgstr "必须登录才能支付"
+
+#: core/functions/func.Credit.php:26
+msgid "You do not have enough credits to accomplish this payment"
+msgstr "你没有足够的积分完成支付"
+
 #: core/functions/func.Follow.php:106
 msgid "The user you are following not exist"
 msgstr "你要关注的用户不存在"
@@ -1793,7 +1801,6 @@ msgid "Product"
 msgstr "商品"
 
 #: core/functions/shop/func.Shop.php:30
-#: core/templates/site/tpl.CheckOut.php:128
 msgid "Add New"
 msgstr "新建商品"
 
@@ -1964,6 +1971,7 @@ msgid "Sales"
 msgstr "销量"
 
 #: core/functions/shop/func.Shop.php:216
+#: core/templates/site/tpl.CheckOut.php:86
 msgid "Product Name"
 msgstr "商品名称"
 
@@ -2453,7 +2461,7 @@ msgstr "昵称"
 #: core/modules/uc/uc.Tab.Profile.php:48
 #: core/templates/actions/tpl.M.Findpass.php:36
 #: core/templates/actions/tpl.M.Signup.php:46
-#: core/templates/site/tpl.CheckOut.php:140
+#: core/templates/site/tpl.CheckOut.php:152
 msgid "Email"
 msgstr "邮箱"
 
@@ -2988,77 +2996,98 @@ msgstr "无效订单"
 msgid "The order with order id you specified has been payed"
 msgstr "该订单已经支付, 请勿重复支付"
 
-#: core/templates/site/tpl.CheckOut.php:58
+#: core/templates/site/tpl.CheckOut.php:60
 msgid "Confirm Order"
 msgstr "确认订单详情"
 
-#: core/templates/site/tpl.CheckOut.php:65
+#: core/templates/site/tpl.CheckOut.php:67
 msgid "Payment Accomplish"
 msgstr "完成支付"
 
-#: core/templates/site/tpl.CheckOut.php:72
+#: core/templates/site/tpl.CheckOut.php:74
 msgid "Confirm Delivery"
 msgstr "确认收货"
 
-#: core/templates/site/tpl.CheckOut.php:78
+#: core/templates/site/tpl.CheckOut.php:80
 msgid "Order Details"
 msgstr "订单详情"
 
-#: core/templates/site/tpl.CheckOut.php:96
+#: core/templates/site/tpl.CheckOut.php:87
+msgid "Single Price"
+msgstr "单价"
+
+#: core/templates/site/tpl.CheckOut.php:88
+#, fuzzy
+msgid "Quantity"
+msgstr "数量"
+
+#: core/templates/site/tpl.CheckOut.php:89
+msgid "Gross"
+msgstr "总价"
+
+#: core/templates/site/tpl.CheckOut.php:90
+msgid "Actions"
+msgstr "操作"
+
+#: core/templates/site/tpl.CheckOut.php:108
 msgid "View Details"
 msgstr "查看详情"
 
-#: core/templates/site/tpl.CheckOut.php:101
+#: core/templates/site/tpl.CheckOut.php:113
 msgid "Message sent to vendor: "
 msgstr "给卖家的留言: "
 
-#: core/templates/site/tpl.CheckOut.php:102
+#: core/templates/site/tpl.CheckOut.php:114
 msgid "Optional, please leave some remind note for this deal to the vendor"
 msgstr "可选, 请在此处填写针对该交易的发送至卖家的备注信息"
 
-#: core/templates/site/tpl.CheckOut.php:106
+#: core/templates/site/tpl.CheckOut.php:118
 msgid "Address Info"
 msgstr "收货信息"
 
-#: core/templates/site/tpl.CheckOut.php:114
+#: core/templates/site/tpl.CheckOut.php:126
 #, php-format
 msgid "Receiver: %s"
 msgstr "%s 收"
 
-#: core/templates/site/tpl.CheckOut.php:136
+#: core/templates/site/tpl.CheckOut.php:140
+msgid "Use New Address"
+msgstr "使用新地址"
+
+#: core/templates/site/tpl.CheckOut.php:148
 msgid "Name"
 msgstr "姓名"
 
-#: core/templates/site/tpl.CheckOut.php:144
+#: core/templates/site/tpl.CheckOut.php:156
 msgid "Phone"
 msgstr "电话"
 
-#: core/templates/site/tpl.CheckOut.php:148
+#: core/templates/site/tpl.CheckOut.php:160
 msgid "Address"
 msgstr "详细地址"
 
-#: core/templates/site/tpl.CheckOut.php:152
+#: core/templates/site/tpl.CheckOut.php:164
 msgid "Zip"
 msgstr "邮编"
 
-#: core/templates/site/tpl.CheckOut.php:159
 #: core/templates/site/tpl.CheckOut.php:171
-msgid "Pay"
-msgstr "支付"
+#: core/templates/site/tpl.CheckOut.php:183
+msgid "Pay Methods"
+msgstr "支付方式"
 
-#: core/templates/site/tpl.CheckOut.php:186
+#: core/templates/site/tpl.CheckOut.php:198
 msgid "Coupon: "
 msgstr "优惠码: "
 
-#: core/templates/site/tpl.CheckOut.php:189
+#: core/templates/site/tpl.CheckOut.php:201
 msgid "Apply"
 msgstr "应用"
 
-#: core/templates/site/tpl.CheckOut.php:194
+#: core/templates/site/tpl.CheckOut.php:206
 msgid "Real Pay: "
 msgstr "实付款: "
 
-#: core/templates/site/tpl.CheckOut.php:199
+#: core/templates/site/tpl.CheckOut.php:211
 msgid "Submit Order"
 msgstr "提交订单"
 
@@ -4189,6 +4218,9 @@ msgstr "Zhiyan"
 #. Author URI of the plugin/theme
 msgid "https://www.webapproach.net/@zhiyan"
 msgstr "https://www.webapproach.net/@zhiyan"
+
+#~ msgid "Pay"
+#~ msgstr "支付"
 
 #~ msgid "Notifications"
 #~ msgstr "通知"

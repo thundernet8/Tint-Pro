@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-11-29 22:47+0800\n"
+"POT-Creation-Date: 2016-11-30 23:35+0800\n"
 "PO-Revision-Date: 2016-08-17 21:40+0800\n"
 "Last-Translator: \n"
 "Language-Team: Zhiyan <mail@webapproach.net>\n"
@@ -288,40 +288,40 @@ msgstr ""
 msgid "Sorry, you cannot create order without signing in."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:153
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:154
 msgid "Create order failed"
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:158
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:159
 msgid "Create order successfully"
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:170
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:171
 msgid "Sorry, you cannot update order without signing in."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:217
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:272
 msgid "Update order failed"
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:236
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:297
 msgid "Sorry, you cannot delete order without signing in."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:253
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:314
 msgid "Delete order failed"
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:255
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:316
 msgid "Delete order successfully"
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:270
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:331
 #: core/api/v1/endpoints/class.Rest.ShoppingCart.Controller.php:186
 msgid "Sorry, you cannot delete cart items without signing in."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:286
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:347
 #: core/api/v1/endpoints/class.Rest.ShoppingCart.Controller.php:202
 msgid "Delete items from cart successfully"
 msgstr ""
@@ -1300,6 +1300,14 @@ msgstr ""
 msgid "Rated %d out of 5"
 msgstr ""
 
+#: core/functions/func.Credit.php:21
+msgid "You must sign in before payment"
+msgstr ""
+
+#: core/functions/func.Credit.php:26
+msgid "You do not have enough credits to accomplish this payment"
+msgstr ""
+
 #: core/functions/func.Follow.php:106
 msgid "The user you are following not exist"
 msgstr ""
@@ -1813,7 +1821,6 @@ msgid "Product"
 msgstr ""
 
 #: core/functions/shop/func.Shop.php:30
-#: core/templates/site/tpl.CheckOut.php:128
 msgid "Add New"
 msgstr ""
 
@@ -1987,6 +1994,7 @@ msgid "Sales"
 msgstr ""
 
 #: core/functions/shop/func.Shop.php:216
+#: core/templates/site/tpl.CheckOut.php:86
 msgid "Product Name"
 msgstr ""
 
@@ -2478,7 +2486,7 @@ msgstr ""
 #: core/modules/uc/uc.Tab.Profile.php:48
 #: core/templates/actions/tpl.M.Findpass.php:36
 #: core/templates/actions/tpl.M.Signup.php:46
-#: core/templates/site/tpl.CheckOut.php:140
+#: core/templates/site/tpl.CheckOut.php:152
 msgid "Email"
 msgstr ""
 
@@ -3014,77 +3022,97 @@ msgstr ""
 msgid "The order with order id you specified has been payed"
 msgstr ""
 
-#: core/templates/site/tpl.CheckOut.php:58
+#: core/templates/site/tpl.CheckOut.php:60
 msgid "Confirm Order"
 msgstr ""
 
-#: core/templates/site/tpl.CheckOut.php:65
+#: core/templates/site/tpl.CheckOut.php:67
 msgid "Payment Accomplish"
 msgstr ""
 
-#: core/templates/site/tpl.CheckOut.php:72
+#: core/templates/site/tpl.CheckOut.php:74
 msgid "Confirm Delivery"
 msgstr ""
 
-#: core/templates/site/tpl.CheckOut.php:78
+#: core/templates/site/tpl.CheckOut.php:80
 msgid "Order Details"
 msgstr ""
 
-#: core/templates/site/tpl.CheckOut.php:96
+#: core/templates/site/tpl.CheckOut.php:87
+msgid "Single Price"
+msgstr ""
+
+#: core/templates/site/tpl.CheckOut.php:88
+msgid "Quantity"
+msgstr ""
+
+#: core/templates/site/tpl.CheckOut.php:89
+msgid "Gross"
+msgstr ""
+
+#: core/templates/site/tpl.CheckOut.php:90
+msgid "Actions"
+msgstr ""
+
+#: core/templates/site/tpl.CheckOut.php:108
 msgid "View Details"
 msgstr ""
 
-#: core/templates/site/tpl.CheckOut.php:101
+#: core/templates/site/tpl.CheckOut.php:113
 msgid "Message sent to vendor: "
 msgstr ""
 
-#: core/templates/site/tpl.CheckOut.php:102
+#: core/templates/site/tpl.CheckOut.php:114
 msgid "Optional, please leave some remind note for this deal to the vendor"
 msgstr ""
 
-#: core/templates/site/tpl.CheckOut.php:106
+#: core/templates/site/tpl.CheckOut.php:118
 msgid "Address Info"
 msgstr ""
 
-#: core/templates/site/tpl.CheckOut.php:114
+#: core/templates/site/tpl.CheckOut.php:126
 #, php-format
 msgid "Receiver: %s"
 msgstr ""
 
-#: core/templates/site/tpl.CheckOut.php:136
-msgid "Name"
-msgstr ""
-
-#: core/templates/site/tpl.CheckOut.php:144
-msgid "Phone"
+#: core/templates/site/tpl.CheckOut.php:140
+msgid "Use New Address"
 msgstr ""
 
 #: core/templates/site/tpl.CheckOut.php:148
+msgid "Name"
+msgstr ""
+
+#: core/templates/site/tpl.CheckOut.php:156
+msgid "Phone"
+msgstr ""
+
+#: core/templates/site/tpl.CheckOut.php:160
 msgid "Address"
 msgstr ""
 
-#: core/templates/site/tpl.CheckOut.php:152
+#: core/templates/site/tpl.CheckOut.php:164
 msgid "Zip"
 msgstr ""
 
-#: core/templates/site/tpl.CheckOut.php:159
 #: core/templates/site/tpl.CheckOut.php:171
-msgid "Pay"
+#: core/templates/site/tpl.CheckOut.php:183
+msgid "Pay Methods"
 msgstr ""
 
-#: core/templates/site/tpl.CheckOut.php:186
+#: core/templates/site/tpl.CheckOut.php:198
 msgid "Coupon: "
 msgstr ""
 
-#: core/templates/site/tpl.CheckOut.php:189
+#: core/templates/site/tpl.CheckOut.php:201
 msgid "Apply"
 msgstr ""
 
-#: core/templates/site/tpl.CheckOut.php:194
+#: core/templates/site/tpl.CheckOut.php:206
 msgid "Real Pay: "
 msgstr ""
 
-#: core/templates/site/tpl.CheckOut.php:199
+#: core/templates/site/tpl.CheckOut.php:211
 msgid "Submit Order"
 msgstr ""
 

@@ -122,6 +122,12 @@ body.checkout{
 
             &>.orders {
                 &>ul {
+                    &>.order-head {
+                        padding: 0;
+                        &>.th {
+                            font-weight: 500;
+                        }
+                    }
                     &>li {
                         padding: 20px 0;
                         overflow: hidden;
@@ -204,6 +210,7 @@ body.checkout{
                             transition: all .3s;
                             &:focus {
                                 height: 60px !important;
+                                border-color: @brand-ico;
                             }
                         }
                     }
@@ -211,7 +218,13 @@ body.checkout{
             }
 
             &>.address {
-                &>.row {
+                &>.address-list {
+
+                }
+                &>.add-new-address {
+                    cursor: pointer;
+                }
+                &>.address-input-group {
                     display: none;
                     &.active {
                         display: block;
