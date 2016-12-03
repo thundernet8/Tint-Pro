@@ -116,6 +116,10 @@ load_class('class.Member');
 if(is_admin()) {
     load_class('class.Tgm.Plugin.Activation');
 }
+if(TT_PRO && tt_get_option('tt_enable_shop', false)){
+    load_class('shop/alipay/alipay_notify.class');
+    load_class('shop/alipay/alipay_submit.class');
+}
 
 /* 载入功能函数 */
 load_func('func.L10n');

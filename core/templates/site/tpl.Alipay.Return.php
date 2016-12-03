@@ -14,10 +14,6 @@
 ?>
 <?php
 
-require_once(THEME_FUNC . "/shop/alipay/alipay.config.php");
-require_once(THEME_FUNC . "/shop/alipay/alipay_notify.class.php");
-require_once(THEME_FUNC . "/shop/alipay/alipay_submit.class.php");
-
 if(!is_user_logged_in()){
     wp_die(__('You cannot visit this page without sign in', 'tt'), __('Error: Unknown User', 'tt'), 403);
 }

@@ -14,10 +14,6 @@
 ?>
 <?php
 
-require_once(THEME_FUNC . "/shop/alipay/alipay.config.php");
-require_once(THEME_FUNC . "/shop/alipay/alipay_notify.class.php");
-require_once(THEME_FUNC . "/shop/alipay/alipay_submit.class.php");
-
 $alipay_config = tt_get_alipay_config();
 
 //计算得出通知验证结果
