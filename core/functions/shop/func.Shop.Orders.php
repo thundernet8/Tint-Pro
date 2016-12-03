@@ -79,16 +79,16 @@ function tt_generate_order_num(){
 function tt_get_order_status_text($code){
     switch($code){
         case 1:
-            $status_text = __('Wait Payment'); //等待买家付款
+            $status_text = __('Wait Payment', 'tt'); //等待买家付款
             break;
         case 2:
-            $status_text = __('Payed, Wait Delivery'); //已付款，等待卖家发货
+            $status_text = __('Payed, Wait Delivery', 'tt'); //已付款，等待卖家发货
             break;
         case 3:
-            $status_text = __('Delivered, Wait Confirm'); //已发货，等待买家确认
+            $status_text = __('Delivered, Wait Confirm', 'tt'); //已发货，等待买家确认
             break;
         case 4:
-            $status_text = __('Trade Succeed'); //交易成功
+            $status_text = __('Trade Succeed', 'tt'); //交易成功
             break;
         case 9:
             $status_text = __('Trade Closed', 'tt'); //交易关闭
@@ -409,4 +409,18 @@ function tt_delete_order_by_order_id($order_id){
         array('%d')
     );
     return !!$delete;
+}
+
+
+// 发送订单状态变化邮件
+function tt_order_email($order_id) {
+    //TODO
+}
+
+function tt_update_order_product_quantity($order_id) {
+    // TODO
+}
+
+function tt_send_order_goods($order_id){
+    // TODO
 }

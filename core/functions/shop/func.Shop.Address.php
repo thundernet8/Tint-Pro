@@ -50,6 +50,22 @@ add_action( 'admin_init', 'tt_install_addresses_table' );
 
 
 /**
+ * 根据地址ID获取地址记录
+ *
+ * @since 2.0.0
+ * @param $address_id
+ * @return array|null|object|void
+ */
+function tt_get_address($address_id){
+    global $wpdb;
+    $prefix = $wpdb->prefix;
+    $addresses_table = $prefix . 'tt_addresses';
+    $row = $wpdb->get_row(sprintf("SELECT * FROM $addresses_table WHERE `id`=%d", $address_id));
+    return $row;
+}
+
+
+/**
  * 添加地址记录
  *
  * @since 2.0.0

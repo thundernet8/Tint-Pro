@@ -67,15 +67,19 @@ var _handleCheckout = function (btn) {
     //data.orderId = orderId;
     data.userMessage = _memoTextarea.length ? _memoTextarea.val() : '';
     
-    if(_receiverNameInput && _receiverEmailInput && _receiverNameInput.val() && _receiverEmailInput.val()) {
-        data.receiverName = _receiverNameInput.val();
-        data.receiverEmail = _receiverEmailInput.val();
-        data.receiverPhone = _receiverPhoneInput.length ? _receiverPhoneInput.val() : '';
-        data.receiverAddr = _receiverAddrInput.length ? _receiverAddrInput.val() : '';
-        data.receiverZip = _receiverZipInput.length ? _receiverZipInput.val() : '';
+    var addressList = $(_addressListActiveSel);
+    if(addressList.length){
+        data.addressId = addressList.data('address-id');
     }else{
-        var addressList = $(_addressListActiveSel);
-        data.addressId = addressList.length ? addressList.data('address-id') : '';
+        if(_receiverNameInput.length && _receiverEmailInput.length && _receiverNameInput.val() && _receiverEmailInput.val() ){
+            data.receiverName = _receiverNameInput.val();
+            data.receiverEmail = _receiverEmailInput.val();
+            data.receiverPhone = _receiverPhoneInput.length ? _receiverPhoneInput.val() : '';
+            data.receiverAddr = _receiverAddrInput.length ? _receiverAddrInput.val() : '';
+            data.receiverZip = _receiverZipInput.length ? _receiverZipInput.val() : '';
+        }else{
+            return false;
+        }
     }
     
     var paymentList = $(_payMethodListSel);
@@ -149,6 +153,9 @@ var _initCheckout = function () {
 
 // 选择地址
 var _initChooseAddr = function () {
+    if($(_addressListActiveSel).length < 1){
+        $(_addressListSel).first().addClass('active');
+    }
     _body.on('click', _addressListSel, function () {
         $(this).siblings().removeClass('active').end().addClass('active');
     });
@@ -242,7 +249,7 @@ var _initAddAddress = function () {
             addrInputGroup.show();
         }
         if(addrList.length) {
-            addrList.hide();
+            addrList.remove();
         }
         $(this).remove();
     });

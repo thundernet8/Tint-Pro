@@ -153,6 +153,7 @@ if(TT_PRO && tt_get_option('tt_enable_shop', false)){
     load_func('shop/func.Shop.Coupon');
     load_func('shop/func.Shop.Cart');
     load_func('shop/func.Shop.Address');
+    load_func('shop/alipay/func.Alipay');
 }
 
 /* 载入数据模型 */

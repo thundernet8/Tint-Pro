@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-11-30 23:35+0800\n"
+"POT-Creation-Date: 2016-12-03 23:25+0800\n"
 "PO-Revision-Date: 2016-08-17 21:40+0800\n"
 "Last-Translator: \n"
 "Language-Team: Zhiyan <mail@webapproach.net>\n"
@@ -300,28 +300,28 @@ msgstr ""
 msgid "Sorry, you cannot update order without signing in."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:272
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:274
 msgid "Update order failed"
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:297
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:299
 msgid "Sorry, you cannot delete order without signing in."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:314
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:316
 msgid "Delete order failed"
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:316
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:318
 msgid "Delete order successfully"
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:331
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:333
 #: core/api/v1/endpoints/class.Rest.ShoppingCart.Controller.php:186
 msgid "Sorry, you cannot delete cart items without signing in."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:347
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:349
 #: core/api/v1/endpoints/class.Rest.ShoppingCart.Controller.php:202
 msgid "Delete items from cart successfully"
 msgstr ""
@@ -1552,27 +1552,27 @@ msgstr ""
 msgid "Weekly"
 msgstr ""
 
-#: core/functions/func.Seo.php:28 core/functions/func.Seo.php:118
+#: core/functions/func.Seo.php:28 core/functions/func.Seo.php:124
 #: core/modules/mod.ModalLoginForm.php:17
 #: core/templates/actions/tpl.M.Signup.php:90
 msgid "Sign In"
 msgstr ""
 
-#: core/functions/func.Seo.php:31 core/functions/func.Seo.php:121
+#: core/functions/func.Seo.php:31 core/functions/func.Seo.php:127
 #: core/templates/actions/tpl.M.Signup.php:62
 msgid "Sign Up"
 msgstr ""
 
-#: core/functions/func.Seo.php:34 core/functions/func.Seo.php:124
+#: core/functions/func.Seo.php:34 core/functions/func.Seo.php:130
 msgid "Activate Registration"
 msgstr ""
 
-#: core/functions/func.Seo.php:37 core/functions/func.Seo.php:127
+#: core/functions/func.Seo.php:37 core/functions/func.Seo.php:133
 #: core/modules/mod.Header.Shop.php:103 core/modules/mod.Header.php:47
 msgid "Sign Out"
 msgstr ""
 
-#: core/functions/func.Seo.php:40 core/functions/func.Seo.php:130
+#: core/functions/func.Seo.php:40 core/functions/func.Seo.php:136
 #: core/templates/actions/tpl.M.Findpass.php:33
 msgid "Find Password"
 msgstr ""
@@ -1581,77 +1581,85 @@ msgstr ""
 msgid "Check Out Orders"
 msgstr ""
 
-#: core/functions/func.Seo.php:59
+#: core/functions/func.Seo.php:51
+msgid "Payment Result"
+msgstr ""
+
+#: core/functions/func.Seo.php:54
+msgid "Do Payment"
+msgstr ""
+
+#: core/functions/func.Seo.php:65
 #, php-format
 msgid " - Page %d"
 msgstr ""
 
-#: core/functions/func.Seo.php:70 core/functions/func.Seo.php:165
+#: core/functions/func.Seo.php:76 core/functions/func.Seo.php:171
 #, php-format
 msgid "%s's Home Page"
 msgstr ""
 
-#: core/functions/func.Seo.php:74 core/functions/shop/func.Shop.php:297
+#: core/functions/func.Seo.php:80 core/functions/shop/func.Shop.php:297
 msgid "Product Category"
 msgstr ""
 
-#: core/functions/func.Seo.php:76
+#: core/functions/func.Seo.php:82
 msgid "Product Tag"
 msgstr ""
 
-#: core/functions/func.Seo.php:78 core/functions/func.Seo.php:81
-#: core/functions/func.Seo.php:177 core/modules/mod.Header.Shop.php:29
+#: core/functions/func.Seo.php:84 core/functions/func.Seo.php:87
+#: core/functions/func.Seo.php:183 core/modules/mod.Header.Shop.php:29
 #: dash/options.php:652
 msgid "Market"
 msgstr ""
 
-#: core/functions/func.Seo.php:84
+#: core/functions/func.Seo.php:90
 msgid "Search"
 msgstr ""
 
-#: core/functions/func.Seo.php:86
+#: core/functions/func.Seo.php:92
 msgid "Y"
 msgstr ""
 
-#: core/functions/func.Seo.php:86 core/functions/func.Seo.php:88
-#: core/functions/func.Seo.php:90
+#: core/functions/func.Seo.php:92 core/functions/func.Seo.php:94
+#: core/functions/func.Seo.php:96
 msgid "posts archive"
 msgstr ""
 
-#: core/functions/func.Seo.php:88
+#: core/functions/func.Seo.php:94
 msgid "Y.n"
 msgstr ""
 
-#: core/functions/func.Seo.php:90
+#: core/functions/func.Seo.php:96
 msgid "Y.n.j"
 msgstr ""
 
-#: core/functions/func.Seo.php:92
+#: core/functions/func.Seo.php:98
 msgid "Tag: "
 msgstr ""
 
-#: core/functions/func.Seo.php:94
+#: core/functions/func.Seo.php:100
 msgid "Page Not Found"
 msgstr ""
 
-#: core/functions/func.Seo.php:99
+#: core/functions/func.Seo.php:105
 #, php-format
 msgid " - Page %d "
 msgstr ""
 
-#: core/functions/func.Seo.php:133 core/functions/func.Seo.php:165
+#: core/functions/func.Seo.php:139 core/functions/func.Seo.php:171
 msgid "Powered by Tint(Tinection 2)"
 msgstr ""
 
-#: core/functions/func.Seo.php:164
+#: core/functions/func.Seo.php:170
 msgid "Ucenter"
 msgstr ""
 
-#: core/functions/func.Seo.php:164 core/functions/func.Seo.php:177
+#: core/functions/func.Seo.php:170 core/functions/func.Seo.php:183
 msgid "Tint Ucenter and Market System"
 msgstr ""
 
-#: core/functions/func.Seo.php:180
+#: core/functions/func.Seo.php:186
 msgid ""
 "Powered by Tint(Tinection 2, a powerful wordpress theme with ucenter and "
 "shop system integrated)"
@@ -2204,6 +2212,7 @@ msgid "SEND"
 msgstr ""
 
 #: core/modules/mod.ModalQrCodes.php:20 core/modules/mod.ModalQrCodes.php:25
+#: core/templates/site/tpl.QrPay.php:90 core/templates/site/tpl.QrPay.php:96
 msgid "Scan the qrcode image and contact with me"
 msgstr ""
 
@@ -2993,12 +3002,77 @@ msgstr ""
 msgid "%d reviews for the product"
 msgstr ""
 
+#: core/templates/site/tpl.Alipay.Return.php:22
 #: core/templates/site/tpl.CheckOut.php:18
+#: core/templates/site/tpl.PayGateway.php:18
+#: core/templates/site/tpl.PayResult.php:18
 msgid "You cannot visit this page without sign in"
 msgstr ""
 
+#: core/templates/site/tpl.Alipay.Return.php:22
 #: core/templates/site/tpl.CheckOut.php:18
+#: core/templates/site/tpl.PayGateway.php:18
+#: core/templates/site/tpl.PayResult.php:18
 msgid "Error: Unknown User"
+msgstr ""
+
+#: core/templates/site/tpl.Alipay.Return.php:30
+msgid "Alipay trade interface configuration is incorrect"
+msgstr ""
+
+#: core/templates/site/tpl.Alipay.Return.php:30
+msgid "Error: Incorrect Alipay Trade Interface Configuration"
+msgstr ""
+
+#: core/templates/site/tpl.Alipay.Return.php:131
+msgid ""
+"Verify return result failed, please contact the site administrator if you "
+"have finished your payment"
+msgstr ""
+
+#: core/templates/site/tpl.Alipay.Return.php:131
+msgid "Verify Failed"
+msgstr ""
+
+#: core/templates/site/tpl.Alipay.Return.php:149
+#: core/templates/site/tpl.CheckOut.php:60
+#: core/templates/site/tpl.PayResult.php:60
+#: core/templates/site/tpl.QrPay.php:53
+msgid "Confirm Order"
+msgstr ""
+
+#: core/templates/site/tpl.Alipay.Return.php:156
+#: core/templates/site/tpl.CheckOut.php:67
+#: core/templates/site/tpl.PayResult.php:67
+msgid "Payment Accomplish"
+msgstr ""
+
+#: core/templates/site/tpl.Alipay.Return.php:163
+#: core/templates/site/tpl.CheckOut.php:74
+#: core/templates/site/tpl.PayResult.php:74
+#: core/templates/site/tpl.QrPay.php:67
+msgid "Confirm Delivery"
+msgstr ""
+
+#: core/templates/site/tpl.Alipay.Return.php:170
+#: core/templates/site/tpl.PayResult.php:81
+#, php-format
+msgid "Payment for Order ID %s has finished successfully"
+msgstr ""
+
+#: core/templates/site/tpl.Alipay.Return.php:171
+#, php-format
+msgid "You have payed %f yuan, Currently the order status is: %s"
+msgstr ""
+
+#: core/templates/site/tpl.Alipay.Return.php:171
+msgid "<br>You need to go to visit your alipay account and confirm delivery."
+msgstr ""
+
+#: core/templates/site/tpl.Alipay.Return.php:172
+#: core/templates/site/tpl.PayResult.php:87
+#: core/templates/site/tpl.QrPay.php:101
+msgid "Check Order Detail"
 msgstr ""
 
 #: core/templates/site/tpl.CheckOut.php:22
@@ -3009,29 +3083,39 @@ msgstr ""
 msgid "Invalid Checkout Parameters"
 msgstr ""
 
+#: core/templates/site/tpl.CheckOut.php:26
+#: core/templates/site/tpl.PayGateway.php:26
+#: core/templates/site/tpl.PayResult.php:26
+msgid "You are acting an illegal visit"
+msgstr ""
+
+#: core/templates/site/tpl.CheckOut.php:26
+#: core/templates/site/tpl.PayGateway.php:26
+#: core/templates/site/tpl.PayResult.php:26
+msgid "Illegal Visit"
+msgstr ""
+
 #: core/templates/site/tpl.CheckOut.php:32
+#: core/templates/site/tpl.PayGateway.php:32
+#: core/templates/site/tpl.PayResult.php:32
+#: core/templates/site/tpl.QrPay.php:28
 msgid "The order with order id you specified is not existed"
 msgstr ""
 
 #: core/templates/site/tpl.CheckOut.php:32
 #: core/templates/site/tpl.CheckOut.php:36
+#: core/templates/site/tpl.PayGateway.php:32
+#: core/templates/site/tpl.PayGateway.php:36
+#: core/templates/site/tpl.PayResult.php:32
+#: core/templates/site/tpl.PayResult.php:36
+#: core/templates/site/tpl.QrPay.php:28 core/templates/site/tpl.QrPay.php:32
 msgid "Invalid Order"
 msgstr ""
 
 #: core/templates/site/tpl.CheckOut.php:36
+#: core/templates/site/tpl.PayGateway.php:36
+#: core/templates/site/tpl.QrPay.php:32
 msgid "The order with order id you specified has been payed"
-msgstr ""
-
-#: core/templates/site/tpl.CheckOut.php:60
-msgid "Confirm Order"
-msgstr ""
-
-#: core/templates/site/tpl.CheckOut.php:67
-msgid "Payment Accomplish"
-msgstr ""
-
-#: core/templates/site/tpl.CheckOut.php:74
-msgid "Confirm Delivery"
 msgstr ""
 
 #: core/templates/site/tpl.CheckOut.php:80
@@ -3116,6 +3200,98 @@ msgstr ""
 msgid "Submit Order"
 msgstr ""
 
+#: core/templates/site/tpl.PayGateway.php:22
+msgid "The required parameters for payment are missing"
+msgstr ""
+
+#: core/templates/site/tpl.PayGateway.php:22
+msgid "Invalid Payment Parameters"
+msgstr ""
+
+#: core/templates/site/tpl.PayGateway.php:42
+msgid "The seller information verify failed, please contact the site manager"
+msgstr ""
+
+#: core/templates/site/tpl.PayGateway.php:42
+msgid "Internal Error"
+msgstr ""
+
+#: core/templates/site/tpl.PayGateway.php:53
+msgid "VIP Membership(Monthly)"
+msgstr ""
+
+#: core/templates/site/tpl.PayGateway.php:54
+msgid "Subscribe VIP Membership(Monthly)"
+msgstr ""
+
+#: core/templates/site/tpl.PayGateway.php:56
+msgid "VIP Membership(Annual)"
+msgstr ""
+
+#: core/templates/site/tpl.PayGateway.php:57
+msgid "Subscribe VIP Membership(Annual)"
+msgstr ""
+
+#: core/templates/site/tpl.PayGateway.php:59
+msgid "VIP Membership(Permanent)"
+msgstr ""
+
+#: core/templates/site/tpl.PayGateway.php:60
+msgid "Subscribe VIP Membership(Permanent)"
+msgstr ""
+
+#: core/templates/site/tpl.PayGateway.php:62
+msgid "Credits Charge"
+msgstr ""
+
+#: core/templates/site/tpl.PayGateway.php:174
+msgid "Confirm"
+msgstr ""
+
+#: core/templates/site/tpl.PayGateway.php:182
+msgid "Payment Gateway"
+msgstr ""
+
+#: core/templates/site/tpl.PayGateway.php:185
+msgid "Redirecting to alipay..."
+msgstr ""
+
+#: core/templates/site/tpl.PayGateway.php:193
+msgid ""
+"The payment channel you choose is not supported, please select another one "
+"or contact with the site manager"
+msgstr ""
+
+#: core/templates/site/tpl.PayGateway.php:193
+msgid "Unsupported Payment Channel"
+msgstr ""
+
+#: core/templates/site/tpl.PayResult.php:22
+msgid ""
+"The required parameters for check result of order payment  are missing"
+msgstr ""
+
+#: core/templates/site/tpl.PayResult.php:22
+#: core/templates/site/tpl.QrPay.php:22
+msgid "Invalid Query Parameters"
+msgstr ""
+
+#: core/templates/site/tpl.PayResult.php:36
+msgid "The order with order id you specified has not been payed"
+msgstr ""
+
+#: core/templates/site/tpl.PayResult.php:83
+#, php-format
+msgid ""
+"You use site credit to accomplish this payment, currently your credit "
+"balance is: %d"
+msgstr ""
+
+#: core/templates/site/tpl.PayResult.php:85
+#, php-format
+msgid "Currently the order status is: %s"
+msgstr ""
+
 #: core/templates/site/tpl.QrCode.php:18
 msgid "The request is not allowed"
 msgstr ""
@@ -3130,6 +3306,61 @@ msgstr ""
 
 #: core/templates/site/tpl.QrCode.php:22
 msgid "Missing argument"
+msgstr ""
+
+#: core/templates/site/tpl.QrPay.php:22
+msgid "The required parameters for retrieve a order  are missing"
+msgstr ""
+
+#: core/templates/site/tpl.QrPay.php:38
+msgid "The order does not support cash payment"
+msgstr ""
+
+#: core/templates/site/tpl.QrPay.php:38
+msgid "Unsuitable Payment Method"
+msgstr ""
+
+#: core/templates/site/tpl.QrPay.php:60
+msgid "Accomplish Payment"
+msgstr ""
+
+#: core/templates/site/tpl.QrPay.php:74
+#, php-format
+msgid "Payment Amount for Order ID %s is %0.2f"
+msgstr ""
+
+#: core/templates/site/tpl.QrPay.php:75
+msgid ""
+"Currently we only support a payment via transfer by scanning qrcode image, "
+"when you transfer cash to us, you should leave some important information "
+"for remark"
+msgstr ""
+
+#: core/templates/site/tpl.QrPay.php:76
+#, php-format
+msgid "Your remark is: <strong>%d</strong>"
+msgstr ""
+
+#: core/templates/site/tpl.QrPay.php:79 core/templates/site/tpl.QrPay.php:83
+msgid "Scan the qrcode image and pay forward to me"
+msgstr ""
+
+#: core/templates/site/tpl.QrPay.php:80
+msgid "Recommended, support auto delivery if you leave right remark"
+msgstr ""
+
+#: core/templates/site/tpl.QrPay.php:84
+msgid ""
+"Auto delivery not supported, please contact us via the contact qrcode "
+"images below"
+msgstr ""
+
+#: core/templates/site/tpl.QrPay.php:91
+msgid "Contact me via alipay"
+msgstr ""
+
+#: core/templates/site/tpl.QrPay.php:97
+msgid "Contact me via weixin"
 msgstr ""
 
 #: core/templates/tax/tpl.Archive.php:60

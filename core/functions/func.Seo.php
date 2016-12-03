@@ -47,6 +47,12 @@ function tt_get_page_title() {
             case 'checkout':
                 $title = __('Check Out Orders', 'tt');
                 break;
+            case 'payresult':
+                $title = __('Payment Result', 'tt');
+                break;
+            case 'qrpay':
+                $title = __('Do Payment', 'tt');
+                break;
             // TODO more
         }
         return $title . ' - ' . get_bloginfo('name');

@@ -22,9 +22,9 @@ if(!isset($_GET['oid']) || !isset($_GET['spm'])){
     wp_die(__('The required parameters for checking out order are missing', 'tt'), __('Invalid Checkout Parameters', 'tt'), 500);
 }
 
-//if(!wp_verify_nonce(htmlspecialchars($_GET['spm']), 'checkout')){
-//    wp_die(__('You are acting an illegal visit', 'tt'), __('Illegal Visit', 'tt'), 500);
-//}
+if(!wp_verify_nonce(htmlspecialchars($_GET['spm']), 'checkout')){
+    wp_die(__('You are acting an illegal visit', 'tt'), __('Illegal Visit', 'tt'), 500);
+}
 
 $order_id = htmlspecialchars($_GET['oid']);
 $order = tt_get_order($order_id);
@@ -32,7 +32,7 @@ if(!$order){
     wp_die(__('The order with order id you specified is not existed', 'tt'), __('Invalid Order', 'tt'), 500);
 }
 
-if($order->order_status > 1){
+if(in_array($order->order_status, array(2, 3, 4))){
     wp_die(__('The order with order id you specified has been payed', 'tt'), __('Invalid Order', 'tt'), 500);
 }
 

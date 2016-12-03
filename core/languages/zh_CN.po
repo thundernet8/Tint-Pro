@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-11-30 23:35+0800\n"
-"PO-Revision-Date: 2016-11-30 23:35+0800\n"
+"POT-Creation-Date: 2016-12-03 23:25+0800\n"
+"PO-Revision-Date: 2016-12-03 23:26+0800\n"
 "Last-Translator: Zhiyan <mail@webapproach.net>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -169,7 +169,7 @@ msgstr "register_routes()方法必须被覆盖"
 #: core/api/v1/endpoints/class.Rest.Controller.php:159
 #, php-format
 msgid "Method '%s' not implemented. Must be over-ridden in subclass."
-msgstr ""
+msgstr "方法 '%s' 未实例化, 必须在派生类中重载"
 
 #: core/api/v1/endpoints/class.Rest.Controller.php:261
 msgid "Current page of the collection."
@@ -190,15 +190,15 @@ msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.Follow.Controller.php:218
 msgid "Sorry, you cannot follow or unfollow without signing in."
-msgstr ""
+msgstr "抱歉, 你必须登录才能关注或取消关注"
 
 #: core/api/v1/endpoints/class.Rest.Message.Controller.php:92
 msgid "Sorry, you cannot view messages without signing in."
-msgstr ""
+msgstr "抱歉, 你必须登录才能查看消息"
 
 #: core/api/v1/endpoints/class.Rest.Message.Controller.php:111
 msgid "Retrieve messages failed"
-msgstr ""
+msgstr "检索消息失败"
 
 #: core/api/v1/endpoints/class.Rest.Message.Controller.php:128
 msgid "Sorry, you cannot create message without signing in."
@@ -278,55 +278,47 @@ msgid "delete message successfully"
 msgstr "删除消息成功"
 
 #: core/api/v1/endpoints/class.Rest.Order.Controller.php:85
-#, fuzzy
 msgid "Sorry, you cannot view orders without signing in."
-msgstr "抱歉, 必须登录才能查看消息"
+msgstr "抱歉, 必须登录才能查看订单"
 
 #: core/api/v1/endpoints/class.Rest.Order.Controller.php:118
-#, fuzzy
 msgid "Sorry, you cannot create order without signing in."
-msgstr "抱歉, 你必须登录才能发送消息"
+msgstr "抱歉, 你必须登录才能创建订单"
 
 #: core/api/v1/endpoints/class.Rest.Order.Controller.php:154
-#, fuzzy
 msgid "Create order failed"
-msgstr "创建新用户失败"
+msgstr "创建订单失败"
 
 #: core/api/v1/endpoints/class.Rest.Order.Controller.php:159
-#, fuzzy
 msgid "Create order successfully"
-msgstr "标记已读消息成功"
+msgstr "创建订单成功"
 
 #: core/api/v1/endpoints/class.Rest.Order.Controller.php:171
-#, fuzzy
 msgid "Sorry, you cannot update order without signing in."
-msgstr "抱歉, 必须登录才能更新消息"
+msgstr "抱歉, 必须登录才能更新订单"
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:272
-#, fuzzy
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:274
 msgid "Update order failed"
-msgstr "需要更新"
+msgstr "更新订单失败"
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:297
-#, fuzzy
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:299
 msgid "Sorry, you cannot delete order without signing in."
-msgstr "抱歉, 你必须登录才能删除用户元数据"
-
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:314
-msgid "Delete order failed"
-msgstr ""
+msgstr "抱歉, 你必须登录才能删除订单"
 
 #: core/api/v1/endpoints/class.Rest.Order.Controller.php:316
-#, fuzzy
-msgid "Delete order successfully"
-msgstr "删除用户元数据成功"
+msgid "Delete order failed"
+msgstr "删除订单失败"
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:331
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:318
+msgid "Delete order successfully"
+msgstr "删除订单成功"
+
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:333
 #: core/api/v1/endpoints/class.Rest.ShoppingCart.Controller.php:186
 msgid "Sorry, you cannot delete cart items without signing in."
 msgstr "抱歉, 你必须登录才能清空购物车"
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:347
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:349
 #: core/api/v1/endpoints/class.Rest.ShoppingCart.Controller.php:202
 msgid "Delete items from cart successfully"
 msgstr "清空购物车成功"
@@ -394,9 +386,8 @@ msgid "Sorry, you cannot view shopping cart without signing in."
 msgstr "抱歉, 你必须登录才能查看购物车"
 
 #: core/api/v1/endpoints/class.Rest.ShoppingCart.Controller.php:121
-#, fuzzy
 msgid "Sorry, you cannot update cart without signing in."
-msgstr "抱歉, 必须登录才能更新消息"
+msgstr "抱歉, 必须登录才能更新购物车"
 
 #: core/api/v1/endpoints/class.Rest.ShoppingCart.Controller.php:139
 msgid "Add to cart successfully"
@@ -418,12 +409,12 @@ msgstr "抱歉, 你不能以角色过滤"
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:246
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:295
 msgid "Sorry, you cannot view this resource with edit context."
-msgstr ""
+msgstr "抱歉, 在编辑上下文中不能查看该资源"
 
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:248
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:297
 msgid "Sorry, you cannot view this resource."
-msgstr ""
+msgstr "抱歉, 你不能查看该资源"
 
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:287
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:314
@@ -467,15 +458,15 @@ msgstr "邮箱已存在"
 msgid ""
 "Send registration request successfully, please go to your email box to find "
 "and visit the activation link"
-msgstr ""
+msgstr "发送注册请求成功, 请查收你的邮箱并点击其中的激活链接"
 
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:508
 msgid "Sorry, you are not allowed to edit resource."
-msgstr ""
+msgstr "抱歉, 你无权编辑资源"
 
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:512
 msgid "Sorry, you are not allowed to edit roles of this resource."
-msgstr ""
+msgstr "抱歉, 你无权编辑该资源的角色"
 
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:533
 msgid "Email address is invalid."
@@ -491,7 +482,7 @@ msgstr "Slug 无效"
 
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:617
 msgid "Invalid resource id for reassignment."
-msgstr ""
+msgstr "无效的再赋值资源ID"
 
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:630
 msgid "The resource cannot be deleted."
@@ -549,7 +540,7 @@ msgstr "用户的昵称"
 
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:944
 msgid "An alphanumeric identifier for the resource."
-msgstr ""
+msgstr "该资源的字母和数字组成的ID"
 
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:952
 msgid "Registration date for the resource."
@@ -561,7 +552,7 @@ msgstr "赋予用户的角色"
 
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:963
 msgid "Password for the resource (never included)."
-msgstr ""
+msgstr "该资源的密码(从不包括)"
 
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:969
 msgid "All capabilities assigned to the resource."
@@ -582,11 +573,11 @@ msgstr "用户的头像链接列表"
 
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:1019
 msgid "Ensure result set excludes specific ids."
-msgstr ""
+msgstr "确保结果设置了不包含特定id"
 
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:1025
 msgid "Limit result set to specific ids."
-msgstr ""
+msgstr "设置到特定id的限制结果"
 
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:1031
 msgid "Offset the result set by a specific number of items."
@@ -664,7 +655,7 @@ msgstr "不能重复绑定QQ"
 msgid ""
 "You have connected with QQ before, can not do it again, please unbind it "
 "before if need"
-msgstr ""
+msgstr "你之前连接过QQ开放平台, 在解绑之前, 你不能重复绑定"
 
 #: core/classes/class.Open.php:227
 msgid "QQ Login Disabled"
@@ -674,17 +665,17 @@ msgstr "QQ 登录禁用"
 msgid ""
 "You have not enabled QQ login, or the required information e.g OpenID, "
 "OpenKey missed"
-msgstr ""
+msgstr "没有开启QQ登录, 或者必须的信息如OpenID, OpenKey丢失"
 
 #: core/classes/class.Open.php:239
 msgid "QQ connected by other one"
-msgstr ""
+msgstr "QQ已连接至另一个用户"
 
 #: core/classes/class.Open.php:240
 msgid ""
 "Someone in your WordPress user system have connected with this QQ before, "
 "please unbind it before if need"
-msgstr ""
+msgstr "WordPress的用户中已有绑定了该QQ, 必须先解绑才能重新连接至此QQ"
 
 #: core/classes/class.Open.php:263
 msgid "State Missing"
@@ -1155,18 +1146,18 @@ msgstr "正在更新插件 %1$s (%2$d/%3$d)"
 #: core/classes/class.Tgm.Plugin.Activation.php:3594
 #, php-format
 msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
-msgstr ""
+msgstr "安装 %1$s 时发生了一个错误: <strong>%2$s</strong>"
 
 #: core/classes/class.Tgm.Plugin.Activation.php:3596
 #, php-format
 msgid "The installation of %1$s failed."
-msgstr ""
+msgstr "安装 %1$s 失败"
 
 #: core/classes/class.Tgm.Plugin.Activation.php:3600
 msgid ""
 "The installation and activation process is starting. This process may take a "
 "while on some hosts, so please be patient."
-msgstr ""
+msgstr "安装与激活工作已开始. 此过程在一些主机上可能耗费较长时间, 请耐心等待."
 
 #: core/classes/class.Tgm.Plugin.Activation.php:3602
 #, php-format
@@ -1196,7 +1187,7 @@ msgstr "正在安装和激活插件: %1$s (%2$d/%3$d)"
 msgid ""
 "The installation process is starting. This process may take a while on some "
 "hosts, so please be patient."
-msgstr ""
+msgstr "安装工作已开始. 此过程在一些主机上可能耗费较长时间, 请耐心等待."
 
 #: core/classes/class.Tgm.Plugin.Activation.php:3610
 #, php-format
@@ -1532,27 +1523,27 @@ msgstr "无效的页面模板"
 msgid "Weekly"
 msgstr "每周的"
 
-#: core/functions/func.Seo.php:28 core/functions/func.Seo.php:118
+#: core/functions/func.Seo.php:28 core/functions/func.Seo.php:124
 #: core/modules/mod.ModalLoginForm.php:17
 #: core/templates/actions/tpl.M.Signup.php:90
 msgid "Sign In"
 msgstr "登录"
 
-#: core/functions/func.Seo.php:31 core/functions/func.Seo.php:121
+#: core/functions/func.Seo.php:31 core/functions/func.Seo.php:127
 #: core/templates/actions/tpl.M.Signup.php:62
 msgid "Sign Up"
 msgstr "注册"
 
-#: core/functions/func.Seo.php:34 core/functions/func.Seo.php:124
+#: core/functions/func.Seo.php:34 core/functions/func.Seo.php:130
 msgid "Activate Registration"
 msgstr "激活注册"
 
-#: core/functions/func.Seo.php:37 core/functions/func.Seo.php:127
+#: core/functions/func.Seo.php:37 core/functions/func.Seo.php:133
 #: core/modules/mod.Header.Shop.php:103 core/modules/mod.Header.php:47
 msgid "Sign Out"
 msgstr "注销"
 
-#: core/functions/func.Seo.php:40 core/functions/func.Seo.php:130
+#: core/functions/func.Seo.php:40 core/functions/func.Seo.php:136
 #: core/templates/actions/tpl.M.Findpass.php:33
 msgid "Find Password"
 msgstr "找回密码"
@@ -1561,77 +1552,85 @@ msgstr "找回密码"
 msgid "Check Out Orders"
 msgstr "结算订单"
 
-#: core/functions/func.Seo.php:59
+#: core/functions/func.Seo.php:51
+msgid "Payment Result"
+msgstr "支付结果"
+
+#: core/functions/func.Seo.php:54
+msgid "Do Payment"
+msgstr "支付"
+
+#: core/functions/func.Seo.php:65
 #, php-format
 msgid " - Page %d"
 msgstr " - 第 %d 页"
 
-#: core/functions/func.Seo.php:70 core/functions/func.Seo.php:165
+#: core/functions/func.Seo.php:76 core/functions/func.Seo.php:171
 #, php-format
 msgid "%s's Home Page"
 msgstr "%s's 个人中心"
 
-#: core/functions/func.Seo.php:74 core/functions/shop/func.Shop.php:297
+#: core/functions/func.Seo.php:80 core/functions/shop/func.Shop.php:297
 msgid "Product Category"
 msgstr "商品分类"
 
-#: core/functions/func.Seo.php:76
+#: core/functions/func.Seo.php:82
 msgid "Product Tag"
 msgstr "商品标签"
 
-#: core/functions/func.Seo.php:78 core/functions/func.Seo.php:81
-#: core/functions/func.Seo.php:177 core/modules/mod.Header.Shop.php:29
+#: core/functions/func.Seo.php:84 core/functions/func.Seo.php:87
+#: core/functions/func.Seo.php:183 core/modules/mod.Header.Shop.php:29
 #: dash/options.php:652
 msgid "Market"
 msgstr "商店"
 
-#: core/functions/func.Seo.php:84
+#: core/functions/func.Seo.php:90
 msgid "Search"
 msgstr "搜索"
 
-#: core/functions/func.Seo.php:86
+#: core/functions/func.Seo.php:92
 msgid "Y"
 msgstr "Y"
 
-#: core/functions/func.Seo.php:86 core/functions/func.Seo.php:88
-#: core/functions/func.Seo.php:90
+#: core/functions/func.Seo.php:92 core/functions/func.Seo.php:94
+#: core/functions/func.Seo.php:96
 msgid "posts archive"
 msgstr "文章归档"
 
-#: core/functions/func.Seo.php:88
+#: core/functions/func.Seo.php:94
 msgid "Y.n"
 msgstr "Y.n"
 
-#: core/functions/func.Seo.php:90
+#: core/functions/func.Seo.php:96
 msgid "Y.n.j"
 msgstr "Y.n.j"
 
-#: core/functions/func.Seo.php:92
+#: core/functions/func.Seo.php:98
 msgid "Tag: "
 msgstr "标签: "
 
-#: core/functions/func.Seo.php:94
+#: core/functions/func.Seo.php:100
 msgid "Page Not Found"
 msgstr "页面未找到"
 
-#: core/functions/func.Seo.php:99
+#: core/functions/func.Seo.php:105
 #, php-format
 msgid " - Page %d "
 msgstr " - 第 %d 页"
 
-#: core/functions/func.Seo.php:133 core/functions/func.Seo.php:165
+#: core/functions/func.Seo.php:139 core/functions/func.Seo.php:171
 msgid "Powered by Tint(Tinection 2)"
 msgstr "由Tint主题驱动(Tinection 2)"
 
-#: core/functions/func.Seo.php:164
+#: core/functions/func.Seo.php:170
 msgid "Ucenter"
 msgstr "用户中心"
 
-#: core/functions/func.Seo.php:164 core/functions/func.Seo.php:177
+#: core/functions/func.Seo.php:170 core/functions/func.Seo.php:183
 msgid "Tint Ucenter and Market System"
 msgstr "Tint主题用户中心和商店系统"
 
-#: core/functions/func.Seo.php:180
+#: core/functions/func.Seo.php:186
 msgid ""
 "Powered by Tint(Tinection 2, a powerful wordpress theme with ucenter and "
 "shop system integrated)"
@@ -2178,6 +2177,7 @@ msgid "SEND"
 msgstr "发送"
 
 #: core/modules/mod.ModalQrCodes.php:20 core/modules/mod.ModalQrCodes.php:25
+#: core/templates/site/tpl.QrPay.php:90 core/templates/site/tpl.QrPay.php:96
 msgid "Scan the qrcode image and contact with me"
 msgstr "扫一扫二维码联系我"
 
@@ -2967,13 +2967,78 @@ msgstr "订单历史"
 msgid "%d reviews for the product"
 msgstr "%d 条商品评价"
 
+#: core/templates/site/tpl.Alipay.Return.php:22
 #: core/templates/site/tpl.CheckOut.php:18
+#: core/templates/site/tpl.PayGateway.php:18
+#: core/templates/site/tpl.PayResult.php:18
 msgid "You cannot visit this page without sign in"
 msgstr "你必须登录才能访问该页面"
 
+#: core/templates/site/tpl.Alipay.Return.php:22
 #: core/templates/site/tpl.CheckOut.php:18
+#: core/templates/site/tpl.PayGateway.php:18
+#: core/templates/site/tpl.PayResult.php:18
 msgid "Error: Unknown User"
 msgstr "错误: 未知用户"
+
+#: core/templates/site/tpl.Alipay.Return.php:30
+msgid "Alipay trade interface configuration is incorrect"
+msgstr "支付宝交易接口配置错误"
+
+#: core/templates/site/tpl.Alipay.Return.php:30
+msgid "Error: Incorrect Alipay Trade Interface Configuration"
+msgstr "错误: 无效的支付宝交易接口配置"
+
+#: core/templates/site/tpl.Alipay.Return.php:131
+msgid ""
+"Verify return result failed, please contact the site administrator if you "
+"have finished your payment"
+msgstr "验证返回结果失败, 如果你已经成功付款请联系管理员"
+
+#: core/templates/site/tpl.Alipay.Return.php:131
+msgid "Verify Failed"
+msgstr "验证失败"
+
+#: core/templates/site/tpl.Alipay.Return.php:149
+#: core/templates/site/tpl.CheckOut.php:60
+#: core/templates/site/tpl.PayResult.php:60
+#: core/templates/site/tpl.QrPay.php:53
+msgid "Confirm Order"
+msgstr "确认订单详情"
+
+#: core/templates/site/tpl.Alipay.Return.php:156
+#: core/templates/site/tpl.CheckOut.php:67
+#: core/templates/site/tpl.PayResult.php:67
+msgid "Payment Accomplish"
+msgstr "完成支付"
+
+#: core/templates/site/tpl.Alipay.Return.php:163
+#: core/templates/site/tpl.CheckOut.php:74
+#: core/templates/site/tpl.PayResult.php:74
+#: core/templates/site/tpl.QrPay.php:67
+msgid "Confirm Delivery"
+msgstr "确认收货"
+
+#: core/templates/site/tpl.Alipay.Return.php:170
+#: core/templates/site/tpl.PayResult.php:81
+#, php-format
+msgid "Payment for Order ID %s has finished successfully"
+msgstr "订单 %s 已经成功支付"
+
+#: core/templates/site/tpl.Alipay.Return.php:171
+#, php-format
+msgid "You have payed %f yuan, Currently the order status is: %s"
+msgstr "你支付了 %0.2f 元, 当前订单状态为: %s"
+
+#: core/templates/site/tpl.Alipay.Return.php:171
+msgid "<br>You need to go to visit your alipay account and confirm delivery."
+msgstr "<br>你需要访问你的支付宝账户, 并对此交易确认收货."
+
+#: core/templates/site/tpl.Alipay.Return.php:172
+#: core/templates/site/tpl.PayResult.php:87
+#: core/templates/site/tpl.QrPay.php:101
+msgid "Check Order Detail"
+msgstr "查看订单详情"
 
 #: core/templates/site/tpl.CheckOut.php:22
 msgid "The required parameters for checking out order are missing"
@@ -2983,30 +3048,40 @@ msgstr "结算订单必须的参数丢失"
 msgid "Invalid Checkout Parameters"
 msgstr "无效的参数"
 
+#: core/templates/site/tpl.CheckOut.php:26
+#: core/templates/site/tpl.PayGateway.php:26
+#: core/templates/site/tpl.PayResult.php:26
+msgid "You are acting an illegal visit"
+msgstr "你正在进行非法访问, 请按正确流程进行操作"
+
+#: core/templates/site/tpl.CheckOut.php:26
+#: core/templates/site/tpl.PayGateway.php:26
+#: core/templates/site/tpl.PayResult.php:26
+msgid "Illegal Visit"
+msgstr "非法访问"
+
 #: core/templates/site/tpl.CheckOut.php:32
+#: core/templates/site/tpl.PayGateway.php:32
+#: core/templates/site/tpl.PayResult.php:32
+#: core/templates/site/tpl.QrPay.php:28
 msgid "The order with order id you specified is not existed"
 msgstr "指定的订单不存在"
 
 #: core/templates/site/tpl.CheckOut.php:32
 #: core/templates/site/tpl.CheckOut.php:36
+#: core/templates/site/tpl.PayGateway.php:32
+#: core/templates/site/tpl.PayGateway.php:36
+#: core/templates/site/tpl.PayResult.php:32
+#: core/templates/site/tpl.PayResult.php:36
+#: core/templates/site/tpl.QrPay.php:28 core/templates/site/tpl.QrPay.php:32
 msgid "Invalid Order"
 msgstr "无效订单"
 
 #: core/templates/site/tpl.CheckOut.php:36
+#: core/templates/site/tpl.PayGateway.php:36
+#: core/templates/site/tpl.QrPay.php:32
 msgid "The order with order id you specified has been payed"
 msgstr "该订单已经支付, 请勿重复支付"
-
-#: core/templates/site/tpl.CheckOut.php:60
-msgid "Confirm Order"
-msgstr "确认订单详情"
-
-#: core/templates/site/tpl.CheckOut.php:67
-msgid "Payment Accomplish"
-msgstr "完成支付"
-
-#: core/templates/site/tpl.CheckOut.php:74
-msgid "Confirm Delivery"
-msgstr "确认收货"
 
 #: core/templates/site/tpl.CheckOut.php:80
 msgid "Order Details"
@@ -3017,7 +3092,6 @@ msgid "Single Price"
 msgstr "单价"
 
 #: core/templates/site/tpl.CheckOut.php:88
-#, fuzzy
 msgid "Quantity"
 msgstr "数量"
 
@@ -3091,6 +3165,97 @@ msgstr "实付款: "
 msgid "Submit Order"
 msgstr "提交订单"
 
+#: core/templates/site/tpl.PayGateway.php:22
+msgid "The required parameters for payment are missing"
+msgstr "支付订单必须的参数丢失"
+
+#: core/templates/site/tpl.PayGateway.php:22
+msgid "Invalid Payment Parameters"
+msgstr "无效的支付参数"
+
+#: core/templates/site/tpl.PayGateway.php:42
+msgid "The seller information verify failed, please contact the site manager"
+msgstr "卖家信息验证失败, 请联系管理员"
+
+#: core/templates/site/tpl.PayGateway.php:42
+msgid "Internal Error"
+msgstr "内部错误"
+
+#: core/templates/site/tpl.PayGateway.php:53
+msgid "VIP Membership(Monthly)"
+msgstr "VIP月费会员"
+
+#: core/templates/site/tpl.PayGateway.php:54
+msgid "Subscribe VIP Membership(Monthly)"
+msgstr "VIP会员订阅(按月)"
+
+#: core/templates/site/tpl.PayGateway.php:56
+msgid "VIP Membership(Annual)"
+msgstr "VIP年费会员"
+
+#: core/templates/site/tpl.PayGateway.php:57
+msgid "Subscribe VIP Membership(Annual)"
+msgstr "VIP会员订阅(按年)"
+
+#: core/templates/site/tpl.PayGateway.php:59
+msgid "VIP Membership(Permanent)"
+msgstr "VIP终生会员"
+
+#: core/templates/site/tpl.PayGateway.php:60
+msgid "Subscribe VIP Membership(Permanent)"
+msgstr "VIP会员订阅(永久)"
+
+#: core/templates/site/tpl.PayGateway.php:62
+msgid "Credits Charge"
+msgstr "积分充值"
+
+#: core/templates/site/tpl.PayGateway.php:174
+msgid "Confirm"
+msgstr "确认"
+
+#: core/templates/site/tpl.PayGateway.php:182
+msgid "Payment Gateway"
+msgstr "支付网关"
+
+#: core/templates/site/tpl.PayGateway.php:185
+msgid "Redirecting to alipay..."
+msgstr "正在前往支付宝..."
+
+#: core/templates/site/tpl.PayGateway.php:193
+msgid ""
+"The payment channel you choose is not supported, please select another one "
+"or contact with the site manager"
+msgstr "不支持你选择的支付方式, 请重新选择支付方式或者联系管理员"
+
+#: core/templates/site/tpl.PayGateway.php:193
+msgid "Unsupported Payment Channel"
+msgstr "不支持的支付方式"
+
+#: core/templates/site/tpl.PayResult.php:22
+msgid "The required parameters for check result of order payment  are missing"
+msgstr "校验订单状态必须的参数丢失"
+
+#: core/templates/site/tpl.PayResult.php:22
+#: core/templates/site/tpl.QrPay.php:22
+msgid "Invalid Query Parameters"
+msgstr "无效的查询参数"
+
+#: core/templates/site/tpl.PayResult.php:36
+msgid "The order with order id you specified has not been payed"
+msgstr "该订单尚未支付, 请先尝试支付"
+
+#: core/templates/site/tpl.PayResult.php:83
+#, php-format
+msgid ""
+"You use site credit to accomplish this payment, currently your credit "
+"balance is: %d"
+msgstr "你使用站内积分完成了本次支付, 当前您的积分余额为: %d"
+
+#: core/templates/site/tpl.PayResult.php:85
+#, php-format
+msgid "Currently the order status is: %s"
+msgstr "当前订单状态为: %s"
+
 #: core/templates/site/tpl.QrCode.php:18
 msgid "The request is not allowed"
 msgstr "请求不被允许"
@@ -3106,6 +3271,63 @@ msgstr "text参数缺失"
 #: core/templates/site/tpl.QrCode.php:22
 msgid "Missing argument"
 msgstr "缺少参数"
+
+#: core/templates/site/tpl.QrPay.php:22
+msgid "The required parameters for retrieve a order  are missing"
+msgstr "检索订单必须的参数丢失"
+
+#: core/templates/site/tpl.QrPay.php:38
+msgid "The order does not support cash payment"
+msgstr "此订单不适用现金支付"
+
+#: core/templates/site/tpl.QrPay.php:38
+msgid "Unsuitable Payment Method"
+msgstr "不匹配的支付方式"
+
+#: core/templates/site/tpl.QrPay.php:60
+msgid "Accomplish Payment"
+msgstr "完成支付"
+
+#: core/templates/site/tpl.QrPay.php:74
+#, php-format
+msgid "Payment Amount for Order ID %s is %0.2f"
+msgstr "订单 %s 需支付 %0.2f 元"
+
+#: core/templates/site/tpl.QrPay.php:75
+msgid ""
+"Currently we only support a payment via transfer by scanning qrcode image, "
+"when you transfer cash to us, you should leave some important information "
+"for remark"
+msgstr ""
+"当前我们只支持扫描二维码转账付款购买, 当您转账给我们时, 请备注一些重要的信息"
+"方便后台程序或管理员自动更新订单状态并发货"
+
+#: core/templates/site/tpl.QrPay.php:76
+#, php-format
+msgid "Your remark is: <strong>%d</strong>"
+msgstr "你的备注信息为: <strong>%d</strong>"
+
+#: core/templates/site/tpl.QrPay.php:79 core/templates/site/tpl.QrPay.php:83
+msgid "Scan the qrcode image and pay forward to me"
+msgstr "扫一扫二维码向我付款"
+
+#: core/templates/site/tpl.QrPay.php:80
+msgid "Recommended, support auto delivery if you leave right remark"
+msgstr "推荐, 支持自动发货(需正确备注)"
+
+#: core/templates/site/tpl.QrPay.php:84
+msgid ""
+"Auto delivery not supported, please contact us via the contact qrcode images "
+"below"
+msgstr "不支持自动发货, 请扫描下方二维码联系我们"
+
+#: core/templates/site/tpl.QrPay.php:91
+msgid "Contact me via alipay"
+msgstr "支付宝联系我"
+
+#: core/templates/site/tpl.QrPay.php:97
+msgid "Contact me via weixin"
+msgstr "微信联系我"
 
 #: core/templates/tax/tpl.Archive.php:60 core/templates/tax/tpl.Category.php:84
 #: core/templates/tax/tpl.Date.php:82 core/templates/tax/tpl.Tag.php:82
@@ -3886,37 +4108,39 @@ msgstr "Themes - Plugins - Services"
 
 #: dash/options.php:679
 msgid "支付宝收款帐户邮箱"
-msgstr ""
+msgstr "支付宝收款帐户邮箱"
 
 #: dash/options.php:680
 msgid "支付宝收款帐户邮箱,要收款必填并务必保持正确"
-msgstr ""
+msgstr "支付宝收款帐户邮箱,要收款必填并务必保持正确"
 
 #: dash/options.php:689
 msgid "支付宝商家身份ID"
-msgstr ""
+msgstr "支付宝商家身份ID"
 
 #: dash/options.php:690
 msgid "合作身份者id，以2088开头的16位纯数字"
-msgstr ""
+msgstr "合作身份者id，以2088开头的16位纯数字"
 
 #: dash/options.php:699
 msgid "支付宝商家身份key"
-msgstr ""
+msgstr "支付宝商家身份key"
 
 #: dash/options.php:700
 msgid "支付宝商家身份安全检验码，以数字和字母组成的32位字符"
-msgstr ""
+msgstr "支付宝商家身份安全检验码，以数字和字母组成的32位字符"
 
 #: dash/options.php:709
 msgid "支付宝商家收款类型"
-msgstr ""
+msgstr "支付宝商家收款类型"
 
 #: dash/options.php:710
 msgid ""
 "支付宝商家收款类型, 支持即时到账, 双功能和担保交易, 注意：切换类型后必须对应"
 "修改商家身份key"
 msgstr ""
+"支付宝商家收款类型, 支持即时到账, 双功能和担保交易, 注意：切换类型后必须对应"
+"修改商家身份key"
 
 #: dash/options.php:715 dash/options.php:757
 msgid "Memcache"

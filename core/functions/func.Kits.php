@@ -65,7 +65,7 @@ function tt_url_for($key, $arg = null, $relative = false){
     };
     switch ($key){
         case 'my_order':
-            $endpoint = 'order/' . (int)$arg;
+            $endpoint = 'me/order/' . (int)$arg;
             break;
         case 'uc_comments':
             $nickname = call_user_func($uc_func, $arg);

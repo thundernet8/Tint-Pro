@@ -1,5 +1,5 @@
 /**
- * Generated on Wed Nov 30 2016 23:33:17 GMT+0800 (中国标准时间) by Zhiyan
+ * Generated on Sat Dec 03 2016 12:39:17 GMT+0800 (中国标准时间) by Zhiyan
  *
  * @package   Tint
  * @version   v2.0.0
@@ -2656,15 +2656,19 @@
                 }
                 var data = { checkout: true };
                 data[['userMessage']] = _memoTextarea[['length']] ? _memoTextarea[['val']]() : '';
-                if (_receiverNameInput && _receiverEmailInput && _receiverNameInput[['val']]() && _receiverEmailInput[['val']]()) {
-                    data[['receiverName']] = _receiverNameInput[['val']]();
-                    data[['receiverEmail']] = _receiverEmailInput[['val']]();
-                    data[['receiverPhone']] = _receiverPhoneInput[['length']] ? _receiverPhoneInput[['val']]() : '';
-                    data[['receiverAddr']] = _receiverAddrInput[['length']] ? _receiverAddrInput[['val']]() : '';
-                    data[['receiverZip']] = _receiverZipInput[['length']] ? _receiverZipInput[['val']]() : '';
+                var addressList = $(_addressListActiveSel);
+                if (addressList[['length']]) {
+                    data[['addressId']] = addressList[['data']]('address-id');
                 } else {
-                    var addressList = $(_addressListActiveSel);
-                    data[['addressId']] = addressList[['length']] ? addressList[['data']]('address-id') : '';
+                    if (_receiverNameInput[['length']] && _receiverEmailInput[['length']] && _receiverNameInput[['val']]() && _receiverEmailInput[['val']]()) {
+                        data[['receiverName']] = _receiverNameInput[['val']]();
+                        data[['receiverEmail']] = _receiverEmailInput[['val']]();
+                        data[['receiverPhone']] = _receiverPhoneInput[['length']] ? _receiverPhoneInput[['val']]() : '';
+                        data[['receiverAddr']] = _receiverAddrInput[['length']] ? _receiverAddrInput[['val']]() : '';
+                        data[['receiverZip']] = _receiverZipInput[['length']] ? _receiverZipInput[['val']]() : '';
+                    } else {
+                        return false;
+                    }
                 }
                 var paymentList = $(_payMethodListSel);
                 if (paymentList[['length']]) {
@@ -2724,6 +2728,9 @@
                 });
             };
             var _initChooseAddr = function _initChooseAddr() {
+                if ($(_addressListActiveSel)[['length']] < 1) {
+                    $(_addressListSel)[['first']]()[['addClass']]('active');
+                }
                 _body[['on']]('click', _addressListSel, function () {
                     $(this)[['siblings']]()[['removeClass']]('active')[['end']]()[['addClass']]('active');
                 });
@@ -2800,10 +2807,10 @@
                     var addrInputGroup = $($(this)[['data']]('show-sel'));
                     var addrList = $($(this)[['data']]('hide-sel'));
                     if (addrInputGroup[['length']]) {
-                        addrInputGroup[['slideDown']]();
+                        addrInputGroup[['show']]();
                     }
                     if (addrList[['length']]) {
-                        addrList[['hide']]();
+                        addrList[['remove']]();
                     }
                     $(this)[['remove']]();
                 });

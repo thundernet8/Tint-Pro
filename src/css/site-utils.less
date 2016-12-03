@@ -27,9 +27,12 @@
 /* Footer */
 @import "modules/nav/footer";
 
+#globalSearch {
+    display: none;
+}
 
 /* Checkout */
-body.checkout{
+body{
     &>.wrapper {
         &>.main {
             border: 1px solid #e6e6e6;
@@ -75,6 +78,11 @@ body.checkout{
                         &.current {
                             i {
                                 background-position: 0 0;
+                            }
+                            &>.step_inner {
+                                &>h4 {
+                                    color: #44b549;
+                                }
                             }
                         }
                         &.size1of2 {
@@ -219,10 +227,33 @@ body.checkout{
 
             &>.address {
                 &>.address-list {
-
+                    &>li {
+                        cursor: pointer;
+                        &>.inner {
+                            padding: 10px;
+                            border: 2px solid @gray-light;
+                            &>.addr-hd {
+                                padding-bottom: 5px;
+                                margin-bottom: 5px;
+                                border-bottom: 1px dotted #eaeaea;
+                                font-size: 1.6rem;
+                                font-weight: 500;
+                            }
+                        }
+                        &.active {
+                            &>.inner {
+                                border-color: @brand-secondary;
+                            }
+                        }
+                    }
                 }
                 &>.add-new-address {
+                    display: inline-block;
+                    margin: 20px;
                     cursor: pointer;
+                    &:before {
+                        content: '+ ';
+                    }
                 }
                 &>.address-input-group {
                     display: none;
@@ -279,6 +310,18 @@ body.checkout{
                         button {
                             border-radius: 0;
                         }
+                        button {
+                            position: relative;
+                            width: 62px;
+                            height: 42px;
+                            i {
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                margin-top: -8px;
+                                margin-left: -8px;
+                            }
+                        }
                         &>span:first-child {
                             display: inline-block;
                             position: absolute;
@@ -311,8 +354,79 @@ body.checkout{
                     }
                 }
                 &>.btn-submit {
+                    height: 42px;
                     border-radius: 0;
                     clear: both;
+                }
+            }
+        }
+    }
+}
+
+/* Pay Result */
+body.payresult {
+    & > .wrapper {
+        & > .main {
+            &>.result {
+                &>.result-wrapper {
+                    padding: 50px 20px;
+                    text-align: center;
+                    &>h1 {
+                        font-weight: 500;
+                    }
+                    &>p {
+                        padding: 10px 0;
+                    }
+                    &>.order-status {
+                        font-size: 1.6rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* QrPay */
+body.qrpay {
+    & > .wrapper {
+        & > .main {
+            &>.payment {
+                &>.payment-wrapper {
+                    padding: 50px 20px;
+                    text-align: center;
+                    &>h1 {
+                        font-weight: 500;
+                    }
+                    &>p {
+                        padding: 10px 0;
+                    }
+                    &>.introduction {
+                        font-size: 1.6rem;
+                    }
+                    &>.remark {
+                        font-size: 1.4rem;
+                        strong {
+                            font-size: 2rem;
+                            color: @brand-hot;
+                        }
+                    }
+                    &>.pay-qr-images {
+                        text-align: center;
+                        margin-bottom: 20px;
+                    }
+                    &>.contact-qr-images {
+                        text-align: center;
+                        margin-bottom: 20px;
+                    }
+                    &>.actions {
+                        text-align: center;
+                        border-top: 1px solid #eaeaea;
+                        &>a {
+                            display: inline-block;
+                            margin: 30px auto 20px;
+                        }
+                    }
                 }
             }
         }

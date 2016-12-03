@@ -107,7 +107,10 @@ $site_allow_utils = json_encode(array(
     'checkout' => 'CheckOut',
     'payresult' => 'PayResult',
     'qrpay' => 'QrPay',
-    'paygateway' => 'PayGateway'
+    'paygateway' => 'PayGateway',
+    'alipayreturn' => 'Alipay.Return',
+    'alipaynotify' => 'Alipay.Notify',
+    'apsvnotify' => 'APSV.Notify'
 ));
 defined('ALLOWED_SITE_UTILS') || define('ALLOWED_SITE_UTILS', $site_allow_utils);
 
@@ -121,6 +124,9 @@ $site_endpoints = json_encode(array(
     'payresult'                 =>  'site/payresult',
     'qrpay'                     =>  'site/qrpay',
     'paygateway'                =>  'site/paygateway',
+    'alipayreturn'              =>  'site/alipayreturn',
+    'alipaynotify'              =>  'site/alipaynotify',
+    'apsvnotify'                =>  'site/apsvnotify',
     'api_root'                  =>  'api',
     'signin'                    =>  'm/signin',
     'signup'                    =>  'm/signup',
