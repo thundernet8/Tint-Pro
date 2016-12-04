@@ -75,29 +75,29 @@ if($currency != 'cash'){
                 <p class="introduction"><?php _e('Currently we only support a payment via transfer by scanning qrcode image, when you transfer cash to us, you should leave some important information for remark', 'tt'); ?></p>
                 <p class="remark"><?php echo sprintf(__('Your remark is: <strong>%d</strong>', 'tt'), $order->id); ?></p>
                 <div class="pay-qr-images row">
-                    <div class="col-md-6 col-sm-6 col-xs-12 alipay">
-                        <div class="wx-qr"><img src="<?php echo tt_get_option('tt_alipay_pay_qr'); ?>" title="<?php _e('Scan the qrcode image and pay forward to me', 'tt'); ?>"></div>
+                    <div class="qrcode col-md-6 col-sm-6 col-xs-12 alipay">
+                        <div class="ali-qr"><img src="<?php echo tt_get_option('tt_site_alipay_qr'); ?>" title="<?php _e('Scan the qrcode image and pay forward to me', 'tt'); ?>"></div>
                         <p><?php _e('Recommended, support auto delivery if you leave right remark', 'tt'); ?></p>
                     </div>
                     <div class="qrcode col-md-6 col-sm-6 col-xs-12 weixin">
-                        <div class="ali-qr"><img src="<?php echo tt_get_option('tt_weixin_pay_qr'); ?>" title="<?php _e('Scan the qrcode image and pay forward to me', 'tt'); ?>"></div>
-                        <p><?php _e('Auto delivery not supported, please contact us via the contact qrcode images below', 'tt'); ?></p>
+                        <div class="wx-qr"><img src="<?php echo tt_get_option('tt_site_weixin_qr'); ?>" title="<?php _e('Scan the qrcode image and pay forward to me', 'tt'); ?>"></div>
+                        <p><?php _e('Auto delivery not supported, we will check and handle the order manually in time', 'tt'); ?></p>
                     </div>
                 </div>
-                <div class="contact-qr-images row">
-                    <div class="col-md-6 col-sm-6 col-xs-12 alipay">
-                        <?php if(tt_get_option('tt_site_alipay_qr')) { ?>
-                            <div class="wx-qr"><img src="<?php echo tt_get_option('tt_site_alipay_qr'); ?>" title="<?php _e('Scan the qrcode image and contact with me', 'tt'); ?>"></div>
-                            <p><?php _e('Contact me via alipay', 'tt'); ?></p>
-                        <?php } ?>
-                    </div>
-                    <div class="qrcode col-md-6 col-sm-6 col-xs-12 weixin">
-                        <?php if(tt_get_option('tt_site_weixin_qr')) { ?>
-                            <div class="ali-qr"><img src="<?php echo tt_get_option('tt_site_weixin_qr'); ?>" title="<?php _e('Scan the qrcode image and contact with me', 'tt'); ?>"></div>
-                            <p><?php _e('Contact me via weixin', 'tt'); ?></p>
-                        <?php } ?>
-                    </div>
-                </div>
+<!--                <div class="contact-qr-images row">-->
+<!--                    <div class="col-md-6 col-sm-6 col-xs-12 alipay">-->
+<!--                        --><?php //if(tt_get_option('tt_site_alipay_qr')) { ?>
+<!--                            <div class="wx-qr"><img src="--><?php //echo tt_get_option('tt_site_alipay_qr'); ?><!--" title="--><?php //_e('Scan the qrcode image and contact with me', 'tt'); ?><!--"></div>-->
+<!--                            <p>--><?php //_e('Contact me via alipay', 'tt'); ?><!--</p>-->
+<!--                        --><?php //} ?>
+<!--                    </div>-->
+<!--                    <div class="qrcode col-md-6 col-sm-6 col-xs-12 weixin">-->
+<!--                        --><?php //if(tt_get_option('tt_site_weixin_qr')) { ?>
+<!--                            <div class="ali-qr"><img src="--><?php //echo tt_get_option('tt_site_weixin_qr'); ?><!--" title="--><?php //_e('Scan the qrcode image and contact with me', 'tt'); ?><!--"></div>-->
+<!--                            <p>--><?php //_e('Contact me via weixin', 'tt'); ?><!--</p>-->
+<!--                        --><?php //} ?>
+<!--                    </div>-->
+<!--                </div>-->
                 <div class="actions"><a class="btn btn-success btn-wide go-order-detail" href="<?php echo tt_url_for('my_order', $order->id); ?>" target="_blank"><?php _e('Check Order Detail', 'tt'); ?></a></div>
             </div>
         </section>

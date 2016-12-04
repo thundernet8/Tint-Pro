@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-12-03 23:25+0800\n"
+"POT-Creation-Date: 2016-12-04 16:13+0800\n"
 "PO-Revision-Date: 2016-08-17 21:40+0800\n"
 "Last-Translator: \n"
 "Language-Team: Zhiyan <mail@webapproach.net>\n"
@@ -1764,19 +1764,19 @@ msgstr ""
 msgid "The coupon code is existed"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Coupon.php:182
+#: core/functions/shop/func.Shop.Coupon.php:183
 msgid "The coupon is not existed"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Coupon.php:185
+#: core/functions/shop/func.Shop.Coupon.php:186
 msgid "The coupon is used"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Coupon.php:189
+#: core/functions/shop/func.Shop.Coupon.php:190
 msgid "The coupon have not taken in effect yet"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Coupon.php:192
+#: core/functions/shop/func.Shop.Coupon.php:193
 msgid "The coupon is expired"
 msgstr ""
 
@@ -1804,17 +1804,17 @@ msgstr ""
 msgid "Order Created"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Orders.php:286
-#: core/functions/shop/func.Shop.Orders.php:294
+#: core/functions/shop/func.Shop.Orders.php:302
 #: core/functions/shop/func.Shop.Orders.php:310
+#: core/functions/shop/func.Shop.Orders.php:327
 msgid "Create combine order failed"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Orders.php:354
+#: core/functions/shop/func.Shop.Orders.php:372
 msgid "The order with the a order id you specified is not existed"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Orders.php:362
+#: core/functions/shop/func.Shop.Orders.php:380
 msgid "The coupon is invalid"
 msgstr ""
 
@@ -2212,7 +2212,6 @@ msgid "SEND"
 msgstr ""
 
 #: core/modules/mod.ModalQrCodes.php:20 core/modules/mod.ModalQrCodes.php:25
-#: core/templates/site/tpl.QrPay.php:90 core/templates/site/tpl.QrPay.php:96
 msgid "Scan the qrcode image and contact with me"
 msgstr ""
 
@@ -3002,74 +3001,92 @@ msgstr ""
 msgid "%d reviews for the product"
 msgstr ""
 
-#: core/templates/site/tpl.Alipay.Return.php:22
+#: core/templates/site/tpl.APSV.Notify.php:30
+#: core/templates/site/tpl.APSV.Notify.php:44
+#: core/templates/site/tpl.Alipay.Notify.php:18
+#: core/templates/site/tpl.CheckOut.php:26
+#: core/templates/site/tpl.PayGateway.php:26
+#: core/templates/site/tpl.PayResult.php:26
+msgid "You are acting an illegal visit"
+msgstr ""
+
+#: core/templates/site/tpl.APSV.Notify.php:30
+#: core/templates/site/tpl.APSV.Notify.php:44
+#: core/templates/site/tpl.Alipay.Notify.php:18
+#: core/templates/site/tpl.CheckOut.php:26
+#: core/templates/site/tpl.PayGateway.php:26
+#: core/templates/site/tpl.PayResult.php:26
+msgid "Illegal Visit"
+msgstr ""
+
+#: core/templates/site/tpl.Alipay.Return.php:18
 #: core/templates/site/tpl.CheckOut.php:18
 #: core/templates/site/tpl.PayGateway.php:18
 #: core/templates/site/tpl.PayResult.php:18
 msgid "You cannot visit this page without sign in"
 msgstr ""
 
-#: core/templates/site/tpl.Alipay.Return.php:22
+#: core/templates/site/tpl.Alipay.Return.php:18
 #: core/templates/site/tpl.CheckOut.php:18
 #: core/templates/site/tpl.PayGateway.php:18
 #: core/templates/site/tpl.PayResult.php:18
 msgid "Error: Unknown User"
 msgstr ""
 
-#: core/templates/site/tpl.Alipay.Return.php:30
+#: core/templates/site/tpl.Alipay.Return.php:26
 msgid "Alipay trade interface configuration is incorrect"
 msgstr ""
 
-#: core/templates/site/tpl.Alipay.Return.php:30
+#: core/templates/site/tpl.Alipay.Return.php:26
 msgid "Error: Incorrect Alipay Trade Interface Configuration"
 msgstr ""
 
-#: core/templates/site/tpl.Alipay.Return.php:131
+#: core/templates/site/tpl.Alipay.Return.php:127
 msgid ""
 "Verify return result failed, please contact the site administrator if you "
 "have finished your payment"
 msgstr ""
 
-#: core/templates/site/tpl.Alipay.Return.php:131
+#: core/templates/site/tpl.Alipay.Return.php:127
 msgid "Verify Failed"
 msgstr ""
 
-#: core/templates/site/tpl.Alipay.Return.php:149
+#: core/templates/site/tpl.Alipay.Return.php:145
 #: core/templates/site/tpl.CheckOut.php:60
 #: core/templates/site/tpl.PayResult.php:60
 #: core/templates/site/tpl.QrPay.php:53
 msgid "Confirm Order"
 msgstr ""
 
-#: core/templates/site/tpl.Alipay.Return.php:156
+#: core/templates/site/tpl.Alipay.Return.php:152
 #: core/templates/site/tpl.CheckOut.php:67
 #: core/templates/site/tpl.PayResult.php:67
 msgid "Payment Accomplish"
 msgstr ""
 
-#: core/templates/site/tpl.Alipay.Return.php:163
+#: core/templates/site/tpl.Alipay.Return.php:159
 #: core/templates/site/tpl.CheckOut.php:74
 #: core/templates/site/tpl.PayResult.php:74
 #: core/templates/site/tpl.QrPay.php:67
 msgid "Confirm Delivery"
 msgstr ""
 
-#: core/templates/site/tpl.Alipay.Return.php:170
+#: core/templates/site/tpl.Alipay.Return.php:166
 #: core/templates/site/tpl.PayResult.php:81
 #, php-format
 msgid "Payment for Order ID %s has finished successfully"
 msgstr ""
 
-#: core/templates/site/tpl.Alipay.Return.php:171
+#: core/templates/site/tpl.Alipay.Return.php:167
 #, php-format
 msgid "You have payed %f yuan, Currently the order status is: %s"
 msgstr ""
 
-#: core/templates/site/tpl.Alipay.Return.php:171
+#: core/templates/site/tpl.Alipay.Return.php:167
 msgid "<br>You need to go to visit your alipay account and confirm delivery."
 msgstr ""
 
-#: core/templates/site/tpl.Alipay.Return.php:172
+#: core/templates/site/tpl.Alipay.Return.php:168
 #: core/templates/site/tpl.PayResult.php:87
 #: core/templates/site/tpl.QrPay.php:101
 msgid "Check Order Detail"
@@ -3081,18 +3098,6 @@ msgstr ""
 
 #: core/templates/site/tpl.CheckOut.php:22
 msgid "Invalid Checkout Parameters"
-msgstr ""
-
-#: core/templates/site/tpl.CheckOut.php:26
-#: core/templates/site/tpl.PayGateway.php:26
-#: core/templates/site/tpl.PayResult.php:26
-msgid "You are acting an illegal visit"
-msgstr ""
-
-#: core/templates/site/tpl.CheckOut.php:26
-#: core/templates/site/tpl.PayGateway.php:26
-#: core/templates/site/tpl.PayResult.php:26
-msgid "Illegal Visit"
 msgstr ""
 
 #: core/templates/site/tpl.CheckOut.php:32
@@ -3351,16 +3356,8 @@ msgstr ""
 
 #: core/templates/site/tpl.QrPay.php:84
 msgid ""
-"Auto delivery not supported, please contact us via the contact qrcode "
-"images below"
-msgstr ""
-
-#: core/templates/site/tpl.QrPay.php:91
-msgid "Contact me via alipay"
-msgstr ""
-
-#: core/templates/site/tpl.QrPay.php:97
-msgid "Contact me via weixin"
+"Auto delivery not supported, we will check and handle the order manually "
+"in time"
 msgstr ""
 
 #: core/templates/tax/tpl.Archive.php:60
@@ -4140,307 +4137,363 @@ msgid "Themes - Plugins - Services"
 msgstr ""
 
 #: dash/options.php:679
-msgid "支付宝收款帐户邮箱"
+msgid "支付方式"
 msgstr ""
 
 #: dash/options.php:680
+msgid ""
+"目前支持支付宝原生即时到账、担保交易、双功能接口, 对于无法申请支付宝接口的"
+"提供个人开发的Alipay Supervisor免签约支付程序"
+msgstr ""
+
+#: dash/options.php:685
+msgid "Alipay"
+msgstr ""
+
+#: dash/options.php:686
+msgid "Alipay Supervisor免签约支付"
+msgstr ""
+
+#: dash/options.php:693
+msgid "支付宝收款帐户邮箱"
+msgstr ""
+
+#: dash/options.php:694
 msgid "支付宝收款帐户邮箱,要收款必填并务必保持正确"
 msgstr ""
 
-#: dash/options.php:689
+#: dash/options.php:703
 msgid "支付宝商家身份ID"
 msgstr ""
 
-#: dash/options.php:690
+#: dash/options.php:704
 msgid "合作身份者id，以2088开头的16位纯数字"
 msgstr ""
 
-#: dash/options.php:699
+#: dash/options.php:713
 msgid "支付宝商家身份key"
 msgstr ""
 
-#: dash/options.php:700
+#: dash/options.php:714
 msgid "支付宝商家身份安全检验码，以数字和字母组成的32位字符"
 msgstr ""
 
-#: dash/options.php:709
+#: dash/options.php:723
 msgid "支付宝商家收款类型"
 msgstr ""
 
-#: dash/options.php:710
+#: dash/options.php:724
 msgid ""
 "支付宝商家收款类型, 支持即时到账, 双功能和担保交易, 注意：切换类型后必须对"
 "应修改商家身份key"
 msgstr ""
 
-#: dash/options.php:715 dash/options.php:757
-msgid "Memcache"
+#: dash/options.php:729
+msgid "即时到账"
 msgstr ""
 
-#: dash/options.php:716 dash/options.php:758
-msgid "Redis"
+#: dash/options.php:730
+msgid "双功能"
 msgstr ""
 
-#: dash/options.php:717 dash/options.php:759 dash/options.php:865
-msgid "None"
+#: dash/options.php:731
+msgid "担保交易"
 msgstr ""
 
-#: dash/options.php:724
-msgid "Site Weixin Pay QR"
+#: dash/options.php:738
+msgid "Alipay Supervisor APP ID"
 msgstr ""
 
-#: dash/options.php:725
-msgid "The Weixin pay qrcode image for collection money"
+#: dash/options.php:739
+msgid "You should buy Alipay Supervisor first and then get the app id"
 msgstr ""
 
-#: dash/options.php:734
-msgid "Site Alipay Pay QR"
+#: dash/options.php:748
+msgid "Alipay Supervisor APP Key"
 msgstr ""
 
-#: dash/options.php:735
-msgid "The Alipay pay qrcode image for collection money"
+#: dash/options.php:749
+msgid "You should buy Alipay Supervisor first and then get the app key"
 msgstr ""
 
-#: dash/options.php:744
-msgid "Auxiliary"
+#: dash/options.php:758
+msgid "Alipay Supervisor Secret"
 msgstr ""
 
-#: dash/options.php:751
-msgid "Object Cache"
-msgstr ""
-
-#: dash/options.php:752
-msgid "Object cache support, accelerate your site"
-msgstr ""
-
-#: dash/options.php:767
-msgid "Memcache Host"
+#: dash/options.php:759
+msgid ""
+"A random string which verify the legitimacy of a request from Alipay "
+"Supervisor, should conform to Alipay Supervisor configuration"
 msgstr ""
 
 #: dash/options.php:768
-msgid "Memcache server host"
+msgid "Site Weixin Pay QR"
 msgstr ""
 
-#: dash/options.php:777
-msgid "Memcache Port"
+#: dash/options.php:769
+msgid "The Weixin pay qrcode image for collection money"
 msgstr ""
 
 #: dash/options.php:778
-msgid "Memcache server port"
+msgid "Site Alipay Pay QR"
 msgstr ""
 
-#: dash/options.php:790
-msgid "Redis Host"
+#: dash/options.php:779
+msgid "The Alipay pay qrcode image for collection money"
 msgstr ""
 
-#: dash/options.php:791
-msgid "Redis server host"
+#: dash/options.php:788
+msgid "Auxiliary"
 msgstr ""
 
-#: dash/options.php:800
-msgid "Redis Port"
+#: dash/options.php:795
+msgid "Object Cache"
+msgstr ""
+
+#: dash/options.php:796
+msgid "Object cache support, accelerate your site"
 msgstr ""
 
 #: dash/options.php:801
-msgid "Redis server port"
+msgid "Memcache"
+msgstr ""
+
+#: dash/options.php:802
+msgid "Redis"
+msgstr ""
+
+#: dash/options.php:803 dash/options.php:909
+msgid "None"
+msgstr ""
+
+#: dash/options.php:811
+msgid "Memcache Host"
 msgstr ""
 
 #: dash/options.php:812
-msgid "Mailer Separator"
+msgid "Memcache server host"
 msgstr ""
 
-#: dash/options.php:819
-msgid "SMTP/PHPMailer"
+#: dash/options.php:821
+msgid "Memcache Port"
 msgstr ""
 
-#: dash/options.php:820
-msgid "Use SMTP or PHPMail as default mailer"
-msgstr ""
-
-#: dash/options.php:825
-msgid "PHP"
-msgstr ""
-
-#: dash/options.php:826
-msgid "SMTP"
+#: dash/options.php:822
+msgid "Memcache server port"
 msgstr ""
 
 #: dash/options.php:834
-msgid "SMTP Host"
+msgid "Redis Host"
 msgstr ""
 
 #: dash/options.php:835
-msgid "Your SMTP service host"
+msgid "Redis server host"
+msgstr ""
+
+#: dash/options.php:844
+msgid "Redis Port"
 msgstr ""
 
 #: dash/options.php:845
-msgid "SMTP Port"
-msgstr ""
-
-#: dash/options.php:846
-msgid "Your SMTP service port"
+msgid "Redis server port"
 msgstr ""
 
 #: dash/options.php:856
-msgid "SMTP Secure"
-msgstr ""
-
-#: dash/options.php:857
-msgid "Your SMTP server secure protocol"
-msgstr ""
-
-#: dash/options.php:862
-msgid "Auto"
+msgid "Mailer Separator"
 msgstr ""
 
 #: dash/options.php:863
-msgid "SSL"
+msgid "SMTP/PHPMailer"
 msgstr ""
 
 #: dash/options.php:864
-msgid "TLS"
+msgid "Use SMTP or PHPMail as default mailer"
 msgstr ""
 
-#: dash/options.php:872
-msgid "SMTP Username"
+#: dash/options.php:869
+msgid "PHP"
 msgstr ""
 
-#: dash/options.php:873
-msgid "Your SMTP username"
+#: dash/options.php:870
+msgid "SMTP"
 msgstr ""
 
-#: dash/options.php:882
-msgid "SMTP Password"
+#: dash/options.php:878
+msgid "SMTP Host"
 msgstr ""
 
-#: dash/options.php:883
-msgid "Your SMTP password"
+#: dash/options.php:879
+msgid "Your SMTP service host"
 msgstr ""
 
-#: dash/options.php:893
-msgid "Your Name"
+#: dash/options.php:889
+msgid "SMTP Port"
 msgstr ""
 
-#: dash/options.php:894
-msgid "Your display name as the sender"
+#: dash/options.php:890
+msgid "Your SMTP service port"
+msgstr ""
+
+#: dash/options.php:900
+msgid "SMTP Secure"
+msgstr ""
+
+#: dash/options.php:901
+msgid "Your SMTP server secure protocol"
 msgstr ""
 
 #: dash/options.php:906
-msgid "PHP Mail Sender Display Name"
+msgid "Auto"
 msgstr ""
 
 #: dash/options.php:907
-msgid "The Sender display name when using PHPMail send mail"
+msgid "SSL"
+msgstr ""
+
+#: dash/options.php:908
+msgid "TLS"
+msgstr ""
+
+#: dash/options.php:916
+msgid "SMTP Username"
 msgstr ""
 
 #: dash/options.php:917
+msgid "Your SMTP username"
+msgstr ""
+
+#: dash/options.php:926
+msgid "SMTP Password"
+msgstr ""
+
+#: dash/options.php:927
+msgid "Your SMTP password"
+msgstr ""
+
+#: dash/options.php:937
+msgid "Your Name"
+msgstr ""
+
+#: dash/options.php:938
+msgid "Your display name as the sender"
+msgstr ""
+
+#: dash/options.php:950
+msgid "PHP Mail Sender Display Name"
+msgstr ""
+
+#: dash/options.php:951
+msgid "The Sender display name when using PHPMail send mail"
+msgstr ""
+
+#: dash/options.php:961
 msgid "PHP Mail Sender Address"
 msgstr ""
 
-#: dash/options.php:918
+#: dash/options.php:962
 msgid "You can use fake mail address when use PHPMail"
 msgstr ""
 
-#: dash/options.php:929
+#: dash/options.php:973
 msgid "Short Link Prefix"
 msgstr ""
 
-#: dash/options.php:930
+#: dash/options.php:974
 msgid ""
 "Use short link instead long link or even convert external link to internal "
 "link"
 msgstr ""
 
-#: dash/options.php:940
+#: dash/options.php:984
 msgid "Short Link Records"
 msgstr ""
 
-#: dash/options.php:941
+#: dash/options.php:985
 msgid "One line for one record, please conform to the sample"
 msgstr ""
 
-#: dash/options.php:954
+#: dash/options.php:998
 msgid "Feedback"
 msgstr ""
 
-#: dash/options.php:966
+#: dash/options.php:1010
 msgid "Others"
 msgstr ""
 
-#: dash/options.php:973
+#: dash/options.php:1017
 msgid "Debug Mode"
 msgstr ""
 
-#: dash/options.php:974
+#: dash/options.php:1018
 msgid ""
 "Enable debug will force display php errors, disable theme cache, enable "
 "some private links or functions, etc."
 msgstr ""
 
-#: dash/options.php:983
+#: dash/options.php:1027
 msgid "Tint Token"
 msgstr ""
 
-#: dash/options.php:984
+#: dash/options.php:1028
 msgid "Private token for theme, maybe useful somewhere."
 msgstr ""
 
-#: dash/options.php:994
+#: dash/options.php:1038
 msgid "Refresh Rewrite Rules"
 msgstr ""
 
-#: dash/options.php:995
+#: dash/options.php:1039
 #, php-format
 msgid ""
 "Please Click to <a href=\"%1$s/m/refresh?token=%2$s\" target=\"_blank"
 "\">Refresh Rewrite Rules</a> if you have encounter some 404 errors"
 msgstr ""
 
-#: dash/options.php:1002
+#: dash/options.php:1046
 msgid "QQ Mailme ID"
 msgstr ""
 
-#: dash/options.php:1003
+#: dash/options.php:1047
 msgid "The id of qq mailme, visit `http://open.mail.qq.com` for detail"
 msgstr ""
 
-#: dash/options.php:1012
+#: dash/options.php:1056
 msgid "QQ Mail list ID"
 msgstr ""
 
-#: dash/options.php:1013
+#: dash/options.php:1057
 msgid "The id of qq mailme, visit `http://list.qq.com` for detail"
 msgstr ""
 
-#: dash/options.php:1022
+#: dash/options.php:1066
 msgid "Head Custom Code"
 msgstr ""
 
-#: dash/options.php:1023
+#: dash/options.php:1067
 msgid "Custom code loaded on page head"
 msgstr ""
 
-#: dash/options.php:1033
+#: dash/options.php:1077
 msgid "Foot Custom Code"
 msgstr ""
 
-#: dash/options.php:1034
+#: dash/options.php:1078
 msgid "Custom code loaded on page foot"
 msgstr ""
 
-#: dash/options.php:1043
+#: dash/options.php:1087
 msgid "Foot Beian Text"
 msgstr ""
 
-#: dash/options.php:1044
+#: dash/options.php:1088
 msgid "IDC reference No. for regulations of China"
 msgstr ""
 
-#: dash/options.php:1052
+#: dash/options.php:1096
 msgid "Site Open Date"
 msgstr ""
 
-#: dash/options.php:1053
+#: dash/options.php:1097
 msgid "The date of when site opened, use `YYYY-mm-dd` format"
 msgstr ""
 

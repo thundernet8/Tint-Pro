@@ -22,6 +22,7 @@ import ModalSignBox from './modules/modalSignBox';
 import SignHelp from './modules/signHelp';
 import FixFooter from './modules/fixFooter';
 import Toggle from './modules/toggle';
+import Referral from './modules/referral';
 
 // DOM Ready
 jQuery(document).ready(function ($) {
@@ -51,4 +52,7 @@ jQuery(document).ready(function ($) {
     
     // 折叠左菜单
     Toggle.initShopLeftMenuToggle();
+    
+    // 设置推广信息cookie, 便于后面使用
+    Referral.init();
 });

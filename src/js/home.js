@@ -23,6 +23,7 @@ import {} from 'lazyload/jquery.lazyload';
 import SignHelp from './modules/signHelp';
 //import Scrollbar from 'perfect-scrollbar/jquery';
 // require('./modules/smooth-scroll');
+import Referral from './modules/referral';
 
 // DOM Ready
 jQuery(document).ready(function ($) {
@@ -74,4 +75,6 @@ jQuery(document).ready(function ($) {
         threshold: 0
     });
     
+    // 设置推广信息cookie, 便于后面使用
+    Referral.init();
 });

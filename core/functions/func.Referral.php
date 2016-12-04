@@ -26,10 +26,10 @@ function tt_retrieve_referral_keyword() {
         do_action('tt_ref', $ref);
     }
 }
-add_action('template_redirect', 'tt_retrieve_referral_keyword');
+//add_action('template_redirect', 'tt_retrieve_referral_keyword');
 
 
 function tt_handle_ref($ref) {
     //TODO
 }
-add_action('tt_ref', 'tt_handle_ref', 10, 1);
+//add_action('tt_ref', 'tt_handle_ref', 10, 1);

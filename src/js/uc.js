@@ -25,6 +25,7 @@ import SignHelp from './modules/signHelp';
 import FixFooter from './modules/fixFooter';
 import UnstarKit from './modules/unstar';
 import Bankit from './modules/ban';
+import Referral from './modules/referral';
 
 
 // DOM Ready
@@ -70,4 +71,7 @@ jQuery(document).ready(function ($) {
     
     // 封禁/解锁账户操作
     Bankit.initModalBan();
+    
+    // 设置推广信息cookie, 便于后面使用
+    Referral.init();
 });

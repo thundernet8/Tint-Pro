@@ -31,6 +31,7 @@ import Toggle from './modules/toggle';
 import {} from './modules/cookie';
 import Usermeta from './modules/usermeta';
 import Buy from './modules/buy';
+import Referral from './modules/referral';
 
 // DOM Ready
 jQuery(document).ready(function ($) {
@@ -134,4 +135,7 @@ jQuery(document).ready(function ($) {
     Buy.initAddCartOrImmediatelyBuy();
     Buy.initQuantityInput();
     Buy.initCartHandle();
+    
+    // 设置推广信息cookie, 便于后面使用
+    Referral.init();
 });

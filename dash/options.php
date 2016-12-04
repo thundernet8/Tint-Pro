@@ -587,18 +587,104 @@ function optionsframework_options() {
 		'type' => 'heading'
 	);
 
+    //
 
-	//
 
-
-	// 主题设置 - 用户系统设置(包含积分和会员)
+    // 主题设置 - 用户系统设置(包含积分和会员)
 	$options[] = array(
 		'name' => __( 'Membership', 'tt' ),
 		'type' => 'heading'
 	);
 
+    // - 注册奖励积分
+    $options[] = array(
+        'name' => __( '注册奖励积分', 'tt' ),
+        'desc' => __( '新用户注册时默认赠送的积分数量', 'tt' ),
+        'id' => 'tt_reg_credit',
+        'std' => '50',
+        'class' => 'mini',
+        'type' => 'text'
+    );
 
-	//
+    // - 访问推广奖励积分
+    $options[] = array(
+        'name' => __( '访问推广奖励积分', 'tt' ),
+        'desc' => __( '通过分享链接推广其他用户访问本站时奖励的积分数量', 'tt' ),
+        'id' => 'tt_rec_view_credit',
+        'std' => '5',
+        'class' => 'mini',
+        'type' => 'text'
+    );
+
+    // - 注册推广奖励积分
+    $options[] = array(
+        'name' => __( '注册推广奖励积分', 'tt' ),
+        'desc' => __( '通过分享链接推广其他用户注册本站用户时奖励的积分数量', 'tt' ),
+        'id' => 'tt_rec_reg_credit',
+        'std' => '30',
+        'class' => 'mini',
+        'type' => 'text'
+    );
+
+    // - 投稿奖励积分
+    $options[] = array(
+        'name' => __( '投稿奖励积分', 'tt' ),
+        'desc' => __( '用户向本站投稿文章通过时奖励的积分', 'tt' ),
+        'id' => 'tt_rec_post_credit',
+        'std' => '50',
+        'class' => 'mini',
+        'type' => 'text'
+    );
+
+    // - 评论奖励积分
+    $options[] = array(
+        'name' => __( '评论奖励积分', 'tt' ),
+        'desc' => __( '用户在站内发表评论一次奖励的积分', 'tt' ),
+        'id' => 'tt_rec_comment_credit',
+        'std' => '5',
+        'class' => 'mini',
+        'type' => 'text'
+    );
+
+    // - 访问推广次数限制
+    $options[] = array(
+        'name' => __( '访问推广次数限制', 'tt' ),
+        'desc' => __( '每日通过访问推广最多获得积分奖励的次数', 'tt' ),
+        'id' => 'tt_rec_view_num',
+        'std' => '50',
+        'class' => 'mini',
+        'type' => 'text'
+    );
+
+    // - 注册推广次数限制
+    $options[] = array(
+        'name' => __( '注册推广次数限制', 'tt' ),
+        'desc' => __( '每日通过注册推广最多获得积分奖励的次数', 'tt' ),
+        'id' => 'tt_rec_reg_num',
+        'std' => '5',
+        'class' => 'mini',
+        'type' => 'text'
+    );
+
+    // - 投稿积分奖励次数限制
+    $options[] = array(
+        'name' => __( '投稿积分奖励次数限制', 'tt' ),
+        'desc' => __( '每日通过投稿最多获得积分奖励的次数', 'tt' ),
+        'id' => 'tt_rec_post_num',
+        'std' => '5',
+        'class' => 'mini',
+        'type' => 'text'
+    );
+
+    // - 评论积分奖励次数限制
+    $options[] = array(
+        'name' => __( '评论积分奖励次数限制', 'tt' ),
+        'desc' => __( '每日通过评论最多获得积分奖励的次数', 'tt' ),
+        'id' => 'tt_rec_comment_num',
+        'std' => '10',
+        'class' => 'mini',
+        'type' => 'text'
+    );
 
 
 	// 主题设置 - 商店设置
@@ -674,6 +760,20 @@ function optionsframework_options() {
     );
 
 
+    // - 支付方式
+    $options[] = array(
+        'name' => __( '支付方式', 'tt' ),
+        'desc' => __( '目前支持支付宝原生即时到账、担保交易、双功能接口, 对于无法申请支付宝接口的提供个人开发的Alipay Supervisor免签约支付程序', 'tt' ),
+        'id' => 'tt_pay_channel',
+        'std' => 'alipay',
+        'type' => 'select', //$theme_pro ? 'select' : 'disabled',
+        'options' => array(
+            'alipay' => __( 'Alipay', 'tt' ),  // 支付宝
+            'apsv' => __( 'Alipay Supervisor免签约支付', 'tt' ) // Alipay Supervisor 扫码支付
+        )
+    );
+
+
     // - 支付宝收款帐户
     $options[] = array(
         'name' => __( '支付宝收款帐户邮箱', 'tt' ),
@@ -712,10 +812,40 @@ function optionsframework_options() {
         'std' => 'create_direct_pay_by_user',
         'type' => $theme_pro ? 'select' : 'disabled',
         'options' => array(
-            'create_direct_pay_by_user' => __( 'Memcache', 'tt' ),  // 即时到账
-            'trade_create_by_buyer' => __( 'Redis', 'tt' ), // 双功能
-            'create_partner_trade_by_buyer'  => __('None', 'tt') // 担保交易
+            'create_direct_pay_by_user' => __( '即时到账', 'tt' ),  // 即时到账
+            'trade_create_by_buyer' => __( '双功能', 'tt' ), // 双功能
+            'create_partner_trade_by_buyer'  => __('担保交易', 'tt') // 担保交易
         )
+    );
+
+
+    // - Alipay Supervisor APP ID
+    $options[] = array(
+        'name' => __( 'Alipay Supervisor APP ID', 'tt' ),
+        'desc' => __( 'You should buy Alipay Supervisor first and then get the app id', 'tt' ),
+        'id' => 'tt_apsv_appid',
+        'std' => '',
+        'type' => 'text' //$theme_pro ? 'text' : 'disabled'
+    );
+
+
+    // - Alipay Supervisor APP Key
+    $options[] = array(
+        'name' => __( 'Alipay Supervisor APP Key', 'tt' ),
+        'desc' => __( 'You should buy Alipay Supervisor first and then get the app key', 'tt' ),
+        'id' => 'tt_apsv_appkey',
+        'std' => '',
+        'type' => 'text' //$theme_pro ? 'text' : 'disabled'
+    );
+
+
+    // - Alipay Supervisor Secret
+    $options[] = array(
+        'name' => __( 'Alipay Supervisor Secret', 'tt' ),
+        'desc' => __( 'A random string which verify the legitimacy of a request from Alipay Supervisor, should conform to Alipay Supervisor configuration', 'tt' ),
+        'id' => 'tt_apsv_secret',
+        'std' => '',
+        'type' => 'text' //$theme_pro ? 'text' : 'disabled'
     );
 
 

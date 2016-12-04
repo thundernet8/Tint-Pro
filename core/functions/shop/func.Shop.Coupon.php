@@ -144,7 +144,8 @@ function tt_update_coupon($id, $data, $format){
         $coupons_table,
         $data,
         array('id' => $id),
-        $format
+        $format,
+        array('%d')
     );
     return !($update===false);
 }

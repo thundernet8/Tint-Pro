@@ -1,5 +1,5 @@
 /**
- * Generated on Sat Dec 03 2016 12:39:16 GMT+0800 (中国标准时间) by Zhiyan
+ * Generated on Sun Dec 04 2016 21:14:37 GMT+0800 (中国标准时间) by Zhiyan
  *
  * @package   Tint
  * @version   v2.0.0
@@ -35,28 +35,19 @@
             'use strict';
             var _loading = __webpack_require__(8);
             var _msgbox = __webpack_require__(6);
-            __webpack_require__(9);
-            var _loadNextPage = __webpack_require__(13);
-            var _loadNextPage2 = _interopRequireDefault(_loadNextPage);
             var _scroll = __webpack_require__(14);
             var _scroll2 = _interopRequireDefault(_scroll);
-            var _modalSignBox = __webpack_require__(5);
-            var _modalSignBox2 = _interopRequireDefault(_modalSignBox);
-            var _signHelp = __webpack_require__(15);
-            var _signHelp2 = _interopRequireDefault(_signHelp);
-            var _fixFooter = __webpack_require__(16);
-            var _fixFooter2 = _interopRequireDefault(_fixFooter);
+            __webpack_require__(9);
+            var _checkout = __webpack_require__(31);
+            var _checkout2 = _interopRequireDefault(_checkout);
             function _interopRequireDefault(obj) {
                 return obj && obj[['__esModule']] ? obj : { default: obj };
             }
             jQuery(document)[['ready']](function ($) {
                 (0, _loading[['handleLineLoading']])();
                 _msgbox[['popMsgbox']][['init']]();
-                _loadNextPage2[['default']][['init']]();
                 _scroll2[['default']][['initScrollTo']]();
-                _modalSignBox2[['default']][['init']]();
-                _signHelp2[['default']][['init']]();
-                (0, _fixFooter2[['default']])();
+                _checkout2[['default']][['init']]();
             });
         }[['call']](exports, __webpack_require__(1)));
     },
@@ -222,6 +213,14 @@
                     });
                 }
             };
+            var _getQueryString = function _getQueryString(name) {
+                var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)');
+                var r = window[['location']][['search']][['substr']](1)[['match']](reg);
+                if (r != null) {
+                    return decodeURI(r[2]);
+                }
+                return '';
+            };
             var Utils = {
                 getUrlPara: _getUrlPara,
                 getSiteUrl: _getSiteUrl,
@@ -236,7 +235,8 @@
                 store: _store,
                 checkLogin: _checkLogin,
                 showFullLoader: _showFullLoader,
-                hideFullLoader: _hideFullLoader
+                hideFullLoader: _hideFullLoader,
+                getQueryString: _getQueryString
             };
             exports[['default']] = Utils;
         }[['call']](exports, __webpack_require__(4), __webpack_require__(1)));
@@ -503,9 +503,9 @@
         }[['call']](exports, __webpack_require__(1), __webpack_require__(1)));
     },
     function (module, exports, __webpack_require__) {
-        var require;
-        var require;
         var __WEBPACK_AMD_DEFINE_RESULT__;
+        var require;
+        var require;
         'use strict';
         var _typeof = typeof Symbol === 'function' && typeof Symbol[['iterator']] === 'symbol' ? function (obj) {
             return typeof obj;
@@ -2464,70 +2464,7 @@
     ,
     ,
     ,
-    function (module, exports, __webpack_require__) {
-        (function ($) {
-            'use strict';
-            Object[['defineProperty']](exports, '__esModule', { value: true });
-            var _globalConfig = __webpack_require__(2);
-            var _body = $('body');
-            var _postListCls = 'archive-posts';
-            var _loadNextComponentID = 'loadNext';
-            var _loadingIcon = '<i class="tico tico-spinner2 spinning"></i>';
-            var _unLoadingIcon = '<i class="tico tico-angle-down"></i>';
-            var _isLoadingNext = false;
-            var _handlePageContent = function _handlePageContent(html, url) {
-                var doc = $(html);
-                var postList = $('.' + _postListCls);
-                if (doc && postList) {
-                    postList[['html']](doc[['find']]('.' + _postListCls)[['html']]());
-                    history[['pushState']]('200', doc[9][['innerText']], url);
-                    document[['title']] = doc[9][['innerText']];
-                }
-            };
-            var _ajaxLoadNext = function _ajaxLoadNext(btn) {
-                if (_isLoadingNext)
-                    return false;
-                var nextPageUrl = btn[['data']]('next-page-url');
-                if (!nextPageUrl)
-                    return false;
-                var beforeSend = function beforeSend() {
-                    _body[['addClass']](_globalConfig[['Classes']][['appLoading']]);
-                    _isLoadingNext = true;
-                    btn[['html']](_loadingIcon);
-                };
-                var finishRequest = function finishRequest() {
-                    _body[['removeClass']](_globalConfig[['Classes']][['appLoading']]);
-                    _isLoadingNext = false;
-                    btn[['html']](_unLoadingIcon);
-                };
-                var success = function success(data, textStatus, xhr) {
-                    if (data && xhr[['status']] == '200') {
-                        _handlePageContent(data, nextPageUrl);
-                    }
-                    finishRequest();
-                };
-                var error = function error(xhr, textStatus, err) {
-                    finishRequest();
-                };
-                $[['get']]({
-                    url: nextPageUrl,
-                    dataType: 'html',
-                    beforeSend: beforeSend,
-                    success: success,
-                    error: error
-                });
-            };
-            var loadNext = {
-                init: function init() {
-                    _body[['on']]('click', '[data-component=' + _loadNextComponentID + ']', function () {
-                        var $this = $(this);
-                        _ajaxLoadNext($this);
-                    });
-                }
-            };
-            exports[['default']] = loadNext;
-        }[['call']](exports, __webpack_require__(1)));
-    },
+    ,
     function (module, exports, __webpack_require__) {
         (function ($) {
             'use strict';
@@ -2667,40 +2604,235 @@
             exports[['default']] = ScrollHandler;
         }[['call']](exports, __webpack_require__(1)));
     },
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
     function (module, exports, __webpack_require__) {
         (function ($) {
             'use strict';
             Object[['defineProperty']](exports, '__esModule', { value: true });
+            var _globalConfig = __webpack_require__(2);
             var _utils = __webpack_require__(3);
             var _utils2 = _interopRequireDefault(_utils);
+            var _msgbox = __webpack_require__(6);
             function _interopRequireDefault(obj) {
                 return obj && obj[['__esModule']] ? obj : { default: obj };
             }
-            var _signInLinkSel = '.login-link';
-            var SignHelp = {
-                init: function init() {
-                    $('body')[['on']]('click', _signInLinkSel, function (e) {
-                        if ($(window)[['width']]() >= 640) {
-                            e[['preventDefault']]();
-                            _utils2[['default']][['checkLogin']]();
-                        }
+            var _body = $('body');
+            var _memoTextarea = $('#memo-textarea');
+            var _addressListSel = '.address-list>li';
+            var _addressListActiveSel = '.address-list>li.active';
+            var _receiverNameInput = $('input[name="receiver-name"]');
+            var _receiverEmailInput = $('input[name="receiver-email"]');
+            var _receiverPhoneInput = $('input[name="receiver-phone"]');
+            var _receiverAddrInput = $('input[name="receiver-address"]');
+            var _receiverZipInput = $('input[name="receiver-zip"]');
+            var _addNewAddrSel = '.add-new-address';
+            var _payMethodListSel = '.pay-method-list';
+            var _couponInput = $('input[name="coupon"]');
+            var _couponApplyBtnSel = '#apply-coupon';
+            var _realPriceSel = '.real-price';
+            var _submitBtnSel = '#submit-order';
+            var _originSendBtnText = '';
+            var _spinner = '<i class="tico tico-spinner spinning"></i>';
+            var _submitting = false;
+            var _validateRequiredInputs = function _validateRequiredInputs() {
+                if (_receiverNameInput && _receiverEmailInput) {
+                    var name = _receiverNameInput[['val']]();
+                    var email = _receiverEmailInput[['val']]();
+                    return name[['length']] && _utils2[['default']][['isEmail']](email);
+                }
+                return true;
+            };
+            var _handleCheckout = function _handleCheckout(btn) {
+                if (_submitting || !_utils2[['default']][['checkLogin']]() || !_validateRequiredInputs())
+                    return false;
+                var orderId = parseInt(btn[['data']]('order-id'));
+                if (!orderId) {
+                    return false;
+                }
+                var data = { checkout: true };
+                data[['userMessage']] = _memoTextarea[['length']] ? _memoTextarea[['val']]() : '';
+                var addressList = $(_addressListActiveSel);
+                if (addressList[['length']]) {
+                    data[['addressId']] = addressList[['data']]('address-id');
+                } else {
+                    if (_receiverNameInput[['length']] && _receiverEmailInput[['length']] && _receiverNameInput[['val']]() && _receiverEmailInput[['val']]()) {
+                        data[['receiverName']] = _receiverNameInput[['val']]();
+                        data[['receiverEmail']] = _receiverEmailInput[['val']]();
+                        data[['receiverPhone']] = _receiverPhoneInput[['length']] ? _receiverPhoneInput[['val']]() : '';
+                        data[['receiverAddr']] = _receiverAddrInput[['length']] ? _receiverAddrInput[['val']]() : '';
+                        data[['receiverZip']] = _receiverZipInput[['length']] ? _receiverZipInput[['val']]() : '';
+                    } else {
+                        return false;
+                    }
+                }
+                var paymentList = $(_payMethodListSel);
+                if (paymentList[['length']]) {
+                    var checkedMethod = paymentList[['find']]('input[type="radio"]:checked');
+                    data[['payMethod']] = checkedMethod[['length']] ? checkedMethod[['val']]() : 'qrcode';
+                }
+                var url = _globalConfig[['Routes']][['orders']] + '/' + orderId;
+                var beforeSend = function beforeSend() {
+                    if (_submitting)
+                        return;
+                    _originSendBtnText = btn[['text']]();
+                    btn[['html']](_spinner);
+                    btn[['prop']]('disabled', true);
+                    _utils2[['default']][['showFullLoader']]('tico-spinner9 spinning', '\u6b63\u5728\u66f4\u65b0\u8ba2\u5355\u4fe1\u606f...');
+                    _submitting = true;
+                };
+                var finishRequest = function finishRequest() {
+                    if (!_submitting)
+                        return;
+                    btn[['text']](_originSendBtnText);
+                    btn[['prop']]('disabled', false);
+                    _utils2[['default']][['hideFullLoader']]();
+                    _submitting = false;
+                };
+                var success = function success(data, textStatus, xhr) {
+                    finishRequest();
+                    if (data[['success']] && data[['success']] == 1) {
+                        location[['href']] = data[['data']][['url']];
+                    } else {
+                        _msgbox[['popMsgbox']][['error']]({
+                            title: data[['message']],
+                            timer: 2000,
+                            showConfirmButton: true
+                        });
+                    }
+                };
+                var error = function error(xhr, textStatus, err) {
+                    finishRequest();
+                    _msgbox[['popMsgbox']][['error']]({
+                        title: xhr[['responseJSON']] ? xhr[['responseJSON']][['message']] : xhr[['responseText']],
+                        timer: 2000,
+                        showConfirmButton: true
                     });
-                }
+                };
+                $[['post']]({
+                    url: url,
+                    data: _utils2[['default']][['filterDataForRest']](data),
+                    dataType: 'json',
+                    beforeSend: beforeSend,
+                    success: success,
+                    error: error
+                });
             };
-            exports[['default']] = SignHelp;
-        }[['call']](exports, __webpack_require__(1)));
-    },
-    function (module, exports, __webpack_require__) {
-        (function ($) {
-            'use strict';
-            Object[['defineProperty']](exports, '__esModule', { value: true });
-            exports[['default']] = function () {
-                var footer = $('body>footer');
-                var diffH = $(window)[['height']]() - footer[['offset']]()[['top']] - footer[['height']]();
-                if (diffH > 0) {
-                    footer[['css']]('position', 'relative')[['css']]('top', diffH);
-                }
+            var _initCheckout = function _initCheckout() {
+                _body[['on']]('click', _submitBtnSel, function () {
+                    _handleCheckout($(this));
+                });
             };
+            var _initChooseAddr = function _initChooseAddr() {
+                if ($(_addressListActiveSel)[['length']] < 1) {
+                    $(_addressListSel)[['first']]()[['addClass']]('active');
+                }
+                _body[['on']]('click', _addressListSel, function () {
+                    $(this)[['siblings']]()[['removeClass']]('active')[['end']]()[['addClass']]('active');
+                });
+            };
+            var _handleApplyCoupon = function _handleApplyCoupon(btn) {
+                if (_submitting || !_utils2[['default']][['checkLogin']]() || !_couponInput || !_couponInput[['val']]())
+                    return false;
+                var orderId = parseInt(btn[['data']]('order-id'));
+                if (!orderId) {
+                    return false;
+                }
+                var data = { coupon: _couponInput[['val']]() };
+                var url = _globalConfig[['Routes']][['orders']] + '/' + orderId;
+                var beforeSend = function beforeSend() {
+                    if (_submitting)
+                        return;
+                    _originSendBtnText = btn[['text']]();
+                    btn[['html']](_spinner);
+                    btn[['prop']]('disabled', true);
+                    $(_submitBtnSel)[['prop']]('disabled', true);
+                    _couponInput[['prop']]('disabled', true);
+                    _submitting = true;
+                };
+                var finishRequest = function finishRequest() {
+                    if (!_submitting)
+                        return;
+                    btn[['text']](_originSendBtnText);
+                    btn[['prop']]('disabled', false);
+                    $(_submitBtnSel)[['prop']]('disabled', false);
+                    _couponInput[['prop']]('disabled', false);
+                    _submitting = false;
+                };
+                var success = function success(data, textStatus, xhr) {
+                    finishRequest();
+                    if (data[['success']] && data[['success']] == 1) {
+                        _msgbox[['popMsgbox']][['success']]({
+                            title: data[['message']],
+                            timer: 2000,
+                            showConfirmButton: true
+                        });
+                        $(_realPriceSel)[['text']](data[['data']][['realPrice']]);
+                    } else {
+                        _msgbox[['popMsgbox']][['error']]({
+                            title: data[['message']],
+                            timer: 2000,
+                            showConfirmButton: true
+                        });
+                    }
+                };
+                var error = function error(xhr, textStatus, err) {
+                    finishRequest();
+                    _msgbox[['popMsgbox']][['error']]({
+                        title: xhr[['responseJSON']] ? xhr[['responseJSON']][['message']] : xhr[['responseText']],
+                        timer: 2000,
+                        showConfirmButton: true
+                    });
+                };
+                $[['post']]({
+                    url: url,
+                    data: _utils2[['default']][['filterDataForRest']](data),
+                    dataType: 'json',
+                    beforeSend: beforeSend,
+                    success: success,
+                    error: error
+                });
+            };
+            var _initApplyCoupon = function _initApplyCoupon() {
+                _body[['on']]('click', _couponApplyBtnSel, function () {
+                    _handleApplyCoupon($(this));
+                });
+            };
+            var _initAddAddress = function _initAddAddress() {
+                _body[['on']]('click', _addNewAddrSel, function () {
+                    var addrInputGroup = $($(this)[['data']]('show-sel'));
+                    var addrList = $($(this)[['data']]('hide-sel'));
+                    if (addrInputGroup[['length']]) {
+                        addrInputGroup[['show']]();
+                    }
+                    if (addrList[['length']]) {
+                        addrList[['remove']]();
+                    }
+                    $(this)[['remove']]();
+                });
+            };
+            var _init = function _init() {
+                _initCheckout();
+                _initChooseAddr();
+                _initApplyCoupon();
+                _initAddAddress();
+            };
+            var Checkout = { init: _init };
+            exports[['default']] = Checkout;
         }[['call']](exports, __webpack_require__(1)));
     }
 ]));

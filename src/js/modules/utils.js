@@ -154,6 +154,14 @@ var _hideFullLoader = function () {
     }
 };
 
+var _getQueryString = function (name){
+    var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+    var r = window.location.search.substr(1).match(reg);
+    if(r != null){
+        return decodeURI(r[2]);
+    }
+    return '';
+};
 
 var Utils = {
     getUrlPara: _getUrlPara,
@@ -169,7 +177,8 @@ var Utils = {
     store: _store,
     checkLogin: _checkLogin,
     showFullLoader: _showFullLoader,
-    hideFullLoader: _hideFullLoader
+    hideFullLoader: _hideFullLoader,
+    getQueryString: _getQueryString
 };
 
 export default Utils;

@@ -53,7 +53,7 @@ function tt_install_orders_table() {
     // - address_id 使用的地址ID
     // - user_message 用户备注留言
     // - user_alipay 用户支付宝账户
-    $create_orders_sql = "CREATE TABLE $orders_table (id int(11) NOT NULL auto_increment,parent_id int(11) NOT NULL DEFAULT 0,order_id varchar(30) NOT NULL,trade_no varchar(30) NOT NULL,product_id int(20) NOT NULL,product_name varchar(250),order_time datetime NOT NULL default '0000-00-00 00:00:00',order_success_time datetime NOT NULL default '0000-00-00 00:00:00',order_price double(10,2) NOT NULL,order_currency varchar(20) NOT NULL default 'credit',order_quantity int(11) NOT NULL,order_total_price double(10,2) NOT NULL,order_status tinyint(4) NOT NULL default 1,coupon_id int(11) DEFAULT 0,user_id int(11) NOT NULL,address_id int(11) NOT NULL DEFAULT 0,user_message text,user_alipay varchar(100),PRIMARY KEY (id),INDEX orderid_index(order_id),INDEX tradeno_index(trade_no),INDEX productid_index(product_id),INDEX uid_index(user_id)) ENGINE = MyISAM $table_charset;";
+    $create_orders_sql = "CREATE TABLE $orders_table (id int(11) NOT NULL auto_increment,parent_id int(11) NOT NULL DEFAULT 0,order_id varchar(30) NOT NULL,trade_no varchar(50) NOT NULL,product_id int(20) NOT NULL,product_name varchar(250),order_time datetime NOT NULL default '0000-00-00 00:00:00',order_success_time datetime NOT NULL default '0000-00-00 00:00:00',order_price double(10,2) NOT NULL,order_currency varchar(20) NOT NULL default 'credit',order_quantity int(11) NOT NULL,order_total_price double(10,2) NOT NULL,order_status tinyint(4) NOT NULL default 1,coupon_id int(11) DEFAULT 0,user_id int(11) NOT NULL,address_id int(11) NOT NULL DEFAULT 0,user_message text,user_alipay varchar(100),PRIMARY KEY (id),INDEX orderid_index(order_id),INDEX tradeno_index(trade_no),INDEX productid_index(product_id),INDEX uid_index(user_id)) ENGINE = MyISAM $table_charset;";
     maybe_create_table($orders_table,$create_orders_sql);
 }
 add_action( 'admin_init', 'tt_install_orders_table' );
@@ -112,6 +112,22 @@ function tt_get_order($order_id) {
     $prefix = $wpdb->prefix;
     $orders_table = $prefix . 'tt_orders';
     $order = $wpdb->get_row(sprintf("SELECT * FROM $orders_table WHERE `order_id`='%s'", $order_id));
+    return $order;
+}
+
+
+/**
+ * 获取指定订单(通过订单序号)
+ *
+ * @since 2.0.0
+ * @param $seq
+ * @return array|null|object|void
+ */
+function tt_get_order_by_sequence($seq) {
+    global $wpdb;
+    $prefix = $wpdb->prefix;
+    $orders_table = $prefix . 'tt_orders';
+    $order = $wpdb->get_row(sprintf("SELECT * FROM $orders_table WHERE `id`='%d'", $seq));
     return $order;
 }
 
@@ -304,7 +320,8 @@ function tt_create_combine_orders($product_ids, $order_quantities){
         array('id' => $insert_id),
         array(
             '%f'
-        )
+        ),
+        array('%d')
     );
     if(!$update){
         return new WP_Error('create_order_failed', __('Create combine order failed', 'tt')); //TODO distinguish
@@ -334,7 +351,8 @@ function tt_update_order($order_id, $data, $format){
         $orders_table,
         $data,
         array('order_id' => $order_id),
-        $format
+        $format,
+        array('%s')
     );
     return !($update===false);
 }

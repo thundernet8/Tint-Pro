@@ -21,6 +21,7 @@ import ScrollHandler from './modules/scroll';
 import ModalSignBox from './modules/modalSignBox';
 import SignHelp from './modules/signHelp';
 import FixFooter from './modules/fixFooter';
+import Referral from './modules/referral';
 
 // DOM Ready
 jQuery(document).ready(function ($) {
@@ -44,4 +45,7 @@ jQuery(document).ready(function ($) {
     
     // 修正Footer位置
     FixFooter();
+    
+    // 设置推广信息cookie, 便于后面使用
+    Referral.init();
 });

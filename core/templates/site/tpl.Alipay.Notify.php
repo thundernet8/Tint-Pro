@@ -14,6 +14,10 @@
 ?>
 <?php
 
+if(!isset($_POST['trade_status'])) {
+    wp_die(__('You are acting an illegal visit', 'tt'), __('Illegal Visit', 'tt'), 404); // 防止直接GET访问
+}
+
 $alipay_config = tt_get_alipay_config();
 
 //计算得出通知验证结果

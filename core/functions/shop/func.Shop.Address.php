@@ -155,7 +155,8 @@ function tt_update_address($id, $data){ // $data must be array( 'column1' => 'va
         $addresses_table,
         $data,
         array('id' => $id),
-        $format
+        $format,
+        array('%d')
     );
     return !($update===false);
 }

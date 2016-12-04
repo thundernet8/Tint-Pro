@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-12-03 23:25+0800\n"
-"PO-Revision-Date: 2016-12-03 23:26+0800\n"
+"POT-Creation-Date: 2016-12-04 16:13+0800\n"
+"PO-Revision-Date: 2016-12-04 16:17+0800\n"
 "Last-Translator: Zhiyan <mail@webapproach.net>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -1735,19 +1735,19 @@ msgstr "你无权添加优惠码"
 msgid "The coupon code is existed"
 msgstr "优惠码已存在"
 
-#: core/functions/shop/func.Shop.Coupon.php:182
+#: core/functions/shop/func.Shop.Coupon.php:183
 msgid "The coupon is not existed"
 msgstr "优惠码不存在"
 
-#: core/functions/shop/func.Shop.Coupon.php:185
+#: core/functions/shop/func.Shop.Coupon.php:186
 msgid "The coupon is used"
 msgstr "优惠码已被使用"
 
-#: core/functions/shop/func.Shop.Coupon.php:189
+#: core/functions/shop/func.Shop.Coupon.php:190
 msgid "The coupon have not taken in effect yet"
 msgstr "优惠码还未生效"
 
-#: core/functions/shop/func.Shop.Coupon.php:192
+#: core/functions/shop/func.Shop.Coupon.php:193
 msgid "The coupon is expired"
 msgstr "优惠码已过期"
 
@@ -1775,17 +1775,17 @@ msgstr "交易关闭"
 msgid "Order Created"
 msgstr "订单创建成功"
 
-#: core/functions/shop/func.Shop.Orders.php:286
-#: core/functions/shop/func.Shop.Orders.php:294
+#: core/functions/shop/func.Shop.Orders.php:302
 #: core/functions/shop/func.Shop.Orders.php:310
+#: core/functions/shop/func.Shop.Orders.php:327
 msgid "Create combine order failed"
 msgstr "创建合并订单失败"
 
-#: core/functions/shop/func.Shop.Orders.php:354
+#: core/functions/shop/func.Shop.Orders.php:372
 msgid "The order with the a order id you specified is not existed"
 msgstr "指定的订单不存在"
 
-#: core/functions/shop/func.Shop.Orders.php:362
+#: core/functions/shop/func.Shop.Orders.php:380
 msgid "The coupon is invalid"
 msgstr "优惠码无效"
 
@@ -2177,7 +2177,6 @@ msgid "SEND"
 msgstr "发送"
 
 #: core/modules/mod.ModalQrCodes.php:20 core/modules/mod.ModalQrCodes.php:25
-#: core/templates/site/tpl.QrPay.php:90 core/templates/site/tpl.QrPay.php:96
 msgid "Scan the qrcode image and contact with me"
 msgstr "扫一扫二维码联系我"
 
@@ -2967,74 +2966,92 @@ msgstr "订单历史"
 msgid "%d reviews for the product"
 msgstr "%d 条商品评价"
 
-#: core/templates/site/tpl.Alipay.Return.php:22
+#: core/templates/site/tpl.APSV.Notify.php:30
+#: core/templates/site/tpl.APSV.Notify.php:44
+#: core/templates/site/tpl.Alipay.Notify.php:18
+#: core/templates/site/tpl.CheckOut.php:26
+#: core/templates/site/tpl.PayGateway.php:26
+#: core/templates/site/tpl.PayResult.php:26
+msgid "You are acting an illegal visit"
+msgstr "你正在进行非法访问, 请按正确流程进行操作"
+
+#: core/templates/site/tpl.APSV.Notify.php:30
+#: core/templates/site/tpl.APSV.Notify.php:44
+#: core/templates/site/tpl.Alipay.Notify.php:18
+#: core/templates/site/tpl.CheckOut.php:26
+#: core/templates/site/tpl.PayGateway.php:26
+#: core/templates/site/tpl.PayResult.php:26
+msgid "Illegal Visit"
+msgstr "非法访问"
+
+#: core/templates/site/tpl.Alipay.Return.php:18
 #: core/templates/site/tpl.CheckOut.php:18
 #: core/templates/site/tpl.PayGateway.php:18
 #: core/templates/site/tpl.PayResult.php:18
 msgid "You cannot visit this page without sign in"
 msgstr "你必须登录才能访问该页面"
 
-#: core/templates/site/tpl.Alipay.Return.php:22
+#: core/templates/site/tpl.Alipay.Return.php:18
 #: core/templates/site/tpl.CheckOut.php:18
 #: core/templates/site/tpl.PayGateway.php:18
 #: core/templates/site/tpl.PayResult.php:18
 msgid "Error: Unknown User"
 msgstr "错误: 未知用户"
 
-#: core/templates/site/tpl.Alipay.Return.php:30
+#: core/templates/site/tpl.Alipay.Return.php:26
 msgid "Alipay trade interface configuration is incorrect"
 msgstr "支付宝交易接口配置错误"
 
-#: core/templates/site/tpl.Alipay.Return.php:30
+#: core/templates/site/tpl.Alipay.Return.php:26
 msgid "Error: Incorrect Alipay Trade Interface Configuration"
 msgstr "错误: 无效的支付宝交易接口配置"
 
-#: core/templates/site/tpl.Alipay.Return.php:131
+#: core/templates/site/tpl.Alipay.Return.php:127
 msgid ""
 "Verify return result failed, please contact the site administrator if you "
 "have finished your payment"
 msgstr "验证返回结果失败, 如果你已经成功付款请联系管理员"
 
-#: core/templates/site/tpl.Alipay.Return.php:131
+#: core/templates/site/tpl.Alipay.Return.php:127
 msgid "Verify Failed"
 msgstr "验证失败"
 
-#: core/templates/site/tpl.Alipay.Return.php:149
+#: core/templates/site/tpl.Alipay.Return.php:145
 #: core/templates/site/tpl.CheckOut.php:60
 #: core/templates/site/tpl.PayResult.php:60
 #: core/templates/site/tpl.QrPay.php:53
 msgid "Confirm Order"
 msgstr "确认订单详情"
 
-#: core/templates/site/tpl.Alipay.Return.php:156
+#: core/templates/site/tpl.Alipay.Return.php:152
 #: core/templates/site/tpl.CheckOut.php:67
 #: core/templates/site/tpl.PayResult.php:67
 msgid "Payment Accomplish"
 msgstr "完成支付"
 
-#: core/templates/site/tpl.Alipay.Return.php:163
+#: core/templates/site/tpl.Alipay.Return.php:159
 #: core/templates/site/tpl.CheckOut.php:74
 #: core/templates/site/tpl.PayResult.php:74
 #: core/templates/site/tpl.QrPay.php:67
 msgid "Confirm Delivery"
 msgstr "确认收货"
 
-#: core/templates/site/tpl.Alipay.Return.php:170
+#: core/templates/site/tpl.Alipay.Return.php:166
 #: core/templates/site/tpl.PayResult.php:81
 #, php-format
 msgid "Payment for Order ID %s has finished successfully"
 msgstr "订单 %s 已经成功支付"
 
-#: core/templates/site/tpl.Alipay.Return.php:171
+#: core/templates/site/tpl.Alipay.Return.php:167
 #, php-format
 msgid "You have payed %f yuan, Currently the order status is: %s"
 msgstr "你支付了 %0.2f 元, 当前订单状态为: %s"
 
-#: core/templates/site/tpl.Alipay.Return.php:171
+#: core/templates/site/tpl.Alipay.Return.php:167
 msgid "<br>You need to go to visit your alipay account and confirm delivery."
 msgstr "<br>你需要访问你的支付宝账户, 并对此交易确认收货."
 
-#: core/templates/site/tpl.Alipay.Return.php:172
+#: core/templates/site/tpl.Alipay.Return.php:168
 #: core/templates/site/tpl.PayResult.php:87
 #: core/templates/site/tpl.QrPay.php:101
 msgid "Check Order Detail"
@@ -3047,18 +3064,6 @@ msgstr "结算订单必须的参数丢失"
 #: core/templates/site/tpl.CheckOut.php:22
 msgid "Invalid Checkout Parameters"
 msgstr "无效的参数"
-
-#: core/templates/site/tpl.CheckOut.php:26
-#: core/templates/site/tpl.PayGateway.php:26
-#: core/templates/site/tpl.PayResult.php:26
-msgid "You are acting an illegal visit"
-msgstr "你正在进行非法访问, 请按正确流程进行操作"
-
-#: core/templates/site/tpl.CheckOut.php:26
-#: core/templates/site/tpl.PayGateway.php:26
-#: core/templates/site/tpl.PayResult.php:26
-msgid "Illegal Visit"
-msgstr "非法访问"
 
 #: core/templates/site/tpl.CheckOut.php:32
 #: core/templates/site/tpl.PayGateway.php:32
@@ -3317,17 +3322,9 @@ msgstr "推荐, 支持自动发货(需正确备注)"
 
 #: core/templates/site/tpl.QrPay.php:84
 msgid ""
-"Auto delivery not supported, please contact us via the contact qrcode images "
-"below"
-msgstr "不支持自动发货, 请扫描下方二维码联系我们"
-
-#: core/templates/site/tpl.QrPay.php:91
-msgid "Contact me via alipay"
-msgstr "支付宝联系我"
-
-#: core/templates/site/tpl.QrPay.php:97
-msgid "Contact me via weixin"
-msgstr "微信联系我"
+"Auto delivery not supported, we will check and handle the order manually in "
+"time"
+msgstr "不支持自动发货, 我们会及时人工处理订单"
 
 #: core/templates/tax/tpl.Archive.php:60 core/templates/tax/tpl.Category.php:84
 #: core/templates/tax/tpl.Date.php:82 core/templates/tax/tpl.Tag.php:82
@@ -4107,34 +4104,54 @@ msgid "Themes - Plugins - Services"
 msgstr "Themes - Plugins - Services"
 
 #: dash/options.php:679
+msgid "支付方式"
+msgstr "支付方式"
+
+#: dash/options.php:680
+msgid ""
+"目前支持支付宝原生即时到账、担保交易、双功能接口, 对于无法申请支付宝接口的提"
+"供个人开发的Alipay Supervisor免签约支付程序"
+msgstr ""
+"目前支持支付宝原生即时到账、担保交易、双功能接口, 对于无法申请支付宝接口的提"
+"供个人开发的Alipay Supervisor免签约支付程序"
+
+#: dash/options.php:685
+msgid "Alipay"
+msgstr "支付宝"
+
+#: dash/options.php:686
+msgid "Alipay Supervisor免签约支付"
+msgstr "Alipay Supervisor免签约支付"
+
+#: dash/options.php:693
 msgid "支付宝收款帐户邮箱"
 msgstr "支付宝收款帐户邮箱"
 
-#: dash/options.php:680
+#: dash/options.php:694
 msgid "支付宝收款帐户邮箱,要收款必填并务必保持正确"
 msgstr "支付宝收款帐户邮箱,要收款必填并务必保持正确"
 
-#: dash/options.php:689
+#: dash/options.php:703
 msgid "支付宝商家身份ID"
 msgstr "支付宝商家身份ID"
 
-#: dash/options.php:690
+#: dash/options.php:704
 msgid "合作身份者id，以2088开头的16位纯数字"
 msgstr "合作身份者id，以2088开头的16位纯数字"
 
-#: dash/options.php:699
+#: dash/options.php:713
 msgid "支付宝商家身份key"
 msgstr "支付宝商家身份key"
 
-#: dash/options.php:700
+#: dash/options.php:714
 msgid "支付宝商家身份安全检验码，以数字和字母组成的32位字符"
 msgstr "支付宝商家身份安全检验码，以数字和字母组成的32位字符"
 
-#: dash/options.php:709
+#: dash/options.php:723
 msgid "支付宝商家收款类型"
 msgstr "支付宝商家收款类型"
 
-#: dash/options.php:710
+#: dash/options.php:724
 msgid ""
 "支付宝商家收款类型, 支持即时到账, 双功能和担保交易, 注意：切换类型后必须对应"
 "修改商家身份key"
@@ -4142,223 +4159,263 @@ msgstr ""
 "支付宝商家收款类型, 支持即时到账, 双功能和担保交易, 注意：切换类型后必须对应"
 "修改商家身份key"
 
-#: dash/options.php:715 dash/options.php:757
-msgid "Memcache"
-msgstr "Memcache"
+#: dash/options.php:729
+msgid "即时到账"
+msgstr "即时到账"
 
-#: dash/options.php:716 dash/options.php:758
-msgid "Redis"
-msgstr "Redis"
+#: dash/options.php:730
+msgid "双功能"
+msgstr "双功能"
 
-#: dash/options.php:717 dash/options.php:759 dash/options.php:865
-msgid "None"
-msgstr "无"
+#: dash/options.php:731
+msgid "担保交易"
+msgstr "担保交易"
 
-#: dash/options.php:724
+#: dash/options.php:738
+msgid "Alipay Supervisor APP ID"
+msgstr "Alipay Supervisor APP ID"
+
+#: dash/options.php:739
+msgid "You should buy Alipay Supervisor first and then get the app id"
+msgstr "你需要购买Alipay Supervisor免签约支付辅助软件以获得app id"
+
+#: dash/options.php:748
+msgid "Alipay Supervisor APP Key"
+msgstr "Alipay Supervisor APP Key"
+
+#: dash/options.php:749
+msgid "You should buy Alipay Supervisor first and then get the app key"
+msgstr "你需要购买Alipay Supervisor免签约支付辅助软件以获得app key"
+
+#: dash/options.php:758
+msgid "Alipay Supervisor Secret"
+msgstr "Alipay Supervisor Secret"
+
+#: dash/options.php:759
+msgid ""
+"A random string which verify the legitimacy of a request from Alipay "
+"Supervisor, should conform to Alipay Supervisor configuration"
+msgstr ""
+"一段随机字符串, 用于校验来自Alipay Supervisor请求的合法性, 并且要和Alipay "
+"Supervisor配置中的pushStateSecret一致"
+
+#: dash/options.php:768
 msgid "Site Weixin Pay QR"
 msgstr "网站微信收款二维码"
 
-#: dash/options.php:725
+#: dash/options.php:769
 msgid "The Weixin pay qrcode image for collection money"
 msgstr "用于网站收集打赏等的微信收款二维码图片"
 
-#: dash/options.php:734
+#: dash/options.php:778
 msgid "Site Alipay Pay QR"
 msgstr "网站支付宝收款二维码"
 
-#: dash/options.php:735
+#: dash/options.php:779
 msgid "The Alipay pay qrcode image for collection money"
 msgstr "用于网站收集打赏等的支付宝收款二维码图片"
 
-#: dash/options.php:744
+#: dash/options.php:788
 msgid "Auxiliary"
 msgstr "辅助"
 
-#: dash/options.php:751
+#: dash/options.php:795
 msgid "Object Cache"
 msgstr "对象缓存"
 
-#: dash/options.php:752
+#: dash/options.php:796
 msgid "Object cache support, accelerate your site"
 msgstr "对象缓存支持，加速网站"
 
-#: dash/options.php:767
+#: dash/options.php:801
+msgid "Memcache"
+msgstr "Memcache"
+
+#: dash/options.php:802
+msgid "Redis"
+msgstr "Redis"
+
+#: dash/options.php:803 dash/options.php:909
+msgid "None"
+msgstr "无"
+
+#: dash/options.php:811
 msgid "Memcache Host"
 msgstr "Memcache主机"
 
-#: dash/options.php:768
+#: dash/options.php:812
 msgid "Memcache server host"
 msgstr "Memcache服务器的地址(IP或url)"
 
-#: dash/options.php:777
+#: dash/options.php:821
 msgid "Memcache Port"
 msgstr "Memcache端口"
 
-#: dash/options.php:778
+#: dash/options.php:822
 msgid "Memcache server port"
 msgstr "Memcache服务器端口"
 
-#: dash/options.php:790
+#: dash/options.php:834
 msgid "Redis Host"
 msgstr "Redis主机"
 
-#: dash/options.php:791
+#: dash/options.php:835
 msgid "Redis server host"
 msgstr "Redis服务器的地址(IP或url)"
 
-#: dash/options.php:800
+#: dash/options.php:844
 msgid "Redis Port"
 msgstr "Redis端口"
 
-#: dash/options.php:801
+#: dash/options.php:845
 msgid "Redis server port"
 msgstr "Redis服务器的端口"
 
-#: dash/options.php:812
+#: dash/options.php:856
 msgid "Mailer Separator"
 msgstr ""
 
-#: dash/options.php:819
+#: dash/options.php:863
 msgid "SMTP/PHPMailer"
 msgstr "SMTP/PHPMailer"
 
-#: dash/options.php:820
+#: dash/options.php:864
 msgid "Use SMTP or PHPMail as default mailer"
 msgstr "使用SMTP或PHPMail作为默认邮件发送方式"
 
-#: dash/options.php:825
+#: dash/options.php:869
 msgid "PHP"
 msgstr "PHP"
 
-#: dash/options.php:826
+#: dash/options.php:870
 msgid "SMTP"
 msgstr "SMTP"
 
-#: dash/options.php:834
+#: dash/options.php:878
 msgid "SMTP Host"
 msgstr "SMTP 服务器"
 
-#: dash/options.php:835
+#: dash/options.php:879
 msgid "Your SMTP service host"
 msgstr "你的SMTP服务器主机地址"
 
-#: dash/options.php:845
+#: dash/options.php:889
 msgid "SMTP Port"
 msgstr "SMTP 端口"
 
-#: dash/options.php:846
+#: dash/options.php:890
 msgid "Your SMTP service port"
 msgstr "你的SMTP服务器服务端口"
 
-#: dash/options.php:856
+#: dash/options.php:900
 msgid "SMTP Secure"
 msgstr "SMTP安全"
 
-#: dash/options.php:857
+#: dash/options.php:901
 msgid "Your SMTP server secure protocol"
 msgstr "你的SMTP服务器安全协议"
 
-#: dash/options.php:862
+#: dash/options.php:906
 msgid "Auto"
 msgstr "自动"
 
-#: dash/options.php:863
+#: dash/options.php:907
 msgid "SSL"
 msgstr "SSL"
 
-#: dash/options.php:864
+#: dash/options.php:908
 msgid "TLS"
 msgstr "TLS"
 
-#: dash/options.php:872
+#: dash/options.php:916
 msgid "SMTP Username"
 msgstr "SMTP 用户名"
 
-#: dash/options.php:873
+#: dash/options.php:917
 msgid "Your SMTP username"
 msgstr "你的SMTP服务的登录用户名"
 
-#: dash/options.php:882
+#: dash/options.php:926
 msgid "SMTP Password"
 msgstr "SMTP 密码"
 
-#: dash/options.php:883
+#: dash/options.php:927
 msgid "Your SMTP password"
 msgstr "你的SMTP服务登录密码"
 
-#: dash/options.php:893
+#: dash/options.php:937
 msgid "Your Name"
 msgstr "发信姓名"
 
-#: dash/options.php:894
+#: dash/options.php:938
 msgid "Your display name as the sender"
 msgstr "你发送的邮件中显示的名称"
 
-#: dash/options.php:906
+#: dash/options.php:950
 msgid "PHP Mail Sender Display Name"
 msgstr "PHPMailer发信人名称"
 
-#: dash/options.php:907
+#: dash/options.php:951
 msgid "The Sender display name when using PHPMail send mail"
 msgstr "使用PHPMailer发送邮件的显示名"
 
-#: dash/options.php:917
+#: dash/options.php:961
 msgid "PHP Mail Sender Address"
 msgstr "PHPMailer 发信人地址"
 
-#: dash/options.php:918
+#: dash/options.php:962
 msgid "You can use fake mail address when use PHPMail"
 msgstr "当使用PHPMailer发信时可使用自定义的发信人地址"
 
-#: dash/options.php:929
+#: dash/options.php:973
 msgid "Short Link Prefix"
 msgstr "短链接前缀标识"
 
-#: dash/options.php:930
+#: dash/options.php:974
 msgid ""
 "Use short link instead long link or even convert external link to internal "
 "link"
 msgstr "使用短链接代替长链接或站外链接转为站内链接"
 
-#: dash/options.php:940
+#: dash/options.php:984
 msgid "Short Link Records"
 msgstr "短链接记录"
 
-#: dash/options.php:941
+#: dash/options.php:985
 msgid "One line for one record, please conform to the sample"
 msgstr "一行一条记录，请参照样例格式"
 
-#: dash/options.php:954
+#: dash/options.php:998
 msgid "Feedback"
 msgstr "反馈"
 
-#: dash/options.php:966
+#: dash/options.php:1010
 msgid "Others"
 msgstr "其他"
 
-#: dash/options.php:973
+#: dash/options.php:1017
 msgid "Debug Mode"
 msgstr "调试模式"
 
-#: dash/options.php:974
+#: dash/options.php:1018
 msgid ""
 "Enable debug will force display php errors, disable theme cache, enable some "
 "private links or functions, etc."
 msgstr "启用Debug将强制输出PHP错误，禁用主题缓存，启用一些私有链接或功能等"
 
-#: dash/options.php:983
+#: dash/options.php:1027
 msgid "Tint Token"
 msgstr "Tint Token"
 
-#: dash/options.php:984
+#: dash/options.php:1028
 msgid "Private token for theme, maybe useful somewhere."
 msgstr "主题私有Token，在某些地方有用"
 
-#: dash/options.php:994
+#: dash/options.php:1038
 msgid "Refresh Rewrite Rules"
 msgstr "刷新固定链接规则"
 
-#: dash/options.php:995
+#: dash/options.php:1039
 #, php-format
 msgid ""
 "Please Click to <a href=\"%1$s/m/refresh?token=%2$s\" target=\"_blank"
@@ -4367,51 +4424,51 @@ msgstr ""
 "如果你遭遇一些404访问错误，请点击 <a href=\"%1$s/m/refresh?token=%2$s\" "
 "target=\"_blank\">刷新固定链接规则</a>。"
 
-#: dash/options.php:1002
+#: dash/options.php:1046
 msgid "QQ Mailme ID"
 msgstr "QQ邮我按钮ID"
 
-#: dash/options.php:1003
+#: dash/options.php:1047
 msgid "The id of qq mailme, visit `http://open.mail.qq.com` for detail"
 msgstr "QQ邮我链接内的ID字段, 访问`http://open.mail.qq.com`获取"
 
-#: dash/options.php:1012
+#: dash/options.php:1056
 msgid "QQ Mail list ID"
 msgstr "QQ邮件列表ID"
 
-#: dash/options.php:1013
+#: dash/options.php:1057
 msgid "The id of qq mailme, visit `http://list.qq.com` for detail"
 msgstr "QQ邮件列表链接内的ID字段, 访问`http://list.qq.com`获取"
 
-#: dash/options.php:1022
+#: dash/options.php:1066
 msgid "Head Custom Code"
 msgstr "页头自定义代码"
 
-#: dash/options.php:1023
+#: dash/options.php:1067
 msgid "Custom code loaded on page head"
 msgstr "页面头部加载的自定义代码，位于head标签结束前"
 
-#: dash/options.php:1033
+#: dash/options.php:1077
 msgid "Foot Custom Code"
 msgstr "页脚自定义代码"
 
-#: dash/options.php:1034
+#: dash/options.php:1078
 msgid "Custom code loaded on page foot"
 msgstr "页面底部加载的自定义代码，位于body标签结束前"
 
-#: dash/options.php:1043
+#: dash/options.php:1087
 msgid "Foot Beian Text"
 msgstr "页脚备案文字"
 
-#: dash/options.php:1044
+#: dash/options.php:1088
 msgid "IDC reference No. for regulations of China"
 msgstr "工信部域名备案号码"
 
-#: dash/options.php:1052
+#: dash/options.php:1096
 msgid "Site Open Date"
 msgstr "建站日期"
 
-#: dash/options.php:1053
+#: dash/options.php:1097
 msgid "The date of when site opened, use `YYYY-mm-dd` format"
 msgstr "网站开放的日期, 使用`YYYY-mm-dd`格式"
 
@@ -4442,6 +4499,12 @@ msgstr "Zhiyan"
 #. Author URI of the plugin/theme
 msgid "https://www.webapproach.net/@zhiyan"
 msgstr "https://www.webapproach.net/@zhiyan"
+
+#~ msgid "Contact me via alipay"
+#~ msgstr "支付宝联系我"
+
+#~ msgid "Contact me via weixin"
+#~ msgstr "微信联系我"
 
 #~ msgid "Pay"
 #~ msgstr "支付"

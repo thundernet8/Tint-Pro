@@ -166,7 +166,7 @@ $current_user = wp_get_current_user();
                         </div>
                     </div>
             </section>
-            <?php if($currency=='cash' && tt_get_option('tt_alipay_email') && tt_get_option('tt_alipay_partner')) { ?>
+            <?php if($currency=='cash' && tt_get_option('tt_pay_channel', 'alipay')=='alipay' && tt_get_option('tt_alipay_email') && tt_get_option('tt_alipay_partner')) { ?>
             <section class="pay-method">
                 <h3><?php _e('Pay Methods', 'tt'); ?></h3>
                 <ul class="pay-method-list">
