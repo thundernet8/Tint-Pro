@@ -185,3 +185,30 @@ function tt_install_message_table () {
     endif;
 }
 add_action( 'load-themes.php', 'tt_install_message_table' );
+
+
+/**
+ * 新建会员所用的数据表
+ *
+ * @since 2.0.0
+ * @return void
+ */
+function tt_install_membership_table(){
+    global $wpdb;
+    include_once(ABSPATH . '/wp-admin/includes/upgrade.php');
+    $table_charset = '';
+    $prefix = $wpdb->prefix;
+    $users_table = $prefix . 'tt_vip_users';
+    if($wpdb->has_cap('collation')) {
+        if(!empty($wpdb->charset)) {
+            $table_charset = "DEFAULT CHARACTER SET $wpdb->charset";
+        }
+        if(!empty($wpdb->collate)) {
+            $table_charset .= " COLLATE $wpdb->collate";
+        }
+    }
+    $create_vip_users_sql = "CREATE TABLE $users_table (id int(11) NOT NULL auto_increment,user_id int(11) NOT NULL,user_type tinyint(4) NOT NULL default 0,startTime datetime NOT NULL default '0000-00-00 00:00:00',endTime datetime NOT NULL default '0000-00-00 00:00:00',PRIMARY KEY (id),INDEX uid_index(user_id),INDEX utype_index(user_type)) ENGINE = MyISAM $table_charset;";
+    maybe_create_table($users_table, $create_vip_users_sql);
+}
+add_action('load-themes.php', 'tt_install_membership_table');
+//add_action('admin_menu', 'tt_install_membership_table');

@@ -136,6 +136,7 @@ load_func('func.Message');
 load_func('func.Referral');
 load_func('func.Query');
 load_func('func.Credit');
+load_func('func.Member');
 if(TT_PRO && tt_get_option('tt_enable_shop', false)){
     load_func('shop/func.Shop');
     load_func('shop/func.Shop.Orders');
@@ -152,6 +153,21 @@ load_class('class.Open');
 load_class('class.PostImage');
 load_class('class.Utils');
 load_class('class.Member');
+// Plates模板引擎
+load_class('plates/Engine');
+load_class('plates/Extension/ExtensionInterface');
+load_class('plates/Template/Data');
+load_class('plates/Template/Directory');
+load_class('plates/Template/FileExtension');
+load_class('plates/Template/Folder');
+load_class('plates/Template/Folders');
+load_class('plates/Template/Func');
+load_class('plates/Template/Functions');
+load_class('plates/Template/Name');
+load_class('plates/Template/Template');
+load_class('plates/Extension/Asset');
+load_class('plates/Extension/URI');
+
 if(is_admin()) {
     load_class('class.Tgm.Plugin.Activation');
 }

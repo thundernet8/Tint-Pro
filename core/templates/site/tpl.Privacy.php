@@ -14,4 +14,7 @@
 ?>
 <?php
 
-echo 'Privacy Template';
+//echo 'Privacy Template';
+$templates = new League\Plates\Engine(THEME_TPL . '/plates');
+
+echo $templates->render('profile', ['name' => 'Jonathan']);
