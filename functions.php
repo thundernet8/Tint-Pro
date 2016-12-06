@@ -137,6 +137,7 @@ load_func('func.Referral');
 load_func('func.Query');
 load_func('func.Credit');
 load_func('func.Member');
+load_func('func.IP');
 if(TT_PRO && tt_get_option('tt_enable_shop', false)){
     load_func('shop/func.Shop');
     load_func('shop/func.Shop.Orders');

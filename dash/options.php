@@ -1075,8 +1075,24 @@ function optionsframework_options() {
     );
 
 
+    // - 开启登录邮件提醒
+    $options[] = array(
+        'name' => __( 'Login Email Notification', 'tt' ),
+        'desc' => __( 'Enable email notification when a successfully login event happened', 'tt' ),
+        'id' => 'tt_login_success_notify',
+        'std' => false,
+        'type' => 'checkbox'
+    );
 
 
+    // - 开启登录错误邮件提醒
+    $options[] = array(
+        'name' => __( 'Login Failure Email Notification', 'tt' ),
+        'desc' => __( 'Enable email notification when a login failure event happened', 'tt' ),
+        'id' => 'tt_login_failure_notify',
+        'std' => false,
+        'type' => 'checkbox'
+    );
 
 
     // 主题反馈

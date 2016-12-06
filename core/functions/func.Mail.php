@@ -153,3 +153,133 @@ function tt_get_mail_title($template = 'comment') {
             return sprintf(__('Site Internal Notification - %s', 'tt'), $blog_name);
     }
 }
+
+
+/**
+ * 评论回复邮件
+ *
+ * @since 2.0.0
+ * @param $comment_id
+ * @param $comment_object
+ * @return void
+ */
+function tt_comment_mail_notify($comment_id, $comment_object) {
+    if( $comment_object->comment_approved != 1 || !empty($comment_object->comment_type) ) return;
+    date_default_timezone_set ('Asia/Shanghai');
+    $admin_notify = '1'; // admin 要不要收回复通知 ( '1'=要 ; '0'=不要 )
+    $admin_email = get_bloginfo ('admin_email'); // $admin_email 可改为你指定的 e-mail.
+    $comment = get_comment($comment_id);
+    $comment_author = trim($comment->comment_author);
+    $comment_date = trim($comment->comment_date);
+    $comment_link = htmlspecialchars(get_comment_link($comment_id));
+    $comment_content = nl2br($comment->comment_content);
+    $comment_author_email = trim($comment->comment_author_email);
+    $parent_id = $comment->comment_parent ? $comment->comment_parent : '';
+    $parent_comment = get_comment($parent_id);
+    $parent_email = trim($parent_comment->comment_author_email);
+    $post = get_post($comment_object->comment_post_ID);
+    $post_author_email = get_user_by( 'id' , $post->post_author)->user_email;
+
+//    global $wpdb;
+//    if ($wpdb->query("Describe {$wpdb->comments} comment_mail_notify") == '')
+//        $wpdb->query("ALTER TABLE {$wpdb->comments} ADD COLUMN comment_mail_notify TINYINT NOT NULL DEFAULT 0;");
+//    if (isset($_POST['comment_mail_notify']))
+//        $wpdb->query("UPDATE {$wpdb->comments} SET comment_mail_notify='1' WHERE comment_ID='$comment_id'");
+    //$notify = $parent_id ? $parent_comment->comment_mail_notify : '0';
+    $notify = 1; // 默认全部提醒
+    $spam_confirmed = $comment->comment_approved;
+    //给父级评论提醒
+    if ($parent_id != '' && $spam_confirmed != 'spam' && $notify == '1' && $parent_email != $comment_author_email) {
+        $parent_author = trim($parent_comment->comment_author);
+        $parent_comment_date = trim($parent_comment->comment_date);
+        $parent_comment_content = nl2br($parent_comment->comment_content);
+        $args = array(
+            'parentAuthor' => $parent_author,
+            'parentCommentDate' => $parent_comment_date,
+            'parentCommentContent' => $parent_comment_content,
+            'postTitle' => $post->post_title,
+            'commentAuthor' => $comment_author,
+            'commentDate' => $comment_date,
+            'commentContent' => $comment_content,
+            'commentLink' => $comment_link
+        );
+        if(filter_var( $post_author_email, FILTER_VALIDATE_EMAIL)){
+            tt_async_mail('', $parent_email, sprintf( __('%1$s在%2$s中回复你', 'tt'), $comment_object->comment_author, $post->post_title ), $args, 'reply');
+        }
+        if($parent_comment->user_id){
+            tt_create_message($parent_comment->user_id, $comment->user_id, $comment_author, 'notification', sprintf( __('我在%1$s中回复了你', 'tt'), $post->post_title ), $comment_content);
+        }
+    }
+
+    //给文章作者的通知
+    if($post_author_email != $comment_author_email && $post_author_email != $parent_email){
+        $args = array(
+            'postTitle' => $post->post_title,
+            'commentAuthor' => $comment_author,
+            'commentContent' => $comment_content,
+            'commentLink' => $comment_link
+        );
+        if(filter_var( $post_author_email, FILTER_VALIDATE_EMAIL)){
+            tt_async_mail('', $post_author_email, sprintf( __('%1$s在%2$s中回复你', 'tt'), $comment_author, $post->post_title ), $args, 'comment');
+        }
+        tt_create_message($post->post_author, 0, 'System', 'notification', sprintf( __('%1$s在%2$s中回复你', 'tt'), $comment_author, $post->post_title ), $comment_content);
+    }
+
+    //给管理员通知
+    if($post_author_email != $admin_email && $parent_id != $admin_email && $admin_notify == '1'){
+        $args = array(
+            'postTitle' => $post->post_title,
+            'commentAuthor' => $comment_author,
+            'commentContent' => $comment_content,
+            'commentLink' => $comment_link
+        );
+        tt_async_mail('', $admin_email, sprintf( __('%1$s上的文章有了新的回复', 'tt'), get_bloginfo('name') ), $args, 'comment-admin');
+        //tt_create_message() //TODO
+    }
+}
+//add_action('comment_post', 'tt_comment_mail_notify');
+add_action('wp_insert_comment', 'tt_comment_mail_notify' , 99, 2 );
+
+
+/**
+ * WP登录提醒
+ *
+ * @since 2.0.0
+ * @param string $user_login
+ * @return void
+ */
+function tt_wp_login_notify($user_login){
+    if(!tt_get_option('tt_login_success_notify')){
+        return ;
+    }
+    date_default_timezone_set ('Asia/Shanghai');
+    $admin_email = get_bloginfo ('admin_email');
+    $subject = '你的博客空间登录提醒';
+    $args = array(
+        'loginName' => $user_login
+    );
+    tt_async_mail('', $admin_email, $subject, $args, 'login');
+    //tt_mail('', $admin_email, $subject, $args, 'login');
+}
+add_action('wp_login', 'tt_wp_login_notify', 10, 1);
+
+/**
+ * WP登录错误提醒
+ *
+ * @since 2.0.0
+ * @param string $login_name
+ * @return void
+ */
+function tt_wp_login_failure_notify($login_name){
+    if(!tt_get_option('tt_login_failure_notify')){
+        return ;
+    }
+    date_default_timezone_set ('Asia/Shanghai');
+    $admin_email = get_bloginfo ('admin_email');
+    $subject = '你的博客空间登录错误警告';
+    $args = array(
+        'loginName' => $login_name
+    );
+    tt_async_mail('', $admin_email, $subject, $args, 'login-fail');
+}
+add_action('wp_login_failed', 'tt_wp_login_failure_notify', 10, 1);
