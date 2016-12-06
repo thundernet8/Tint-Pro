@@ -53,13 +53,13 @@ add_action('phpmailer_init', 'tt_switch_mailer');
  * @param string    $from   发件人
  * @param string    $to     收件人
  * @param string    $title  主题
- * @param string|array    $content    内容
+ * @param string|array    $args    渲染内容所需的变量对象
  * @param string    $template   模板，例如评论回复邮件模板、新用户、找回密码、订阅信等模板
  * @return  void
  */
-function tt_mail($from, $to, $title = '', $content, $template = 'comment') {
+function tt_mail($from, $to, $title = '', $args = array(), $template = 'comment') {
     $title = $title ? trim($title) : tt_get_mail_title($template);
-    $content = tt_mail_render($content, $template);
+    $content = tt_mail_render($args, $template);
     $blog_name = get_bloginfo('name');
     $sender_name = tt_get_option('tt_mail_custom_sender') || tt_get_option('tt_smtp_name', $blog_name);
     if(empty($from)){
@@ -69,6 +69,24 @@ function tt_mail($from, $to, $title = '', $content, $template = 'comment') {
     $fr = "From: \"" . $sender_name . "\" <$from>";
     $headers = "$fr\nContent-Type: text/html; charset=" . get_option('blog_charset') . "\n";
     wp_mail( $to, $title, $content, $headers );
+}
+add_action('tt_async_send_mail', 'tt_mail', 10, 5);
+
+/**
+ * 异步发送邮件
+ *
+ * @since 2.0.0
+ * @param $from
+ * @param $to
+ * @param string $title
+ * @param array $args
+ * @param string $template
+ */
+function tt_async_mail($from, $to, $title = '', $args = array(), $template = 'comment'){
+    if(is_array($args)) {
+        $args = base64_encode(json_encode($args));
+    }
+    do_action('send_mail', $from, $to, $title, $args, $template);
 }
 
 
@@ -82,13 +100,15 @@ function tt_mail($from, $to, $title = '', $content, $template = 'comment') {
  * @return  string
  */
 function tt_mail_render($content, $template = 'comment') {
-    if(is_array($content)){
-
+    // 使用Plates模板渲染引擎
+    $templates = new League\Plates\Engine(THEME_TPL . '/plates/emails');
+    if (is_string($content)) {
+        return $templates->render('pure', ['content' => $content]);
+    } elseif (is_array($content)) {
+        return $templates->render($template, $content); // TODO confirm template exist
     }
-    // TODO
-    return 'Email content rendered';
+    return '';
 }
-
 
 /**
  * 不同模板的邮件标题
@@ -99,7 +119,37 @@ function tt_mail_render($content, $template = 'comment') {
  * @return  string
  */
 function tt_get_mail_title($template = 'comment') {
-
-    // TODO
-    return 'Email Title';
+    $blog_name = get_bloginfo('name');
+    switch ($template){
+        case 'comment':
+            return sprintf(__('New Comment Notification - %s', 'tt'), $blog_name);
+            break;
+        case 'comment-admin':
+            return sprintf(__('New Comment In Your Blog - %s', 'tt'), $blog_name);
+            break;
+        case 'contribute-post':
+            return sprintf(__('New Comment Reply Notification - %s', 'tt'), $blog_name);
+            break;
+        case 'download':
+            return sprintf(__('The Files You Asking For In %s', 'tt'), $blog_name);
+            break;
+        case 'download-admin':
+            return sprintf(__('New Download Request Handled In Your Blog %s', 'tt'), $blog_name);
+            break;
+        case 'findpass':
+            return sprintf(__('New Comment Reply Notification - %s', 'tt'), $blog_name);
+            break;
+        case 'login':
+            return sprintf(__('New Login Event Notification - %s', 'tt'), $blog_name);
+            break;
+        case 'login-fail':
+            return sprintf(__('New Login Fail Event Notification - %s', 'tt'), $blog_name);
+            break;
+        case 'reply':
+            return sprintf(__('New Comment Reply Notification - %s', 'tt'), $blog_name);
+            break;
+        //TODO more
+        default:
+            return sprintf(__('Site Internal Notification - %s', 'tt'), $blog_name);
+    }
 }

@@ -14,7 +14,12 @@
 ?>
 <?php
 
-//echo 'Privacy Template';
-$templates = new League\Plates\Engine(THEME_TPL . '/plates');
+echo 'Privacy Template';
+//$templates = new League\Plates\Engine(THEME_TPL . '/plates');
 
-echo $templates->render('profile', ['name' => 'Jonathan']);
+//echo $templates->render('profile', ['name' => 'Jonathan']);
+
+tt_async_mail('mail@parser.cc', '813920477@qq.com', 'async test title', ['commentAuthor' => 'commentAuthor', 'commentLink' => 'https://www.webapproach.net', 'postTitle' => 'postTitle', 'commentContent' => 'commentContent']);
+
+//tt_async_mail('mail@parser.cc', '813920477@qq.com', 'test async title', 'test');
+//tt_mail('mail@parser.cc', '813920477@qq.com', 'test sync title', 'test');

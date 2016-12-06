@@ -210,3 +210,27 @@ function tt_filter_default_register_url() {
     return tt_url_for('signup');
 }
 add_filter('register_url', 'tt_filter_default_register_url');
+
+
+/**
+ * 更改找回密码邮件中的内容
+ *
+ * @since 2.0.0
+ * @param $message
+ * @param $key
+ * @return string
+ */
+function tt_reset_password_message( $message, $key ) {
+    if ( strpos($_POST['user_login'], '@') ) {
+        $user_data = get_user_by('email', trim($_POST['user_login']));
+    } else {
+        $login = trim($_POST['user_login']);
+        $user_data = get_user_by('login', $login);
+    }
+    $user_login = $user_data->user_login;
+    $reset_link = network_site_url('wp-login.php?action=rp&key=' . $key . '&login=' . rawurlencode($user_login), 'login') ;
+
+    $templates = new League\Plates\Engine(THEME_TPL . '/plates/emails');
+    return $templates->render('findpass', ['userLogin' => $user_login, 'resetPassLink' => $reset_link]);
+}
+add_filter('retrieve_password_message', 'tt_reset_password_message', null, 2);

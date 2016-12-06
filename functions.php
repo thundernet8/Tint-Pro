@@ -153,6 +153,8 @@ load_class('class.Open');
 load_class('class.PostImage');
 load_class('class.Utils');
 load_class('class.Member');
+load_class('class.Async.Task');
+load_class('class.Async.Email');
 // Plates模板引擎
 load_class('plates/Engine');
 load_class('plates/Extension/ExtensionInterface');
@@ -223,3 +225,6 @@ load_widget('wgt.UC');
 load_widget('wgt.Float');
 load_widget('wgt.EnhancedText');
 load_widget('wgt.Donate');
+
+/* 实例化异步任务类实现注册异步任务钩子 */
+new AsyncEmail();
