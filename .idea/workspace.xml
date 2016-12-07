@@ -2,14 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1212df9-9110-41ec-af9e-f8eb72c2514b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/functions/func.IP.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/api/v1/endpoints/class.Rest.Session.Controller.php" afterPath="$PROJECT_DIR$/core/api/v1/endpoints/class.Rest.Session.Controller.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/classes/class.Async.Email.php" afterPath="$PROJECT_DIR$/core/classes/class.Async.Email.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/func.Mail.php" afterPath="$PROJECT_DIR$/core/functions/func.Mail.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/plates/emails/login-fail.php" afterPath="$PROJECT_DIR$/core/templates/plates/emails/login-fail.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/plates/emails/login.php" afterPath="$PROJECT_DIR$/core/templates/plates/emails/login.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/site/tpl.Privacy.php" afterPath="$PROJECT_DIR$/core/templates/site/tpl.Privacy.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dash/options.php" afterPath="$PROJECT_DIR$/dash/options.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/functions.php" afterPath="$PROJECT_DIR$/functions.php" />
     </list>
     <ignored path="Tinection 2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,24 +34,6 @@
         <option name="myItemId" />
         <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
       </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="MySQL - wptestdb@localhost" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="MySQL - wptestdb@localhost" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="tint" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
     </PATH>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
@@ -65,11 +45,21 @@
       <file leaf-file-name="class.Async.Email.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/classes/class.Async.Email.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="727">
-              <caret line="61" column="1" selection-start-line="61" selection-start-column="1" selection-end-line="61" selection-end-column="1" />
+            <state relative-caret-position="570">
+              <caret line="59" column="26" selection-start-line="59" selection-start-column="26" selection-end-line="59" selection-end-column="26" />
               <folding>
                 <element signature="e#6#286#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="class.Rest.Session.Controller.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/core/api/v1/endpoints/class.Rest.Session.Controller.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="532">
+              <caret line="114" column="34" selection-start-line="114" selection-start-column="19" selection-end-line="114" selection-end-column="34" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -84,14 +74,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="func.Mail.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="func.Mail.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/functions/func.Mail.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="615">
-              <caret line="263" column="20" selection-start-line="263" selection-start-column="12" selection-end-line="263" selection-end-column="20" />
+            <state relative-caret-position="444">
+              <caret line="284" column="67" selection-start-line="284" selection-start-column="67" selection-end-line="284" selection-end-column="67" />
               <folding>
-                <marker date="1481037589806" expanded="true" signature="6148:6235" ph="ALTER TABLE $... " />
-                <marker date="1481037589806" expanded="true" signature="6312:6395" ph="UPDATE ${{$w... " />
+                <marker date="1481112907709" expanded="true" signature="6148:6235" ph="ALTER TABLE $... " />
+                <marker date="1481112907709" expanded="true" signature="6312:6395" ph="UPDATE ${{$w... " />
               </folding>
             </state>
           </provider>
@@ -100,7 +90,7 @@
       <file leaf-file-name="options.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dash/options.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="727">
+            <state relative-caret-position="28980">
               <caret line="1091" column="40" selection-start-line="1091" selection-start-column="40" selection-end-line="1091" selection-end-column="40" />
               <folding>
                 <element signature="e#17736#17945#0#PHP" expanded="false" />
@@ -119,52 +109,10 @@
       <file leaf-file-name="func.IP.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/functions/func.IP.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="335">
+            <state relative-caret-position="336">
               <caret line="23" column="25" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="25" />
               <folding>
                 <element signature="e#6#286#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="func.Message.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/functions/func.Message.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="73">
-              <caret line="24" column="41" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="41" />
-              <folding>
-                <marker date="1478801514698" expanded="true" signature="1231:1393" ph="INSERT INTO ${$table_name}... " />
-                <marker date="1478801514698" expanded="true" signature="2415:2492" ph="UPDATE ${$ta... " />
-                <marker date="1478801514698" expanded="true" signature="2842:2919" ph="UPDATE ${$ta... " />
-                <marker date="1478801514698" expanded="true" signature="3289:3367" ph="SELECT * FRO... ${$table_name}" />
-                <marker date="1478801514698" expanded="true" signature="4248:4404" ph="SELECT %s FR... " />
-                <marker date="1478801514698" expanded="true" signature="7130:7214" ph="UPDATE ${$ta... " />
-                <marker date="1478801514698" expanded="true" signature="7271:7357" ph="UPDATE ${$ta... " />
-                <marker date="1478801514698" expanded="true" signature="7745:7831" ph="UPDATE ${$ta... " />
-                <marker date="1478801514698" expanded="true" signature="8680:8865" ph="SELECT %s FR... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="reply.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/templates/plates/emails/reply.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="10" selection-end-column="123" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="class-http.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../../WebServer/WWW/wordpress_map/wp-includes/class-http.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="436">
-              <caret line="196" column="22" selection-start-line="196" selection-start-column="13" selection-end-line="196" selection-end-column="22" />
-              <folding>
-                <element signature="n#_get_first_available_transport#0;n#WP_Http#0;n#!!top" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -184,13 +132,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="dummy://restClient/response2.txt" root0="SKIP_INSPECTION" />
-  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/core/functions/shop/func.Shop.Address.php" />
         <option value="$PROJECT_DIR$/core/templates/site/tpl.PayGateway.php" />
         <option value="$PROJECT_DIR$/core/functions/shop/alipay/alipay_submit.class.php" />
         <option value="$PROJECT_DIR$/core/functions/shop/alipay/alipay_notify.class.php" />
@@ -232,15 +176,16 @@
         <option value="$PROJECT_DIR$/core/templates/plates/reply.php" />
         <option value="$PROJECT_DIR$/core/templates/plates/emails/comment.php" />
         <option value="$PROJECT_DIR$/core/templates/plates/emails/base.php" />
-        <option value="$PROJECT_DIR$/core/classes/class.Async.Task.php" />
-        <option value="$PROJECT_DIR$/core/classes/class.Async.Email.php" />
         <option value="$PROJECT_DIR$/functions.php" />
         <option value="$PROJECT_DIR$/core/functions/func.IP.php" />
+        <option value="$PROJECT_DIR$/dash/options.php" />
+        <option value="$PROJECT_DIR$/core/templates/site/tpl.Privacy.php" />
+        <option value="$PROJECT_DIR$/core/api/v1/endpoints/class.Rest.Session.Controller.php" />
+        <option value="$PROJECT_DIR$/core/classes/class.Async.Task.php" />
+        <option value="$PROJECT_DIR$/core/classes/class.Async.Email.php" />
         <option value="$PROJECT_DIR$/core/templates/plates/emails/login.php" />
         <option value="$PROJECT_DIR$/core/templates/plates/emails/login-fail.php" />
-        <option value="$PROJECT_DIR$/dash/options.php" />
         <option value="$PROJECT_DIR$/core/functions/func.Mail.php" />
-        <option value="$PROJECT_DIR$/core/templates/site/tpl.Privacy.php" />
       </list>
     </option>
   </component>
@@ -321,7 +266,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -556,6 +500,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -1017,7 +962,8 @@
       <workItem from="1480686352748" duration="2755000" />
       <workItem from="1480738073529" duration="23470000" />
       <workItem from="1480823273549" duration="34122000" />
-      <workItem from="1481024799270" duration="12945000" />
+      <workItem from="1481024799270" duration="12975000" />
+      <workItem from="1481110560737" duration="2370000" />
     </task>
     <task id="LOCAL-00001" summary="Add change log and contributing doc">
       <created>1476711242287</created>
@@ -1037,7 +983,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1516364000" />
+    <option name="totallyTimeSpent" value="1518764000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1052,12 +998,11 @@
     <frame x="-8" y="0" width="1928" height="1056" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25053534" sideWeight="0.4927798" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.253212" sideWeight="0.4927798" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32968238" sideWeight="0.4978678" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20824295" sideWeight="0.54273504" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13062099" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20065077" sideWeight="0.4728145" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329718" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20065077" sideWeight="0.4728145" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3264642" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20824295" sideWeight="0.45726496" order="11" side_tool="false" content_ui="tabs" />
@@ -1066,6 +1011,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329718" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329718" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -1142,20 +1088,6 @@
     </PATH>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/js/home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="505">
-          <caret line="77" column="4" selection-start-line="77" selection-start-column="4" selection-end-line="78" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/single.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="88" column="20" selection-start-line="88" selection-start-column="20" selection-end-line="88" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/js/product.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="645">
@@ -1310,7 +1242,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="69" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1350,7 +1281,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../../../WebServer/WWW/wordpress_map/wp-includes/class-http.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="436">
+        <state relative-caret-position="5320">
           <caret line="196" column="22" selection-start-line="196" selection-start-column="13" selection-end-line="196" selection-end-column="22" />
           <folding>
             <element signature="n#_get_first_available_transport#0;n#WP_Http#0;n#!!top" expanded="false" />
@@ -1358,19 +1289,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/classes/class.Async.Task.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="149" column="39" selection-start-line="149" selection-start-column="39" selection-end-line="149" selection-end-column="39" />
-          <folding>
-            <element signature="e#6#255#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/templates/plates/emails/reply.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
+        <state relative-caret-position="140">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="10" selection-end-column="123" />
           <folding />
         </state>
@@ -1386,7 +1307,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/functions/func.Message.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="73">
+        <state relative-caret-position="364">
           <caret line="24" column="41" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="41" />
           <folding>
             <marker date="1478801514698" expanded="true" signature="1231:1393" ph="INSERT INTO ${$table_name}... " />
@@ -1406,7 +1327,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
@@ -1423,19 +1343,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/classes/class.Async.Email.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="727">
-          <caret line="61" column="1" selection-start-line="61" selection-start-column="1" selection-end-line="61" selection-end-column="1" />
-          <folding>
-            <element signature="e#6#286#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/functions/func.IP.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
+        <state relative-caret-position="336">
           <caret line="23" column="25" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="25" />
           <folding>
             <element signature="e#6#286#0#PHP" expanded="true" />
@@ -1443,25 +1353,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/templates/plates/emails/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="7" column="74" selection-start-line="7" selection-start-column="74" selection-end-line="7" selection-end-column="74" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/templates/plates/emails/login-fail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="2" column="49" selection-start-line="2" selection-start-column="49" selection-end-line="2" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dash/options.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="727">
+        <state relative-caret-position="28980">
           <caret line="1091" column="40" selection-start-line="1091" selection-start-column="40" selection-end-line="1091" selection-end-column="40" />
           <folding>
             <element signature="e#17736#17945#0#PHP" expanded="false" />
@@ -1476,10 +1370,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/core/api/v1/endpoints/class.Rest.Coupon.Controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../../../WebServer/WWW/wordpress_map/wp-includes/user.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="689">
-          <caret line="101" column="44" selection-start-line="101" selection-start-column="34" selection-end-line="101" selection-end-column="44" />
+        <state relative-caret-position="236">
+          <caret line="27" column="9" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
           <folding>
             <marker date="1458116486000" expanded="true" signature="10990:11024" ph="SELECT COUNT... wp_posts" />
             <marker date="1458116486000" expanded="true" signature="12436:12541" ph="SELECT post_... wp_posts" />
@@ -1496,11 +1398,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/api/v1/endpoints/class.Rest.Session.Controller.php">
+    <entry file="file://$PROJECT_DIR$/core/classes/class.Async.Email.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="106" column="25" selection-start-line="106" selection-start-column="20" selection-end-line="106" selection-end-column="29" />
-          <folding />
+        <state relative-caret-position="570">
+          <caret line="59" column="26" selection-start-line="59" selection-start-column="26" selection-end-line="59" selection-end-column="26" />
+          <folding>
+            <element signature="e#6#286#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1512,14 +1416,59 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/core/templates/plates/emails/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="2" column="52" selection-start-line="2" selection-start-column="52" selection-end-line="2" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/templates/plates/emails/login-fail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="2" column="53" selection-start-line="2" selection-start-column="53" selection-end-line="2" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/core/functions/func.Mail.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="263" column="20" selection-start-line="263" selection-start-column="12" selection-end-line="263" selection-end-column="20" />
+        <state relative-caret-position="444">
+          <caret line="284" column="67" selection-start-line="284" selection-start-column="67" selection-end-line="284" selection-end-column="67" />
           <folding>
-            <marker date="1481037589806" expanded="true" signature="6148:6235" ph="ALTER TABLE $... " />
-            <marker date="1481037589806" expanded="true" signature="6312:6395" ph="UPDATE ${{$w... " />
+            <marker date="1481112907709" expanded="true" signature="6148:6235" ph="ALTER TABLE $... " />
+            <marker date="1481112907709" expanded="true" signature="6312:6395" ph="UPDATE ${{$w... " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/classes/class.Async.Task.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1222">
+          <caret line="153" column="13" selection-start-line="153" selection-start-column="13" selection-end-line="153" selection-end-column="13" />
+          <folding>
+            <element signature="e#6#255#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../WebServer/WWW/wordpress_map/wp-includes/pluggable.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="497">
+          <caret line="2049" column="52" selection-start-line="2049" selection-start-column="52" selection-end-line="2049" selection-end-column="52" />
+          <folding>
+            <marker date="1466489430000" expanded="true" signature="3278:3324" ph="SELECT * FRO... wp_users" />
+            <marker date="1466489430000" expanded="true" signature="50953:51027" ph="SELECT count... wp_comments" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/api/v1/endpoints/class.Rest.Session.Controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="114" column="34" selection-start-line="114" selection-start-column="19" selection-end-line="114" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1551,6 +1500,6 @@
     </states>
   </component>
   <component name="webServersAuthStorage">
-    <data>AAAAcITzUtEXkylnzIjO4K690+/2zhugR8XSkJ/9YbPN6lA5N8uu4KxrpJZgfM1BE8Qa7bcRgQ4nV1HVgJ/v82/fpUFqsLCvYgmEC+5w9UVsgkqJ2b3Mpu7CG3y24fJiLnX95Psrbq+2b+X7N8CzrphmaW6Z6vWl75fphRfNoOrXyDFB</data>
+    <data>AAAAcITrs0c2GwEebcjBREaEpHZk5c65EUA6PnG7sdRM6J1titnNCcH1pmpLpri7R5U2M2qGFcFmbZqYh6/cjmN2tnFkVw9Tr28Wqv4S66c4UYpcu+3X74vXPaEY8+h8npuNNaHfmDTS8g6xqBmuzMeCoamzKOLeYmJ5oEbGOoT3/07C</data>
   </component>
 </project>

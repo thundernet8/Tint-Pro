@@ -111,6 +111,9 @@ class WP_REST_Session_Controller extends WP_REST_Controller
             ));
         }
 
+        //hook
+        do_action('wp_login_failed', $user_login);
+
         return new WP_Error( 'rest_session_invalid_login', __( 'There is no user matches the info you offered', 'tt' ), array( 'status' => tt_rest_authorization_required_code() ) );
     }
 

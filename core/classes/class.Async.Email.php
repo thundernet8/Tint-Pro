@@ -56,7 +56,8 @@ final class AsyncEmail extends WPAsyncTask {
             'args' => $args,
             'template' => $_POST['template']
         );
-        do_action( "tt_async_$this->action", $data['from'], $data['to'], $data['title'], $data['args'], $data['template'] );
+        $action = $_POST['action'];
+        do_action( $action, $data['from'], $data['to'], $data['title'], $data['args'], $data['template'] );
         // 也可以直接tt_mail($data['from'], $data['to'], $data['title'], $data['args'], $data['template']), 则不需要在tt_mail下写add_action('tt_async_send_mail', xx);
     }
 }

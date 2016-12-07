@@ -254,9 +254,10 @@ function tt_wp_login_notify($user_login){
     }
     date_default_timezone_set ('Asia/Shanghai');
     $admin_email = get_bloginfo ('admin_email');
-    $subject = '你的博客空间登录提醒';
+    $subject = __('你的博客空间登录提醒', 'tt');
     $args = array(
-        'loginName' => $user_login
+        'loginName' => $user_login,
+        'ip' => $_SERVER['REMOTE_ADDR']
     );
     tt_async_mail('', $admin_email, $subject, $args, 'login');
     //tt_mail('', $admin_email, $subject, $args, 'login');
@@ -276,9 +277,10 @@ function tt_wp_login_failure_notify($login_name){
     }
     date_default_timezone_set ('Asia/Shanghai');
     $admin_email = get_bloginfo ('admin_email');
-    $subject = '你的博客空间登录错误警告';
+    $subject = __('你的博客空间登录错误警告', 'tt');
     $args = array(
-        'loginName' => $login_name
+        'loginName' => $login_name,
+        'ip' => $_SERVER['REMOTE_ADDR']
     );
     tt_async_mail('', $admin_email, $subject, $args, 'login-fail');
 }
