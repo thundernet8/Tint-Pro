@@ -198,7 +198,7 @@ function tt_install_membership_table(){
     include_once(ABSPATH . '/wp-admin/includes/upgrade.php');
     $table_charset = '';
     $prefix = $wpdb->prefix;
-    $users_table = $prefix . 'tt_vip_users';
+    $users_table = $prefix . 'tt_members';
     if($wpdb->has_cap('collation')) {
         if(!empty($wpdb->charset)) {
             $table_charset = "DEFAULT CHARACTER SET $wpdb->charset";
@@ -207,7 +207,7 @@ function tt_install_membership_table(){
             $table_charset .= " COLLATE $wpdb->collate";
         }
     }
-    $create_vip_users_sql = "CREATE TABLE $users_table (id int(11) NOT NULL auto_increment,user_id int(11) NOT NULL,user_type tinyint(4) NOT NULL default 0,startTime datetime NOT NULL default '0000-00-00 00:00:00',endTime datetime NOT NULL default '0000-00-00 00:00:00',PRIMARY KEY (id),INDEX uid_index(user_id),INDEX utype_index(user_type)) ENGINE = MyISAM $table_charset;";
+    $create_vip_users_sql = "CREATE TABLE $users_table (id int(11) NOT NULL auto_increment,user_id int(11) NOT NULL,user_type tinyint(4) NOT NULL default 0,startTime datetime NOT NULL default '0000-00-00 00:00:00',endTime datetime NOT NULL default '0000-00-00 00:00:00',endTimeStamp int NOT NULL default 0,PRIMARY KEY (id),INDEX uid_index(user_id),INDEX utype_index(user_type),INDEX endTime_index(user_id)) ENGINE = MyISAM $table_charset;";
     maybe_create_table($users_table, $create_vip_users_sql);
 }
 add_action('load-themes.php', 'tt_install_membership_table');

@@ -46,7 +46,7 @@ if($currency != 'cash'){
     <div class="main inner-wrap">
         <section class="processor">
             <ol>
-                <li class="size1of2">
+                <li class="done size1of2">
                     <div class="step_line"></div>
                     <div class="step_inner">
                         <i class="icon_step">1</i>

@@ -175,6 +175,7 @@ if(is_admin()) {
     load_class('class.Tgm.Plugin.Activation');
 }
 if(TT_PRO && tt_get_option('tt_enable_shop', false)){
+    load_class('shop/class.Product');
     load_class('shop/alipay/alipay_notify.class');
     load_class('shop/alipay/alipay_submit.class');
 }

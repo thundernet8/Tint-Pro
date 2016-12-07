@@ -63,7 +63,7 @@ function tt_mail($from, $to, $title = '', $args = array(), $template = 'comment'
     $blog_name = get_bloginfo('name');
     $sender_name = tt_get_option('tt_mail_custom_sender') || tt_get_option('tt_smtp_name', $blog_name);
     if(empty($from)){
-        $from = 'no-reply@' . preg_replace('#^www\.#', '', strtolower($_SERVER['SERVER_NAME'])); //TODO: case e.g subdomain.domain.com
+        $from = tt_get_option('tt_mail_custom_address', 'no-reply@' . preg_replace('#^www\.#', '', strtolower($_SERVER['SERVER_NAME']))); //TODO: case e.g subdomain.domain.com
     }
 
     $fr = "From: \"" . $sender_name . "\" <$from>";
@@ -285,3 +285,89 @@ function tt_wp_login_failure_notify($login_name){
     tt_async_mail('', $admin_email, $subject, $args, 'login-fail');
 }
 add_action('wp_login_failed', 'tt_wp_login_failure_notify', 10, 1);
+
+
+/**
+ * 投稿文章发表时给作者添加积分和发送邮件通知
+ *
+ * @since 2.0.0
+ * @param $post
+ * @return void
+ */
+function tt_pending_to_publish( $post ) {
+    $rec_post_num = (int)tt_get_option('tt_rec_post_num', '5');
+    $rec_post_credit = (int)tt_get_option('tt_rec_post_credit','50');
+    $rec_post = (int)get_user_meta( $post->post_author, 'tt_rec_post', true );
+    if( $rec_post<$rec_post_num && $rec_post_credit ){
+        //添加积分
+        tt_update_user_credit($post->post_author, $rec_post_credit, sprintf(__('获得文章投稿奖励%1$s积分', 'tt'), $rec_post_credit), false);
+        //发送邮件
+        $user = get_user_by( 'id', $post->post_author );
+        $user_email = $user->user_email;
+        if( filter_var( $user_email , FILTER_VALIDATE_EMAIL)){
+            $subject = sprintf(__('你在%1$s上有新的文章发表', 'tt'), get_bloginfo('name'));
+            $args = array(
+                'postAuthor' => $user->display_name,
+                'postLink' => get_permalink($post->ID),
+                'postTitle' => $post->post_title
+            );
+            tt_async_mail('', $user_email, $subject, $args, 'contribute-post');
+        }
+    }
+    update_user_meta( $post->post_author, 'tt_rec_post', $rec_post+1);
+}
+add_action( 'pending_to_publish',  'tt_pending_to_publish', 10, 1 );
+
+
+/**
+ * 开通或续费会员后发送邮件
+ *
+ * @since 2.0.0
+ * @param $user_id
+ * @param $type
+ * @param $start_time
+ * @param $end_time
+ */
+function tt_open_vip_email($user_id, $type, $start_time, $end_time){
+    $user = get_user_by( 'id', $user_id );
+    if(!$user){
+        return;
+    }
+    $user_email = $user->user_email;
+    $subject = __('会员状态变更提醒', 'tt');
+    $vip_type_des = tt_get_member_type_string($type);
+    $args = array(
+        'adminEmail' => get_option('admin_email'),
+        'vipType' => $vip_type_des,
+        'startTime' => $start_time,
+        'endTime' => $end_time
+    );
+    tt_async_mail('', $user_email, $subject, $args, 'open-vip');
+}
+
+
+/**
+ * 管理员手动提升会员后发送邮件
+ *
+ * @since 2.0.0
+ * @param $user_id
+ * @param $type
+ * @param $start_time
+ * @param $end_time
+ */
+function tt_promote_vip_email($user_id, $type, $start_time, $end_time){
+    $user = get_user_by( 'id', $user_id );
+    if(!$user){
+        return;
+    }
+    $user_email = $user->user_email;
+    $subject = __('会员状态变更提醒', 'tt');
+    $vip_type_des = tt_get_member_type_string($type);
+    $args = array(
+        'adminEmail' => get_option('admin_email'),
+        'vipType' => $vip_type_des,
+        'startTime' => $start_time,
+        'endTime' => $end_time
+    );
+    tt_async_mail('', $user_email, $subject, $args, 'promote-vip');
+}

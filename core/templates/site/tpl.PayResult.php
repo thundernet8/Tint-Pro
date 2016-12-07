@@ -53,18 +53,18 @@ $current_user = wp_get_current_user();
     <div class="main inner-wrap">
         <section class="processor">
             <ol>
-                <li class="size1of2">
+                <li class="done size1of2">
                     <div class="step_line"></div>
                     <div class="step_inner">
                         <i class="icon_step">1</i>
                         <h4><?php _e('Confirm Order', 'tt'); ?></h4>
                     </div>
                 </li>
-                <li class="size1of2 no_extra">
+                <li class="done size1of2 no_extra">
                     <div class="step_line"></div>
                     <div class="step_inner">
                         <i class="icon_step">2</i>
-                        <h4><?php _e('Payment Accomplish', 'tt'); ?></h4>
+                        <h4><?php _e('Accomplish Payment', 'tt'); ?></h4>
                     </div>
                 </li>
                 <li class="current size1of2 last">

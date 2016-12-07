@@ -28,7 +28,7 @@ defined('CSS_ME') || define('CSS_ME', 'me-e5e83f102f.css');
 defined('CSS_ACTION') || define('CSS_ACTION', 'actions-7608b913b7.css');
 defined('CSS_404') || define('CSS_404', '404-28b80ae25e.css');
 defined('CSS_ERROR_PAGE') || define('CSS_ERROR_PAGE', 'error-page-3f93122770.css');
-defined('CSS_SITE_UTILS') || define('CSS_SITE_UTILS', 'site-utils-660dcc6273.css');
+defined('CSS_SITE_UTILS') || define('CSS_SITE_UTILS', 'site-utils-16737d4e3a.css');
 
 // JS
 defined('JS_COMMON') || define('JS_COMMON', 'common-caa0d2a669.js');

@@ -596,6 +596,50 @@ function optionsframework_options() {
 		'type' => 'heading'
 	);
 
+    // - 月费会员价格
+    $options[] = array(
+        'name' => __( '月费会员价格', 'tt' ),
+        'desc' => '',
+        'id' => 'tt_monthly_vip_price',
+        'std' => 10,
+        'class' => 'mini',
+        'type' => 'text'
+    );
+
+
+    // - 年费会员价格
+    $options[] = array(
+        'name' => __( '年费会员价格', 'tt' ),
+        'desc' => '',
+        'id' => 'tt_annual_vip_price',
+        'std' => 100,
+        'class' => 'mini',
+        'type' => 'text'
+    );
+
+
+    // - 永久会员价格
+    $options[] = array(
+        'name' => __( '永久会员价格', 'tt' ),
+        'desc' => '',
+        'id' => 'tt_permanent_vip_price',
+        'std' => 199,
+        'class' => 'mini',
+        'type' => 'text'
+    );
+
+
+    // - 积分价格
+    $options[] = array(
+        'name' => __( '积分价格(元/100积分)', 'tt' ),
+        'desc' => __('注意: 积分充值最小单位为100, 此价格为100个积分的价格'),
+        'id' => 'tt_hundred_credit_price',
+        'std' => 1,
+        'class' => 'mini',
+        'type' => 'text'
+    );
+
+
     // - 注册奖励积分
     $options[] = array(
         'name' => __( '注册奖励积分', 'tt' ),

@@ -191,13 +191,13 @@ function tt_create_order($product_id, $product_name = '', $order_quantity = 1, $
     // 折扣
     $discount_summary = maybe_unserialize(get_post_meta($product_id, 'tt_product_discount', true)); // array 第1项为普通折扣, 第2项为会员(月付)折扣, 第3项为会员(年付)折扣, 第4项为会员(终身)折扣
     switch ($member->vip_type){
-        case 'monthly':
+        case Member::MONTHLY_VIP:
             $discount = isset($discount_summary[1]) ? $discount_summary[1] : 100;
             break;
-        case 'yearly':
+        case Member::ANNUAL_VIP:
             $discount = isset($discount_summary[2]) ? $discount_summary[2] : 100;
             break;
-        case 'forever':
+        case Member::PERMANENT_VIP:
             $discount = isset($discount_summary[3]) ? $discount_summary[3] : 100;
             break;
         default:
@@ -224,7 +224,6 @@ function tt_create_order($product_id, $product_name = '', $order_quantity = 1, $
             'order_quantity' => $order_quantity,
             'order_total_price' => $order_total_price,
             'user_id' => $user_id
-
         ),
         array(
             '%d',
@@ -440,5 +439,9 @@ function tt_update_order_product_quantity($order_id) {
 }
 
 function tt_send_order_goods($order_id){
+    // TODO
+}
+
+function tt_continue_pay($order_id){
     // TODO
 }

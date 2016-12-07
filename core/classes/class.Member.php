@@ -19,31 +19,88 @@
  */
 class Member{
 
+    const NORMAL_MEMBER = 0;
+
+    const MONTHLY_VIP = 1;
+
+    const ANNUAL_VIP = 2;
+
+    const PERMANENT_VIP = 3;
+
+    const MONTHLY_VIP_PERIOD = 2592000;
+
+    const ANNUAL_VIP_PERIOD = 31536000;
+
+    const PERMANENT_VIP_PERIOD = 315360000;
+
     private $_user;
 
-    public $vip_type = 'normal';
+    private $_uid;
+
+    private $_member_row = false;
+
+    private $vip_type = 0;
 
     public function __construct($user_or_id){
         if($user_or_id instanceof WP_User){
             $this->_user = $user_or_id;
-        }elseif((int)$user_or_id > 0){
-            $this->_user = get_user_by('id', (int)$user_or_id);
         }else{
-            // TODO: error
+            $this->_user = get_user_by('id', (int)$user_or_id);
         }
 
-//        if($this->_user){
-//            foreach (get_object_vars($this->_user) as $key => $value){
-//                $this->{$key} = $value;
-//            }
-//        }
+        if($this->_user){
+            $this->_uid = $this->_user->ID;
+            foreach (get_object_vars($this->_user) as $key => $value){
+                $this->{$key} = $value;
+            }
+        }
+    }
+
+    private function __get($property_name) {
+        switch ($property_name){
+            case 'vip_type':
+                return $this->get_vip_type();
+            default:
+                if(isset($this->$property_name)){
+                    return $this->$property_name;
+                }else{
+                    return null;
+                }
+        }
+    }
+
+    private function __set($property_name, $value) {
+        switch ($property_name){
+            case 'vip_type': // 不允许外部设值
+                break;
+            default:
+                $this->$property_name = $value;
+        }
+    }
+
+    private function get_vip_type() {
+        if($this->_member_row === false){
+            $row = tt_get_member_row($this->_uid);
+            $this->_member_row = $row;
+            $this->vip_type = $row->user_type;
+            return $row->user_type;
+        }
+        return 0;
     }
 
     public function is_vip(){
-        return true; //TODO
+        return $this->get_vip_type() > self::NORMAL_MEMBER;
     }
 
     public function is_monthly_vip(){
-        return true; //TODO
+        return $this->get_vip_type() == self::MONTHLY_VIP;
+    }
+
+    public function is_annual_vip(){
+        return $this->get_vip_type() == self::ANNUAL_VIP;
+    }
+
+    public function is_permanent_vip(){
+        return $this->get_vip_type() == self::PERMANENT_VIP;
     }
 }

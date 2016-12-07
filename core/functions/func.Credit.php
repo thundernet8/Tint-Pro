@@ -55,7 +55,7 @@ function tt_update_user_credit($user_id = 0, $amount = 0, $msg = '', $admin_hand
     $before_credits = (int)get_user_meta($user_id, 'tt_credits', true);
     // 管理员直接更改用户积分
     if($admin_handle){
-        $update = update_user_meta($user_id, 'tt_credits', absint($amount));
+        $update = update_user_meta($user_id, 'tt_credits', min(0, (int)$amount));
         if($update){
             // 添加积分消息
             $msg = $msg ? : sprintf(__('Administrator change your credits to %d', 'tt') , $amount);
@@ -289,4 +289,57 @@ function tt_credits_rank($limits=10, $offset = 0){
     $offset = absint($offset);
     $ranks = $wpdb->get_results( " SELECT * FROM $wpdb->usermeta WHERE meta_key='tt_credits' ORDER BY -meta_value ASC LIMIT $limits OFFSET $offset" );
     return $ranks;
+}
+
+
+/**
+ * 创建积分充值订单
+ *
+ * @since 2.0.0
+ * @param $user_id
+ * @param int $amount // 积分数量为100*$amount
+ * @return array|bool
+ */
+function tt_create_credit_charge_order($user_id, $amount = 1){
+    $amount = absint($amount);
+    if(!$amount){
+        return false;
+    }
+    $order_id = tt_generate_order_num();
+    $order_time = current_time('mysql');
+    $product_id = Product::CREDIT_CHARGE;
+    $product_name = Product::CREDIT_CHARGE_NAME;
+    $currency = 'cash';
+    $hundred_credits_price = intval(tt_get_option('tt_hundred_credit_price', 1));
+    $order_price = sprintf('%0.2f', $hundred_credits_price/100);
+    $order_quantity = $amount * 100;
+    $order_total_price = sprintf('%0.2f', $hundred_credits_price * $amount);
+
+    global $wpdb;
+    $prefix = $wpdb->prefix;
+    $orders_table = $prefix . 'tt_orders';
+    $insert = $wpdb->insert(
+        $orders_table,
+        array(
+            'parent_id' => 0,
+            'order_id' => $order_id,
+            'product_id' => $product_id,
+            'product_name' => $product_name,
+            'order_time' => $order_time,
+            'order_price' => $order_price,
+            'order_currency' => $currency,
+            'order_quantity' => $order_quantity,
+            'order_total_price' => $order_total_price,
+            'user_id' => $user_id
+        ),
+        array('%d', '%s', '%d', '%s', '%s', '%f', '%s', '%d', '%f', '%d')
+    );
+    if($insert) {
+        return array(
+            'insert_id' => $wpdb->insert_id,
+            'order_id' => $order_id,
+            'total_price' => $order_total_price
+        );
+    }
+    return false;
 }
