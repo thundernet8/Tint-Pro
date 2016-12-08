@@ -35,6 +35,15 @@ function tt_add_more_buttons($buttons){
 }
 add_filter("mce_buttons_3", "tt_add_more_buttons");
 
+
+/**
+ * 后台编辑器文本模式添加短代码快捷输入按钮
+ */
+function tt_editor_quicktags() {
+    wp_enqueue_script('my_quicktags', THEME_ASSET . '/dash/js/my_quicktags.js', array('quicktags'), '2.0.0');
+}
+add_action('admin_print_scripts', 'tt_editor_quicktags');
+
 /**
  * 添加Admin bar项目
  *

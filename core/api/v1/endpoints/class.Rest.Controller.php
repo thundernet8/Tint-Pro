@@ -15,6 +15,8 @@
 <?php
 
 // http://v2.wp-api.org/
+if(!class_exists('WP_REST_Controller')):
+
 abstract class WP_REST_Controller {
 
     /**
@@ -496,3 +498,5 @@ abstract class WP_REST_Controller {
     }
 
 }
+
+endif;

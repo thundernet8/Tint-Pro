@@ -49,16 +49,16 @@ $product_des = '';
 if($product_id>0){
     $product_name = $order->product_name;
     $product_des = get_post_field('post_excerpt', $product_id);
-}elseif($product_id==-1){
+}elseif($product_id==Product::MONTHLY_VIP){
     $product_name = __('VIP Membership(Monthly)', 'tt');
     $product_des = __('Subscribe VIP Membership(Monthly)', 'tt');
-}elseif($product_id==-2){
+}elseif($product_id==Product::ANNUAL_VIP){
     $product_name = __('VIP Membership(Annual)', 'tt');
     $product_des = __('Subscribe VIP Membership(Annual)', 'tt');
-}elseif($product_id==-3){
+}elseif($product_id==Product::PERMANENT_VIP){
     $product_name = __('VIP Membership(Permanent)', 'tt');
     $product_des = __('Subscribe VIP Membership(Permanent)', 'tt');
-}elseif($product_id==-4){
+}elseif($product_id==Product::CREDIT_CHARGE){
     $product_name = __('Credits Charge', 'tt');
     $product_des=$order->product_name;
 }else{

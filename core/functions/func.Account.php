@@ -151,7 +151,11 @@ function tt_activate_registration_from_link($key) {
     );
 
     // 发送激活成功与注册欢迎信
-    tt_mail('', $data['email'], '', array('email' => $data['email'], 'name' => $data['username'], 'user_id' => $userdata), 'register_activation_done');
+    $blogname = get_bloginfo('name');
+    // 给注册用户
+    tt_async_mail('', $data['email'], sprintf(__('欢迎加入[%s]', 'tt'), $blogname), array('loginName' => $data['username'], 'password' => $data['password'], 'loginLink' => tt_url_for('signin')), 'register');
+    // 给管理员
+    tt_async_mail('', get_option('admin_email'), sprintf(__('您的站点「%s」有新用户注册 :', 'tt'), $blogname), array('loginName' => $data['username'], 'email' => $data['email'], 'ip' => $_SERVER['REMOTE_ADDR']), 'register-admin');
 
     return $result;
 }

@@ -24,3 +24,4 @@ echo 'Privacy Template';
 //tt_async_mail('mail@parser.cc', '813920477@qq.com', 'test async title', 'test');
 //tt_mail('mail@parser.cc', '813920477@qq.com', 'test sync title', 'test');
 //do_action('wp_login', 'wp_login');
+

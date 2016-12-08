@@ -14,6 +14,9 @@
 ?>
 <?php
 
+/**
+ * Class PostImage
+ */
 final class PostImage{
     /**
      * 文章缩略图或图片处理操作相关
