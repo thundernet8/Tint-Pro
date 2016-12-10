@@ -2,57 +2,39 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1212df9-9110-41ec-af9e-f8eb72c2514b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/modules/mod.SinglePage.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/templates/page/tpl.Page.Links.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/viewModels/vm.Single.Page.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/css/page.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/js/page.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/404-ba85897b1f.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/actions-7189ea979b.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/archive-7d5cb2712a.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/front-page-f7acd7f104.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/home-f451d30f16.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/me-f7acd7f104.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/product-723ac15aa7.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/products-dd535b4518.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/single-997217ccd2.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/site-utils-cdd0dd5143.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/uc-2a7b86eeba.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/js/product-29f1efeabf.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/js/products-c45bc98c2f.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/js/single-343395da5a.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/js/site-utils-8d6981f67c.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/js/uc-a3b8857f76.js" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/templates/me/tpl.Me.Credits.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/home-9817e7ad99.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/page-a40d6b391a.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/single-4ebb1efd08.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/js/archive-498b848ca0.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/js/home-40fdbc2ff1.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/js/page-2e7e271cfb.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/js/product-abde12d5d9.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/js/products-6e88703000.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/js/single-e7a054ad4b.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/js/site-utils-29dde61dc5.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/js/uc-9b86b73cf0.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/404-4208349e1c.css" afterPath="$PROJECT_DIR$/assets/css/404-4208349e1c.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/actions-206d0e6c62.css" afterPath="$PROJECT_DIR$/assets/css/actions-206d0e6c62.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/archive-848a260aae.css" afterPath="$PROJECT_DIR$/assets/css/archive-848a260aae.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/error-page-3f93122770.css" afterPath="$PROJECT_DIR$/assets/css/error-page-3f93122770.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/front-page-8dc5564560.css" afterPath="$PROJECT_DIR$/assets/css/front-page-8dc5564560.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/me-8dc5564560.css" afterPath="$PROJECT_DIR$/assets/css/me-8dc5564560.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/product-cb32facea6.css" afterPath="$PROJECT_DIR$/assets/css/product-cb32facea6.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/products-d88582aa66.css" afterPath="$PROJECT_DIR$/assets/css/products-d88582aa66.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/site-utils-988aaa01c9.css" afterPath="$PROJECT_DIR$/assets/css/site-utils-988aaa01c9.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/uc-1b484af02d.css" afterPath="$PROJECT_DIR$/assets/css/uc-1b484af02d.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/404-2f0fc73298.js" afterPath="$PROJECT_DIR$/assets/js/404-2f0fc73298.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/actionPage-220c5c3c4b.js" afterPath="$PROJECT_DIR$/assets/js/actionPage-220c5c3c4b.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/archive-498b848ca0.js" afterPath="$PROJECT_DIR$/assets/js/archive-498b848ca0.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/frontPage-6407430b6a.js" afterPath="$PROJECT_DIR$/assets/js/frontPage-6407430b6a.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/home-40fdbc2ff1.js" afterPath="$PROJECT_DIR$/assets/js/home-40fdbc2ff1.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/me-6407430b6a.js" afterPath="$PROJECT_DIR$/assets/js/me-6407430b6a.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/Constants.php" afterPath="$PROJECT_DIR$/core/functions/Constants.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/asset.Constant.php" afterPath="$PROJECT_DIR$/core/functions/asset.Constant.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/func.Kits.php" afterPath="$PROJECT_DIR$/core/functions/func.Kits.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/func.Metabox.php" afterPath="$PROJECT_DIR$/core/functions/func.Metabox.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/func.Page.php" afterPath="$PROJECT_DIR$/core/functions/func.Page.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/func.Script.php" afterPath="$PROJECT_DIR$/core/functions/func.Script.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/func.ShortCode.php" afterPath="$PROJECT_DIR$/core/functions/func.ShortCode.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/shop/func.Shop.Orders.php" afterPath="$PROJECT_DIR$/core/functions/shop/func.Shop.Orders.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/metaKeys.md" afterPath="$PROJECT_DIR$/core/metaKeys.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/shop/mod.Shop.Relates.php" afterPath="$PROJECT_DIR$/core/modules/shop/mod.Shop.Relates.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/shop/mod.Shop.Sidebar.Left.php" afterPath="$PROJECT_DIR$/core/modules/shop/mod.Shop.Sidebar.Left.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/shop/mod.Shop.Sidebar.Right.php" afterPath="$PROJECT_DIR$/core/modules/shop/mod.Shop.Sidebar.Right.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/page/tpl.Page.php" afterPath="$PROJECT_DIR$/core/templates/page/tpl.Page.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/shop/tpl.Product.php" afterPath="$PROJECT_DIR$/core/templates/shop/tpl.Product.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/viewModels/shop/vm.Shop.LatestRated.php" afterPath="$PROJECT_DIR$/core/viewModels/shop/vm.Shop.LatestRated.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/viewModels/shop/vm.Shop.Product.php" afterPath="$PROJECT_DIR$/core/viewModels/shop/vm.Shop.Product.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/viewModels/shop/vm.Shop.ViewHistory.php" afterPath="$PROJECT_DIR$/core/viewModels/shop/vm.Shop.ViewHistory.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/functions.php" afterPath="$PROJECT_DIR$/functions.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/css/product.less" afterPath="$PROJECT_DIR$/src/css/product.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/site-utils.js" afterPath="$PROJECT_DIR$/src/js/site-utils.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/php/asset.Constant.php" afterPath="$PROJECT_DIR$/src/php/asset.Constant.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dash/dash.php" afterPath="$PROJECT_DIR$/dash/dash.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/css/modules/aside/sidebar.less" afterPath="$PROJECT_DIR$/src/css/modules/aside/sidebar.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/modules/scroll.js" afterPath="$PROJECT_DIR$/src/js/modules/scroll.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/rev/rev-manifest.json" afterPath="$PROJECT_DIR$/src/rev/rev-manifest.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/templates/page/tpl.Test.php" afterPath="$PROJECT_DIR$/core/templates/page/tpl.Page.FullWidth.php" />
     </list>
     <ignored path="Tinection 2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -87,115 +69,47 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="dash.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dash/dash.php">
+      <file leaf-file-name="scroll.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/js/modules/scroll.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="619">
-              <caret line="42" column="106" selection-start-line="42" selection-start-column="106" selection-end-line="42" selection-end-column="106" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="product.less" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/css/product.less">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="619">
-              <caret line="388" column="55" selection-start-line="388" selection-start-column="55" selection-end-line="388" selection-end-column="55" />
+            <state relative-caret-position="126">
+              <caret line="101" column="47" selection-start-line="101" selection-start-column="47" selection-end-line="101" selection-end-column="47" />
               <folding>
-                <element signature="e#16351#17165#0" expanded="false" />
-                <element signature="e#17192#25883#0" expanded="false" />
-                <element signature="e#25909#29878#0" expanded="false" />
+                <element signature="e#539#820#0" expanded="false" />
+                <element signature="e#855#966#0" expanded="false" />
+                <element signature="e#1269#1980#0" expanded="false" />
+                <element signature="e#2015#2190#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tpl.Single.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/templates/single/tpl.Single.php">
+      <file leaf-file-name="func.Script.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/core/functions/func.Script.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="23" selection-end-column="25" />
+            <state relative-caret-position="476">
+              <caret line="28" column="80" selection-start-line="28" selection-start-column="76" selection-end-line="28" selection-end-column="80" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tpl.Page.FullWidth.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/core/templates/page/tpl.Page.FullWidth.php">
+      <file leaf-file-name="asset.Constant.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/functions/asset.Constant.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tpl.Page.Links.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/templates/page/tpl.Page.Links.php">
+      <file leaf-file-name="sidebar.less" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/css/modules/aside/sidebar.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="423">
-              <caret line="20" column="68" selection-start-line="20" selection-start-column="68" selection-end-line="20" selection-end-column="68" />
-              <folding>
-                <element signature="e#6#312#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="func.Page.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/functions/func.Page.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="86" column="0" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
+            <state relative-caret-position="140">
+              <caret line="53" column="8" selection-start-line="53" selection-start-column="8" selection-end-line="53" selection-end-column="8" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tpl.Page.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/templates/page/tpl.Page.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mod.SinglePage.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/modules/mod.SinglePage.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1288">
-              <caret line="40" column="19" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="19" />
-              <folding>
-                <element signature="e#6#286#0#PHP" expanded="true" />
-                <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="page.less" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/css/page.less">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="451">
-              <caret line="64" column="43" selection-start-line="64" selection-start-column="43" selection-end-line="64" selection-end-column="43" />
-              <folding>
-                <element signature="e#2222#3900#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="page.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/js/page.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="421">
-              <caret line="45" column="4" selection-start-line="45" selection-start-column="4" selection-end-line="49" selection-end-column="36" />
-              <folding>
-                <element signature="e#302#354#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -217,10 +131,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/core/functions/func.IP.php" />
-        <option value="$PROJECT_DIR$/core/api/v1/endpoints/class.Rest.Session.Controller.php" />
-        <option value="$PROJECT_DIR$/core/classes/class.Async.Task.php" />
-        <option value="$PROJECT_DIR$/core/classes/class.Async.Email.php" />
         <option value="$PROJECT_DIR$/core/templates/plates/emails/login.php" />
         <option value="$PROJECT_DIR$/core/templates/plates/emails/login-fail.php" />
         <option value="$PROJECT_DIR$/core/templates/site/tpl.PayResult.php" />
@@ -246,7 +156,6 @@
         <option value="$PROJECT_DIR$/core/classes/class.PostImage.php" />
         <option value="$PROJECT_DIR$/core/templates/site/tpl.Privacy.php" />
         <option value="$PROJECT_DIR$/core/functions/func.Optimization.php" />
-        <option value="$PROJECT_DIR$/dash/dash.php" />
         <option value="$PROJECT_DIR$/src/css/modules/content/article-content.less" />
         <option value="$PROJECT_DIR$/assets/dash/js/my_quicktags.js" />
         <option value="$PROJECT_DIR$/src/css/modules/flat/contextual.less" />
@@ -268,6 +177,11 @@
         <option value="$PROJECT_DIR$/core/templates/page/tpl.Page.FullWidth.php" />
         <option value="$PROJECT_DIR$/core/templates/page/tpl.Page.Links.php" />
         <option value="$PROJECT_DIR$/core/functions/func.Page.php" />
+        <option value="$PROJECT_DIR$/dash/dash.php" />
+        <option value="$PROJECT_DIR$/core/functions/Constants.php" />
+        <option value="$PROJECT_DIR$/core/templates/me/tpl.Me.Credits.php" />
+        <option value="$PROJECT_DIR$/src/css/modules/aside/sidebar.less" />
+        <option value="$PROJECT_DIR$/src/js/modules/scroll.js" />
       </list>
     </option>
   </component>
@@ -415,7 +329,77 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tint" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tint" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tint" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tint" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tint" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tint" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="aside" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -546,6 +530,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="page" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tint" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tint" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="me" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -1127,7 +1133,7 @@
       <workItem from="1481110560737" duration="15769000" />
       <workItem from="1481197273117" duration="13701000" />
       <workItem from="1481283399510" duration="1618000" />
-      <workItem from="1481343954151" duration="10647000" />
+      <workItem from="1481343954151" duration="14858000" />
     </task>
     <task id="LOCAL-00001" summary="Add change log and contributing doc">
       <created>1476711242287</created>
@@ -1147,7 +1153,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1558129000" />
+    <option name="totallyTimeSpent" value="1562340000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1252,48 +1258,6 @@
     </PATH>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/core/api/v1/endpoints/class.Rest.Session.Controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-248">
-          <caret line="83" column="45" selection-start-line="83" selection-start-column="45" selection-end-line="83" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/functions/func.Mail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="59" column="81" selection-start-line="59" selection-start-column="9" selection-end-line="59" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/templates/plates/emails/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="2" column="52" selection-start-line="0" selection-start-column="0" selection-end-line="7" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/templates/plates/emails/register.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="5" column="70" selection-start-line="5" selection-start-column="70" selection-end-line="5" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/templates/plates/emails/register-admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="6" column="5" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/functions/func.Account.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="157" column="195" selection-start-line="157" selection-start-column="195" selection-end-line="157" selection-end-column="195" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/functions/func.Credit.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2047">
@@ -1334,13 +1298,6 @@
         <state relative-caret-position="504">
           <caret line="172" column="25" selection-start-line="172" selection-start-column="20" selection-end-line="172" selection-end-column="29" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/functions/Constants.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="26" column="70" selection-start-line="26" selection-start-column="44" selection-end-line="26" selection-end-column="70" />
         </state>
       </provider>
     </entry>
@@ -1482,14 +1439,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dash/dash.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="619">
-          <caret line="42" column="106" selection-start-line="42" selection-start-column="106" selection-end-line="42" selection-end-column="106" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/js/home.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-503">
@@ -1521,26 +1470,6 @@
           <folding>
             <element signature="e#302#354#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/css/product.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="619">
-          <caret line="388" column="55" selection-start-line="388" selection-start-column="55" selection-end-line="388" selection-end-column="55" />
-          <folding>
-            <element signature="e#16351#17165#0" expanded="false" />
-            <element signature="e#17192#25883#0" expanded="false" />
-            <element signature="e#25909#29878#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/templates/single/tpl.Single.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="23" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1586,14 +1515,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/functions/func.Script.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="65" column="35" selection-start-line="65" selection-start-column="35" selection-end-line="65" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/css/single.less">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1633,7 +1554,7 @@
         <state relative-caret-position="421">
           <caret line="45" column="4" selection-start-line="45" selection-start-column="4" selection-end-line="49" selection-end-column="36" />
           <folding>
-            <element signature="e#302#354#0" expanded="true" />
+            <element signature="e#302#354#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1664,22 +1585,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/modules/mod.SinglePage.php">
+    <entry file="file://$PROJECT_DIR$/core/templates/page/tpl.Page.FullWidth.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1288">
-          <caret line="40" column="19" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="19" />
-          <folding>
-            <element signature="e#6#286#0#PHP" expanded="true" />
-            <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-          </folding>
+        <state relative-caret-position="280">
+          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/templates/page/tpl.Page.php">
+    <entry file="file://$PROJECT_DIR$/core/templates/single/tpl.Single.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+        <state relative-caret-position="84">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="23" selection-end-column="25" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/templates/page/tpl.Page.Links.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="423">
+          <caret line="20" column="68" selection-start-line="20" selection-start-column="68" selection-end-line="20" selection-end-column="68" />
+          <folding>
+            <element signature="e#6#312#0#PHP" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1691,20 +1619,113 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/templates/page/tpl.Page.Links.php">
+    <entry file="file://$PROJECT_DIR$/core/templates/page/tpl.Page.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="20" column="68" selection-start-line="20" selection-start-column="68" selection-end-line="20" selection-end-column="68" />
+        <state relative-caret-position="168">
+          <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/modules/mod.SinglePage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1288">
+          <caret line="40" column="19" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="19" />
           <folding>
-            <element signature="e#6#312#0#PHP" expanded="true" />
+            <element signature="e#6#286#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/templates/page/tpl.Page.FullWidth.php">
+    <entry file="file://$PROJECT_DIR$/src/css/product.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+        <state relative-caret-position="619">
+          <caret line="388" column="55" selection-start-line="388" selection-start-column="55" selection-end-line="388" selection-end-column="55" />
+          <folding>
+            <element signature="e#16351#17165#0" expanded="false" />
+            <element signature="e#17192#25883#0" expanded="false" />
+            <element signature="e#25909#29878#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dash/dash.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="451">
+          <caret line="42" column="125" selection-start-line="42" selection-start-column="125" selection-end-line="42" selection-end-column="125" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/functions/func.Rewrite.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="287" column="71" selection-start-line="287" selection-start-column="56" selection-end-line="287" selection-end-column="71" />
+          <folding>
+            <marker date="1480074601864" expanded="true" signature="4590:4708" ph="SELECT user_... $" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/templates/me/tpl.Me.Credits.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding>
+            <element signature="e#6#286#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/templates/me/tpl.Me.Stars.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/functions/Constants.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="37">
+          <caret line="139" column="15" selection-start-line="139" selection-start-column="5" selection-end-line="139" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/css/modules/aside/sidebar.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="53" column="8" selection-start-line="53" selection-start-column="8" selection-end-line="53" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/modules/scroll.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="101" column="47" selection-start-line="101" selection-start-column="47" selection-end-line="101" selection-end-column="47" />
+          <folding>
+            <element signature="e#539#820#0" expanded="false" />
+            <element signature="e#855#966#0" expanded="false" />
+            <element signature="e#1269#1980#0" expanded="false" />
+            <element signature="e#2015#2190#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/functions/asset.Constant.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/functions/func.Script.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="80" selection-start-line="28" selection-start-column="76" selection-end-line="28" selection-end-column="80" />
           <folding />
         </state>
       </provider>

@@ -137,6 +137,7 @@ $site_endpoints = json_encode(array(
     'my_settings'               =>  'me/settings',
     'balance'                   =>  'me/balance',
     'stars'                     =>  'me/stars',
+    'my_credits'                =>  'me/credits',
     'new_post'                  =>  'me/newpost',
     'in_msg'                    =>  'me/messages/inbox',
     'out_msg'                   =>  'me/messages/sendbox',

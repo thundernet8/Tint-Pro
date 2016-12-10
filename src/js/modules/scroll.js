@@ -95,6 +95,19 @@ var _mainWrapTopY = 0;
 var _mainWrapHeight = 0;
 var _windowHeight = 0;
 
+// document ready后直接计算一次需要的数据, 无需等到滚动时计算
+_originWidget = $(_originWidgetSel);
+if(_originWidget){
+    _mirrorWidget = $(_mirrorWidgetSel);
+    _mirrorWidget.css('visibility', 'visible');
+    _mainWrap = $(_mainWrapSel);
+    _originWidgetTopY = _originWidget.offset().top;
+    _originWidgetHeight = _originWidget.height();
+    _mirrorWidgetTopY = _mirrorWidget.offset().top;
+    _mainWrapHeight = _mainWrap.height();
+    _windowHeight = $(window).height();
+}
+
 var _handleFloatWidget = function () {
     //sidebar不和主内容并列的情况不处理
     if($(window).width() < 1000) return;

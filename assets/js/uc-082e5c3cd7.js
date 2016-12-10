@@ -1,5 +1,5 @@
 /**
- * Generated on Sat Dec 10 2016 18:23:03 GMT+0800 (中国标准时间) by Zhiyan
+ * Generated on Sat Dec 10 2016 23:29:59 GMT+0800 (中国标准时间) by Zhiyan
  *
  * @package   Tint
  * @version   v2.0.0
@@ -2565,6 +2565,17 @@
             var _mainWrapTopY = 0;
             var _mainWrapHeight = 0;
             var _windowHeight = 0;
+            _originWidget = $(_originWidgetSel);
+            if (_originWidget) {
+                _mirrorWidget = $(_mirrorWidgetSel);
+                _mirrorWidget[['css']]('visibility', 'visible');
+                _mainWrap = $(_mainWrapSel);
+                _originWidgetTopY = _originWidget[['offset']]()[['top']];
+                _originWidgetHeight = _originWidget[['height']]();
+                _mirrorWidgetTopY = _mirrorWidget[['offset']]()[['top']];
+                _mainWrapHeight = _mainWrap[['height']]();
+                _windowHeight = $(window)[['height']]();
+            }
             var _handleFloatWidget = function _handleFloatWidget() {
                 if ($(window)[['width']]() < 1000)
                     return;

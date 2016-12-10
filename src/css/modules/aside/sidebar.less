@@ -50,7 +50,8 @@ body {
     }
     &>.float-widget-mirror {
         position: relative;
-        display: none;
+        //display: none; // Note: 使用display:none脱离文档流导致无法计算距离顶部高度
+        visibility: hidden;
     }
 }
 
