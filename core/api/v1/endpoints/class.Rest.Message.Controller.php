@@ -160,7 +160,7 @@ class WP_REST_Message_Controller extends WP_REST_Controller
             return tt_api_fail(__('Message content cannot be blank', 'tt'), array(), 400);
         }
 
-        $send = tt_create_pm($receiver_id, $current_uid, $message);
+        $send = tt_create_pm($receiver_id, $current_uid, $message, true);
 
         if(!$send) {
             return tt_api_fail(__('Send message failed', 'tt'), array(), 400);

@@ -97,7 +97,7 @@ var _windowHeight = 0;
 
 // document ready后直接计算一次需要的数据, 无需等到滚动时计算
 _originWidget = $(_originWidgetSel);
-if(_originWidget){
+if(_originWidget.length){
     _mirrorWidget = $(_mirrorWidgetSel);
     _mirrorWidget.css('visibility', 'visible');
     _mainWrap = $(_mainWrapSel);

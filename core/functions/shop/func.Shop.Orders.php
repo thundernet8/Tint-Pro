@@ -368,7 +368,7 @@ function tt_update_order_by_coupon($order_id, $coupon_code){
     // 检验order
     $order = tt_get_order($order_id);
     if(!$order) {
-        return new WP_Error('order_id_invalid', __('The order with the a order id you specified is not existed', 'tt'));
+        return new WP_Error('order_id_invalid', __('The order with the a order id you specified is not existed', 'tt'), array( 'status' => 404 ));
     }
     $total_price = $order->order_total_price;
     // 检验coupon
@@ -376,7 +376,7 @@ function tt_update_order_by_coupon($order_id, $coupon_code){
     if($coupon instanceof WP_Error) {
         return $coupon;
     }elseif(!$coupon){
-        return new WP_Error('coupon_invalid', __('The coupon is invalid', 'tt'));
+        return new WP_Error('coupon_invalid', __('The coupon is invalid', 'tt'), array( 'status' => 404 ));
     }
     $discount = $coupon->discount_value;
     // 标记一次性coupon为已使用

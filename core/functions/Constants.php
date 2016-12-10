@@ -70,6 +70,7 @@ $me_allow_routes = json_encode(array(
     'settings' => 'settings', //profile设置等, @xxx/profile只提供profile资料查阅, 不可编辑
     'balance'  => 'balance',
     'stars'    => 'stars',
+    'credits' => 'credits',
     'order'    => 'order',
     'newpost' => 'newpost',
     'notifications' => array(

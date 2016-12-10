@@ -180,17 +180,17 @@ function tt_check_coupon($code){
     $coupons_table = $prefix . 'tt_coupons';
     $coupon = $wpdb->get_row(sprintf("SELECT * FROM $coupons_table WHERE `coupon_code`=%s", $code));
     if(!$coupon){
-        return new WP_Error('coupon_not_exist', __('The coupon is not existed', 'tt'));
+        return new WP_Error('coupon_not_exist', __('The coupon is not existed', 'tt'), array( 'status' => 404 ));
     }
     if(!($coupon->coupon_status)){
-        return new WP_Error('coupon_used', __('The coupon is used', 'tt'));
+        return new WP_Error('coupon_used', __('The coupon is used', 'tt'), array( 'status' => 404 ));
     }
     $timestamp = time();
     if($timestamp < strtotime($coupon->begin_date)){
-        return new WP_Error('coupon_not_in_effect', __('The coupon have not taken in effect yet', 'tt'));
+        return new WP_Error('coupon_not_in_effect', __('The coupon have not taken in effect yet', 'tt'), array( 'status' => 404 ));
     }
     if($timestamp > strtotime($coupon->expire_date)){
-        return new WP_Error('coupon_expired', __('The coupon is expired', 'tt'));
+        return new WP_Error('coupon_expired', __('The coupon is expired', 'tt'), array( 'status' => 404 ));
     }
     return $coupon;
 }

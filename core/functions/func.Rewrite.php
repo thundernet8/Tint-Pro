@@ -176,12 +176,16 @@ function tt_match_author_link_field($query_vars){
                 // @see func.Template.php - tt_get_user_template
                 wp_redirect(home_url('/@' . $nickname), 301);
                 exit;
-            }elseif(!in_array($uc_tab, (array)json_decode(ALLOWED_UC_TABS)) || ($uc_tab === 'chat' && (!$logged_user_id || $logged_user_id == $author_id))){
+            }elseif(!in_array($uc_tab, (array)json_decode(ALLOWED_UC_TABS)) || ($uc_tab === 'chat' && $logged_user_id == $author_id)){
                 unset($query_vars['author_name']);
                 unset($query_vars['uctab']);
                 unset($query_vars['uc']);
                 $query_vars['error'] = '404';
                 return $query_vars;
+            }elseif($uc_tab === 'chat' && (!$logged_user_id || $logged_user_id == $author_id)){
+                // 用户未登录, 跳转至登录页面
+                wp_redirect(tt_add_redirect(tt_url_for('signin'), home_url('/@' . $nickname . '/chat')), 302);
+                exit;
             }
         }
 

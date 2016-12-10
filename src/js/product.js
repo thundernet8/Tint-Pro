@@ -27,6 +27,7 @@ import ModalSignBox from './modules/modalSignBox';
 import {} from 'lazyload/jquery.lazyload';
 import SignHelp from './modules/signHelp';
 import FixFooter from './modules/fixFooter';
+import FixContent from './modules/fixProductContent';
 import Toggle from './modules/toggle';
 import {} from './modules/cookie';
 import Usermeta from './modules/usermeta';
@@ -93,6 +94,9 @@ jQuery(document).ready(function ($) {
     
     // 平滑锚点
     AnimateAnchor(120, false); // 顶部保留120px高度,不显示hash值在url中
+    
+    // 修正内容高度
+    FixContent();
     
     // 修正Footer位置
     FixFooter();

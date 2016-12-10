@@ -57,13 +57,32 @@ function tt_create_message( $user_id=0, $sender_id=0, $sender, $type='', $title=
  * @param $receiver_id
  * @param $sender
  * @param $text
+ * @param $send_mail
  * @return bool
  */
-function tt_create_pm($receiver_id, $sender, $text) {
+function tt_create_pm($receiver_id, $sender, $text, $send_mail = false) {
     if($sender instanceof WP_User && $sender->ID) {
+        if($send_mail && $sender->user_email) {
+            $subject = sprintf( __('%1$s向你发送了一条消息 - %2$s', 'tt'), $sender->display_name, get_bloginfo('name') );
+            $args = array(
+                'senderName' => $sender->display_name,
+                'message' => $text,
+                'chatLink' => tt_url_for('uc_chat', $sender)
+            );
+            tt_async_mail('', get_user_by('id', $receiver_id)->user_email, $subject, $args, 'pm');
+        }
         return tt_create_message($receiver_id, $sender->ID, $sender->display_name, 'chat', $text);
     }elseif(is_int($sender)){
         $sender = get_user_by('ID', $sender);
+        if($send_mail && $sender->user_email) {
+            $subject = sprintf( __('%1$s向你发送了一条消息 - %2$s', 'tt'), $sender->display_name, get_bloginfo('name') );
+            $args = array(
+                'senderName' => $sender->display_name,
+                'message' => $text,
+                'chatLink' => tt_url_for('uc_chat', $sender)
+            );
+            tt_async_mail('', get_user_by('id', $receiver_id)->user_email, $subject, $args, 'pm');
+        }
         return tt_create_message($receiver_id, $sender->ID, $sender->display_name, 'chat', $text);
     }
     return false;

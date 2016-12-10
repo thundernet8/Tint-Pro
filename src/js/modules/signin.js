@@ -97,7 +97,7 @@ var _post = function () {
     };
     var success = function (data, textStatus, xhr) {
         if(data.success && data.success == 1) {
-            var redirect = Utils.getUrlPara('redirect') ? Utils.getAbsUrl(decodeURIComponent(Utils.getUrlPara('redirect'))) : Utils.getSiteUrl();
+            var redirect = Utils.getUrlPara('redirect_to') ? Utils.getAbsUrl(decodeURIComponent(Utils.getUrlPara('redirect_to'))) : (Utils.getUrlPara('redirect') ? Utils.getAbsUrl(decodeURIComponent(Utils.getUrlPara('redirect'))) : Utils.getSiteUrl());
             popMsgbox.success({
                 title: '登录成功',
                 text: '将在 2s 内跳转至 ' + redirect,

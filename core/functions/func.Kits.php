@@ -99,6 +99,10 @@ function tt_url_for($key, $arg = null, $relative = false){
             $nickname = call_user_func($uc_func, $arg);
             if($nickname) $endpoint = '@' . $nickname . '/activities';
             break;
+        case 'uc_chat':
+            $nickname = call_user_func($uc_func, $arg);
+            if($nickname) $endpoint = '@' . $nickname . '/chat';
+            break;
         case 'shop_archive':
             $endpoint = tt_get_option('tt_product_archives_slug', 'shop');
     }
@@ -178,11 +182,11 @@ function tt_signout_url($redirect) {
  */
 function tt_add_redirect($url, $redirect = '') {
     if($redirect) {
-        $url = add_query_arg('redirect_to', urlencode($redirect), $url);
+        return add_query_arg('redirect_to', urlencode($redirect), $url);
     }elseif(isset($_GET['redirect_to'])){
-        $url = add_query_arg('redirect_to', urlencode(esc_url_raw($_GET['redirect_to'])), $url);
+        return add_query_arg('redirect_to', urlencode(esc_url_raw($_GET['redirect_to'])), $url);
     }elseif(isset($_GET['redirect'])){
-        $url = add_query_arg('redirect_to', urlencode(esc_url_raw($_GET['redirect'])), $url);
+        return add_query_arg('redirect_to', urlencode(esc_url_raw($_GET['redirect'])), $url);
     }
     return add_query_arg('redirect_to', urlencode(home_url()), $url);
 }
@@ -387,8 +391,6 @@ function tt_get_css($filename = '') {
         $filename = CSS_HOME;
     }elseif(is_single()) {
         $filename = get_post_type()==='product' ? CSS_PRODUCT : CSS_SINGLE;
-    }elseif(is_page()){
-        $filename = CSS_PAGE;
     }elseif((is_archive() && !is_author()) || (is_search() && isset($_GET['in_shop']) && $_GET['in_shop'] == 1)) {
         $filename = get_post_type()==='product' || (is_search() && isset($_GET['in_shop']) && $_GET['in_shop'] == 1) ? CSS_PRODUCT_ARCHIVE : CSS_ARCHIVE;
     }elseif(is_author()) {
@@ -403,6 +405,9 @@ function tt_get_css($filename = '') {
         $filename = CSS_FRONT_PAGE;
     }elseif(get_query_var('site_util')){
         $filename = CSS_SITE_UTILS;
+    }else{
+        // is_page() ?
+        $filename = CSS_PAGE;
     }
     return THEME_ASSET.'/css/' . $filename;
 }

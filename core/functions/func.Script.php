@@ -62,8 +62,6 @@ function tt_register_scripts() {
         $script = 'tt_home';
     }elseif(is_single()) {
         $script = get_post_type()==='product' ? 'tt_product_page' : 'tt_single_post';
-    }elseif(is_page()){
-        $script = 'tt_single_page';
     }elseif((is_archive() && !is_author()) || (is_search() && isset($_GET['in_shop']) && $_GET['in_shop'] == 1)) {
         $script = get_post_type()==='product' || (is_search() && isset($_GET['in_shop']) && $_GET['in_shop'] == 1) ? 'tt_products_page' : 'tt_archive_page';
     }elseif(is_author()) {
@@ -78,6 +76,9 @@ function tt_register_scripts() {
         $script = 'tt_front_page';
     }elseif(get_query_var('site_util')){
         $script = 'tt_site_utils';
+    }else{
+        // is_page() ?
+        $script = 'tt_single_page';
     }
 
     if($script) {
