@@ -77,7 +77,7 @@
                     <div class="price"><?php echo $view_product['price_icon']; ?><?php echo $view_product['price']; ?></div>
                 <?php }else{ ?>
                     <del><?php echo $view_product['price_icon']; ?><span class="price original-price"><?php echo $view_product['price']; ?></span></del>
-                    <ins><?php echo $view_product['price_icon']; ?><span class="price discount-price"><?php $discount_price = $view_product['currency'] == 'cash' ? sprintf('%0.2f', $view_product['price'] * $view_product['discount'][0]) : intval($view_product['price'] * $view_product['discount'][0]); echo $discount_price; ?></span></ins>
+                    <ins><?php echo $view_product['price_icon']; ?><span class="price discount-price"><?php $discount_price = $view_product['currency'] == 'cash' ? sprintf('%0.2f', $view_product['price'] * $view_product['discount'][0] / 100) : intval($view_product['price'] * $view_product['discount'][0] / 100); echo $discount_price; ?></span></ins>
                 <?php } ?>
             </li>
         <?php } ?>

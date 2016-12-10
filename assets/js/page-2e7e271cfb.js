@@ -1,5 +1,5 @@
 /**
- * Generated on Sun Dec 04 2016 21:14:37 GMT+0800 (中国标准时间) by Zhiyan
+ * Generated on Sat Dec 10 2016 18:23:02 GMT+0800 (中国标准时间) by Zhiyan
  *
  * @package   Tint
  * @version   v2.0.0
@@ -56,6 +56,8 @@
             var _signHelp2 = _interopRequireDefault(_signHelp);
             var _referral = __webpack_require__(17);
             var _referral2 = _interopRequireDefault(_referral);
+            var _fixFooter = __webpack_require__(16);
+            var _fixFooter2 = _interopRequireDefault(_fixFooter);
             function _interopRequireDefault(obj) {
                 return obj && obj[['__esModule']] ? obj : { default: obj };
             }
@@ -65,7 +67,6 @@
                 _postStar2[['default']][['init']]();
                 _comments2[['default']][['init']]();
                 _scroll2[['default']][['initScrollTo']]();
-                _scroll2[['default']][['initShareBar']]();
                 _scroll2[['default']][['initFloatWidget']]();
                 _follow2[['default']][['init']]();
                 _pm2[['default']][['initModalPm']]();
@@ -87,6 +88,7 @@
                     threshold: 0
                 });
                 (0, _animateAnchor2[['default']])();
+                (0, _fixFooter2[['default']])();
                 _referral2[['default']][['init']]();
             });
         }[['call']](exports, __webpack_require__(1)));
@@ -2667,7 +2669,19 @@
             exports[['default']] = SignHelp;
         }[['call']](exports, __webpack_require__(1)));
     },
-    ,
+    function (module, exports, __webpack_require__) {
+        (function ($) {
+            'use strict';
+            Object[['defineProperty']](exports, '__esModule', { value: true });
+            exports[['default']] = function () {
+                var footer = $('body>footer');
+                var diffH = $(window)[['height']]() - footer[['offset']]()[['top']] - footer[['height']]();
+                if (diffH > 0) {
+                    footer[['css']]('position', 'relative')[['css']]('top', diffH);
+                }
+            };
+        }[['call']](exports, __webpack_require__(1)));
+    },
     function (module, exports, __webpack_require__) {
         (function ($) {
             'use strict';

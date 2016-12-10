@@ -38,7 +38,7 @@ function tt_sc_product($atts, $content = null){
         return '<button type="button" class="btn btn-product btn-' . $size . '">' . $content . '</button>';
     }
 }
-//add_shortcode('product', 'tt_sc_product');
+add_shortcode('product', 'tt_sc_product');
 
 // Button
 function tt_sc_button($atts, $content = null){

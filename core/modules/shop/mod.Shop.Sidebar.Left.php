@@ -41,7 +41,7 @@
                     <div class="price"><?php echo $rand_product['price_icon']; ?><?php echo $rand_product['price']; ?></div>
                 <?php }else{ ?>
                     <del><?php echo $rand_product['price_icon']; ?><span class="price original-price"><?php echo $rand_product['price']; ?></span></del>
-                    <ins><?php echo $rand_product['price_icon']; ?><span class="price discount-price"><?php $discount_price = $rand_product['currency'] == 'cash' ? sprintf('%0.2f', $rand_product['price'] * $rand_product['discount'][0]) : intval($rand_product['price'] * $rand_product['discount'][0]); echo $discount_price; ?></span></ins>
+                    <ins><?php echo $rand_product['price_icon']; ?><span class="price discount-price"><?php $discount_price = $rand_product['currency'] == 'cash' ? sprintf('%0.2f', $rand_product['price'] * $rand_product['discount'][0] / 100) : intval($rand_product['price'] * $rand_product['discount'][0] / 100); echo $discount_price; ?></span></ins>
                 <?php } ?>
             </li>
         <?php } ?>

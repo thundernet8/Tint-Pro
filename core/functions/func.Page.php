@@ -32,7 +32,7 @@ function tt_get_page_templates( $post = null ) {
 
     if ( ! is_array( $page_templates ) ) {
         $page_templates = array();
-        $files = (array) Utils::scandir( THEME_TPL . 'page', 'php', 0 ); // Note: 主要这里重新定义扫描模板的文件夹/core/templates/page
+        $files = (array) Utils::scandir( THEME_TPL . '/page', 'php', 0 ); // Note: 主要这里重新定义扫描模板的文件夹/core/templates/page
         foreach ( $files as $file => $full_path ) {
             if ( ! preg_match( '|Template Name:(.*)$|mi', file_get_contents( $full_path ), $header ) )
                 continue;

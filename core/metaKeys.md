@@ -35,6 +35,8 @@
 * tt_post_star_users (不唯一)
 * tt_sidebar
 * tt_latest_reviewed
+* tt_free_dl
+* tt_sale_dl
 
 
 ### Post Meta(Product)
@@ -42,10 +44,12 @@
 * tt_product_quantity
 * tt_pay_currency (0->credit 1->cash)
 * tt_product_sales
-* tt_product_discount (array, 折扣使用百分数的数值部分)
+* tt_product_discount (array, 折扣使用百分数的数值部分, serialize后保存)
 * tt_buy_channel (instation/taobao)
 * tt_taobao_link
 * tt_latest_rated
+* tt_product_download_links
+* tt_product_pay_content
 
 ### Post Meta(Page)
 * tt_keywords

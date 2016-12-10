@@ -1,5 +1,5 @@
 /**
- * Generated on Sun Dec 04 2016 21:14:36 GMT+0800 (中国标准时间) by Zhiyan
+ * Generated on Sat Dec 10 2016 18:23:03 GMT+0800 (中国标准时间) by Zhiyan
  *
  * @package   Tint
  * @version   v2.0.0
@@ -519,9 +519,9 @@
         }[['call']](exports, __webpack_require__(1), __webpack_require__(1)));
     },
     function (module, exports, __webpack_require__) {
+        var require;
+        var require;
         var __WEBPACK_AMD_DEFINE_RESULT__;
-        var require;
-        var require;
         'use strict';
         var _typeof = typeof Symbol === 'function' && typeof Symbol[['iterator']] === 'symbol' ? function (obj) {
             return typeof obj;

@@ -188,6 +188,7 @@ load_vm('vm.Home.Popular');
 load_vm('vm.Home.Latest');
 load_vm('vm.Home.FeaturedCategory');
 load_vm('vm.Single.Post');
+load_vm('vm.Single.Page');
 load_vm('vm.Post.Comments');
 load_vm('vm.Category.Posts');
 load_vm('vm.Tag.Posts');

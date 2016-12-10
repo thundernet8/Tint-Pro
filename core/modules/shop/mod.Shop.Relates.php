@@ -14,7 +14,7 @@
 ?>
 <?php global $productdata; ?>
 <section class="related-products">
-    <h2><?php _e('Related Products', 'tt'); ?></h2>
+    <h2><span><?php _e('Related Products', 'tt'); ?></span></h2>
     <ul class="products row">
         <?php $relates = $productdata->relates; ?>
         <?php foreach ($relates as $relate) { ?>
@@ -35,7 +35,7 @@
                             <span class="price"><?php echo $relate['price_icon']; ?><?php echo $relate['price']; ?></span>
                         <?php }else{ ?>
                             <del><?php echo $relate['price_icon']; ?><span class="price original-price"><?php echo $relate['price']; ?></span></del>
-                            <ins><?php echo $relate['price_icon']; ?><span class="price discount-price"><?php $relate_discount_price = $relate['currency'] == 'cash' ? sprintf('%0.2f', $relate['price'] * $relate['discount'][0]) : intval($relate['price'] * $relate['discount'][0]); echo $relate_discount_price; ?></span></ins>
+                            <ins><?php echo $relate['price_icon']; ?><span class="price discount-price"><?php $relate_discount_price = $relate['currency'] == 'cash' ? sprintf('%0.2f', $relate['price'] * $relate['discount'][0] / 100) : intval($relate['price'] * $relate['discount'][0] / 100); echo $relate_discount_price; ?></span></ins>
                         <?php } ?>
                     </div>
                 </a>

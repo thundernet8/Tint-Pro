@@ -18,6 +18,7 @@ import {popMsgbox, msgbox} from './modules/msgbox';
 import ScrollHandler from './modules/scroll';
 import {} from './modules/bootstrap-flat';
 import Checkout from './modules/checkout';
+import FixFooter from './modules/fixFooter';
 
 // DOM Ready
 jQuery(document).ready(function ($) {
@@ -36,4 +37,6 @@ jQuery(document).ready(function ($) {
     // 确认订单详情和结算(输入地址信息、应用优惠码等)
     Checkout.init();
     
+    // 修正Footer位置
+    FixFooter();
 });

@@ -98,7 +98,7 @@
                                     <?php }else{ ?>
                                         <?php echo $productdata->price_icon; ?>
                                         <del><span class="price original-price"><?php echo $productdata->price; ?></span></del>
-                                        <ins><span class="price discount-price"><?php $discount_price = $productdata->currency == 'cash' ? sprintf('%0.2f', $productdata->price * $productdata->discount[0]) : intval($productdata->price * $productdata->discount[0]); echo $discount_price; ?></span></ins>
+                                        <ins><span class="price discount-price"><?php $discount_price = $productdata->currency == 'cash' ? sprintf('%0.2f', $productdata->price * $productdata->discount[0] / 100) : intval($productdata->price * $productdata->discount[0] / 100); echo $discount_price; ?></span></ins>
                                     <?php } ?>
                                 </p>
                                 <meta itemprop="price" content="<?php echo $productdata->price; ?>">

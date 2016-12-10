@@ -123,7 +123,7 @@ class ShopProductVM extends BaseVM {
         $info['price_icon'] = !($info['price'] > 0) ? '' : $info['currency'] == 'cash' ? '<i class="tico tico-cny"></i>' : '<i class="tico tico-diamond"></i>';
 
         // 折扣
-        $info['discount'] = maybe_unserialize(get_post_meta($the_product->ID, 'tt_product_discount', true)); // array 第1项为普通折扣, 第2项为会员(月付)折扣, 第3项为会员(年付)折扣, 第4项为会员(终身)折扣
+        $info['discount'] = maybe_unserialize(get_post_meta($the_product->ID, 'tt_product_discount', true)); // array 第1项为普通折扣, 第2项为会员(月付)折扣, 第3项为会员(年付)折扣, 第4项为会员(永久)折扣
 
         // 总量
         $info['amount'] = (int)get_post_meta($the_product->ID, 'tt_product_quantity', true);
@@ -232,7 +232,7 @@ class ShopProductVM extends BaseVM {
             $related_product['price'] = $related_product['currency'] == 'cash' ? sprintf('%0.2f', get_post_meta($post->ID, 'tt_product_price', true)) : (int)get_post_meta($the_product->ID, 'tt_product_price', true);
             $related_product['price_unit'] = $related_product['currency'] == 'cash' ? __('YUAN', 'tt') : __('CREDITS', 'tt');
             $related_product['price_icon'] = !($related_product['price'] > 0) ? '' : $related_product['currency'] == 'cash' ? '<i class="tico tico-cny"></i>' : '<i class="tico tico-diamond"></i>';
-            $related_product['discount'] = maybe_unserialize(get_post_meta($post->ID, 'tt_product_discount', true)); // array 第1项为普通折扣, 第2项为会员(月付)折扣, 第3项为会员(年付)折扣, 第4项为会员(终身)折扣
+            $related_product['discount'] = (array)maybe_unserialize(get_post_meta($post->ID, 'tt_product_discount', true)); // array 第1项为普通折扣, 第2项为会员(月付)折扣, 第3项为会员(年付)折扣, 第4项为会员(永久)折扣
             // 打分
             $related_rating_raw = get_post_meta($post->ID, 'tt_post_ratings', true);
             $related_rating_arr = $related_rating_raw ? (array)maybe_unserialize($related_rating_raw) : array(); // array(rating value1, rating value2...)
@@ -279,7 +279,7 @@ class ShopProductVM extends BaseVM {
             $rand_product['price'] = $rand_product['currency'] == 'cash' ? sprintf('%0.2f', get_post_meta($post->ID, 'tt_product_price', true)) : (int)get_post_meta($post->ID, 'tt_product_price', true);
             $rand_product['price_unit'] = $rand_product['currency'] == 'cash' ? __('YUAN', 'tt') : __('CREDITS', 'tt');
             $rand_product['price_icon'] = !($rand_product['price'] > 0) ? '' : $rand_product['currency'] == 'cash' ? '<i class="tico tico-cny"></i>' : '<i class="tico tico-diamond"></i>';
-            $rand_product['discount'] = maybe_unserialize(get_post_meta($post->ID, 'tt_product_discount', true)); // array 第1项为普通折扣, 第2项为会员(月付)折扣, 第3项为会员(年付)折扣, 第4项为会员(终身)折扣
+            $rand_product['discount'] = (array)maybe_unserialize(get_post_meta($post->ID, 'tt_product_discount', true)); // array 第1项为普通折扣, 第2项为会员(月付)折扣, 第3项为会员(年付)折扣, 第4项为会员(永久)折扣
             $rand_products[] = $rand_product;
         endwhile;
 

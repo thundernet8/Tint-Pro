@@ -189,19 +189,19 @@ function tt_create_order($product_id, $product_name = '', $order_quantity = 1, $
     $currency = get_post_meta( $product_id, 'tt_pay_currency', true) ? 'cash' : 'credit';
     $order_price = $currency == 'cash' ? sprintf('%0.2f', get_post_meta($product_id, 'tt_product_price', true)) : (int)get_post_meta($product_id, 'tt_product_price', true);
     // 折扣
-    $discount_summary = maybe_unserialize(get_post_meta($product_id, 'tt_product_discount', true)); // array 第1项为普通折扣, 第2项为会员(月付)折扣, 第3项为会员(年付)折扣, 第4项为会员(终身)折扣
+    $discount_summary = (array)maybe_unserialize(get_post_meta($product_id, 'tt_product_discount', true)); // array 第1项为普通折扣, 第2项为会员(月付)折扣, 第3项为会员(年付)折扣, 第4项为会员(永久)折扣
     switch ($member->vip_type){
         case Member::MONTHLY_VIP:
-            $discount = isset($discount_summary[1]) ? $discount_summary[1] : 100;
+            $discount = isset($discount_summary[1]) ? absint($discount_summary[1]) : 100;
             break;
         case Member::ANNUAL_VIP:
-            $discount = isset($discount_summary[2]) ? $discount_summary[2] : 100;
+            $discount = isset($discount_summary[2]) ? absint($discount_summary[2]) : 100;
             break;
         case Member::PERMANENT_VIP:
-            $discount = isset($discount_summary[3]) ? $discount_summary[3] : 100;
+            $discount = isset($discount_summary[3]) ? absint($discount_summary[3]) : 100;
             break;
         default:
-            $discount = isset($discount_summary[0]) ? $discount_summary[0] : 100;
+            $discount = isset($discount_summary[0]) ? absint($discount_summary[0]) : 100;
             break;
     }
     $order_total_price = $currency == 'cash' ? $order_price * absint($order_quantity) * $discount / 100 : absint($order_price * $order_quantity);

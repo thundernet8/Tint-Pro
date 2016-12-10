@@ -60,7 +60,7 @@ class ShopLatestRatedVM extends BaseVM {
             //$latest_rated_product['price'] = $latest_rated_product['currency'] == 'cash' ? sprintf('%0.2f', get_post_meta($post->ID, 'tt_product_price', true)) : (int)get_post_meta($post->ID, 'tt_product_price', true);
             //$latest_rated_product['price_unit'] = $latest_rated_product['currency'] == 'cash' ? __('YUAN', 'tt') : __('CREDITS', 'tt');
             //$latest_rated_product['price_icon'] = !($latest_rated_product['price'] > 0) ? '' : $latest_rated_product['currency'] == 'cash' ? '<i class="tico tico-cny"></i>' : '<i class="tico tico-diamond"></i>';
-            //$latest_rated_product['discount'] = maybe_unserialize(get_post_meta($post->ID, 'tt_product_discount', true)); // array 第1项为普通折扣, 第2项为会员(月付)折扣, 第3项为会员(年付)折扣, 第4项为会员(终身)折扣
+            //$latest_rated_product['discount'] = (array)maybe_unserialize(get_post_meta($post->ID, 'tt_product_discount', true)); // array 第1项为普通折扣, 第2项为会员(月付)折扣, 第3项为会员(年付)折扣, 第4项为会员(永久)折扣
             // 打分
             $rating_raw = get_post_meta($post->ID, 'tt_post_ratings', true);
             $rating_arr = $rating_raw ? (array)maybe_unserialize($rating_raw) : array(); // array(rating value1, rating value2...)

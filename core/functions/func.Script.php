@@ -28,7 +28,8 @@ function tt_register_scripts() {
     //wp_register_script( 'tt_common', THEME_ASSET . '/js/' . JS_COMMON, array(), null, true );
     wp_register_script( 'tt_home', THEME_ASSET . '/js/' . JS_HOME, array(), null, true );
     wp_register_script( 'tt_front_page', THEME_ASSET . '/js/' . JS_FRONT_PAGE, array(), null, true );
-    wp_register_script( 'tt_single_page', THEME_ASSET . '/js/' . JS_SINGLE, array(), null, true );
+    wp_register_script( 'tt_single_post', THEME_ASSET . '/js/' . JS_SINGLE, array(), null, true );
+    wp_register_script( 'tt_single_page', THEME_ASSET . '/js/' . JS_PAGE, array(), null, true );
     wp_register_script( 'tt_archive_page', THEME_ASSET . '/js/' . JS_ARCHIVE, array(), null, true );
     wp_register_script( 'tt_product_page', THEME_ASSET . '/js/' . JS_PRODUCT, array(), null, true );
     wp_register_script( 'tt_products_page', THEME_ASSET . '/js/' . JS_PRODUCT_ARCHIVE, array(), null, true );
@@ -60,7 +61,9 @@ function tt_register_scripts() {
     if(is_home()) {
         $script = 'tt_home';
     }elseif(is_single()) {
-        $script = get_post_type()==='product' ? 'tt_product_page' : 'tt_single_page';
+        $script = get_post_type()==='product' ? 'tt_product_page' : 'tt_single_post';
+    }elseif(is_page()){
+        $script = 'tt_single_page';
     }elseif((is_archive() && !is_author()) || (is_search() && isset($_GET['in_shop']) && $_GET['in_shop'] == 1)) {
         $script = get_post_type()==='product' || (is_search() && isset($_GET['in_shop']) && $_GET['in_shop'] == 1) ? 'tt_products_page' : 'tt_archive_page';
     }elseif(is_author()) {
