@@ -20,7 +20,7 @@
 defined('CSS_HOME') || define('CSS_HOME', 'home-ba160b7f63.css');
 defined('CSS_FRONT_PAGE') || define('CSS_FRONT_PAGE', 'front-page-5a764c2f8a.css');
 defined('CSS_SINGLE') || define('CSS_SINGLE', 'single-b1260e956f.css');
-defined('CSS_PAGE') || define('CSS_PAGE', 'page-b59c96c165.css');
+defined('CSS_PAGE') || define('CSS_PAGE', 'page-c5f0799822.css');
 defined('CSS_ARCHIVE') || define('CSS_ARCHIVE', 'archive-772931ae07.css');
 defined('CSS_PRODUCT') || define('CSS_PRODUCT', 'product-39e9d0bcf3.css');
 defined('CSS_PRODUCT_ARCHIVE') || define('CSS_PRODUCT_ARCHIVE', 'products-93b7019381.css');
@@ -29,7 +29,7 @@ defined('CSS_ME') || define('CSS_ME', 'me-5a764c2f8a.css');
 defined('CSS_ACTION') || define('CSS_ACTION', 'actions-fc56a5ddf3.css');
 defined('CSS_404') || define('CSS_404', '404-fae707238d.css');
 defined('CSS_ERROR_PAGE') || define('CSS_ERROR_PAGE', 'error-page-3f93122770.css');
-defined('CSS_SITE_UTILS') || define('CSS_SITE_UTILS', 'site-utils-10a36c3c9d.css');
+defined('CSS_SITE_UTILS') || define('CSS_SITE_UTILS', 'site-utils-fea0deee8d.css');
 
 // JS
 defined('JS_COMMON') || define('JS_COMMON', 'common-caa0d2a669.js');
