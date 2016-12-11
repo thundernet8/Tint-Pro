@@ -88,7 +88,7 @@ function tt_sc_r2v( $atts, $content ){
             if( $user_id != $post->post_author && !user_can($user_id,'edit_others_posts') ){
                 $comments = get_comments( array('status' => 'approve', 'user_id' => $user_id, 'post_id' => $post->ID, 'count' => true ) );
                 if(!$comments) {
-                    $content = '<div class="bg-lr2v contextual"><i class="tico tico-comment"></i>' . __('此处内容需要登录并 <a href="#response">发表评论</a> 才可见' , 'tt'). '</div>';
+                    $content = '<div class="bg-lr2v contextual"><i class="tico tico-comment"></i>' . __('此处内容需要登录并 <a href="#respond">发表评论</a> 才可见' , 'tt'). '</div>';
                 }
             }
         }

@@ -71,6 +71,13 @@ class SinglePostVM extends BaseVM {
         $info['thumb'] = tt_get_thumb($the_post, array('width' => 720, 'height' => 400, 'str' => 'medium'));
         $info['format'] = get_post_format($the_post) ? : 'standard';
 
+        // 相关下载
+        $free_download = get_post_meta($the_post->ID, 'tt_free_dl', true);
+        $sale_download = get_post_meta($the_post->ID, 'tt_sale_dl', true);
+        if(!empty($free_download) || !empty($sale_download)) {
+            $info['download'] = tt_url_for('download', $the_post->ID);
+        }
+
         // 文章来源版权信息
         $cc = get_post_meta( $the_post->ID, 'tt_post_copyright', true );
         $cc = $cc ? maybe_unserialize($cc) : array('source_title' => '', 'source_link' => '');

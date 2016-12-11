@@ -181,3 +181,29 @@ function tt_save_meta_box_page_template_data( $post_id ) {
     }
 }
 add_action( 'save_post', 'tt_save_meta_box_page_template_data' );
+
+
+/**
+ * 给Body添加额外的class(部分自定义页面无法使用wp的body_class函数生成独特的class)
+ *
+ * @since 2.0.0
+ * @param $classes
+ * @return array
+ */
+function tt_modify_body_classes($classes) {
+    if($query_var = get_query_var('site_util')) {
+        $classes[] = 'site_util-' . $query_var;
+    }elseif($query_var = get_query_var('me')) {
+        $classes[] = 'me-' . $query_var;
+    }elseif($query_var = get_query_var('uctab')) {
+        $classes[] = 'uc-' . $query_var;
+    }elseif($query_var = get_query_var('uc')) {
+        $classes[] = 'uc-profile';
+    }elseif($query_var = get_query_var('action')) {
+        $classes[] = 'action-' . $query_var;
+    }
+
+    //TODO more
+    return $classes;
+}
+add_filter('body_class', 'tt_modify_body_classes');

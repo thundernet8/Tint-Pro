@@ -105,6 +105,10 @@ function tt_url_for($key, $arg = null, $relative = false){
             break;
         case 'shop_archive':
             $endpoint = tt_get_option('tt_product_archives_slug', 'shop');
+            break;
+        case 'download':
+            $endpoint = 'site/download?_=' . rtrim(tt_encrypt($arg, tt_get_option('tt_private_token')), '=');
+            break;
     }
     if($endpoint){
         return $relative ? '/' . $endpoint : home_url('/' . $endpoint);
@@ -202,7 +206,11 @@ function tt_add_redirect($url, $redirect = '') {
  * @return  string
  */
 function tt_encrypt($data, $key) {
-    $data = maybe_serialize($data);
+    if(is_numeric($data)){
+        $data = strval($data);
+    }else{
+        $data = maybe_serialize($data);
+    }
     $key = md5($key);
     $x = 0;
     $len = strlen($data);

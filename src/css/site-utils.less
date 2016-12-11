@@ -24,6 +24,9 @@
 @import "modules/loading/loading";
 @import "modules/nav/header";
 
+/* Sidebar */
+@import "modules/aside/sidebar";
+
 /* Footer */
 @import "modules/nav/footer";
 
@@ -442,6 +445,57 @@ body.qrpay {
                         }
                     }
                 }
+            }
+        }
+    }
+}
+
+
+/* Download */
+body.site_util-download {
+    background: #eff0f1;
+    &>.download-wrapper {
+        &>.main-wrap {
+            padding: 30px 0;
+            &>.primary {
+                background: #fff;
+                border-radius: 2px;
+                padding: 30px 20px;
+                &>.download {
+                    &>.dl-declaration {
+                        &>p {
+                            margin-bottom: 0;
+                        }
+                    }
+                    &>.dl-detail {
+                        &>h2 {
+                            font-size: 2.5rem;
+                        }
+                        &>ul {
+                            margin-bottom: 20px;
+                            font-size: 1.6rem;
+                            line-height: 2;
+                            &>li {
+                                i {
+                                    margin-right: 5px;
+                                    vertical-align: -2px;
+                                }
+                            }
+                        }
+                    }
+                    &>.tt-gg {
+                        margin: 10px auto;
+                    }
+                    &>.dl-help {
+                        &>p {
+                            margin: 5px 0;
+                            line-height: 1.6;
+                        }
+                    }
+                }
+            }
+            &>.sidebar {
+
             }
         }
     }

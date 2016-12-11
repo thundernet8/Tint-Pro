@@ -53,7 +53,14 @@
                     <a class="post-meta-likes js-article-like <?php if(in_array(get_current_user_id(), $postdata->star_uids)) echo 'active'; ?>" href="javascript: void(0)" data-post-id="<?php echo $postdata->ID; ?>" data-nonce="<?php echo wp_create_nonce('tt_post_star_nonce'); ?>"><i class="tico tico-favorite"></i><span class="js-article-like-count num"><?php echo $postdata->stars; ?></span></a>
                 </div>
             </div>
-            <article class="single-article"><?php echo $postdata->content; apply_filters('the_content', 'content'); // 一些插件(如crayon-syntax-highlighter)将非内容性的钩子(wp_enqueue_script等)挂载在the_content上, 缓存命中时将失效 ?></article>
+            <article class="single-article">
+                <?php echo $postdata->content; apply_filters('the_content', 'content'); // 一些插件(如crayon-syntax-highlighter)将非内容性的钩子(wp_enqueue_script等)挂载在the_content上, 缓存命中时将失效 ?>
+                <?php if(isset($postdata->download) && $postdata->download) { ?>
+                <!-- 相关下载 -->
+                <h2 class="content-dl"><?php _e('Related Downloads', 'tt'); ?></h2>
+                <p style="text-align: center;margin-bottom: 50px;"><a class="btn btn-download" href="<?php echo $postdata->download; ?>" target="_blank"><?php _e('Click to Download', 'tt'); ?></a></p>
+                <?php } ?>
+            </article>
             <div class="article-footer">
                 <div class="post-copyright">
                     <p><i class="tico tico-bell-o"></i><?php echo $postdata->cc_text; ?></p>

@@ -147,6 +147,10 @@ function tt_create_initial_rest_routes() {
     // Order
     $order_controller = new WP_REST_Order_Controller;
     $order_controller->register_routes();
+
+    // Buy post resource
+    $post_resource_buy_controller = new WP_REST_BoughtResource_Controller;
+    $post_resource_buy_controller->register_routes();
 }
 add_action( 'rest_api_init', 'tt_create_initial_rest_routes', 0 );  // TODO cached 接口
 

@@ -19,6 +19,7 @@ import ScrollHandler from './modules/scroll';
 import {} from './modules/bootstrap-flat';
 import Checkout from './modules/checkout';
 import FixFooter from './modules/fixFooter';
+import BuyResource from './modules/buyResource';
 
 // DOM Ready
 jQuery(document).ready(function ($) {
@@ -39,4 +40,7 @@ jQuery(document).ready(function ($) {
     
     // 修正Footer位置
     FixFooter();
+    
+    // 初始化购买文章内资源请求handler
+    BuyResource.init();
 });

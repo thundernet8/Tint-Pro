@@ -29,6 +29,8 @@
 
 * tt_view_product_history (array<product id>) //cookie use same key
 
+* tt_bought_posts
+
 ### Post Meta
 * views (postViews插件)
 * tt_post_stars (废弃)

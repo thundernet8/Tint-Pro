@@ -33,7 +33,8 @@ var routes = {
     userMeta: Utils.getAPIUrl('/users/metas'),
     shoppingCart: Utils.getAPIUrl('/shoppingcart'),
     orders: Utils.getAPIUrl('/orders'),
-    coupons: Utils.getAPIUrl('/coupons')
+    coupons: Utils.getAPIUrl('/coupons'),
+    boughtResources: Utils.getAPIUrl('/users/boughtresources')
 };
 
 // URL列表

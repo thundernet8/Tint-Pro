@@ -25,13 +25,14 @@ function tt_dynamic_sidebar(){
     $sidebar = 'sidebar_common';
 
     // 根据页面选择边栏
-    if ( is_home() && tt_get_option('sidebar_home') ) $sidebar = tt_get_option('sidebar_home');
-    if ( is_single() && tt_get_option('sidebar_single') ) $sidebar = tt_get_option('sidebar_single');
-    if ( is_archive() && tt_get_option('sidebar_archive') ) $sidebar = tt_get_option('sidebar_archive');
-    if ( is_category() && tt_get_option('sidebar_category') ) $sidebar = tt_get_option('sidebar_category');
-    if ( is_search() && tt_get_option('sidebar_search') ) $sidebar = tt_get_option('sidebar_search');
-    if ( is_404() && tt_get_option('sidebar_404') ) $sidebar = tt_get_option('sidebar_404');
-    if ( is_page() && tt_get_option('sidebar_page') ) $sidebar = tt_get_option('sidebar_page');
+    if ( is_home() && $option = tt_get_option('tt_home_sidebar') ) $sidebar = $option;
+    if ( is_single() && $option = tt_get_option('tt_single_sidebar') ) $sidebar = $option;
+    if ( is_archive() && $option = tt_get_option('tt_archive_sidebar') ) $sidebar = $option;
+    if ( is_category() && $option = tt_get_option('tt_category_sidebar') ) $sidebar = $option;
+    if ( is_search() && $option = tt_get_option('tt_search_sidebar') ) $sidebar = $option;
+    if ( is_404() && $option = tt_get_option('tt_404_sidebar') ) $sidebar = $option;
+    if ( is_page() && $option = tt_get_option('tt_page_sidebar') ) $sidebar = $option;
+    if (get_query_var('site_util') == 'download' && $option = tt_get_option('tt_download_sidebar')) $sidebar = $option;
 
     // 检查一个页面或文章是否有特指边栏
     if ( is_singular() ) {
@@ -63,7 +64,8 @@ function tt_register_sidebars(){
         //'sidebar_category'  =>    __('Category Sidebar', 'tt'),
         'sidebar_search'    =>    __('Search Sidebar', 'tt'),
         //'sidebar_404'       =>    __('404 Sidebar', 'tt'),
-        'sidebar_page'      =>    __('Page Sidebar', 'tt')
+        'sidebar_page'      =>    __('Page Sidebar', 'tt'),
+        'sidebar_download'  =>    __('Download Page Sidebar', 'tt')
     );
     foreach ($sidebars as $key => $value){
         if(!$value) continue;

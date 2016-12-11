@@ -1,5 +1,5 @@
 /**
- * Generated on Sun Dec 11 2016 01:32:49 GMT+0800 (中国标准时间) by Zhiyan
+ * Generated on Sun Dec 11 2016 17:33:42 GMT+0800 (中国标准时间) by Zhiyan
  *
  * @package   Tint
  * @version   v2.0.0
@@ -33,24 +33,27 @@
     function (module, exports, __webpack_require__) {
         (function (jQuery) {
             'use strict';
-            var _globalConfig = __webpack_require__(2);
             var _loading = __webpack_require__(8);
+            var _msgbox = __webpack_require__(6);
+            var _scroll = __webpack_require__(14);
+            var _scroll2 = _interopRequireDefault(_scroll);
             __webpack_require__(9);
+            var _checkout = __webpack_require__(32);
+            var _checkout2 = _interopRequireDefault(_checkout);
+            var _fixFooter = __webpack_require__(16);
+            var _fixFooter2 = _interopRequireDefault(_fixFooter);
+            var _buyResource = __webpack_require__(33);
+            var _buyResource2 = _interopRequireDefault(_buyResource);
+            function _interopRequireDefault(obj) {
+                return obj && obj[['__esModule']] ? obj : { default: obj };
+            }
             jQuery(document)[['ready']](function ($) {
                 (0, _loading[['handleLineLoading']])();
-                var _redirectBtn = $('#linkBackHome');
-                var _numSpan = _redirectBtn[['children']]('span.num');
-                var _countNum = function _countNum(span) {
-                    var sec = parseInt(span[['text']]());
-                    if (sec - 1 <= 0) {
-                        clearInterval(_interval);
-                        _redirectBtn[['html']]('\u8df3\u8f6c\u4e2d...');
-                        window[['location']][['href']] = _globalConfig[['Urls']][['site']];
-                    } else {
-                        span[['text']](sec - 1);
-                    }
-                };
-                var _interval = setInterval(_countNum[['bind']](this, _numSpan), 1000);
+                _msgbox[['popMsgbox']][['init']]();
+                _scroll2[['default']][['initScrollTo']]();
+                _checkout2[['default']][['init']]();
+                (0, _fixFooter2[['default']])();
+                _buyResource2[['default']][['init']]();
             });
         }[['call']](exports, __webpack_require__(1)));
     },
@@ -83,7 +86,8 @@
             userMeta: _utils2[['default']][['getAPIUrl']]('/users/metas'),
             shoppingCart: _utils2[['default']][['getAPIUrl']]('/shoppingcart'),
             orders: _utils2[['default']][['getAPIUrl']]('/orders'),
-            coupons: _utils2[['default']][['getAPIUrl']]('/coupons')
+            coupons: _utils2[['default']][['getAPIUrl']]('/coupons'),
+            boughtResources: _utils2[['default']][['getAPIUrl']]('/users/boughtresources')
         };
         var urls = {
             site: _utils2[['default']][['getSiteUrl']](),
@@ -197,14 +201,14 @@
                 _modalSignBox2[['default']][['show']]();
                 return false;
             };
-            var _showFullLoader = function _showFullLoader(icon, text) {
+            var _showFullLoader = function _showFullLoader(iconClass, text) {
                 var loaderContainer = $('#fullLoader-container');
                 if (!loaderContainer[['length']]) {
-                    $('<div id="fullLoader-container"><div class="loader"><i class="tico ' + icon + '"></i></div><p>' + text + '</p></div>')[['appendTo']]('body')[['fadeIn']]();
+                    $('<div id="fullLoader-container"><div class="box"><div class="loader"><i class="tico ' + iconClass + ' spinning"></i></div><p>' + text + '</p></div></div>')[['appendTo']]('body')[['fadeIn']]();
                 } else {
                     loaderContainer[['children']]('p')[['text']](text);
                     var iconEle = loaderContainer[['find']]('i');
-                    iconEle[['attr']]('class', 'tico ' + icon);
+                    iconEle[['attr']]('class', 'tico ' + iconClass);
                     loaderContainer[['fadeIn']]();
                 }
             };
@@ -2463,5 +2467,489 @@
                 $(this)[['siblings']]()[['removeClass']]('active')[['end']]()[['addClass']]('active');
             });
         }[['call']](undefined, jQuery));
+    },
+    ,
+    ,
+    ,
+    ,
+    function (module, exports, __webpack_require__) {
+        (function ($) {
+            'use strict';
+            Object[['defineProperty']](exports, '__esModule', { value: true });
+            var _body = $('body');
+            var _document = $(document);
+            var _scrollTopBottomAnchorCls = 'scroll-to';
+            var _scrollTopAnchorCls = 'scroll-top';
+            var _scrollBottomAnchorCls = 'scroll-bottom';
+            var _handleScrollTo = function _handleScrollTo(btn) {
+                if (btn[['hasClass']](_scrollBottomAnchorCls)) {
+                    _body[['animate']]({ scrollTop: $(document)[['height']]() }, 'slow');
+                } else if (btn[['hasClass']](_scrollTopAnchorCls)) {
+                    _body[['animate']]({ scrollTop: 0 }, 'slow');
+                }
+                return false;
+            };
+            var _initScrollTo = function _initScrollTo() {
+                _body[['on']]('click', '.' + _scrollTopBottomAnchorCls, function () {
+                    _handleScrollTo($(this));
+                });
+            };
+            var _postWrapSel = '#main>.post';
+            var _postWrapBottomY = 0;
+            var _singleBodySel = '.single-body';
+            var _singleBodyTopY = 0;
+            var _shareBarSel = '.single-body>.share-bar';
+            var _shareBarHeight = 0;
+            var _shareBar = null;
+            var _postWrap = null;
+            var _singleBody = null;
+            var _calcTop = function _calcTop() {
+                if (!_shareBar)
+                    _shareBar = $(_shareBarSel);
+                if (!_singleBody)
+                    _singleBody = $(_singleBodySel);
+                if (!_postWrap)
+                    _postWrap = $(_postWrapSel);
+                if (!_shareBarHeight)
+                    _shareBarHeight = _shareBar[['height']]();
+                if (!_postWrapBottomY)
+                    _postWrapBottomY = _postWrap[['offset']]()[['top']] + _postWrap[['height']]() + 40;
+                if (!_singleBodyTopY)
+                    _singleBodyTopY = _singleBody[['offset']]()[['top']];
+                var documentScrollTop = _document[['scrollTop']]();
+                var top = 0;
+                top = Math[['max']](20, 80 + documentScrollTop - _singleBodyTopY);
+                if (_singleBodyTopY + top + _shareBarHeight > _postWrapBottomY) {
+                    top = _postWrapBottomY - _shareBarHeight - _singleBodyTopY;
+                }
+                return top;
+            };
+            var _initShareBar = function _initShareBar() {
+                _document[['on']]('scroll', function () {
+                    var top = _calcTop();
+                    if (!_shareBar)
+                        _shareBar = $(_shareBarSel);
+                    _shareBar[['css']]('top', top + 'px');
+                });
+            };
+            var _originWidgetSel = '#sidebar>.widget_float-sidebar';
+            var _originWidget = null;
+            var _originWidgetTopY = 0;
+            var _originWidgetHeight = 0;
+            var _mirrorWidgetSel = '#sidebar>.float-widget-mirror';
+            var _mirrorWidget = null;
+            var _mirrorWidgetTopY = 0;
+            var _mainWrapSel = '.main-wrap';
+            var _mainWrap = null;
+            var _mainWrapTopY = 0;
+            var _mainWrapHeight = 0;
+            var _windowHeight = 0;
+            _originWidget = $(_originWidgetSel);
+            if (_originWidget[['length']]) {
+                _mirrorWidget = $(_mirrorWidgetSel);
+                _mirrorWidget[['css']]('visibility', 'visible');
+                _mainWrap = $(_mainWrapSel);
+                _originWidgetTopY = _originWidget[['offset']]()[['top']];
+                _originWidgetHeight = _originWidget[['height']]();
+                _mirrorWidgetTopY = _mirrorWidget[['offset']]()[['top']];
+                _mainWrapHeight = _mainWrap[['height']]();
+                _windowHeight = $(window)[['height']]();
+            }
+            var _handleFloatWidget = function _handleFloatWidget() {
+                if ($(window)[['width']]() < 1000)
+                    return;
+                if (!_originWidget)
+                    _originWidget = $(_originWidgetSel);
+                if (_originWidget[['length']] == 0)
+                    return;
+                if (!_mirrorWidget)
+                    _mirrorWidget = $(_mirrorWidgetSel);
+                if (!_mainWrap)
+                    _mainWrap = $(_mainWrapSel);
+                if (!_originWidgetTopY)
+                    _originWidgetTopY = _originWidget[['offset']]()[['top']];
+                if (!_originWidgetHeight)
+                    _originWidgetHeight = _originWidget[['height']]();
+                if (!_mirrorWidgetTopY)
+                    _mirrorWidgetTopY = _mirrorWidget[['offset']]()[['top']];
+                if (!_mainWrapTopY)
+                    _mainWrapTopY = _mainWrap[['offset']]()[['top']];
+                if (!_mainWrapHeight)
+                    _mainWrapHeight = _mainWrap[['height']]();
+                if (!_windowHeight)
+                    _windowHeight = $(window)[['height']]();
+                var documentScrollTop = _document[['scrollTop']]();
+                if (documentScrollTop + _windowHeight + 20 > _mirrorWidgetTopY + _originWidgetHeight + 60) {
+                    if (_mirrorWidget[['html']]() == '') {
+                        _mirrorWidget[['prepend']](_originWidget[['html']]());
+                    }
+                    _mirrorWidget[['fadeIn']]('slow');
+                    var top = Math[['max']](0, documentScrollTop - _mirrorWidgetTopY + 100);
+                    _mirrorWidget[['css']]('top', top);
+                } else {
+                    _mirrorWidget[['html']]('')[['fadeOut']]('slow');
+                }
+            };
+            var _initFloatWidget = function _initFloatWidget() {
+                _document[['on']]('scroll', function () {
+                    _handleFloatWidget();
+                });
+            };
+            var _prevTop = 0;
+            var _currTop = 0;
+            var _handleShopSubNavCollapse = function _handleShopSubNavCollapse() {
+                _currTop = _document[['scrollTop']]();
+                if (_currTop < _prevTop) {
+                    _body[['removeClass']]('collapse-subnav');
+                } else {
+                    _body[['addClass']]('collapse-subnav');
+                }
+                setTimeout(function () {
+                    _prevTop = _currTop;
+                }, 0);
+            };
+            var _initShopSubNavCollapse = function _initShopSubNavCollapse() {
+                _document[['on']]('scroll', function () {
+                    _handleShopSubNavCollapse();
+                });
+            };
+            var ScrollHandler = {
+                initScrollTo: _initScrollTo,
+                initShareBar: _initShareBar,
+                initFloatWidget: _initFloatWidget,
+                initShopSubNavCollapse: _initShopSubNavCollapse
+            };
+            exports[['default']] = ScrollHandler;
+        }[['call']](exports, __webpack_require__(1)));
+    },
+    ,
+    function (module, exports, __webpack_require__) {
+        (function ($) {
+            'use strict';
+            Object[['defineProperty']](exports, '__esModule', { value: true });
+            exports[['default']] = function () {
+                var footer = $('body>footer');
+                var diffH = $(window)[['height']]() - footer[['offset']]()[['top']] - footer[['height']]();
+                if (diffH > 0) {
+                    footer[['css']]('position', 'relative')[['css']]('top', diffH);
+                }
+            };
+        }[['call']](exports, __webpack_require__(1)));
+    },
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    function (module, exports, __webpack_require__) {
+        (function ($) {
+            'use strict';
+            Object[['defineProperty']](exports, '__esModule', { value: true });
+            var _globalConfig = __webpack_require__(2);
+            var _utils = __webpack_require__(3);
+            var _utils2 = _interopRequireDefault(_utils);
+            var _msgbox = __webpack_require__(6);
+            function _interopRequireDefault(obj) {
+                return obj && obj[['__esModule']] ? obj : { default: obj };
+            }
+            var _body = $('body');
+            var _memoTextarea = $('#memo-textarea');
+            var _addressListSel = '.address-list>li';
+            var _addressListActiveSel = '.address-list>li.active';
+            var _receiverNameInput = $('input[name="receiver-name"]');
+            var _receiverEmailInput = $('input[name="receiver-email"]');
+            var _receiverPhoneInput = $('input[name="receiver-phone"]');
+            var _receiverAddrInput = $('input[name="receiver-address"]');
+            var _receiverZipInput = $('input[name="receiver-zip"]');
+            var _addNewAddrSel = '.add-new-address';
+            var _payMethodListSel = '.pay-method-list';
+            var _couponInput = $('input[name="coupon"]');
+            var _couponApplyBtnSel = '#apply-coupon';
+            var _realPriceSel = '.real-price';
+            var _submitBtnSel = '#submit-order';
+            var _originSendBtnText = '';
+            var _spinner = '<i class="tico tico-spinner spinning"></i>';
+            var _submitting = false;
+            var _validateRequiredInputs = function _validateRequiredInputs() {
+                if (_receiverNameInput && _receiverEmailInput) {
+                    var name = _receiverNameInput[['val']]();
+                    var email = _receiverEmailInput[['val']]();
+                    return name[['length']] && _utils2[['default']][['isEmail']](email);
+                }
+                return true;
+            };
+            var _handleCheckout = function _handleCheckout(btn) {
+                if (_submitting || !_utils2[['default']][['checkLogin']]() || !_validateRequiredInputs())
+                    return false;
+                var orderId = parseInt(btn[['data']]('order-id'));
+                if (!orderId) {
+                    return false;
+                }
+                var data = { checkout: true };
+                data[['userMessage']] = _memoTextarea[['length']] ? _memoTextarea[['val']]() : '';
+                var addressList = $(_addressListActiveSel);
+                if (addressList[['length']]) {
+                    data[['addressId']] = addressList[['data']]('address-id');
+                } else {
+                    if (_receiverNameInput[['length']] && _receiverEmailInput[['length']] && _receiverNameInput[['val']]() && _receiverEmailInput[['val']]()) {
+                        data[['receiverName']] = _receiverNameInput[['val']]();
+                        data[['receiverEmail']] = _receiverEmailInput[['val']]();
+                        data[['receiverPhone']] = _receiverPhoneInput[['length']] ? _receiverPhoneInput[['val']]() : '';
+                        data[['receiverAddr']] = _receiverAddrInput[['length']] ? _receiverAddrInput[['val']]() : '';
+                        data[['receiverZip']] = _receiverZipInput[['length']] ? _receiverZipInput[['val']]() : '';
+                    } else {
+                        return false;
+                    }
+                }
+                var paymentList = $(_payMethodListSel);
+                if (paymentList[['length']]) {
+                    var checkedMethod = paymentList[['find']]('input[type="radio"]:checked');
+                    data[['payMethod']] = checkedMethod[['length']] ? checkedMethod[['val']]() : 'qrcode';
+                }
+                var url = _globalConfig[['Routes']][['orders']] + '/' + orderId;
+                var beforeSend = function beforeSend() {
+                    if (_submitting)
+                        return;
+                    _originSendBtnText = btn[['text']]();
+                    btn[['html']](_spinner);
+                    btn[['prop']]('disabled', true);
+                    _utils2[['default']][['showFullLoader']]('tico-spinner9 spinning', '\u6b63\u5728\u66f4\u65b0\u8ba2\u5355\u4fe1\u606f...');
+                    _submitting = true;
+                };
+                var finishRequest = function finishRequest() {
+                    if (!_submitting)
+                        return;
+                    btn[['text']](_originSendBtnText);
+                    btn[['prop']]('disabled', false);
+                    _utils2[['default']][['hideFullLoader']]();
+                    _submitting = false;
+                };
+                var success = function success(data, textStatus, xhr) {
+                    finishRequest();
+                    if (data[['success']] && data[['success']] == 1) {
+                        location[['href']] = data[['data']][['url']];
+                    } else {
+                        _msgbox[['popMsgbox']][['error']]({
+                            title: data[['message']],
+                            timer: 2000,
+                            showConfirmButton: true
+                        });
+                    }
+                };
+                var error = function error(xhr, textStatus, err) {
+                    finishRequest();
+                    _msgbox[['popMsgbox']][['error']]({
+                        title: xhr[['responseJSON']] ? xhr[['responseJSON']][['message']] : xhr[['responseText']],
+                        timer: 2000,
+                        showConfirmButton: true
+                    });
+                };
+                $[['post']]({
+                    url: url,
+                    data: _utils2[['default']][['filterDataForRest']](data),
+                    dataType: 'json',
+                    beforeSend: beforeSend,
+                    success: success,
+                    error: error
+                });
+            };
+            var _initCheckout = function _initCheckout() {
+                _body[['on']]('click', _submitBtnSel, function () {
+                    _handleCheckout($(this));
+                });
+            };
+            var _initChooseAddr = function _initChooseAddr() {
+                if ($(_addressListActiveSel)[['length']] < 1) {
+                    $(_addressListSel)[['first']]()[['addClass']]('active');
+                }
+                _body[['on']]('click', _addressListSel, function () {
+                    $(this)[['siblings']]()[['removeClass']]('active')[['end']]()[['addClass']]('active');
+                });
+            };
+            var _handleApplyCoupon = function _handleApplyCoupon(btn) {
+                if (_submitting || !_utils2[['default']][['checkLogin']]() || !_couponInput || !_couponInput[['val']]())
+                    return false;
+                var orderId = parseInt(btn[['data']]('order-id'));
+                if (!orderId) {
+                    return false;
+                }
+                var data = { coupon: _couponInput[['val']]() };
+                var url = _globalConfig[['Routes']][['orders']] + '/' + orderId;
+                var beforeSend = function beforeSend() {
+                    if (_submitting)
+                        return;
+                    _originSendBtnText = btn[['text']]();
+                    btn[['html']](_spinner);
+                    btn[['prop']]('disabled', true);
+                    $(_submitBtnSel)[['prop']]('disabled', true);
+                    _couponInput[['prop']]('disabled', true);
+                    _submitting = true;
+                };
+                var finishRequest = function finishRequest() {
+                    if (!_submitting)
+                        return;
+                    btn[['text']](_originSendBtnText);
+                    btn[['prop']]('disabled', false);
+                    $(_submitBtnSel)[['prop']]('disabled', false);
+                    _couponInput[['prop']]('disabled', false);
+                    _submitting = false;
+                };
+                var success = function success(data, textStatus, xhr) {
+                    finishRequest();
+                    if (data[['success']] && data[['success']] == 1) {
+                        _msgbox[['popMsgbox']][['success']]({
+                            title: data[['message']],
+                            timer: 2000,
+                            showConfirmButton: true
+                        });
+                        $(_realPriceSel)[['text']](data[['data']][['realPrice']]);
+                    } else {
+                        _msgbox[['popMsgbox']][['error']]({
+                            title: data[['message']],
+                            timer: 2000,
+                            showConfirmButton: true
+                        });
+                    }
+                };
+                var error = function error(xhr, textStatus, err) {
+                    finishRequest();
+                    _msgbox[['popMsgbox']][['error']]({
+                        title: xhr[['responseJSON']] ? xhr[['responseJSON']][['message']] : xhr[['responseText']],
+                        timer: 2000,
+                        showConfirmButton: true
+                    });
+                };
+                $[['post']]({
+                    url: url,
+                    data: _utils2[['default']][['filterDataForRest']](data),
+                    dataType: 'json',
+                    beforeSend: beforeSend,
+                    success: success,
+                    error: error
+                });
+            };
+            var _initApplyCoupon = function _initApplyCoupon() {
+                _body[['on']]('click', _couponApplyBtnSel, function () {
+                    _handleApplyCoupon($(this));
+                });
+            };
+            var _initAddAddress = function _initAddAddress() {
+                _body[['on']]('click', _addNewAddrSel, function () {
+                    var addrInputGroup = $($(this)[['data']]('show-sel'));
+                    var addrList = $($(this)[['data']]('hide-sel'));
+                    if (addrInputGroup[['length']]) {
+                        addrInputGroup[['show']]();
+                    }
+                    if (addrList[['length']]) {
+                        addrList[['remove']]();
+                    }
+                    $(this)[['remove']]();
+                });
+            };
+            var _init = function _init() {
+                _initCheckout();
+                _initChooseAddr();
+                _initApplyCoupon();
+                _initAddAddress();
+            };
+            var Checkout = { init: _init };
+            exports[['default']] = Checkout;
+        }[['call']](exports, __webpack_require__(1)));
+    },
+    function (module, exports, __webpack_require__) {
+        (function ($) {
+            'use strict';
+            Object[['defineProperty']](exports, '__esModule', { value: true });
+            var _globalConfig = __webpack_require__(2);
+            var _utils = __webpack_require__(3);
+            var _utils2 = _interopRequireDefault(_utils);
+            var _msgbox = __webpack_require__(6);
+            function _interopRequireDefault(obj) {
+                return obj && obj[['__esModule']] ? obj : { default: obj };
+            }
+            var _buyBtnSel = '.buy-resource';
+            var _body = $('body');
+            var _sending = false;
+            var _buyResource = function _buyResource(btn) {
+                if (_sending || !_utils2[['default']][['checkLogin']]())
+                    return false;
+                var postId = parseInt(btn[['data']]('post-id'));
+                var resourceSeq = parseInt(btn[['data']]('resource-seq'));
+                if (!postId || !resourceSeq)
+                    return false;
+                var url = _globalConfig[['Routes']][['boughtResources']];
+                var data = {
+                    postId: postId,
+                    resourceSeq: resourceSeq
+                };
+                var beforeSend = function beforeSend() {
+                    if (_sending)
+                        return;
+                    _utils2[['default']][['showFullLoader']]('tico-spinner2', '\u6b63\u5728\u8bf7\u6c42\u4e2d...');
+                    _sending = true;
+                };
+                var finishRequest = function finishRequest() {
+                    if (!_sending)
+                        return;
+                    _utils2[['default']][['hideFullLoader']]();
+                    _sending = false;
+                };
+                var success = function success(data, textStatus, xhr) {
+                    finishRequest();
+                    if (data[['success']] && data[['success']] == 1) {
+                        _msgbox[['popMsgbox']][['success']]({
+                            title: data[['message']],
+                            text: '\u6d88\u8d39\u79ef\u5206: ' + data[['data']][['cost']] + '<br>\u5f53\u524d\u79ef\u5206\u4f59\u989d: ' + data[['data']][['balance']],
+                            html: true,
+                            showConfirmButton: true
+                        }, function () {
+                            location[['replace']](location[['href']]);
+                        });
+                    } else {
+                        _msgbox[['popMsgbox']][['error']]({
+                            title: data[['message']],
+                            timer: 2000,
+                            showConfirmButton: true
+                        });
+                    }
+                };
+                var error = function error(xhr, textStatus, err) {
+                    finishRequest();
+                    _msgbox[['popMsgbox']][['error']]({
+                        title: xhr[['responseJSON']] ? xhr[['responseJSON']][['message']] : xhr[['responseText']],
+                        timer: 2000,
+                        showConfirmButton: true
+                    });
+                };
+                $[['post']]({
+                    url: url,
+                    data: _utils2[['default']][['filterDataForRest']](data),
+                    dataType: 'json',
+                    beforeSend: beforeSend,
+                    success: success,
+                    error: error
+                });
+            };
+            var BuyResource = {
+                init: function init() {
+                    _body[['on']]('click', _buyBtnSel, function (e) {
+                        e[['preventDefault']]();
+                        var $this = $(this);
+                        _buyResource($this);
+                    });
+                }
+            };
+            exports[['default']] = BuyResource;
+        }[['call']](exports, __webpack_require__(1)));
     }
 ]));

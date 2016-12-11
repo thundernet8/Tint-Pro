@@ -111,7 +111,7 @@
                                 <tbody>
                                 <tr>
                                     <td width="100%">
-                                        <div style="padding:20px;font-size:15px;line-height:1.5;color:#3d464d;">
+                                        <div style="padding:20px 20px 40px;font-size:15px;line-height:1.5;color:#3d464d;">
                                             <!-- Content -->
                                             <?=$this->section('content')?>
                                             <!-- ./ Content -->

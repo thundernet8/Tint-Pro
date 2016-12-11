@@ -118,7 +118,7 @@ function tt_credit_pay($amount = 0, $rest = false) {
 //        tt_create_message( $user_id, 0, 'System', 'credit', $msg, '', 0, 'publish');
 //    }
 
-    tt_update_user_credit($user_id, $amount*(-1));
+    tt_update_user_credit($user_id, $amount*(-1)); //TODO confirm update
     return true;
 }
 

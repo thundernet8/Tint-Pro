@@ -1,5 +1,5 @@
 /**
- * Generated on Sun Dec 11 2016 01:32:51 GMT+0800 (中国标准时间) by Zhiyan
+ * Generated on Sun Dec 11 2016 17:33:42 GMT+0800 (中国标准时间) by Zhiyan
  *
  * @package   Tint
  * @version   v2.0.0
@@ -31,7 +31,7 @@
     return __webpack_require__(0);
 }([
     function (module, exports, __webpack_require__) {
-        (function (jQuery) {
+        (function (jQuery, TT) {
             'use strict';
             var _loading = __webpack_require__(8);
             var _msgbox = __webpack_require__(6);
@@ -54,6 +54,17 @@
             __webpack_require__(21);
             var _signHelp = __webpack_require__(15);
             var _signHelp2 = _interopRequireDefault(_signHelp);
+            var _fixFooter = __webpack_require__(16);
+            var _fixFooter2 = _interopRequireDefault(_fixFooter);
+            var _fixProductContent = __webpack_require__(28);
+            var _fixProductContent2 = _interopRequireDefault(_fixProductContent);
+            var _toggle = __webpack_require__(29);
+            var _toggle2 = _interopRequireDefault(_toggle);
+            __webpack_require__(18);
+            var _usermeta = __webpack_require__(30);
+            var _usermeta2 = _interopRequireDefault(_usermeta);
+            var _buy = __webpack_require__(31);
+            var _buy2 = _interopRequireDefault(_buy);
             var _referral = __webpack_require__(17);
             var _referral2 = _interopRequireDefault(_referral);
             function _interopRequireDefault(obj) {
@@ -65,8 +76,6 @@
                 _postStar2[['default']][['init']]();
                 _comments2[['default']][['init']]();
                 _scroll2[['default']][['initScrollTo']]();
-                _scroll2[['default']][['initShareBar']]();
-                _scroll2[['default']][['initFloatWidget']]();
                 _follow2[['default']][['init']]();
                 _pm2[['default']][['initModalPm']]();
                 _modalSignBox2[['default']][['init']]();
@@ -78,18 +87,58 @@
                         item[['attr']]('data-title', img[['attr']]('title'));
                     }
                 });
-                $('img.lazy')[['lazyload']]({
+                $('#primary img.lazy')[['lazyload']]({
                     effect: 'fadeIn',
                     threshold: 50
                 });
-                $('.sidebar img.lazy')[['lazyload']]({
+                $('#secondary img.lazy')[['lazyload']]({
                     effect: 'fadeIn',
                     threshold: 0
                 });
-                (0, _animateAnchor2[['default']])();
+                $('#tertiary img.lazy')[['lazyload']]({
+                    effect: 'fadeIn',
+                    threshold: 0
+                });
+                (0, _animateAnchor2[['default']])(120, false);
+                (0, _fixProductContent2[['default']])();
+                (0, _fixFooter2[['default']])();
+                _toggle2[['default']][['initShopLeftMenuToggle']]();
+                var hash = location[['hash']];
+                if (hash == '#tab-description' || hash == '#tab-reviews') {
+                    $('a[data-target="' + hash + '"]')[['tab']]('show');
+                }
+                $('a[href="#reviews"]')[['on']]('click', function () {
+                    $('a[data-target="#tab-reviews"]')[['tab']]('show');
+                });
+                var viewHistory = $[['cookie']]('tt_view_product_history');
+                if (viewHistory && viewHistory[['length']]) {
+                    var pids = viewHistory[['split']]('_');
+                    var index = viewHistory[['indexOf']](TT[['pid']]);
+                    if (index > -1) {
+                        pids[['splice']](index, 1);
+                    }
+                    pids[['unshift']](TT[['pid']]);
+                    var newViewHistory = pids[['join']]('_');
+                    $[['cookie']]('tt_view_product_history', newViewHistory, {
+                        expires: 365,
+                        path: '/'
+                    });
+                    if (viewHistory != newViewHistory) {
+                        _usermeta2[['default']][['updateMeta']]('tt_view_product_history', newViewHistory);
+                    }
+                } else {
+                    $[['cookie']]('tt_view_product_history', TT[['pid']], {
+                        expires: 365,
+                        path: '/'
+                    });
+                    _usermeta2[['default']][['updateMeta']]('tt_view_product_history', TT[['pid']]);
+                }
+                _buy2[['default']][['initAddCartOrImmediatelyBuy']]();
+                _buy2[['default']][['initQuantityInput']]();
+                _buy2[['default']][['initCartHandle']]();
                 _referral2[['default']][['init']]();
             });
-        }[['call']](exports, __webpack_require__(1)));
+        }[['call']](exports, __webpack_require__(1), __webpack_require__(4)));
     },
     function (module, exports) {
         module[['exports']] = jQuery;
@@ -120,7 +169,8 @@
             userMeta: _utils2[['default']][['getAPIUrl']]('/users/metas'),
             shoppingCart: _utils2[['default']][['getAPIUrl']]('/shoppingcart'),
             orders: _utils2[['default']][['getAPIUrl']]('/orders'),
-            coupons: _utils2[['default']][['getAPIUrl']]('/coupons')
+            coupons: _utils2[['default']][['getAPIUrl']]('/coupons'),
+            boughtResources: _utils2[['default']][['getAPIUrl']]('/users/boughtresources')
         };
         var urls = {
             site: _utils2[['default']][['getSiteUrl']](),
@@ -234,14 +284,14 @@
                 _modalSignBox2[['default']][['show']]();
                 return false;
             };
-            var _showFullLoader = function _showFullLoader(icon, text) {
+            var _showFullLoader = function _showFullLoader(iconClass, text) {
                 var loaderContainer = $('#fullLoader-container');
                 if (!loaderContainer[['length']]) {
-                    $('<div id="fullLoader-container"><div class="loader"><i class="tico ' + icon + '"></i></div><p>' + text + '</p></div>')[['appendTo']]('body')[['fadeIn']]();
+                    $('<div id="fullLoader-container"><div class="box"><div class="loader"><i class="tico ' + iconClass + ' spinning"></i></div><p>' + text + '</p></div></div>')[['appendTo']]('body')[['fadeIn']]();
                 } else {
                     loaderContainer[['children']]('p')[['text']](text);
                     var iconEle = loaderContainer[['find']]('i');
-                    iconEle[['attr']]('class', 'tico ' + icon);
+                    iconEle[['attr']]('class', 'tico ' + iconClass);
                     loaderContainer[['fadeIn']]();
                 }
             };
@@ -2678,7 +2728,19 @@
             exports[['default']] = SignHelp;
         }[['call']](exports, __webpack_require__(1)));
     },
-    ,
+    function (module, exports, __webpack_require__) {
+        (function ($) {
+            'use strict';
+            Object[['defineProperty']](exports, '__esModule', { value: true });
+            exports[['default']] = function () {
+                var footer = $('body>footer');
+                var diffH = $(window)[['height']]() - footer[['offset']]()[['top']] - footer[['height']]();
+                if (diffH > 0) {
+                    footer[['css']]('position', 'relative')[['css']]('top', diffH);
+                }
+            };
+        }[['call']](exports, __webpack_require__(1)));
+    },
     function (module, exports, __webpack_require__) {
         (function ($) {
             'use strict';
@@ -4212,6 +4274,409 @@
                 }
             };
             exports[['default']] = PmKit;
+        }[['call']](exports, __webpack_require__(1)));
+    },
+    function (module, exports, __webpack_require__) {
+        (function ($) {
+            'use strict';
+            Object[['defineProperty']](exports, '__esModule', { value: true });
+            exports[['default']] = function () {
+                var content = $('body>.wrapper');
+                $('#primary')[['css']]('height', content[['height']]());
+            };
+        }[['call']](exports, __webpack_require__(1)));
+    },
+    function (module, exports, __webpack_require__) {
+        (function ($) {
+            'use strict';
+            Object[['defineProperty']](exports, '__esModule', { value: true });
+            var _body = $('body');
+            var _shopMenuToggleAnchorSel = '.hamburger';
+            var _initShopLeftMenuToggle = function _initShopLeftMenuToggle() {
+                _body[['on']]('click', _shopMenuToggleAnchorSel, function () {
+                    _body[['toggleClass']]('without-menu');
+                });
+            };
+            var Toggle = { initShopLeftMenuToggle: _initShopLeftMenuToggle };
+            exports[['default']] = Toggle;
+        }[['call']](exports, __webpack_require__(1)));
+    },
+    function (module, exports, __webpack_require__) {
+        (function ($) {
+            'use strict';
+            Object[['defineProperty']](exports, '__esModule', { value: true });
+            var _globalConfig = __webpack_require__(2);
+            var _utils = __webpack_require__(3);
+            var _utils2 = _interopRequireDefault(_utils);
+            function _interopRequireDefault(obj) {
+                return obj && obj[['__esModule']] ? obj : { default: obj };
+            }
+            var _addMeta = function _addMeta(key, value) {
+                var url = _globalConfig[['Routes']][['userMeta']] + '/' + key;
+                var data = {
+                    value: value,
+                    multi: true
+                };
+                $[['post']]({
+                    url: url,
+                    data: _utils2[['default']][['filterDataForRest']](data),
+                    dataType: 'json'
+                });
+            };
+            var _updateMeta = function _updateMeta(key, value) {
+                var url = _globalConfig[['Routes']][['userMeta']] + '/' + key;
+                var data = { value: value };
+                $[['post']]({
+                    url: url,
+                    data: _utils2[['default']][['filterDataForRest']](data),
+                    dataType: 'json'
+                });
+            };
+            var _deleteMeta = function _deleteMeta(key, value) {
+                var url = _globalConfig[['Routes']][['userMeta']] + '/' + key;
+                var data = { value: value };
+                $[['post']]({
+                    url: url,
+                    data: _utils2[['default']][['filterDataForRest']](data),
+                    dataType: 'json'
+                });
+            };
+            var Usermeta = {
+                addMeta: _addMeta,
+                updateMeta: _updateMeta,
+                deleteMeta: _deleteMeta
+            };
+            exports[['default']] = Usermeta;
+        }[['call']](exports, __webpack_require__(1)));
+    },
+    function (module, exports, __webpack_require__) {
+        (function ($) {
+            'use strict';
+            Object[['defineProperty']](exports, '__esModule', { value: true });
+            var _globalConfig = __webpack_require__(2);
+            var _utils = __webpack_require__(3);
+            var _utils2 = _interopRequireDefault(_utils);
+            var _msgbox = __webpack_require__(6);
+            function _interopRequireDefault(obj) {
+                return obj && obj[['__esModule']] ? obj : { default: obj };
+            }
+            var _body = $('body');
+            var _baseApiUrl = _globalConfig[['Routes']][['shoppingCart']];
+            var _spinner = '<i class="tico tico-spinner spinning"></i>';
+            var _originSendBtnText = '';
+            var _productIDInput = $('input[name="product_id"]');
+            var _quantityInput = $('input[name="quantity"]');
+            var _sending = false;
+            var _widgetCartContainerSel = '.widget_shopping_cart>ul';
+            var _headerCartContainerSel = '.header_shopping_cart>ul';
+            var _cartItemRemoveSel = '.cart-item .delete';
+            var _cartItemsClearSel = '.cart-actions .clear-act';
+            var _cartCheckOutSel = '.cart-actions .check-act';
+            var _handleAddCart = function _handleAddCart(btn) {
+                if (_sending || !_utils2[['default']][['checkLogin']]())
+                    return false;
+                var productId = parseInt(_productIDInput[['val']]());
+                if (!productId)
+                    return false;
+                var quantity = Math[['abs']](parseInt(_quantityInput[['val']]()));
+                if (!quantity) {
+                    quantity = 1;
+                }
+                var url = _baseApiUrl + '/' + productId;
+                var data = { quantity: quantity };
+                var beforeSend = function beforeSend() {
+                    if (_sending)
+                        return;
+                    _originSendBtnText = btn[['text']]();
+                    btn[['html']](_spinner);
+                    btn[['parent']]()[['children']]('.btn-buy')[['prop']]('disabled', true);
+                    _sending = true;
+                };
+                var finishRequest = function finishRequest() {
+                    if (!_sending)
+                        return;
+                    btn[['text']](_originSendBtnText);
+                    btn[['parent']]()[['children']]('.btn-buy')[['prop']]('disabled', false);
+                    _sending = false;
+                };
+                var success = function success(data, textStatus, xhr) {
+                    finishRequest();
+                    if (data[['success']] && data[['success']] == 1) {
+                        _msgbox[['popMsgbox']][['success']]({
+                            title: data[['message']],
+                            showConfirmButton: true
+                        });
+                        _updateSidebarCart(data[['data']]);
+                    } else {
+                        _msgbox[['popMsgbox']][['error']]({
+                            title: data[['message']],
+                            timer: 2000,
+                            showConfirmButton: true
+                        });
+                    }
+                };
+                var error = function error(xhr, textStatus, err) {
+                    finishRequest();
+                    _msgbox[['popMsgbox']][['error']]({
+                        title: xhr[['responseJSON']] ? xhr[['responseJSON']][['message']] : xhr[['responseText']],
+                        timer: 2000,
+                        showConfirmButton: true
+                    });
+                };
+                $[['post']]({
+                    url: url,
+                    data: _utils2[['default']][['filterDataForRest']](data),
+                    dataType: 'json',
+                    beforeSend: beforeSend,
+                    success: success,
+                    error: error
+                });
+            };
+            var _handleQuantityInput = function _handleQuantityInput(input, max) {
+                var value = Math[['abs']](parseInt(input[['val']]()));
+                value = Math[['max']](1, Math[['min']](value, max));
+                input[['val']](value);
+            };
+            var _updateSidebarCart = function _updateSidebarCart(data) {
+                var dom = '';
+                var total = 0;
+                data[['forEach']](function (item) {
+                    dom += '<li class="cart-item" data-product-id="' + item[['id']] + '"><a href="' + item[['permalink']] + '" title="' + item[['name']] + '"><img class="thumbnail" src="' + item[['thumb']] + '"><span class="product-title">' + item[['name']] + '</span></a><div class="price"><i class="tico tico-cny"></i>' + item[['price']] + ' x ' + item[['quantity']] + '</div><i class="tico tico-close delete"></i></li>';
+                    total += parseFloat(item[['price']]) * parseInt(item[['quantity']]);
+                });
+                dom += '<div class="cart-amount">\u5408\u8ba1: <i class="tico tico-cny"></i><span>' + total + '</span></div>';
+                var widgetContainer = $(_widgetCartContainerSel);
+                var headerContainer = $(_headerCartContainerSel);
+                var parent;
+                if (widgetContainer[['length']]) {
+                    widgetContainer[['html']](dom);
+                    parent = widgetContainer[['parent']]();
+                    if (widgetContainer[['children']]('li')[['length']] < 1) {
+                        parent[['removeClass']]('active');
+                    } else {
+                        parent[['addClass']](parent[['hasClass']]('active') ? '' : 'active');
+                    }
+                }
+                if (headerContainer[['length']]) {
+                    headerContainer[['html']](dom);
+                    parent = headerContainer[['parent']]();
+                    if (headerContainer[['children']]('li')[['length']] < 1) {
+                        parent[['removeClass']]('active');
+                    } else {
+                        parent[['addClass']](parent[['hasClass']]('active') ? '' : 'active');
+                    }
+                }
+            };
+            var _initQuantityInput = function _initQuantityInput() {
+                var amountInput = $('input[name="product_amount"]');
+                var maxLimit = amountInput ? Math[['abs']](parseInt(amountInput[['val']]())) : 1;
+                _body[['on']]('input', 'input[name="quantity"]', function () {
+                    _handleQuantityInput($(this), maxLimit);
+                });
+            };
+            var _initImmediatelyBuy = function _initImmediatelyBuy(btn) {
+                if (_sending || !_utils2[['default']][['checkLogin']]())
+                    return false;
+                var productId = parseInt(_productIDInput[['val']]());
+                if (!productId)
+                    return false;
+                var quantity = Math[['abs']](parseInt(_quantityInput[['val']]()));
+                if (!quantity) {
+                    quantity = 1;
+                }
+                var url = _globalConfig[['Routes']][['orders']];
+                var data = {
+                    productId: productId,
+                    productName: '',
+                    orderQuantity: quantity
+                };
+                var beforeSend = function beforeSend() {
+                    if (_sending)
+                        return;
+                    _originSendBtnText = btn[['text']]();
+                    btn[['html']](_spinner);
+                    btn[['parent']]()[['children']]('.btn-buy')[['prop']]('disabled', true);
+                    _sending = true;
+                };
+                var finishRequest = function finishRequest() {
+                    if (!_sending)
+                        return;
+                    btn[['text']](_originSendBtnText);
+                    btn[['parent']]()[['children']]('.btn-buy')[['prop']]('disabled', false);
+                    _sending = false;
+                };
+                var success = function success(data, textStatus, xhr) {
+                    finishRequest();
+                    if (data[['success']] && data[['success']] == 1) {
+                        _msgbox[['popMsgbox']][['success']]({
+                            title: data[['message']],
+                            text: '\u8ba2\u5355\u521b\u5efa\u6210\u529f, \u5c06\u8df3\u8f6c\u81f3\u7ed3\u7b97\u9875\u9762',
+                            showConfirmButton: true
+                        });
+                        var create = data[['data']];
+                        var checkOutUrl = create[['url']];
+                        setTimeout(function () {
+                            location[['href']] = checkOutUrl;
+                        }, 2000);
+                    } else {
+                        _msgbox[['popMsgbox']][['error']]({
+                            title: data[['message']],
+                            timer: 2000,
+                            showConfirmButton: true
+                        });
+                    }
+                };
+                var error = function error(xhr, textStatus, err) {
+                    finishRequest();
+                    _msgbox[['popMsgbox']][['error']]({
+                        title: xhr[['responseJSON']] ? xhr[['responseJSON']][['message']] : xhr[['responseText']],
+                        timer: 2000,
+                        showConfirmButton: true
+                    });
+                };
+                $[['post']]({
+                    url: url,
+                    data: _utils2[['default']][['filterDataForRest']](data),
+                    dataType: 'json',
+                    beforeSend: beforeSend,
+                    success: success,
+                    error: error
+                });
+            };
+            var _initSoldOutNotice = function _initSoldOutNotice(btn) {
+                _msgbox[['popMsgbox']][['info']]({
+                    title: btn[['data']]('msg-title'),
+                    text: btn[['data']]('msg-text'),
+                    timer: 2000,
+                    showConfirmButton: true
+                });
+            };
+            var _initAddCartOrImmediatelyBuy = function _initAddCartOrImmediatelyBuy() {
+                _body[['on']]('click', '.btn-buy', function () {
+                    var btn = $(this);
+                    if (btn[['data']]('buy-action') == 'addcart') {
+                        _handleAddCart(btn);
+                    } else if (btn[['data']]('buy-action') == 'checkout') {
+                        _initImmediatelyBuy(btn);
+                    } else {
+                        _initSoldOutNotice(btn);
+                    }
+                });
+            };
+            var _initCartItemRemove = function _initCartItemRemove() {
+                _body[['on']]('click', _cartItemRemoveSel, function () {
+                    _handleCartItemRemove($(this)[['parent']]());
+                });
+            };
+            var _handleCartItemRemove = function _handleCartItemRemove(item) {
+                var productId = item[['data']]('product-id');
+                var url = _globalConfig[['Routes']][['shoppingCart']] + '/' + productId;
+                var data = {};
+                var success = function success(data, textStatus, xhr) {
+                    if (data[['success']] && data[['success']] == 1) {
+                        _updateSidebarCart(data[['data']]);
+                    }
+                };
+                $[['post']]({
+                    url: url + '?' + $[['param']](_utils2[['default']][['filterDataForRest']](data)),
+                    type: 'DELETE',
+                    dataType: 'json',
+                    success: success
+                });
+            };
+            var _initCartItemsRemove = function _initCartItemsRemove() {
+                _body[['on']]('click', _cartItemsClearSel, function () {
+                    _handleCartItemsRemove();
+                });
+            };
+            var _handleCartItemsRemove = function _handleCartItemsRemove() {
+                var _headerCartContainer = $(_headerCartContainerSel);
+                var _widgetCartContainer = $(_widgetCartContainerSel);
+                if (_headerCartContainer) {
+                    _headerCartContainer[['html']]('')[['parent']]()[['removeClass']]('active');
+                }
+                if (_widgetCartContainer) {
+                    _widgetCartContainer[['html']]('')[['parent']]()[['removeClass']]('active');
+                }
+                var url = _globalConfig[['Routes']][['shoppingCart']];
+                var data = {};
+                $[['post']]({
+                    url: url + '?' + $[['param']](_utils2[['default']][['filterDataForRest']](data)),
+                    type: 'DELETE',
+                    dataType: 'json'
+                });
+            };
+            var _initCartCheckOut = function _initCartCheckOut() {
+                _body[['on']]('click', _cartCheckOutSel, function () {
+                    _handleCartCheckOut($(this));
+                });
+            };
+            var _handleCartCheckOut = function _handleCartCheckOut(btn) {
+                if (_sending || !_utils2[['default']][['checkLogin']]())
+                    return false;
+                var url = _globalConfig[['Routes']][['orders']];
+                var data = { from: 'cart' };
+                var beforeSend = function beforeSend() {
+                    if (_sending)
+                        return;
+                    _utils2[['default']][['showFullLoader']]('tico-spinner spinning', '\u6b63\u5728\u521b\u5efa\u8ba2\u5355...');
+                    _sending = true;
+                };
+                var finishRequest = function finishRequest() {
+                    if (!_sending)
+                        return;
+                    _utils2[['default']][['hideFullLoader']]();
+                    _sending = false;
+                };
+                var success = function success(data, textStatus, xhr) {
+                    finishRequest();
+                    if (data[['success']] && data[['success']] == 1) {
+                        _msgbox[['popMsgbox']][['success']]({
+                            title: data[['message']],
+                            text: '\u8ba2\u5355\u521b\u5efa\u6210\u529f, \u5c06\u8df3\u8f6c\u81f3\u7ed3\u7b97\u9875\u9762',
+                            showConfirmButton: true
+                        });
+                        var create = data[['data']];
+                        var checkOutUrl = create[['url']];
+                        setTimeout(function () {
+                            location[['href']] = checkOutUrl;
+                        }, 2000);
+                    } else {
+                        _msgbox[['popMsgbox']][['error']]({
+                            title: data[['message']],
+                            timer: 2000,
+                            showConfirmButton: true
+                        });
+                    }
+                };
+                var error = function error(xhr, textStatus, err) {
+                    finishRequest();
+                    _msgbox[['popMsgbox']][['error']]({
+                        title: xhr[['responseJSON']] ? xhr[['responseJSON']][['message']] : xhr[['responseText']],
+                        timer: 2000,
+                        showConfirmButton: true
+                    });
+                };
+                $[['post']]({
+                    url: url,
+                    data: _utils2[['default']][['filterDataForRest']](data),
+                    dataType: 'json',
+                    beforeSend: beforeSend,
+                    success: success,
+                    error: error
+                });
+            };
+            var _initCartHandle = function _initCartHandle() {
+                _initCartItemRemove();
+                _initCartItemsRemove();
+                _initCartCheckOut();
+            };
+            var Buy = {
+                initQuantityInput: _initQuantityInput,
+                initAddCartOrImmediatelyBuy: _initAddCartOrImmediatelyBuy,
+                initCartHandle: _initCartHandle
+            };
+            exports[['default']] = Buy;
         }[['call']](exports, __webpack_require__(1)));
     }
 ]));

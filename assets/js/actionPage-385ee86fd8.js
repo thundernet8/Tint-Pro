@@ -1,5 +1,5 @@
 /**
- * Generated on Sun Dec 11 2016 01:32:50 GMT+0800 (中国标准时间) by Zhiyan
+ * Generated on Sun Dec 11 2016 17:33:41 GMT+0800 (中国标准时间) by Zhiyan
  *
  * @package   Tint
  * @version   v2.0.0
@@ -82,7 +82,8 @@
             userMeta: _utils2[['default']][['getAPIUrl']]('/users/metas'),
             shoppingCart: _utils2[['default']][['getAPIUrl']]('/shoppingcart'),
             orders: _utils2[['default']][['getAPIUrl']]('/orders'),
-            coupons: _utils2[['default']][['getAPIUrl']]('/coupons')
+            coupons: _utils2[['default']][['getAPIUrl']]('/coupons'),
+            boughtResources: _utils2[['default']][['getAPIUrl']]('/users/boughtresources')
         };
         var urls = {
             site: _utils2[['default']][['getSiteUrl']](),
@@ -196,14 +197,14 @@
                 _modalSignBox2[['default']][['show']]();
                 return false;
             };
-            var _showFullLoader = function _showFullLoader(icon, text) {
+            var _showFullLoader = function _showFullLoader(iconClass, text) {
                 var loaderContainer = $('#fullLoader-container');
                 if (!loaderContainer[['length']]) {
-                    $('<div id="fullLoader-container"><div class="loader"><i class="tico ' + icon + '"></i></div><p>' + text + '</p></div>')[['appendTo']]('body')[['fadeIn']]();
+                    $('<div id="fullLoader-container"><div class="box"><div class="loader"><i class="tico ' + iconClass + ' spinning"></i></div><p>' + text + '</p></div></div>')[['appendTo']]('body')[['fadeIn']]();
                 } else {
                     loaderContainer[['children']]('p')[['text']](text);
                     var iconEle = loaderContainer[['find']]('i');
-                    iconEle[['attr']]('class', 'tico ' + icon);
+                    iconEle[['attr']]('class', 'tico ' + iconClass);
                     loaderContainer[['fadeIn']]();
                 }
             };

@@ -14,6 +14,9 @@
 ?>
 <?php
 
+/**
+ * Class WP_REST_Usermeta_Controller
+ */
 class WP_REST_Usermeta_Controller extends WP_REST_Controller
 {
     public function __construct()

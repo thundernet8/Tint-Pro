@@ -133,14 +133,14 @@ var _checkLogin = function () {
 
 
 // 全屏加载动画
-var _showFullLoader = function (icon, text) {
+var _showFullLoader = function (iconClass, text) {
     var loaderContainer = $('#fullLoader-container');
     if(!loaderContainer.length){
-        $('<div id="fullLoader-container"><div class="loader"><i class="tico ' + icon + '"></i></div><p>' + text + '</p></div>').appendTo('body').fadeIn();
+        $('<div id="fullLoader-container"><div class="box"><div class="loader"><i class="tico ' + iconClass + ' spinning"></i></div><p>' + text + '</p></div></div>').appendTo('body').fadeIn();
     }else{
         loaderContainer.children('p').text(text);
         var iconEle = loaderContainer.find('i');
-        iconEle.attr('class', 'tico ' + icon);
+        iconEle.attr('class', 'tico ' + iconClass);
         loaderContainer.fadeIn();
     }
 };

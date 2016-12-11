@@ -111,7 +111,8 @@ $site_allow_utils = json_encode(array(
     'paygateway' => 'PayGateway',
     'alipayreturn' => 'Alipay.Return',
     'alipaynotify' => 'Alipay.Notify',
-    'apsvnotify' => 'APSV.Notify'
+    'apsvnotify' => 'APSV.Notify',
+    'download' => 'Download'
 ));
 defined('ALLOWED_SITE_UTILS') || define('ALLOWED_SITE_UTILS', $site_allow_utils);
 

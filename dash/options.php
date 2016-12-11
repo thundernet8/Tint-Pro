@@ -305,12 +305,13 @@ function optionsframework_options() {
             //'sidebar_category'  =>    __('Category Sidebar', 'tt'),
             'sidebar_search'    =>    __('Search Sidebar', 'tt'),
             //'sidebar_404'       =>    __('404 Sidebar', 'tt'),
-            'sidebar_page'      =>    __('Page Sidebar', 'tt')
+            'sidebar_page'      =>    __('Page Sidebar', 'tt'),
+            'sidebar_download'  =>    __('Download Page Sidebar', 'tt')
         )
     );
 
 
-    // - 首页边栏
+    // - 所有边栏
     $all_sidebars = array(
         'sidebar_common'    =>    __('Common Sidebar', 'tt'),
         'sidebar_home'      =>    __('Home Sidebar', 'tt'),
@@ -319,7 +320,8 @@ function optionsframework_options() {
         'sidebar_category'  =>    __('Category Sidebar', 'tt'),
         'sidebar_search'    =>    __('Search Sidebar', 'tt'),
         'sidebar_404'       =>    __('404 Sidebar', 'tt'),
-        'sidebar_page'      =>    __('Page Sidebar', 'tt')
+        'sidebar_page'      =>    __('Page Sidebar', 'tt'),
+        'sidebar_download'  =>    __('Download Page Sidebar', 'tt')
     );
     $register_status = of_get_option('tt_register_sidebars', array('sidebar_common' => true));
     $available_sidebars = [];
@@ -357,15 +359,15 @@ function optionsframework_options() {
         'options' => $available_sidebars
     );
 
-    $options[] = array(
-        'name' => __('Category Sidebar', 'tt'),
-        'desc' => __('Select a sidebar for category page', 'tt'),
-        'id'   => 'tt_category_sidebar',
-        'std'  => array('sidebar_common' => true),
-        'type' => 'select',
-        'class' => 'mini',
-        'options' => $available_sidebars
-    );
+//    $options[] = array(
+//        'name' => __('Category Sidebar', 'tt'),
+//        'desc' => __('Select a sidebar for category page', 'tt'),
+//        'id'   => 'tt_category_sidebar',
+//        'std'  => array('sidebar_common' => true),
+//        'type' => 'select',
+//        'class' => 'mini',
+//        'options' => $available_sidebars
+//    );
 
     $options[] = array(
         'name' => __('Search Sidebar', 'tt'),
@@ -391,6 +393,16 @@ function optionsframework_options() {
         'name' => __('Page Sidebar', 'tt'),
         'desc' => __('Select a sidebar for page', 'tt'),
         'id'   => 'tt_page_sidebar',
+        'std'  => array('sidebar_common' => true),
+        'type' => 'select',
+        'class' => 'mini',
+        'options' => $available_sidebars
+    );
+
+    $options[] = array(
+        'name' => __('Download Page Sidebar', 'tt'),
+        'desc' => __('Select a sidebar for download page', 'tt'),
+        'id'   => 'tt_download_sidebar',
         'std'  => array('sidebar_common' => true),
         'type' => 'select',
         'class' => 'mini',

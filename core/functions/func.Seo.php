@@ -53,6 +53,9 @@ function tt_get_page_title() {
             case 'qrpay':
                 $title = __('Do Payment', 'tt');
                 break;
+            case 'download':
+                global $origin_post;
+                $title = __('Resources Download:', 'tt') . $origin_post->post_title;
             // TODO more
         }
         return $title . ' - ' . get_bloginfo('name');

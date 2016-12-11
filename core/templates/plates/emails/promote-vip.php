@@ -5,4 +5,4 @@
     会员类型：<?=$this->e($vipType)?>
     <br>开通时间：<?=$this->e($startTime)?>
     <br>到期时间：<?=$this->e($endTime)?>
-</div>';
+</div>
