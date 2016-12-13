@@ -416,3 +416,124 @@ function tt_is_product_tag() {
     }
     return false;
 }
+
+
+/**
+ * 检查用户是否购买了某产品(只考虑交易成功的)
+ *
+ * @since 2.0.0
+ * @param $product_id
+ * @param int $user_id
+ * @return bool
+ */
+function tt_check_user_has_buy_product($product_id, $user_id = 0) {
+    $the_orders = tt_get_specified_user_and_product_orders($product_id, $user_id);
+    if($the_orders){
+        return false;
+    }
+    foreach ($the_orders as $the_order){
+        if($the_order->order_status == OrderStatus::TRADE_SUCCESS){
+            return true;
+        }
+    }
+    return false;
+}
+
+
+/**
+ * 检查某商品对某用户的实际价格(会员优惠、全站折扣等)
+ *
+ * @since 2.0.0
+ * @param $product_id
+ * @param int $user_id
+ * @return double|int
+ */
+function tt_get_specified_user_product_price($product_id, $user_id = 0) {
+    $currency = get_post_meta( $product_id, 'tt_pay_currency', true) ? 'cash' : 'credit';
+    $price = $currency == 'cash' ? sprintf('%0.2f', get_post_meta($product_id, 'tt_product_price', true)) : (int)get_post_meta($product_id, 'tt_product_price', true);
+
+    $discount = tt_get_product_discount_array($product_id); // array 第1项为普通折扣, 第2项为会员(月付)折扣, 第3项为会员(年付)折扣, 第4项为会员(永久)折扣
+
+    $user_id = $user_id ? : get_current_user_id();
+    if(!$user_id) {
+        return $currency == 'cash' ? sprintf('%0.2f', $price * absint($discount[0]) / 100) : intval($price * absint($discount[0]) / 100);
+    }
+
+    // 会员等级价格
+    $member = new Member($user_id);
+    if($member->is_permanent_vip()) {
+        return $currency == 'cash' ? sprintf('%0.2f', $price * absint($discount[3]) / 100) : intval($price * absint($discount[3]) / 100);
+    }elseif($member->is_annual_vip()){
+        return $currency == 'cash' ? sprintf('%0.2f', $price * absint($discount[2]) / 100) : intval($price * absint($discount[2]) / 100);
+    }elseif($member->is_monthly_vip()){
+        return $currency == 'cash' ? sprintf('%0.2f', $price * absint($discount[1]) / 100) : intval($price * absint($discount[1]) / 100);
+    }
+    return $currency == 'cash' ? sprintf('%0.2f', $price * absint($discount[0]) / 100) : intval($price * absint($discount[0]) / 100);
+}
+
+
+/**
+ * 获取商品中的下载链接
+ *
+ * @since 2.0.0
+ * @param $product_id
+ * @return string
+ */
+function tt_get_product_download_content($product_id){
+    $content = '';
+    $dl_links = get_post_meta($product_id, 'tt_product_download_links', true);
+    if(!empty($dl_links)):
+        $dl_links = explode(PHP_EOL, $dl_links);
+        foreach($dl_links as $dl_link){
+            $dl_info = explode('|', $dl_link);
+            $dl_info[0] = isset($dl_info[0]) ? $dl_info[0] : '';
+            $dl_info[1] = isset($dl_info[1]) ? $dl_info[1] : '';
+            $dl_info[2] = isset($dl_info[2]) ? $dl_info[2] : __('None', 'tt');
+            $content .= sprintf(__('<li><p>%1$s</p><p>下载链接：<a href="%2$s" title="%1$s" target="_blank">%2$s</a>下载密码：%3$s</p></li>', 'tt'), $dl_info[0], $dl_info[1], $dl_info[2]);
+        }
+    endif;
+    return $content;
+}
+
+
+/**
+ * 获取商品付费内容(包含下载链接和付费可见内容)
+ *
+ * @since 2.0.0
+ * @param $product_id
+ * @return string
+ */
+function tt_get_product_pay_content($product_id){
+    $user_id = get_current_user_id();
+
+    $price = tt_get_specified_user_product_price($product_id, $user_id);
+    $show = $price < 0.01 && tt_check_user_has_buy_product($product_id, $user_id);
+    if(!$show) {
+        return __('<div class="contextual-bg bg-paycontent"><span><i class="tico tico-paypal">&nbsp;</i>付费内容</span><p>你只有购买支付后才能查看该内容！</p></div>', 'tt');
+    }
+
+    $pay_content = get_post_meta($product_id, 'tt_product_pay_content', true);
+    $download_content = tt_get_product_download_content($product_id);
+
+    return sprintf(__('<div class="contextual-bg bg-paycontent"><span><i class="tico tico-paypal">&nbsp;</i>付费内容</span><p>%1$s</p><p>%2$s</p></div>', 'tt'), $download_content, $pay_content);
+}
+
+
+/**
+ * 获取商品折扣数组
+ *
+ * @since 2.0.0
+ * @param $product_id
+ * @return array|mixed
+ */
+function tt_get_product_discount_array($product_id){
+    $discount = maybe_unserialize(get_post_meta($product_id, 'tt_product_discount', true));
+    if(!is_array($discount)) {
+        return array(100, 100, 100, 100);
+    }
+    $discount[0] = isset($discount[0]) ? min(100, absint($discount[0])) : 100;
+    $discount[1] = isset($discount[1]) ? min(100, absint($discount[1])) : $discount[0];
+    $discount[2] = isset($discount[2]) ? min(100, absint($discount[2])) : $discount[0];
+    $discount[3] = isset($discount[3]) ? min(100, absint($discount[3])) : $discount[0];
+    return $discount;
+}

@@ -181,4 +181,11 @@ var Utils = {
     getQueryString: _getQueryString
 };
 
+
+// 全局事件绑定
+$('body').on('click', '.user-login', function (e) {
+    e.preventDefault();
+    _checkLogin();
+});
+
 export default Utils;

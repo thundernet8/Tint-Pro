@@ -49,10 +49,10 @@
                                 <a href="<?php echo $product['permalink']; ?>">
                                     <img class="thumb-medium wp-post-image fadeIn" src="<?php echo $product['thumb']; ?>">
                                     <span class="product-stats clearfix">
-                                <span class="product-stat"><i class="tico tico-eye"></i><?php echo $product['views']; ?></span>
-                                <span class="product-stat"><i class="tico tico-comments"></i><?php echo $product['comment_count']; ?></span>
-                                <span class="product-stat"><i class="tico tico-truck"></i><?php echo $product['sales']; ?></span>
-                            </span>
+                                        <span class="product-stat"><i class="tico tico-eye"></i><?php echo $product['views']; ?></span>
+                                        <span class="product-stat"><i class="tico tico-comments"></i><?php echo $product['comment_count']; ?></span>
+                                        <span class="product-stat"><i class="tico tico-truck"></i><?php echo $product['sales']; ?></span>
+                                    </span>
                                 </a>
                             </div>
                             <div class="entry-detail">

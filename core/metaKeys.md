@@ -39,6 +39,7 @@
 * tt_latest_reviewed
 * tt_free_dl
 * tt_sale_dl
+* tt_embed_product
 
 
 ### Post Meta(Product)

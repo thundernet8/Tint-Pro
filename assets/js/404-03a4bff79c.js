@@ -1,5 +1,5 @@
 /**
- * Generated on Sun Dec 11 2016 17:33:41 GMT+0800 (中国标准时间) by Zhiyan
+ * Generated on Tue Dec 13 2016 00:49:03 GMT+0800 (中国标准时间) by Zhiyan
  *
  * @package   Tint
  * @version   v2.0.0
@@ -33,33 +33,24 @@
     function (module, exports, __webpack_require__) {
         (function (jQuery) {
             'use strict';
+            var _globalConfig = __webpack_require__(2);
             var _loading = __webpack_require__(8);
-            var _msgbox = __webpack_require__(6);
             __webpack_require__(9);
-            var _loadNextPage = __webpack_require__(13);
-            var _loadNextPage2 = _interopRequireDefault(_loadNextPage);
-            var _scroll = __webpack_require__(14);
-            var _scroll2 = _interopRequireDefault(_scroll);
-            var _modalSignBox = __webpack_require__(5);
-            var _modalSignBox2 = _interopRequireDefault(_modalSignBox);
-            var _signHelp = __webpack_require__(15);
-            var _signHelp2 = _interopRequireDefault(_signHelp);
-            var _fixFooter = __webpack_require__(16);
-            var _fixFooter2 = _interopRequireDefault(_fixFooter);
-            var _referral = __webpack_require__(17);
-            var _referral2 = _interopRequireDefault(_referral);
-            function _interopRequireDefault(obj) {
-                return obj && obj[['__esModule']] ? obj : { default: obj };
-            }
             jQuery(document)[['ready']](function ($) {
                 (0, _loading[['handleLineLoading']])();
-                _msgbox[['popMsgbox']][['init']]();
-                _loadNextPage2[['default']][['init']]();
-                _scroll2[['default']][['initScrollTo']]();
-                _modalSignBox2[['default']][['init']]();
-                _signHelp2[['default']][['init']]();
-                (0, _fixFooter2[['default']])();
-                _referral2[['default']][['init']]();
+                var _redirectBtn = $('#linkBackHome');
+                var _numSpan = _redirectBtn[['children']]('span.num');
+                var _countNum = function _countNum(span) {
+                    var sec = parseInt(span[['text']]());
+                    if (sec - 1 <= 0) {
+                        clearInterval(_interval);
+                        _redirectBtn[['html']]('\u8df3\u8f6c\u4e2d...');
+                        window[['location']][['href']] = _globalConfig[['Urls']][['site']];
+                    } else {
+                        span[['text']](sec - 1);
+                    }
+                };
+                var _interval = setInterval(_countNum[['bind']](this, _numSpan), 1000);
             });
         }[['call']](exports, __webpack_require__(1)));
     },
@@ -251,6 +242,10 @@
                 hideFullLoader: _hideFullLoader,
                 getQueryString: _getQueryString
             };
+            $('body')[['on']]('click', '.user-login', function (e) {
+                e[['preventDefault']]();
+                _checkLogin();
+            });
             exports[['default']] = Utils;
         }[['call']](exports, __webpack_require__(4), __webpack_require__(1)));
     },
@@ -2473,359 +2468,5 @@
                 $(this)[['siblings']]()[['removeClass']]('active')[['end']]()[['addClass']]('active');
             });
         }[['call']](undefined, jQuery));
-    },
-    ,
-    ,
-    ,
-    function (module, exports, __webpack_require__) {
-        (function ($) {
-            'use strict';
-            Object[['defineProperty']](exports, '__esModule', { value: true });
-            var _globalConfig = __webpack_require__(2);
-            var _body = $('body');
-            var _postListCls = 'archive-posts';
-            var _loadNextComponentID = 'loadNext';
-            var _loadingIcon = '<i class="tico tico-spinner2 spinning"></i>';
-            var _unLoadingIcon = '<i class="tico tico-angle-down"></i>';
-            var _isLoadingNext = false;
-            var _handlePageContent = function _handlePageContent(html, url) {
-                var doc = $(html);
-                var postList = $('.' + _postListCls);
-                if (doc && postList) {
-                    postList[['html']](doc[['find']]('.' + _postListCls)[['html']]());
-                    history[['pushState']]('200', doc[9][['innerText']], url);
-                    document[['title']] = doc[9][['innerText']];
-                }
-            };
-            var _ajaxLoadNext = function _ajaxLoadNext(btn) {
-                if (_isLoadingNext)
-                    return false;
-                var nextPageUrl = btn[['data']]('next-page-url');
-                if (!nextPageUrl)
-                    return false;
-                var beforeSend = function beforeSend() {
-                    _body[['addClass']](_globalConfig[['Classes']][['appLoading']]);
-                    _isLoadingNext = true;
-                    btn[['html']](_loadingIcon);
-                };
-                var finishRequest = function finishRequest() {
-                    _body[['removeClass']](_globalConfig[['Classes']][['appLoading']]);
-                    _isLoadingNext = false;
-                    btn[['html']](_unLoadingIcon);
-                };
-                var success = function success(data, textStatus, xhr) {
-                    if (data && xhr[['status']] == '200') {
-                        _handlePageContent(data, nextPageUrl);
-                    }
-                    finishRequest();
-                };
-                var error = function error(xhr, textStatus, err) {
-                    finishRequest();
-                };
-                $[['get']]({
-                    url: nextPageUrl,
-                    dataType: 'html',
-                    beforeSend: beforeSend,
-                    success: success,
-                    error: error
-                });
-            };
-            var loadNext = {
-                init: function init() {
-                    _body[['on']]('click', '[data-component=' + _loadNextComponentID + ']', function () {
-                        var $this = $(this);
-                        _ajaxLoadNext($this);
-                    });
-                }
-            };
-            exports[['default']] = loadNext;
-        }[['call']](exports, __webpack_require__(1)));
-    },
-    function (module, exports, __webpack_require__) {
-        (function ($) {
-            'use strict';
-            Object[['defineProperty']](exports, '__esModule', { value: true });
-            var _body = $('body');
-            var _document = $(document);
-            var _scrollTopBottomAnchorCls = 'scroll-to';
-            var _scrollTopAnchorCls = 'scroll-top';
-            var _scrollBottomAnchorCls = 'scroll-bottom';
-            var _handleScrollTo = function _handleScrollTo(btn) {
-                if (btn[['hasClass']](_scrollBottomAnchorCls)) {
-                    _body[['animate']]({ scrollTop: $(document)[['height']]() }, 'slow');
-                } else if (btn[['hasClass']](_scrollTopAnchorCls)) {
-                    _body[['animate']]({ scrollTop: 0 }, 'slow');
-                }
-                return false;
-            };
-            var _initScrollTo = function _initScrollTo() {
-                _body[['on']]('click', '.' + _scrollTopBottomAnchorCls, function () {
-                    _handleScrollTo($(this));
-                });
-            };
-            var _postWrapSel = '#main>.post';
-            var _postWrapBottomY = 0;
-            var _singleBodySel = '.single-body';
-            var _singleBodyTopY = 0;
-            var _shareBarSel = '.single-body>.share-bar';
-            var _shareBarHeight = 0;
-            var _shareBar = null;
-            var _postWrap = null;
-            var _singleBody = null;
-            var _calcTop = function _calcTop() {
-                if (!_shareBar)
-                    _shareBar = $(_shareBarSel);
-                if (!_singleBody)
-                    _singleBody = $(_singleBodySel);
-                if (!_postWrap)
-                    _postWrap = $(_postWrapSel);
-                if (!_shareBarHeight)
-                    _shareBarHeight = _shareBar[['height']]();
-                if (!_postWrapBottomY)
-                    _postWrapBottomY = _postWrap[['offset']]()[['top']] + _postWrap[['height']]() + 40;
-                if (!_singleBodyTopY)
-                    _singleBodyTopY = _singleBody[['offset']]()[['top']];
-                var documentScrollTop = _document[['scrollTop']]();
-                var top = 0;
-                top = Math[['max']](20, 80 + documentScrollTop - _singleBodyTopY);
-                if (_singleBodyTopY + top + _shareBarHeight > _postWrapBottomY) {
-                    top = _postWrapBottomY - _shareBarHeight - _singleBodyTopY;
-                }
-                return top;
-            };
-            var _initShareBar = function _initShareBar() {
-                _document[['on']]('scroll', function () {
-                    var top = _calcTop();
-                    if (!_shareBar)
-                        _shareBar = $(_shareBarSel);
-                    _shareBar[['css']]('top', top + 'px');
-                });
-            };
-            var _originWidgetSel = '#sidebar>.widget_float-sidebar';
-            var _originWidget = null;
-            var _originWidgetTopY = 0;
-            var _originWidgetHeight = 0;
-            var _mirrorWidgetSel = '#sidebar>.float-widget-mirror';
-            var _mirrorWidget = null;
-            var _mirrorWidgetTopY = 0;
-            var _mainWrapSel = '.main-wrap';
-            var _mainWrap = null;
-            var _mainWrapTopY = 0;
-            var _mainWrapHeight = 0;
-            var _windowHeight = 0;
-            _originWidget = $(_originWidgetSel);
-            if (_originWidget[['length']]) {
-                _mirrorWidget = $(_mirrorWidgetSel);
-                _mirrorWidget[['css']]('visibility', 'visible');
-                _mainWrap = $(_mainWrapSel);
-                _originWidgetTopY = _originWidget[['offset']]()[['top']];
-                _originWidgetHeight = _originWidget[['height']]();
-                _mirrorWidgetTopY = _mirrorWidget[['offset']]()[['top']];
-                _mainWrapHeight = _mainWrap[['height']]();
-                _windowHeight = $(window)[['height']]();
-            }
-            var _handleFloatWidget = function _handleFloatWidget() {
-                if ($(window)[['width']]() < 1000)
-                    return;
-                if (!_originWidget)
-                    _originWidget = $(_originWidgetSel);
-                if (_originWidget[['length']] == 0)
-                    return;
-                if (!_mirrorWidget)
-                    _mirrorWidget = $(_mirrorWidgetSel);
-                if (!_mainWrap)
-                    _mainWrap = $(_mainWrapSel);
-                if (!_originWidgetTopY)
-                    _originWidgetTopY = _originWidget[['offset']]()[['top']];
-                if (!_originWidgetHeight)
-                    _originWidgetHeight = _originWidget[['height']]();
-                if (!_mirrorWidgetTopY)
-                    _mirrorWidgetTopY = _mirrorWidget[['offset']]()[['top']];
-                if (!_mainWrapTopY)
-                    _mainWrapTopY = _mainWrap[['offset']]()[['top']];
-                if (!_mainWrapHeight)
-                    _mainWrapHeight = _mainWrap[['height']]();
-                if (!_windowHeight)
-                    _windowHeight = $(window)[['height']]();
-                var documentScrollTop = _document[['scrollTop']]();
-                if (documentScrollTop + _windowHeight + 20 > _mirrorWidgetTopY + _originWidgetHeight + 60) {
-                    if (_mirrorWidget[['html']]() == '') {
-                        _mirrorWidget[['prepend']](_originWidget[['html']]());
-                    }
-                    _mirrorWidget[['fadeIn']]('slow');
-                    var top = Math[['max']](0, documentScrollTop - _mirrorWidgetTopY + 100);
-                    _mirrorWidget[['css']]('top', top);
-                } else {
-                    _mirrorWidget[['html']]('')[['fadeOut']]('slow');
-                }
-            };
-            var _initFloatWidget = function _initFloatWidget() {
-                _document[['on']]('scroll', function () {
-                    _handleFloatWidget();
-                });
-            };
-            var _prevTop = 0;
-            var _currTop = 0;
-            var _handleShopSubNavCollapse = function _handleShopSubNavCollapse() {
-                _currTop = _document[['scrollTop']]();
-                if (_currTop < _prevTop) {
-                    _body[['removeClass']]('collapse-subnav');
-                } else {
-                    _body[['addClass']]('collapse-subnav');
-                }
-                setTimeout(function () {
-                    _prevTop = _currTop;
-                }, 0);
-            };
-            var _initShopSubNavCollapse = function _initShopSubNavCollapse() {
-                _document[['on']]('scroll', function () {
-                    _handleShopSubNavCollapse();
-                });
-            };
-            var ScrollHandler = {
-                initScrollTo: _initScrollTo,
-                initShareBar: _initShareBar,
-                initFloatWidget: _initFloatWidget,
-                initShopSubNavCollapse: _initShopSubNavCollapse
-            };
-            exports[['default']] = ScrollHandler;
-        }[['call']](exports, __webpack_require__(1)));
-    },
-    function (module, exports, __webpack_require__) {
-        (function ($) {
-            'use strict';
-            Object[['defineProperty']](exports, '__esModule', { value: true });
-            var _utils = __webpack_require__(3);
-            var _utils2 = _interopRequireDefault(_utils);
-            function _interopRequireDefault(obj) {
-                return obj && obj[['__esModule']] ? obj : { default: obj };
-            }
-            var _signInLinkSel = '.login-link';
-            var SignHelp = {
-                init: function init() {
-                    $('body')[['on']]('click', _signInLinkSel, function (e) {
-                        if ($(window)[['width']]() >= 640) {
-                            e[['preventDefault']]();
-                            _utils2[['default']][['checkLogin']]();
-                        }
-                    });
-                }
-            };
-            exports[['default']] = SignHelp;
-        }[['call']](exports, __webpack_require__(1)));
-    },
-    function (module, exports, __webpack_require__) {
-        (function ($) {
-            'use strict';
-            Object[['defineProperty']](exports, '__esModule', { value: true });
-            exports[['default']] = function () {
-                var footer = $('body>footer');
-                var diffH = $(window)[['height']]() - footer[['offset']]()[['top']] - footer[['height']]();
-                if (diffH > 0) {
-                    footer[['css']]('position', 'relative')[['css']]('top', diffH);
-                }
-            };
-        }[['call']](exports, __webpack_require__(1)));
-    },
-    function (module, exports, __webpack_require__) {
-        (function ($) {
-            'use strict';
-            Object[['defineProperty']](exports, '__esModule', { value: true });
-            __webpack_require__(18);
-            var _utils = __webpack_require__(3);
-            var _utils2 = _interopRequireDefault(_utils);
-            function _interopRequireDefault(obj) {
-                return obj && obj[['__esModule']] ? obj : { default: obj };
-            }
-            var _body = $('body');
-            var _initRef = function _initRef() {
-                if (!$[['cookie']]('tt_ref')) {
-                    $[['cookie']]('tt_ref', _utils2[['default']][['getQueryString']]('ref'), {
-                        expires: 1,
-                        path: '/'
-                    });
-                }
-            };
-            var Referral = { init: _initRef };
-            exports[['default']] = Referral;
-        }[['call']](exports, __webpack_require__(1)));
-    },
-    function (module, exports, __webpack_require__) {
-        var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
-        'use strict';
-        var _typeof = typeof Symbol === 'function' && typeof Symbol[['iterator']] === 'symbol' ? function (obj) {
-            return typeof obj;
-        } : function (obj) {
-            return obj && typeof Symbol === 'function' && obj[['constructor']] === Symbol ? 'symbol' : typeof obj;
-        };
-        (function (factory) {
-            if (true) {
-                !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(1)], __WEBPACK_AMD_DEFINE_FACTORY__ = factory, __WEBPACK_AMD_DEFINE_RESULT__ = typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? __WEBPACK_AMD_DEFINE_FACTORY__[['apply']](exports, __WEBPACK_AMD_DEFINE_ARRAY__) : __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module[['exports']] = __WEBPACK_AMD_DEFINE_RESULT__));
-            } else if ((typeof exports === 'undefined' ? 'undefined' : _typeof(exports)) === 'object') {
-                module[['exports']] = factory(require('jquery'));
-            } else {
-                factory(jQuery);
-            }
-        }(function ($) {
-            var pluses = /\+/g;
-            function encode(s) {
-                return config[['raw']] ? s : encodeURIComponent(s);
-            }
-            function decode(s) {
-                return config[['raw']] ? s : decodeURIComponent(s);
-            }
-            function stringifyCookieValue(value) {
-                return encode(config[['json']] ? JSON[['stringify']](value) : String(value));
-            }
-            function parseCookieValue(s) {
-                if (s[['indexOf']]('"') === 0) {
-                    s = s[['slice']](1, -1)[['replace']](/\\"/g, '"')[['replace']](/\\\\/g, '\\');
-                }
-                try {
-                    s = decodeURIComponent(s[['replace']](pluses, ' '));
-                    return config[['json']] ? JSON[['parse']](s) : s;
-                } catch (e) {
-                }
-            }
-            function read(s, converter) {
-                var value = config[['raw']] ? s : parseCookieValue(s);
-                return $[['isFunction']](converter) ? converter(value) : value;
-            }
-            var config = $[['cookie']] = function (key, value, options) {
-                if (arguments[['length']] > 1 && !$[['isFunction']](value)) {
-                    options = $[['extend']]({}, config[['defaults']], options);
-                    if (typeof options[['expires']] === 'number') {
-                        var days = options[['expires']], t = options[['expires']] = new Date();
-                        t[['setMilliseconds']](t[['getMilliseconds']]() + days * 86400000);
-                    }
-                    return document[['cookie']] = [
-                        encode(key),
-                        '=',
-                        stringifyCookieValue(value),
-                        options[['expires']] ? '; expires=' + options[['expires']][['toUTCString']]() : '',
-                        options[['path']] ? '; path=' + options[['path']] : '',
-                        options[['domain']] ? '; domain=' + options[['domain']] : '',
-                        options[['secure']] ? '; secure' : ''
-                    ][['join']]('');
-                }
-                var result = key ? undefined : {}, cookies = document[['cookie']] ? document[['cookie']][['split']]('; ') : [], i = 0, l = cookies[['length']];
-                for (; i < l; i++) {
-                    var parts = cookies[i][['split']]('='), name = decode(parts[['shift']]()), cookie = parts[['join']]('=');
-                    if (key === name) {
-                        result = read(cookie, value);
-                        break;
-                    }
-                    if (!key && (cookie = read(cookie)) !== undefined) {
-                        result[name] = cookie;
-                    }
-                }
-                return result;
-            };
-            config[['defaults']] = {};
-            $[['removeCookie']] = function (key, options) {
-                $[['cookie']](key, '', $[['extend']]({}, options, { expires: -1 }));
-                return !$[['cookie']](key);
-            };
-        }));
     }
 ]));

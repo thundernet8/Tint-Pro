@@ -38,7 +38,7 @@ function tt_sc_product($atts, $content = null){
         return '<button type="button" class="btn btn-product btn-' . $size . '">' . $content . '</button>';
     }
 }
-add_shortcode('product', 'tt_sc_product');
+//add_shortcode('product', 'tt_sc_product');
 
 // Button
 function tt_sc_button($atts, $content = null){
@@ -72,7 +72,7 @@ add_shortcode('infobg', 'tt_sc_infobg');
 
 // Login to visual
 function tt_sc_l2v( $atts, $content ){
-    if( !is_null( $content ) && !is_user_logged_in() ) $content = '<div class="bg-lr2v contextual"><i class="fa fa-exclamation"></i>' . __(' 此处内容需要 <span class="user-login">登录</span> 才可见', 'tt') . '</div>';
+    if( !is_null( $content ) && !is_user_logged_in() ) $content = '<div class="bg-lr2v contextual-bg bg-warning"><i class="fa fa-exclamation"></i>' . __(' 此处内容需要 <span class="user-login">登录</span> 才可见', 'tt') . '</div>';
     return $content;
 }
 add_shortcode( 'ttl2v', 'tt_sc_l2v' );
@@ -81,7 +81,7 @@ add_shortcode( 'ttl2v', 'tt_sc_l2v' );
 function tt_sc_r2v( $atts, $content ){
     if( !is_null( $content ) ) :
         if(!is_user_logged_in()){
-            $content = '<div class="bg-lr2v contextual"><i class="tico tico-comment"></i>' . __('此处内容需要登录并 <span class="user-login">发表评论</span> 才可见', 'tt') . '</div>';
+            $content = '<div class="bg-lr2v contextual-bg bg-info"><i class="tico tico-comment"></i>' . __('此处内容需要登录并 <span class="user-login">发表评论</span> 才可见', 'tt') . '</div>';
         }else{
             global $post;
             $user_id = get_current_user_id();

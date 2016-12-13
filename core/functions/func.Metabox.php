@@ -14,6 +14,14 @@
 ?>
 <?php
 function tt_add_metaboxes() {
+    // 嵌入商品
+    add_meta_box(
+        'tt_post_embed_product',
+        __( 'Post Embed Product', 'tt' ),
+        'tt_post_embed_product_callback',
+        'post',
+        'normal','high'
+    );
     // 转载信息
     add_meta_box(
         'tt_copyright_content',
@@ -49,6 +57,24 @@ function tt_add_metaboxes() {
 }
 add_action( 'add_meta_boxes', 'tt_add_metaboxes' );
 
+
+/**
+ * 文章内嵌入商品
+ *
+ * @since 2.0.0
+ * @param $post
+ * @return void
+ */
+function tt_post_embed_product_callback($post) {
+    $embed_product = (int)get_post_meta( $post->ID, 'tt_embed_product', true );
+    ?>
+    <p style="width:100%;">
+        <?php _e( 'Embed Product ID', 'tt' );?>
+        <input name="tt_embed_product" class="small-text code" value="<?php echo $embed_product;?>" style="width:80px;height: 28px;">
+        <?php _e( '(Leave empty or zero to disable)', 'tt' );?>
+    </p>
+    <?php
+}
 
 /**
  * 文章转载信息
@@ -127,11 +153,11 @@ function tt_product_info_callback($post){
     $amount = get_post_meta($post->ID, 'tt_product_quantity', true);
 
     // 注意，折扣保存的是百分数的数值部分
-    $discount_summary = maybe_unserialize(get_post_meta($post->ID, 'tt_product_discount', true)); // 第1项为普通折扣, 第2项为会员(月付)折扣, 第3项为会员(年付)折扣, 第4项为会员(永久)折扣
-    $site_discount = is_array($discount_summary) && isset($discount_summary[0]) ? absint($discount_summary[0]) : 100;
-    $monthly_vip_discount = isset($discount_summary[1]) ? absint($discount_summary[1]) : $site_discount;
-    $annual_vip_discount = isset($discount_summary[2]) ? absint($discount_summary[2]) : $site_discount;
-    $permanent_vip_discount = isset($discount_summary[3]) ? absint($discount_summary[3]) : $site_discount;
+    $discount_summary = tt_get_product_discount_array($post->ID); // 第1项为普通折扣, 第2项为会员(月付)折扣, 第3项为会员(年付)折扣, 第4项为会员(永久)折扣
+    $site_discount = $discount_summary[0];
+    $monthly_vip_discount = $discount_summary[1];
+    $annual_vip_discount = $discount_summary[2];
+    $permanent_vip_discount = $discount_summary[3];
 
     //$promote_code_support = get_post_meta($post->ID, 'tt_promote_code_support', true) ? (int)get_post_meta($post->ID, 'tt_promote_code_support', true) : 0;
     //$promote_discount = get_post_meta($post->ID,'product_promote_discount',true);
@@ -141,9 +167,9 @@ function tt_product_info_callback($post){
     $download_links = get_post_meta($post->ID, 'tt_product_download_links', true);
     $pay_content = get_post_meta($post->ID,'tt_product_pay_content',true);
     ?>
-    <p style="clear:both;font-weight:bold;">
+    <!--p style="clear:both;font-weight:bold;">
         <?php echo sprintf(__('此商品购买按钮快捷插入短代码为[product id="%1$s"][/product]', 'tt'), $post->ID); ?>
-    </p>
+    </p-->
     <p style="clear:both;font-weight:bold;border-bottom:1px solid #ddd;padding-bottom:8px;">
         <?php _e('基本信息', 'tt'); ?>
     </p>
@@ -221,6 +247,10 @@ function tt_save_meta_box_data( $post_id ) {
         }
     }
     // 检查和更新字段
+    if(isset($_POST['tt_embed_product'])) {
+        update_post_meta($post_id, 'tt_embed_product', absint($_POST['tt_embed_product']));
+    }
+
     if(isset($_POST['tt_source_title']) && isset($_POST['tt_source_link'])) {
         $cc = array(
             'source_title' => trim($_POST['tt_source_title']),

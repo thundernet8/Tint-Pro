@@ -56,7 +56,7 @@ class Member{
         }
     }
 
-    private function __get($property_name) {
+    public function __get($property_name) {
         switch ($property_name){
             case 'vip_type':
                 return $this->get_vip_type();
@@ -69,7 +69,7 @@ class Member{
         }
     }
 
-    private function __set($property_name, $value) {
+    public function __set($property_name, $value) {
         switch ($property_name){
             case 'vip_type': // 不允许外部设值
                 break;
@@ -82,8 +82,8 @@ class Member{
         if($this->_member_row === false){
             $row = tt_get_member_row($this->_uid);
             $this->_member_row = $row;
-            $this->vip_type = $row->user_type;
-            return $row->user_type;
+            $this->vip_type = $row ? $row->user_type : 0;
+            return $this->vip_type;
         }
         return 0;
     }

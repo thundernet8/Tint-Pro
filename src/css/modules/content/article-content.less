@@ -84,4 +84,104 @@
     .btn {
         margin: 10px;
     }
+
+    .bg-lr2v {
+        text-align: center;
+        i {
+            margin-right: 10px;
+        }
+        span {
+            color: #222;
+            font-weight: bold;
+        }
+        .user-login {
+            cursor: pointer;
+        }
+    }
+}
+
+#main .single-article {
+    &>.embed-product {
+        position: relative;
+        height: 100px;
+        border: 1px solid #fafafa;
+        border-left: 3px solid @brand-elegant;
+        border-radius: 3px;
+        padding: 0 10px 0 10px;
+        margin: 30px auto;
+        font-size: 1.4rem;
+        &>img {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            float: left;
+            margin: 0 15px 0 0;
+        }
+        &>.product-info {
+            &>h4 {
+                font-size: 1.6rem;
+                white-space: nowrap;
+                text-overflow: clip;
+                overflow: hidden;
+                a {
+                    color: @brand-success;
+                }
+            }
+            &>.price {
+                font-size: 2rem;
+                font-weight: 500;
+                color: @brand-hot;
+                i {
+                    vertical-align: -2px;
+                }
+            }
+            &>.entry-meta {
+
+            }
+            &>.product-rating {
+                &>.star-rating {
+                    position: relative;
+                    float: left;
+                    height: 15px;
+                    width: 68px;
+                    margin: 3px 4px 0 0;
+                    overflow: hidden;
+                    font-size: 1.4rem;
+                    line-height: 14px;
+                    &:before {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        content: '\f006\f006\f006\f006\f006';
+                        color: #ccc;
+                    }
+                    &>span {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        padding-top: 15px;
+                        overflow: hidden;
+                        &:before {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            content: '\f005\f005\f005\f005\f005';
+                        }
+                        &>span {
+
+                        }
+                    }
+                }
+            }
+            &>.btn-buy {
+                position: absolute;
+                right: 15px;
+                bottom: 15px;
+                margin: 0;
+                i {
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
 }

@@ -151,10 +151,12 @@ function tt_get_keywords_and_description() {
     }elseif(is_single() && get_post_type() != 'product') {
         $tags = get_the_tags();
         $tag_names = array();
-        foreach ($tags as $tag){
-            $tag_names[] = $tag->name;
+        if($tags){
+            foreach ($tags as $tag){
+                $tag_names[] = $tag->name;
+            }
+            $keywords = implode(',', $tag_names);
         }
-        $keywords = implode(',', $tag_names);
         $description = strip_tags(get_the_excerpt());
     }elseif(is_page()){
         global $post;

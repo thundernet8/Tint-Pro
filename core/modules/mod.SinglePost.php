@@ -60,6 +60,40 @@
                 <h2 class="content-dl"><?php _e('Related Downloads', 'tt'); ?></h2>
                 <p style="text-align: center;margin-bottom: 50px;"><a class="btn btn-download" href="<?php echo $postdata->download; ?>" target="_blank"><?php _e('Click to Download', 'tt'); ?></a></p>
                 <?php } ?>
+                <?php if(isset($postdata->embed_product) && $embed_product = $postdata->embed_product) { ?>
+                <!-- 内嵌商品 -->
+                <div class="embed-product">
+                    <img src="<?php echo $embed_product['product_thumb']; ?>">
+                    <div class="product-info">
+                        <h4><a href="<?php echo $embed_product['product_link']; ?>"><?php echo $embed_product['product_name']; ?></a></h4>
+                        <div class="price">
+                            <?php if(!($embed_product['product_price'] > 0)) { ?>
+                                <span><?php echo __('FREE', 'tt'); ?></span>
+                            <?php }elseif($embed_product['pay_currency'] == 'credit') { ?>
+                                <i class="tico tico-diamond"></i>
+                                <span><?php echo (int)$embed_product['product_price']; ?></span>
+                            <?php }else{ ?>
+                                <i class="tico tico-cny"></i>
+                                <span><?php echo $embed_product['product_price']; ?></span>
+                            <?php } ?>
+                        </div>
+                        <!--div class="entry-meta">
+                            <i class="tico tico-eye"></i><?php echo $embed_product['product_views']; ?>
+                            <i class="tico tico-truck"></i><?php echo $embed_product['product_sales']; ?>
+                        </div-->
+                        <?php $rating = $embed_product['product_rating']; ?>
+                        <div class="product-rating" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
+                            <div class="star-rating tico-star-o" title="<?php printf(__('Rated %0.1f out of 5', 'tt'), $rating['value']); ?>">
+                                <span class="tico-star" style="<?php echo sprintf('width:%d', $rating['percent']) . '%;'; ?>">
+                                    <?php printf(__('<strong itemprop="ratingValue" class="rating">%0.1f</strong> out of <span itemprop="bestRating">5</span>based on <span itemprop="ratingCount" class="rating">%d</span> customer ratings', 'tt'), $rating['value'], $rating['count']); ?>
+                                </span>
+                            </div>
+                            <!--a href="#reviews" class="commerce-review-link" rel="nofollow">(<?php printf(__('<span itemprop="reviewCount" class="count">%d</span> customer reviews', 'tt'), $rating['count']); ?>)</a-->
+                        </div>
+                        <a class="btn btn-success btn-buy" href="<?php echo $embed_product['product_link']; ?>"><i class="tico tico-shopping-cart"></i><?php _e('Buy Now', 'tt'); ?></a>
+                    </div>
+                </div>
+                <?php } ?>
             </article>
             <div class="article-footer">
                 <div class="post-copyright">

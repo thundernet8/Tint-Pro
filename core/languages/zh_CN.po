@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-12-11 14:20+0800\n"
-"PO-Revision-Date: 2016-12-11 14:20+0800\n"
+"POT-Creation-Date: 2016-12-13 20:33+0800\n"
+"PO-Revision-Date: 2016-12-13 20:37+0800\n"
 "Last-Translator: Zhiyan <mail@webapproach.net>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -78,6 +78,14 @@ msgstr "%s必须介于%d(不包含)和%d(包含)之间"
 msgid "%s must be between %d (inclusive) and %d (inclusive)"
 msgstr "%s必须介于%d(包含)和%d(包含)之间"
 
+#: core/api/v1/endpoints/class.Rest.BoughtResource.Controller.php:53
+msgid "Sorry, you cannot buy post resources without signing in."
+msgstr "抱歉, 必须登录才能购买资源"
+
+#: core/api/v1/endpoints/class.Rest.BoughtResource.Controller.php:71
+msgid "Buy the resource successfully"
+msgstr "购买资源成功"
+
 #: core/api/v1/endpoints/class.Rest.Comment.Controller.php:57
 #: core/api/v1/endpoints/class.Rest.Message.Controller.php:73
 #: core/api/v1/endpoints/class.Rest.Order.Controller.php:65
@@ -86,7 +94,7 @@ msgstr "%s必须介于%d(包含)和%d(包含)之间"
 #: core/api/v1/endpoints/class.Rest.ShoppingCart.Controller.php:49
 #: core/api/v1/endpoints/class.Rest.ShoppingCart.Controller.php:71
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:69
-#: core/api/v1/endpoints/class.Rest.Usermeta.Controller.php:52
+#: core/api/v1/endpoints/class.Rest.Usermeta.Controller.php:55
 msgid "Required to be true, as resource does not support trashing."
 msgstr ""
 
@@ -240,7 +248,7 @@ msgid "Cannot get the message specified"
 msgstr "不能获取指定消息"
 
 #: core/api/v1/endpoints/class.Rest.Message.Controller.php:218
-#: core/api/v1/endpoints/class.Rest.Usermeta.Controller.php:101
+#: core/api/v1/endpoints/class.Rest.Usermeta.Controller.php:104
 msgid "Sorry, you cannot update message without signing in."
 msgstr "抱歉, 必须登录才能更新消息"
 
@@ -623,27 +631,27 @@ msgstr "抱歉, 你无权更新用户账户状态"
 msgid "A reason is required"
 msgstr "需要理由"
 
-#: core/api/v1/endpoints/class.Rest.Usermeta.Controller.php:70
+#: core/api/v1/endpoints/class.Rest.Usermeta.Controller.php:73
 msgid "Sorry, you cannot retrieve usermeta without signing in."
 msgstr "抱歉, 你必须登录才能检索用户元数据"
 
-#: core/api/v1/endpoints/class.Rest.Usermeta.Controller.php:87
+#: core/api/v1/endpoints/class.Rest.Usermeta.Controller.php:90
 msgid "Cannot get the usermeta specified"
 msgstr "不能获取指定用户元数据"
 
-#: core/api/v1/endpoints/class.Rest.Usermeta.Controller.php:123
+#: core/api/v1/endpoints/class.Rest.Usermeta.Controller.php:126
 msgid "Cannot update or create the usermeta specified"
 msgstr "不能更新或创建指定的用户元数据"
 
-#: core/api/v1/endpoints/class.Rest.Usermeta.Controller.php:139
+#: core/api/v1/endpoints/class.Rest.Usermeta.Controller.php:142
 msgid "Sorry, you cannot delete usermeta without signing in."
 msgstr "抱歉, 你必须登录才能删除用户元数据"
 
-#: core/api/v1/endpoints/class.Rest.Usermeta.Controller.php:157
+#: core/api/v1/endpoints/class.Rest.Usermeta.Controller.php:160
 msgid "The usermeta cannot be deleted."
 msgstr "该用户元数据不可删除"
 
-#: core/api/v1/endpoints/class.Rest.Usermeta.Controller.php:160
+#: core/api/v1/endpoints/class.Rest.Usermeta.Controller.php:163
 msgid "delete usermeta successfully"
 msgstr "删除用户元数据成功"
 
@@ -1343,6 +1351,26 @@ msgstr "积分"
 msgid "总积分 %1$d 已消费 %2$d 剩余 %3$d"
 msgstr "总积分 %1$d 已消费 %2$d 剩余 %3$d"
 
+#: core/functions/func.Download.php:61
+msgid "You must sign in to continue your purchase"
+msgstr "你必须登录才能继续购买"
+
+#: core/functions/func.Download.php:67
+msgid "The resource you willing to buy is not existed"
+msgstr "你要购买的资源不存在"
+
+#: core/functions/func.Download.php:76
+msgid "You have bought the resource yet, do not repeat a purchase"
+msgstr "你已经购买过了, 请不要重复购买"
+
+#: core/functions/func.Download.php:103
+msgid "Failed to buy the resource, or maybe you have bought before"
+msgstr "购买资源失败, 或许你已经购买过了"
+
+#: core/functions/func.Download.php:107
+msgid "Payment for the resource finished successfully"
+msgstr "资源购买支付成功"
+
 #: core/functions/func.Follow.php:106
 msgid "The user you are following not exist"
 msgstr "你要关注的用户不存在"
@@ -1631,34 +1659,46 @@ msgid "%1$s向你发送了一条消息 - %2$s"
 msgstr "%1$s向你发送了一条消息 - %2$s"
 
 #: core/functions/func.Metabox.php:20
+msgid "Post Embed Product"
+msgstr "文章内嵌商品"
+
+#: core/functions/func.Metabox.php:28
 msgid "Post Copyright Info"
 msgstr "文章版权信息"
 
-#: core/functions/func.Metabox.php:28
+#: core/functions/func.Metabox.php:36
 msgid "普通与积分收费下载"
 msgstr "普通与积分收费下载"
 
-#: core/functions/func.Metabox.php:36
+#: core/functions/func.Metabox.php:44
 msgid "页面关键词与描述"
 msgstr "页面关键词与描述"
 
-#: core/functions/func.Metabox.php:44
+#: core/functions/func.Metabox.php:52
 msgid "商品信息"
 msgstr "商品信息"
 
-#: core/functions/func.Metabox.php:64
+#: core/functions/func.Metabox.php:72
+msgid "Embed Product ID"
+msgstr "内嵌商品ID"
+
+#: core/functions/func.Metabox.php:74
+msgid "(Leave empty or zero to disable)"
+msgstr "(留空或0以禁用)"
+
+#: core/functions/func.Metabox.php:90
 msgid "Post Source Title"
 msgstr "文章源标题"
 
-#: core/functions/func.Metabox.php:66
+#: core/functions/func.Metabox.php:92
 msgid "Post Source Link, leaving empty means the post is original article"
 msgstr "文章源链接, 留空表明为原创"
 
-#: core/functions/func.Metabox.php:87
+#: core/functions/func.Metabox.php:113
 msgid "普通下载资源下载方式"
 msgstr "普通下载资源下载方式"
 
-#: core/functions/func.Metabox.php:88
+#: core/functions/func.Metabox.php:114
 msgid ""
 "普通下载资源，格式为 资源1名称|资源1url|下载密码,资源2名称|资源2url|下载密码 "
 "资源名称与url用|隔开，不同资源用英文逗号隔开，url请添加http://头，如提供百度"
@@ -1668,7 +1708,7 @@ msgstr ""
 "资源名称与url用|隔开，不同资源用英文逗号隔开，url请添加http://头，如提供百度"
 "网盘加密下载可以填写密码，也可以留空"
 
-#: core/functions/func.Metabox.php:90
+#: core/functions/func.Metabox.php:116
 msgid ""
 "积分下载资源，格式为 资源1名称|资源1url|资源1价格|下载密码,资源2名称|资源"
 "2url|资源2价格|下载密码 资源名称与url以及价格、下载密码用|隔开，不同资源用英"
@@ -1678,76 +1718,76 @@ msgstr ""
 "2url|资源2价格|下载密码 资源名称与url以及价格、下载密码用|隔开，不同资源用英"
 "文逗号隔开"
 
-#: core/functions/func.Metabox.php:108
+#: core/functions/func.Metabox.php:134
 msgid "页面关键词"
 msgstr "页面关键词"
 
-#: core/functions/func.Metabox.php:110
+#: core/functions/func.Metabox.php:136
 msgid "页面描述"
 msgstr "页面描述"
 
-#: core/functions/func.Metabox.php:145
+#: core/functions/func.Metabox.php:171
 #, php-format
 msgid "此商品购买按钮快捷插入短代码为[product id=\"%1$s\"][/product]"
 msgstr "此商品购买按钮快捷插入短代码为[product id=\"%1$s\"][/product]"
 
-#: core/functions/func.Metabox.php:148
+#: core/functions/func.Metabox.php:174
 msgid "基本信息"
 msgstr "基本信息"
 
-#: core/functions/func.Metabox.php:150
+#: core/functions/func.Metabox.php:176
 msgid "选择支付币种"
 msgstr "选择支付币种"
 
-#: core/functions/func.Metabox.php:152
+#: core/functions/func.Metabox.php:178
 msgid "积分"
 msgstr "积分"
 
-#: core/functions/func.Metabox.php:153
+#: core/functions/func.Metabox.php:179
 msgid "人民币"
 msgstr "人民币"
 
-#: core/functions/func.Metabox.php:156
+#: core/functions/func.Metabox.php:182
 msgid "商品售价 "
 msgstr "商品售价 "
 
-#: core/functions/func.Metabox.php:159
+#: core/functions/func.Metabox.php:185
 msgid "商品数量 "
 msgstr "商品数量 "
 
-#: core/functions/func.Metabox.php:163
+#: core/functions/func.Metabox.php:189
 msgid "VIP会员折扣百分数(100代表原价)"
 msgstr "VIP会员折扣百分数(100代表原价)"
 
-#: core/functions/func.Metabox.php:165
+#: core/functions/func.Metabox.php:191
 msgid "VIP月费会员折扣 "
 msgstr "VIP月费会员折扣 "
 
-#: core/functions/func.Metabox.php:168
+#: core/functions/func.Metabox.php:194
 msgid "VIP年费会员折扣 "
 msgstr "VIP年费会员折扣 "
 
-#: core/functions/func.Metabox.php:171
+#: core/functions/func.Metabox.php:197
 msgid "VIP永久会员折扣 "
 msgstr "VIP永久会员折扣 "
 
-#: core/functions/func.Metabox.php:175
+#: core/functions/func.Metabox.php:201
 msgid "促销信息"
 msgstr "促销信息"
 
-#: core/functions/func.Metabox.php:177
+#: core/functions/func.Metabox.php:203
 msgid "优惠促销折扣(100代表原价)"
 msgstr "优惠促销折扣(100代表原价)"
 
-#: core/functions/func.Metabox.php:181
+#: core/functions/func.Metabox.php:207
 msgid "付费内容"
 msgstr "付费内容"
 
-#: core/functions/func.Metabox.php:183
+#: core/functions/func.Metabox.php:209
 msgid "付费查看下载链接,一行一个,每个资源格式为资源名|资源下载链接|密码"
 msgstr "付费查看下载链接,一行一个,每个资源格式为资源名|资源下载链接|密码"
 
-#: core/functions/func.Metabox.php:185
+#: core/functions/func.Metabox.php:211
 msgid "付费查看的内容信息"
 msgstr "付费查看的内容信息"
 
@@ -1846,7 +1886,7 @@ msgstr "资源下载: "
 msgid " - Page %d"
 msgstr " - 第 %d 页"
 
-#: core/functions/func.Seo.php:79 core/functions/func.Seo.php:174
+#: core/functions/func.Seo.php:79 core/functions/func.Seo.php:176
 #, php-format
 msgid "%s's Home Page"
 msgstr "%s's 个人中心"
@@ -1860,7 +1900,7 @@ msgid "Product Tag"
 msgstr "商品标签"
 
 #: core/functions/func.Seo.php:87 core/functions/func.Seo.php:90
-#: core/functions/func.Seo.php:186 core/modules/mod.Header.Shop.php:29
+#: core/functions/func.Seo.php:188 core/modules/mod.Header.Shop.php:29
 #: dash/options.php:794
 msgid "Market"
 msgstr "商店"
@@ -1899,19 +1939,19 @@ msgstr "页面未找到"
 msgid " - Page %d "
 msgstr " - 第 %d 页"
 
-#: core/functions/func.Seo.php:142 core/functions/func.Seo.php:174
+#: core/functions/func.Seo.php:142 core/functions/func.Seo.php:176
 msgid "Powered by Tint(Tinection 2)"
 msgstr "由Tint主题驱动(Tinection 2)"
 
-#: core/functions/func.Seo.php:173
+#: core/functions/func.Seo.php:175
 msgid "Ucenter"
 msgstr "用户中心"
 
-#: core/functions/func.Seo.php:173 core/functions/func.Seo.php:186
+#: core/functions/func.Seo.php:175 core/functions/func.Seo.php:188
 msgid "Tint Ucenter and Market System"
 msgstr "Tint主题用户中心和商店系统"
 
-#: core/functions/func.Seo.php:189
+#: core/functions/func.Seo.php:191
 msgid ""
 "Powered by Tint(Tinection 2, a powerful wordpress theme with ucenter and "
 "shop system integrated)"
@@ -2077,17 +2117,17 @@ msgstr "交易关闭"
 msgid "Order Created"
 msgstr "订单创建成功"
 
-#: core/functions/shop/func.Shop.Orders.php:301
-#: core/functions/shop/func.Shop.Orders.php:309
-#: core/functions/shop/func.Shop.Orders.php:326
+#: core/functions/shop/func.Shop.Orders.php:352
+#: core/functions/shop/func.Shop.Orders.php:360
+#: core/functions/shop/func.Shop.Orders.php:377
 msgid "Create combine order failed"
 msgstr "创建合并订单失败"
 
-#: core/functions/shop/func.Shop.Orders.php:371
+#: core/functions/shop/func.Shop.Orders.php:422
 msgid "The order with the a order id you specified is not existed"
 msgstr "指定的订单不存在"
 
-#: core/functions/shop/func.Shop.Orders.php:379
+#: core/functions/shop/func.Shop.Orders.php:430
 msgid "The coupon is invalid"
 msgstr "优惠码无效"
 
@@ -2296,9 +2336,118 @@ msgstr "件"
 msgid "Show all categories"
 msgstr "显示所有分类"
 
+#: core/functions/shop/func.Shop.php:491 core/modules/mod.Download.php:35
+#: core/modules/mod.Download.php:49 dash/options.php:945 dash/options.php:1051
+msgid "None"
+msgstr "无"
+
+#: core/functions/shop/func.Shop.php:492
+#, php-format
+msgid ""
+"<li><p>%1$s</p><p>下载链接：<a href=\"%2$s\" title=\"%1$s\" target=\"_blank"
+"\">%2$s</a>下载密码：%3$s</p></li>"
+msgstr ""
+"<li><p>%1$s</p><p>下载链接：<a href=\"%2$s\" title=\"%1$s\" target=\"_blank"
+"\">%2$s</a>下载密码：%3$s</p></li>"
+
+#: core/functions/shop/func.Shop.php:512
+msgid ""
+"<div class=\"contextual-bg bg-paycontent\"><span><i class=\"tico tico-paypal"
+"\">&nbsp;</i>付费内容</span><p>你只有购买支付后才能查看该内容！</p></div>"
+msgstr ""
+"<div class=\"contextual-bg bg-paycontent\"><span><i class=\"tico tico-paypal"
+"\">&nbsp;</i>付费内容</span><p>你只有购买支付后才能查看该内容！</p></div>"
+
+#: core/functions/shop/func.Shop.php:518
+#, php-format
+msgid ""
+"<div class=\"contextual-bg bg-paycontent\"><span><i class=\"tico tico-paypal"
+"\">&nbsp;</i>付费内容</span><p>%1$s</p><p>%2$s</p></div>"
+msgstr ""
+"<div class=\"contextual-bg bg-paycontent\"><span><i class=\"tico tico-paypal"
+"\">&nbsp;</i>付费内容</span><p>%1$s</p><p>%2$s</p></div>"
+
 #: core/modules/mod.Comments.php:29 core/modules/shop/mod.Shop.Comments.php:29
 msgid "Load More Comments"
 msgstr "加载更多"
+
+#: core/modules/mod.Download.php:25
+msgid ""
+"本站所刊载内容均为网络上收集整理，包括但不限于代码、应用程序、影音资源、电子"
+"书籍资料等，并且以研究交流为目的，所有仅供大家参考、学习，不存在任何商业目的"
+"与商业用途。若您使用开源的软件代码，请遵守相应的开源许可规范和精神，若您需要"
+"使用非免费的软件或服务，您应当购买正版授权并合法使用。如果你下载此文件，表示"
+"您同意只将此文件用于参考、学习使用而非任何其他用途。"
+msgstr ""
+"本站所刊载内容均为网络上收集整理，包括但不限于代码、应用程序、影音资源、电子"
+"书籍资料等，并且以研究交流为目的，所有仅供大家参考、学习，不存在任何商业目的"
+"与商业用途。若您使用开源的软件代码，请遵守相应的开源许可规范和精神，若您需要"
+"使用非免费的软件或服务，您应当购买正版授权并合法使用。如果你下载此文件，表示"
+"您同意只将此文件用于参考、学习使用而非任何其他用途。"
+
+#: core/modules/mod.Download.php:29
+msgid "Free Resources"
+msgstr "免费资源"
+
+#: core/modules/mod.Download.php:35 core/modules/mod.Download.php:49
+#, php-format
+msgid ""
+"%d. %2$s <a href=\"%3$s\" target=\"_blank\"><i class=\"tico tico-cloud-"
+"download\"></i>点击下载</a> (密码: %4$s)"
+msgstr ""
+"%d. %2$s <a href=\"%3$s\" target=\"_blank\"><i class=\"tico tico-cloud-"
+"download\"></i>点击下载</a> (密码: %4$s)"
+
+#: core/modules/mod.Download.php:42
+msgid "Sale Resources"
+msgstr "付费资源"
+
+#: core/modules/mod.Download.php:51
+#, php-format
+msgid ""
+"%1$s. %2$s <a class=\"buy-resource\" href=\"javascript:;\" data-post-id="
+"\"%3$s\" data-resource-seq=\"%1$s\" target=\"_blank\"><i class=\"tico tico-"
+"cart\"></i>点击购买</a> (%4$s Credits)"
+msgstr ""
+"%1$s. %2$s <a class=\"buy-resource\" href=\"javascript:;\" data-post-id="
+"\"%3$s\" data-resource-seq=\"%1$s\" target=\"_blank\"><i class=\"tico tico-"
+"cart\"></i>点击购买</a> (%4$s Credits)"
+
+#: core/modules/mod.Download.php:61
+msgid "如果您发现本文件已经失效不能下载，请联系站长修正！"
+msgstr "如果您发现本文件已经失效不能下载，请联系站长修正！"
+
+#: core/modules/mod.Download.php:62
+msgid ""
+"本站提供的资源多数为百度网盘下载，对于大文件，你需要安装百度云客户端才能下"
+"载！"
+msgstr ""
+"本站提供的资源多数为百度网盘下载，对于大文件，你需要安装百度云客户端才能下"
+"载！"
+
+#: core/modules/mod.Download.php:63
+msgid ""
+"部分文件引用的官方或者非网盘类他站下载链接，你可能需要使用迅雷、BT等下载工具"
+"下载！"
+msgstr ""
+"部分文件引用的官方或者非网盘类他站下载链接，你可能需要使用迅雷、BT等下载工具"
+"下载！"
+
+#: core/modules/mod.Download.php:64
+msgid ""
+"本站推荐的资源均经由站长检测或者个人发布，不包含恶意软件病毒代码等，如果你发"
+"现此类问题，请向站长举报！"
+msgstr ""
+"本站推荐的资源均经由站长检测或者个人发布，不包含恶意软件病毒代码等，如果你发"
+"现此类问题，请向站长举报！"
+
+#: core/modules/mod.Download.php:65
+msgid ""
+"本站仅提供文件的免费下载服务，如果你对代码程序软件的使用有任何疑惑，请留意相"
+"关网站论坛。对于本站个人发布的资源，站长会提供有限的帮助！"
+msgstr ""
+"本站仅提供文件的免费下载服务，如果你对代码程序软件的使用有任何疑惑，请留意相"
+"关网站论坛。对于本站个人发布的资源，站长会提供有限的帮助！"
 
 #: core/modules/mod.FixedControls.php:17
 msgid "Scroll to top"
@@ -2492,32 +2641,38 @@ msgstr "说点什么吧..."
 msgid "Signin and Leave some words..."
 msgstr "登录并参与讨论..."
 
-#: core/modules/mod.SinglePage.php:26
+#: core/modules/mod.SinglePage.php:26 core/templates/page/tpl.Page.Links.php:32
 msgid "Post on: "
 msgstr "发布于: "
 
-#: core/modules/mod.SinglePage.php:28
+#: core/modules/mod.SinglePage.php:28 core/templates/page/tpl.Page.Links.php:34
 msgid "Modified on: "
 msgstr "上次更新: "
 
 #: core/modules/mod.SinglePage.php:45 core/modules/mod.SinglePage.php:50
-#: core/modules/mod.SinglePost.php:70 core/modules/mod.SinglePost.php:75
+#: core/modules/mod.SinglePost.php:104 core/modules/mod.SinglePost.php:109
+#: core/templates/page/tpl.Page.Links.php:65
+#: core/templates/page/tpl.Page.Links.php:70
 msgid "Stared"
 msgstr "已赞"
 
-#: core/modules/mod.SinglePage.php:45 core/modules/mod.SinglePost.php:70
+#: core/modules/mod.SinglePage.php:45 core/modules/mod.SinglePost.php:104
+#: core/templates/page/tpl.Page.Links.php:65
 msgid "Star It"
 msgstr "赞一下"
 
-#: core/modules/mod.SinglePage.php:50 core/modules/mod.SinglePost.php:75
+#: core/modules/mod.SinglePage.php:50 core/modules/mod.SinglePost.php:109
+#: core/templates/page/tpl.Page.Links.php:70
 msgid "persons"
 msgstr "个人"
 
-#: core/modules/mod.SinglePage.php:58 core/modules/mod.SinglePost.php:115
+#: core/modules/mod.SinglePage.php:58 core/modules/mod.SinglePost.php:149
+#: core/templates/page/tpl.Page.Links.php:78
 msgid "LEAVE A REPLY"
 msgstr "参与评论"
 
-#: core/modules/mod.SinglePage.php:62 core/modules/mod.SinglePost.php:119
+#: core/modules/mod.SinglePage.php:62 core/modules/mod.SinglePost.php:153
+#: core/templates/page/tpl.Page.Links.php:82
 msgid "COMMENTS CLOSED"
 msgstr "评论已关闭"
 
@@ -2549,30 +2704,25 @@ msgstr "相关下载"
 msgid "Click to Download"
 msgstr "点击下载"
 
-#: core/modules/mod.SinglePost.php:83
-msgid "Previous article"
-msgstr "上一篇"
+#: core/modules/mod.SinglePost.php:71 core/modules/shop/mod.Shop.Relates.php:33
+#: core/modules/shop/mod.Shop.Sidebar.Left.php:39
+#: core/modules/shop/mod.Shop.Sidebar.Right.php:75
+#: core/templates/shop/tpl.Product.Archive.php:62
+#: core/templates/shop/tpl.Product.Category.php:63
+#: core/templates/shop/tpl.Product.Search.php:63
+#: core/templates/shop/tpl.Product.Tag.php:63
+#: core/templates/shop/tpl.Product.php:94
+msgid "FREE"
+msgstr "FREE"
 
-#: core/modules/mod.SinglePost.php:87
-msgid "Next article"
-msgstr "下一篇"
-
-#: core/modules/mod.SinglePost.php:94
-msgid "Related Articles"
-msgstr "相关文章"
-
-#: core/modules/shop/mod.Shop.Relates.php:17
-msgid "Related Products"
-msgstr "相关商品"
-
-#: core/modules/shop/mod.Shop.Relates.php:26
+#: core/modules/mod.SinglePost.php:86 core/modules/shop/mod.Shop.Relates.php:26
 #: core/modules/shop/mod.Shop.Sidebar.Right.php:51
 #: core/templates/shop/tpl.Product.php:82
 #, php-format
 msgid "Rated %0.1f out of 5"
 msgstr "平均评分 %0.1f (满分5)"
 
-#: core/modules/shop/mod.Shop.Relates.php:28
+#: core/modules/mod.SinglePost.php:88 core/modules/shop/mod.Shop.Relates.php:28
 #: core/modules/shop/mod.Shop.Sidebar.Right.php:53
 #: core/templates/shop/tpl.Product.php:84
 #, php-format
@@ -2585,16 +2735,31 @@ msgstr ""
 "itemprop=\"bestRating\">5</span> 基于 <span itemprop=\"ratingCount\" class="
 "\"rating\">%d</span> 个用户评分"
 
-#: core/modules/shop/mod.Shop.Relates.php:33
-#: core/modules/shop/mod.Shop.Sidebar.Left.php:39
-#: core/modules/shop/mod.Shop.Sidebar.Right.php:75
-#: core/templates/shop/tpl.Product.Archive.php:62
-#: core/templates/shop/tpl.Product.Category.php:63
-#: core/templates/shop/tpl.Product.Search.php:63
-#: core/templates/shop/tpl.Product.Tag.php:63
-#: core/templates/shop/tpl.Product.php:94
-msgid "FREE"
-msgstr "FREE"
+#: core/modules/mod.SinglePost.php:91 core/templates/shop/tpl.Product.php:87
+#, php-format
+msgid ""
+"<span itemprop=\"reviewCount\" class=\"count\">%d</span> customer reviews"
+msgstr "<span itemprop=\"reviewCount\" class=\"count\">%d</span> 个客户评价"
+
+#: core/modules/mod.SinglePost.php:93
+msgid "Buy Now"
+msgstr "立即购买"
+
+#: core/modules/mod.SinglePost.php:117
+msgid "Previous article"
+msgstr "上一篇"
+
+#: core/modules/mod.SinglePost.php:121
+msgid "Next article"
+msgstr "下一篇"
+
+#: core/modules/mod.SinglePost.php:128
+msgid "Related Articles"
+msgstr "相关文章"
+
+#: core/modules/shop/mod.Shop.Relates.php:17
+msgid "Related Products"
+msgstr "相关商品"
 
 #: core/modules/shop/mod.Shop.ReplyForm.php:26
 msgid "RATING"
@@ -3223,12 +3388,6 @@ msgstr "分享 "
 msgid "Product Views: %d"
 msgstr "人气: %d"
 
-#: core/templates/shop/tpl.Product.php:87
-#, php-format
-msgid ""
-"<span itemprop=\"reviewCount\" class=\"count\">%d</span> customer reviews"
-msgstr "<span itemprop=\"reviewCount\" class=\"count\">%d</span> 个客户评价"
-
 #: core/templates/shop/tpl.Product.php:115
 msgid "SOLD OUT"
 msgstr "售罄"
@@ -3263,7 +3422,7 @@ msgid "Categories: "
 msgstr "分类: "
 
 #: core/templates/shop/tpl.Product.php:143
-#: core/templates/shop/tpl.Product.php:155
+#: core/templates/shop/tpl.Product.php:158
 msgid "Product Description"
 msgstr "商品介绍"
 
@@ -3276,7 +3435,11 @@ msgstr "评价 (%d)"
 msgid "History"
 msgstr "订单历史"
 
-#: core/templates/shop/tpl.Product.php:161
+#: core/templates/shop/tpl.Product.php:152
+msgid "Pay Content"
+msgstr "付费内容"
+
+#: core/templates/shop/tpl.Product.php:164
 #, php-format
 msgid "%d reviews for the product"
 msgstr "%d 条商品评价"
@@ -3683,7 +3846,8 @@ msgstr "页面发生了一个错误."
 #: core/viewModels/shop/vm.Shop.Product.php:280
 #: core/viewModels/shop/vm.Shop.Search.php:111
 #: core/viewModels/shop/vm.Shop.Tag.php:117
-#: core/viewModels/shop/vm.Shop.ViewHistory.php:98
+#: core/viewModels/shop/vm.Shop.ViewHistory.php:99
+#: core/viewModels/vm.Single.Post.php:106
 msgid "YUAN"
 msgstr "元"
 
@@ -3694,7 +3858,8 @@ msgstr "元"
 #: core/viewModels/shop/vm.Shop.Product.php:280
 #: core/viewModels/shop/vm.Shop.Search.php:111
 #: core/viewModels/shop/vm.Shop.Tag.php:117
-#: core/viewModels/shop/vm.Shop.ViewHistory.php:98
+#: core/viewModels/shop/vm.Shop.ViewHistory.php:99
+#: core/viewModels/vm.Single.Post.php:106
 msgid "CREDITS"
 msgstr "积分"
 
@@ -3733,7 +3898,7 @@ msgstr "年归档"
 msgid "All posts which were published in year %s"
 msgstr "%s 年发表的所有文章"
 
-#: core/viewModels/vm.Single.Post.php:87
+#: core/viewModels/vm.Single.Post.php:122
 #, php-format
 msgid ""
 "All the posts are created by <a href=\"%1$s\" title=\"%2$s\" target=\"_blank"
@@ -3743,7 +3908,7 @@ msgstr ""
 "除特别注明外，本站所有文章均为<a href=\"%1$s\" title=\"%2$s\" target=\"_blank"
 "\">%2$s</a>原创，转载请注明出处来自<a href=\"%3$s\" title=\"%4$s\">%3$s</a>"
 
-#: core/viewModels/vm.Single.Post.php:88
+#: core/viewModels/vm.Single.Post.php:123
 #, php-format
 msgid ""
 "The post is from: <a href=\"%1$s\" title=\"%2$s\" target=\"_blank\">%2$s</a>"
@@ -4651,10 +4816,6 @@ msgstr "Memcache"
 #: dash/options.php:944
 msgid "Redis"
 msgstr "Redis"
-
-#: dash/options.php:945 dash/options.php:1051
-msgid "None"
-msgstr "无"
 
 #: dash/options.php:953
 msgid "Memcache Host"

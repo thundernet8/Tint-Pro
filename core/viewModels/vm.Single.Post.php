@@ -78,6 +78,41 @@ class SinglePostVM extends BaseVM {
             $info['download'] = tt_url_for('download', $the_post->ID);
         }
 
+        // 内嵌商品
+        $embed_product_id = (int)get_post_meta($the_post->ID, 'tt_embed_product', true);
+        $product = get_post($embed_product_id);
+
+        if($product && $product->post_type == 'product' && $product->post_status == 'publish'){
+            $pay_currency = get_post_meta( $product->ID, 'tt_pay_currency', true) ? 'cash' : 'credit';
+            $product_price = $pay_currency == 'cash' ? sprintf('%0.2f', get_post_meta($product->ID, 'tt_product_price', true)) : (int)get_post_meta($product->ID, 'tt_product_price', true);
+            $rating_raw = get_post_meta($product->ID, 'tt_post_ratings', true);
+            $rating_arr = $rating_raw ? (array)maybe_unserialize($rating_raw) : array(); // array(rating value1, rating value2...)
+            $rating_count = count($rating_arr);
+            $rating_value = !$rating_count ? '0.0' : sprintf('%0.1f', array_sum($rating_arr)/$rating_count);
+            $rating_percent = intval($rating_value*100/5);
+            $rating = array(
+                'count' => $rating_count,
+                'value' => $rating_value,
+                'percent' => $rating_percent
+            );
+            $info['embed_product'] = array(
+                'product_id' => $product->ID,
+                'product_name' => $product->post_title,
+                'product_description' => get_the_excerpt($product),
+                'product_link' => get_permalink($product),
+                'product_thumb' => tt_get_thumb($product, array('width' => 100, 'height' => 100, 'str' => 'thumbnail')),
+                'pay_currency' => $pay_currency,
+                'product_price' => $product_price,
+                'price_unit' => $pay_currency == 'cash' ? __('YUAN', 'tt') : __('CREDITS', 'tt'),
+                'price_icon' => !($product_price > 0) ? '' : $pay_currency == 'cash' ? '<i class="tico tico-cny"></i>' : '<i class="tico tico-diamond"></i>',
+                'product_discount' => tt_get_product_discount_array($product->ID),
+                'product_sales' => get_post_meta($product->ID, 'tt_product_sales', true),
+                'product_views' => absint(get_post_meta( $product->ID, 'views', true )),
+                'product_rating' => $rating
+            );
+        }
+
+
         // 文章来源版权信息
         $cc = get_post_meta( $the_post->ID, 'tt_post_copyright', true );
         $cc = $cc ? maybe_unserialize($cc) : array('source_title' => '', 'source_link' => '');

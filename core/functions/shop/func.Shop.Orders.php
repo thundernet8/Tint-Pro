@@ -78,19 +78,19 @@ function tt_generate_order_num(){
  */
 function tt_get_order_status_text($code){
     switch($code){
-        case 1:
+        case (OrderStatus::WAIT_PAYMENT):
             $status_text = __('Wait Payment', 'tt'); //等待买家付款
             break;
-        case 2:
+        case (OrderStatus::PAYED_AND_WAIT_DELIVERY):
             $status_text = __('Payed, Wait Delivery', 'tt'); //已付款，等待卖家发货
             break;
-        case 3:
+        case (OrderStatus::DELIVERED_AND_WAIT_CONFIRM):
             $status_text = __('Delivered, Wait Confirm', 'tt'); //已发货，等待买家确认
             break;
-        case 4:
+        case (OrderStatus::TRADE_SUCCESS):
             $status_text = __('Trade Succeed', 'tt'); //交易成功
             break;
-        case 9:
+        case (OrderStatus::TRADE_CLOSED):
             $status_text = __('Trade Closed', 'tt'); //交易关闭
             break;
         default:
@@ -156,6 +156,57 @@ function tt_get_orders($limit, $offset, $currency_type = 'all'){
 
 
 /**
+ * 获取用户的订单
+ *
+ * @since 2.0.0
+ * @param int $user_id
+ * @param int $limit
+ * @param int $offset
+ * @param string $currency_type
+ * @return array|null|object
+ */
+function tt_get_user_orders($user_id = 0, $limit = 20, $offset = 0, $currency_type = 'all'){
+    $user_id = $user_id ? : get_current_user_id();
+    if(!$user_id){
+        return null;
+    }
+
+    global $wpdb;
+    $prefix = $wpdb->prefix;
+    $orders_table = $prefix . 'tt_orders';
+    if($currency_type == 'all'){
+        $sql = sprintf("SELECT * FROM $orders_table WHERE `user_id`=%d ORDER BY id DESC LIMIT %d, OFFSET %d", $user_id, $limit, $offset);
+    }else{
+        $sql = sprintf("SELECT * FROM $orders_table WHERE `user_id`=%d AND `order_currency`='%s' ORDER BY id DESC LIMIT %d, OFFSET %d", $user_id, $currency_type, $limit, $offset);
+    }
+    $results = $wpdb->get_results($sql);
+    return $results;
+}
+
+
+/**
+ * 获取指定用户指定商品的订单
+ *
+ * @param $product_id
+ * @param int $user_id
+ * @return array|null|object
+ */
+function tt_get_specified_user_and_product_orders($product_id, $user_id = 0){
+    $user_id = $user_id ? : get_current_user_id();
+    if(!$user_id){
+        return null;
+    }
+
+    global $wpdb;
+    $prefix = $wpdb->prefix;
+    $orders_table = $prefix . 'tt_orders';
+    $sql = sprintf("SELECT * FROM $orders_table WHERE `user_id`=%d AND `product_id`=%d ORDER BY id DESC", $user_id, $product_id);
+    $results = $wpdb->get_results($sql);
+    return $results;
+}
+
+
+/**
  * 获取子订单
  *
  * @since 2.0.0
@@ -189,19 +240,19 @@ function tt_create_order($product_id, $product_name = '', $order_quantity = 1, $
     $currency = get_post_meta( $product_id, 'tt_pay_currency', true) ? 'cash' : 'credit';
     $order_price = $currency == 'cash' ? sprintf('%0.2f', get_post_meta($product_id, 'tt_product_price', true)) : (int)get_post_meta($product_id, 'tt_product_price', true);
     // 折扣
-    $discount_summary = (array)maybe_unserialize(get_post_meta($product_id, 'tt_product_discount', true)); // array 第1项为普通折扣, 第2项为会员(月付)折扣, 第3项为会员(年付)折扣, 第4项为会员(永久)折扣
+    $discount_summary = tt_get_product_discount_array($product_id); // array 第1项为普通折扣, 第2项为会员(月付)折扣, 第3项为会员(年付)折扣, 第4项为会员(永久)折扣
     switch ($member->vip_type){
         case Member::MONTHLY_VIP:
-            $discount = isset($discount_summary[1]) ? absint($discount_summary[1]) : 100;
+            $discount = $discount_summary[1];
             break;
         case Member::ANNUAL_VIP:
-            $discount = isset($discount_summary[2]) ? absint($discount_summary[2]) : 100;
+            $discount = $discount_summary[2];
             break;
         case Member::PERMANENT_VIP:
-            $discount = isset($discount_summary[3]) ? absint($discount_summary[3]) : 100;
+            $discount = $discount_summary[3];
             break;
         default:
-            $discount = isset($discount_summary[0]) ? absint($discount_summary[0]) : 100;
+            $discount = $discount_summary[0];
             break;
     }
     $order_total_price = $currency == 'cash' ? $order_price * absint($order_quantity) * $discount / 100 : absint($order_price * $order_quantity);

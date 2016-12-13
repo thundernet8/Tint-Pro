@@ -16,5 +16,5 @@
 
 export default function () {
     var content = $('body>.wrapper');
-    $('#primary').css('height', content.height());
+    $('#primary').css('min-height', content.height() + 40);
 }

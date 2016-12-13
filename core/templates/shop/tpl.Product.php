@@ -148,6 +148,9 @@
                                 <!--li class="nav-item history_tab">
                                     <a class="nav-link" href="javascript:;" data-toggle="tab" data-target="#tab-history" role="tab" aria-controls="tab-history"><?php _e('History', 'tt'); ?></a>
                                 </li-->
+                                <li class="nav-item paycontent_tab">
+                                    <a class="nav-link" href="javascript:;" data-toggle="tab" data-target="#tab-paycontent" role="tab" aria-controls="tab-paycontent"><?php _e('Pay Content', 'tt'); ?></a>
+                                </li>
                             </ul>
                             <div class="tab-content">
                                 <!-- Description -->
@@ -167,6 +170,12 @@
                                 <!-- Orders history -->
                                 <div class="tab-pane entry-content wc-tab" id="tab-history" role="tabpanel">
 
+                                </div>
+                                <!-- Pay content -->
+                                <div class="tab-pane entry-content wc-tab" id="tab-paycontent" role="tabpanel">
+                                    <div class="paycontent-wrapper">
+                                        <?php echo tt_get_product_pay_content($productdata->ID); ?>
+                                    </div>
                                 </div>
                             </div>
                         </section>

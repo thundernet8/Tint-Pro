@@ -1,5 +1,5 @@
 /**
- * Generated on Sun Dec 11 2016 17:33:42 GMT+0800 (中国标准时间) by Zhiyan
+ * Generated on Tue Dec 13 2016 00:49:04 GMT+0800 (中国标准时间) by Zhiyan
  *
  * @package   Tint
  * @version   v2.0.0
@@ -279,6 +279,10 @@
                 hideFullLoader: _hideFullLoader,
                 getQueryString: _getQueryString
             };
+            $('body')[['on']]('click', '.user-login', function (e) {
+                e[['preventDefault']]();
+                _checkLogin();
+            });
             exports[['default']] = Utils;
         }[['call']](exports, __webpack_require__(4), __webpack_require__(1)));
     },
