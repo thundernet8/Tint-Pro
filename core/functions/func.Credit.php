@@ -89,6 +89,36 @@ function tt_update_user_credit($user_id = 0, $amount = 0, $msg = '', $admin_hand
 
 
 /**
+ * 积分充值到账
+ *
+ * @since 2.0.0
+ * @param $order_id
+ */
+function tt_add_credits_by_order($order_id){
+    $order = tt_get_order($order_id);
+    if(!$order || $order->order_status != OrderStatus::TRADE_SUCCESS){
+        return;
+    }
+
+    $user = get_user_by('id', $order->user_id);
+    $credit_price = max(abs(tt_get_option('tt_hundred_credit_price', 1)));
+    $buy_credits = intval($order->order_total_price * 100 / $credit_price);
+    tt_update_user_credit($order->user_id, $buy_credits, sprintf(__('Buy <strong>%d</strong> Credits, Cost %0.2f YUAN', 'tt') , $buy_credits, $order->order_total_price));
+
+    // 发送邮件
+    $blog_name = get_bloginfo('name');
+    $subject = sprintf(__('Charge Credits Successfully - %s', 'tt'), $blog_name);
+    $args = array(
+        'blogName' => $blog_name,
+        'creditsNum' => $buy_credits,
+        'currentCredits' => tt_get_user_credit($user->ID),
+        'adminEmail' => get_option('admin_email')
+    );
+    tt_async_mail('', $user->user_email, $subject, $args, 'charge-credits-success');
+}
+
+
+/**
  * 使用积分支付
  *
  * @since 2.0.0
@@ -173,6 +203,11 @@ function tt_update_credit_by_user_register( $user_id ) {
 add_action( 'user_register', 'tt_update_credit_by_user_register');
 
 
+/**
+ * 推广访问奖励积分
+ *
+ * @since 2.0.0
+ */
 function tt_update_credit_by_referral_view(){
     if( isset($_COOKIE['tt_ref']) && is_numeric($_COOKIE['tt_ref']) ){
         $ref_from = absint($_COOKIE['tt_ref']);

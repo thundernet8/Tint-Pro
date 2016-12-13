@@ -480,19 +480,148 @@ function tt_delete_order_by_order_id($order_id){
 }
 
 
-// 发送订单状态变化邮件
+/**
+ * 发送订单状态变化邮件
+ *
+ * @since 2.0.0
+ * @param $order_id
+ */
 function tt_order_email($order_id) {
-    //TODO
+    $order = tt_get_order($order_id);
+    if(!$order) {
+        return;
+    }
+    $user = get_user_by('id', $order->user_id);
+    $order_url = tt_url_for('my_order', $order->id);
+
+    $blog_name = get_bloginfo('name');
+    $admin_email = get_option('admin_email');
+    $order_status_text = tt_get_order_status_text($order->order_status);
+    $subject = sprintf(__('%s 商店交易提醒', 'tt'), $blog_name);
+    $args = array(
+        'blogName' => $blog_name,
+        'buyerName' => $user->display_name,
+        'orderUrl' => $order_url,
+        'adminEmail' => $admin_email,
+        'productName' => $order->product_name, //TODO suborders
+        'orderId' => $order_id,
+        'orderTotalPrice' => $order->order_total_price,
+        'orderTime' => $order->order_time,
+        'orderStatusText' => $order_status_text
+    );
+    tt_async_mail('', $user->user_email, $subject, $args, 'order-status');
+
+    // 如果交易成功 发信通知管理员
+    if($order->order_status == OrderStatus::TRADE_SUCCESS){
+        $admin_subject = sprintf(__('%s 商店新成功交易提醒', 'tt'), $blog_name);
+        $admin_args = array(
+            'blogName' => $blog_name,
+            'buyerName' => $user->display_name,
+            'orderUrl' => $order_url,
+            'adminEmail' => $admin_email,
+            'productName' => $order->product_name, //TODO suborders
+            'orderId' => $order_id,
+            'orderTotalPrice' => $order->order_total_price,
+            'orderTime' => $order->order_time,
+            'orderStatusText' => $order_status_text,
+            'buyerUC' => get_author_posts_url($user->ID)
+        );
+        tt_async_mail('', $user->user_email, $admin_subject, $admin_args, 'order-status-admin');
+    }
+
+    // TODO 站内消息
 }
 
+/**
+ * 根据订单更新商品销量和存量
+ *
+ * @since 2.0.0
+ * @param $order_id
+ */
 function tt_update_order_product_quantity($order_id) {
-    // TODO
+    $order = tt_get_order($order_id);
+    if(!$order || $order->order_status != OrderStatus::TRADE_SUCCESS){
+        return;
+    }
+    $parent_id = $order->parent_id;
+    if($parent_id == -1){ // 这是一个合并订单
+        $sub_orders = tt_get_sub_orders($order->id);
+        $product_ids = array();
+        $buy_amounts = array();
+        foreach ($sub_orders as $sub_order){
+            $product_ids[] = $sub_order->product_id;
+            $buy_amounts[] = $sub_order->order_quantity;
+        }
+    }else{
+        $product_ids = array($order->product_id);
+        $buy_amounts = array($order->order_quantity);
+    }
+
+    foreach ($product_ids as $key => $product_id){
+        // 更新存量
+        $quantity = (int)get_post_meta($product_id, 'tt_product_quantity', true);
+        update_user_meta($product_id, 'tt_product_quantity', max(0, $quantity-$buy_amounts[$key]));
+        // 更新销量
+        $sales = (int)get_post_meta($product_id, 'tt_product_sales', true);
+        update_user_meta($product_id, 'tt_product_sales', $sales+$buy_amounts[$key]);
+    }
 }
 
+
+/**
+ * 根据订单发送相应内容(付费内容,开通会员,增加积分等)
+ *
+ * @since 2.0.0
+ * @param $order_id
+ */
 function tt_send_order_goods($order_id){
-    // TODO
+    $order = tt_get_order($order_id);
+    if(!$order || $order->order_status != OrderStatus::TRADE_SUCCESS){
+        return;
+    }
+
+    $user_id = $order->user_id;
+    $user = get_user_by('id', $user_id);
+    $parent_id = $order->parent_id;
+    if($parent_id == -1){ // 这是一个合并订单
+        $sub_orders = tt_get_sub_orders($order->id);
+        $product_ids = array();
+        foreach ($sub_orders as $sub_order){
+            $product_ids[] = $sub_order->product_id;
+        }
+    }else{
+        $product_ids = array($order->product_id);
+    }
+
+    $blog_name = get_bloginfo('name');
+    foreach ($product_ids as $product_id){
+        if($product_id > 0) {
+            $pay_content = get_post_meta($product_id, 'tt_product_pay_content', true);
+            $download_content = tt_get_product_download_content($product_id);
+//            if(!$pay_content || !$download_content){
+//                continue;
+//            }
+            $subject = sprintf(__('The Resources You Bought in %s'), $blog_name);
+            $args = array(
+                'blogName' => $blog_name,
+                'totalPrice' => $order->order_currency == 'credit' ? sprintf(__('%d Credits', 'tt'), $order->order_total_price) : sprintf(__('%0.2f YUAN', 'tt'), $order->order_total_price),
+                'payContent' => $download_content . '<br>' . $pay_content
+            );
+            tt_async_mail('', $user->user_email, $subject, $args, 'order-pay-content');
+        }elseif($product_id == Product::MONTHLY_VIP){
+            tt_add_or_update_member($user_id, Member::MONTHLY_VIP);
+        }elseif($product_id == Product::ANNUAL_VIP){
+            tt_add_or_update_member($user_id, Member::ANNUAL_VIP);
+        }elseif($product_id == Product::PERMANENT_VIP){
+            tt_add_or_update_member($user_id, Member::PERMANENT_VIP);
+        }elseif($product_id == Product::CREDIT_CHARGE){
+            tt_add_credits_by_order($order_id);
+        }else{
+            // TODO more
+        }
+    }
 }
 
 function tt_continue_pay($order_id){
-    // TODO
+    // TODO TODO
 }
