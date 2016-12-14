@@ -246,6 +246,22 @@
   }
 
   &.signup {
+    background: url("../img/login-bg2.jpg") top fixed / cover no-repeat;
+    color: #ffffff;
+
+    a {
+      color: #ffffff;
+      &:before {
+        background-color: rgba(255,255,255,.8);
+      }
+
+      &:hover {
+
+      }
+    }
+    &>header {
+      background: transparent;
+    }
     &>.wrapper {
       &>.main {
         top: 50%;
@@ -356,6 +372,9 @@
 
         }
       }
+    }
+    footer.simple-footer>.foot-menu>.sep {
+      border-right-color: #ffffff;
     }
   }
 }

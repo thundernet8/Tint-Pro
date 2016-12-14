@@ -26,7 +26,6 @@ else :
     // $body = wp_remote_retrieve_body($response);
     // $data_obj = is_string($body) ? json_decode($body) : (object)array();
     $result = tt_activate_registration_from_link($key);
-
     $data_obj = is_array($result) ? (object)$result : (object)array();
     if(is_wp_error($result) || !$data_obj || !isset($data_obj->success) || intval($data_obj->success) != 1) {
         wp_die(__('Can not activate your registration, please try again the registration steps.', 'tt'), __('Activate Registration Failed', 'tt'), array('response' => 200));

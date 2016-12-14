@@ -15,3 +15,4 @@
 <?php
 
 echo 'Privacy Template';
+

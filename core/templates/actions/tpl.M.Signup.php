@@ -89,7 +89,7 @@ tt_get_header('simple');
                 <div class="note">
                     <p class="login-note"><?php _e('Already have an account? ', 'tt'); ?><a class="login-link" id="go-login" href="<?php echo tt_add_redirect(tt_url_for('signin')); ?>" rel="link"><?php _e('Sign In', 'tt'); ?></a></p>
                     <!-- Terms -->
-                    <p class="terms-note"><?php echo sprintf(__('* By signing up, you agree to our <a href="%s" target="_blank">Terms of Use, Privacy Policy</a> and to receive emails, newsletters &amp; updates.', 'tt'), tt_url_for('privacy')); ?></p>
+                    <p class="terms-note"><?php echo sprintf(__('* By signing up, you agree to our <a href="%s" target="_blank"><strong>「Terms of Use, Privacy Policy」</strong></a> and to receive emails, newsletters &amp; updates.', 'tt'), tt_url_for('privacy')); ?></p>
                 </div>
             </form>
         </div>

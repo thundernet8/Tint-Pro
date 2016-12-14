@@ -12,7 +12,14 @@
  * @link https://www.webapproach.net/tint
  */
 ?>
-<?php
-
-echo 'Me - Stars';
-
+<?php tt_get_header(); ?>
+<div id="content" class="wrapper">
+    <!-- 主要内容区 -->
+    <section class="container user-area">
+        <div class="inner row">
+            <?php load_mod('me/me.NavMenu'); ?>
+            <?php load_mod('me/me.Tab.Credits'); ?>
+        </div>
+    </section>
+</div>
+<?php tt_get_footer(); ?>

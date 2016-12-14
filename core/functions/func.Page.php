@@ -201,6 +201,8 @@ function tt_modify_body_classes($classes) {
         $classes[] = 'uc-profile';
     }elseif($query_var = get_query_var('action')) {
         $classes[] = 'action-' . $query_var;
+    }elseif($query_var = get_query_var('me_child_route')){
+        $classes[] = 'me me-' . $query_var;
     }
 
     //TODO more

@@ -15,8 +15,3 @@
 <?php
 
 echo 'ucenter';
-
-
-global $wp_query;
-
-var_dump($wp_query);

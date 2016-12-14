@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-12-13 20:33+0800\n"
+"POT-Creation-Date: 2016-12-14 23:49+0800\n"
 "PO-Revision-Date: 2016-08-17 21:40+0800\n"
 "Last-Translator: \n"
 "Language-Team: Zhiyan <mail@webapproach.net>\n"
@@ -464,6 +464,10 @@ msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:426
 msgid "Email is already used."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:431
+msgid "Your account activation link"
 msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:435
@@ -1333,39 +1337,49 @@ msgstr ""
 msgid "Spend %d credits"
 msgstr ""
 
-#: core/functions/func.Credit.php:103
+#: core/functions/func.Credit.php:106
+#, php-format
+msgid "Buy <strong>%d</strong> Credits, Cost %0.2f YUAN"
+msgstr ""
+
+#: core/functions/func.Credit.php:110
+#, php-format
+msgid "Charge Credits Successfully - %s"
+msgstr ""
+
+#: core/functions/func.Credit.php:133
 msgid "You must sign in before payment"
 msgstr ""
 
-#: core/functions/func.Credit.php:108
+#: core/functions/func.Credit.php:138
 msgid "You do not have enough credits to accomplish this payment"
 msgstr ""
 
-#: core/functions/func.Credit.php:164
+#: core/functions/func.Credit.php:194
 #, php-format
 msgid "获得注册推广（来自%1$s的注册）奖励%2$s积分"
 msgstr ""
 
-#: core/functions/func.Credit.php:170
+#: core/functions/func.Credit.php:200
 #, php-format
 msgid "获得注册奖励%s积分"
 msgstr ""
 
-#: core/functions/func.Credit.php:200
+#: core/functions/func.Credit.php:235
 #, php-format
 msgid "获得访问推广奖励%d积分"
 msgstr ""
 
-#: core/functions/func.Credit.php:224
+#: core/functions/func.Credit.php:259
 #, php-format
 msgid "获得评论回复奖励%d积分"
 msgstr ""
 
-#: core/functions/func.Credit.php:261 core/functions/shop/func.Shop.php:238
+#: core/functions/func.Credit.php:296 core/functions/shop/func.Shop.php:238
 msgid "Credit"
 msgstr ""
 
-#: core/functions/func.Credit.php:271
+#: core/functions/func.Credit.php:306
 #, php-format
 msgid "总积分 %1$d 已消费 %2$d 剩余 %3$d"
 msgstr ""
@@ -2154,6 +2168,31 @@ msgstr ""
 msgid "The coupon is invalid"
 msgstr ""
 
+#: core/functions/shop/func.Shop.Orders.php:500
+#, php-format
+msgid "%s 商店交易提醒"
+msgstr ""
+
+#: core/functions/shop/func.Shop.Orders.php:516
+#, php-format
+msgid "%s 商店新成功交易提醒"
+msgstr ""
+
+#: core/functions/shop/func.Shop.Orders.php:604
+#, php-format
+msgid "The Resources You Bought in %s"
+msgstr ""
+
+#: core/functions/shop/func.Shop.Orders.php:607
+#, php-format
+msgid "%d Credits"
+msgstr ""
+
+#: core/functions/shop/func.Shop.Orders.php:607
+#, php-format
+msgid "%0.2f YUAN"
+msgstr ""
+
 #: core/functions/shop/func.Shop.php:28
 msgctxt "taxonomy general name"
 msgid "Products"
@@ -2390,6 +2429,201 @@ msgid ""
 "paypal\">&nbsp;</i>付费内容</span><p>%1$s</p><p>%2$s</p></div>"
 msgstr ""
 
+#: core/modules/me/me.NavMenu.php:22
+msgid "SETTINGS"
+msgstr ""
+
+#: core/modules/me/me.NavMenu.php:23
+msgid "NOTIFICATIONS"
+msgstr ""
+
+#: core/modules/me/me.NavMenu.php:24
+msgid "MESSAGES"
+msgstr ""
+
+#: core/modules/me/me.NavMenu.php:25 core/modules/uc/uc.NavTabs.php:20
+msgid "MY STARS"
+msgstr ""
+
+#: core/modules/me/me.NavMenu.php:26
+#: core/viewModels/shop/vm.Shop.Category.php:117
+#: core/viewModels/shop/vm.Shop.Home.php:110
+#: core/viewModels/shop/vm.Shop.Product.php:120
+#: core/viewModels/shop/vm.Shop.Product.php:233
+#: core/viewModels/shop/vm.Shop.Product.php:280
+#: core/viewModels/shop/vm.Shop.Search.php:111
+#: core/viewModels/shop/vm.Shop.Tag.php:117
+#: core/viewModels/shop/vm.Shop.ViewHistory.php:99
+#: core/viewModels/vm.Single.Post.php:106
+msgid "CREDITS"
+msgstr ""
+
+#: core/modules/me/me.NavMenu.php:27
+msgid "ORDERS"
+msgstr ""
+
+#: core/modules/me/me.Tab.Setting.php:29
+#: core/modules/uc/uc.Tab.Profile.php:28
+#, php-format
+msgid "Member Since %s"
+msgstr ""
+
+#: core/modules/me/me.Tab.Setting.php:30
+#: core/modules/uc/uc.Tab.Profile.php:29
+#, php-format
+msgid "Last Login %s"
+msgstr ""
+
+#: core/modules/me/me.Tab.Setting.php:30
+#: core/modules/uc/uc.Tab.Profile.php:29
+#, php-format
+msgid "Latest Login %s"
+msgstr ""
+
+#: core/modules/me/me.Tab.Setting.php:32
+#: core/modules/uc/uc.Tab.Profile.php:31
+#, php-format
+msgid "This Login IP %s"
+msgstr ""
+
+#: core/modules/me/me.Tab.Setting.php:32
+#: core/modules/me/me.Tab.Setting.php:35
+#: core/modules/uc/uc.Tab.Profile.php:31
+#: core/modules/uc/uc.Tab.Profile.php:34
+#, php-format
+msgid "Last Login IP %s"
+msgstr ""
+
+#: core/modules/me/me.Tab.Setting.php:42
+#: core/modules/uc/uc.Tab.Profile.php:41
+msgid "Basic Info"
+msgstr ""
+
+#: core/modules/me/me.Tab.Setting.php:44
+#: core/modules/uc/uc.Tab.Profile.php:43
+msgid "Nickname"
+msgstr ""
+
+#: core/modules/me/me.Tab.Setting.php:49
+#: core/modules/uc/uc.Tab.Profile.php:48
+#: core/templates/actions/tpl.M.Findpass.php:36
+#: core/templates/actions/tpl.M.Signup.php:46
+#: core/templates/site/tpl.CheckOut.php:152
+msgid "Email"
+msgstr ""
+
+#: core/modules/me/me.Tab.Setting.php:54
+#: core/modules/uc/uc.Tab.Profile.php:53
+msgid "Site"
+msgstr ""
+
+#: core/modules/me/me.Tab.Setting.php:58
+#: core/modules/uc/uc.Tab.Profile.php:57
+msgid "Description"
+msgstr ""
+
+#: core/modules/me/me.Tab.Setting.php:64
+#: core/modules/uc/uc.Tab.Profile.php:63
+msgid "Extended Info"
+msgstr ""
+
+#: core/modules/me/me.Tab.Setting.php:67
+#: core/modules/uc/uc.Tab.Profile.php:66
+msgid "Talk with QQ"
+msgstr ""
+
+#: core/modules/me/me.Tab.Setting.php:70
+#: core/modules/uc/uc.Tab.Profile.php:69
+msgid "Follow on Weibo"
+msgstr ""
+
+#: core/modules/me/me.Tab.Setting.php:73
+#: core/modules/uc/uc.Tab.Profile.php:72
+msgid "Talk with Wechat"
+msgstr ""
+
+#: core/modules/me/me.Tab.Setting.php:76
+#: core/modules/uc/uc.Tab.Profile.php:75
+msgid "Follow on Twitter"
+msgstr ""
+
+#: core/modules/me/me.Tab.Setting.php:79
+#: core/modules/uc/uc.Tab.Profile.php:78
+msgid "Find on Facebook"
+msgstr ""
+
+#: core/modules/me/me.Tab.Setting.php:82
+#: core/modules/uc/uc.Tab.Profile.php:81
+msgid "Google+"
+msgstr ""
+
+#: core/modules/me/me.Tab.Setting.php:89
+#: core/modules/uc/uc.Tab.Profile.php:88
+msgid "Donate Info"
+msgstr ""
+
+#: core/modules/me/me.Tab.Setting.php:89
+#: core/modules/uc/uc.Tab.Profile.php:88
+msgid "Donate to me"
+msgstr ""
+
+#: core/modules/me/me.Tab.Setting.php:92
+#: core/modules/uc/uc.Tab.Profile.php:91
+msgid "Donate via Alipay"
+msgstr ""
+
+#: core/modules/me/me.Tab.Setting.php:95
+#: core/modules/uc/uc.Tab.Profile.php:94
+msgid "Donate via Wechat"
+msgstr ""
+
+#: core/modules/me/me.Tab.Setting.php:102
+#: core/modules/uc/uc.Tab.Profile.php:101
+msgid "Referral Info"
+msgstr ""
+
+#: core/modules/me/me.Tab.Setting.php:104
+#: core/modules/uc/uc.Tab.Profile.php:103
+msgid "Referral Link"
+msgstr ""
+
+#: core/modules/me/me.Tab.Setting.php:105
+#: core/modules/uc/uc.Tab.Profile.php:104
+msgid "COPY"
+msgstr ""
+
+#: core/modules/me/me.Tab.Setting.php:111 core/modules/mod.ModalBanBox.php:18
+#: core/modules/uc/uc.Tab.Profile.php:110
+msgid "Account Management"
+msgstr ""
+
+#: core/modules/me/me.Tab.Setting.php:111
+#: core/modules/uc/uc.Tab.Profile.php:110
+msgid "Visible for administrator"
+msgstr ""
+
+#: core/modules/me/me.Tab.Setting.php:114
+#: core/modules/uc/uc.Tab.Profile.php:113
+msgid "Unlock Account"
+msgstr ""
+
+#: core/modules/me/me.Tab.Setting.php:115
+#: core/modules/uc/uc.Tab.Profile.php:114
+msgid "This action will enable the account to normal functions"
+msgstr ""
+
+#: core/modules/me/me.Tab.Setting.php:117
+#: core/modules/uc/uc.Tab.Profile.php:116
+msgid "Ban Account"
+msgstr ""
+
+#: core/modules/me/me.Tab.Setting.php:118
+#: core/modules/uc/uc.Tab.Profile.php:117
+msgid ""
+"Warning: this action will ban the account, the all features is not "
+"accessible until manual unlock"
+msgstr ""
+
 #: core/modules/mod.Comments.php:29
 #: core/modules/shop/mod.Shop.Comments.php:29
 msgid "Load More Comments"
@@ -2556,12 +2790,22 @@ msgstr ""
 msgid "Latest Posts"
 msgstr ""
 
-#: core/modules/mod.HomePopular.php:22
-msgid "Popular"
+#: core/modules/mod.HomeLatest.php:69 core/modules/uc/uc.Tab.Chat.php:87
+#: core/modules/uc/uc.Tab.Comments.php:54
+#: core/modules/uc/uc.Tab.Latest.php:66
+#, php-format
+msgid "Current Page %d"
 msgstr ""
 
-#: core/modules/mod.ModalBanBox.php:18 core/modules/uc/uc.Tab.Profile.php:110
-msgid "Account Management"
+#: core/modules/mod.HomeLatest.php:71 core/modules/uc/uc.Tab.Chat.php:89
+#: core/modules/uc/uc.Tab.Comments.php:56
+#: core/modules/uc/uc.Tab.Latest.php:68
+#, php-format
+msgid "Total %d Pages"
+msgstr ""
+
+#: core/modules/mod.HomePopular.php:22
+msgid "Popular"
 msgstr ""
 
 #: core/modules/mod.ModalBanBox.php:23
@@ -2802,10 +3046,6 @@ msgstr ""
 msgid "COMMENTS"
 msgstr ""
 
-#: core/modules/uc/uc.NavTabs.php:20
-msgid "MY STARS"
-msgstr ""
-
 #: core/modules/uc/uc.NavTabs.php:21 core/modules/uc/uc.Tab.Followers.php:37
 #: core/modules/uc/uc.Tab.Following.php:37
 #: core/modules/widgets/wgt.Author.php:55
@@ -2912,133 +3152,6 @@ msgstr ""
 #: core/modules/uc/uc.Tab.Followers.php:51
 #: core/modules/uc/uc.Tab.Following.php:51
 msgid "Check Activities"
-msgstr ""
-
-#: core/modules/uc/uc.Tab.Profile.php:28
-#, php-format
-msgid "Member Since %s"
-msgstr ""
-
-#: core/modules/uc/uc.Tab.Profile.php:29
-#, php-format
-msgid "Last Login %s"
-msgstr ""
-
-#: core/modules/uc/uc.Tab.Profile.php:29
-#, php-format
-msgid "Latest Login %s"
-msgstr ""
-
-#: core/modules/uc/uc.Tab.Profile.php:31
-#, php-format
-msgid "This Login IP %s"
-msgstr ""
-
-#: core/modules/uc/uc.Tab.Profile.php:31
-#: core/modules/uc/uc.Tab.Profile.php:34
-#, php-format
-msgid "Last Login IP %s"
-msgstr ""
-
-#: core/modules/uc/uc.Tab.Profile.php:41
-msgid "Basic Info"
-msgstr ""
-
-#: core/modules/uc/uc.Tab.Profile.php:43
-msgid "Nickname"
-msgstr ""
-
-#: core/modules/uc/uc.Tab.Profile.php:48
-#: core/templates/actions/tpl.M.Findpass.php:36
-#: core/templates/actions/tpl.M.Signup.php:46
-#: core/templates/site/tpl.CheckOut.php:152
-msgid "Email"
-msgstr ""
-
-#: core/modules/uc/uc.Tab.Profile.php:53
-msgid "Site"
-msgstr ""
-
-#: core/modules/uc/uc.Tab.Profile.php:57
-msgid "Description"
-msgstr ""
-
-#: core/modules/uc/uc.Tab.Profile.php:63
-msgid "Extended Info"
-msgstr ""
-
-#: core/modules/uc/uc.Tab.Profile.php:66
-msgid "Talk with QQ"
-msgstr ""
-
-#: core/modules/uc/uc.Tab.Profile.php:69
-msgid "Follow on Weibo"
-msgstr ""
-
-#: core/modules/uc/uc.Tab.Profile.php:72
-msgid "Talk with Wechat"
-msgstr ""
-
-#: core/modules/uc/uc.Tab.Profile.php:75
-msgid "Follow on Twitter"
-msgstr ""
-
-#: core/modules/uc/uc.Tab.Profile.php:78
-msgid "Find on Facebook"
-msgstr ""
-
-#: core/modules/uc/uc.Tab.Profile.php:81
-msgid "Google+"
-msgstr ""
-
-#: core/modules/uc/uc.Tab.Profile.php:88
-msgid "Donate Info"
-msgstr ""
-
-#: core/modules/uc/uc.Tab.Profile.php:88
-msgid "Donate to me"
-msgstr ""
-
-#: core/modules/uc/uc.Tab.Profile.php:91
-msgid "Donate via Alipay"
-msgstr ""
-
-#: core/modules/uc/uc.Tab.Profile.php:94
-msgid "Donate via Wechat"
-msgstr ""
-
-#: core/modules/uc/uc.Tab.Profile.php:101
-msgid "Referral Info"
-msgstr ""
-
-#: core/modules/uc/uc.Tab.Profile.php:103
-msgid "Referral Link"
-msgstr ""
-
-#: core/modules/uc/uc.Tab.Profile.php:104
-msgid "COPY"
-msgstr ""
-
-#: core/modules/uc/uc.Tab.Profile.php:110
-msgid "Visible for administrator"
-msgstr ""
-
-#: core/modules/uc/uc.Tab.Profile.php:113
-msgid "Unlock Account"
-msgstr ""
-
-#: core/modules/uc/uc.Tab.Profile.php:114
-msgid "This action will enable the account to normal functions"
-msgstr ""
-
-#: core/modules/uc/uc.Tab.Profile.php:116
-msgid "Ban Account"
-msgstr ""
-
-#: core/modules/uc/uc.Tab.Profile.php:117
-msgid ""
-"Warning: this action will ban the account, the all features is not "
-"accessible until manual unlock"
 msgstr ""
 
 #: core/modules/uc/uc.Tab.Stars.php:40
@@ -3226,21 +3339,21 @@ msgstr ""
 msgid "Invalid Activation Link"
 msgstr ""
 
-#: core/templates/actions/tpl.M.Activate.php:32
+#: core/templates/actions/tpl.M.Activate.php:31
 msgid ""
 "Can not activate your registration, please try again the registration "
 "steps."
 msgstr ""
 
-#: core/templates/actions/tpl.M.Activate.php:32
+#: core/templates/actions/tpl.M.Activate.php:31
 msgid "Activate Registration Failed"
 msgstr ""
 
-#: core/templates/actions/tpl.M.Activate.php:54
+#: core/templates/actions/tpl.M.Activate.php:53
 msgid "Activate Successfully"
 msgstr ""
 
-#: core/templates/actions/tpl.M.Activate.php:55
+#: core/templates/actions/tpl.M.Activate.php:54
 msgid "You will be redirected to the signin page in 3s"
 msgstr ""
 
@@ -3351,9 +3464,9 @@ msgstr ""
 #: core/templates/actions/tpl.M.Signup.php:92
 #, php-format
 msgid ""
-"* By signing up, you agree to our <a href=\"%s\" target=\"_blank\">Terms "
-"of Use, Privacy Policy</a> and to receive emails, newsletters &amp; "
-"updates."
+"* By signing up, you agree to our <a href=\"%s\" target=\"_blank"
+"\"><strong>「Terms of Use, Privacy Policy」</strong></a> and to receive "
+"emails, newsletters &amp; updates."
 msgstr ""
 
 #: core/templates/oauth/tpl.OAuth.php:33
@@ -3861,18 +3974,6 @@ msgstr ""
 #: core/viewModels/shop/vm.Shop.ViewHistory.php:99
 #: core/viewModels/vm.Single.Post.php:106
 msgid "YUAN"
-msgstr ""
-
-#: core/viewModels/shop/vm.Shop.Category.php:117
-#: core/viewModels/shop/vm.Shop.Home.php:110
-#: core/viewModels/shop/vm.Shop.Product.php:120
-#: core/viewModels/shop/vm.Shop.Product.php:233
-#: core/viewModels/shop/vm.Shop.Product.php:280
-#: core/viewModels/shop/vm.Shop.Search.php:111
-#: core/viewModels/shop/vm.Shop.Tag.php:117
-#: core/viewModels/shop/vm.Shop.ViewHistory.php:99
-#: core/viewModels/vm.Single.Post.php:106
-msgid "CREDITS"
 msgstr ""
 
 #: core/viewModels/shop/vm.Shop.Header.SubNav.php:77

@@ -261,6 +261,10 @@ function tt_handle_me_child_routes_template(){
     $me_child_route = strtolower(get_query_var('me_child_route'));
     $me_grandchild_route = strtolower(get_query_var('me_grandchild_route'));
     if($is_me_route && $me_child_route){
+        //非Home
+        global $wp_query;
+        $wp_query->is_home = false;
+
         //未登录的404处理
         if(!is_user_logged_in()) {
             Utils::set404();

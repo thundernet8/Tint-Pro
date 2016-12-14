@@ -73,6 +73,7 @@ $me_allow_routes = json_encode(array(
     'credits' => 'credits',
     'order'    => 'order',
     'newpost' => 'newpost',
+    'editpost' => 'editpost',
     'notifications' => array(
         'all',
         'comment',
@@ -137,8 +138,8 @@ $site_endpoints = json_encode(array(
     'findpass'                  =>  'm/findpass',
     'resetpass'                 =>  'm/resetpass',
     'my_settings'               =>  'me/settings',
-    'balance'                   =>  'me/balance',
-    'stars'                     =>  'me/stars',
+    'my_balance'                   =>  'me/balance',
+    'my_stars'                     =>  'me/stars',
     'my_credits'                =>  'me/credits',
     'new_post'                  =>  'me/newpost',
     'in_msg'                    =>  'me/messages/inbox',

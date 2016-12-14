@@ -428,7 +428,7 @@ class WP_REST_User_Controller extends WP_REST_Controller {
 
             // 发送激活链接
             $activation_link = tt_generate_registration_activation_link($username, $email, $password);
-            tt_mail('', $email, '', array('email' => $email, 'name' => $username, 'link' => $activation_link), 'register_activation');
+            tt_async_mail('', $email, __('Your account activation link', 'tt'), array('email' => $email, 'name' => $username, 'link' => $activation_link), 'register-confirm');
 
             $response = rest_ensure_response(array(
                 'success' => 1,

@@ -104,7 +104,7 @@ function tt_generate_registration_activation_link ($username, $email, $password)
         'password' => $password
     );
 
-    $key = tt_authdata($data, 'ENCODE', tt_get_option('tt_private_token'), 60*10); // 10分钟有效期
+    $key = base64_encode(tt_authdata($data, 'ENCODE', tt_get_option('tt_private_token'), 60*10)); // 10分钟有效期
 
     $link = add_query_arg('key', $key, $base_url);
 
@@ -124,7 +124,7 @@ function tt_activate_registration_from_link($key) {
     if(empty($key)) {
         return new WP_Error( 'invalid_key', __( 'The registration activation key is invalid.', 'tt' ), array( 'status' => 400 ) );
     }
-    $data = tt_authdata($key, 'DECODE', tt_get_option('tt_private_token'));
+    $data = tt_authdata(base64_decode($key), 'DECODE', tt_get_option('tt_private_token'));
     if(!$data || !is_array($data) || !isset($data['username']) || !isset($data['email']) || !isset($data['password'])){
         return new WP_Error( 'invalid_key', __( 'The registration activation key is invalid.', 'tt' ), array( 'status' => 400 ) );
     }

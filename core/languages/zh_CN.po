@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-12-13 20:33+0800\n"
-"PO-Revision-Date: 2016-12-13 20:37+0800\n"
+"POT-Creation-Date: 2016-12-14 23:49+0800\n"
+"PO-Revision-Date: 2016-12-14 23:50+0800\n"
 "Last-Translator: Zhiyan <mail@webapproach.net>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -461,6 +461,10 @@ msgstr "无效的邮箱格式"
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:426
 msgid "Email is already used."
 msgstr "邮箱已存在"
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:431
+msgid "Your account activation link"
+msgstr "你的账户激活链接"
 
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:435
 msgid ""
@@ -1314,39 +1318,49 @@ msgstr "获得 %d 积分"
 msgid "Spend %d credits"
 msgstr "消费 %d 积分"
 
-#: core/functions/func.Credit.php:103
+#: core/functions/func.Credit.php:106
+#, php-format
+msgid "Buy <strong>%d</strong> Credits, Cost %0.2f YUAN"
+msgstr "购买 <strong>%d</strong> 积分, 花费 %0.2f 元"
+
+#: core/functions/func.Credit.php:110
+#, php-format
+msgid "Charge Credits Successfully - %s"
+msgstr "充值积分已到账 - %s"
+
+#: core/functions/func.Credit.php:133
 msgid "You must sign in before payment"
 msgstr "必须登录才能支付"
 
-#: core/functions/func.Credit.php:108
+#: core/functions/func.Credit.php:138
 msgid "You do not have enough credits to accomplish this payment"
 msgstr "你没有足够的积分完成支付"
 
-#: core/functions/func.Credit.php:164
+#: core/functions/func.Credit.php:194
 #, php-format
 msgid "获得注册推广（来自%1$s的注册）奖励%2$s积分"
 msgstr "获得注册推广（来自%1$s的注册）奖励%2$s积分"
 
-#: core/functions/func.Credit.php:170
+#: core/functions/func.Credit.php:200
 #, php-format
 msgid "获得注册奖励%s积分"
 msgstr "获得注册奖励%s积分"
 
-#: core/functions/func.Credit.php:200
+#: core/functions/func.Credit.php:235
 #, php-format
 msgid "获得访问推广奖励%d积分"
 msgstr "获得访问推广奖励%d积分"
 
-#: core/functions/func.Credit.php:224
+#: core/functions/func.Credit.php:259
 #, php-format
 msgid "获得评论回复奖励%d积分"
 msgstr "获得评论回复奖励%d积分"
 
-#: core/functions/func.Credit.php:261 core/functions/shop/func.Shop.php:238
+#: core/functions/func.Credit.php:296 core/functions/shop/func.Shop.php:238
 msgid "Credit"
 msgstr "积分"
 
-#: core/functions/func.Credit.php:271
+#: core/functions/func.Credit.php:306
 #, php-format
 msgid "总积分 %1$d 已消费 %2$d 剩余 %3$d"
 msgstr "总积分 %1$d 已消费 %2$d 剩余 %3$d"
@@ -2131,6 +2145,31 @@ msgstr "指定的订单不存在"
 msgid "The coupon is invalid"
 msgstr "优惠码无效"
 
+#: core/functions/shop/func.Shop.Orders.php:500
+#, php-format
+msgid "%s 商店交易提醒"
+msgstr "%s 商店交易提醒"
+
+#: core/functions/shop/func.Shop.Orders.php:516
+#, php-format
+msgid "%s 商店新成功交易提醒"
+msgstr "%s 商店新成功交易提醒"
+
+#: core/functions/shop/func.Shop.Orders.php:604
+#, php-format
+msgid "The Resources You Bought in %s"
+msgstr "你在 %s 付费购买的资源"
+
+#: core/functions/shop/func.Shop.Orders.php:607
+#, php-format
+msgid "%d Credits"
+msgstr "%d 积分"
+
+#: core/functions/shop/func.Shop.Orders.php:607
+#, php-format
+msgid "%0.2f YUAN"
+msgstr "%0.2f 元"
+
 #: core/functions/shop/func.Shop.php:28
 msgctxt "taxonomy general name"
 msgid "Products"
@@ -2367,6 +2406,179 @@ msgstr ""
 "<div class=\"contextual-bg bg-paycontent\"><span><i class=\"tico tico-paypal"
 "\">&nbsp;</i>付费内容</span><p>%1$s</p><p>%2$s</p></div>"
 
+#: core/modules/me/me.NavMenu.php:22
+msgid "SETTINGS"
+msgstr "设置"
+
+#: core/modules/me/me.NavMenu.php:23
+msgid "NOTIFICATIONS"
+msgstr "通知"
+
+#: core/modules/me/me.NavMenu.php:24
+msgid "MESSAGES"
+msgstr "消息"
+
+#: core/modules/me/me.NavMenu.php:25 core/modules/uc/uc.NavTabs.php:20
+msgid "MY STARS"
+msgstr "收藏"
+
+#: core/modules/me/me.NavMenu.php:26
+#: core/viewModels/shop/vm.Shop.Category.php:117
+#: core/viewModels/shop/vm.Shop.Home.php:110
+#: core/viewModels/shop/vm.Shop.Product.php:120
+#: core/viewModels/shop/vm.Shop.Product.php:233
+#: core/viewModels/shop/vm.Shop.Product.php:280
+#: core/viewModels/shop/vm.Shop.Search.php:111
+#: core/viewModels/shop/vm.Shop.Tag.php:117
+#: core/viewModels/shop/vm.Shop.ViewHistory.php:99
+#: core/viewModels/vm.Single.Post.php:106
+msgid "CREDITS"
+msgstr "积分"
+
+#: core/modules/me/me.NavMenu.php:27
+msgid "ORDERS"
+msgstr "订单"
+
+#: core/modules/me/me.Tab.Setting.php:29 core/modules/uc/uc.Tab.Profile.php:28
+#, php-format
+msgid "Member Since %s"
+msgstr "加入时间 %s"
+
+#: core/modules/me/me.Tab.Setting.php:30 core/modules/uc/uc.Tab.Profile.php:29
+#, php-format
+msgid "Last Login %s"
+msgstr "上次登录 %s"
+
+#: core/modules/me/me.Tab.Setting.php:30 core/modules/uc/uc.Tab.Profile.php:29
+#, php-format
+msgid "Latest Login %s"
+msgstr "最近登录 %s"
+
+#: core/modules/me/me.Tab.Setting.php:32 core/modules/uc/uc.Tab.Profile.php:31
+#, php-format
+msgid "This Login IP %s"
+msgstr "本次登录IP %s"
+
+#: core/modules/me/me.Tab.Setting.php:32 core/modules/me/me.Tab.Setting.php:35
+#: core/modules/uc/uc.Tab.Profile.php:31 core/modules/uc/uc.Tab.Profile.php:34
+#, php-format
+msgid "Last Login IP %s"
+msgstr "上次登录IP %s"
+
+#: core/modules/me/me.Tab.Setting.php:42 core/modules/uc/uc.Tab.Profile.php:41
+msgid "Basic Info"
+msgstr "基本信息"
+
+#: core/modules/me/me.Tab.Setting.php:44 core/modules/uc/uc.Tab.Profile.php:43
+msgid "Nickname"
+msgstr "昵称"
+
+#: core/modules/me/me.Tab.Setting.php:49 core/modules/uc/uc.Tab.Profile.php:48
+#: core/templates/actions/tpl.M.Findpass.php:36
+#: core/templates/actions/tpl.M.Signup.php:46
+#: core/templates/site/tpl.CheckOut.php:152
+msgid "Email"
+msgstr "邮箱"
+
+#: core/modules/me/me.Tab.Setting.php:54 core/modules/uc/uc.Tab.Profile.php:53
+msgid "Site"
+msgstr "网站"
+
+#: core/modules/me/me.Tab.Setting.php:58 core/modules/uc/uc.Tab.Profile.php:57
+msgid "Description"
+msgstr "个人描述"
+
+#: core/modules/me/me.Tab.Setting.php:64 core/modules/uc/uc.Tab.Profile.php:63
+msgid "Extended Info"
+msgstr "扩展信息"
+
+#: core/modules/me/me.Tab.Setting.php:67 core/modules/uc/uc.Tab.Profile.php:66
+msgid "Talk with QQ"
+msgstr "QQ交谈"
+
+#: core/modules/me/me.Tab.Setting.php:70 core/modules/uc/uc.Tab.Profile.php:69
+msgid "Follow on Weibo"
+msgstr "微博"
+
+#: core/modules/me/me.Tab.Setting.php:73 core/modules/uc/uc.Tab.Profile.php:72
+msgid "Talk with Wechat"
+msgstr "微信"
+
+#: core/modules/me/me.Tab.Setting.php:76 core/modules/uc/uc.Tab.Profile.php:75
+msgid "Follow on Twitter"
+msgstr "Twitter"
+
+#: core/modules/me/me.Tab.Setting.php:79 core/modules/uc/uc.Tab.Profile.php:78
+msgid "Find on Facebook"
+msgstr "Facebook"
+
+#: core/modules/me/me.Tab.Setting.php:82 core/modules/uc/uc.Tab.Profile.php:81
+msgid "Google+"
+msgstr "Google+"
+
+#: core/modules/me/me.Tab.Setting.php:89 core/modules/uc/uc.Tab.Profile.php:88
+msgid "Donate Info"
+msgstr "收款信息"
+
+#: core/modules/me/me.Tab.Setting.php:89 core/modules/uc/uc.Tab.Profile.php:88
+msgid "Donate to me"
+msgstr "打赏我"
+
+#: core/modules/me/me.Tab.Setting.php:92 core/modules/uc/uc.Tab.Profile.php:91
+msgid "Donate via Alipay"
+msgstr "支付宝打赏"
+
+#: core/modules/me/me.Tab.Setting.php:95 core/modules/uc/uc.Tab.Profile.php:94
+msgid "Donate via Wechat"
+msgstr "微信打赏"
+
+#: core/modules/me/me.Tab.Setting.php:102
+#: core/modules/uc/uc.Tab.Profile.php:101
+msgid "Referral Info"
+msgstr "推广信息"
+
+#: core/modules/me/me.Tab.Setting.php:104
+#: core/modules/uc/uc.Tab.Profile.php:103
+msgid "Referral Link"
+msgstr "推广链接"
+
+#: core/modules/me/me.Tab.Setting.php:105
+#: core/modules/uc/uc.Tab.Profile.php:104
+msgid "COPY"
+msgstr "复制"
+
+#: core/modules/me/me.Tab.Setting.php:111 core/modules/mod.ModalBanBox.php:18
+#: core/modules/uc/uc.Tab.Profile.php:110
+msgid "Account Management"
+msgstr "账户管理"
+
+#: core/modules/me/me.Tab.Setting.php:111
+#: core/modules/uc/uc.Tab.Profile.php:110
+msgid "Visible for administrator"
+msgstr "仅管理员可见"
+
+#: core/modules/me/me.Tab.Setting.php:114
+#: core/modules/uc/uc.Tab.Profile.php:113
+msgid "Unlock Account"
+msgstr "解禁账户"
+
+#: core/modules/me/me.Tab.Setting.php:115
+#: core/modules/uc/uc.Tab.Profile.php:114
+msgid "This action will enable the account to normal functions"
+msgstr "此操作将恢复该账户的正常功能"
+
+#: core/modules/me/me.Tab.Setting.php:117
+#: core/modules/uc/uc.Tab.Profile.php:116
+msgid "Ban Account"
+msgstr "封禁账户"
+
+#: core/modules/me/me.Tab.Setting.php:118
+#: core/modules/uc/uc.Tab.Profile.php:117
+msgid ""
+"Warning: this action will ban the account, the all features is not "
+"accessible until manual unlock"
+msgstr "警告: 此操作将封禁该账户, 所有功能不可使用直至手动解禁"
+
 #: core/modules/mod.Comments.php:29 core/modules/shop/mod.Shop.Comments.php:29
 msgid "Load More Comments"
 msgstr "加载更多"
@@ -2549,13 +2761,21 @@ msgstr "我的文章"
 msgid "Latest Posts"
 msgstr "近期文章"
 
+#: core/modules/mod.HomeLatest.php:69 core/modules/uc/uc.Tab.Chat.php:87
+#: core/modules/uc/uc.Tab.Comments.php:54 core/modules/uc/uc.Tab.Latest.php:66
+#, php-format
+msgid "Current Page %d"
+msgstr "第 %d 页"
+
+#: core/modules/mod.HomeLatest.php:71 core/modules/uc/uc.Tab.Chat.php:89
+#: core/modules/uc/uc.Tab.Comments.php:56 core/modules/uc/uc.Tab.Latest.php:68
+#, php-format
+msgid "Total %d Pages"
+msgstr "共 %d 页"
+
 #: core/modules/mod.HomePopular.php:22
 msgid "Popular"
 msgstr "Popular"
-
-#: core/modules/mod.ModalBanBox.php:18 core/modules/uc/uc.Tab.Profile.php:110
-msgid "Account Management"
-msgstr "账户管理"
 
 #: core/modules/mod.ModalBanBox.php:23
 msgid "Write your reason here."
@@ -2793,10 +3013,6 @@ msgstr "文章"
 msgid "COMMENTS"
 msgstr "评论"
 
-#: core/modules/uc/uc.NavTabs.php:20
-msgid "MY STARS"
-msgstr "收藏"
-
 #: core/modules/uc/uc.NavTabs.php:21 core/modules/uc/uc.Tab.Followers.php:37
 #: core/modules/uc/uc.Tab.Following.php:37
 #: core/modules/widgets/wgt.Author.php:55
@@ -2903,132 +3119,6 @@ msgstr "他的评论"
 #: core/modules/uc/uc.Tab.Following.php:51
 msgid "Check Activities"
 msgstr "关注动态"
-
-#: core/modules/uc/uc.Tab.Profile.php:28
-#, php-format
-msgid "Member Since %s"
-msgstr "加入时间 %s"
-
-#: core/modules/uc/uc.Tab.Profile.php:29
-#, php-format
-msgid "Last Login %s"
-msgstr "上次登录 %s"
-
-#: core/modules/uc/uc.Tab.Profile.php:29
-#, php-format
-msgid "Latest Login %s"
-msgstr "最近登录 %s"
-
-#: core/modules/uc/uc.Tab.Profile.php:31
-#, php-format
-msgid "This Login IP %s"
-msgstr "本次登录IP %s"
-
-#: core/modules/uc/uc.Tab.Profile.php:31 core/modules/uc/uc.Tab.Profile.php:34
-#, php-format
-msgid "Last Login IP %s"
-msgstr "上次登录IP %s"
-
-#: core/modules/uc/uc.Tab.Profile.php:41
-msgid "Basic Info"
-msgstr "基本信息"
-
-#: core/modules/uc/uc.Tab.Profile.php:43
-msgid "Nickname"
-msgstr "昵称"
-
-#: core/modules/uc/uc.Tab.Profile.php:48
-#: core/templates/actions/tpl.M.Findpass.php:36
-#: core/templates/actions/tpl.M.Signup.php:46
-#: core/templates/site/tpl.CheckOut.php:152
-msgid "Email"
-msgstr "邮箱"
-
-#: core/modules/uc/uc.Tab.Profile.php:53
-msgid "Site"
-msgstr "网站"
-
-#: core/modules/uc/uc.Tab.Profile.php:57
-msgid "Description"
-msgstr "个人描述"
-
-#: core/modules/uc/uc.Tab.Profile.php:63
-msgid "Extended Info"
-msgstr "扩展信息"
-
-#: core/modules/uc/uc.Tab.Profile.php:66
-msgid "Talk with QQ"
-msgstr "QQ交谈"
-
-#: core/modules/uc/uc.Tab.Profile.php:69
-msgid "Follow on Weibo"
-msgstr "微博"
-
-#: core/modules/uc/uc.Tab.Profile.php:72
-msgid "Talk with Wechat"
-msgstr "微信"
-
-#: core/modules/uc/uc.Tab.Profile.php:75
-msgid "Follow on Twitter"
-msgstr "Twitter"
-
-#: core/modules/uc/uc.Tab.Profile.php:78
-msgid "Find on Facebook"
-msgstr "Facebook"
-
-#: core/modules/uc/uc.Tab.Profile.php:81
-msgid "Google+"
-msgstr "Google+"
-
-#: core/modules/uc/uc.Tab.Profile.php:88
-msgid "Donate Info"
-msgstr "收款信息"
-
-#: core/modules/uc/uc.Tab.Profile.php:88
-msgid "Donate to me"
-msgstr "打赏我"
-
-#: core/modules/uc/uc.Tab.Profile.php:91
-msgid "Donate via Alipay"
-msgstr "支付宝打赏"
-
-#: core/modules/uc/uc.Tab.Profile.php:94
-msgid "Donate via Wechat"
-msgstr "微信打赏"
-
-#: core/modules/uc/uc.Tab.Profile.php:101
-msgid "Referral Info"
-msgstr "推广信息"
-
-#: core/modules/uc/uc.Tab.Profile.php:103
-msgid "Referral Link"
-msgstr "推广链接"
-
-#: core/modules/uc/uc.Tab.Profile.php:104
-msgid "COPY"
-msgstr "复制"
-
-#: core/modules/uc/uc.Tab.Profile.php:110
-msgid "Visible for administrator"
-msgstr "仅管理员可见"
-
-#: core/modules/uc/uc.Tab.Profile.php:113
-msgid "Unlock Account"
-msgstr "解禁账户"
-
-#: core/modules/uc/uc.Tab.Profile.php:114
-msgid "This action will enable the account to normal functions"
-msgstr "此操作将恢复该账户的正常功能"
-
-#: core/modules/uc/uc.Tab.Profile.php:116
-msgid "Ban Account"
-msgstr "封禁账户"
-
-#: core/modules/uc/uc.Tab.Profile.php:117
-msgid ""
-"Warning: this action will ban the account, the all features is not "
-"accessible until manual unlock"
-msgstr "警告: 此操作将封禁该账户, 所有功能不可使用直至手动解禁"
 
 #: core/modules/uc/uc.Tab.Stars.php:40
 msgid "Unstar"
@@ -3214,20 +3304,20 @@ msgstr "无法激活您的注册, 访问的链接不正确"
 msgid "Invalid Activation Link"
 msgstr "无效的激活链接"
 
-#: core/templates/actions/tpl.M.Activate.php:32
+#: core/templates/actions/tpl.M.Activate.php:31
 msgid ""
 "Can not activate your registration, please try again the registration steps."
 msgstr "不能激活您的注册, 请重试注册步骤"
 
-#: core/templates/actions/tpl.M.Activate.php:32
+#: core/templates/actions/tpl.M.Activate.php:31
 msgid "Activate Registration Failed"
 msgstr "激活注册失败"
 
-#: core/templates/actions/tpl.M.Activate.php:54
+#: core/templates/actions/tpl.M.Activate.php:53
 msgid "Activate Successfully"
 msgstr "激活成功"
 
-#: core/templates/actions/tpl.M.Activate.php:55
+#: core/templates/actions/tpl.M.Activate.php:54
 msgid "You will be redirected to the signin page in 3s"
 msgstr "你将在 3 秒内引导至登录页面"
 
@@ -3338,11 +3428,12 @@ msgstr "已有账号? "
 #: core/templates/actions/tpl.M.Signup.php:92
 #, php-format
 msgid ""
-"* By signing up, you agree to our <a href=\"%s\" target=\"_blank\">Terms of "
-"Use, Privacy Policy</a> and to receive emails, newsletters &amp; updates."
+"* By signing up, you agree to our <a href=\"%s\" target=\"_blank"
+"\"><strong>「Terms of Use, Privacy Policy」</strong></a> and to receive "
+"emails, newsletters &amp; updates."
 msgstr ""
-"* 提交注册代表您同意我们的<a href=\"%s\" target=\"_blank\">使用条款与隐私政策"
-"</a> 并接受来自网站的邮件、订阅信和其他同步信息."
+"* 提交注册代表您同意我们的<a href=\"%s\" target=\"_blank\"><strong>「使用条款"
+"与隐私政策」</strong></a> 并接受来自网站的邮件、订阅信和其他同步信息."
 
 #: core/templates/oauth/tpl.OAuth.php:33
 msgid "The request you have done is illegal, please retry"
@@ -3850,18 +3941,6 @@ msgstr "页面发生了一个错误."
 #: core/viewModels/vm.Single.Post.php:106
 msgid "YUAN"
 msgstr "元"
-
-#: core/viewModels/shop/vm.Shop.Category.php:117
-#: core/viewModels/shop/vm.Shop.Home.php:110
-#: core/viewModels/shop/vm.Shop.Product.php:120
-#: core/viewModels/shop/vm.Shop.Product.php:233
-#: core/viewModels/shop/vm.Shop.Product.php:280
-#: core/viewModels/shop/vm.Shop.Search.php:111
-#: core/viewModels/shop/vm.Shop.Tag.php:117
-#: core/viewModels/shop/vm.Shop.ViewHistory.php:99
-#: core/viewModels/vm.Single.Post.php:106
-msgid "CREDITS"
-msgstr "积分"
 
 #: core/viewModels/shop/vm.Shop.Header.SubNav.php:77
 msgid "Free Products"

@@ -51,9 +51,9 @@
                             } ?>
                         </ul>
                         <div class="page-nums">
-                            Page&nbsp;<span class="current-page"><?php echo $pagination_args['current_page']; ?></span>
+                            <span class="current-page"><?php printf(__('Current Page %d', 'tt'), $pagination_args['current_page']); ?></span>
                             <span class="separator">/</span>
-                            <span class="max-page"><?php echo $pagination_args['max_num_pages']; ?></span>
+                            <span class="max-page"><?php printf(__('Total %d Pages', 'tt'), $pagination_args['max_num_pages']); ?></span>
                         </div>
                     </nav>
                 <?php } ?>
