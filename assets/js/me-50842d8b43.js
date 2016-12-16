@@ -1,5 +1,5 @@
 /**
- * Generated on Fri Dec 16 2016 00:38:25 GMT+0800 (中国标准时间) by Zhiyan
+ * Generated on Fri Dec 16 2016 23:50:53 GMT+0800 (中国标准时间) by Zhiyan
  *
  * @package   Tint
  * @version   v2.0.0
@@ -3020,7 +3020,7 @@
         }[['call']](exports, __webpack_require__(1)));
     },
     function (module, exports, __webpack_require__) {
-        (function ($, TT) {
+        (function ($) {
             'use strict';
             Object[['defineProperty']](exports, '__esModule', { value: true });
             var _utils = __webpack_require__(3);
@@ -3031,13 +3031,17 @@
             }
             var _body = $('body');
             var _initAvatarUpload = function _initAvatarUpload() {
-                _handleAvatarUpload(TT[['uid']] + '.jpg');
+                _handleAvatarUpload();
             };
-            var _handleAvatarUpload = function _handleAvatarUpload(name) {
+            var _handleAvatarUpload = function _handleAvatarUpload() {
                 var options = {
                     auto: true,
                     server: _utils2[['default']][['getAbsUrl']]('site/upload'),
-                    pick: '.avatar-picker',
+                    pick: {
+                        id: '.avatar-picker',
+                        innerHTML: '',
+                        multiple: false
+                    },
                     accept: {
                         title: 'Images',
                         extensions: 'jpg,jpeg,bmp,png',
@@ -3048,32 +3052,32 @@
                         height: 100,
                         quality: 90,
                         allowMagnify: false,
-                        crop: false,
+                        crop: true,
                         preserveHeaders: true,
                         noCompressIfLarger: false,
                         compressSize: 0
                     },
-                    formData: {
-                        name: name,
-                        imgFor: 'avatar'
-                    }
+                    formData: { imgFor: 'avatar' }
                 };
                 var uploader = WebUploader[['create']](options);
-                uploader[['on']]('uploadProgress', function (file, percentage) {
-                    console[['log']](percentage);
+                uploader[['on']]('startUpload', function () {
+                    _utils2[['default']][['showFullLoader']]('tico-spinner2', '\u6b63\u5728\u4e0a\u4f20\u4e2d...');
                 });
-                uploader[['on']]('uploadSuccess', function (file) {
-                    _msgbox[['popMsgbox']][['success']]({ title: 'success' });
+                uploader[['on']]('uploadProgress', function (file, percentage) {
+                });
+                uploader[['on']]('uploadSuccess', function (file, response) {
+                    _msgbox[['popMsgbox']][['success']]({ title: '\u5934\u50cf\u4e0a\u4f20\u6210\u529f' });
+                    $('.local-avatar-label>img')[['attr']]('src', response[['data']][['avatar']]);
                 });
                 uploader[['on']]('uploadError', function (file) {
-                    _msgbox[['popMsgbox']][['error']]({ title: 'error' });
+                    _msgbox[['popMsgbox']][['error']]({ title: '\u4e0a\u4f20\u5934\u50cf\u5931\u8d25' });
                 });
                 uploader[['on']]('uploadComplete', function (file) {
-                    _msgbox[['popMsgbox']][['success']]({ title: 'complete' });
+                    _utils2[['default']][['hideFullLoader']]();
                 });
             };
             var ImageUploader = { initAvatarUpload: _initAvatarUpload };
             exports[['default']] = ImageUploader;
-        }[['call']](exports, __webpack_require__(1), __webpack_require__(4)));
+        }[['call']](exports, __webpack_require__(1)));
     }
 ]));

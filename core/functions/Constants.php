@@ -40,6 +40,10 @@ defined('THEME_MOD') || define('THEME_MOD', get_template_directory() . '/core/mo
 
 defined('THEME_TPL') || define('THEME_TPL', get_template_directory() . '/core/templates');
 
+defined('AVATARS_PATH') || define('AVATARS_PATH', WP_CONTENT_DIR . DIRECTORY_SEPARATOR . '/uploads/avatars');
+
+defined('AVATARS_URL') || define('AVATARS_URL', home_url('wp-content/uploads/avatars'));
+
 /* Theme Version */
 defined('TT_PRO') || define('TT_PRO', !!preg_match('/([0-9-\.]+)PRO/i', trim(wp_get_theme()->get('Version'))));
 

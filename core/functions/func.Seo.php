@@ -42,7 +42,39 @@ function tt_get_page_title() {
         }
         return $title . ' - ' . get_bloginfo('name');
     }
-    if($site_util = get_query_var('site_util')){
+    if($me_route = get_query_var('me_child_route')) {
+        switch ($me_route) {
+            case 'settings':
+                $title = __('My Settings', 'tt');
+                break;
+            case 'notifications':
+                $title = __('My Notifications', 'tt');
+                break;
+            case 'messages': //TODO grandchild route in/out msgbox
+                $title = __('My Messages', 'tt');
+                break;
+            case 'stars':
+                $title = __('My Stars', 'tt');
+                break;
+            case 'credits':
+                $title = __('My Credits', 'tt');
+                break;
+            case 'orders':
+                $title = __('My Orders', 'tt');
+                break;
+            case 'order':
+                $title = __('My Order', 'tt');
+                break;
+            case 'newpost':
+                $title = __('New Post', 'tt');
+                break;
+            case 'editpost':
+                $title = __('Edit Post', 'tt');
+                break;
+        }
+        return $title . ' - ' . get_bloginfo('name');
+    }
+    if($site_util = get_query_var('site_util')) {
         switch ($site_util){
             case 'checkout':
                 $title = __('Check Out Orders', 'tt');

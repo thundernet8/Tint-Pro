@@ -14,7 +14,15 @@
 ?>
 <?php
 
+$user_id = get_current_user_id();
+
+if(!$user_id){
+    header("HTTP/1.1 403 Forbidden");
+    exit;
+}
+
 // Make sure file is not cached (as it happens for example on iOS devices)
+header("HTTP/1.1 200 OK");
 header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
 header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
 header("Cache-Control: no-store, no-cache, must-revalidate");
@@ -24,18 +32,20 @@ header("Pragma: no-cache");
 // Support CORS
 // header("Access-Control-Allow-Origin: *");
 // other CORS headers if any...
-if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
-    exit; // finish preflight CORS requests here
-}
+//if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
+//    exit; // finish preflight CORS requests here
+//}
 
-$imageFor = isset($_REQUEST['imageFor']) && $_REQUEST['imageFor'] == 'avatar' ? 'avatar' : 'default';
+$imageFor = isset($_POST['imgFor']) && $_POST['imgFor'] == 'avatar' ? 'avatar' : 'default';
 
 // 1 minutes execution time
 @set_time_limit(1 * 60);
 
 // Settings
 $targetDir = WP_CONTENT_DIR . '/uploads/tmp';
-$uploadDir = $imageFor=='avatar' ? WP_CONTENT_DIR . '/uploads/avatars' : WP_CONTENT_DIR . '/uploads/images';
+//$uploadDir = $imageFor=='avatar' ? AVATARS_PATH : WP_CONTENT_DIR . '/uploads/images';
+$uploadDir = WP_CONTENT_DIR . '/uploads/images';
+$uploadUrl = home_url('wp-content/uploads/images');
 $cleanupTargetDir = true; // Remove old files
 $maxFileAge = 5 * 3600; // Temp file age in seconds
 // Create target dir
@@ -47,19 +57,24 @@ if (!file_exists($uploadDir)) {
     @mkdir($uploadDir);
 }
 // Get a file name
-if (isset($_REQUEST["name"])) { // for avatars use [user_id].jpg
+if($imageFor == 'avatar'){
+    $fileName = $_REQUEST["name"];
+}elseif (isset($_POST["name"])) { // for avatars use [user_id].jpg
     $fileName = $_REQUEST["name"];
 } elseif (!empty($_FILES)) {
     $fileName = $_FILES["file"]["name"];
 } else {
     $fileName = uniqid("file_");
 }
+
+$fileName = tt_unique_img_name($fileName, isset($_POST['type']) ? trim($_POST['type']) : 'image/jpg');
+
 $filePath = $targetDir . DIRECTORY_SEPARATOR . $fileName;
 $uploadPath = $uploadDir . DIRECTORY_SEPARATOR . $fileName;
 
 // Chunking might be enabled
-$chunk = isset($_REQUEST["chunk"]) ? intval($_REQUEST["chunk"]) : 0;
-$chunks = isset($_REQUEST["chunks"]) ? intval($_REQUEST["chunks"]) : 1;
+$chunk = isset($_POST["chunk"]) ? intval($_POST["chunk"]) : 0;
+$chunks = isset($_POST["chunks"]) ? intval($_POST["chunks"]) : 1;
 // Remove old temp files
 if ($cleanupTargetDir) {
     if (!is_dir($targetDir) || !$dir = opendir($targetDir)) {
@@ -128,7 +143,31 @@ if ( $done ) {
     }
     @fclose($out);
 
-    // TODO
+    // 转为jpg, avatar移动到专用文件夹
+    if($imageFor == 'avatar'){
+        $avatar_path = AVATARS_PATH . DIRECTORY_SEPARATOR . $user_id . '.jpg';
+        tt_resize_img($uploadPath, $avatar_path);
+        // TODO uploads/images删除临时文件
+        tt_update_user_avatar_by_upload($user_id);
+        echo json_encode(array(
+            'success' => true,
+            'message' => '',
+            'data' => array(
+                'avatar' => AVATARS_URL . '/' . $user_id . '.jpg?_=' . time() // 加时间戳防止缓存
+            )
+        ));
+        exit;
+    }else{
+        // TODO
+        echo json_encode(array(
+            'success' => true,
+            'message' => '',
+            'data' => array(
+                'image' => $uploadUrl . '/' . $fileName
+            )
+        ));
+        exit;
+    }
 }
 // Return Success JSON-RPC response
 die('{"jsonrpc" : "2.0", "result" : null, "id" : "id"}');

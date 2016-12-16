@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-12-14 23:49+0800\n"
+"POT-Creation-Date: 2016-12-17 00:24+0800\n"
 "PO-Revision-Date: 2016-08-17 21:40+0800\n"
 "Last-Translator: \n"
 "Language-Team: Zhiyan <mail@webapproach.net>\n"
@@ -1565,30 +1565,37 @@ msgid ""
 msgstr ""
 
 #: core/functions/func.Install.php:35 core/functions/func.Install.php:59
-#: core/functions/func.Install.php:84 core/functions/func.Install.php:97
+#: core/functions/func.Install.php:83 core/functions/func.Install.php:108
+#: core/functions/func.Install.php:121
 msgid "Caught exception: "
 msgstr ""
 
-#: core/functions/func.Install.php:36 core/functions/func.Install.php:98
-#: functions.php:16
+#: core/functions/func.Install.php:36 core/functions/func.Install.php:60
+#: core/functions/func.Install.php:122 functions.php:16
 msgid "WordPress internal error"
 msgstr ""
 
-#: core/functions/func.Install.php:59 core/functions/func.Install.php:97
+#: core/functions/func.Install.php:59
+msgid ""
+"Create tmp upload folder failed, maybe check your php.ini to enable "
+"`mkdir` function.\\n"
+msgstr ""
+
+#: core/functions/func.Install.php:83 core/functions/func.Install.php:121
 msgid "Can not copy `memcache object-cache.php` to `wp-content` dir.\\n"
 msgstr ""
 
-#: core/functions/func.Install.php:60 core/functions/func.Install.php:85
+#: core/functions/func.Install.php:84 core/functions/func.Install.php:109
 msgid "Create folder error"
 msgstr ""
 
-#: core/functions/func.Install.php:84
+#: core/functions/func.Install.php:108
 msgid ""
 "Create timthumb cache folder failed, maybe check your php.ini to enable "
 "`mkdir` function.\\n"
 msgstr ""
 
-#: core/functions/func.Kits.php:363
+#: core/functions/func.Kits.php:356
 msgid "WordPress &rsaquo; Error"
 msgstr ""
 
@@ -1877,118 +1884,156 @@ msgstr ""
 msgid "Weekly"
 msgstr ""
 
-#: core/functions/func.Seo.php:28 core/functions/func.Seo.php:127
+#: core/functions/func.Seo.php:28 core/functions/func.Seo.php:159
 #: core/modules/mod.ModalLoginForm.php:17
 #: core/templates/actions/tpl.M.Signup.php:90
 msgid "Sign In"
 msgstr ""
 
-#: core/functions/func.Seo.php:31 core/functions/func.Seo.php:130
+#: core/functions/func.Seo.php:31 core/functions/func.Seo.php:162
 #: core/templates/actions/tpl.M.Signup.php:62
 msgid "Sign Up"
 msgstr ""
 
-#: core/functions/func.Seo.php:34 core/functions/func.Seo.php:133
+#: core/functions/func.Seo.php:34 core/functions/func.Seo.php:165
 msgid "Activate Registration"
 msgstr ""
 
-#: core/functions/func.Seo.php:37 core/functions/func.Seo.php:136
+#: core/functions/func.Seo.php:37 core/functions/func.Seo.php:168
 #: core/modules/mod.Header.Shop.php:103 core/modules/mod.Header.php:47
 msgid "Sign Out"
 msgstr ""
 
-#: core/functions/func.Seo.php:40 core/functions/func.Seo.php:139
+#: core/functions/func.Seo.php:40 core/functions/func.Seo.php:171
 #: core/templates/actions/tpl.M.Findpass.php:33
 msgid "Find Password"
 msgstr ""
 
-#: core/functions/func.Seo.php:48
-msgid "Check Out Orders"
+#: core/functions/func.Seo.php:48 core/modules/mod.Header.Shop.php:101
+#: core/modules/mod.Header.php:45
+msgid "My Settings"
 msgstr ""
 
 #: core/functions/func.Seo.php:51
+msgid "My Notifications"
+msgstr ""
+
+#: core/functions/func.Seo.php:54 core/modules/mod.Header.Shop.php:100
+#: core/modules/mod.Header.php:44
+msgid "My Messages"
+msgstr ""
+
+#: core/functions/func.Seo.php:57
+msgid "My Stars"
+msgstr ""
+
+#: core/functions/func.Seo.php:60
+msgid "My Credits"
+msgstr ""
+
+#: core/functions/func.Seo.php:63 core/modules/mod.Header.Shop.php:99
+msgid "My Orders"
+msgstr ""
+
+#: core/functions/func.Seo.php:66
+msgid "My Order"
+msgstr ""
+
+#: core/functions/func.Seo.php:69 core/modules/mod.Header.php:42
+msgid "New Post"
+msgstr ""
+
+#: core/functions/func.Seo.php:72 core/modules/uc/uc.Tab.Latest.php:34
+msgid "Edit Post"
+msgstr ""
+
+#: core/functions/func.Seo.php:80
+msgid "Check Out Orders"
+msgstr ""
+
+#: core/functions/func.Seo.php:83
 msgid "Payment Result"
 msgstr ""
 
-#: core/functions/func.Seo.php:54
+#: core/functions/func.Seo.php:86
 msgid "Do Payment"
 msgstr ""
 
-#: core/functions/func.Seo.php:58
+#: core/functions/func.Seo.php:90
 msgid "Resources Download:"
 msgstr ""
 
-#: core/functions/func.Seo.php:68
+#: core/functions/func.Seo.php:100
 #, php-format
 msgid " - Page %d"
 msgstr ""
 
-#: core/functions/func.Seo.php:79 core/functions/func.Seo.php:176
+#: core/functions/func.Seo.php:111 core/functions/func.Seo.php:208
 #, php-format
 msgid "%s's Home Page"
 msgstr ""
 
-#: core/functions/func.Seo.php:83 core/functions/shop/func.Shop.php:297
+#: core/functions/func.Seo.php:115 core/functions/shop/func.Shop.php:297
 msgid "Product Category"
 msgstr ""
 
-#: core/functions/func.Seo.php:85
+#: core/functions/func.Seo.php:117
 msgid "Product Tag"
 msgstr ""
 
-#: core/functions/func.Seo.php:87 core/functions/func.Seo.php:90
-#: core/functions/func.Seo.php:188 core/modules/mod.Header.Shop.php:29
+#: core/functions/func.Seo.php:119 core/functions/func.Seo.php:122
+#: core/functions/func.Seo.php:220 core/modules/mod.Header.Shop.php:29
 #: dash/options.php:794
 msgid "Market"
 msgstr ""
 
-#: core/functions/func.Seo.php:93
+#: core/functions/func.Seo.php:125
 msgid "Search"
 msgstr ""
 
-#: core/functions/func.Seo.php:95
+#: core/functions/func.Seo.php:127
 msgid "Y"
 msgstr ""
 
-#: core/functions/func.Seo.php:95 core/functions/func.Seo.php:97
-#: core/functions/func.Seo.php:99
+#: core/functions/func.Seo.php:127 core/functions/func.Seo.php:129
+#: core/functions/func.Seo.php:131
 msgid "posts archive"
 msgstr ""
 
-#: core/functions/func.Seo.php:97
+#: core/functions/func.Seo.php:129
 msgid "Y.n"
 msgstr ""
 
-#: core/functions/func.Seo.php:99
+#: core/functions/func.Seo.php:131
 msgid "Y.n.j"
 msgstr ""
 
-#: core/functions/func.Seo.php:101
+#: core/functions/func.Seo.php:133
 msgid "Tag: "
 msgstr ""
 
-#: core/functions/func.Seo.php:103
+#: core/functions/func.Seo.php:135
 msgid "Page Not Found"
 msgstr ""
 
-#: core/functions/func.Seo.php:108
+#: core/functions/func.Seo.php:140
 #, php-format
 msgid " - Page %d "
 msgstr ""
 
-#: core/functions/func.Seo.php:142 core/functions/func.Seo.php:176
+#: core/functions/func.Seo.php:174 core/functions/func.Seo.php:208
 msgid "Powered by Tint(Tinection 2)"
 msgstr ""
 
-#: core/functions/func.Seo.php:175
+#: core/functions/func.Seo.php:207
 msgid "Ucenter"
 msgstr ""
 
-#: core/functions/func.Seo.php:175 core/functions/func.Seo.php:188
+#: core/functions/func.Seo.php:207 core/functions/func.Seo.php:220
 msgid "Tint Ucenter and Market System"
 msgstr ""
 
-#: core/functions/func.Seo.php:191
+#: core/functions/func.Seo.php:223
 msgid ""
 "Powered by Tint(Tinection 2, a powerful wordpress theme with ucenter and "
 "shop system integrated)"
@@ -2429,23 +2474,27 @@ msgid ""
 "paypal\">&nbsp;</i>付费内容</span><p>%1$s</p><p>%2$s</p></div>"
 msgstr ""
 
-#: core/modules/me/me.NavMenu.php:22
-msgid "SETTINGS"
-msgstr ""
-
 #: core/modules/me/me.NavMenu.php:23
-msgid "NOTIFICATIONS"
-msgstr ""
-
-#: core/modules/me/me.NavMenu.php:24
-msgid "MESSAGES"
-msgstr ""
-
-#: core/modules/me/me.NavMenu.php:25 core/modules/uc/uc.NavTabs.php:20
-msgid "MY STARS"
+msgid "Visit My Homepage"
 msgstr ""
 
 #: core/modules/me/me.NavMenu.php:26
+msgid "SETTINGS"
+msgstr ""
+
+#: core/modules/me/me.NavMenu.php:27
+msgid "NOTIFICATIONS"
+msgstr ""
+
+#: core/modules/me/me.NavMenu.php:28
+msgid "MESSAGES"
+msgstr ""
+
+#: core/modules/me/me.NavMenu.php:29 core/modules/uc/uc.NavTabs.php:20
+msgid "MY STARS"
+msgstr ""
+
+#: core/modules/me/me.NavMenu.php:30
 #: core/viewModels/shop/vm.Shop.Category.php:117
 #: core/viewModels/shop/vm.Shop.Home.php:110
 #: core/viewModels/shop/vm.Shop.Product.php:120
@@ -2458,53 +2507,36 @@ msgstr ""
 msgid "CREDITS"
 msgstr ""
 
-#: core/modules/me/me.NavMenu.php:27
+#: core/modules/me/me.NavMenu.php:31
 msgid "ORDERS"
 msgstr ""
 
-#: core/modules/me/me.Tab.Setting.php:29
-#: core/modules/uc/uc.Tab.Profile.php:28
-#, php-format
-msgid "Member Since %s"
-msgstr ""
-
-#: core/modules/me/me.Tab.Setting.php:30
-#: core/modules/uc/uc.Tab.Profile.php:29
-#, php-format
-msgid "Last Login %s"
-msgstr ""
-
-#: core/modules/me/me.Tab.Setting.php:30
-#: core/modules/uc/uc.Tab.Profile.php:29
-#, php-format
-msgid "Latest Login %s"
-msgstr ""
-
-#: core/modules/me/me.Tab.Setting.php:32
-#: core/modules/uc/uc.Tab.Profile.php:31
-#, php-format
-msgid "This Login IP %s"
-msgstr ""
-
-#: core/modules/me/me.Tab.Setting.php:32
-#: core/modules/me/me.Tab.Setting.php:35
-#: core/modules/uc/uc.Tab.Profile.php:31
-#: core/modules/uc/uc.Tab.Profile.php:34
-#, php-format
-msgid "Last Login IP %s"
-msgstr ""
-
-#: core/modules/me/me.Tab.Setting.php:42
+#: core/modules/me/me.Tab.Settings.php:27
 #: core/modules/uc/uc.Tab.Profile.php:41
 msgid "Basic Info"
 msgstr ""
 
-#: core/modules/me/me.Tab.Setting.php:44
+#: core/modules/me/me.Tab.Settings.php:29
+msgid "Avatar"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:33
+#: core/modules/me/me.Tab.Settings.php:40
+msgid "Upload Avatar"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:37
+#: core/modules/me/me.Tab.Settings.php:44
+#: core/modules/me/me.Tab.Settings.php:46
+msgid "Default Avatar"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:52
 #: core/modules/uc/uc.Tab.Profile.php:43
 msgid "Nickname"
 msgstr ""
 
-#: core/modules/me/me.Tab.Setting.php:49
+#: core/modules/me/me.Tab.Settings.php:57
 #: core/modules/uc/uc.Tab.Profile.php:48
 #: core/templates/actions/tpl.M.Findpass.php:36
 #: core/templates/actions/tpl.M.Signup.php:46
@@ -2512,112 +2544,112 @@ msgstr ""
 msgid "Email"
 msgstr ""
 
-#: core/modules/me/me.Tab.Setting.php:54
+#: core/modules/me/me.Tab.Settings.php:62
 #: core/modules/uc/uc.Tab.Profile.php:53
 msgid "Site"
 msgstr ""
 
-#: core/modules/me/me.Tab.Setting.php:58
+#: core/modules/me/me.Tab.Settings.php:66
 #: core/modules/uc/uc.Tab.Profile.php:57
 msgid "Description"
 msgstr ""
 
-#: core/modules/me/me.Tab.Setting.php:64
+#: core/modules/me/me.Tab.Settings.php:72
 #: core/modules/uc/uc.Tab.Profile.php:63
 msgid "Extended Info"
 msgstr ""
 
-#: core/modules/me/me.Tab.Setting.php:67
+#: core/modules/me/me.Tab.Settings.php:75
 #: core/modules/uc/uc.Tab.Profile.php:66
 msgid "Talk with QQ"
 msgstr ""
 
-#: core/modules/me/me.Tab.Setting.php:70
+#: core/modules/me/me.Tab.Settings.php:78
 #: core/modules/uc/uc.Tab.Profile.php:69
 msgid "Follow on Weibo"
 msgstr ""
 
-#: core/modules/me/me.Tab.Setting.php:73
+#: core/modules/me/me.Tab.Settings.php:81
 #: core/modules/uc/uc.Tab.Profile.php:72
 msgid "Talk with Wechat"
 msgstr ""
 
-#: core/modules/me/me.Tab.Setting.php:76
+#: core/modules/me/me.Tab.Settings.php:84
 #: core/modules/uc/uc.Tab.Profile.php:75
 msgid "Follow on Twitter"
 msgstr ""
 
-#: core/modules/me/me.Tab.Setting.php:79
+#: core/modules/me/me.Tab.Settings.php:87
 #: core/modules/uc/uc.Tab.Profile.php:78
 msgid "Find on Facebook"
 msgstr ""
 
-#: core/modules/me/me.Tab.Setting.php:82
+#: core/modules/me/me.Tab.Settings.php:90
 #: core/modules/uc/uc.Tab.Profile.php:81
 msgid "Google+"
 msgstr ""
 
-#: core/modules/me/me.Tab.Setting.php:89
+#: core/modules/me/me.Tab.Settings.php:97
 #: core/modules/uc/uc.Tab.Profile.php:88
 msgid "Donate Info"
 msgstr ""
 
-#: core/modules/me/me.Tab.Setting.php:89
+#: core/modules/me/me.Tab.Settings.php:97
 #: core/modules/uc/uc.Tab.Profile.php:88
 msgid "Donate to me"
 msgstr ""
 
-#: core/modules/me/me.Tab.Setting.php:92
+#: core/modules/me/me.Tab.Settings.php:100
 #: core/modules/uc/uc.Tab.Profile.php:91
 msgid "Donate via Alipay"
 msgstr ""
 
-#: core/modules/me/me.Tab.Setting.php:95
+#: core/modules/me/me.Tab.Settings.php:103
 #: core/modules/uc/uc.Tab.Profile.php:94
 msgid "Donate via Wechat"
 msgstr ""
 
-#: core/modules/me/me.Tab.Setting.php:102
+#: core/modules/me/me.Tab.Settings.php:110
 #: core/modules/uc/uc.Tab.Profile.php:101
 msgid "Referral Info"
 msgstr ""
 
-#: core/modules/me/me.Tab.Setting.php:104
+#: core/modules/me/me.Tab.Settings.php:112
 #: core/modules/uc/uc.Tab.Profile.php:103
 msgid "Referral Link"
 msgstr ""
 
-#: core/modules/me/me.Tab.Setting.php:105
+#: core/modules/me/me.Tab.Settings.php:113
 #: core/modules/uc/uc.Tab.Profile.php:104
 msgid "COPY"
 msgstr ""
 
-#: core/modules/me/me.Tab.Setting.php:111 core/modules/mod.ModalBanBox.php:18
-#: core/modules/uc/uc.Tab.Profile.php:110
+#: core/modules/me/me.Tab.Settings.php:119
+#: core/modules/mod.ModalBanBox.php:18 core/modules/uc/uc.Tab.Profile.php:110
 msgid "Account Management"
 msgstr ""
 
-#: core/modules/me/me.Tab.Setting.php:111
+#: core/modules/me/me.Tab.Settings.php:119
 #: core/modules/uc/uc.Tab.Profile.php:110
 msgid "Visible for administrator"
 msgstr ""
 
-#: core/modules/me/me.Tab.Setting.php:114
+#: core/modules/me/me.Tab.Settings.php:122
 #: core/modules/uc/uc.Tab.Profile.php:113
 msgid "Unlock Account"
 msgstr ""
 
-#: core/modules/me/me.Tab.Setting.php:115
+#: core/modules/me/me.Tab.Settings.php:123
 #: core/modules/uc/uc.Tab.Profile.php:114
 msgid "This action will enable the account to normal functions"
 msgstr ""
 
-#: core/modules/me/me.Tab.Setting.php:117
+#: core/modules/me/me.Tab.Settings.php:125
 #: core/modules/uc/uc.Tab.Profile.php:116
 msgid "Ban Account"
 msgstr ""
 
-#: core/modules/me/me.Tab.Setting.php:118
+#: core/modules/me/me.Tab.Settings.php:126
 #: core/modules/uc/uc.Tab.Profile.php:117
 msgid ""
 "Warning: this action will ban the account, the all features is not "
@@ -2745,18 +2777,6 @@ msgstr ""
 msgid "Go Dashboard"
 msgstr ""
 
-#: core/modules/mod.Header.Shop.php:99
-msgid "My Orders"
-msgstr ""
-
-#: core/modules/mod.Header.Shop.php:100 core/modules/mod.Header.php:44
-msgid "My Messages"
-msgstr ""
-
-#: core/modules/mod.Header.Shop.php:101 core/modules/mod.Header.php:45
-msgid "My Settings"
-msgstr ""
-
 #: core/modules/mod.Header.Shop.php:108 core/modules/mod.Header.php:52
 msgid "Sign In or Up"
 msgstr ""
@@ -2778,10 +2798,6 @@ msgstr ""
 msgid "Latest"
 msgstr ""
 
-#: core/modules/mod.Header.php:42
-msgid "New Post"
-msgstr ""
-
 #: core/modules/mod.Header.php:43
 msgid "My Posts"
 msgstr ""
@@ -2792,14 +2808,14 @@ msgstr ""
 
 #: core/modules/mod.HomeLatest.php:69 core/modules/uc/uc.Tab.Chat.php:87
 #: core/modules/uc/uc.Tab.Comments.php:54
-#: core/modules/uc/uc.Tab.Latest.php:66
+#: core/modules/uc/uc.Tab.Latest.php:67
 #, php-format
 msgid "Current Page %d"
 msgstr ""
 
 #: core/modules/mod.HomeLatest.php:71 core/modules/uc/uc.Tab.Chat.php:89
 #: core/modules/uc/uc.Tab.Comments.php:56
-#: core/modules/uc/uc.Tab.Latest.php:68
+#: core/modules/uc/uc.Tab.Latest.php:69
 #, php-format
 msgid "Total %d Pages"
 msgstr ""
@@ -3100,14 +3116,14 @@ msgstr ""
 #: core/modules/uc/uc.Tab.Comments.php:63
 #: core/modules/uc/uc.Tab.Followers.php:62
 #: core/modules/uc/uc.Tab.Following.php:62
-#: core/modules/uc/uc.Tab.Latest.php:75 core/modules/uc/uc.Tab.Stars.php:79
+#: core/modules/uc/uc.Tab.Latest.php:76 core/modules/uc/uc.Tab.Stars.php:79
 msgid "Nothing found here"
 msgstr ""
 
 #: core/modules/uc/uc.Tab.Comments.php:64
 #: core/modules/uc/uc.Tab.Followers.php:63
 #: core/modules/uc/uc.Tab.Following.php:63
-#: core/modules/uc/uc.Tab.Latest.php:76 core/modules/uc/uc.Tab.Stars.php:80
+#: core/modules/uc/uc.Tab.Latest.php:77 core/modules/uc/uc.Tab.Stars.php:80
 msgid "Back to home"
 msgstr ""
 
@@ -3152,6 +3168,32 @@ msgstr ""
 #: core/modules/uc/uc.Tab.Followers.php:51
 #: core/modules/uc/uc.Tab.Following.php:51
 msgid "Check Activities"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Profile.php:28
+#, php-format
+msgid "Member Since %s"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Profile.php:29
+#, php-format
+msgid "Last Login %s"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Profile.php:29
+#, php-format
+msgid "Latest Login %s"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Profile.php:31
+#, php-format
+msgid "This Login IP %s"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Profile.php:31
+#: core/modules/uc/uc.Tab.Profile.php:34
+#, php-format
+msgid "Last Login IP %s"
 msgstr ""
 
 #: core/modules/uc/uc.Tab.Stars.php:40

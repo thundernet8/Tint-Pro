@@ -186,7 +186,7 @@ final class Avatar{
         }
         $this->_size = self::strSize($size);
         //为每个用户头像赋予一个专用缓存key
-        $key = CACHE_PREFIX . '_daily' . '_avatar_' . md5(strval($this->_user->ID) . strval($this->_size) . Utils::getCurrentDateTimeStr('day'));
+        $key = CACHE_PREFIX . '_daily' . '_avatar_' . $this->_user->ID . '_' . md5(strval($this->_user->ID) . strval($this->_size) . Utils::getCurrentDateTimeStr('day'));
         $this->cache_key = $key;
     }
 

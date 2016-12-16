@@ -20,10 +20,10 @@ import {popMsgbox} from './msgbox';
 var _body = $('body');
 
 var _initAvatarUpload = function () {
-    _handleAvatarUpload(TT.uid + '.jpg');
+    _handleAvatarUpload();
 };
 
-var _handleAvatarUpload = function (name) {
+var _handleAvatarUpload = function () {
     var options = {
         // 选完文件后，是否自动上传。
         auto: true,
@@ -36,7 +36,11 @@ var _handleAvatarUpload = function (name) {
     
         // 选择文件的按钮。可选。
         // 内部根据当前运行是创建，可能是input元素，也可能是flash.
-        pick: '.avatar-picker',
+        pick: {
+            id: '.avatar-picker',
+            innerHTML: '',
+            multiple: false
+        },
     
         // 只允许选择图片文件。
         accept: {
@@ -52,7 +56,7 @@ var _handleAvatarUpload = function (name) {
             // 是否允许放大，如果想要生成小图的时候不失真，此选项应该设置为false.
             allowMagnify: false,
             // 是否允许裁剪。
-            crop: false,
+            crop: true,
             // 是否保留头部meta信息。
             preserveHeaders: true,
             // 如果发现压缩后文件大小比原来还大，则使用原来图片
@@ -62,35 +66,38 @@ var _handleAvatarUpload = function (name) {
             compressSize: 0
         },
         formData: {
-            name: name,
             imgFor: 'avatar'
         }
     };
     var uploader = WebUploader.create(options);
+    
+    uploader.on( 'startUpload', function(){
+        Utils.showFullLoader('tico-spinner2', '正在上传中...')
+    } );
+    
     // 文件上传过程中创建进度条实时显示。
     uploader.on( 'uploadProgress', function( file, percentage ) {
-        console.log(percentage);
+        //console.log(percentage);
     });
 
     // 文件上传成功，给item添加成功class, 用样式标记上传成功。
-    uploader.on( 'uploadSuccess', function( file ) {
+    uploader.on( 'uploadSuccess', function( file, response ) {
         popMsgbox.success({
-           title: 'success'
+           title: '头像上传成功'
         });
+        $('.local-avatar-label>img').attr('src', response.data.avatar);
     });
 
     // 文件上传失败，显示上传出错。
     uploader.on( 'uploadError', function( file ) {
         popMsgbox.error({
-            title: 'error'
+            title: '上传头像失败'
         });
     });
 
     // 完成上传完了，成功或者失败，先删除进度条。
     uploader.on( 'uploadComplete', function( file ) {
-        popMsgbox.success({
-            title: 'complete'
-        });
+        Utils.hideFullLoader();
     });
 };
 

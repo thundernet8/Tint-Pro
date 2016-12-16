@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-12-14 23:49+0800\n"
-"PO-Revision-Date: 2016-12-14 23:50+0800\n"
+"POT-Creation-Date: 2016-12-17 00:25+0800\n"
+"PO-Revision-Date: 2016-12-17 00:26+0800\n"
 "Last-Translator: Zhiyan <mail@webapproach.net>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -1536,30 +1536,37 @@ msgid ""
 msgstr "创建头像上传文件夹失败，或许可检查php.ini以启用`mkdir`函数.\\n"
 
 #: core/functions/func.Install.php:35 core/functions/func.Install.php:59
-#: core/functions/func.Install.php:84 core/functions/func.Install.php:97
+#: core/functions/func.Install.php:83 core/functions/func.Install.php:108
+#: core/functions/func.Install.php:121
 msgid "Caught exception: "
 msgstr "捕获异常: "
 
-#: core/functions/func.Install.php:36 core/functions/func.Install.php:98
-#: functions.php:16
+#: core/functions/func.Install.php:36 core/functions/func.Install.php:60
+#: core/functions/func.Install.php:122 functions.php:16
 msgid "WordPress internal error"
 msgstr "WordPress内部错误"
 
-#: core/functions/func.Install.php:59 core/functions/func.Install.php:97
+#: core/functions/func.Install.php:59
+msgid ""
+"Create tmp upload folder failed, maybe check your php.ini to enable `mkdir` "
+"function.\\n"
+msgstr "创建图片上传临时文件夹失败，或许可检查php.ini以启用`mkdir`函数.\\n"
+
+#: core/functions/func.Install.php:83 core/functions/func.Install.php:121
 msgid "Can not copy `memcache object-cache.php` to `wp-content` dir.\\n"
 msgstr "Can not copy `memcache object-cache.php` to `wp-content` dir.\\n"
 
-#: core/functions/func.Install.php:60 core/functions/func.Install.php:85
+#: core/functions/func.Install.php:84 core/functions/func.Install.php:109
 msgid "Create folder error"
 msgstr "创建文件夹错误"
 
-#: core/functions/func.Install.php:84
+#: core/functions/func.Install.php:108
 msgid ""
 "Create timthumb cache folder failed, maybe check your php.ini to enable "
 "`mkdir` function.\\n"
 msgstr "创建Timthumb缓存文件夹失败，或许可检查php.ini以启用`mkdir`函数.\\n"
 
-#: core/functions/func.Kits.php:363
+#: core/functions/func.Kits.php:356
 msgid "WordPress &rsaquo; Error"
 msgstr "WordPress &rsaquo; 错误"
 
@@ -1854,118 +1861,156 @@ msgstr "无效的页面模板"
 msgid "Weekly"
 msgstr "每周的"
 
-#: core/functions/func.Seo.php:28 core/functions/func.Seo.php:127
+#: core/functions/func.Seo.php:28 core/functions/func.Seo.php:159
 #: core/modules/mod.ModalLoginForm.php:17
 #: core/templates/actions/tpl.M.Signup.php:90
 msgid "Sign In"
 msgstr "登录"
 
-#: core/functions/func.Seo.php:31 core/functions/func.Seo.php:130
+#: core/functions/func.Seo.php:31 core/functions/func.Seo.php:162
 #: core/templates/actions/tpl.M.Signup.php:62
 msgid "Sign Up"
 msgstr "注册"
 
-#: core/functions/func.Seo.php:34 core/functions/func.Seo.php:133
+#: core/functions/func.Seo.php:34 core/functions/func.Seo.php:165
 msgid "Activate Registration"
 msgstr "激活注册"
 
-#: core/functions/func.Seo.php:37 core/functions/func.Seo.php:136
+#: core/functions/func.Seo.php:37 core/functions/func.Seo.php:168
 #: core/modules/mod.Header.Shop.php:103 core/modules/mod.Header.php:47
 msgid "Sign Out"
 msgstr "注销"
 
-#: core/functions/func.Seo.php:40 core/functions/func.Seo.php:139
+#: core/functions/func.Seo.php:40 core/functions/func.Seo.php:171
 #: core/templates/actions/tpl.M.Findpass.php:33
 msgid "Find Password"
 msgstr "找回密码"
 
-#: core/functions/func.Seo.php:48
+#: core/functions/func.Seo.php:48 core/modules/mod.Header.Shop.php:101
+#: core/modules/mod.Header.php:45
+msgid "My Settings"
+msgstr "个人设置"
+
+#: core/functions/func.Seo.php:51
+msgid "My Notifications"
+msgstr "站内通知"
+
+#: core/functions/func.Seo.php:54 core/modules/mod.Header.Shop.php:100
+#: core/modules/mod.Header.php:44
+msgid "My Messages"
+msgstr "站内消息"
+
+#: core/functions/func.Seo.php:57
+msgid "My Stars"
+msgstr "我的收藏"
+
+#: core/functions/func.Seo.php:60
+msgid "My Credits"
+msgstr "我的积分"
+
+#: core/functions/func.Seo.php:63 core/modules/mod.Header.Shop.php:99
+msgid "My Orders"
+msgstr "我的订单"
+
+#: core/functions/func.Seo.php:66
+msgid "My Order"
+msgstr "我的订单"
+
+#: core/functions/func.Seo.php:69 core/modules/mod.Header.php:42
+msgid "New Post"
+msgstr "新建文章"
+
+#: core/functions/func.Seo.php:72 core/modules/uc/uc.Tab.Latest.php:34
+msgid "Edit Post"
+msgstr "编辑文章"
+
+#: core/functions/func.Seo.php:80
 msgid "Check Out Orders"
 msgstr "结算订单"
 
-#: core/functions/func.Seo.php:51
+#: core/functions/func.Seo.php:83
 msgid "Payment Result"
 msgstr "支付结果"
 
-#: core/functions/func.Seo.php:54
+#: core/functions/func.Seo.php:86
 msgid "Do Payment"
 msgstr "支付"
 
-#: core/functions/func.Seo.php:58
+#: core/functions/func.Seo.php:90
 msgid "Resources Download:"
 msgstr "资源下载: "
 
-#: core/functions/func.Seo.php:68
+#: core/functions/func.Seo.php:100
 #, php-format
 msgid " - Page %d"
 msgstr " - 第 %d 页"
 
-#: core/functions/func.Seo.php:79 core/functions/func.Seo.php:176
+#: core/functions/func.Seo.php:111 core/functions/func.Seo.php:208
 #, php-format
 msgid "%s's Home Page"
 msgstr "%s's 个人中心"
 
-#: core/functions/func.Seo.php:83 core/functions/shop/func.Shop.php:297
+#: core/functions/func.Seo.php:115 core/functions/shop/func.Shop.php:297
 msgid "Product Category"
 msgstr "商品分类"
 
-#: core/functions/func.Seo.php:85
+#: core/functions/func.Seo.php:117
 msgid "Product Tag"
 msgstr "商品标签"
 
-#: core/functions/func.Seo.php:87 core/functions/func.Seo.php:90
-#: core/functions/func.Seo.php:188 core/modules/mod.Header.Shop.php:29
+#: core/functions/func.Seo.php:119 core/functions/func.Seo.php:122
+#: core/functions/func.Seo.php:220 core/modules/mod.Header.Shop.php:29
 #: dash/options.php:794
 msgid "Market"
 msgstr "商店"
 
-#: core/functions/func.Seo.php:93
+#: core/functions/func.Seo.php:125
 msgid "Search"
 msgstr "搜索"
 
-#: core/functions/func.Seo.php:95
+#: core/functions/func.Seo.php:127
 msgid "Y"
 msgstr "Y"
 
-#: core/functions/func.Seo.php:95 core/functions/func.Seo.php:97
-#: core/functions/func.Seo.php:99
+#: core/functions/func.Seo.php:127 core/functions/func.Seo.php:129
+#: core/functions/func.Seo.php:131
 msgid "posts archive"
 msgstr "文章归档"
 
-#: core/functions/func.Seo.php:97
+#: core/functions/func.Seo.php:129
 msgid "Y.n"
 msgstr "Y.n"
 
-#: core/functions/func.Seo.php:99
+#: core/functions/func.Seo.php:131
 msgid "Y.n.j"
 msgstr "Y.n.j"
 
-#: core/functions/func.Seo.php:101
+#: core/functions/func.Seo.php:133
 msgid "Tag: "
 msgstr "标签: "
 
-#: core/functions/func.Seo.php:103
+#: core/functions/func.Seo.php:135
 msgid "Page Not Found"
 msgstr "页面未找到"
 
-#: core/functions/func.Seo.php:108
+#: core/functions/func.Seo.php:140
 #, php-format
 msgid " - Page %d "
 msgstr " - 第 %d 页"
 
-#: core/functions/func.Seo.php:142 core/functions/func.Seo.php:176
+#: core/functions/func.Seo.php:174 core/functions/func.Seo.php:208
 msgid "Powered by Tint(Tinection 2)"
 msgstr "由Tint主题驱动(Tinection 2)"
 
-#: core/functions/func.Seo.php:175
+#: core/functions/func.Seo.php:207
 msgid "Ucenter"
 msgstr "用户中心"
 
-#: core/functions/func.Seo.php:175 core/functions/func.Seo.php:188
+#: core/functions/func.Seo.php:207 core/functions/func.Seo.php:220
 msgid "Tint Ucenter and Market System"
 msgstr "Tint主题用户中心和商店系统"
 
-#: core/functions/func.Seo.php:191
+#: core/functions/func.Seo.php:223
 msgid ""
 "Powered by Tint(Tinection 2, a powerful wordpress theme with ucenter and "
 "shop system integrated)"
@@ -2406,23 +2451,27 @@ msgstr ""
 "<div class=\"contextual-bg bg-paycontent\"><span><i class=\"tico tico-paypal"
 "\">&nbsp;</i>付费内容</span><p>%1$s</p><p>%2$s</p></div>"
 
-#: core/modules/me/me.NavMenu.php:22
+#: core/modules/me/me.NavMenu.php:23
+msgid "Visit My Homepage"
+msgstr "访问我的主页"
+
+#: core/modules/me/me.NavMenu.php:26
 msgid "SETTINGS"
 msgstr "设置"
 
-#: core/modules/me/me.NavMenu.php:23
+#: core/modules/me/me.NavMenu.php:27
 msgid "NOTIFICATIONS"
 msgstr "通知"
 
-#: core/modules/me/me.NavMenu.php:24
+#: core/modules/me/me.NavMenu.php:28
 msgid "MESSAGES"
 msgstr "消息"
 
-#: core/modules/me/me.NavMenu.php:25 core/modules/uc/uc.NavTabs.php:20
+#: core/modules/me/me.NavMenu.php:29 core/modules/uc/uc.NavTabs.php:20
 msgid "MY STARS"
 msgstr "收藏"
 
-#: core/modules/me/me.NavMenu.php:26
+#: core/modules/me/me.NavMenu.php:30
 #: core/viewModels/shop/vm.Shop.Category.php:117
 #: core/viewModels/shop/vm.Shop.Home.php:110
 #: core/viewModels/shop/vm.Shop.Product.php:120
@@ -2435,144 +2484,135 @@ msgstr "收藏"
 msgid "CREDITS"
 msgstr "积分"
 
-#: core/modules/me/me.NavMenu.php:27
+#: core/modules/me/me.NavMenu.php:31
 msgid "ORDERS"
 msgstr "订单"
 
-#: core/modules/me/me.Tab.Setting.php:29 core/modules/uc/uc.Tab.Profile.php:28
-#, php-format
-msgid "Member Since %s"
-msgstr "加入时间 %s"
-
-#: core/modules/me/me.Tab.Setting.php:30 core/modules/uc/uc.Tab.Profile.php:29
-#, php-format
-msgid "Last Login %s"
-msgstr "上次登录 %s"
-
-#: core/modules/me/me.Tab.Setting.php:30 core/modules/uc/uc.Tab.Profile.php:29
-#, php-format
-msgid "Latest Login %s"
-msgstr "最近登录 %s"
-
-#: core/modules/me/me.Tab.Setting.php:32 core/modules/uc/uc.Tab.Profile.php:31
-#, php-format
-msgid "This Login IP %s"
-msgstr "本次登录IP %s"
-
-#: core/modules/me/me.Tab.Setting.php:32 core/modules/me/me.Tab.Setting.php:35
-#: core/modules/uc/uc.Tab.Profile.php:31 core/modules/uc/uc.Tab.Profile.php:34
-#, php-format
-msgid "Last Login IP %s"
-msgstr "上次登录IP %s"
-
-#: core/modules/me/me.Tab.Setting.php:42 core/modules/uc/uc.Tab.Profile.php:41
+#: core/modules/me/me.Tab.Settings.php:27 core/modules/uc/uc.Tab.Profile.php:41
 msgid "Basic Info"
 msgstr "基本信息"
 
-#: core/modules/me/me.Tab.Setting.php:44 core/modules/uc/uc.Tab.Profile.php:43
+#: core/modules/me/me.Tab.Settings.php:29
+msgid "Avatar"
+msgstr "头像"
+
+#: core/modules/me/me.Tab.Settings.php:33
+#: core/modules/me/me.Tab.Settings.php:40
+msgid "Upload Avatar"
+msgstr "上传头像"
+
+#: core/modules/me/me.Tab.Settings.php:37
+#: core/modules/me/me.Tab.Settings.php:44
+#: core/modules/me/me.Tab.Settings.php:46
+msgid "Default Avatar"
+msgstr "默认头像"
+
+#: core/modules/me/me.Tab.Settings.php:52 core/modules/uc/uc.Tab.Profile.php:43
 msgid "Nickname"
 msgstr "昵称"
 
-#: core/modules/me/me.Tab.Setting.php:49 core/modules/uc/uc.Tab.Profile.php:48
+#: core/modules/me/me.Tab.Settings.php:57 core/modules/uc/uc.Tab.Profile.php:48
 #: core/templates/actions/tpl.M.Findpass.php:36
 #: core/templates/actions/tpl.M.Signup.php:46
 #: core/templates/site/tpl.CheckOut.php:152
 msgid "Email"
 msgstr "邮箱"
 
-#: core/modules/me/me.Tab.Setting.php:54 core/modules/uc/uc.Tab.Profile.php:53
+#: core/modules/me/me.Tab.Settings.php:62 core/modules/uc/uc.Tab.Profile.php:53
 msgid "Site"
 msgstr "网站"
 
-#: core/modules/me/me.Tab.Setting.php:58 core/modules/uc/uc.Tab.Profile.php:57
+#: core/modules/me/me.Tab.Settings.php:66 core/modules/uc/uc.Tab.Profile.php:57
 msgid "Description"
 msgstr "个人描述"
 
-#: core/modules/me/me.Tab.Setting.php:64 core/modules/uc/uc.Tab.Profile.php:63
+#: core/modules/me/me.Tab.Settings.php:72 core/modules/uc/uc.Tab.Profile.php:63
 msgid "Extended Info"
 msgstr "扩展信息"
 
-#: core/modules/me/me.Tab.Setting.php:67 core/modules/uc/uc.Tab.Profile.php:66
+#: core/modules/me/me.Tab.Settings.php:75 core/modules/uc/uc.Tab.Profile.php:66
 msgid "Talk with QQ"
 msgstr "QQ交谈"
 
-#: core/modules/me/me.Tab.Setting.php:70 core/modules/uc/uc.Tab.Profile.php:69
+#: core/modules/me/me.Tab.Settings.php:78 core/modules/uc/uc.Tab.Profile.php:69
 msgid "Follow on Weibo"
 msgstr "微博"
 
-#: core/modules/me/me.Tab.Setting.php:73 core/modules/uc/uc.Tab.Profile.php:72
+#: core/modules/me/me.Tab.Settings.php:81 core/modules/uc/uc.Tab.Profile.php:72
 msgid "Talk with Wechat"
 msgstr "微信"
 
-#: core/modules/me/me.Tab.Setting.php:76 core/modules/uc/uc.Tab.Profile.php:75
+#: core/modules/me/me.Tab.Settings.php:84 core/modules/uc/uc.Tab.Profile.php:75
 msgid "Follow on Twitter"
 msgstr "Twitter"
 
-#: core/modules/me/me.Tab.Setting.php:79 core/modules/uc/uc.Tab.Profile.php:78
+#: core/modules/me/me.Tab.Settings.php:87 core/modules/uc/uc.Tab.Profile.php:78
 msgid "Find on Facebook"
 msgstr "Facebook"
 
-#: core/modules/me/me.Tab.Setting.php:82 core/modules/uc/uc.Tab.Profile.php:81
+#: core/modules/me/me.Tab.Settings.php:90 core/modules/uc/uc.Tab.Profile.php:81
 msgid "Google+"
 msgstr "Google+"
 
-#: core/modules/me/me.Tab.Setting.php:89 core/modules/uc/uc.Tab.Profile.php:88
+#: core/modules/me/me.Tab.Settings.php:97 core/modules/uc/uc.Tab.Profile.php:88
 msgid "Donate Info"
 msgstr "收款信息"
 
-#: core/modules/me/me.Tab.Setting.php:89 core/modules/uc/uc.Tab.Profile.php:88
+#: core/modules/me/me.Tab.Settings.php:97 core/modules/uc/uc.Tab.Profile.php:88
 msgid "Donate to me"
 msgstr "打赏我"
 
-#: core/modules/me/me.Tab.Setting.php:92 core/modules/uc/uc.Tab.Profile.php:91
+#: core/modules/me/me.Tab.Settings.php:100
+#: core/modules/uc/uc.Tab.Profile.php:91
 msgid "Donate via Alipay"
 msgstr "支付宝打赏"
 
-#: core/modules/me/me.Tab.Setting.php:95 core/modules/uc/uc.Tab.Profile.php:94
+#: core/modules/me/me.Tab.Settings.php:103
+#: core/modules/uc/uc.Tab.Profile.php:94
 msgid "Donate via Wechat"
 msgstr "微信打赏"
 
-#: core/modules/me/me.Tab.Setting.php:102
+#: core/modules/me/me.Tab.Settings.php:110
 #: core/modules/uc/uc.Tab.Profile.php:101
 msgid "Referral Info"
 msgstr "推广信息"
 
-#: core/modules/me/me.Tab.Setting.php:104
+#: core/modules/me/me.Tab.Settings.php:112
 #: core/modules/uc/uc.Tab.Profile.php:103
 msgid "Referral Link"
 msgstr "推广链接"
 
-#: core/modules/me/me.Tab.Setting.php:105
+#: core/modules/me/me.Tab.Settings.php:113
 #: core/modules/uc/uc.Tab.Profile.php:104
 msgid "COPY"
 msgstr "复制"
 
-#: core/modules/me/me.Tab.Setting.php:111 core/modules/mod.ModalBanBox.php:18
+#: core/modules/me/me.Tab.Settings.php:119 core/modules/mod.ModalBanBox.php:18
 #: core/modules/uc/uc.Tab.Profile.php:110
 msgid "Account Management"
 msgstr "账户管理"
 
-#: core/modules/me/me.Tab.Setting.php:111
+#: core/modules/me/me.Tab.Settings.php:119
 #: core/modules/uc/uc.Tab.Profile.php:110
 msgid "Visible for administrator"
 msgstr "仅管理员可见"
 
-#: core/modules/me/me.Tab.Setting.php:114
+#: core/modules/me/me.Tab.Settings.php:122
 #: core/modules/uc/uc.Tab.Profile.php:113
 msgid "Unlock Account"
 msgstr "解禁账户"
 
-#: core/modules/me/me.Tab.Setting.php:115
+#: core/modules/me/me.Tab.Settings.php:123
 #: core/modules/uc/uc.Tab.Profile.php:114
 msgid "This action will enable the account to normal functions"
 msgstr "此操作将恢复该账户的正常功能"
 
-#: core/modules/me/me.Tab.Setting.php:117
+#: core/modules/me/me.Tab.Settings.php:125
 #: core/modules/uc/uc.Tab.Profile.php:116
 msgid "Ban Account"
 msgstr "封禁账户"
 
-#: core/modules/me/me.Tab.Setting.php:118
+#: core/modules/me/me.Tab.Settings.php:126
 #: core/modules/uc/uc.Tab.Profile.php:117
 msgid ""
 "Warning: this action will ban the account, the all features is not "
@@ -2716,18 +2756,6 @@ msgstr "购物车空空如也."
 msgid "Go Dashboard"
 msgstr "访问后台"
 
-#: core/modules/mod.Header.Shop.php:99
-msgid "My Orders"
-msgstr "我的订单"
-
-#: core/modules/mod.Header.Shop.php:100 core/modules/mod.Header.php:44
-msgid "My Messages"
-msgstr "站内消息"
-
-#: core/modules/mod.Header.Shop.php:101 core/modules/mod.Header.php:45
-msgid "My Settings"
-msgstr "个人设置"
-
 #: core/modules/mod.Header.Shop.php:108 core/modules/mod.Header.php:52
 msgid "Sign In or Up"
 msgstr "登录/注册"
@@ -2749,10 +2777,6 @@ msgstr "热门"
 msgid "Latest"
 msgstr "最新上架"
 
-#: core/modules/mod.Header.php:42
-msgid "New Post"
-msgstr "新建文章"
-
 #: core/modules/mod.Header.php:43
 msgid "My Posts"
 msgstr "我的文章"
@@ -2762,13 +2786,13 @@ msgid "Latest Posts"
 msgstr "近期文章"
 
 #: core/modules/mod.HomeLatest.php:69 core/modules/uc/uc.Tab.Chat.php:87
-#: core/modules/uc/uc.Tab.Comments.php:54 core/modules/uc/uc.Tab.Latest.php:66
+#: core/modules/uc/uc.Tab.Comments.php:54 core/modules/uc/uc.Tab.Latest.php:67
 #, php-format
 msgid "Current Page %d"
 msgstr "第 %d 页"
 
 #: core/modules/mod.HomeLatest.php:71 core/modules/uc/uc.Tab.Chat.php:89
-#: core/modules/uc/uc.Tab.Comments.php:56 core/modules/uc/uc.Tab.Latest.php:68
+#: core/modules/uc/uc.Tab.Comments.php:56 core/modules/uc/uc.Tab.Latest.php:69
 #, php-format
 msgid "Total %d Pages"
 msgstr "共 %d 页"
@@ -3065,14 +3089,14 @@ msgstr "评论"
 
 #: core/modules/uc/uc.Tab.Comments.php:63
 #: core/modules/uc/uc.Tab.Followers.php:62
-#: core/modules/uc/uc.Tab.Following.php:62 core/modules/uc/uc.Tab.Latest.php:75
+#: core/modules/uc/uc.Tab.Following.php:62 core/modules/uc/uc.Tab.Latest.php:76
 #: core/modules/uc/uc.Tab.Stars.php:79
 msgid "Nothing found here"
 msgstr "这里什么都没有..."
 
 #: core/modules/uc/uc.Tab.Comments.php:64
 #: core/modules/uc/uc.Tab.Followers.php:63
-#: core/modules/uc/uc.Tab.Following.php:63 core/modules/uc/uc.Tab.Latest.php:76
+#: core/modules/uc/uc.Tab.Following.php:63 core/modules/uc/uc.Tab.Latest.php:77
 #: core/modules/uc/uc.Tab.Stars.php:80
 msgid "Back to home"
 msgstr "去首页看看"
@@ -3119,6 +3143,31 @@ msgstr "他的评论"
 #: core/modules/uc/uc.Tab.Following.php:51
 msgid "Check Activities"
 msgstr "关注动态"
+
+#: core/modules/uc/uc.Tab.Profile.php:28
+#, php-format
+msgid "Member Since %s"
+msgstr "加入时间 %s"
+
+#: core/modules/uc/uc.Tab.Profile.php:29
+#, php-format
+msgid "Last Login %s"
+msgstr "上次登录 %s"
+
+#: core/modules/uc/uc.Tab.Profile.php:29
+#, php-format
+msgid "Latest Login %s"
+msgstr "最近登录 %s"
+
+#: core/modules/uc/uc.Tab.Profile.php:31
+#, php-format
+msgid "This Login IP %s"
+msgstr "本次登录IP %s"
+
+#: core/modules/uc/uc.Tab.Profile.php:31 core/modules/uc/uc.Tab.Profile.php:34
+#, php-format
+msgid "Last Login IP %s"
+msgstr "上次登录IP %s"
 
 #: core/modules/uc/uc.Tab.Stars.php:40
 msgid "Unstar"

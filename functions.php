@@ -140,6 +140,7 @@ load_func('func.Member');
 load_func('func.IP');
 load_func('func.ShortCode');
 load_func('func.Download');
+load_func('func.Image');
 if(TT_PRO && tt_get_option('tt_enable_shop', false)){
     load_func('shop/func.Shop');
     load_func('shop/func.Shop.Orders');
