@@ -20,7 +20,7 @@
 <aside class="col col-left">
     <nav class="nav clearfix">
         <div class="context-avatar context-avatar-tiny">
-            <img class="avatar avatar-tiny" src="<?php echo tt_get_avatar($tt_me_vars['tt_user_id'], 'small'); ?>"><span><?php echo $tt_me_vars['tt_user']->display_name; ?></span>
+            <img class="avatar avatar-tiny" src="<?php echo tt_get_avatar($tt_me_vars['tt_user_id'], 'small'); ?>"><a href="<?php echo tt_url_for('uc_me'); ?>" title="<?php _e('Visit My Homepage', 'tt'); ?>"><?php echo $tt_me_vars['tt_user']->display_name; ?></a>
         </div>
         <ul class="me_tabs">
             <li><a class="<?php echo tt_conditional_class('me_tab settings', $me_tab == 'settings'); ?>" href="<?php echo tt_url_for('my_settings', $tt_me_vars['tt_user_id']); ?>"><?php _e('SETTINGS', 'tt'); ?></a></li>

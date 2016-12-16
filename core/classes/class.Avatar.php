@@ -24,6 +24,18 @@ if (!defined('LETTER_AVATAR_URI')){
 
 final class Avatar{
 
+    const GRAVATAR = 'gravatar';
+
+    const QQ_AVATAR = 'qq';
+
+    const WEIBO_AVATAR = 'weibo';
+
+    const WEIXIN_AVATAR = 'weixin';
+
+    const CUSTOM_AVATAR = 'custom';
+
+    const LETTER_AVATAR = 'letter';
+
     /**
      * 头像尺寸
      *
@@ -108,13 +120,22 @@ final class Avatar{
      * @var     array
      */
     private static $_avatarTypes = array(
-        "gravatar",
-        "qq",
-        "weibo",
-        "weixin",
-        "custom",
-        "letter"
+        Avatar::GRAVATAR,
+        Avatar::QQ_AVATAR,
+        Avatar::WEIBO_AVATAR,
+        Avatar::WEIXIN_AVATAR,
+        Avatar::CUSTOM_AVATAR,
+        Avatar::LETTER_AVATAR
     );
+
+
+    /**
+     * 当前的头像类型
+     *
+     * @since 2.0.0
+     * @var
+     */
+    public $avatarType;
 
 
     /**
@@ -176,10 +197,12 @@ final class Avatar{
      * @since   2.0.0
      *
      * @access  public
+     * @param   $type
      * @return  string
      */
-    public function getAvatar(){
-        $type = $this->getUserAvatarType();
+    public function getAvatar($type = ''){
+        $this->avatarType = $this->getUserAvatarType();
+        $type = $type && in_array($type, Avatar::$_avatarTypes) ? $type : $this->avatarType;
         switch ($type){
             case 'gravatar':
                 return $this->getGravatar();

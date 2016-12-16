@@ -21,6 +21,7 @@
     <div class="tab-content latest-posts">
     <?php if($data = $vm->modelData) { $pagination_args = $data->pagination; $uc_latest_posts = $data->uc_latest_posts; ?>
         <?php if(count($uc_latest_posts) > 0) { ?>
+        <?php $logged_user_id = get_current_user_id(); ?>
         <div class="loop-rows posts-loop-rows">
             <?php foreach ($uc_latest_posts as $uc_latest_post) { ?>
                 <article id="<?php echo 'post-' . $uc_latest_post['ID']; ?>" class="post type-post status-publish <?php echo 'format-' . $uc_latest_post['format']; ?>">
@@ -30,7 +31,7 @@
                     </div>
                     <div class="entry-detail">
                         <header class="entry-header">
-                            <h2 class="entry-title"><a href="<?php echo $uc_latest_post['permalink']; ?>" rel="bookmark"><?php echo $uc_latest_post['title']; ?></a></h2>
+                            <h2 class="entry-title"><a href="<?php echo $uc_latest_post['permalink']; ?>" rel="bookmark"><?php echo $uc_latest_post['title']; ?></a><?php if($logged_user_id == $tt_author_id){?><span><a href="<?php echo tt_url_for('edit_post', $uc_latest_post['ID']); ?>" title="<?php _e('Edit Post', 'tt'); ?>"><i class="tico tico-new"></i></a> </span><?php } ?></h2>
                             <div class="entry-meta entry-meta-1">
                                 <span class="author vcard"><a class="url" href="<?php echo $uc_latest_post['author_url']; ?>"><?php echo $uc_latest_post['author']; ?></a></span>
                                 <span class="entry-date text-muted"><time class="entry-date" datetime="<?php echo $uc_latest_post['datetime']; ?>" title="<?php echo $uc_latest_post['datetime']; ?>"><?php echo $uc_latest_post['time']; ?></time></span>

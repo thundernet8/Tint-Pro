@@ -1,5 +1,5 @@
 /**
- * Generated on Wed Dec 14 2016 22:40:55 GMT+0800 (中国标准时间) by Zhiyan
+ * Generated on Fri Dec 16 2016 00:38:25 GMT+0800 (中国标准时间) by Zhiyan
  *
  * @package   Tint
  * @version   v2.0.0
@@ -38,11 +38,11 @@
             var _scroll = __webpack_require__(14);
             var _scroll2 = _interopRequireDefault(_scroll);
             __webpack_require__(9);
-            var _checkout = __webpack_require__(33);
+            var _checkout = __webpack_require__(34);
             var _checkout2 = _interopRequireDefault(_checkout);
             var _fixFooter = __webpack_require__(16);
             var _fixFooter2 = _interopRequireDefault(_fixFooter);
-            var _buyResource = __webpack_require__(34);
+            var _buyResource = __webpack_require__(35);
             var _buyResource2 = _interopRequireDefault(_buyResource);
             function _interopRequireDefault(obj) {
                 return obj && obj[['__esModule']] ? obj : { default: obj };
@@ -2640,6 +2640,7 @@
             };
         }[['call']](exports, __webpack_require__(1)));
     },
+    ,
     ,
     ,
     ,

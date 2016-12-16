@@ -113,7 +113,8 @@ $site_allow_utils = json_encode(array(
     'alipayreturn' => 'Alipay.Return',
     'alipaynotify' => 'Alipay.Notify',
     'apsvnotify' => 'APSV.Notify',
-    'download' => 'Download'
+    'download' => 'Download',
+    'upload' => 'Image.Upload'
 ));
 defined('ALLOWED_SITE_UTILS') || define('ALLOWED_SITE_UTILS', $site_allow_utils);
 
@@ -130,6 +131,7 @@ $site_endpoints = json_encode(array(
     'alipayreturn'              =>  'site/alipayreturn',
     'alipaynotify'              =>  'site/alipaynotify',
     'apsvnotify'                =>  'site/apsvnotify',
+    'upload'                    =>  'site/upload',
     'api_root'                  =>  'api',
     'signin'                    =>  'm/signin',
     'signup'                    =>  'm/signup',
@@ -138,8 +140,8 @@ $site_endpoints = json_encode(array(
     'findpass'                  =>  'm/findpass',
     'resetpass'                 =>  'm/resetpass',
     'my_settings'               =>  'me/settings',
-    'my_balance'                   =>  'me/balance',
-    'my_stars'                     =>  'me/stars',
+    'my_balance'                =>  'me/balance',
+    'my_stars'                  =>  'me/stars',
     'my_credits'                =>  'me/credits',
     'new_post'                  =>  'me/newpost',
     'in_msg'                    =>  'me/messages/inbox',

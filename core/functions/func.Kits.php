@@ -51,60 +51,53 @@ function tt_url_for($key, $arg = null, $relative = false){
     if(array_key_exists($key, $routes)){
         return $relative ? '/' . $routes[$key] : home_url('/' . $routes[$key]);
     }
-    $endpoint = null;
-    $uc_func = function($arg){
-        $nickname = null;
-        if(is_string($arg)){
-            $nickname = $arg;
-        }elseif(is_int($arg) && !!$arg){
-            $nickname = get_user_meta($arg, 'nickname', true);
-        }elseif($arg instanceof WP_User){
-            $nickname = get_user_meta($arg->ID, 'nickname', true);
+
+    // 输入参数$arg为user时获取其ID使用
+    $get_uid = function($var){
+        if($var instanceof WP_User){
+            return $var->ID;
+        }else{
+            return intval($var);
         }
-        return $nickname;
     };
+
+    $endpoint = null;
     switch ($key){
         case 'my_order':
             $endpoint = 'me/order/' . (int)$arg;
             break;
         case 'uc_comments':
-            $nickname = call_user_func($uc_func, $arg);
-            if($nickname) $endpoint = '@' . $nickname . '/comments';
+            $endpoint = 'u/' . call_user_func($get_uid, $arg) . '/comments';
             break;
         case 'uc_profile':
-            $nickname = call_user_func($uc_func, $arg);
-            if($nickname) $endpoint = '@' . $nickname;
+            $endpoint = 'u/' . call_user_func($get_uid, $arg);
             break;
         case 'uc_me':
-            $nickname = get_user_meta(get_current_user_id(), 'nickname', true);
-            if($nickname) $endpoint = '@' . $nickname;
+            $endpoint = 'u/' . get_current_user_id();
             break;
         case 'uc_latest':
-            $nickname = call_user_func($uc_func, $arg);
-            if($nickname) $endpoint = '@' . $nickname . '/latest';
+            $endpoint = 'u/' . call_user_func($get_uid, $arg) . '/latest';
             break;
         case 'uc_stars':
-            $nickname = call_user_func($uc_func, $arg);
-            if($nickname) $endpoint = '@' . $nickname . '/stars';
+            $endpoint = 'u/' . call_user_func($get_uid, $arg) . '/stars';
             break;
         case 'uc_followers':
-            $nickname = call_user_func($uc_func, $arg);
-            if($nickname) $endpoint = '@' . $nickname . '/followers';
+            $endpoint = 'u/' . call_user_func($get_uid, $arg) . '/followers';
             break;
         case 'uc_following':
-            $nickname = call_user_func($uc_func, $arg);
-            if($nickname) $endpoint = '@' . $nickname . '/following';
+            $endpoint = 'u/' . call_user_func($get_uid, $arg) . '/following';
             break;
         case 'uc_activities':
-            $nickname = call_user_func($uc_func, $arg);
-            if($nickname) $endpoint = '@' . $nickname . '/activities';
+            $endpoint = 'u/' . call_user_func($get_uid, $arg) . '/activities';
             break;
         case 'uc_chat':
-            $nickname = call_user_func($uc_func, $arg);
-            if($nickname) $endpoint = '@' . $nickname . '/chat';
+            $endpoint = 'u/' . call_user_func($get_uid, $arg) . '/chat';
             break;
         case 'shop_archive':
             $endpoint = tt_get_option('tt_product_archives_slug', 'shop');
+            break;
+        case 'edit_post':
+            $endpoint = 'me/editpost/' . absint($arg);
             break;
         case 'download':
             $endpoint = 'site/download?_=' . rtrim(tt_encrypt($arg, tt_get_option('tt_private_token')), '=');

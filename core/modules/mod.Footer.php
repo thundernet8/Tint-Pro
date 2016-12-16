@@ -86,7 +86,7 @@
                 <?php if($beian = tt_get_option('tt_beian')){
                     echo '·&nbsp;<a href="http://www.miitbeian.gov.cn/" rel="link" target="_blank">' . $beian . '</a>';
                 } ?>
-                <?php echo '·&nbsp;Design by <a href="https://www.webapproach.net" title="WebApproach" rel="link" target="_blank">WebApproach.</a>'; ?>
+                <?php echo '·&nbsp;<b style="color: #ff4425;">♥</b>&nbsp;<a href="https://www.webapproach.net/tint" title="Tint">Tint</a> & Design by <a href="https://www.webapproach.net" title="WebApproach" rel="link" target="_blank">WebApproach.</a>'; ?>
             </div>
         </div>
     </div>

@@ -87,18 +87,18 @@ function tt_set_user_page_rewrite_rules($wp_rewrite){
     if($ps = get_option('permalink_structure')){
         // TODO: 用户链接前缀 `u` 是否可以自定义
         // Note: 用户名必须数字或字母组成，不区分大小写
-        if(stripos($ps, '%postname%') !== false){
-            // 默认为profile tab，但是链接不显示profile
-            $new_rules['@([一-龥a-zA-Z0-9]+)$'] = 'index.php?author_name=$matches[1]&uc=1';
-            // ucenter tabs
-            $new_rules['@([一-龥a-zA-Z0-9]+)/([A-Za-z]+)$'] = 'index.php?author_name=$matches[1]&uctab=$matches[2]&uc=1';
-            // 分页
-            $new_rules['@([一-龥a-zA-Z0-9]+)/([A-Za-z]+)/page/([0-9]{1,})$'] = 'index.php?author_name=$matches[1]&uctab=$matches[2]&uc=1&paged=$matches[3]';
-        }else{
+//        if(stripos($ps, '%postname%') !== false){
+//            // 默认为profile tab，但是链接不显示profile
+//            $new_rules['@([一-龥a-zA-Z0-9]+)$'] = 'index.php?author_name=$matches[1]&uc=1';
+//            // ucenter tabs
+//            $new_rules['@([一-龥a-zA-Z0-9]+)/([A-Za-z]+)$'] = 'index.php?author_name=$matches[1]&uctab=$matches[2]&uc=1';
+//            // 分页
+//            $new_rules['@([一-龥a-zA-Z0-9]+)/([A-Za-z]+)/page/([0-9]{1,})$'] = 'index.php?author_name=$matches[1]&uctab=$matches[2]&uc=1&paged=$matches[3]';
+//        }else{
             $new_rules['u/([0-9]{1,})$'] = 'index.php?author=$matches[1]&uc=1';
             $new_rules['u/([0-9]{1,})/([A-Za-z]+)$'] = 'index.php?author=$matches[1]&uctab=$matches[2]&uc=1';
             $new_rules['u/([0-9]{1,})/([A-Za-z]+)/page/([0-9]{1,})$'] = 'index.php?author_name=$matches[1]&uctab=$matches[2]&uc=1&paged=$matches[3]';
-        }
+//        }
         $wp_rewrite->rules = $new_rules + $wp_rewrite->rules;
     }
 }
@@ -137,11 +137,11 @@ function tt_custom_author_link($link, $author_id){
     if(!$ps){
         return $link;
     }
-    if(stripos($ps, '%postname%') !== false){
-        $nickname = get_user_meta($author_id, 'nickname', true);
-        // TODO: 解决nickname重复问题，用户保存资料时发出消息要求更改重复的名字，否则改为login_name，使用 `profile_update` action
-        return home_url('/@' . $nickname);
-    }
+//    if(stripos($ps, '%postname%') !== false){
+//        $nickname = get_user_meta($author_id, 'nickname', true);
+//        // TODO: 解决nickname重复问题，用户保存资料时发出消息要求更改重复的名字，否则改为login_name，使用 `profile_update` action
+//        return home_url('/@' . $nickname);
+//    }
     return home_url('/u/' . strval($author_id));
 }
 add_filter('author_link', 'tt_custom_author_link', 10, 2);
@@ -166,7 +166,8 @@ function tt_match_author_link_field($query_vars){
 
         // 如果是原始author链接访问，重定向至新的自定义链接 /author/nickname -> /@nickname
         if(!array_key_exists('uc', $query_vars)){
-            wp_redirect(home_url('/@' . $nickname), 301);
+            //wp_redirect(home_url('/@' . $nickname), 301);
+            wp_redirect(get_author_posts_url($author_id), 301);
             exit;
         }
 
@@ -174,7 +175,8 @@ function tt_match_author_link_field($query_vars){
         if(array_key_exists('uctab', $query_vars) && $uc_tab = $query_vars['uctab']){
             if($uc_tab === 'profile'){
                 // @see func.Template.php - tt_get_user_template
-                wp_redirect(home_url('/@' . $nickname), 301);
+                //wp_redirect(home_url('/@' . $nickname), 301);
+                wp_redirect(get_author_posts_url($author_id), 301);
                 exit;
             }elseif(!in_array($uc_tab, (array)json_decode(ALLOWED_UC_TABS)) || ($uc_tab === 'chat' && $logged_user_id == $author_id)){
                 unset($query_vars['author_name']);
@@ -184,7 +186,7 @@ function tt_match_author_link_field($query_vars){
                 return $query_vars;
             }elseif($uc_tab === 'chat' && (!$logged_user_id || $logged_user_id == $author_id)){
                 // 用户未登录, 跳转至登录页面
-                wp_redirect(tt_add_redirect(tt_url_for('signin'), home_url('/@' . $nickname . '/chat')), 302);
+                wp_redirect(tt_add_redirect(tt_url_for('signin'), get_author_posts_url($author_id) . '/chat'), 302);
                 exit;
             }
         }
@@ -214,8 +216,8 @@ add_filter('request', 'tt_match_author_link_field', 10, 1);
 function tt_redirect_me_main_route(){
     if(preg_match('/^\/me([^\/]*)$/i', $_SERVER['REQUEST_URI'])){
         if($user_id = get_current_user_id()){
-            $nickname = get_user_meta(get_current_user_id(), 'nickname', true);
-            wp_redirect(home_url('/@' . $nickname), 302);
+            //$nickname = get_user_meta(get_current_user_id(), 'nickname', true);
+            wp_redirect(get_author_posts_url($user_id), 302);
         }else{
             wp_redirect(tt_signin_url(tt_get_current_url()), 302);
         }
@@ -239,6 +241,7 @@ function tt_handle_me_child_routes_rewrite($wp_rewrite){
         $new_rules['me/([a-zA-Z]+)$'] = 'index.php?me_child_route=$matches[1]&is_me_route=1';
         $new_rules['me/([a-zA-Z]+)/([a-zA-Z]+)$'] = 'index.php?me_child_route=$matches[1]&me_grandchild_route=$matches[2]&is_me_route=1';
         $new_rules['me/order/([0-9]{1,})$'] = 'index.php?me_child_route=order&me_grandchild_route=$matches[1]&is_me_route=1'; // 我的单个订单详情
+        $new_rules['me/editpost/([0-9]{1,})$'] = 'index.php?me_child_route=editpost&me_grandchild_route=$matches[1]&is_me_route=1'; // 编辑文章
         // 分页
         $new_rules['me/([a-zA-Z]+)/page/([0-9]{1,})$'] = 'index.php?me_child_route=$matches[1]&is_me_route=1&paged=$matches[2]';
         $new_rules['me/([a-zA-Z]+)/([a-zA-Z]+)/page/([0-9]{1,})$'] = 'index.php?me_child_route=$matches[1]&me_grandchild_route=$matches[2]&is_me_route=1&paged=$matches[3]';
@@ -279,8 +282,16 @@ function tt_handle_me_child_routes_template(){
             return;
         }
         // 对于order/8单个我的订单详情路由，孙路由必须是数字
-        if($me_child_route === 'order' && (!$me_grandchild_route || !preg_match('/([0-9]{1,})/', $me_grandchild_route))) return;
-        if($me_child_route !== 'order'){
+        // 对于editpost/8单个我的订单详情路由，孙路由必须是数字
+        if($me_child_route === 'order' && (!$me_grandchild_route || !preg_match('/([0-9]{1,})/', $me_grandchild_route))){
+            Utils::set404();
+            return;
+        }
+        if($me_child_route === 'editpost' && (!$me_grandchild_route || !preg_match('/([0-9]{1,})/', $me_grandchild_route))){
+            Utils::set404();
+            return;
+        }
+        if($me_child_route !== 'order' && $me_child_route !== 'editpost'){
             $allow_grandchild = $allow_routes[$me_child_route];
             // 对于可以有孙路由的一般不允许直接子路由，必须访问孙路由，比如/me/notifications 必须跳转至/me/notifications/all
             if(empty($me_grandchild_route) && is_array($allow_grandchild)){

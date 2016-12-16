@@ -43,6 +43,30 @@ add_action('load-themes.php', 'tt_add_avatar_folder');
 
 
 /**
+ * 建立上传图片的临时文件夹
+ *
+ * @since   2.0.0
+ *
+ * @return  void
+ */
+function tt_add_upload_tmp_folder() {
+    $tmp_dir = WP_CONTENT_DIR . '/uploads/tmp';
+    if (! is_dir($tmp_dir)) {
+        try {
+            mkdir( $tmp_dir, 0755 );
+        }catch (Exception $e){
+            if(tt_get_option('tt_theme_debug', false)){
+                $message = __('Create tmp upload folder failed, maybe check your php.ini to enable `mkdir` function.\n', 'tt') . __('Caught exception: ', 'tt') . $e->getMessage() . '\n';
+                $title = __('WordPress internal error', 'tt');
+                wp_die($message, $title);
+            }
+        }
+    }
+}
+add_action('load-themes.php', 'tt_add_upload_tmp_folder');
+
+
+/**
  * 复制Object-cache.php到wp-content目录
  *
  * @since   2.0.0

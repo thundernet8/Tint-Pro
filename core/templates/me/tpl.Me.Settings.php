@@ -18,7 +18,7 @@
         <section class="container user-area">
             <div class="inner row">
                 <?php load_mod('me/me.NavMenu'); ?>
-                <?php load_mod('me/me.Tab.Setting'); ?>
+                <?php load_mod('me/me.Tab.Settings'); ?>
             </div>
         </section>
     </div>

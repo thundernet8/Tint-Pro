@@ -27,6 +27,7 @@ import FixFooter from './modules/fixFooter';
 import UnstarKit from './modules/unstar';
 //import Bankit from './modules/ban';
 import Referral from './modules/referral';
+import ImageUploader from './modules/imageUploader';
 
 
 // DOM Ready
@@ -75,4 +76,7 @@ jQuery(document).ready(function ($) {
     
     // 设置推广信息cookie, 便于后面使用
     Referral.init();
+    
+    // 初始化头像上传
+    ImageUploader.initAvatarUpload();
 });
