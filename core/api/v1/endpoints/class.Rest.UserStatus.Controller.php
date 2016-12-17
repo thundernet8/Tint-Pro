@@ -14,6 +14,9 @@
 ?>
 <?php
 
+/**
+ * Class WP_REST_User_Status_Controller
+ */
 class WP_REST_User_Status_Controller extends WP_REST_Controller
 {
     public function __construct()
@@ -132,48 +135,5 @@ class WP_REST_User_Status_Controller extends WP_REST_Controller
             return tt_api_fail($result['message']);
         }
         return null;
-    }
-
-    /**
-     * 检查请求是否有删除指定消息的权限
-     *
-     * @param  WP_REST_Request $request Full details about the request.
-     * @return boolean | WP_Error
-     */
-    public function delete_item_permissions_check( $request ) {
-
-        $id = (int) $request['id'];
-        $current_uid = get_current_user_id();
-
-        if (!$current_uid) {
-            return new WP_Error('rest_message_cannot_delete', __('Sorry, you cannot delete message without signing in.', 'tt'), array('status' => tt_rest_authorization_required_code()));
-        }
-        $message = tt_get_message($id);
-        if(!$message) {
-            return new WP_Error('rest_message_not_found', __('Sorry, the message is not found.', 'tt'), array('status' => 404));
-        }
-
-        if($message->user_id != $current_uid && $message->sender_id != $current_uid) {
-            return new WP_Error('rest_message_cannot_delete', __('Sorry, you cannot delete message not belong to you.', 'tt'), array('status' => tt_rest_authorization_required_code()));
-        }
-
-        return true;
-    }
-
-    /**
-     * 删除单条消息
-     *
-     * @param WP_REST_Request $request Full details about the request.
-     * @return WP_Error|WP_REST_Response
-     */
-    public function delete_item( $request ) {
-        $id = (int) $request['id'];
-
-        $result = tt_trash_message($id);
-        if(!$result) {
-            return new WP_Error( 'rest_cannot_delete', __( 'The message cannot be deleted.', 'tt' ), array( 'status' => 500 ) );
-        }
-
-        return tt_api_success(__('delete message successfully', 'tt'), array('msg_id' => $id));
     }
 }

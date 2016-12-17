@@ -44,3 +44,4 @@ require_once THEME_API . '/v1/endpoints/class.Rest.Usermeta.Controller.php';
 require_once THEME_API . '/v1/endpoints/class.Rest.ShoppingCart.Controller.php';
 require_once THEME_API . '/v1/endpoints/class.Rest.Order.Controller.php';
 require_once THEME_API . '/v1/endpoints/class.Rest.BoughtResource.Controller.php';
+require_once THEME_API . '/v1/endpoints/class.Rest.UserProfile.Controller.php';

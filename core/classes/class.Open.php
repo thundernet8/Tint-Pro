@@ -185,7 +185,7 @@ abstract class Open{
      * @param   int    $user_id    用户id
      * @return bool
      */
-    protected function isOpenConnected($user_id = 0){
+    public function isOpenConnected($user_id = 0){
         // 判断该第三方账号是否已经授权过博客的登录(初始只能判断当前已登录的用户，对于开放平台连接了WP系统内其他用户的暂时无法判断，需要获取openid之后判断)
         $user = $this->_user;
         if(!$user){

@@ -69,6 +69,7 @@ var _handleAvatarUpload = function () {
             imgFor: 'avatar'
         }
     };
+    if(typeof WebUploader == 'undefined') return false;
     var uploader = WebUploader.create(options);
     
     uploader.on( 'startUpload', function(){
@@ -86,6 +87,7 @@ var _handleAvatarUpload = function () {
            title: '头像上传成功'
         });
         $('.local-avatar-label>img').attr('src', response.data.avatar);
+        $('.local-avatar-label>input[name="avatar"]').prop('checked', true).val('custom');
     });
 
     // 文件上传失败，显示上传出错。

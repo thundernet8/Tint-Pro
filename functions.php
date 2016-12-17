@@ -99,9 +99,9 @@ if(TT_DEBUG) {
 }
 
 /* 载入后台相关处理逻辑 */
-if( is_admin() ){
+//if( is_admin() ){
     load_dash('dash');
-}
+//}
 
 /* 载入REST API功能控制函数 */
 load_api('api.Config');
@@ -141,6 +141,7 @@ load_func('func.IP');
 load_func('func.ShortCode');
 load_func('func.Download');
 load_func('func.Image');
+load_func('func.Oauth');
 if(TT_PRO && tt_get_option('tt_enable_shop', false)){
     load_func('shop/func.Shop');
     load_func('shop/func.Shop.Orders');

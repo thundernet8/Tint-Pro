@@ -238,3 +238,98 @@ function tt_reset_password_message( $message, $key ) {
     return $templates->render('findpass', ['userLogin' => $user_login, 'resetPassLink' => $reset_link]);
 }
 add_filter('retrieve_password_message', 'tt_reset_password_message', null, 2);
+
+
+/**
+ * 更新基本资料(个人设置)
+ *
+ * @since 2.0.0
+ * @param $user_id
+ * @param $avatar_type
+ * @param $nickname
+ * @param $site
+ * @param $description
+ * @return array|WP_Error
+ */
+function tt_update_basic_profiles($user_id, $avatar_type, $nickname, $site, $description){
+    $data = array(
+        'ID' => $user_id,
+        'user_url' => $site, //可空
+        'description' => $description // 可空
+    );
+    if(!empty($nickname)) {
+        $data['nickname'] = $nickname;
+        $data['display_name'] = $nickname;
+    }
+    $update = wp_update_user($data);//If successful, returns the user_id, otherwise returns a WP_Error object.
+
+    if($update instanceof WP_Error) {
+        return $update;
+    }
+
+    if(!in_array($avatar_type, Avatar::$_avatarTypes)) {
+        $avatar_type = Avatar::LETTER_AVATAR;
+    }
+    update_user_meta($user_id, 'tt_avatar_type', $avatar_type);
+
+    //删除VM缓存
+    tt_clear_cache_key_like('tt_cache_daily_vm_MeSettingsVM_user' . $data['ID']);
+    tt_clear_cache_key_like('tt_cache_daily_vm_UCProfileVM_author_' . $data['ID']);
+    //删除头像缓存
+    tt_clear_cache_key_like('tt_cache_daily_avatar_' . strval($user_id));
+
+    return array(
+        'success' => true,
+        'message' => __('Update basic profiles successfully', 'tt')
+    );
+}
+
+
+/**
+ * 更新扩展资料
+ *
+ * @since 2.0.0
+ * @param $data
+ * @return array|int|WP_Error
+ */
+function tt_update_extended_profiles($data){
+    $update = wp_update_user($data);//If successful, returns the user_id, otherwise returns a WP_Error object.
+
+    if($update instanceof WP_Error) {
+        return $update;
+    }
+
+    //删除VM缓存
+    tt_clear_cache_key_like('tt_cache_daily_vm_MeSettingsVM_user' . $data['ID']);
+    tt_clear_cache_key_like('tt_cache_daily_vm_UCProfileVM_author_' . $data['ID']);
+
+    return array(
+        'success' => true,
+        'message' => __('Update extended profiles successfully', 'tt')
+    );
+}
+
+
+/**
+ * 更新安全资料
+ *
+ * @since 2.0.0
+ * @param $data
+ * @return array|int|WP_Error
+ */
+function tt_update_security_profiles($data){
+    $update = wp_update_user($data);//If successful, returns the user_id, otherwise returns a WP_Error object.
+
+    if($update instanceof WP_Error) {
+        return $update;
+    }
+
+    //删除VM缓存
+    tt_clear_cache_key_like('tt_cache_daily_vm_MeSettingsVM_user' . $data['ID']);
+    tt_clear_cache_key_like('tt_cache_daily_vm_UCProfileVM_author_' . $data['ID']);
+
+    return array(
+        'success' => true,
+        'message' => __('Update security profiles successfully', 'tt')
+    );
+}

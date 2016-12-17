@@ -151,6 +151,10 @@ function tt_create_initial_rest_routes() {
     // Buy post resource
     $post_resource_buy_controller = new WP_REST_BoughtResource_Controller;
     $post_resource_buy_controller->register_routes();
+
+    // User profile
+    $user_profile_controller = new WP_REST_User_Profile_Controller;
+    $user_profile_controller->register_routes();
 }
 add_action( 'rest_api_init', 'tt_create_initial_rest_routes', 0 );  // TODO cached 接口
 

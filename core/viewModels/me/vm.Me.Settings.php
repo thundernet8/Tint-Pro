@@ -72,13 +72,13 @@ class MeSettingsVM extends BaseVM {
 //        $user_info['this_login_ip'] = $data->tt_latest_login_ip;
 
 
-        $user_info['qq'] = $data->tt_qq ? 'http://wpa.qq.com/msgrd?v=3&uin=' . $data->tt_qq . '&site=qq&menu=yes' : '';
-        $user_info['weibo'] = $data->tt_weibo ? 'http://weibo.com/' . $data->tt_weibo : '';
+        $user_info['qq'] = $data->tt_qq; //$data->tt_qq ? 'http://wpa.qq.com/msgrd?v=3&uin=' . $data->tt_qq . '&site=qq&menu=yes' : '';
+        $user_info['weibo'] = $data->tt_weibo; //$data->tt_weibo ? 'http://weibo.com/' . $data->tt_weibo : '';
         $user_info['weixin'] = $data->tt_weixin;
-        $user_info['twitter'] = $data->tt_twitter ? 'https://twitter.com/' . $data->tt_twitter : '';
-        $user_info['facebook'] = $data->tt_facebook ? 'https://www.facebook.com/' . $data->tt_facebook : '';
-        $user_info['googleplus'] = $data->tt_googleplus ? 'https://plus.google.com/u/0/' . $data->tt_googleplus : '';
-        //$user_info['alipay_email'] = $data->tt_alipay_email;
+        $user_info['twitter'] = $data->tt_twitter; //$data->tt_twitter ? 'https://twitter.com/' . $data->tt_twitter : '';
+        $user_info['facebook'] = $data->tt_facebook; //$data->tt_facebook ? 'https://www.facebook.com/' . $data->tt_facebook : '';
+        $user_info['googleplus'] = $data->tt_googleplus; //$data->tt_googleplus ? 'https://plus.google.com/u/0/' . $data->tt_googleplus : '';
+        $user_info['alipay_email'] = $data->tt_alipay_email;
         $user_info['alipay_pay'] = $data->tt_alipay_pay_qr;
         $user_info['wechat_pay'] = $data->tt_wechat_pay_qr;
 

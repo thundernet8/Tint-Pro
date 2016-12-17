@@ -1,5 +1,5 @@
 /**
- * Generated on Fri Dec 16 2016 23:50:53 GMT+0800 (中国标准时间) by Zhiyan
+ * Generated on Sat Dec 17 2016 17:31:59 GMT+0800 (中国标准时间) by Zhiyan
  *
  * @package   Tint
  * @version   v2.0.0
@@ -46,7 +46,7 @@
             var _signHelp2 = _interopRequireDefault(_signHelp);
             var _fixFooter = __webpack_require__(16);
             var _fixFooter2 = _interopRequireDefault(_fixFooter);
-            var _toggle = __webpack_require__(31);
+            var _toggle = __webpack_require__(32);
             var _toggle2 = _interopRequireDefault(_toggle);
             var _referral = __webpack_require__(17);
             var _referral2 = _interopRequireDefault(_referral);
@@ -97,7 +97,8 @@
             shoppingCart: _utils2[['default']][['getAPIUrl']]('/shoppingcart'),
             orders: _utils2[['default']][['getAPIUrl']]('/orders'),
             coupons: _utils2[['default']][['getAPIUrl']]('/coupons'),
-            boughtResources: _utils2[['default']][['getAPIUrl']]('/users/boughtresources')
+            boughtResources: _utils2[['default']][['getAPIUrl']]('/users/boughtresources'),
+            userProfiles: _utils2[['default']][['getAPIUrl']]('/users/profiles')
         };
         var urls = {
             site: _utils2[['default']][['getSiteUrl']](),
@@ -2836,6 +2837,7 @@
             };
         }));
     },
+    ,
     ,
     ,
     ,

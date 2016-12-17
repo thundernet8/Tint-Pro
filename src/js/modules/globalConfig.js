@@ -34,7 +34,8 @@ var routes = {
     shoppingCart: Utils.getAPIUrl('/shoppingcart'),
     orders: Utils.getAPIUrl('/orders'),
     coupons: Utils.getAPIUrl('/coupons'),
-    boughtResources: Utils.getAPIUrl('/users/boughtresources')
+    boughtResources: Utils.getAPIUrl('/users/boughtresources'),
+    userProfiles: Utils.getAPIUrl('/users/profiles')
 };
 
 // URL列表

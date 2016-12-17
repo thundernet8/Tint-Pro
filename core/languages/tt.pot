@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-12-17 00:24+0800\n"
+"POT-Creation-Date: 2016-12-17 17:34+0800\n"
 "PO-Revision-Date: 2016-08-17 21:40+0800\n"
 "Last-Translator: \n"
 "Language-Team: Zhiyan <mail@webapproach.net>\n"
@@ -216,7 +216,7 @@ msgid "Sorry, you cannot create message without signing in."
 msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.Message.Controller.php:150
-#: core/api/v1/endpoints/class.Rest.UserStatus.Controller.php:110
+#: core/api/v1/endpoints/class.Rest.UserStatus.Controller.php:113
 msgid "Verify nonce failed"
 msgstr ""
 
@@ -264,27 +264,22 @@ msgid "Mark message read failed"
 msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.Message.Controller.php:254
-#: core/api/v1/endpoints/class.Rest.UserStatus.Controller.php:149
 msgid "Sorry, you cannot delete message without signing in."
 msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.Message.Controller.php:258
-#: core/api/v1/endpoints/class.Rest.UserStatus.Controller.php:153
 msgid "Sorry, the message is not found."
 msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.Message.Controller.php:262
-#: core/api/v1/endpoints/class.Rest.UserStatus.Controller.php:157
 msgid "Sorry, you cannot delete message not belong to you."
 msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.Message.Controller.php:279
-#: core/api/v1/endpoints/class.Rest.UserStatus.Controller.php:174
 msgid "The message cannot be deleted."
 msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.Message.Controller.php:282
-#: core/api/v1/endpoints/class.Rest.UserStatus.Controller.php:177
 msgid "delete message successfully"
 msgstr ""
 
@@ -617,25 +612,38 @@ msgid ""
 "provided. Accepts csv list or single role."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.UserStatus.Controller.php:57
-msgid "Sorry, you cannot view user account status without signing in."
+#: core/api/v1/endpoints/class.Rest.UserProfile.Controller.php:61
+msgid "Sorry, you cannot update user profiles without signing in."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.UserStatus.Controller.php:72
-#: core/api/v1/endpoints/class.Rest.UserStatus.Controller.php:104
+#: core/api/v1/endpoints/class.Rest.UserProfile.Controller.php:64
+msgid "Sorry, you have no authority to update user profiles."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.UserProfile.Controller.php:79
+#: core/api/v1/endpoints/class.Rest.UserStatus.Controller.php:75
+#: core/api/v1/endpoints/class.Rest.UserStatus.Controller.php:107
 #: core/functions/func.User.php:349 core/functions/func.User.php:383
 msgid "The specified user is not existed"
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.UserStatus.Controller.php:86
-msgid "Sorry, you cannot update user account status without signing in."
+#: core/api/v1/endpoints/class.Rest.UserProfile.Controller.php:136
+msgid "Sorry, invalid profile type"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.UserStatus.Controller.php:60
+msgid "Sorry, you cannot view user account status without signing in."
 msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.UserStatus.Controller.php:89
+msgid "Sorry, you cannot update user account status without signing in."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.UserStatus.Controller.php:92
 msgid "Sorry, you have no authority to update user account status."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.UserStatus.Controller.php:118
+#: core/api/v1/endpoints/class.Rest.UserStatus.Controller.php:121
 msgid "A reason is required"
 msgstr ""
 
@@ -1292,6 +1300,18 @@ msgstr ""
 msgid "您的站点「%s」有新用户注册 :"
 msgstr ""
 
+#: core/functions/func.Account.php:277
+msgid "Update basic profiles successfully"
+msgstr ""
+
+#: core/functions/func.Account.php:298
+msgid "Update extended profiles successfully"
+msgstr ""
+
+#: core/functions/func.Account.php:323
+msgid "Update security profiles successfully"
+msgstr ""
+
 #: core/functions/func.Cache.php:192
 #, php-format
 msgid "<!-- Nav cached %s -->"
@@ -1884,27 +1904,27 @@ msgstr ""
 msgid "Weekly"
 msgstr ""
 
-#: core/functions/func.Seo.php:28 core/functions/func.Seo.php:159
+#: core/functions/func.Seo.php:28 core/functions/func.Seo.php:162
 #: core/modules/mod.ModalLoginForm.php:17
 #: core/templates/actions/tpl.M.Signup.php:90
 msgid "Sign In"
 msgstr ""
 
-#: core/functions/func.Seo.php:31 core/functions/func.Seo.php:162
+#: core/functions/func.Seo.php:31 core/functions/func.Seo.php:165
 #: core/templates/actions/tpl.M.Signup.php:62
 msgid "Sign Up"
 msgstr ""
 
-#: core/functions/func.Seo.php:34 core/functions/func.Seo.php:165
+#: core/functions/func.Seo.php:34 core/functions/func.Seo.php:168
 msgid "Activate Registration"
 msgstr ""
 
-#: core/functions/func.Seo.php:37 core/functions/func.Seo.php:168
+#: core/functions/func.Seo.php:37 core/functions/func.Seo.php:171
 #: core/modules/mod.Header.Shop.php:103 core/modules/mod.Header.php:47
 msgid "Sign Out"
 msgstr ""
 
-#: core/functions/func.Seo.php:40 core/functions/func.Seo.php:171
+#: core/functions/func.Seo.php:40 core/functions/func.Seo.php:174
 #: core/templates/actions/tpl.M.Findpass.php:33
 msgid "Find Password"
 msgstr ""
@@ -1939,101 +1959,105 @@ msgstr ""
 msgid "My Order"
 msgstr ""
 
-#: core/functions/func.Seo.php:69 core/modules/mod.Header.php:42
+#: core/functions/func.Seo.php:69
+msgid "My Drafts"
+msgstr ""
+
+#: core/functions/func.Seo.php:72 core/modules/mod.Header.php:42
 msgid "New Post"
 msgstr ""
 
-#: core/functions/func.Seo.php:72 core/modules/uc/uc.Tab.Latest.php:34
+#: core/functions/func.Seo.php:75 core/modules/uc/uc.Tab.Latest.php:34
 msgid "Edit Post"
 msgstr ""
 
-#: core/functions/func.Seo.php:80
+#: core/functions/func.Seo.php:83
 msgid "Check Out Orders"
 msgstr ""
 
-#: core/functions/func.Seo.php:83
+#: core/functions/func.Seo.php:86
 msgid "Payment Result"
 msgstr ""
 
-#: core/functions/func.Seo.php:86
+#: core/functions/func.Seo.php:89
 msgid "Do Payment"
 msgstr ""
 
-#: core/functions/func.Seo.php:90
+#: core/functions/func.Seo.php:93
 msgid "Resources Download:"
 msgstr ""
 
-#: core/functions/func.Seo.php:100
+#: core/functions/func.Seo.php:103
 #, php-format
 msgid " - Page %d"
 msgstr ""
 
-#: core/functions/func.Seo.php:111 core/functions/func.Seo.php:208
+#: core/functions/func.Seo.php:114 core/functions/func.Seo.php:211
 #, php-format
 msgid "%s's Home Page"
 msgstr ""
 
-#: core/functions/func.Seo.php:115 core/functions/shop/func.Shop.php:297
+#: core/functions/func.Seo.php:118 core/functions/shop/func.Shop.php:297
 msgid "Product Category"
 msgstr ""
 
-#: core/functions/func.Seo.php:117
+#: core/functions/func.Seo.php:120
 msgid "Product Tag"
 msgstr ""
 
-#: core/functions/func.Seo.php:119 core/functions/func.Seo.php:122
-#: core/functions/func.Seo.php:220 core/modules/mod.Header.Shop.php:29
+#: core/functions/func.Seo.php:122 core/functions/func.Seo.php:125
+#: core/functions/func.Seo.php:223 core/modules/mod.Header.Shop.php:29
 #: dash/options.php:794
 msgid "Market"
 msgstr ""
 
-#: core/functions/func.Seo.php:125
+#: core/functions/func.Seo.php:128
 msgid "Search"
 msgstr ""
 
-#: core/functions/func.Seo.php:127
+#: core/functions/func.Seo.php:130
 msgid "Y"
 msgstr ""
 
-#: core/functions/func.Seo.php:127 core/functions/func.Seo.php:129
-#: core/functions/func.Seo.php:131
+#: core/functions/func.Seo.php:130 core/functions/func.Seo.php:132
+#: core/functions/func.Seo.php:134
 msgid "posts archive"
 msgstr ""
 
-#: core/functions/func.Seo.php:129
+#: core/functions/func.Seo.php:132
 msgid "Y.n"
 msgstr ""
 
-#: core/functions/func.Seo.php:131
+#: core/functions/func.Seo.php:134
 msgid "Y.n.j"
 msgstr ""
 
-#: core/functions/func.Seo.php:133
+#: core/functions/func.Seo.php:136
 msgid "Tag: "
 msgstr ""
 
-#: core/functions/func.Seo.php:135
+#: core/functions/func.Seo.php:138
 msgid "Page Not Found"
 msgstr ""
 
-#: core/functions/func.Seo.php:140
+#: core/functions/func.Seo.php:143
 #, php-format
 msgid " - Page %d "
 msgstr ""
 
-#: core/functions/func.Seo.php:174 core/functions/func.Seo.php:208
+#: core/functions/func.Seo.php:177 core/functions/func.Seo.php:211
 msgid "Powered by Tint(Tinection 2)"
 msgstr ""
 
-#: core/functions/func.Seo.php:207
+#: core/functions/func.Seo.php:210
 msgid "Ucenter"
 msgstr ""
 
-#: core/functions/func.Seo.php:207 core/functions/func.Seo.php:220
+#: core/functions/func.Seo.php:210 core/functions/func.Seo.php:223
 msgid "Tint Ucenter and Market System"
 msgstr ""
 
-#: core/functions/func.Seo.php:223
+#: core/functions/func.Seo.php:226
 msgid ""
 "Powered by Tint(Tinection 2, a powerful wordpress theme with ucenter and "
 "shop system integrated)"
@@ -2490,11 +2514,19 @@ msgstr ""
 msgid "MESSAGES"
 msgstr ""
 
-#: core/modules/me/me.NavMenu.php:29 core/modules/uc/uc.NavTabs.php:20
-msgid "MY STARS"
+#: core/modules/me/me.NavMenu.php:29
+msgid "MY POSTS"
 msgstr ""
 
 #: core/modules/me/me.NavMenu.php:30
+msgid "MY DRAFTS"
+msgstr ""
+
+#: core/modules/me/me.NavMenu.php:31 core/modules/uc/uc.NavTabs.php:20
+msgid "MY STARS"
+msgstr ""
+
+#: core/modules/me/me.NavMenu.php:32
 #: core/viewModels/shop/vm.Shop.Category.php:117
 #: core/viewModels/shop/vm.Shop.Home.php:110
 #: core/viewModels/shop/vm.Shop.Product.php:120
@@ -2507,7 +2539,7 @@ msgstr ""
 msgid "CREDITS"
 msgstr ""
 
-#: core/modules/me/me.NavMenu.php:31
+#: core/modules/me/me.NavMenu.php:33
 msgid "ORDERS"
 msgstr ""
 
@@ -2531,27 +2563,32 @@ msgstr ""
 msgid "Default Avatar"
 msgstr ""
 
+#: core/modules/me/me.Tab.Settings.php:37
+#: core/modules/me/me.Tab.Settings.php:44
+msgid "Custom Avatar"
+msgstr ""
+
 #: core/modules/me/me.Tab.Settings.php:52
 #: core/modules/uc/uc.Tab.Profile.php:43
 msgid "Nickname"
 msgstr ""
 
-#: core/modules/me/me.Tab.Settings.php:57
-#: core/modules/uc/uc.Tab.Profile.php:48
-#: core/templates/actions/tpl.M.Findpass.php:36
-#: core/templates/actions/tpl.M.Signup.php:46
-#: core/templates/site/tpl.CheckOut.php:152
-msgid "Email"
-msgstr ""
-
-#: core/modules/me/me.Tab.Settings.php:62
+#: core/modules/me/me.Tab.Settings.php:56
 #: core/modules/uc/uc.Tab.Profile.php:53
 msgid "Site"
 msgstr ""
 
-#: core/modules/me/me.Tab.Settings.php:66
+#: core/modules/me/me.Tab.Settings.php:60
 #: core/modules/uc/uc.Tab.Profile.php:57
 msgid "Description"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:61
+msgid "Add your bio..."
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:66
+msgid "Save Profile"
 msgstr ""
 
 #: core/modules/me/me.Tab.Settings.php:72
@@ -2559,101 +2596,162 @@ msgstr ""
 msgid "Extended Info"
 msgstr ""
 
-#: core/modules/me/me.Tab.Settings.php:75
-#: core/modules/uc/uc.Tab.Profile.php:66
-msgid "Talk with QQ"
+#: core/modules/me/me.Tab.Settings.php:72
+msgid "e.g. Social Infos"
 msgstr ""
 
-#: core/modules/me/me.Tab.Settings.php:78
-#: core/modules/uc/uc.Tab.Profile.php:69
-msgid "Follow on Weibo"
+#: core/modules/me/me.Tab.Settings.php:74
+msgid "QQ"
 msgstr ""
 
-#: core/modules/me/me.Tab.Settings.php:81
-#: core/modules/uc/uc.Tab.Profile.php:72
-msgid "Talk with Wechat"
+#: core/modules/me/me.Tab.Settings.php:81 dash/dash.php:148
+msgid "Sina Weibo"
 msgstr ""
 
 #: core/modules/me/me.Tab.Settings.php:84
-#: core/modules/uc/uc.Tab.Profile.php:75
-msgid "Follow on Twitter"
+msgid "微博用户名, 如weibo.com/touchumind中的touchumind"
 msgstr ""
 
-#: core/modules/me/me.Tab.Settings.php:87
-#: core/modules/uc/uc.Tab.Profile.php:78
-msgid "Find on Facebook"
+#: core/modules/me/me.Tab.Settings.php:88
+msgid "Wechat Qrcode"
 msgstr ""
 
-#: core/modules/me/me.Tab.Settings.php:90
+#: core/modules/me/me.Tab.Settings.php:91
+msgid "微信二维码图片地址"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:95 dash/dash.php:150
+msgid "Twitter"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:98
+msgid "Twitter用户名, 如twitter.com/thundernet8中的thundernet8"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:102
+msgid "Facebook"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:105
+msgid "Facebook用户名, 如www.facebook.com/xueqian.wu中的xueqian.wu"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:109
 #: core/modules/uc/uc.Tab.Profile.php:81
 msgid "Google+"
 msgstr ""
 
-#: core/modules/me/me.Tab.Settings.php:97
-#: core/modules/uc/uc.Tab.Profile.php:88
-msgid "Donate Info"
-msgstr ""
-
-#: core/modules/me/me.Tab.Settings.php:97
-#: core/modules/uc/uc.Tab.Profile.php:88
-msgid "Donate to me"
-msgstr ""
-
-#: core/modules/me/me.Tab.Settings.php:100
-#: core/modules/uc/uc.Tab.Profile.php:91
-msgid "Donate via Alipay"
-msgstr ""
-
-#: core/modules/me/me.Tab.Settings.php:103
-#: core/modules/uc/uc.Tab.Profile.php:94
-msgid "Donate via Wechat"
-msgstr ""
-
-#: core/modules/me/me.Tab.Settings.php:110
-#: core/modules/uc/uc.Tab.Profile.php:101
-msgid "Referral Info"
-msgstr ""
-
 #: core/modules/me/me.Tab.Settings.php:112
-#: core/modules/uc/uc.Tab.Profile.php:103
-msgid "Referral Link"
+msgid ""
+"Google+用户ID, 如plus.google.com/u/0/103638104473894849180中的"
+"103638104473894849180"
 msgstr ""
 
-#: core/modules/me/me.Tab.Settings.php:113
-#: core/modules/uc/uc.Tab.Profile.php:104
-msgid "COPY"
-msgstr ""
-
-#: core/modules/me/me.Tab.Settings.php:119
-#: core/modules/mod.ModalBanBox.php:18 core/modules/uc/uc.Tab.Profile.php:110
-msgid "Account Management"
+#: core/modules/me/me.Tab.Settings.php:116 dash/dash.php:153
+msgid "Alipay Account"
 msgstr ""
 
 #: core/modules/me/me.Tab.Settings.php:119
-#: core/modules/uc/uc.Tab.Profile.php:110
-msgid "Visible for administrator"
-msgstr ""
-
-#: core/modules/me/me.Tab.Settings.php:122
-#: core/modules/uc/uc.Tab.Profile.php:113
-msgid "Unlock Account"
+msgid "支付宝账户邮箱或手机, 推荐邮箱"
 msgstr ""
 
 #: core/modules/me/me.Tab.Settings.php:123
-#: core/modules/uc/uc.Tab.Profile.php:114
-msgid "This action will enable the account to normal functions"
-msgstr ""
-
-#: core/modules/me/me.Tab.Settings.php:125
-#: core/modules/uc/uc.Tab.Profile.php:116
-msgid "Ban Account"
+msgid "Alipay Gather Qrcode"
 msgstr ""
 
 #: core/modules/me/me.Tab.Settings.php:126
-#: core/modules/uc/uc.Tab.Profile.php:117
+msgid "支付宝收款二维码地址"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:130
+msgid "Wechat Gather Qrcode"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:133
+msgid "微信收款二维码地址"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:139
+msgid "Save Extended Profile"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:152
+msgid "Bind Account"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:152
+msgid "Used for quick login"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:155
+msgid "QQ Social Account"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:158
+msgid "Disconnect QQ"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:160
+msgid "Connect QQ"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:167
+msgid "Weibo Social Account"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:170
+msgid "Disconnect Weibo"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:172
+msgid "Connect Weibo"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:179
+msgid "Wechat Social Account"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:182
+msgid "Disconnect Wechat"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:184
+msgid "Connect Wechat"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:193
+msgid "Account Security"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:193
+msgid "Be careful"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:195
+msgid "Email (Required)"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:199
+msgid "New Password"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:202
+msgid "如果您想修改您的密码, 请在此输入新密码, 否则请留空."
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:206
+#: core/templates/actions/tpl.M.Resetpass.php:40
+msgid "Repeat Password"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:209
 msgid ""
-"Warning: this action will ban the account, the all features is not "
-"accessible until manual unlock"
+"再输入一遍新密码. 提示: 您的密码最好至少包含7个字符. 为了保证密码强度, 使用"
+"大小写字母、数字和符号（例如! \" ? $ % ^ &amp; ) )."
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:215
+msgid "Save Security Info"
 msgstr ""
 
 #: core/modules/mod.Comments.php:29
@@ -2822,6 +2920,10 @@ msgstr ""
 
 #: core/modules/mod.HomePopular.php:22
 msgid "Popular"
+msgstr ""
+
+#: core/modules/mod.ModalBanBox.php:18 core/modules/uc/uc.Tab.Profile.php:110
+msgid "Account Management"
 msgstr ""
 
 #: core/modules/mod.ModalBanBox.php:23
@@ -3196,6 +3298,83 @@ msgstr ""
 msgid "Last Login IP %s"
 msgstr ""
 
+#: core/modules/uc/uc.Tab.Profile.php:48
+#: core/templates/actions/tpl.M.Findpass.php:36
+#: core/templates/actions/tpl.M.Signup.php:46
+#: core/templates/site/tpl.CheckOut.php:152
+msgid "Email"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Profile.php:66
+msgid "Talk with QQ"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Profile.php:69
+msgid "Follow on Weibo"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Profile.php:72
+msgid "Talk with Wechat"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Profile.php:75
+msgid "Follow on Twitter"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Profile.php:78
+msgid "Find on Facebook"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Profile.php:88
+msgid "Donate Info"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Profile.php:88
+msgid "Donate to me"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Profile.php:91
+msgid "Donate via Alipay"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Profile.php:94
+msgid "Donate via Wechat"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Profile.php:101
+msgid "Referral Info"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Profile.php:103
+msgid "Referral Link"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Profile.php:104
+msgid "COPY"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Profile.php:110
+msgid "Visible for administrator"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Profile.php:113
+msgid "Unlock Account"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Profile.php:114
+msgid "This action will enable the account to normal functions"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Profile.php:116
+msgid "Ban Account"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Profile.php:117
+msgid ""
+"Warning: this action will ban the account, the all features is not "
+"accessible until manual unlock"
+msgstr ""
+
 #: core/modules/uc/uc.Tab.Stars.php:40
 msgid "Unstar"
 msgstr ""
@@ -3432,10 +3611,6 @@ msgstr ""
 
 #: core/templates/actions/tpl.M.Resetpass.php:37
 msgid "Please input your new password"
-msgstr ""
-
-#: core/templates/actions/tpl.M.Resetpass.php:40
-msgid "Repeat Password"
 msgstr ""
 
 #: core/templates/actions/tpl.M.Resetpass.php:44
@@ -4095,20 +4270,8 @@ msgid ""
 "theme style your website</span>"
 msgstr ""
 
-#: dash/dash.php:148
-msgid "Sina Weibo"
-msgstr ""
-
 #: dash/dash.php:149
 msgid "Wechat"
-msgstr ""
-
-#: dash/dash.php:150
-msgid "Twitter"
-msgstr ""
-
-#: dash/dash.php:153
-msgid "Alipay Account"
 msgstr ""
 
 #: dash/dash.php:154

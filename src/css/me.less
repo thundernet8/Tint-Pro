@@ -135,24 +135,38 @@ body.me-settings {
                     }
                 }
                 &>.info-group {
-                    padding-left: 15px;
-                    padding-right: 15px;
+                    padding: 5px 15px;
                     margin: 10px 0;
                     &>label {
-                        max-width: 120px;
-                        line-height: 1.5;
+                        max-width: 130px;
+                        line-height: 40px;
                         font-weight: 600;
                     }
                     &>p {
                         margin: 0;
+                        &>.help-block {
+                            display: block;
+                            margin-top: 5px;
+                            margin-bottom: 10px;
+                            font-size: 1.4rem;
+                        }
+                        &>.form-control {
+                            height: auto;
+                            font-size: 1.4rem;
+                        }
+                    }
+                    &:first-child {
+                        &>label {
+                            line-height: 60px;
+                        }
                     }
                 }
             }
             &>.info-basis {
                 &>.info-group {
-                    padding: 5px 0;
-                    &>.col-sm-9 {
+                    &>.col-md-10 {
                         &>.radio {
+                            padding-left: 0;
                             &>label {
                                 position: relative;
                                 display: inline-block;
@@ -226,7 +240,7 @@ body.me-settings {
             &>.info-referral {
 
             }
-            &>.admin-operation {
+            &>.info-security {
                 &>.info-group {
                     &>p {
                         padding-right: 120px;

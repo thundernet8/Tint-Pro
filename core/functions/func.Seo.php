@@ -65,6 +65,9 @@ function tt_get_page_title() {
             case 'order':
                 $title = __('My Order', 'tt');
                 break;
+            case 'drafts':
+                $title = __('My Drafts', 'tt');
+                break;
             case 'newpost':
                 $title = __('New Post', 'tt');
                 break;

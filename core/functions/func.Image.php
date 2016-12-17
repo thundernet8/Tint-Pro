@@ -120,7 +120,8 @@ function tt_update_user_avatar_by_upload($user_id = 0){
     update_user_meta($user_id, 'tt_avatar_type', 'custom');
 
     //删除VM缓存
-    tt_clear_cache_key_like('tt_cache_daily_vm_MeSettingsVM');
+    tt_clear_cache_key_like('tt_cache_daily_vm_MeSettingsVM_user' . $user_id);
+    tt_clear_cache_key_like('tt_cache_daily_vm_UCProfileVM_author_' . $user_id);
     //删除头像缓存
     tt_clear_cache_key_like('tt_cache_daily_avatar_' . strval($user_id));
 }

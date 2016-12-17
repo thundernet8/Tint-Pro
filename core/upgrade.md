@@ -20,6 +20,9 @@ UPDATE wp_postmeta SET meta_key='tt_product_quantity' WHERE meta_key='product_am
 product_price -> tt_product_price
 UPDATE wp_postmeta SET meta_key='tt_product_price' WHERE meta_key='product_price'
 
+tin_views -> views
+UPDATE wp_postmeta SET meta_key='views' WHERE meta_key='tin_views'
+
 ## User Meta Key
 tin_credit -> tt_credits
 UPDATE wp_usermeta SET meta_key='tt_credits' WHERE meta_key='tin_credit'

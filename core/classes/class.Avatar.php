@@ -119,7 +119,7 @@ final class Avatar{
      * @access  private
      * @var     array
      */
-    private static $_avatarTypes = array(
+    public static $_avatarTypes = array(
         Avatar::GRAVATAR,
         Avatar::QQ_AVATAR,
         Avatar::WEIBO_AVATAR,

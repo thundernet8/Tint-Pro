@@ -72,8 +72,8 @@ defined('ALLOWED_M_ACTIONS') || define('ALLOWED_M_ACTIONS', $m_allow_actions);
 /* Allowed Me Routes */
 $me_allow_routes = json_encode(array(
     'settings' => 'settings', //profile设置等, @xxx/profile只提供profile资料查阅, 不可编辑
-    'balance'  => 'balance',
-    'stars'    => 'stars',
+    //'balance'  => 'balance',
+    'drafts'    => 'drafts',
     'credits' => 'credits',
     'order'    => 'order',
     'newpost' => 'newpost',
@@ -144,8 +144,9 @@ $site_endpoints = json_encode(array(
     'findpass'                  =>  'm/findpass',
     'resetpass'                 =>  'm/resetpass',
     'my_settings'               =>  'me/settings',
-    'my_balance'                =>  'me/balance',
-    'my_stars'                  =>  'me/stars',
+    //'my_balance'                =>  'me/balance',
+    //'my_stars'                  =>  'me/stars',
+    'my_drafts'                  =>  'me/drafts',
     'my_credits'                =>  'me/credits',
     'new_post'                  =>  'me/newpost',
     'in_msg'                    =>  'me/messages/inbox',

@@ -28,6 +28,7 @@ import UnstarKit from './modules/unstar';
 //import Bankit from './modules/ban';
 import Referral from './modules/referral';
 import ImageUploader from './modules/imageUploader';
+import SaveSettingsKit from './modules/saveSettings';
 
 
 // DOM Ready
@@ -79,4 +80,7 @@ jQuery(document).ready(function ($) {
     
     // 初始化头像上传
     ImageUploader.initAvatarUpload();
+    
+    // 初始化资料保存
+    SaveSettingsKit.init();
 });
