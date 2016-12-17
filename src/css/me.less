@@ -141,29 +141,32 @@ body.me-settings {
                         max-width: 130px;
                         line-height: 40px;
                         font-weight: 600;
+                        white-space: nowrap;
                     }
                     &>p {
                         margin: 0;
                         &>.help-block {
                             display: block;
+                            padding: 0 5px;
                             margin-top: 5px;
                             margin-bottom: 10px;
                             font-size: 1.4rem;
+                            word-break: break-all;
                         }
                         &>.form-control {
                             height: auto;
                             font-size: 1.4rem;
                         }
                     }
-                    &:first-child {
-                        &>label {
-                            line-height: 60px;
-                        }
-                    }
                 }
             }
             &>.info-basis {
                 &>.info-group {
+                    &:first-of-type {
+                        &>label {
+                            line-height: 60px;
+                        }
+                    }
                     &>.col-md-10 {
                         &>.radio {
                             padding-left: 0;

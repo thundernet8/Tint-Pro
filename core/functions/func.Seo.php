@@ -74,6 +74,9 @@ function tt_get_page_title() {
             case 'editpost':
                 $title = __('Edit Post', 'tt');
                 break;
+            case 'membership':
+                $title = __('My Membership', 'tt');
+                break;
         }
         return $title . ' - ' . get_bloginfo('name');
     }

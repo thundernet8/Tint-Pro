@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-12-17 18:40+0800\n"
-"PO-Revision-Date: 2016-12-17 18:40+0800\n"
+"POT-Creation-Date: 2016-12-17 19:55+0800\n"
+"PO-Revision-Date: 2016-12-17 19:56+0800\n"
 "Last-Translator: Zhiyan <mail@webapproach.net>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -1585,7 +1585,7 @@ msgid ""
 "`mkdir` function.\\n"
 msgstr "创建Timthumb缓存文件夹失败，或许可检查php.ini以启用`mkdir`函数.\\n"
 
-#: core/functions/func.Kits.php:356
+#: core/functions/func.Kits.php:362
 msgid "WordPress &rsaquo; Error"
 msgstr "WordPress &rsaquo; 错误"
 
@@ -1880,33 +1880,33 @@ msgstr "无效的页面模板"
 msgid "Weekly"
 msgstr "每周的"
 
-#: core/functions/func.Seo.php:28 core/functions/func.Seo.php:162
+#: core/functions/func.Seo.php:28 core/functions/func.Seo.php:165
 #: core/modules/mod.ModalLoginForm.php:17
 #: core/templates/actions/tpl.M.Signup.php:90
 msgid "Sign In"
 msgstr "登录"
 
-#: core/functions/func.Seo.php:31 core/functions/func.Seo.php:165
+#: core/functions/func.Seo.php:31 core/functions/func.Seo.php:168
 #: core/templates/actions/tpl.M.Signup.php:62
 msgid "Sign Up"
 msgstr "注册"
 
-#: core/functions/func.Seo.php:34 core/functions/func.Seo.php:168
+#: core/functions/func.Seo.php:34 core/functions/func.Seo.php:171
 msgid "Activate Registration"
 msgstr "激活注册"
 
-#: core/functions/func.Seo.php:37 core/functions/func.Seo.php:171
-#: core/modules/mod.Header.Shop.php:103 core/modules/mod.Header.php:47
+#: core/functions/func.Seo.php:37 core/functions/func.Seo.php:174
+#: core/modules/mod.Header.Shop.php:103 core/modules/mod.Header.php:48
 msgid "Sign Out"
 msgstr "注销"
 
-#: core/functions/func.Seo.php:40 core/functions/func.Seo.php:174
+#: core/functions/func.Seo.php:40 core/functions/func.Seo.php:177
 #: core/templates/actions/tpl.M.Findpass.php:33
 msgid "Find Password"
 msgstr "找回密码"
 
 #: core/functions/func.Seo.php:48 core/modules/mod.Header.Shop.php:101
-#: core/modules/mod.Header.php:45
+#: core/modules/mod.Header.php:46
 msgid "My Settings"
 msgstr "个人设置"
 
@@ -1915,7 +1915,7 @@ msgid "My Notifications"
 msgstr "站内通知"
 
 #: core/functions/func.Seo.php:54 core/modules/mod.Header.Shop.php:100
-#: core/modules/mod.Header.php:44
+#: core/modules/mod.Header.php:45
 msgid "My Messages"
 msgstr "站内消息"
 
@@ -1939,7 +1939,7 @@ msgstr "我的订单"
 msgid "My Drafts"
 msgstr "我的草稿"
 
-#: core/functions/func.Seo.php:72 core/modules/mod.Header.php:42
+#: core/functions/func.Seo.php:72 core/modules/mod.Header.php:43
 msgid "New Post"
 msgstr "新建文章"
 
@@ -1947,93 +1947,97 @@ msgstr "新建文章"
 msgid "Edit Post"
 msgstr "编辑文章"
 
-#: core/functions/func.Seo.php:83
+#: core/functions/func.Seo.php:78
+msgid "My Membership"
+msgstr "我的会员"
+
+#: core/functions/func.Seo.php:86
 msgid "Check Out Orders"
 msgstr "结算订单"
 
-#: core/functions/func.Seo.php:86
+#: core/functions/func.Seo.php:89
 msgid "Payment Result"
 msgstr "支付结果"
 
-#: core/functions/func.Seo.php:89
+#: core/functions/func.Seo.php:92
 msgid "Do Payment"
 msgstr "支付"
 
-#: core/functions/func.Seo.php:93
+#: core/functions/func.Seo.php:96
 msgid "Resources Download:"
 msgstr "资源下载: "
 
-#: core/functions/func.Seo.php:103
+#: core/functions/func.Seo.php:106
 #, php-format
 msgid " - Page %d"
 msgstr " - 第 %d 页"
 
-#: core/functions/func.Seo.php:114 core/functions/func.Seo.php:211
+#: core/functions/func.Seo.php:117 core/functions/func.Seo.php:214
 #, php-format
 msgid "%s's Home Page"
 msgstr "%s's 个人中心"
 
-#: core/functions/func.Seo.php:118 core/functions/shop/func.Shop.php:297
+#: core/functions/func.Seo.php:121 core/functions/shop/func.Shop.php:297
 msgid "Product Category"
 msgstr "商品分类"
 
-#: core/functions/func.Seo.php:120
+#: core/functions/func.Seo.php:123
 msgid "Product Tag"
 msgstr "商品标签"
 
-#: core/functions/func.Seo.php:122 core/functions/func.Seo.php:125
-#: core/functions/func.Seo.php:223 core/modules/mod.Header.Shop.php:29
+#: core/functions/func.Seo.php:125 core/functions/func.Seo.php:128
+#: core/functions/func.Seo.php:226 core/modules/mod.Header.Shop.php:29
 #: dash/options.php:794
 msgid "Market"
 msgstr "商店"
 
-#: core/functions/func.Seo.php:128
+#: core/functions/func.Seo.php:131
 msgid "Search"
 msgstr "搜索"
 
-#: core/functions/func.Seo.php:130
+#: core/functions/func.Seo.php:133
 msgid "Y"
 msgstr "Y"
 
-#: core/functions/func.Seo.php:130 core/functions/func.Seo.php:132
-#: core/functions/func.Seo.php:134
+#: core/functions/func.Seo.php:133 core/functions/func.Seo.php:135
+#: core/functions/func.Seo.php:137
 msgid "posts archive"
 msgstr "文章归档"
 
-#: core/functions/func.Seo.php:132
+#: core/functions/func.Seo.php:135
 msgid "Y.n"
 msgstr "Y.n"
 
-#: core/functions/func.Seo.php:134
+#: core/functions/func.Seo.php:137
 msgid "Y.n.j"
 msgstr "Y.n.j"
 
-#: core/functions/func.Seo.php:136
+#: core/functions/func.Seo.php:139
 msgid "Tag: "
 msgstr "标签: "
 
-#: core/functions/func.Seo.php:138
+#: core/functions/func.Seo.php:141
 msgid "Page Not Found"
 msgstr "页面未找到"
 
-#: core/functions/func.Seo.php:143
+#: core/functions/func.Seo.php:146
 #, php-format
 msgid " - Page %d "
 msgstr " - 第 %d 页"
 
-#: core/functions/func.Seo.php:177 core/functions/func.Seo.php:211
+#: core/functions/func.Seo.php:180 core/functions/func.Seo.php:214
 msgid "Powered by Tint(Tinection 2)"
 msgstr "由Tint主题驱动(Tinection 2)"
 
-#: core/functions/func.Seo.php:210
+#: core/functions/func.Seo.php:213
 msgid "Ucenter"
 msgstr "用户中心"
 
-#: core/functions/func.Seo.php:210 core/functions/func.Seo.php:223
+#: core/functions/func.Seo.php:213 core/functions/func.Seo.php:226
 msgid "Tint Ucenter and Market System"
 msgstr "Tint主题用户中心和商店系统"
 
-#: core/functions/func.Seo.php:226
+#: core/functions/func.Seo.php:229
 msgid ""
 "Powered by Tint(Tinection 2, a powerful wordpress theme with ucenter and "
 "shop system integrated)"
@@ -2870,7 +2874,7 @@ msgstr "购物车空空如也."
 msgid "Go Dashboard"
 msgstr "访问后台"
 
-#: core/modules/mod.Header.Shop.php:108 core/modules/mod.Header.php:52
+#: core/modules/mod.Header.Shop.php:108 core/modules/mod.Header.php:53
 msgid "Sign In or Up"
 msgstr "登录/注册"
 
@@ -2891,7 +2895,11 @@ msgstr "热门"
 msgid "Latest"
 msgstr "最新上架"
 
-#: core/modules/mod.Header.php:43
+#: core/modules/mod.Header.php:41
+msgid "Site Management"
+msgstr "站务管理"
+
+#: core/modules/mod.Header.php:44
 msgid "My Posts"
 msgstr "我的文章"
 

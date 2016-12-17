@@ -28,17 +28,27 @@ add_shortcode('toggle', 'tt_sc_toggle_content');
 
 // 插入商品短代码
 function tt_sc_product($atts, $content = null){
-    extract(shortcode_atts(array('size'=>'lg','id'=>''), $atts));
+    extract(shortcode_atts(array('id'=>''), $atts));
     if(!empty($id)) {
-        $href = get_permalink($id);
-        $title=get_post_field('post_title', $id);
-        $content = !empty($content) ? $content : __('购买', 'tt');
-        return '<a class="btnhref" href=" ' . $href . '" title="' . $title . '" target="_blank"><button type="button" class="btn btn-product btn-' . $size . '">' . $content . '</button></a>';
-    }else{
-        return '<button type="button" class="btn btn-product btn-' . $size . '">' . $content . '</button>';
+        $vm = EmbedProductVM::getInstance(intval($id));
+        $data = $vm->modelData;
+        if(!isset($data->product_id)) return $id;
+        $templates = new League\Plates\Engine(THEME_TPL . '/plates');
+        $args = array(
+            'thumb' => $data->product_thumb,
+            'link' => $data->product_link,
+            'name' => $data->product_name,
+            'price' => $data->product_price,
+            'currency' => $data->product_currency,
+            'rating_value' => ($data->product_rating)['value'],
+            'rating_count' => ($data->product_rating)['count'],
+
+        );
+        return $templates->render('embed-product', $args);
     }
+    return '';
 }
-//add_shortcode('product', 'tt_sc_product');
+add_shortcode('product', 'tt_sc_product');
 
 // Button
 function tt_sc_button($atts, $content = null){

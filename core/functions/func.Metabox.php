@@ -167,9 +167,9 @@ function tt_product_info_callback($post){
     $download_links = get_post_meta($post->ID, 'tt_product_download_links', true);
     $pay_content = get_post_meta($post->ID,'tt_product_pay_content',true);
     ?>
-    <!--p style="clear:both;font-weight:bold;">
+    <p style="clear:both;font-weight:bold;">
         <?php echo sprintf(__('此商品购买按钮快捷插入短代码为[product id="%1$s"][/product]', 'tt'), $post->ID); ?>
-    </p-->
+    </p>
     <p style="clear:both;font-weight:bold;border-bottom:1px solid #ddd;padding-bottom:8px;">
         <?php _e('基本信息', 'tt'); ?>
     </p>

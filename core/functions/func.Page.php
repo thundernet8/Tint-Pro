@@ -203,6 +203,9 @@ function tt_modify_body_classes($classes) {
         $classes[] = 'action-' . $query_var;
     }elseif($query_var = get_query_var('me_child_route')){
         $classes[] = 'me me-' . $query_var;
+    }elseif($query_var = get_query_var('manage_child_route')){
+        $query_var = get_query_var('manage_grandchild_route') ? substr($query_var, -2) : $query_var;
+        $classes[] = 'manage manage-' . $query_var;
     }
 
     //TODO more
