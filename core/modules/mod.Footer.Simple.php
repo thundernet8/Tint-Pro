@@ -23,7 +23,7 @@
         <span class="sep" role="separator"></span>
         <a href="javascript:void(0)" title="" rel="link" target="_blank"><?php _e('CONTACT', 'tt'); ?></a> <!-- TODO: 联系方式如二维码 -->
     </div>
-    <div class="foot-copyright pull-right">&copy;&nbsp;<?php echo tt_copyright_year(); ?><?php echo ' ' . get_bloginfo('name') . ' All Right Reserved · <b style="color: #ff4425;">♥</b>&nbsp;<a href="https://www.webapproach.net/tint.html" title="Tint">Tint</a> & Design by <a href="https://www.webapproach.net" rel="link" title="WebApproach">WebApproach.</a>'; ?>
+    <div class="foot-copyright pull-right">&copy;&nbsp;<?php echo tt_copyright_year(); ?><?php echo ' ' . get_bloginfo('name') . ' All Right Reserved · <b style="color: #ff4425;">♥</b>&nbsp;<a href="https://www.webapproach.net/tint.html" title="Tint" rel="link" target="_blank">Tint</a> & Design by <a href="https://www.webapproach.net" rel="link" title="WebApproach">WebApproach.</a>'; ?>
     </div>
 </footer>
 <?php if(tt_get_option('tt_foot_code')) { echo tt_get_option('tt_foot_code'); } ?>

@@ -93,6 +93,12 @@ function tt_url_for($key, $arg = null, $relative = false){
         case 'uc_chat':
             $endpoint = 'u/' . call_user_func($get_uid, $arg) . '/chat';
             break;
+        case 'manage_user':
+            $endpoint = 'management/users/' . intval($arg);
+            break;
+        case 'manage_order':
+            $endpoint = 'management/orders/' . intval($arg);
+            break;
         case 'shop_archive':
             $endpoint = tt_get_option('tt_product_archives_slug', 'shop');
             break;

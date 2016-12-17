@@ -78,6 +78,7 @@ $me_allow_routes = json_encode(array(
     'order'    => 'order',
     'newpost' => 'newpost',
     'editpost' => 'editpost',
+    'membership' => 'membership',
     'notifications' => array(
         'all',
         'comment',
@@ -122,6 +123,20 @@ $site_allow_utils = json_encode(array(
 ));
 defined('ALLOWED_SITE_UTILS') || define('ALLOWED_SITE_UTILS', $site_allow_utils);
 
+/* Allowed Management Routes */
+$manage_allow_routes = json_encode(array(
+    'status' => 'status',
+    'posts' => 'posts',
+    'comments' => 'comments',
+    'users' => 'users',
+    'user' => 'user',
+    'orders' => 'orders',
+    'order' => 'order',
+    'coupons' => 'coupons',
+    'members' => 'members'
+));
+defined('ALLOWED_MANAGE_ROUTES') || define('ALLOWED_MANAGE_ROUTES', $manage_allow_routes);
+
 /* Some Endpoints */
 $site_endpoints = json_encode(array(
     'upgrade_browser'           =>  'site/upgrade-browser',
@@ -146,9 +161,10 @@ $site_endpoints = json_encode(array(
     'my_settings'               =>  'me/settings',
     //'my_balance'                =>  'me/balance',
     //'my_stars'                  =>  'me/stars',
-    'my_drafts'                  =>  'me/drafts',
+    'my_drafts'                 =>  'me/drafts',
     'my_credits'                =>  'me/credits',
     'new_post'                  =>  'me/newpost',
+    'my_membership'             =>  'me/membership',
     'in_msg'                    =>  'me/messages/inbox',
     'out_msg'                   =>  'me/messages/sendbox',
     'all_notify'                =>  'me/notifications/all',
@@ -169,7 +185,14 @@ $site_endpoints = json_encode(array(
     'oauth_weixin_disconnect'   =>  'oauth/weixin?act=disconnect',
     'oauth_qq_refresh'          =>  'oauth/qq?act=refresh',
     'oauth_weibo_refresh'       =>  'oauth/weibo?act=refresh',
-    'oauth_weixin_refresh'      =>  'oauth/weixin?act=refresh'
+    'oauth_weixin_refresh'      =>  'oauth/weixin?act=refresh',
+    'manage_home'               =>  'management', //302 to status
+    'manage_status'             =>  'management/status', // 全站数据统计 用户文章评论订单等数据量 运营时间等
+    'manage_users'              =>  'management/users',
+    'manage_posts'              =>  'management/posts',
+    'manage_comments'           =>  'management/comments',
+    'manage_orders'             =>  'management/orders',
+    'manage_coupons'            =>  'management/coupons'
 
     // TODO: Add more
 ));

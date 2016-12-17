@@ -30,6 +30,7 @@
             <li><a class="<?php echo tt_conditional_class('me_tab drafts', $me_tab == 'drafts'); ?>" href="<?php echo tt_url_for('my_drafts', $tt_me_vars['tt_user_id']); ?>"><?php _e('MY DRAFTS', 'tt'); ?></a></li>
             <li><a class="<?php echo tt_conditional_class('me_tab stars', $me_tab == 'stars'); ?>" href="<?php echo tt_url_for('uc_stars', $tt_me_vars['tt_user_id']); ?>" target="_blank"><?php _e('MY STARS', 'tt'); ?></a></li>
             <li><a class="<?php echo tt_conditional_class('me_tab credits', $me_tab == 'credits'); ?>" href="<?php echo tt_url_for('my_credits', $tt_me_vars['tt_user_id']); ?>"><?php _e('CREDITS', 'tt'); ?></a></li>
+            <li><a class="<?php echo tt_conditional_class('me_tab membership', $me_tab == 'membership'); ?>" href="<?php echo tt_url_for('my_membership', $tt_me_vars['tt_user_id']); ?>"><?php _e('MEMBERSHIP', 'tt'); ?></a></li>
             <li><a class="<?php echo tt_conditional_class('me_tab orders', $me_tab == 'orders' || $me_tab == 'order'); ?>" href="<?php echo tt_url_for('my_all_orders', $tt_me_vars['tt_user_id']); ?>"><?php _e('ORDERS', 'tt'); ?></a></li>
         </ul>
     </nav>

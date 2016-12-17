@@ -38,6 +38,7 @@
                         <ul class="nav-user-menu dropdown-menu">
                             <?php if(current_user_can('edit_users')) { ?>
                             <li><a href="<?php echo get_dashboard_url(); ?>"><span class="tico tico-meter"></span><?php _e('Go Dashboard', 'tt'); ?></a></li>
+                            <li><a href="<?php echo tt_url_for('manage_home'); ?>"><span class="tico tico-list-small-thumbnails"></span><?php _e('Site Management', 'tt'); ?></a></li>
                             <?php } ?>
                             <li><a href="<?php echo tt_url_for('new_post'); ?>"><span class="tico tico-quill"></span><?php _e('New Post', 'tt'); ?></a></li>
                             <li><a href="<?php echo tt_url_for('uc_latest', $user); ?>"><span class="tico tico-stack-overflow"></span><?php _e('My Posts', 'tt'); ?></a></li>

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-12-17 17:34+0800\n"
-"PO-Revision-Date: 2016-12-17 17:34+0800\n"
+"POT-Creation-Date: 2016-12-17 18:40+0800\n"
+"PO-Revision-Date: 2016-12-17 18:40+0800\n"
 "Last-Translator: Zhiyan <mail@webapproach.net>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -616,13 +616,6 @@ msgstr "抱歉, 必须登录才能更新资料"
 msgid "Sorry, you have no authority to update user profiles."
 msgstr "抱歉, 你无权更新用户资料"
 
-#: core/api/v1/endpoints/class.Rest.UserProfile.Controller.php:79
-#: core/api/v1/endpoints/class.Rest.UserStatus.Controller.php:75
-#: core/api/v1/endpoints/class.Rest.UserStatus.Controller.php:107
-#: core/functions/func.User.php:349 core/functions/func.User.php:383
-msgid "The specified user is not existed"
-msgstr "指定的用户不存在"
-
 #: core/api/v1/endpoints/class.Rest.UserProfile.Controller.php:136
 msgid "Sorry, invalid profile type"
 msgstr "无效的资料类型"
@@ -630,6 +623,12 @@ msgstr "无效的资料类型"
 #: core/api/v1/endpoints/class.Rest.UserStatus.Controller.php:60
 msgid "Sorry, you cannot view user account status without signing in."
 msgstr "抱歉, 必须登录才能查看用户账户状态"
+
+#: core/api/v1/endpoints/class.Rest.UserStatus.Controller.php:75
+#: core/api/v1/endpoints/class.Rest.UserStatus.Controller.php:107
+#: core/functions/func.User.php:349 core/functions/func.User.php:383
+msgid "The specified user is not existed"
+msgstr "指定的用户不存在"
 
 #: core/api/v1/endpoints/class.Rest.UserStatus.Controller.php:89
 msgid "Sorry, you cannot update user account status without signing in."
@@ -1281,15 +1280,15 @@ msgstr "欢迎加入[%s]"
 msgid "您的站点「%s」有新用户注册 :"
 msgstr "您的站点「%s」有新用户注册 :"
 
-#: core/functions/func.Account.php:277
+#: core/functions/func.Account.php:283
 msgid "Update basic profiles successfully"
 msgstr "更新基本资料成功"
 
-#: core/functions/func.Account.php:298
+#: core/functions/func.Account.php:308
 msgid "Update extended profiles successfully"
 msgstr "更新扩展资料成功"
 
-#: core/functions/func.Account.php:323
+#: core/functions/func.Account.php:333
 msgid "Update security profiles successfully"
 msgstr "更新安全信息成功"
 
@@ -2517,6 +2516,10 @@ msgid "CREDITS"
 msgstr "积分"
 
 #: core/modules/me/me.NavMenu.php:33
+msgid "MEMBERSHIP"
+msgstr "会员"
+
+#: core/modules/me/me.NavMenu.php:34
 msgid "ORDERS"
 msgstr "订单"
 

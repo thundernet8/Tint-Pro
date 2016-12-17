@@ -282,7 +282,7 @@ function tt_handle_me_child_routes_template(){
             return;
         }
         // 对于order/8单个我的订单详情路由，孙路由必须是数字
-        // 对于editpost/8单个我的订单详情路由，孙路由必须是数字
+        // 对于editpost/8路由，孙路由必须是数字
         if($me_child_route === 'order' && (!$me_grandchild_route || !preg_match('/([0-9]{1,})/', $me_grandchild_route))){
             Utils::set404();
             return;
@@ -295,7 +295,7 @@ function tt_handle_me_child_routes_template(){
             $allow_grandchild = $allow_routes[$me_child_route];
             // 对于可以有孙路由的一般不允许直接子路由，必须访问孙路由，比如/me/notifications 必须跳转至/me/notifications/all
             if(empty($me_grandchild_route) && is_array($allow_grandchild)){
-                wp_redirect(home_url('/me/' . $me_child_route . '/' . $allow_grandchild[0]), 301);
+                wp_redirect(home_url('/me/' . $me_child_route . '/' . $allow_grandchild[0]), 302);
                 exit;
             }
             // 非法孙路由处理
@@ -568,6 +568,128 @@ function tt_handle_api_rewrite_rules($wp_rewrite){
     }
 }
 //add_action('generate_rewrite_rules', 'tt_handle_api_rewrite_rules'); //直接用 `rest_url_prefix` 更改wp-json至api @see core/api/api.Config.php
+
+
+/* Route : Management - e.g /management/users */
+
+/**
+ * /management主路由处理
+ *
+ * @since   2.0.0
+ *
+ * @return  void
+ */
+function tt_redirect_management_main_route(){
+    if(preg_match('/^\/management([^\/]*)$/i', $_SERVER['REQUEST_URI'])){
+        if($user_id = get_current_user_id()){
+            //$nickname = get_user_meta(get_current_user_id(), 'nickname', true);
+            wp_redirect(tt_url_for('manage_status'), 302);
+        }else{
+            Utils::set404();
+            return;
+        }
+        exit;
+    }
+}
+add_action('init', 'tt_redirect_management_main_route'); //the `init` hook is typically used by plugins to initialize. The current user is already authenticated by this time.
+
+
+/**
+ * /management子路由处理 - Rewrite
+ *
+ * @since   2.0.0
+ *
+ * @param   object   $wp_rewrite   WP_Rewrite
+ * @return  object
+ */
+function tt_handle_management_child_routes_rewrite($wp_rewrite){
+    if(get_option('permalink_structure')){
+        // Note: management子路由与孙路由必须字母组成，不区分大小写
+        $new_rules['management/([a-zA-Z]+)$'] = 'index.php?manage_child_route=$matches[1]&is_manage_route=1';
+        //$new_rules['management/([a-zA-Z]+)/([a-zA-Z]+)$'] = 'index.php?manage_child_route=$matches[1]&manage_grandchild_route=$matches[2]&is_manage_route=1';
+        $new_rules['management/orders/([0-9]{1,})$'] = 'index.php?manage_child_route=orders&manage_grandchild_route=$matches[1]&is_manage_route=1';
+        $new_rules['management/users/([0-9]{1,})$'] = 'index.php?manage_child_route=users&manage_grandchild_route=$matches[1]&is_manage_route=1';
+        // 分页
+        $new_rules['management/([a-zA-Z]+)/page/([0-9]{1,})$'] = 'index.php?manage_child_route=$matches[1]&is_manage_route=1&paged=$matches[2]';
+        $wp_rewrite->rules = $new_rules + $wp_rewrite->rules;
+    }
+    return $wp_rewrite;
+}
+add_filter('generate_rewrite_rules', 'tt_handle_management_child_routes_rewrite');
+
+
+/**
+ * /management子路由处理 - Template
+ *
+ * @since   2.0.0
+ *
+ * @return  void
+ */
+function tt_handle_manage_child_routes_template(){
+    $is_manage_route = strtolower(get_query_var('is_manage_route'));
+    $manage_child_route = strtolower(get_query_var('manage_child_route'));
+    $manage_grandchild_route = strtolower(get_query_var('manage_grandchild_route'));
+    if($is_manage_route && $manage_child_route){
+        //非Home
+        global $wp_query;
+        $wp_query->is_home = false;
+
+        //未登录的或非管理员404处理
+        if(!is_user_logged_in() || !current_user_can('edit_users')) {
+            Utils::set404();
+            return;
+        }
+
+        $allow_routes = (array)json_decode(ALLOWED_MANAGE_ROUTES);
+        $allow_child = array_keys($allow_routes);
+        // 非法的子路由处理
+        if(!in_array($manage_child_route, $allow_child)){
+            Utils::set404();
+            return;
+        }
+        // 对于orders/8单个订单详情路由，孙路由必须是数字
+        // 对于users/8单个用户详情路由，孙路由必须是数字
+        if($manage_child_route === 'orders' && $manage_grandchild_route && !preg_match('/([0-9]{1,})/', $manage_grandchild_route)){
+            Utils::set404();
+            return;
+        }
+        if($manage_child_route === 'users' && $manage_grandchild_route && !preg_match('/([0-9]{1,})/', $manage_grandchild_route)){
+            Utils::set404();
+            return;
+        }
+        if($manage_child_route !== 'orders' && $manage_child_route !== 'users'){
+            // 除orders/users外不允许有孙路由
+            if($manage_grandchild_route) {
+                Utils::set404();
+                return;
+            }
+        };
+        $template_id = ($manage_child_route === 'orders' && $manage_grandchild_route) ? 'Order' : (($manage_child_route === 'users' && $manage_grandchild_route) ? 'User' : ucfirst($manage_child_route));
+        $template = THEME_TPL . '/management/tpl.Manage.' . $template_id . '.php';
+        load_template($template);
+        exit;
+    }
+}
+add_action('template_redirect', 'tt_handle_manage_child_routes_template', 5);
+
+
+/**
+ * 为自定义的管理页添加query_var白名单
+ *
+ * @since   2.0.0
+ *
+ * @param   object  $public_query_vars  公共全局query_vars
+ * @return  object
+ */
+function tt_add_manage_page_query_vars($public_query_vars) {
+    if(!is_admin()){
+        $public_query_vars[] = 'is_manage_route';
+        $public_query_vars[] = 'manage_child_route';
+        $public_query_vars[] = 'manage_grandchild_route';
+    }
+    return $public_query_vars;
+}
+add_filter('query_vars', 'tt_add_manage_page_query_vars');
 
 
 /**
