@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-12-17 19:55+0800\n"
-"PO-Revision-Date: 2016-12-17 19:56+0800\n"
+"POT-Creation-Date: 2016-12-18 23:19+0800\n"
+"PO-Revision-Date: 2016-12-18 23:20+0800\n"
 "Last-Translator: Zhiyan <mail@webapproach.net>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -1392,15 +1392,21 @@ msgstr "你必须登录才能继续购买"
 msgid "The resource you willing to buy is not existed"
 msgstr "你要购买的资源不存在"
 
-#: core/functions/func.Download.php:76
+#: core/functions/func.Download.php:73 core/functions/shop/func.Shop.php:491
+#: core/modules/mod.Download.php:35 core/modules/mod.Download.php:49
+#: dash/options.php:945 dash/options.php:1051
+msgid "None"
+msgstr "无"
+
+#: core/functions/func.Download.php:77
 msgid "You have bought the resource yet, do not repeat a purchase"
 msgstr "你已经购买过了, 请不要重复购买"
 
-#: core/functions/func.Download.php:103
+#: core/functions/func.Download.php:104
 msgid "Failed to buy the resource, or maybe you have bought before"
 msgstr "购买资源失败, 或许你已经购买过了"
 
-#: core/functions/func.Download.php:107
+#: core/functions/func.Download.php:108
 msgid "Payment for the resource finished successfully"
 msgstr "资源购买支付成功"
 
@@ -1927,7 +1933,8 @@ msgstr "我的收藏"
 msgid "My Credits"
 msgstr "我的积分"
 
-#: core/functions/func.Seo.php:63 core/modules/mod.Header.Shop.php:99
+#: core/functions/func.Seo.php:63 core/modules/me/me.Tab.Orders.php:26
+#: core/modules/mod.Header.Shop.php:99
 msgid "My Orders"
 msgstr "我的订单"
 
@@ -2045,19 +2052,15 @@ msgstr ""
 "由Tint主题驱动(Tinection 2, 一个功能强大的内嵌用户中心和商店系统的WordPress主"
 "题)"
 
-#: core/functions/func.ShortCode.php:35
-msgid "购买"
-msgstr "购买"
-
-#: core/functions/func.ShortCode.php:75
+#: core/functions/func.ShortCode.php:85
 msgid " 此处内容需要 <span class=\"user-login\">登录</span> 才可见"
 msgstr " 此处内容需要 <span class=\"user-login\">登录</span> 才可见"
 
-#: core/functions/func.ShortCode.php:84
+#: core/functions/func.ShortCode.php:94
 msgid "此处内容需要登录并 <span class=\"user-login\">发表评论</span> 才可见"
 msgstr "此处内容需要登录并 <span class=\"user-login\">发表评论</span> 才可见"
 
-#: core/functions/func.ShortCode.php:91
+#: core/functions/func.ShortCode.php:101
 msgid "此处内容需要登录并 <a href=\"#respond\">发表评论</a> 才可见"
 msgstr "此处内容需要登录并 <a href=\"#respond\">发表评论</a> 才可见"
 
@@ -2179,65 +2182,65 @@ msgstr "优惠码还未生效"
 msgid "The coupon is expired"
 msgstr "优惠码已过期"
 
-#: core/functions/shop/func.Shop.Orders.php:82
+#: core/functions/shop/func.Shop.Orders.php:84
 msgid "Wait Payment"
 msgstr "等待买家付款"
 
-#: core/functions/shop/func.Shop.Orders.php:85
+#: core/functions/shop/func.Shop.Orders.php:87
 msgid "Payed, Wait Delivery"
 msgstr "已付款，等待卖家发货"
 
-#: core/functions/shop/func.Shop.Orders.php:88
+#: core/functions/shop/func.Shop.Orders.php:90
 msgid "Delivered, Wait Confirm"
 msgstr "已发货，等待买家确认"
 
-#: core/functions/shop/func.Shop.Orders.php:91
+#: core/functions/shop/func.Shop.Orders.php:93
 msgid "Trade Succeed"
 msgstr "交易成功"
 
-#: core/functions/shop/func.Shop.Orders.php:94
+#: core/functions/shop/func.Shop.Orders.php:96
 msgid "Trade Closed"
 msgstr "交易关闭"
 
-#: core/functions/shop/func.Shop.Orders.php:97
+#: core/functions/shop/func.Shop.Orders.php:99
 msgid "Order Created"
 msgstr "订单创建成功"
 
-#: core/functions/shop/func.Shop.Orders.php:352
-#: core/functions/shop/func.Shop.Orders.php:360
-#: core/functions/shop/func.Shop.Orders.php:377
+#: core/functions/shop/func.Shop.Orders.php:381
+#: core/functions/shop/func.Shop.Orders.php:389
+#: core/functions/shop/func.Shop.Orders.php:406
 msgid "Create combine order failed"
 msgstr "创建合并订单失败"
 
-#: core/functions/shop/func.Shop.Orders.php:422
+#: core/functions/shop/func.Shop.Orders.php:451
 msgid "The order with the a order id you specified is not existed"
 msgstr "指定的订单不存在"
 
-#: core/functions/shop/func.Shop.Orders.php:430
+#: core/functions/shop/func.Shop.Orders.php:459
 msgid "The coupon is invalid"
 msgstr "优惠码无效"
 
-#: core/functions/shop/func.Shop.Orders.php:500
+#: core/functions/shop/func.Shop.Orders.php:529
 #, php-format
 msgid "%s 商店交易提醒"
 msgstr "%s 商店交易提醒"
 
-#: core/functions/shop/func.Shop.Orders.php:516
+#: core/functions/shop/func.Shop.Orders.php:545
 #, php-format
 msgid "%s 商店新成功交易提醒"
 msgstr "%s 商店新成功交易提醒"
 
-#: core/functions/shop/func.Shop.Orders.php:604
+#: core/functions/shop/func.Shop.Orders.php:633
 #, php-format
 msgid "The Resources You Bought in %s"
 msgstr "你在 %s 付费购买的资源"
 
-#: core/functions/shop/func.Shop.Orders.php:607
+#: core/functions/shop/func.Shop.Orders.php:636
 #, php-format
 msgid "%d Credits"
 msgstr "%d 积分"
 
-#: core/functions/shop/func.Shop.Orders.php:607
+#: core/functions/shop/func.Shop.Orders.php:636
 #, php-format
 msgid "%0.2f YUAN"
 msgstr "%0.2f 元"
@@ -2422,7 +2425,7 @@ msgstr "数量"
 msgid "Sales"
 msgstr "销量"
 
-#: core/functions/shop/func.Shop.php:216
+#: core/functions/shop/func.Shop.php:216 core/modules/me/me.Tab.Orders.php:44
 #: core/templates/site/tpl.CheckOut.php:86
 msgid "Product Name"
 msgstr "商品名称"
@@ -2446,11 +2449,6 @@ msgstr "件"
 #: core/functions/shop/func.Shop.php:295
 msgid "Show all categories"
 msgstr "显示所有分类"
-
-#: core/functions/shop/func.Shop.php:491 core/modules/mod.Download.php:35
-#: core/modules/mod.Download.php:49 dash/options.php:945 dash/options.php:1051
-msgid "None"
-msgstr "无"
 
 #: core/functions/shop/func.Shop.php:492
 #, php-format
@@ -2507,6 +2505,7 @@ msgid "MY STARS"
 msgstr "收藏"
 
 #: core/modules/me/me.NavMenu.php:32
+#: core/viewModels/shop/vm.Embed.Product.php:72
 #: core/viewModels/shop/vm.Shop.Category.php:117
 #: core/viewModels/shop/vm.Shop.Home.php:110
 #: core/viewModels/shop/vm.Shop.Product.php:120
@@ -2515,7 +2514,7 @@ msgstr "收藏"
 #: core/viewModels/shop/vm.Shop.Search.php:111
 #: core/viewModels/shop/vm.Shop.Tag.php:117
 #: core/viewModels/shop/vm.Shop.ViewHistory.php:99
-#: core/viewModels/vm.Single.Post.php:106
+#: core/viewModels/vm.Single.Post.php:107
 msgid "CREDITS"
 msgstr "积分"
 
@@ -2526,6 +2525,81 @@ msgstr "会员"
 #: core/modules/me/me.NavMenu.php:34
 msgid "ORDERS"
 msgstr "订单"
+
+#: core/modules/me/me.Tab.Orders.php:29
+#, php-format
+msgid "%d order records in total"
+msgstr "共有 %d 条订单记录"
+
+#: core/modules/me/me.Tab.Orders.php:32
+msgid "Orders Type"
+msgstr "订单类型"
+
+#: core/modules/me/me.Tab.Orders.php:34
+msgid "ALL"
+msgstr "全部"
+
+#: core/modules/me/me.Tab.Orders.php:35
+msgid "CASH"
+msgstr "现金订单"
+
+#: core/modules/me/me.Tab.Orders.php:36
+msgid "CREDIT"
+msgstr "积分订单"
+
+#: core/modules/me/me.Tab.Orders.php:43
+msgid "Order Id"
+msgstr "订单号"
+
+#: core/modules/me/me.Tab.Orders.php:45
+msgid "Order Create Time"
+msgstr "下单时间"
+
+#: core/modules/me/me.Tab.Orders.php:46
+msgid "Order Total Price"
+msgstr "订单总价"
+
+#: core/modules/me/me.Tab.Orders.php:47
+msgid "Order Status"
+msgstr "订单状态"
+
+#: core/modules/me/me.Tab.Orders.php:48 core/templates/site/tpl.CheckOut.php:90
+msgid "Actions"
+msgstr "操作"
+
+#: core/modules/me/me.Tab.Orders.php:61
+msgid "View Order"
+msgstr "查看"
+
+#: core/modules/me/me.Tab.Orders.php:63
+msgid "Continue Pay"
+msgstr "支付"
+
+#: core/modules/me/me.Tab.Orders.php:64
+msgid "Delete"
+msgstr "删除"
+
+#: core/modules/me/me.Tab.Orders.php:75 core/modules/me/me.Tab.Orders.php:77
+msgid "← 上一页"
+msgstr "← 上一页"
+
+#: core/modules/me/me.Tab.Orders.php:80 core/modules/mod.HomeLatest.php:69
+#: core/modules/uc/uc.Tab.Chat.php:87 core/modules/uc/uc.Tab.Comments.php:54
+#: core/modules/uc/uc.Tab.Latest.php:67
+#, php-format
+msgid "Current Page %d"
+msgstr "第 %d 页"
+
+#: core/modules/me/me.Tab.Orders.php:82 core/modules/mod.HomeLatest.php:71
+#: core/modules/uc/uc.Tab.Chat.php:89 core/modules/uc/uc.Tab.Comments.php:56
+#: core/modules/uc/uc.Tab.Latest.php:69
+#, php-format
+msgid "Total %d Pages"
+msgstr "共 %d 页"
+
+#: core/modules/me/me.Tab.Orders.php:85 core/modules/me/me.Tab.Orders.php:87
+msgid "下一页 →"
+msgstr "下一页 →"
 
 #: core/modules/me/me.Tab.Settings.php:27 core/modules/uc/uc.Tab.Profile.php:41
 msgid "Basic Info"
@@ -2781,7 +2855,7 @@ msgid ""
 msgstr ""
 "%1$s. %2$s <a class=\"buy-resource\" href=\"javascript:;\" data-post-id="
 "\"%3$s\" data-resource-seq=\"%1$s\" target=\"_blank\"><i class=\"tico tico-"
-"cart\"></i>点击购买</a> (%4$s Credits)"
+"cart\"></i>点击购买</a> (%4$s 积分)"
 
 #: core/modules/mod.Download.php:61
 msgid "如果您发现本文件已经失效不能下载，请联系站长修正！"
@@ -2906,18 +2980,6 @@ msgstr "我的文章"
 #: core/modules/mod.HomeLatest.php:23
 msgid "Latest Posts"
 msgstr "近期文章"
-
-#: core/modules/mod.HomeLatest.php:69 core/modules/uc/uc.Tab.Chat.php:87
-#: core/modules/uc/uc.Tab.Comments.php:54 core/modules/uc/uc.Tab.Latest.php:67
-#, php-format
-msgid "Current Page %d"
-msgstr "第 %d 页"
-
-#: core/modules/mod.HomeLatest.php:71 core/modules/uc/uc.Tab.Chat.php:89
-#: core/modules/uc/uc.Tab.Comments.php:56 core/modules/uc/uc.Tab.Latest.php:69
-#, php-format
-msgid "Total %d Pages"
-msgstr "共 %d 页"
 
 #: core/modules/mod.HomePopular.php:22
 msgid "Popular"
@@ -3077,6 +3139,7 @@ msgstr "点击下载"
 #: core/modules/mod.SinglePost.php:71 core/modules/shop/mod.Shop.Relates.php:33
 #: core/modules/shop/mod.Shop.Sidebar.Left.php:39
 #: core/modules/shop/mod.Shop.Sidebar.Right.php:75
+#: core/templates/plates/embed-product.php:7
 #: core/templates/shop/tpl.Product.Archive.php:62
 #: core/templates/shop/tpl.Product.Category.php:63
 #: core/templates/shop/tpl.Product.Search.php:63
@@ -3087,6 +3150,7 @@ msgstr "FREE"
 
 #: core/modules/mod.SinglePost.php:86 core/modules/shop/mod.Shop.Relates.php:26
 #: core/modules/shop/mod.Shop.Sidebar.Right.php:51
+#: core/templates/plates/embed-product.php:17
 #: core/templates/shop/tpl.Product.php:82
 #, php-format
 msgid "Rated %0.1f out of 5"
@@ -3094,6 +3158,7 @@ msgstr "平均评分 %0.1f (满分5)"
 
 #: core/modules/mod.SinglePost.php:88 core/modules/shop/mod.Shop.Relates.php:28
 #: core/modules/shop/mod.Shop.Sidebar.Right.php:53
+#: core/templates/plates/embed-product.php:19
 #: core/templates/shop/tpl.Product.php:84
 #, php-format
 msgid ""
@@ -3112,6 +3177,7 @@ msgid ""
 msgstr "<span itemprop=\"reviewCount\" class=\"count\">%d</span> 个客户评价"
 
 #: core/modules/mod.SinglePost.php:93
+#: core/templates/plates/embed-product.php:23
 msgid "Buy Now"
 msgstr "立即购买"
 
@@ -3922,10 +3988,6 @@ msgstr "数量"
 msgid "Gross"
 msgstr "总价"
 
-#: core/templates/site/tpl.CheckOut.php:90
-msgid "Actions"
-msgstr "操作"
-
 #: core/templates/site/tpl.CheckOut.php:108
 msgid "View Details"
 msgstr "查看详情"
@@ -4178,6 +4240,7 @@ msgstr "发生了错误！"
 msgid "An error has happened on this page."
 msgstr "页面发生了一个错误."
 
+#: core/viewModels/shop/vm.Embed.Product.php:72
 #: core/viewModels/shop/vm.Shop.Category.php:117
 #: core/viewModels/shop/vm.Shop.Home.php:110
 #: core/viewModels/shop/vm.Shop.Product.php:120
@@ -4186,7 +4249,7 @@ msgstr "页面发生了一个错误."
 #: core/viewModels/shop/vm.Shop.Search.php:111
 #: core/viewModels/shop/vm.Shop.Tag.php:117
 #: core/viewModels/shop/vm.Shop.ViewHistory.php:99
-#: core/viewModels/vm.Single.Post.php:106
+#: core/viewModels/vm.Single.Post.php:107
 msgid "YUAN"
 msgstr "元"
 
@@ -4225,7 +4288,7 @@ msgstr "年归档"
 msgid "All posts which were published in year %s"
 msgstr "%s 年发表的所有文章"
 
-#: core/viewModels/vm.Single.Post.php:122
+#: core/viewModels/vm.Single.Post.php:123
 #, php-format
 msgid ""
 "All the posts are created by <a href=\"%1$s\" title=\"%2$s\" target=\"_blank"
@@ -4235,7 +4298,7 @@ msgstr ""
 "除特别注明外，本站所有文章均为<a href=\"%1$s\" title=\"%2$s\" target=\"_blank"
 "\">%2$s</a>原创，转载请注明出处来自<a href=\"%3$s\" title=\"%4$s\">%3$s</a>"
 
-#: core/viewModels/vm.Single.Post.php:123
+#: core/viewModels/vm.Single.Post.php:124
 #, php-format
 msgid ""
 "The post is from: <a href=\"%1$s\" title=\"%2$s\" target=\"_blank\">%2$s</a>"
@@ -5434,6 +5497,9 @@ msgstr "Zhiyan"
 #. Author URI of the plugin/theme
 msgid "https://www.webapproach.net/@zhiyan"
 msgstr "https://www.webapproach.net/@zhiyan"
+
+#~ msgid "购买"
+#~ msgstr "购买"
 
 #~ msgid "Visible for yourself"
 #~ msgstr "仅自己可见"

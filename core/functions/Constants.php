@@ -91,7 +91,7 @@ $me_allow_routes = json_encode(array(
     ),
     'orders' => array(
         'all',
-        'gold',
+        'credit',
         'cash'
     )
 ));
@@ -172,7 +172,7 @@ $site_endpoints = json_encode(array(
     'star_notify'               =>  'me/notifications/star',
     'update_notify'             =>  'me/notifications/update',
     'my_all_orders'             =>  'me/orders/all',
-    'my_gold_orders'            =>  'me/orders/gold',
+    'my_credit_orders'          =>  'me/orders/credit',
     'my_cash_orders'            =>  'me/orders/cash',
     'oauth_qq'                  =>  'oauth/qq',
     'oauth_weibo'               =>  'oauth/weibo',

@@ -162,7 +162,7 @@ function tt_get_coupons($limit = 20, $offset = 0){
     global $wpdb;
     $prefix = $wpdb->prefix;
     $coupons_table = $prefix . 'tt_coupons';
-    $results = $wpdb->get_results(sprintf("SELECT * FROM $coupons_table ORDER BY id DESC LIMIT %d, OFFSET %d", $limit, $offset));
+    $results = $wpdb->get_results(sprintf("SELECT * FROM $coupons_table ORDER BY id DESC LIMIT %d OFFSET %d", $limit, $offset));
     return $results;
 }
 

@@ -50,7 +50,7 @@ class AuthorWidgetVM extends BaseVM {
         $nickname = get_user_meta($this->_authorId, 'nickname', true);
 
         // 作者主页
-        $author_home = home_url('/@' . $nickname);
+        $author_home = get_author_posts_url($this->_authorId, $nickname);
 
         // 作者头像
         $avatar = tt_get_avatar($user);

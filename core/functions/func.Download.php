@@ -70,6 +70,7 @@ function tt_bought_post_resource($post_id, $resource_seq) {
     $price = isset($the_post_resource[2]) ? absint($the_post_resource[2]) : 1;
     $resource_name = $the_post_resource[0];
     $resource_link = $the_post_resource[1];
+    $resource_pass = isset($the_post_resource[3]) ? trim($the_post_resource[3]) : __('None', 'tt');
 
     //检查是否已购买
     if(tt_check_bought_post_resources($post_id, $resource_seq)) {
@@ -110,6 +111,7 @@ function tt_bought_post_resource($post_id, $resource_seq) {
         'adminEmail' => get_option('admin_email'),
         'resourceName' => $resource_name,
         'resourceLink' => $resource_link,
+        'resourcePass' => $resource_pass,
         'spentCredits' => $price,
         'creditsBalance' => $balance
     );

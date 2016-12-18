@@ -478,3 +478,45 @@
     position: relative;
   }
 }
+
+.pagination-mini {
+  display: block;
+  width: 100%;
+  //padding: 0 10px;
+  margin: 20px 0;
+  font-size: 1.5rem;
+  &>.prev,
+  &>.next {
+    a {
+      display: block;
+      padding: 8px 30px;
+      border: 1px solid #ddd;
+      border-radius: 20px;
+      color: #777;
+      text-align: center;
+    }
+    &:not(.disabled) {
+      a {
+        &:hover {
+          background: @brand-secondary;
+          color: #ffffff;
+        }
+      }
+    }
+    &.disabled {
+      a {
+        cursor: not-allowed;
+      }
+    }
+  }
+  &>.prev {
+
+  }
+  &>.page-nums {
+    text-align: center;
+    line-height: 40px;
+  }
+  &>.next {
+
+  }
+}
