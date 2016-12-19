@@ -1,5 +1,5 @@
 /**
- * Generated on Sat Dec 17 2016 17:31:58 GMT+0800 (中国标准时间) by Zhiyan
+ * Generated on Mon Dec 19 2016 21:56:42 GMT+0800 (中国标准时间) by Zhiyan
  *
  * @package   Tint
  * @version   v2.0.0
@@ -36,18 +36,18 @@
             var _loading = __webpack_require__(8);
             var _msgbox = __webpack_require__(6);
             __webpack_require__(9);
-            var _comments = __webpack_require__(25);
+            var _comments = __webpack_require__(27);
             var _comments2 = _interopRequireDefault(_comments);
-            var _postStar = __webpack_require__(26);
+            var _postStar = __webpack_require__(28);
             var _postStar2 = _interopRequireDefault(_postStar);
             var _scroll = __webpack_require__(14);
             var _scroll2 = _interopRequireDefault(_scroll);
-            var _animateAnchor = __webpack_require__(27);
+            var _animateAnchor = __webpack_require__(29);
             var _animateAnchor2 = _interopRequireDefault(_animateAnchor);
-            __webpack_require__(28);
-            var _follow = __webpack_require__(29);
+            __webpack_require__(30);
+            var _follow = __webpack_require__(31);
             var _follow2 = _interopRequireDefault(_follow);
-            var _pm = __webpack_require__(30);
+            var _pm = __webpack_require__(32);
             var _pm2 = _interopRequireDefault(_pm);
             var _modalSignBox = __webpack_require__(5);
             var _modalSignBox2 = _interopRequireDefault(_modalSignBox);
@@ -56,14 +56,14 @@
             var _signHelp2 = _interopRequireDefault(_signHelp);
             var _fixFooter = __webpack_require__(16);
             var _fixFooter2 = _interopRequireDefault(_fixFooter);
-            var _fixProductContent = __webpack_require__(31);
+            var _fixProductContent = __webpack_require__(33);
             var _fixProductContent2 = _interopRequireDefault(_fixProductContent);
-            var _toggle = __webpack_require__(32);
+            var _toggle = __webpack_require__(34);
             var _toggle2 = _interopRequireDefault(_toggle);
             __webpack_require__(18);
-            var _usermeta = __webpack_require__(33);
+            var _usermeta = __webpack_require__(35);
             var _usermeta2 = _interopRequireDefault(_usermeta);
-            var _buy = __webpack_require__(34);
+            var _buy = __webpack_require__(36);
             var _buy2 = _interopRequireDefault(_buy);
             var _referral = __webpack_require__(17);
             var _referral2 = _interopRequireDefault(_referral);
@@ -3020,6 +3020,8 @@
             }(jQuery, window, document));
         }[['call']](exports, __webpack_require__(1)));
     },
+    ,
+    ,
     ,
     ,
     ,

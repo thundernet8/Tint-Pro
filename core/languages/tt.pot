@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-12-18 23:19+0800\n"
+"POT-Creation-Date: 2016-12-19 21:51+0800\n"
 "PO-Revision-Date: 2016-08-17 21:40+0800\n"
 "Last-Translator: \n"
 "Language-Team: Zhiyan <mail@webapproach.net>\n"
@@ -303,28 +303,28 @@ msgstr ""
 msgid "Sorry, you cannot update order without signing in."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:274
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:277
 msgid "Update order failed"
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:299
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:302
 msgid "Sorry, you cannot delete order without signing in."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:316
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:319
 msgid "Delete order failed"
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:318
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:321
 msgid "Delete order successfully"
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:333
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:336
 #: core/api/v1/endpoints/class.Rest.ShoppingCart.Controller.php:186
 msgid "Sorry, you cannot delete cart items without signing in."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:349
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:352
 #: core/api/v1/endpoints/class.Rest.ShoppingCart.Controller.php:202
 msgid "Delete items from cart successfully"
 msgstr ""
@@ -2243,29 +2243,45 @@ msgstr ""
 msgid "The coupon is invalid"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Orders.php:529
+#: core/functions/shop/func.Shop.Orders.php:532
 #, php-format
 msgid "%s 商店交易提醒"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Orders.php:545
+#: core/functions/shop/func.Shop.Orders.php:548
 #, php-format
 msgid "%s 商店新成功交易提醒"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Orders.php:633
+#: core/functions/shop/func.Shop.Orders.php:636
 #, php-format
 msgid "The Resources You Bought in %s"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Orders.php:636
+#: core/functions/shop/func.Shop.Orders.php:639
 #, php-format
 msgid "%d Credits"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Orders.php:636
+#: core/functions/shop/func.Shop.Orders.php:639
 #, php-format
 msgid "%0.2f YUAN"
+msgstr ""
+
+#: core/functions/shop/func.Shop.Orders.php:668
+msgid "The order is not found"
+msgstr ""
+
+#: core/functions/shop/func.Shop.Orders.php:672
+msgid "The order has been payed"
+msgstr ""
+
+#: core/functions/shop/func.Shop.Orders.php:676
+msgid "The order has been closed"
+msgstr ""
+
+#: core/functions/shop/func.Shop.Orders.php:692
+msgid "Some error happened when continue the payment"
 msgstr ""
 
 #: core/functions/shop/func.Shop.php:28
@@ -2591,36 +2607,48 @@ msgid "Actions"
 msgstr ""
 
 #: core/modules/me/me.Tab.Orders.php:61
+msgid "View the order detail"
+msgstr ""
+
+#: core/modules/me/me.Tab.Orders.php:61
 msgid "View Order"
 msgstr ""
 
-#: core/modules/me/me.Tab.Orders.php:63
-msgid "Continue Pay"
+#: core/modules/me/me.Tab.Orders.php:64
+msgid "Finish the payment"
 msgstr ""
 
 #: core/modules/me/me.Tab.Orders.php:64
+msgid "Continue Pay"
+msgstr ""
+
+#: core/modules/me/me.Tab.Orders.php:66
+msgid "Delete the order"
+msgstr ""
+
+#: core/modules/me/me.Tab.Orders.php:66
 msgid "Delete"
 msgstr ""
 
-#: core/modules/me/me.Tab.Orders.php:75 core/modules/me/me.Tab.Orders.php:77
+#: core/modules/me/me.Tab.Orders.php:77 core/modules/me/me.Tab.Orders.php:79
 msgid "← 上一页"
 msgstr ""
 
-#: core/modules/me/me.Tab.Orders.php:80 core/modules/mod.HomeLatest.php:69
+#: core/modules/me/me.Tab.Orders.php:82 core/modules/mod.HomeLatest.php:69
 #: core/modules/uc/uc.Tab.Chat.php:87 core/modules/uc/uc.Tab.Comments.php:54
 #: core/modules/uc/uc.Tab.Latest.php:67
 #, php-format
 msgid "Current Page %d"
 msgstr ""
 
-#: core/modules/me/me.Tab.Orders.php:82 core/modules/mod.HomeLatest.php:71
+#: core/modules/me/me.Tab.Orders.php:84 core/modules/mod.HomeLatest.php:71
 #: core/modules/uc/uc.Tab.Chat.php:89 core/modules/uc/uc.Tab.Comments.php:56
 #: core/modules/uc/uc.Tab.Latest.php:69
 #, php-format
 msgid "Total %d Pages"
 msgstr ""
 
-#: core/modules/me/me.Tab.Orders.php:85 core/modules/me/me.Tab.Orders.php:87
+#: core/modules/me/me.Tab.Orders.php:87 core/modules/me/me.Tab.Orders.php:89
 msgid "下一页 →"
 msgstr ""
 
@@ -4158,8 +4186,8 @@ msgstr ""
 #: core/templates/site/tpl.PayResult.php:83
 #, php-format
 msgid ""
-"You use site credit to accomplish this payment, currently your credit "
-"balance is: %d"
+"You use site credit to accomplish this payment, cost %d credits, currently "
+"your credit balance is: %d"
 msgstr ""
 
 #: core/templates/site/tpl.PayResult.php:85

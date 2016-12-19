@@ -181,7 +181,7 @@ class WP_REST_Order_Controller extends WP_REST_Controller
      */
     public function update_item( $request ) {
         $order_id = $request['id'];
-        $order = tt_get_order($order_id);
+        //$order = tt_get_order($order_id);
         if($coupon = $request->get_param('coupon')){
             $update = tt_update_order_by_coupon($order_id, $coupon);
         }elseif($request->get_param('checkout')){
@@ -211,6 +211,7 @@ class WP_REST_Order_Controller extends WP_REST_Controller
             $update = tt_update_order($order_id, $data, $format); // 把用户留言和地址更新到订单
 
             // 如果是积分订单,立即支付
+            $order = tt_get_order($order_id);
             if($order->order_currency == 'credit'){
                 $pay = tt_credit_pay($order->order_total_price, true);
                 if($pay instanceof WP_Error) return $pay;
@@ -238,6 +239,8 @@ class WP_REST_Order_Controller extends WP_REST_Controller
                         )));
                 }
             }
+        }elseif($request->get_param('continuePay')){
+            return tt_continue_pay($order_id);
         }else{
             // 此条件一般是用户自己或管理员管理订单,需要操作orderStatus信息
             $data = array();

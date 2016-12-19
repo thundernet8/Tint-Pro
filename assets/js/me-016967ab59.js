@@ -1,5 +1,5 @@
 /**
- * Generated on Sat Dec 17 2016 17:31:59 GMT+0800 (中国标准时间) by Zhiyan
+ * Generated on Mon Dec 19 2016 21:56:41 GMT+0800 (中国标准时间) by Zhiyan
  *
  * @package   Tint
  * @version   v2.0.0
@@ -35,15 +35,28 @@
             'use strict';
             var _loading = __webpack_require__(8);
             var _msgbox = __webpack_require__(6);
+            __webpack_require__(9);
             var _scroll = __webpack_require__(14);
             var _scroll2 = _interopRequireDefault(_scroll);
-            __webpack_require__(9);
-            var _checkout = __webpack_require__(35);
-            var _checkout2 = _interopRequireDefault(_checkout);
+            var _modalSignBox = __webpack_require__(5);
+            var _modalSignBox2 = _interopRequireDefault(_modalSignBox);
+            __webpack_require__(21);
+            var _signHelp = __webpack_require__(15);
+            var _signHelp2 = _interopRequireDefault(_signHelp);
             var _fixFooter = __webpack_require__(16);
             var _fixFooter2 = _interopRequireDefault(_fixFooter);
-            var _buyResource = __webpack_require__(36);
-            var _buyResource2 = _interopRequireDefault(_buyResource);
+            var _unstar = __webpack_require__(22);
+            var _unstar2 = _interopRequireDefault(_unstar);
+            var _referral = __webpack_require__(17);
+            var _referral2 = _interopRequireDefault(_referral);
+            var _imageUploader = __webpack_require__(23);
+            var _imageUploader2 = _interopRequireDefault(_imageUploader);
+            var _saveSettings = __webpack_require__(24);
+            var _saveSettings2 = _interopRequireDefault(_saveSettings);
+            var _continuePay = __webpack_require__(25);
+            var _continuePay2 = _interopRequireDefault(_continuePay);
+            var _deleteOrder = __webpack_require__(26);
+            var _deleteOrder2 = _interopRequireDefault(_deleteOrder);
             function _interopRequireDefault(obj) {
                 return obj && obj[['__esModule']] ? obj : { default: obj };
             }
@@ -51,9 +64,20 @@
                 (0, _loading[['handleLineLoading']])();
                 _msgbox[['popMsgbox']][['init']]();
                 _scroll2[['default']][['initScrollTo']]();
-                _checkout2[['default']][['init']]();
+                _modalSignBox2[['default']][['init']]();
+                _signHelp2[['default']][['init']]();
+                $('img.lazy')[['lazyload']]({
+                    effect: 'fadeIn',
+                    threshold: 50
+                });
                 (0, _fixFooter2[['default']])();
-                _buyResource2[['default']][['init']]();
+                _unstar2[['default']][['init']]();
+                $('.popover-qr')[['popover']]({ html: true });
+                _referral2[['default']][['init']]();
+                _imageUploader2[['default']][['initAvatarUpload']]();
+                _saveSettings2[['default']][['init']]();
+                _continuePay2[['default']][['init']]();
+                _deleteOrder2[['default']][['init']]();
             });
         }[['call']](exports, __webpack_require__(1)));
     },
@@ -515,9 +539,9 @@
         }[['call']](exports, __webpack_require__(1), __webpack_require__(1)));
     },
     function (module, exports, __webpack_require__) {
+        var require;
+        var require;
         var __WEBPACK_AMD_DEFINE_RESULT__;
-        var require;
-        var require;
         'use strict';
         var _typeof = typeof Symbol === 'function' && typeof Symbol[['iterator']] === 'symbol' ? function (obj) {
             return typeof obj;
@@ -2627,7 +2651,29 @@
             exports[['default']] = ScrollHandler;
         }[['call']](exports, __webpack_require__(1)));
     },
-    ,
+    function (module, exports, __webpack_require__) {
+        (function ($) {
+            'use strict';
+            Object[['defineProperty']](exports, '__esModule', { value: true });
+            var _utils = __webpack_require__(3);
+            var _utils2 = _interopRequireDefault(_utils);
+            function _interopRequireDefault(obj) {
+                return obj && obj[['__esModule']] ? obj : { default: obj };
+            }
+            var _signInLinkSel = '.login-link';
+            var SignHelp = {
+                init: function init() {
+                    $('body')[['on']]('click', _signInLinkSel, function (e) {
+                        if ($(window)[['width']]() >= 640) {
+                            e[['preventDefault']]();
+                            _utils2[['default']][['checkLogin']]();
+                        }
+                    });
+                }
+            };
+            exports[['default']] = SignHelp;
+        }[['call']](exports, __webpack_require__(1)));
+    },
     function (module, exports, __webpack_require__) {
         (function ($) {
             'use strict';
@@ -2641,24 +2687,412 @@
             };
         }[['call']](exports, __webpack_require__(1)));
     },
+    function (module, exports, __webpack_require__) {
+        (function ($) {
+            'use strict';
+            Object[['defineProperty']](exports, '__esModule', { value: true });
+            __webpack_require__(18);
+            var _utils = __webpack_require__(3);
+            var _utils2 = _interopRequireDefault(_utils);
+            function _interopRequireDefault(obj) {
+                return obj && obj[['__esModule']] ? obj : { default: obj };
+            }
+            var _body = $('body');
+            var _initRef = function _initRef() {
+                if (!$[['cookie']]('tt_ref')) {
+                    $[['cookie']]('tt_ref', _utils2[['default']][['getQueryString']]('ref'), {
+                        expires: 1,
+                        path: '/'
+                    });
+                }
+            };
+            var Referral = { init: _initRef };
+            exports[['default']] = Referral;
+        }[['call']](exports, __webpack_require__(1)));
+    },
+    function (module, exports, __webpack_require__) {
+        var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
+        'use strict';
+        var _typeof = typeof Symbol === 'function' && typeof Symbol[['iterator']] === 'symbol' ? function (obj) {
+            return typeof obj;
+        } : function (obj) {
+            return obj && typeof Symbol === 'function' && obj[['constructor']] === Symbol ? 'symbol' : typeof obj;
+        };
+        (function (factory) {
+            if (true) {
+                !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(1)], __WEBPACK_AMD_DEFINE_FACTORY__ = factory, __WEBPACK_AMD_DEFINE_RESULT__ = typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? __WEBPACK_AMD_DEFINE_FACTORY__[['apply']](exports, __WEBPACK_AMD_DEFINE_ARRAY__) : __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module[['exports']] = __WEBPACK_AMD_DEFINE_RESULT__));
+            } else if ((typeof exports === 'undefined' ? 'undefined' : _typeof(exports)) === 'object') {
+                module[['exports']] = factory(require('jquery'));
+            } else {
+                factory(jQuery);
+            }
+        }(function ($) {
+            var pluses = /\+/g;
+            function encode(s) {
+                return config[['raw']] ? s : encodeURIComponent(s);
+            }
+            function decode(s) {
+                return config[['raw']] ? s : decodeURIComponent(s);
+            }
+            function stringifyCookieValue(value) {
+                return encode(config[['json']] ? JSON[['stringify']](value) : String(value));
+            }
+            function parseCookieValue(s) {
+                if (s[['indexOf']]('"') === 0) {
+                    s = s[['slice']](1, -1)[['replace']](/\\"/g, '"')[['replace']](/\\\\/g, '\\');
+                }
+                try {
+                    s = decodeURIComponent(s[['replace']](pluses, ' '));
+                    return config[['json']] ? JSON[['parse']](s) : s;
+                } catch (e) {
+                }
+            }
+            function read(s, converter) {
+                var value = config[['raw']] ? s : parseCookieValue(s);
+                return $[['isFunction']](converter) ? converter(value) : value;
+            }
+            var config = $[['cookie']] = function (key, value, options) {
+                if (arguments[['length']] > 1 && !$[['isFunction']](value)) {
+                    options = $[['extend']]({}, config[['defaults']], options);
+                    if (typeof options[['expires']] === 'number') {
+                        var days = options[['expires']], t = options[['expires']] = new Date();
+                        t[['setMilliseconds']](t[['getMilliseconds']]() + days * 86400000);
+                    }
+                    return document[['cookie']] = [
+                        encode(key),
+                        '=',
+                        stringifyCookieValue(value),
+                        options[['expires']] ? '; expires=' + options[['expires']][['toUTCString']]() : '',
+                        options[['path']] ? '; path=' + options[['path']] : '',
+                        options[['domain']] ? '; domain=' + options[['domain']] : '',
+                        options[['secure']] ? '; secure' : ''
+                    ][['join']]('');
+                }
+                var result = key ? undefined : {}, cookies = document[['cookie']] ? document[['cookie']][['split']]('; ') : [], i = 0, l = cookies[['length']];
+                for (; i < l; i++) {
+                    var parts = cookies[i][['split']]('='), name = decode(parts[['shift']]()), cookie = parts[['join']]('=');
+                    if (key === name) {
+                        result = read(cookie, value);
+                        break;
+                    }
+                    if (!key && (cookie = read(cookie)) !== undefined) {
+                        result[name] = cookie;
+                    }
+                }
+                return result;
+            };
+            config[['defaults']] = {};
+            $[['removeCookie']] = function (key, options) {
+                $[['cookie']](key, '', $[['extend']]({}, options, { expires: -1 }));
+                return !$[['cookie']](key);
+            };
+        }));
+    },
     ,
     ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
+    function (module, exports, __webpack_require__) {
+        (function (jQuery) {
+            'use strict';
+            (function ($, window, document, undefined) {
+                var $window = $(window);
+                $[['fn']][['lazyload']] = function (options) {
+                    var elements = this;
+                    var $container;
+                    var settings = {
+                        threshold: 0,
+                        failure_limit: 0,
+                        event: 'scroll',
+                        effect: 'show',
+                        container: window,
+                        data_attribute: 'original',
+                        skip_invisible: true,
+                        appear: null,
+                        load: null
+                    };
+                    function update() {
+                        var counter = 0;
+                        elements[['each']](function () {
+                            var $this = $(this);
+                            if (settings[['skip_invisible']] && !$this[['is']](':visible')) {
+                                return;
+                            }
+                            if ($[['abovethetop']](this, settings) || $[['leftofbegin']](this, settings)) {
+                            } else if (!$[['belowthefold']](this, settings) && !$[['rightoffold']](this, settings)) {
+                                $this[['trigger']]('appear');
+                                counter = 0;
+                            } else {
+                                if (++counter > settings[['failure_limit']]) {
+                                    return false;
+                                }
+                            }
+                        });
+                    }
+                    if (options) {
+                        if (undefined !== options[['failurelimit']]) {
+                            options[['failure_limit']] = options[['failurelimit']];
+                            delete options[['failurelimit']];
+                        }
+                        if (undefined !== options[['effectspeed']]) {
+                            options[['effect_speed']] = options[['effectspeed']];
+                            delete options[['effectspeed']];
+                        }
+                        $[['extend']](settings, options);
+                    }
+                    $container = settings[['container']] === undefined || settings[['container']] === window ? $window : $(settings[['container']]);
+                    if (0 === settings[['event']][['indexOf']]('scroll')) {
+                        $container[['bind']](settings[['event']], function (event) {
+                            return update();
+                        });
+                    }
+                    this[['each']](function () {
+                        var self = this;
+                        var $self = $(self);
+                        self[['loaded']] = false;
+                        $self[['one']]('appear', function () {
+                            if (!this[['loaded']]) {
+                                if (settings[['appear']]) {
+                                    var elements_left = elements[['length']];
+                                    settings[['appear']][['call']](self, elements_left, settings);
+                                }
+                                $('<img />')[['bind']]('load', function () {
+                                    $self[['hide']]()[['attr']]('src', $self[['data']](settings[['data_attribute']]))[settings[['effect']]](settings[['effect_speed']]);
+                                    self[['loaded']] = true;
+                                    var temp = $[['grep']](elements, function (element) {
+                                        return !element[['loaded']];
+                                    });
+                                    elements = $(temp);
+                                    if (settings[['load']]) {
+                                        var elements_left = elements[['length']];
+                                        settings[['load']][['call']](self, elements_left, settings);
+                                    }
+                                })[['attr']]('src', $self[['data']](settings[['data_attribute']]));
+                            }
+                        });
+                        if (0 !== settings[['event']][['indexOf']]('scroll')) {
+                            $self[['bind']](settings[['event']], function (event) {
+                                if (!self[['loaded']]) {
+                                    $self[['trigger']]('appear');
+                                }
+                            });
+                        }
+                    });
+                    $window[['bind']]('resize', function (event) {
+                        update();
+                    });
+                    if (/iphone|ipod|ipad.*os 5/gi[['test']](navigator[['appVersion']])) {
+                        $window[['bind']]('pageshow', function (event) {
+                            if (event[['originalEvent']][['persisted']]) {
+                                elements[['each']](function () {
+                                    $(this)[['trigger']]('appear');
+                                });
+                            }
+                        });
+                    }
+                    $(window)[['load']](function () {
+                        update();
+                    });
+                    return this;
+                };
+                $[['belowthefold']] = function (element, settings) {
+                    var fold;
+                    if (settings[['container']] === undefined || settings[['container']] === window) {
+                        fold = $window[['height']]() + $window[['scrollTop']]();
+                    } else {
+                        fold = $(settings[['container']])[['offset']]()[['top']] + $(settings[['container']])[['height']]();
+                    }
+                    return fold <= $(element)[['offset']]()[['top']] - settings[['threshold']];
+                };
+                $[['rightoffold']] = function (element, settings) {
+                    var fold;
+                    if (settings[['container']] === undefined || settings[['container']] === window) {
+                        fold = $window[['width']]() + $window[['scrollLeft']]();
+                    } else {
+                        fold = $(settings[['container']])[['offset']]()[['left']] + $(settings[['container']])[['width']]();
+                    }
+                    return fold <= $(element)[['offset']]()[['left']] - settings[['threshold']];
+                };
+                $[['abovethetop']] = function (element, settings) {
+                    var fold;
+                    if (settings[['container']] === undefined || settings[['container']] === window) {
+                        fold = $window[['scrollTop']]();
+                    } else {
+                        fold = $(settings[['container']])[['offset']]()[['top']];
+                    }
+                    return fold >= $(element)[['offset']]()[['top']] + settings[['threshold']] + $(element)[['height']]();
+                };
+                $[['leftofbegin']] = function (element, settings) {
+                    var fold;
+                    if (settings[['container']] === undefined || settings[['container']] === window) {
+                        fold = $window[['scrollLeft']]();
+                    } else {
+                        fold = $(settings[['container']])[['offset']]()[['left']];
+                    }
+                    return fold >= $(element)[['offset']]()[['left']] + settings[['threshold']] + $(element)[['width']]();
+                };
+                $[['inviewport']] = function (element, settings) {
+                    return !$[['rightoffold']](element, settings) && !$[['leftofbegin']](element, settings) && !$[['belowthefold']](element, settings) && !$[['abovethetop']](element, settings);
+                };
+                $[['extend']]($[['expr']][':'], {
+                    'below-the-fold': function belowTheFold(a) {
+                        return $[['belowthefold']](a, { threshold: 0 });
+                    },
+                    'above-the-top': function aboveTheTop(a) {
+                        return !$[['belowthefold']](a, { threshold: 0 });
+                    },
+                    'right-of-screen': function rightOfScreen(a) {
+                        return $[['rightoffold']](a, { threshold: 0 });
+                    },
+                    'left-of-screen': function leftOfScreen(a) {
+                        return !$[['rightoffold']](a, { threshold: 0 });
+                    },
+                    'in-viewport': function inViewport(a) {
+                        return $[['inviewport']](a, { threshold: 0 });
+                    },
+                    'above-the-fold': function aboveTheFold(a) {
+                        return !$[['belowthefold']](a, { threshold: 0 });
+                    },
+                    'right-of-fold': function rightOfFold(a) {
+                        return $[['rightoffold']](a, { threshold: 0 });
+                    },
+                    'left-of-fold': function leftOfFold(a) {
+                        return !$[['rightoffold']](a, { threshold: 0 });
+                    }
+                });
+            }(jQuery, window, document));
+        }[['call']](exports, __webpack_require__(1)));
+    },
+    function (module, exports, __webpack_require__) {
+        (function ($) {
+            'use strict';
+            Object[['defineProperty']](exports, '__esModule', { value: true });
+            var _globalConfig = __webpack_require__(2);
+            var _utils = __webpack_require__(3);
+            var _utils2 = _interopRequireDefault(_utils);
+            function _interopRequireDefault(obj) {
+                return obj && obj[['__esModule']] ? obj : { default: obj };
+            }
+            var _body = $('body');
+            var _unstarBtnSel = '.unstar-link>a';
+            var _unstaring = false;
+            var _removeUnstared = function _removeUnstared(postId) {
+                var articleBoxSel = '#post-' + postId[['toString']]();
+                var article = $(articleBoxSel);
+                if (article) {
+                    article[['slideUp']]('slow', function () {
+                        article[['remove']]();
+                    });
+                }
+            };
+            var _unstar = function _unstar(btn) {
+                if (_unstaring || !_utils2[['default']][['checkLogin']]())
+                    return false;
+                var postId = btn[['data']]('post-id');
+                var url = _globalConfig[['Routes']][['postStars']] + '/' + postId;
+                var data = {};
+                var beforeSend = function beforeSend() {
+                    if (_unstaring)
+                        return false;
+                    _unstaring = true;
+                };
+                var finishRequest = function finishRequest() {
+                    if (!_unstaring)
+                        return;
+                    _unstaring = false;
+                };
+                var success = function success(data, textStatus, xhr) {
+                    if (data[['success']] && data[['success']] == 1) {
+                        _removeUnstared(postId);
+                    } else {
+                    }
+                    finishRequest();
+                };
+                var error = function error(xhr, textStatus, err) {
+                    finishRequest();
+                };
+                $[['post']]({
+                    url: url + '?' + $[['param']](_utils2[['default']][['filterDataForRest']](data)),
+                    type: 'DELETE',
+                    dataType: 'json',
+                    beforeSend: beforeSend,
+                    success: success,
+                    error: error
+                });
+            };
+            var UnstarKit = {
+                init: function init() {
+                    _body[['on']]('click', _unstarBtnSel, function () {
+                        var $this = $(this);
+                        _unstar($this);
+                    });
+                }
+            };
+            exports[['default']] = UnstarKit;
+        }[['call']](exports, __webpack_require__(1)));
+    },
+    function (module, exports, __webpack_require__) {
+        (function ($) {
+            'use strict';
+            Object[['defineProperty']](exports, '__esModule', { value: true });
+            var _utils = __webpack_require__(3);
+            var _utils2 = _interopRequireDefault(_utils);
+            var _msgbox = __webpack_require__(6);
+            function _interopRequireDefault(obj) {
+                return obj && obj[['__esModule']] ? obj : { default: obj };
+            }
+            var _body = $('body');
+            var _initAvatarUpload = function _initAvatarUpload() {
+                _handleAvatarUpload();
+            };
+            var _handleAvatarUpload = function _handleAvatarUpload() {
+                var options = {
+                    auto: true,
+                    server: _utils2[['default']][['getAbsUrl']]('site/upload'),
+                    pick: {
+                        id: '.avatar-picker',
+                        innerHTML: '',
+                        multiple: false
+                    },
+                    accept: {
+                        title: 'Images',
+                        extensions: 'jpg,jpeg,bmp,png',
+                        mimeTypes: 'image/*'
+                    },
+                    compress: {
+                        width: 100,
+                        height: 100,
+                        quality: 90,
+                        allowMagnify: false,
+                        crop: true,
+                        preserveHeaders: true,
+                        noCompressIfLarger: false,
+                        compressSize: 0
+                    },
+                    formData: { imgFor: 'avatar' }
+                };
+                if (typeof WebUploader == 'undefined')
+                    return false;
+                var uploader = WebUploader[['create']](options);
+                uploader[['on']]('startUpload', function () {
+                    _utils2[['default']][['showFullLoader']]('tico-spinner2', '\u6b63\u5728\u4e0a\u4f20\u4e2d...');
+                });
+                uploader[['on']]('uploadProgress', function (file, percentage) {
+                });
+                uploader[['on']]('uploadSuccess', function (file, response) {
+                    _msgbox[['popMsgbox']][['success']]({ title: '\u5934\u50cf\u4e0a\u4f20\u6210\u529f' });
+                    $('.local-avatar-label>img')[['attr']]('src', response[['data']][['avatar']]);
+                    $('.local-avatar-label>input[name="avatar"]')[['prop']]('checked', true)[['val']]('custom');
+                });
+                uploader[['on']]('uploadError', function (file) {
+                    _msgbox[['popMsgbox']][['error']]({ title: '\u4e0a\u4f20\u5934\u50cf\u5931\u8d25' });
+                });
+                uploader[['on']]('uploadComplete', function (file) {
+                    _utils2[['default']][['hideFullLoader']]();
+                });
+            };
+            var ImageUploader = { initAvatarUpload: _initAvatarUpload };
+            exports[['default']] = ImageUploader;
+        }[['call']](exports, __webpack_require__(1)));
+    },
     function (module, exports, __webpack_require__) {
         (function ($) {
             'use strict';
@@ -2671,74 +3105,285 @@
                 return obj && obj[['__esModule']] ? obj : { default: obj };
             }
             var _body = $('body');
-            var _memoTextarea = $('#memo-textarea');
-            var _addressListSel = '.address-list>li';
-            var _addressListActiveSel = '.address-list>li.active';
-            var _receiverNameInput = $('input[name="receiver-name"]');
-            var _receiverEmailInput = $('input[name="receiver-email"]');
-            var _receiverPhoneInput = $('input[name="receiver-phone"]');
-            var _receiverAddrInput = $('input[name="receiver-address"]');
-            var _receiverZipInput = $('input[name="receiver-zip"]');
-            var _addNewAddrSel = '.add-new-address';
-            var _payMethodListSel = '.pay-method-list';
-            var _couponInput = $('input[name="coupon"]');
-            var _couponApplyBtnSel = '#apply-coupon';
-            var _realPriceSel = '.real-price';
-            var _submitBtnSel = '#submit-order';
-            var _originSendBtnText = '';
-            var _spinner = '<i class="tico tico-spinner spinning"></i>';
-            var _submitting = false;
-            var _validateRequiredInputs = function _validateRequiredInputs() {
-                if (_receiverNameInput && _receiverEmailInput) {
-                    var name = _receiverNameInput[['val']]();
-                    var email = _receiverEmailInput[['val']]();
-                    return name[['length']] && _utils2[['default']][['isEmail']](email);
-                }
-                return true;
+            var _apiurl = _globalConfig[['Routes']][['userProfiles']];
+            var _sending = false;
+            var _saveBtnSel = '.btn-save-settings';
+            var _avatarTypeSel = 'input[type="radio"][name="avatar"]:checked';
+            var _nicknameSel = 'input[name="nickname"]';
+            var _siteSel = 'input[name="user_url"]';
+            var _descriptionSel = 'textarea[name="description"]';
+            var _qqSel = 'input[name="tt_qq"]';
+            var _weiboSel = 'input[name="tt_weibo"]';
+            var _weixinSel = 'input[name="tt_weixin"]';
+            var _twitterSel = 'input[name="tt_twitter"]';
+            var _facebookSel = 'input[name="tt_facebook"]';
+            var _googleplusSel = 'input[name="tt_googleplus"]';
+            var _alipaySel = 'input[name="tt_alipay_email"]';
+            var _alipayPaySel = 'input[name="tt_alipay_pay_qr"]';
+            var _weixinPaySel = 'input[name="tt_wechat_pay_qr"]';
+            var _emailSel = 'input[name="user_email"]';
+            var _passwordSel = 'input[name="password"]';
+            var _password2Sel = 'input[name="password2"]';
+            var _init = function _init() {
+                _body[['on']]('click', _saveBtnSel, function () {
+                    _handleSave($(this));
+                });
             };
-            var _handleCheckout = function _handleCheckout(btn) {
-                if (_submitting || !_utils2[['default']][['checkLogin']]() || !_validateRequiredInputs())
+            var _handleSave = function _handleSave(btn) {
+                var type = btn[['data']]('save-info');
+                switch (type) {
+                case 'basis':
+                    _saveBasicProfile();
+                    break;
+                case 'extends':
+                    _saveExtendProfile();
+                    break;
+                case 'security':
+                    _saveSecurityInfo();
+                    break;
+                default:
+                    return;
+                }
+            };
+            var _saveBasicProfile = function _saveBasicProfile() {
+                var nickname = $(_nicknameSel)[['val']]();
+                if (nickname[['length']] == 0) {
+                    _msgbox[['popMsgbox']][['alert']]({
+                        title: '\u6635\u79f0\u4e0d\u80fd\u4e3a\u7a7a',
+                        timer: 2000
+                    });
+                    return false;
+                }
+                var data = {
+                    type: 'basis',
+                    avatarType: $(_avatarTypeSel)[['val']](),
+                    nickname: nickname,
+                    site: $(_siteSel)[['val']](),
+                    description: $(_descriptionSel)[['val']]()
+                };
+                var beforeSend = function beforeSend() {
+                    if (_sending)
+                        return;
+                    _utils2[['default']][['showFullLoader']]('tico-spinner2', '\u6b63\u5728\u66f4\u65b0\u57fa\u672c\u8d44\u6599...');
+                    _sending = true;
+                };
+                var finishRequest = function finishRequest() {
+                    if (!_sending)
+                        return;
+                    _utils2[['default']][['hideFullLoader']]();
+                    _sending = false;
+                };
+                var success = function success(data, textStatus, xhr) {
+                    finishRequest();
+                    if (data[['success']] && data[['success']] == 1) {
+                        _msgbox[['popMsgbox']][['success']]({
+                            title: data[['message']],
+                            timer: 2000,
+                            showConfirmButton: true
+                        });
+                    } else {
+                        _msgbox[['popMsgbox']][['error']]({
+                            title: data[['message']],
+                            timer: 2000,
+                            showConfirmButton: true
+                        });
+                    }
+                };
+                var error = function error(xhr, textStatus, err) {
+                    finishRequest();
+                    _msgbox[['popMsgbox']][['error']]({
+                        title: xhr[['responseJSON']] ? xhr[['responseJSON']][['message']] : xhr[['responseText']],
+                        timer: 2000,
+                        showConfirmButton: true
+                    });
+                };
+                $[['post']]({
+                    url: _apiurl,
+                    data: _utils2[['default']][['filterDataForRest']](data),
+                    dataType: 'json',
+                    beforeSend: beforeSend,
+                    success: success,
+                    error: error
+                });
+            };
+            var _saveExtendProfile = function _saveExtendProfile() {
+                var data = {
+                    type: 'extends',
+                    qq: $(_qqSel)[['val']](),
+                    weibo: $(_weiboSel)[['val']](),
+                    weixin: $(_weixinSel)[['val']](),
+                    twitter: $(_twitterSel)[['val']](),
+                    facebook: $(_facebookSel)[['val']](),
+                    googleplus: $(_googleplusSel)[['val']](),
+                    alipay: $(_alipaySel)[['val']](),
+                    alipayPay: $(_alipayPaySel)[['val']](),
+                    weixinPay: $(_weixinPaySel)[['val']]()
+                };
+                var beforeSend = function beforeSend() {
+                    if (_sending)
+                        return;
+                    _utils2[['default']][['showFullLoader']]('tico-spinner2', '\u6b63\u5728\u66f4\u65b0\u6269\u5c55\u8d44\u6599...');
+                    _sending = true;
+                };
+                var finishRequest = function finishRequest() {
+                    if (!_sending)
+                        return;
+                    _utils2[['default']][['hideFullLoader']]();
+                    _sending = false;
+                };
+                var success = function success(data, textStatus, xhr) {
+                    finishRequest();
+                    if (data[['success']] && data[['success']] == 1) {
+                        _msgbox[['popMsgbox']][['success']]({
+                            title: data[['message']],
+                            timer: 2000,
+                            showConfirmButton: true
+                        });
+                    } else {
+                        _msgbox[['popMsgbox']][['error']]({
+                            title: data[['message']],
+                            timer: 2000,
+                            showConfirmButton: true
+                        });
+                    }
+                };
+                var error = function error(xhr, textStatus, err) {
+                    finishRequest();
+                    _msgbox[['popMsgbox']][['error']]({
+                        title: xhr[['responseJSON']] ? xhr[['responseJSON']][['message']] : xhr[['responseText']],
+                        timer: 2000,
+                        showConfirmButton: true
+                    });
+                };
+                $[['post']]({
+                    url: _apiurl,
+                    data: _utils2[['default']][['filterDataForRest']](data),
+                    dataType: 'json',
+                    beforeSend: beforeSend,
+                    success: success,
+                    error: error
+                });
+            };
+            var _saveSecurityInfo = function _saveSecurityInfo() {
+                var email = $(_emailSel)[['val']]();
+                var password = $(_passwordSel)[['val']]();
+                var password2 = $(_password2Sel)[['val']]();
+                if (email[['length']] == 0) {
+                    _msgbox[['popMsgbox']][['alert']]({
+                        title: '\u90ae\u7bb1\u4e0d\u80fd\u4e3a\u7a7a',
+                        timer: 2000
+                    });
+                    return false;
+                }
+                if (!_utils2[['default']][['isEmail']](email)) {
+                    _msgbox[['popMsgbox']][['alert']]({
+                        title: '\u90ae\u7bb1\u683c\u5f0f\u4e0d\u6b63\u786e',
+                        timer: 2000
+                    });
+                    return false;
+                }
+                if (password[['length']] > 0 && password[['length']] < 6) {
+                    _msgbox[['popMsgbox']][['alert']]({
+                        title: '\u5bc6\u7801\u4f4d\u6570\u592a\u77ed',
+                        timer: 2000
+                    });
+                    return false;
+                }
+                if (password != password2) {
+                    _msgbox[['popMsgbox']][['alert']]({
+                        title: '\u4e24\u6b21\u8f93\u5165\u7684\u5bc6\u7801\u4e0d\u4e00\u81f4',
+                        timer: 2000
+                    });
+                    return false;
+                }
+                var data = {
+                    type: 'security',
+                    email: email
+                };
+                if (password[['length']] > 0) {
+                    data[['password']] = password;
+                }
+                var beforeSend = function beforeSend() {
+                    if (_sending)
+                        return;
+                    _utils2[['default']][['showFullLoader']]('tico-spinner2', '\u6b63\u5728\u66f4\u65b0\u5b89\u5168\u4fe1\u606f...');
+                    _sending = true;
+                };
+                var finishRequest = function finishRequest() {
+                    if (!_sending)
+                        return;
+                    _utils2[['default']][['hideFullLoader']]();
+                    _sending = false;
+                };
+                var success = function success(data, textStatus, xhr) {
+                    finishRequest();
+                    if (data[['success']] && data[['success']] == 1) {
+                        _msgbox[['popMsgbox']][['success']]({
+                            title: data[['message']],
+                            timer: 2000,
+                            showConfirmButton: true
+                        });
+                    } else {
+                        _msgbox[['popMsgbox']][['error']]({
+                            title: data[['message']],
+                            timer: 2000,
+                            showConfirmButton: true
+                        });
+                    }
+                };
+                var error = function error(xhr, textStatus, err) {
+                    finishRequest();
+                    _msgbox[['popMsgbox']][['error']]({
+                        title: xhr[['responseJSON']] ? xhr[['responseJSON']][['message']] : xhr[['responseText']],
+                        timer: 2000,
+                        showConfirmButton: true
+                    });
+                };
+                $[['post']]({
+                    url: _apiurl,
+                    data: _utils2[['default']][['filterDataForRest']](data),
+                    dataType: 'json',
+                    beforeSend: beforeSend,
+                    success: success,
+                    error: error
+                });
+            };
+            var SaveSettingsKit = { init: _init };
+            exports[['default']] = SaveSettingsKit;
+        }[['call']](exports, __webpack_require__(1)));
+    },
+    function (module, exports, __webpack_require__) {
+        (function ($) {
+            'use strict';
+            Object[['defineProperty']](exports, '__esModule', { value: true });
+            var _globalConfig = __webpack_require__(2);
+            var _utils = __webpack_require__(3);
+            var _utils2 = _interopRequireDefault(_utils);
+            var _msgbox = __webpack_require__(6);
+            function _interopRequireDefault(obj) {
+                return obj && obj[['__esModule']] ? obj : { default: obj };
+            }
+            var _body = $('body');
+            var _continueBtnSel = '.order-actions>.continue-pay';
+            var _submitting = false;
+            var _handleContinuePay = function _handleContinuePay(btn) {
+                if (_submitting || !_utils2[['default']][['checkLogin']]())
                     return false;
                 var orderId = parseInt(btn[['data']]('order-id'));
                 if (!orderId) {
                     return false;
                 }
-                var data = { checkout: true };
-                data[['userMessage']] = _memoTextarea[['length']] ? _memoTextarea[['val']]() : '';
-                var addressList = $(_addressListActiveSel);
-                if (addressList[['length']]) {
-                    data[['addressId']] = addressList[['data']]('address-id');
-                } else {
-                    if (_receiverNameInput[['length']] && _receiverEmailInput[['length']] && _receiverNameInput[['val']]() && _receiverEmailInput[['val']]()) {
-                        data[['receiverName']] = _receiverNameInput[['val']]();
-                        data[['receiverEmail']] = _receiverEmailInput[['val']]();
-                        data[['receiverPhone']] = _receiverPhoneInput[['length']] ? _receiverPhoneInput[['val']]() : '';
-                        data[['receiverAddr']] = _receiverAddrInput[['length']] ? _receiverAddrInput[['val']]() : '';
-                        data[['receiverZip']] = _receiverZipInput[['length']] ? _receiverZipInput[['val']]() : '';
-                    } else {
-                        return false;
-                    }
-                }
-                var paymentList = $(_payMethodListSel);
-                if (paymentList[['length']]) {
-                    var checkedMethod = paymentList[['find']]('input[type="radio"]:checked');
-                    data[['payMethod']] = checkedMethod[['length']] ? checkedMethod[['val']]() : 'qrcode';
-                }
+                var data = { continuePay: true };
                 var url = _globalConfig[['Routes']][['orders']] + '/' + orderId;
                 var beforeSend = function beforeSend() {
                     if (_submitting)
                         return;
-                    _originSendBtnText = btn[['text']]();
-                    btn[['html']](_spinner);
-                    btn[['prop']]('disabled', true);
-                    _utils2[['default']][['showFullLoader']]('tico-spinner9 spinning', '\u6b63\u5728\u66f4\u65b0\u8ba2\u5355\u4fe1\u606f...');
+                    _utils2[['default']][['showFullLoader']]('tico-spinner2', '\u6b63\u5728\u63d0\u4ea4\u652f\u4ed8\u8bf7\u6c42...');
                     _submitting = true;
                 };
                 var finishRequest = function finishRequest() {
                     if (!_submitting)
                         return;
-                    btn[['text']](_originSendBtnText);
-                    btn[['prop']]('disabled', false);
                     _utils2[['default']][['hideFullLoader']]();
                     _submitting = false;
                 };
@@ -2771,107 +3416,13 @@
                     error: error
                 });
             };
-            var _initCheckout = function _initCheckout() {
-                _body[['on']]('click', _submitBtnSel, function () {
-                    _handleCheckout($(this));
-                });
-            };
-            var _initChooseAddr = function _initChooseAddr() {
-                if ($(_addressListActiveSel)[['length']] < 1) {
-                    $(_addressListSel)[['first']]()[['addClass']]('active');
-                }
-                _body[['on']]('click', _addressListSel, function () {
-                    $(this)[['siblings']]()[['removeClass']]('active')[['end']]()[['addClass']]('active');
-                });
-            };
-            var _handleApplyCoupon = function _handleApplyCoupon(btn) {
-                if (_submitting || !_utils2[['default']][['checkLogin']]() || !_couponInput || !_couponInput[['val']]())
-                    return false;
-                var orderId = parseInt(btn[['data']]('order-id'));
-                if (!orderId) {
-                    return false;
-                }
-                var data = { coupon: _couponInput[['val']]() };
-                var url = _globalConfig[['Routes']][['orders']] + '/' + orderId;
-                var beforeSend = function beforeSend() {
-                    if (_submitting)
-                        return;
-                    _originSendBtnText = btn[['text']]();
-                    btn[['html']](_spinner);
-                    btn[['prop']]('disabled', true);
-                    $(_submitBtnSel)[['prop']]('disabled', true);
-                    _couponInput[['prop']]('disabled', true);
-                    _submitting = true;
-                };
-                var finishRequest = function finishRequest() {
-                    if (!_submitting)
-                        return;
-                    btn[['text']](_originSendBtnText);
-                    btn[['prop']]('disabled', false);
-                    $(_submitBtnSel)[['prop']]('disabled', false);
-                    _couponInput[['prop']]('disabled', false);
-                    _submitting = false;
-                };
-                var success = function success(data, textStatus, xhr) {
-                    finishRequest();
-                    if (data[['success']] && data[['success']] == 1) {
-                        _msgbox[['popMsgbox']][['success']]({
-                            title: data[['message']],
-                            timer: 2000,
-                            showConfirmButton: true
-                        });
-                        $(_realPriceSel)[['text']](data[['data']][['realPrice']]);
-                    } else {
-                        _msgbox[['popMsgbox']][['error']]({
-                            title: data[['message']],
-                            timer: 2000,
-                            showConfirmButton: true
-                        });
-                    }
-                };
-                var error = function error(xhr, textStatus, err) {
-                    finishRequest();
-                    _msgbox[['popMsgbox']][['error']]({
-                        title: xhr[['responseJSON']] ? xhr[['responseJSON']][['message']] : xhr[['responseText']],
-                        timer: 2000,
-                        showConfirmButton: true
-                    });
-                };
-                $[['post']]({
-                    url: url,
-                    data: _utils2[['default']][['filterDataForRest']](data),
-                    dataType: 'json',
-                    beforeSend: beforeSend,
-                    success: success,
-                    error: error
-                });
-            };
-            var _initApplyCoupon = function _initApplyCoupon() {
-                _body[['on']]('click', _couponApplyBtnSel, function () {
-                    _handleApplyCoupon($(this));
-                });
-            };
-            var _initAddAddress = function _initAddAddress() {
-                _body[['on']]('click', _addNewAddrSel, function () {
-                    var addrInputGroup = $($(this)[['data']]('show-sel'));
-                    var addrList = $($(this)[['data']]('hide-sel'));
-                    if (addrInputGroup[['length']]) {
-                        addrInputGroup[['show']]();
-                    }
-                    if (addrList[['length']]) {
-                        addrList[['remove']]();
-                    }
-                    $(this)[['remove']]();
-                });
-            };
             var _init = function _init() {
-                _initCheckout();
-                _initChooseAddr();
-                _initApplyCoupon();
-                _initAddAddress();
+                _body[['on']]('click', _continueBtnSel, function () {
+                    _handleContinuePay($(this));
+                });
             };
-            var Checkout = { init: _init };
-            exports[['default']] = Checkout;
+            var ContinuePay = { init: _init };
+            exports[['default']] = ContinuePay;
         }[['call']](exports, __webpack_require__(1)));
     },
     function (module, exports, __webpack_require__) {
@@ -2885,44 +3436,39 @@
             function _interopRequireDefault(obj) {
                 return obj && obj[['__esModule']] ? obj : { default: obj };
             }
-            var _buyBtnSel = '.buy-resource';
             var _body = $('body');
-            var _sending = false;
-            var _buyResource = function _buyResource(btn) {
-                if (_sending || !_utils2[['default']][['checkLogin']]())
+            var _continueBtnSel = '.order-actions>.delete-order';
+            var _submitting = false;
+            var _handleContinuePay = function _handleContinuePay(btn) {
+                if (_submitting || !_utils2[['default']][['checkLogin']]())
                     return false;
-                var postId = parseInt(btn[['data']]('post-id'));
-                var resourceSeq = parseInt(btn[['data']]('resource-seq'));
-                if (!postId || !resourceSeq)
+                var orderId = parseInt(btn[['data']]('order-id'));
+                if (!orderId) {
                     return false;
-                var url = _globalConfig[['Routes']][['boughtResources']];
-                var data = {
-                    postId: postId,
-                    resourceSeq: resourceSeq
-                };
+                }
+                var data = {};
+                var url = _globalConfig[['Routes']][['orders']] + '/' + orderId;
                 var beforeSend = function beforeSend() {
-                    if (_sending)
+                    if (_submitting)
                         return;
                     _utils2[['default']][['showFullLoader']]('tico-spinner2', '\u6b63\u5728\u8bf7\u6c42\u4e2d...');
-                    _sending = true;
+                    _submitting = true;
                 };
                 var finishRequest = function finishRequest() {
-                    if (!_sending)
+                    if (!_submitting)
                         return;
                     _utils2[['default']][['hideFullLoader']]();
-                    _sending = false;
+                    _submitting = false;
                 };
                 var success = function success(data, textStatus, xhr) {
                     finishRequest();
                     if (data[['success']] && data[['success']] == 1) {
                         _msgbox[['popMsgbox']][['success']]({
                             title: data[['message']],
-                            text: '\u6d88\u8d39\u79ef\u5206: ' + data[['data']][['cost']] + '<br>\u5f53\u524d\u79ef\u5206\u4f59\u989d: ' + data[['data']][['balance']],
-                            html: true,
+                            timer: 2000,
                             showConfirmButton: true
-                        }, function () {
-                            location[['replace']](location[['href']]);
                         });
+                        $('#oid-' + data[['data']][['order_id']])[['remove']]();
                     } else {
                         _msgbox[['popMsgbox']][['error']]({
                             title: data[['message']],
@@ -2940,24 +3486,21 @@
                     });
                 };
                 $[['post']]({
-                    url: url,
-                    data: _utils2[['default']][['filterDataForRest']](data),
+                    url: url + '?' + $[['param']](_utils2[['default']][['filterDataForRest']](data)),
+                    type: 'DELETE',
                     dataType: 'json',
                     beforeSend: beforeSend,
                     success: success,
                     error: error
                 });
             };
-            var BuyResource = {
-                init: function init() {
-                    _body[['on']]('click', _buyBtnSel, function (e) {
-                        e[['preventDefault']]();
-                        var $this = $(this);
-                        _buyResource($this);
-                    });
-                }
+            var _init = function _init() {
+                _body[['on']]('click', _continueBtnSel, function () {
+                    _handleContinuePay($(this));
+                });
             };
-            exports[['default']] = BuyResource;
+            var DeleteOrder = { init: _init };
+            exports[['default']] = DeleteOrder;
         }[['call']](exports, __webpack_require__(1)));
     }
 ]));

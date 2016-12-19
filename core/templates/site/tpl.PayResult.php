@@ -80,7 +80,7 @@ $current_user = wp_get_current_user();
             <div class="result-wrapper">
                 <h1><?php echo sprintf(__('Payment for Order ID %s has finished successfully', 'tt'), $order_id); ?></h1>
                 <?php if($order->order_currency == 'credit'){ ?>
-                <p class="order-status"><?php echo sprintf(__('You use site credit to accomplish this payment, currently your credit balance is: %d', 'tt'), (int)get_user_meta($current_user->ID, 'tt_credits', true)); ?></p>
+                <p class="order-status"><?php echo sprintf(__('You use site credit to accomplish this payment, cost %d credits, currently your credit balance is: %d', 'tt'), intval($order->order_total_price), tt_get_user_credit($current_user->ID)); ?></p>
                 <?php }else{ ?>
                 <p class="order-status"><?php echo sprintf(__('Currently the order status is: %s', 'tt'), tt_get_order_status_text($order->order_status)); ?></p>
                 <?php } ?>

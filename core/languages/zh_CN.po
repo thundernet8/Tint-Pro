@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-12-18 23:19+0800\n"
-"PO-Revision-Date: 2016-12-18 23:20+0800\n"
+"POT-Creation-Date: 2016-12-19 21:51+0800\n"
+"PO-Revision-Date: 2016-12-19 21:51+0800\n"
 "Last-Translator: Zhiyan <mail@webapproach.net>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -300,28 +300,28 @@ msgstr "创建订单成功"
 msgid "Sorry, you cannot update order without signing in."
 msgstr "抱歉, 必须登录才能更新订单"
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:274
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:277
 msgid "Update order failed"
 msgstr "更新订单失败"
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:299
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:302
 msgid "Sorry, you cannot delete order without signing in."
 msgstr "抱歉, 你必须登录才能删除订单"
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:316
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:319
 msgid "Delete order failed"
 msgstr "删除订单失败"
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:318
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:321
 msgid "Delete order successfully"
 msgstr "删除订单成功"
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:333
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:336
 #: core/api/v1/endpoints/class.Rest.ShoppingCart.Controller.php:186
 msgid "Sorry, you cannot delete cart items without signing in."
 msgstr "抱歉, 你必须登录才能清空购物车"
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:349
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:352
 #: core/api/v1/endpoints/class.Rest.ShoppingCart.Controller.php:202
 msgid "Delete items from cart successfully"
 msgstr "清空购物车成功"
@@ -2220,30 +2220,46 @@ msgstr "指定的订单不存在"
 msgid "The coupon is invalid"
 msgstr "优惠码无效"
 
-#: core/functions/shop/func.Shop.Orders.php:529
+#: core/functions/shop/func.Shop.Orders.php:532
 #, php-format
 msgid "%s 商店交易提醒"
 msgstr "%s 商店交易提醒"
 
-#: core/functions/shop/func.Shop.Orders.php:545
+#: core/functions/shop/func.Shop.Orders.php:548
 #, php-format
 msgid "%s 商店新成功交易提醒"
 msgstr "%s 商店新成功交易提醒"
 
-#: core/functions/shop/func.Shop.Orders.php:633
+#: core/functions/shop/func.Shop.Orders.php:636
 #, php-format
 msgid "The Resources You Bought in %s"
 msgstr "你在 %s 付费购买的资源"
 
-#: core/functions/shop/func.Shop.Orders.php:636
+#: core/functions/shop/func.Shop.Orders.php:639
 #, php-format
 msgid "%d Credits"
 msgstr "%d 积分"
 
-#: core/functions/shop/func.Shop.Orders.php:636
+#: core/functions/shop/func.Shop.Orders.php:639
 #, php-format
 msgid "%0.2f YUAN"
 msgstr "%0.2f 元"
+
+#: core/functions/shop/func.Shop.Orders.php:668
+msgid "The order is not found"
+msgstr "未找到订单"
+
+#: core/functions/shop/func.Shop.Orders.php:672
+msgid "The order has been payed"
+msgstr "订单已支付"
+
+#: core/functions/shop/func.Shop.Orders.php:676
+msgid "The order has been closed"
+msgstr "订单已关闭"
+
+#: core/functions/shop/func.Shop.Orders.php:692
+msgid "Some error happened when continue the payment"
+msgstr "请求继续支付时发生了一些错误"
 
 #: core/functions/shop/func.Shop.php:28
 msgctxt "taxonomy general name"
@@ -2568,36 +2584,48 @@ msgid "Actions"
 msgstr "操作"
 
 #: core/modules/me/me.Tab.Orders.php:61
+msgid "View the order detail"
+msgstr "查看订单详情"
+
+#: core/modules/me/me.Tab.Orders.php:61
 msgid "View Order"
 msgstr "查看"
 
-#: core/modules/me/me.Tab.Orders.php:63
+#: core/modules/me/me.Tab.Orders.php:64
+msgid "Finish the payment"
+msgstr "完成订单支付"
+
+#: core/modules/me/me.Tab.Orders.php:64
 msgid "Continue Pay"
 msgstr "支付"
 
-#: core/modules/me/me.Tab.Orders.php:64
+#: core/modules/me/me.Tab.Orders.php:66
+msgid "Delete the order"
+msgstr "删除订单"
+
+#: core/modules/me/me.Tab.Orders.php:66
 msgid "Delete"
 msgstr "删除"
 
-#: core/modules/me/me.Tab.Orders.php:75 core/modules/me/me.Tab.Orders.php:77
+#: core/modules/me/me.Tab.Orders.php:77 core/modules/me/me.Tab.Orders.php:79
 msgid "← 上一页"
 msgstr "← 上一页"
 
-#: core/modules/me/me.Tab.Orders.php:80 core/modules/mod.HomeLatest.php:69
+#: core/modules/me/me.Tab.Orders.php:82 core/modules/mod.HomeLatest.php:69
 #: core/modules/uc/uc.Tab.Chat.php:87 core/modules/uc/uc.Tab.Comments.php:54
 #: core/modules/uc/uc.Tab.Latest.php:67
 #, php-format
 msgid "Current Page %d"
 msgstr "第 %d 页"
 
-#: core/modules/me/me.Tab.Orders.php:82 core/modules/mod.HomeLatest.php:71
+#: core/modules/me/me.Tab.Orders.php:84 core/modules/mod.HomeLatest.php:71
 #: core/modules/uc/uc.Tab.Chat.php:89 core/modules/uc/uc.Tab.Comments.php:56
 #: core/modules/uc/uc.Tab.Latest.php:69
 #, php-format
 msgid "Total %d Pages"
 msgstr "共 %d 页"
 
-#: core/modules/me/me.Tab.Orders.php:85 core/modules/me/me.Tab.Orders.php:87
+#: core/modules/me/me.Tab.Orders.php:87 core/modules/me/me.Tab.Orders.php:89
 msgid "下一页 →"
 msgstr "下一页 →"
 
@@ -4145,9 +4173,9 @@ msgstr "完成支付"
 #: core/templates/site/tpl.PayResult.php:83
 #, php-format
 msgid ""
-"You use site credit to accomplish this payment, currently your credit "
-"balance is: %d"
-msgstr "你使用站内积分完成了本次支付, 当前您的积分余额为: %d"
+"You use site credit to accomplish this payment, cost %d credits, currently "
+"your credit balance is: %d"
+msgstr "你使用站内积分完成了本次支付, 花费了 %d 积分, 当前您的积分余额为: %d"
 
 #: core/templates/site/tpl.PayResult.php:85
 #, php-format

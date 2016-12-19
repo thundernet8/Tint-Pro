@@ -50,20 +50,20 @@
                     </thead>
                     <tbody>
                     <?php foreach ($orders as $order){ ?>
-                        <tr>
+                        <tr id="oid-<?php echo $order->order_id; ?>">
                             <td><?php echo $order->order_id; ?></td>
                             <td><?php echo $order->product_name; ?></td>
                             <td><?php echo $order->order_time; ?></td>
                             <td><?php if($order->order_currency == 'credit'){ echo '<i class="tico tico-diamond"></i>' . intval($order->order_total_price); }else{ echo '<i class="tico tico-cny"></i>' . sprintf('%0.2f', $order->order_total_price); } ?></td>
                             <td><?php echo tt_get_order_status_text($order->order_status); ?></td>
                             <td>
-                                <div class="order-actions" data-order-id="<?php echo $order->order_id; ?>" data-order-seq="<?php echo $order->id; ?>">
-                                    <a data-order-action="view_detail" href="<?php echo tt_url_for('my_order', $order->id); ?>" target="_blank"><?php _e('View Order', 'tt'); ?></a>
+                                <div class="order-actions">
+                                    <a data-order-action="view_detail" href="<?php echo tt_url_for('my_order', $order->id); ?>" title="<?php _e('View the order detail', 'tt'); ?>" target="_blank"><?php _e('View Order', 'tt'); ?></a>
                                     <?php if(!in_array($order->order_status, [OrderStatus::PAYED_AND_WAIT_DELIVERY, OrderStatus::DELIVERED_AND_WAIT_CONFIRM, OrderStatus::TRADE_SUCCESS])) { ?>
                                         <span class="text-explode">|</span>
-                                        <a data-order-action="continue_pay" href="javascript:;"><?php _e('Continue Pay', 'tt'); ?></a>
+                                        <a class="continue-pay" href="javascript:;" data-order-action="continue_pay" data-order-id="<?php echo $order->order_id; ?>" data-order-seq="<?php echo $order->id; ?>" title="<?php _e('Finish the payment'); ?>"><?php _e('Continue Pay', 'tt'); ?></a>
                                         <span class="text-explode">|</span>
-                                        <a data-order-action="delete" href="javascript:;"><?php _e('Delete', 'tt'); ?></a>
+                                        <a class="delete-order" href="javascript:;" data-order-action="delete" data-order-id="<?php echo $order->order_id; ?>" data-order-seq="<?php echo $order->id; ?>" title="<?php _e('Delete the order', 'tt'); ?>"><?php _e('Delete', 'tt'); ?></a>
                                     <?php } ?>
                                 </div>
                             </td>

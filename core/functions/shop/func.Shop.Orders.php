@@ -477,15 +477,21 @@ function tt_update_order_by_coupon($order_id, $coupon_code){
  * @return bool
  */
 function tt_delete_order($id){
-    global $wpdb;
-    $prefix = $wpdb->prefix;
-    $orders_table = $prefix . 'tt_orders';
-    $delete = $wpdb->delete(
-        $orders_table,
-        array('id' => $id),
-        array('%d')
-    );
-    return !!$delete;
+//    global $wpdb;
+//    $prefix = $wpdb->prefix;
+//    $orders_table = $prefix . 'tt_orders';
+//    $delete = $wpdb->delete(
+//        $orders_table,
+//        array('id' => $id),
+//        array('%d')
+//    );
+    $user_id = get_current_user_id();
+    // 清理VM缓存
+    tt_clear_cache_key_like('tt_cache_daily_vm_MeOrdersVM_user' . $user_id);
+
+    $order = tt_get_order_by_sequence($id);
+    return tt_update_order($order->order_id, array('deleted' => 1, 'deleted_by' => $user_id), array('%d', '%d'));
+//    return !!$delete;
 }
 
 
@@ -497,15 +503,20 @@ function tt_delete_order($id){
  * @return bool
  */
 function tt_delete_order_by_order_id($order_id){
-    global $wpdb;
-    $prefix = $wpdb->prefix;
-    $orders_table = $prefix . 'tt_orders';
-    $delete = $wpdb->delete(
-        $orders_table,
-        array('order_id' => $order_id),
-        array('%d')
-    );
-    return !!$delete;
+//    global $wpdb;
+//    $prefix = $wpdb->prefix;
+//    $orders_table = $prefix . 'tt_orders';
+//    $delete = $wpdb->delete(
+//        $orders_table,
+//        array('order_id' => $order_id),
+//        array('%d')
+//    );
+//    return !!$delete;
+    $user_id = get_current_user_id();
+    // 清理VM缓存
+    tt_clear_cache_key_like('tt_cache_daily_vm_MeOrdersVM_user' . $user_id);
+
+    return tt_update_order($order_id, array('deleted' => 1, 'deleted_by' => $user_id), array('%d', '%d'));
 }
 
 
@@ -651,6 +662,55 @@ function tt_send_order_goods($order_id){
     }
 }
 
+
+/**
+ * 继续完成未支付订单
+ *
+ * @since 2.0.0
+ * @param $order_id
+ * @return bool|WP_Error|WP_REST_Response
+ */
 function tt_continue_pay($order_id){
-    // TODO TODO
+    $order = tt_get_order($order_id);
+    if(!$order) {
+        return new WP_Error('order_not_found', __('The order is not found', 'tt'), array('status' => 404));
+    }
+
+    if(in_array($order->order_status, [OrderStatus::PAYED_AND_WAIT_DELIVERY, OrderStatus::DELIVERED_AND_WAIT_CONFIRM, OrderStatus::TRADE_SUCCESS])) {
+        return new WP_Error('invalid_order_status', __('The order has been payed', 'tt'), array('status' => 200));
+    }
+
+    if($order->order_status == OrderStatus::TRADE_CLOSED) {
+        return new WP_Error('invalid_order_status', __('The order has been closed', 'tt'), array('status' => 404));
+    }
+
+    if($order->order_currency == 'credit'){
+        $pay = tt_credit_pay($order->order_total_price, true);
+        if($pay instanceof WP_Error) return $pay;
+        if($pay) {
+            // 更新订单支付状态和支付完成时间
+            tt_update_order($order_id, array('order_success_time' => current_time('mysql'), 'order_status' => 4), array('%s', '%d')); //TODO 确保成功
+            return tt_api_success('', array('data' => array(
+                'orderId' => $order_id,
+                'url' => add_query_arg(array('oid' => $order_id, 'spm' => wp_create_nonce('pay_result')), tt_url_for('payresult'))
+                //TODO 添加积分充值链接
+            )));
+        }
+
+        return new WP_Error('continue_pay_failed', __('Some error happened when continue the payment', 'tt'), array('status' => 500));
+    }else{ // 现金支付
+        $pay_method = tt_get_option('tt_pay_channel', 'alipay')=='alipay' && tt_get_option('tt_alipay_email') && tt_get_option('tt_alipay_partner') ? 'alipay' : 'qrcode';
+        switch ($pay_method){
+            case 'alipay':
+                return tt_api_success('', array('data' => array( // 返回payment gateway url
+                    'orderId' => $order_id,
+                    'url' => add_query_arg(array('oid' => $order_id, 'spm' => wp_create_nonce('pay_gateway'), 'channel' => 'alipay'), tt_url_for('paygateway'))
+                )));
+            default: //qrcode
+                return tt_api_success('', array('data' => array( // 直接返回扫码支付url,后面手动修改订单
+                    'orderId' => $order_id,
+                    'url' => add_query_arg(array('oid' => $order_id), tt_url_for('qrpay'))
+                )));
+        }
+    }
 }

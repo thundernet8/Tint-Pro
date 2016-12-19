@@ -29,6 +29,8 @@ import UnstarKit from './modules/unstar';
 import Referral from './modules/referral';
 import ImageUploader from './modules/imageUploader';
 import SaveSettingsKit from './modules/saveSettings';
+import ContinuePay from './modules/continuePay';
+import DeleteOrder from './modules/deleteOrder';
 
 
 // DOM Ready
@@ -83,4 +85,10 @@ jQuery(document).ready(function ($) {
     
     // 初始化资料保存
     SaveSettingsKit.init();
+    
+    // 继续支付订单
+    ContinuePay.init();
+    
+    // 删除订单
+    DeleteOrder.init();
 });
