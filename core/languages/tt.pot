@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-12-19 21:51+0800\n"
+"POT-Creation-Date: 2016-12-21 21:26+0800\n"
 "PO-Revision-Date: 2016-08-17 21:40+0800\n"
 "Last-Translator: \n"
 "Language-Team: Zhiyan <mail@webapproach.net>\n"
@@ -1703,27 +1703,43 @@ msgstr ""
 msgid "会员状态变更提醒"
 msgstr ""
 
-#: core/functions/func.Member.php:44
+#: core/functions/func.Member.php:63
 msgid "Permanent Membership"
 msgstr ""
 
-#: core/functions/func.Member.php:47
+#: core/functions/func.Member.php:66
 msgid "Annual Membership"
 msgstr ""
 
-#: core/functions/func.Member.php:50
+#: core/functions/func.Member.php:69
 msgid "Monthly Membership"
 msgstr ""
 
-#: core/functions/func.Member.php:53
+#: core/functions/func.Member.php:72
+msgid "Expired Membership"
+msgstr ""
+
+#: core/functions/func.Member.php:75
 msgid "None Membership"
 msgstr ""
 
-#: core/functions/func.Member.php:143 core/functions/func.Member.php:165
+#: core/functions/func.Member.php:93
+msgid "In Effective"
+msgstr ""
+
+#: core/functions/func.Member.php:96
+msgid "Expired"
+msgstr ""
+
+#: core/functions/func.Member.php:99
+msgid "N/A"
+msgstr ""
+
+#: core/functions/func.Member.php:188 core/functions/func.Member.php:210
 msgid "你的会员状态发生了变化"
 msgstr ""
 
-#: core/functions/func.Member.php:143 core/functions/func.Member.php:165
+#: core/functions/func.Member.php:188 core/functions/func.Member.php:210
 #, php-format
 msgid "会员类型: %1$s, 到期时间: %2$s"
 msgstr ""
@@ -2243,44 +2259,44 @@ msgstr ""
 msgid "The coupon is invalid"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Orders.php:532
+#: core/functions/shop/func.Shop.Orders.php:540
 #, php-format
 msgid "%s 商店交易提醒"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Orders.php:548
+#: core/functions/shop/func.Shop.Orders.php:556
 #, php-format
 msgid "%s 商店新成功交易提醒"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Orders.php:636
+#: core/functions/shop/func.Shop.Orders.php:644
 #, php-format
 msgid "The Resources You Bought in %s"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Orders.php:639
+#: core/functions/shop/func.Shop.Orders.php:647
 #, php-format
 msgid "%d Credits"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Orders.php:639
+#: core/functions/shop/func.Shop.Orders.php:647
 #, php-format
 msgid "%0.2f YUAN"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Orders.php:668
+#: core/functions/shop/func.Shop.Orders.php:676
 msgid "The order is not found"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Orders.php:672
+#: core/functions/shop/func.Shop.Orders.php:680
 msgid "The order has been payed"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Orders.php:676
+#: core/functions/shop/func.Shop.Orders.php:684
 msgid "The order has been closed"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Orders.php:692
+#: core/functions/shop/func.Shop.Orders.php:700
 msgid "Some error happened when continue the payment"
 msgstr ""
 
@@ -2564,6 +2580,120 @@ msgstr ""
 msgid "ORDERS"
 msgstr ""
 
+#: core/modules/me/me.Tab.Membership.php:26
+msgid "Member Info"
+msgstr ""
+
+#: core/modules/me/me.Tab.Membership.php:29
+msgid "Member Type"
+msgstr ""
+
+#: core/modules/me/me.Tab.Membership.php:33
+msgid "Member Status"
+msgstr ""
+
+#: core/modules/me/me.Tab.Membership.php:37
+msgid "Join Time"
+msgstr ""
+
+#: core/modules/me/me.Tab.Membership.php:41
+msgid "Expire Date"
+msgstr ""
+
+#: core/modules/me/me.Tab.Membership.php:48
+msgid "Join Member"
+msgstr ""
+
+#: core/modules/me/me.Tab.Membership.php:48
+msgid "Join, Renew"
+msgstr ""
+
+#: core/modules/me/me.Tab.Membership.php:52
+#, php-format
+msgid "Monthly VIP(%d YUAN/Month)"
+msgstr ""
+
+#: core/modules/me/me.Tab.Membership.php:53
+#, php-format
+msgid "Annual VIP(%d YUAN/Year)"
+msgstr ""
+
+#: core/modules/me/me.Tab.Membership.php:54
+#, php-format
+msgid "Permanent VIP(%d YUAN)"
+msgstr ""
+
+#: core/modules/me/me.Tab.Membership.php:55
+msgid "Renew VIP"
+msgstr ""
+
+#: core/modules/me/me.Tab.Membership.php:55
+msgid "Confirm Join"
+msgstr ""
+
+#: core/modules/me/me.Tab.Membership.php:57
+msgid ""
+"提示:若已开通会员则按照选择开通的类型自动续费,若会员已到期,则按重新开通计算"
+"有效期"
+msgstr ""
+
+#: core/modules/me/me.Tab.Membership.php:63
+msgid "Member Records"
+msgstr ""
+
+#: core/modules/me/me.Tab.Membership.php:63
+msgid "Member Orders"
+msgstr ""
+
+#: core/modules/me/me.Tab.Membership.php:68
+#: core/modules/me/me.Tab.Orders.php:43
+msgid "Order Id"
+msgstr ""
+
+#: core/modules/me/me.Tab.Membership.php:69
+msgid "Payment Time"
+msgstr ""
+
+#: core/modules/me/me.Tab.Membership.php:70
+msgid "Payment Amount"
+msgstr ""
+
+#: core/modules/me/me.Tab.Membership.php:71
+msgid "VIP Type"
+msgstr ""
+
+#: core/modules/me/me.Tab.Membership.php:72
+msgid "VIP Order Status"
+msgstr ""
+
+#: core/modules/me/me.Tab.Membership.php:90
+#: core/modules/me/me.Tab.Membership.php:92
+#: core/modules/me/me.Tab.Orders.php:77 core/modules/me/me.Tab.Orders.php:79
+msgid "← 上一页"
+msgstr ""
+
+#: core/modules/me/me.Tab.Membership.php:95
+#: core/modules/me/me.Tab.Orders.php:82 core/modules/mod.HomeLatest.php:69
+#: core/modules/uc/uc.Tab.Chat.php:87 core/modules/uc/uc.Tab.Comments.php:54
+#: core/modules/uc/uc.Tab.Latest.php:67
+#, php-format
+msgid "Current Page %d"
+msgstr ""
+
+#: core/modules/me/me.Tab.Membership.php:97
+#: core/modules/me/me.Tab.Orders.php:84 core/modules/mod.HomeLatest.php:71
+#: core/modules/uc/uc.Tab.Chat.php:89 core/modules/uc/uc.Tab.Comments.php:56
+#: core/modules/uc/uc.Tab.Latest.php:69
+#, php-format
+msgid "Total %d Pages"
+msgstr ""
+
+#: core/modules/me/me.Tab.Membership.php:100
+#: core/modules/me/me.Tab.Membership.php:102
+#: core/modules/me/me.Tab.Orders.php:87 core/modules/me/me.Tab.Orders.php:89
+msgid "下一页 →"
+msgstr ""
+
 #: core/modules/me/me.Tab.Orders.php:29
 #, php-format
 msgid "%d order records in total"
@@ -2583,10 +2713,6 @@ msgstr ""
 
 #: core/modules/me/me.Tab.Orders.php:36
 msgid "CREDIT"
-msgstr ""
-
-#: core/modules/me/me.Tab.Orders.php:43
-msgid "Order Id"
 msgstr ""
 
 #: core/modules/me/me.Tab.Orders.php:45
@@ -2628,28 +2754,6 @@ msgstr ""
 
 #: core/modules/me/me.Tab.Orders.php:66
 msgid "Delete"
-msgstr ""
-
-#: core/modules/me/me.Tab.Orders.php:77 core/modules/me/me.Tab.Orders.php:79
-msgid "← 上一页"
-msgstr ""
-
-#: core/modules/me/me.Tab.Orders.php:82 core/modules/mod.HomeLatest.php:69
-#: core/modules/uc/uc.Tab.Chat.php:87 core/modules/uc/uc.Tab.Comments.php:54
-#: core/modules/uc/uc.Tab.Latest.php:67
-#, php-format
-msgid "Current Page %d"
-msgstr ""
-
-#: core/modules/me/me.Tab.Orders.php:84 core/modules/mod.HomeLatest.php:71
-#: core/modules/uc/uc.Tab.Chat.php:89 core/modules/uc/uc.Tab.Comments.php:56
-#: core/modules/uc/uc.Tab.Latest.php:69
-#, php-format
-msgid "Total %d Pages"
-msgstr ""
-
-#: core/modules/me/me.Tab.Orders.php:87 core/modules/me/me.Tab.Orders.php:89
-msgid "下一页 →"
 msgstr ""
 
 #: core/modules/me/me.Tab.Settings.php:27

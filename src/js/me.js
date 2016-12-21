@@ -31,6 +31,7 @@ import ImageUploader from './modules/imageUploader';
 import SaveSettingsKit from './modules/saveSettings';
 import ContinuePay from './modules/continuePay';
 import DeleteOrder from './modules/deleteOrder';
+import JoinVip from './modules/joinVip';
 
 
 // DOM Ready
@@ -91,4 +92,7 @@ jQuery(document).ready(function ($) {
     
     // 删除订单
     DeleteOrder.init();
+    
+    // 加入会员
+    JoinVip.init();
 });

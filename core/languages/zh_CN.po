@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-12-19 21:51+0800\n"
-"PO-Revision-Date: 2016-12-19 21:51+0800\n"
+"POT-Creation-Date: 2016-12-21 21:26+0800\n"
+"PO-Revision-Date: 2016-12-21 21:26+0800\n"
 "Last-Translator: Zhiyan <mail@webapproach.net>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -1674,27 +1674,43 @@ msgstr "你在%1$s上有新的文章发表"
 msgid "会员状态变更提醒"
 msgstr "会员状态变更提醒"
 
-#: core/functions/func.Member.php:44
+#: core/functions/func.Member.php:63
 msgid "Permanent Membership"
 msgstr "永久会员"
 
-#: core/functions/func.Member.php:47
+#: core/functions/func.Member.php:66
 msgid "Annual Membership"
 msgstr "年费会员"
 
-#: core/functions/func.Member.php:50
+#: core/functions/func.Member.php:69
 msgid "Monthly Membership"
 msgstr "月费会员"
 
-#: core/functions/func.Member.php:53
+#: core/functions/func.Member.php:72
+msgid "Expired Membership"
+msgstr "过期会员"
+
+#: core/functions/func.Member.php:75
 msgid "None Membership"
 msgstr "非会员"
 
-#: core/functions/func.Member.php:143 core/functions/func.Member.php:165
+#: core/functions/func.Member.php:93
+msgid "In Effective"
+msgstr "有效"
+
+#: core/functions/func.Member.php:96
+msgid "Expired"
+msgstr "过期"
+
+#: core/functions/func.Member.php:99
+msgid "N/A"
+msgstr "N/A"
+
+#: core/functions/func.Member.php:188 core/functions/func.Member.php:210
 msgid "你的会员状态发生了变化"
 msgstr "你的会员状态发生了变化"
 
-#: core/functions/func.Member.php:143 core/functions/func.Member.php:165
+#: core/functions/func.Member.php:188 core/functions/func.Member.php:210
 #, php-format
 msgid "会员类型: %1$s, 到期时间: %2$s"
 msgstr "会员类型: %1$s, 到期时间: %2$s"
@@ -2220,44 +2236,44 @@ msgstr "指定的订单不存在"
 msgid "The coupon is invalid"
 msgstr "优惠码无效"
 
-#: core/functions/shop/func.Shop.Orders.php:532
+#: core/functions/shop/func.Shop.Orders.php:540
 #, php-format
 msgid "%s 商店交易提醒"
 msgstr "%s 商店交易提醒"
 
-#: core/functions/shop/func.Shop.Orders.php:548
+#: core/functions/shop/func.Shop.Orders.php:556
 #, php-format
 msgid "%s 商店新成功交易提醒"
 msgstr "%s 商店新成功交易提醒"
 
-#: core/functions/shop/func.Shop.Orders.php:636
+#: core/functions/shop/func.Shop.Orders.php:644
 #, php-format
 msgid "The Resources You Bought in %s"
 msgstr "你在 %s 付费购买的资源"
 
-#: core/functions/shop/func.Shop.Orders.php:639
+#: core/functions/shop/func.Shop.Orders.php:647
 #, php-format
 msgid "%d Credits"
 msgstr "%d 积分"
 
-#: core/functions/shop/func.Shop.Orders.php:639
+#: core/functions/shop/func.Shop.Orders.php:647
 #, php-format
 msgid "%0.2f YUAN"
 msgstr "%0.2f 元"
 
-#: core/functions/shop/func.Shop.Orders.php:668
+#: core/functions/shop/func.Shop.Orders.php:676
 msgid "The order is not found"
 msgstr "未找到订单"
 
-#: core/functions/shop/func.Shop.Orders.php:672
+#: core/functions/shop/func.Shop.Orders.php:680
 msgid "The order has been payed"
 msgstr "订单已支付"
 
-#: core/functions/shop/func.Shop.Orders.php:676
+#: core/functions/shop/func.Shop.Orders.php:684
 msgid "The order has been closed"
 msgstr "订单已关闭"
 
-#: core/functions/shop/func.Shop.Orders.php:692
+#: core/functions/shop/func.Shop.Orders.php:700
 msgid "Some error happened when continue the payment"
 msgstr "请求继续支付时发生了一些错误"
 
@@ -2542,6 +2558,122 @@ msgstr "会员"
 msgid "ORDERS"
 msgstr "订单"
 
+#: core/modules/me/me.Tab.Membership.php:26
+msgid "Member Info"
+msgstr "会员信息"
+
+#: core/modules/me/me.Tab.Membership.php:29
+msgid "Member Type"
+msgstr "会员类型"
+
+#: core/modules/me/me.Tab.Membership.php:33
+msgid "Member Status"
+msgstr "会员状态"
+
+#: core/modules/me/me.Tab.Membership.php:37
+msgid "Join Time"
+msgstr "加入时间"
+
+#: core/modules/me/me.Tab.Membership.php:41
+msgid "Expire Date"
+msgstr "过期时间"
+
+#: core/modules/me/me.Tab.Membership.php:48
+msgid "Join Member"
+msgstr "加入会员"
+
+#: core/modules/me/me.Tab.Membership.php:48
+msgid "Join, Renew"
+msgstr "加入、续费"
+
+#: core/modules/me/me.Tab.Membership.php:52
+#, php-format
+msgid "Monthly VIP(%d YUAN/Month)"
+msgstr "月费会员(%d 元/月)"
+
+#: core/modules/me/me.Tab.Membership.php:53
+#, php-format
+msgid "Annual VIP(%d YUAN/Year)"
+msgstr "年费会员(%d 元/年)"
+
+#: core/modules/me/me.Tab.Membership.php:54
+#, php-format
+msgid "Permanent VIP(%d YUAN)"
+msgstr "永久会员(%d 元)"
+
+#: core/modules/me/me.Tab.Membership.php:55
+msgid "Renew VIP"
+msgstr "续费会员"
+
+#: core/modules/me/me.Tab.Membership.php:55
+msgid "Confirm Join"
+msgstr "确认开通"
+
+#: core/modules/me/me.Tab.Membership.php:57
+msgid ""
+"提示:若已开通会员则按照选择开通的类型自动续费,若会员已到期,则按重新开通计算有"
+"效期"
+msgstr ""
+"提示:若已开通会员则按照选择开通的类型自动续费,若会员已到期,则按重新开通计算有"
+"效期"
+
+#: core/modules/me/me.Tab.Membership.php:63
+msgid "Member Records"
+msgstr "会员记录"
+
+#: core/modules/me/me.Tab.Membership.php:63
+msgid "Member Orders"
+msgstr "会员订单"
+
+#: core/modules/me/me.Tab.Membership.php:68
+#: core/modules/me/me.Tab.Orders.php:43
+msgid "Order Id"
+msgstr "订单号"
+
+#: core/modules/me/me.Tab.Membership.php:69
+msgid "Payment Time"
+msgstr "支付时间"
+
+#: core/modules/me/me.Tab.Membership.php:70
+msgid "Payment Amount"
+msgstr "支付金额"
+
+#: core/modules/me/me.Tab.Membership.php:71
+msgid "VIP Type"
+msgstr "开通类型"
+
+#: core/modules/me/me.Tab.Membership.php:72
+msgid "VIP Order Status"
+msgstr "交易状态"
+
+#: core/modules/me/me.Tab.Membership.php:90
+#: core/modules/me/me.Tab.Membership.php:92
+#: core/modules/me/me.Tab.Orders.php:77 core/modules/me/me.Tab.Orders.php:79
+msgid "← 上一页"
+msgstr "← 上一页"
+
+#: core/modules/me/me.Tab.Membership.php:95
+#: core/modules/me/me.Tab.Orders.php:82 core/modules/mod.HomeLatest.php:69
+#: core/modules/uc/uc.Tab.Chat.php:87 core/modules/uc/uc.Tab.Comments.php:54
+#: core/modules/uc/uc.Tab.Latest.php:67
+#, php-format
+msgid "Current Page %d"
+msgstr "第 %d 页"
+
+#: core/modules/me/me.Tab.Membership.php:97
+#: core/modules/me/me.Tab.Orders.php:84 core/modules/mod.HomeLatest.php:71
+#: core/modules/uc/uc.Tab.Chat.php:89 core/modules/uc/uc.Tab.Comments.php:56
+#: core/modules/uc/uc.Tab.Latest.php:69
+#, php-format
+msgid "Total %d Pages"
+msgstr "共 %d 页"
+
+#: core/modules/me/me.Tab.Membership.php:100
+#: core/modules/me/me.Tab.Membership.php:102
+#: core/modules/me/me.Tab.Orders.php:87 core/modules/me/me.Tab.Orders.php:89
+msgid "下一页 →"
+msgstr "下一页 →"
+
 #: core/modules/me/me.Tab.Orders.php:29
 #, php-format
 msgid "%d order records in total"
@@ -2562,10 +2694,6 @@ msgstr "现金订单"
 #: core/modules/me/me.Tab.Orders.php:36
 msgid "CREDIT"
 msgstr "积分订单"
-
-#: core/modules/me/me.Tab.Orders.php:43
-msgid "Order Id"
-msgstr "订单号"
 
 #: core/modules/me/me.Tab.Orders.php:45
 msgid "Order Create Time"
@@ -2606,28 +2734,6 @@ msgstr "删除订单"
 #: core/modules/me/me.Tab.Orders.php:66
 msgid "Delete"
 msgstr "删除"
-
-#: core/modules/me/me.Tab.Orders.php:77 core/modules/me/me.Tab.Orders.php:79
-msgid "← 上一页"
-msgstr "← 上一页"
-
-#: core/modules/me/me.Tab.Orders.php:82 core/modules/mod.HomeLatest.php:69
-#: core/modules/uc/uc.Tab.Chat.php:87 core/modules/uc/uc.Tab.Comments.php:54
-#: core/modules/uc/uc.Tab.Latest.php:67
-#, php-format
-msgid "Current Page %d"
-msgstr "第 %d 页"
-
-#: core/modules/me/me.Tab.Orders.php:84 core/modules/mod.HomeLatest.php:71
-#: core/modules/uc/uc.Tab.Chat.php:89 core/modules/uc/uc.Tab.Comments.php:56
-#: core/modules/uc/uc.Tab.Latest.php:69
-#, php-format
-msgid "Total %d Pages"
-msgstr "共 %d 页"
-
-#: core/modules/me/me.Tab.Orders.php:87 core/modules/me/me.Tab.Orders.php:89
-msgid "下一页 →"
-msgstr "下一页 →"
 
 #: core/modules/me/me.Tab.Settings.php:27 core/modules/uc/uc.Tab.Profile.php:41
 msgid "Basic Info"

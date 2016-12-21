@@ -128,6 +128,7 @@ class WP_REST_Order_Controller extends WP_REST_Controller
      */
     public function create_item( $request ) {
         $is_cart = $request->get_param('from') == 'cart';
+        $is_join_vip = $request->get_param('joinVip');
         if($is_cart){
             $cart_items = tt_get_cart(get_current_user_id(), true);
             if($cart_items instanceof WP_Error){
@@ -141,6 +142,24 @@ class WP_REST_Order_Controller extends WP_REST_Controller
             }
             $create = tt_create_combine_orders($product_ids, $order_quantities);
             tt_clear_cart(); // 创建订单成功后清空购物车
+        }elseif($is_join_vip){
+            $product_id = $request->get_param('vipProductId');
+            $create = tt_create_vip_order(get_current_user_id(), $product_id * (-1));
+            if($create && isset($create['order_id'])) {
+                $pay_method = tt_get_option('tt_pay_channel', 'alipay')=='alipay' && tt_get_option('tt_alipay_email') && tt_get_option('tt_alipay_partner') ? 'alipay' : 'qrcode';
+                switch ($pay_method){
+                    case 'alipay':
+                        return tt_api_success('', array('data' => array( // 返回payment gateway url
+                            'orderId' => $create['order_id'],
+                            'url' => add_query_arg(array('oid' => $create['order_id'], 'spm' => wp_create_nonce('pay_gateway'), 'channel' => 'alipay'), tt_url_for('paygateway'))
+                        )));
+                    default: //qrcode
+                        return tt_api_success('', array('data' => array( // 直接返回扫码支付url,后面手动修改订单
+                            'orderId' => $create['order_id'],
+                            'url' => add_query_arg(array('oid' => $create['order_id']), tt_url_for('qrpay'))
+                        )));
+                }
+            }
         }else{
             $product_id = $request->get_param('productId');
             $product_name = $request->get_param('productName');

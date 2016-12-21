@@ -19,15 +19,34 @@
  *
  * @since 2.0.0
  * @param int $user_id
+ * @param int $limit
+ * @param int $offset
  * @return array|null|object
  */
-function get_user_member_orders($user_id = 0){
+function tt_get_user_member_orders($user_id = 0, $limit = 20, $offset = 0){
     global $wpdb;
     $user_id = $user_id ? : get_current_user_id();
     $prefix = $wpdb->prefix;
     $table = $prefix . 'tt_orders';
-    $vip_orders=$wpdb->get_results(sprintf("select * from %s where `user_id`=%d and `product_id` in (-1,-2,-3)", $table, $user_id));
+    $vip_orders=$wpdb->get_results(sprintf("SELECT * FROM %s WHERE `user_id`=%d AND `product_id` IN (-1,-2,-3) ORDER BY `id` DESC LIMIT %d OFFSET %d", $table, $user_id, $limit, $offset));
     return $vip_orders;
+}
+
+
+/**
+ * 统计用户会员订单数量
+ *
+ * @since 2.0.0
+ * @param $user_id
+ * @return int
+ */
+function tt_count_user_member_orders($user_id){
+    global $wpdb;
+    $user_id = $user_id ? : get_current_user_id();
+    $prefix = $wpdb->prefix;
+    $table = $prefix . 'tt_orders';
+    $count=$wpdb->get_var(sprintf("SELECT COUNT(*) FROM %s WHERE `user_id`=%d AND `product_id` IN (-1,-2,-3)", $table, $user_id));
+    return (int)$count;
 }
 
 
@@ -40,19 +59,45 @@ function get_user_member_orders($user_id = 0){
  */
 function tt_get_member_type_string($code){
     switch($code){
-        case 3:
+        case Member::PERMANENT_VIP:
             $type = __('Permanent Membership', 'tt');
             break;
-        case 2:
+        case Member::ANNUAL_VIP:
             $type = __('Annual Membership', 'tt');
             break;
-        case 1:
+        case Member::MONTHLY_VIP:
             $type = __('Monthly Membership', 'tt');
+            break;
+        case Member::EXPIRED_VIP:
+            $type = __('Expired Membership', 'tt');
             break;
         default:
             $type = __('None Membership', 'tt');
     }
     return $type;
+}
+
+
+/**
+ * 获取用户会员状态文字(有效性)
+ *
+ * @since 2.0.0
+ * @param $code
+ * @return string|void
+ */
+function tt_get_member_status_string($code) {
+    switch($code){
+        case Member::PERMANENT_VIP:
+        case Member::ANNUAL_VIP:
+        case Member::MONTHLY_VIP:
+            return __('In Effective', 'tt');
+            break;
+        case Member::EXPIRED_VIP:
+            return __('Expired', 'tt');
+            break;
+        default:
+            return __('N/A', 'tt');
+    }
 }
 
 
@@ -182,7 +227,7 @@ function tt_delete_member($user_id){
         $members_table,
         array('user_id' => $user_id),
         array('%d')
-    );
+    ); //TODO deleted field
     return !!$delete;
 }
 
@@ -273,7 +318,7 @@ function tt_get_member_icon($user_id){
  * @param int $vip_type
  * @return float
  */
-function tt_get_vip_price($vip_type = 1){
+function tt_get_vip_price($vip_type = Member::MONTHLY_VIP){
     switch ($vip_type){
         case Member::MONTHLY_VIP:
             $price = tt_get_option('tt_monthly_vip_price', 10);
@@ -300,7 +345,7 @@ function tt_get_vip_price($vip_type = 1){
  */
 function tt_create_vip_order($user_id, $vip_type = 1){
     if(!in_array($vip_type * (-1), array(Product::MONTHLY_VIP, Product::ANNUAL_VIP, Product::PERMANENT_VIP))){
-        return false;
+        $vip_type = Product::PERMANENT_VIP;
     }
 
     $order_id = tt_generate_order_num();
@@ -351,4 +396,25 @@ function tt_create_vip_order($user_id, $vip_type = 1){
         );
     }
     return false;
+}
+
+
+/**
+ * 根据订单产品ID获取对应VIP开通类型名
+ *
+ * @since 2.0.0
+ * @param $product_id
+ * @return string
+ */
+function tt_get_vip_product_name($product_id) {
+    switch ($product_id){
+        case Product::PERMANENT_VIP:
+            return Product::PERMANENT_VIP_NAME;
+        case Product::ANNUAL_VIP:
+            return Product::ANNUAL_VIP_NAME;
+        case Product::MONTHLY_VIP:
+            return Product::MONTHLY_VIP_NAME;
+        default:
+            return "";
+    }
 }

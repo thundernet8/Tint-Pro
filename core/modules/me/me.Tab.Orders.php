@@ -61,7 +61,7 @@
                                     <a data-order-action="view_detail" href="<?php echo tt_url_for('my_order', $order->id); ?>" title="<?php _e('View the order detail', 'tt'); ?>" target="_blank"><?php _e('View Order', 'tt'); ?></a>
                                     <?php if(!in_array($order->order_status, [OrderStatus::PAYED_AND_WAIT_DELIVERY, OrderStatus::DELIVERED_AND_WAIT_CONFIRM, OrderStatus::TRADE_SUCCESS])) { ?>
                                         <span class="text-explode">|</span>
-                                        <a class="continue-pay" href="javascript:;" data-order-action="continue_pay" data-order-id="<?php echo $order->order_id; ?>" data-order-seq="<?php echo $order->id; ?>" title="<?php _e('Finish the payment'); ?>"><?php _e('Continue Pay', 'tt'); ?></a>
+                                        <a class="continue-pay" href="javascript:;" data-order-action="continue_pay" data-order-id="<?php echo $order->order_id; ?>" data-order-seq="<?php echo $order->id; ?>" title="<?php _e('Finish the payment', 'tt'); ?>"><?php _e('Continue Pay', 'tt'); ?></a>
                                         <span class="text-explode">|</span>
                                         <a class="delete-order" href="javascript:;" data-order-action="delete" data-order-id="<?php echo $order->order_id; ?>" data-order-seq="<?php echo $order->id; ?>" title="<?php _e('Delete the order', 'tt'); ?>"><?php _e('Delete', 'tt'); ?></a>
                                     <?php } ?>

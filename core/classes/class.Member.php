@@ -27,6 +27,8 @@ class Member{
 
     const PERMANENT_VIP = 3;
 
+    const EXPIRED_VIP = 9;
+
     const MONTHLY_VIP_PERIOD = 2592000;
 
     const ANNUAL_VIP_PERIOD = 31536000;
@@ -40,6 +42,10 @@ class Member{
     private $_member_row = false;
 
     private $vip_type = 0;
+
+//    private $join_time = 'N/A';
+//
+//    private $expire_time = 'N/A';
 
     public function __construct($user_or_id){
         if($user_or_id instanceof WP_User){
@@ -80,16 +86,55 @@ class Member{
 
     private function get_vip_type() {
         if($this->_member_row === false){
-            $row = tt_get_member_row($this->_uid);
-            $this->_member_row = $row;
-            $this->vip_type = $row ? $row->user_type : 0;
-            return $this->vip_type;
+            $this->_member_row = tt_get_member_row($this->_uid);
         }
-        return 0;
+        if(!$this->_member_row) {
+            return Member::NORMAL_MEMBER;
+        }
+        if($this->_member_row->endTimeStamp <= time()) { //已过期
+            // TODO do_action membership_expired
+            return Member::EXPIRED_VIP;
+        }
+        if(in_array($this->_member_row->user_type, [Member::PERMANENT_VIP, Member::ANNUAL_VIP, Member::MONTHLY_VIP])) {
+            return $this->_member_row->user_type;
+        }
+        return Member::MONTHLY_VIP;
+    }
+
+    /**
+     * 获取VIP开通时间
+     *
+     * @since 2.0.0
+     * @return string
+     */
+    public function get_vip_join_time() {
+        if($this->_member_row === false){
+            $this->_member_row = tt_get_member_row($this->_uid);
+        }
+        if(!$this->_member_row) {
+            return 'N/A';
+        }
+        return $this->_member_row->startTime;
+    }
+
+    /**
+     * 获取VIP过期时间
+     *
+     * @since 2.0.0
+     * @return string
+     */
+    public function get_vip_expire_time() {
+        if($this->_member_row === false){
+            $this->_member_row = tt_get_member_row($this->_uid);
+        }
+        if(!$this->_member_row) {
+            return 'N/A';
+        }
+        return $this->_member_row->endTime;
     }
 
     public function is_vip(){
-        return $this->get_vip_type() > self::NORMAL_MEMBER;
+        return in_array($this->get_vip_type(), [Member::PERMANENT_VIP, Member::ANNUAL_VIP, Member::MONTHLY_VIP]);
     }
 
     public function is_monthly_vip(){

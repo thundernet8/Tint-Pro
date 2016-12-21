@@ -6,7 +6,7 @@
  * @since 2.0.0
  * @package Tint
  * @author Zhiyan
- * @date 2016/12/17 22:56
+ * @date 2016/12/20 22:26
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
  * @link https://www.webapproach.net/tint
@@ -15,19 +15,14 @@
 <?php
 
 /**
- * Class MeOrdersVM
+ * Class MeMembershipVM
  */
-class MeOrdersVM extends BaseVM {
+class MeMembershipVM extends BaseVM {
 
     /**
      * @var int 用户ID
      */
     private $_userId;
-
-    /**
-     * @var string 订单货币类型
-     */
-    private $_type;
 
     /**
      * @var int 分页
@@ -49,30 +44,38 @@ class MeOrdersVM extends BaseVM {
      *
      * @since   2.0.0
      * @param   int    $user_id   用户ID
-     * @param   string $type      订单货币类型
      * @param   int    $page      分页
      * @param   int    $limit     每页最多显示数量
      * @return  static
      */
-    public static function getInstance($user_id = 0, $type = 'all', $page = 1, $limit = 20) {
+    public static function getInstance($user_id = 0, $page = 1, $limit = 20) {
         $instance = new static();
-        $type = in_array($type, ['all', 'credit', 'cash']) ? $type : 'all';
-        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . static::class . '_user' . $user_id . '_type' . $type;
+        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . static::class . '_user' . $user_id;
         $instance->_userId = $user_id;
-        $instance->_type = $type;
         $instance->_page = $page;
         $instance->_limit = $limit;
+        //$instance->_enableCache = false; //Debug use TODO clear
         $instance->configInstance();
         return $instance;
     }
 
     protected function getRealData() {
-        $orders = tt_get_user_orders($this->_userId, $this->_limit, ($this->_page - 1) * $this->_limit, $this->_type);
+        $orders = tt_get_user_member_orders($this->_userId, $this->_limit, ($this->_page - 1) * $this->_limit);
         $count = $orders ? count($orders) : 0;
-        $total = tt_count_user_orders($this->_userId, $this->_type);
+        $total = tt_count_user_member_orders($this->_userId);
         $max_pages = ceil($total / $this->_limit);
-        $pagination_base = tt_url_for('my_' . $this->_type . '_orders') . '/page/%#%';
+        $pagination_base = tt_url_for('my_membership') . '/page/%#%';
+
+        $member = new Member($this->_userId);
+        $info = array(
+            'is_vip' => $member->is_vip(),
+            'member_type' => $member->vip_type,
+            'member_status' => tt_get_member_status_string($member->vip_type),
+            'join_time' => $member->get_vip_join_time(),
+            'end_time' => $member->get_vip_expire_time()
+        );
         return (object)array(
+            'info' => $info,
             'count' => $count,
             'orders' => $orders,
             'total' => $total,
