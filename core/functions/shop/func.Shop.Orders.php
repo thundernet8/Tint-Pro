@@ -685,7 +685,7 @@ function tt_continue_pay($order_id){
     }
 
     if($order->order_currency == 'credit'){
-        $pay = tt_credit_pay($order->order_total_price, true);
+        $pay = tt_credit_pay($order->order_total_price, $order->product_name, true);
         if($pay instanceof WP_Error) return $pay;
         if($pay) {
             // 更新订单支付状态和支付完成时间
@@ -699,17 +699,17 @@ function tt_continue_pay($order_id){
 
         return new WP_Error('continue_pay_failed', __('Some error happened when continue the payment', 'tt'), array('status' => 500));
     }else{ // 现金支付
-        $pay_method = tt_get_option('tt_pay_channel', 'alipay')=='alipay' && tt_get_option('tt_alipay_email') && tt_get_option('tt_alipay_partner') ? 'alipay' : 'qrcode';
+        $pay_method = tt_get_cash_pay_method();
         switch ($pay_method){
             case 'alipay':
                 return tt_api_success('', array('data' => array( // 返回payment gateway url
                     'orderId' => $order_id,
-                    'url' => add_query_arg(array('oid' => $order_id, 'spm' => wp_create_nonce('pay_gateway'), 'channel' => 'alipay'), tt_url_for('paygateway'))
+                    'url' => tt_get_alipay_gateway($order_id)
                 )));
             default: //qrcode
                 return tt_api_success('', array('data' => array( // 直接返回扫码支付url,后面手动修改订单
                     'orderId' => $order_id,
-                    'url' => add_query_arg(array('oid' => $order_id), tt_url_for('qrpay'))
+                    'url' => tt_get_qrpay_gateway($order_id)
                 )));
         }
     }

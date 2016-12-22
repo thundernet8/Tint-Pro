@@ -296,3 +296,22 @@ fieldset[disabled] .form-control + .form-control-feedback,
     }
   }
 }
+
+.form-inline {
+  display: table;
+  margin-bottom: 10px;
+  &>.form-group {
+    display: table-cell;
+    vertical-align: middle;
+    &>.input-group {
+      display: inline-table;
+      vertical-align: middle;
+      position: relative;
+      border-collapse: separate;
+    }
+  }
+  &>button {
+    margin-left: 10px;
+    vertical-align: middle;
+  }
+}

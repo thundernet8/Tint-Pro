@@ -1,5 +1,5 @@
 /**
- * Generated on Wed Dec 21 2016 22:21:16 GMT+0800 (中国标准时间) by Zhiyan
+ * Generated on Thu Dec 22 2016 23:49:11 GMT+0800 (中国标准时间) by Zhiyan
  *
  * @package   Tint
  * @version   v2.0.0
@@ -36,18 +36,18 @@
             var _loading = __webpack_require__(8);
             var _msgbox = __webpack_require__(6);
             __webpack_require__(9);
-            var _comments = __webpack_require__(28);
+            var _comments = __webpack_require__(30);
             var _comments2 = _interopRequireDefault(_comments);
-            var _postStar = __webpack_require__(29);
+            var _postStar = __webpack_require__(31);
             var _postStar2 = _interopRequireDefault(_postStar);
             var _scroll = __webpack_require__(14);
             var _scroll2 = _interopRequireDefault(_scroll);
-            var _animateAnchor = __webpack_require__(30);
+            var _animateAnchor = __webpack_require__(32);
             var _animateAnchor2 = _interopRequireDefault(_animateAnchor);
-            __webpack_require__(31);
-            var _follow = __webpack_require__(32);
+            __webpack_require__(33);
+            var _follow = __webpack_require__(34);
             var _follow2 = _interopRequireDefault(_follow);
-            var _pm = __webpack_require__(33);
+            var _pm = __webpack_require__(35);
             var _pm2 = _interopRequireDefault(_pm);
             var _modalSignBox = __webpack_require__(5);
             var _modalSignBox2 = _interopRequireDefault(_modalSignBox);
@@ -122,7 +122,8 @@
             orders: _utils2[['default']][['getAPIUrl']]('/orders'),
             coupons: _utils2[['default']][['getAPIUrl']]('/coupons'),
             boughtResources: _utils2[['default']][['getAPIUrl']]('/users/boughtresources'),
-            userProfiles: _utils2[['default']][['getAPIUrl']]('/users/profiles')
+            userProfiles: _utils2[['default']][['getAPIUrl']]('/users/profiles'),
+            otherActions: _utils2[['default']][['getAPIUrl']]('/actions')
         };
         var urls = {
             site: _utils2[['default']][['getSiteUrl']](),
@@ -2959,6 +2960,8 @@
             }(jQuery, window, document));
         }[['call']](exports, __webpack_require__(1)));
     },
+    ,
+    ,
     ,
     ,
     ,

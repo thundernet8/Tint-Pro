@@ -91,7 +91,7 @@ load_dash('of_inc/options-framework');
 load_dash('options');
 /* 调试模式选项保存为全局变量 */
 defined('TT_DEBUG') || define('TT_DEBUG', of_get_option('tt_theme_debug', false));
-if(!TT_DEBUG) {
+if(TT_DEBUG) {
     ini_set("display_errors","On");
     error_reporting(E_ALL);
 }else{
@@ -142,6 +142,7 @@ load_func('func.ShortCode');
 load_func('func.Download');
 load_func('func.Image');
 load_func('func.Oauth');
+load_func('func.API.Actions');
 if(TT_PRO && tt_get_option('tt_enable_shop', false)){
     load_func('shop/func.Shop');
     load_func('shop/func.Shop.Orders');
@@ -211,6 +212,7 @@ load_vm('uc/vm.UC.Following');
 load_vm('uc/vm.UC.Chat');
 load_vm('uc/vm.UC.Profile');
 load_vm('me/vm.Me.Settings');
+load_vm('me/vm.Me.Credits');
 if(TT_PRO && tt_get_option('tt_enable_shop', false)){
     load_vm('shop/vm.Shop.Header.SubNav');
     load_vm('shop/vm.Shop.Home');

@@ -26,6 +26,7 @@
 
 * tt_credits
 * tt_consumed_credits
+* tt_daily_sign
 
 * tt_view_product_history (array<product id>) //cookie use same key
 

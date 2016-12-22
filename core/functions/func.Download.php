@@ -78,7 +78,7 @@ function tt_bought_post_resource($post_id, $resource_seq) {
     }
 
     //检查用户积分是否足够
-    $payment = tt_credit_pay($price, true);
+    $payment = tt_credit_pay($price, $resource_name, true);
     if($payment instanceof WP_Error) {
         return $payment;
     }

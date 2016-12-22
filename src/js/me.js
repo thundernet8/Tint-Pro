@@ -32,6 +32,8 @@ import SaveSettingsKit from './modules/saveSettings';
 import ContinuePay from './modules/continuePay';
 import DeleteOrder from './modules/deleteOrder';
 import JoinVip from './modules/joinVip';
+import DailySign from './modules/dailySign';
+import CreditsCharge from './modules/creditsCharge';
 
 
 // DOM Ready
@@ -95,4 +97,10 @@ jQuery(document).ready(function ($) {
     
     // 加入会员
     JoinVip.init();
+    
+    // 每日签到
+    DailySign.init();
+    
+    // 积分充值
+    CreditsCharge.init();
 });

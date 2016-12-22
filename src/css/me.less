@@ -300,6 +300,10 @@ body.me-orders {
                         margin-right: 5px;
                     }
 
+                    .th-sumprice {
+                        min-width: 80px;
+                    }
+
                     .order-actions {
 
                         &>.text-explode {
@@ -314,7 +318,6 @@ body.me-orders {
         }
     }
 }
-
 
 
 /* Membership */
@@ -376,6 +379,87 @@ body.me-membership {
                         i {
                             vertical-align: -2px;
                             margin-right: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* Credits */
+body.me-credits {
+    .credits-tab {
+        &>.tab-content {
+            &>.credits-info {
+                &>.info-group {
+                    &>.row {
+                        &>.col-md-9 {
+                            p {
+                                margin: 0;
+                                line-height: 32px;
+                            }
+                        }
+                        .btn-daily-sign {
+                            position: relative;
+                            padding: 6px 15px;
+                            font-size: 1.4rem;
+                            line-height: 24px;
+                            height: 36px;
+                            min-width: 60px;
+                            i {
+                                width: 16px;
+                                height: 16px;
+                                top: 50%;
+                                left: 50%;
+                                margin-top: -8px;
+                                margin-left: -8px;
+                            }
+                        }
+                    }
+                }
+            }
+            &>.credits-charge {
+                &>.info-group {
+                    &>.form-group {
+                        &>.form-inline {
+                            margin-top: 20px;
+                            &>button {
+                                position: relative;
+                                padding: 6px 15px;
+                                font-size: 1.4rem;
+                                line-height: 30px;
+                                height: 42px;
+                                min-width: 100px;
+                                i {
+                                    width: 16px;
+                                    height: 16px;
+                                    top: 50%;
+                                    left: 50%;
+                                    margin-top: -8px;
+                                    margin-left: -8px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &>.credit-records {
+                &>.info-group {
+                    &>.records-list {
+                        &>li {
+                            padding: 0 10px;
+                            margin-bottom: 10px;
+                            line-height: 32px;
+                            //border-bottom: 1px dotted #eee;
+                            color: @text-muted-color;
+                            background: #fafafa;
+                            &>span {
+                                padding: 5px 10px;
+                                line-height: 22px;
+                                color: @brand-primary;
+                            }
                         }
                     }
                 }

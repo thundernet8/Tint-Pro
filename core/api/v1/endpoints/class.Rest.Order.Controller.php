@@ -146,17 +146,17 @@ class WP_REST_Order_Controller extends WP_REST_Controller
             $product_id = $request->get_param('vipProductId');
             $create = tt_create_vip_order(get_current_user_id(), $product_id * (-1));
             if($create && isset($create['order_id'])) {
-                $pay_method = tt_get_option('tt_pay_channel', 'alipay')=='alipay' && tt_get_option('tt_alipay_email') && tt_get_option('tt_alipay_partner') ? 'alipay' : 'qrcode';
+                $pay_method = tt_get_cash_pay_method();
                 switch ($pay_method){
                     case 'alipay':
                         return tt_api_success('', array('data' => array( // 返回payment gateway url
                             'orderId' => $create['order_id'],
-                            'url' => add_query_arg(array('oid' => $create['order_id'], 'spm' => wp_create_nonce('pay_gateway'), 'channel' => 'alipay'), tt_url_for('paygateway'))
+                            'url' => tt_get_alipay_gateway($create['order_id'])
                         )));
                     default: //qrcode
                         return tt_api_success('', array('data' => array( // 直接返回扫码支付url,后面手动修改订单
                             'orderId' => $create['order_id'],
-                            'url' => add_query_arg(array('oid' => $create['order_id']), tt_url_for('qrpay'))
+                            'url' => tt_get_qrpay_gateway($create['order_id'])
                         )));
                 }
             }
@@ -232,7 +232,7 @@ class WP_REST_Order_Controller extends WP_REST_Controller
             // 如果是积分订单,立即支付
             $order = tt_get_order($order_id);
             if($order->order_currency == 'credit'){
-                $pay = tt_credit_pay($order->order_total_price, true);
+                $pay = tt_credit_pay($order->order_total_price, $order->product_name, true);
                 if($pay instanceof WP_Error) return $pay;
                 if($pay) {
                     // 更新订单支付状态和支付完成时间

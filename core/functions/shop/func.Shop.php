@@ -537,3 +537,39 @@ function tt_get_product_discount_array($product_id){
     $discount[3] = isset($discount[3]) ? min(100, absint($discount[3])) : $discount[0];
     return $discount;
 }
+
+
+/**
+ * 获取现金支付的方式
+ *
+ * @since 2.0.0
+ * @return string
+ */
+function tt_get_cash_pay_method() {
+    $pay_method = tt_get_option('tt_pay_channel', 'alipay')=='alipay' && tt_get_option('tt_alipay_email') && tt_get_option('tt_alipay_partner') ? 'alipay' : 'qrcode';
+    return $pay_method;
+}
+
+
+/**
+ * 获取支付宝支付网关
+ *
+ * @since 2.0.0
+ * @param $order_id
+ * @return string
+ */
+function tt_get_alipay_gateway($order_id) {
+    return add_query_arg(array('oid' => $order_id, 'spm' => wp_create_nonce('pay_gateway'), 'channel' => 'alipay'), tt_url_for('paygateway'));
+}
+
+
+/**
+ * 获取扫码转账支付网关
+ *
+ * @since 2.0.0
+ * @param $order_id
+ * @return string
+ */
+function tt_get_qrpay_gateway($order_id) {
+    return add_query_arg(array('oid' => $order_id), tt_url_for('qrpay'));
+}

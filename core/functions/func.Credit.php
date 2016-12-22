@@ -123,10 +123,11 @@ function tt_add_credits_by_order($order_id){
  *
  * @since 2.0.0
  * @param int $amount
+ * @param string $product_subject
  * @param bool $rest
  * @return bool|WP_Error
  */
-function tt_credit_pay($amount = 0, $rest = false) {
+function tt_credit_pay($amount = 0, $product_subject = '', $rest = false) {
     $amount = absint($amount);
     $user_id = get_current_user_id();
     if(!$user_id) {
@@ -148,7 +149,8 @@ function tt_credit_pay($amount = 0, $rest = false) {
 //        tt_create_message( $user_id, 0, 'System', 'credit', $msg, '', 0, 'publish');
 //    }
 
-    tt_update_user_credit($user_id, $amount*(-1)); //TODO confirm update
+    $msg = $product_subject ? sprintf(__('Cost %d to buy %s', 'tt'), $amount, $product_subject) : '';
+    tt_update_user_credit($user_id, $amount*(-1), $msg); //TODO confirm update
     return true;
 }
 
@@ -377,4 +379,56 @@ function tt_create_credit_charge_order($user_id, $amount = 1){
         );
     }
     return false;
+}
+
+
+/**
+ * 获取每日签到按钮HTML
+ *
+ * @since 2.0.0
+ * @param int $user_id
+ * @return string
+ */
+function tt_daily_sign_anchor($user_id = 0){
+    $user_id = $user_id ? : get_current_user_id();
+    if(get_user_meta($user_id, 'tt_daily_sign', true)){
+        date_default_timezone_set ('Asia/Shanghai');
+        $sign_date_meta = get_user_meta($user_id,'tt_daily_sign',true);
+        $sign_date = date('Y-m-d', strtotime($sign_date_meta));
+        $now_date = date('Y-m-d', time());
+        if($sign_date != $now_date){
+            return '<a class="btn btn-info btn-daily-sign" href="javascript:;" title="' . __('Sign to gain credits', 'tt') . '">'.__('Daily Sign', 'tt').'</a>';
+        }else{
+            return '<a class="btn btn-warning btn-daily-sign signed" href="javascript:;" title="' . sprintf(__('Signed on %s', 'tt'), $sign_date_meta) .'">' . __('Signed today', 'tt') . '</a>';
+        }
+    }else{
+        return '<a class="btn btn-primary btn-daily-sign" href="javascript:;" id="daily_sign" title="' . __('Sign to gain credits', 'tt') . '">' . __('Daily Sign', 'tt').'</a>';
+    }
+}
+
+/**
+ * 每日签到
+ *
+ * @since 2.0.0
+ * @return WP_Error|bool
+ */
+function tt_daily_sign(){
+    date_default_timezone_set ('Asia/Shanghai');
+    $user_id = get_current_user_id();
+    if(!$user_id) {
+        return new WP_Error('user_not_sign_in', __('You must sign in before daily sign', 'tt'), array('status' => 401));
+    }
+    $date = date('Y-m-d H:i:s',time());
+    $sign_date_meta = get_user_meta($user_id, 'tt_daily_sign', true);
+    $sign_date = date('Y-m-d', strtotime($sign_date_meta));
+    $now_date = date('Y-m-d', time());
+    if($sign_date != $now_date):
+        update_user_meta($user_id, 'tt_daily_sign', $date);
+        $credits = (int)tt_get_option('tt_daily_sign_credits', 10);
+        tt_update_user_credit($user_id, $credits, sprintf(__('Gain %d credits for daily sign', 'tt'), $credits));
+        //TODO clear VM cache
+        return true;
+    else:
+        return new WP_Error('daily_signed', __('You have signed today', 'tt'), array('status' => 200));
+    endif;
 }

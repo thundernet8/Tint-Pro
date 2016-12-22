@@ -184,7 +184,7 @@ add_action( 'load-themes.php', 'tt_install_follow_table' );
  */
 function tt_install_message_table () {
     global $wpdb;
-    $table_name = $wpdb->prefix . 'tt_message';
+    $table_name = $wpdb->prefix . 'tt_messages';
     if( $wpdb->get_var("SHOW TABLES LIKE '$table_name'") != $table_name ) :
         $sql = " CREATE TABLE `$table_name` (
 			`msg_id` int NOT NULL AUTO_INCREMENT, 

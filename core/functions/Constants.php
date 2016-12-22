@@ -198,6 +198,14 @@ $site_endpoints = json_encode(array(
 ));
 defined('SITE_ROUTES') || define('SITE_ROUTES', $site_endpoints);
 
+/* Some Actions for API */
+$site_api_actions = json_encode(array(
+    'daily_sign' => 1, // 1代表私密action必须登录执行, 其它为公开action
+    'credits_charge' => 1
+    // TODO: Add more
+));
+defined('ALLOWED_ACTIONS') || define('ALLOWED_ACTIONS', $site_api_actions);
+
 /* jQuery Source */
 $jquery_srouces = json_encode(array(
     'local_1' => THEME_ASSET . '/vender/js/jquery/1.12.4/jquery.min.js',

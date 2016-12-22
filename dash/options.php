@@ -652,6 +652,17 @@ function optionsframework_options() {
     );
 
 
+    // - 每日签到积分奖励
+    $options[] = array(
+        'name' => __( '每日签到积分奖励', 'tt' ),
+        'desc' => '',
+        'id' => 'tt_daily_sign_credits',
+        'std' => '10',
+        'class' => 'mini',
+        'type' => 'text'
+    );
+
+
     // - 注册奖励积分
     $options[] = array(
         'name' => __( '注册奖励积分', 'tt' ),
