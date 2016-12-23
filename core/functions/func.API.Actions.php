@@ -29,7 +29,7 @@ function tt_exec_api_actions($action) {
                 return $result;
             }
             if($result){
-                return tt_api_success(sprintf(__('Daily sign successfully and gain %d credits'), (int)tt_get_option('tt_daily_sign_credits', 10)));
+                return tt_api_success(sprintf(__('Daily sign successfully and gain %d credits', 'tt'), (int)tt_get_option('tt_daily_sign_credits', 10)));
             }
             break;
         case 'credits_charge':

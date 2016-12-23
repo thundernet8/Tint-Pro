@@ -83,7 +83,8 @@ $me_allow_routes = json_encode(array(
         'all',
         'comment',
         'star',
-        'update'
+        'update',
+        'credit' //TODO remove?
     ),
     'messages' => array(
         'inbox',
@@ -171,6 +172,7 @@ $site_endpoints = json_encode(array(
     'comment_notify'            =>  'me/notifications/comment',
     'star_notify'               =>  'me/notifications/star',
     'update_notify'             =>  'me/notifications/update',
+    'credit_notify'             =>  'me/notifications/credit',
     'my_all_orders'             =>  'me/orders/all',
     'my_credit_orders'          =>  'me/orders/credit',
     'my_cash_orders'            =>  'me/orders/cash',

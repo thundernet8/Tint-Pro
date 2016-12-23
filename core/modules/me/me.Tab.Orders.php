@@ -26,7 +26,7 @@
                 <header><h2><?php _e('My Orders', 'tt'); ?></h2></header>
                 <div class="info-group clearfix">
                     <div class="col-md-6 orders-info">
-                        <span><?php printf(__('%d order records in total', 'tt'), $count); ?></span>
+                        <span><?php printf(__('%d order records in total', 'tt'), $total); ?></span>
                     </div>
                     <div class="col-md-6 orders-filter">
                         <label><?php _e('Orders Type', 'tt'); ?></label>
@@ -58,7 +58,7 @@
                             <td><?php echo tt_get_order_status_text($order->order_status); ?></td>
                             <td>
                                 <div class="order-actions">
-                                    <a data-order-action="view_detail" href="<?php echo tt_url_for('my_order', $order->id); ?>" title="<?php _e('View the order detail', 'tt'); ?>" target="_blank"><?php _e('View Order', 'tt'); ?></a>
+                                    <a class="view-detail" href="<?php echo tt_url_for('my_order', $order->id); ?>" title="<?php _e('View the order detail', 'tt'); ?>" target="_blank"><?php _e('View Order', 'tt'); ?></a>
                                     <?php if(!in_array($order->order_status, [OrderStatus::PAYED_AND_WAIT_DELIVERY, OrderStatus::DELIVERED_AND_WAIT_CONFIRM, OrderStatus::TRADE_SUCCESS])) { ?>
                                         <span class="text-explode">|</span>
                                         <a class="continue-pay" href="javascript:;" data-order-action="continue_pay" data-order-id="<?php echo $order->order_id; ?>" data-order-seq="<?php echo $order->id; ?>" title="<?php _e('Finish the payment', 'tt'); ?>"><?php _e('Continue Pay', 'tt'); ?></a>

@@ -213,6 +213,9 @@ load_vm('uc/vm.UC.Chat');
 load_vm('uc/vm.UC.Profile');
 load_vm('me/vm.Me.Settings');
 load_vm('me/vm.Me.Credits');
+load_vm('me/vm.Me.Drafts');
+load_vm('me/vm.Me.Messages');
+load_vm('me/vm.Me.Notifications');
 if(TT_PRO && tt_get_option('tt_enable_shop', false)){
     load_vm('shop/vm.Shop.Header.SubNav');
     load_vm('shop/vm.Shop.Home');

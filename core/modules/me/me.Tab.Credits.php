@@ -64,7 +64,7 @@
                 <div class="info-group clearfix">
                     <ul class="records-list">
                     <?php foreach ($records as $record) { ?>
-                        <li><?php echo $record->msg_date; ?><span class="record-text"><?php echo $record->msg_title; ?></span></li>
+                        <li id="record-<?php echo $record->msg_id; ?>"><?php echo $record->msg_date; ?><span class="record-text"><?php echo $record->msg_title; ?></span></li>
                     <?php } ?>
                     </ul>
                     <?php if($max_pages > 1) { ?>

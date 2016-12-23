@@ -79,7 +79,7 @@ class HomeLatestVM extends BaseVM {
             $latest_post['excerpt'] = get_the_excerpt($post);
             $latest_post['category'] = get_the_category_list(' ', '', $post->ID);
             $latest_post['author'] = get_the_author();
-            $latest_post['author_url'] = home_url('/@' . $latest_post['author']); //TODO the link
+            $latest_post['author_url'] = get_author_posts_url($post->post_author);
             $latest_post['time'] = get_post_time('F j, Y', false, $post, false); //get_post_time( string $d = 'U', bool $gmt = false, int|WP_Post $post = null, bool $translate = false )
             $latest_post['datetime'] = get_the_time(DATE_W3C, $post);
             $latest_post['thumb'] = tt_get_thumb($post, 'medium');

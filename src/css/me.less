@@ -32,6 +32,9 @@
 /* Ban */
 //@import "modules/ban/ban";
 
+/* Post loop */
+@import "modules/loop/loop-rows";
+
 body.me {
     background-color: #f5f6f8;
     &>.wrapper {
@@ -304,8 +307,20 @@ body.me-orders {
                         min-width: 80px;
                     }
 
-                    .order-actions {
+                    .th-actions {
+                        min-width: 120px;
+                    }
 
+                    .order-actions {
+                        &>.view-detail {
+                            color: @brand-info;
+                        }
+                        &>.continue-pay {
+                            color: @brand-secondary;
+                        }
+                        &>.delete-order {
+                            color: @brand-danger;
+                        }
                         &>.text-explode {
                             position: relative;
                             top: -2px;
@@ -318,7 +333,6 @@ body.me-orders {
         }
     }
 }
-
 
 /* Membership */
 body.me-membership {
@@ -387,7 +401,6 @@ body.me-membership {
     }
 }
 
-
 /* Credits */
 body.me-credits {
     .credits-tab {
@@ -399,6 +412,7 @@ body.me-credits {
                             p {
                                 margin: 0;
                                 line-height: 32px;
+                                font-weight: 500;
                             }
                         }
                         .btn-daily-sign {
@@ -461,6 +475,229 @@ body.me-credits {
                                 color: @brand-primary;
                             }
                         }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Drafts */
+body.me-drafts {
+    .drafts-tab {
+        &>.tab-content {
+            &>.my-drafts {
+                &>.empty-content {
+                    padding: 30px 0;
+                    text-align: center;
+                    font-size: 2rem;
+                    &>.tico {
+                        font-size: 6rem;
+                        color: #ddd;
+                    }
+                    &>p {
+                        margin: 40px auto 20px;
+                    }
+                }
+                &>.loop-wrap {
+                    &>article {
+                        border-bottom: 1px solid #f5f5f5;
+                        &>.entry-detail {
+                            &>header {
+                                &>.entry-title {
+                                    &>span {
+                                        margin-left: 10px;
+                                        font-size: 1.6rem;
+                                        a {
+                                            &:hover {
+                                                color: @brand-hot;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Messages */
+body.me-messages {
+    .messages-tab {
+        &>.tab-content {
+            &>.my-messages {
+                &>.info-group {
+                    &:first-of-type {
+                        padding: 0;
+                    }
+                    &>.messages-info {
+                        font-size: 1.5rem;
+                        line-height: 36px;
+                    }
+                    &>.messages-filter {
+                        text-align: right;
+                        &>label {
+                            margin-right: 10px;
+                            line-height: 36px;
+                        }
+                        &>select {
+                            max-width: 120px;
+                            height: 36px;
+                            padding: 5px 10px;
+                            font-size: 1.4rem;
+                        }
+                    }
+                    &>.messages-list {
+                        margin-top: 20px;
+                        &>li {
+                            position: relative;
+                            margin-bottom: 15px;
+                            padding-bottom: 15px;
+                            border-bottom: 1px solid #f5f6f8;
+                            &.inbox {
+                                .avatar {
+                                    margin-right: 5px;
+                                }
+                                &>.msg-content {
+                                    margin-left: 50px;
+                                    &:before {
+                                        border-right-color: #f3f7fb;
+                                        left: -10px;
+                                    }
+                                }
+                            }
+                            &.sendbox {
+                                .avatar {
+                                    right: 0;
+                                }
+                                &>.msg-content {
+                                    margin-right: 50px;
+                                    &:before {
+                                        border-left-color: #f3f7fb;
+                                        right: -10px;
+                                    }
+                                }
+                            }
+                            &>.msg-title {
+                                white-space: nowrap;
+                                text-overflow: ellipsis;
+                                overflow: hidden;
+                                &>.msg-author {
+                                    margin-right: 5px;
+                                    color: #757f90;
+                                    &>span {
+                                        margin-right: 10px;
+                                        color: @brand-primary;
+                                    }
+                                    &>.avatar {
+                                        position: absolute;
+                                        top: 33px;
+                                        width: 36px;
+                                        height: 36px;
+                                        border-radius: 50%;
+                                    }
+                                }
+                            }
+                            &>.msg-content {
+                                position: relative;
+                                padding: 10px 20px;
+                                margin-top: 10px;
+                                border-radius: 3px;
+                                font-size: 1.3rem;
+                                line-height: 1.5;
+                                word-break: break-all;
+                                color: @brand-primary;
+                                background-color: #f3f7fb;
+                                &:before {
+                                    content: " ";
+                                    height: 0;
+                                    width: 0;
+                                    border: 5px solid transparent;
+                                    position: absolute;
+                                    top: 12px;
+                                }
+                                &>p {
+                                    &:last-child {
+                                        margin-bottom: 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                &>.empty-content {
+                    padding: 50px 0;
+                    text-align: center;
+                    font-size: 2rem;
+                    &>.tico {
+                        font-size: 6rem;
+                        color: #ddd;
+                    }
+                    &>p {
+                        margin: 40px auto 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Notifications */
+body.me-notifications {
+    .notifications-tab {
+        &>.tab-content {
+            &>.my-notifications {
+                &>.info-group {
+                    &:first-of-type {
+                        padding: 0;
+                    }
+                    &>.notifications-info {
+                        font-size: 1.5rem;
+                        line-height: 36px;
+                    }
+                    &>.notifications-filter {
+                        text-align: right;
+                        &>label {
+                            margin-right: 10px;
+                            line-height: 36px;
+                        }
+                        &>select {
+                            max-width: 120px;
+                            height: 36px;
+                            padding: 5px 10px;
+                            font-size: 1.4rem;
+                        }
+                    }
+                    &>.notifications-list {
+                        margin-top: 20px;
+                        &>li {
+                            padding: 0 10px;
+                            margin-bottom: 10px;
+                            line-height: 32px;
+                            //border-bottom: 1px dotted #eee;
+                            color: @text-muted-color;
+                            background: #fafafa;
+                            &>span {
+                                padding: 5px 10px;
+                                line-height: 22px;
+                                color: @brand-primary;
+                            }
+                        }
+                    }
+                }
+                &>.empty-content {
+                    padding: 50px 0;
+                    text-align: center;
+                    font-size: 2rem;
+                    &>.tico {
+                        font-size: 6rem;
+                        color: #ddd;
+                    }
+                    &>p {
+                        margin: 40px auto 20px;
                     }
                 }
             }

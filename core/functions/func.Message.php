@@ -174,7 +174,7 @@ function tt_get_messages( $type = 'chat', $limit = 20, $offset = 0, $read = 0, $
     if(!$user_id) return false;
 
     if(is_array($type)) {
-        $type = implode(',', $type);
+        $type = implode("','", $type); //NOTE  IN('comment','star','update','notification') IN表达式的引号
     }
     if(!in_array($read, [0, 1, 'all'])) {
         $read = 0;
@@ -266,7 +266,7 @@ function tt_count_credit_messages() {
 
 
 /**
- * 获取聊天消息
+ * 获取收到的对话消息
  *
  * @since 2.0.0
  * @param $sender_id
@@ -281,14 +281,65 @@ function tt_get_pm($sender_id, $limit = 20, $offset = 0, $read = 0) {
 
 
 /**
- * 获取来自指定发送者的聊天消息(sender_id为0时不指定发送者)
+ * 获取来自指定发送者的聊天消息数量(sender_id为0时不指定发送者)
  *
  * @param int $sender_id
  * @param int $read
- * @return array|bool|int|null|object
+ * @return int
  */
 function tt_count_pm($sender_id = 0, $read = 0) {
     return tt_count_messages('chat', $read, 'publish', $sender_id);
+}
+
+
+/**
+ * 获取我发送的消息($to_user为0时不指定收件人)
+ *
+ * @since 2.0.0
+ * @param int $to_user
+ * @param int $limit
+ * @param int $offset
+ * @param int $read
+ * @param string $msg_status
+ * @param bool $count
+ * @return array|bool|int|null|object|string
+ */
+function tt_get_sent_pm($to_user = 0, $limit = 20, $offset = 0, $read = 'all', $msg_status = 'publish', $count = false ) {
+    $sender_id = get_current_user_id();
+
+    if(!$sender_id) return false;
+
+    $type = 'chat';
+    if(!in_array($read, [0, 1, 'all'])) {
+        $read = 0;
+    }
+    if(!in_array($msg_status, ['publish', 'trash', 'all'])) {
+        $msg_status = 'publish';
+    }
+
+    global $wpdb;
+    $table_name = $wpdb->prefix . 'tt_messages';
+
+    $sql = sprintf("SELECT %s FROM $table_name WHERE `sender_id`=%d%s AND `msg_type` IN('$type')%s%s ORDER BY (CASE WHEN `msg_read`='all' THEN 1 ELSE 0 END) DESC, `msg_date` DESC%s", $count ? "COUNT(*)" : "*", $sender_id, $to_user ? " AND `user_id`=$to_user" : "", $read!='all' ? " AND `msg_read`='$read'" : "", $msg_status!='all' ? " AND `msg_status`='$msg_status'" : "", $count ? "" : " LIMIT $offset, $limit");
+
+    $results = $count ? $wpdb->get_var($sql) : $wpdb->get_results($sql);
+    if($results){
+        return $results;
+    }
+    return 0;
+}
+
+
+/**
+ * 获取我发送的消息数量
+ *
+ * @since 2.0.0
+ * @param int $to_user
+ * @param int $read
+ * @return int
+ */
+function tt_count_sent_pm($to_user = 0, $read = 'all') {
+    return tt_get_sent_pm($to_user, 0, 0, $read, 'publish', true);
 }
 
 

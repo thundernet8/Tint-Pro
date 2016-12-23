@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-12-22 23:49+0800\n"
+"POT-Creation-Date: 2016-12-23 23:34+0800\n"
 "PO-Revision-Date: 2016-08-17 21:40+0800\n"
 "Last-Translator: \n"
 "Language-Team: Zhiyan <mail@webapproach.net>\n"
@@ -2008,12 +2008,12 @@ msgstr ""
 msgid "My Settings"
 msgstr ""
 
-#: core/functions/func.Seo.php:51
+#: core/functions/func.Seo.php:51 core/modules/me/me.Tab.Notifications.php:26
 msgid "My Notifications"
 msgstr ""
 
-#: core/functions/func.Seo.php:54 core/modules/mod.Header.Shop.php:100
-#: core/modules/mod.Header.php:45
+#: core/functions/func.Seo.php:54 core/modules/me/me.Tab.Messages.php:26
+#: core/modules/mod.Header.Shop.php:100 core/modules/mod.Header.php:45
 msgid "My Messages"
 msgstr ""
 
@@ -2034,7 +2034,7 @@ msgstr ""
 msgid "My Order"
 msgstr ""
 
-#: core/functions/func.Seo.php:69
+#: core/functions/func.Seo.php:69 core/modules/me/me.Tab.Drafts.php:26
 msgid "My Drafts"
 msgstr ""
 
@@ -2670,15 +2670,22 @@ msgid "Credit Records"
 msgstr ""
 
 #: core/modules/me/me.Tab.Credits.php:73
-#: core/modules/me/me.Tab.Credits.php:75
+#: core/modules/me/me.Tab.Credits.php:75 core/modules/me/me.Tab.Drafts.php:52
+#: core/modules/me/me.Tab.Drafts.php:54
 #: core/modules/me/me.Tab.Membership.php:88
 #: core/modules/me/me.Tab.Membership.php:90
+#: core/modules/me/me.Tab.Messages.php:76
+#: core/modules/me/me.Tab.Messages.php:78
+#: core/modules/me/me.Tab.Notifications.php:51
+#: core/modules/me/me.Tab.Notifications.php:53
 #: core/modules/me/me.Tab.Orders.php:77 core/modules/me/me.Tab.Orders.php:79
 msgid "← 上一页"
 msgstr ""
 
-#: core/modules/me/me.Tab.Credits.php:78
+#: core/modules/me/me.Tab.Credits.php:78 core/modules/me/me.Tab.Drafts.php:57
 #: core/modules/me/me.Tab.Membership.php:93
+#: core/modules/me/me.Tab.Messages.php:81
+#: core/modules/me/me.Tab.Notifications.php:56
 #: core/modules/me/me.Tab.Orders.php:82 core/modules/mod.HomeLatest.php:69
 #: core/modules/uc/uc.Tab.Chat.php:87 core/modules/uc/uc.Tab.Comments.php:54
 #: core/modules/uc/uc.Tab.Latest.php:67
@@ -2686,8 +2693,10 @@ msgstr ""
 msgid "Current Page %d"
 msgstr ""
 
-#: core/modules/me/me.Tab.Credits.php:80
+#: core/modules/me/me.Tab.Credits.php:80 core/modules/me/me.Tab.Drafts.php:59
 #: core/modules/me/me.Tab.Membership.php:95
+#: core/modules/me/me.Tab.Messages.php:83
+#: core/modules/me/me.Tab.Notifications.php:58
 #: core/modules/me/me.Tab.Orders.php:84 core/modules/mod.HomeLatest.php:71
 #: core/modules/uc/uc.Tab.Chat.php:89 core/modules/uc/uc.Tab.Comments.php:56
 #: core/modules/uc/uc.Tab.Latest.php:69
@@ -2696,11 +2705,36 @@ msgid "Total %d Pages"
 msgstr ""
 
 #: core/modules/me/me.Tab.Credits.php:83
-#: core/modules/me/me.Tab.Credits.php:85
+#: core/modules/me/me.Tab.Credits.php:85 core/modules/me/me.Tab.Drafts.php:62
+#: core/modules/me/me.Tab.Drafts.php:64
 #: core/modules/me/me.Tab.Membership.php:98
 #: core/modules/me/me.Tab.Membership.php:100
+#: core/modules/me/me.Tab.Messages.php:86
+#: core/modules/me/me.Tab.Messages.php:88
+#: core/modules/me/me.Tab.Notifications.php:61
+#: core/modules/me/me.Tab.Notifications.php:63
 #: core/modules/me/me.Tab.Orders.php:87 core/modules/me/me.Tab.Orders.php:89
 msgid "下一页 →"
+msgstr ""
+
+#: core/modules/me/me.Tab.Drafts.php:37
+msgid "Edit Draft"
+msgstr ""
+
+#: core/modules/me/me.Tab.Drafts.php:71
+#: core/modules/uc/uc.Tab.Comments.php:63
+#: core/modules/uc/uc.Tab.Followers.php:62
+#: core/modules/uc/uc.Tab.Following.php:62
+#: core/modules/uc/uc.Tab.Latest.php:76 core/modules/uc/uc.Tab.Stars.php:79
+msgid "Nothing found here"
+msgstr ""
+
+#: core/modules/me/me.Tab.Drafts.php:72
+#: core/modules/uc/uc.Tab.Comments.php:64
+#: core/modules/uc/uc.Tab.Followers.php:63
+#: core/modules/uc/uc.Tab.Following.php:63
+#: core/modules/uc/uc.Tab.Latest.php:77 core/modules/uc/uc.Tab.Stars.php:80
+msgid "Back to home"
 msgstr ""
 
 #: core/modules/me/me.Tab.Membership.php:26
@@ -2789,6 +2823,88 @@ msgstr ""
 msgid "VIP Order Status"
 msgstr ""
 
+#: core/modules/me/me.Tab.Messages.php:26
+msgid "Sendbox"
+msgstr ""
+
+#: core/modules/me/me.Tab.Messages.php:26
+msgid "Inbox"
+msgstr ""
+
+#: core/modules/me/me.Tab.Messages.php:29
+#, php-format
+msgid "%d message records in total"
+msgstr ""
+
+#: core/modules/me/me.Tab.Messages.php:32
+msgid "Messages Type"
+msgstr ""
+
+#: core/modules/me/me.Tab.Messages.php:34
+msgid "INBOX"
+msgstr ""
+
+#: core/modules/me/me.Tab.Messages.php:35
+msgid "SENDBOX"
+msgstr ""
+
+#: core/modules/me/me.Tab.Messages.php:46
+#, php-format
+msgid "Sent to %s"
+msgstr ""
+
+#: core/modules/me/me.Tab.Messages.php:49
+#: core/modules/me/me.Tab.Messages.php:62
+msgid "Send Time: "
+msgstr ""
+
+#: core/modules/me/me.Tab.Messages.php:50
+msgid "Send To: "
+msgstr ""
+
+#: core/modules/me/me.Tab.Messages.php:59
+#, php-format
+msgid "%s send to me"
+msgstr ""
+
+#: core/modules/me/me.Tab.Messages.php:63
+msgid "Sender: "
+msgstr ""
+
+#: core/modules/me/me.Tab.Messages.php:96
+msgid "No message records"
+msgstr ""
+
+#: core/modules/me/me.Tab.Notifications.php:29
+#, php-format
+msgid "%d notifications records in total"
+msgstr ""
+
+#: core/modules/me/me.Tab.Notifications.php:32
+msgid "Notifications Type"
+msgstr ""
+
+#: core/modules/me/me.Tab.Notifications.php:34
+#: core/modules/me/me.Tab.Orders.php:34
+msgid "ALL"
+msgstr ""
+
+#: core/modules/me/me.Tab.Notifications.php:35
+msgid "COMMENT NOTIFICATION"
+msgstr ""
+
+#: core/modules/me/me.Tab.Notifications.php:36
+msgid "STAR NOTIFICATION"
+msgstr ""
+
+#: core/modules/me/me.Tab.Notifications.php:37
+msgid "CREDIT NOTIFICATION"
+msgstr ""
+
+#: core/modules/me/me.Tab.Notifications.php:71
+msgid "No notifications"
+msgstr ""
+
 #: core/modules/me/me.Tab.Orders.php:29
 #, php-format
 msgid "%d order records in total"
@@ -2796,10 +2912,6 @@ msgstr ""
 
 #: core/modules/me/me.Tab.Orders.php:32
 msgid "Orders Type"
-msgstr ""
-
-#: core/modules/me/me.Tab.Orders.php:34
-msgid "ALL"
 msgstr ""
 
 #: core/modules/me/me.Tab.Orders.php:35
@@ -3515,20 +3627,6 @@ msgstr ""
 
 #: core/modules/uc/uc.Tab.Comments.php:29
 msgid "REVIEW"
-msgstr ""
-
-#: core/modules/uc/uc.Tab.Comments.php:63
-#: core/modules/uc/uc.Tab.Followers.php:62
-#: core/modules/uc/uc.Tab.Following.php:62
-#: core/modules/uc/uc.Tab.Latest.php:76 core/modules/uc/uc.Tab.Stars.php:79
-msgid "Nothing found here"
-msgstr ""
-
-#: core/modules/uc/uc.Tab.Comments.php:64
-#: core/modules/uc/uc.Tab.Followers.php:63
-#: core/modules/uc/uc.Tab.Following.php:63
-#: core/modules/uc/uc.Tab.Latest.php:77 core/modules/uc/uc.Tab.Stars.php:80
-msgid "Back to home"
 msgstr ""
 
 #: core/modules/uc/uc.Tab.Followers.php:32

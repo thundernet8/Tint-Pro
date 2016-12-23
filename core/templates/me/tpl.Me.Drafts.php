@@ -18,7 +18,7 @@
     <section class="container user-area">
         <div class="inner row">
             <?php load_mod('me/me.NavMenu'); ?>
-            <?php load_mod('me/me.Tab.Stars'); ?>
+            <?php load_mod('me/me.Tab.Drafts'); ?>
         </div>
     </section>
 </div>
