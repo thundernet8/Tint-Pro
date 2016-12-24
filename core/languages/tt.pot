@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-12-23 23:34+0800\n"
+"POT-Creation-Date: 2016-12-24 20:05+0800\n"
 "PO-Revision-Date: 2016-08-17 21:40+0800\n"
 "Last-Translator: \n"
 "Language-Team: Zhiyan <mail@webapproach.net>\n"
@@ -335,6 +335,38 @@ msgstr ""
 #: core/api/v1/endpoints/class.Rest.Order.Controller.php:371
 #: core/api/v1/endpoints/class.Rest.ShoppingCart.Controller.php:202
 msgid "Delete items from cart successfully"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Post.Controller.php:112
+#: core/api/v1/endpoints/class.Rest.Post.Controller.php:190
+msgid "Sorry, you do not have the capability to publish a post."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Post.Controller.php:114
+#: core/api/v1/endpoints/class.Rest.Post.Controller.php:192
+msgid "Sorry, you do not have the capability to contribute a post."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Post.Controller.php:128
+#: core/api/v1/endpoints/class.Rest.Post.Controller.php:207
+msgid "The post title is too short or empty"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Post.Controller.php:133
+#: core/api/v1/endpoints/class.Rest.Post.Controller.php:212
+msgid "The post content is too short or empty"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Post.Controller.php:177
+msgid "Create post successfully"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Post.Controller.php:242
+msgid "Update the post failed"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Post.Controller.php:261
+msgid "Update post successfully"
 msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:110
@@ -1464,7 +1496,7 @@ msgstr ""
 msgid "The resource you willing to buy is not existed"
 msgstr ""
 
-#: core/functions/func.Download.php:73 core/functions/shop/func.Shop.php:491
+#: core/functions/func.Download.php:73 core/functions/shop/func.Shop.php:493
 #: core/modules/mod.Download.php:35 core/modules/mod.Download.php:49
 #: dash/options.php:956 dash/options.php:1062
 msgid "None"
@@ -1843,6 +1875,8 @@ msgid "普通下载资源下载方式"
 msgstr ""
 
 #: core/functions/func.Metabox.php:114
+#: core/modules/me/me.Tab.Contribute.php:69
+#: core/modules/me/me.Tab.EditPost.php:74
 msgid ""
 "普通下载资源，格式为 资源1名称|资源1url|下载密码,资源2名称|资源2url|下载密"
 "码 资源名称与url用|隔开，不同资源用英文逗号隔开，url请添加http://头，如提供"
@@ -1850,6 +1884,8 @@ msgid ""
 msgstr ""
 
 #: core/functions/func.Metabox.php:116
+#: core/modules/me/me.Tab.Contribute.php:75
+#: core/modules/me/me.Tab.EditPost.php:80
 msgid ""
 "积分下载资源，格式为 资源1名称|资源1url|资源1价格|下载密码,资源2名称|资源"
 "2url|资源2价格|下载密码 资源名称与url以及价格、下载密码用|隔开，不同资源用"
@@ -2042,7 +2078,8 @@ msgstr ""
 msgid "New Post"
 msgstr ""
 
-#: core/functions/func.Seo.php:75 core/modules/uc/uc.Tab.Latest.php:34
+#: core/functions/func.Seo.php:75 core/modules/me/me.Tab.EditPost.php:26
+#: core/modules/uc/uc.Tab.Latest.php:34
 msgid "Edit Post"
 msgstr ""
 
@@ -2328,11 +2365,13 @@ msgid "The Resources You Bought in %s"
 msgstr ""
 
 #: core/functions/shop/func.Shop.Orders.php:647
+#: core/viewModels/me/vm.Me.Order.php:73
 #, php-format
 msgid "%d Credits"
 msgstr ""
 
 #: core/functions/shop/func.Shop.Orders.php:647
+#: core/viewModels/me/vm.Me.Order.php:73
 #, php-format
 msgid "%0.2f YUAN"
 msgstr ""
@@ -2562,21 +2601,21 @@ msgstr ""
 msgid "Show all categories"
 msgstr ""
 
-#: core/functions/shop/func.Shop.php:492
+#: core/functions/shop/func.Shop.php:494
 #, php-format
 msgid ""
 "<li><p>%1$s</p><p>下载链接：<a href=\"%2$s\" title=\"%1$s\" target=\"_blank"
 "\">%2$s</a>下载密码：%3$s</p></li>"
 msgstr ""
 
-#: core/functions/shop/func.Shop.php:512
+#: core/functions/shop/func.Shop.php:520
 msgid ""
 "<div class=\"contextual-bg bg-paycontent\"><span><i class=\"tico tico-"
 "paypal\">&nbsp;</i>付费内容</span><p>你只有购买支付后才能查看该内容！</p></"
 "div>"
 msgstr ""
 
-#: core/functions/shop/func.Shop.php:518
+#: core/functions/shop/func.Shop.php:526
 #, php-format
 msgid ""
 "<div class=\"contextual-bg bg-paycontent\"><span><i class=\"tico tico-"
@@ -2631,6 +2670,82 @@ msgstr ""
 
 #: core/modules/me/me.NavMenu.php:34
 msgid "ORDERS"
+msgstr ""
+
+#: core/modules/me/me.Tab.Contribute.php:22
+msgid "Add New Post"
+msgstr ""
+
+#: core/modules/me/me.Tab.Contribute.php:25
+#: core/modules/me/me.Tab.EditPost.php:30
+msgid "Please save your draft timely in case of missing content"
+msgstr ""
+
+#: core/modules/me/me.Tab.Contribute.php:28
+#: core/modules/me/me.Tab.EditPost.php:33
+msgid "Input your title here"
+msgstr ""
+
+#: core/modules/me/me.Tab.Contribute.php:33
+msgid "Write your words here..."
+msgstr ""
+
+#: core/modules/me/me.Tab.Contribute.php:38
+#: core/modules/me/me.Tab.EditPost.php:43
+msgid "Choose the category"
+msgstr ""
+
+#: core/modules/me/me.Tab.Contribute.php:47
+msgid "Input the tags, comma separate multi tags"
+msgstr ""
+
+#: core/modules/me/me.Tab.Contribute.php:52
+msgid "Add excerpt"
+msgstr ""
+
+#: core/modules/me/me.Tab.Contribute.php:57
+#: core/modules/me/me.Tab.EditPost.php:62
+msgid "Copyright - Original post title"
+msgstr ""
+
+#: core/modules/me/me.Tab.Contribute.php:62
+#: core/modules/me/me.Tab.EditPost.php:67
+msgid ""
+"Copyright - Original post link, please leave empty if yours is original"
+msgstr ""
+
+#: core/modules/me/me.Tab.Contribute.php:67
+#: core/modules/me/me.Tab.EditPost.php:72
+msgid "Embed free resources"
+msgstr ""
+
+#: core/modules/me/me.Tab.Contribute.php:73
+#: core/modules/me/me.Tab.EditPost.php:78
+msgid "Embed sale resources"
+msgstr ""
+
+#: core/modules/me/me.Tab.Contribute.php:82
+#: core/modules/me/me.Tab.EditPost.php:87
+msgid "Submit for review"
+msgstr ""
+
+#: core/modules/me/me.Tab.Contribute.php:83
+#: core/modules/me/me.Tab.EditPost.php:88
+msgid "Save draft"
+msgstr ""
+
+#: core/modules/me/me.Tab.Contribute.php:85
+#: core/modules/me/me.Tab.EditPost.php:90
+msgid "Publish post"
+msgstr ""
+
+#: core/modules/me/me.Tab.Contribute.php:90
+#: core/modules/me/me.Tab.EditPost.php:95
+msgid "Confirm Action"
+msgstr ""
+
+#: core/modules/me/me.Tab.Contribute.php:95
+msgid "Sorry, you do not have the capability of contributing"
 msgstr ""
 
 #: core/modules/me/me.Tab.Credits.php:29
@@ -2737,6 +2852,22 @@ msgstr ""
 msgid "Back to home"
 msgstr ""
 
+#: core/modules/me/me.Tab.EditPost.php:52
+msgid "Post tags, comma separate multi tags"
+msgstr ""
+
+#: core/modules/me/me.Tab.EditPost.php:57
+msgid "Post excerpt"
+msgstr ""
+
+#: core/modules/me/me.Tab.EditPost.php:100
+msgid "Sorry, you do not have the capability to edit the post"
+msgstr ""
+
+#: core/modules/me/me.Tab.EditPost.php:106
+msgid "The post you specified is not existed"
+msgstr ""
+
 #: core/modules/me/me.Tab.Membership.php:26
 msgid "Member Info"
 msgstr ""
@@ -2812,6 +2943,7 @@ msgid "Payment Time"
 msgstr ""
 
 #: core/modules/me/me.Tab.Membership.php:68
+#: core/modules/me/me.Tab.Order.php:62
 msgid "Payment Amount"
 msgstr ""
 
@@ -2905,6 +3037,76 @@ msgstr ""
 msgid "No notifications"
 msgstr ""
 
+#: core/modules/me/me.Tab.Order.php:26
+msgid "Order Detail"
+msgstr ""
+
+#: core/modules/me/me.Tab.Order.php:29
+msgid "Order ID"
+msgstr ""
+
+#: core/modules/me/me.Tab.Order.php:33
+msgid "Order Content"
+msgstr ""
+
+#: core/modules/me/me.Tab.Order.php:37 core/modules/me/me.Tab.Orders.php:45
+msgid "Order Create Time"
+msgstr ""
+
+#: core/modules/me/me.Tab.Order.php:42
+msgid "Order Success Time"
+msgstr ""
+
+#: core/modules/me/me.Tab.Order.php:47
+msgid "Payment Status"
+msgstr ""
+
+#: core/modules/me/me.Tab.Order.php:52 core/modules/me/me.Tab.Orders.php:64
+msgid "Finish the payment"
+msgstr ""
+
+#: core/modules/me/me.Tab.Order.php:52 core/modules/me/me.Tab.Orders.php:64
+msgid "Continue Pay"
+msgstr ""
+
+#: core/modules/me/me.Tab.Order.php:58
+msgid "Payment Method"
+msgstr ""
+
+#: core/modules/me/me.Tab.Order.php:69 core/modules/me/me.Tab.Order.php:92
+msgid "Payed Content"
+msgstr ""
+
+#: core/modules/me/me.Tab.Order.php:72
+msgid ""
+"This is a combined order, please visit sub orders below for more specified "
+"payed content"
+msgstr ""
+
+#: core/modules/me/me.Tab.Order.php:75
+#, php-format
+msgid "Order %s"
+msgstr ""
+
+#: core/modules/me/me.Tab.Order.php:80
+msgid "Download Content"
+msgstr ""
+
+#: core/modules/me/me.Tab.Order.php:84
+#, php-format
+msgid "Download Name: %s"
+msgstr ""
+
+#: core/modules/me/me.Tab.Order.php:85
+#, php-format
+msgid "Download Link: %s"
+msgstr ""
+
+#: core/modules/me/me.Tab.Order.php:86
+#, php-format
+msgid "Download Password: %s"
+msgstr ""
+
 #: core/modules/me/me.Tab.Orders.php:29
 #, php-format
 msgid "%d order records in total"
@@ -2920,10 +3122,6 @@ msgstr ""
 
 #: core/modules/me/me.Tab.Orders.php:36
 msgid "CREDIT"
-msgstr ""
-
-#: core/modules/me/me.Tab.Orders.php:45
-msgid "Order Create Time"
 msgstr ""
 
 #: core/modules/me/me.Tab.Orders.php:46
@@ -2945,14 +3143,6 @@ msgstr ""
 
 #: core/modules/me/me.Tab.Orders.php:61
 msgid "View Order"
-msgstr ""
-
-#: core/modules/me/me.Tab.Orders.php:64
-msgid "Finish the payment"
-msgstr ""
-
-#: core/modules/me/me.Tab.Orders.php:64
-msgid "Continue Pay"
 msgstr ""
 
 #: core/modules/me/me.Tab.Orders.php:66
@@ -4571,6 +4761,14 @@ msgstr ""
 
 #: core/templates/tpl.Error.php:60
 msgid "An error has happened on this page."
+msgstr ""
+
+#: core/viewModels/me/vm.Me.Order.php:72
+msgid "Credit Payment"
+msgstr ""
+
+#: core/viewModels/me/vm.Me.Order.php:72
+msgid "Cash Payment"
 msgstr ""
 
 #: core/viewModels/shop/vm.Embed.Product.php:72

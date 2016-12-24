@@ -63,7 +63,7 @@ class MeNotificationsVM extends BaseVM {
         $instance->_type = $type;
         $instance->_page = $page;
         $instance->_limit = $limit;
-        $instance->_enableCache = false; //TODO debug use
+        //$instance->_enableCache = false; //TODO debug use
         $instance->configInstance();
         return $instance;
     }

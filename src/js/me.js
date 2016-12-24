@@ -34,6 +34,7 @@ import DeleteOrder from './modules/deleteOrder';
 import JoinVip from './modules/joinVip';
 import DailySign from './modules/dailySign';
 import CreditsCharge from './modules/creditsCharge';
+import Contribute from './modules/contribute';
 
 
 // DOM Ready
@@ -103,4 +104,7 @@ jQuery(document).ready(function ($) {
     
     // 积分充值
     CreditsCharge.init();
+    
+    // 前台投稿或编辑文章
+    Contribute.init();
 });

@@ -477,10 +477,12 @@ function tt_get_specified_user_product_price($product_id, $user_id = 0) {
  *
  * @since 2.0.0
  * @param $product_id
+ * @param $html
  * @return string
  */
-function tt_get_product_download_content($product_id){
+function tt_get_product_download_content($product_id, $html = true){
     $content = '';
+    $array_content = array();
     $dl_links = get_post_meta($product_id, 'tt_product_download_links', true);
     if(!empty($dl_links)):
         $dl_links = explode(PHP_EOL, $dl_links);
@@ -490,9 +492,14 @@ function tt_get_product_download_content($product_id){
             $dl_info[1] = isset($dl_info[1]) ? $dl_info[1] : '';
             $dl_info[2] = isset($dl_info[2]) ? $dl_info[2] : __('None', 'tt');
             $content .= sprintf(__('<li><p>%1$s</p><p>下载链接：<a href="%2$s" title="%1$s" target="_blank">%2$s</a>下载密码：%3$s</p></li>', 'tt'), $dl_info[0], $dl_info[1], $dl_info[2]);
+            $array_content[] = array(
+                'name' => $dl_info[0],
+                'link' => $dl_info[1],
+                'password' => $dl_info[2]
+            );
         }
     endif;
-    return $content;
+    return $html ? $content : $array_content;
 }
 
 
@@ -501,21 +508,22 @@ function tt_get_product_download_content($product_id){
  *
  * @since 2.0.0
  * @param $product_id
+ * @param bool $html 是否输出HTML
  * @return string
  */
-function tt_get_product_pay_content($product_id){
+function tt_get_product_pay_content($product_id, $html = true){
     $user_id = get_current_user_id();
 
     $price = tt_get_specified_user_product_price($product_id, $user_id);
     $show = $price < 0.01 && tt_check_user_has_buy_product($product_id, $user_id);
     if(!$show) {
-        return __('<div class="contextual-bg bg-paycontent"><span><i class="tico tico-paypal">&nbsp;</i>付费内容</span><p>你只有购买支付后才能查看该内容！</p></div>', 'tt');
+        return $html ? __('<div class="contextual-bg bg-paycontent"><span><i class="tico tico-paypal">&nbsp;</i>付费内容</span><p>你只有购买支付后才能查看该内容！</p></div>', 'tt') : null;
     }
 
     $pay_content = get_post_meta($product_id, 'tt_product_pay_content', true);
-    $download_content = tt_get_product_download_content($product_id);
+    $download_content = tt_get_product_download_content($product_id, $html);
 
-    return sprintf(__('<div class="contextual-bg bg-paycontent"><span><i class="tico tico-paypal">&nbsp;</i>付费内容</span><p>%1$s</p><p>%2$s</p></div>', 'tt'), $download_content, $pay_content);
+    return $html ? sprintf(__('<div class="contextual-bg bg-paycontent"><span><i class="tico tico-paypal">&nbsp;</i>付费内容</span><p>%1$s</p><p>%2$s</p></div>', 'tt'), $download_content, $pay_content) : array('download_content' => $download_content, 'pay_content' => $pay_content);
 }
 
 

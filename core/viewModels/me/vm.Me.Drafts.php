@@ -56,7 +56,8 @@ class MeDraftsVM extends BaseVM {
         $posts_per_page = get_option('posts_per_page', 10);
         $args = array(
             'post_type' => 'post',
-            'post_status' => 'draft',
+            'post_status' => 'draft,pending',
+            'author' => $this->_userId,
             'posts_per_page' => $posts_per_page,
             'paged' => $this->_page,
 //            'has_password' => false,
@@ -67,9 +68,12 @@ class MeDraftsVM extends BaseVM {
 
         $query = new WP_Query($args);
         $query->is_home = false;
+        $query->is_author = false;
         $GLOBALS['wp_query'] = $query; // 取代主循环(query_posts只返回posts，为了获取其他有用数据，使用WP_Query) //TODO 缓存时无效
 
         $draft_posts = array();
+
+        $author_url = get_author_posts_url($this->_userId);
 
         while ($query->have_posts()) : $query->the_post();
             $draft_post = array();
@@ -81,7 +85,7 @@ class MeDraftsVM extends BaseVM {
             $draft_post['excerpt'] = get_the_excerpt($post);
             $draft_post['category'] = get_the_category_list(' ', '', $post->ID);
             //$draft_post['author'] = get_the_author();
-            $draft_post['author_url'] = get_author_posts_url($post->post_author);
+            $draft_post['author_url'] = $author_url;
             $draft_post['time'] = get_post_time('Y-m-d H:i:s', false, $post, false); //get_post_time( string $d = 'U', bool $gmt = false, int|WP_Post $post = null, bool $translate = false )
             $draft_post['datetime'] = get_the_time(DATE_W3C, $post);
             $draft_post['thumb'] = tt_get_thumb($post, 'medium');

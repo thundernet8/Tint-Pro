@@ -216,6 +216,7 @@ load_vm('me/vm.Me.Credits');
 load_vm('me/vm.Me.Drafts');
 load_vm('me/vm.Me.Messages');
 load_vm('me/vm.Me.Notifications');
+load_vm('me/vm.Me.EditPost');
 if(TT_PRO && tt_get_option('tt_enable_shop', false)){
     load_vm('shop/vm.Shop.Header.SubNav');
     load_vm('shop/vm.Shop.Home');
@@ -227,6 +228,7 @@ if(TT_PRO && tt_get_option('tt_enable_shop', false)){
     load_vm('shop/vm.Shop.LatestRated');
     load_vm('shop/vm.Shop.ViewHistory');
     load_vm('shop/vm.Embed.Product');
+    load_vm('me/vm.Me.Order');
     load_vm('me/vm.Me.Orders');
     load_vm('me/vm.Me.Membership');
 }

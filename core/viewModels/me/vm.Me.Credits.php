@@ -54,7 +54,7 @@ class MeCreditRecordsVM extends BaseVM {
         $instance->_userId = $user_id;
         $instance->_page = $page;
         $instance->_limit = $limit;
-        $instance->_enableCache = false; //TODO debug use
+        //$instance->_enableCache = false; //TODO debug use
         $instance->configInstance();
         return $instance;
     }

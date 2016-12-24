@@ -1,5 +1,5 @@
 /**
- * Generated on Thu Dec 22 2016 23:49:11 GMT+0800 (中国标准时间) by Zhiyan
+ * Generated on Sat Dec 24 2016 20:08:31 GMT+0800 (中国标准时间) by Zhiyan
  *
  * @package   Tint
  * @version   v2.0.0
@@ -35,35 +35,21 @@
             'use strict';
             var _loading = __webpack_require__(8);
             var _msgbox = __webpack_require__(6);
-            __webpack_require__(9);
-            var _loadNextPage = __webpack_require__(13);
-            var _loadNextPage2 = _interopRequireDefault(_loadNextPage);
-            var _scroll = __webpack_require__(14);
-            var _scroll2 = _interopRequireDefault(_scroll);
-            var _modalSignBox = __webpack_require__(5);
-            var _modalSignBox2 = _interopRequireDefault(_modalSignBox);
-            var _signHelp = __webpack_require__(15);
-            var _signHelp2 = _interopRequireDefault(_signHelp);
-            var _fixFooter = __webpack_require__(16);
-            var _fixFooter2 = _interopRequireDefault(_fixFooter);
-            var _toggle = __webpack_require__(37);
-            var _toggle2 = _interopRequireDefault(_toggle);
-            var _referral = __webpack_require__(17);
-            var _referral2 = _interopRequireDefault(_referral);
-            function _interopRequireDefault(obj) {
-                return obj && obj[['__esModule']] ? obj : { default: obj };
-            }
+            var _signin = __webpack_require__(10);
+            var _signup = __webpack_require__(11);
+            var _seasonalBg = __webpack_require__(12);
             jQuery(document)[['ready']](function ($) {
                 (0, _loading[['handleLineLoading']])();
                 _msgbox[['popMsgbox']][['init']]();
-                _loadNextPage2[['default']][['init']]();
-                _scroll2[['default']][['initScrollTo']]();
-                _modalSignBox2[['default']][['init']]();
-                _signHelp2[['default']][['init']]();
-                (0, _fixFooter2[['default']])();
-                _scroll2[['default']][['initShopSubNavCollapse']]();
-                _toggle2[['default']][['initShopLeftMenuToggle']]();
-                _referral2[['default']][['init']]();
+                _msgbox[['msgbox']][['init']]();
+                var body = $('body');
+                if (body[['hasClass']]('signin')) {
+                    (0, _seasonalBg[['handleSeasonalBg']])($('#bg-layer'));
+                    _signin[['pageSignIn']][['init']]();
+                }
+                if (body[['hasClass']]('signup')) {
+                    _signup[['pageSignUp']][['init']]();
+                }
             });
         }[['call']](exports, __webpack_require__(1)));
     },
@@ -99,7 +85,8 @@
             coupons: _utils2[['default']][['getAPIUrl']]('/coupons'),
             boughtResources: _utils2[['default']][['getAPIUrl']]('/users/boughtresources'),
             userProfiles: _utils2[['default']][['getAPIUrl']]('/users/profiles'),
-            otherActions: _utils2[['default']][['getAPIUrl']]('/actions')
+            otherActions: _utils2[['default']][['getAPIUrl']]('/actions'),
+            posts: _utils2[['default']][['getAPIUrl']]('/posts')
         };
         var urls = {
             site: _utils2[['default']][['getSiteUrl']](),
@@ -1484,1391 +1471,428 @@
             exports[['handleSpinLoading']] = handleSpinLoading;
         }[['call']](exports, __webpack_require__(1)));
     },
-    function (module, exports, __webpack_require__) {
-        'use strict';
-        var _typeof = typeof Symbol === 'function' && typeof Symbol[['iterator']] === 'symbol' ? function (obj) {
-            return typeof obj;
-        } : function (obj) {
-            return obj && typeof Symbol === 'function' && obj[['constructor']] === Symbol ? 'symbol' : typeof obj;
-        };
-        var jQuery = __webpack_require__(1);
-        (function (global, $) {
-            'use strict';
-            var Radiocheck = function Radiocheck(element, options) {
-                this[['init']]('radiocheck', element, options);
-            };
-            Radiocheck[['DEFAULTS']] = {
-                checkboxClass: 'custom-checkbox',
-                radioClass: 'custom-radio',
-                checkboxTemplate: '<span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>',
-                radioTemplate: '<span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>'
-            };
-            Radiocheck[['prototype']][['init']] = function (type, element, options) {
-                this[['$element']] = $(element);
-                this[['options']] = $[['extend']]({}, Radiocheck[['DEFAULTS']], this[['$element']][['data']](), options);
-                if (this[['$element']][['attr']]('type') == 'checkbox') {
-                    this[['$element']][['addClass']](this[['options']][['checkboxClass']]);
-                    this[['$element']][['after']](this[['options']][['checkboxTemplate']]);
-                } else if (this[['$element']][['attr']]('type') == 'radio') {
-                    this[['$element']][['addClass']](this[['options']][['radioClass']]);
-                    this[['$element']][['after']](this[['options']][['radioTemplate']]);
-                }
-            };
-            Radiocheck[['prototype']][['check']] = function () {
-                this[['$element']][['prop']]('checked', true);
-                this[['$element']][['trigger']]('change.radiocheck')[['trigger']]('checked.radiocheck');
-            }, Radiocheck[['prototype']][['uncheck']] = function () {
-                this[['$element']][['prop']]('checked', false);
-                this[['$element']][['trigger']]('change.radiocheck')[['trigger']]('unchecked.radiocheck');
-            }, Radiocheck[['prototype']][['toggle']] = function () {
-                this[['$element']][['prop']]('checked', function (i, value) {
-                    return !value;
-                });
-                this[['$element']][['trigger']]('change.radiocheck')[['trigger']]('toggled.radiocheck');
-            }, Radiocheck[['prototype']][['indeterminate']] = function () {
-                this[['$element']][['prop']]('indeterminate', true);
-                this[['$element']][['trigger']]('change.radiocheck')[['trigger']]('indeterminated.radiocheck');
-            }, Radiocheck[['prototype']][['determinate']] = function () {
-                this[['$element']][['prop']]('indeterminate', false);
-                this[['$element']][['trigger']]('change.radiocheck')[['trigger']]('determinated.radiocheck');
-            }, Radiocheck[['prototype']][['disable']] = function () {
-                this[['$element']][['prop']]('disabled', true);
-                this[['$element']][['trigger']]('change.radiocheck')[['trigger']]('disabled.radiocheck');
-            }, Radiocheck[['prototype']][['enable']] = function () {
-                this[['$element']][['prop']]('disabled', false);
-                this[['$element']][['trigger']]('change.radiocheck')[['trigger']]('enabled.radiocheck');
-            }, Radiocheck[['prototype']][['destroy']] = function () {
-                this[['$element']][['removeData']]()[['removeClass']](this[['options']][['checkboxClass']] + ' ' + this[['options']][['radioClass']])[['next']]('.icons')[['remove']]();
-                this[['$element']][['trigger']]('destroyed.radiocheck');
-            };
-            function Plugin(option) {
-                return this[['each']](function () {
-                    var $this = $(this);
-                    var data = $this[['data']]('radiocheck');
-                    var options = (typeof option === 'undefined' ? 'undefined' : _typeof(option)) == 'object' && option;
-                    if (!data && option == 'destroy') {
-                        return;
-                    }
-                    if (!data) {
-                        $this[['data']]('radiocheck', data = new Radiocheck(this, options));
-                    }
-                    if (typeof option == 'string') {
-                        data[option]();
-                    }
-                    var mobile = /mobile|tablet|phone|ip(ad|od)|android|silk|webos/i[['test']](global[['navigator']][['userAgent']]);
-                    if (mobile === true) {
-                        $this[['parent']]()[['hover']](function () {
-                            $this[['addClass']]('nohover');
-                        }, function () {
-                            $this[['removeClass']]('nohover');
-                        });
-                    }
-                });
-            }
-            var old = $[['fn']][['radiocheck']];
-            $[['fn']][['radiocheck']] = Plugin;
-            $[['fn']][['radiocheck']][['Constructor']] = Radiocheck;
-            $[['fn']][['radiocheck']][['noConflict']] = function () {
-                $[['fn']][['radiocheck']] = old;
-                return this;
-            };
-        }(undefined, jQuery));
-        (function ($) {
-            'use strict';
-            var Tooltip = function Tooltip(element, options) {
-                this[['type']] = this[['options']] = this[['enabled']] = this[['timeout']] = this[['hoverState']] = this[['$element']] = null;
-                this[['init']]('tooltip', element, options);
-            };
-            Tooltip[['VERSION']] = '3.2.0';
-            Tooltip[['DEFAULTS']] = {
-                animation: true,
-                placement: 'top',
-                selector: false,
-                template: '<div class="tooltip" role="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>',
-                trigger: 'hover focus',
-                title: '',
-                delay: 0,
-                html: false,
-                container: false,
-                viewport: {
-                    selector: 'body',
-                    padding: 0
-                }
-            };
-            Tooltip[['prototype']][['init']] = function (type, element, options) {
-                this[['enabled']] = true;
-                this[['type']] = type;
-                this[['$element']] = $(element);
-                this[['options']] = this[['getOptions']](options);
-                this[['$viewport']] = this[['options']][['viewport']] && $(this[['options']][['viewport']][['selector']] || this[['options']][['viewport']]);
-                var triggers = this[['options']][['trigger']][['split']](' ');
-                for (var i = triggers[['length']]; i--;) {
-                    var trigger = triggers[i];
-                    if (trigger == 'click') {
-                        this[['$element']][['on']]('click.' + this[['type']], this[['options']][['selector']], $[['proxy']](this[['toggle']], this));
-                    } else if (trigger != 'manual') {
-                        var eventIn = trigger == 'hover' ? 'mouseenter' : 'focusin';
-                        var eventOut = trigger == 'hover' ? 'mouseleave' : 'focusout';
-                        this[['$element']][['on']](eventIn + '.' + this[['type']], this[['options']][['selector']], $[['proxy']](this[['enter']], this));
-                        this[['$element']][['on']](eventOut + '.' + this[['type']], this[['options']][['selector']], $[['proxy']](this[['leave']], this));
-                    }
-                }
-                this[['options']][['selector']] ? this[['_options']] = $[['extend']]({}, this[['options']], {
-                    trigger: 'manual',
-                    selector: ''
-                }) : this[['fixTitle']]();
-            };
-            Tooltip[['prototype']][['getDefaults']] = function () {
-                return Tooltip[['DEFAULTS']];
-            };
-            Tooltip[['prototype']][['getOptions']] = function (options) {
-                options = $[['extend']]({}, this[['getDefaults']](), this[['$element']][['data']](), options);
-                if (options[['delay']] && typeof options[['delay']] == 'number') {
-                    options[['delay']] = {
-                        show: options[['delay']],
-                        hide: options[['delay']]
-                    };
-                }
-                return options;
-            };
-            Tooltip[['prototype']][['getDelegateOptions']] = function () {
-                var options = {};
-                var defaults = this[['getDefaults']]();
-                this[['_options']] && $[['each']](this[['_options']], function (key, value) {
-                    if (defaults[key] != value)
-                        options[key] = value;
-                });
-                return options;
-            };
-            Tooltip[['prototype']][['enter']] = function (obj) {
-                var self = obj instanceof this[['constructor']] ? obj : $(obj[['currentTarget']])[['data']]('bs.' + this[['type']]);
-                if (!self) {
-                    self = new this[['constructor']](obj[['currentTarget']], this[['getDelegateOptions']]());
-                    $(obj[['currentTarget']])[['data']]('bs.' + this[['type']], self);
-                }
-                clearTimeout(self[['timeout']]);
-                self[['hoverState']] = 'in';
-                if (!self[['options']][['delay']] || !self[['options']][['delay']][['show']])
-                    return self[['show']]();
-                self[['timeout']] = setTimeout(function () {
-                    if (self[['hoverState']] == 'in')
-                        self[['show']]();
-                }, self[['options']][['delay']][['show']]);
-            };
-            Tooltip[['prototype']][['leave']] = function (obj) {
-                var self = obj instanceof this[['constructor']] ? obj : $(obj[['currentTarget']])[['data']]('bs.' + this[['type']]);
-                if (!self) {
-                    self = new this[['constructor']](obj[['currentTarget']], this[['getDelegateOptions']]());
-                    $(obj[['currentTarget']])[['data']]('bs.' + this[['type']], self);
-                }
-                clearTimeout(self[['timeout']]);
-                self[['hoverState']] = 'out';
-                if (!self[['options']][['delay']] || !self[['options']][['delay']][['hide']])
-                    return self[['hide']]();
-                self[['timeout']] = setTimeout(function () {
-                    if (self[['hoverState']] == 'out')
-                        self[['hide']]();
-                }, self[['options']][['delay']][['hide']]);
-            };
-            Tooltip[['prototype']][['show']] = function () {
-                var e = $[['Event']]('show.bs.' + this[['type']]);
-                if (this[['hasContent']]() && this[['enabled']]) {
-                    this[['$element']][['trigger']](e);
-                    var inDom = $[['contains']](document[['documentElement']], this[['$element']][0]);
-                    if (e[['isDefaultPrevented']]() || !inDom)
-                        return;
-                    var that = this;
-                    var $tip = this[['tip']]();
-                    var tipId = this[['getUID']](this[['type']]);
-                    this[['setContent']]();
-                    $tip[['attr']]('id', tipId);
-                    this[['$element']][['attr']]('aria-describedby', tipId);
-                    if (this[['options']][['animation']])
-                        $tip[['addClass']]('fade');
-                    var placement = typeof this[['options']][['placement']] == 'function' ? this[['options']][['placement']][['call']](this, $tip[0], this[['$element']][0]) : this[['options']][['placement']];
-                    var autoToken = /\s?auto?\s?/i;
-                    var autoPlace = autoToken[['test']](placement);
-                    if (autoPlace)
-                        placement = placement[['replace']](autoToken, '') || 'top';
-                    $tip[['detach']]()[['css']]({
-                        top: 0,
-                        left: 0,
-                        display: 'block'
-                    })[['addClass']](placement)[['data']]('bs.' + this[['type']], this);
-                    this[['options']][['container']] ? $tip[['appendTo']](this[['options']][['container']]) : $tip[['insertAfter']](this[['$element']]);
-                    var pos = this[['getPosition']]();
-                    var actualWidth = $tip[0][['offsetWidth']];
-                    var actualHeight = $tip[0][['offsetHeight']];
-                    if (autoPlace) {
-                        var orgPlacement = placement;
-                        var $parent = this[['$element']][['parent']]();
-                        var parentDim = this[['getPosition']]($parent);
-                        placement = placement == 'bottom' && pos[['top']] + pos[['height']] + actualHeight - parentDim[['scroll']] > parentDim[['height']] ? 'top' : placement == 'top' && pos[['top']] - parentDim[['scroll']] - actualHeight < 0 ? 'bottom' : placement == 'right' && pos[['right']] + actualWidth > parentDim[['width']] ? 'left' : placement == 'left' && pos[['left']] - actualWidth < parentDim[['left']] ? 'right' : placement;
-                        $tip[['removeClass']](orgPlacement)[['addClass']](placement);
-                    }
-                    var calculatedOffset = this[['getCalculatedOffset']](placement, pos, actualWidth, actualHeight);
-                    this[['applyPlacement']](calculatedOffset, placement);
-                    var complete = function complete() {
-                        that[['$element']][['trigger']]('shown.bs.' + that[['type']]);
-                        that[['hoverState']] = null;
-                    };
-                    $[['support']][['transition']] && this[['$tip']][['hasClass']]('fade') ? $tip[['one']]('bsTransitionEnd', complete)[['emulateTransitionEnd']](150) : complete();
-                }
-            };
-            Tooltip[['prototype']][['applyPlacement']] = function (offset, placement) {
-                var $tip = this[['tip']]();
-                var width = $tip[0][['offsetWidth']];
-                var height = $tip[0][['offsetHeight']];
-                var marginTop = parseInt($tip[['css']]('margin-top'), 10);
-                var marginLeft = parseInt($tip[['css']]('margin-left'), 10);
-                if (isNaN(marginTop))
-                    marginTop = 0;
-                if (isNaN(marginLeft))
-                    marginLeft = 0;
-                offset[['top']] = offset[['top']] + marginTop;
-                offset[['left']] = offset[['left']] + marginLeft;
-                $[['offset']][['setOffset']]($tip[0], $[['extend']]({
-                    using: function using(props) {
-                        $tip[['css']]({
-                            top: Math[['round']](props[['top']]),
-                            left: Math[['round']](props[['left']])
-                        });
-                    }
-                }, offset), 0);
-                $tip[['addClass']]('in');
-                var actualWidth = $tip[0][['offsetWidth']];
-                var actualHeight = $tip[0][['offsetHeight']];
-                if (placement == 'top' && actualHeight != height) {
-                    offset[['top']] = offset[['top']] + height - actualHeight;
-                }
-                var delta = this[['getViewportAdjustedDelta']](placement, offset, actualWidth, actualHeight);
-                if (delta[['left']])
-                    offset[['left']] += delta[['left']];
-                else
-                    offset[['top']] += delta[['top']];
-                var arrowDelta = delta[['left']] ? delta[['left']] * 2 - width + actualWidth : delta[['top']] * 2 - height + actualHeight;
-                var arrowPosition = delta[['left']] ? 'left' : 'top';
-                var arrowOffsetPosition = delta[['left']] ? 'offsetWidth' : 'offsetHeight';
-                $tip[['offset']](offset);
-                this[['replaceArrow']](arrowDelta, $tip[0][arrowOffsetPosition], arrowPosition);
-            };
-            Tooltip[['prototype']][['replaceArrow']] = function (delta, dimension, position) {
-                this[['arrow']]()[['css']](position, delta ? 50 * (1 - delta / dimension) + '%' : '');
-            };
-            Tooltip[['prototype']][['setContent']] = function () {
-                var $tip = this[['tip']]();
-                var title = this[['getTitle']]();
-                $tip[['find']]('.tooltip-inner')[this[['options']][['html']] ? 'html' : 'text'](title);
-                $tip[['removeClass']]('fade in top bottom left right');
-            };
-            Tooltip[['prototype']][['hide']] = function () {
-                var that = this;
-                var $tip = this[['tip']]();
-                var e = $[['Event']]('hide.bs.' + this[['type']]);
-                this[['$element']][['removeAttr']]('aria-describedby');
-                function complete() {
-                    if (that[['hoverState']] != 'in')
-                        $tip[['detach']]();
-                    that[['$element']][['trigger']]('hidden.bs.' + that[['type']]);
-                }
-                this[['$element']][['trigger']](e);
-                if (e[['isDefaultPrevented']]())
-                    return;
-                $tip[['removeClass']]('in');
-                $[['support']][['transition']] && this[['$tip']][['hasClass']]('fade') ? $tip[['one']]('bsTransitionEnd', complete)[['emulateTransitionEnd']](150) : complete();
-                this[['hoverState']] = null;
-                return this;
-            };
-            Tooltip[['prototype']][['fixTitle']] = function () {
-                var $e = this[['$element']];
-                if ($e[['attr']]('title') || typeof $e[['attr']]('data-original-title') != 'string') {
-                    $e[['attr']]('data-original-title', $e[['attr']]('title') || '')[['attr']]('title', '');
-                }
-            };
-            Tooltip[['prototype']][['hasContent']] = function () {
-                return this[['getTitle']]();
-            };
-            Tooltip[['prototype']][['getPosition']] = function ($element) {
-                $element = $element || this[['$element']];
-                var el = $element[0];
-                var isBody = el[['tagName']] == 'BODY';
-                return $[['extend']]({}, typeof el[['getBoundingClientRect']] == 'function' ? el[['getBoundingClientRect']]() : null, {
-                    scroll: isBody ? document[['documentElement']][['scrollTop']] || document[['body']][['scrollTop']] : $element[['scrollTop']](),
-                    width: isBody ? $(window)[['width']]() : $element[['outerWidth']](),
-                    height: isBody ? $(window)[['height']]() : $element[['outerHeight']]()
-                }, isBody ? {
-                    top: 0,
-                    left: 0
-                } : $element[['offset']]());
-            };
-            Tooltip[['prototype']][['getCalculatedOffset']] = function (placement, pos, actualWidth, actualHeight) {
-                return placement == 'bottom' ? {
-                    top: pos[['top']] + pos[['height']],
-                    left: pos[['left']] + pos[['width']] / 2 - actualWidth / 2
-                } : placement == 'top' ? {
-                    top: pos[['top']] - actualHeight,
-                    left: pos[['left']] + pos[['width']] / 2 - actualWidth / 2
-                } : placement == 'left' ? {
-                    top: pos[['top']] + pos[['height']] / 2 - actualHeight / 2,
-                    left: pos[['left']] - actualWidth
-                } : {
-                    top: pos[['top']] + pos[['height']] / 2 - actualHeight / 2,
-                    left: pos[['left']] + pos[['width']]
-                };
-            };
-            Tooltip[['prototype']][['getViewportAdjustedDelta']] = function (placement, pos, actualWidth, actualHeight) {
-                var delta = {
-                    top: 0,
-                    left: 0
-                };
-                if (!this[['$viewport']])
-                    return delta;
-                var viewportPadding = this[['options']][['viewport']] && this[['options']][['viewport']][['padding']] || 0;
-                var viewportDimensions = this[['getPosition']](this[['$viewport']]);
-                if (/right|left/[['test']](placement)) {
-                    var topEdgeOffset = pos[['top']] - viewportPadding - viewportDimensions[['scroll']];
-                    var bottomEdgeOffset = pos[['top']] + viewportPadding - viewportDimensions[['scroll']] + actualHeight;
-                    if (topEdgeOffset < viewportDimensions[['top']]) {
-                        delta[['top']] = viewportDimensions[['top']] - topEdgeOffset;
-                    } else if (bottomEdgeOffset > viewportDimensions[['top']] + viewportDimensions[['height']]) {
-                        delta[['top']] = viewportDimensions[['top']] + viewportDimensions[['height']] - bottomEdgeOffset;
-                    }
-                } else {
-                    var leftEdgeOffset = pos[['left']] - viewportPadding;
-                    var rightEdgeOffset = pos[['left']] + viewportPadding + actualWidth;
-                    if (leftEdgeOffset < viewportDimensions[['left']]) {
-                        delta[['left']] = viewportDimensions[['left']] - leftEdgeOffset;
-                    } else if (rightEdgeOffset > viewportDimensions[['width']]) {
-                        delta[['left']] = viewportDimensions[['left']] + viewportDimensions[['width']] - rightEdgeOffset;
-                    }
-                }
-                return delta;
-            };
-            Tooltip[['prototype']][['getTitle']] = function () {
-                var title;
-                var $e = this[['$element']];
-                var o = this[['options']];
-                title = $e[['attr']]('data-original-title') || (typeof o[['title']] == 'function' ? o[['title']][['call']]($e[0]) : o[['title']]);
-                return title;
-            };
-            Tooltip[['prototype']][['getUID']] = function (prefix) {
-                do {
-                    prefix += ~~(Math[['random']]() * 1000000);
-                } while (document[['getElementById']](prefix));
-                return prefix;
-            };
-            Tooltip[['prototype']][['tip']] = function () {
-                return this[['$tip']] = this[['$tip']] || $(this[['options']][['template']]);
-            };
-            Tooltip[['prototype']][['arrow']] = function () {
-                return this[['$arrow']] = this[['$arrow']] || this[['tip']]()[['find']]('.tooltip-arrow');
-            };
-            Tooltip[['prototype']][['validate']] = function () {
-                if (!this[['$element']][0][['parentNode']]) {
-                    this[['hide']]();
-                    this[['$element']] = null;
-                    this[['options']] = null;
-                }
-            };
-            Tooltip[['prototype']][['enable']] = function () {
-                this[['enabled']] = true;
-            };
-            Tooltip[['prototype']][['disable']] = function () {
-                this[['enabled']] = false;
-            };
-            Tooltip[['prototype']][['toggleEnabled']] = function () {
-                this[['enabled']] = !this[['enabled']];
-            };
-            Tooltip[['prototype']][['toggle']] = function (e) {
-                var self = this;
-                if (e) {
-                    self = $(e[['currentTarget']])[['data']]('bs.' + this[['type']]);
-                    if (!self) {
-                        self = new this[['constructor']](e[['currentTarget']], this[['getDelegateOptions']]());
-                        $(e[['currentTarget']])[['data']]('bs.' + this[['type']], self);
-                    }
-                }
-                self[['tip']]()[['hasClass']]('in') ? self[['leave']](self) : self[['enter']](self);
-            };
-            Tooltip[['prototype']][['destroy']] = function () {
-                clearTimeout(this[['timeout']]);
-                this[['hide']]()[['$element']][['off']]('.' + this[['type']])[['removeData']]('bs.' + this[['type']]);
-            };
-            function Plugin(option) {
-                return this[['each']](function () {
-                    var $this = $(this);
-                    var data = $this[['data']]('bs.tooltip');
-                    var options = (typeof option === 'undefined' ? 'undefined' : _typeof(option)) == 'object' && option;
-                    if (!data && option == 'destroy')
-                        return;
-                    if (!data)
-                        $this[['data']]('bs.tooltip', data = new Tooltip(this, options));
-                    if (typeof option == 'string')
-                        data[option]();
-                });
-            }
-            var old = $[['fn']][['tooltip']];
-            $[['fn']][['tooltip']] = Plugin;
-            $[['fn']][['tooltip']][['Constructor']] = Tooltip;
-            $[['fn']][['tooltip']][['noConflict']] = function () {
-                $[['fn']][['tooltip']] = old;
-                return this;
-            };
-        }(jQuery));
-        (function ($) {
-            'use strict';
-            var Button = function Button(element, options) {
-                this[['$element']] = $(element);
-                this[['options']] = $[['extend']]({}, Button[['DEFAULTS']], options);
-                this[['isLoading']] = false;
-            };
-            Button[['VERSION']] = '3.2.0';
-            Button[['DEFAULTS']] = { loadingText: 'loading...' };
-            Button[['prototype']][['setState']] = function (state) {
-                var d = 'disabled';
-                var $el = this[['$element']];
-                var val = $el[['is']]('input') ? 'val' : 'html';
-                var data = $el[['data']]();
-                state = state + 'Text';
-                if (data[['resetText']] == null)
-                    $el[['data']]('resetText', $el[val]());
-                $el[val](data[state] == null ? this[['options']][state] : data[state]);
-                setTimeout($[['proxy']](function () {
-                    if (state == 'loadingText') {
-                        this[['isLoading']] = true;
-                        $el[['addClass']](d)[['attr']](d, d);
-                    } else if (this[['isLoading']]) {
-                        this[['isLoading']] = false;
-                        $el[['removeClass']](d)[['removeAttr']](d);
-                    }
-                }, this), 0);
-            };
-            Button[['prototype']][['toggle']] = function () {
-                var changed = true;
-                var $parent = this[['$element']][['closest']]('[data-toggle="buttons"]');
-                if ($parent[['length']]) {
-                    var $input = this[['$element']][['find']]('input');
-                    if ($input[['prop']]('type') == 'radio') {
-                        if ($input[['prop']]('checked') && this[['$element']][['hasClass']]('active'))
-                            changed = false;
-                        else
-                            $parent[['find']]('.active')[['removeClass']]('active');
-                    }
-                    if (changed)
-                        $input[['prop']]('checked', !this[['$element']][['hasClass']]('active'))[['trigger']]('change');
-                }
-                if (changed)
-                    this[['$element']][['toggleClass']]('active');
-            };
-            function Plugin(option) {
-                return this[['each']](function () {
-                    var $this = $(this);
-                    var data = $this[['data']]('bs.button');
-                    var options = (typeof option === 'undefined' ? 'undefined' : _typeof(option)) == 'object' && option;
-                    if (!data)
-                        $this[['data']]('bs.button', data = new Button(this, options));
-                    if (option == 'toggle')
-                        data[['toggle']]();
-                    else if (option)
-                        data[['setState']](option);
-                });
-            }
-            var old = $[['fn']][['button']];
-            $[['fn']][['button']] = Plugin;
-            $[['fn']][['button']][['Constructor']] = Button;
-            $[['fn']][['button']][['noConflict']] = function () {
-                $[['fn']][['button']] = old;
-                return this;
-            };
-            $(document)[['on']]('click.bs.button.data-api', '[data-toggle^="button"]', function (e) {
-                var $btn = $(e[['target']]);
-                if (!$btn[['hasClass']]('btn'))
-                    $btn = $btn[['closest']]('.btn');
-                Plugin[['call']]($btn, 'toggle');
-                e[['preventDefault']]();
-            });
-        }(jQuery));
-        (function ($) {
-            'use strict';
-            var backdrop = '.dropdown-backdrop';
-            var toggle = '[data-toggle="dropdown"]';
-            var Dropdown = function Dropdown(element) {
-                $(element)[['on']]('click.bs.dropdown', this[['toggle']]);
-            };
-            Dropdown[['VERSION']] = '3.2.0';
-            Dropdown[['prototype']][['toggle']] = function (e) {
-                var $this = $(this);
-                if ($this[['is']]('.disabled, :disabled'))
-                    return;
-                var $parent = getParent($this);
-                var isActive = $parent[['hasClass']]('open');
-                clearMenus();
-                if (!isActive) {
-                    if ('ontouchstart' in document[['documentElement']] && !$parent[['closest']]('.navbar-nav')[['length']]) {
-                        $('<div class="dropdown-backdrop"/>')[['insertAfter']]($(this))[['on']]('click', clearMenus);
-                    }
-                    var relatedTarget = { relatedTarget: this };
-                    $parent[['trigger']](e = $[['Event']]('show.bs.dropdown', relatedTarget));
-                    if (e[['isDefaultPrevented']]())
-                        return;
-                    $this[['trigger']]('focus');
-                    $parent[['toggleClass']]('open')[['trigger']]('shown.bs.dropdown', relatedTarget);
-                }
-                return false;
-            };
-            Dropdown[['prototype']][['keydown']] = function (e) {
-                if (!/(38|40|27)/[['test']](e[['keyCode']]))
-                    return;
-                var $this = $(this);
-                e[['preventDefault']]();
-                e[['stopPropagation']]();
-                if ($this[['is']]('.disabled, :disabled'))
-                    return;
-                var $parent = getParent($this);
-                var isActive = $parent[['hasClass']]('open');
-                if (!isActive || isActive && e[['keyCode']] == 27) {
-                    if (e[['which']] == 27)
-                        $parent[['find']](toggle)[['trigger']]('focus');
-                    return $this[['trigger']]('click');
-                }
-                var desc = ' li:not(.divider):visible a';
-                var $items = $parent[['find']]('[role="menu"]' + desc + ', [role="listbox"]' + desc);
-                if (!$items[['length']])
-                    return;
-                var index = $items[['index']]($items[['filter']](':focus'));
-                if (e[['keyCode']] == 38 && index > 0)
-                    index--;
-                if (e[['keyCode']] == 40 && index < $items[['length']] - 1)
-                    index++;
-                if (!~index)
-                    index = 0;
-                $items[['eq']](index)[['trigger']]('focus');
-            };
-            function clearMenus(e) {
-                if (e && e[['which']] === 3)
-                    return;
-                $(backdrop)[['remove']]();
-                $(toggle)[['each']](function () {
-                    var $parent = getParent($(this));
-                    var relatedTarget = { relatedTarget: this };
-                    if (!$parent[['hasClass']]('open'))
-                        return;
-                    $parent[['trigger']](e = $[['Event']]('hide.bs.dropdown', relatedTarget));
-                    if (e[['isDefaultPrevented']]())
-                        return;
-                    $parent[['removeClass']]('open')[['trigger']]('hidden.bs.dropdown', relatedTarget);
-                });
-            }
-            function getParent($this) {
-                var selector = $this[['attr']]('data-target');
-                if (!selector) {
-                    selector = $this[['attr']]('href');
-                    selector = selector && /#[A-Za-z]/[['test']](selector) && selector[['replace']](/.*(?=#[^\s]*$)/, '');
-                }
-                var $parent = selector && $(selector);
-                return $parent && $parent[['length']] ? $parent : $this[['parent']]();
-            }
-            function Plugin(option) {
-                return this[['each']](function () {
-                    var $this = $(this);
-                    var data = $this[['data']]('bs.dropdown');
-                    if (!data)
-                        $this[['data']]('bs.dropdown', data = new Dropdown(this));
-                    if (typeof option == 'string')
-                        data[option][['call']]($this);
-                });
-            }
-            var old = $[['fn']][['dropdown']];
-            $[['fn']][['dropdown']] = Plugin;
-            $[['fn']][['dropdown']][['Constructor']] = Dropdown;
-            $[['fn']][['dropdown']][['noConflict']] = function () {
-                $[['fn']][['dropdown']] = old;
-                return this;
-            };
-            $(document)[['on']]('click.bs.dropdown.data-api', clearMenus)[['on']]('click.bs.dropdown.data-api', '.dropdown form', function (e) {
-                e[['stopPropagation']]();
-            })[['on']]('click.bs.dropdown.data-api', toggle, Dropdown[['prototype']][['toggle']])[['on']]('keydown.bs.dropdown.data-api', toggle + ', [role="menu"], [role="listbox"]', Dropdown[['prototype']][['keydown']]);
-        }(jQuery));
-        (function ($) {
-            'use strict';
-            var Popover = function Popover(element, options) {
-                this[['init']]('popover', element, options);
-            };
-            if (!$[['fn']][['tooltip']])
-                throw new Error('Popover requires tooltip.js');
-            Popover[['VERSION']] = '3.2.0';
-            Popover[['DEFAULTS']] = $[['extend']]({}, $[['fn']][['tooltip']][['Constructor']][['DEFAULTS']], {
-                placement: 'right',
-                trigger: 'click',
-                content: '',
-                template: '<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'
-            });
-            Popover[['prototype']] = $[['extend']]({}, $[['fn']][['tooltip']][['Constructor']][['prototype']]);
-            Popover[['prototype']][['constructor']] = Popover;
-            Popover[['prototype']][['getDefaults']] = function () {
-                return Popover[['DEFAULTS']];
-            };
-            Popover[['prototype']][['setContent']] = function () {
-                var $tip = this[['tip']]();
-                var title = this[['getTitle']]();
-                var content = this[['getContent']]();
-                $tip[['find']]('.popover-title')[this[['options']][['html']] ? 'html' : 'text'](title);
-                $tip[['find']]('.popover-content')[['empty']]()[this[['options']][['html']] ? typeof content == 'string' ? 'html' : 'append' : 'text'](content);
-                $tip[['removeClass']]('fade top bottom left right in');
-                if (!$tip[['find']]('.popover-title')[['html']]())
-                    $tip[['find']]('.popover-title')[['hide']]();
-            };
-            Popover[['prototype']][['hasContent']] = function () {
-                return this[['getTitle']]() || this[['getContent']]();
-            };
-            Popover[['prototype']][['getContent']] = function () {
-                var $e = this[['$element']];
-                var o = this[['options']];
-                return $e[['attr']]('data-content') || (typeof o[['content']] == 'function' ? o[['content']][['call']]($e[0]) : o[['content']]);
-            };
-            Popover[['prototype']][['arrow']] = function () {
-                return this[['$arrow']] = this[['$arrow']] || this[['tip']]()[['find']]('.arrow');
-            };
-            Popover[['prototype']][['tip']] = function () {
-                if (!this[['$tip']])
-                    this[['$tip']] = $(this[['options']][['template']]);
-                return this[['$tip']];
-            };
-            function Plugin(option) {
-                return this[['each']](function () {
-                    var $this = $(this);
-                    var data = $this[['data']]('bs.popover');
-                    var options = (typeof option === 'undefined' ? 'undefined' : _typeof(option)) == 'object' && option;
-                    if (!data && option == 'destroy')
-                        return;
-                    if (!data)
-                        $this[['data']]('bs.popover', data = new Popover(this, options));
-                    if (typeof option == 'string')
-                        data[option]();
-                });
-            }
-            var old = $[['fn']][['popover']];
-            $[['fn']][['popover']] = Plugin;
-            $[['fn']][['popover']][['Constructor']] = Popover;
-            $[['fn']][['popover']][['noConflict']] = function () {
-                $[['fn']][['popover']] = old;
-                return this;
-            };
-        }(jQuery));
-        +function ($) {
-            'use strict';
-            var Modal = function Modal(element, options) {
-                this[['options']] = options;
-                this[['$body']] = $(document[['body']]);
-                this[['$element']] = $(element);
-                this[['$dialog']] = this[['$element']][['find']]('.modal-dialog');
-                this[['$backdrop']] = null;
-                this[['isShown']] = null;
-                this[['originalBodyPad']] = null;
-                this[['scrollbarWidth']] = 0;
-                this[['ignoreBackdropClick']] = false;
-                if (this[['options']][['remote']]) {
-                    this[['$element']][['find']]('.modal-content')[['load']](this[['options']][['remote']], $[['proxy']](function () {
-                        this[['$element']][['trigger']]('loaded.bs.modal');
-                    }, this));
-                }
-            };
-            Modal[['VERSION']] = '3.3.7';
-            Modal[['TRANSITION_DURATION']] = 300;
-            Modal[['BACKDROP_TRANSITION_DURATION']] = 150;
-            Modal[['DEFAULTS']] = {
-                backdrop: true,
-                keyboard: true,
-                show: true
-            };
-            Modal[['prototype']][['toggle']] = function (_relatedTarget) {
-                return this[['isShown']] ? this[['hide']]() : this[['show']](_relatedTarget);
-            };
-            Modal[['prototype']][['show']] = function (_relatedTarget) {
-                var that = this;
-                var e = $[['Event']]('show.bs.modal', { relatedTarget: _relatedTarget });
-                this[['$element']][['trigger']](e);
-                if (this[['isShown']] || e[['isDefaultPrevented']]())
-                    return;
-                this[['isShown']] = true;
-                this[['checkScrollbar']]();
-                this[['setScrollbar']]();
-                this[['$body']][['addClass']]('modal-open');
-                this[['escape']]();
-                this[['resize']]();
-                this[['$element']][['on']]('click.dismiss.bs.modal', '[data-dismiss="modal"]', $[['proxy']](this[['hide']], this));
-                this[['$dialog']][['on']]('mousedown.dismiss.bs.modal', function () {
-                    that[['$element']][['one']]('mouseup.dismiss.bs.modal', function (e) {
-                        if ($(e[['target']])[['is']](that[['$element']]))
-                            that[['ignoreBackdropClick']] = true;
-                    });
-                });
-                this[['backdrop']](function () {
-                    var transition = $[['support']][['transition']] && that[['$element']][['hasClass']]('fade');
-                    if (!that[['$element']][['parent']]()[['length']]) {
-                        that[['$element']][['appendTo']](that[['$body']]);
-                    }
-                    that[['$element']][['show']]()[['scrollTop']](0);
-                    that[['adjustDialog']]();
-                    if (transition) {
-                        that[['$element']][0][['offsetWidth']];
-                    }
-                    that[['$element']][['addClass']]('in');
-                    that[['enforceFocus']]();
-                    var e = $[['Event']]('shown.bs.modal', { relatedTarget: _relatedTarget });
-                    transition ? that[['$dialog']][['one']]('bsTransitionEnd', function () {
-                        that[['$element']][['trigger']]('focus')[['trigger']](e);
-                    })[['emulateTransitionEnd']](Modal[['TRANSITION_DURATION']]) : that[['$element']][['trigger']]('focus')[['trigger']](e);
-                });
-            };
-            Modal[['prototype']][['hide']] = function (e) {
-                if (e)
-                    e[['preventDefault']]();
-                e = $[['Event']]('hide.bs.modal');
-                this[['$element']][['trigger']](e);
-                if (!this[['isShown']] || e[['isDefaultPrevented']]())
-                    return;
-                this[['isShown']] = false;
-                this[['escape']]();
-                this[['resize']]();
-                $(document)[['off']]('focusin.bs.modal');
-                this[['$element']][['removeClass']]('in')[['off']]('click.dismiss.bs.modal')[['off']]('mouseup.dismiss.bs.modal');
-                this[['$dialog']][['off']]('mousedown.dismiss.bs.modal');
-                $[['support']][['transition']] && this[['$element']][['hasClass']]('fade') ? this[['$element']][['one']]('bsTransitionEnd', $[['proxy']](this[['hideModal']], this))[['emulateTransitionEnd']](Modal[['TRANSITION_DURATION']]) : this[['hideModal']]();
-            };
-            Modal[['prototype']][['enforceFocus']] = function () {
-                $(document)[['off']]('focusin.bs.modal')[['on']]('focusin.bs.modal', $[['proxy']](function (e) {
-                    if (document !== e[['target']] && this[['$element']][0] !== e[['target']] && !this[['$element']][['has']](e[['target']])[['length']]) {
-                        this[['$element']][['trigger']]('focus');
-                    }
-                }, this));
-            };
-            Modal[['prototype']][['escape']] = function () {
-                if (this[['isShown']] && this[['options']][['keyboard']]) {
-                    this[['$element']][['on']]('keydown.dismiss.bs.modal', $[['proxy']](function (e) {
-                        e[['which']] == 27 && this[['hide']]();
-                    }, this));
-                } else if (!this[['isShown']]) {
-                    this[['$element']][['off']]('keydown.dismiss.bs.modal');
-                }
-            };
-            Modal[['prototype']][['resize']] = function () {
-                if (this[['isShown']]) {
-                    $(window)[['on']]('resize.bs.modal', $[['proxy']](this[['handleUpdate']], this));
-                } else {
-                    $(window)[['off']]('resize.bs.modal');
-                }
-            };
-            Modal[['prototype']][['hideModal']] = function () {
-                var that = this;
-                this[['$element']][['hide']]();
-                this[['backdrop']](function () {
-                    that[['$body']][['removeClass']]('modal-open');
-                    that[['resetAdjustments']]();
-                    that[['resetScrollbar']]();
-                    that[['$element']][['trigger']]('hidden.bs.modal');
-                });
-            };
-            Modal[['prototype']][['removeBackdrop']] = function () {
-                this[['$backdrop']] && this[['$backdrop']][['remove']]();
-                this[['$backdrop']] = null;
-            };
-            Modal[['prototype']][['backdrop']] = function (callback) {
-                var that = this;
-                var animate = this[['$element']][['hasClass']]('fade') ? 'fade' : '';
-                if (this[['isShown']] && this[['options']][['backdrop']]) {
-                    var doAnimate = $[['support']][['transition']] && animate;
-                    this[['$backdrop']] = $(document[['createElement']]('div'))[['addClass']]('modal-backdrop ' + animate)[['appendTo']](this[['$body']]);
-                    this[['$element']][['on']]('click.dismiss.bs.modal', $[['proxy']](function (e) {
-                        if (this[['ignoreBackdropClick']]) {
-                            this[['ignoreBackdropClick']] = false;
-                            return;
-                        }
-                        if (e[['target']] !== e[['currentTarget']])
-                            return;
-                        this[['options']][['backdrop']] == 'static' ? this[['$element']][0][['focus']]() : this[['hide']]();
-                    }, this));
-                    if (doAnimate)
-                        this[['$backdrop']][0][['offsetWidth']];
-                    this[['$backdrop']][['addClass']]('in');
-                    if (!callback)
-                        return;
-                    doAnimate ? this[['$backdrop']][['one']]('bsTransitionEnd', callback)[['emulateTransitionEnd']](Modal[['BACKDROP_TRANSITION_DURATION']]) : callback();
-                } else if (!this[['isShown']] && this[['$backdrop']]) {
-                    this[['$backdrop']][['removeClass']]('in');
-                    var callbackRemove = function callbackRemove() {
-                        that[['removeBackdrop']]();
-                        callback && callback();
-                    };
-                    $[['support']][['transition']] && this[['$element']][['hasClass']]('fade') ? this[['$backdrop']][['one']]('bsTransitionEnd', callbackRemove)[['emulateTransitionEnd']](Modal[['BACKDROP_TRANSITION_DURATION']]) : callbackRemove();
-                } else if (callback) {
-                    callback();
-                }
-            };
-            Modal[['prototype']][['handleUpdate']] = function () {
-                this[['adjustDialog']]();
-            };
-            Modal[['prototype']][['adjustDialog']] = function () {
-                var modalIsOverflowing = this[['$element']][0][['scrollHeight']] > document[['documentElement']][['clientHeight']];
-                this[['$element']][['css']]({
-                    paddingLeft: !this[['bodyIsOverflowing']] && modalIsOverflowing ? this[['scrollbarWidth']] : '',
-                    paddingRight: this[['bodyIsOverflowing']] && !modalIsOverflowing ? this[['scrollbarWidth']] : ''
-                });
-            };
-            Modal[['prototype']][['resetAdjustments']] = function () {
-                this[['$element']][['css']]({
-                    paddingLeft: '',
-                    paddingRight: ''
-                });
-            };
-            Modal[['prototype']][['checkScrollbar']] = function () {
-                var fullWindowWidth = window[['innerWidth']];
-                if (!fullWindowWidth) {
-                    var documentElementRect = document[['documentElement']][['getBoundingClientRect']]();
-                    fullWindowWidth = documentElementRect[['right']] - Math[['abs']](documentElementRect[['left']]);
-                }
-                this[['bodyIsOverflowing']] = document[['body']][['clientWidth']] < fullWindowWidth;
-                this[['scrollbarWidth']] = this[['measureScrollbar']]();
-            };
-            Modal[['prototype']][['setScrollbar']] = function () {
-                var bodyPad = parseInt(this[['$body']][['css']]('padding-right') || 0, 10);
-                this[['originalBodyPad']] = document[['body']][['style']][['paddingRight']] || '';
-                if (this[['bodyIsOverflowing']])
-                    this[['$body']][['css']]('padding-right', bodyPad + this[['scrollbarWidth']]);
-            };
-            Modal[['prototype']][['resetScrollbar']] = function () {
-                this[['$body']][['css']]('padding-right', this[['originalBodyPad']]);
-            };
-            Modal[['prototype']][['measureScrollbar']] = function () {
-                var scrollDiv = document[['createElement']]('div');
-                scrollDiv[['className']] = 'modal-scrollbar-measure';
-                this[['$body']][['append']](scrollDiv);
-                var scrollbarWidth = scrollDiv[['offsetWidth']] - scrollDiv[['clientWidth']];
-                this[['$body']][0][['removeChild']](scrollDiv);
-                return scrollbarWidth;
-            };
-            function Plugin(option, _relatedTarget) {
-                return this[['each']](function () {
-                    var $this = $(this);
-                    var data = $this[['data']]('bs.modal');
-                    var options = $[['extend']]({}, Modal[['DEFAULTS']], $this[['data']](), (typeof option === 'undefined' ? 'undefined' : _typeof(option)) == 'object' && option);
-                    if (!data)
-                        $this[['data']]('bs.modal', data = new Modal(this, options));
-                    if (typeof option == 'string')
-                        data[option](_relatedTarget);
-                    else if (options[['show']])
-                        data[['show']](_relatedTarget);
-                });
-            }
-            var old = $[['fn']][['modal']];
-            $[['fn']][['modal']] = Plugin;
-            $[['fn']][['modal']][['Constructor']] = Modal;
-            $[['fn']][['modal']][['noConflict']] = function () {
-                $[['fn']][['modal']] = old;
-                return this;
-            };
-            $(document)[['on']]('click.bs.modal.data-api', '[data-toggle="modal"]', function (e) {
-                var $this = $(this);
-                var href = $this[['attr']]('href');
-                var $target = $($this[['attr']]('data-target') || href && href[['replace']](/.*(?=#[^\s]+$)/, ''));
-                var option = $target[['data']]('bs.modal') ? 'toggle' : $[['extend']]({ remote: !/#/[['test']](href) && href }, $target[['data']](), $this[['data']]());
-                if ($this[['is']]('a'))
-                    e[['preventDefault']]();
-                $target[['one']]('show.bs.modal', function (showEvent) {
-                    if (showEvent[['isDefaultPrevented']]())
-                        return;
-                    $target[['one']]('hidden.bs.modal', function () {
-                        $this[['is']](':visible') && $this[['trigger']]('focus');
-                    });
-                });
-                Plugin[['call']]($target, option, this);
-            });
-        }(jQuery);
-        (function ($) {
-            'use strict';
-            var Tab = function Tab(element) {
-                this[['element']] = $(element);
-            };
-            Tab[['VERSION']] = '3.2.0';
-            Tab[['prototype']][['show']] = function () {
-                var $this = this[['element']];
-                var $ul = $this[['closest']]('ul:not(.dropdown-menu)');
-                var selector = $this[['data']]('target');
-                if (!selector) {
-                    selector = $this[['attr']]('href');
-                    selector = selector && selector[['replace']](/.*(?=#[^\s]*$)/, '');
-                }
-                if ($this[['parent']]('li')[['hasClass']]('active'))
-                    return;
-                var previous = $ul[['find']]('.active:last a')[0];
-                var e = $[['Event']]('show.bs.tab', { relatedTarget: previous });
-                $this[['trigger']](e);
-                if (e[['isDefaultPrevented']]())
-                    return;
-                var $target = $(selector);
-                this[['activate']]($this[['closest']]('li'), $ul);
-                this[['activate']]($target, $target[['parent']](), function () {
-                    $this[['trigger']]({
-                        type: 'shown.bs.tab',
-                        relatedTarget: previous
-                    });
-                });
-            };
-            Tab[['prototype']][['activate']] = function (element, container, callback) {
-                var $active = container[['find']]('> .active');
-                var transition = callback && $[['support']][['transition']] && $active[['hasClass']]('fade');
-                function next() {
-                    $active[['removeClass']]('active')[['find']]('> .dropdown-menu > .active')[['removeClass']]('active');
-                    element[['addClass']]('active');
-                    if (transition) {
-                        element[0][['offsetWidth']];
-                        element[['addClass']]('in');
-                    } else {
-                        element[['removeClass']]('fade');
-                    }
-                    if (element[['parent']]('.dropdown-menu')) {
-                        element[['closest']]('li.dropdown')[['addClass']]('active');
-                    }
-                    callback && callback();
-                }
-                transition ? $active[['one']]('bsTransitionEnd', next)[['emulateTransitionEnd']](150) : next();
-                $active[['removeClass']]('in');
-            };
-            function Plugin(option) {
-                return this[['each']](function () {
-                    var $this = $(this);
-                    var data = $this[['data']]('bs.tab');
-                    if (!data)
-                        $this[['data']]('bs.tab', data = new Tab(this));
-                    if (typeof option == 'string')
-                        data[option]();
-                });
-            }
-            var old = $[['fn']][['tab']];
-            $[['fn']][['tab']] = Plugin;
-            $[['fn']][['tab']][['Constructor']] = Tab;
-            $[['fn']][['tab']][['noConflict']] = function () {
-                $[['fn']][['tab']] = old;
-                return this;
-            };
-            $(document)[['on']]('click.bs.tab.data-api', '[data-toggle="tab"], [data-toggle="pill"]', function (e) {
-                e[['preventDefault']]();
-                Plugin[['call']]($(this), 'show');
-            });
-        }(jQuery));
-        (function (global, $) {
-            $('.input-group')[['on']]('focus', '.form-control', function () {
-                $(this)[['closest']]('.input-group, .form-group')[['addClass']]('focus');
-            })[['on']]('blur', '.form-control', function () {
-                $(this)[['closest']]('.input-group, .form-group')[['removeClass']]('focus');
-            });
-        }(undefined, jQuery));
-        jQuery(function ($) {
-            $('[data-toggle="tooltip"]')[['tooltip']]();
-        }[['call']](undefined, jQuery));
-        jQuery(function ($) {
-            $('[data-toggle="checkbox"]')[['radiocheck']]();
-            $('[data-toggle="radio"]')[['radiocheck']]();
-        }[['call']](undefined, jQuery));
-        jQuery(function ($) {
-            $('[data-toggle="popover"]')[['popover']]();
-        }[['call']](undefined, jQuery));
-        jQuery(function ($) {
-            $('.pagination')[['on']]('click', 'a', function () {
-                $(this)[['parent']]()[['siblings']]('li')[['removeClass']]('active')[['end']]()[['addClass']]('active');
-            });
-        }[['call']](undefined, jQuery));
-        jQuery(function ($) {
-            $('.btn-group')[['on']]('click', 'a', function () {
-                $(this)[['siblings']]()[['removeClass']]('active')[['end']]()[['addClass']]('active');
-            });
-        }[['call']](undefined, jQuery));
-    },
-    ,
-    ,
     ,
     function (module, exports, __webpack_require__) {
         (function ($) {
             'use strict';
             Object[['defineProperty']](exports, '__esModule', { value: true });
+            exports[['pageSignIn']] = undefined;
             var _globalConfig = __webpack_require__(2);
-            var _body = $('body');
-            var _postListCls = 'archive-posts';
-            var _loadNextComponentID = 'loadNext';
-            var _loadingIcon = '<i class="tico tico-spinner2 spinning"></i>';
-            var _unLoadingIcon = '<i class="tico tico-angle-down"></i>';
-            var _isLoadingNext = false;
-            var _handlePageContent = function _handlePageContent(html, url) {
-                var doc = $(html);
-                var postList = $('.' + _postListCls);
-                if (doc && postList) {
-                    postList[['html']](doc[['find']]('.' + _postListCls)[['html']]());
-                    history[['pushState']]('200', doc[9][['innerText']], url);
-                    document[['title']] = doc[9][['innerText']];
+            var _msgbox = __webpack_require__(6);
+            var _utils = __webpack_require__(3);
+            var _utils2 = _interopRequireDefault(_utils);
+            function _interopRequireDefault(obj) {
+                return obj && obj[['__esModule']] ? obj : { default: obj };
+            }
+            var _form = $('.form-signin');
+            var _userLoginInput = $('#user_login-input');
+            var _passwordInput = $('#password-input');
+            var _submitting = false;
+            var _validate = function _validate(input) {
+                if (!input) {
+                    var userLoginValidated = _validateUserLogin();
+                    var passwordValidated = _validatePassword();
+                    return userLoginValidated && passwordValidated;
+                } else if (input[['attr']]('name') === 'user_login') {
+                    return _validateUserLogin();
+                } else if (input[['attr']]('name') === 'password') {
+                    return _validatePassword();
                 }
+                return false;
             };
-            var _ajaxLoadNext = function _ajaxLoadNext(btn) {
-                if (_isLoadingNext)
+            var _validateUserLogin = function _validateUserLogin() {
+                if (_userLoginInput[['val']]() === '') {
+                    _showError(_userLoginInput, '\u8bf7\u8f93\u5165\u8d26\u53f7');
                     return false;
-                var nextPageUrl = btn[['data']]('next-page-url');
-                if (!nextPageUrl)
+                } else if (!_utils2[['default']][['isValidUserName']](_userLoginInput[['val']]()) && !_utils2[['default']][['isEmail']](_userLoginInput[['val']]())) {
+                    _showError(_userLoginInput, '\u90ae\u7bb1\u6216\u8005\u4ee5\u5b57\u6bcd\u5f00\u5934\u7684\u82f1\u6587/\u6570\u5b57/\u4e0b\u5212\u7ebf\u7ec4\u5408\u7684\u7528\u6237\u540d');
                     return false;
+                } else if (_userLoginInput[['val']]()[['length']] < 5) {
+                    _showError(_userLoginInput, '\u8d26\u6237\u957f\u5ea6\u81f3\u5c11\u4e3a 5');
+                    return false;
+                }
+                return true;
+            };
+            var _validatePassword = function _validatePassword() {
+                if (_passwordInput[['val']]() === '') {
+                    _showError(_passwordInput, '\u8bf7\u8f93\u5165\u5bc6\u7801');
+                    return false;
+                } else if (_passwordInput[['val']]()[['length']] < 6) {
+                    _showError(_passwordInput, '\u5bc6\u7801\u957f\u5ea6\u81f3\u5c11\u4e3a 6');
+                    return false;
+                }
+                return true;
+            };
+            var _showError = function _showError(input, msg) {
+                var inputName = input[['attr']]('name');
+                switch (inputName) {
+                case 'user_login':
+                    _removeError(_userLoginInput);
+                    break;
+                case 'password':
+                    _removeError(_passwordInput);
+                    break;
+                }
+                input[['parent']]()[['addClass']]('error')[['append']]('<div class="error-tip">' + msg + '</div>');
+            };
+            var _removeError = function _removeError(input) {
+                input[['parent']]()[['removeClass']]('error')[['children']]('.error-tip')[['remove']]();
+            };
+            var _post = function _post() {
+                var url = _globalConfig[['Routes']][['signIn']];
                 var beforeSend = function beforeSend() {
-                    _body[['addClass']](_globalConfig[['Classes']][['appLoading']]);
-                    _isLoadingNext = true;
-                    btn[['html']](_loadingIcon);
+                    _form[['addClass']]('submitting');
+                    _userLoginInput[['prop']]('disabled', true);
+                    _passwordInput[['prop']]('disabled', true);
+                    _submitting = true;
                 };
                 var finishRequest = function finishRequest() {
-                    _body[['removeClass']](_globalConfig[['Classes']][['appLoading']]);
-                    _isLoadingNext = false;
-                    btn[['html']](_unLoadingIcon);
+                    _form[['removeClass']]('submitting');
+                    _userLoginInput[['prop']]('disabled', false);
+                    _passwordInput[['prop']]('disabled', false);
+                    _submitting = false;
                 };
                 var success = function success(data, textStatus, xhr) {
-                    if (data && xhr[['status']] == '200') {
-                        _handlePageContent(data, nextPageUrl);
+                    if (data[['success']] && data[['success']] == 1) {
+                        var redirect = _utils2[['default']][['getUrlPara']]('redirect_to') ? _utils2[['default']][['getAbsUrl']](decodeURIComponent(_utils2[['default']][['getUrlPara']]('redirect_to'))) : _utils2[['default']][['getUrlPara']]('redirect') ? _utils2[['default']][['getAbsUrl']](decodeURIComponent(_utils2[['default']][['getUrlPara']]('redirect'))) : _utils2[['default']][['getSiteUrl']]();
+                        _msgbox[['popMsgbox']][['success']]({
+                            title: '\u767b\u5f55\u6210\u529f',
+                            text: '\u5c06\u5728 2s \u5185\u8df3\u8f6c\u81f3 ' + redirect,
+                            timer: 2000,
+                            showConfirmButton: false
+                        });
+                        setTimeout(function () {
+                            window[['location']][['href']] = redirect;
+                        }, 2000);
+                    } else {
+                        _msgbox[['popMsgbox']][['error']]({
+                            title: '\u767b\u5f55\u9519\u8bef',
+                            text: data[['message']]
+                        });
+                        finishRequest();
                     }
-                    finishRequest();
                 };
                 var error = function error(xhr, textStatus, err) {
+                    _msgbox[['popMsgbox']][['error']]({
+                        title: '\u8bf7\u6c42\u767b\u5f55\u5931\u8d25, \u8bf7\u91cd\u65b0\u5c1d\u8bd5',
+                        text: xhr[['responseJSON']] ? xhr[['responseJSON']][['message']] : xhr[['responseText']]
+                    });
                     finishRequest();
                 };
-                $[['get']]({
-                    url: nextPageUrl,
-                    dataType: 'html',
+                $[['post']]({
+                    url: url,
+                    data: _utils2[['default']][['filterDataForRest']](_form[['serialize']]()),
+                    dataType: 'json',
                     beforeSend: beforeSend,
                     success: success,
                     error: error
                 });
             };
-            var loadNext = {
+            var pageSignIn = {
                 init: function init() {
-                    _body[['on']]('click', '[data-component=' + _loadNextComponentID + ']', function () {
+                    $('body')[['on']]('blur', '.local-signin>.input-container>input', function () {
+                        _validate($(this));
+                    })[['on']]('keyup', '.local-signin>.input-container>input', function (e) {
                         var $this = $(this);
-                        _ajaxLoadNext($this);
-                    });
-                }
-            };
-            exports[['default']] = loadNext;
-        }[['call']](exports, __webpack_require__(1)));
-    },
-    function (module, exports, __webpack_require__) {
-        (function ($) {
-            'use strict';
-            Object[['defineProperty']](exports, '__esModule', { value: true });
-            var _body = $('body');
-            var _document = $(document);
-            var _scrollTopBottomAnchorCls = 'scroll-to';
-            var _scrollTopAnchorCls = 'scroll-top';
-            var _scrollBottomAnchorCls = 'scroll-bottom';
-            var _handleScrollTo = function _handleScrollTo(btn) {
-                if (btn[['hasClass']](_scrollBottomAnchorCls)) {
-                    _body[['animate']]({ scrollTop: $(document)[['height']]() }, 'slow');
-                } else if (btn[['hasClass']](_scrollTopAnchorCls)) {
-                    _body[['animate']]({ scrollTop: 0 }, 'slow');
-                }
-                return false;
-            };
-            var _initScrollTo = function _initScrollTo() {
-                _body[['on']]('click', '.' + _scrollTopBottomAnchorCls, function () {
-                    _handleScrollTo($(this));
-                });
-            };
-            var _postWrapSel = '#main>.post';
-            var _postWrapBottomY = 0;
-            var _singleBodySel = '.single-body';
-            var _singleBodyTopY = 0;
-            var _shareBarSel = '.single-body>.share-bar';
-            var _shareBarHeight = 0;
-            var _shareBar = null;
-            var _postWrap = null;
-            var _singleBody = null;
-            var _calcTop = function _calcTop() {
-                if (!_shareBar)
-                    _shareBar = $(_shareBarSel);
-                if (!_singleBody)
-                    _singleBody = $(_singleBodySel);
-                if (!_postWrap)
-                    _postWrap = $(_postWrapSel);
-                if (!_shareBarHeight)
-                    _shareBarHeight = _shareBar[['height']]();
-                if (!_postWrapBottomY)
-                    _postWrapBottomY = _postWrap[['offset']]()[['top']] + _postWrap[['height']]() + 40;
-                if (!_singleBodyTopY)
-                    _singleBodyTopY = _singleBody[['offset']]()[['top']];
-                var documentScrollTop = _document[['scrollTop']]();
-                var top = 0;
-                top = Math[['max']](20, 80 + documentScrollTop - _singleBodyTopY);
-                if (_singleBodyTopY + top + _shareBarHeight > _postWrapBottomY) {
-                    top = _postWrapBottomY - _shareBarHeight - _singleBodyTopY;
-                }
-                return top;
-            };
-            var _initShareBar = function _initShareBar() {
-                _document[['on']]('scroll', function () {
-                    var top = _calcTop();
-                    if (!_shareBar)
-                        _shareBar = $(_shareBarSel);
-                    _shareBar[['css']]('top', top + 'px');
-                });
-            };
-            var _originWidgetSel = '#sidebar>.widget_float-sidebar';
-            var _originWidget = null;
-            var _originWidgetTopY = 0;
-            var _originWidgetHeight = 0;
-            var _mirrorWidgetSel = '#sidebar>.float-widget-mirror';
-            var _mirrorWidget = null;
-            var _mirrorWidgetTopY = 0;
-            var _mainWrapSel = '.main-wrap';
-            var _mainWrap = null;
-            var _mainWrapTopY = 0;
-            var _mainWrapHeight = 0;
-            var _windowHeight = 0;
-            _originWidget = $(_originWidgetSel);
-            if (_originWidget[['length']]) {
-                _mirrorWidget = $(_mirrorWidgetSel);
-                _mirrorWidget[['css']]('visibility', 'visible');
-                _mainWrap = $(_mainWrapSel);
-                _originWidgetTopY = _originWidget[['offset']]()[['top']];
-                _originWidgetHeight = _originWidget[['height']]();
-                _mirrorWidgetTopY = _mirrorWidget[['offset']]()[['top']];
-                _mainWrapHeight = _mainWrap[['height']]();
-                _windowHeight = $(window)[['height']]();
-            }
-            var _handleFloatWidget = function _handleFloatWidget() {
-                if ($(window)[['width']]() < 1000)
-                    return;
-                if (!_originWidget)
-                    _originWidget = $(_originWidgetSel);
-                if (_originWidget[['length']] == 0)
-                    return;
-                if (!_mirrorWidget)
-                    _mirrorWidget = $(_mirrorWidgetSel);
-                if (!_mainWrap)
-                    _mainWrap = $(_mainWrapSel);
-                if (!_originWidgetTopY)
-                    _originWidgetTopY = _originWidget[['offset']]()[['top']];
-                if (!_originWidgetHeight)
-                    _originWidgetHeight = _originWidget[['height']]();
-                if (!_mirrorWidgetTopY)
-                    _mirrorWidgetTopY = _mirrorWidget[['offset']]()[['top']];
-                if (!_mainWrapTopY)
-                    _mainWrapTopY = _mainWrap[['offset']]()[['top']];
-                if (!_mainWrapHeight)
-                    _mainWrapHeight = _mainWrap[['height']]();
-                if (!_windowHeight)
-                    _windowHeight = $(window)[['height']]();
-                var documentScrollTop = _document[['scrollTop']]();
-                if (documentScrollTop + _windowHeight + 20 > _mirrorWidgetTopY + _originWidgetHeight + 60) {
-                    if (_mirrorWidget[['html']]() == '') {
-                        _mirrorWidget[['prepend']](_originWidget[['html']]());
-                    }
-                    _mirrorWidget[['fadeIn']]('slow');
-                    var top = Math[['max']](0, documentScrollTop - _mirrorWidgetTopY + 100);
-                    _mirrorWidget[['css']]('top', top);
-                } else {
-                    _mirrorWidget[['html']]('')[['fadeOut']]('slow');
-                }
-            };
-            var _initFloatWidget = function _initFloatWidget() {
-                _document[['on']]('scroll', function () {
-                    _handleFloatWidget();
-                });
-            };
-            var _prevTop = 0;
-            var _currTop = 0;
-            var _handleShopSubNavCollapse = function _handleShopSubNavCollapse() {
-                _currTop = _document[['scrollTop']]();
-                if (_currTop < _prevTop) {
-                    _body[['removeClass']]('collapse-subnav');
-                } else {
-                    _body[['addClass']]('collapse-subnav');
-                }
-                setTimeout(function () {
-                    _prevTop = _currTop;
-                }, 0);
-            };
-            var _initShopSubNavCollapse = function _initShopSubNavCollapse() {
-                _document[['on']]('scroll', function () {
-                    _handleShopSubNavCollapse();
-                });
-            };
-            var ScrollHandler = {
-                initScrollTo: _initScrollTo,
-                initShareBar: _initShareBar,
-                initFloatWidget: _initFloatWidget,
-                initShopSubNavCollapse: _initShopSubNavCollapse
-            };
-            exports[['default']] = ScrollHandler;
-        }[['call']](exports, __webpack_require__(1)));
-    },
-    function (module, exports, __webpack_require__) {
-        (function ($) {
-            'use strict';
-            Object[['defineProperty']](exports, '__esModule', { value: true });
-            var _utils = __webpack_require__(3);
-            var _utils2 = _interopRequireDefault(_utils);
-            function _interopRequireDefault(obj) {
-                return obj && obj[['__esModule']] ? obj : { default: obj };
-            }
-            var _signInLinkSel = '.login-link';
-            var SignHelp = {
-                init: function init() {
-                    $('body')[['on']]('click', _signInLinkSel, function (e) {
-                        if ($(window)[['width']]() >= 640) {
-                            e[['preventDefault']]();
-                            _utils2[['default']][['checkLogin']]();
+                        _validate($this) ? _removeError($this) : function () {
+                        }();
+                        if (e[['keyCode']] === 13 && !_submitting && $this[['attr']]('name') === 'password' && _validate()) {
+                            _post();
                         }
                     });
                 }
             };
-            exports[['default']] = SignHelp;
+            exports[['pageSignIn']] = pageSignIn;
         }[['call']](exports, __webpack_require__(1)));
     },
     function (module, exports, __webpack_require__) {
         (function ($) {
             'use strict';
             Object[['defineProperty']](exports, '__esModule', { value: true });
-            exports[['default']] = function () {
-                var footer = $('body>footer');
-                var diffH = $(window)[['height']]() - footer[['offset']]()[['top']] - footer[['height']]();
-                if (diffH > 0) {
-                    footer[['css']]('position', 'relative')[['css']]('top', diffH);
-                }
-            };
-        }[['call']](exports, __webpack_require__(1)));
-    },
-    function (module, exports, __webpack_require__) {
-        (function ($) {
-            'use strict';
-            Object[['defineProperty']](exports, '__esModule', { value: true });
-            __webpack_require__(18);
+            exports[['pageSignUp']] = undefined;
+            var _globalConfig = __webpack_require__(2);
+            var _msgbox = __webpack_require__(6);
             var _utils = __webpack_require__(3);
             var _utils2 = _interopRequireDefault(_utils);
             function _interopRequireDefault(obj) {
                 return obj && obj[['__esModule']] ? obj : { default: obj };
             }
-            var _body = $('body');
-            var _initRef = function _initRef() {
-                if (!$[['cookie']]('tt_ref')) {
-                    $[['cookie']]('tt_ref', _utils2[['default']][['getQueryString']]('ref'), {
-                        expires: 1,
-                        path: '/'
+            var _form = $('.form-signup');
+            var _msgSibling = $('#default-tip');
+            var _userLoginInput = $('#user_login-input');
+            var _emailInput = $('#email-input');
+            var _passwordInput = $('#password-input');
+            var _captchaInput = $('#captcha-input');
+            var _captchaImg = $('img#captcha');
+            var _submitBtn = $('button#signup-btn');
+            var _submitBtnText = _submitBtn[['text']]();
+            var _submitting = false;
+            var _validate = function _validate(input) {
+                var showMsg = arguments[['length']] <= 1 || arguments[1] === undefined ? true : arguments[1];
+                if (!input) {
+                    return _validateUserLogin(showMsg) && _validateEmail(showMsg) && _validatePassword(showMsg) && _validateCaptcha(showMsg);
+                } else {
+                    var inputName = input[['attr']]('name');
+                    switch (inputName) {
+                    case 'user_login':
+                        return _validateUserLogin(showMsg);
+                        break;
+                    case 'email':
+                        return _validateEmail(showMsg);
+                        break;
+                    case 'password':
+                        return _validatePassword(showMsg);
+                        break;
+                    case 'captcha':
+                        return _validateCaptcha(showMsg);
+                        break;
+                    default:
+                        return false;
+                    }
+                }
+            };
+            var _validateUserLogin = function _validateUserLogin(showMsg) {
+                if (_userLoginInput[['val']]() === '') {
+                    if (showMsg) {
+                        _msgbox[['msgbox']][['show']]('\u8bf7\u8f93\u5165\u7528\u6237\u540d', 'danger', _msgSibling);
+                    }
+                    _userLoginInput[['parent']]()[['addClass']]('has-error');
+                    return false;
+                } else if (!_utils2[['default']][['isValidUserName']](_userLoginInput[['val']]()) && !_utils2[['default']][['isEmail']](_userLoginInput[['val']]())) {
+                    if (showMsg) {
+                        _msgbox[['msgbox']][['show']]('\u7528\u6237\u540d\u5fc5\u987b\u4ee5\u5b57\u6bcd\u5f00\u5934, \u82f1\u6587/\u6570\u5b57/\u4e0b\u5212\u7ebf\u7ec4\u5408', 'danger', _msgSibling);
+                    }
+                    _userLoginInput[['parent']]()[['addClass']]('has-error');
+                    return false;
+                } else if (_userLoginInput[['val']]()[['length']] < 5) {
+                    if (showMsg) {
+                        _msgbox[['msgbox']][['show']]('\u8d26\u6237\u957f\u5ea6\u81f3\u5c11\u4e3a 5', 'danger', _msgSibling);
+                    }
+                    _userLoginInput[['parent']]()[['addClass']]('has-error');
+                    return false;
+                }
+                _userLoginInput[['parent']]()[['removeClass']]('has-error');
+                return true;
+            };
+            var _validateEmail = function _validateEmail(showMsg) {
+                if (_emailInput[['val']]() === '') {
+                    if (showMsg) {
+                        _msgbox[['msgbox']][['show']]('\u8bf7\u586b\u5199\u90ae\u7bb1', 'danger', _msgSibling);
+                    }
+                    _emailInput[['parent']]()[['addClass']]('has-error');
+                    return false;
+                } else if (!_utils2[['default']][['isEmail']](_emailInput[['val']]())) {
+                    if (showMsg) {
+                        _msgbox[['msgbox']][['show']]('\u90ae\u7bb1\u683c\u5f0f\u4e0d\u6b63\u786e', 'danger', _msgSibling);
+                    }
+                    _emailInput[['parent']]()[['addClass']]('has-error');
+                    return false;
+                }
+                _emailInput[['parent']]()[['removeClass']]('has-error');
+                return true;
+            };
+            var _validatePassword = function _validatePassword(showMsg) {
+                if (_passwordInput[['val']]() === '') {
+                    if (showMsg) {
+                        _msgbox[['msgbox']][['show']]('\u8bf7\u8f93\u5165\u5bc6\u7801', 'danger', _msgSibling);
+                    }
+                    _passwordInput[['parent']]()[['addClass']]('has-error');
+                    return false;
+                } else if (_passwordInput[['val']]()[['length']] < 6) {
+                    if (showMsg) {
+                        _msgbox[['msgbox']][['show']]('\u5bc6\u7801\u957f\u5ea6\u81f3\u5c11\u4e3a 6', 'danger', _msgSibling);
+                    }
+                    _passwordInput[['parent']]()[['addClass']]('has-error');
+                    return false;
+                }
+                _passwordInput[['parent']]()[['removeClass']]('has-error');
+                return true;
+            };
+            var _validateCaptcha = function _validateCaptcha(showMsg) {
+                if (_captchaInput[['val']]() === '') {
+                    if (showMsg) {
+                        _msgbox[['msgbox']][['show']]('\u9a8c\u8bc1\u7801\u4e0d\u80fd\u4e3a\u7a7a', 'danger', _msgSibling);
+                    }
+                    _captchaInput[['parent']]()[['addClass']]('has-error');
+                    return false;
+                } else if (_captchaInput[['val']]()[['length']] != 4) {
+                    if (showMsg) {
+                        _msgbox[['msgbox']][['show']]('\u9a8c\u8bc1\u7801\u957f\u5ea6\u5fc5\u987b\u4e3a 4 \u4f4d', 'danger', _msgSibling);
+                    }
+                    _captchaInput[['parent']]()[['addClass']]('has-error');
+                    return false;
+                }
+                _captchaInput[['parent']]()[['removeClass']]('has-error');
+                return true;
+            };
+            var _removeMsg = function _removeMsg() {
+                $('.form-signup>.msg')[['remove']]();
+            };
+            var _handleInputStatus = function _handleInputStatus(disable) {
+                _userLoginInput[['prop']]('disabled', disable);
+                _emailInput[['prop']]('disabled', disable);
+                _passwordInput[['prop']]('disabled', disable);
+                _captchaInput[['prop']]('disabled', disable);
+            };
+            var _handleCaptchaRefresh = function _handleCaptchaRefresh(captcha) {
+                var captchaSel = captcha ? captcha : _captchaImg;
+                var originCaptchaUrl = captchaSel[['attr']]('src');
+                var date = new Date();
+                var tQueryStr = date[['getMilliseconds']]() / 1000 + '00000_' + date[['getTime']]();
+                var newCaptchaUrl = originCaptchaUrl[['replace']](/\?t=([0-9_\.]+)/, '?t=' + tQueryStr);
+                captchaSel[['attr']]('src', newCaptchaUrl);
+            };
+            var _handleSubmitBtnStatus = function _handleSubmitBtnStatus(disable) {
+                var status = !!disable;
+                _submitBtn[['prop']]('disabled', status);
+            };
+            var _handleSubmitBtnHtml = function _handleSubmitBtnHtml(submitting) {
+                if (submitting) {
+                    _submitBtn[['html']]('<span class="indicator spinner tico tico-spinner3"></span>');
+                } else {
+                    _submitBtn[['html']]('')[['text']](_submitBtnText);
+                }
+            };
+            var _handleSuccess = function _handleSuccess() {
+                var title = '\u6ce8\u518c\u5b8c\u6210';
+                var message = '\u8fd8\u5dee\u4e00\u6b65\u60a8\u5c31\u80fd\u6b63\u5f0f\u62e5\u6709\u4e00\u4e2a\u672c\u7ad9\u8d26\u6237\uff0c\u8bf7\u7acb\u5373\u8bbf\u95ee\u4f60\u6ce8\u518c\u65f6\u63d0\u4f9b\u7684\u90ae\u7bb1\uff0c\u70b9\u51fb\u6fc0\u6d3b\u94fe\u63a5\u5b8c\u6210\u6700\u7ec8\u8d26\u6237\u6ce8\u518c.<br>\u5982\u679c\u60a8\u6ca1\u6709\u6536\u5230\u90ae\u4ef6\uff0c\u8bf7\u67e5\u770b\u5783\u573e\u7bb1\u6216\u90ae\u7bb1\u62e6\u622a\u8bb0\u5f55\uff0c\u5982\u679c\u4ecd\u672a\u83b7\u5f97\u6fc0\u6d3b\u94fe\u63a5\uff0c\u8bf7\u8054\u7cfb\u7f51\u7ad9\u7ba1\u7406\u5458.';
+                _form[['html']]('<h2 class="title signup-title mb30">' + title + '</h2>' + '<p id="default-tip">' + message + '</p>');
+            };
+            var _post = function _post() {
+                var url = _globalConfig[['Routes']][['signUp']];
+                var beforeSend = function beforeSend() {
+                    _handleInputStatus(true);
+                    _handleSubmitBtnStatus(true);
+                    _submitting = true;
+                    _handleSubmitBtnHtml(true);
+                };
+                var finishRequest = function finishRequest() {
+                    _handleInputStatus(false);
+                    _handleSubmitBtnStatus(false);
+                    _submitting = false;
+                    _handleSubmitBtnHtml(false);
+                };
+                var success = function success(data, textStatus, xhr) {
+                    if (data[['success']] && data[['success']] == 1) {
+                        var redirect = _utils2[['default']][['getUrlPara']]('redirect') ? _utils2[['default']][['getAbsUrl']](decodeURIComponent(_utils2[['default']][['getUrlPara']]('redirect'))) : _utils2[['default']][['getSiteUrl']]();
+                        _msgbox[['popMsgbox']][['success']]({
+                            title: '\u8bf7\u6c42\u6ce8\u518c\u6210\u529f',
+                            text: '\u8bf7\u81f3\u60a8\u7684\u90ae\u7bb1\u67e5\u8be2\u5e76\u8bbf\u95ee\u8d26\u6237\u6fc0\u6d3b\u94fe\u63a5\u4ee5\u6700\u7ec8\u5b8c\u6210\u8d26\u6237\u7684\u6ce8\u518c.',
+                            showConfirmButton: true
+                        });
+                        _handleSuccess();
+                    } else {
+                        _msgbox[['popMsgbox']][['error']]({
+                            title: '\u767b\u5f55\u9519\u8bef',
+                            text: data[['message']]
+                        });
+                        finishRequest();
+                    }
+                };
+                var error = function error(xhr, textStatus, err) {
+                    _msgbox[['popMsgbox']][['error']]({
+                        title: '\u8bf7\u6c42\u767b\u5f55\u5931\u8d25, \u8bf7\u91cd\u65b0\u5c1d\u8bd5',
+                        text: xhr[['responseJSON']][['message']]
+                    });
+                    finishRequest();
+                };
+                $[['post']]({
+                    url: url,
+                    data: _form[['serialize']](),
+                    dataType: 'json',
+                    beforeSend: beforeSend,
+                    success: success,
+                    error: error
+                });
+            };
+            var pageSignUp = {
+                init: function init() {
+                    var body = $('body');
+                    body[['on']]('blur', '.local-signup>.input-container input', function () {
+                        _validate($(this));
+                    })[['on']]('keyup', '.local-signup>.input-container input', function () {
+                        var validateResult = _validate(null, false);
+                        _handleSubmitBtnStatus(!validateResult);
+                        if (validateResult) {
+                            _removeMsg();
+                        }
+                    });
+                    body[['on']]('click', 'img.captcha', function () {
+                        _handleCaptchaRefresh($(this));
+                    });
+                    body[['on']]('click', '.local-signup>#signup-btn', function () {
+                        if (_validate()) {
+                            _post();
+                        }
+                        return false;
                     });
                 }
             };
-            var Referral = { init: _initRef };
-            exports[['default']] = Referral;
+            exports[['pageSignUp']] = pageSignUp;
         }[['call']](exports, __webpack_require__(1)));
     },
     function (module, exports, __webpack_require__) {
-        var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
-        'use strict';
-        var _typeof = typeof Symbol === 'function' && typeof Symbol[['iterator']] === 'symbol' ? function (obj) {
-            return typeof obj;
-        } : function (obj) {
-            return obj && typeof Symbol === 'function' && obj[['constructor']] === Symbol ? 'symbol' : typeof obj;
-        };
-        (function (factory) {
-            if (true) {
-                !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(1)], __WEBPACK_AMD_DEFINE_FACTORY__ = factory, __WEBPACK_AMD_DEFINE_RESULT__ = typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? __WEBPACK_AMD_DEFINE_FACTORY__[['apply']](exports, __WEBPACK_AMD_DEFINE_ARRAY__) : __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module[['exports']] = __WEBPACK_AMD_DEFINE_RESULT__));
-            } else if ((typeof exports === 'undefined' ? 'undefined' : _typeof(exports)) === 'object') {
-                module[['exports']] = factory(require('jquery'));
-            } else {
-                factory(jQuery);
-            }
-        }(function ($) {
-            var pluses = /\+/g;
-            function encode(s) {
-                return config[['raw']] ? s : encodeURIComponent(s);
-            }
-            function decode(s) {
-                return config[['raw']] ? s : decodeURIComponent(s);
-            }
-            function stringifyCookieValue(value) {
-                return encode(config[['json']] ? JSON[['stringify']](value) : String(value));
-            }
-            function parseCookieValue(s) {
-                if (s[['indexOf']]('"') === 0) {
-                    s = s[['slice']](1, -1)[['replace']](/\\"/g, '"')[['replace']](/\\\\/g, '\\');
-                }
-                try {
-                    s = decodeURIComponent(s[['replace']](pluses, ' '));
-                    return config[['json']] ? JSON[['parse']](s) : s;
-                } catch (e) {
-                }
-            }
-            function read(s, converter) {
-                var value = config[['raw']] ? s : parseCookieValue(s);
-                return $[['isFunction']](converter) ? converter(value) : value;
-            }
-            var config = $[['cookie']] = function (key, value, options) {
-                if (arguments[['length']] > 1 && !$[['isFunction']](value)) {
-                    options = $[['extend']]({}, config[['defaults']], options);
-                    if (typeof options[['expires']] === 'number') {
-                        var days = options[['expires']], t = options[['expires']] = new Date();
-                        t[['setMilliseconds']](t[['getMilliseconds']]() + days * 86400000);
-                    }
-                    return document[['cookie']] = [
-                        encode(key),
-                        '=',
-                        stringifyCookieValue(value),
-                        options[['expires']] ? '; expires=' + options[['expires']][['toUTCString']]() : '',
-                        options[['path']] ? '; path=' + options[['path']] : '',
-                        options[['domain']] ? '; domain=' + options[['domain']] : '',
-                        options[['secure']] ? '; secure' : ''
-                    ][['join']]('');
-                }
-                var result = key ? undefined : {}, cookies = document[['cookie']] ? document[['cookie']][['split']]('; ') : [], i = 0, l = cookies[['length']];
-                for (; i < l; i++) {
-                    var parts = cookies[i][['split']]('='), name = decode(parts[['shift']]()), cookie = parts[['join']]('=');
-                    if (key === name) {
-                        result = read(cookie, value);
-                        break;
-                    }
-                    if (!key && (cookie = read(cookie)) !== undefined) {
-                        result[name] = cookie;
-                    }
-                }
-                return result;
-            };
-            config[['defaults']] = {};
-            $[['removeCookie']] = function (key, options) {
-                $[['cookie']](key, '', $[['extend']]({}, options, { expires: -1 }));
-                return !$[['cookie']](key);
-            };
-        }));
-    },
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    function (module, exports, __webpack_require__) {
-        (function ($) {
+        (function (TT, $) {
             'use strict';
             Object[['defineProperty']](exports, '__esModule', { value: true });
-            var _body = $('body');
-            var _shopMenuToggleAnchorSel = '.hamburger';
-            var _initShopLeftMenuToggle = function _initShopLeftMenuToggle() {
-                _body[['on']]('click', _shopMenuToggleAnchorSel, function () {
-                    _body[['toggleClass']]('without-menu');
-                });
+            exports[['handleSeasonalBg']] = undefined;
+            var _utils = __webpack_require__(3);
+            var _utils2 = _interopRequireDefault(_utils);
+            function _interopRequireDefault(obj) {
+                return obj && obj[['__esModule']] ? obj : { default: obj };
+            }
+            var _getSeason = function _getSeason(month) {
+                month = parseInt(month);
+                switch (month) {
+                case 3:
+                case 4:
+                case 5:
+                    return 'Spring';
+                    break;
+                case 6:
+                case 7:
+                case 8:
+                    return 'Summer';
+                    break;
+                case 9:
+                case 10:
+                case 11:
+                    return 'Autumn';
+                    break;
+                case 12:
+                case 1:
+                case 2:
+                    return 'Winter';
+                    break;
+                }
             };
-            var Toggle = { initShopLeftMenuToggle: _initShopLeftMenuToggle };
-            exports[['default']] = Toggle;
-        }[['call']](exports, __webpack_require__(1)));
+            var _getPeriod = function _getPeriod(hour) {
+                hour = parseInt(hour);
+                if (hour >= 5 && hour < 11) {
+                    return 'Morning';
+                }
+                if (hour >= 11 && hour < 16) {
+                    return 'Noon';
+                }
+                if (hour >= 16 && hour < 19) {
+                    return 'Evening';
+                }
+                return 'Night';
+            };
+            var _getSeasonalBg = function _getSeasonalBg() {
+                var bgRootUrl = TT && TT[['themeRoot']] ? TT[['themeRoot']] + '/assets/img/spotlight/' : _utils2[['default']][['getSiteUrl']]() + '/wp-content/themes/Tint/assets/img/spotlight/';
+                var _date = new Date();
+                return bgRootUrl + _getSeason(_date[['getMonth']]() + 1)[['toLowerCase']]() + '/' + _getPeriod(_date[['getHours']]())[['toLowerCase']]() + '.jpg';
+            };
+            var _handleSeasonalBg = function _handleSeasonalBg(sel) {
+                var changeBg = function changeBg() {
+                    var bgLayer = sel ? sel : $('body');
+                    bgLayer[['css']]('background-image', 'url(' + _getSeasonalBg() + ')');
+                };
+                changeBg(sel);
+                setInterval(changeBg[['bind']](this, sel), 1000 * 60);
+            };
+            exports[['handleSeasonalBg']] = _handleSeasonalBg;
+        }[['call']](exports, __webpack_require__(4), __webpack_require__(1)));
     }
 ]));

@@ -14,7 +14,7 @@
 'use strict';
 
 
-import {Routes, Urls} from './globalConfig';
+import {Routes} from './globalConfig';
 import Utils from './utils';
 import {popMsgbox} from './msgbox'
 

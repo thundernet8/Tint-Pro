@@ -36,7 +36,8 @@ var routes = {
     coupons: Utils.getAPIUrl('/coupons'),
     boughtResources: Utils.getAPIUrl('/users/boughtresources'),
     userProfiles: Utils.getAPIUrl('/users/profiles'),
-    otherActions: Utils.getAPIUrl('/actions')
+    otherActions: Utils.getAPIUrl('/actions'),
+    posts: Utils.getAPIUrl('/posts')
 };
 
 // URL列表
