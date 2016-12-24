@@ -217,6 +217,7 @@ load_vm('me/vm.Me.Drafts');
 load_vm('me/vm.Me.Messages');
 load_vm('me/vm.Me.Notifications');
 load_vm('me/vm.Me.EditPost');
+load_vm('vm.Search');
 if(TT_PRO && tt_get_option('tt_enable_shop', false)){
     load_vm('shop/vm.Shop.Header.SubNav');
     load_vm('shop/vm.Shop.Home');

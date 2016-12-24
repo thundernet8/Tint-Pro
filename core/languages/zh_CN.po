@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-12-24 20:05+0800\n"
-"PO-Revision-Date: 2016-12-24 20:10+0800\n"
+"POT-Creation-Date: 2016-12-25 00:23+0800\n"
+"PO-Revision-Date: 2016-12-25 00:25+0800\n"
 "Last-Translator: Zhiyan <mail@webapproach.net>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -2770,6 +2770,7 @@ msgstr "积分记录"
 #: core/modules/me/me.Tab.Notifications.php:51
 #: core/modules/me/me.Tab.Notifications.php:53
 #: core/modules/me/me.Tab.Orders.php:77 core/modules/me/me.Tab.Orders.php:79
+#: core/modules/mod.SearchPosts.php:44 core/modules/mod.SearchPosts.php:46
 msgid "← 上一页"
 msgstr "← 上一页"
 
@@ -2778,8 +2779,8 @@ msgstr "← 上一页"
 #: core/modules/me/me.Tab.Messages.php:81
 #: core/modules/me/me.Tab.Notifications.php:56
 #: core/modules/me/me.Tab.Orders.php:82 core/modules/mod.HomeLatest.php:69
-#: core/modules/uc/uc.Tab.Chat.php:87 core/modules/uc/uc.Tab.Comments.php:54
-#: core/modules/uc/uc.Tab.Latest.php:67
+#: core/modules/mod.SearchPosts.php:49 core/modules/uc/uc.Tab.Chat.php:87
+#: core/modules/uc/uc.Tab.Comments.php:54 core/modules/uc/uc.Tab.Latest.php:67
 #, php-format
 msgid "Current Page %d"
 msgstr "第 %d 页"
@@ -2789,8 +2790,8 @@ msgstr "第 %d 页"
 #: core/modules/me/me.Tab.Messages.php:83
 #: core/modules/me/me.Tab.Notifications.php:58
 #: core/modules/me/me.Tab.Orders.php:84 core/modules/mod.HomeLatest.php:71
-#: core/modules/uc/uc.Tab.Chat.php:89 core/modules/uc/uc.Tab.Comments.php:56
-#: core/modules/uc/uc.Tab.Latest.php:69
+#: core/modules/mod.SearchPosts.php:51 core/modules/uc/uc.Tab.Chat.php:89
+#: core/modules/uc/uc.Tab.Comments.php:56 core/modules/uc/uc.Tab.Latest.php:69
 #, php-format
 msgid "Total %d Pages"
 msgstr "共 %d 页"
@@ -2804,6 +2805,7 @@ msgstr "共 %d 页"
 #: core/modules/me/me.Tab.Notifications.php:61
 #: core/modules/me/me.Tab.Notifications.php:63
 #: core/modules/me/me.Tab.Orders.php:87 core/modules/me/me.Tab.Orders.php:89
+#: core/modules/mod.SearchPosts.php:54 core/modules/mod.SearchPosts.php:56
 msgid "下一页 →"
 msgstr "下一页 →"
 
@@ -3597,6 +3599,10 @@ msgstr "说点什么吧..."
 #: core/modules/shop/mod.Shop.ReplyForm.php:53
 msgid "Signin and Leave some words..."
 msgstr "登录并参与讨论..."
+
+#: core/modules/mod.SearchPosts.php:62
+msgid "No results matched your search words"
+msgstr "未找到任何匹配结果..."
 
 #: core/modules/mod.SinglePage.php:26 core/templates/page/tpl.Page.Links.php:32
 msgid "Post on: "
@@ -4747,6 +4753,16 @@ msgstr "发生了错误！"
 msgid "An error has happened on this page."
 msgstr "页面发生了一个错误."
 
+#: core/templates/tpl.Search.php:28
+#, php-format
+msgid "Search %s"
+msgstr "搜索: %s"
+
+#: core/templates/tpl.Search.php:29
+#, php-format
+msgid "%d results in total"
+msgstr "找到 %d 条结果"
+
 #: core/viewModels/me/vm.Me.Order.php:72
 msgid "Credit Payment"
 msgstr "积分支付"
@@ -5438,7 +5454,7 @@ msgstr "注意: 积分充值最小单位为100, 此价格为100个积分的价�
 
 #: dash/options.php:657
 msgid "每日签到积分奖励"
-msgstr ""
+msgstr "每日签到积分奖励"
 
 #: dash/options.php:668
 msgid "注册奖励积分"

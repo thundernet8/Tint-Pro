@@ -19,8 +19,8 @@
 // CSS
 defined('CSS_HOME') || define('CSS_HOME', 'home-dcd09e5f9a.css');
 defined('CSS_FRONT_PAGE') || define('CSS_FRONT_PAGE', 'front-page-33a138a3e8.css');
-defined('CSS_SINGLE') || define('CSS_SINGLE', 'single-d3f933c0ed.css');
-defined('CSS_PAGE') || define('CSS_PAGE', 'page-98850b0a29.css');
+defined('CSS_SINGLE') || define('CSS_SINGLE', 'single-68e19235bc.css');
+defined('CSS_PAGE') || define('CSS_PAGE', 'page-6656df65b8.css');
 defined('CSS_ARCHIVE') || define('CSS_ARCHIVE', 'archive-b7d5f7ca4c.css');
 defined('CSS_PRODUCT') || define('CSS_PRODUCT', 'product-f97da706ef.css');
 defined('CSS_PRODUCT_ARCHIVE') || define('CSS_PRODUCT_ARCHIVE', 'products-7b6f726c8a.css');

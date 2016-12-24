@@ -47,6 +47,9 @@
 /* Article Content */
 @import "modules/content/article-content";
 
+/* Rows loop */
+@import "modules/loop/loop-rows";
+
 body {
     &.page {
         background: #eff0f1; //#dfe3e5; // f9fafc
@@ -288,6 +291,70 @@ body.page-template-tpl-Page-Links {
                         overflow: hidden;
                         font-size: 1.2rem;
                         color: #999;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Search */
+body.search {
+    background: #f5f6f8;
+    &>#content {
+        &>.billboard {
+            height: 200px;
+            padding: 30px 20px 0;
+            border-radius: 4px;
+            background-color: #363f45;
+            color: #fefefe;
+            background-position: 50%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            box-shadow: 0 1px 1px rgba(0,0,0,.1);
+            background-image: url('../img/search-banner.jpg');
+            &>.container {
+                h1 {
+                    line-height: 1.5;
+                    font-size: 3rem;
+                    font-weight: 500;
+                    text-transform: capitalize;
+                    i {
+                        margin-right: 10px;
+                        vertical-align: -2px;
+                        font-size: 2.6rem;
+                    }
+                }
+                p {
+                    margin-top: 20px;
+                    font-size: 1.6rem;
+                    opacity: .9;
+                    font-weight: 500;
+                }
+            }
+        }
+        &>.main-wrap {
+            &>#main {
+                padding: 0 20px;
+                background: #ffffff;
+                &>.loop-rows {
+                    &>article {
+                        border-bottom: 1px solid #f5f5f5;
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+                &>.empty-results {
+                    padding: 50px 0;
+                    text-align: center;
+                    font-size: 2rem;
+                    &>.tico {
+                        font-size: 6rem;
+                        color: #ddd;
+                    }
+                    &>p {
+                        margin: 40px auto 20px;
                     }
                 }
             }

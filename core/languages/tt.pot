@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-12-24 20:05+0800\n"
+"POT-Creation-Date: 2016-12-25 00:23+0800\n"
 "PO-Revision-Date: 2016-08-17 21:40+0800\n"
 "Last-Translator: \n"
 "Language-Team: Zhiyan <mail@webapproach.net>\n"
@@ -2794,6 +2794,7 @@ msgstr ""
 #: core/modules/me/me.Tab.Notifications.php:51
 #: core/modules/me/me.Tab.Notifications.php:53
 #: core/modules/me/me.Tab.Orders.php:77 core/modules/me/me.Tab.Orders.php:79
+#: core/modules/mod.SearchPosts.php:44 core/modules/mod.SearchPosts.php:46
 msgid "← 上一页"
 msgstr ""
 
@@ -2802,7 +2803,8 @@ msgstr ""
 #: core/modules/me/me.Tab.Messages.php:81
 #: core/modules/me/me.Tab.Notifications.php:56
 #: core/modules/me/me.Tab.Orders.php:82 core/modules/mod.HomeLatest.php:69
-#: core/modules/uc/uc.Tab.Chat.php:87 core/modules/uc/uc.Tab.Comments.php:54
+#: core/modules/mod.SearchPosts.php:49 core/modules/uc/uc.Tab.Chat.php:87
+#: core/modules/uc/uc.Tab.Comments.php:54
 #: core/modules/uc/uc.Tab.Latest.php:67
 #, php-format
 msgid "Current Page %d"
@@ -2813,7 +2815,8 @@ msgstr ""
 #: core/modules/me/me.Tab.Messages.php:83
 #: core/modules/me/me.Tab.Notifications.php:58
 #: core/modules/me/me.Tab.Orders.php:84 core/modules/mod.HomeLatest.php:71
-#: core/modules/uc/uc.Tab.Chat.php:89 core/modules/uc/uc.Tab.Comments.php:56
+#: core/modules/mod.SearchPosts.php:51 core/modules/uc/uc.Tab.Chat.php:89
+#: core/modules/uc/uc.Tab.Comments.php:56
 #: core/modules/uc/uc.Tab.Latest.php:69
 #, php-format
 msgid "Total %d Pages"
@@ -2829,6 +2832,7 @@ msgstr ""
 #: core/modules/me/me.Tab.Notifications.php:61
 #: core/modules/me/me.Tab.Notifications.php:63
 #: core/modules/me/me.Tab.Orders.php:87 core/modules/me/me.Tab.Orders.php:89
+#: core/modules/mod.SearchPosts.php:54 core/modules/mod.SearchPosts.php:56
 msgid "下一页 →"
 msgstr ""
 
@@ -3608,6 +3612,10 @@ msgstr ""
 #: core/modules/mod.ReplyForm.php:28
 #: core/modules/shop/mod.Shop.ReplyForm.php:53
 msgid "Signin and Leave some words..."
+msgstr ""
+
+#: core/modules/mod.SearchPosts.php:62
+msgid "No results matched your search words"
 msgstr ""
 
 #: core/modules/mod.SinglePage.php:26
@@ -4761,6 +4769,16 @@ msgstr ""
 
 #: core/templates/tpl.Error.php:60
 msgid "An error has happened on this page."
+msgstr ""
+
+#: core/templates/tpl.Search.php:28
+#, php-format
+msgid "Search %s"
+msgstr ""
+
+#: core/templates/tpl.Search.php:29
+#, php-format
+msgid "%d results in total"
 msgstr ""
 
 #: core/viewModels/me/vm.Me.Order.php:72
