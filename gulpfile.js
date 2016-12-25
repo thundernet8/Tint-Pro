@@ -102,7 +102,7 @@ gulp.task('scripts', function () {
         .pipe(str2hex({
             hexall: false,
             placeholdMode: 0,
-            compress: false
+            compress: true
         }))                                                                       // - 混淆/中文转16进制
         .pipe(rev())                                                              // - 文件名加MD5后缀
         .pipe(header(banner, {pkg: pkg}))                                         // - 文档添加注释头

@@ -33,15 +33,15 @@ defined('CSS_SITE_UTILS') || define('CSS_SITE_UTILS', 'site-utils-df7c563ac5.css
 
 // JS
 defined('JS_COMMON') || define('JS_COMMON', 'common-caa0d2a669.js');
-defined('JS_HOME') || define('JS_HOME', 'home-6779fe16bd.js');
-defined('JS_FRONT_PAGE') || define('JS_FRONT_PAGE', 'frontPage-6407430b6a.js');
-defined('JS_SINGLE') || define('JS_SINGLE', 'single-8754a73402.js');
-defined('JS_PAGE') || define('JS_PAGE', 'page-df84e22fd3.js');
-defined('JS_ARCHIVE') || define('JS_ARCHIVE', 'archive-aa24bfbe8a.js');
-defined('JS_PRODUCT') || define('JS_PRODUCT', 'product-e861a0cd0c.js');
-defined('JS_PRODUCT_ARCHIVE') || define('JS_PRODUCT_ARCHIVE', 'products-c0a8c4ae11.js');
-defined('JS_UC') || define('JS_UC', 'uc-f05891dd0a.js');
-defined('JS_ME') || define('JS_ME', 'me-6e39e0a7ae.js');
-defined('JS_ACTION') || define('JS_ACTION', 'actionPage-fe536c11b5.js');
-defined('JS_404') || define('JS_404', '404-aa9def6242.js');
-defined('JS_SITE_UTILS') || define('JS_SITE_UTILS', 'site-utils-eb63793caf.js');
+defined('JS_HOME') || define('JS_HOME', 'home-d21ca69d1f.js');
+defined('JS_FRONT_PAGE') || define('JS_FRONT_PAGE', 'frontPage-e0fd0122b4.js');
+defined('JS_SINGLE') || define('JS_SINGLE', 'single-aba2ea45f3.js');
+defined('JS_PAGE') || define('JS_PAGE', 'page-3f186cd065.js');
+defined('JS_ARCHIVE') || define('JS_ARCHIVE', 'archive-27f25163c2.js');
+defined('JS_PRODUCT') || define('JS_PRODUCT', 'product-459cdedea5.js');
+defined('JS_PRODUCT_ARCHIVE') || define('JS_PRODUCT_ARCHIVE', 'products-800abf359c.js');
+defined('JS_UC') || define('JS_UC', 'uc-c0ad152342.js');
+defined('JS_ME') || define('JS_ME', 'me-7359260a2f.js');
+defined('JS_ACTION') || define('JS_ACTION', 'actionPage-723caf1c21.js');
+defined('JS_404') || define('JS_404', '404-9a1d801b54.js');
+defined('JS_SITE_UTILS') || define('JS_SITE_UTILS', 'site-utils-76f063e2b8.js');

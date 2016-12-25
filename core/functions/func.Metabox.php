@@ -281,7 +281,7 @@ function tt_save_meta_box_data( $post_id ) {
     }
 
     if(isset($_POST['tt_product_price'])){
-        update_post_meta($post_id, 'tt_pay_currency', abs($_POST['tt_product_price']));
+        update_post_meta($post_id, 'tt_product_price', abs($_POST['tt_product_price']));
     }
 
     if(isset($_POST['tt_product_quantity'])){
