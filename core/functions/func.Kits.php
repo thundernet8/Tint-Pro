@@ -477,3 +477,16 @@ function tt_get_referral_link($user_id = 0, $base_link = ''){
 
     return add_query_arg(array('ref' => $user_id), $base_link);
 }
+
+
+/**
+ * 获取GET方法http响应状态代码
+ *
+ * @since 2.0.0
+ * @param $theURL
+ * @return string
+ */
+function tt_get_http_response_code($theURL) {
+    @$headers = get_headers($theURL);
+    return substr($headers[0], 9, 3);
+}

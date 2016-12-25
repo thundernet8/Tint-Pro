@@ -38,7 +38,7 @@
             <?php } ?>
             </ul>
         <?php } ?>
-        <?php if(count($free_dls)) { ?>
+        <?php if(count($sale_dls)) { ?>
             <h2><?php _e('Sale Resources', 'tt'); ?></h2>
             <ul class="sale-resources">
             <?php $seq = 0; foreach ($sale_dls as $sale_dl) { ?>
