@@ -453,7 +453,7 @@ body.qrpay {
 
 /* Download */
 body.site_util-download {
-    background: #eff0f1;
+    background: #f5f6f8;//#eff0f1;
     &>.download-wrapper {
         &>.main-wrap {
             padding: 30px 0;
@@ -496,6 +496,56 @@ body.site_util-download {
             }
             &>.sidebar {
 
+            }
+        }
+    }
+}
+
+
+
+/* Privacy */
+body.site_util-privacy-policies-and-terms {
+    background: #f5f6f8;
+    &>#content {
+        &>.main-wrap {
+            max-width: 960px;
+            min-height: 500px;
+            margin: 20px auto;
+            border-radius: 3px;
+            background: #fff;
+            &>.main {
+                &>.page {
+                    &>.single-header {
+                        text-align: center;
+                        h1 {
+                            margin-top: 50px;
+                        }
+                    }
+                    &>.single-body {
+                        padding: 20px 30px;
+                        font-size: 1.6rem;
+                        line-height: 1.5;
+
+                        h2 {
+                            margin: 30px 0 15px;
+                            font-size: 2.4rem;
+                        }
+
+                        ul {
+                            padding-left: 20px;
+                            li {
+                                line-height: 1.8;
+                                opacity: 0.9;
+                                &:before {
+                                    font-family: Tico!important;
+                                    content: '\e628';
+                                    font-size: 10px;
+                                    padding: 0 6px 0 10px;
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }

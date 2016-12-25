@@ -91,7 +91,7 @@ load_dash('of_inc/options-framework');
 load_dash('options');
 /* 调试模式选项保存为全局变量 */
 defined('TT_DEBUG') || define('TT_DEBUG', of_get_option('tt_theme_debug', false));
-if(TT_DEBUG) {
+if(!TT_DEBUG) {
     ini_set("display_errors","On");
     error_reporting(E_ALL);
 }else{

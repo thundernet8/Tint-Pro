@@ -73,21 +73,32 @@ add_action('load-themes.php', 'tt_add_upload_tmp_folder');
  *
  * @return  void
  */
-function tt_copy_memcache_cache_plugin(){
+function tt_copy_object_cache_plugin(){
     //TODO: maybe need check the file in wp-content is same with that in theme dir
-    if(!file_exists( WP_CONTENT_DIR . '/object-cache.php' ) && file_exists( THEME_DIR . '/dash/plugins/memcache/object-cache.php') && tt_get_option('tt_object_cache', 'none') == 'memcache' ){
+    $object_cache_type = tt_get_option('tt_object_cache', 'none');
+    if($object_cache_type == 'memcache' && !class_exists('Memcache')) {
+        wp_die(__('You choose the memcache object cache, but the Memcache library is not installed', 'tt'), __('Copy plugin error', 'tt'));
+    }
+    if($object_cache_type == 'redis' && !class_exists('Redis')) {
+        wp_die(__('You choose the redis object cache, but the Redis library is not installed', 'tt'), __('Copy plugin error', 'tt'));
+    }
+    //!file_exists( WP_CONTENT_DIR . '/object-cache.php' ) ??
+    $last_use_cache_type = get_option('tt_object_cache_type');
+    if(in_array($object_cache_type, ['memcache', 'redis']) && $last_use_cache_type != $object_cache_type && file_exists( THEME_DIR . '/dash/plugins/' . $object_cache_type . '/object-cache.php')){
         try{
-            copy(THEME_DIR . '/dash/plugins/memcache/object-cache.php', WP_CONTENT_DIR . '/object-cache.php');
+            copy(THEME_DIR . '/dash/plugins/' . $object_cache_type . '/object-cache.php', WP_CONTENT_DIR . '/object-cache.php');
+            update_option('tt_object_cache_type', $object_cache_type);
         }catch (Exception $e){
             if(tt_get_option('tt_theme_debug', false)){
-                $message = __('Can not copy `memcache object-cache.php` to `wp-content` dir.\n', 'tt') . __('Caught exception: ', 'tt') . $e->getMessage() . '\n';
-                $title = __('Create folder error', 'tt');
+                $message = __('Can not copy `object-cache.php` to `wp-content` dir.\n', 'tt') . __('Caught exception: ', 'tt') . $e->getMessage() . '\n';
+                $title = __('Copy plugin error', 'tt');
                 wp_die($message, $title);
             }
         }
     }
 }
-add_action('load-themes.php', 'tt_copy_memcache_cache_plugin');
+//add_action('load-themes.php', 'tt_copy_object_cache_plugin');
+add_action('admin_menu', 'tt_copy_object_cache_plugin');
 
 
 /**

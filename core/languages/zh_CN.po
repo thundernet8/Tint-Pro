@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-12-25 00:23+0800\n"
-"PO-Revision-Date: 2016-12-25 00:25+0800\n"
+"POT-Creation-Date: 2016-12-25 15:20+0800\n"
+"PO-Revision-Date: 2016-12-25 15:21+0800\n"
 "Last-Translator: Zhiyan <mail@webapproach.net>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -1646,13 +1646,13 @@ msgid ""
 msgstr "创建头像上传文件夹失败，或许可检查php.ini以启用`mkdir`函数.\\n"
 
 #: core/functions/func.Install.php:35 core/functions/func.Install.php:59
-#: core/functions/func.Install.php:83 core/functions/func.Install.php:108
-#: core/functions/func.Install.php:121
+#: core/functions/func.Install.php:93 core/functions/func.Install.php:119
+#: core/functions/func.Install.php:132
 msgid "Caught exception: "
 msgstr "捕获异常: "
 
 #: core/functions/func.Install.php:36 core/functions/func.Install.php:60
-#: core/functions/func.Install.php:122 functions.php:16
+#: core/functions/func.Install.php:133 functions.php:16
 msgid "WordPress internal error"
 msgstr "WordPress内部错误"
 
@@ -1662,19 +1662,39 @@ msgid ""
 "function.\\n"
 msgstr "创建图片上传临时文件夹失败，或许可检查php.ini以启用`mkdir`函数.\\n"
 
-#: core/functions/func.Install.php:83 core/functions/func.Install.php:121
-msgid "Can not copy `memcache object-cache.php` to `wp-content` dir.\\n"
-msgstr "Can not copy `memcache object-cache.php` to `wp-content` dir.\\n"
+#: core/functions/func.Install.php:80
+msgid ""
+"You choose the memcache object cache, but the Memcache library is not "
+"installed"
+msgstr "你选择了memcache对象缓存, 但是没有安装Memcache"
 
-#: core/functions/func.Install.php:84 core/functions/func.Install.php:109
-msgid "Create folder error"
-msgstr "创建文件夹错误"
+#: core/functions/func.Install.php:80 core/functions/func.Install.php:83
+#: core/functions/func.Install.php:94
+msgid "Copy plugin error"
+msgstr "复制插件错误"
 
-#: core/functions/func.Install.php:108
+#: core/functions/func.Install.php:83
+msgid ""
+"You choose the redis object cache, but the Redis library is not installed"
+msgstr "你选择了redis对象缓存, 但是没有安装Redis"
+
+#: core/functions/func.Install.php:93
+msgid "Can not copy `object-cache.php` to `wp-content` dir.\\n"
+msgstr "不能复制 `object-cache.php` 到`wp-content` 目录.\\n"
+
+#: core/functions/func.Install.php:119
 msgid ""
 "Create timthumb cache folder failed, maybe check your php.ini to enable "
 "`mkdir` function.\\n"
 msgstr "创建Timthumb缓存文件夹失败，或许可检查php.ini以启用`mkdir`函数.\\n"
+
+#: core/functions/func.Install.php:120
+msgid "Create folder error"
+msgstr "创建文件夹错误"
+
+#: core/functions/func.Install.php:132
+msgid "Can not copy `memcache object-cache.php` to `wp-content` dir.\\n"
+msgstr "Can not copy `memcache object-cache.php` to `wp-content` dir.\\n"
 
 #: core/functions/func.Kits.php:362
 msgid "WordPress &rsaquo; Error"
@@ -1989,27 +2009,27 @@ msgstr "无效的页面模板"
 msgid "Weekly"
 msgstr "每周的"
 
-#: core/functions/func.Seo.php:28 core/functions/func.Seo.php:165
+#: core/functions/func.Seo.php:28 core/functions/func.Seo.php:169
 #: core/modules/mod.ModalLoginForm.php:17
 #: core/templates/actions/tpl.M.Signup.php:90
 msgid "Sign In"
 msgstr "登录"
 
-#: core/functions/func.Seo.php:31 core/functions/func.Seo.php:168
+#: core/functions/func.Seo.php:31 core/functions/func.Seo.php:172
 #: core/templates/actions/tpl.M.Signup.php:62
 msgid "Sign Up"
 msgstr "注册"
 
-#: core/functions/func.Seo.php:34 core/functions/func.Seo.php:171
+#: core/functions/func.Seo.php:34 core/functions/func.Seo.php:175
 msgid "Activate Registration"
 msgstr "激活注册"
 
-#: core/functions/func.Seo.php:37 core/functions/func.Seo.php:174
+#: core/functions/func.Seo.php:37 core/functions/func.Seo.php:178
 #: core/modules/mod.Header.Shop.php:103 core/modules/mod.Header.php:48
 msgid "Sign Out"
 msgstr "注销"
 
-#: core/functions/func.Seo.php:40 core/functions/func.Seo.php:177
+#: core/functions/func.Seo.php:40 core/functions/func.Seo.php:181
 #: core/templates/actions/tpl.M.Findpass.php:33
 msgid "Find Password"
 msgstr "找回密码"
@@ -2078,77 +2098,81 @@ msgstr "支付"
 msgid "Resources Download:"
 msgstr "资源下载: "
 
-#: core/functions/func.Seo.php:106
+#: core/functions/func.Seo.php:99 core/templates/site/tpl.Privacy.php:23
+msgid "Privacy Policies and Terms"
+msgstr "隐私政策和版权声明"
+
+#: core/functions/func.Seo.php:110
 #, php-format
 msgid " - Page %d"
 msgstr " - 第 %d 页"
 
-#: core/functions/func.Seo.php:117 core/functions/func.Seo.php:214
+#: core/functions/func.Seo.php:121 core/functions/func.Seo.php:218
 #, php-format
 msgid "%s's Home Page"
 msgstr "%s's 个人中心"
 
-#: core/functions/func.Seo.php:121 core/functions/shop/func.Shop.php:297
+#: core/functions/func.Seo.php:125 core/functions/shop/func.Shop.php:297
 msgid "Product Category"
 msgstr "商品分类"
 
-#: core/functions/func.Seo.php:123
+#: core/functions/func.Seo.php:127
 msgid "Product Tag"
 msgstr "商品标签"
 
-#: core/functions/func.Seo.php:125 core/functions/func.Seo.php:128
-#: core/functions/func.Seo.php:226 core/modules/mod.Header.Shop.php:29
+#: core/functions/func.Seo.php:129 core/functions/func.Seo.php:132
+#: core/functions/func.Seo.php:230 core/modules/mod.Header.Shop.php:29
 #: dash/options.php:805
 msgid "Market"
 msgstr "商店"
 
-#: core/functions/func.Seo.php:131
+#: core/functions/func.Seo.php:135
 msgid "Search"
 msgstr "搜索"
 
-#: core/functions/func.Seo.php:133
+#: core/functions/func.Seo.php:137
 msgid "Y"
 msgstr "Y"
 
-#: core/functions/func.Seo.php:133 core/functions/func.Seo.php:135
-#: core/functions/func.Seo.php:137
+#: core/functions/func.Seo.php:137 core/functions/func.Seo.php:139
+#: core/functions/func.Seo.php:141
 msgid "posts archive"
 msgstr "文章归档"
 
-#: core/functions/func.Seo.php:135
+#: core/functions/func.Seo.php:139
 msgid "Y.n"
 msgstr "Y.n"
 
-#: core/functions/func.Seo.php:137
+#: core/functions/func.Seo.php:141
 msgid "Y.n.j"
 msgstr "Y.n.j"
 
-#: core/functions/func.Seo.php:139
+#: core/functions/func.Seo.php:143
 msgid "Tag: "
 msgstr "标签: "
 
-#: core/functions/func.Seo.php:141
+#: core/functions/func.Seo.php:145
 msgid "Page Not Found"
 msgstr "页面未找到"
 
-#: core/functions/func.Seo.php:146
+#: core/functions/func.Seo.php:150
 #, php-format
 msgid " - Page %d "
 msgstr " - 第 %d 页"
 
-#: core/functions/func.Seo.php:180 core/functions/func.Seo.php:214
+#: core/functions/func.Seo.php:184 core/functions/func.Seo.php:218
 msgid "Powered by Tint(Tinection 2)"
 msgstr "由Tint主题驱动(Tinection 2)"
 
-#: core/functions/func.Seo.php:213
+#: core/functions/func.Seo.php:217
 msgid "Ucenter"
 msgstr "用户中心"
 
-#: core/functions/func.Seo.php:213 core/functions/func.Seo.php:226
+#: core/functions/func.Seo.php:217 core/functions/func.Seo.php:230
 msgid "Tint Ucenter and Market System"
 msgstr "Tint主题用户中心和商店系统"
 
-#: core/functions/func.Seo.php:229
+#: core/functions/func.Seo.php:233
 msgid ""
 "Powered by Tint(Tinection 2, a powerful wordpress theme with ucenter and "
 "shop system integrated)"
@@ -3600,15 +3624,17 @@ msgstr "说点什么吧..."
 msgid "Signin and Leave some words..."
 msgstr "登录并参与讨论..."
 
-#: core/modules/mod.SearchPosts.php:62
+#: core/modules/mod.SearchPosts.php:63
 msgid "No results matched your search words"
 msgstr "未找到任何匹配结果..."
 
 #: core/modules/mod.SinglePage.php:26 core/templates/page/tpl.Page.Links.php:32
+#: core/templates/site/tpl.Privacy.php:25
 msgid "Post on: "
 msgstr "发布于: "
 
 #: core/modules/mod.SinglePage.php:28 core/templates/page/tpl.Page.Links.php:34
+#: core/templates/site/tpl.Privacy.php:27
 msgid "Modified on: "
 msgstr "上次更新: "
 

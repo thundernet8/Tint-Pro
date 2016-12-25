@@ -963,7 +963,7 @@ function optionsframework_options() {
     $options[] = array(
         'name' => __( 'Memcache Host', 'tt' ),
         'desc' => __( 'Memcache server host', 'tt' ),
-        'id' => 'tt_memcached_host',
+        'id' => 'tt_memcache_host',
         'std' => '127.0.0.1',
         'type' => 'text'
     );
@@ -973,7 +973,7 @@ function optionsframework_options() {
     $options[] = array(
         'name' => __( 'Memcache Port', 'tt' ),
         'desc' => __( 'Memcache server port', 'tt' ),
-        'id' => 'tt_memcached_port',
+        'id' => 'tt_memcache_port',
         'std' => 11211,
         'class' => 'mini',
         'type' => 'text'

@@ -94,6 +94,10 @@ function tt_get_page_title() {
             case 'download':
                 global $origin_post;
                 $title = __('Resources Download:', 'tt') . $origin_post->post_title;
+                break;
+            case 'privacy-policies-and-terms':
+                $title = __('Privacy Policies and Terms', 'tt');
+                break;
             // TODO more
         }
         return $title . ' - ' . get_bloginfo('name');

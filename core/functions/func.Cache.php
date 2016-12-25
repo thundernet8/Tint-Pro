@@ -276,3 +276,23 @@ function tt_create_widget_cache($value, $type, $expiration = 21600) {  // 21600 
     set_transient($cache_key, $value, $expiration);
 }
 add_action('tt_widget_create_cache', 'tt_create_widget_cache', 10, 2);
+
+
+/**
+ * 配置Object Cache服务器
+ *
+ * @since 2.0.0
+ */
+function tt_init_object_cache_server(){
+    if(of_get_option('tt_object_cache', 'none') == 'memcache') {
+        global $memcached_servers;
+        $host = of_get_option('tt_memcache_host', '127.0.0.1');
+        $port = of_get_option('tt_memcache_port', 11211);
+        $memcached_servers[] = $host . ':' . $port;
+    }elseif(of_get_option('tt_object_cache', 'none') == 'redis') {
+        global $redis_server;
+        $redis_server['host'] = of_get_option('tt_redis_host', '127.0.0.1');
+        $redis_server['port'] = of_get_option('tt_redis_port', 6379);
+    }
+}
+tt_init_object_cache_server();

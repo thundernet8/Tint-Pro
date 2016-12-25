@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-12-25 00:23+0800\n"
+"POT-Creation-Date: 2016-12-25 15:20+0800\n"
 "PO-Revision-Date: 2016-08-17 21:40+0800\n"
 "Last-Translator: \n"
 "Language-Team: Zhiyan <mail@webapproach.net>\n"
@@ -1675,13 +1675,13 @@ msgid ""
 msgstr ""
 
 #: core/functions/func.Install.php:35 core/functions/func.Install.php:59
-#: core/functions/func.Install.php:83 core/functions/func.Install.php:108
-#: core/functions/func.Install.php:121
+#: core/functions/func.Install.php:93 core/functions/func.Install.php:119
+#: core/functions/func.Install.php:132
 msgid "Caught exception: "
 msgstr ""
 
 #: core/functions/func.Install.php:36 core/functions/func.Install.php:60
-#: core/functions/func.Install.php:122 functions.php:16
+#: core/functions/func.Install.php:133 functions.php:16
 msgid "WordPress internal error"
 msgstr ""
 
@@ -1691,18 +1691,38 @@ msgid ""
 "`mkdir` function.\\n"
 msgstr ""
 
-#: core/functions/func.Install.php:83 core/functions/func.Install.php:121
-msgid "Can not copy `memcache object-cache.php` to `wp-content` dir.\\n"
+#: core/functions/func.Install.php:80
+msgid ""
+"You choose the memcache object cache, but the Memcache library is not "
+"installed"
 msgstr ""
 
-#: core/functions/func.Install.php:84 core/functions/func.Install.php:109
-msgid "Create folder error"
+#: core/functions/func.Install.php:80 core/functions/func.Install.php:83
+#: core/functions/func.Install.php:94
+msgid "Copy plugin error"
 msgstr ""
 
-#: core/functions/func.Install.php:108
+#: core/functions/func.Install.php:83
+msgid ""
+"You choose the redis object cache, but the Redis library is not installed"
+msgstr ""
+
+#: core/functions/func.Install.php:93
+msgid "Can not copy `object-cache.php` to `wp-content` dir.\\n"
+msgstr ""
+
+#: core/functions/func.Install.php:119
 msgid ""
 "Create timthumb cache folder failed, maybe check your php.ini to enable "
 "`mkdir` function.\\n"
+msgstr ""
+
+#: core/functions/func.Install.php:120
+msgid "Create folder error"
+msgstr ""
+
+#: core/functions/func.Install.php:132
+msgid "Can not copy `memcache object-cache.php` to `wp-content` dir.\\n"
 msgstr ""
 
 #: core/functions/func.Kits.php:362
@@ -2014,27 +2034,27 @@ msgstr ""
 msgid "Weekly"
 msgstr ""
 
-#: core/functions/func.Seo.php:28 core/functions/func.Seo.php:165
+#: core/functions/func.Seo.php:28 core/functions/func.Seo.php:169
 #: core/modules/mod.ModalLoginForm.php:17
 #: core/templates/actions/tpl.M.Signup.php:90
 msgid "Sign In"
 msgstr ""
 
-#: core/functions/func.Seo.php:31 core/functions/func.Seo.php:168
+#: core/functions/func.Seo.php:31 core/functions/func.Seo.php:172
 #: core/templates/actions/tpl.M.Signup.php:62
 msgid "Sign Up"
 msgstr ""
 
-#: core/functions/func.Seo.php:34 core/functions/func.Seo.php:171
+#: core/functions/func.Seo.php:34 core/functions/func.Seo.php:175
 msgid "Activate Registration"
 msgstr ""
 
-#: core/functions/func.Seo.php:37 core/functions/func.Seo.php:174
+#: core/functions/func.Seo.php:37 core/functions/func.Seo.php:178
 #: core/modules/mod.Header.Shop.php:103 core/modules/mod.Header.php:48
 msgid "Sign Out"
 msgstr ""
 
-#: core/functions/func.Seo.php:40 core/functions/func.Seo.php:177
+#: core/functions/func.Seo.php:40 core/functions/func.Seo.php:181
 #: core/templates/actions/tpl.M.Findpass.php:33
 msgid "Find Password"
 msgstr ""
@@ -2103,77 +2123,81 @@ msgstr ""
 msgid "Resources Download:"
 msgstr ""
 
-#: core/functions/func.Seo.php:106
+#: core/functions/func.Seo.php:99 core/templates/site/tpl.Privacy.php:23
+msgid "Privacy Policies and Terms"
+msgstr ""
+
+#: core/functions/func.Seo.php:110
 #, php-format
 msgid " - Page %d"
 msgstr ""
 
-#: core/functions/func.Seo.php:117 core/functions/func.Seo.php:214
+#: core/functions/func.Seo.php:121 core/functions/func.Seo.php:218
 #, php-format
 msgid "%s's Home Page"
 msgstr ""
 
-#: core/functions/func.Seo.php:121 core/functions/shop/func.Shop.php:297
+#: core/functions/func.Seo.php:125 core/functions/shop/func.Shop.php:297
 msgid "Product Category"
 msgstr ""
 
-#: core/functions/func.Seo.php:123
+#: core/functions/func.Seo.php:127
 msgid "Product Tag"
 msgstr ""
 
-#: core/functions/func.Seo.php:125 core/functions/func.Seo.php:128
-#: core/functions/func.Seo.php:226 core/modules/mod.Header.Shop.php:29
+#: core/functions/func.Seo.php:129 core/functions/func.Seo.php:132
+#: core/functions/func.Seo.php:230 core/modules/mod.Header.Shop.php:29
 #: dash/options.php:805
 msgid "Market"
 msgstr ""
 
-#: core/functions/func.Seo.php:131
+#: core/functions/func.Seo.php:135
 msgid "Search"
 msgstr ""
 
-#: core/functions/func.Seo.php:133
+#: core/functions/func.Seo.php:137
 msgid "Y"
 msgstr ""
 
-#: core/functions/func.Seo.php:133 core/functions/func.Seo.php:135
-#: core/functions/func.Seo.php:137
+#: core/functions/func.Seo.php:137 core/functions/func.Seo.php:139
+#: core/functions/func.Seo.php:141
 msgid "posts archive"
 msgstr ""
 
-#: core/functions/func.Seo.php:135
+#: core/functions/func.Seo.php:139
 msgid "Y.n"
 msgstr ""
 
-#: core/functions/func.Seo.php:137
+#: core/functions/func.Seo.php:141
 msgid "Y.n.j"
 msgstr ""
 
-#: core/functions/func.Seo.php:139
+#: core/functions/func.Seo.php:143
 msgid "Tag: "
 msgstr ""
 
-#: core/functions/func.Seo.php:141
+#: core/functions/func.Seo.php:145
 msgid "Page Not Found"
 msgstr ""
 
-#: core/functions/func.Seo.php:146
+#: core/functions/func.Seo.php:150
 #, php-format
 msgid " - Page %d "
 msgstr ""
 
-#: core/functions/func.Seo.php:180 core/functions/func.Seo.php:214
+#: core/functions/func.Seo.php:184 core/functions/func.Seo.php:218
 msgid "Powered by Tint(Tinection 2)"
 msgstr ""
 
-#: core/functions/func.Seo.php:213
+#: core/functions/func.Seo.php:217
 msgid "Ucenter"
 msgstr ""
 
-#: core/functions/func.Seo.php:213 core/functions/func.Seo.php:226
+#: core/functions/func.Seo.php:217 core/functions/func.Seo.php:230
 msgid "Tint Ucenter and Market System"
 msgstr ""
 
-#: core/functions/func.Seo.php:229
+#: core/functions/func.Seo.php:233
 msgid ""
 "Powered by Tint(Tinection 2, a powerful wordpress theme with ucenter and "
 "shop system integrated)"
@@ -3614,17 +3638,19 @@ msgstr ""
 msgid "Signin and Leave some words..."
 msgstr ""
 
-#: core/modules/mod.SearchPosts.php:62
+#: core/modules/mod.SearchPosts.php:63
 msgid "No results matched your search words"
 msgstr ""
 
 #: core/modules/mod.SinglePage.php:26
 #: core/templates/page/tpl.Page.Links.php:32
+#: core/templates/site/tpl.Privacy.php:25
 msgid "Post on: "
 msgstr ""
 
 #: core/modules/mod.SinglePage.php:28
 #: core/templates/page/tpl.Page.Links.php:34
+#: core/templates/site/tpl.Privacy.php:27
 msgid "Modified on: "
 msgstr ""
 
