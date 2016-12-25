@@ -5,5 +5,16 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="jQuery-2.0.0" level="application" />
+    <orderEntry type="module-library">
+      <library name="PHP">
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../../../WebServer/WWW/wordpress_map" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/../../../WebServer/WWW/wordpress_map" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="library" name="webuploader.html5only" level="application" />
   </component>
 </module>
