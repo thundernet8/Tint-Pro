@@ -220,11 +220,11 @@ class WP_REST_Order_Controller extends WP_REST_Controller
             $format = array();
             if($address_id || $address_id = $request->get_param('addressId') !== null){
                 $data['address_id'] = $address_id;
-                $format[] = '%d';
+                $format[0] = '%d';
             }
-            if($user_message = $request->get_param('userMessage') !== null){
+            if($user_message = $request->get_param('userMessage')){
                 $data['user_message'] = $user_message;
-                $format[] = '%s';
+                $format[1] = '%s';
             }
 
             $update = tt_update_order($order_id, $data, $format); // 把用户留言和地址更新到订单
