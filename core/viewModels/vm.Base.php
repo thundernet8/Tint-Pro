@@ -121,7 +121,7 @@ abstract class BaseVM {
      */
     protected function getDataFromCache() {
         // DEBUG模式不使用缓存 //TODO
-        if(TT_DEBUG || !($this->_enableCache) || (isset($_GET['cache']) && $_GET['cache'] == 0)) {
+        if(TT_DEBUG || tt_get_option('tt_disable_cache', false) || !($this->_enableCache) || (isset($_GET['cache']) && $_GET['cache'] == 0)) {
             return false;
         }
 

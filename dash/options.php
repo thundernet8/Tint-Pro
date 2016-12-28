@@ -1202,6 +1202,16 @@ function optionsframework_options() {
     );
 
 
+    // - 单独暂停缓存
+    $options[] = array(
+        'name' => __( 'Disable Cache', 'tt' ),
+        'desc' => __( 'Stop cache, user always get the latest content', 'tt' ),
+        'id' => 'tt_disable_cache',
+        'std' => false,
+        'type' => 'checkbox'
+    );
+
+
     // - 主题专用私有Token
     $options[] = array(
         'name' => __('Tint Token', 'tt'),

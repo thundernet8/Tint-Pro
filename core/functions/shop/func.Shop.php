@@ -428,7 +428,7 @@ function tt_is_product_tag() {
  */
 function tt_check_user_has_buy_product($product_id, $user_id = 0) {
     $the_orders = tt_get_specified_user_and_product_orders($product_id, $user_id);
-    if($the_orders){
+    if(!$the_orders){
         return false;
     }
     foreach ($the_orders as $the_order){
@@ -515,7 +515,7 @@ function tt_get_product_pay_content($product_id, $html = true){
     $user_id = get_current_user_id();
 
     $price = tt_get_specified_user_product_price($product_id, $user_id);
-    $show = $price < 0.01 && tt_check_user_has_buy_product($product_id, $user_id);
+    $show = $price < 0.01 || tt_check_user_has_buy_product($product_id, $user_id);
     if(!$show) {
         return $html ? __('<div class="contextual-bg bg-paycontent"><span><i class="tico tico-paypal">&nbsp;</i>付费内容</span><p>你只有购买支付后才能查看该内容！</p></div>', 'tt') : null;
     }

@@ -39,7 +39,7 @@
                     <nav class="commerce-breadcrumb">
                         <a href="<?php echo home_url(); ?>"><?php _e('HOME', 'tt'); ?></a>
                         <span class="breadcrumb-delimeter">/</span>
-                        <a href="<?php echo home_url(); ?>"><?php _e('SHOP', 'tt'); ?></a>
+                        <a href="<?php echo tt_url_for('shop_archive'); ?>"><?php _e('SHOP', 'tt'); ?></a>
                         <span class="breadcrumb-delimeter">/</span>
                         <?php $cat_breads = array(); foreach($categories as $category) { ?>
                         <?php $category = (array)$category; $cat_breads[] = '<a href="' . $category['permalink'] . '">' . $category['name'] . '</a>'; ?>

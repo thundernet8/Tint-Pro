@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-12-25 15:20+0800\n"
-"PO-Revision-Date: 2016-12-25 15:21+0800\n"
+"POT-Creation-Date: 2016-12-28 22:02+0800\n"
+"PO-Revision-Date: 2016-12-28 22:03+0800\n"
 "Last-Translator: Zhiyan <mail@webapproach.net>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -2226,6 +2226,21 @@ msgid ""
 "A container for placing some widgets, it will be float once exceed the vision"
 msgstr "放置若干小工具的容器, 一旦滚动超出视野范围将浮动重新显示"
 
+#: core/functions/func.Tint.php:73
+#, php-format
+msgid ""
+"Tint主题已更新至<a style=\"color:red;\">%1$s</a>(当前%2$s)，请访问<a href=\""
+msgstr ""
+
+#: core/functions/func.Tint.php:166
+#, php-format
+msgid ""
+"主题未授权本域名，如果你购买了本主题，请先<a href=\"%1$s\" target=\"_blank\" "
+"title=\"验证授权\">验证授权</a>，并配置主题根目录functions.php中的相关授权参"
+"数。 如果没有购买，请访问<a href=\"%2$s\" target=\"_blank\" title=\"购买Tint"
+"主题\">WebApproach商店</a>购买。"
+msgstr ""
+
 #: core/functions/func.User.php:26
 msgid "Site Manager"
 msgstr "站长"
@@ -2943,7 +2958,7 @@ msgstr "订单号"
 msgid "Payment Time"
 msgstr "支付时间"
 
-#: core/modules/me/me.Tab.Membership.php:68 core/modules/me/me.Tab.Order.php:62
+#: core/modules/me/me.Tab.Membership.php:68 core/modules/me/me.Tab.Order.php:63
 msgid "Payment Amount"
 msgstr "支付金额"
 
@@ -3037,75 +3052,79 @@ msgstr "积分通知"
 msgid "No notifications"
 msgstr "没有通知消息"
 
-#: core/modules/me/me.Tab.Order.php:26
+#: core/modules/me/me.Tab.Order.php:27 core/modules/me/me.Tab.Order.php:103
 msgid "Order Detail"
 msgstr "订单详情"
 
-#: core/modules/me/me.Tab.Order.php:29
+#: core/modules/me/me.Tab.Order.php:30
 msgid "Order ID"
 msgstr "订单号"
 
-#: core/modules/me/me.Tab.Order.php:33
+#: core/modules/me/me.Tab.Order.php:34
 msgid "Order Content"
 msgstr "订单产品"
 
-#: core/modules/me/me.Tab.Order.php:37 core/modules/me/me.Tab.Orders.php:45
+#: core/modules/me/me.Tab.Order.php:38 core/modules/me/me.Tab.Orders.php:45
 msgid "Order Create Time"
 msgstr "下单时间"
 
-#: core/modules/me/me.Tab.Order.php:42
+#: core/modules/me/me.Tab.Order.php:43
 msgid "Order Success Time"
 msgstr "支付时间"
 
-#: core/modules/me/me.Tab.Order.php:47
+#: core/modules/me/me.Tab.Order.php:48
 msgid "Payment Status"
 msgstr "支付状态"
 
-#: core/modules/me/me.Tab.Order.php:52 core/modules/me/me.Tab.Orders.php:64
+#: core/modules/me/me.Tab.Order.php:53 core/modules/me/me.Tab.Orders.php:64
 msgid "Finish the payment"
 msgstr "完成订单支付"
 
-#: core/modules/me/me.Tab.Order.php:52 core/modules/me/me.Tab.Orders.php:64
+#: core/modules/me/me.Tab.Order.php:53 core/modules/me/me.Tab.Orders.php:64
 msgid "Continue Pay"
 msgstr "支付"
 
-#: core/modules/me/me.Tab.Order.php:58
+#: core/modules/me/me.Tab.Order.php:59
 msgid "Payment Method"
 msgstr "支付方式"
 
-#: core/modules/me/me.Tab.Order.php:69 core/modules/me/me.Tab.Order.php:92
+#: core/modules/me/me.Tab.Order.php:70 core/modules/me/me.Tab.Order.php:93
 msgid "Payed Content"
 msgstr "付费内容"
 
-#: core/modules/me/me.Tab.Order.php:72
+#: core/modules/me/me.Tab.Order.php:73
 msgid ""
 "This is a combined order, please visit sub orders below for more specified "
 "payed content"
 msgstr "这是一个合并订单, 请访问下面的子订单链接查看对应的付费内容"
 
-#: core/modules/me/me.Tab.Order.php:75
+#: core/modules/me/me.Tab.Order.php:76
 #, php-format
 msgid "Order %s"
 msgstr "订单 %s"
 
-#: core/modules/me/me.Tab.Order.php:80
+#: core/modules/me/me.Tab.Order.php:81
 msgid "Download Content"
 msgstr "下载信息"
 
-#: core/modules/me/me.Tab.Order.php:84
+#: core/modules/me/me.Tab.Order.php:85
 #, php-format
 msgid "Download Name: %s"
 msgstr "下载内容: %s"
 
-#: core/modules/me/me.Tab.Order.php:85
+#: core/modules/me/me.Tab.Order.php:86
 #, php-format
 msgid "Download Link: %s"
 msgstr "下载链接: %s"
 
-#: core/modules/me/me.Tab.Order.php:86
+#: core/modules/me/me.Tab.Order.php:87
 #, php-format
 msgid "Download Password: %s"
 msgstr "下载密码: %s"
+
+#: core/modules/me/me.Tab.Order.php:106
+msgid "No this order"
+msgstr "未找到订单"
 
 #: core/modules/me/me.Tab.Orders.php:29
 #, php-format
@@ -4392,8 +4411,8 @@ msgstr "付费内容"
 msgid "%d reviews for the product"
 msgstr "%d 条商品评价"
 
-#: core/templates/site/tpl.APSV.Notify.php:30
-#: core/templates/site/tpl.APSV.Notify.php:44
+#: core/templates/site/tpl.APSV.Notify.php:42
+#: core/templates/site/tpl.APSV.Notify.php:57
 #: core/templates/site/tpl.Alipay.Notify.php:18
 #: core/templates/site/tpl.CheckOut.php:26
 #: core/templates/site/tpl.PayGateway.php:26
@@ -4401,8 +4420,8 @@ msgstr "%d 条商品评价"
 msgid "You are acting an illegal visit"
 msgstr "你正在进行非法访问, 请按正确流程进行操作"
 
-#: core/templates/site/tpl.APSV.Notify.php:30
-#: core/templates/site/tpl.APSV.Notify.php:44
+#: core/templates/site/tpl.APSV.Notify.php:42
+#: core/templates/site/tpl.APSV.Notify.php:57
 #: core/templates/site/tpl.Alipay.Notify.php:18
 #: core/templates/site/tpl.CheckOut.php:26
 #: core/templates/site/tpl.PayGateway.php:26
@@ -5963,18 +5982,26 @@ msgid ""
 msgstr "启用Debug将强制输出PHP错误，禁用主题缓存，启用一些私有链接或功能等"
 
 #: dash/options.php:1207
+msgid "Disable Cache"
+msgstr "禁用缓存"
+
+#: dash/options.php:1208
+msgid "Stop cache, user always get the latest content"
+msgstr "停用缓存，用户总是会看到最新的内容"
+
+#: dash/options.php:1217
 msgid "Tint Token"
 msgstr "Tint Token"
 
-#: dash/options.php:1208
+#: dash/options.php:1218
 msgid "Private token for theme, maybe useful somewhere."
 msgstr "主题私有Token，在某些地方有用"
 
-#: dash/options.php:1218
+#: dash/options.php:1228
 msgid "Refresh Rewrite Rules"
 msgstr "刷新固定链接规则"
 
-#: dash/options.php:1219
+#: dash/options.php:1229
 #, php-format
 msgid ""
 "Please Click to <a href=\"%1$s/m/refresh?token=%2$s\" target=\"_blank"
@@ -5983,51 +6010,51 @@ msgstr ""
 "如果你遭遇一些404访问错误，请点击 <a href=\"%1$s/m/refresh?token=%2$s\" "
 "target=\"_blank\">刷新固定链接规则</a>。"
 
-#: dash/options.php:1226
+#: dash/options.php:1236
 msgid "QQ Mailme ID"
 msgstr "QQ邮我按钮ID"
 
-#: dash/options.php:1227
+#: dash/options.php:1237
 msgid "The id of qq mailme, visit `http://open.mail.qq.com` for detail"
 msgstr "QQ邮我链接内的ID字段, 访问`http://open.mail.qq.com`获取"
 
-#: dash/options.php:1236
+#: dash/options.php:1246
 msgid "QQ Mail list ID"
 msgstr "QQ邮件列表ID"
 
-#: dash/options.php:1237
+#: dash/options.php:1247
 msgid "The id of qq mailme, visit `http://list.qq.com` for detail"
 msgstr "QQ邮件列表链接内的ID字段, 访问`http://list.qq.com`获取"
 
-#: dash/options.php:1246
+#: dash/options.php:1256
 msgid "Head Custom Code"
 msgstr "页头自定义代码"
 
-#: dash/options.php:1247
+#: dash/options.php:1257
 msgid "Custom code loaded on page head"
 msgstr "页面头部加载的自定义代码，位于head标签结束前"
 
-#: dash/options.php:1257
+#: dash/options.php:1267
 msgid "Foot Custom Code"
 msgstr "页脚自定义代码"
 
-#: dash/options.php:1258
+#: dash/options.php:1268
 msgid "Custom code loaded on page foot"
 msgstr "页面底部加载的自定义代码，位于body标签结束前"
 
-#: dash/options.php:1267
+#: dash/options.php:1277
 msgid "Foot Beian Text"
 msgstr "页脚备案文字"
 
-#: dash/options.php:1268
+#: dash/options.php:1278
 msgid "IDC reference No. for regulations of China"
 msgstr "工信部域名备案号码"
 
-#: dash/options.php:1276
+#: dash/options.php:1286
 msgid "Site Open Date"
 msgstr "建站日期"
 
-#: dash/options.php:1277
+#: dash/options.php:1287
 msgid "The date of when site opened, use `YYYY-mm-dd` format"
 msgstr "网站开放的日期, 使用`YYYY-mm-dd`格式"
 

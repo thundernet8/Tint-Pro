@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-12-25 15:20+0800\n"
+"POT-Creation-Date: 2016-12-28 22:02+0800\n"
 "PO-Revision-Date: 2016-08-17 21:40+0800\n"
 "Last-Translator: \n"
 "Language-Team: Zhiyan <mail@webapproach.net>\n"
@@ -2251,6 +2251,22 @@ msgid ""
 "vision"
 msgstr ""
 
+#: core/functions/func.Tint.php:73
+#, php-format
+msgid ""
+"Tint主题已更新至<a style=\"color:red;\">%1$s</a>(当前%2$s)，请访问<a href="
+"\""
+msgstr ""
+
+#: core/functions/func.Tint.php:166
+#, php-format
+msgid ""
+"主题未授权本域名，如果你购买了本主题，请先<a href=\"%1$s\" target=\"_blank"
+"\" title=\"验证授权\">验证授权</a>，并配置主题根目录functions.php中的相关授"
+"权参数。 如果没有购买，请访问<a href=\"%2$s\" target=\"_blank\" title=\"购"
+"买Tint主题\">WebApproach商店</a>购买。"
+msgstr ""
+
 #: core/functions/func.User.php:26
 msgid "Site Manager"
 msgstr ""
@@ -2971,7 +2987,7 @@ msgid "Payment Time"
 msgstr ""
 
 #: core/modules/me/me.Tab.Membership.php:68
-#: core/modules/me/me.Tab.Order.php:62
+#: core/modules/me/me.Tab.Order.php:63
 msgid "Payment Amount"
 msgstr ""
 
@@ -3065,74 +3081,78 @@ msgstr ""
 msgid "No notifications"
 msgstr ""
 
-#: core/modules/me/me.Tab.Order.php:26
+#: core/modules/me/me.Tab.Order.php:27 core/modules/me/me.Tab.Order.php:103
 msgid "Order Detail"
 msgstr ""
 
-#: core/modules/me/me.Tab.Order.php:29
+#: core/modules/me/me.Tab.Order.php:30
 msgid "Order ID"
 msgstr ""
 
-#: core/modules/me/me.Tab.Order.php:33
+#: core/modules/me/me.Tab.Order.php:34
 msgid "Order Content"
 msgstr ""
 
-#: core/modules/me/me.Tab.Order.php:37 core/modules/me/me.Tab.Orders.php:45
+#: core/modules/me/me.Tab.Order.php:38 core/modules/me/me.Tab.Orders.php:45
 msgid "Order Create Time"
 msgstr ""
 
-#: core/modules/me/me.Tab.Order.php:42
+#: core/modules/me/me.Tab.Order.php:43
 msgid "Order Success Time"
 msgstr ""
 
-#: core/modules/me/me.Tab.Order.php:47
+#: core/modules/me/me.Tab.Order.php:48
 msgid "Payment Status"
 msgstr ""
 
-#: core/modules/me/me.Tab.Order.php:52 core/modules/me/me.Tab.Orders.php:64
+#: core/modules/me/me.Tab.Order.php:53 core/modules/me/me.Tab.Orders.php:64
 msgid "Finish the payment"
 msgstr ""
 
-#: core/modules/me/me.Tab.Order.php:52 core/modules/me/me.Tab.Orders.php:64
+#: core/modules/me/me.Tab.Order.php:53 core/modules/me/me.Tab.Orders.php:64
 msgid "Continue Pay"
 msgstr ""
 
-#: core/modules/me/me.Tab.Order.php:58
+#: core/modules/me/me.Tab.Order.php:59
 msgid "Payment Method"
 msgstr ""
 
-#: core/modules/me/me.Tab.Order.php:69 core/modules/me/me.Tab.Order.php:92
+#: core/modules/me/me.Tab.Order.php:70 core/modules/me/me.Tab.Order.php:93
 msgid "Payed Content"
 msgstr ""
 
-#: core/modules/me/me.Tab.Order.php:72
+#: core/modules/me/me.Tab.Order.php:73
 msgid ""
 "This is a combined order, please visit sub orders below for more specified "
 "payed content"
 msgstr ""
 
-#: core/modules/me/me.Tab.Order.php:75
+#: core/modules/me/me.Tab.Order.php:76
 #, php-format
 msgid "Order %s"
 msgstr ""
 
-#: core/modules/me/me.Tab.Order.php:80
+#: core/modules/me/me.Tab.Order.php:81
 msgid "Download Content"
-msgstr ""
-
-#: core/modules/me/me.Tab.Order.php:84
-#, php-format
-msgid "Download Name: %s"
 msgstr ""
 
 #: core/modules/me/me.Tab.Order.php:85
 #, php-format
-msgid "Download Link: %s"
+msgid "Download Name: %s"
 msgstr ""
 
 #: core/modules/me/me.Tab.Order.php:86
 #, php-format
+msgid "Download Link: %s"
+msgstr ""
+
+#: core/modules/me/me.Tab.Order.php:87
+#, php-format
 msgid "Download Password: %s"
+msgstr ""
+
+#: core/modules/me/me.Tab.Order.php:106
+msgid "No this order"
 msgstr ""
 
 #: core/modules/me/me.Tab.Orders.php:29
@@ -4410,8 +4430,8 @@ msgstr ""
 msgid "%d reviews for the product"
 msgstr ""
 
-#: core/templates/site/tpl.APSV.Notify.php:30
-#: core/templates/site/tpl.APSV.Notify.php:44
+#: core/templates/site/tpl.APSV.Notify.php:42
+#: core/templates/site/tpl.APSV.Notify.php:57
 #: core/templates/site/tpl.Alipay.Notify.php:18
 #: core/templates/site/tpl.CheckOut.php:26
 #: core/templates/site/tpl.PayGateway.php:26
@@ -4419,8 +4439,8 @@ msgstr ""
 msgid "You are acting an illegal visit"
 msgstr ""
 
-#: core/templates/site/tpl.APSV.Notify.php:30
-#: core/templates/site/tpl.APSV.Notify.php:44
+#: core/templates/site/tpl.APSV.Notify.php:42
+#: core/templates/site/tpl.APSV.Notify.php:57
 #: core/templates/site/tpl.Alipay.Notify.php:18
 #: core/templates/site/tpl.CheckOut.php:26
 #: core/templates/site/tpl.PayGateway.php:26
@@ -5969,69 +5989,77 @@ msgid ""
 msgstr ""
 
 #: dash/options.php:1207
-msgid "Tint Token"
+msgid "Disable Cache"
 msgstr ""
 
 #: dash/options.php:1208
-msgid "Private token for theme, maybe useful somewhere."
+msgid "Stop cache, user always get the latest content"
+msgstr ""
+
+#: dash/options.php:1217
+msgid "Tint Token"
 msgstr ""
 
 #: dash/options.php:1218
+msgid "Private token for theme, maybe useful somewhere."
+msgstr ""
+
+#: dash/options.php:1228
 msgid "Refresh Rewrite Rules"
 msgstr ""
 
-#: dash/options.php:1219
+#: dash/options.php:1229
 #, php-format
 msgid ""
 "Please Click to <a href=\"%1$s/m/refresh?token=%2$s\" target=\"_blank"
 "\">Refresh Rewrite Rules</a> if you have encounter some 404 errors"
 msgstr ""
 
-#: dash/options.php:1226
+#: dash/options.php:1236
 msgid "QQ Mailme ID"
 msgstr ""
 
-#: dash/options.php:1227
+#: dash/options.php:1237
 msgid "The id of qq mailme, visit `http://open.mail.qq.com` for detail"
 msgstr ""
 
-#: dash/options.php:1236
+#: dash/options.php:1246
 msgid "QQ Mail list ID"
 msgstr ""
 
-#: dash/options.php:1237
+#: dash/options.php:1247
 msgid "The id of qq mailme, visit `http://list.qq.com` for detail"
 msgstr ""
 
-#: dash/options.php:1246
+#: dash/options.php:1256
 msgid "Head Custom Code"
 msgstr ""
 
-#: dash/options.php:1247
+#: dash/options.php:1257
 msgid "Custom code loaded on page head"
 msgstr ""
 
-#: dash/options.php:1257
+#: dash/options.php:1267
 msgid "Foot Custom Code"
 msgstr ""
 
-#: dash/options.php:1258
+#: dash/options.php:1268
 msgid "Custom code loaded on page foot"
 msgstr ""
 
-#: dash/options.php:1267
+#: dash/options.php:1277
 msgid "Foot Beian Text"
 msgstr ""
 
-#: dash/options.php:1268
+#: dash/options.php:1278
 msgid "IDC reference No. for regulations of China"
 msgstr ""
 
-#: dash/options.php:1276
+#: dash/options.php:1286
 msgid "Site Open Date"
 msgstr ""
 
-#: dash/options.php:1277
+#: dash/options.php:1287
 msgid "The date of when site opened, use `YYYY-mm-dd` format"
 msgstr ""
 

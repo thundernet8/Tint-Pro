@@ -641,11 +641,11 @@ function tt_send_order_goods($order_id){
 //            if(!$pay_content || !$download_content){
 //                continue;
 //            }
-            $subject = sprintf(__('The Resources You Bought in %s'), $blog_name);
+            $subject = sprintf(__('The Resources You Bought in %s', 'tt'), $blog_name);
             $args = array(
                 'blogName' => $blog_name,
                 'totalPrice' => $order->order_currency == 'credit' ? sprintf(__('%d Credits', 'tt'), $order->order_total_price) : sprintf(__('%0.2f YUAN', 'tt'), $order->order_total_price),
-                'payContent' => $download_content . '<br>' . $pay_content
+                'payContent' => $download_content . PHP_EOL . $pay_content
             );
             tt_async_mail('', $user->user_email, $subject, $args, 'order-pay-content');
         }elseif($product_id == Product::MONTHLY_VIP){

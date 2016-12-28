@@ -21,6 +21,7 @@
     <?php $data = $vm->modelData; $order = $data->order; $order_status_text = $data->order_status_text; $pay_method = $data->pay_method; $pay_amount = $data->pay_amount; $pay_content = $data->pay_content; $is_combined = $data->is_combined; $sub_orders = $data->sub_orders; ?>
     <div class="me-tab-box order-tab">
         <div class="tab-content me-order">
+            <?php if($order) { ?>
             <!-- 订单信息 -->
             <section class="my-order clearfix">
                 <header><h2><?php _e('Order Detail', 'tt'); ?></h2></header>
@@ -97,6 +98,14 @@
                     <?php } ?>
                 </div>
             </section>
+            <?php }else{ ?>
+            <section class="my-order clearfix">
+                <header><h2><?php _e('Order Detail', 'tt'); ?></h2></header>
+                <div class="empty-content">
+                    <span class="tico tico-cart"></span>
+                    <p><?php _e('No this order', 'tt'); ?></p>
+                </div>
+            <?php } ?>
         </div>
     </div>
 </div>
