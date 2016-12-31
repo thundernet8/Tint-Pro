@@ -39,4 +39,4 @@ UPDATE wp_term_taxonomy SET taxonomy='product_category' WHERE taxonomy='products
 
 ## Post
 post_type: store -> product
-UPDATE wp_posts SET post_type='product' WHERE taxonomy='store'
+UPDATE wp_posts SET post_type='product' WHERE post_type='store'

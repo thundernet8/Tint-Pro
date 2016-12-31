@@ -35,6 +35,10 @@ Tint集成了多种缓存方式，包括如下几种:
 
 内存对象缓存能极大降低查询次数，目前[WebApproach](https://old.webapproach.net)已开启Memcache并将首页查询降低到个位数，稳定在7queries左右，相比数据库片段方式优势明显
 
+REST API
+
+Tint最大化利用了WP新版本的REST API功能，并将所有AJAX请求与REST API对接并完成相应的路由控制器，v1版本的API仍将基于cookie验证，但未来很容易过渡到v2基于token验证，实现更方便的跨域前后端真正分离
+
 其他...见[介绍文章](https://old.webapproach.net/tint.html)
 
 ### 使用的开源代码\资源

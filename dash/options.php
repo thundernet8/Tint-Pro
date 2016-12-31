@@ -1005,11 +1005,11 @@ function optionsframework_options() {
 
 
     // - Separator
-    $options[] = array(
-        'name' => __( 'Mailer Separator', 'tt' ),
-        'class'=> 'option-separator',
-        'type' => 'info'
-    );
+//    $options[] = array(
+//        'name' => __( 'Mailer Separator', 'tt' ),
+//        'class'=> 'option-separator',
+//        'type' => 'info'
+//    );
 
     // - SMTP/PHPMail
     $options[] = array(

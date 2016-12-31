@@ -500,7 +500,7 @@ function tt_delete_order($id){
  *
  * @since 2.0.0
  * @param $order_id
- * @return bool
+ * @return bool|WP_Error
  */
 function tt_delete_order_by_order_id($order_id){
 //    global $wpdb;
@@ -575,7 +575,7 @@ function tt_order_email($order_id) {
             'orderStatusText' => $order_status_text,
             'buyerUC' => get_author_posts_url($user->ID)
         );
-        tt_async_mail('', $user->user_email, $admin_subject, $admin_args, 'order-status-admin');
+        tt_async_mail('', $admin_email, $admin_subject, $admin_args, 'order-status-admin');
     }
 
     // TODO 站内消息
