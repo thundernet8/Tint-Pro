@@ -164,7 +164,7 @@ function tt_clear_cache_by_key($key) { //use delete_transient
         global $wpdb;
         $key1 = '_transient_' . $key;
         $key2 = '_transient_timeout_' . $key;
-        $wpdb->query( $wpdb->prepare("DELETE FROM $wpdb->options WHERE `option_name` IN ('%s','%s')", $like1, $like2) );
+        $wpdb->query( $wpdb->prepare("DELETE FROM $wpdb->options WHERE `option_name` IN ('%s','%s')", $key1, $key2) );
     }
 }
 
@@ -226,6 +226,9 @@ function tt_delete_menu_cache(){
     $wpdb->query("DELETE FROM $wpdb->options WHERE `option_name` LIKE '_transient_tt_cache_hourly_nav_%' OR `option_name` LIKE '_transient_timeout_tt_cache_hourly_nav_%'");
 
     //TODO: 如果使用object cache则wp_cache_flush()
+    if(wp_using_ext_object_cache()){
+        wp_cache_flush();
+    }
 }
 add_action('wp_update_nav_menu', 'tt_delete_menu_cache');
 
@@ -268,8 +271,7 @@ add_action('tt_unstared_post', 'tt_clear_cache_for_uc_stars', 10, 2);
  * 订单状态变更时删除相关缓存
  *
  * @since   2.0.0
- * @param   int $post_ID
- * @param   int $author_id
+ * @param   int $order_id
  * @return  void
  */
 function tt_clear_cache_for_order_relates($order_id) {

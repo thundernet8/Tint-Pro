@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-12-28 22:02+0800\n"
-"PO-Revision-Date: 2016-12-28 22:03+0800\n"
+"POT-Creation-Date: 2016-12-31 21:24+0800\n"
+"PO-Revision-Date: 2016-12-31 21:27+0800\n"
 "Last-Translator: Zhiyan <mail@webapproach.net>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -308,28 +308,28 @@ msgstr "创建订单成功"
 msgid "Sorry, you cannot update order without signing in."
 msgstr "抱歉, 必须登录才能更新订单"
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:296
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:298
 msgid "Update order failed"
 msgstr "更新订单失败"
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:321
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:323
 msgid "Sorry, you cannot delete order without signing in."
 msgstr "抱歉, 你必须登录才能删除订单"
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:338
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:340
 msgid "Delete order failed"
 msgstr "删除订单失败"
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:340
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:342
 msgid "Delete order successfully"
 msgstr "删除订单成功"
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:355
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:357
 #: core/api/v1/endpoints/class.Rest.ShoppingCart.Controller.php:186
 msgid "Sorry, you cannot delete cart items without signing in."
 msgstr "抱歉, 你必须登录才能清空购物车"
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:371
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:373
 #: core/api/v1/endpoints/class.Rest.ShoppingCart.Controller.php:202
 msgid "Delete items from cart successfully"
 msgstr "清空购物车成功"
@@ -666,7 +666,7 @@ msgstr "抱歉, 必须登录才能查看用户账户状态"
 
 #: core/api/v1/endpoints/class.Rest.UserStatus.Controller.php:75
 #: core/api/v1/endpoints/class.Rest.UserStatus.Controller.php:107
-#: core/functions/func.User.php:349 core/functions/func.User.php:383
+#: core/functions/func.User.php:361 core/functions/func.User.php:395
 msgid "The specified user is not existed"
 msgstr "指定的用户不存在"
 
@@ -1341,12 +1341,12 @@ msgstr "更新扩展资料成功"
 msgid "Update security profiles successfully"
 msgstr "更新安全信息成功"
 
-#: core/functions/func.Cache.php:192
+#: core/functions/func.Cache.php:214
 #, php-format
 msgid "<!-- Nav cached %s -->"
 msgstr "<!-- Nav cached %s -->"
 
-#: core/functions/func.Cache.php:192
+#: core/functions/func.Cache.php:214
 msgid "<!-- Nav cache end -->"
 msgstr "<!-- Nav cache end -->"
 
@@ -1895,68 +1895,80 @@ msgstr "页面关键词"
 msgid "页面描述"
 msgstr "页面描述"
 
-#: core/functions/func.Metabox.php:171
+#: core/functions/func.Metabox.php:172
 #, php-format
 msgid "此商品购买按钮快捷插入短代码为[product id=\"%1$s\"][/product]"
 msgstr "此商品购买按钮快捷插入短代码为[product id=\"%1$s\"][/product]"
 
-#: core/functions/func.Metabox.php:174
+#: core/functions/func.Metabox.php:175
 msgid "基本信息"
 msgstr "基本信息"
 
-#: core/functions/func.Metabox.php:176
+#: core/functions/func.Metabox.php:177
 msgid "选择支付币种"
 msgstr "选择支付币种"
 
-#: core/functions/func.Metabox.php:178
+#: core/functions/func.Metabox.php:179
 msgid "积分"
 msgstr "积分"
 
-#: core/functions/func.Metabox.php:179
+#: core/functions/func.Metabox.php:180
 msgid "人民币"
 msgstr "人民币"
 
-#: core/functions/func.Metabox.php:182
+#: core/functions/func.Metabox.php:183
+msgid "选择购买渠道"
+msgstr ""
+
+#: core/functions/func.Metabox.php:185
+msgid "站内购买"
+msgstr ""
+
+#: core/functions/func.Metabox.php:186
+msgid "淘宝链接"
+msgstr ""
+
+#: core/functions/func.Metabox.php:189
 msgid "商品售价 "
 msgstr "商品售价 "
 
-#: core/functions/func.Metabox.php:185
+#: core/functions/func.Metabox.php:192
 msgid "商品数量 "
 msgstr "商品数量 "
 
-#: core/functions/func.Metabox.php:189
+#: core/functions/func.Metabox.php:196
 msgid "VIP会员折扣百分数(100代表原价)"
 msgstr "VIP会员折扣百分数(100代表原价)"
 
-#: core/functions/func.Metabox.php:191
+#: core/functions/func.Metabox.php:198
 msgid "VIP月费会员折扣 "
 msgstr "VIP月费会员折扣 "
 
-#: core/functions/func.Metabox.php:194
+#: core/functions/func.Metabox.php:201
 msgid "VIP年费会员折扣 "
 msgstr "VIP年费会员折扣 "
 
-#: core/functions/func.Metabox.php:197
+#: core/functions/func.Metabox.php:204
 msgid "VIP永久会员折扣 "
 msgstr "VIP永久会员折扣 "
 
-#: core/functions/func.Metabox.php:201
+#: core/functions/func.Metabox.php:208
 msgid "促销信息"
 msgstr "促销信息"
 
-#: core/functions/func.Metabox.php:203
+#: core/functions/func.Metabox.php:210
 msgid "优惠促销折扣(100代表原价)"
 msgstr "优惠促销折扣(100代表原价)"
 
-#: core/functions/func.Metabox.php:207
+#: core/functions/func.Metabox.php:214
 msgid "付费内容"
 msgstr "付费内容"
 
-#: core/functions/func.Metabox.php:209
+#: core/functions/func.Metabox.php:216
 msgid "付费查看下载链接,一行一个,每个资源格式为资源名|资源下载链接|密码"
 msgstr "付费查看下载链接,一行一个,每个资源格式为资源名|资源下载链接|密码"
 
-#: core/functions/func.Metabox.php:211
+#: core/functions/func.Metabox.php:218
 msgid "付费查看的内容信息"
 msgstr "付费查看的内容信息"
 
@@ -2232,7 +2244,7 @@ msgid ""
 "Tint主题已更新至<a style=\"color:red;\">%1$s</a>(当前%2$s)，请访问<a href=\""
 msgstr ""
 
-#: core/functions/func.Tint.php:166
+#: core/functions/func.Tint.php:167
 #, php-format
 msgid ""
 "主题未授权本域名，如果你购买了本主题，请先<a href=\"%1$s\" target=\"_blank\" "
@@ -2261,30 +2273,83 @@ msgstr "投稿者"
 msgid "Reader"
 msgstr "读者"
 
-#: core/functions/func.User.php:300
+#: core/functions/func.User.php:312
 #, php-format
 msgid "Your account is banned for reason: %s"
 msgstr "你的账户已被封禁, 理由为: %s"
 
-#: core/functions/func.User.php:300
+#: core/functions/func.User.php:312
 msgid "Account Banned"
 msgstr "账户冻结"
 
-#: core/functions/func.User.php:360
+#: core/functions/func.User.php:372
 msgid "The specified user is banned"
 msgstr "指定的用户已被封禁"
 
-#: core/functions/func.User.php:365
+#: core/functions/func.User.php:377
 msgid "Error occurs when banning the user"
 msgstr "当封禁用户时发生了错误"
 
-#: core/functions/func.User.php:393
+#: core/functions/func.User.php:405
 msgid "The specified user is unlocked"
 msgstr "指定的用户已解禁"
 
-#: core/functions/func.User.php:398
+#: core/functions/func.User.php:410
 msgid "Error occurs when unlock the user"
 msgstr "当解禁用户时发生了错误"
+
+#: core/functions/func.User.php:424
+#, php-format
+msgid "Log User <a href=\"%1$s\">%2$s</a>"
+msgstr "登录者 <a href=\"%1$s\">%2$s</a>"
+
+#: core/functions/func.User.php:424
+#, php-format
+msgid "<a href=\"%1$s\" title=\"Log Out\">Log Out &raquo;</a>"
+msgstr "<a href=\"%1$s\" title=\"注销你的会话\">登出 &raquo;</a>"
+
+#: core/functions/func.User.php:426
+#, php-format
+msgid ""
+"<a href=\"%1$s#securityInfo\">Please add correct email for safety of your "
+"account.</a>"
+msgstr "<a href=\"%1$s#securityInfo\">请添加正确的邮箱以保护你的账户安全.</a>"
+
+#: core/functions/func.User.php:431
+msgid "My HomePage"
+msgstr "我的主页"
+
+#: core/functions/func.User.php:436
+msgid "Manage Dashboard"
+msgstr "管理后台"
+
+#: core/functions/func.User.php:441 core/modules/me/me.Tab.Contribute.php:22
+msgid "Add New Post"
+msgstr "发布文章"
+
+#: core/functions/func.User.php:458
+msgid "Posts"
+msgstr "文章"
+
+#: core/functions/func.User.php:463
+msgid "Comments"
+msgstr "评论"
+
+#: core/functions/func.User.php:468
+msgid "Stars"
+msgstr "收藏"
+
+#: core/functions/func.User.php:475
+msgid "Unread Messages"
+msgstr "未读消息"
+
+#: core/functions/func.User.php:481
+msgid "Credits"
+msgstr "积分"
+
+#: core/functions/func.User.php:495
+msgid "Ref url for this page"
+msgstr "本页推广链接"
 
 #: core/functions/shop/func.Shop.Cart.php:30
 msgid "You need sign in to view the shopping cart"
@@ -2363,46 +2428,54 @@ msgstr "指定的订单不存在"
 msgid "The coupon is invalid"
 msgstr "优惠码无效"
 
-#: core/functions/shop/func.Shop.Orders.php:540
+#: core/functions/shop/func.Shop.Orders.php:518
+msgid "The order is not exist"
+msgstr "订单不存在"
+
+#: core/functions/shop/func.Shop.Orders.php:522
+msgid "You are not permit to delete this order"
+msgstr "你无权删除该订单"
+
+#: core/functions/shop/func.Shop.Orders.php:549
 #, php-format
 msgid "%s 商店交易提醒"
 msgstr "%s 商店交易提醒"
 
-#: core/functions/shop/func.Shop.Orders.php:556
+#: core/functions/shop/func.Shop.Orders.php:565
 #, php-format
 msgid "%s 商店新成功交易提醒"
 msgstr "%s 商店新成功交易提醒"
 
-#: core/functions/shop/func.Shop.Orders.php:644
+#: core/functions/shop/func.Shop.Orders.php:653
 #, php-format
 msgid "The Resources You Bought in %s"
 msgstr "你在 %s 付费购买的资源"
 
-#: core/functions/shop/func.Shop.Orders.php:647
+#: core/functions/shop/func.Shop.Orders.php:656
 #: core/viewModels/me/vm.Me.Order.php:73
 #, php-format
 msgid "%d Credits"
 msgstr "%d 积分"
 
-#: core/functions/shop/func.Shop.Orders.php:647
+#: core/functions/shop/func.Shop.Orders.php:656
 #: core/viewModels/me/vm.Me.Order.php:73
 #, php-format
 msgid "%0.2f YUAN"
 msgstr "%0.2f 元"
 
-#: core/functions/shop/func.Shop.Orders.php:676
+#: core/functions/shop/func.Shop.Orders.php:685
 msgid "The order is not found"
 msgstr "未找到订单"
 
-#: core/functions/shop/func.Shop.Orders.php:680
+#: core/functions/shop/func.Shop.Orders.php:689
 msgid "The order has been payed"
 msgstr "订单已支付"
 
-#: core/functions/shop/func.Shop.Orders.php:684
+#: core/functions/shop/func.Shop.Orders.php:693
 msgid "The order has been closed"
 msgstr "订单已关闭"
 
-#: core/functions/shop/func.Shop.Orders.php:700
+#: core/functions/shop/func.Shop.Orders.php:709
 msgid "Some error happened when continue the payment"
 msgstr "请求继续支付时发生了一些错误"
 
@@ -2687,10 +2760,6 @@ msgstr "会员"
 msgid "ORDERS"
 msgstr "订单"
 
-#: core/modules/me/me.Tab.Contribute.php:22
-msgid "Add New Post"
-msgstr "添加新文章"
-
 #: core/modules/me/me.Tab.Contribute.php:25
 #: core/modules/me/me.Tab.EditPost.php:30
 msgid "Please save your draft timely in case of missing content"
@@ -2958,7 +3027,7 @@ msgstr "订单号"
 msgid "Payment Time"
 msgstr "支付时间"
 
-#: core/modules/me/me.Tab.Membership.php:68 core/modules/me/me.Tab.Order.php:63
+#: core/modules/me/me.Tab.Membership.php:68 core/modules/me/me.Tab.Order.php:65
 msgid "Payment Amount"
 msgstr "支付金额"
 
@@ -3052,7 +3121,7 @@ msgstr "积分通知"
 msgid "No notifications"
 msgstr "没有通知消息"
 
-#: core/modules/me/me.Tab.Order.php:27 core/modules/me/me.Tab.Order.php:103
+#: core/modules/me/me.Tab.Order.php:27 core/modules/me/me.Tab.Order.php:107
 msgid "Order Detail"
 msgstr "订单详情"
 
@@ -3064,65 +3133,65 @@ msgstr "订单号"
 msgid "Order Content"
 msgstr "订单产品"
 
-#: core/modules/me/me.Tab.Order.php:38 core/modules/me/me.Tab.Orders.php:45
+#: core/modules/me/me.Tab.Order.php:40 core/modules/me/me.Tab.Orders.php:45
 msgid "Order Create Time"
 msgstr "下单时间"
 
-#: core/modules/me/me.Tab.Order.php:43
+#: core/modules/me/me.Tab.Order.php:45
 msgid "Order Success Time"
 msgstr "支付时间"
 
-#: core/modules/me/me.Tab.Order.php:48
+#: core/modules/me/me.Tab.Order.php:50
 msgid "Payment Status"
 msgstr "支付状态"
 
-#: core/modules/me/me.Tab.Order.php:53 core/modules/me/me.Tab.Orders.php:64
+#: core/modules/me/me.Tab.Order.php:55 core/modules/me/me.Tab.Orders.php:64
 msgid "Finish the payment"
 msgstr "完成订单支付"
 
-#: core/modules/me/me.Tab.Order.php:53 core/modules/me/me.Tab.Orders.php:64
+#: core/modules/me/me.Tab.Order.php:55 core/modules/me/me.Tab.Orders.php:64
 msgid "Continue Pay"
 msgstr "支付"
 
-#: core/modules/me/me.Tab.Order.php:59
+#: core/modules/me/me.Tab.Order.php:61
 msgid "Payment Method"
 msgstr "支付方式"
 
-#: core/modules/me/me.Tab.Order.php:70 core/modules/me/me.Tab.Order.php:93
+#: core/modules/me/me.Tab.Order.php:72 core/modules/me/me.Tab.Order.php:97
 msgid "Payed Content"
 msgstr "付费内容"
 
-#: core/modules/me/me.Tab.Order.php:73
+#: core/modules/me/me.Tab.Order.php:75
 msgid ""
 "This is a combined order, please visit sub orders below for more specified "
 "payed content"
 msgstr "这是一个合并订单, 请访问下面的子订单链接查看对应的付费内容"
 
-#: core/modules/me/me.Tab.Order.php:76
+#: core/modules/me/me.Tab.Order.php:78
 #, php-format
 msgid "Order %s"
 msgstr "订单 %s"
 
-#: core/modules/me/me.Tab.Order.php:81
+#: core/modules/me/me.Tab.Order.php:83
 msgid "Download Content"
 msgstr "下载信息"
 
-#: core/modules/me/me.Tab.Order.php:85
+#: core/modules/me/me.Tab.Order.php:88
 #, php-format
 msgid "Download Name: %s"
 msgstr "下载内容: %s"
 
-#: core/modules/me/me.Tab.Order.php:86
+#: core/modules/me/me.Tab.Order.php:89
 #, php-format
-msgid "Download Link: %s"
-msgstr "下载链接: %s"
+msgid "Download Link: <a href=\"%1$s\">%1$s</a>"
+msgstr "下载链接: <a href=\"%1$s\">%1$s</a>"
 
-#: core/modules/me/me.Tab.Order.php:87
+#: core/modules/me/me.Tab.Order.php:90
 #, php-format
 msgid "Download Password: %s"
 msgstr "下载密码: %s"
 
-#: core/modules/me/me.Tab.Order.php:106
+#: core/modules/me/me.Tab.Order.php:110
 msgid "No this order"
 msgstr "未找到订单"
 
@@ -4040,7 +4109,7 @@ msgstr "赞助我"
 #: core/modules/widgets/wgt.HotReviews.Posts.php:66
 #: core/modules/widgets/wgt.Latest.Posts.php:65
 #: core/modules/widgets/wgt.RecentComments.php:60
-#: core/modules/widgets/wgt.TagCloud.php:57 core/modules/widgets/wgt.UC.php:48
+#: core/modules/widgets/wgt.TagCloud.php:57 core/modules/widgets/wgt.UC.php:59
 msgid "Title："
 msgstr "标题: "
 
@@ -4172,7 +4241,25 @@ msgstr "TT-以标签云形式展现文章的标签"
 msgid "TAG CLOUD"
 msgstr "标签云"
 
-#: core/modules/widgets/wgt.UC.php:46
+#: core/modules/widgets/wgt.UC.php:35
+#, fuzzy
+msgid "Local Account"
+msgstr "QQ账户"
+
+#: core/modules/widgets/wgt.UC.php:37 dash/options.php:492
+msgid "QQ Login"
+msgstr "QQ 登录"
+
+#: core/modules/widgets/wgt.UC.php:40 dash/options.php:522
+msgid "Weibo Login"
+msgstr "微博登录"
+
+#: core/modules/widgets/wgt.UC.php:43
+#, fuzzy
+msgid "Wechat Login"
+msgstr "上次登录"
+
+#: core/modules/widgets/wgt.UC.php:57
 msgid "USER MANAGEMENT"
 msgstr "用户管理"
 
@@ -4453,51 +4540,51 @@ msgstr "支付宝交易接口配置错误"
 msgid "Error: Incorrect Alipay Trade Interface Configuration"
 msgstr "错误: 无效的支付宝交易接口配置"
 
-#: core/templates/site/tpl.Alipay.Return.php:127
+#: core/templates/site/tpl.Alipay.Return.php:133
 msgid ""
 "Verify return result failed, please contact the site administrator if you "
 "have finished your payment"
 msgstr "验证返回结果失败, 如果你已经成功付款请联系管理员"
 
-#: core/templates/site/tpl.Alipay.Return.php:127
+#: core/templates/site/tpl.Alipay.Return.php:133
 msgid "Verify Failed"
 msgstr "验证失败"
 
-#: core/templates/site/tpl.Alipay.Return.php:145
+#: core/templates/site/tpl.Alipay.Return.php:151
 #: core/templates/site/tpl.CheckOut.php:60
 #: core/templates/site/tpl.PayResult.php:60
 #: core/templates/site/tpl.QrPay.php:53
 msgid "Confirm Order"
 msgstr "确认订单详情"
 
-#: core/templates/site/tpl.Alipay.Return.php:152
+#: core/templates/site/tpl.Alipay.Return.php:158
 #: core/templates/site/tpl.CheckOut.php:67
 msgid "Payment Accomplish"
 msgstr "完成支付"
 
-#: core/templates/site/tpl.Alipay.Return.php:159
+#: core/templates/site/tpl.Alipay.Return.php:165
 #: core/templates/site/tpl.CheckOut.php:74
 #: core/templates/site/tpl.PayResult.php:74
 #: core/templates/site/tpl.QrPay.php:67
 msgid "Confirm Delivery"
 msgstr "确认收货"
 
-#: core/templates/site/tpl.Alipay.Return.php:166
+#: core/templates/site/tpl.Alipay.Return.php:172
 #: core/templates/site/tpl.PayResult.php:81
 #, php-format
 msgid "Payment for Order ID %s has finished successfully"
 msgstr "订单 %s 已经成功支付"
 
-#: core/templates/site/tpl.Alipay.Return.php:167
+#: core/templates/site/tpl.Alipay.Return.php:173
 #, php-format
 msgid "You have payed %f yuan, Currently the order status is: %s"
 msgstr "你支付了 %0.2f 元, 当前订单状态为: %s"
 
-#: core/templates/site/tpl.Alipay.Return.php:167
+#: core/templates/site/tpl.Alipay.Return.php:173
 msgid "<br>You need to go to visit your alipay account and confirm delivery."
 msgstr "<br>你需要访问你的支付宝账户, 并对此交易确认收货."
 
-#: core/templates/site/tpl.Alipay.Return.php:168
+#: core/templates/site/tpl.Alipay.Return.php:174
 #: core/templates/site/tpl.PayResult.php:87
 #: core/templates/site/tpl.QrPay.php:101
 msgid "Check Order Detail"
@@ -5385,10 +5472,6 @@ msgstr "网站支付宝"
 msgid "The qrcode image of Alipay account which is dedicated for the site"
 msgstr "站点服务专属支付宝账号的二维码图片"
 
-#: dash/options.php:492
-msgid "QQ Login"
-msgstr "QQ 登录"
-
 #: dash/options.php:493
 msgid "QQ login "
 msgstr "QQ 登录"
@@ -5408,10 +5491,6 @@ msgstr "QQ Open Key"
 #: dash/options.php:513
 msgid "Your QQ open application key"
 msgstr "你的QQ开放平台应用Key"
-
-#: dash/options.php:522
-msgid "Weibo Login"
-msgstr "微博登录"
 
 #: dash/options.php:523
 msgid "Weibo login access"

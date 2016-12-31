@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-12-28 22:02+0800\n"
+"POT-Creation-Date: 2016-12-31 21:24+0800\n"
 "PO-Revision-Date: 2016-08-17 21:40+0800\n"
 "Last-Translator: \n"
 "Language-Team: Zhiyan <mail@webapproach.net>\n"
@@ -311,28 +311,28 @@ msgstr ""
 msgid "Sorry, you cannot update order without signing in."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:296
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:298
 msgid "Update order failed"
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:321
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:323
 msgid "Sorry, you cannot delete order without signing in."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:338
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:340
 msgid "Delete order failed"
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:340
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:342
 msgid "Delete order successfully"
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:355
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:357
 #: core/api/v1/endpoints/class.Rest.ShoppingCart.Controller.php:186
 msgid "Sorry, you cannot delete cart items without signing in."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:371
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:373
 #: core/api/v1/endpoints/class.Rest.ShoppingCart.Controller.php:202
 msgid "Delete items from cart successfully"
 msgstr ""
@@ -670,7 +670,7 @@ msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.UserStatus.Controller.php:75
 #: core/api/v1/endpoints/class.Rest.UserStatus.Controller.php:107
-#: core/functions/func.User.php:349 core/functions/func.User.php:383
+#: core/functions/func.User.php:361 core/functions/func.User.php:395
 msgid "The specified user is not existed"
 msgstr ""
 
@@ -1360,12 +1360,12 @@ msgstr ""
 msgid "Update security profiles successfully"
 msgstr ""
 
-#: core/functions/func.Cache.php:192
+#: core/functions/func.Cache.php:214
 #, php-format
 msgid "<!-- Nav cached %s -->"
 msgstr ""
 
-#: core/functions/func.Cache.php:192
+#: core/functions/func.Cache.php:214
 msgid "<!-- Nav cache end -->"
 msgstr ""
 
@@ -1920,68 +1920,80 @@ msgstr ""
 msgid "页面描述"
 msgstr ""
 
-#: core/functions/func.Metabox.php:171
+#: core/functions/func.Metabox.php:172
 #, php-format
 msgid "此商品购买按钮快捷插入短代码为[product id=\"%1$s\"][/product]"
 msgstr ""
 
-#: core/functions/func.Metabox.php:174
+#: core/functions/func.Metabox.php:175
 msgid "基本信息"
 msgstr ""
 
-#: core/functions/func.Metabox.php:176
+#: core/functions/func.Metabox.php:177
 msgid "选择支付币种"
 msgstr ""
 
-#: core/functions/func.Metabox.php:178
+#: core/functions/func.Metabox.php:179
 msgid "积分"
 msgstr ""
 
-#: core/functions/func.Metabox.php:179
+#: core/functions/func.Metabox.php:180
 msgid "人民币"
 msgstr ""
 
-#: core/functions/func.Metabox.php:182
-msgid "商品售价 "
+#: core/functions/func.Metabox.php:183
+msgid "选择购买渠道"
 msgstr ""
 
 #: core/functions/func.Metabox.php:185
-msgid "商品数量 "
+msgid "站内购买"
+msgstr ""
+
+#: core/functions/func.Metabox.php:186
+msgid "淘宝链接"
 msgstr ""
 
 #: core/functions/func.Metabox.php:189
+msgid "商品售价 "
+msgstr ""
+
+#: core/functions/func.Metabox.php:192
+msgid "商品数量 "
+msgstr ""
+
+#: core/functions/func.Metabox.php:196
 msgid "VIP会员折扣百分数(100代表原价)"
 msgstr ""
 
-#: core/functions/func.Metabox.php:191
+#: core/functions/func.Metabox.php:198
 msgid "VIP月费会员折扣 "
 msgstr ""
 
-#: core/functions/func.Metabox.php:194
+#: core/functions/func.Metabox.php:201
 msgid "VIP年费会员折扣 "
 msgstr ""
 
-#: core/functions/func.Metabox.php:197
+#: core/functions/func.Metabox.php:204
 msgid "VIP永久会员折扣 "
 msgstr ""
 
-#: core/functions/func.Metabox.php:201
+#: core/functions/func.Metabox.php:208
 msgid "促销信息"
 msgstr ""
 
-#: core/functions/func.Metabox.php:203
+#: core/functions/func.Metabox.php:210
 msgid "优惠促销折扣(100代表原价)"
 msgstr ""
 
-#: core/functions/func.Metabox.php:207
+#: core/functions/func.Metabox.php:214
 msgid "付费内容"
 msgstr ""
 
-#: core/functions/func.Metabox.php:209
+#: core/functions/func.Metabox.php:216
 msgid "付费查看下载链接,一行一个,每个资源格式为资源名|资源下载链接|密码"
 msgstr ""
 
-#: core/functions/func.Metabox.php:211
+#: core/functions/func.Metabox.php:218
 msgid "付费查看的内容信息"
 msgstr ""
 
@@ -2258,7 +2270,7 @@ msgid ""
 "\""
 msgstr ""
 
-#: core/functions/func.Tint.php:166
+#: core/functions/func.Tint.php:167
 #, php-format
 msgid ""
 "主题未授权本域名，如果你购买了本主题，请先<a href=\"%1$s\" target=\"_blank"
@@ -2287,29 +2299,82 @@ msgstr ""
 msgid "Reader"
 msgstr ""
 
-#: core/functions/func.User.php:300
+#: core/functions/func.User.php:312
 #, php-format
 msgid "Your account is banned for reason: %s"
 msgstr ""
 
-#: core/functions/func.User.php:300
+#: core/functions/func.User.php:312
 msgid "Account Banned"
 msgstr ""
 
-#: core/functions/func.User.php:360
+#: core/functions/func.User.php:372
 msgid "The specified user is banned"
 msgstr ""
 
-#: core/functions/func.User.php:365
+#: core/functions/func.User.php:377
 msgid "Error occurs when banning the user"
 msgstr ""
 
-#: core/functions/func.User.php:393
+#: core/functions/func.User.php:405
 msgid "The specified user is unlocked"
 msgstr ""
 
-#: core/functions/func.User.php:398
+#: core/functions/func.User.php:410
 msgid "Error occurs when unlock the user"
+msgstr ""
+
+#: core/functions/func.User.php:424
+#, php-format
+msgid "Log User <a href=\"%1$s\">%2$s</a>"
+msgstr ""
+
+#: core/functions/func.User.php:424
+#, php-format
+msgid "<a href=\"%1$s\" title=\"Log Out\">Log Out &raquo;</a>"
+msgstr ""
+
+#: core/functions/func.User.php:426
+#, php-format
+msgid ""
+"<a href=\"%1$s#securityInfo\">Please add correct email for safety of your "
+"account.</a>"
+msgstr ""
+
+#: core/functions/func.User.php:431
+msgid "My HomePage"
+msgstr ""
+
+#: core/functions/func.User.php:436
+msgid "Manage Dashboard"
+msgstr ""
+
+#: core/functions/func.User.php:441 core/modules/me/me.Tab.Contribute.php:22
+msgid "Add New Post"
+msgstr ""
+
+#: core/functions/func.User.php:458
+msgid "Posts"
+msgstr ""
+
+#: core/functions/func.User.php:463
+msgid "Comments"
+msgstr ""
+
+#: core/functions/func.User.php:468
+msgid "Stars"
+msgstr ""
+
+#: core/functions/func.User.php:475
+msgid "Unread Messages"
+msgstr ""
+
+#: core/functions/func.User.php:481
+msgid "Credits"
+msgstr ""
+
+#: core/functions/func.User.php:495
+msgid "Ref url for this page"
 msgstr ""
 
 #: core/functions/shop/func.Shop.Cart.php:30
@@ -2389,46 +2454,54 @@ msgstr ""
 msgid "The coupon is invalid"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Orders.php:540
+#: core/functions/shop/func.Shop.Orders.php:518
+msgid "The order is not exist"
+msgstr ""
+
+#: core/functions/shop/func.Shop.Orders.php:522
+msgid "You are not permit to delete this order"
+msgstr ""
+
+#: core/functions/shop/func.Shop.Orders.php:549
 #, php-format
 msgid "%s 商店交易提醒"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Orders.php:556
+#: core/functions/shop/func.Shop.Orders.php:565
 #, php-format
 msgid "%s 商店新成功交易提醒"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Orders.php:644
+#: core/functions/shop/func.Shop.Orders.php:653
 #, php-format
 msgid "The Resources You Bought in %s"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Orders.php:647
+#: core/functions/shop/func.Shop.Orders.php:656
 #: core/viewModels/me/vm.Me.Order.php:73
 #, php-format
 msgid "%d Credits"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Orders.php:647
+#: core/functions/shop/func.Shop.Orders.php:656
 #: core/viewModels/me/vm.Me.Order.php:73
 #, php-format
 msgid "%0.2f YUAN"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Orders.php:676
+#: core/functions/shop/func.Shop.Orders.php:685
 msgid "The order is not found"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Orders.php:680
+#: core/functions/shop/func.Shop.Orders.php:689
 msgid "The order has been payed"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Orders.php:684
+#: core/functions/shop/func.Shop.Orders.php:693
 msgid "The order has been closed"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Orders.php:700
+#: core/functions/shop/func.Shop.Orders.php:709
 msgid "Some error happened when continue the payment"
 msgstr ""
 
@@ -2712,10 +2785,6 @@ msgstr ""
 msgid "ORDERS"
 msgstr ""
 
-#: core/modules/me/me.Tab.Contribute.php:22
-msgid "Add New Post"
-msgstr ""
-
 #: core/modules/me/me.Tab.Contribute.php:25
 #: core/modules/me/me.Tab.EditPost.php:30
 msgid "Please save your draft timely in case of missing content"
@@ -2987,7 +3056,7 @@ msgid "Payment Time"
 msgstr ""
 
 #: core/modules/me/me.Tab.Membership.php:68
-#: core/modules/me/me.Tab.Order.php:63
+#: core/modules/me/me.Tab.Order.php:65
 msgid "Payment Amount"
 msgstr ""
 
@@ -3081,7 +3150,7 @@ msgstr ""
 msgid "No notifications"
 msgstr ""
 
-#: core/modules/me/me.Tab.Order.php:27 core/modules/me/me.Tab.Order.php:103
+#: core/modules/me/me.Tab.Order.php:27 core/modules/me/me.Tab.Order.php:107
 msgid "Order Detail"
 msgstr ""
 
@@ -3093,65 +3162,65 @@ msgstr ""
 msgid "Order Content"
 msgstr ""
 
-#: core/modules/me/me.Tab.Order.php:38 core/modules/me/me.Tab.Orders.php:45
+#: core/modules/me/me.Tab.Order.php:40 core/modules/me/me.Tab.Orders.php:45
 msgid "Order Create Time"
 msgstr ""
 
-#: core/modules/me/me.Tab.Order.php:43
+#: core/modules/me/me.Tab.Order.php:45
 msgid "Order Success Time"
 msgstr ""
 
-#: core/modules/me/me.Tab.Order.php:48
+#: core/modules/me/me.Tab.Order.php:50
 msgid "Payment Status"
 msgstr ""
 
-#: core/modules/me/me.Tab.Order.php:53 core/modules/me/me.Tab.Orders.php:64
+#: core/modules/me/me.Tab.Order.php:55 core/modules/me/me.Tab.Orders.php:64
 msgid "Finish the payment"
 msgstr ""
 
-#: core/modules/me/me.Tab.Order.php:53 core/modules/me/me.Tab.Orders.php:64
+#: core/modules/me/me.Tab.Order.php:55 core/modules/me/me.Tab.Orders.php:64
 msgid "Continue Pay"
 msgstr ""
 
-#: core/modules/me/me.Tab.Order.php:59
+#: core/modules/me/me.Tab.Order.php:61
 msgid "Payment Method"
 msgstr ""
 
-#: core/modules/me/me.Tab.Order.php:70 core/modules/me/me.Tab.Order.php:93
+#: core/modules/me/me.Tab.Order.php:72 core/modules/me/me.Tab.Order.php:97
 msgid "Payed Content"
 msgstr ""
 
-#: core/modules/me/me.Tab.Order.php:73
+#: core/modules/me/me.Tab.Order.php:75
 msgid ""
 "This is a combined order, please visit sub orders below for more specified "
 "payed content"
 msgstr ""
 
-#: core/modules/me/me.Tab.Order.php:76
+#: core/modules/me/me.Tab.Order.php:78
 #, php-format
 msgid "Order %s"
 msgstr ""
 
-#: core/modules/me/me.Tab.Order.php:81
+#: core/modules/me/me.Tab.Order.php:83
 msgid "Download Content"
 msgstr ""
 
-#: core/modules/me/me.Tab.Order.php:85
+#: core/modules/me/me.Tab.Order.php:88
 #, php-format
 msgid "Download Name: %s"
 msgstr ""
 
-#: core/modules/me/me.Tab.Order.php:86
+#: core/modules/me/me.Tab.Order.php:89
 #, php-format
-msgid "Download Link: %s"
+msgid "Download Link: <a href=\"%1$s\">%1$s</a>"
 msgstr ""
 
-#: core/modules/me/me.Tab.Order.php:87
+#: core/modules/me/me.Tab.Order.php:90
 #, php-format
 msgid "Download Password: %s"
 msgstr ""
 
-#: core/modules/me/me.Tab.Order.php:106
+#: core/modules/me/me.Tab.Order.php:110
 msgid "No this order"
 msgstr ""
 
@@ -4060,7 +4129,7 @@ msgstr ""
 #: core/modules/widgets/wgt.Latest.Posts.php:65
 #: core/modules/widgets/wgt.RecentComments.php:60
 #: core/modules/widgets/wgt.TagCloud.php:57
-#: core/modules/widgets/wgt.UC.php:48
+#: core/modules/widgets/wgt.UC.php:59
 msgid "Title："
 msgstr ""
 
@@ -4192,7 +4261,23 @@ msgstr ""
 msgid "TAG CLOUD"
 msgstr ""
 
-#: core/modules/widgets/wgt.UC.php:46
+#: core/modules/widgets/wgt.UC.php:35
+msgid "Local Account"
+msgstr ""
+
+#: core/modules/widgets/wgt.UC.php:37 dash/options.php:492
+msgid "QQ Login"
+msgstr ""
+
+#: core/modules/widgets/wgt.UC.php:40 dash/options.php:522
+msgid "Weibo Login"
+msgstr ""
+
+#: core/modules/widgets/wgt.UC.php:43
+msgid "Wechat Login"
+msgstr ""
+
+#: core/modules/widgets/wgt.UC.php:57
 msgid "USER MANAGEMENT"
 msgstr ""
 
@@ -4472,51 +4557,51 @@ msgstr ""
 msgid "Error: Incorrect Alipay Trade Interface Configuration"
 msgstr ""
 
-#: core/templates/site/tpl.Alipay.Return.php:127
+#: core/templates/site/tpl.Alipay.Return.php:133
 msgid ""
 "Verify return result failed, please contact the site administrator if you "
 "have finished your payment"
 msgstr ""
 
-#: core/templates/site/tpl.Alipay.Return.php:127
+#: core/templates/site/tpl.Alipay.Return.php:133
 msgid "Verify Failed"
 msgstr ""
 
-#: core/templates/site/tpl.Alipay.Return.php:145
+#: core/templates/site/tpl.Alipay.Return.php:151
 #: core/templates/site/tpl.CheckOut.php:60
 #: core/templates/site/tpl.PayResult.php:60
 #: core/templates/site/tpl.QrPay.php:53
 msgid "Confirm Order"
 msgstr ""
 
-#: core/templates/site/tpl.Alipay.Return.php:152
+#: core/templates/site/tpl.Alipay.Return.php:158
 #: core/templates/site/tpl.CheckOut.php:67
 msgid "Payment Accomplish"
 msgstr ""
 
-#: core/templates/site/tpl.Alipay.Return.php:159
+#: core/templates/site/tpl.Alipay.Return.php:165
 #: core/templates/site/tpl.CheckOut.php:74
 #: core/templates/site/tpl.PayResult.php:74
 #: core/templates/site/tpl.QrPay.php:67
 msgid "Confirm Delivery"
 msgstr ""
 
-#: core/templates/site/tpl.Alipay.Return.php:166
+#: core/templates/site/tpl.Alipay.Return.php:172
 #: core/templates/site/tpl.PayResult.php:81
 #, php-format
 msgid "Payment for Order ID %s has finished successfully"
 msgstr ""
 
-#: core/templates/site/tpl.Alipay.Return.php:167
+#: core/templates/site/tpl.Alipay.Return.php:173
 #, php-format
 msgid "You have payed %f yuan, Currently the order status is: %s"
 msgstr ""
 
-#: core/templates/site/tpl.Alipay.Return.php:167
+#: core/templates/site/tpl.Alipay.Return.php:173
 msgid "<br>You need to go to visit your alipay account and confirm delivery."
 msgstr ""
 
-#: core/templates/site/tpl.Alipay.Return.php:168
+#: core/templates/site/tpl.Alipay.Return.php:174
 #: core/templates/site/tpl.PayResult.php:87
 #: core/templates/site/tpl.QrPay.php:101
 msgid "Check Order Detail"
@@ -5402,10 +5487,6 @@ msgstr ""
 msgid "The qrcode image of Alipay account which is dedicated for the site"
 msgstr ""
 
-#: dash/options.php:492
-msgid "QQ Login"
-msgstr ""
-
 #: dash/options.php:493
 msgid "QQ login "
 msgstr ""
@@ -5424,10 +5505,6 @@ msgstr ""
 
 #: dash/options.php:513
 msgid "Your QQ open application key"
-msgstr ""
-
-#: dash/options.php:522
-msgid "Weibo Login"
 msgstr ""
 
 #: dash/options.php:523

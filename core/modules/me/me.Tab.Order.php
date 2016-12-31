@@ -83,10 +83,12 @@
                         <label class="col-md-3 control-label"><?php _e('Download Content', 'tt'); ?></label>
                         <div class="col-md-9">
                             <div class="form-control-static">
-                                <?php if(isset($pay_content['download_content'])){ $download = $pay_content['download_content']; ?>
-                                <p><?php printf(__('Download Name: %s'), $download['name']); ?></p>
-                                <p><?php printf(__('Download Link: %s'), $download['link']); ?></p>
-                                <p><?php printf(__('Download Password: %s'), $download['password']); ?></p>
+                                <?php if(isset($pay_content['download_content'])){ $downloads = $pay_content['download_content']; ?>
+                                <?php foreach ($downloads as $download) { ?>
+                                <p><?php printf(__('Download Name: %s', 'tt'), $download['name']); ?></p>
+                                <p><?php printf(__('Download Link: <a href="%1$s">%1$s</a>', 'tt'), $download['link']); ?></p>
+                                <p><?php printf(__('Download Password: %s', 'tt'), $download['password']); ?></p>
+                                <?php } ?>
                                 <?php } ?>
                             </div>
                         </div>
