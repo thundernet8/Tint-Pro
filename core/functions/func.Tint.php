@@ -122,11 +122,12 @@ function tt_tint_authorize() {
     $post = 1;
     $active = 0;
     $key = '';
-    $server = strtolower($_SERVER['SERVER_NAME']);
+    $server = strtolower($_SERVER['HTTP_HOST']);
     $free_servers = array('webapproach.net', 'old.webapproach.net', 'www.webapproach.net', 'zhiyanblog.com', 'www.zhiyanblog.com');
     if(in_array($server, $free_servers)){
         return;
     }
+
     $server_arr = explode('.', $server);
     if(count($server_arr)==3){
         $server = $server_arr[1] . '.' . $server_arr[2];
@@ -148,8 +149,8 @@ function tt_tint_authorize() {
         );
         $post_args = array(
             'method' => 'POST',
-            'timeout' => 30,
-            'blocking'  => false,
+            //'timeout' => 30,
+            //'blocking'  => false,
             'sslverify' => false,
             'body' => $data,
         );

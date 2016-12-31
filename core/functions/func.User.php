@@ -138,6 +138,18 @@ function tt_get_user_star_post_ids ($user_id) {
 
 
 /**
+ * 统计用户点赞(收藏)的文章数
+ *
+ * @since 2.0.0
+ * @param $user_id
+ * @return intval
+ */
+function tt_count_user_star_posts($user_id) {
+    return count(tt_get_user_star_post_ids($user_id));
+}
+
+
+/**
  * 获取一定数量特定角色用户
  *
  * @since 2.0.0
@@ -397,4 +409,92 @@ function tt_unban_user($user_id, $return = 'bool') {
         'success' => false,
         'message' => __('Error occurs when unlock the user', 'tt')
     );
+}
+
+
+/**
+ * 输出UC小工具中登录后的内容
+ *
+ * @since 2.0.0
+ * @return void
+ */
+function tt_uc_widget_content() {
+    $user = wp_get_current_user();
+    ?>
+    <li class="login-info"><img class="avatar" src="<?php echo tt_get_avatar($user->ID); ?>"><span><?php printf(__('Log User <a href="%1$s">%2$s</a>', 'tt'), tt_url_for('my_settings'), $user->display_name); ?></span><span><?php printf(__('<a href="%1$s" title="Log Out">Log Out &raquo;</a>', 'tt'), tt_signout_url()); ?></span></li>
+    <?php if(!filter_var($user->user_email, FILTER_VALIDATE_EMAIL)) { ?>
+    <li><?php printf(__('<a href="%1$s#securityInfo">Please add correct email for safety of your account.</a>', 'tt'), tt_url_for('my_settings')); ?></li>
+    <?php } ?>
+    <?php
+    $links = array();
+    $links[] = array(
+        'title' => __('My HomePage', 'tt'),
+        'url' => get_author_posts_url($user->ID)
+    );
+    if( current_user_can( 'manage_options' ) ) {
+		$links[] = array(
+			'title' => __('Manage Dashboard', 'tt'),
+			'url' => admin_url()
+		);
+	}
+    $links[] = array(
+        'title' => __('Add New Post', 'tt'),
+        'url' => tt_url_for('new_post')
+    );
+    ?>
+    <li class="active">
+    <?php foreach($links as $link) { ?>
+    <a href="<?php echo $link['url']; ?>"><?php echo $link['url'] . ' &raquo;'; ?></a>
+    <?php } ?>
+    </li>
+    <?php
+    $credit = tt_get_user_credit($user->ID);
+    $credit_void = tt_get_user_consumed_credit($user->ID);
+    $unread_count = tt_count_messages('chat', 0);
+    $stared_count = tt_count_user_star_posts($user->ID);
+
+    $statistic_info = array(
+		array(
+			'title' => __('Posts', 'tt'),
+            'url' => tt_url_for('uc_latest', $user->ID),
+			'count' => count_user_posts($user->ID)
+		),
+		array(
+			'title' => __('Comments', 'tt'),
+			'url' => tt_url_for('uc_comments', $user->ID),
+			'count' => get_comments( array('status' => '1', 'user_id'=>$user->ID, 'count' => true) )
+		),
+		array(
+			'title' => __('Stars', 'tt'),
+			'url' => tt_url_for('uc_stars', $user->ID),
+			'count' => $stared_count
+		),
+	);
+    if($unread_count) {
+        $statistic_info[] = array(
+            'title' => __('Unread Messages', 'tt'),
+            'url' => tt_url_for('in_msg'),
+            'count' => $unread_count
+        );
+    }
+    $statistic_info[] = array(
+        'title' => __('Credits', 'tt'),
+        'url' => tt_url_for('my_credits'),
+        'count' => $credit
+    );
+    ?>
+    <li>
+    <?php
+    foreach ($statistic_info as $info_item) { ?>
+    <span><?php printf('%1$s<a href="%2$s">%3$s</a>', $info_item['title'], $info_item['url'], $info_item['count']); ?></span>
+    <?php } ?>
+    <?php echo tt_daily_sign_anchor($user->ID); ?>
+    </li>
+    <li>
+		<div class="input-group">
+			<span class="input-group-addon"><?php _e('Ref url for this page', 'tt'); ?></span>
+			<input class="tin_aff_url form-control" type="text" class="form-control" value="<?php echo add_query_arg('ref', $current_user->ID, Utils::getPHPCurrentUrl()); ?>">
+		</div>
+	</li>
+    <?php
 }

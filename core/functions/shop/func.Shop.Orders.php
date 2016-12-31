@@ -513,6 +513,15 @@ function tt_delete_order_by_order_id($order_id){
 //    );
 //    return !!$delete;
     $user_id = get_current_user_id();
+    $order = tt_get_order($order_id);
+    if(!$order){
+        return new WP_Error('order_not_exist', __('The order is not exist', 'tt'));
+    }
+
+    if($order->user_id != $user_id && !current_user_can('edit_users')){
+        return new WP_Error('delete_order_denied', __('You are not permit to delete this order', 'tt'));
+    }
+
     // 清理VM缓存
     tt_clear_cache_key_like('tt_cache_daily_vm_MeOrdersVM_user' . $user_id);
 

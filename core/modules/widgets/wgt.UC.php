@@ -29,9 +29,20 @@ class UCWidget extends WP_Widget {
         if($instance['title']) { echo $args['before_title'] . $instance['title'] . $args['after_title']; } ?>
         <div class="widget-content">
         <?php if(is_user_logged_in()) { ?>
-            // TODO
+            tt_uc_widget_content();
         <?php }else{ ?>
-
+            <li>
+                <span class="local-account"><a data-sign="0" class="btn btn-info user-login"><i class="tico tico-wordpress"></i><?php _e('Local Account', 'tt'); ?></a></span>
+                <?php if(tt_get_option('tt_enable_qq_login')) { ?>
+                <span class="other-sign"><a class="qqlogin btn btn-social-qq" href="<?php echo tt_add_redirect(tt_url_for('oauth_qq'), Utils::getPHPCurrentUrl()); ?>"><i class="tico tico-qq"></i><span><?php _e('QQ Login', 'tt'); ?></span></a></span>
+                <?php } ?>
+                <?php if(tt_get_option('tt_enable_weibo_login')) { ?>
+                <span class="other-sign"><a class="wblogin btn btn-social-weibo" href="<?php echo tt_add_redirect(tt_url_for('oauth_weibo'), Utils::getPHPCurrentUrl()); ?>"><i class="tico tico-weibo"></i><span><?php _e('Weibo Login', 'tt'); ?></span></a></span>
+                <?php } ?>
+                <?php if(tt_get_option('tt_enable_weixin_login')) { ?>
+                <span class="other-sign"><a class="wxlogin btn btn-social-weixin" href="<?php echo tt_add_redirect(tt_url_for('oauth_weixin'), Utils::getPHPCurrentUrl()); ?>"><i class="tico tico-wechat"></i><span><?php _e('Wechat Login', 'tt'); ?></span></a></span>
+                <?php } ?>
+            </li>
         <?php } ?>
         </div>
         <?php echo $args['after_widget']; ?>

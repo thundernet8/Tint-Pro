@@ -189,7 +189,7 @@
                 </section>
             <?php } ?>
             <!-- 账户安全 -->
-            <section class="info-security clearfix">
+            <section class="info-security clearfix" id="securityInfo">
                 <header><h2><?php _e('Account Security', 'tt'); ?><small><?php _e('Be careful', 'tt'); ?></small></h2></header>
                 <div class="form-group info-group clearfix">
                     <label class="col-md-2 control-label"><?php _e('Email (Required)', 'tt'); ?></label>

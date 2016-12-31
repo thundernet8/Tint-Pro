@@ -32,7 +32,9 @@
                     </div>
                     <div class="row clearfix">
                         <label class="col-md-3 control-label"><?php _e('Order Content', 'tt'); ?></label>
-                        <div class="col-md-9"><p class="form-control-static"><?php echo $order->product_name; ?></p></div>
+                        <div class="col-md-9">
+                            <p class="form-control-static"><?php if($order->product_id > 0) { ?><a href="<?php echo get_permalink($order->product_id); ?>" target="_blank"><?php echo $order->product_name; ?></a><?php }else{ echo $order->product_name; } ?></p>
+                        </div>
                     </div>
                     <div class="row clearfix">
                         <label class="col-md-3 control-label"><?php _e('Order Create Time', 'tt'); ?></label>

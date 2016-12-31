@@ -237,6 +237,8 @@ class WP_REST_Order_Controller extends WP_REST_Controller
                 if($pay) {
                     // 更新订单支付状态和支付完成时间
                     tt_update_order($order_id, array('order_success_time' => current_time('mysql'), 'order_status' => 4), array('%s', '%d')); //TODO 确保成功
+                    // 钩子 - 用于清理缓存等
+                    do_action('tt_order_status_change', $order_id);
                     return tt_api_success('', array('data' => array(
                         'orderId' => $order_id,
                         'url' => add_query_arg(array('oid' => $order_id, 'spm' => wp_create_nonce('pay_result')), tt_url_for('payresult'))

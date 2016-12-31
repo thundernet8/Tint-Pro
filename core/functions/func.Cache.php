@@ -141,11 +141,33 @@ function tt_clear_all_cache() {
  * @param $key
  */
 function tt_clear_cache_key_like($key) {
+    if(wp_using_ext_object_cache()) {
+        return; //object cache无法模糊匹配key
+    }
     global $wpdb;
     $like1 = '_transient_' . $key . '%';
     $like2 = '_transient_timeout_' . $key . '%';
     $wpdb->query( $wpdb->prepare("DELETE FROM $wpdb->options WHERE `option_name` LIKE %s OR `option_name` LIKE %s", $like1, $like2) );
 }
+
+
+/**
+ * 精确匹配键值删除transient的缓存(包括Object Cache)
+ *
+ * @since 2.0.0
+ * @param $key
+ */
+function tt_clear_cache_by_key($key) { //use delete_transient
+    if(wp_using_ext_object_cache()){
+        wp_cache_delete($key, 'transient'); // object cache是由set_transient时设置的, group为transient
+    }else{
+        global $wpdb;
+        $key1 = '_transient_' . $key;
+        $key2 = '_transient_timeout_' . $key;
+        $wpdb->query( $wpdb->prepare("DELETE FROM $wpdb->options WHERE `option_name` IN ('%s','%s')", $like1, $like2) );
+    }
+}
+
 
 
 /**
@@ -236,9 +258,35 @@ function tt_clear_cache_for_uc_stars($post_ID, $author_id) {
     $cache_key = 'tt_cache_daily_vm_UCStarsVM_author' . $author_id . '_page'; //模糊键值
     //delete_transient($cache_key);
     tt_clear_cache_key_like($cache_key);
+    tt_clear_cache_by_key($cache_key . '1');
 }
 add_action('tt_stared_post', 'tt_clear_cache_for_uc_stars', 10 , 2);
 add_action('tt_unstared_post', 'tt_clear_cache_for_uc_stars', 10, 2);
+
+
+/**
+ * 订单状态变更时删除相关缓存
+ *
+ * @since   2.0.0
+ * @param   int $post_ID
+ * @param   int $author_id
+ * @return  void
+ */
+function tt_clear_cache_for_order_relates($order_id) {
+    $order = tt_get_order($order_id);
+    if(!$order) return;
+
+    //Product VM
+    delete_transient(sprintf('tt_cache_daily_vm_ShopProductVM_product%1$s_user%2$s', $order->product_id, $order->user_id));
+    //Order Detail VM
+    delete_transient(sprintf('tt_cache_daily_vm_MeOrderVM_user%1$s_seq%2$s', $order->user_id, $order->id));
+    //Orders VM
+    delete_transient(sprintf('tt_cache_daily_vm_MeOrdersVM_user%1$s_typeall', $order->user_id));
+    delete_transient(sprintf('tt_cache_daily_vm_MeOrdersVM_user%1$s_typecash', $order->user_id));
+    delete_transient(sprintf('tt_cache_daily_vm_MeOrdersVM_user%1$s_typecredit', $order->user_id));
+}
+add_action('tt_order_status_change', 'tt_clear_cache_for_order_relates');
+
 
 
 /**

@@ -55,6 +55,11 @@ abstract class BaseVM {
     protected $_cacheInterval = 3600;
 
     /**
+     * @var intval
+     */
+    protected $_objectCacheInterval = 600; 
+
+    /**
      * @var object
      */
     public $modelData;
@@ -155,7 +160,7 @@ abstract class BaseVM {
             'data' => $data,
             'cacheTime' => $cacheTime
         ));
-        set_transient($this->_cacheKey, $store, $this->_cacheInterval);
+        set_transient($this->_cacheKey, $store, wp_using_ext_object_cache() ? $this->_objectCacheInterval : $this->_cacheInterval);
     }
 
     /**

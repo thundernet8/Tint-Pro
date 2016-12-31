@@ -67,6 +67,8 @@ if($verify_result) {//验证成功
                 'user_alipay' => $buyer_alipay
             ), array('%d', '%s', '%s'));
             tt_order_email($out_trade_no);
+            // 钩子 - 用于清理缓存等
+            do_action('tt_order_status_change', $order->order_id);
         }
 
         //构造要请求的参数数组，无需改动
@@ -95,6 +97,8 @@ if($verify_result) {//验证成功
                     'order_status' => 3
                 ), array('%d'));
                 tt_order_email($out_trade_no);
+                // 钩子 - 用于清理缓存等
+                do_action('tt_order_status_change', $order->order_id);
             }
         }
 
@@ -115,6 +119,8 @@ if($verify_result) {//验证成功
             tt_order_email($out_trade_no);
             //发送购买可见内容或下载链接或会员状态变更
             tt_send_order_goods($out_trade_no);
+            // 钩子 - 用于清理缓存等
+            do_action('tt_order_status_change', $order->order_id);
         }
         //如果没有做过处理，根据订单号（out_trade_no）在商户网站的订单系统中查到该笔订单的详细，并执行商户的业务程序
         //如果有做过处理，不执行商户的业务程序

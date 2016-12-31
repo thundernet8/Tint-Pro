@@ -149,6 +149,7 @@ function tt_keywords_description_callback($post){
  */
 function tt_product_info_callback($post){
     $currency = get_post_meta($post->ID, 'tt_pay_currency', true); // 0 - credit 1 - cash
+    $channel = get_post_meta($post->ID, 'tt_buy_channel', true) == 'taobao' ? 'taobao' : 'instation';
     $price = get_post_meta($post->ID, 'tt_product_price', true);
     $amount = get_post_meta($post->ID, 'tt_product_quantity', true);
 
@@ -177,6 +178,12 @@ function tt_product_info_callback($post){
         <select name="tt_pay_currency">
             <option value="0" <?php if( $currency!=1) echo 'selected="selected"';?>><?php _e( '积分', 'tt' );?></option>
             <option value="1" <?php if( $currency==1) echo 'selected="selected"';?>><?php _e( '人民币', 'tt' );?></option>
+        </select>
+    </p>
+    <p style="width:20%;float:left;"><?php _e( '选择购买渠道', 'tt' );?>
+        <select name="tt_buy_channel">
+            <option value="instation" <?php if( $channel!='taobao') echo 'selected="selected"';?>><?php _e( '站内购买', 'tt' );?></option>
+            <option value="taobao" <?php if( $channel=='taobao') echo 'selected="selected"';?>><?php _e( '淘宝链接', 'tt' );?></option>
         </select>
     </p>
     <p style="width:20%;float:left;"><?php _e( '商品售价 ', 'tt' );?>
@@ -278,6 +285,11 @@ function tt_save_meta_box_data( $post_id ) {
     if(isset($_POST['tt_pay_currency'])){
         $currency = (int)$_POST['tt_pay_currency'] == 1 ? 1 : 0;
         update_post_meta($post_id, 'tt_pay_currency', $currency);
+    }
+
+    if(isset($_POST['tt_buy_channel'])){
+        $channel = trim($_POST['tt_buy_channel']) == 'taobao' ? 'taobao' : 'instation';
+        update_post_meta($post_id, 'tt_buy_channel', $channel);
     }
 
     if(isset($_POST['tt_product_price'])){
