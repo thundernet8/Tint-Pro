@@ -34,14 +34,15 @@ function tt_sc_product($atts, $content = null){
         $data = $vm->modelData;
         if(!isset($data->product_id)) return $id;
         $templates = new League\Plates\Engine(THEME_TPL . '/plates');
+        $rating = $data->product_rating;
         $args = array(
             'thumb' => $data->product_thumb,
             'link' => $data->product_link,
             'name' => $data->product_name,
             'price' => $data->product_price,
             'currency' => $data->product_currency,
-            'rating_value' => ($data->product_rating)['value'],
-            'rating_count' => ($data->product_rating)['count'],
+            'rating_value' => $rating['value'],
+            'rating_count' => $rating['count'],
 
         );
         return $templates->render('embed-product', $args);

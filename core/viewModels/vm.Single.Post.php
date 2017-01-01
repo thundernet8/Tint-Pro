@@ -162,7 +162,8 @@ class SinglePostVM extends BaseVM {
             'ignore_sticky_posts'=>1
         );
         $relates_query = null;
-        if(count($tagIDs) > 0 && ($the_query = new WP_Query($relates_query_args))->have_posts()) {
+        $the_query = new WP_Query($relates_query_args);
+        if(count($tagIDs) > 0 && ($the_query->have_posts())) {
             $relates_query = $the_query;
         }else{
             $catIDs = wp_get_post_categories($the_post->ID);
