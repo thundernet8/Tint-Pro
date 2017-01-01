@@ -1179,7 +1179,7 @@ function optionsframework_options() {
     // 相关作品
     $options[] = array(
         'name' => __( 'Related Works', 'tt' ),
-        'desc' => sprintf(__( '<br><h2>Alipay Supervisor (<a href="%s">View Detail</a>)</h2><br><p>A toolkit for helping improve payment experience</p>', 'tt'), 'https://www.webapproach.net/alipaysupervisor'),
+        'desc' => sprintf(__( '<br><h2>Alipay Supervisor (<a href="%s">View Detail</a>)</h2><br><p>A toolkit for helping improve payment experience</p>', 'tt'), 'https://www.webapproach.net/shop/apsv.html'),
         'type' => 'info'
     );
 
