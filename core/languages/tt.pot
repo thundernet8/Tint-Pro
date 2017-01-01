@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-12-31 21:24+0800\n"
+"POT-Creation-Date: 2017-01-01 14:57+0800\n"
 "PO-Revision-Date: 2016-08-17 21:40+0800\n"
 "Last-Translator: \n"
 "Language-Team: Zhiyan <mail@webapproach.net>\n"
@@ -3571,6 +3571,11 @@ msgstr ""
 msgid "CONTACT"
 msgstr ""
 
+#: core/modules/mod.Footer.php:90
+#, php-format
+msgid " ·&nbsp;%1$s queries in %2$ss"
+msgstr ""
+
 #: core/modules/mod.Header.Shop.php:38
 msgid "Search for something..."
 msgstr ""
@@ -5895,10 +5900,6 @@ msgstr ""
 msgid "Redis server port"
 msgstr ""
 
-#: dash/options.php:1009
-msgid "Mailer Separator"
-msgstr ""
-
 #: dash/options.php:1016
 msgid "SMTP/PHPMailer"
 msgstr ""
@@ -6138,6 +6139,14 @@ msgstr ""
 
 #: dash/options.php:1287
 msgid "The date of when site opened, use `YYYY-mm-dd` format"
+msgstr ""
+
+#: dash/options.php:1298
+msgid "Footer Queries Info"
+msgstr ""
+
+#: dash/options.php:1299
+msgid "Show WordPress queries statistic information"
 msgstr ""
 
 #: functions.php:16

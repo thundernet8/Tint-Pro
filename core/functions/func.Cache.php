@@ -290,6 +290,36 @@ function tt_clear_cache_for_order_relates($order_id) {
 add_action('tt_order_status_change', 'tt_clear_cache_for_order_relates');
 
 
+/**
+ * 保存文章时清理相关缓存
+ *
+ * @since 2.0.0
+ * @param $post_id
+ * @return void
+ */
+function tt_clear_cache_for_post_relates($post_id) {
+    $post_type = get_post_type($post_id);
+
+    if($post_type == 'post'){
+        // 文章本身
+        delete_transient(sprintf('tt_cache_daily_vm_SinglePostVM_post%1$s', $post_id));
+        // 文章列表
+        delete_transient('tt_cache_daily_vm_HomeLatestVM_page1');
+        // 分类列表
+        // TODO
+    }elseif($post_type == 'page'){
+        // 页面本身
+        delete_transient(sprintf('tt_cache_daily_vm_SinglePageVM_page%1$s', $post_id));
+    }elseif($post_type == 'product'){
+        // 商品本身 //与用户id相关的cache key 只能缩短缓存时间自动过期
+
+        // 商品列表
+        delete_transient('tt_cache_daily_vm_ShopHomeVM_page1_sort_latest');
+        delete_transient('tt_cache_daily_vm_ShopHomeVM_page1_sort_popular');
+    }
+}
+add_action('save_post', 'tt_clear_cache_for_post_relates');
+
 
 /**
  * 输出小工具前尝试检索缓存

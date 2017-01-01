@@ -1293,6 +1293,15 @@ function optionsframework_options() {
 
 
 
+    // - 页脚输出统计PHP查询信息
+    $options[] = array(
+        'name' => __( 'Footer Queries Info', 'tt' ),
+        'desc' => __( 'Show WordPress queries statistic information', 'tt' ),
+        'id' => 'tt_show_queries_num',
+        'std' => false,
+        'type' => 'checkbox'
+    );
+
 
 
 	///////////////////////////////////////////////////////////////////////////

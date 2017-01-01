@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1212df9-9110-41ec-af9e-f8eb72c2514b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/shop/func.Shop.Orders.php" afterPath="$PROJECT_DIR$/core/functions/shop/func.Shop.Orders.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/upgrade.md" afterPath="$PROJECT_DIR$/core/upgrade.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/languages/zh_CN.mo" afterPath="$PROJECT_DIR$/core/languages/zh_CN.mo" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/func.Cache.php" afterPath="$PROJECT_DIR$/core/functions/func.Cache.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/languages/tt.pot" afterPath="$PROJECT_DIR$/core/languages/tt.pot" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/languages/zh_CN.po" afterPath="$PROJECT_DIR$/core/languages/zh_CN.po" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/mod.Footer.php" afterPath="$PROJECT_DIR$/core/modules/mod.Footer.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dash/options.php" afterPath="$PROJECT_DIR$/dash/options.php" />
     </list>
     <ignored path="Tinection 2.iws" />
@@ -41,10 +42,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="tpl.Privacy.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="tpl.Privacy.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/templates/site/tpl.Privacy.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
+            <state relative-caret-position="701">
               <caret line="39" column="25" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
               <folding />
             </state>
@@ -54,7 +55,7 @@
       <file leaf-file-name="tpl.APSV.Notify.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/templates/site/tpl.APSV.Notify.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
+            <state relative-caret-position="2912">
               <caret line="115" column="18" selection-start-line="115" selection-start-column="8" selection-end-line="115" selection-end-column="22" />
               <folding />
             </state>
@@ -64,7 +65,7 @@
       <file leaf-file-name="func.Shop.Orders.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/functions/shop/func.Shop.Orders.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="710">
+            <state relative-caret-position="15372">
               <caret line="560" column="4" selection-start-line="560" selection-start-column="4" selection-end-line="560" selection-end-column="74" />
               <folding>
                 <element signature="n#tt_update_order_product_quantity#0;n#!!top" expanded="false" />
@@ -84,89 +85,59 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="func.Cache.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="func.Cache.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/functions/func.Cache.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-281">
-              <caret line="238" column="2" selection-start-line="238" selection-start-column="2" selection-end-line="238" selection-end-column="2" />
+            <state relative-caret-position="626">
+              <caret line="317" column="76" selection-start-line="317" selection-start-column="76" selection-end-line="317" selection-end-column="76" />
               <folding>
-                <marker date="1483177604654" expanded="true" signature="2087:2229" ph="DELETE FROM " />
-                <marker date="1483177604654" expanded="true" signature="2549:2690" ph="DELETE FROM " />
-                <marker date="1483177604654" expanded="true" signature="2966:3108" ph="DELETE FROM " />
-                <marker date="1483177604654" expanded="true" signature="3614:3743" ph="DELETE FROM " />
-                <marker date="1483177604654" expanded="true" signature="4085:4164" ph="DELETE FROM " />
-                <marker date="1483177604654" expanded="true" signature="4622:4683" ph="DELETE FROM " />
-                <marker date="1483177604654" expanded="true" signature="6048:6199" ph="DELETE FROM " />
+                <marker date="1483254490889" expanded="true" signature="2087:2229" ph="DELETE FROM " />
+                <marker date="1483254490889" expanded="true" signature="2549:2690" ph="DELETE FROM " />
+                <marker date="1483254490889" expanded="true" signature="2966:3108" ph="DELETE FROM " />
+                <marker date="1483254490889" expanded="true" signature="3614:3743" ph="DELETE FROM " />
+                <marker date="1483254490889" expanded="true" signature="4085:4164" ph="DELETE FROM " />
+                <marker date="1483254490889" expanded="true" signature="4622:4683" ph="DELETE FROM " />
+                <marker date="1483254490889" expanded="true" signature="6048:6199" ph="DELETE FROM " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="me.Tab.Order.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/modules/me/me.Tab.Order.php">
+      <file leaf-file-name="vm.Shop.Home.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/viewModels/shop/vm.Shop.Home.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="88" column="85" selection-start-line="88" selection-start-column="85" selection-end-line="88" selection-end-column="85" />
-              <folding>
-                <marker date="1483190613497" expanded="true" signature="6155:6227" ph="..." />
-                <marker date="1483190613497" expanded="true" signature="6308:6403" ph="..." />
-                <marker date="1483190613497" expanded="true" signature="6678:6716" ph="..." />
-                <marker date="1483190613497" expanded="true" signature="6799:6889" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="site-utils.less" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/css/site-utils.less">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="645">
-              <caret line="307" column="75" selection-start-line="307" selection-start-column="75" selection-end-line="307" selection-end-column="75" />
+            <state relative-caret-position="420">
+              <caret line="44" column="69" selection-start-line="44" selection-start-column="69" selection-end-line="44" selection-end-column="69" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="me.less" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/css/me.less">
+      <file leaf-file-name="vm.Home.Latest.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/viewModels/vm.Home.Latest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="477">
-              <caret line="740" column="46" selection-start-line="740" selection-start-column="46" selection-end-line="740" selection-end-column="46" />
+            <state relative-caret-position="56">
+              <caret line="19" column="18" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tpl.Product.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/templates/shop/tpl.Product.php">
+      <file leaf-file-name="vm.Single.Page.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/viewModels/vm.Single.Page.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4620">
-              <caret line="176" column="69" selection-start-line="176" selection-start-column="51" selection-end-line="176" selection-end-column="77" />
-              <folding>
-                <marker date="1482926676108" expanded="true" signature="2895:3037" ph="..." />
-              </folding>
+            <state relative-caret-position="56">
+              <caret line="19" column="18" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="18" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="func.Shop.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/functions/shop/func.Shop.php">
+      <file leaf-file-name="vm.Single.Post.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/viewModels/vm.Single.Post.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="14168">
-              <caret line="517" column="58" selection-start-line="517" selection-start-column="29" selection-end-line="517" selection-end-column="58" />
-              <folding>
-                <marker date="1482933327907" expanded="true" signature="17583:17589" ph=" " />
-                <marker date="1482933327907" expanded="true" signature="17920:17926" ph=" " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="options.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dash/options.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="1007" column="0" selection-start-line="1007" selection-start-column="2" selection-end-line="1011" selection-end-column="8" />
+            <state relative-caret-position="476">
+              <caret line="37" column="54" selection-start-line="37" selection-start-column="54" selection-end-line="37" selection-end-column="54" />
               <folding />
             </state>
           </provider>
@@ -189,9 +160,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/js/modules/joinVip.js" />
-        <option value="$PROJECT_DIR$/core/api/v1/endpoints/class.Rest.Comment.Post.Controller.php" />
-        <option value="$PROJECT_DIR$/core/modules/me/me.Tab.Contribute.php" />
         <option value="$PROJECT_DIR$/core/api/v1/endpoints/class.Rest.Post.Controller.php" />
         <option value="$PROJECT_DIR$/src/js/me.js" />
         <option value="$PROJECT_DIR$/core/api/api.Config.php" />
@@ -233,13 +201,16 @@
         <option value="$PROJECT_DIR$/core/functions/shop/func.Shop.php" />
         <option value="$PROJECT_DIR$/core/viewModels/vm.Base.php" />
         <option value="$PROJECT_DIR$/core/functions/func.Tint.php" />
-        <option value="$PROJECT_DIR$/core/functions/func.Cache.php" />
         <option value="$PROJECT_DIR$/src/css/me.less" />
         <option value="$PROJECT_DIR$/core/modules/me/me.Tab.Order.php" />
         <option value="$PROJECT_DIR$/core/upgrade.md" />
         <option value="$PROJECT_DIR$/core/functions/shop/func.Shop.Orders.php" />
-        <option value="$PROJECT_DIR$/dash/options.php" />
         <option value="$PROJECT_DIR$/core/templates/site/tpl.Privacy.php" />
+        <option value="$PROJECT_DIR$/core/modules/mod.Footer.php" />
+        <option value="$PROJECT_DIR$/dash/options.php" />
+        <option value="$PROJECT_DIR$/core/viewModels/vm.Single.Post.php" />
+        <option value="$PROJECT_DIR$/core/viewModels/shop/vm.Shop.Home.php" />
+        <option value="$PROJECT_DIR$/core/functions/func.Cache.php" />
       </list>
     </option>
   </component>
@@ -322,7 +293,6 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -398,6 +368,46 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tint" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tint" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="viewModels" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tint" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tint" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="viewModels" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shop" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -499,12 +509,31 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tint" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tint" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -992,6 +1021,7 @@
       <workItem from="1483012544393" duration="835000" />
       <workItem from="1483014473381" duration="1859000" />
       <workItem from="1483177407821" duration="5638000" />
+      <workItem from="1483246061363" duration="1913000" />
     </task>
     <task id="LOCAL-00001" summary="Add change log and contributing doc">
       <created>1476711242287</created>
@@ -1011,7 +1041,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1824891000" />
+    <option name="totallyTimeSpent" value="1826804000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1026,14 +1056,14 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22814499" sideWeight="0.4927798" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23081024" sideWeight="0.4927798" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32968238" sideWeight="0.4978678" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3264642" sideWeight="0.5245727" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13062099" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20065077" sideWeight="0.4728145" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20065077" sideWeight="0.4728145" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3264642" sideWeight="0.47542736" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20824295" sideWeight="0.45309168" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20824295" sideWeight="0.45309168" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17430703" sideWeight="0.5072202" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1139,29 +1169,6 @@
     </PATH>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/core/viewModels/vm.Search.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="49" column="10" selection-start-line="49" selection-start-column="10" selection-end-line="49" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/templates/tpl.Search.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="28" column="57" selection-start-line="28" selection-start-column="57" selection-end-line="28" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/modules/contribute.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="27" column="33" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dash/plugins/object-cache.php" />
-    <entry file="file://$PROJECT_DIR$/dash/plugins/redis/object-cache.php" />
     <entry file="file://$PROJECT_DIR$/dash/plugins/memcache/object-cache.php" />
     <entry file="file://$PROJECT_DIR$/core/functions/func.Install.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -1358,7 +1365,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1596">
           <caret line="68" column="20" selection-start-line="68" selection-start-column="20" selection-end-line="72" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1366,7 +1372,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2660">
           <caret line="106" column="29" selection-start-line="106" selection-start-column="20" selection-end-line="106" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1387,13 +1392,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="392">
           <caret line="151" column="14" selection-start-line="151" selection-start-column="14" selection-end-line="151" selection-end-column="14" />
-          <folding>
-            <element signature="n#tt_clear_version_check#0;n#!!top" expanded="false" />
-            <element signature="n#tt_check_version_setup_schedule#0;n#!!top" expanded="false" />
-            <element signature="n#tt_check_version_do_this_daily#0;n#!!top" expanded="false" />
-            <element signature="n#tin_update_alert_callback#0;n#!!top" expanded="false" />
-            <marker date="1483016828459" expanded="true" signature="1987:1997" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1415,84 +1413,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/functions/shop/func.Shop.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14168">
-          <caret line="517" column="58" selection-start-line="517" selection-start-column="29" selection-end-line="517" selection-end-column="58" />
-          <folding>
-            <marker date="1482933327907" expanded="true" signature="17583:17589" ph=" " />
-            <marker date="1482933327907" expanded="true" signature="17920:17926" ph=" " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/functions/func.Cache.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-281">
-          <caret line="238" column="2" selection-start-line="238" selection-start-column="2" selection-end-line="238" selection-end-column="2" />
-          <folding>
-            <marker date="1483177604654" expanded="true" signature="2087:2229" ph="DELETE FROM " />
-            <marker date="1483177604654" expanded="true" signature="2549:2690" ph="DELETE FROM " />
-            <marker date="1483177604654" expanded="true" signature="2966:3108" ph="DELETE FROM " />
-            <marker date="1483177604654" expanded="true" signature="3614:3743" ph="DELETE FROM " />
-            <marker date="1483177604654" expanded="true" signature="4085:4164" ph="DELETE FROM " />
-            <marker date="1483177604654" expanded="true" signature="4622:4683" ph="DELETE FROM " />
-            <marker date="1483177604654" expanded="true" signature="6048:6199" ph="DELETE FROM " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/css/site-utils.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="307" column="75" selection-start-line="307" selection-start-column="75" selection-end-line="307" selection-end-column="75" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/css/me.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="477">
-          <caret line="740" column="46" selection-start-line="740" selection-start-column="46" selection-end-line="740" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/upgrade.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="465">
             <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="63" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/modules/me/me.Tab.Order.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="88" column="85" selection-start-line="88" selection-start-column="85" selection-end-line="88" selection-end-column="85" />
-          <folding>
-            <marker date="1483190613497" expanded="true" signature="6155:6227" ph="..." />
-            <marker date="1483190613497" expanded="true" signature="6308:6403" ph="..." />
-            <marker date="1483190613497" expanded="true" signature="6678:6716" ph="..." />
-            <marker date="1483190613497" expanded="true" signature="6799:6889" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dash/options.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="1007" column="0" selection-start-line="1007" selection-start-column="2" selection-end-line="1011" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/templates/site/tpl.APSV.Notify.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
+        <state relative-caret-position="2912">
           <caret line="115" column="18" selection-start-line="115" selection-start-column="8" selection-end-line="115" selection-end-column="22" />
           <folding />
         </state>
@@ -1500,7 +1433,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/functions/shop/func.Shop.Orders.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="710">
+        <state relative-caret-position="15372">
           <caret line="560" column="4" selection-start-line="560" selection-start-column="4" selection-end-line="560" selection-end-column="74" />
           <folding>
             <element signature="n#tt_update_order_product_quantity#0;n#!!top" expanded="false" />
@@ -1521,9 +1454,118 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/templates/site/tpl.Privacy.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
+        <state relative-caret-position="701">
           <caret line="39" column="25" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dash/options.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="395">
+          <caret line="1298" column="67" selection-start-line="1298" selection-start-column="67" selection-end-line="1298" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/functions/shop/func.Shop.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="626">
+          <caret line="517" column="58" selection-start-line="517" selection-start-column="29" selection-end-line="517" selection-end-column="58" />
+          <folding>
+            <marker date="1482933327907" expanded="true" signature="17583:17589" ph=" " />
+            <marker date="1482933327907" expanded="true" signature="17920:17926" ph=" " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/css/me.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28">
+          <caret line="740" column="46" selection-start-line="740" selection-start-column="46" selection-end-line="740" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/css/site-utils.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28">
+          <caret line="307" column="75" selection-start-line="307" selection-start-column="75" selection-end-line="307" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/modules/me/me.Tab.Order.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="88" column="85" selection-start-line="88" selection-start-column="85" selection-end-line="88" selection-end-column="85" />
+          <folding>
+            <marker date="1483190613497" expanded="true" signature="6155:6227" ph="..." />
+            <marker date="1483190613497" expanded="true" signature="6308:6403" ph="..." />
+            <marker date="1483190613497" expanded="true" signature="6678:6716" ph="..." />
+            <marker date="1483190613497" expanded="true" signature="6799:6889" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/modules/mod.Footer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="89" column="59" selection-start-line="89" selection-start-column="40" selection-end-line="89" selection-end-column="59" />
+          <folding>
+            <marker date="1483253677549" expanded="true" signature="4207:4213" ph=" " />
+            <marker date="1483253677549" expanded="true" signature="4350:4356" ph=" " />
+            <marker date="1483253677549" expanded="true" signature="4366:4381" ph="..." />
+            <marker date="1483253677549" expanded="true" signature="4388:4394" ph=" " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/viewModels/vm.Single.Post.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="37" column="54" selection-start-line="37" selection-start-column="54" selection-end-line="37" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/viewModels/vm.Single.Page.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="19" column="18" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/viewModels/vm.Home.Latest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="19" column="18" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/viewModels/shop/vm.Shop.Home.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="44" column="69" selection-start-line="44" selection-start-column="69" selection-end-line="44" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/functions/func.Cache.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="626">
+          <caret line="317" column="76" selection-start-line="317" selection-start-column="76" selection-end-line="317" selection-end-column="76" />
+          <folding>
+            <marker date="1483254490889" expanded="true" signature="2087:2229" ph="DELETE FROM " />
+            <marker date="1483254490889" expanded="true" signature="2549:2690" ph="DELETE FROM " />
+            <marker date="1483254490889" expanded="true" signature="2966:3108" ph="DELETE FROM " />
+            <marker date="1483254490889" expanded="true" signature="3614:3743" ph="DELETE FROM " />
+            <marker date="1483254490889" expanded="true" signature="4085:4164" ph="DELETE FROM " />
+            <marker date="1483254490889" expanded="true" signature="4622:4683" ph="DELETE FROM " />
+            <marker date="1483254490889" expanded="true" signature="6048:6199" ph="DELETE FROM " />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1555,6 +1597,6 @@
     </states>
   </component>
   <component name="webServersAuthStorage">
-    <data>AAAAcHd6UwleoZXLLExzA+zdNz7G1pSoHzaRKPlrnO/40Ezcx8LgkSmyCSL6oCvqUBo0BgeIj3EGh/49191Fa4KQS1zahvvxtjRc4N+YE8WeSMLeR5JbT4lPmJ/Jx+WLcfd9REZ0w8LRNRsLYptBuJ7nDY23dPaGA5B4cf8tFk3TsXyD</data>
+    <data>AAAAcHrn7Rpc1cEKrZMm5STm03FvCyZQRa3wnJLNBtGN27aj+jgd3kZ37ZnqItRRv5OMfTNwrP38Rg0lVUhC8+pJMVT4EUDtt9j3ZkdaJdeuqeCZoRE2OZpXwJhVQ2O4Zhbaq+1eEjJIh8JWSlutNiLAPXNOa/zkKp4RZKBFdlyrYuLL</data>
   </component>
 </project>

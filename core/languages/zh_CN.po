@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2016-12-31 21:24+0800\n"
-"PO-Revision-Date: 2016-12-31 21:27+0800\n"
+"POT-Creation-Date: 2017-01-01 14:57+0800\n"
+"PO-Revision-Date: 2017-01-01 14:58+0800\n"
 "Last-Translator: Zhiyan <mail@webapproach.net>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -3556,6 +3556,11 @@ msgstr "关于"
 msgid "CONTACT"
 msgstr "联系"
 
+#: core/modules/mod.Footer.php:90
+#, php-format
+msgid " ·&nbsp;%1$s queries in %2$ss"
+msgstr ""
+
 #: core/modules/mod.Header.Shop.php:38
 msgid "Search for something..."
 msgstr "搜索点什么..."
@@ -4242,9 +4247,8 @@ msgid "TAG CLOUD"
 msgstr "标签云"
 
 #: core/modules/widgets/wgt.UC.php:35
-#, fuzzy
 msgid "Local Account"
-msgstr "QQ账户"
+msgstr "本地账户"
 
 #: core/modules/widgets/wgt.UC.php:37 dash/options.php:492
 msgid "QQ Login"
@@ -4255,9 +4259,8 @@ msgid "Weibo Login"
 msgstr "微博登录"
 
 #: core/modules/widgets/wgt.UC.php:43
-#, fuzzy
 msgid "Wechat Login"
-msgstr "上次登录"
+msgstr "微信登录"
 
 #: core/modules/widgets/wgt.UC.php:57
 msgid "USER MANAGEMENT"
@@ -5886,10 +5889,6 @@ msgstr "Redis端口"
 msgid "Redis server port"
 msgstr "Redis服务器的端口"
 
-#: dash/options.php:1009
-msgid "Mailer Separator"
-msgstr ""
-
 #: dash/options.php:1016
 msgid "SMTP/PHPMailer"
 msgstr "SMTP/PHPMailer"
@@ -6136,6 +6135,14 @@ msgstr "建站日期"
 #: dash/options.php:1287
 msgid "The date of when site opened, use `YYYY-mm-dd` format"
 msgstr "网站开放的日期, 使用`YYYY-mm-dd`格式"
+
+#: dash/options.php:1298
+msgid "Footer Queries Info"
+msgstr "页脚查询信息"
+
+#: dash/options.php:1299
+msgid "Show WordPress queries statistic information"
+msgstr "在页脚显示WordPress查询统计信息"
 
 #: functions.php:16
 msgid "Lack of WordPress environment"
