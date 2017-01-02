@@ -143,8 +143,11 @@ var _originLoadMoreBtnText = _loadMoreBtn.text();
 var _appendComments = function (comments) {
     $(_commentListSel).append(comments);
     $('.comments-list img.lazy').lazyload({
-        effect: "fadeIn",
-        threshold: 0
+        //effect: "fadeIn",
+        threshold: 0,
+        load: function () {
+            $(this).addClass('show');
+        }
     });
 };
 

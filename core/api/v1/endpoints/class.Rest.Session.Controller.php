@@ -105,6 +105,9 @@ class WP_REST_Session_Controller extends WP_REST_Controller
         if ($user && wp_check_password( $password, $user->data->user_pass, $user->ID)) {
             $creds = array('user_login' => $user->data->user_login, 'user_password' => $password, 'remember' => true);
             $user = wp_signon( $creds, is_ssl() );
+            if($user instanceof WP_Error) {
+                return $user;
+            }
             return rest_ensure_response(array(
                 'success' => 1,
                 'message' => __('Welcome, you have signed in successfully', 'tt')

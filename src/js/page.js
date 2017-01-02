@@ -72,12 +72,18 @@ jQuery(document).ready(function ($) {
     
     // 延迟加载图片
     $('img.lazy').lazyload({
-        effect: "fadeIn",
-        threshold: 50
+        //effect: "fadeIn",
+        threshold: 50,
+        load: function () {
+            $(this).addClass('show');
+        }
     });
     $('.sidebar img.lazy').lazyload({
-        effect: "fadeIn",
-        threshold: 0
+        //effect: "fadeIn",
+        threshold: 0,
+        load: function () {
+            $(this).addClass('show');
+        }
     });
     
     // 平滑锚点

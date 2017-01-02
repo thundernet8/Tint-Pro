@@ -61,9 +61,11 @@ function tt_get_img_info( $img ){
  * @param string $dst
  * @param int $dst_width
  * @param int $dst_height
+ * @param bool $delete_ori
  */
-function tt_resize_img( $ori, $dst = '', $dst_width = 100, $dst_height = 100 ){ //绝对路径, 带文件名
+function tt_resize_img( $ori, $dst = '', $dst_width = 100, $dst_height = 100, $delete_ori = false ){ //绝对路径, 带文件名
     $info = tt_get_img_info( $ori );
+
     if( $info ){
         if( $info['type']=='jpg' || $info['type']=='jpeg' ){
             $im = imagecreatefromjpeg( $ori );
@@ -77,21 +79,16 @@ function tt_resize_img( $ori, $dst = '', $dst_width = 100, $dst_height = 100 ){ 
         if( $info['type']=='bmp' ){
             $im = imagecreatefromwbmp( $ori );
         }
-        if( $info['width']<=$dst_width && $info['height']<=$dst_height ){
-            return;
+        if( $info['width'] > $info['height'] ){
+            $height = intval($info['height']);
+            $width = $height;
+            $x = ($info['width']-$width)/2;
+            $y = 0;
         } else {
-            if( $info['width'] > $info['height'] ){
-                $height = intval($info['height']);
-                $width = $height;
-                $x = ($info['width']-$width)/2;
-                $y = 0;
-            } else {
-                $width = intval($info['width']);
-                $height = $width;
-                $x = 0;
-                $y = ($info['height']-$height) / 2;
-            }
-
+            $width = intval($info['width']);
+            $height = $width;
+            $x = 0;
+            $y = ($info['height']-$height) / 2;
         }
         $new_img = imagecreatetruecolor( $width, $height );
         imagecopy($new_img, $im, 0, 0, $x, $y, $info['width'], $info['height']);
@@ -104,6 +101,10 @@ function tt_resize_img( $ori, $dst = '', $dst_width = 100, $dst_height = 100 ){ 
         imagedestroy( $im );
         imagedestroy( $new_img );
         imagedestroy( $target );
+
+        if($delete_ori){
+            unlink($ori);
+        }
     }
     return;
 }
@@ -120,8 +121,13 @@ function tt_update_user_avatar_by_upload($user_id = 0){
     update_user_meta($user_id, 'tt_avatar_type', 'custom');
 
     //删除VM缓存
-    tt_clear_cache_key_like('tt_cache_daily_vm_MeSettingsVM_user' . $user_id);
-    tt_clear_cache_key_like('tt_cache_daily_vm_UCProfileVM_author_' . $user_id);
+    //tt_clear_cache_key_like('tt_cache_daily_vm_MeSettingsVM_user' . $user_id);
+    delete_transient('tt_cache_daily_vm_MeSettingsVM_user' . $user_id);
+    //tt_clear_cache_key_like('tt_cache_daily_vm_UCProfileVM_author' . $user_id);
+    delete_transient('tt_cache_daily_vm_UCProfileVM_author' . $user_id);
     //删除头像缓存
-    tt_clear_cache_key_like('tt_cache_daily_avatar_' . strval($user_id));
+    //tt_clear_cache_key_like('tt_cache_daily_avatar_' . strval($user_id));
+    delete_transient('tt_cache_daily_avatar_' . $user_id . '_' . md5(strval($user_id) . 'small' . Utils::getCurrentDateTimeStr('day')));
+    delete_transient('tt_cache_daily_avatar_' . $user_id . '_' . md5(strval($user_id) . 'medium' . Utils::getCurrentDateTimeStr('day')));
+    delete_transient('tt_cache_daily_avatar_' . $user_id . '_' . md5(strval($user_id) . 'large' . Utils::getCurrentDateTimeStr('day')));
 }

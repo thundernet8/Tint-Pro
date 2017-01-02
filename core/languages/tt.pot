@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2017-01-02 18:06+0800\n"
+"POT-Creation-Date: 2017-01-02 18:37+0800\n"
 "PO-Revision-Date: 2016-08-17 21:40+0800\n"
 "Last-Translator: \n"
 "Language-Team: Zhiyan <mail@webapproach.net>\n"
@@ -474,7 +474,7 @@ msgid "Request to find password was sent"
 msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:309
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:672
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:676
 msgid "Unknown action request"
 msgstr ""
 
@@ -550,122 +550,126 @@ msgstr ""
 msgid "The resource cannot be deleted."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:666
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:652
+msgid "The new password length is too short and not safe"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:670
 msgid "Reset password failed, please retry or contact the administrator"
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:669
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:673
 msgid "Your password has been reset successfully"
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:823
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:827
 #, php-format
 msgid "The role %s does not exist."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:830
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:840
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:834
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:844
 msgid "You cannot give resource that role."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:860
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:864
 msgid "Unique identifier for the resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:866
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:870
 msgid "Login name for the resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:876
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:880
 msgid "Display name for the resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:884
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:888
 msgid "First name for the resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:892
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:896
 msgid "Last name for the resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:900
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:904
 msgid "The email address for the resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:907
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:911
 msgid "URL of the resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:913
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:917
 msgid "Description of the resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:921
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:925
 msgid "Author URL to the resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:928
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:932
 msgid "The nickname for the resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:936
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:940
 msgid "An alphanumeric identifier for the resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:944
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:948
 msgid "Registration date for the resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:950
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:954
 msgid "Roles assigned to the resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:955
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:959
 msgid "Password for the resource (never included)."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:961
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:965
 msgid "All capabilities assigned to the resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:966
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:970
 msgid "Any extra capabilities assigned to the resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:980
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:984
 #, php-format
 msgid "Avatar URL with image size of %d pixels."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:988
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:992
 msgid "Avatar URLs for the resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:1011
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:1015
 msgid "Ensure result set excludes specific ids."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:1017
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:1021
 msgid "Limit result set to specific ids."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:1023
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:1027
 msgid "Offset the result set by a specific number of items."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:1030
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:1034
 msgid "Order sort attribute ascending or descending."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:1038
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:1042
 msgid "Sort collection by object attribute."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:1050
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:1054
 msgid "Limit result set to resources with a specific slug."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:1055
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:1059
 msgid ""
 "Limit result set to resources matching at least one specific role "
 "provided. Accepts csv list or single role."
@@ -4356,6 +4360,14 @@ msgstr ""
 
 #: core/templates/actions/tpl.M.Refresh.php:39
 msgid "Forbidden Access"
+msgstr ""
+
+#: core/templates/actions/tpl.M.Resetpass.php:20
+msgid "The link you visited is invalid or expired"
+msgstr ""
+
+#: core/templates/actions/tpl.M.Resetpass.php:20
+msgid "Link Error"
 msgstr ""
 
 #: core/templates/actions/tpl.M.Resetpass.php:37

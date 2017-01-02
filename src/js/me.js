@@ -63,8 +63,11 @@ jQuery(document).ready(function ($) {
     
     // 延迟加载图片
     $('img.lazy').lazyload({
-        effect: "fadeIn",
-        threshold: 50
+        //effect: "fadeIn",
+        threshold: 50,
+        load: function () {
+            $(this).addClass('show');
+        }
     });
     
     // 修正Footer位置

@@ -67,12 +67,19 @@ jQuery(document).ready(function ($) {
 
     // 延迟加载图片
     $('img.lazy').lazyload({
-        effect: "fadeIn",
-        threshold: 50
+        //effect: "fadeIn",
+        threshold: 50,
+        failure_limit: 10,
+        load: function () {
+            $(this).addClass('show');
+        }
     });
     $('.sidebar img.lazy').lazyload({
-        effect: "fadeIn",
-        threshold: 0
+        //effect: "fadeIn",
+        threshold: 0,
+        load: function () {
+            $(this).addClass('show');
+        }
     });
     
     // 设置推广信息cookie, 便于后面使用

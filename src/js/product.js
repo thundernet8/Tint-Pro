@@ -80,16 +80,25 @@ jQuery(document).ready(function ($) {
     
     // 延迟加载图片
     $('#primary img.lazy').lazyload({
-        effect: "fadeIn",
-        threshold: 50
+        //effect: "fadeIn",
+        threshold: 50,
+        load: function () {
+            $(this).addClass('show');
+        }
     });
     $('#secondary img.lazy').lazyload({
-        effect: "fadeIn",
-        threshold: 0
+        //effect: "fadeIn",
+        threshold: 0,
+        load: function () {
+            $(this).addClass('show');
+        }
     });
     $('#tertiary img.lazy').lazyload({
-        effect: "fadeIn",
-        threshold: 0
+        //effect: "fadeIn",
+        threshold: 0,
+        load: function () {
+            $(this).addClass('show');
+        }
     });
     
     // 平滑锚点

@@ -42,7 +42,7 @@ defined('THEME_TPL') || define('THEME_TPL', get_template_directory() . '/core/te
 
 defined('THEME_DASH') || define('THEME_DASH', get_template_directory() . '/dash');
 
-defined('AVATARS_PATH') || define('AVATARS_PATH', WP_CONTENT_DIR . DIRECTORY_SEPARATOR . '/uploads/avatars');
+defined('AVATARS_PATH') || define('AVATARS_PATH', WP_CONTENT_DIR . '/uploads/avatars');
 
 defined('AVATARS_URL') || define('AVATARS_URL', home_url('wp-content/uploads/avatars'));
 
