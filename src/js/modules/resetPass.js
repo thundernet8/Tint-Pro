@@ -57,7 +57,7 @@ var _handleResetPass = function (btn) {
     }
     
     var data = {
-        pass : pass,
+        password : pass,
         key: Utils.getQueryString('key')
     };
     

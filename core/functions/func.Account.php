@@ -80,7 +80,7 @@ function tt_reset_password_by_key($key, $new_pass) {
     if(!$user){
         return new WP_Error( 'user_not_found', __( 'Sorry, the user was not found.', 'tt' ), array( 'status' => 404 ) );
     }
-
+    
     reset_password($user, $new_pass);
     return $user;
 }

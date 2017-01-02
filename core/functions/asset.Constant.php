@@ -42,6 +42,6 @@ defined('JS_PRODUCT') || define('JS_PRODUCT', 'product-b79d636aec.js');
 defined('JS_PRODUCT_ARCHIVE') || define('JS_PRODUCT_ARCHIVE', 'products-6ca443eaab.js');
 defined('JS_UC') || define('JS_UC', 'uc-78714ed81c.js');
 defined('JS_ME') || define('JS_ME', 'me-89be1d683b.js');
-defined('JS_ACTION') || define('JS_ACTION', 'actionPage-bdbed44da1.js');
+defined('JS_ACTION') || define('JS_ACTION', 'actionPage-fec4b56b11.js');
 defined('JS_404') || define('JS_404', '404-18f2d33753.js');
 defined('JS_SITE_UTILS') || define('JS_SITE_UTILS', 'site-utils-2b04a2e9aa.js');

@@ -648,6 +648,10 @@ class WP_REST_User_Controller extends WP_REST_Controller {
         if($act == 'resetpass') {
             $password = $request->get_param('password');
 
+            if(strlen($password) < 6) {
+                return new WP_Error(__('The new password length is too short and not safe', 'tt'));
+            }
+
             $user = tt_reset_password_by_key($key, $password);
 
             if($user instanceof WP_Error){
@@ -666,7 +670,7 @@ class WP_REST_User_Controller extends WP_REST_Controller {
                 return tt_api_fail(__('Reset password failed, please retry or contact the administrator', 'tt'));
             }
 
-            return tt_api_success(__('Your password has been reset successfully'));
+            return tt_api_success(__('Your password has been reset successfully', 'tt'));
         }
 
         return tt_api_fail(__('Unknown action request', 'tt'));
