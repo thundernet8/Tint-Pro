@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2017-01-01 14:57+0800\n"
+"POT-Creation-Date: 2017-01-02 18:06+0800\n"
 "PO-Revision-Date: 2016-08-17 21:40+0800\n"
 "Last-Translator: \n"
 "Language-Team: Zhiyan <mail@webapproach.net>\n"
@@ -115,7 +115,7 @@ msgstr ""
 #: core/api/v1/endpoints/class.Rest.Comment.Controller.php:94
 #: core/api/v1/endpoints/class.Rest.Comment.Star.Controller.php:102
 #: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:115
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:391
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:372
 msgid "Nonce verify failed"
 msgstr ""
 
@@ -153,7 +153,7 @@ msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.Comment.Controller.php:267
 #: core/api/v1/endpoints/class.Rest.Session.Controller.php:130
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:588
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:569
 msgid "Sorry, you are not allowed to delete this resource."
 msgstr ""
 
@@ -411,15 +411,15 @@ msgid "There is no user matches the info you offered"
 msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.Session.Controller.php:147
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:607
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:588
 msgid "Users do not support trashing."
 msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.Session.Controller.php:152
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:238
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:265
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:529
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:612
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:510
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:593
 msgid "Invalid resource id."
 msgstr ""
 
@@ -453,200 +453,219 @@ msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:122
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:246
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:295
 msgid "Sorry, you cannot view this resource with edit context."
 msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:248
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:297
 msgid "Sorry, you cannot view this resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:287
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:314
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:295
 msgid "Invalid resource email."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:340
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:303
+#, php-format
+msgid "Your Password Reset Link - %s"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:306
+msgid "Request to find password was sent"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:309
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:672
+msgid "Unknown action request"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:321
 msgid "You are not currently logged in."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:361
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:342
 msgid "Sorry, you are not allowed to create resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:397
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:378
 msgid ""
 "Password length does not match the requirement, must more than or equal to "
 "6."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:406
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:387
 msgid "Captcha does not match."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:412
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:393
 msgid "Invalid resource login name."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:416
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:397
 msgid "Login name is already existed."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:422
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:403
 msgid "Invalid email format."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:426
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:407
 msgid "Email is already used."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:431
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:412
 msgid "Your account activation link"
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:435
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:416
 msgid ""
 "Send registration request successfully, please go to your email box to "
 "find and visit the activation link"
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:508
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:489
 msgid "Sorry, you are not allowed to edit resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:512
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:493
 msgid "Sorry, you are not allowed to edit roles of this resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:533
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:514
 msgid "Email address is invalid."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:537
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:518
 msgid "Username isn't editable"
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:541
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:522
 msgid "Slug is invalid."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:617
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:598
 msgid "Invalid resource id for reassignment."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:630
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:611
 msgid "The resource cannot be deleted."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:831
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:666
+msgid "Reset password failed, please retry or contact the administrator"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:669
+msgid "Your password has been reset successfully"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:823
 #, php-format
 msgid "The role %s does not exist."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:838
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:848
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:830
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:840
 msgid "You cannot give resource that role."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:868
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:860
 msgid "Unique identifier for the resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:874
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:866
 msgid "Login name for the resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:884
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:876
 msgid "Display name for the resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:892
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:884
 msgid "First name for the resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:900
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:892
 msgid "Last name for the resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:908
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:900
 msgid "The email address for the resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:915
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:907
 msgid "URL of the resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:921
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:913
 msgid "Description of the resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:929
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:921
 msgid "Author URL to the resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:936
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:928
 msgid "The nickname for the resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:944
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:936
 msgid "An alphanumeric identifier for the resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:952
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:944
 msgid "Registration date for the resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:958
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:950
 msgid "Roles assigned to the resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:963
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:955
 msgid "Password for the resource (never included)."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:969
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:961
 msgid "All capabilities assigned to the resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:974
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:966
 msgid "Any extra capabilities assigned to the resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:988
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:980
 #, php-format
 msgid "Avatar URL with image size of %d pixels."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:996
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:988
 msgid "Avatar URLs for the resource."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:1019
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:1011
 msgid "Ensure result set excludes specific ids."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:1025
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:1017
 msgid "Limit result set to specific ids."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:1031
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:1023
 msgid "Offset the result set by a specific number of items."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:1038
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:1030
 msgid "Order sort attribute ascending or descending."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:1046
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:1038
 msgid "Sort collection by object attribute."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:1058
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:1050
 msgid "Limit result set to resources with a specific slug."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:1063
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:1055
 msgid ""
 "Limit result set to resources matching at least one specific role "
 "provided. Accepts csv list or single role."
@@ -2046,184 +2065,188 @@ msgstr ""
 msgid "Weekly"
 msgstr ""
 
-#: core/functions/func.Seo.php:28 core/functions/func.Seo.php:169
+#: core/functions/func.Seo.php:28 core/functions/func.Seo.php:172
 #: core/modules/mod.ModalLoginForm.php:17
 #: core/templates/actions/tpl.M.Signup.php:90
 msgid "Sign In"
 msgstr ""
 
-#: core/functions/func.Seo.php:31 core/functions/func.Seo.php:172
+#: core/functions/func.Seo.php:31 core/functions/func.Seo.php:175
 #: core/templates/actions/tpl.M.Signup.php:62
 msgid "Sign Up"
 msgstr ""
 
-#: core/functions/func.Seo.php:34 core/functions/func.Seo.php:175
+#: core/functions/func.Seo.php:34 core/functions/func.Seo.php:178
 msgid "Activate Registration"
 msgstr ""
 
-#: core/functions/func.Seo.php:37 core/functions/func.Seo.php:178
+#: core/functions/func.Seo.php:37 core/functions/func.Seo.php:181
 #: core/modules/mod.Header.Shop.php:103 core/modules/mod.Header.php:48
 msgid "Sign Out"
 msgstr ""
 
-#: core/functions/func.Seo.php:40 core/functions/func.Seo.php:181
+#: core/functions/func.Seo.php:40 core/functions/func.Seo.php:184
 #: core/templates/actions/tpl.M.Findpass.php:33
 msgid "Find Password"
 msgstr ""
 
-#: core/functions/func.Seo.php:48 core/modules/mod.Header.Shop.php:101
+#: core/functions/func.Seo.php:43
+msgid "Reset Password"
+msgstr ""
+
+#: core/functions/func.Seo.php:51 core/modules/mod.Header.Shop.php:101
 #: core/modules/mod.Header.php:46
 msgid "My Settings"
 msgstr ""
 
-#: core/functions/func.Seo.php:51 core/modules/me/me.Tab.Notifications.php:26
+#: core/functions/func.Seo.php:54 core/modules/me/me.Tab.Notifications.php:26
 msgid "My Notifications"
 msgstr ""
 
-#: core/functions/func.Seo.php:54 core/modules/me/me.Tab.Messages.php:26
+#: core/functions/func.Seo.php:57 core/modules/me/me.Tab.Messages.php:26
 #: core/modules/mod.Header.Shop.php:100 core/modules/mod.Header.php:45
 msgid "My Messages"
 msgstr ""
 
-#: core/functions/func.Seo.php:57
+#: core/functions/func.Seo.php:60
 msgid "My Stars"
 msgstr ""
 
-#: core/functions/func.Seo.php:60 core/modules/me/me.Tab.Credits.php:26
+#: core/functions/func.Seo.php:63 core/modules/me/me.Tab.Credits.php:26
 msgid "My Credits"
 msgstr ""
 
-#: core/functions/func.Seo.php:63 core/modules/me/me.Tab.Orders.php:26
+#: core/functions/func.Seo.php:66 core/modules/me/me.Tab.Orders.php:26
 #: core/modules/mod.Header.Shop.php:99
 msgid "My Orders"
 msgstr ""
 
-#: core/functions/func.Seo.php:66
+#: core/functions/func.Seo.php:69
 msgid "My Order"
 msgstr ""
 
-#: core/functions/func.Seo.php:69 core/modules/me/me.Tab.Drafts.php:26
+#: core/functions/func.Seo.php:72 core/modules/me/me.Tab.Drafts.php:26
 msgid "My Drafts"
 msgstr ""
 
-#: core/functions/func.Seo.php:72 core/modules/mod.Header.php:43
+#: core/functions/func.Seo.php:75 core/modules/mod.Header.php:43
 msgid "New Post"
 msgstr ""
 
-#: core/functions/func.Seo.php:75 core/modules/me/me.Tab.EditPost.php:26
+#: core/functions/func.Seo.php:78 core/modules/me/me.Tab.EditPost.php:26
 #: core/modules/uc/uc.Tab.Latest.php:34
 msgid "Edit Post"
 msgstr ""
 
-#: core/functions/func.Seo.php:78
+#: core/functions/func.Seo.php:81
 msgid "My Membership"
 msgstr ""
 
-#: core/functions/func.Seo.php:86
+#: core/functions/func.Seo.php:89
 msgid "Check Out Orders"
 msgstr ""
 
-#: core/functions/func.Seo.php:89
+#: core/functions/func.Seo.php:92
 msgid "Payment Result"
 msgstr ""
 
-#: core/functions/func.Seo.php:92
+#: core/functions/func.Seo.php:95
 msgid "Do Payment"
 msgstr ""
 
-#: core/functions/func.Seo.php:96
+#: core/functions/func.Seo.php:99
 msgid "Resources Download:"
 msgstr ""
 
-#: core/functions/func.Seo.php:99 core/templates/site/tpl.Privacy.php:23
+#: core/functions/func.Seo.php:102 core/templates/site/tpl.Privacy.php:23
 msgid "Privacy Policies and Terms"
 msgstr ""
 
-#: core/functions/func.Seo.php:110
+#: core/functions/func.Seo.php:113
 #, php-format
 msgid " - Page %d"
 msgstr ""
 
-#: core/functions/func.Seo.php:121 core/functions/func.Seo.php:218
+#: core/functions/func.Seo.php:124 core/functions/func.Seo.php:221
 #, php-format
 msgid "%s's Home Page"
 msgstr ""
 
-#: core/functions/func.Seo.php:125 core/functions/shop/func.Shop.php:297
+#: core/functions/func.Seo.php:128 core/functions/shop/func.Shop.php:297
 msgid "Product Category"
 msgstr ""
 
-#: core/functions/func.Seo.php:127
+#: core/functions/func.Seo.php:130
 msgid "Product Tag"
 msgstr ""
 
-#: core/functions/func.Seo.php:129 core/functions/func.Seo.php:132
-#: core/functions/func.Seo.php:230 core/modules/mod.Header.Shop.php:29
+#: core/functions/func.Seo.php:132 core/functions/func.Seo.php:135
+#: core/functions/func.Seo.php:233 core/modules/mod.Header.Shop.php:29
 #: dash/options.php:805
 msgid "Market"
 msgstr ""
 
-#: core/functions/func.Seo.php:135
+#: core/functions/func.Seo.php:138
 msgid "Search"
 msgstr ""
 
-#: core/functions/func.Seo.php:137
+#: core/functions/func.Seo.php:140
 msgid "Y"
 msgstr ""
 
-#: core/functions/func.Seo.php:137 core/functions/func.Seo.php:139
-#: core/functions/func.Seo.php:141
+#: core/functions/func.Seo.php:140 core/functions/func.Seo.php:142
+#: core/functions/func.Seo.php:144
 msgid "posts archive"
 msgstr ""
 
-#: core/functions/func.Seo.php:139
+#: core/functions/func.Seo.php:142
 msgid "Y.n"
 msgstr ""
 
-#: core/functions/func.Seo.php:141
+#: core/functions/func.Seo.php:144
 msgid "Y.n.j"
 msgstr ""
 
-#: core/functions/func.Seo.php:143
+#: core/functions/func.Seo.php:146
 msgid "Tag: "
 msgstr ""
 
-#: core/functions/func.Seo.php:145
+#: core/functions/func.Seo.php:148
 msgid "Page Not Found"
 msgstr ""
 
-#: core/functions/func.Seo.php:150
+#: core/functions/func.Seo.php:153
 #, php-format
 msgid " - Page %d "
 msgstr ""
 
-#: core/functions/func.Seo.php:184 core/functions/func.Seo.php:218
+#: core/functions/func.Seo.php:187 core/functions/func.Seo.php:221
 msgid "Powered by Tint(Tinection 2)"
 msgstr ""
 
-#: core/functions/func.Seo.php:217
+#: core/functions/func.Seo.php:220
 msgid "Ucenter"
 msgstr ""
 
-#: core/functions/func.Seo.php:217 core/functions/func.Seo.php:230
+#: core/functions/func.Seo.php:220 core/functions/func.Seo.php:233
 msgid "Tint Ucenter and Market System"
 msgstr ""
 
-#: core/functions/func.Seo.php:233
+#: core/functions/func.Seo.php:236
 msgid ""
 "Powered by Tint(Tinection 2, a powerful wordpress theme with ucenter and "
 "shop system integrated)"
 msgstr ""
 
-#: core/functions/func.ShortCode.php:85
+#: core/functions/func.ShortCode.php:86
 msgid " 此处内容需要 <span class=\"user-login\">登录</span> 才可见"
 msgstr ""
 
-#: core/functions/func.ShortCode.php:94
+#: core/functions/func.ShortCode.php:95
 msgid "此处内容需要登录并 <span class=\"user-login\">发表评论</span> 才可见"
 msgstr ""
 
-#: core/functions/func.ShortCode.php:101
+#: core/functions/func.ShortCode.php:102
 msgid "此处内容需要登录并 <a href=\"#respond\">发表评论</a> 才可见"
 msgstr ""
 
@@ -3468,6 +3491,7 @@ msgstr ""
 
 #: core/modules/me/me.Tab.Settings.php:206
 #: core/templates/actions/tpl.M.Resetpass.php:40
+#: core/templates/actions/tpl.M.Resetpass.php:41
 msgid "Repeat Password"
 msgstr ""
 
@@ -3668,7 +3692,6 @@ msgstr ""
 #: core/modules/mod.ModalLoginForm.php:27
 #: core/templates/actions/tpl.M.Resetpass.php:38
 #: core/templates/actions/tpl.M.Resetpass.php:39
-#: core/templates/actions/tpl.M.Resetpass.php:41
 #: core/templates/actions/tpl.M.Signin.php:53
 #: core/templates/actions/tpl.M.Signup.php:49
 msgid "Password"
@@ -4335,20 +4358,8 @@ msgstr ""
 msgid "Forbidden Access"
 msgstr ""
 
-#: core/templates/actions/tpl.M.Resetpass.php:20
-msgid "The link you visited is invalid or expired"
-msgstr ""
-
-#: core/templates/actions/tpl.M.Resetpass.php:20
-msgid "Link Error"
-msgstr ""
-
 #: core/templates/actions/tpl.M.Resetpass.php:37
 msgid "Please input your new password"
-msgstr ""
-
-#: core/templates/actions/tpl.M.Resetpass.php:44
-msgid "Remember me"
 msgstr ""
 
 #: core/templates/actions/tpl.M.Signin.php:70

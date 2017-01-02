@@ -29,16 +29,16 @@ tt_get_header('simple');
     <?php load_template(THEME_MOD . '/mod.LogoHeader.php'); ?>
     <div id="content" class="wrapper container no-aside">
         <div class="main inner-wrap">
-            <form class="form-findpass">
+            <div class="form-findpass">
                 <h2 class="mb30"><?php _e('Find Password', 'tt'); ?></h2>
                 <p class="form-findpass-heading"><?php _e('Please input your account associated email', 'tt'); ?></p>
                 <div class="input-group">
                     <input type="email" id="inputEmail" class="form-control" placeholder="<?php _e('Email', 'tt'); ?>" required="required">
                     <span class="input-group-btn">
-                        <button class="btn btn-lg btn-primary btn-block" type="submit"><?php _e('Submit', 'tt'); ?></button>
+                        <button class="btn btn-lg btn-primary btn-block" id="find-pass" type="submit"><?php _e('Submit', 'tt'); ?></button>
                     </span>
                 </div>
-            </form>
+            </div>
         </div>
     </div>
 

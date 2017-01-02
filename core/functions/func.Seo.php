@@ -39,6 +39,9 @@ function tt_get_page_title() {
             case 'findpass':
                 $title = __('Find Password', 'tt');
                 break;
+            case 'resetpass':
+                $title = __('Reset Password', 'tt');
+                break;
         }
         return $title . ' - ' . get_bloginfo('name');
     }

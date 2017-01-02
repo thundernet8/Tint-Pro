@@ -33,19 +33,19 @@ tt_get_header('simple');
     <?php load_template(THEME_MOD . '/mod.LogoHeader.php'); ?>
     <div id="content" class="wrapper container no-aside">
         <div class="main inner-wrap">
-            <form class="form-resetpass">
+            <div class="form-resetpass">
                 <h2 class="form-resetpass-heading"><?php _e('Please input your new password', 'tt'); ?></h2>
                 <label for="inputPassword" class="sr-only"><?php _e('Password', 'tt'); ?></label>
                 <input type="password" id="inputPassword" class="form-control" placeholder="<?php _e('Password', 'tt'); ?>" required="required">
                 <label for="inputPassword2" class="sr-only"><?php _e('Repeat Password', 'tt'); ?></label>
-                <input type="password" id="inputPassword2" class="form-control" placeholder="<?php _e('Password', 'tt'); ?>" required="required">
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox" value="remember-me"> <?php _e('Remember me', 'tt'); ?>
-                    </label>
-                </div>
-                <button class="btn btn-lg btn-primary btn-block" type="submit"><?php _e('Submit', 'tt'); ?></button>
-            </form>
+                <input type="password" id="inputPassword2" class="form-control" placeholder="<?php _e('Repeat Password', 'tt'); ?>" required="required">
+<!--                <div class="checkbox">-->
+<!--                    <label>-->
+<!--                        <input type="checkbox" value="remember-me"> --><?php //_e('Remember me', 'tt'); ?>
+<!--                    </label>-->
+<!--                </div>-->
+                <button class="btn btn-lg btn-primary btn-block" id="reset-pass" type="submit"><?php _e('Submit', 'tt'); ?></button>
+            </div>
         </div>
     </div>
 

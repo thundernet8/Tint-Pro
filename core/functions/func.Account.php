@@ -35,9 +35,9 @@ function tt_generate_reset_password_link($email, $user_id = 0) {
         'email' =>  $email
     );
 
-    $key = tt_authdata($data, 'ENCODE', tt_get_option('tt_private_token'), 60*10); // 10分钟有效期
+    $key = base64_encode(tt_authdata($data, 'ENCODE', tt_get_option('tt_private_token'), 60*10)); // 10分钟有效期
 
-    $link = add_query_arg('token', $key, $base_url);
+    $link = add_query_arg('key', $key, $base_url);
     return $link;
 }
 
@@ -52,7 +52,7 @@ function tt_generate_reset_password_link($email, $user_id = 0) {
  */
 function tt_verify_reset_password_link($key) {
     if(empty($key)) return false;
-    $data = tt_authdata($key, 'DECODE', tt_get_option('tt_private_token'));
+    $data = tt_authdata(base64_decode($key), 'DECODE', tt_get_option('tt_private_token'));
     if(!$data || !is_array($data) || !isset($data['id']) || !isset($data['email'])){
         return false;
     }
@@ -71,14 +71,14 @@ function tt_verify_reset_password_link($key) {
  * @return  WP_User | WP_Error
  */
 function tt_reset_password_by_key($key, $new_pass) {
-    $data = tt_authdata($key, 'DECODE', tt_get_option('tt_private_token'));
+    $data = tt_authdata(base64_decode($key), 'DECODE', tt_get_option('tt_private_token'));
     if(!$data || !is_array($data) || !isset($data['id']) || !isset($data['email'])){
         return new WP_Error( 'invalid_key', __( 'The key is invalid.', 'tt' ), array( 'status' => 400 ) );
     }
 
     $user = get_user_by('id', (int)$data['id']);
     if(!$user){
-        return new WP_Error( 'user_not_found', __( 'Sorry, the user was not found.', 'tt' ), array( 'status' => 400 ) );
+        return new WP_Error( 'user_not_found', __( 'Sorry, the user was not found.', 'tt' ), array( 'status' => 404 ) );
     }
 
     reset_password($user, $new_pass);
@@ -235,7 +235,7 @@ function tt_reset_password_message( $message, $key ) {
     $reset_link = network_site_url('wp-login.php?action=rp&key=' . $key . '&login=' . rawurlencode($user_login), 'login') ;
 
     $templates = new League\Plates\Engine(THEME_TPL . '/plates/emails');
-    return $templates->render('findpass', ['userLogin' => $user_login, 'resetPassLink' => $reset_link]);
+    return $templates->render('findpass', ['home' => home_url(), 'userLogin' => $user_login, 'resetPassLink' => $reset_link]);
 }
 add_filter('retrieve_password_message', 'tt_reset_password_message', null, 2);
 

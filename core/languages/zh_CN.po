@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2017-01-01 14:57+0800\n"
-"PO-Revision-Date: 2017-01-01 14:58+0800\n"
+"POT-Creation-Date: 2017-01-02 18:06+0800\n"
+"PO-Revision-Date: 2017-01-02 18:07+0800\n"
 "Last-Translator: Zhiyan <mail@webapproach.net>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -113,7 +113,7 @@ msgstr "无效的文章ID"
 #: core/api/v1/endpoints/class.Rest.Comment.Controller.php:94
 #: core/api/v1/endpoints/class.Rest.Comment.Star.Controller.php:102
 #: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:115
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:391
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:372
 msgid "Nonce verify failed"
 msgstr "Nonce验证失败"
 
@@ -151,7 +151,7 @@ msgstr "添加评论失败"
 
 #: core/api/v1/endpoints/class.Rest.Comment.Controller.php:267
 #: core/api/v1/endpoints/class.Rest.Session.Controller.php:130
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:588
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:569
 msgid "Sorry, you are not allowed to delete this resource."
 msgstr "抱歉, 你无权删除该资源"
 
@@ -408,15 +408,15 @@ msgid "There is no user matches the info you offered"
 msgstr "未找到匹配用户"
 
 #: core/api/v1/endpoints/class.Rest.Session.Controller.php:147
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:607
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:588
 msgid "Users do not support trashing."
 msgstr "用户资源不支持删除"
 
 #: core/api/v1/endpoints/class.Rest.Session.Controller.php:152
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:238
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:265
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:529
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:612
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:510
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:593
 msgid "Invalid resource id."
 msgstr "无效的用户 id"
 
@@ -450,199 +450,218 @@ msgstr "抱歉, 你不能以角色过滤"
 
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:122
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:246
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:295
 msgid "Sorry, you cannot view this resource with edit context."
 msgstr "抱歉, 在编辑上下文中不能查看该资源"
 
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:248
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:297
 msgid "Sorry, you cannot view this resource."
 msgstr "抱歉, 你不能查看该资源"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:287
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:314
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:295
 msgid "Invalid resource email."
 msgstr "无效的用户 email"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:340
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:303
+#, php-format
+msgid "Your Password Reset Link - %s"
+msgstr "你的登录密码重置链接 - %s"
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:306
+msgid "Request to find password was sent"
+msgstr "找回密码的请求已发送，请留意邮箱邮件"
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:309
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:672
+msgid "Unknown action request"
+msgstr "未知请求操作"
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:321
 msgid "You are not currently logged in."
 msgstr "你现在尚未登录"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:361
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:342
 msgid "Sorry, you are not allowed to create resource."
 msgstr "抱歉, 你无权创建该资源"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:397
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:378
 msgid ""
 "Password length does not match the requirement, must more than or equal to 6."
 msgstr "密码长度不满足要求, 长度必须至少为6"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:406
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:387
 msgid "Captcha does not match."
 msgstr "验证码不匹配"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:412
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:393
 msgid "Invalid resource login name."
 msgstr "无效的用户名"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:416
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:397
 msgid "Login name is already existed."
 msgstr "用户名已存在"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:422
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:403
 msgid "Invalid email format."
 msgstr "无效的邮箱格式"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:426
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:407
 msgid "Email is already used."
 msgstr "邮箱已存在"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:431
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:412
 msgid "Your account activation link"
 msgstr "你的账户激活链接"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:435
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:416
 msgid ""
 "Send registration request successfully, please go to your email box to find "
 "and visit the activation link"
 msgstr "发送注册请求成功, 请查收你的邮箱并点击其中的激活链接"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:508
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:489
 msgid "Sorry, you are not allowed to edit resource."
 msgstr "抱歉, 你无权编辑资源"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:512
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:493
 msgid "Sorry, you are not allowed to edit roles of this resource."
 msgstr "抱歉, 你无权编辑该资源的角色"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:533
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:514
 msgid "Email address is invalid."
 msgstr "邮箱地址无效"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:537
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:518
 msgid "Username isn't editable"
 msgstr "用户名不可编辑"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:541
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:522
 msgid "Slug is invalid."
 msgstr "Slug 无效"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:617
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:598
 msgid "Invalid resource id for reassignment."
 msgstr "无效的再赋值资源ID"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:630
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:611
 msgid "The resource cannot be deleted."
 msgstr "用户不可删除"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:831
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:666
+msgid "Reset password failed, please retry or contact the administrator"
+msgstr "重置密码失败, 请重新尝试或联系管理员"
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:669
+msgid "Your password has been reset successfully"
+msgstr "你的密码已被重置"
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:823
 #, php-format
 msgid "The role %s does not exist."
 msgstr "角色%s不存在"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:838
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:848
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:830
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:840
 msgid "You cannot give resource that role."
 msgstr "你不能给予用户那种角色"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:868
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:860
 msgid "Unique identifier for the resource."
 msgstr "用户的唯一id"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:874
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:866
 msgid "Login name for the resource."
 msgstr "用户的登录名"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:884
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:876
 msgid "Display name for the resource."
 msgstr "用户的显示名"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:892
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:884
 msgid "First name for the resource."
 msgstr "用户的名"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:900
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:892
 msgid "Last name for the resource."
 msgstr "用户的姓"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:908
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:900
 msgid "The email address for the resource."
 msgstr "用户的邮箱地址"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:915
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:907
 msgid "URL of the resource."
 msgstr "用户的主页"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:921
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:913
 msgid "Description of the resource."
 msgstr "用户的描述"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:929
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:921
 msgid "Author URL to the resource."
 msgstr "用户的作者页"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:936
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:928
 msgid "The nickname for the resource."
 msgstr "用户的昵称"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:944
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:936
 msgid "An alphanumeric identifier for the resource."
 msgstr "该资源的字母和数字组成的ID"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:952
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:944
 msgid "Registration date for the resource."
 msgstr "用户注册日期"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:958
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:950
 msgid "Roles assigned to the resource."
 msgstr "赋予用户的角色"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:963
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:955
 msgid "Password for the resource (never included)."
 msgstr "该资源的密码(从不包括)"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:969
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:961
 msgid "All capabilities assigned to the resource."
 msgstr "用户获得的所有权限"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:974
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:966
 msgid "Any extra capabilities assigned to the resource."
 msgstr "用户获得的所有其他权限"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:988
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:980
 #, php-format
 msgid "Avatar URL with image size of %d pixels."
 msgstr "尺寸为 %d 像素的头像链接"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:996
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:988
 msgid "Avatar URLs for the resource."
 msgstr "用户的头像链接列表"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:1019
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:1011
 msgid "Ensure result set excludes specific ids."
 msgstr "确保结果设置了不包含特定id"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:1025
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:1017
 msgid "Limit result set to specific ids."
 msgstr "设置到特定id的限制结果"
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:1031
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:1023
 msgid "Offset the result set by a specific number of items."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:1038
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:1030
 msgid "Order sort attribute ascending or descending."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:1046
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:1038
 msgid "Sort collection by object attribute."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:1058
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:1050
 msgid "Limit result set to resources with a specific slug."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.User.Controller.php:1063
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:1055
 msgid ""
 "Limit result set to resources matching at least one specific role provided. "
 "Accepts csv list or single role."
@@ -2021,170 +2040,174 @@ msgstr "无效的页面模板"
 msgid "Weekly"
 msgstr "每周的"
 
-#: core/functions/func.Seo.php:28 core/functions/func.Seo.php:169
+#: core/functions/func.Seo.php:28 core/functions/func.Seo.php:172
 #: core/modules/mod.ModalLoginForm.php:17
 #: core/templates/actions/tpl.M.Signup.php:90
 msgid "Sign In"
 msgstr "登录"
 
-#: core/functions/func.Seo.php:31 core/functions/func.Seo.php:172
+#: core/functions/func.Seo.php:31 core/functions/func.Seo.php:175
 #: core/templates/actions/tpl.M.Signup.php:62
 msgid "Sign Up"
 msgstr "注册"
 
-#: core/functions/func.Seo.php:34 core/functions/func.Seo.php:175
+#: core/functions/func.Seo.php:34 core/functions/func.Seo.php:178
 msgid "Activate Registration"
 msgstr "激活注册"
 
-#: core/functions/func.Seo.php:37 core/functions/func.Seo.php:178
+#: core/functions/func.Seo.php:37 core/functions/func.Seo.php:181
 #: core/modules/mod.Header.Shop.php:103 core/modules/mod.Header.php:48
 msgid "Sign Out"
 msgstr "注销"
 
-#: core/functions/func.Seo.php:40 core/functions/func.Seo.php:181
+#: core/functions/func.Seo.php:40 core/functions/func.Seo.php:184
 #: core/templates/actions/tpl.M.Findpass.php:33
 msgid "Find Password"
 msgstr "找回密码"
 
-#: core/functions/func.Seo.php:48 core/modules/mod.Header.Shop.php:101
+#: core/functions/func.Seo.php:43
+msgid "Reset Password"
+msgstr "重置密码"
+
+#: core/functions/func.Seo.php:51 core/modules/mod.Header.Shop.php:101
 #: core/modules/mod.Header.php:46
 msgid "My Settings"
 msgstr "个人设置"
 
-#: core/functions/func.Seo.php:51 core/modules/me/me.Tab.Notifications.php:26
+#: core/functions/func.Seo.php:54 core/modules/me/me.Tab.Notifications.php:26
 msgid "My Notifications"
 msgstr "站内通知"
 
-#: core/functions/func.Seo.php:54 core/modules/me/me.Tab.Messages.php:26
+#: core/functions/func.Seo.php:57 core/modules/me/me.Tab.Messages.php:26
 #: core/modules/mod.Header.Shop.php:100 core/modules/mod.Header.php:45
 msgid "My Messages"
 msgstr "站内消息"
 
-#: core/functions/func.Seo.php:57
+#: core/functions/func.Seo.php:60
 msgid "My Stars"
 msgstr "我的收藏"
 
-#: core/functions/func.Seo.php:60 core/modules/me/me.Tab.Credits.php:26
+#: core/functions/func.Seo.php:63 core/modules/me/me.Tab.Credits.php:26
 msgid "My Credits"
 msgstr "我的积分"
 
-#: core/functions/func.Seo.php:63 core/modules/me/me.Tab.Orders.php:26
+#: core/functions/func.Seo.php:66 core/modules/me/me.Tab.Orders.php:26
 #: core/modules/mod.Header.Shop.php:99
 msgid "My Orders"
 msgstr "我的订单"
 
-#: core/functions/func.Seo.php:66
+#: core/functions/func.Seo.php:69
 msgid "My Order"
 msgstr "我的订单"
 
-#: core/functions/func.Seo.php:69 core/modules/me/me.Tab.Drafts.php:26
+#: core/functions/func.Seo.php:72 core/modules/me/me.Tab.Drafts.php:26
 msgid "My Drafts"
 msgstr "我的草稿"
 
-#: core/functions/func.Seo.php:72 core/modules/mod.Header.php:43
+#: core/functions/func.Seo.php:75 core/modules/mod.Header.php:43
 msgid "New Post"
 msgstr "新建文章"
 
-#: core/functions/func.Seo.php:75 core/modules/me/me.Tab.EditPost.php:26
+#: core/functions/func.Seo.php:78 core/modules/me/me.Tab.EditPost.php:26
 #: core/modules/uc/uc.Tab.Latest.php:34
 msgid "Edit Post"
 msgstr "编辑文章"
 
-#: core/functions/func.Seo.php:78
+#: core/functions/func.Seo.php:81
 msgid "My Membership"
 msgstr "我的会员"
 
-#: core/functions/func.Seo.php:86
+#: core/functions/func.Seo.php:89
 msgid "Check Out Orders"
 msgstr "结算订单"
 
-#: core/functions/func.Seo.php:89
+#: core/functions/func.Seo.php:92
 msgid "Payment Result"
 msgstr "支付结果"
 
-#: core/functions/func.Seo.php:92
+#: core/functions/func.Seo.php:95
 msgid "Do Payment"
 msgstr "支付"
 
-#: core/functions/func.Seo.php:96
+#: core/functions/func.Seo.php:99
 msgid "Resources Download:"
 msgstr "资源下载: "
 
-#: core/functions/func.Seo.php:99 core/templates/site/tpl.Privacy.php:23
+#: core/functions/func.Seo.php:102 core/templates/site/tpl.Privacy.php:23
 msgid "Privacy Policies and Terms"
 msgstr "隐私政策和版权声明"
 
-#: core/functions/func.Seo.php:110
+#: core/functions/func.Seo.php:113
 #, php-format
 msgid " - Page %d"
 msgstr " - 第 %d 页"
 
-#: core/functions/func.Seo.php:121 core/functions/func.Seo.php:218
+#: core/functions/func.Seo.php:124 core/functions/func.Seo.php:221
 #, php-format
 msgid "%s's Home Page"
 msgstr "%s's 个人中心"
 
-#: core/functions/func.Seo.php:125 core/functions/shop/func.Shop.php:297
+#: core/functions/func.Seo.php:128 core/functions/shop/func.Shop.php:297
 msgid "Product Category"
 msgstr "商品分类"
 
-#: core/functions/func.Seo.php:127
+#: core/functions/func.Seo.php:130
 msgid "Product Tag"
 msgstr "商品标签"
 
-#: core/functions/func.Seo.php:129 core/functions/func.Seo.php:132
-#: core/functions/func.Seo.php:230 core/modules/mod.Header.Shop.php:29
+#: core/functions/func.Seo.php:132 core/functions/func.Seo.php:135
+#: core/functions/func.Seo.php:233 core/modules/mod.Header.Shop.php:29
 #: dash/options.php:805
 msgid "Market"
 msgstr "商店"
 
-#: core/functions/func.Seo.php:135
+#: core/functions/func.Seo.php:138
 msgid "Search"
 msgstr "搜索"
 
-#: core/functions/func.Seo.php:137
+#: core/functions/func.Seo.php:140
 msgid "Y"
 msgstr "Y"
 
-#: core/functions/func.Seo.php:137 core/functions/func.Seo.php:139
-#: core/functions/func.Seo.php:141
+#: core/functions/func.Seo.php:140 core/functions/func.Seo.php:142
+#: core/functions/func.Seo.php:144
 msgid "posts archive"
 msgstr "文章归档"
 
-#: core/functions/func.Seo.php:139
+#: core/functions/func.Seo.php:142
 msgid "Y.n"
 msgstr "Y.n"
 
-#: core/functions/func.Seo.php:141
+#: core/functions/func.Seo.php:144
 msgid "Y.n.j"
 msgstr "Y.n.j"
 
-#: core/functions/func.Seo.php:143
+#: core/functions/func.Seo.php:146
 msgid "Tag: "
 msgstr "标签: "
 
-#: core/functions/func.Seo.php:145
+#: core/functions/func.Seo.php:148
 msgid "Page Not Found"
 msgstr "页面未找到"
 
-#: core/functions/func.Seo.php:150
+#: core/functions/func.Seo.php:153
 #, php-format
 msgid " - Page %d "
 msgstr " - 第 %d 页"
 
-#: core/functions/func.Seo.php:184 core/functions/func.Seo.php:218
+#: core/functions/func.Seo.php:187 core/functions/func.Seo.php:221
 msgid "Powered by Tint(Tinection 2)"
 msgstr "由Tint主题驱动(Tinection 2)"
 
-#: core/functions/func.Seo.php:217
+#: core/functions/func.Seo.php:220
 msgid "Ucenter"
 msgstr "用户中心"
 
-#: core/functions/func.Seo.php:217 core/functions/func.Seo.php:230
+#: core/functions/func.Seo.php:220 core/functions/func.Seo.php:233
 msgid "Tint Ucenter and Market System"
 msgstr "Tint主题用户中心和商店系统"
 
-#: core/functions/func.Seo.php:233
+#: core/functions/func.Seo.php:236
 msgid ""
 "Powered by Tint(Tinection 2, a powerful wordpress theme with ucenter and "
 "shop system integrated)"
@@ -2192,15 +2215,15 @@ msgstr ""
 "由Tint主题驱动(Tinection 2, 一个功能强大的内嵌用户中心和商店系统的WordPress主"
 "题)"
 
-#: core/functions/func.ShortCode.php:85
+#: core/functions/func.ShortCode.php:86
 msgid " 此处内容需要 <span class=\"user-login\">登录</span> 才可见"
 msgstr " 此处内容需要 <span class=\"user-login\">登录</span> 才可见"
 
-#: core/functions/func.ShortCode.php:94
+#: core/functions/func.ShortCode.php:95
 msgid "此处内容需要登录并 <span class=\"user-login\">发表评论</span> 才可见"
 msgstr "此处内容需要登录并 <span class=\"user-login\">发表评论</span> 才可见"
 
-#: core/functions/func.ShortCode.php:101
+#: core/functions/func.ShortCode.php:102
 msgid "此处内容需要登录并 <a href=\"#respond\">发表评论</a> 才可见"
 msgstr "此处内容需要登录并 <a href=\"#respond\">发表评论</a> 才可见"
 
@@ -3435,6 +3458,7 @@ msgstr "如果您想修改您的密码, 请在此输入新密码, 否则请留�
 
 #: core/modules/me/me.Tab.Settings.php:206
 #: core/templates/actions/tpl.M.Resetpass.php:40
+#: core/templates/actions/tpl.M.Resetpass.php:41
 msgid "Repeat Password"
 msgstr "重复密码"
 
@@ -3653,7 +3677,6 @@ msgstr "邮箱或用户名"
 #: core/modules/mod.ModalLoginForm.php:27
 #: core/templates/actions/tpl.M.Resetpass.php:38
 #: core/templates/actions/tpl.M.Resetpass.php:39
-#: core/templates/actions/tpl.M.Resetpass.php:41
 #: core/templates/actions/tpl.M.Signin.php:53
 #: core/templates/actions/tpl.M.Signup.php:49
 msgid "Password"
@@ -4314,21 +4337,9 @@ msgstr "请自定义固定链接，其是主题高级功能的基础"
 msgid "Forbidden Access"
 msgstr "禁止访问"
 
-#: core/templates/actions/tpl.M.Resetpass.php:20
-msgid "The link you visited is invalid or expired"
-msgstr "访问的链接无效或已过期"
-
-#: core/templates/actions/tpl.M.Resetpass.php:20
-msgid "Link Error"
-msgstr "链接错误"
-
 #: core/templates/actions/tpl.M.Resetpass.php:37
 msgid "Please input your new password"
 msgstr "请输入您的新密码"
-
-#: core/templates/actions/tpl.M.Resetpass.php:44
-msgid "Remember me"
-msgstr "记住我"
 
 #: core/templates/actions/tpl.M.Signin.php:70
 #: core/templates/actions/tpl.M.Signup.php:67
@@ -6171,6 +6182,15 @@ msgstr "Zhiyan"
 #. Author URI of the plugin/theme
 msgid "https://www.webapproach.net/@zhiyan"
 msgstr "https://www.webapproach.net/@zhiyan"
+
+#~ msgid "The link you visited is invalid or expired"
+#~ msgstr "访问的链接无效或已过期"
+
+#~ msgid "Link Error"
+#~ msgstr "链接错误"
+
+#~ msgid "Remember me"
+#~ msgstr "记住我"
 
 #~ msgid "购买"
 #~ msgstr "购买"

@@ -18,6 +18,8 @@ import {popMsgbox, msgbox} from './modules/msgbox';
 import {pageSignIn} from './modules/signin';
 import {pageSignUp} from './modules/signup';
 import {handleSeasonalBg} from './modules/seasonalBg';
+import FindPass from './modules/findPass';
+import ResetPass from './modules/resetPass';
 
 // DOM Ready
 jQuery(document).ready(function ($) {
@@ -44,4 +46,9 @@ jQuery(document).ready(function ($) {
         pageSignUp.init();
     }
 
+    // 找回密码(发送重置链接)
+    FindPass.init();
+    
+    // 重置密码
+    ResetPass.init();
 });

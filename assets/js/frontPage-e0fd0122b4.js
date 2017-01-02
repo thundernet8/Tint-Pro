@@ -1,11 +1,11 @@
 /**
- * Generated on Sun Dec 25 2016 19:44:37 GMT+0800 (中国标准时间) by Zhiyan
+ * Generated on Mon Jan 02 2017 18:05:14 GMT+0800 (中国标准时间) by Zhiyan
  *
  * @package   Tint
  * @version   v2.0.0
  * @author    Zhiyan <mail@webapproach.net>
  * @site      WebApproach <www.webapproach.net>
- * @copyright Copyright (c) 2014-2016, Zhiyan
+ * @copyright Copyright (c) 2014-2017, Zhiyan
  * @license   https://opensource.org/licenses/gpl-3.0.html GPL v3
  * @link      http://www.webapproach.net/tint.html
  *
