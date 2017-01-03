@@ -28,8 +28,7 @@ global $origin_post;
 $origin_post = get_post($post_id);
 
 if(!$origin_post){
-    var_dump(tt_encrypt(977, tt_get_option('tt_private_token')));
-    //wp_die(__('The resource id is invalid or resource is not exist', 'tt'), __('Invalid Resource ID', 'tt'), 404);
+    wp_die(__('The resource id is invalid or resource is not exist', 'tt'), __('Invalid Resource ID', 'tt'), 404);
 }
 
 ?>

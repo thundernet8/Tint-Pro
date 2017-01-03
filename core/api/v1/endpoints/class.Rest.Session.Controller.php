@@ -85,6 +85,30 @@ class WP_REST_Session_Controller extends WP_REST_Controller
 
         $user_login = sanitize_text_field($request->get_param('user_login'));
         $password = sanitize_text_field($request->get_param('password'));
+        $oauth = $request->get_param('oauth');
+        if($oauth !== null && in_array($oauth, (array)json_decode(ALLOWED_OAUTH_TYPES))){
+            switch($oauth) {
+                case 'qq':
+                    $open = new OpenQQ(wp_get_current_user());
+                    break;
+                case 'weibo':
+                    $open = new OpenWeibo(wp_get_current_user());
+                    break;
+                case 'weixin':
+                    $open = new OpenWeiXin(wp_get_current_user());
+                    break;
+            }
+            $open_handle_result = $open->openHandleLast($user_login, $password, false, $request->get_param('key'));
+            if($open_handle_result instanceof WP_Error){
+                return $open_handle_result;
+            }elseif(!$open_handle_result){
+                return tt_api_fail(__('Open connect failed to complete your profile', 'tt'));
+            }else{
+                return tt_api_success(__('Open connected', 'tt'));
+            }
+        }
+
+
         $nonce = trim($request->get_param('nonce'));
 
         // 验证登录nonce

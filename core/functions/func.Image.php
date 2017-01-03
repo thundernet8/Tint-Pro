@@ -131,3 +131,24 @@ function tt_update_user_avatar_by_upload($user_id = 0){
     delete_transient('tt_cache_daily_avatar_' . $user_id . '_' . md5(strval($user_id) . 'medium' . Utils::getCurrentDateTimeStr('day')));
     delete_transient('tt_cache_daily_avatar_' . $user_id . '_' . md5(strval($user_id) . 'large' . Utils::getCurrentDateTimeStr('day')));
 }
+
+
+/**
+ * 开放平台登录后清理头像等资料缓存
+ *
+ * @param $user_id
+ * @param string $avatar_type
+ */
+function tt_update_user_avatar_by_oauth($user_id, $avatar_type = 'qq'){
+    if(!$user_id) return;
+
+    update_user_meta($user_id, 'tt_avatar_type', $avatar_type); //TODO filter $avatar_type
+
+    //删除VM缓存
+    delete_transient('tt_cache_daily_vm_MeSettingsVM_user' . $user_id);
+    delete_transient('tt_cache_daily_vm_UCProfileVM_author' . $user_id);
+    //删除头像缓存
+    delete_transient('tt_cache_daily_avatar_' . $user_id . '_' . md5(strval($user_id) . 'small' . Utils::getCurrentDateTimeStr('day')));
+    delete_transient('tt_cache_daily_avatar_' . $user_id . '_' . md5(strval($user_id) . 'medium' . Utils::getCurrentDateTimeStr('day')));
+    delete_transient('tt_cache_daily_avatar_' . $user_id . '_' . md5(strval($user_id) . 'large' . Utils::getCurrentDateTimeStr('day')));
+}

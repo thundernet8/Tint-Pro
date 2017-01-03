@@ -26,10 +26,15 @@ require_once 'func.Cache.php';
  * @return  string
  */
 function tt_get_avatar($id_or_email, $size='medium'){
-    $callback = function () use ($id_or_email, $size) {
-        return (new Avatar($id_or_email, $size))->getAvatar();
-    };
-    return tt_cached((new Avatar($id_or_email, $size))->cache_key, $callback, 'avatar', 60*60*24);
+//    $callback = function () use ($id_or_email, $size) {
+//        return (new Avatar($id_or_email, $size))->getAvatar();
+//    };
+//    return tt_cached((new Avatar($id_or_email, $size))->cache_key, $callback, 'avatar', 60*60*24);
+    $instance = new Avatar($id_or_email, $size);
+    if($cache = get_transient($instance->cache_key)) {
+        return $cache;
+    }
+    return $instance->getAvatar();
 }
 
 
@@ -46,3 +51,20 @@ function tt_get_avatar($id_or_email, $size='medium'){
 //    $wpdb->query( "DELETE FROM $wpdb->options WHERE `option_name` LIKE '_transient_tt_cache_daily_avatar_%' OR `option_name` LIKE '_transient_timeout_tt_cache_daily_avatar_%'" );
 //}
 //add_action('tt_setup_common_daily_event', 'tt_daily_clear_avatar_cache');
+
+
+/**
+ * 删除头像缓存以及包含头像的多处缓存数据
+ *
+ * @since 2.0.0
+ * @param $user_id
+ */
+function tt_clear_avatar_related_cache($user_id){
+    //删除VM缓存
+    delete_transient('tt_cache_daily_vm_MeSettingsVM_user' . $user_id);
+    delete_transient('tt_cache_daily_vm_UCProfileVM_author' . $user_id);
+    //删除头像缓存
+    delete_transient('tt_cache_daily_avatar_' . $user_id . '_' . md5(strval($user_id) . 'small' . Utils::getCurrentDateTimeStr('day')));
+    delete_transient('tt_cache_daily_avatar_' . $user_id . '_' . md5(strval($user_id) . 'medium' . Utils::getCurrentDateTimeStr('day')));
+    delete_transient('tt_cache_daily_avatar_' . $user_id . '_' . md5(strval($user_id) . 'large' . Utils::getCurrentDateTimeStr('day')));
+}

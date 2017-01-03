@@ -80,7 +80,7 @@ function tt_reset_password_by_key($key, $new_pass) {
     if(!$user){
         return new WP_Error( 'user_not_found', __( 'Sorry, the user was not found.', 'tt' ), array( 'status' => 404 ) );
     }
-    
+
     reset_password($user, $new_pass);
     return $user;
 }
@@ -272,11 +272,8 @@ function tt_update_basic_profiles($user_id, $avatar_type, $nickname, $site, $des
     }
     update_user_meta($user_id, 'tt_avatar_type', $avatar_type);
 
-    //删除VM缓存
-    tt_clear_cache_key_like('tt_cache_daily_vm_MeSettingsVM_user' . $data['ID']);
-    tt_clear_cache_key_like('tt_cache_daily_vm_UCProfileVM_author_' . $data['ID']);
-    //删除头像缓存
-    tt_clear_cache_key_like('tt_cache_daily_avatar_' . strval($user_id));
+    //删除缓存
+    tt_clear_avatar_related_cache($user_id);
 
     return array(
         'success' => true,

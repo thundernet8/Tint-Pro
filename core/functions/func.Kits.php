@@ -412,6 +412,8 @@ function tt_get_css($filename = '') {
         $filename = CSS_FRONT_PAGE;
     }elseif(get_query_var('site_util')){
         $filename = CSS_SITE_UTILS;
+    }elseif(get_query_var('oauth')){
+        $filename = CSS_OAUTH;
     }else{
         // is_page() ?
         $filename = CSS_PAGE;

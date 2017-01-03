@@ -30,6 +30,9 @@ UPDATE wp_usermeta SET meta_key='tt_credits' WHERE meta_key='tin_credit'
 tin_credit_void -> tt_consumed_credits
 UPDATE wp_usermeta SET meta_key='tt_consumed_credits' WHERE meta_key='tin_credit_void'
 
+tin_twitter -> tt_twitter
+UPDATE wp_usermeta SET meta_key='tt_twitter' WHERE meta_key='tin_twitter'
+
 ## Taxonomy
 products_tag -> product_tag
 UPDATE wp_term_taxonomy SET taxonomy='product_tag' WHERE taxonomy='products_tag'

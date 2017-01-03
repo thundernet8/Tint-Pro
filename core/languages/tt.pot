@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2017-01-02 18:37+0800\n"
+"POT-Creation-Date: 2017-01-03 22:58+0800\n"
 "PO-Revision-Date: 2016-08-17 21:40+0800\n"
 "Last-Translator: \n"
 "Language-Team: Zhiyan <mail@webapproach.net>\n"
@@ -152,7 +152,7 @@ msgid "Add comment failed"
 msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.Comment.Controller.php:267
-#: core/api/v1/endpoints/class.Rest.Session.Controller.php:130
+#: core/api/v1/endpoints/class.Rest.Session.Controller.php:157
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:569
 msgid "Sorry, you are not allowed to delete this resource."
 msgstr ""
@@ -398,24 +398,32 @@ msgstr ""
 msgid "Unstar post successfully"
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Session.Controller.php:94
+#: core/api/v1/endpoints/class.Rest.Session.Controller.php:105
+msgid "Open connect failed to complete your profile"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Session.Controller.php:107
+msgid "Open connected"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Session.Controller.php:118
 msgid "Verify the login nonce failed"
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Session.Controller.php:110
+#: core/api/v1/endpoints/class.Rest.Session.Controller.php:137
 msgid "Welcome, you have signed in successfully"
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Session.Controller.php:117
+#: core/api/v1/endpoints/class.Rest.Session.Controller.php:144
 msgid "There is no user matches the info you offered"
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Session.Controller.php:147
+#: core/api/v1/endpoints/class.Rest.Session.Controller.php:174
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:588
 msgid "Users do not support trashing."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Session.Controller.php:152
+#: core/api/v1/endpoints/class.Rest.Session.Controller.php:179
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:238
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:265
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:510
@@ -423,7 +431,7 @@ msgstr ""
 msgid "Invalid resource id."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Session.Controller.php:160
+#: core/api/v1/endpoints/class.Rest.Session.Controller.php:187
 msgid "You have signed out successfully"
 msgstr ""
 
@@ -733,145 +741,160 @@ msgstr ""
 msgid "delete usermeta successfully"
 msgstr ""
 
-#: core/classes/class.Open.php:215
+#: core/classes/class.Open.php:224
 msgid "Can Not Bind QQ Again"
 msgstr ""
 
-#: core/classes/class.Open.php:216
+#: core/classes/class.Open.php:225
 msgid ""
 "You have connected with QQ before, can not do it again, please unbind it "
 "before if need"
 msgstr ""
 
-#: core/classes/class.Open.php:227
+#: core/classes/class.Open.php:236
 msgid "QQ Login Disabled"
 msgstr ""
 
-#: core/classes/class.Open.php:228
+#: core/classes/class.Open.php:237
 msgid ""
 "You have not enabled QQ login, or the required information e.g OpenID, "
 "OpenKey missed"
 msgstr ""
 
-#: core/classes/class.Open.php:239
+#: core/classes/class.Open.php:248
 msgid "QQ connected by other one"
 msgstr ""
 
-#: core/classes/class.Open.php:240
+#: core/classes/class.Open.php:249
 msgid ""
 "Someone in your WordPress user system have connected with this QQ before, "
 "please unbind it before if need"
 msgstr ""
 
-#: core/classes/class.Open.php:263
+#: core/classes/class.Open.php:272
 msgid "State Missing"
 msgstr ""
 
-#: core/classes/class.Open.php:264
+#: core/classes/class.Open.php:273
 msgid "The state parameter was not found in the url"
 msgstr ""
 
-#: core/classes/class.Open.php:271
+#: core/classes/class.Open.php:280
 msgid "State Incorrect"
 msgstr ""
 
-#: core/classes/class.Open.php:272
+#: core/classes/class.Open.php:281
 msgid "The state parameter in the url is incorrect"
 msgstr ""
 
-#: core/classes/class.Open.php:408
+#: core/classes/class.Open.php:453
 msgid "OAuth Data Not Exist"
 msgstr ""
 
-#: core/classes/class.Open.php:409
+#: core/classes/class.Open.php:454
 msgid "Can not get oauth data, please retry the oauth steps"
 msgstr ""
 
-#: core/classes/class.Open.php:440
+#: core/classes/class.Open.php:485
+msgid ""
+"The username is exist, please provide correct password for it if owned by "
+"you or choose another username"
+msgstr ""
+
+#: core/classes/class.Open.php:507
 msgid "Create New User Failed"
 msgstr ""
 
-#: core/classes/class.Open.php:531
+#: core/classes/class.Open.php:527
+msgid "请完善账号信息"
+msgstr ""
+
+#: core/classes/class.Open.php:528
+#, php-format
+msgid "欢迎来到%1$s, 请<a href=\"%2$s\">完善资料</a>"
+msgstr ""
+
+#: core/classes/class.Open.php:583
 msgid "Unallowed Open Type"
 msgstr ""
 
-#: core/classes/class.Open.php:532
+#: core/classes/class.Open.php:584
 msgid "The open connect type is not allowed"
 msgstr ""
 
-#: core/classes/class.Open.php:575
+#: core/classes/class.Open.php:627
 msgid "User Authorization Canceled"
 msgstr ""
 
-#: core/classes/class.Open.php:576
+#: core/classes/class.Open.php:628
 msgid ""
 "You should agree to authorize our application connecting your open account"
 msgstr ""
 
-#: core/classes/class.Open.php:604 core/classes/class.Open.php:821
-#: core/classes/class.Open.php:1084 core/classes/class.Open.php:1439
+#: core/classes/class.Open.php:657 core/classes/class.Open.php:876
+#: core/classes/class.Open.php:1139 core/classes/class.Open.php:1494
 msgid "User Not Logged In"
 msgstr ""
 
-#: core/classes/class.Open.php:605
+#: core/classes/class.Open.php:658
 msgid "You must be logged in and then log out"
 msgstr ""
 
-#: core/classes/class.Open.php:714
+#: core/classes/class.Open.php:769
 msgid "Grant QQ Access Token Failed"
 msgstr ""
 
-#: core/classes/class.Open.php:767
+#: core/classes/class.Open.php:822
 msgid "Grant QQ OpenID Failed"
 msgstr ""
 
-#: core/classes/class.Open.php:795
+#: core/classes/class.Open.php:850
 msgid "Grant QQ User Info Failed"
 msgstr ""
 
-#: core/classes/class.Open.php:822 core/classes/class.Open.php:1085
-#: core/classes/class.Open.php:1440
+#: core/classes/class.Open.php:877 core/classes/class.Open.php:1140
+#: core/classes/class.Open.php:1495
 msgid "You must log in to refresh your token"
 msgstr ""
 
-#: core/classes/class.Open.php:833 core/classes/class.Open.php:1096
-#: core/classes/class.Open.php:1451
+#: core/classes/class.Open.php:888 core/classes/class.Open.php:1151
+#: core/classes/class.Open.php:1506
 msgid "Refresh Token Miss"
 msgstr ""
 
-#: core/classes/class.Open.php:834 core/classes/class.Open.php:1097
-#: core/classes/class.Open.php:1452
+#: core/classes/class.Open.php:889 core/classes/class.Open.php:1152
+#: core/classes/class.Open.php:1507
 msgid "A refresh token is required to get new access token"
 msgstr ""
 
-#: core/classes/class.Open.php:978 core/classes/class.Open.php:1057
-#: core/classes/class.Open.php:1142 core/classes/class.Open.php:1271
-#: core/classes/class.Open.php:1334 core/classes/class.Open.php:1414
-#: core/classes/class.Open.php:1489
+#: core/classes/class.Open.php:1033 core/classes/class.Open.php:1112
+#: core/classes/class.Open.php:1197 core/classes/class.Open.php:1326
+#: core/classes/class.Open.php:1389 core/classes/class.Open.php:1469
+#: core/classes/class.Open.php:1544
 msgid "The open server returned with a incorrect response"
 msgstr ""
 
-#: core/classes/class.Open.php:1048 core/classes/class.Open.php:1056
+#: core/classes/class.Open.php:1103 core/classes/class.Open.php:1111
 msgid "Get WeiXin Userinfo Failed"
 msgstr ""
 
-#: core/classes/class.Open.php:1133 core/classes/class.Open.php:1141
+#: core/classes/class.Open.php:1188 core/classes/class.Open.php:1196
 msgid "Refresh WeiXin Token Failed"
 msgstr ""
 
-#: core/classes/class.Open.php:1262
+#: core/classes/class.Open.php:1317
 msgid "Grant Weibo Access Token Failed"
 msgstr ""
 
-#: core/classes/class.Open.php:1325
+#: core/classes/class.Open.php:1380
 msgid "Grant Weibo Token Info Failed"
 msgstr ""
 
-#: core/classes/class.Open.php:1405
+#: core/classes/class.Open.php:1460
 msgid "Grant Weibo User Show Info Failed"
 msgstr ""
 
-#: core/classes/class.Open.php:1480
+#: core/classes/class.Open.php:1535
 msgid "Refresh Weibo Access Token Failed"
 msgstr ""
 
@@ -2069,27 +2092,27 @@ msgstr ""
 msgid "Weekly"
 msgstr ""
 
-#: core/functions/func.Seo.php:28 core/functions/func.Seo.php:172
+#: core/functions/func.Seo.php:28 core/functions/func.Seo.php:186
 #: core/modules/mod.ModalLoginForm.php:17
 #: core/templates/actions/tpl.M.Signup.php:90
 msgid "Sign In"
 msgstr ""
 
-#: core/functions/func.Seo.php:31 core/functions/func.Seo.php:175
+#: core/functions/func.Seo.php:31 core/functions/func.Seo.php:189
 #: core/templates/actions/tpl.M.Signup.php:62
 msgid "Sign Up"
 msgstr ""
 
-#: core/functions/func.Seo.php:34 core/functions/func.Seo.php:178
+#: core/functions/func.Seo.php:34 core/functions/func.Seo.php:192
 msgid "Activate Registration"
 msgstr ""
 
-#: core/functions/func.Seo.php:37 core/functions/func.Seo.php:181
+#: core/functions/func.Seo.php:37 core/functions/func.Seo.php:195
 #: core/modules/mod.Header.Shop.php:103 core/modules/mod.Header.php:48
 msgid "Sign Out"
 msgstr ""
 
-#: core/functions/func.Seo.php:40 core/functions/func.Seo.php:184
+#: core/functions/func.Seo.php:40 core/functions/func.Seo.php:198
 #: core/templates/actions/tpl.M.Findpass.php:33
 msgid "Find Password"
 msgstr ""
@@ -2166,77 +2189,89 @@ msgstr ""
 msgid "Privacy Policies and Terms"
 msgstr ""
 
-#: core/functions/func.Seo.php:113
+#: core/functions/func.Seo.php:111
+msgid "Complete Account Info - QQ Connect"
+msgstr ""
+
+#: core/functions/func.Seo.php:114
+msgid "Complete Account Info - Weibo Connect"
+msgstr ""
+
+#: core/functions/func.Seo.php:117
+msgid "Complete Account Info - Weixin Connect"
+msgstr ""
+
+#: core/functions/func.Seo.php:127
 #, php-format
 msgid " - Page %d"
 msgstr ""
 
-#: core/functions/func.Seo.php:124 core/functions/func.Seo.php:221
+#: core/functions/func.Seo.php:138 core/functions/func.Seo.php:235
 #, php-format
 msgid "%s's Home Page"
 msgstr ""
 
-#: core/functions/func.Seo.php:128 core/functions/shop/func.Shop.php:297
+#: core/functions/func.Seo.php:142 core/functions/shop/func.Shop.php:297
 msgid "Product Category"
 msgstr ""
 
-#: core/functions/func.Seo.php:130
+#: core/functions/func.Seo.php:144
 msgid "Product Tag"
 msgstr ""
 
-#: core/functions/func.Seo.php:132 core/functions/func.Seo.php:135
-#: core/functions/func.Seo.php:233 core/modules/mod.Header.Shop.php:29
+#: core/functions/func.Seo.php:146 core/functions/func.Seo.php:149
+#: core/functions/func.Seo.php:247 core/modules/mod.Header.Shop.php:29
 #: dash/options.php:805
 msgid "Market"
 msgstr ""
 
-#: core/functions/func.Seo.php:138
+#: core/functions/func.Seo.php:152
 msgid "Search"
 msgstr ""
 
-#: core/functions/func.Seo.php:140
+#: core/functions/func.Seo.php:154
 msgid "Y"
 msgstr ""
 
-#: core/functions/func.Seo.php:140 core/functions/func.Seo.php:142
-#: core/functions/func.Seo.php:144
+#: core/functions/func.Seo.php:154 core/functions/func.Seo.php:156
+#: core/functions/func.Seo.php:158
 msgid "posts archive"
 msgstr ""
 
-#: core/functions/func.Seo.php:142
+#: core/functions/func.Seo.php:156
 msgid "Y.n"
 msgstr ""
 
-#: core/functions/func.Seo.php:144
+#: core/functions/func.Seo.php:158
 msgid "Y.n.j"
 msgstr ""
 
-#: core/functions/func.Seo.php:146
+#: core/functions/func.Seo.php:160
 msgid "Tag: "
 msgstr ""
 
-#: core/functions/func.Seo.php:148
+#: core/functions/func.Seo.php:162
 msgid "Page Not Found"
 msgstr ""
 
-#: core/functions/func.Seo.php:153
+#: core/functions/func.Seo.php:167
 #, php-format
 msgid " - Page %d "
 msgstr ""
 
-#: core/functions/func.Seo.php:187 core/functions/func.Seo.php:221
+#: core/functions/func.Seo.php:201 core/functions/func.Seo.php:235
 msgid "Powered by Tint(Tinection 2)"
 msgstr ""
 
-#: core/functions/func.Seo.php:220
+#: core/functions/func.Seo.php:234
 msgid "Ucenter"
 msgstr ""
 
-#: core/functions/func.Seo.php:220 core/functions/func.Seo.php:233
+#: core/functions/func.Seo.php:234 core/functions/func.Seo.php:247
 msgid "Tint Ucenter and Market System"
 msgstr ""
 
-#: core/functions/func.Seo.php:236
+#: core/functions/func.Seo.php:250
 msgid ""
 "Powered by Tint(Tinection 2, a powerful wordpress theme with ucenter and "
 "shop system integrated)"
@@ -3306,20 +3341,28 @@ msgstr ""
 msgid "Avatar"
 msgstr ""
 
-#: core/modules/me/me.Tab.Settings.php:33
-#: core/modules/me/me.Tab.Settings.php:40
+#: core/modules/me/me.Tab.Settings.php:32
 msgid "Upload Avatar"
 msgstr ""
 
-#: core/modules/me/me.Tab.Settings.php:37
-#: core/modules/me/me.Tab.Settings.php:44
-#: core/modules/me/me.Tab.Settings.php:46
-msgid "Default Avatar"
+#: core/modules/me/me.Tab.Settings.php:36
+msgid "Custom Avatar"
 msgstr ""
 
-#: core/modules/me/me.Tab.Settings.php:37
-#: core/modules/me/me.Tab.Settings.php:44
-msgid "Custom Avatar"
+#: core/modules/me/me.Tab.Settings.php:38
+msgid "Letter Avatar"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:40
+msgid "QQ Avatar"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:43
+msgid "Weibo Avatar"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:46
+msgid "Weixin Avatar"
 msgstr ""
 
 #: core/modules/me/me.Tab.Settings.php:52
@@ -3496,6 +3539,7 @@ msgstr ""
 #: core/modules/me/me.Tab.Settings.php:206
 #: core/templates/actions/tpl.M.Resetpass.php:40
 #: core/templates/actions/tpl.M.Resetpass.php:41
+#: core/templates/oauth/tpl.OAuth.Last.php:33
 msgid "Repeat Password"
 msgstr ""
 
@@ -3698,6 +3742,7 @@ msgstr ""
 #: core/templates/actions/tpl.M.Resetpass.php:39
 #: core/templates/actions/tpl.M.Signin.php:53
 #: core/templates/actions/tpl.M.Signup.php:49
+#: core/templates/oauth/tpl.OAuth.Last.php:34
 msgid "Password"
 msgstr ""
 
@@ -4443,11 +4488,26 @@ msgid ""
 "emails, newsletters &amp; updates."
 msgstr ""
 
-#: core/templates/oauth/tpl.OAuth.php:33
+#: core/templates/oauth/tpl.OAuth.Last.php:29
+msgid "The Last Step, Complete Basic Account Info"
+msgstr ""
+
+#: core/templates/oauth/tpl.OAuth.Last.php:31
+#: core/templates/oauth/tpl.OAuth.Last.php:32
+msgid "Username"
+msgstr ""
+
+#: core/templates/oauth/tpl.OAuth.Last.php:35
+msgid "Bind"
+msgstr ""
+
+#: core/templates/oauth/tpl.OAuth.php:24
+#: core/templates/oauth/tpl.OAuth.php:48
 msgid "The request you have done is illegal, please retry"
 msgstr ""
 
-#: core/templates/oauth/tpl.OAuth.php:33
+#: core/templates/oauth/tpl.OAuth.php:24
+#: core/templates/oauth/tpl.OAuth.php:48
 msgid "Illegal Request"
 msgstr ""
 
@@ -4749,7 +4809,12 @@ msgid "The required resource id is missing"
 msgstr ""
 
 #: core/templates/site/tpl.Download.php:22
+#: core/templates/site/tpl.Download.php:31
 msgid "Invalid Resource ID"
+msgstr ""
+
+#: core/templates/site/tpl.Download.php:31
+msgid "The resource id is invalid or resource is not exist"
 msgstr ""
 
 #: core/templates/site/tpl.PayGateway.php:22

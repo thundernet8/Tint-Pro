@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2017-01-02 18:37+0800\n"
-"PO-Revision-Date: 2017-01-02 18:39+0800\n"
+"POT-Creation-Date: 2017-01-03 22:58+0800\n"
+"PO-Revision-Date: 2017-01-03 22:59+0800\n"
 "Last-Translator: Zhiyan <mail@webapproach.net>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -150,7 +150,7 @@ msgid "Add comment failed"
 msgstr "添加评论失败"
 
 #: core/api/v1/endpoints/class.Rest.Comment.Controller.php:267
-#: core/api/v1/endpoints/class.Rest.Session.Controller.php:130
+#: core/api/v1/endpoints/class.Rest.Session.Controller.php:157
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:569
 msgid "Sorry, you are not allowed to delete this resource."
 msgstr "抱歉, 你无权删除该资源"
@@ -395,24 +395,32 @@ msgstr "删除收藏失败"
 msgid "Unstar post successfully"
 msgstr "删除收藏成功"
 
-#: core/api/v1/endpoints/class.Rest.Session.Controller.php:94
+#: core/api/v1/endpoints/class.Rest.Session.Controller.php:105
+msgid "Open connect failed to complete your profile"
+msgstr "开放平台登录失败, 必要资料未完成"
+
+#: core/api/v1/endpoints/class.Rest.Session.Controller.php:107
+msgid "Open connected"
+msgstr "开放平台连接登录成功"
+
+#: core/api/v1/endpoints/class.Rest.Session.Controller.php:118
 msgid "Verify the login nonce failed"
 msgstr "验证登录Nonce失败"
 
-#: core/api/v1/endpoints/class.Rest.Session.Controller.php:110
+#: core/api/v1/endpoints/class.Rest.Session.Controller.php:137
 msgid "Welcome, you have signed in successfully"
 msgstr "欢迎, 你已成功登录"
 
-#: core/api/v1/endpoints/class.Rest.Session.Controller.php:117
+#: core/api/v1/endpoints/class.Rest.Session.Controller.php:144
 msgid "There is no user matches the info you offered"
 msgstr "未找到匹配用户"
 
-#: core/api/v1/endpoints/class.Rest.Session.Controller.php:147
+#: core/api/v1/endpoints/class.Rest.Session.Controller.php:174
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:588
 msgid "Users do not support trashing."
 msgstr "用户资源不支持删除"
 
-#: core/api/v1/endpoints/class.Rest.Session.Controller.php:152
+#: core/api/v1/endpoints/class.Rest.Session.Controller.php:179
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:238
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:265
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:510
@@ -420,7 +428,7 @@ msgstr "用户资源不支持删除"
 msgid "Invalid resource id."
 msgstr "无效的用户 id"
 
-#: core/api/v1/endpoints/class.Rest.Session.Controller.php:160
+#: core/api/v1/endpoints/class.Rest.Session.Controller.php:187
 msgid "You have signed out successfully"
 msgstr "你已成功登出"
 
@@ -729,145 +737,160 @@ msgstr "该用户元数据不可删除"
 msgid "delete usermeta successfully"
 msgstr "删除用户元数据成功"
 
-#: core/classes/class.Open.php:215
+#: core/classes/class.Open.php:224
 msgid "Can Not Bind QQ Again"
 msgstr "不能重复绑定QQ"
 
-#: core/classes/class.Open.php:216
+#: core/classes/class.Open.php:225
 msgid ""
 "You have connected with QQ before, can not do it again, please unbind it "
 "before if need"
 msgstr "你之前连接过QQ开放平台, 在解绑之前, 你不能重复绑定"
 
-#: core/classes/class.Open.php:227
+#: core/classes/class.Open.php:236
 msgid "QQ Login Disabled"
 msgstr "QQ 登录禁用"
 
-#: core/classes/class.Open.php:228
+#: core/classes/class.Open.php:237
 msgid ""
 "You have not enabled QQ login, or the required information e.g OpenID, "
 "OpenKey missed"
 msgstr "没有开启QQ登录, 或者必须的信息如OpenID, OpenKey丢失"
 
-#: core/classes/class.Open.php:239
+#: core/classes/class.Open.php:248
 msgid "QQ connected by other one"
 msgstr "QQ已连接至另一个用户"
 
-#: core/classes/class.Open.php:240
+#: core/classes/class.Open.php:249
 msgid ""
 "Someone in your WordPress user system have connected with this QQ before, "
 "please unbind it before if need"
 msgstr "WordPress的用户中已有绑定了该QQ, 必须先解绑才能重新连接至此QQ"
 
-#: core/classes/class.Open.php:263
+#: core/classes/class.Open.php:272
 msgid "State Missing"
 msgstr "State交换码丢失"
 
-#: core/classes/class.Open.php:264
+#: core/classes/class.Open.php:273
 msgid "The state parameter was not found in the url"
 msgstr "URL缺少state参数"
 
-#: core/classes/class.Open.php:271
+#: core/classes/class.Open.php:280
 msgid "State Incorrect"
 msgstr "State交换码错误"
 
-#: core/classes/class.Open.php:272
+#: core/classes/class.Open.php:281
 msgid "The state parameter in the url is incorrect"
 msgstr "URL中的state参数无效"
 
-#: core/classes/class.Open.php:408
+#: core/classes/class.Open.php:453
 msgid "OAuth Data Not Exist"
 msgstr "不存在OAuth数据"
 
-#: core/classes/class.Open.php:409
+#: core/classes/class.Open.php:454
 msgid "Can not get oauth data, please retry the oauth steps"
 msgstr "无法获取 OAuth数据, 请重试授权步骤"
 
-#: core/classes/class.Open.php:440
+#: core/classes/class.Open.php:485
+msgid ""
+"The username is exist, please provide correct password for it if owned by "
+"you or choose another username"
+msgstr "该用户名已存在, 请提供正确的密码以供连接或重选新的用户名"
+
+#: core/classes/class.Open.php:507
 msgid "Create New User Failed"
 msgstr "创建新用户失败"
 
-#: core/classes/class.Open.php:531
+#: core/classes/class.Open.php:527
+msgid "请完善账号信息"
+msgstr ""
+
+#: core/classes/class.Open.php:528
+#, php-format
+msgid "欢迎来到%1$s, 请<a href=\"%2$s\">完善资料</a>"
+msgstr ""
+
+#: core/classes/class.Open.php:583
 msgid "Unallowed Open Type"
 msgstr "不允许的开放平台登录类型"
 
-#: core/classes/class.Open.php:532
+#: core/classes/class.Open.php:584
 msgid "The open connect type is not allowed"
 msgstr "不允许该开放平台登录"
 
-#: core/classes/class.Open.php:575
+#: core/classes/class.Open.php:627
 msgid "User Authorization Canceled"
 msgstr "用户取消了授权"
 
-#: core/classes/class.Open.php:576
+#: core/classes/class.Open.php:628
 msgid ""
 "You should agree to authorize our application connecting your open account"
 msgstr "你应该同意授权本应用连接你的开放平台账户"
 
-#: core/classes/class.Open.php:604 core/classes/class.Open.php:821
-#: core/classes/class.Open.php:1084 core/classes/class.Open.php:1439
+#: core/classes/class.Open.php:657 core/classes/class.Open.php:876
+#: core/classes/class.Open.php:1139 core/classes/class.Open.php:1494
 msgid "User Not Logged In"
 msgstr "用户未登录"
 
-#: core/classes/class.Open.php:605
+#: core/classes/class.Open.php:658
 msgid "You must be logged in and then log out"
 msgstr "你必须登录了才能登出"
 
-#: core/classes/class.Open.php:714
+#: core/classes/class.Open.php:769
 msgid "Grant QQ Access Token Failed"
 msgstr "获取 QQ Access Token 失败"
 
-#: core/classes/class.Open.php:767
+#: core/classes/class.Open.php:822
 msgid "Grant QQ OpenID Failed"
 msgstr "获取 QQ OpenID 失败"
 
-#: core/classes/class.Open.php:795
+#: core/classes/class.Open.php:850
 msgid "Grant QQ User Info Failed"
 msgstr "获取 QQ 用户信息失败"
 
-#: core/classes/class.Open.php:822 core/classes/class.Open.php:1085
-#: core/classes/class.Open.php:1440
+#: core/classes/class.Open.php:877 core/classes/class.Open.php:1140
+#: core/classes/class.Open.php:1495
 msgid "You must log in to refresh your token"
 msgstr "你必须登录才能刷新Token"
 
-#: core/classes/class.Open.php:833 core/classes/class.Open.php:1096
-#: core/classes/class.Open.php:1451
+#: core/classes/class.Open.php:888 core/classes/class.Open.php:1151
+#: core/classes/class.Open.php:1506
 msgid "Refresh Token Miss"
 msgstr "丢失Refresh Token"
 
-#: core/classes/class.Open.php:834 core/classes/class.Open.php:1097
-#: core/classes/class.Open.php:1452
+#: core/classes/class.Open.php:889 core/classes/class.Open.php:1152
+#: core/classes/class.Open.php:1507
 msgid "A refresh token is required to get new access token"
 msgstr "需要 Refresh Token 以获取新的 Access Token"
 
-#: core/classes/class.Open.php:978 core/classes/class.Open.php:1057
-#: core/classes/class.Open.php:1142 core/classes/class.Open.php:1271
-#: core/classes/class.Open.php:1334 core/classes/class.Open.php:1414
-#: core/classes/class.Open.php:1489
+#: core/classes/class.Open.php:1033 core/classes/class.Open.php:1112
+#: core/classes/class.Open.php:1197 core/classes/class.Open.php:1326
+#: core/classes/class.Open.php:1389 core/classes/class.Open.php:1469
+#: core/classes/class.Open.php:1544
 msgid "The open server returned with a incorrect response"
 msgstr "开放平台服务器响应格式错误"
 
-#: core/classes/class.Open.php:1048 core/classes/class.Open.php:1056
+#: core/classes/class.Open.php:1103 core/classes/class.Open.php:1111
 msgid "Get WeiXin Userinfo Failed"
 msgstr "获取微信用户信息失败"
 
-#: core/classes/class.Open.php:1133 core/classes/class.Open.php:1141
+#: core/classes/class.Open.php:1188 core/classes/class.Open.php:1196
 msgid "Refresh WeiXin Token Failed"
 msgstr "刷新微信 Token 失败"
 
-#: core/classes/class.Open.php:1262
+#: core/classes/class.Open.php:1317
 msgid "Grant Weibo Access Token Failed"
 msgstr "获取微博 Access Token 失败"
 
-#: core/classes/class.Open.php:1325
+#: core/classes/class.Open.php:1380
 msgid "Grant Weibo Token Info Failed"
 msgstr "获取微博 Token 信息失败"
 
-#: core/classes/class.Open.php:1405
+#: core/classes/class.Open.php:1460
 msgid "Grant Weibo User Show Info Failed"
 msgstr "获取微博用户信息失败"
 
-#: core/classes/class.Open.php:1480
+#: core/classes/class.Open.php:1535
 msgid "Refresh Weibo Access Token Failed"
 msgstr "刷新微博 Access Token 失败"
 
@@ -2044,27 +2067,27 @@ msgstr "无效的页面模板"
 msgid "Weekly"
 msgstr "每周的"
 
-#: core/functions/func.Seo.php:28 core/functions/func.Seo.php:172
+#: core/functions/func.Seo.php:28 core/functions/func.Seo.php:186
 #: core/modules/mod.ModalLoginForm.php:17
 #: core/templates/actions/tpl.M.Signup.php:90
 msgid "Sign In"
 msgstr "登录"
 
-#: core/functions/func.Seo.php:31 core/functions/func.Seo.php:175
+#: core/functions/func.Seo.php:31 core/functions/func.Seo.php:189
 #: core/templates/actions/tpl.M.Signup.php:62
 msgid "Sign Up"
 msgstr "注册"
 
-#: core/functions/func.Seo.php:34 core/functions/func.Seo.php:178
+#: core/functions/func.Seo.php:34 core/functions/func.Seo.php:192
 msgid "Activate Registration"
 msgstr "激活注册"
 
-#: core/functions/func.Seo.php:37 core/functions/func.Seo.php:181
+#: core/functions/func.Seo.php:37 core/functions/func.Seo.php:195
 #: core/modules/mod.Header.Shop.php:103 core/modules/mod.Header.php:48
 msgid "Sign Out"
 msgstr "注销"
 
-#: core/functions/func.Seo.php:40 core/functions/func.Seo.php:184
+#: core/functions/func.Seo.php:40 core/functions/func.Seo.php:198
 #: core/templates/actions/tpl.M.Findpass.php:33
 msgid "Find Password"
 msgstr "找回密码"
@@ -2141,77 +2164,89 @@ msgstr "资源下载: "
 msgid "Privacy Policies and Terms"
 msgstr "隐私政策和版权声明"
 
-#: core/functions/func.Seo.php:113
+#: core/functions/func.Seo.php:111
+msgid "Complete Account Info - QQ Connect"
+msgstr "完善账户信息 - 连接QQ"
+
+#: core/functions/func.Seo.php:114
+msgid "Complete Account Info - Weibo Connect"
+msgstr "完善账户信息 - 连接微博"
+
+#: core/functions/func.Seo.php:117
+msgid "Complete Account Info - Weixin Connect"
+msgstr "完善账户信息 - 连接微信"
+
+#: core/functions/func.Seo.php:127
 #, php-format
 msgid " - Page %d"
 msgstr " - 第 %d 页"
 
-#: core/functions/func.Seo.php:124 core/functions/func.Seo.php:221
+#: core/functions/func.Seo.php:138 core/functions/func.Seo.php:235
 #, php-format
 msgid "%s's Home Page"
 msgstr "%s's 个人中心"
 
-#: core/functions/func.Seo.php:128 core/functions/shop/func.Shop.php:297
+#: core/functions/func.Seo.php:142 core/functions/shop/func.Shop.php:297
 msgid "Product Category"
 msgstr "商品分类"
 
-#: core/functions/func.Seo.php:130
+#: core/functions/func.Seo.php:144
 msgid "Product Tag"
 msgstr "商品标签"
 
-#: core/functions/func.Seo.php:132 core/functions/func.Seo.php:135
-#: core/functions/func.Seo.php:233 core/modules/mod.Header.Shop.php:29
+#: core/functions/func.Seo.php:146 core/functions/func.Seo.php:149
+#: core/functions/func.Seo.php:247 core/modules/mod.Header.Shop.php:29
 #: dash/options.php:805
 msgid "Market"
 msgstr "商店"
 
-#: core/functions/func.Seo.php:138
+#: core/functions/func.Seo.php:152
 msgid "Search"
 msgstr "搜索"
 
-#: core/functions/func.Seo.php:140
+#: core/functions/func.Seo.php:154
 msgid "Y"
 msgstr "Y"
 
-#: core/functions/func.Seo.php:140 core/functions/func.Seo.php:142
-#: core/functions/func.Seo.php:144
+#: core/functions/func.Seo.php:154 core/functions/func.Seo.php:156
+#: core/functions/func.Seo.php:158
 msgid "posts archive"
 msgstr "文章归档"
 
-#: core/functions/func.Seo.php:142
+#: core/functions/func.Seo.php:156
 msgid "Y.n"
 msgstr "Y.n"
 
-#: core/functions/func.Seo.php:144
+#: core/functions/func.Seo.php:158
 msgid "Y.n.j"
 msgstr "Y.n.j"
 
-#: core/functions/func.Seo.php:146
+#: core/functions/func.Seo.php:160
 msgid "Tag: "
 msgstr "标签: "
 
-#: core/functions/func.Seo.php:148
+#: core/functions/func.Seo.php:162
 msgid "Page Not Found"
 msgstr "页面未找到"
 
-#: core/functions/func.Seo.php:153
+#: core/functions/func.Seo.php:167
 #, php-format
 msgid " - Page %d "
 msgstr " - 第 %d 页"
 
-#: core/functions/func.Seo.php:187 core/functions/func.Seo.php:221
+#: core/functions/func.Seo.php:201 core/functions/func.Seo.php:235
 msgid "Powered by Tint(Tinection 2)"
 msgstr "由Tint主题驱动(Tinection 2)"
 
-#: core/functions/func.Seo.php:220
+#: core/functions/func.Seo.php:234
 msgid "Ucenter"
 msgstr "用户中心"
 
-#: core/functions/func.Seo.php:220 core/functions/func.Seo.php:233
+#: core/functions/func.Seo.php:234 core/functions/func.Seo.php:247
 msgid "Tint Ucenter and Market System"
 msgstr "Tint主题用户中心和商店系统"
 
-#: core/functions/func.Seo.php:236
+#: core/functions/func.Seo.php:250
 msgid ""
 "Powered by Tint(Tinection 2, a powerful wordpress theme with ucenter and "
 "shop system integrated)"
@@ -3275,21 +3310,29 @@ msgstr "基本信息"
 msgid "Avatar"
 msgstr "头像"
 
-#: core/modules/me/me.Tab.Settings.php:33
-#: core/modules/me/me.Tab.Settings.php:40
+#: core/modules/me/me.Tab.Settings.php:32
 msgid "Upload Avatar"
 msgstr "上传头像"
 
-#: core/modules/me/me.Tab.Settings.php:37
-#: core/modules/me/me.Tab.Settings.php:44
-#: core/modules/me/me.Tab.Settings.php:46
-msgid "Default Avatar"
-msgstr "默认头像"
-
-#: core/modules/me/me.Tab.Settings.php:37
-#: core/modules/me/me.Tab.Settings.php:44
+#: core/modules/me/me.Tab.Settings.php:36
 msgid "Custom Avatar"
 msgstr "自定义头像"
+
+#: core/modules/me/me.Tab.Settings.php:38
+msgid "Letter Avatar"
+msgstr "默认头像"
+
+#: core/modules/me/me.Tab.Settings.php:40
+msgid "QQ Avatar"
+msgstr "QQ头像"
+
+#: core/modules/me/me.Tab.Settings.php:43
+msgid "Weibo Avatar"
+msgstr "微博头像"
+
+#: core/modules/me/me.Tab.Settings.php:46
+msgid "Weixin Avatar"
+msgstr "微信头像"
 
 #: core/modules/me/me.Tab.Settings.php:52 core/modules/uc/uc.Tab.Profile.php:43
 msgid "Nickname"
@@ -3463,6 +3506,7 @@ msgstr "如果您想修改您的密码, 请在此输入新密码, 否则请留�
 #: core/modules/me/me.Tab.Settings.php:206
 #: core/templates/actions/tpl.M.Resetpass.php:40
 #: core/templates/actions/tpl.M.Resetpass.php:41
+#: core/templates/oauth/tpl.OAuth.Last.php:33
 msgid "Repeat Password"
 msgstr "重复密码"
 
@@ -3683,6 +3727,7 @@ msgstr "邮箱或用户名"
 #: core/templates/actions/tpl.M.Resetpass.php:39
 #: core/templates/actions/tpl.M.Signin.php:53
 #: core/templates/actions/tpl.M.Signup.php:49
+#: core/templates/oauth/tpl.OAuth.Last.php:34
 msgid "Password"
 msgstr "密码"
 
@@ -4424,11 +4469,24 @@ msgstr ""
 "* 提交注册代表您同意我们的<a href=\"%s\" target=\"_blank\"><strong>「使用条款"
 "与隐私政策」</strong></a> 并接受来自网站的邮件、订阅信和其他同步信息."
 
-#: core/templates/oauth/tpl.OAuth.php:33
+#: core/templates/oauth/tpl.OAuth.Last.php:29
+msgid "The Last Step, Complete Basic Account Info"
+msgstr "最后一步 完善账号信息"
+
+#: core/templates/oauth/tpl.OAuth.Last.php:31
+#: core/templates/oauth/tpl.OAuth.Last.php:32
+msgid "Username"
+msgstr "用户名"
+
+#: core/templates/oauth/tpl.OAuth.Last.php:35
+msgid "Bind"
+msgstr "完成"
+
+#: core/templates/oauth/tpl.OAuth.php:24 core/templates/oauth/tpl.OAuth.php:48
 msgid "The request you have done is illegal, please retry"
 msgstr "非法请求，请重试"
 
-#: core/templates/oauth/tpl.OAuth.php:33
+#: core/templates/oauth/tpl.OAuth.php:24 core/templates/oauth/tpl.OAuth.php:48
 msgid "Illegal Request"
 msgstr "非法请求"
 
@@ -4730,8 +4788,14 @@ msgid "The required resource id is missing"
 msgstr "必须的资源ID丢失"
 
 #: core/templates/site/tpl.Download.php:22
+#: core/templates/site/tpl.Download.php:31
 msgid "Invalid Resource ID"
 msgstr "无效的资源ID"
+
+#: core/templates/site/tpl.Download.php:31
+#, fuzzy
+msgid "The resource id is invalid or resource is not exist"
+msgstr "你要购买的资源不存在"
 
 #: core/templates/site/tpl.PayGateway.php:22
 msgid "The required parameters for payment are missing"

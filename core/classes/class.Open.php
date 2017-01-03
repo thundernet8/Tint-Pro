@@ -29,6 +29,15 @@ abstract class Open{
      */
     protected static $_redirect_cookie_name = 'tt_oauth_redirect';
 
+
+    /**
+     * 保存oauth获取的token等信息的缓存key
+     *
+     * @since 2.0.0
+     * @var string
+     */
+    protected $_data_transient_key;
+
     /**
      * 是否启用该平台登录
      *
@@ -318,6 +327,44 @@ abstract class Open{
      */
     abstract protected function refreshToken();
 
+
+    /**
+     * 开放平台连接将要成功时将一些token/openID以及可用的资料信息保存到用户的meta
+     *
+     * @since 2.0.0
+     *
+     * @param $user_id
+     * @param $data
+     */
+    protected function saveOpenInfoAndProfile($user_id, $data){
+        // 将Open数据存储到对应用户meta
+        update_user_meta($user_id, static::$_openid_meta_key, $data['openid']);
+        update_user_meta($user_id, static::$_access_token_meta_key, $data['access_token']);
+        update_user_meta($user_id, static::$_refresh_token_meta_key, $data['refresh_token']);
+        update_user_meta($user_id, static::$_token_expiration_meta_key, $data['expiration']);
+
+        if(static::$_type === 'weixin'){
+            update_user_meta($user_id, 'tt_weixin_avatar', $data['headimgurl']);
+            update_user_meta($user_id, 'tt_weixin_unionid', $data['unionid']);
+            update_user_meta($user_id, 'tt_user_country', $data['country']); // 国家，如中国为CN
+            update_user_meta($user_id, 'tt_user_province', $data['province']); // 普通用户个人资料填写的省份
+            update_user_meta($user_id, 'tt_user_city', $data['city']); // 普通用户个人资料填写的城市
+            update_user_meta($user_id, 'tt_user_sex', $data['sex']==2 ? 'female' : 'male'); // 普通用户性别，1为男性，2为女性
+        }
+
+        if(static::$_type === 'weibo'){
+            update_user_meta($user_id, 'tt_weibo_avatar', $data['avatar_large']);
+            update_user_meta($user_id, 'tt_weibo_profile_img', $data['profile_image_url']);
+            update_user_meta($user_id, 'tt_weibo_id', $data['id']);
+            update_user_meta($user_id, 'tt_user_description', $data['description']);
+            update_user_meta($user_id, 'tt_user_location', $data['location']);
+            update_user_meta($user_id, 'tt_user_sex', $data['sex']!='m' ? 'female' : 'male'); // 普通用户性别，m为男性，f为女性
+        }
+
+        // 使用开放平台头像
+        tt_update_user_avatar_by_oauth($user_id, static::$_type);
+    }
+
     /**
      * 获取必要的信息完成后尝试登入并连接WP用户系统
      * @param string $openid 用户openid
@@ -328,6 +375,14 @@ abstract class Open{
      * @return bool
      */
     protected function openSignIn($openid, $access_token, $refresh_token, $expiration, $info){
+        setcookie(static::$_state_cookie_name, null); // 删除state的cookie
+
+        $data = (array)$info;
+        $data['openid'] = $openid;
+        $data['access_token'] = $access_token;
+        $data['refresh_token'] = $refresh_token;
+        $data['expiration'] = $expiration;
+        $data['name'] = $info->name;
 
         global $wpdb;
         $user_exist = $wpdb->get_var( $wpdb->prepare("SELECT user_id FROM $wpdb->usermeta WHERE meta_key=%s AND meta_value=%s", static::$_openid_meta_key, $openid) );
@@ -338,18 +393,21 @@ abstract class Open{
 
         if( isset($user_exist) && (int)$user_exist>0 ){
             // 该开放平台账号已连接过WP系统，再次使用它登录并更新相关信息
-            $insert_user_id = (int)$user_exist;
-            update_user_meta( $insert_user_id, static::$_openid_meta_key, $openid );
-            update_user_meta( $insert_user_id, static::$_access_token_meta_key, $access_token );
-            update_user_meta( $insert_user_id, static::$_refresh_token_meta_key, $refresh_token );
-            update_user_meta( $insert_user_id, static::$_token_expiration_meta_key, $expiration );
+            $user_exist = (int)$user_exist;
+            $this->saveOpenInfoAndProfile($user_exist, $data);
 
-            update_user_meta( $insert_user_id, 'tt_latest_login', current_time( 'mysql' ) ); // TODO: 记录登录时间
-            wp_set_current_user( $insert_user_id );
-            wp_set_auth_cookie( $insert_user_id );
+            //update_user_meta( $user_exist, 'tt_latest_login', current_time( 'mysql' ) ); // 由wp_login钩子去做
+            wp_set_current_user( $user_exist );
+            wp_set_auth_cookie( $user_exist );
 
-            $user_login = get_userdata($insert_user_id)->user_login;
+            $user_login = get_userdata($user_exist)->user_login;
             do_action( 'wp_login', $user_login );  // 保证挂载的action执行
+
+            wp_safe_redirect(self::getRedirect());
+            exit;
+        }elseif($current_user_id = get_current_user_id()){
+            // Open 连接未被占用且当前已登录了本地账号, 那么直接绑定信息到该账号 case: 从个人资料设置中点击了绑定社交账号等操作
+            $this->saveOpenInfoAndProfile($current_user_id, $data);
 
             wp_safe_redirect(self::getRedirect());
             exit;
@@ -357,20 +415,10 @@ abstract class Open{
             // 该开放平台账号未连接过WP系统，使用它登录并分配和绑定一个WP本地新用户
             // 为了方便用户自主定义一些用户信息，需跳转至/oauth/[type]/last页面提示用户输入必要信息(GET跳转)
             // 安全起见， 数据序列化后保存在WP缓存中，由下个页面取出
-            $data = (array)$info;
-            $data['openid'] = $openid;
-            $data['access_token'] = $access_token;
-            $data['refresh_token'] = $refresh_token;
-            $data['expiration'] = $expiration;
-            $data['name'] = $info->name;
-            $_data_transient_key = 'tt_oauth_temp_data_' . strtolower(Utils::generateRandomStr(10, 'letter'));
+            $_data_transient_key = md5('tt_oauth_temp_data_' . strtolower(Utils::generateRandomStr(10, 'letter')));
             set_transient($_data_transient_key, maybe_serialize($data), 60*10); // 10分钟缓存过期时间
 
-            session_start();
-
-            $_SESSION[static::$_oauth_data_session_key] = $_data_transient_key;
-
-            wp_safe_redirect(esc_url( add_query_arg('redirect', urlencode(self::getRedirect()), tt_url_for(static::$_oauth_last_url_key))));
+            wp_safe_redirect(add_query_arg(array('redirect' => urlencode(self::getRedirect()), 'key' => $_data_transient_key), tt_url_for(static::$_oauth_last_url_key)));
             exit;
         }
 
@@ -386,8 +434,7 @@ abstract class Open{
      */
     protected function openSignUpPrepare($delete_cache = false){
         // 尝试获取存放在缓存的OAuth数据，保证流程正确
-        session_start();
-        $_data_transient_key = isset($_SESSION[static::$_oauth_data_session_key]) ? $_SESSION[static::$_oauth_data_session_key] : '';
+        $_data_transient_key = $this->_data_transient_key;
         if($_data_transient_key && $cache_data = get_transient($_data_transient_key)){
             $data = (array)maybe_unserialize($cache_data);
             // $user_login = strtoupper(static::$_type) . $openid; // 有暴露openid风险
@@ -396,9 +443,7 @@ abstract class Open{
 
             if($delete_cache){
                 // 删除OAuth数据缓存
-                delete_transient($_data_transient_key);
-                // 删除Session中的cache key
-                unset($_SESSION[static::$_oauth_data_session_key]);
+                //delete_transient($_data_transient_key); //TODO uncomment
             }
 
             // 返回随机生成的用户名填充输入框默认值
@@ -420,20 +465,42 @@ abstract class Open{
      *
      * @param   string  $user_login  用户登录名
      * @param   string  $password   用户密码
-     * @return  bool|string
+     * @return  bool|string|WP_Error
      */
     protected function openSignUp($user_login, $password){
         // 获取缓存的OAuth数据
         $data = $this->openSignUpPrepare(true);
         if(!$data) return false;
 
-        // 开放平台连接并需要新建一个本地用户绑定
-        $insert_user_id = wp_insert_user( array(
-            'user_login'  => $user_login,
-            'nickname'  => $data['name'],
-            'display_name'  => $data['name'],
-            'user_pass' => $password
-        ) ) ;
+        // 判断对应用户名是否已使用, 已使用则要求提供正确的密码作为登录凭据, 并将该开放平台账号绑定到该账户
+        // 账户可为普通用户名或邮箱
+        $is_new = true;
+        if(is_email($user_login)){
+            $user = get_user_by('email', $user_login);
+        }else{
+            $user = get_user_by('login', $user_login);
+        }
+        if($user) {
+            if(!wp_check_password( $password, $user->data->user_pass, $user->ID)) {
+                return new WP_Error('unmatch_login_pass', __('The username is exist, please provide correct password for it if owned by you or choose another username', 'tt'));
+            }
+            // 更新用户数据
+            $insert_user_id = wp_update_user( array(
+                'ID'  => $user->ID,
+                'nickname'  => $data['name'],
+                'display_name'  => $data['name']
+            ) ) ;
+            $is_new = false;
+        }else{
+            // 开放平台连接并需要新建一个本地用户绑定
+            $insert_user_id = wp_insert_user( array(
+                'user_login'  => $user_login,
+                'nickname'  => $data['name'],
+                'display_name'  => $data['name'],
+                'user_pass' => $password
+            ) ) ;
+        }
+
 
         if( is_wp_error($insert_user_id) ) {
             $this->_error = (object)array(
@@ -442,43 +509,26 @@ abstract class Open{
                 'code' => $insert_user_id->get_error_code()
             );
 
-            return false;
+            //return false;
+            return $insert_user_id; // for rest request
         }else{
 
             // 将Open数据存储到对应用户meta
-            update_user_meta($insert_user_id, static::$_openid_meta_key, $data['openid']);
-            update_user_meta($insert_user_id, static::$_access_token_meta_key, $data['access_token']);
-            update_user_meta($insert_user_id, static::$_refresh_token_meta_key, $data['refresh_token']);
-            update_user_meta($insert_user_id, static::$_token_expiration_meta_key, $data['expiration']);
-
-            if(static::$_type === 'weixin'){
-                update_user_meta($insert_user_id, 'tt_weixin_avatar', $data['headimgurl']);
-                update_user_meta($insert_user_id, 'tt_weixin_unionid', $data['unionid']);
-                update_user_meta($insert_user_id, 'tt_user_country', $data['country']); // 国家，如中国为CN
-                update_user_meta($insert_user_id, 'tt_user_province', $data['province']); // 普通用户个人资料填写的省份
-                update_user_meta($insert_user_id, 'tt_user_city', $data['city']); // 普通用户个人资料填写的城市
-                update_user_meta($insert_user_id, 'tt_user_sex', $data['sex']==2 ? 'female' : 'male'); // 普通用户性别，1为男性，2为女性
-            }
-
-            if(static::$_type === 'weibo'){
-                update_user_meta($insert_user_id, 'tt_weibo_avatar', $data['avatar_large']);
-                update_user_meta($insert_user_id, 'tt_weibo_profile_img', $data['profile_image_url']);
-                update_user_meta($insert_user_id, 'tt_weibo_id', $data['id']);
-                update_user_meta($insert_user_id, 'tt_user_description', $data['description']);
-                update_user_meta($insert_user_id, 'tt_user_location', $data['location']);
-                update_user_meta($insert_user_id, 'tt_user_sex', $data['sex']!='m' ? 'female' : 'male'); // 普通用户性别，m为男性，f为女性
-            }
+            $this->saveOpenInfoAndProfile($insert_user_id, $data);
 
             // 新用户直接使用开放平台头像
-            update_user_meta($insert_user_id, 'tt_avatar_type', static::$_type);  // TODO: 是否判断已有其他开放平台的头像
+            //update_user_meta($insert_user_id, 'tt_avatar_type', static::$_type);  // TODO: 是否判断已有其他开放平台的头像
 
             // 新用户角色
-            wp_update_user( array ('ID' => $insert_user_id, 'role' => tt_get_option('tt_open_role', 'contributor') ) );
+            if($is_new) wp_update_user( array ('ID' => $insert_user_id, 'role' => tt_get_option('tt_open_role', 'contributor') ) );
 
             // 发送消息
-            // add_tt_message( $insert_user_id, 'unread', current_time('mysql'),
-            // __('请完善账号信息','tt'), sprintf(__('欢迎来到%1$s，请<a href="%2$s">完善资料</a>','tt') ,
-            // get_bloginfo('name'), admin_url('profile.php')) ); // TODO
+            if($is_new) {
+                $msg_title = __('请完善账号信息','tt');
+                $msg_content = sprintf(__('欢迎来到%1$s, 请<a href="%2$s">完善资料</a>','tt'), get_bloginfo('name'), tt_url_for('my_settings'));
+                tt_create_message( $insert_user_id, 0, 'System', 'notification', $msg_title, $msg_content, 0, 'publish');
+            }
+
 
             // 更新最新登录时间
             // update_user_meta( $insert_user_id, 'tt_latest_login', current_time( 'mysql' ) ); // Note: 由wp_login钩子去做
@@ -489,7 +539,7 @@ abstract class Open{
             do_action( 'wp_login', $user_login ); // TODO: 通过email发送欢迎邮件
 
             //return wp_safe_redirect(self::getRedirect());
-            return self::getRedirect(); // TODO
+            return true; // TODO
         }
 
     }
@@ -503,11 +553,13 @@ abstract class Open{
      * @param   string  $user_login  用户名
      * @param   string  $password   用户密码
      * @param   bool    $is_get_data    是否仅获取缓存的OAuth信息
-     * @return  bool|string
+     * @param   string  $data_cache_key 缓存OAuth信息的Key
+     * @return  bool|string|WP_Error
      */
-    public function openHandleLast($user_login, $password, $is_get_data = true){
+    public function openHandleLast($user_login, $password, $is_get_data = true, $data_cache_key = ''){
+        $this->_data_transient_key = $data_cache_key;
         if($is_get_data){
-            // 仅获取缓存的OAuth信息，用于填充/oauth/[type]/last页面表单默认值
+            // 仅获取缓存的OAuth信息，用于填充/oauth/[type]/last页面表单默认值, 此事用户名是随机生成的, 不推荐
             return $this->openSignUpPrepare();
         }
         return $this->openSignUp($user_login, $password);
@@ -583,6 +635,7 @@ abstract class Open{
         // Case 2.2 开放平台的回调请求(用户同意授权)
         $code = trim($_GET['code']);
         $state = isset($_GET['state']) ? trim($_GET['state']) : '';
+
         if(!($ret = $this->authorize($code, $state))){
             // $error = $this->getError();
             // wp_die($error->message, $error->title, array('back_link'=>true));
@@ -609,6 +662,7 @@ abstract class Open{
             return false;
         }
 
+        update_user_meta($this->_user->ID, static::$_openid_meta_key, '');
         update_user_meta($this->_user->ID, static::$_access_token_meta_key, '');
         update_user_meta($this->_user->ID, static::$_refresh_token_meta_key, '');
         update_user_meta($this->_user->ID, static::$_token_expiration_meta_key, '');
@@ -696,7 +750,8 @@ class OpenQQ extends Open{
             'grant_type' => 'authorization_code',
             'code' => $code,
             'client_id' => $this->_openkey,
-            'client_secret' => $this->_opensecret
+            'client_secret' => $this->_opensecret,
+            'redirect_uri' => self::getCallbackUrl()
         );
 
         $url = 'https://graph.qq.com/oauth2.0/token?' . http_build_query($params);

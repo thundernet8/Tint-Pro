@@ -38,4 +38,3 @@
     </section>
 </div>
 <?php tt_get_footer(); ?>
-<?php tt_resize_img('/home/wwwroot/old.webapproach.net/wp-content/uploads/images/0decad202e5663bca305e7e7b85be6df.jpeg', '/home/wwwroot/old.webapproach.net/wp-content/uploads/avatars/57.jpg'); ?>
