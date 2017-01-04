@@ -38,7 +38,7 @@ class UCProfileVM extends BaseVM {
      */
     public static function getInstance($author_id = 0) {
         $instance = new static();
-        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . static::class . '_author' . $author_id;
+        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . __CLASS__ . '_author' . $author_id;
         $instance->_authorId = $author_id;
         $instance->configInstance();
         return $instance;

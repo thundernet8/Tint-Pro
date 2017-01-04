@@ -248,7 +248,8 @@ final class Avatar{
      * @return  string
      */
     public function getLetterAvatar(){
-        $firstLetter = (new NameFirstChar($this->_user->display_name, true, "Sharp"))->toUpperCase();
+        $instance = new NameFirstChar($this->_user->display_name, true, "Sharp");
+        $firstLetter = $instance->toUpperCase();
         return self::$_letterAvatarAPI . $firstLetter . '/' . $this->_size . '.png';
     }
 

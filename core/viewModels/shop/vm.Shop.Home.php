@@ -44,7 +44,7 @@ class ShopHomeVM extends BaseVM {
      */
     public static function getInstance($page = 1, $sort = 'latest') {
         $instance = new static();
-        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . static::class . '_page' . $page . '_sort' . $sort;
+        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . __CLASS__ . '_page' . $page . '_sort' . $sort;
         $instance->_page = max(1, $page);
         $instance->_sort = in_array($sort, array('latest', 'popular')) ? $sort : 'latest';
         $instance->configInstance();

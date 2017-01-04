@@ -44,7 +44,7 @@ class ShopCategoryVM extends BaseVM {
      */
     public static function getInstance($page = 1, $cat = 0) {
         $instance = new static();
-        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . static::class . '_page' . $page . '_category' . $cat;
+        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . __CLASS__ . '_page' . $page . '_category' . $cat;
         $instance->_page = max(1, $page);
         $instance->_cat = absint($cat);
         $instance->configInstance();

@@ -39,9 +39,9 @@ class ShopViewedHistoryVM extends BaseVM {
     public static function getInstance($user_id = 0) {
         $instance = new static();
         if($user_id) {
-            $key = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . static::class . '_user' . $user_id;
+            $key = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . __CLASS__ . '_user' . $user_id;
         }elseif(isset($_COOKIE["tt_view_product_history"]) && !empty($_COOKIE["tt_view_product_history"])){
-            $key = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . static::class . '_cookie_value' . htmlspecialchars($_COOKIE["tt_view_product_history"]);
+            $key = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . __CLASS__ . '_cookie_value' . htmlspecialchars($_COOKIE["tt_view_product_history"]);
         }else{
             $key = '';
             $instance->_enableCache = false;

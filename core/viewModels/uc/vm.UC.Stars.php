@@ -45,7 +45,7 @@ class UCStarsVM extends BaseVM {
      */
     public static function getInstance($page = 1, $author_id = 0) {
         $instance = new static(); // 因为不同分页不同作者共用该模型，不采用单例模式
-        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . static::class . '_author' . $author_id . '_page' . $page;
+        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . __CLASS__ . '_author' . $author_id . '_page' . $page;
         $instance->_page = max(1, $page);
         $instance->_authorId = $author_id;
         $instance->configInstance();

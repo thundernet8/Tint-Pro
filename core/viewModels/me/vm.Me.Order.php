@@ -45,7 +45,7 @@ class MeOrderVM extends BaseVM {
      */
     public static function getInstance($order_seq = 0, $user_id = 0) {
         $instance = new static();
-        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . static::class . '_user' . $user_id . '_seq' . $order_seq;
+        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . __CLASS__ . '_user' . $user_id . '_seq' . $order_seq;
         $instance->_orderSeq = $order_seq;
         $instance->_userId = $user_id;
         $instance->_enableCache = false; // 订单详情不使用缓存

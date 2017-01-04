@@ -37,7 +37,7 @@ class PostCommentsVM extends BaseVM {
      */
     public static function getInstance($post_id = 1) {
         $instance = new static(); // 因为不同文章的评论共用该模型，不采用单例模式
-        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . static::class . '_post' . $post_id . '_comments';
+        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . __CLASS__ . '_post' . $post_id . '_comments';
         $instance->_postId = intval($post_id);
         $instance->configInstance();
         return $instance;

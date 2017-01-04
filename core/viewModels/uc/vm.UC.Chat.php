@@ -51,7 +51,7 @@ class UCChatVM extends BaseVM {
     public static function getInstance($page = 1, $author_id = 0) {
         $instance = new static();
         $user_id = get_current_user_id();
-        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . static::class . '_author' . $author_id . '_user' . $user_id . '_page' . $page;
+        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . __CLASS__ . '_author' . $author_id . '_user' . $user_id . '_page' . $page;
         $instance->_page = max(1, $page);
         $instance->_authorId = absint($author_id);
         $instance->_userId = $user_id;

@@ -44,7 +44,7 @@ class TermPostsVM extends BaseVM {
     public static function getInstance($page = 1) {
         $term_ID = absint(get_queried_object_id());
         $instance = new static(); // 因为不同分页不同分类共用该模型，不采用单例模式
-        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . static::class . '_term' . $term_ID . '_page' . $page;
+        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . __CLASS__ . '_term' . $term_ID . '_page' . $page;
         $instance->_page = max(1, $page);
         $instance->_termID = $term_ID;
         $instance->configInstance();

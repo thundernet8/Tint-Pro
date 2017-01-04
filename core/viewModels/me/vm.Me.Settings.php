@@ -38,7 +38,7 @@ class MeSettingsVM extends BaseVM {
      */
     public static function getInstance($user_id = 0) {
         $instance = new static();
-        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . static::class . '_user' . $user_id;
+        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . __CLASS__ . '_user' . $user_id;
         $instance->_userId = $user_id;
         $instance->configInstance();
         return $instance;

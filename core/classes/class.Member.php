@@ -95,7 +95,7 @@ class Member{
             // TODO do_action membership_expired
             return Member::EXPIRED_VIP;
         }
-        if(in_array($this->_member_row->user_type, [Member::PERMANENT_VIP, Member::ANNUAL_VIP, Member::MONTHLY_VIP])) {
+        if(in_array($this->_member_row->user_type, array(Member::PERMANENT_VIP, Member::ANNUAL_VIP, Member::MONTHLY_VIP))) {
             return $this->_member_row->user_type;
         }
         return Member::MONTHLY_VIP;
@@ -134,7 +134,7 @@ class Member{
     }
 
     public function is_vip(){
-        return in_array($this->get_vip_type(), [Member::PERMANENT_VIP, Member::ANNUAL_VIP, Member::MONTHLY_VIP]);
+        return in_array($this->get_vip_type(), array(Member::PERMANENT_VIP, Member::ANNUAL_VIP, Member::MONTHLY_VIP));
     }
 
     public function is_monthly_vip(){

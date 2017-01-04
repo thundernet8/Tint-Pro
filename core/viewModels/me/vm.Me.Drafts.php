@@ -44,7 +44,7 @@ class MeDraftsVM extends BaseVM {
      */
     public static function getInstance($user_id = 0, $page = 1) {
         $instance = new static();
-        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . static::class . '_page' . $page . '_user' . $user_id;
+        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . __CLASS__ . '_page' . $page . '_user' . $user_id;
         $instance->_userId = $user_id;
         $instance->_page = max(1, $page);
         $instance->_enableCache = false; // 不使用缓存

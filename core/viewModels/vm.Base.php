@@ -81,7 +81,12 @@ abstract class BaseVM {
 
         $args = func_get_args();
         if(count($args)) {
-            $reflect = new ReflectionClass(static::class);
+            //if(version_compare(PHP_VERSION,'5.5.0','ge')) {
+                //$reflect = new ReflectionClass(static::class); //static::class 是PHP5.5的新特性
+            //}else{
+                $reflect = new ReflectionClass(get_called_class());
+            //}
+            
             static::$_instance = $reflect->newInstanceArgs($args);
         }
         static::$_instance = new static();
@@ -105,7 +110,7 @@ abstract class BaseVM {
     protected function configInstance() {
         // cache key
         if(!$this->_cacheKey) {
-            $this->_cacheKey = 'tt_cache_' . $this->_cacheUpdateFrequency . '_vm_' . static::class;
+            $this->_cacheKey = 'tt_cache_' . $this->_cacheUpdateFrequency . '_vm_' . get_called_class();
         }
 
         if($cache = $this->getDataFromCache()) {

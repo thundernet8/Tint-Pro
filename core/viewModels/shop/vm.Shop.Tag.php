@@ -44,7 +44,7 @@ class ShopTagVM extends BaseVM {
      */
     public static function getInstance($page = 1, $tag = 0) {
         $instance = new static();
-        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . static::class . '_page' . $page . '_tag' . $tag;
+        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . __CLASS__ . '_page' . $page . '_tag' . $tag;
         $instance->_page = max(1, $page);
         $instance->_tag = absint($tag);
         $instance->configInstance();

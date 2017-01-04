@@ -38,7 +38,7 @@ class HomeLatestVM extends BaseVM {
      */
     public static function getInstance($page = 1) {
         $instance = new static(); // 因为不同分页共用该模型，不采用单例模式
-        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . static::class . '_page' . $page;
+        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . get_called_class() . '_page' . $page;
         $instance->_page = max(1, $page);
         $instance->configInstance();
         return $instance;

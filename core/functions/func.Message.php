@@ -176,10 +176,10 @@ function tt_get_messages( $type = 'chat', $limit = 20, $offset = 0, $read = 0, $
     if(is_array($type)) {
         $type = implode("','", $type); //NOTE  IN('comment','star','update','notification') IN表达式的引号
     }
-    if(!in_array($read, [0, 1, 'all'])) {
+    if(!in_array($read, array(0, 1, 'all'))) {
         $read = 0;
     }
-    if(!in_array($msg_status, ['publish', 'trash', 'all'])) {
+    if(!in_array($msg_status, array('publish', 'trash', 'all'))) {
         $msg_status = 'publish';
     }
 
@@ -310,10 +310,10 @@ function tt_get_sent_pm($to_user = 0, $limit = 20, $offset = 0, $read = 'all', $
     if(!$sender_id) return false;
 
     $type = 'chat';
-    if(!in_array($read, [0, 1, 'all'])) {
+    if(!in_array($read, array(0, 1, 'all'))) {
         $read = 0;
     }
-    if(!in_array($msg_status, ['publish', 'trash', 'all'])) {
+    if(!in_array($msg_status, array('publish', 'trash', 'all'))) {
         $msg_status = 'publish';
     }
 
@@ -402,10 +402,10 @@ function tt_get_bothway_chat( $one_uid, $limit = 20, $offset = 0, $read = 0, $ms
 
     if(!$user_id) return false;
 
-    if(!in_array($read, [0, 1, 'all'])) {
+    if(!in_array($read, array(0, 1, 'all'))) {
         $read = 0;
     }
-    if(!in_array($msg_status, ['publish', 'trash', 'all'])) {
+    if(!in_array($msg_status, array('publish', 'trash', 'all'))) {
         $msg_status = 'publish';
     }
 

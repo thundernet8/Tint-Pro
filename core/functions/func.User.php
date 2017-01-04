@@ -48,7 +48,7 @@ function tt_get_user_cap_string ($user_id) {
  * @return string
  */
 function tt_get_user_cover ($user_id, $size = 'full', $default = '') {
-    if(!in_array($size, ['full', 'mini'])) {
+    if(!in_array($size, array('full', 'mini'))) {
         $size = 'full';
     }
     if($cover = get_user_meta($user_id, 'tt_user_cover', true)) {
@@ -173,7 +173,7 @@ function tt_get_users_with_role ($role, $offset = 0, $limit = 20) {
     if (!empty($users)) {
         return $users;
     }
-    return [];
+    return array();
 }
 
 
@@ -184,7 +184,7 @@ function tt_get_users_with_role ($role, $offset = 0, $limit = 20) {
  * @return array
  */
 function tt_get_administrator_ids () {
-    $ids = [];
+    $ids = array();
     $administrators = tt_get_users_with_role('Administrator');
     foreach ($administrators as $administrator) {
         $ids[] = $administrator->ID;

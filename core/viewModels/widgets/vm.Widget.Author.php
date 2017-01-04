@@ -37,7 +37,7 @@ class AuthorWidgetVM extends BaseVM {
      */
     public static function getInstance($author_id = 1) {
         $instance = new static(); // 因为不同作者共用该模型，不采用单例模式
-        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . static::class . '_author' . $author_id;
+        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . __CLASS__ . '_author' . $author_id;
         $instance->_authorId = absint($author_id);
         $instance->configInstance();
         return $instance;

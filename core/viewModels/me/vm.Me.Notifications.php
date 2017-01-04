@@ -56,9 +56,9 @@ class MeNotificationsVM extends BaseVM {
      */
     public static function getInstance($user_id = 0, $type = 'all', $page = 1, $limit = 20) {
         $instance = new static();
-        $type = in_array($type, ['comment', 'star', 'credit', 'update']) ? $type : ['comment', 'star', 'update', 'notification', 'credit']; //TODO add more
+        $type = in_array($type, array('comment', 'star', 'credit', 'update')) ? $type : array('comment', 'star', 'update', 'notification', 'credit'); //TODO add more
         $type_str = is_array($type) ? implode('_', $type) : $type;
-        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . static::class . '_user' . $user_id . '_type' . $type_str;
+        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . __CLASS__ . '_user' . $user_id . '_type' . $type_str;
         $instance->_userId = $user_id;
         $instance->_type = $type;
         $instance->_page = $page;

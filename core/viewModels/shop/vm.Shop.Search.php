@@ -44,7 +44,7 @@ class ShopSearchVM extends BaseVM {
      */
     public static function getInstance($page = 1, $search = '') {
         $instance = new static();
-        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . static::class . '_page' . $page . '_search' . $search;
+        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . __CLASS__ . '_page' . $page . '_search' . $search;
         $instance->_page = max(1, $page);
         $instance->_search = $search;
         $instance->configInstance();

@@ -37,7 +37,7 @@ class ProductCommentsVM extends BaseVM {
      */
     public static function getInstance($product_id = 1) {
         $instance = new static();
-        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . static::class . '_product' . $product_id . '_comments';
+        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . __CLASS__ . '_product' . $product_id . '_comments';
         $instance->_productId = intval($product_id);
         $instance->configInstance();
         return $instance;

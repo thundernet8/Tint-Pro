@@ -84,7 +84,7 @@ function tt_copy_object_cache_plugin(){
     }
     //!file_exists( WP_CONTENT_DIR . '/object-cache.php' ) ??
     $last_use_cache_type = get_option('tt_object_cache_type');
-    if(in_array($object_cache_type, ['memcache', 'redis']) && $last_use_cache_type != $object_cache_type && file_exists( THEME_DIR . '/dash/plugins/' . $object_cache_type . '/object-cache.php')){
+    if(in_array($object_cache_type, array('memcache', 'redis')) && $last_use_cache_type != $object_cache_type && file_exists( THEME_DIR . '/dash/plugins/' . $object_cache_type . '/object-cache.php')){
         try{
             copy(THEME_DIR . '/dash/plugins/' . $object_cache_type . '/object-cache.php', WP_CONTENT_DIR . '/object-cache.php');
             update_option('tt_object_cache_type', $object_cache_type);

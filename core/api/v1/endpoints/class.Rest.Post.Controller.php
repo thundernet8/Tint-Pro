@@ -141,7 +141,7 @@ class WP_REST_Post_Controller extends WP_REST_Controller
         $free_dl = sanitize_text_field(trim($request->get_param('freeDl')));
         $sale_dl = sanitize_text_field(trim($request->get_param('saleDl')));
 
-        $action = in_array($request->get_param('action'), ['publish', 'draft', 'pending']) ? $request->get_param('action') : 'draft';
+        $action = in_array($request->get_param('action'), array('publish', 'draft', 'pending')) ? $request->get_param('action') : 'draft';
 
         // 插入文章
         $new_post = wp_insert_post( array(
@@ -220,7 +220,7 @@ class WP_REST_Post_Controller extends WP_REST_Controller
         $free_dl = sanitize_text_field(trim($request->get_param('freeDl')));
         $sale_dl = sanitize_text_field(trim($request->get_param('saleDl')));
 
-        $action = in_array($request->get_param('action'), ['publish', 'draft', 'pending']) ? $request->get_param('action') : 'draft';
+        $action = in_array($request->get_param('action'), array('publish', 'draft', 'pending')) ? $request->get_param('action') : 'draft';
 
         // 插入文章
         $update_post = wp_update_post( array( //Return: The ID of the post if the post is successfully updated in the database. Otherwise returns 0

@@ -203,12 +203,13 @@ function optionsframework_options() {
         )
     );
 
+    $category_keys = array_keys($options_categories);
     // - 置顶分类1
     $options[] = array(
         'name' => __('Featured Category 1', 'tt'),
         'desc' => __('Choose the first featured category for homepage', 'tt'),
         'id' => 'tt_home_featured_category_one',
-        'std' => array_keys($options_categories)[0],
+        'std' => $category_keys[0],
         'type' => 'select',
         'options' => $options_categories
     );
@@ -218,7 +219,7 @@ function optionsframework_options() {
         'name' => __('Featured Category 2', 'tt'),
         'desc' => __('Choose the second featured category for homepage', 'tt'),
         'id' => 'tt_home_featured_category_two',
-        'std' => array_keys($options_categories)[min(1, count($options_categories)-1)],
+        'std' => $category_keys[min(1, count($options_categories)-1)],
         'type' => 'select',
         'options' => $options_categories
     );
@@ -228,7 +229,7 @@ function optionsframework_options() {
         'name' => __('Featured Category 3', 'tt'),
         'desc' => __('Choose the third featured category for homepage', 'tt'),
         'id' => 'tt_home_featured_category_three',
-        'std' => array_keys($options_categories)[min(2, count($options_categories)-1)],
+        'std' => $category_keys[min(2, count($options_categories)-1)],
         'type' => 'select',
         'options' => $options_categories
     );
@@ -324,7 +325,7 @@ function optionsframework_options() {
         'sidebar_download'  =>    __('Download Page Sidebar', 'tt')
     );
     $register_status = of_get_option('tt_register_sidebars', array('sidebar_common' => true));
-    $available_sidebars = [];
+    $available_sidebars = array();
     foreach ($register_status as $key => $value){
         if($value) $available_sidebars[$key] = $all_sidebars[$key];
     }

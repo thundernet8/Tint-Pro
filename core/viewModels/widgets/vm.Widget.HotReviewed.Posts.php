@@ -36,7 +36,7 @@ class HotReviewedPostsVM extends BaseVM {
     public static function getInstance($count = 5) {
         $posts_count = min(5, absint($count));
         $instance = new static(); // 因为配置不同文章数量共用该模型，不采用单例模式
-        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . static::class . '_count' . $posts_count;
+        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . __CLASS__ . '_count' . $posts_count;
         $instance->_count = $posts_count;;
         $instance->configInstance();
         return $instance;

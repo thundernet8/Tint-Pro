@@ -44,7 +44,7 @@ class MeEditPostVM extends BaseVM {
      */
     public static function getInstance($post_id = 0, $user_id = 0) {
         $instance = new static();
-        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . static::class . '_post' . $post_id . '_user' . $user_id;
+        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . __CLASS__ . '_post' . $post_id . '_user' . $user_id;
         $instance->_postId = $post_id;
         $instance->_userId = $user_id;
         $instance->_enableCache = false; // 待编辑文章不使用缓存

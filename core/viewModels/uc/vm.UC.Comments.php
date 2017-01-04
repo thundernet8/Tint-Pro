@@ -49,7 +49,7 @@ class UCCommentsVM extends BaseVM {
      */
     public static function getInstance($page = 1, $author_id = 0, $all_status = false) {
         $instance = new static(); // 因为不同作者不同分页的评论共用该模型，不采用单例模式
-        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . static::class . '_author' . $author_id . '_page' . $page . '_status' . intval(!$all_status);
+        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . __CLASS__ . '_author' . $author_id . '_page' . $page . '_status' . intval(!$all_status);
         $instance->_authorId = absint($author_id);
         $instance->_page = absint($page);
         $instance->_allStatus = $all_status;
@@ -71,9 +71,9 @@ class UCCommentsVM extends BaseVM {
             'offset' => ($this->_page - 1) * $per_page
         ));
 
-        $uc_comments = [];
+        $uc_comments = array();
         foreach ($the_comments as $the_comment) {
-            $uc_comment = [];
+            $uc_comment = array();
             if(!$the_comment->user_id) continue;
             $uc_comment['comment_ID'] = $the_comment->comment_ID;
             $uc_comment['author_name'] = $the_comment->comment_author;

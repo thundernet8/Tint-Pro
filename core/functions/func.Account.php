@@ -235,7 +235,7 @@ function tt_reset_password_message( $message, $key ) {
     $reset_link = network_site_url('wp-login.php?action=rp&key=' . $key . '&login=' . rawurlencode($user_login), 'login') ;
 
     $templates = new League\Plates\Engine(THEME_TPL . '/plates/emails');
-    return $templates->render('findpass', ['home' => home_url(), 'userLogin' => $user_login, 'resetPassLink' => $reset_link]);
+    return $templates->render('findpass', array('home' => home_url(), 'userLogin' => $user_login, 'resetPassLink' => $reset_link));
 }
 add_filter('retrieve_password_message', 'tt_reset_password_message', null, 2);
 

@@ -37,7 +37,7 @@ class SinglePageVM extends BaseVM {
      */
     public static function getInstance($page_id = 1) {
         $instance = new static();
-        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . static::class . '_page' . $page_id;
+        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . __CLASS__ . '_page' . $page_id;
         $instance->_pageId = absint($page_id);
         $instance->configInstance();
         return $instance;

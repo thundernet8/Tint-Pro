@@ -231,7 +231,7 @@ class WP_REST_User_Follow_Controller extends WP_REST_Controller
     public function create_follower_item($request)
     {
         $uid = absint($request['uid']); // 被关注者, 关注者为当前用户
-        $action = in_array($request->get_param('action'), ['follow', 'unfollow']) ? $request->get_param('action') : 'follow';
+        $action = in_array($request->get_param('action'), array('follow', 'unfollow')) ? $request->get_param('action') : 'follow';
         $result = $action == 'follow' ? tt_follow($uid) : tt_unfollow($uid);
 
         if($result instanceof WP_Error) {

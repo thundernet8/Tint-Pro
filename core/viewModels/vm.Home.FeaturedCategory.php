@@ -38,7 +38,7 @@ class FeaturedCategoryVM extends BaseVM {
      */
     public static function getInstance($sequence = 1) {
         $instance = new static(); // 因为首页置顶三个分类公用该模型，因此不采用单例模式，覆盖父类方法
-        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . static::class . $sequence;
+        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . __CLASS__ . $sequence;
         $instance->_categorySequence = in_array($sequence, array(1, 2, 3)) ? $sequence : 1;
         $instance->configInstance();
         return $instance;

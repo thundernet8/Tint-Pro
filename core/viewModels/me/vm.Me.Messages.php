@@ -56,8 +56,8 @@ class MeMessagesVM extends BaseVM {
      */
     public static function getInstance($user_id = 0, $type = 'inbox', $page = 1, $limit = 20) {
         $instance = new static();
-        $type = in_array($type, ['inbox', 'sendbox']) ? $type : 'inbox';
-        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . static::class . '_user' . $user_id . '_type' . $type;
+        $type = in_array($type, array('inbox', 'sendbox')) ? $type : 'inbox';
+        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . __CLASS__ . '_user' . $user_id . '_type' . $type;
         $instance->_userId = $user_id;
         $instance->_type = $type;
         $instance->_page = $page;

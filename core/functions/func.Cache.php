@@ -42,7 +42,7 @@ function tt_cached($key, $miss_cb, $group, $expire){
         return false;
     }
     // 使用memcache或redis内存对象缓存
-    elseif(in_array(tt_get_option('tt_object_cache', 'none'), ['memcache', 'redis']) && !TT_DEBUG){
+    elseif(in_array(tt_get_option('tt_object_cache', 'none'), array('memcache', 'redis')) && !TT_DEBUG){
         $data = wp_cache_get($key, $group);
         if($data!==false){
             return $data;

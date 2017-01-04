@@ -248,7 +248,7 @@ class WP_REST_Comment_Controller extends WP_REST_Controller
             'page'=>1,
             'per_page'=>1,
             'echo'=>false
-        ), [$comment]);
+        ), array($comment));
 
         return tt_api_success($comment_html);
 

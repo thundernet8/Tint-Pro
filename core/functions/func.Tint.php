@@ -123,7 +123,7 @@ function tt_tint_authorize() {
     $active = 0;
     $key = '';
     $server = strtolower($_SERVER['HTTP_HOST']);
-    $free_servers = array('webapproach.net', 'old.webapproach.net', 'www.webapproach.net', 'zhiyanblog.com', 'www.zhiyanblog.com');
+    $free_servers = array('webapproach.net', 'old.webapproach.net', 'www.webapproach.net', 'zhiyanblog.com', 'www.zhiyanblog.com', 'dev.zhiyanblog.com');
     if(in_array($server, $free_servers)){
         return;
     }

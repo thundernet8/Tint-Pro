@@ -23,17 +23,20 @@
  * @return bool
  */
 function tt_has_connect($type = 'qq', $user_id = 0){
-    if(!in_array($type, ['qq', 'weibo', 'weixin'])) {
+    if(!in_array($type, array('qq', 'weibo', 'weixin'))) {
         return  false;
     }
     $user_id = $user_id ? : get_current_user_id();
     switch ($type){
         case 'qq':
-            return (new OpenQQ($user_id))->isOpenConnected();
+            $instance = new OpenQQ($user_id);
+            return $instance->isOpenConnected();
         case 'weibo':
-            return (new OpenWeibo($user_id))->isOpenConnected();
+            $instance = new OpenWeibo($user_id);
+            return $instance->isOpenConnected();
         case 'weixin':
-            return (new OpenWeiXin($user_id))->isOpenConnected();
+            $instance = new OpenWeiXin($user_id);
+            return $instance->isOpenConnected();
     }
 
     return false;

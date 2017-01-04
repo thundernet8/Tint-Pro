@@ -224,7 +224,7 @@ function tt_rest_pre_dispatch_cache($result, $server, $request) {
 
     // 部分接口不缓存，如登录接口 //TODO more
     // POST请求不缓存|DEBUG模式不緩存
-    if($request->get_method() == 'POST' || in_array($request->get_route(), ['/v1/session']) || tt_get_option('tt_theme_debug', false)) {
+    if($request->get_method() == 'POST' || in_array($request->get_route(), array('/v1/session')) || tt_get_option('tt_theme_debug', false)) {
         return false;
     }
 

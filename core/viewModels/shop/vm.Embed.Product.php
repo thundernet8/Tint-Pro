@@ -37,7 +37,7 @@ class EmbedProductVM extends BaseVM {
      */
     public static function getInstance($product_id = 0) {
         $instance = new static();
-        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . static::class . '_product' . $product_id;
+        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . __CLASS__ . '_product' . $product_id;
         $instance->_productId = absint($product_id);
         $instance->configInstance();
         return $instance;

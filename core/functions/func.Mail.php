@@ -103,7 +103,7 @@ function tt_mail_render($content, $template = 'comment') {
     // 使用Plates模板渲染引擎
     $templates = new League\Plates\Engine(THEME_TPL . '/plates/emails');
     if (is_string($content)) {
-        return $templates->render('pure', ['content' => $content]);
+        return $templates->render('pure', array('content' => $content));
     } elseif (is_array($content)) {
         return $templates->render($template, $content); // TODO confirm template exist
     }
