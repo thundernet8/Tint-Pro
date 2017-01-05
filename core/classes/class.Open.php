@@ -389,7 +389,8 @@ abstract class Open{
 
         // 对于已登录了原WP系统的用户，在鉴权阶段就检查了是否存在openid，所以这里$user_exist不会为已登录用户id，无需为当前用户更新已获取的openid等信息
         // 如果当前用户已登录，而$user_exist存在，即该开放平台账号连接被其他用户占用了，不能再重复绑定了
-        if( isset($user_exist) && !($this->checkOpen('occupation_check', $user_exist)) ) return false;
+        $current_user_id = get_current_user_id();
+        if( $current_user_id != 0 && isset($user_exist) && $current_user_id != $user_exist && !($this->checkOpen('occupation_check', $user_exist)) ) return false;
 
         if( isset($user_exist) && (int)$user_exist>0 ){
             // 该开放平台账号已连接过WP系统，再次使用它登录并更新相关信息
@@ -405,7 +406,7 @@ abstract class Open{
 
             wp_safe_redirect(self::getRedirect());
             exit;
-        }elseif($current_user_id = get_current_user_id()){
+        }elseif($current_user_id){
             // Open 连接未被占用且当前已登录了本地账号, 那么直接绑定信息到该账号 case: 从个人资料设置中点击了绑定社交账号等操作
             $this->saveOpenInfoAndProfile($current_user_id, $data);
 

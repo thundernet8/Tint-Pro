@@ -71,19 +71,19 @@ tt_get_header('simple');
 					<?php if($open_weibo) { ?>
 					<a href="<?php echo tt_add_redirect(tt_url_for('oauth_weibo')); ?>" class="btn btn-lg btn-sn-weibo pull-left anchor-noborder">
 						<span class="tico tico-weibo"></span>
-						<strong class="visible-xs-inline"><?php _e('Signin with Sina weibo'); ?></strong>
+						<strong class="visible-xs-inline"><?php _e('Signin with Sina weibo', 'tt'); ?></strong>
 					</a>
 					<?php } ?>
 					<?php if($open_qq) { ?>
 					<a href="<?php echo tt_add_redirect(tt_url_for('oauth_qq')); ?>" class="btn btn-lg btn-sn-qq pull-left anchor-noborder">
 						<span class="tico tico-qq"></span>
-						<strong class="visible-xs-inline"><?php _e('Signin with QQ'); ?></strong>
+						<strong class="visible-xs-inline"><?php _e('Signin with QQ', 'tt'); ?></strong>
 					</a>
 					<?php } ?>
 					<?php if($open_weixin) { ?>
 					<a href="<?php echo tt_add_redirect(tt_url_for('oauth_weixin')); ?>" class="btn btn-lg btn-sn-weixin pull-left anchor-noborder">
 						<span class="tico tico-weixin"></span>
-						<strong class="visible-xs-inline"><?php _e('Signin with Wechat'); ?></strong>
+						<strong class="visible-xs-inline"><?php _e('Signin with Wechat', 'tt'); ?></strong>
 					</a>
 					<?php } ?>
 				</div>

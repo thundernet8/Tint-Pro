@@ -55,7 +55,7 @@ abstract class BaseVM {
     protected $_cacheInterval = 3600;
 
     /**
-     * @var intval
+     * @var int
      */
     protected $_objectCacheInterval = 600; 
 
