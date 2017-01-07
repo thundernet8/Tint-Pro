@@ -132,9 +132,9 @@ $manage_allow_routes = json_encode(array(
     'posts' => 'posts',
     'comments' => 'comments',
     'users' => 'users',
-    'user' => 'user',
+    //'user' => 'user',
     'orders' => 'orders',
-    'order' => 'order',
+    //'order' => 'order',
     'coupons' => 'coupons',
     'members' => 'members'
 ));
@@ -196,7 +196,8 @@ $site_endpoints = json_encode(array(
     'manage_posts'              =>  'management/posts',
     'manage_comments'           =>  'management/comments',
     'manage_orders'             =>  'management/orders',
-    'manage_coupons'            =>  'management/coupons'
+    'manage_coupons'            =>  'management/coupons',
+    'manage_members'            =>  'management/members'
 
     // TODO: Add more
 ));

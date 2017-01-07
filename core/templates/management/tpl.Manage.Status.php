@@ -12,6 +12,14 @@
  * @link https://www.webapproach.net/tint
  */
 ?>
-<?php
-
-echo 'Manage - Status';
+<?php tt_get_header(); ?>
+<div id="content" class="wrapper">
+    <!-- 主要内容区 -->
+    <section class="container main-area">
+        <div class="inner row">
+            <?php load_mod('management/mg.NavMenu'); ?>
+            <?php load_mod('management/mg.Tab.Status'); ?>
+        </div>
+    </section>
+</div>
+<?php tt_get_footer(); ?>

@@ -231,6 +231,13 @@ if(TT_PRO && tt_get_option('tt_enable_shop', false)){
     load_vm('me/vm.Me.Order');
     load_vm('me/vm.Me.Orders');
     load_vm('me/vm.Me.Membership');
+    load_vm('management/vm.Mg.Status');
+    load_vm('management/vm.Mg.Comments');
+    load_vm('management/vm.Mg.Coupons');
+    load_vm('management/vm.Mg.Members');
+    load_vm('management/vm.Mg.Orders');
+    load_vm('management/vm.Mg.Posts');
+    load_vm('management/vm.Mg.Users');
 }
 
 /* 载入小工具 */

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2017-01-07 12:53+0800\n"
+"POT-Creation-Date: 2017-01-07 23:08+0800\n"
 "PO-Revision-Date: 2016-08-17 21:40+0800\n"
 "Last-Translator: \n"
 "Language-Team: Zhiyan <mail@webapproach.net>\n"
@@ -2110,27 +2110,27 @@ msgstr ""
 msgid "Weekly"
 msgstr ""
 
-#: core/functions/func.Seo.php:28 core/functions/func.Seo.php:186
+#: core/functions/func.Seo.php:28 core/functions/func.Seo.php:212
 #: core/modules/mod.ModalLoginForm.php:17
 #: core/templates/actions/tpl.M.Signup.php:90
 msgid "Sign In"
 msgstr ""
 
-#: core/functions/func.Seo.php:31 core/functions/func.Seo.php:189
+#: core/functions/func.Seo.php:31 core/functions/func.Seo.php:215
 #: core/templates/actions/tpl.M.Signup.php:62
 msgid "Sign Up"
 msgstr ""
 
-#: core/functions/func.Seo.php:34 core/functions/func.Seo.php:192
+#: core/functions/func.Seo.php:34 core/functions/func.Seo.php:218
 msgid "Activate Registration"
 msgstr ""
 
-#: core/functions/func.Seo.php:37 core/functions/func.Seo.php:195
+#: core/functions/func.Seo.php:37 core/functions/func.Seo.php:221
 #: core/modules/mod.Header.Shop.php:103 core/modules/mod.Header.php:48
 msgid "Sign Out"
 msgstr ""
 
-#: core/functions/func.Seo.php:40 core/functions/func.Seo.php:198
+#: core/functions/func.Seo.php:40 core/functions/func.Seo.php:224
 #: core/templates/actions/tpl.M.Findpass.php:33
 msgid "Find Password"
 msgstr ""
@@ -2219,77 +2219,106 @@ msgstr ""
 msgid "Complete Account Info - Weixin Connect"
 msgstr ""
 
-#: core/functions/func.Seo.php:127
+#: core/functions/func.Seo.php:125
+#: core/modules/management/mg.Tab.Status.php:26
+msgid "Site Statistic"
+msgstr ""
+
+#: core/functions/func.Seo.php:128
+msgid "Posts Management"
+msgstr ""
+
+#: core/functions/func.Seo.php:131
+msgid "Comments Management"
+msgstr ""
+
+#: core/functions/func.Seo.php:134
+msgid "Users Management"
+msgstr ""
+
+#: core/functions/func.Seo.php:137
+msgid "Orders Management"
+msgstr ""
+
+#: core/functions/func.Seo.php:140
+msgid "Coupons Management"
+msgstr ""
+
+#: core/functions/func.Seo.php:143
+msgid "Members Management"
+msgstr ""
+
+#: core/functions/func.Seo.php:153
 #, php-format
 msgid " - Page %d"
 msgstr ""
 
-#: core/functions/func.Seo.php:138 core/functions/func.Seo.php:235
+#: core/functions/func.Seo.php:164 core/functions/func.Seo.php:261
 #, php-format
 msgid "%s's Home Page"
 msgstr ""
 
-#: core/functions/func.Seo.php:142 core/functions/shop/func.Shop.php:297
+#: core/functions/func.Seo.php:168 core/functions/shop/func.Shop.php:297
 msgid "Product Category"
 msgstr ""
 
-#: core/functions/func.Seo.php:144
+#: core/functions/func.Seo.php:170
 msgid "Product Tag"
 msgstr ""
 
-#: core/functions/func.Seo.php:146 core/functions/func.Seo.php:149
-#: core/functions/func.Seo.php:247 core/modules/mod.Header.Shop.php:29
+#: core/functions/func.Seo.php:172 core/functions/func.Seo.php:175
+#: core/functions/func.Seo.php:273 core/modules/mod.Header.Shop.php:29
 #: dash/options.php:806
 msgid "Market"
 msgstr ""
 
-#: core/functions/func.Seo.php:152
+#: core/functions/func.Seo.php:178
 msgid "Search"
 msgstr ""
 
-#: core/functions/func.Seo.php:154
+#: core/functions/func.Seo.php:180
 msgid "Y"
 msgstr ""
 
-#: core/functions/func.Seo.php:154 core/functions/func.Seo.php:156
-#: core/functions/func.Seo.php:158
+#: core/functions/func.Seo.php:180 core/functions/func.Seo.php:182
+#: core/functions/func.Seo.php:184
 msgid "posts archive"
 msgstr ""
 
-#: core/functions/func.Seo.php:156
+#: core/functions/func.Seo.php:182
 msgid "Y.n"
 msgstr ""
 
-#: core/functions/func.Seo.php:158
+#: core/functions/func.Seo.php:184
 msgid "Y.n.j"
 msgstr ""
 
-#: core/functions/func.Seo.php:160
+#: core/functions/func.Seo.php:186
 msgid "Tag: "
 msgstr ""
 
-#: core/functions/func.Seo.php:162
+#: core/functions/func.Seo.php:188
 msgid "Page Not Found"
 msgstr ""
 
-#: core/functions/func.Seo.php:167
+#: core/functions/func.Seo.php:193
 #, php-format
 msgid " - Page %d "
 msgstr ""
 
-#: core/functions/func.Seo.php:201 core/functions/func.Seo.php:235
+#: core/functions/func.Seo.php:227 core/functions/func.Seo.php:261
 msgid "Powered by Tint(Tinection 2)"
 msgstr ""
 
-#: core/functions/func.Seo.php:234
+#: core/functions/func.Seo.php:260
 msgid "Ucenter"
 msgstr ""
 
-#: core/functions/func.Seo.php:234 core/functions/func.Seo.php:247
+#: core/functions/func.Seo.php:260 core/functions/func.Seo.php:273
 msgid "Tint Ucenter and Market System"
 msgstr ""
 
-#: core/functions/func.Seo.php:250
+#: core/functions/func.Seo.php:276
 msgid ""
 "Powered by Tint(Tinection 2, a powerful wordpress theme with ucenter and "
 "shop system integrated)"
@@ -2348,15 +2377,6 @@ msgstr ""
 msgid ""
 "Tint主题已更新至<a style=\"color:red;\">%1$s</a>(当前%2$s)，请访问<a href="
 "\""
-msgstr ""
-
-#: core/functions/func.Tint.php:167
-#, php-format
-msgid ""
-"主题未授权本域名，如果你购买了本主题，请先<a href=\"%1$s\" target=\"_blank"
-"\" title=\"验证授权\">验证授权</a>，并配置主题根目录functions.php中的相关授"
-"权参数。 如果没有购买，请访问<a href=\"%2$s\" target=\"_blank\" title=\"购"
-"买Tint主题\">WebApproach商店</a>购买。"
 msgstr ""
 
 #: core/functions/func.User.php:26
@@ -2815,6 +2835,52 @@ msgid ""
 "paypal\">&nbsp;</i>付费内容</span><p>%1$s</p><p>%2$s</p></div>"
 msgstr ""
 
+#: core/modules/management/mg.NavMenu.php:24
+msgid "SITE MANAGEMENT"
+msgstr ""
+
+#: core/modules/management/mg.NavMenu.php:27
+msgid "STATISTIC"
+msgstr ""
+
+#: core/modules/management/mg.NavMenu.php:28
+#: core/modules/uc/uc.Tab.Followers.php:38
+#: core/modules/uc/uc.Tab.Following.php:38
+#: core/modules/widgets/wgt.Author.php:52
+msgid "POSTS"
+msgstr ""
+
+#: core/modules/management/mg.NavMenu.php:29
+#: core/modules/uc/uc.NavTabs.php:19
+msgid "COMMENTS"
+msgstr ""
+
+#: core/modules/management/mg.NavMenu.php:30
+msgid "USERS"
+msgstr ""
+
+#: core/modules/management/mg.NavMenu.php:31
+#: core/modules/me/me.NavMenu.php:34
+msgid "ORDERS"
+msgstr ""
+
+#: core/modules/management/mg.NavMenu.php:32
+msgid "COUPONS"
+msgstr ""
+
+#: core/modules/management/mg.NavMenu.php:33
+msgid "MEMBERS"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Status.php:28 dash/options.php:1287
+msgid "Site Open Date"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Status.php:29
+#, php-format
+msgid "%s (Online for %d days)"
+msgstr ""
+
 #: core/modules/me/me.NavMenu.php:23
 msgid "Visit My Homepage"
 msgstr ""
@@ -2859,10 +2925,6 @@ msgstr ""
 
 #: core/modules/me/me.NavMenu.php:33
 msgid "MEMBERSHIP"
-msgstr ""
-
-#: core/modules/me/me.NavMenu.php:34
-msgid "ORDERS"
 msgstr ""
 
 #: core/modules/me/me.Tab.Contribute.php:25
@@ -3978,10 +4040,6 @@ msgstr ""
 msgid "ARTICLES"
 msgstr ""
 
-#: core/modules/uc/uc.NavTabs.php:19
-msgid "COMMENTS"
-msgstr ""
-
 #: core/modules/uc/uc.NavTabs.php:21 core/modules/uc/uc.Tab.Followers.php:37
 #: core/modules/uc/uc.Tab.Following.php:37
 #: core/modules/widgets/wgt.Author.php:55
@@ -4036,12 +4094,6 @@ msgstr ""
 #: core/modules/uc/uc.Tab.Followers.php:32
 #: core/modules/uc/uc.Tab.Following.php:32
 msgid "Brief Intro : "
-msgstr ""
-
-#: core/modules/uc/uc.Tab.Followers.php:38
-#: core/modules/uc/uc.Tab.Following.php:38
-#: core/modules/widgets/wgt.Author.php:52
-msgid "POSTS"
 msgstr ""
 
 #: core/modules/uc/uc.Tab.Followers.php:43
@@ -6233,10 +6285,6 @@ msgstr ""
 
 #: dash/options.php:1279
 msgid "IDC reference No. for regulations of China"
-msgstr ""
-
-#: dash/options.php:1287
-msgid "Site Open Date"
 msgstr ""
 
 #: dash/options.php:1288

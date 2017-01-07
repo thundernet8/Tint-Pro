@@ -119,6 +119,32 @@ function tt_get_page_title() {
         }
         return $title . ' - ' . get_bloginfo('name');
     }
+    if($site_manage = get_query_var('manage_child_route')) {
+        switch ($site_manage) {
+            case 'status':
+                $title = __('Site Statistic', 'tt');
+                break;
+            case 'posts':
+                $title = __('Posts Management', 'tt');
+                break;
+            case 'comments':
+                $title = __('Comments Management', 'tt');
+                break;
+            case 'users':
+                $title = __('Users Management', 'tt');
+                break;
+            case 'orders':
+                $title = __('Orders Management', 'tt');
+                break;
+            case 'coupons':
+                $title = __('Coupons Management', 'tt');
+                break;
+            case 'members':
+                $title = __('Members Management', 'tt');
+                break;
+        }
+        return $title . ' - ' . get_bloginfo('name');
+    }
     if(is_home() || is_front_page()) {
         $title = get_bloginfo('name') . ' - ' . get_bloginfo('description');
     }elseif(is_single()&&get_post_type() != 'product') {

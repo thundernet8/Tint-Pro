@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2017-01-07 12:53+0800\n"
-"PO-Revision-Date: 2017-01-07 12:54+0800\n"
+"POT-Creation-Date: 2017-01-07 23:09+0800\n"
+"PO-Revision-Date: 2017-01-07 23:11+0800\n"
 "Last-Translator: Zhiyan <mail@webapproach.net>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -2085,27 +2085,27 @@ msgstr "无效的页面模板"
 msgid "Weekly"
 msgstr "每周的"
 
-#: core/functions/func.Seo.php:28 core/functions/func.Seo.php:186
+#: core/functions/func.Seo.php:28 core/functions/func.Seo.php:212
 #: core/modules/mod.ModalLoginForm.php:17
 #: core/templates/actions/tpl.M.Signup.php:90
 msgid "Sign In"
 msgstr "登录"
 
-#: core/functions/func.Seo.php:31 core/functions/func.Seo.php:189
+#: core/functions/func.Seo.php:31 core/functions/func.Seo.php:215
 #: core/templates/actions/tpl.M.Signup.php:62
 msgid "Sign Up"
 msgstr "注册"
 
-#: core/functions/func.Seo.php:34 core/functions/func.Seo.php:192
+#: core/functions/func.Seo.php:34 core/functions/func.Seo.php:218
 msgid "Activate Registration"
 msgstr "激活注册"
 
-#: core/functions/func.Seo.php:37 core/functions/func.Seo.php:195
+#: core/functions/func.Seo.php:37 core/functions/func.Seo.php:221
 #: core/modules/mod.Header.Shop.php:103 core/modules/mod.Header.php:48
 msgid "Sign Out"
 msgstr "注销"
 
-#: core/functions/func.Seo.php:40 core/functions/func.Seo.php:198
+#: core/functions/func.Seo.php:40 core/functions/func.Seo.php:224
 #: core/templates/actions/tpl.M.Findpass.php:33
 msgid "Find Password"
 msgstr "找回密码"
@@ -2194,77 +2194,105 @@ msgstr "完善账户信息 - 连接微博"
 msgid "Complete Account Info - Weixin Connect"
 msgstr "完善账户信息 - 连接微信"
 
-#: core/functions/func.Seo.php:127
+#: core/functions/func.Seo.php:125 core/modules/management/mg.Tab.Status.php:26
+msgid "Site Statistic"
+msgstr "站点统计"
+
+#: core/functions/func.Seo.php:128
+msgid "Posts Management"
+msgstr "文章管理"
+
+#: core/functions/func.Seo.php:131
+msgid "Comments Management"
+msgstr "评论管理"
+
+#: core/functions/func.Seo.php:134
+msgid "Users Management"
+msgstr "用户管理"
+
+#: core/functions/func.Seo.php:137
+msgid "Orders Management"
+msgstr "订单管理"
+
+#: core/functions/func.Seo.php:140
+msgid "Coupons Management"
+msgstr "优惠码管理"
+
+#: core/functions/func.Seo.php:143
+msgid "Members Management"
+msgstr "会员管理"
+
+#: core/functions/func.Seo.php:153
 #, php-format
 msgid " - Page %d"
 msgstr " - 第 %d 页"
 
-#: core/functions/func.Seo.php:138 core/functions/func.Seo.php:235
+#: core/functions/func.Seo.php:164 core/functions/func.Seo.php:261
 #, php-format
 msgid "%s's Home Page"
 msgstr "%s's 个人中心"
 
-#: core/functions/func.Seo.php:142 core/functions/shop/func.Shop.php:297
+#: core/functions/func.Seo.php:168 core/functions/shop/func.Shop.php:297
 msgid "Product Category"
 msgstr "商品分类"
 
-#: core/functions/func.Seo.php:144
+#: core/functions/func.Seo.php:170
 msgid "Product Tag"
 msgstr "商品标签"
 
-#: core/functions/func.Seo.php:146 core/functions/func.Seo.php:149
-#: core/functions/func.Seo.php:247 core/modules/mod.Header.Shop.php:29
+#: core/functions/func.Seo.php:172 core/functions/func.Seo.php:175
+#: core/functions/func.Seo.php:273 core/modules/mod.Header.Shop.php:29
 #: dash/options.php:806
 msgid "Market"
 msgstr "商店"
 
-#: core/functions/func.Seo.php:152
+#: core/functions/func.Seo.php:178
 msgid "Search"
 msgstr "搜索"
 
-#: core/functions/func.Seo.php:154
+#: core/functions/func.Seo.php:180
 msgid "Y"
 msgstr "Y"
 
-#: core/functions/func.Seo.php:154 core/functions/func.Seo.php:156
-#: core/functions/func.Seo.php:158
+#: core/functions/func.Seo.php:180 core/functions/func.Seo.php:182
+#: core/functions/func.Seo.php:184
 msgid "posts archive"
 msgstr "文章归档"
 
-#: core/functions/func.Seo.php:156
+#: core/functions/func.Seo.php:182
 msgid "Y.n"
 msgstr "Y.n"
 
-#: core/functions/func.Seo.php:158
+#: core/functions/func.Seo.php:184
 msgid "Y.n.j"
 msgstr "Y.n.j"
 
-#: core/functions/func.Seo.php:160
+#: core/functions/func.Seo.php:186
 msgid "Tag: "
 msgstr "标签: "
 
-#: core/functions/func.Seo.php:162
+#: core/functions/func.Seo.php:188
 msgid "Page Not Found"
 msgstr "页面未找到"
 
-#: core/functions/func.Seo.php:167
+#: core/functions/func.Seo.php:193
 #, php-format
 msgid " - Page %d "
 msgstr " - 第 %d 页"
 
-#: core/functions/func.Seo.php:201 core/functions/func.Seo.php:235
+#: core/functions/func.Seo.php:227 core/functions/func.Seo.php:261
 msgid "Powered by Tint(Tinection 2)"
 msgstr "由Tint主题驱动(Tinection 2)"
 
-#: core/functions/func.Seo.php:234
+#: core/functions/func.Seo.php:260
 msgid "Ucenter"
 msgstr "用户中心"
 
-#: core/functions/func.Seo.php:234 core/functions/func.Seo.php:247
+#: core/functions/func.Seo.php:260 core/functions/func.Seo.php:273
 msgid "Tint Ucenter and Market System"
 msgstr "Tint主题用户中心和商店系统"
 
-#: core/functions/func.Seo.php:250
+#: core/functions/func.Seo.php:276
 msgid ""
 "Powered by Tint(Tinection 2, a powerful wordpress theme with ucenter and "
 "shop system integrated)"
@@ -2322,15 +2350,6 @@ msgstr "放置若干小工具的容器, 一旦滚动超出视野范围将浮动�
 #, php-format
 msgid ""
 "Tint主题已更新至<a style=\"color:red;\">%1$s</a>(当前%2$s)，请访问<a href=\""
-msgstr ""
-
-#: core/functions/func.Tint.php:167
-#, php-format
-msgid ""
-"主题未授权本域名，如果你购买了本主题，请先<a href=\"%1$s\" target=\"_blank\" "
-"title=\"验证授权\">验证授权</a>，并配置主题根目录functions.php中的相关授权参"
-"数。 如果没有购买，请访问<a href=\"%2$s\" target=\"_blank\" title=\"购买Tint"
-"主题\">WebApproach商店</a>购买。"
 msgstr ""
 
 #: core/functions/func.User.php:26
@@ -2790,6 +2809,50 @@ msgstr ""
 "<div class=\"contextual-bg bg-paycontent\"><span><i class=\"tico tico-paypal"
 "\">&nbsp;</i>付费内容</span><p>%1$s</p><p>%2$s</p></div>"
 
+#: core/modules/management/mg.NavMenu.php:24
+msgid "SITE MANAGEMENT"
+msgstr "管理中心"
+
+#: core/modules/management/mg.NavMenu.php:27
+msgid "STATISTIC"
+msgstr "统计"
+
+#: core/modules/management/mg.NavMenu.php:28
+#: core/modules/uc/uc.Tab.Followers.php:38
+#: core/modules/uc/uc.Tab.Following.php:38
+#: core/modules/widgets/wgt.Author.php:52
+msgid "POSTS"
+msgstr "文章"
+
+#: core/modules/management/mg.NavMenu.php:29 core/modules/uc/uc.NavTabs.php:19
+msgid "COMMENTS"
+msgstr "评论"
+
+#: core/modules/management/mg.NavMenu.php:30
+msgid "USERS"
+msgstr "用户"
+
+#: core/modules/management/mg.NavMenu.php:31 core/modules/me/me.NavMenu.php:34
+msgid "ORDERS"
+msgstr "订单"
+
+#: core/modules/management/mg.NavMenu.php:32
+msgid "COUPONS"
+msgstr "优惠码"
+
+#: core/modules/management/mg.NavMenu.php:33
+msgid "MEMBERS"
+msgstr "会员"
+
+#: core/modules/management/mg.Tab.Status.php:28 dash/options.php:1287
+msgid "Site Open Date"
+msgstr "建站日期"
+
+#: core/modules/management/mg.Tab.Status.php:29
+#, php-format
+msgid "%s (Online for %d days)"
+msgstr "%s (上线 %d 天)"
+
 #: core/modules/me/me.NavMenu.php:23
 msgid "Visit My Homepage"
 msgstr "访问我的主页"
@@ -2835,10 +2898,6 @@ msgstr "积分"
 #: core/modules/me/me.NavMenu.php:33
 msgid "MEMBERSHIP"
 msgstr "会员"
-
-#: core/modules/me/me.NavMenu.php:34
-msgid "ORDERS"
-msgstr "订单"
 
 #: core/modules/me/me.Tab.Contribute.php:25
 #: core/modules/me/me.Tab.EditPost.php:30
@@ -3882,7 +3941,7 @@ msgstr "点击下载"
 #: core/templates/shop/tpl.Product.Tag.php:63
 #: core/templates/shop/tpl.Product.php:94
 msgid "FREE"
-msgstr "FREE"
+msgstr "免费"
 
 #: core/modules/mod.SinglePost.php:86 core/modules/shop/mod.Shop.Relates.php:26
 #: core/modules/shop/mod.Shop.Sidebar.Right.php:51
@@ -3961,10 +4020,6 @@ msgstr "资料"
 msgid "ARTICLES"
 msgstr "文章"
 
-#: core/modules/uc/uc.NavTabs.php:19
-msgid "COMMENTS"
-msgstr "评论"
-
 #: core/modules/uc/uc.NavTabs.php:21 core/modules/uc/uc.Tab.Followers.php:37
 #: core/modules/uc/uc.Tab.Following.php:37
 #: core/modules/widgets/wgt.Author.php:55
@@ -4019,12 +4074,6 @@ msgstr "评论"
 #: core/modules/uc/uc.Tab.Following.php:32
 msgid "Brief Intro : "
 msgstr "简介 : "
-
-#: core/modules/uc/uc.Tab.Followers.php:38
-#: core/modules/uc/uc.Tab.Following.php:38
-#: core/modules/widgets/wgt.Author.php:52
-msgid "POSTS"
-msgstr "文章"
 
 #: core/modules/uc/uc.Tab.Followers.php:43
 #: core/modules/uc/uc.Tab.Following.php:43 core/modules/uc/uc.TopPane.php:28
@@ -6228,10 +6277,6 @@ msgstr "页脚备案文字"
 #: dash/options.php:1279
 msgid "IDC reference No. for regulations of China"
 msgstr "工信部域名备案号码"
-
-#: dash/options.php:1287
-msgid "Site Open Date"
-msgstr "建站日期"
 
 #: dash/options.php:1288
 msgid "The date of when site opened, use `YYYY-mm-dd` format"

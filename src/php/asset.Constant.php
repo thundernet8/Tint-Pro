@@ -31,6 +31,7 @@ defined('CSS_404') || define('CSS_404', '404.css');
 defined('CSS_ERROR_PAGE') || define('CSS_ERROR_PAGE', 'error-page.css');
 defined('CSS_SITE_UTILS') || define('CSS_SITE_UTILS', 'site-utils.css');
 defined('CSS_OAUTH') || define('CSS_OAUTH', 'oauth.css');
+defined('CSS_MANAGE') || define('CSS_MANAGE', 'manage.css');
 
 // JS
 defined('JS_COMMON') || define('JS_COMMON', 'common.js');
@@ -47,3 +48,4 @@ defined('JS_ACTION') || define('JS_ACTION', 'actionPage.js');
 defined('JS_404') || define('JS_404', '404.js');
 defined('JS_SITE_UTILS') || define('JS_SITE_UTILS', 'site-utils.js');
 defined('JS_OAUTH') || define('JS_OAUTH', 'oauth.js');
+defined('JS_MANAGE') || define('JS_MANAGE', 'manage.js');

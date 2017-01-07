@@ -581,7 +581,7 @@ function tt_handle_api_rewrite_rules($wp_rewrite){
  */
 function tt_redirect_management_main_route(){
     if(preg_match('/^\/management([^\/]*)$/i', $_SERVER['REQUEST_URI'])){
-        if($user_id = get_current_user_id()){
+        if(current_user_can('administrator')){
             //$nickname = get_user_meta(get_current_user_id(), 'nickname', true);
             wp_redirect(tt_url_for('manage_status'), 302);
         }else{
