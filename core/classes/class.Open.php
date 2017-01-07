@@ -66,6 +66,61 @@ abstract class Open{
     protected $_opensecret = null; // QQ的是openkey
 
     /**
+     * @var string 开放平台类型
+     */
+    protected static $_type = '';
+
+    /**
+     * @var string 用于获取开放平台开启状态的主题选项key
+     */
+    protected static $_status_option_name = '';
+
+    /**
+     * @var string 用于获取开放平台open key的主题选项key
+     */
+    protected static $_openkey_option_name = '';
+
+    /**
+     * @var string 用于获取开放平台open secret的主题选项key
+     */
+    protected static $_opensecret_option_name = '';
+
+    /**
+     * @var string 用于获取和保存开放平台openid的meta key
+     */
+    protected static $_openid_meta_key = '';
+
+    /**
+     * @var string 用于获取和保存开放平台access token的meta key
+     */
+    protected static $_access_token_meta_key = '';
+
+    /**
+     * @var string 用于获取和保存开放平台refresh token的meta key
+     */
+    protected static $_refresh_token_meta_key = '';
+
+    /**
+     * @var string 用于获取和保存开放平台token expiration的meta key
+     */
+    protected static $_token_expiration_meta_key = '';
+
+    /**
+     * @var string 用于储存state的cookie名
+     */
+    protected static $_state_cookie_name = '';
+
+    /**
+     * @var string 用于储存回调地址的key
+     */
+    protected static $_callback_url_key = '';
+
+    /**
+     * @var string oauth最后一步url key
+     */
+    protected static $_oauth_last_url_key = '';
+
+    /**
      * WP用户实例
      *
      * @since   2.0.0
@@ -100,6 +155,26 @@ abstract class Open{
             $this->_user = ($user_or_id instanceof WP_User) ? $user_or_id : get_user_by('id', (int)$user_or_id);
         }else{
             $this->_user = wp_get_current_user();
+        }
+    }
+
+    /**
+     * 获取对应开放平台的名称
+     *
+     * @since 2.0.0
+     *
+     * @return string
+     */
+    protected function getTypeString(){
+        switch (static::$_type){
+            case 'qq':
+                return __('QQ', 'tt');
+            case 'weibo':
+                return __('Weibo', 'tt');
+            case 'weixin':
+                return __('Weixin', 'tt');
+            default:
+                return '';
         }
     }
 
@@ -216,13 +291,14 @@ abstract class Open{
      * @return bool
      */
     protected function checkOpen($schema = 'enable_check', $user_id = 0){
+        $openTypeString = $this->getTypeString();
         switch ($schema){
             case 'duplication_check':
 
                 if($this->isOpenConnected()){
                     $this->_error = (object)array(
-                        'title' => __('Can Not Bind QQ Again', 'tt'),
-                        'message' => __('You have connected with QQ before, can not do it again, please unbind it before if need', 'tt'),
+                        'title' => sprintf(__('Can Not Bind %s Again', 'tt'), $openTypeString),
+                        'message' => sprintf(__('You have connected with %s before, can not do it again, please unbind it before if need', 'tt'), $openTypeString),
                         'code'  => 'duplicated_connect'
                     );
                     return false;
@@ -233,8 +309,8 @@ abstract class Open{
 
                 if( !($this->isOpenAvailable()) ){
                     $this->_error = (object)array(
-                        'title' => __('QQ Login Disabled', 'tt'),
-                        'message' => __('You have not enabled QQ login, or the required information e.g OpenID, OpenKey missed', 'tt'),
+                        'title' => sprintf(__('%s Login Disabled', 'tt'), $openTypeString),
+                        'message' => sprintf(__('You have not enabled %s login, or the required information e.g OpenID, OpenKey missed', 'tt'), $openTypeString),
                         'code'  => 'disabled_connect'
                     );
                     return false;
@@ -245,8 +321,8 @@ abstract class Open{
 
                 if($this->isOpenConnected($user_id)){
                     $this->_error = (object)array(
-                        'title' => __('QQ connected by other one', 'tt'),
-                        'message' => __('Someone in your WordPress user system have connected with this QQ before, please unbind it before if need', 'tt'),
+                        'title' => sprintf(__('%s connected by other one', 'tt'), $openTypeString),
+                        'message' => sprintf(__('Someone in your WordPress user system have connected with this %s before, please unbind it before if need', 'tt'), $openTypeString),
                         'code'  => 'occupied_connect'
                     );
                     return false;
@@ -708,8 +784,6 @@ class OpenQQ extends Open{
 
     protected static $_oauth_last_url_key = 'oauth_qq_last';
 
-    protected static $_oauth_data_session_key = 'tt_qq_oauth_data';
-
     /**
      * 鉴权，获取code
      *
@@ -955,7 +1029,6 @@ class OpenWeiXin extends Open{
 
     protected static $_oauth_last_url_key = 'oauth_weixin_last';
 
-    protected static $_oauth_data_session_key = 'tt_weixin_oauth_data';
 
     /**
      * 鉴权，获取code
@@ -1245,7 +1318,6 @@ class OpenWeibo extends Open{
 
     protected static $_oauth_last_url_key = 'oauth_weibo_last';
 
-    protected static $_oauth_data_session_key = 'tt_weibo_oauth_data';
 
     /**
      * 鉴权，获取code

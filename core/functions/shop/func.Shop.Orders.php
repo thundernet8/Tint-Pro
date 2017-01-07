@@ -589,9 +589,9 @@ function tt_order_email($order_id) {
  */
 function tt_update_order_product_quantity($order_id) {
     $order = tt_get_order($order_id);
-    if(!$order || $order->order_status != OrderStatus::TRADE_SUCCESS){
-        return;
-    }
+//    if(!$order || $order->order_status != OrderStatus::TRADE_SUCCESS){
+//        return;
+//    }
     $parent_id = $order->parent_id;
     if($parent_id == -1){ // 这是一个合并订单
         $sub_orders = tt_get_sub_orders($order->id);

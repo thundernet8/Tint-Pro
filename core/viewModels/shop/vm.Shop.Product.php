@@ -186,7 +186,8 @@ class ShopProductVM extends BaseVM {
             'ignore_sticky_posts'=>1
         );
         $relates_query = null;
-        if(count($tagIDs) > 0 && ($the_query = new WP_Query($relates_query_args))->have_posts()) {
+        $the_query = new WP_Query($relates_query_args);
+        if(count($tagIDs) > 0 && $the_query->have_posts()) {
             $relates_query = $the_query;
         }else{
             $r_cats = get_the_terms($the_product, 'product_category');
@@ -229,7 +230,7 @@ class ShopProductVM extends BaseVM {
             ));
             $related_product['sales'] = get_post_meta($post->ID, 'tt_product_sales', true);
             $related_product['currency'] = get_post_meta( $post->ID, 'tt_pay_currency', true) ? 'cash' : 'credit';
-            $related_product['price'] = $related_product['currency'] == 'cash' ? sprintf('%0.2f', get_post_meta($post->ID, 'tt_product_price', true)) : (int)get_post_meta($the_product->ID, 'tt_product_price', true);
+            $related_product['price'] = $related_product['currency'] == 'cash' ? sprintf('%0.2f', get_post_meta($post->ID, 'tt_product_price', true)) : (int)get_post_meta($post->ID, 'tt_product_price', true);
             $related_product['price_unit'] = $related_product['currency'] == 'cash' ? __('YUAN', 'tt') : __('CREDITS', 'tt');
             $related_product['price_icon'] = !($related_product['price'] > 0) ? '' : $related_product['currency'] == 'cash' ? '<i class="tico tico-cny"></i>' : '<i class="tico tico-diamond"></i>';
             $related_product['discount'] = tt_get_product_discount_array($post->ID); // array 第1项为普通折扣, 第2项为会员(月付)折扣, 第3项为会员(年付)折扣, 第4项为会员(永久)折扣

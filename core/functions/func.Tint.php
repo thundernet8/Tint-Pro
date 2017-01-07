@@ -164,7 +164,7 @@ function tt_tint_authorize() {
         }
     }
     if($active!=1){
-        wp_die(sprintf(__('主题未授权本域名，如果你购买了本主题，请先<a href="%1$s" target="_blank" title="验证授权">验证授权</a>，并配置主题根目录functions.php中的相关授权参数。 如果没有购买，请访问<a href="%2$s" target="_blank" title="购买Tint主题">WebApproach商店</a>购买。'), TT_CHECK_HOME . '/tint/authorize.php', 'https://old.webapproach.net/shop'), '域名未授权');
+        wp_die(sprintf(base64_decode('5Li76aKY5pyq5o6I5p2D5pys5Z+f5ZCN77yM5aaC5p6c5L2g6LSt5Lmw5LqG5pys5Li76aKY77yM6K+35YWIPGEgaHJlZj0iJTEkcyIgdGFyZ2V0PSJfYmxhbmsiIHRpdGxlPSLpqozor4HmjojmnYMiPumqjOivgeaOiOadgzwvYT7vvIzlubbphY3nva7kuLvpopjmoLnnm67lvZVmdW5jdGlvbnMucGhw5Lit55qE55u45YWz5o6I5p2D5Y+C5pWw44CCIOWmguaenOayoeaciei0reS5sO+8jOivt+iuv+mXrjxhIGhyZWY9IiUyJHMiIHRhcmdldD0iX2JsYW5rIiB0aXRsZT0i6LSt5LmwVGludOS4u+mimCI+V2ViQXBwcm9hY2jllYblupc8L2E+6LSt5Lmw44CC'), TT_CHECK_HOME . base64_decode('L3RpbnQvYXV0aG9yaXplLnBocA=='), base64_decode('aHR0cHM6Ly9vbGQud2ViYXBwcm9hY2gubmV0L3Nob3A=')), base64_decode('5Z+f5ZCN5pyq5o6I5p2D'));
     }else{
         $arr = array(
             'time' => time(),

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2017-01-03 22:58+0800\n"
-"PO-Revision-Date: 2017-01-03 22:59+0800\n"
+"POT-Creation-Date: 2017-01-07 12:53+0800\n"
+"PO-Revision-Date: 2017-01-07 12:54+0800\n"
 "Last-Translator: Zhiyan <mail@webapproach.net>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -737,160 +737,178 @@ msgstr "该用户元数据不可删除"
 msgid "delete usermeta successfully"
 msgstr "删除用户元数据成功"
 
-#: core/classes/class.Open.php:224
-msgid "Can Not Bind QQ Again"
-msgstr "不能重复绑定QQ"
+#: core/classes/class.Open.php:171 core/modules/me/me.Tab.Settings.php:74
+msgid "QQ"
+msgstr "QQ"
 
-#: core/classes/class.Open.php:225
+#: core/classes/class.Open.php:173
+msgid "Weibo"
+msgstr "微博"
+
+#: core/classes/class.Open.php:175
+msgid "Weixin"
+msgstr "微信"
+
+#: core/classes/class.Open.php:300
+#, php-format
+msgid "Can Not Bind %s Again"
+msgstr "不能重复绑定%s"
+
+#: core/classes/class.Open.php:301
+#, php-format
 msgid ""
-"You have connected with QQ before, can not do it again, please unbind it "
+"You have connected with %s before, can not do it again, please unbind it "
 "before if need"
-msgstr "你之前连接过QQ开放平台, 在解绑之前, 你不能重复绑定"
+msgstr "你之前连接过%s开放平台, 在解绑之前, 你不能重复绑定"
 
-#: core/classes/class.Open.php:236
-msgid "QQ Login Disabled"
-msgstr "QQ 登录禁用"
+#: core/classes/class.Open.php:312
+#, php-format
+msgid "%s Login Disabled"
+msgstr "%s 登录禁用"
 
-#: core/classes/class.Open.php:237
+#: core/classes/class.Open.php:313
+#, php-format
 msgid ""
-"You have not enabled QQ login, or the required information e.g OpenID, "
+"You have not enabled %s login, or the required information e.g OpenID, "
 "OpenKey missed"
-msgstr "没有开启QQ登录, 或者必须的信息如OpenID, OpenKey丢失"
+msgstr "没有开启%s登录, 或者必须的信息如OpenID, OpenKey丢失"
 
-#: core/classes/class.Open.php:248
-msgid "QQ connected by other one"
-msgstr "QQ已连接至另一个用户"
+#: core/classes/class.Open.php:324
+#, php-format
+msgid "%s connected by other one"
+msgstr "%s已连接至另一个用户"
 
-#: core/classes/class.Open.php:249
+#: core/classes/class.Open.php:325
+#, php-format
 msgid ""
-"Someone in your WordPress user system have connected with this QQ before, "
+"Someone in your WordPress user system have connected with this %s before, "
 "please unbind it before if need"
-msgstr "WordPress的用户中已有绑定了该QQ, 必须先解绑才能重新连接至此QQ"
+msgstr "WordPress的用户中已有绑定了该%s, 必须先解绑才能重新连接"
 
-#: core/classes/class.Open.php:272
+#: core/classes/class.Open.php:348
 msgid "State Missing"
 msgstr "State交换码丢失"
 
-#: core/classes/class.Open.php:273
+#: core/classes/class.Open.php:349
 msgid "The state parameter was not found in the url"
 msgstr "URL缺少state参数"
 
-#: core/classes/class.Open.php:280
+#: core/classes/class.Open.php:356
 msgid "State Incorrect"
 msgstr "State交换码错误"
 
-#: core/classes/class.Open.php:281
+#: core/classes/class.Open.php:357
 msgid "The state parameter in the url is incorrect"
 msgstr "URL中的state参数无效"
 
-#: core/classes/class.Open.php:453
+#: core/classes/class.Open.php:530
 msgid "OAuth Data Not Exist"
 msgstr "不存在OAuth数据"
 
-#: core/classes/class.Open.php:454
+#: core/classes/class.Open.php:531
 msgid "Can not get oauth data, please retry the oauth steps"
 msgstr "无法获取 OAuth数据, 请重试授权步骤"
 
-#: core/classes/class.Open.php:485
+#: core/classes/class.Open.php:562
 msgid ""
 "The username is exist, please provide correct password for it if owned by "
 "you or choose another username"
 msgstr "该用户名已存在, 请提供正确的密码以供连接或重选新的用户名"
 
-#: core/classes/class.Open.php:507
+#: core/classes/class.Open.php:584
 msgid "Create New User Failed"
 msgstr "创建新用户失败"
 
-#: core/classes/class.Open.php:527
+#: core/classes/class.Open.php:604
 msgid "请完善账号信息"
 msgstr ""
 
-#: core/classes/class.Open.php:528
+#: core/classes/class.Open.php:605
 #, php-format
 msgid "欢迎来到%1$s, 请<a href=\"%2$s\">完善资料</a>"
 msgstr ""
 
-#: core/classes/class.Open.php:583
+#: core/classes/class.Open.php:660
 msgid "Unallowed Open Type"
 msgstr "不允许的开放平台登录类型"
 
-#: core/classes/class.Open.php:584
+#: core/classes/class.Open.php:661
 msgid "The open connect type is not allowed"
 msgstr "不允许该开放平台登录"
 
-#: core/classes/class.Open.php:627
+#: core/classes/class.Open.php:704
 msgid "User Authorization Canceled"
 msgstr "用户取消了授权"
 
-#: core/classes/class.Open.php:628
+#: core/classes/class.Open.php:705
 msgid ""
 "You should agree to authorize our application connecting your open account"
 msgstr "你应该同意授权本应用连接你的开放平台账户"
 
-#: core/classes/class.Open.php:657 core/classes/class.Open.php:876
-#: core/classes/class.Open.php:1139 core/classes/class.Open.php:1494
+#: core/classes/class.Open.php:734 core/classes/class.Open.php:951
+#: core/classes/class.Open.php:1213 core/classes/class.Open.php:1567
 msgid "User Not Logged In"
 msgstr "用户未登录"
 
-#: core/classes/class.Open.php:658
+#: core/classes/class.Open.php:735
 msgid "You must be logged in and then log out"
 msgstr "你必须登录了才能登出"
 
-#: core/classes/class.Open.php:769
+#: core/classes/class.Open.php:844
 msgid "Grant QQ Access Token Failed"
 msgstr "获取 QQ Access Token 失败"
 
-#: core/classes/class.Open.php:822
+#: core/classes/class.Open.php:897
 msgid "Grant QQ OpenID Failed"
 msgstr "获取 QQ OpenID 失败"
 
-#: core/classes/class.Open.php:850
+#: core/classes/class.Open.php:925
 msgid "Grant QQ User Info Failed"
 msgstr "获取 QQ 用户信息失败"
 
-#: core/classes/class.Open.php:877 core/classes/class.Open.php:1140
-#: core/classes/class.Open.php:1495
+#: core/classes/class.Open.php:952 core/classes/class.Open.php:1214
+#: core/classes/class.Open.php:1568
 msgid "You must log in to refresh your token"
 msgstr "你必须登录才能刷新Token"
 
-#: core/classes/class.Open.php:888 core/classes/class.Open.php:1151
-#: core/classes/class.Open.php:1506
+#: core/classes/class.Open.php:963 core/classes/class.Open.php:1225
+#: core/classes/class.Open.php:1579
 msgid "Refresh Token Miss"
 msgstr "丢失Refresh Token"
 
-#: core/classes/class.Open.php:889 core/classes/class.Open.php:1152
-#: core/classes/class.Open.php:1507
+#: core/classes/class.Open.php:964 core/classes/class.Open.php:1226
+#: core/classes/class.Open.php:1580
 msgid "A refresh token is required to get new access token"
 msgstr "需要 Refresh Token 以获取新的 Access Token"
 
-#: core/classes/class.Open.php:1033 core/classes/class.Open.php:1112
-#: core/classes/class.Open.php:1197 core/classes/class.Open.php:1326
-#: core/classes/class.Open.php:1389 core/classes/class.Open.php:1469
-#: core/classes/class.Open.php:1544
+#: core/classes/class.Open.php:1107 core/classes/class.Open.php:1186
+#: core/classes/class.Open.php:1271 core/classes/class.Open.php:1399
+#: core/classes/class.Open.php:1462 core/classes/class.Open.php:1542
+#: core/classes/class.Open.php:1617
 msgid "The open server returned with a incorrect response"
 msgstr "开放平台服务器响应格式错误"
 
-#: core/classes/class.Open.php:1103 core/classes/class.Open.php:1111
+#: core/classes/class.Open.php:1177 core/classes/class.Open.php:1185
 msgid "Get WeiXin Userinfo Failed"
 msgstr "获取微信用户信息失败"
 
-#: core/classes/class.Open.php:1188 core/classes/class.Open.php:1196
+#: core/classes/class.Open.php:1262 core/classes/class.Open.php:1270
 msgid "Refresh WeiXin Token Failed"
 msgstr "刷新微信 Token 失败"
 
-#: core/classes/class.Open.php:1317
+#: core/classes/class.Open.php:1390
 msgid "Grant Weibo Access Token Failed"
 msgstr "获取微博 Access Token 失败"
 
-#: core/classes/class.Open.php:1380
+#: core/classes/class.Open.php:1453
 msgid "Grant Weibo Token Info Failed"
 msgstr "获取微博 Token 信息失败"
 
-#: core/classes/class.Open.php:1460
+#: core/classes/class.Open.php:1533
 msgid "Grant Weibo User Show Info Failed"
 msgstr "获取微博用户信息失败"
 
-#: core/classes/class.Open.php:1535
+#: core/classes/class.Open.php:1608
 msgid "Refresh Weibo Access Token Failed"
 msgstr "刷新微博 Access Token 失败"
 
@@ -1375,15 +1393,15 @@ msgstr "欢迎加入[%s]"
 msgid "您的站点「%s」有新用户注册 :"
 msgstr "您的站点「%s」有新用户注册 :"
 
-#: core/functions/func.Account.php:283
+#: core/functions/func.Account.php:280
 msgid "Update basic profiles successfully"
 msgstr "更新基本资料成功"
 
-#: core/functions/func.Account.php:308
+#: core/functions/func.Account.php:305
 msgid "Update extended profiles successfully"
 msgstr "更新扩展资料成功"
 
-#: core/functions/func.Account.php:333
+#: core/functions/func.Account.php:330
 msgid "Update security profiles successfully"
 msgstr "更新安全信息成功"
 
@@ -1525,7 +1543,7 @@ msgstr "你要购买的资源不存在"
 
 #: core/functions/func.Download.php:73 core/functions/shop/func.Shop.php:493
 #: core/modules/mod.Download.php:35 core/modules/mod.Download.php:49
-#: dash/options.php:956 dash/options.php:1062
+#: dash/options.php:957 dash/options.php:1063
 msgid "None"
 msgstr "无"
 
@@ -2196,7 +2214,7 @@ msgstr "商品标签"
 
 #: core/functions/func.Seo.php:146 core/functions/func.Seo.php:149
 #: core/functions/func.Seo.php:247 core/modules/mod.Header.Shop.php:29
-#: dash/options.php:805
+#: dash/options.php:806
 msgid "Market"
 msgstr "商店"
 
@@ -2266,32 +2284,32 @@ msgstr "此处内容需要登录并 <span class=\"user-login\">发表评论</spa
 msgid "此处内容需要登录并 <a href=\"#respond\">发表评论</a> 才可见"
 msgstr "此处内容需要登录并 <a href=\"#respond\">发表评论</a> 才可见"
 
-#: core/functions/func.Sidebar.php:60 dash/options.php:301 dash/options.php:316
+#: core/functions/func.Sidebar.php:60 dash/options.php:302 dash/options.php:317
 msgid "Common Sidebar"
 msgstr "默认边栏"
 
-#: core/functions/func.Sidebar.php:61 dash/options.php:302 dash/options.php:317
-#: dash/options.php:333
+#: core/functions/func.Sidebar.php:61 dash/options.php:303 dash/options.php:318
+#: dash/options.php:334
 msgid "Home Sidebar"
 msgstr "主页边栏"
 
-#: core/functions/func.Sidebar.php:62 dash/options.php:303 dash/options.php:318
-#: dash/options.php:343
+#: core/functions/func.Sidebar.php:62 dash/options.php:304 dash/options.php:319
+#: dash/options.php:344
 msgid "Single Sidebar"
 msgstr "文章边栏"
 
-#: core/functions/func.Sidebar.php:65 dash/options.php:306 dash/options.php:321
-#: dash/options.php:373
+#: core/functions/func.Sidebar.php:65 dash/options.php:307 dash/options.php:322
+#: dash/options.php:374
 msgid "Search Sidebar"
 msgstr "搜索边栏"
 
-#: core/functions/func.Sidebar.php:67 dash/options.php:308 dash/options.php:323
-#: dash/options.php:393
+#: core/functions/func.Sidebar.php:67 dash/options.php:309 dash/options.php:324
+#: dash/options.php:394
 msgid "Page Sidebar"
 msgstr "页面边栏"
 
-#: core/functions/func.Sidebar.php:68 dash/options.php:309 dash/options.php:324
-#: dash/options.php:403
+#: core/functions/func.Sidebar.php:68 dash/options.php:310 dash/options.php:325
+#: dash/options.php:404
 msgid "Download Page Sidebar"
 msgstr "下载页边栏"
 
@@ -2319,15 +2337,15 @@ msgstr ""
 msgid "Site Manager"
 msgstr "站长"
 
-#: core/functions/func.User.php:29 dash/options.php:587
+#: core/functions/func.User.php:29 dash/options.php:588
 msgid "Editor"
 msgstr "编辑"
 
-#: core/functions/func.User.php:32 dash/options.php:588
+#: core/functions/func.User.php:32 dash/options.php:589
 msgid "Author"
 msgstr "作者"
 
-#: core/functions/func.User.php:35 dash/options.php:589
+#: core/functions/func.User.php:35 dash/options.php:590
 msgid "Contributor"
 msgstr "投稿者"
 
@@ -2805,8 +2823,8 @@ msgstr "收藏"
 #: core/viewModels/shop/vm.Shop.Category.php:117
 #: core/viewModels/shop/vm.Shop.Home.php:110
 #: core/viewModels/shop/vm.Shop.Product.php:120
-#: core/viewModels/shop/vm.Shop.Product.php:233
-#: core/viewModels/shop/vm.Shop.Product.php:280
+#: core/viewModels/shop/vm.Shop.Product.php:234
+#: core/viewModels/shop/vm.Shop.Product.php:281
 #: core/viewModels/shop/vm.Shop.Search.php:111
 #: core/viewModels/shop/vm.Shop.Tag.php:117
 #: core/viewModels/shop/vm.Shop.ViewHistory.php:99
@@ -3361,10 +3379,6 @@ msgstr "扩展信息"
 #: core/modules/me/me.Tab.Settings.php:72
 msgid "e.g. Social Infos"
 msgstr "社会化信息等"
-
-#: core/modules/me/me.Tab.Settings.php:74
-msgid "QQ"
-msgstr "QQ"
 
 #: core/modules/me/me.Tab.Settings.php:81 dash/dash.php:148
 msgid "Sina Weibo"
@@ -4322,11 +4336,11 @@ msgstr "标签云"
 msgid "Local Account"
 msgstr "本地账户"
 
-#: core/modules/widgets/wgt.UC.php:37 dash/options.php:492
+#: core/modules/widgets/wgt.UC.php:37 dash/options.php:493
 msgid "QQ Login"
 msgstr "QQ 登录"
 
-#: core/modules/widgets/wgt.UC.php:40 dash/options.php:522
+#: core/modules/widgets/wgt.UC.php:40 dash/options.php:523
 msgid "Weibo Login"
 msgstr "微博登录"
 
@@ -4997,8 +5011,8 @@ msgstr "现金支付"
 #: core/viewModels/shop/vm.Shop.Category.php:117
 #: core/viewModels/shop/vm.Shop.Home.php:110
 #: core/viewModels/shop/vm.Shop.Product.php:120
-#: core/viewModels/shop/vm.Shop.Product.php:233
-#: core/viewModels/shop/vm.Shop.Product.php:280
+#: core/viewModels/shop/vm.Shop.Product.php:234
+#: core/viewModels/shop/vm.Shop.Product.php:281
 #: core/viewModels/shop/vm.Shop.Search.php:111
 #: core/viewModels/shop/vm.Shop.Tag.php:117
 #: core/viewModels/shop/vm.Shop.ViewHistory.php:99
@@ -5385,438 +5399,438 @@ msgstr "最多评论"
 msgid "Latest Reviewed"
 msgstr "最新评论"
 
-#: dash/options.php:208
+#: dash/options.php:209
 msgid "Featured Category 1"
 msgstr "置顶分类 1"
 
-#: dash/options.php:209
+#: dash/options.php:210
 msgid "Choose the first featured category for homepage"
 msgstr "选择首页第一个置顶分类"
 
-#: dash/options.php:218
+#: dash/options.php:219
 msgid "Featured Category 2"
 msgstr "置顶分类 2"
 
-#: dash/options.php:219
+#: dash/options.php:220
 msgid "Choose the second featured category for homepage"
 msgstr "选择首页第二个置顶分类"
 
-#: dash/options.php:228
+#: dash/options.php:229
 msgid "Featured Category 3"
 msgstr "置顶分类 3"
 
-#: dash/options.php:229
+#: dash/options.php:230
 msgid "Choose the third featured category for homepage"
 msgstr "选择首页第三个置顶分类"
 
-#: dash/options.php:238
+#: dash/options.php:239
 msgid "Home Products Recommendation"
 msgstr "首页商品推荐"
 
-#: dash/options.php:239
+#: dash/options.php:240
 msgid "Enable products recommendation module for homepage"
 msgstr "开启首页底部商品推荐模块"
 
-#: dash/options.php:247
+#: dash/options.php:248
 msgid "Post Comments Count"
 msgstr "分页评论数量"
 
-#: dash/options.php:248
+#: dash/options.php:249
 msgid ""
 "The num of comments per page for a post to display, leave empty or set 0 to "
 "show all comments"
 msgstr "每个评论分页最多显示的评论数量, 留空或设为0以显示所有评论"
 
-#: dash/options.php:257
+#: dash/options.php:258
 msgid "Excerpt Read More Text"
 msgstr "摘要Read More字符"
 
-#: dash/options.php:258
+#: dash/options.php:259
 msgid "The placeholder string at end of excerpt for indicating reading more"
 msgstr "位于摘要尾部的占位字符"
 
-#: dash/options.php:267
+#: dash/options.php:268
 msgid "Excerpt Length"
 msgstr "摘要长度"
 
-#: dash/options.php:278
+#: dash/options.php:279
 msgid "Disable External Links"
 msgstr "禁止外部链接"
 
-#: dash/options.php:279
+#: dash/options.php:280
 msgid ""
 "Convert external links in post content, excerpt or comments to internal links"
 msgstr "将外部链接转换为内部链接"
 
-#: dash/options.php:288
+#: dash/options.php:289
 msgid "Sidebar"
 msgstr "边栏"
 
-#: dash/options.php:295
+#: dash/options.php:296
 msgid "Register Sidebars"
 msgstr "注册边栏"
 
-#: dash/options.php:296
+#: dash/options.php:297
 msgid "Check the sidebars to register"
 msgstr "勾选需要注册的边栏"
 
-#: dash/options.php:319 dash/options.php:353
+#: dash/options.php:320 dash/options.php:354
 msgid "Archive Sidebar"
 msgstr "归档边栏"
 
-#: dash/options.php:320
+#: dash/options.php:321
 msgid "Category Sidebar"
 msgstr "分类边栏"
 
-#: dash/options.php:322 dash/options.php:383
+#: dash/options.php:323 dash/options.php:384
 msgid "404 Sidebar"
 msgstr "404边栏"
 
-#: dash/options.php:334
+#: dash/options.php:335
 msgid "Select a sidebar for homepage"
 msgstr "为主页选择一个边栏"
 
-#: dash/options.php:344
+#: dash/options.php:345
 msgid "Select a sidebar for single post page"
 msgstr "为文章页选择一个边栏"
 
-#: dash/options.php:354
+#: dash/options.php:355
 msgid "Select a sidebar for archive page"
 msgstr "为归档页选择一个边栏"
 
-#: dash/options.php:374
+#: dash/options.php:375
 msgid "Select a sidebar for search page"
 msgstr "为搜索结果页选择一个边栏"
 
-#: dash/options.php:384
+#: dash/options.php:385
 msgid "Select a sidebar for 404 page"
 msgstr "为404页面选择一个边栏"
 
-#: dash/options.php:394
+#: dash/options.php:395
 msgid "Select a sidebar for page"
 msgstr "为普通页面选择一个边栏"
 
-#: dash/options.php:404
+#: dash/options.php:405
 msgid "Select a sidebar for download page"
 msgstr "为下载页选择一个边栏"
 
-#: dash/options.php:415
+#: dash/options.php:416
 msgid "Social"
 msgstr "社会化"
 
-#: dash/options.php:422
+#: dash/options.php:423
 msgid "Site QQ"
 msgstr "网站QQ"
 
-#: dash/options.php:423
+#: dash/options.php:424
 msgid "The QQ which is dedicated for the site"
 msgstr "站点服务专属QQ号码"
 
-#: dash/options.php:432
+#: dash/options.php:433
 msgid "Site QQ Group ID"
 msgstr "网站QQ群 ID Key"
 
-#: dash/options.php:433
+#: dash/options.php:434
 msgid ""
 "The ID key of QQ group which is dedicated for the site, visit `http://shang."
 "qq.com` for detail"
 msgstr "站点专属服务QQ群加群链接的ID Key, 非群号, 至`http://shang.qq.com`获取"
 
-#: dash/options.php:442
+#: dash/options.php:443
 msgid "Site Weibo"
 msgstr "网站微博名"
 
-#: dash/options.php:443
+#: dash/options.php:444
 msgid "The name of Weibo account which is dedicated for the site"
 msgstr "站点服务专属微博用户名"
 
-#: dash/options.php:452
+#: dash/options.php:453
 msgid "Site Facebook"
 msgstr "网站Facebook账户名"
 
-#: dash/options.php:453
+#: dash/options.php:454
 msgid "The name of Facebook account which is dedicated for the site"
 msgstr "站点服务专属的Facebook账户用户名"
 
-#: dash/options.php:462
+#: dash/options.php:463
 msgid "Site Twitter"
 msgstr "网站Twitter"
 
-#: dash/options.php:463
+#: dash/options.php:464
 msgid "The name of Twitter account which is dedicated for the site"
 msgstr "站点专属服务Twitter账号"
 
-#: dash/options.php:472
+#: dash/options.php:473
 msgid "Site Weixin"
 msgstr "网站微信"
 
-#: dash/options.php:473
+#: dash/options.php:474
 msgid "The qrcode image of Weixin account which is dedicated for the site"
 msgstr "站点服务专属微信号的二维码图片(可以是公众号二维码)"
 
-#: dash/options.php:482
+#: dash/options.php:483
 msgid "Site Alipay"
 msgstr "网站支付宝"
 
-#: dash/options.php:483
+#: dash/options.php:484
 msgid "The qrcode image of Alipay account which is dedicated for the site"
 msgstr "站点服务专属支付宝账号的二维码图片"
 
-#: dash/options.php:493
+#: dash/options.php:494
 msgid "QQ login "
 msgstr "QQ 登录"
 
-#: dash/options.php:502
+#: dash/options.php:503
 msgid "QQ Open ID"
 msgstr "QQ Open ID"
 
-#: dash/options.php:503
+#: dash/options.php:504
 msgid "Your QQ open application ID"
 msgstr "你的QQ开放平台应用ID"
 
-#: dash/options.php:512
+#: dash/options.php:513
 msgid "QQ Open Key"
 msgstr "QQ Open Key"
 
-#: dash/options.php:513
+#: dash/options.php:514
 msgid "Your QQ open application key"
 msgstr "你的QQ开放平台应用Key"
 
-#: dash/options.php:523
+#: dash/options.php:524
 msgid "Weibo login access"
 msgstr "接入微博登录"
 
-#: dash/options.php:532
+#: dash/options.php:533
 msgid "Weibo Open Key"
 msgstr "微博 Open Key"
 
-#: dash/options.php:533
+#: dash/options.php:534
 msgid "Your weibo open application key"
 msgstr "你的微博开放平台应用Key"
 
-#: dash/options.php:542
+#: dash/options.php:543
 msgid "Weibo Open Secret"
 msgstr "微博 Open Secret"
 
-#: dash/options.php:543
+#: dash/options.php:544
 msgid "Your weibo open application secret"
 msgstr "你的微博开放平台应用Secret"
 
-#: dash/options.php:552
+#: dash/options.php:553
 msgid "Weixin Login"
 msgstr "微信登录"
 
-#: dash/options.php:553
+#: dash/options.php:554
 msgid "Weixin login access"
 msgstr "接入微信登录"
 
-#: dash/options.php:562
+#: dash/options.php:563
 msgid "Weixin Open Key"
 msgstr "微信 Open Key"
 
-#: dash/options.php:563
+#: dash/options.php:564
 msgid "Your weixin open application key"
 msgstr "你的微博开放平台应用Key"
 
-#: dash/options.php:572
+#: dash/options.php:573
 msgid "Weixin Open Secret"
 msgstr "微信 Open Secret"
 
-#: dash/options.php:573
+#: dash/options.php:574
 msgid "Your weixin open application secret"
 msgstr "你的微博开放平台应用Secret"
 
-#: dash/options.php:581
+#: dash/options.php:582
 msgid "Open User Default Role"
 msgstr "社会化登录新用户默认角色"
 
-#: dash/options.php:582
+#: dash/options.php:583
 msgid "Choose the role and capabilities for the new connected user from open"
 msgstr "选择通过社会化登录新连接用户的默认角色和权限"
 
-#: dash/options.php:590
+#: dash/options.php:591
 msgid "Subscriber"
 msgstr "订阅者"
 
-#: dash/options.php:598
+#: dash/options.php:599
 msgid "Ad"
 msgstr "广告"
 
-#: dash/options.php:607
+#: dash/options.php:608
 msgid "Membership"
 msgstr "会员"
 
-#: dash/options.php:613
+#: dash/options.php:614
 msgid "月费会员价格"
 msgstr "月费会员价格"
 
-#: dash/options.php:624
+#: dash/options.php:625
 msgid "年费会员价格"
 msgstr "年费会员价格"
 
-#: dash/options.php:635
+#: dash/options.php:636
 msgid "永久会员价格"
 msgstr "永久会员价格"
 
-#: dash/options.php:646
+#: dash/options.php:647
 msgid "积分价格(元/100积分)"
 msgstr "积分价格(元/100积分)"
 
-#: dash/options.php:647
+#: dash/options.php:648
 msgid "注意: 积分充值最小单位为100, 此价格为100个积分的价格"
 msgstr "注意: 积分充值最小单位为100, 此价格为100个积分的价格"
 
-#: dash/options.php:657
+#: dash/options.php:658
 msgid "每日签到积分奖励"
 msgstr "每日签到积分奖励"
 
-#: dash/options.php:668
+#: dash/options.php:669
 msgid "注册奖励积分"
 msgstr "注册奖励积分"
 
-#: dash/options.php:669
+#: dash/options.php:670
 msgid "新用户注册时默认赠送的积分数量"
 msgstr "新用户注册时默认赠送的积分数量"
 
-#: dash/options.php:678
+#: dash/options.php:679
 msgid "访问推广奖励积分"
 msgstr "访问推广奖励积分"
 
-#: dash/options.php:679
+#: dash/options.php:680
 msgid "通过分享链接推广其他用户访问本站时奖励的积分数量"
 msgstr "通过分享链接推广其他用户访问本站时奖励的积分数量"
 
-#: dash/options.php:688
+#: dash/options.php:689
 msgid "注册推广奖励积分"
 msgstr "注册推广奖励积分"
 
-#: dash/options.php:689
+#: dash/options.php:690
 msgid "通过分享链接推广其他用户注册本站用户时奖励的积分数量"
 msgstr "通过分享链接推广其他用户注册本站用户时奖励的积分数量"
 
-#: dash/options.php:698
+#: dash/options.php:699
 msgid "投稿奖励积分"
 msgstr "投稿奖励积分"
 
-#: dash/options.php:699
+#: dash/options.php:700
 msgid "用户向本站投稿文章通过时奖励的积分"
 msgstr "用户向本站投稿文章通过时奖励的积分"
 
-#: dash/options.php:708
+#: dash/options.php:709
 msgid "评论奖励积分"
 msgstr "评论奖励积分"
 
-#: dash/options.php:709
+#: dash/options.php:710
 msgid "用户在站内发表评论一次奖励的积分"
 msgstr "用户在站内发表评论一次奖励的积分"
 
-#: dash/options.php:718
+#: dash/options.php:719
 msgid "访问推广次数限制"
 msgstr "访问推广次数限制"
 
-#: dash/options.php:719
+#: dash/options.php:720
 msgid "每日通过访问推广最多获得积分奖励的次数"
 msgstr "每日通过访问推广最多获得积分奖励的次数"
 
-#: dash/options.php:728
+#: dash/options.php:729
 msgid "注册推广次数限制"
 msgstr "注册推广次数限制"
 
-#: dash/options.php:729
+#: dash/options.php:730
 msgid "每日通过注册推广最多获得积分奖励的次数"
 msgstr "每日通过注册推广最多获得积分奖励的次数"
 
-#: dash/options.php:738
+#: dash/options.php:739
 msgid "投稿积分奖励次数限制"
 msgstr "投稿积分奖励次数限制"
 
-#: dash/options.php:739
+#: dash/options.php:740
 msgid "每日通过投稿最多获得积分奖励的次数"
 msgstr "每日通过投稿最多获得积分奖励的次数"
 
-#: dash/options.php:748
+#: dash/options.php:749
 msgid "评论积分奖励次数限制"
 msgstr "评论积分奖励次数限制"
 
-#: dash/options.php:749
+#: dash/options.php:750
 msgid "每日通过评论最多获得积分奖励的次数"
 msgstr "每日通过评论最多获得积分奖励的次数"
 
-#: dash/options.php:759
+#: dash/options.php:760
 msgid "Shop"
 msgstr "商店"
 
-#: dash/options.php:766
+#: dash/options.php:767
 msgid "Enable Shop"
 msgstr "开启商品系统"
 
-#: dash/options.php:767
+#: dash/options.php:768
 msgid ""
 "After enable this, users can create orders and buy something those the site "
 "provided"
 msgstr "启用此选项以支持商品创建, 用户订单创建以及购买提供的商品"
 
-#: dash/options.php:776
+#: dash/options.php:777
 msgid "Products Archive Link Slug"
 msgstr "商品归档固定链接Slug"
 
-#: dash/options.php:777
+#: dash/options.php:778
 msgid "The special prefix in product archive link"
 msgstr "商品归档页固定链接的标识, 商品详情页固定链接前缀也将使用此字符"
 
-#: dash/options.php:787
+#: dash/options.php:788
 msgid "Product Permalink Mode"
 msgstr "商品固定链接模式"
 
-#: dash/options.php:788
+#: dash/options.php:789
 msgid "The link mode for the rewrite product permalink"
 msgstr "商品固定链接Rewrite的模式, 请保持与全站的固定链接模式一致"
 
-#: dash/options.php:794
+#: dash/options.php:795
 msgid "Post ID"
 msgstr "Post ID"
 
-#: dash/options.php:795
+#: dash/options.php:796
 msgid "Post Name"
 msgstr "Post Name"
 
-#: dash/options.php:802
+#: dash/options.php:803
 msgid "Shop Home Keywords"
 msgstr "商店主页关键词"
 
-#: dash/options.php:803
+#: dash/options.php:804
 msgid "The keywords of shop homepage, good for SEO"
 msgstr "商店主页关键词元信息，SEO友好(多个关键词以英文逗号分隔)"
 
-#: dash/options.php:812
+#: dash/options.php:813
 msgid "Shop Home Banner Title"
 msgstr "商店主页横幅标题"
 
-#: dash/options.php:813
+#: dash/options.php:814
 msgid "The main title displayed in the banner of shop homepage"
 msgstr "商店主页顶部横幅上显示的主标题"
 
-#: dash/options.php:815
+#: dash/options.php:816
 msgid "Shop Quality Products"
 msgstr "Shop Quality Products"
 
-#: dash/options.php:822
+#: dash/options.php:823
 msgid "Shop Home Banner Sub Title"
 msgstr "商店主页横幅副标题"
 
-#: dash/options.php:823
+#: dash/options.php:824
 msgid "The sub title displayed in the banner of shop homepage"
 msgstr "商店主页顶部横幅上显示的副标题/描述"
 
-#: dash/options.php:825
+#: dash/options.php:826
 msgid "Themes - Plugins - Services"
 msgstr "Themes - Plugins - Services"
 
-#: dash/options.php:832
+#: dash/options.php:833
 msgid "支付方式"
 msgstr "支付方式"
 
-#: dash/options.php:833
+#: dash/options.php:834
 msgid ""
 "目前支持支付宝原生即时到账、担保交易、双功能接口, 对于无法申请支付宝接口的提"
 "供个人开发的Alipay Supervisor免签约支付程序"
@@ -5824,43 +5838,43 @@ msgstr ""
 "目前支持支付宝原生即时到账、担保交易、双功能接口, 对于无法申请支付宝接口的提"
 "供个人开发的Alipay Supervisor免签约支付程序"
 
-#: dash/options.php:838
+#: dash/options.php:839
 msgid "Alipay"
 msgstr "支付宝"
 
-#: dash/options.php:839
+#: dash/options.php:840
 msgid "Alipay Supervisor免签约支付"
 msgstr "Alipay Supervisor免签约支付"
 
-#: dash/options.php:846
+#: dash/options.php:847
 msgid "支付宝收款帐户邮箱"
 msgstr "支付宝收款帐户邮箱"
 
-#: dash/options.php:847
+#: dash/options.php:848
 msgid "支付宝收款帐户邮箱,要收款必填并务必保持正确"
 msgstr "支付宝收款帐户邮箱,要收款必填并务必保持正确"
 
-#: dash/options.php:856
+#: dash/options.php:857
 msgid "支付宝商家身份ID"
 msgstr "支付宝商家身份ID"
 
-#: dash/options.php:857
+#: dash/options.php:858
 msgid "合作身份者id，以2088开头的16位纯数字"
 msgstr "合作身份者id，以2088开头的16位纯数字"
 
-#: dash/options.php:866
+#: dash/options.php:867
 msgid "支付宝商家身份key"
 msgstr "支付宝商家身份key"
 
-#: dash/options.php:867
+#: dash/options.php:868
 msgid "支付宝商家身份安全检验码，以数字和字母组成的32位字符"
 msgstr "支付宝商家身份安全检验码，以数字和字母组成的32位字符"
 
-#: dash/options.php:876
+#: dash/options.php:877
 msgid "支付宝商家收款类型"
 msgstr "支付宝商家收款类型"
 
-#: dash/options.php:877
+#: dash/options.php:878
 msgid ""
 "支付宝商家收款类型, 支持即时到账, 双功能和担保交易, 注意：切换类型后必须对应"
 "修改商家身份key"
@@ -5868,39 +5882,39 @@ msgstr ""
 "支付宝商家收款类型, 支持即时到账, 双功能和担保交易, 注意：切换类型后必须对应"
 "修改商家身份key"
 
-#: dash/options.php:882
+#: dash/options.php:883
 msgid "即时到账"
 msgstr "即时到账"
 
-#: dash/options.php:883
+#: dash/options.php:884
 msgid "双功能"
 msgstr "双功能"
 
-#: dash/options.php:884
+#: dash/options.php:885
 msgid "担保交易"
 msgstr "担保交易"
 
-#: dash/options.php:891
+#: dash/options.php:892
 msgid "Alipay Supervisor APP ID"
 msgstr "Alipay Supervisor APP ID"
 
-#: dash/options.php:892
+#: dash/options.php:893
 msgid "You should buy Alipay Supervisor first and then get the app id"
 msgstr "你需要购买Alipay Supervisor免签约支付辅助软件以获得app id"
 
-#: dash/options.php:901
+#: dash/options.php:902
 msgid "Alipay Supervisor APP Key"
 msgstr "Alipay Supervisor APP Key"
 
-#: dash/options.php:902
+#: dash/options.php:903
 msgid "You should buy Alipay Supervisor first and then get the app key"
 msgstr "你需要购买Alipay Supervisor免签约支付辅助软件以获得app key"
 
-#: dash/options.php:911
+#: dash/options.php:912
 msgid "Alipay Supervisor Secret"
 msgstr "Alipay Supervisor Secret"
 
-#: dash/options.php:912
+#: dash/options.php:913
 msgid ""
 "A random string which verify the legitimacy of a request from Alipay "
 "Supervisor, should conform to Alipay Supervisor configuration"
@@ -5908,209 +5922,209 @@ msgstr ""
 "一段随机字符串, 用于校验来自Alipay Supervisor请求的合法性, 并且要和Alipay "
 "Supervisor配置中的pushStateSecret一致"
 
-#: dash/options.php:921
+#: dash/options.php:922
 msgid "Site Weixin Pay QR"
 msgstr "网站微信收款二维码"
 
-#: dash/options.php:922
+#: dash/options.php:923
 msgid "The Weixin pay qrcode image for collection money"
 msgstr "用于网站收集打赏等的微信收款二维码图片"
 
-#: dash/options.php:931
+#: dash/options.php:932
 msgid "Site Alipay Pay QR"
 msgstr "网站支付宝收款二维码"
 
-#: dash/options.php:932
+#: dash/options.php:933
 msgid "The Alipay pay qrcode image for collection money"
 msgstr "用于网站收集打赏等的支付宝收款二维码图片"
 
-#: dash/options.php:941
+#: dash/options.php:942
 msgid "Auxiliary"
 msgstr "辅助"
 
-#: dash/options.php:948
+#: dash/options.php:949
 msgid "Object Cache"
 msgstr "对象缓存"
 
-#: dash/options.php:949
+#: dash/options.php:950
 msgid "Object cache support, accelerate your site"
 msgstr "对象缓存支持，加速网站"
 
-#: dash/options.php:954
+#: dash/options.php:955
 msgid "Memcache"
 msgstr "Memcache"
 
-#: dash/options.php:955
+#: dash/options.php:956
 msgid "Redis"
 msgstr "Redis"
 
-#: dash/options.php:964
+#: dash/options.php:965
 msgid "Memcache Host"
 msgstr "Memcache主机"
 
-#: dash/options.php:965
+#: dash/options.php:966
 msgid "Memcache server host"
 msgstr "Memcache服务器的地址(IP或url)"
 
-#: dash/options.php:974
+#: dash/options.php:975
 msgid "Memcache Port"
 msgstr "Memcache端口"
 
-#: dash/options.php:975
+#: dash/options.php:976
 msgid "Memcache server port"
 msgstr "Memcache服务器端口"
 
-#: dash/options.php:987
+#: dash/options.php:988
 msgid "Redis Host"
 msgstr "Redis主机"
 
-#: dash/options.php:988
+#: dash/options.php:989
 msgid "Redis server host"
 msgstr "Redis服务器的地址(IP或url)"
 
-#: dash/options.php:997
+#: dash/options.php:998
 msgid "Redis Port"
 msgstr "Redis端口"
 
-#: dash/options.php:998
+#: dash/options.php:999
 msgid "Redis server port"
 msgstr "Redis服务器的端口"
 
-#: dash/options.php:1016
+#: dash/options.php:1017
 msgid "SMTP/PHPMailer"
 msgstr "SMTP/PHPMailer"
 
-#: dash/options.php:1017
+#: dash/options.php:1018
 msgid "Use SMTP or PHPMail as default mailer"
 msgstr "使用SMTP或PHPMail作为默认邮件发送方式"
 
-#: dash/options.php:1022
+#: dash/options.php:1023
 msgid "PHP"
 msgstr "PHP"
 
-#: dash/options.php:1023
+#: dash/options.php:1024
 msgid "SMTP"
 msgstr "SMTP"
 
-#: dash/options.php:1031
+#: dash/options.php:1032
 msgid "SMTP Host"
 msgstr "SMTP 服务器"
 
-#: dash/options.php:1032
+#: dash/options.php:1033
 msgid "Your SMTP service host"
 msgstr "你的SMTP服务器主机地址"
 
-#: dash/options.php:1042
+#: dash/options.php:1043
 msgid "SMTP Port"
 msgstr "SMTP 端口"
 
-#: dash/options.php:1043
+#: dash/options.php:1044
 msgid "Your SMTP service port"
 msgstr "你的SMTP服务器服务端口"
 
-#: dash/options.php:1053
+#: dash/options.php:1054
 msgid "SMTP Secure"
 msgstr "SMTP安全"
 
-#: dash/options.php:1054
+#: dash/options.php:1055
 msgid "Your SMTP server secure protocol"
 msgstr "你的SMTP服务器安全协议"
 
-#: dash/options.php:1059
+#: dash/options.php:1060
 msgid "Auto"
 msgstr "自动"
 
-#: dash/options.php:1060
+#: dash/options.php:1061
 msgid "SSL"
 msgstr "SSL"
 
-#: dash/options.php:1061
+#: dash/options.php:1062
 msgid "TLS"
 msgstr "TLS"
 
-#: dash/options.php:1069
+#: dash/options.php:1070
 msgid "SMTP Username"
 msgstr "SMTP 用户名"
 
-#: dash/options.php:1070
+#: dash/options.php:1071
 msgid "Your SMTP username"
 msgstr "你的SMTP服务的登录用户名"
 
-#: dash/options.php:1079
+#: dash/options.php:1080
 msgid "SMTP Password"
 msgstr "SMTP 密码"
 
-#: dash/options.php:1080
+#: dash/options.php:1081
 msgid "Your SMTP password"
 msgstr "你的SMTP服务登录密码"
 
-#: dash/options.php:1090
+#: dash/options.php:1091
 msgid "Your Name"
 msgstr "发信姓名"
 
-#: dash/options.php:1091
+#: dash/options.php:1092
 msgid "Your display name as the sender"
 msgstr "你发送的邮件中显示的名称"
 
-#: dash/options.php:1103
+#: dash/options.php:1104
 msgid "PHP Mail Sender Display Name"
 msgstr "PHPMailer发信人名称"
 
-#: dash/options.php:1104
+#: dash/options.php:1105
 msgid "The Sender display name when using PHPMail send mail"
 msgstr "使用PHPMailer发送邮件的显示名"
 
-#: dash/options.php:1114
+#: dash/options.php:1115
 msgid "PHP Mail Sender Address"
 msgstr "PHPMailer 发信人地址"
 
-#: dash/options.php:1115
+#: dash/options.php:1116
 msgid "You can use fake mail address when use PHPMail"
 msgstr "当使用PHPMailer发信时可使用自定义的发信人地址"
 
-#: dash/options.php:1126
+#: dash/options.php:1127
 msgid "Short Link Prefix"
 msgstr "短链接前缀标识"
 
-#: dash/options.php:1127
+#: dash/options.php:1128
 msgid ""
 "Use short link instead long link or even convert external link to internal "
 "link"
 msgstr "使用短链接代替长链接或站外链接转为站内链接"
 
-#: dash/options.php:1137
+#: dash/options.php:1138
 msgid "Short Link Records"
 msgstr "短链接记录"
 
-#: dash/options.php:1138
+#: dash/options.php:1139
 msgid "One line for one record, please conform to the sample"
 msgstr "一行一条记录，请参照样例格式"
 
-#: dash/options.php:1147
+#: dash/options.php:1148
 msgid "Login Email Notification"
 msgstr "登录邮件通知"
 
-#: dash/options.php:1148
+#: dash/options.php:1149
 msgid "Enable email notification when a successfully login event happened"
 msgstr "开启登录成功事件的邮件通知"
 
-#: dash/options.php:1157
+#: dash/options.php:1158
 msgid "Login Failure Email Notification"
 msgstr "登录失败邮件通知"
 
-#: dash/options.php:1158
+#: dash/options.php:1159
 msgid "Enable email notification when a login failure event happened"
 msgstr "开启登录失败事件的邮件通知"
 
-#: dash/options.php:1167
+#: dash/options.php:1168
 msgid "Feedback"
 msgstr "反馈"
 
-#: dash/options.php:1174
+#: dash/options.php:1175
 msgid "Contact Author"
 msgstr "联系作者"
 
-#: dash/options.php:1175
+#: dash/options.php:1176
 #, php-format
 msgid ""
 "<br><h2>Email: chinash2010@gmail.com</h2><br><h2>Wechat & Alipay & "
@@ -6119,11 +6133,11 @@ msgstr ""
 "<br><h2>Email: chinash2010@gmail.com</h2><br><h2>微信 & 支付宝 & QQ(如下)</"
 "h2><br><img src=\"%s\"><img src=\"%s\"><img src=\"%s\"> "
 
-#: dash/options.php:1181
+#: dash/options.php:1182
 msgid "Related Works"
 msgstr "相关作品"
 
-#: dash/options.php:1182
+#: dash/options.php:1183
 #, php-format
 msgid ""
 "<br><h2>Alipay Supervisor (<a href=\"%s\">View Detail</a>)</h2><br><p>A "
@@ -6132,41 +6146,41 @@ msgstr ""
 "<br><h2>Alipay Supervisor (<a href=\"%s\">查看详情</a>)</h2><br><p>帮助无法签"
 "约支付宝交易接口的个人用户实现免签约交易，自动通知交易状态的辅助工具</p>"
 
-#: dash/options.php:1190
+#: dash/options.php:1191
 msgid "Others"
 msgstr "其他"
 
-#: dash/options.php:1197
+#: dash/options.php:1198
 msgid "Debug Mode"
 msgstr "调试模式"
 
-#: dash/options.php:1198
+#: dash/options.php:1199
 msgid ""
 "Enable debug will force display php errors, disable theme cache, enable some "
 "private links or functions, etc."
 msgstr "启用Debug将强制输出PHP错误，禁用主题缓存，启用一些私有链接或功能等"
 
-#: dash/options.php:1207
+#: dash/options.php:1208
 msgid "Disable Cache"
 msgstr "禁用缓存"
 
-#: dash/options.php:1208
+#: dash/options.php:1209
 msgid "Stop cache, user always get the latest content"
 msgstr "停用缓存，用户总是会看到最新的内容"
 
-#: dash/options.php:1217
+#: dash/options.php:1218
 msgid "Tint Token"
 msgstr "Tint Token"
 
-#: dash/options.php:1218
+#: dash/options.php:1219
 msgid "Private token for theme, maybe useful somewhere."
 msgstr "主题私有Token，在某些地方有用"
 
-#: dash/options.php:1228
+#: dash/options.php:1229
 msgid "Refresh Rewrite Rules"
 msgstr "刷新固定链接规则"
 
-#: dash/options.php:1229
+#: dash/options.php:1230
 #, php-format
 msgid ""
 "Please Click to <a href=\"%1$s/m/refresh?token=%2$s\" target=\"_blank"
@@ -6175,59 +6189,59 @@ msgstr ""
 "如果你遭遇一些404访问错误，请点击 <a href=\"%1$s/m/refresh?token=%2$s\" "
 "target=\"_blank\">刷新固定链接规则</a>。"
 
-#: dash/options.php:1236
+#: dash/options.php:1237
 msgid "QQ Mailme ID"
 msgstr "QQ邮我按钮ID"
 
-#: dash/options.php:1237
+#: dash/options.php:1238
 msgid "The id of qq mailme, visit `http://open.mail.qq.com` for detail"
 msgstr "QQ邮我链接内的ID字段, 访问`http://open.mail.qq.com`获取"
 
-#: dash/options.php:1246
+#: dash/options.php:1247
 msgid "QQ Mail list ID"
 msgstr "QQ邮件列表ID"
 
-#: dash/options.php:1247
+#: dash/options.php:1248
 msgid "The id of qq mailme, visit `http://list.qq.com` for detail"
 msgstr "QQ邮件列表链接内的ID字段, 访问`http://list.qq.com`获取"
 
-#: dash/options.php:1256
+#: dash/options.php:1257
 msgid "Head Custom Code"
 msgstr "页头自定义代码"
 
-#: dash/options.php:1257
+#: dash/options.php:1258
 msgid "Custom code loaded on page head"
 msgstr "页面头部加载的自定义代码，位于head标签结束前"
 
-#: dash/options.php:1267
+#: dash/options.php:1268
 msgid "Foot Custom Code"
 msgstr "页脚自定义代码"
 
-#: dash/options.php:1268
+#: dash/options.php:1269
 msgid "Custom code loaded on page foot"
 msgstr "页面底部加载的自定义代码，位于body标签结束前"
 
-#: dash/options.php:1277
+#: dash/options.php:1278
 msgid "Foot Beian Text"
 msgstr "页脚备案文字"
 
-#: dash/options.php:1278
+#: dash/options.php:1279
 msgid "IDC reference No. for regulations of China"
 msgstr "工信部域名备案号码"
 
-#: dash/options.php:1286
+#: dash/options.php:1287
 msgid "Site Open Date"
 msgstr "建站日期"
 
-#: dash/options.php:1287
+#: dash/options.php:1288
 msgid "The date of when site opened, use `YYYY-mm-dd` format"
 msgstr "网站开放的日期, 使用`YYYY-mm-dd`格式"
 
-#: dash/options.php:1298
+#: dash/options.php:1299
 msgid "Footer Queries Info"
 msgstr "页脚查询信息"
 
-#: dash/options.php:1299
+#: dash/options.php:1300
 msgid "Show WordPress queries statistic information"
 msgstr "在页脚显示WordPress查询统计信息"
 

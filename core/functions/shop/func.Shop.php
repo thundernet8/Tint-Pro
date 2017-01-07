@@ -242,7 +242,7 @@ function tt_populate_product_columns( $column ) {
         $price = $product_price . ' ' . $text;
         echo $price;
     }elseif( 'product_quantity' == $column ){
-        $product_quantity = get_post_meta( get_the_ID(), 'tt_product_amount', true ) ? : 0;
+        $product_quantity = get_post_meta( get_the_ID(), 'tt_product_quantity', true ) ? : 0;
         echo $product_quantity . ' ' . __('pieces', 'tt');
     }elseif( 'product_sales' == $column ){
         $product_sales = get_post_meta( get_the_ID(), 'tt_product_sales', true ) ? : 0;
