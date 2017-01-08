@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2017-01-07 23:08+0800\n"
+"POT-Creation-Date: 2017-01-08 14:42+0800\n"
 "PO-Revision-Date: 2016-08-17 21:40+0800\n"
 "Last-Translator: \n"
 "Language-Team: Zhiyan <mail@webapproach.net>\n"
@@ -2764,6 +2764,7 @@ msgid "Choose from Most Used Product Tags"
 msgstr ""
 
 #: core/functions/shop/func.Shop.php:142
+#: core/modules/management/mg.Tab.Status.php:76
 #: core/modules/shop/mod.Shop.Sidebar.Left.php:52
 msgid "Product Tags"
 msgstr ""
@@ -2865,11 +2866,11 @@ msgid "ORDERS"
 msgstr ""
 
 #: core/modules/management/mg.NavMenu.php:32
-msgid "COUPONS"
+msgid "MEMBERS"
 msgstr ""
 
 #: core/modules/management/mg.NavMenu.php:33
-msgid "MEMBERS"
+msgid "COUPONS"
 msgstr ""
 
 #: core/modules/management/mg.Tab.Status.php:28 dash/options.php:1287
@@ -2879,6 +2880,102 @@ msgstr ""
 #: core/modules/management/mg.Tab.Status.php:29
 #, php-format
 msgid "%s (Online for %d days)"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Status.php:32
+msgid "Site Link"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Status.php:33
+#, php-format
+msgid "%d links"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Status.php:36
+msgid "Last Modified"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Status.php:37
+#, php-format
+msgid "%s"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Status.php:40
+msgid "Site Users"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Status.php:41
+#, php-format
+msgid "%d Registered users"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Status.php:44
+msgid "Site Members"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Status.php:45
+#, php-format
+msgid "%d Payed members (%d monthly VIP, %d annual VIP, %d permanent VIP)"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Status.php:48
+msgid "Site Posts"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Status.php:49
+#, php-format
+msgid "%d posts in total (%d published, %d drafts, %d pending)"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Status.php:52
+msgid "Site Pages"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Status.php:53
+#, php-format
+msgid "%d pages"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Status.php:56
+msgid "Sale Products"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Status.php:57
+#, php-format
+msgid "%d products"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Status.php:60
+msgid "User Comments"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Status.php:61
+#, php-format
+msgid "%d comments"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Status.php:64
+msgid "Post Categories"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Status.php:65
+#: core/modules/management/mg.Tab.Status.php:73
+#, php-format
+msgid "%d categories"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Status.php:68
+msgid "Post Tags"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Status.php:69
+#: core/modules/management/mg.Tab.Status.php:77
+#, php-format
+msgid "%d tags"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Status.php:72
+msgid "Product Categories"
 msgstr ""
 
 #: core/modules/me/me.NavMenu.php:23

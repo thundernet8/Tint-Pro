@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2017-01-07 23:09+0800\n"
-"PO-Revision-Date: 2017-01-07 23:11+0800\n"
+"POT-Creation-Date: 2017-01-08 14:42+0800\n"
+"PO-Revision-Date: 2017-01-08 15:12+0800\n"
 "Last-Translator: Zhiyan <mail@webapproach.net>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -2737,6 +2737,7 @@ msgid "Choose from Most Used Product Tags"
 msgstr "从常用商品标签中选择"
 
 #: core/functions/shop/func.Shop.php:142
+#: core/modules/management/mg.Tab.Status.php:76
 #: core/modules/shop/mod.Shop.Sidebar.Left.php:52
 msgid "Product Tags"
 msgstr "商品标签"
@@ -2837,12 +2838,12 @@ msgid "ORDERS"
 msgstr "订单"
 
 #: core/modules/management/mg.NavMenu.php:32
-msgid "COUPONS"
-msgstr "优惠码"
-
-#: core/modules/management/mg.NavMenu.php:33
 msgid "MEMBERS"
 msgstr "会员"
+
+#: core/modules/management/mg.NavMenu.php:33
+msgid "COUPONS"
+msgstr "优惠码"
 
 #: core/modules/management/mg.Tab.Status.php:28 dash/options.php:1287
 msgid "Site Open Date"
@@ -2852,6 +2853,102 @@ msgstr "建站日期"
 #, php-format
 msgid "%s (Online for %d days)"
 msgstr "%s (上线 %d 天)"
+
+#: core/modules/management/mg.Tab.Status.php:32
+msgid "Site Link"
+msgstr "友情链接"
+
+#: core/modules/management/mg.Tab.Status.php:33
+#, php-format
+msgid "%d links"
+msgstr "%d 个链接"
+
+#: core/modules/management/mg.Tab.Status.php:36
+msgid "Last Modified"
+msgstr "最后更新"
+
+#: core/modules/management/mg.Tab.Status.php:37
+#, php-format
+msgid "%s"
+msgstr "%s"
+
+#: core/modules/management/mg.Tab.Status.php:40
+msgid "Site Users"
+msgstr "网站用户"
+
+#: core/modules/management/mg.Tab.Status.php:41
+#, php-format
+msgid "%d Registered users"
+msgstr "%d 注册用户"
+
+#: core/modules/management/mg.Tab.Status.php:44
+msgid "Site Members"
+msgstr "网站会员"
+
+#: core/modules/management/mg.Tab.Status.php:45
+#, php-format
+msgid "%d Payed members (%d monthly VIP, %d annual VIP, %d permanent VIP)"
+msgstr "%d 位付费会员 (其中 %d 位月费会员, %d 位年费会员, %d 位永久会员)"
+
+#: core/modules/management/mg.Tab.Status.php:48
+msgid "Site Posts"
+msgstr "文章总数"
+
+#: core/modules/management/mg.Tab.Status.php:49
+#, php-format
+msgid "%d posts in total (%d published, %d drafts, %d pending)"
+msgstr "%d 篇 (%d 已发布, %d 篇草稿, %d 篇待审)"
+
+#: core/modules/management/mg.Tab.Status.php:52
+msgid "Site Pages"
+msgstr "页面总数"
+
+#: core/modules/management/mg.Tab.Status.php:53
+#, php-format
+msgid "%d pages"
+msgstr "%d 个页面"
+
+#: core/modules/management/mg.Tab.Status.php:56
+msgid "Sale Products"
+msgstr "上架商品"
+
+#: core/modules/management/mg.Tab.Status.php:57
+#, php-format
+msgid "%d products"
+msgstr "%d 个在售"
+
+#: core/modules/management/mg.Tab.Status.php:60
+msgid "User Comments"
+msgstr "用户评论"
+
+#: core/modules/management/mg.Tab.Status.php:61
+#, php-format
+msgid "%d comments"
+msgstr "%d 条评论"
+
+#: core/modules/management/mg.Tab.Status.php:64
+msgid "Post Categories"
+msgstr "文章分类"
+
+#: core/modules/management/mg.Tab.Status.php:65
+#: core/modules/management/mg.Tab.Status.php:73
+#, php-format
+msgid "%d categories"
+msgstr "%d 个分类"
+
+#: core/modules/management/mg.Tab.Status.php:68
+msgid "Post Tags"
+msgstr "文章标签"
+
+#: core/modules/management/mg.Tab.Status.php:69
+#: core/modules/management/mg.Tab.Status.php:77
+#, php-format
+msgid "%d tags"
+msgstr "%d 个标签"
+
+#: core/modules/management/mg.Tab.Status.php:72
+msgid "Product Categories"
+msgstr "商品分类"
 
 #: core/modules/me/me.NavMenu.php:23
 msgid "Visit My Homepage"
