@@ -26,6 +26,7 @@
         <ul class="mg_tabs">
             <li><a class="<?php echo tt_conditional_class('mg_tab status', $mg_tab == 'status'); ?>" href="<?php echo tt_url_for('manage_status'); ?>"><?php _e('STATISTIC', 'tt'); ?></a></li>
             <li><a class="<?php echo tt_conditional_class('mg_tab posts', $mg_tab == 'posts'); ?>" href="<?php echo tt_url_for('manage_posts'); ?>"><?php _e('POSTS', 'tt'); ?></a></li>
+            <li><a class="<?php echo tt_conditional_class('mg_tab products', $mg_tab == 'products'); ?>" href="<?php echo tt_url_for('manage_products'); ?>"><?php _e('PRODUCTS', 'tt'); ?></a></li>
             <li><a class="<?php echo tt_conditional_class('mg_tab comments', $mg_tab == 'comments'); ?>" href="<?php echo tt_url_for('manage_comments'); ?>"><?php _e('COMMENTS', 'tt'); ?></a></li>
             <li><a class="<?php echo tt_conditional_class('mg_tab users', $mg_tab == 'users'); ?>" href="<?php echo tt_url_for('manage_users'); ?>"><?php _e('USERS', 'tt'); ?></a></li>
             <li><a class="<?php echo tt_conditional_class('mg_tab orders', $mg_tab == 'orders'); ?>" href="<?php echo tt_url_for('manage_orders'); ?>"><?php _e('ORDERS', 'tt'); ?></a></li>

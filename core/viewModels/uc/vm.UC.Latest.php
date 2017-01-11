@@ -85,7 +85,7 @@ class UCLatestVM extends BaseVM {
             $uc_latest_post['excerpt'] = get_the_excerpt($post);
             $uc_latest_post['category'] = get_the_category_list(' ', '', $post->ID);
             $uc_latest_post['author'] = get_the_author();
-            $uc_latest_post['author_url'] = home_url('/@' . $uc_latest_post['author']); //TODO the link
+            $uc_latest_post['author_url'] = get_author_posts_url(get_the_author_meta('ID'));
             $uc_latest_post['time'] = get_post_time('F j, Y', false, $post, false); //get_post_time( string $d = 'U', bool $gmt = false, int|WP_Post $post = null, bool $translate = false )
             $uc_latest_post['datetime'] = get_the_time(DATE_W3C, $post);
             $uc_latest_post['thumb'] = tt_get_thumb($post, 'medium');

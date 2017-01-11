@@ -19,7 +19,7 @@
         <!-- Site status cached <?php echo $vm->cacheTime; ?> -->
     <?php } ?>
     <?php $info = $vm->modelData; ?>
-    <div class="mg-tab-box setting-tab">
+    <div class="mg-tab-box status-tab">
         <div class="tab-content mg-status">
             <!-- 统计信息 -->
             <section class="statistic-info clearfix">

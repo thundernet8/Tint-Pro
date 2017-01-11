@@ -1,52 +1,55 @@
 <?php
 /**
- * Copyright (c) 2014-2016, WebApproach.net
+ * Copyright (c) 2014-2017, WebApproach.net
  * All right reserved.
  *
  * @since 2.0.0
  * @package Tint
  * @author Zhiyan
- * @date 2017/01/07 19:45
+ * @date 2017/01/09 20:59
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
  * @link https://www.webapproach.net/tint
  */
 ?>
 <?php global $tt_mg_vars; $tt_user_id = $tt_mg_vars['tt_user_id']; $tt_page = $tt_mg_vars['tt_paged']; ?>
-<div class="col col-right posts">
-    <?php $vm = MgPostsVM::getInstance($tt_page); ?>
+<div class="col col-right products">
+    <?php $vm = MgProductsVM::getInstance($tt_page); ?>
     <?php if($vm->isCache && $vm->cacheTime) { ?>
-        <!-- Manage posts cached <?php echo $vm->cacheTime; ?> -->
+        <!-- Manage products cached <?php echo $vm->cacheTime; ?> -->
     <?php } ?>
-    <?php $data = $vm->modelData; $posts = $data->posts; $count = $data->count; $max_pages = $data->max_pages; ?>
-    <div class="mg-tab-box posts-tab">
+    <?php $data = $vm->modelData; $products = $data->products; $count = $data->count; $max_pages = $data->max_pages; ?>
+    <div class="mg-tab-box posts-tab products-tab">
         <div class="tab-content">
-            <!-- 全站文章列表 -->
-            <section class="mg-posts clearfix">
-                <header><h2><?php _e('Posts List', 'tt'); ?></h2></header>
+            <!-- 全站商品列表 -->
+            <section class="mg-posts mg-products clearfix">
+                <header><h2><?php _e('Products List', 'tt'); ?></h2></header>
                 <?php if($count > 0) { ?>
                     <div class="loop-wrap loop-rows posts-loop-rows clearfix">
-                        <?php foreach ($posts as $post) { ?>
-                            <article id="<?php echo 'post-' . $post['ID']; ?>" class="post type-post status-<?php echo $post['post_status']; ?> <?php echo 'format-' . $post['format']; ?>">
+                        <?php foreach ($products as $product) { ?>
+                            <article id="<?php echo 'product-' . $product['ID']; ?>" class="post product type-product status-<?php echo $product['post_status']; ?>">
                                 <div class="entry-thumb hover-scale">
-                                    <a href="<?php echo $post['permalink']; ?>"><img width="175" height="120" src="<?php echo LAZY_PENDING_IMAGE; ?>" data-original="<?php echo $post['thumb']; ?>" class="thumb-medium wp-post-image lazy" alt="<?php echo $post['title']; ?>"></a>
-                                    <?php echo $post['category']; ?>
+                                    <a href="<?php echo $product['permalink']; ?>"><img width="175" height="120" src="<?php echo LAZY_PENDING_IMAGE; ?>" data-original="<?php echo $product['thumb']; ?>" class="thumb-medium wp-post-image lazy" alt="<?php echo $product['title']; ?>"></a>
+                                    <?php echo $product['category']; ?>
                                 </div>
                                 <div class="entry-detail">
                                     <header class="entry-header">
-                                        <h2 class="entry-title"><?php if(!empty($post['status_string'])){echo '[' . $post['status_string'] . ']&nbsp;'; } ?><a href="<?php echo $post['permalink']; ?>" rel="bookmark"><?php echo $post['title']; ?></a></h2>
+                                        <h2 class="entry-title"><?php if(!empty($product['status_string'])){echo '[' . $product['status_string'] . ']&nbsp;'; } ?><a href="<?php echo $product['permalink']; ?>" rel="bookmark"><?php echo $product['title']; ?></a></h2>
                                         <div class="entry-meta entry-meta-1">
-                                            <?php _e('Date: ', 'tt'); ?><span class="entry-date text-muted"><time class="entry-date" datetime="<?php echo $post['datetime']; ?>" title="<?php echo $post['datetime']; ?>"><?php echo $post['time']; ?></time></span>
-                                            <?php _e('Author: ', 'tt'); ?><span class="entry-author text-muted"><a href="<?php echo $post['author_url']; ?>" target="_blank"><?php echo $post['author']; ?></a></span>
+                                            <?php _e('Date: ', 'tt'); ?><span class="entry-date text-muted"><time class="entry-date" datetime="<?php echo $product['datetime']; ?>" title="<?php echo $product['datetime']; ?>"><?php echo $product['time']; ?></time></span>
+                                            <?php _e('Modified: ', 'tt'); ?><span class="entry-date text-muted"><time class="entry-date" datetime="<?php echo $product['modified_time']; ?>" title="<?php echo $product['modified_time']; ?>"><?php echo $product['modified_time']; ?></time></span>
+                                            <?php _e('Price: ', 'tt'); ?><span class="entry-author text-muted"><?php echo $product['price_icon'] . $product['price'] . $product['price_unit']; ?></span>
+                                            <?php _e('Amounts: ', 'tt'); ?><span class="entry-author text-muted"><?php echo $product['amount']; ?></span>
+                                            <?php _e('Sales: ', 'tt'); ?><span class="entry-author text-muted"><?php echo $product['sales']; ?></span>
                                         </div>
                                     </header>
                                     <div class="entry-excerpt">
-                                        <div class="post-excerpt"><?php echo $post['excerpt']; ?></div>
+                                        <div class="post-excerpt"><?php echo $product['excerpt']; ?></div>
                                     </div>
                                 </div>
                                 <div class="actions transition">
-                                    <?php foreach ($post['actions'] as $action) { ?>
-                                    <a class="<?php echo $action['class']; ?>" href="<?php echo $action['url']; ?>" data-post-id="<?php echo $post['ID']; ?>"><?php echo $action['text']; ?></a>
+                                    <?php foreach ($product['actions'] as $action) { ?>
+                                        <a class="<?php echo $action['class']; ?>" href="<?php echo $action['url']; ?>" data-post-id="<?php echo $product['ID']; ?>"><?php echo $action['text']; ?></a>
                                     <?php } ?>
                                 </div>
                             </article>

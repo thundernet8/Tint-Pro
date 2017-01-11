@@ -159,6 +159,7 @@ class WP_REST_Comment_Controller extends WP_REST_Controller
         }
         do_action('pre_comment_on_post', $comment_post_ID);
 
+        $post_type = get_post_type($comment_post_ID);
         $comment_content = trim( $_POST['content'] );
         $comment_type = isset( $_POST['commentType'] ) ? trim( $_POST['commentType'] ) : '';
         $ksesNonce = trim( $_POST['ksesNonce'] );
@@ -228,7 +229,12 @@ class WP_REST_Comment_Controller extends WP_REST_Controller
         }
 
         // add comment meta(rating for product)
-        if($product_rating) {
+        if($post_type=='product' && $product_rating) {
+            // 仅购买成功的用户方可评论
+            if(!tt_check_user_has_buy_product($comment_post_ID, $user->ID)){
+                return tt_api_fail(__('You cannot comment this product becasue you donot buy it', 'tt'));
+            }
+
             update_comment_meta($comment_id, 'tt_rating_product', $product_rating);
             $product_ratings_raw = get_post_meta($comment_post_ID, 'tt_post_ratings', true);
             $product_ratings = $product_ratings_raw ? (array)maybe_unserialize($product_ratings_raw) : array();

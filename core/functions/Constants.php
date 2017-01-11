@@ -136,7 +136,8 @@ $manage_allow_routes = json_encode(array(
     'orders' => 'orders',
     //'order' => 'order',
     'coupons' => 'coupons',
-    'members' => 'members'
+    'members' => 'members',
+    'products' => 'products'
 ));
 defined('ALLOWED_MANAGE_ROUTES') || define('ALLOWED_MANAGE_ROUTES', $manage_allow_routes);
 
@@ -197,7 +198,8 @@ $site_endpoints = json_encode(array(
     'manage_comments'           =>  'management/comments',
     'manage_orders'             =>  'management/orders',
     'manage_coupons'            =>  'management/coupons',
-    'manage_members'            =>  'management/members'
+    'manage_members'            =>  'management/members',
+    'manage_products'           =>  'management/products'
 
     // TODO: Add more
 ));

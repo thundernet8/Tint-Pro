@@ -142,6 +142,9 @@ function tt_get_page_title() {
             case 'members':
                 $title = __('Members Management', 'tt');
                 break;
+            case 'products':
+                $title = __('Products Management', 'tt');
+                break;
         }
         return $title . ' - ' . get_bloginfo('name');
     }

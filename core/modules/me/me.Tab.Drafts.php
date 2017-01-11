@@ -34,7 +34,7 @@
                                 </div>
                                 <div class="entry-detail">
                                     <header class="entry-header">
-                                        <h2 class="entry-title"><a href="<?php echo $draft['edit_link']; ?>" rel="bookmark"><?php echo $draft['title']; ?></a><span><a href="<?php echo tt_url_for('edit_post', $draft['ID']); ?>" title="<?php _e('Edit Draft', 'tt'); ?>"><i class="tico tico-new"></i></a> </span></h2>
+                                        <h2 class="entry-title"><a href="<?php echo $draft['edit_link']; ?>" rel="bookmark"><?php echo $draft['title']; ?></a><span><a href="<?php echo $draft['edit_link']; ?>" title="<?php _e('Edit Draft', 'tt'); ?>"><i class="tico tico-new"></i></a> </span></h2>
                                         <div class="entry-meta entry-meta-1">
                                             <span class="entry-date text-muted"><time class="entry-date" datetime="<?php echo $draft['datetime']; ?>" title="<?php echo $draft['datetime']; ?>"><?php echo $draft['time']; ?></time></span>
                                         </div>

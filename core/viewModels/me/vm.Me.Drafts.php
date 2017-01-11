@@ -72,8 +72,8 @@ class MeDraftsVM extends BaseVM {
         $GLOBALS['wp_query'] = $query; // 取代主循环(query_posts只返回posts，为了获取其他有用数据，使用WP_Query) //TODO 缓存时无效
 
         $draft_posts = array();
-        $count = $query->max_num_pages;
-        $max_pages = ceil($count / $posts_per_page);
+        $count = $query->found_posts;
+        $max_pages = $query->max_num_pages; //ceil($count / $posts_per_page);
         $pagination_base = tt_url_for('my_drafts') . '/page/%#%';
 
         $author_url = get_author_posts_url($this->_userId);
