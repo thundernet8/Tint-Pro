@@ -106,7 +106,7 @@ class MgPostsVM extends BaseVM {
                 $actions[] = array(
                     'class' => 'btn btn-warning act act-draft',
                     'url' => 'javascript:;',
-                    'text' => __('DRAFT', 'tt')
+                    'text' => __('SAVE DRAFT', 'tt')
                 );
             }elseif($post->post_status == 'draft') {
                 $actions[] = array(

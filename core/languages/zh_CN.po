@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2017-01-08 14:42+0800\n"
-"PO-Revision-Date: 2017-01-08 15:12+0800\n"
+"POT-Creation-Date: 2017-01-11 20:00+0800\n"
+"PO-Revision-Date: 2017-01-11 20:00+0800\n"
 "Last-Translator: Zhiyan <mail@webapproach.net>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -137,19 +137,23 @@ msgstr "不能评论未发布文章"
 msgid "Cannot comment a password protected post"
 msgstr "不能评论密码保护的文章"
 
-#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:189
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:190
 msgid "Sorry, you must be logged in to reply to a comment."
 msgstr "你必须登录才能评论"
 
-#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:194
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:195
 msgid "Comment cannot be blank"
 msgstr "评论内容不能为空"
 
-#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:227
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:228
 msgid "Add comment failed"
 msgstr "添加评论失败"
 
-#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:267
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:235
+msgid "You cannot comment this product becasue you donot buy it"
+msgstr "未购买该商品, 不能评论"
+
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:273
 #: core/api/v1/endpoints/class.Rest.Session.Controller.php:157
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:569
 msgid "Sorry, you are not allowed to delete this resource."
@@ -2085,27 +2089,27 @@ msgstr "无效的页面模板"
 msgid "Weekly"
 msgstr "每周的"
 
-#: core/functions/func.Seo.php:28 core/functions/func.Seo.php:212
+#: core/functions/func.Seo.php:28 core/functions/func.Seo.php:215
 #: core/modules/mod.ModalLoginForm.php:17
 #: core/templates/actions/tpl.M.Signup.php:90
 msgid "Sign In"
 msgstr "登录"
 
-#: core/functions/func.Seo.php:31 core/functions/func.Seo.php:215
+#: core/functions/func.Seo.php:31 core/functions/func.Seo.php:218
 #: core/templates/actions/tpl.M.Signup.php:62
 msgid "Sign Up"
 msgstr "注册"
 
-#: core/functions/func.Seo.php:34 core/functions/func.Seo.php:218
+#: core/functions/func.Seo.php:34 core/functions/func.Seo.php:221
 msgid "Activate Registration"
 msgstr "激活注册"
 
-#: core/functions/func.Seo.php:37 core/functions/func.Seo.php:221
+#: core/functions/func.Seo.php:37 core/functions/func.Seo.php:224
 #: core/modules/mod.Header.Shop.php:103 core/modules/mod.Header.php:48
 msgid "Sign Out"
 msgstr "注销"
 
-#: core/functions/func.Seo.php:40 core/functions/func.Seo.php:224
+#: core/functions/func.Seo.php:40 core/functions/func.Seo.php:227
 #: core/templates/actions/tpl.M.Findpass.php:33
 msgid "Find Password"
 msgstr "找回密码"
@@ -2222,77 +2226,81 @@ msgstr "优惠码管理"
 msgid "Members Management"
 msgstr "会员管理"
 
-#: core/functions/func.Seo.php:153
+#: core/functions/func.Seo.php:146
+msgid "Products Management"
+msgstr "商品管理"
+
+#: core/functions/func.Seo.php:156
 #, php-format
 msgid " - Page %d"
 msgstr " - 第 %d 页"
 
-#: core/functions/func.Seo.php:164 core/functions/func.Seo.php:261
+#: core/functions/func.Seo.php:167 core/functions/func.Seo.php:264
 #, php-format
 msgid "%s's Home Page"
 msgstr "%s's 个人中心"
 
-#: core/functions/func.Seo.php:168 core/functions/shop/func.Shop.php:297
+#: core/functions/func.Seo.php:171 core/functions/shop/func.Shop.php:297
 msgid "Product Category"
 msgstr "商品分类"
 
-#: core/functions/func.Seo.php:170
+#: core/functions/func.Seo.php:173
 msgid "Product Tag"
 msgstr "商品标签"
 
-#: core/functions/func.Seo.php:172 core/functions/func.Seo.php:175
-#: core/functions/func.Seo.php:273 core/modules/mod.Header.Shop.php:29
+#: core/functions/func.Seo.php:175 core/functions/func.Seo.php:178
+#: core/functions/func.Seo.php:276 core/modules/mod.Header.Shop.php:29
 #: dash/options.php:806
 msgid "Market"
 msgstr "商店"
 
-#: core/functions/func.Seo.php:178
+#: core/functions/func.Seo.php:181
 msgid "Search"
 msgstr "搜索"
 
-#: core/functions/func.Seo.php:180
+#: core/functions/func.Seo.php:183
 msgid "Y"
 msgstr "Y"
 
-#: core/functions/func.Seo.php:180 core/functions/func.Seo.php:182
-#: core/functions/func.Seo.php:184
+#: core/functions/func.Seo.php:183 core/functions/func.Seo.php:185
+#: core/functions/func.Seo.php:187
 msgid "posts archive"
 msgstr "文章归档"
 
-#: core/functions/func.Seo.php:182
+#: core/functions/func.Seo.php:185
 msgid "Y.n"
 msgstr "Y.n"
 
-#: core/functions/func.Seo.php:184
+#: core/functions/func.Seo.php:187
 msgid "Y.n.j"
 msgstr "Y.n.j"
 
-#: core/functions/func.Seo.php:186
+#: core/functions/func.Seo.php:189
 msgid "Tag: "
 msgstr "标签: "
 
-#: core/functions/func.Seo.php:188
+#: core/functions/func.Seo.php:191
 msgid "Page Not Found"
 msgstr "页面未找到"
 
-#: core/functions/func.Seo.php:193
+#: core/functions/func.Seo.php:196
 #, php-format
 msgid " - Page %d "
 msgstr " - 第 %d 页"
 
-#: core/functions/func.Seo.php:227 core/functions/func.Seo.php:261
+#: core/functions/func.Seo.php:230 core/functions/func.Seo.php:264
 msgid "Powered by Tint(Tinection 2)"
 msgstr "由Tint主题驱动(Tinection 2)"
 
-#: core/functions/func.Seo.php:260
+#: core/functions/func.Seo.php:263
 msgid "Ucenter"
 msgstr "用户中心"
 
-#: core/functions/func.Seo.php:260 core/functions/func.Seo.php:273
+#: core/functions/func.Seo.php:263 core/functions/func.Seo.php:276
 msgid "Tint Ucenter and Market System"
 msgstr "Tint主题用户中心和商店系统"
 
-#: core/functions/func.Seo.php:276
+#: core/functions/func.Seo.php:279
 msgid ""
 "Powered by Tint(Tinection 2, a powerful wordpress theme with ucenter and "
 "shop system integrated)"
@@ -2825,25 +2833,140 @@ msgstr "统计"
 msgid "POSTS"
 msgstr "文章"
 
-#: core/modules/management/mg.NavMenu.php:29 core/modules/uc/uc.NavTabs.php:19
+#: core/modules/management/mg.NavMenu.php:29
+msgid "PRODUCTS"
+msgstr "商品"
+
+#: core/modules/management/mg.NavMenu.php:30 core/modules/uc/uc.NavTabs.php:19
 msgid "COMMENTS"
 msgstr "评论"
 
-#: core/modules/management/mg.NavMenu.php:30
+#: core/modules/management/mg.NavMenu.php:31
 msgid "USERS"
 msgstr "用户"
 
-#: core/modules/management/mg.NavMenu.php:31 core/modules/me/me.NavMenu.php:34
+#: core/modules/management/mg.NavMenu.php:32 core/modules/me/me.NavMenu.php:34
 msgid "ORDERS"
 msgstr "订单"
 
-#: core/modules/management/mg.NavMenu.php:32
+#: core/modules/management/mg.NavMenu.php:33
 msgid "MEMBERS"
 msgstr "会员"
 
-#: core/modules/management/mg.NavMenu.php:33
+#: core/modules/management/mg.NavMenu.php:34
 msgid "COUPONS"
 msgstr "优惠码"
+
+#: core/modules/management/mg.Tab.Posts.php:26
+msgid "Posts List"
+msgstr "文章列表"
+
+#: core/modules/management/mg.Tab.Posts.php:39
+#: core/modules/management/mg.Tab.Products.php:39
+msgid "Date: "
+msgstr "日期: "
+
+#: core/modules/management/mg.Tab.Posts.php:40
+msgid "Author: "
+msgstr "作者: "
+
+#: core/modules/management/mg.Tab.Posts.php:58
+#: core/modules/management/mg.Tab.Posts.php:60
+#: core/modules/management/mg.Tab.Products.php:61
+#: core/modules/management/mg.Tab.Products.php:63
+#: core/modules/me/me.Tab.Credits.php:73 core/modules/me/me.Tab.Credits.php:75
+#: core/modules/me/me.Tab.Drafts.php:52 core/modules/me/me.Tab.Drafts.php:54
+#: core/modules/me/me.Tab.Membership.php:88
+#: core/modules/me/me.Tab.Membership.php:90
+#: core/modules/me/me.Tab.Messages.php:76
+#: core/modules/me/me.Tab.Messages.php:78
+#: core/modules/me/me.Tab.Notifications.php:51
+#: core/modules/me/me.Tab.Notifications.php:53
+#: core/modules/me/me.Tab.Orders.php:77 core/modules/me/me.Tab.Orders.php:79
+#: core/modules/mod.SearchPosts.php:44 core/modules/mod.SearchPosts.php:46
+msgid "← 上一页"
+msgstr "← 上一页"
+
+#: core/modules/management/mg.Tab.Posts.php:63
+#: core/modules/management/mg.Tab.Products.php:66
+#: core/modules/me/me.Tab.Credits.php:78 core/modules/me/me.Tab.Drafts.php:57
+#: core/modules/me/me.Tab.Membership.php:93
+#: core/modules/me/me.Tab.Messages.php:81
+#: core/modules/me/me.Tab.Notifications.php:56
+#: core/modules/me/me.Tab.Orders.php:82 core/modules/mod.HomeLatest.php:69
+#: core/modules/mod.SearchPosts.php:49 core/modules/uc/uc.Tab.Chat.php:87
+#: core/modules/uc/uc.Tab.Comments.php:54 core/modules/uc/uc.Tab.Latest.php:67
+#, php-format
+msgid "Current Page %d"
+msgstr "第 %d 页"
+
+#: core/modules/management/mg.Tab.Posts.php:65
+#: core/modules/management/mg.Tab.Products.php:68
+#: core/modules/me/me.Tab.Credits.php:80 core/modules/me/me.Tab.Drafts.php:59
+#: core/modules/me/me.Tab.Membership.php:95
+#: core/modules/me/me.Tab.Messages.php:83
+#: core/modules/me/me.Tab.Notifications.php:58
+#: core/modules/me/me.Tab.Orders.php:84 core/modules/mod.HomeLatest.php:71
+#: core/modules/mod.SearchPosts.php:51 core/modules/uc/uc.Tab.Chat.php:89
+#: core/modules/uc/uc.Tab.Comments.php:56 core/modules/uc/uc.Tab.Latest.php:69
+#, php-format
+msgid "Total %d Pages"
+msgstr "共 %d 页"
+
+#: core/modules/management/mg.Tab.Posts.php:68
+#: core/modules/management/mg.Tab.Posts.php:70
+#: core/modules/management/mg.Tab.Products.php:71
+#: core/modules/management/mg.Tab.Products.php:73
+#: core/modules/me/me.Tab.Credits.php:83 core/modules/me/me.Tab.Credits.php:85
+#: core/modules/me/me.Tab.Drafts.php:62 core/modules/me/me.Tab.Drafts.php:64
+#: core/modules/me/me.Tab.Membership.php:98
+#: core/modules/me/me.Tab.Membership.php:100
+#: core/modules/me/me.Tab.Messages.php:86
+#: core/modules/me/me.Tab.Messages.php:88
+#: core/modules/me/me.Tab.Notifications.php:61
+#: core/modules/me/me.Tab.Notifications.php:63
+#: core/modules/me/me.Tab.Orders.php:87 core/modules/me/me.Tab.Orders.php:89
+#: core/modules/mod.SearchPosts.php:54 core/modules/mod.SearchPosts.php:56
+msgid "下一页 →"
+msgstr "下一页 →"
+
+#: core/modules/management/mg.Tab.Posts.php:77
+#: core/modules/management/mg.Tab.Products.php:80
+#: core/modules/me/me.Tab.Drafts.php:71 core/modules/uc/uc.Tab.Comments.php:63
+#: core/modules/uc/uc.Tab.Followers.php:62
+#: core/modules/uc/uc.Tab.Following.php:62 core/modules/uc/uc.Tab.Latest.php:76
+#: core/modules/uc/uc.Tab.Stars.php:79
+msgid "Nothing found here"
+msgstr "这里什么都没有..."
+
+#: core/modules/management/mg.Tab.Posts.php:78
+#: core/modules/management/mg.Tab.Products.php:81
+#: core/modules/me/me.Tab.Drafts.php:72 core/modules/uc/uc.Tab.Comments.php:64
+#: core/modules/uc/uc.Tab.Followers.php:63
+#: core/modules/uc/uc.Tab.Following.php:63 core/modules/uc/uc.Tab.Latest.php:77
+#: core/modules/uc/uc.Tab.Stars.php:80
+msgid "Back to home"
+msgstr "去首页看看"
+
+#: core/modules/management/mg.Tab.Products.php:26
+msgid "Products List"
+msgstr "商品列表"
+
+#: core/modules/management/mg.Tab.Products.php:40
+msgid "Modified: "
+msgstr "更新: "
+
+#: core/modules/management/mg.Tab.Products.php:41
+msgid "Price: "
+msgstr "价格: "
+
+#: core/modules/management/mg.Tab.Products.php:42
+msgid "Amounts: "
+msgstr "库存: "
+
+#: core/modules/management/mg.Tab.Products.php:43
+msgid "Sales: "
+msgstr "销量: "
 
 #: core/modules/management/mg.Tab.Status.php:28 dash/options.php:1287
 msgid "Site Open Date"
@@ -2979,6 +3102,7 @@ msgid "MY STARS"
 msgstr "收藏"
 
 #: core/modules/me/me.NavMenu.php:32
+#: core/viewModels/management/vm.Mg.Products.php:95
 #: core/viewModels/shop/vm.Embed.Product.php:72
 #: core/viewModels/shop/vm.Shop.Category.php:117
 #: core/viewModels/shop/vm.Shop.Home.php:110
@@ -3105,71 +3229,9 @@ msgstr ""
 msgid "Credit Records"
 msgstr "积分记录"
 
-#: core/modules/me/me.Tab.Credits.php:73 core/modules/me/me.Tab.Credits.php:75
-#: core/modules/me/me.Tab.Drafts.php:52 core/modules/me/me.Tab.Drafts.php:54
-#: core/modules/me/me.Tab.Membership.php:88
-#: core/modules/me/me.Tab.Membership.php:90
-#: core/modules/me/me.Tab.Messages.php:76
-#: core/modules/me/me.Tab.Messages.php:78
-#: core/modules/me/me.Tab.Notifications.php:51
-#: core/modules/me/me.Tab.Notifications.php:53
-#: core/modules/me/me.Tab.Orders.php:77 core/modules/me/me.Tab.Orders.php:79
-#: core/modules/mod.SearchPosts.php:44 core/modules/mod.SearchPosts.php:46
-msgid "← 上一页"
-msgstr "← 上一页"
-
-#: core/modules/me/me.Tab.Credits.php:78 core/modules/me/me.Tab.Drafts.php:57
-#: core/modules/me/me.Tab.Membership.php:93
-#: core/modules/me/me.Tab.Messages.php:81
-#: core/modules/me/me.Tab.Notifications.php:56
-#: core/modules/me/me.Tab.Orders.php:82 core/modules/mod.HomeLatest.php:69
-#: core/modules/mod.SearchPosts.php:49 core/modules/uc/uc.Tab.Chat.php:87
-#: core/modules/uc/uc.Tab.Comments.php:54 core/modules/uc/uc.Tab.Latest.php:67
-#, php-format
-msgid "Current Page %d"
-msgstr "第 %d 页"
-
-#: core/modules/me/me.Tab.Credits.php:80 core/modules/me/me.Tab.Drafts.php:59
-#: core/modules/me/me.Tab.Membership.php:95
-#: core/modules/me/me.Tab.Messages.php:83
-#: core/modules/me/me.Tab.Notifications.php:58
-#: core/modules/me/me.Tab.Orders.php:84 core/modules/mod.HomeLatest.php:71
-#: core/modules/mod.SearchPosts.php:51 core/modules/uc/uc.Tab.Chat.php:89
-#: core/modules/uc/uc.Tab.Comments.php:56 core/modules/uc/uc.Tab.Latest.php:69
-#, php-format
-msgid "Total %d Pages"
-msgstr "共 %d 页"
-
-#: core/modules/me/me.Tab.Credits.php:83 core/modules/me/me.Tab.Credits.php:85
-#: core/modules/me/me.Tab.Drafts.php:62 core/modules/me/me.Tab.Drafts.php:64
-#: core/modules/me/me.Tab.Membership.php:98
-#: core/modules/me/me.Tab.Membership.php:100
-#: core/modules/me/me.Tab.Messages.php:86
-#: core/modules/me/me.Tab.Messages.php:88
-#: core/modules/me/me.Tab.Notifications.php:61
-#: core/modules/me/me.Tab.Notifications.php:63
-#: core/modules/me/me.Tab.Orders.php:87 core/modules/me/me.Tab.Orders.php:89
-#: core/modules/mod.SearchPosts.php:54 core/modules/mod.SearchPosts.php:56
-msgid "下一页 →"
-msgstr "下一页 →"
-
 #: core/modules/me/me.Tab.Drafts.php:37
 msgid "Edit Draft"
 msgstr "编辑草稿"
-
-#: core/modules/me/me.Tab.Drafts.php:71 core/modules/uc/uc.Tab.Comments.php:63
-#: core/modules/uc/uc.Tab.Followers.php:62
-#: core/modules/uc/uc.Tab.Following.php:62 core/modules/uc/uc.Tab.Latest.php:76
-#: core/modules/uc/uc.Tab.Stars.php:79
-msgid "Nothing found here"
-msgstr "这里什么都没有..."
-
-#: core/modules/me/me.Tab.Drafts.php:72 core/modules/uc/uc.Tab.Comments.php:64
-#: core/modules/uc/uc.Tab.Followers.php:63
-#: core/modules/uc/uc.Tab.Following.php:63 core/modules/uc/uc.Tab.Latest.php:77
-#: core/modules/uc/uc.Tab.Stars.php:80
-msgid "Back to home"
-msgstr "去首页看看"
 
 #: core/modules/me/me.Tab.EditPost.php:52
 msgid "Post tags, comma separate multi tags"
@@ -4143,6 +4205,7 @@ msgid "%d messages in total, %d new income messages (with green mark)"
 msgstr "共有 %d 条对话消息, 其中 %d 条未读消息 (绿色标注)"
 
 #: core/modules/uc/uc.Tab.Chat.php:55
+#: core/viewModels/management/vm.Mg.Products.php:149
 msgid "DELETE"
 msgstr "删除"
 
@@ -5145,14 +5208,36 @@ msgstr "搜索: %s"
 msgid "%d results in total"
 msgstr "找到 %d 条结果"
 
-#: core/viewModels/me/vm.Me.Order.php:72
-msgid "Credit Payment"
-msgstr "积分支付"
+#: core/viewModels/management/vm.Mg.Posts.php:93
+msgid "PENDING"
+msgstr "待审"
 
-#: core/viewModels/me/vm.Me.Order.php:72
-msgid "Cash Payment"
-msgstr "现金支付"
+#: core/viewModels/management/vm.Mg.Posts.php:95
+msgid "DRAFT"
+msgstr "草稿"
 
+#: core/viewModels/management/vm.Mg.Posts.php:102
+#: core/viewModels/management/vm.Mg.Products.php:124
+msgid "EDIT"
+msgstr "编辑"
+
+#: core/viewModels/management/vm.Mg.Posts.php:109
+msgid "SAVE DRAFT"
+msgstr "存稿"
+
+#: core/viewModels/management/vm.Mg.Posts.php:115
+msgid "PUBLISH"
+msgstr "发布"
+
+#: core/viewModels/management/vm.Mg.Posts.php:121
+msgid "APPROVE"
+msgstr "通过"
+
+#: core/viewModels/management/vm.Mg.Posts.php:127
+msgid "TRASH"
+msgstr "删除"
+
+#: core/viewModels/management/vm.Mg.Products.php:95
 #: core/viewModels/shop/vm.Embed.Product.php:72
 #: core/viewModels/shop/vm.Shop.Category.php:117
 #: core/viewModels/shop/vm.Shop.Home.php:110
@@ -5165,6 +5250,35 @@ msgstr "现金支付"
 #: core/viewModels/vm.Single.Post.php:107
 msgid "YUAN"
 msgstr "元"
+
+#: core/viewModels/management/vm.Mg.Products.php:113
+msgid "On Sell"
+msgstr "在售"
+
+#: core/viewModels/management/vm.Mg.Products.php:115
+msgid "Await Sell"
+msgstr "待售"
+
+#: core/viewModels/management/vm.Mg.Products.php:117
+msgid "Await Edit"
+msgstr "编辑中"
+
+#: core/viewModels/management/vm.Mg.Products.php:131
+msgid "PULL DOWN"
+msgstr "下架"
+
+#: core/viewModels/management/vm.Mg.Products.php:137
+#: core/viewModels/management/vm.Mg.Products.php:143
+msgid "PUSH SELL"
+msgstr "上架"
+
+#: core/viewModels/me/vm.Me.Order.php:72
+msgid "Credit Payment"
+msgstr "积分支付"
+
+#: core/viewModels/me/vm.Me.Order.php:72
+msgid "Cash Payment"
+msgstr "现金支付"
 
 #: core/viewModels/shop/vm.Shop.Header.SubNav.php:77
 msgid "Free Products"

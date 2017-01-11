@@ -57,7 +57,7 @@ abstract class BaseVM {
     /**
      * @var int
      */
-    protected $_objectCacheInterval = 600; 
+    protected $_objectCacheInterval = 3600;
 
     /**
      * @var object
@@ -86,7 +86,7 @@ abstract class BaseVM {
             //}else{
                 $reflect = new ReflectionClass(get_called_class());
             //}
-            
+
             static::$_instance = $reflect->newInstanceArgs($args);
         }
         static::$_instance = new static();

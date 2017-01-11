@@ -264,8 +264,12 @@ function tt_handle_me_child_routes_template(){
     $me_child_route = strtolower(get_query_var('me_child_route'));
     $me_grandchild_route = strtolower(get_query_var('me_grandchild_route'));
     if($is_me_route && $me_child_route){
-        //非Home
         global $wp_query;
+        if($wp_query->is_404()) {
+            return;
+        }
+
+        //非Home
         $wp_query->is_home = false;
 
         //未登录的404处理
@@ -511,6 +515,11 @@ function tt_handle_site_util_page_template(){
     $allowed_utils = (array)json_decode(ALLOWED_SITE_UTILS);
     if($util && in_array(strtolower($util), array_keys($allowed_utils))){
         global $wp_query;
+
+//        if($wp_query->is_404()) {
+//            return;
+//        }
+
         $wp_query->is_home = false;
         $wp_query->is_page = true; //将该模板改为页面属性，而非首页
         $template = THEME_TPL . '/site/tpl.' . ucfirst($allowed_utils[$util]) . '.php';
@@ -634,11 +643,16 @@ function tt_handle_manage_child_routes_template(){
         global $wp_query;
         $wp_query->is_home = false;
 
+        if($wp_query->is_404()) {
+            return;
+        }
+
         //未登录的或非管理员404处理
         if(!is_user_logged_in() || !current_user_can('edit_users')) {
             Utils::set404();
             return;
         }
+
 
         $allow_routes = (array)json_decode(ALLOWED_MANAGE_ROUTES);
         $allow_child = array_keys($allow_routes);
