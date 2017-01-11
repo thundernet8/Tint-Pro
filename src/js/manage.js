@@ -23,7 +23,8 @@ import {} from 'lazyload/jquery.lazyload';
 import SignHelp from './modules/signHelp';
 import FixFooter from './modules/fixFooter';
 import DeleteOrder from './modules/deleteOrder';
-
+import ManagePosts from './modules/managePosts';
+import ManageProducts from './modules/manageProducts';
 
 // DOM Ready
 jQuery(document).ready(function ($) {
@@ -57,4 +58,9 @@ jQuery(document).ready(function ($) {
     // 删除订单
     DeleteOrder.init();
     
+    // 文章管理
+    ManagePosts.init();
+    
+    // 商品管理
+    ManageProducts.init();
 });

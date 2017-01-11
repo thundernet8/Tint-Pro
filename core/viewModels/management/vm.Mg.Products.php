@@ -104,7 +104,7 @@ class MgProductsVM extends BaseVM {
             $product['amount'] = (int)get_post_meta($post->ID, 'tt_product_quantity', true);
 
             // 销量
-            $product['sales'] = get_post_meta($post->ID, 'tt_product_sales', true);
+            $product['sales'] = absint(get_post_meta($post->ID, 'tt_product_sales', true));
 
             $product['edit_link'] = get_edit_post_link($post->ID);//tt_url_for('edit_post', $post->ID);
 
@@ -119,34 +119,39 @@ class MgProductsVM extends BaseVM {
 
             $actions = array();
             $actions[] = array(
-                'class' => 'btn btn-inverse act act-edit',
+                'class' => 'btn btn-inverse product-act act-edit',
                 'url' => $product['edit_link'],
-                'text' => __('EDIT', 'tt')
+                'text' => __('EDIT', 'tt'),
+                'action' => ''
             );
 
             if($post->post_status == 'publish') {
                 $actions[] = array(
-                    'class' => 'btn btn-warning act act-draft',
+                    'class' => 'btn btn-warning product-act act-draft',
                     'url' => 'javascript:;',
-                    'text' => __('PULL DOWN', 'tt')
+                    'text' => __('PULL DOWN', 'tt'),
+                    'action' => 'draft'
                 );
             }elseif($post->post_status == 'draft') {
                 $actions[] = array(
-                    'class' => 'btn btn-primary act act-publish',
+                    'class' => 'btn btn-primary product-act act-publish',
                     'url' => 'javascript:;',
-                    'text' => __('PUSH SELL', 'tt')
+                    'text' => __('PUSH SELL', 'tt'),
+                    'action' => 'publish'
                 );
             }elseif($post->post_status == 'pending'){
                 $actions[] = array(
-                    'class' => 'btn btn-success act act-approve',
+                    'class' => 'btn btn-success product-act act-approve',
                     'url' => 'javascript:;',
-                    'text' => __('PUSH SELL', 'tt')
+                    'text' => __('PUSH SELL', 'tt'),
+                    'action' => 'publish'
                 );
             }
             $actions[] = array(
-                'class' => 'btn btn-danger act act-trash',
+                'class' => 'btn btn-danger product-act act-trash',
                 'url' => 'javascript:;',
-                'text' => __('DELETE', 'tt')
+                'text' => __('DELETE', 'tt'),
+                'action' => 'trash'
             );
             $product['actions'] = $actions;
 

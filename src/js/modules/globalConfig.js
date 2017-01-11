@@ -37,7 +37,8 @@ var routes = {
     boughtResources: Utils.getAPIUrl('/users/boughtresources'),
     userProfiles: Utils.getAPIUrl('/users/profiles'),
     otherActions: Utils.getAPIUrl('/actions'),
-    posts: Utils.getAPIUrl('/posts')
+    posts: Utils.getAPIUrl('/posts'),
+    products: Utils.getAPIUrl('/products')
 };
 
 // URL列表

@@ -36,8 +36,8 @@
                                     <header class="entry-header">
                                         <h2 class="entry-title"><?php if(!empty($post['status_string'])){echo '[' . $post['status_string'] . ']&nbsp;'; } ?><a href="<?php echo $post['permalink']; ?>" rel="bookmark"><?php echo $post['title']; ?></a></h2>
                                         <div class="entry-meta entry-meta-1">
-                                            <?php _e('Date: ', 'tt'); ?><span class="entry-date text-muted"><time class="entry-date" datetime="<?php echo $post['datetime']; ?>" title="<?php echo $post['datetime']; ?>"><?php echo $post['time']; ?></time></span>
-                                            <?php _e('Author: ', 'tt'); ?><span class="entry-author text-muted"><a href="<?php echo $post['author_url']; ?>" target="_blank"><?php echo $post['author']; ?></a></span>
+                                            <span class="text-muted"><?php _e('Date: ', 'tt'); ?></span><span class="entry-date"><time class="entry-date" datetime="<?php echo $post['datetime']; ?>" title="<?php echo $post['datetime']; ?>"><?php echo $post['time']; ?></time></span>
+                                            <span class="text-muted"><?php _e('Author: ', 'tt'); ?></span><span class="entry-author"><a href="<?php echo $post['author_url']; ?>" target="_blank"><?php echo $post['author']; ?></a></span>
                                         </div>
                                     </header>
                                     <div class="entry-excerpt">
@@ -46,7 +46,7 @@
                                 </div>
                                 <div class="actions transition">
                                     <?php foreach ($post['actions'] as $action) { ?>
-                                    <a class="<?php echo $action['class']; ?>" href="<?php echo $action['url']; ?>" data-post-id="<?php echo $post['ID']; ?>"><?php echo $action['text']; ?></a>
+                                    <a class="<?php echo $action['class']; ?>" href="<?php echo $action['url']; ?>" data-post-id="<?php echo $post['ID']; ?>" data-act="<?php echo $action['action']; ?>"><?php echo $action['text']; ?></a>
                                     <?php } ?>
                                 </div>
                             </article>

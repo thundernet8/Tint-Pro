@@ -163,6 +163,10 @@ function tt_create_initial_rest_routes() {
     // TT post
     $tt_post_controller = new WP_REST_Post_Controller;
     $tt_post_controller->register_routes();
+
+    // Product
+    $product_controller = new WP_REST_Product_Controller;
+    $product_controller->register_routes();
 }
 add_action( 'rest_api_init', 'tt_create_initial_rest_routes', 0 );  // TODO cached 接口
 
@@ -171,7 +175,7 @@ add_action( 'rest_api_init', 'tt_create_initial_rest_routes', 0 );  // TODO cach
  * REST请求时设置DOING_AJAX为true
  *
  * @since 2.0.0
- * @return void
+ * @return bool
  */
 function tt_rest_set_doing_ajax () {
     if(!defined('DOING_AJAX')) {

@@ -36,11 +36,11 @@
                                     <header class="entry-header">
                                         <h2 class="entry-title"><?php if(!empty($product['status_string'])){echo '[' . $product['status_string'] . ']&nbsp;'; } ?><a href="<?php echo $product['permalink']; ?>" rel="bookmark"><?php echo $product['title']; ?></a></h2>
                                         <div class="entry-meta entry-meta-1">
-                                            <?php _e('Date: ', 'tt'); ?><span class="entry-date text-muted"><time class="entry-date" datetime="<?php echo $product['datetime']; ?>" title="<?php echo $product['datetime']; ?>"><?php echo $product['time']; ?></time></span>
-                                            <?php _e('Modified: ', 'tt'); ?><span class="entry-date text-muted"><time class="entry-date" datetime="<?php echo $product['modified_time']; ?>" title="<?php echo $product['modified_time']; ?>"><?php echo $product['modified_time']; ?></time></span>
-                                            <?php _e('Price: ', 'tt'); ?><span class="entry-author text-muted"><?php echo $product['price_icon'] . $product['price'] . $product['price_unit']; ?></span>
-                                            <?php _e('Amounts: ', 'tt'); ?><span class="entry-author text-muted"><?php echo $product['amount']; ?></span>
-                                            <?php _e('Sales: ', 'tt'); ?><span class="entry-author text-muted"><?php echo $product['sales']; ?></span>
+                                            <span class="text-muted"><?php _e('Date: ', 'tt'); ?></span><span class="entry-date"><time class="entry-date" datetime="<?php echo $product['datetime']; ?>" title="<?php echo $product['datetime']; ?>"><?php echo $product['time']; ?></time></span>
+                                            <span class="text-muted"><?php _e('Modified: ', 'tt'); ?></span><span class="entry-date"><time class="entry-date" datetime="<?php echo $product['modified_time']; ?>" title="<?php echo $product['modified_time']; ?>"><?php echo $product['modified_time']; ?></time></span>
+                                            <span class="text-muted"><?php _e('Price: ', 'tt'); ?></span><span class="entry-author"><?php echo $product['price_icon'] . $product['price'] . $product['price_unit']; ?></span>
+                                            <span class="text-muted"><?php _e('Amounts: ', 'tt'); ?></span><span class="entry-author"><?php echo $product['amount']; ?></span>
+                                            <span class="text-muted"><?php _e('Sales: ', 'tt'); ?></span><span class="entry-author"><?php echo $product['sales']; ?></span>
                                         </div>
                                     </header>
                                     <div class="entry-excerpt">
@@ -49,7 +49,7 @@
                                 </div>
                                 <div class="actions transition">
                                     <?php foreach ($product['actions'] as $action) { ?>
-                                        <a class="<?php echo $action['class']; ?>" href="<?php echo $action['url']; ?>" data-post-id="<?php echo $product['ID']; ?>"><?php echo $action['text']; ?></a>
+                                        <a class="<?php echo $action['class']; ?>" href="<?php echo $action['url']; ?>" data-product-id="<?php echo $product['ID']; ?>" data-act="<?php echo $action['action']; ?>"><?php echo $action['text']; ?></a>
                                     <?php } ?>
                                 </div>
                             </article>

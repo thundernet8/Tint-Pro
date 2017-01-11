@@ -97,34 +97,39 @@ class MgPostsVM extends BaseVM {
 
             $actions = array();
             $actions[] = array(
-                'class' => 'btn btn-inverse act act-edit',
+                'class' => 'btn btn-inverse post-act act-edit',
                 'url' => $manage_post['edit_link'],
-                'text' => __('EDIT', 'tt')
+                'text' => __('EDIT', 'tt'),
+                'action' => ''
             );
 
             if($post->post_status == 'publish') {
                 $actions[] = array(
-                    'class' => 'btn btn-warning act act-draft',
+                    'class' => 'btn btn-warning post-act act-draft',
                     'url' => 'javascript:;',
-                    'text' => __('SAVE DRAFT', 'tt')
+                    'text' => __('SAVE DRAFT', 'tt'),
+                    'action' => 'draft'
                 );
             }elseif($post->post_status == 'draft') {
                 $actions[] = array(
-                    'class' => 'btn btn-primary act act-publish',
+                    'class' => 'btn btn-primary post-act act-publish',
                     'url' => 'javascript:;',
-                    'text' => __('PUBLISH', 'tt')
+                    'text' => __('PUBLISH', 'tt'),
+                    'action' => 'publish'
                 );
             }elseif($post->post_status == 'pending'){
                 $actions[] = array(
-                    'class' => 'btn btn-success act act-approve',
+                    'class' => 'btn btn-success post-act act-approve',
                     'url' => 'javascript:;',
-                    'text' => __('APPROVE', 'tt')
+                    'text' => __('APPROVE', 'tt'),
+                    'action' => 'publish'
                 );
             }
             $actions[] = array(
-                'class' => 'btn btn-danger act act-trash',
+                'class' => 'btn btn-danger post-act act-trash',
                 'url' => 'javascript:;',
-                'text' => __('TRASH', 'tt')
+                'text' => __('TRASH', 'tt'),
+                'action' => 'trash'
             );
             $manage_post['actions'] = $actions;
 
