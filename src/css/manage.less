@@ -153,6 +153,18 @@ body {
                         }
                     }
                 }
+                &>.empty-content {
+                    padding: 30px 0;
+                    text-align: center;
+                    font-size: 2rem;
+                    &>.tico {
+                        font-size: 6rem;
+                        color: #ddd;
+                    }
+                    &>p {
+                        margin: 40px auto 20px;
+                    }
+                }
             }
         }
     }
@@ -224,6 +236,31 @@ body {
                                 border-radius: 0;
                             }
                         }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* Coupon */
+body {
+    .coupons-tab {
+        &>.tab-content {
+            &>.mg-coupon {
+                #add-coupon {
+                    position: relative;
+                    width: 100px;
+                    height: 42px;
+                    i {
+                        width: 16px;
+                        height: 16px;
+                        top: 50%;
+                        left: 50%;
+                        margin-top: -8px;
+                        margin-left: -8px;
+                        font-size: 1.6rem;
                     }
                 }
             }

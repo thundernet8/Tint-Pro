@@ -151,19 +151,63 @@ function tt_update_coupon($id, $data, $format){
 }
 
 /**
+ * 根据ID查询单个优惠码
+ *
+ * @since 2.0.0
+ * @param $id
+ * @return array|null|object|void
+ */
+function tt_get_coupon($id) {
+    global $wpdb;
+    $prefix = $wpdb->prefix;
+    $coupons_table = $prefix . 'tt_coupons';
+    $coupon = $wpdb->get_row(sprintf("SELECT * FROM $coupons_table WHERE `id`=%d", $id));
+    return $coupon;
+}
+
+/**
  * 获取多条coupons
  *
  * @since 2.0.0
  * @param int $limit
  * @param int $offset
+ * @param bool $in_effect
  * @return array|null|object
  */
-function tt_get_coupons($limit = 20, $offset = 0){
+function tt_get_coupons($limit = 20, $offset = 0, $in_effect = false){
     global $wpdb;
     $prefix = $wpdb->prefix;
     $coupons_table = $prefix . 'tt_coupons';
-    $results = $wpdb->get_results(sprintf("SELECT * FROM $coupons_table ORDER BY id DESC LIMIT %d OFFSET %d", $limit, $offset));
+    if($in_effect){
+        $now = new DateTime();
+        $sql = sprintf("SELECT * FROM $coupons_table WHERE `coupon_status`=1 AND `begin_date`<'%s' AND `expire_date`>'%s' ORDER BY id DESC LIMIT %d OFFSET %d", $now, $now, $limit, $offset);
+    }else{
+        $sql = sprintf("SELECT * FROM $coupons_table ORDER BY id DESC LIMIT %d OFFSET %d", $limit, $offset);
+    }
+    $results = $wpdb->get_results($sql);
     return $results;
+}
+
+
+/**
+ * 统计优惠码数量
+ *
+ * @since 2.0.0
+ * @param $in_effect
+ * @return int
+ */
+function tt_count_coupons($in_effect = false){
+    global $wpdb;
+    $prefix = $wpdb->prefix;
+    $coupons_table = $prefix . 'tt_coupons';
+    if($in_effect){
+        $now = new DateTime();
+        $sql = sprintf("SELECT COUNT(*) FROM $coupons_table WHERE `coupon_status`=1 AND `begin_date`<'%s' AND `expire_date`>'%s'", $now, $now);
+    }else{
+        $sql = "SELECT COUNT(*) FROM $coupons_table";
+    }
+    $count = $wpdb->get_var($sql);
+    return $count;
 }
 
 

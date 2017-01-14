@@ -12,9 +12,9 @@
  * @link https://www.webapproach.net/tint
  */
 ?>
-<?php global $tt_mg_vars; ?>
-<?php $tt_mg_vars['tt_user_id'] = get_current_user_id(); ?>
-<?php $tt_mg_vars['tt_user'] = get_user_by('ID', $tt_mg_vars['tt_user_id']); ?>
+<?php global $tt_mg_vars; $current_user = wp_get_current_user(); ?>
+<?php $tt_mg_vars['tt_user'] = $current_user; ?>
+<?php $tt_mg_vars['tt_user_id'] = $current_user->ID; ?>
 <?php $tt_mg_vars['tt_paged'] = get_query_var('paged') ? : 1; ?>
 <?php global $wp_query; $query_vars=$wp_query->query_vars; $mg_tab = isset($query_vars['manage_child_route']) && in_array($query_vars['manage_child_route'], array_keys((array)json_decode(ALLOWED_MANAGE_ROUTES))) ? $query_vars['manage_child_route'] : 'status'; $tt_mg_vars['manage_child_route'] = $mg_tab; ?>
 <aside class="col col-left">

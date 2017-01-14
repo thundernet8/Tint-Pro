@@ -25,6 +25,8 @@ import FixFooter from './modules/fixFooter';
 import DeleteOrder from './modules/deleteOrder';
 import ManagePosts from './modules/managePosts';
 import ManageProducts from './modules/manageProducts';
+import AddCoupon from './modules/addCoupon';
+import DeleteCoupon from './modules/deleteCoupon';
 
 // DOM Ready
 jQuery(document).ready(function ($) {
@@ -63,4 +65,10 @@ jQuery(document).ready(function ($) {
     
     // 商品管理
     ManageProducts.init();
+    
+    // 添加优惠码
+    AddCoupon.init();
+    
+    // 删除优惠码
+    DeleteCoupon.init();
 });

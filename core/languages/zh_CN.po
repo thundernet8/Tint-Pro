@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2017-01-11 20:00+0800\n"
-"PO-Revision-Date: 2017-01-11 20:00+0800\n"
+"POT-Creation-Date: 2017-01-14 21:04+0800\n"
+"PO-Revision-Date: 2017-01-14 21:11+0800\n"
 "Last-Translator: Zhiyan <mail@webapproach.net>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -95,6 +95,7 @@ msgid "Buy the resource successfully"
 msgstr "购买资源成功"
 
 #: core/api/v1/endpoints/class.Rest.Comment.Controller.php:57
+#: core/api/v1/endpoints/class.Rest.Coupon.Controller.php:73
 #: core/api/v1/endpoints/class.Rest.Message.Controller.php:73
 #: core/api/v1/endpoints/class.Rest.Order.Controller.php:65
 #: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:55
@@ -207,6 +208,71 @@ msgstr ""
 msgid ""
 "Scope under which the request is made; determines fields present in response."
 msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Coupon.Controller.php:92
+msgid "Sorry, you are not permitted to view coupons."
+msgstr "抱歉, 你无权查看优惠码"
+
+#: core/api/v1/endpoints/class.Rest.Coupon.Controller.php:110
+msgid "Retrieve coupons failed"
+msgstr "检索优惠码失败"
+
+#: core/api/v1/endpoints/class.Rest.Coupon.Controller.php:126
+msgid "Sorry, you are not permitted to create a coupon."
+msgstr "抱歉, 你无权创建优惠码"
+
+#: core/api/v1/endpoints/class.Rest.Coupon.Controller.php:148
+msgid "Coupon type is not right"
+msgstr "优惠码类型不正确"
+
+#: core/api/v1/endpoints/class.Rest.Coupon.Controller.php:153
+msgid "Coupon code is too short"
+msgstr "优惠码太短"
+
+#: core/api/v1/endpoints/class.Rest.Coupon.Controller.php:158
+msgid ""
+"Invalid coupon discount value, should not less than 0 and not greater than 1"
+msgstr "无效的折扣值, 因位于0~1之间"
+
+#: core/api/v1/endpoints/class.Rest.Coupon.Controller.php:163
+msgid "Coupon effect date should not be empty"
+msgstr "优惠码生效日期不能为空"
+
+#: core/api/v1/endpoints/class.Rest.Coupon.Controller.php:167
+msgid "Coupon expire date should not be empty"
+msgstr "优惠码失效日期不能为空"
+
+#: core/api/v1/endpoints/class.Rest.Coupon.Controller.php:175
+msgid "Add coupon failed"
+msgstr "添加优惠码失败"
+
+#: core/api/v1/endpoints/class.Rest.Coupon.Controller.php:178
+msgid "Add coupon successfully"
+msgstr "添加优惠码成功"
+
+#: core/api/v1/endpoints/class.Rest.Coupon.Controller.php:190
+msgid "Sorry, you are not permitted to view a coupon."
+msgstr "抱歉, 你无权查看优惠码"
+
+#: core/api/v1/endpoints/class.Rest.Coupon.Controller.php:205
+msgid "Cannot get the coupon specified"
+msgstr "不能获取指定优惠码"
+
+#: core/api/v1/endpoints/class.Rest.Coupon.Controller.php:219
+msgid "Sorry, you are not permitted to update a coupon."
+msgstr "抱歉, 你无权更新优惠码"
+
+#: core/api/v1/endpoints/class.Rest.Coupon.Controller.php:245
+msgid "Sorry, you are not permitted to delete a coupon."
+msgstr "抱歉, 你无权删除该优惠码"
+
+#: core/api/v1/endpoints/class.Rest.Coupon.Controller.php:261
+msgid "The coupon cannot be deleted."
+msgstr "优惠码不可删除"
+
+#: core/api/v1/endpoints/class.Rest.Coupon.Controller.php:264
+msgid "delete coupon successfully"
+msgstr "删除优惠码成功"
 
 #: core/api/v1/endpoints/class.Rest.Follow.Controller.php:218
 msgid "Sorry, you cannot follow or unfollow without signing in."
@@ -349,12 +415,12 @@ msgid "Sorry, you do not have the capability to contribute a post."
 msgstr "抱歉, 你没有投稿的权限"
 
 #: core/api/v1/endpoints/class.Rest.Post.Controller.php:128
-#: core/api/v1/endpoints/class.Rest.Post.Controller.php:207
+#: core/api/v1/endpoints/class.Rest.Post.Controller.php:223
 msgid "The post title is too short or empty"
 msgstr "文章标题为空或太短"
 
 #: core/api/v1/endpoints/class.Rest.Post.Controller.php:133
-#: core/api/v1/endpoints/class.Rest.Post.Controller.php:212
+#: core/api/v1/endpoints/class.Rest.Post.Controller.php:228
 msgid "The post content is too short or empty"
 msgstr "文章内容为空或太短"
 
@@ -362,11 +428,19 @@ msgstr "文章内容为空或太短"
 msgid "Create post successfully"
 msgstr "添加新文章成功"
 
-#: core/api/v1/endpoints/class.Rest.Post.Controller.php:242
+#: core/api/v1/endpoints/class.Rest.Post.Controller.php:215
+msgid "Handle post failed"
+msgstr "操作文章失败"
+
+#: core/api/v1/endpoints/class.Rest.Post.Controller.php:217
+msgid "Handle post successfully"
+msgstr "操作文章成功"
+
+#: core/api/v1/endpoints/class.Rest.Post.Controller.php:258
 msgid "Update the post failed"
 msgstr "更新文章失败"
 
-#: core/api/v1/endpoints/class.Rest.Post.Controller.php:261
+#: core/api/v1/endpoints/class.Rest.Post.Controller.php:277
 msgid "Update post successfully"
 msgstr "更新文章成功"
 
@@ -398,6 +472,45 @@ msgstr "删除收藏失败"
 #: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:181
 msgid "Unstar post successfully"
 msgstr "删除收藏成功"
+
+#: core/api/v1/endpoints/class.Rest.Product.Controller.php:112
+msgid "Sorry, you do not have the capability to publish a product."
+msgstr "抱歉, 你无权发布商品"
+
+#: core/api/v1/endpoints/class.Rest.Product.Controller.php:114
+#: core/api/v1/endpoints/class.Rest.Product.Controller.php:179
+msgid "Sorry, you do not have the capability to contribute a product."
+msgstr "抱歉, 你没有投稿商品的权限"
+
+#: core/api/v1/endpoints/class.Rest.Product.Controller.php:128
+#: core/api/v1/endpoints/class.Rest.Product.Controller.php:210
+msgid "The product name is too short or empty"
+msgstr "商品名为空或太短"
+
+#: core/api/v1/endpoints/class.Rest.Product.Controller.php:133
+#: core/api/v1/endpoints/class.Rest.Product.Controller.php:215
+msgid "The product description is too short or empty"
+msgstr "商品描述为空或太短"
+
+#: core/api/v1/endpoints/class.Rest.Product.Controller.php:161
+msgid "Create product successfully"
+msgstr "添加商品成功"
+
+#: core/api/v1/endpoints/class.Rest.Product.Controller.php:202
+msgid "Handle product failed"
+msgstr "操作商品失败"
+
+#: core/api/v1/endpoints/class.Rest.Product.Controller.php:204
+msgid "Handle product successfully"
+msgstr "操作商品成功"
+
+#: core/api/v1/endpoints/class.Rest.Product.Controller.php:241
+msgid "Update the product failed"
+msgstr "更新商品失败"
+
+#: core/api/v1/endpoints/class.Rest.Product.Controller.php:248
+msgid "Update product successfully"
+msgstr "更新商品成功"
 
 #: core/api/v1/endpoints/class.Rest.Session.Controller.php:105
 msgid "Open connect failed to complete your profile"
@@ -2481,108 +2594,108 @@ msgstr "你无权添加优惠码"
 msgid "The coupon code is existed"
 msgstr "优惠码已存在"
 
-#: core/functions/shop/func.Shop.Coupon.php:183
+#: core/functions/shop/func.Shop.Coupon.php:227
 msgid "The coupon is not existed"
 msgstr "优惠码不存在"
 
-#: core/functions/shop/func.Shop.Coupon.php:186
+#: core/functions/shop/func.Shop.Coupon.php:230
 msgid "The coupon is used"
 msgstr "优惠码已被使用"
 
-#: core/functions/shop/func.Shop.Coupon.php:190
+#: core/functions/shop/func.Shop.Coupon.php:234
 msgid "The coupon have not taken in effect yet"
 msgstr "优惠码还未生效"
 
-#: core/functions/shop/func.Shop.Coupon.php:193
+#: core/functions/shop/func.Shop.Coupon.php:237
 msgid "The coupon is expired"
 msgstr "优惠码已过期"
 
-#: core/functions/shop/func.Shop.Orders.php:84
+#: core/functions/shop/func.Shop.Order.php:84
 msgid "Wait Payment"
 msgstr "等待买家付款"
 
-#: core/functions/shop/func.Shop.Orders.php:87
+#: core/functions/shop/func.Shop.Order.php:87
 msgid "Payed, Wait Delivery"
 msgstr "已付款，等待卖家发货"
 
-#: core/functions/shop/func.Shop.Orders.php:90
+#: core/functions/shop/func.Shop.Order.php:90
 msgid "Delivered, Wait Confirm"
 msgstr "已发货，等待买家确认"
 
-#: core/functions/shop/func.Shop.Orders.php:93
+#: core/functions/shop/func.Shop.Order.php:93
 msgid "Trade Succeed"
 msgstr "交易成功"
 
-#: core/functions/shop/func.Shop.Orders.php:96
+#: core/functions/shop/func.Shop.Order.php:96
 msgid "Trade Closed"
 msgstr "交易关闭"
 
-#: core/functions/shop/func.Shop.Orders.php:99
+#: core/functions/shop/func.Shop.Order.php:99
 msgid "Order Created"
 msgstr "订单创建成功"
 
-#: core/functions/shop/func.Shop.Orders.php:381
-#: core/functions/shop/func.Shop.Orders.php:389
-#: core/functions/shop/func.Shop.Orders.php:406
+#: core/functions/shop/func.Shop.Order.php:381
+#: core/functions/shop/func.Shop.Order.php:389
+#: core/functions/shop/func.Shop.Order.php:406
 msgid "Create combine order failed"
 msgstr "创建合并订单失败"
 
-#: core/functions/shop/func.Shop.Orders.php:451
+#: core/functions/shop/func.Shop.Order.php:451
 msgid "The order with the a order id you specified is not existed"
 msgstr "指定的订单不存在"
 
-#: core/functions/shop/func.Shop.Orders.php:459
+#: core/functions/shop/func.Shop.Order.php:459
 msgid "The coupon is invalid"
 msgstr "优惠码无效"
 
-#: core/functions/shop/func.Shop.Orders.php:518
+#: core/functions/shop/func.Shop.Order.php:518
 msgid "The order is not exist"
 msgstr "订单不存在"
 
-#: core/functions/shop/func.Shop.Orders.php:522
+#: core/functions/shop/func.Shop.Order.php:522
 msgid "You are not permit to delete this order"
 msgstr "你无权删除该订单"
 
-#: core/functions/shop/func.Shop.Orders.php:549
+#: core/functions/shop/func.Shop.Order.php:549
 #, php-format
 msgid "%s 商店交易提醒"
 msgstr "%s 商店交易提醒"
 
-#: core/functions/shop/func.Shop.Orders.php:565
+#: core/functions/shop/func.Shop.Order.php:565
 #, php-format
 msgid "%s 商店新成功交易提醒"
 msgstr "%s 商店新成功交易提醒"
 
-#: core/functions/shop/func.Shop.Orders.php:653
+#: core/functions/shop/func.Shop.Order.php:653
 #, php-format
 msgid "The Resources You Bought in %s"
 msgstr "你在 %s 付费购买的资源"
 
-#: core/functions/shop/func.Shop.Orders.php:656
+#: core/functions/shop/func.Shop.Order.php:656
 #: core/viewModels/me/vm.Me.Order.php:73
 #, php-format
 msgid "%d Credits"
 msgstr "%d 积分"
 
-#: core/functions/shop/func.Shop.Orders.php:656
+#: core/functions/shop/func.Shop.Order.php:656
 #: core/viewModels/me/vm.Me.Order.php:73
 #, php-format
 msgid "%0.2f YUAN"
 msgstr "%0.2f 元"
 
-#: core/functions/shop/func.Shop.Orders.php:685
+#: core/functions/shop/func.Shop.Order.php:685
 msgid "The order is not found"
 msgstr "未找到订单"
 
-#: core/functions/shop/func.Shop.Orders.php:689
+#: core/functions/shop/func.Shop.Order.php:689
 msgid "The order has been payed"
 msgstr "订单已支付"
 
-#: core/functions/shop/func.Shop.Orders.php:693
+#: core/functions/shop/func.Shop.Order.php:693
 msgid "The order has been closed"
 msgstr "订单已关闭"
 
-#: core/functions/shop/func.Shop.Orders.php:709
+#: core/functions/shop/func.Shop.Order.php:709
 msgid "Some error happened when continue the payment"
 msgstr "请求继续支付时发生了一些错误"
 
@@ -2857,19 +2970,103 @@ msgstr "会员"
 msgid "COUPONS"
 msgstr "优惠码"
 
-#: core/modules/management/mg.Tab.Posts.php:26
-msgid "Posts List"
-msgstr "文章列表"
+#: core/modules/management/mg.Tab.Coupons.php:26
+msgid "Add Coupon"
+msgstr "添加优惠码"
 
-#: core/modules/management/mg.Tab.Posts.php:39
-#: core/modules/management/mg.Tab.Products.php:39
-msgid "Date: "
-msgstr "日期: "
+#: core/modules/management/mg.Tab.Coupons.php:29
+#: core/modules/management/mg.Tab.Coupons.php:76
+msgid "Coupon Type"
+msgstr "类型"
 
-#: core/modules/management/mg.Tab.Posts.php:40
-msgid "Author: "
-msgstr "作者: "
+#: core/modules/management/mg.Tab.Coupons.php:31
+#: core/modules/management/mg.Tab.Coupons.php:89
+msgid "ONCE COUPON"
+msgstr "一次性"
 
+#: core/modules/management/mg.Tab.Coupons.php:34
+#: core/modules/management/mg.Tab.Coupons.php:89
+msgid "MULTI COUPON"
+msgstr "重复使用"
+
+#: core/modules/management/mg.Tab.Coupons.php:42
+msgid "Code"
+msgstr "优惠码"
+
+#: core/modules/management/mg.Tab.Coupons.php:46
+msgid "Discount"
+msgstr "折扣"
+
+#: core/modules/management/mg.Tab.Coupons.php:54
+msgid "Effect Date"
+msgstr "生效时间"
+
+#: core/modules/management/mg.Tab.Coupons.php:58
+#: core/modules/me/me.Tab.Membership.php:41
+msgid "Expire Date"
+msgstr "过期时间"
+
+#: core/modules/management/mg.Tab.Coupons.php:62
+msgid "ADD"
+msgstr "添加"
+
+#: core/modules/management/mg.Tab.Coupons.php:64
+msgid ""
+"折扣请填写0~1之间的小数, 并精确到2位小数, 有效期格式为2017-01-01 10:00:00"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Coupons.php:69
+msgid "Coupons List"
+msgstr "优惠码列表"
+
+#: core/modules/management/mg.Tab.Coupons.php:74
+msgid "Coupon Sequence"
+msgstr "序号"
+
+#: core/modules/management/mg.Tab.Coupons.php:75
+msgid "Coupon Code"
+msgstr "优惠码"
+
+#: core/modules/management/mg.Tab.Coupons.php:77
+msgid "Coupon Discount"
+msgstr "折扣"
+
+#: core/modules/management/mg.Tab.Coupons.php:78
+msgid "Coupon Status"
+msgstr "状态"
+
+#: core/modules/management/mg.Tab.Coupons.php:79
+msgid "Coupon Effect Date"
+msgstr "生效日期"
+
+#: core/modules/management/mg.Tab.Coupons.php:80
+msgid "Coupon Expire Date"
+msgstr "失效时间"
+
+#: core/modules/management/mg.Tab.Coupons.php:81
+#: core/modules/me/me.Tab.Orders.php:48 core/templates/site/tpl.CheckOut.php:90
+msgid "Actions"
+msgstr "操作"
+
+#: core/modules/management/mg.Tab.Coupons.php:91
+msgid "Not Used"
+msgstr "未使用"
+
+#: core/modules/management/mg.Tab.Coupons.php:91
+msgid "Used"
+msgstr "已使用"
+
+#: core/modules/management/mg.Tab.Coupons.php:96
+msgid "Delete the coupon"
+msgstr "删除优惠码"
+
+#: core/modules/management/mg.Tab.Coupons.php:96
+#: core/modules/me/me.Tab.Orders.php:66
+msgid "Delete"
+msgstr "删除"
+
+#: core/modules/management/mg.Tab.Coupons.php:106
+#: core/modules/management/mg.Tab.Coupons.php:108
 #: core/modules/management/mg.Tab.Posts.php:58
 #: core/modules/management/mg.Tab.Posts.php:60
 #: core/modules/management/mg.Tab.Products.php:61
@@ -2887,6 +3084,7 @@ msgstr "作者: "
 msgid "← 上一页"
 msgstr "← 上一页"
 
+#: core/modules/management/mg.Tab.Coupons.php:111
 #: core/modules/management/mg.Tab.Posts.php:63
 #: core/modules/management/mg.Tab.Products.php:66
 #: core/modules/me/me.Tab.Credits.php:78 core/modules/me/me.Tab.Drafts.php:57
@@ -2900,6 +3098,7 @@ msgstr "← 上一页"
 msgid "Current Page %d"
 msgstr "第 %d 页"
 
+#: core/modules/management/mg.Tab.Coupons.php:113
 #: core/modules/management/mg.Tab.Posts.php:65
 #: core/modules/management/mg.Tab.Products.php:68
 #: core/modules/me/me.Tab.Credits.php:80 core/modules/me/me.Tab.Drafts.php:59
@@ -2913,6 +3112,8 @@ msgstr "第 %d 页"
 msgid "Total %d Pages"
 msgstr "共 %d 页"
 
+#: core/modules/management/mg.Tab.Coupons.php:116
+#: core/modules/management/mg.Tab.Coupons.php:118
 #: core/modules/management/mg.Tab.Posts.php:68
 #: core/modules/management/mg.Tab.Posts.php:70
 #: core/modules/management/mg.Tab.Products.php:71
@@ -2930,6 +3131,7 @@ msgstr "共 %d 页"
 msgid "下一页 →"
 msgstr "下一页 →"
 
+#: core/modules/management/mg.Tab.Coupons.php:125
 #: core/modules/management/mg.Tab.Posts.php:77
 #: core/modules/management/mg.Tab.Products.php:80
 #: core/modules/me/me.Tab.Drafts.php:71 core/modules/uc/uc.Tab.Comments.php:63
@@ -2938,6 +3140,19 @@ msgstr "下一页 →"
 #: core/modules/uc/uc.Tab.Stars.php:79
 msgid "Nothing found here"
 msgstr "这里什么都没有..."
+
+#: core/modules/management/mg.Tab.Posts.php:26
+msgid "Posts List"
+msgstr "文章列表"
+
+#: core/modules/management/mg.Tab.Posts.php:39
+#: core/modules/management/mg.Tab.Products.php:39
+msgid "Date: "
+msgstr "日期: "
+
+#: core/modules/management/mg.Tab.Posts.php:40
+msgid "Author: "
+msgstr "作者: "
 
 #: core/modules/management/mg.Tab.Posts.php:78
 #: core/modules/management/mg.Tab.Products.php:81
@@ -3265,10 +3480,6 @@ msgstr "会员状态"
 msgid "Join Time"
 msgstr "加入时间"
 
-#: core/modules/me/me.Tab.Membership.php:41
-msgid "Expire Date"
-msgstr "过期时间"
-
 #: core/modules/me/me.Tab.Membership.php:48
 msgid "Join Member"
 msgstr "加入会员"
@@ -3518,10 +3729,6 @@ msgstr "订单总价"
 msgid "Order Status"
 msgstr "订单状态"
 
-#: core/modules/me/me.Tab.Orders.php:48 core/templates/site/tpl.CheckOut.php:90
-msgid "Actions"
-msgstr "操作"
-
 #: core/modules/me/me.Tab.Orders.php:61
 msgid "View the order detail"
 msgstr "查看订单详情"
@@ -3533,10 +3740,6 @@ msgstr "查看"
 #: core/modules/me/me.Tab.Orders.php:66
 msgid "Delete the order"
 msgstr "删除订单"
-
-#: core/modules/me/me.Tab.Orders.php:66
-msgid "Delete"
-msgstr "删除"
 
 #: core/modules/me/me.Tab.Settings.php:27 core/modules/uc/uc.Tab.Profile.php:41
 msgid "Basic Info"
@@ -4205,7 +4408,7 @@ msgid "%d messages in total, %d new income messages (with green mark)"
 msgstr "共有 %d 条对话消息, 其中 %d 条未读消息 (绿色标注)"
 
 #: core/modules/uc/uc.Tab.Chat.php:55
-#: core/viewModels/management/vm.Mg.Products.php:149
+#: core/viewModels/management/vm.Mg.Products.php:153
 msgid "DELETE"
 msgstr "删除"
 
@@ -5221,19 +5424,19 @@ msgstr "草稿"
 msgid "EDIT"
 msgstr "编辑"
 
-#: core/viewModels/management/vm.Mg.Posts.php:109
+#: core/viewModels/management/vm.Mg.Posts.php:110
 msgid "SAVE DRAFT"
 msgstr "存稿"
 
-#: core/viewModels/management/vm.Mg.Posts.php:115
+#: core/viewModels/management/vm.Mg.Posts.php:117
 msgid "PUBLISH"
 msgstr "发布"
 
-#: core/viewModels/management/vm.Mg.Posts.php:121
+#: core/viewModels/management/vm.Mg.Posts.php:124
 msgid "APPROVE"
 msgstr "通过"
 
-#: core/viewModels/management/vm.Mg.Posts.php:127
+#: core/viewModels/management/vm.Mg.Posts.php:131
 msgid "TRASH"
 msgstr "删除"
 
@@ -5263,12 +5466,12 @@ msgstr "待售"
 msgid "Await Edit"
 msgstr "编辑中"
 
-#: core/viewModels/management/vm.Mg.Products.php:131
+#: core/viewModels/management/vm.Mg.Products.php:132
 msgid "PULL DOWN"
 msgstr "下架"
 
-#: core/viewModels/management/vm.Mg.Products.php:137
-#: core/viewModels/management/vm.Mg.Products.php:143
+#: core/viewModels/management/vm.Mg.Products.php:139
+#: core/viewModels/management/vm.Mg.Products.php:146
 msgid "PUSH SELL"
 msgstr "上架"
 

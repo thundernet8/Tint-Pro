@@ -144,7 +144,7 @@ load_func('func.API.Actions');
 load_func('func.Tint');
 if(TT_PRO && tt_get_option('tt_enable_shop', false)){
     load_func('shop/func.Shop');
-    load_func('shop/func.Shop.Orders');
+    load_func('shop/func.Shop.Order');
     load_func('shop/func.Shop.Coupon');
     load_func('shop/func.Shop.Cart');
     load_func('shop/func.Shop.Address');

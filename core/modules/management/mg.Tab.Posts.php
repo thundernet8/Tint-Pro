@@ -46,7 +46,7 @@
                                 </div>
                                 <div class="actions transition">
                                     <?php foreach ($post['actions'] as $action) { ?>
-                                    <a class="<?php echo $action['class']; ?>" href="<?php echo $action['url']; ?>" data-post-id="<?php echo $post['ID']; ?>" data-act="<?php echo $action['action']; ?>"><?php echo $action['text']; ?></a>
+                                        <a class="<?php echo $action['class']; ?>" href="<?php echo $action['url']; ?>" data-post-id="<?php echo $post['ID']; ?>" data-act="<?php echo $action['action']; ?>"><?php echo $action['text']; ?></a>
                                     <?php } ?>
                                 </div>
                             </article>
