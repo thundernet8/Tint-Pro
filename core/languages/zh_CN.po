@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2017-01-14 21:04+0800\n"
-"PO-Revision-Date: 2017-01-14 21:11+0800\n"
+"POT-Creation-Date: 2017-01-15 17:08+0800\n"
+"PO-Revision-Date: 2017-01-15 17:10+0800\n"
 "Last-Translator: Zhiyan <mail@webapproach.net>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -96,6 +96,7 @@ msgstr "购买资源成功"
 
 #: core/api/v1/endpoints/class.Rest.Comment.Controller.php:57
 #: core/api/v1/endpoints/class.Rest.Coupon.Controller.php:73
+#: core/api/v1/endpoints/class.Rest.Member.Controller.php:73
 #: core/api/v1/endpoints/class.Rest.Message.Controller.php:73
 #: core/api/v1/endpoints/class.Rest.Order.Controller.php:65
 #: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:55
@@ -262,21 +263,73 @@ msgstr "不能获取指定优惠码"
 msgid "Sorry, you are not permitted to update a coupon."
 msgstr "抱歉, 你无权更新优惠码"
 
-#: core/api/v1/endpoints/class.Rest.Coupon.Controller.php:245
+#: core/api/v1/endpoints/class.Rest.Coupon.Controller.php:244
 msgid "Sorry, you are not permitted to delete a coupon."
 msgstr "抱歉, 你无权删除该优惠码"
 
-#: core/api/v1/endpoints/class.Rest.Coupon.Controller.php:261
+#: core/api/v1/endpoints/class.Rest.Coupon.Controller.php:260
 msgid "The coupon cannot be deleted."
 msgstr "优惠码不可删除"
 
-#: core/api/v1/endpoints/class.Rest.Coupon.Controller.php:264
+#: core/api/v1/endpoints/class.Rest.Coupon.Controller.php:263
 msgid "delete coupon successfully"
 msgstr "删除优惠码成功"
 
 #: core/api/v1/endpoints/class.Rest.Follow.Controller.php:218
 msgid "Sorry, you cannot follow or unfollow without signing in."
 msgstr "抱歉, 你必须登录才能关注或取消关注"
+
+#: core/api/v1/endpoints/class.Rest.Member.Controller.php:92
+msgid "Sorry, you are not permitted to view members."
+msgstr "抱歉, 你无权查看会员列表"
+
+#: core/api/v1/endpoints/class.Rest.Member.Controller.php:110
+msgid "Retrieve members failed"
+msgstr "检索会员失败"
+
+#: core/api/v1/endpoints/class.Rest.Member.Controller.php:126
+msgid "Sorry, you are not permitted to create a member."
+msgstr "抱歉, 你无权创建会员"
+
+#: core/api/v1/endpoints/class.Rest.Member.Controller.php:149
+msgid "User you specified is not found"
+msgstr "指定的用户不存在"
+
+#: core/api/v1/endpoints/class.Rest.Member.Controller.php:154
+msgid "Member VIP type is not right"
+msgstr "会员类型不正确"
+
+#: core/api/v1/endpoints/class.Rest.Member.Controller.php:162
+msgid "Add member failed"
+msgstr "添加会员失败"
+
+#: core/api/v1/endpoints/class.Rest.Member.Controller.php:165
+msgid "Add member successfully"
+msgstr "添加会员成功"
+
+#: core/api/v1/endpoints/class.Rest.Member.Controller.php:177
+msgid "Sorry, you are not permitted to view a member without signing in."
+msgstr "抱歉, 你未登录无权查看会员"
+
+#: core/api/v1/endpoints/class.Rest.Member.Controller.php:192
+msgid "Cannot get the member specified"
+msgstr "不能获取指定会员"
+
+#: core/api/v1/endpoints/class.Rest.Member.Controller.php:206
+msgid "Sorry, you are not permitted to update a member."
+msgstr "抱歉, 你无权更新会员信息"
+
+#: core/api/v1/endpoints/class.Rest.Member.Controller.php:231
+msgid "Sorry, you are not permitted to delete a member."
+msgstr "抱歉, 你无权删除该会员"
+
+#: core/api/v1/endpoints/class.Rest.Member.Controller.php:247
+msgid "The member cannot be deleted."
+msgstr "会员不可删除"
+
+#: core/api/v1/endpoints/class.Rest.Member.Controller.php:250
+msgid "delete member successfully"
+msgstr "删除会员成功"
 
 #: core/api/v1/endpoints/class.Rest.Message.Controller.php:92
 msgid "Sorry, you cannot view messages without signing in."
@@ -1992,11 +2045,11 @@ msgstr "过期"
 msgid "N/A"
 msgstr "N/A"
 
-#: core/functions/func.Member.php:188 core/functions/func.Member.php:210
+#: core/functions/func.Member.php:204 core/functions/func.Member.php:224
 msgid "你的会员状态发生了变化"
 msgstr "你的会员状态发生了变化"
 
-#: core/functions/func.Member.php:188 core/functions/func.Member.php:210
+#: core/functions/func.Member.php:204 core/functions/func.Member.php:224
 #, php-format
 msgid "会员类型: %1$s, 到期时间: %2$s"
 msgstr "会员类型: %1$s, 到期时间: %2$s"
@@ -2980,12 +3033,12 @@ msgid "Coupon Type"
 msgstr "类型"
 
 #: core/modules/management/mg.Tab.Coupons.php:31
-#: core/modules/management/mg.Tab.Coupons.php:89
+#: core/modules/management/mg.Tab.Coupons.php:91
 msgid "ONCE COUPON"
 msgstr "一次性"
 
 #: core/modules/management/mg.Tab.Coupons.php:34
-#: core/modules/management/mg.Tab.Coupons.php:89
+#: core/modules/management/mg.Tab.Coupons.php:91
 msgid "MULTI COUPON"
 msgstr "重复使用"
 
@@ -3007,6 +3060,7 @@ msgid "Expire Date"
 msgstr "过期时间"
 
 #: core/modules/management/mg.Tab.Coupons.php:62
+#: core/modules/management/mg.Tab.Members.php:49
 msgid "ADD"
 msgstr "添加"
 
@@ -3044,29 +3098,33 @@ msgid "Coupon Expire Date"
 msgstr "失效时间"
 
 #: core/modules/management/mg.Tab.Coupons.php:81
+#: core/modules/management/mg.Tab.Members.php:67
 #: core/modules/me/me.Tab.Orders.php:48 core/templates/site/tpl.CheckOut.php:90
 msgid "Actions"
 msgstr "操作"
 
-#: core/modules/management/mg.Tab.Coupons.php:91
+#: core/modules/management/mg.Tab.Coupons.php:93
 msgid "Not Used"
 msgstr "未使用"
 
-#: core/modules/management/mg.Tab.Coupons.php:91
+#: core/modules/management/mg.Tab.Coupons.php:93
 msgid "Used"
 msgstr "已使用"
 
-#: core/modules/management/mg.Tab.Coupons.php:96
+#: core/modules/management/mg.Tab.Coupons.php:98
 msgid "Delete the coupon"
 msgstr "删除优惠码"
 
-#: core/modules/management/mg.Tab.Coupons.php:96
+#: core/modules/management/mg.Tab.Coupons.php:98
+#: core/modules/management/mg.Tab.Members.php:84
 #: core/modules/me/me.Tab.Orders.php:66
 msgid "Delete"
 msgstr "删除"
 
-#: core/modules/management/mg.Tab.Coupons.php:106
 #: core/modules/management/mg.Tab.Coupons.php:108
+#: core/modules/management/mg.Tab.Coupons.php:110
+#: core/modules/management/mg.Tab.Members.php:94
+#: core/modules/management/mg.Tab.Members.php:96
 #: core/modules/management/mg.Tab.Posts.php:58
 #: core/modules/management/mg.Tab.Posts.php:60
 #: core/modules/management/mg.Tab.Products.php:61
@@ -3084,7 +3142,8 @@ msgstr "删除"
 msgid "← 上一页"
 msgstr "← 上一页"
 
-#: core/modules/management/mg.Tab.Coupons.php:111
+#: core/modules/management/mg.Tab.Coupons.php:113
+#: core/modules/management/mg.Tab.Members.php:99
 #: core/modules/management/mg.Tab.Posts.php:63
 #: core/modules/management/mg.Tab.Products.php:66
 #: core/modules/me/me.Tab.Credits.php:78 core/modules/me/me.Tab.Drafts.php:57
@@ -3098,7 +3157,8 @@ msgstr "← 上一页"
 msgid "Current Page %d"
 msgstr "第 %d 页"
 
-#: core/modules/management/mg.Tab.Coupons.php:113
+#: core/modules/management/mg.Tab.Coupons.php:115
+#: core/modules/management/mg.Tab.Members.php:101
 #: core/modules/management/mg.Tab.Posts.php:65
 #: core/modules/management/mg.Tab.Products.php:68
 #: core/modules/me/me.Tab.Credits.php:80 core/modules/me/me.Tab.Drafts.php:59
@@ -3112,8 +3172,10 @@ msgstr "第 %d 页"
 msgid "Total %d Pages"
 msgstr "共 %d 页"
 
-#: core/modules/management/mg.Tab.Coupons.php:116
 #: core/modules/management/mg.Tab.Coupons.php:118
+#: core/modules/management/mg.Tab.Coupons.php:120
+#: core/modules/management/mg.Tab.Members.php:104
+#: core/modules/management/mg.Tab.Members.php:106
 #: core/modules/management/mg.Tab.Posts.php:68
 #: core/modules/management/mg.Tab.Posts.php:70
 #: core/modules/management/mg.Tab.Products.php:71
@@ -3131,7 +3193,8 @@ msgstr "共 %d 页"
 msgid "下一页 →"
 msgstr "下一页 →"
 
-#: core/modules/management/mg.Tab.Coupons.php:125
+#: core/modules/management/mg.Tab.Coupons.php:127
+#: core/modules/management/mg.Tab.Members.php:113
 #: core/modules/management/mg.Tab.Posts.php:77
 #: core/modules/management/mg.Tab.Products.php:80
 #: core/modules/me/me.Tab.Drafts.php:71 core/modules/uc/uc.Tab.Comments.php:63
@@ -3140,6 +3203,75 @@ msgstr "下一页 →"
 #: core/modules/uc/uc.Tab.Stars.php:79
 msgid "Nothing found here"
 msgstr "这里什么都没有..."
+
+#: core/modules/management/mg.Tab.Members.php:26
+msgid "Add Member"
+msgstr "添加会员"
+
+#: core/modules/management/mg.Tab.Members.php:29
+msgid "Member VIP Type"
+msgstr "会员类型"
+
+#: core/modules/management/mg.Tab.Members.php:31
+msgid "MONTHLY VIP"
+msgstr "月费会员"
+
+#: core/modules/management/mg.Tab.Members.php:34
+msgid "ANNUAL VIP"
+msgstr "年费会员"
+
+#: core/modules/management/mg.Tab.Members.php:37
+msgid "PERMANENT VIP"
+msgstr "永久会员"
+
+#: core/modules/management/mg.Tab.Members.php:45
+msgid "User name or ID"
+msgstr "用户名或ID"
+
+#: core/modules/management/mg.Tab.Members.php:51
+msgid "请提供要提升会员用户的登录名或用户ID"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Members.php:56
+msgid "Members List"
+msgstr "会员列表"
+
+#: core/modules/management/mg.Tab.Members.php:61
+msgid "Sequence"
+msgstr "序号"
+
+#: core/modules/management/mg.Tab.Members.php:62
+msgid "User ID"
+msgstr "用户ID"
+
+#: core/modules/management/mg.Tab.Members.php:63
+msgid "User Name"
+msgstr "用户名"
+
+#: core/modules/management/mg.Tab.Members.php:64
+#: core/modules/me/me.Tab.Membership.php:29
+msgid "Member Type"
+msgstr "会员类型"
+
+#: core/modules/management/mg.Tab.Members.php:65
+msgid "Member Effect Date"
+msgstr "开始时间"
+
+#: core/modules/management/mg.Tab.Members.php:66
+msgid "Member Expire Date"
+msgstr "到期时间"
+
+#: core/modules/management/mg.Tab.Members.php:83
+msgid "View the user homepage"
+msgstr "访问用户主页"
+
+#: core/modules/management/mg.Tab.Members.php:83
+msgid "View User"
+msgstr "查看"
+
+#: core/modules/management/mg.Tab.Members.php:84
+msgid "Delete the member"
+msgstr "删除会员"
 
 #: core/modules/management/mg.Tab.Posts.php:26
 msgid "Posts List"
@@ -3467,10 +3599,6 @@ msgstr "指定的文章不存在"
 #: core/modules/me/me.Tab.Membership.php:26
 msgid "Member Info"
 msgstr "会员信息"
-
-#: core/modules/me/me.Tab.Membership.php:29
-msgid "Member Type"
-msgstr "会员类型"
 
 #: core/modules/me/me.Tab.Membership.php:33
 msgid "Member Status"

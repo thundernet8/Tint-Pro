@@ -102,6 +102,22 @@ function tt_get_member_status_string($code) {
 
 
 /**
+ * 根据会员ID获取会员记录
+ *
+ * @since 2.0.0
+ * @param $id
+ * @return array|null|object|void
+ */
+function tt_get_member($id){
+    global $wpdb;
+    $prefix = $wpdb->prefix;
+    $members_table = $prefix . 'tt_members';
+    $row = $wpdb->get_row(sprintf("SELECT * FROM $members_table WHERE `id`=%d", $id));
+    return $row;
+}
+
+
+/**
  * 根据用户ID获取会员记录
  *
  * @since 2.0.0
@@ -202,12 +218,13 @@ function tt_add_or_update_member($user_id, $vip_type, $start_time = 0, $end_time
         array('%d', '%d', '%s', '%s', '%d')
     );
     if($insert) {
+        // 发送邮件
+        $admin_handle ? tt_promote_vip_email($user_id, $vip_type, date('Y-m-d H:i:s', $start_time), date('Y-m-d H:i:s', $end_time)) : tt_open_vip_email($user_id, $vip_type, date('Y-m-d H:i:s', $start_time), date('Y-m-d H:i:s', $end_time));
+        // 站内消息
+        tt_create_message($user_id, 0, 'System', 'notification', __('你的会员状态发生了变化', 'tt'), sprintf( __('会员类型: %1$s, 到期时间: %2$s', 'tt'), tt_get_member_type_string($vip_type), date('Y-m-d H:i:s', $end_time) ));
+
         return $wpdb->insert_id;
     }
-    // 发送邮件
-    $admin_handle ? tt_promote_vip_email($user_id, $vip_type, date('Y-m-d H:i:s', $start_time), date('Y-m-d H:i:s', $end_time)) : tt_open_vip_email($user_id, $vip_type, date('Y-m-d H:i:s', $start_time), date('Y-m-d H:i:s', $end_time));
-    // 站内消息
-    tt_create_message($user_id, 0, 'System', 'notification', __('你的会员状态发生了变化', 'tt'), sprintf( __('会员类型: %1$s, 到期时间: %2$s', 'tt'), tt_get_member_type_string($vip_type), date('Y-m-d H:i:s', $end_time) ));
     return false;
 }
 
@@ -226,6 +243,26 @@ function tt_delete_member($user_id){
     $delete = $wpdb->delete(
         $members_table,
         array('user_id' => $user_id),
+        array('%d')
+    ); //TODO deleted field
+    return !!$delete;
+}
+
+
+/**
+ * 删除会员记录
+ *
+ * @since 2.0.0
+ * @param $id
+ * @return bool
+ */
+function tt_delete_member_by_id($id){
+    global $wpdb;
+    $prefix = $wpdb->prefix;
+    $members_table = $prefix . 'tt_members';
+    $delete = $wpdb->delete(
+        $members_table,
+        array('id' => $id),
         array('%d')
     ); //TODO deleted field
     return !!$delete;

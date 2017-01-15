@@ -171,6 +171,10 @@ function tt_create_initial_rest_routes() {
     // Coupon
     $coupon_controller = new WP_REST_Coupon_Controller;
     $coupon_controller->register_routes();
+
+    // Member
+    $member_controller = new WP_REST_Member_Controller;
+    $member_controller->register_routes();
 }
 add_action( 'rest_api_init', 'tt_create_initial_rest_routes', 0 );  // TODO cached 接口
 

@@ -27,6 +27,8 @@ import ManagePosts from './modules/managePosts';
 import ManageProducts from './modules/manageProducts';
 import AddCoupon from './modules/addCoupon';
 import DeleteCoupon from './modules/deleteCoupon';
+import AddMember from './modules/addMember';
+import DeleteMember from './modules/deleteMember';
 
 // DOM Ready
 jQuery(document).ready(function ($) {
@@ -71,4 +73,10 @@ jQuery(document).ready(function ($) {
     
     // 删除优惠码
     DeleteCoupon.init();
+    
+    // 添加会员
+    AddMember.init();
+    
+    // 删除会员
+    DeleteMember.init();
 });

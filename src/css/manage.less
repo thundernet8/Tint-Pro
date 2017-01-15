@@ -244,11 +244,20 @@ body {
 }
 
 
-/* Coupon */
+/* Coupons */
 body {
     .coupons-tab {
         &>.tab-content {
             &>.mg-coupon {
+                .coupon-radios {
+                    &>label {
+                        margin: 0 10px;
+                        input {
+                            vertical-align: -2px;
+                            margin-right: 5px;
+                        }
+                    }
+                }
                 #add-coupon {
                     position: relative;
                     width: 100px;
@@ -263,6 +272,83 @@ body {
                         font-size: 1.6rem;
                     }
                 }
+            }
+        }
+    }
+}
+
+/* Members */
+body {
+    .members-tab {
+        &>.tab-content {
+            &>.mg-member {
+                .member-radios {
+                    &>label {
+                        margin: 0 10px;
+                        input {
+                            vertical-align: -2px;
+                            margin-right: 5px;
+                        }
+                    }
+                }
+                #add-member {
+                    position: relative;
+                    width: 100px;
+                    height: 42px;
+                    i {
+                        width: 16px;
+                        height: 16px;
+                        top: 50%;
+                        left: 50%;
+                        margin-top: -8px;
+                        margin-left: -8px;
+                        font-size: 1.6rem;
+                    }
+                }
+            }
+            &>.mg-members {
+                .view-detail {
+                    color: @brand-secondary;
+                }
+                .delete-member {
+                    color: @brand-danger;
+                }
+            }
+        }
+    }
+}
+
+
+/* Users */
+body {
+    .users-tab {
+        &>.tab-content {
+            &>.mg-users {
+
+            }
+        }
+    }
+}
+
+
+/* Orders */
+body {
+    .orders-tab {
+        &>.tab-content {
+            &>.mg-orders {
+
+            }
+        }
+    }
+}
+
+
+/* Comments */
+body {
+    .comments-tab {
+        &>.tab-content {
+            &>.mg-comments {
+
             }
         }
     }

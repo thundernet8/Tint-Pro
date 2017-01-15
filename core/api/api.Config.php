@@ -49,3 +49,4 @@ require_once THEME_API . '/v1/endpoints/class.Rest.Action.Controller.php';
 require_once THEME_API . '/v1/endpoints/class.Rest.Post.Controller.php';
 require_once THEME_API . '/v1/endpoints/class.Rest.Product.Controller.php';
 require_once THEME_API . '/v1/endpoints/class.Rest.Coupon.Controller.php';
+require_once THEME_API . '/v1/endpoints/class.Rest.Member.Controller.php';

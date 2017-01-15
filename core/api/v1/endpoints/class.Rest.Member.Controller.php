@@ -1,12 +1,12 @@
 <?php
 /**
- * Copyright (c) 2014-2016, WebApproach.net
+ * Copyright (c) 2014-2017, WebApproach.net
  * All right reserved.
  *
  * @since 2.0.0
  * @package Tint
  * @author Zhiyan
- * @date 2016/11/30 21:32
+ * @date 2017/01/15 16:43
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
  * @link https://www.webapproach.net/tint
@@ -15,14 +15,14 @@
 <?php
 
 /**
- * Class WP_REST_Coupon_Controller
+ * Class WP_REST_Member_Controller
  */
-class WP_REST_Coupon_Controller extends WP_REST_Controller
+class WP_REST_Member_Controller extends WP_REST_Controller
 {
     public function __construct()
     {
         $this->namespace = 'v1';
-        $this->rest_base = 'coupons';
+        $this->rest_base = 'members';
     }
 
     /**
@@ -81,7 +81,7 @@ class WP_REST_Coupon_Controller extends WP_REST_Controller
 
 
     /**
-     * 检查是否有获取多个优惠码的权限
+     * 检查是否有获取多个会员的权限
      *
      * @param WP_REST_Request $request Full details about the request.
      * @return WP_Error|boolean
@@ -89,13 +89,13 @@ class WP_REST_Coupon_Controller extends WP_REST_Controller
     public function get_items_permissions_check($request)
     {
         if (!current_user_can('administrator')) {
-            return new WP_Error('rest_coupons_cannot_view', __('Sorry, you are not permitted to view coupons.', 'tt'), array('status' => tt_rest_authorization_required_code()));
+            return new WP_Error('rest_members_cannot_view', __('Sorry, you are not permitted to view members.', 'tt'), array('status' => tt_rest_authorization_required_code()));
         }
         return true;
     }
 
     /**
-     * 获取多个优惠码
+     * 获取多个会员
      *
      * @param WP_REST_Request $request Full details about the request.
      * @return WP_Error|WP_REST_Response
@@ -104,10 +104,10 @@ class WP_REST_Coupon_Controller extends WP_REST_Controller
     {
         $limit = absint($request->get_param('limit')) ? : 20;
         $offset = absint($request->get_param('offset')) ? : 0;
-        $results = tt_get_coupons(0, $limit, $offset);
+        $results = tt_get_vip_members(-1, $limit, $offset);
 
         if( !$results || $results instanceof WP_Error/*is_wp_error($results)*/ ) {
-            return tt_api_fail(__('Retrieve coupons failed', 'tt'), array(), 500);
+            return tt_api_fail(__('Retrieve members failed', 'tt'), array(), 500);
         }
 
         return tt_api_success('', array('data' => $results));
@@ -115,7 +115,7 @@ class WP_REST_Coupon_Controller extends WP_REST_Controller
 
 
     /**
-     * 判断请求是否有创建优惠码的权限
+     * 判断请求是否有创建会员的权限
      *
      * @param  WP_REST_Request $request Full details about the request.
      * @return boolean | WP_Error
@@ -123,14 +123,14 @@ class WP_REST_Coupon_Controller extends WP_REST_Controller
     public function create_item_permissions_check($request)
     {
         if (!current_user_can('administrator')) {
-            return new WP_Error('rest_coupon_cannot_create', __('Sorry, you are not permitted to create a coupon.', 'tt'), array('status' => tt_rest_authorization_required_code()));
+            return new WP_Error('rest_member_cannot_create', __('Sorry, you are not permitted to create a member.', 'tt'), array('status' => tt_rest_authorization_required_code()));
         }
         return true;
     }
 
 
     /**
-     * 创建一个优惠码
+     * 创建一个会员
      *
      * @param WP_REST_Request $request Full details about the request.
      * @return WP_Error|WP_REST_Response
@@ -138,91 +138,78 @@ class WP_REST_Coupon_Controller extends WP_REST_Controller
     public function create_item($request)
     {
         $type = $request->get_param('type');
-        $effect_date = $request->get_param('effectDate');
-        $expire_date = $request->get_param('expireDate');
-        $code = sanitize_text_field($request->get_param('code'));
-        $discount = $request->get_param('discount');
+        $user_name_or_id = $request->get_param('user');
+        if(is_numeric($user_name_or_id)) {
+            $user = get_user_by('ID', $user_name_or_id);
+        }else{
+            $user = get_user_by('display_name', $user_name_or_id);
+        }
+
+        if(!$user){
+            return tt_api_fail(__('User you specified is not found', 'tt'), array(), 400);
+        }
 
         // type 验证
-        if(!in_array($type, array('once', 'multi'))){
-            return tt_api_fail(__('Coupon type is not right', 'tt'), array(), 400);
+        if(!in_array($type, array(Member::MONTHLY_VIP, Member::ANNUAL_VIP, Member::PERMANENT_VIP))){
+            return tt_api_fail(__('Member VIP type is not right', 'tt'), array(), 400);
         }
 
-        // Code 验证
-        if(strlen($code) < 4){
-            return tt_api_fail(__('Coupon code is too short', 'tt'), array(), 400);
-        }
-
-        //
-        if($discount < 0 || $discount > 1) {
-            return tt_api_fail(__('Invalid coupon discount value, should not less than 0 and not greater than 1', 'tt'), array(), 400);
-        }
-
-        //
-        if(!$effect_date) {
-            return tt_api_fail(__('Coupon effect date should not be empty', 'tt'), array(), 400);
-        }
-
-        if(!$expire_date) {
-            return tt_api_fail(__('Coupon expire date should not be empty', 'tt'), array(), 400);
-        }
-
-        $add = tt_add_coupon($code, $type, $discount, $effect_date, $expire_date);
+        $add = tt_add_or_update_member($user->ID, $type, 0, 0, true);
 
         if($add instanceof WP_Error) {
             return $add;
         }elseif(!$add) {
-            return tt_api_fail(__('Add coupon failed', 'tt'), array(), 400);
+            return tt_api_fail(__('Add member failed', 'tt'), array(), 400);
         }
 
-        return tt_api_success(__('Add coupon successfully', 'tt'), array());
+        return tt_api_success(__('Add member successfully', 'tt'), array());
     }
 
 
     /**
-     * 判断请求是否有权限读取单个优惠码
+     * 判断请求是否有权限读取单个会员
      *
      * @param  WP_REST_Request $request Full details about the request.
      * @return boolean | WP_Error
      */
     public function get_item_permissions_check( $request ) {
-        if (!current_user_can('administrator')) {
-            return new WP_Error('rest_coupon_cannot_view', __('Sorry, you are not permitted to view a coupon.', 'tt'), array('status' => tt_rest_authorization_required_code()));
+        if (is_user_logged_in()) {
+            return new WP_Error('rest_member_cannot_view', __('Sorry, you are not permitted to view a member without signing in.', 'tt'), array('status' => tt_rest_authorization_required_code()));
         }
         return true;
     }
 
     /**
-     * 读取单个优惠码
+     * 读取单个会员
      *
      * @param WP_REST_Request $request Full details about the request.
      * @return WP_Error | WP_REST_Response
      */
     public function get_item( $request ) {
         $id = absint($request['id']);
-        $coupon = tt_get_coupon($id);
-        if(!$coupon) {
-            return tt_api_fail(__('Cannot get the coupon specified', 'tt'));
+        $member = tt_get_member($id);
+        if(!$member) {
+            return tt_api_fail(__('Cannot get the member specified', 'tt'));
         }
-        return tt_api_success('', array('data' => $coupon));
+        return tt_api_success('', array('data' => $member));
     }
 
 
     /**
-     * 判断当前请求是否有权限更新指定优惠码
+     * 判断当前请求是否有权限更新指定会员
      *
      * @param  WP_REST_Request $request Full details about the request.
      * @return boolean | WP_Error
      */
     public function update_item_permissions_check( $request ) {
         if (!current_user_can('administrator')) {
-            return new WP_Error('rest_coupon_cannot_update', __('Sorry, you are not permitted to update a coupon.', 'tt'), array('status' => tt_rest_authorization_required_code()));
+            return new WP_Error('rest_member_cannot_update', __('Sorry, you are not permitted to update a member.', 'tt'), array('status' => tt_rest_authorization_required_code()));
         }
         return true;
     }
 
     /**
-     * 更新单个优惠码
+     * 更新单个会员
      *
      * @param WP_REST_Request $request Full details about the request.
      * @return WP_Error|WP_REST_Response
@@ -234,20 +221,20 @@ class WP_REST_Coupon_Controller extends WP_REST_Controller
     }
 
     /**
-     * 检查请求是否有删除指定优惠码的权限
+     * 检查请求是否有删除指定会员的权限
      *
      * @param  WP_REST_Request $request Full details about the request.
      * @return boolean | WP_Error
      */
     public function delete_item_permissions_check( $request ) {
         if (!current_user_can('administrator')) {
-            return new WP_Error('rest_coupon_cannot_delete', __('Sorry, you are not permitted to delete a coupon.', 'tt'), array('status' => tt_rest_authorization_required_code()));
+            return new WP_Error('rest_member_cannot_delete', __('Sorry, you are not permitted to delete a member.', 'tt'), array('status' => tt_rest_authorization_required_code()));
         }
         return true;
     }
 
     /**
-     * 删除单个优惠码
+     * 删除单个会员
      *
      * @param WP_REST_Request $request Full details about the request.
      * @return WP_Error|WP_REST_Response
@@ -255,11 +242,11 @@ class WP_REST_Coupon_Controller extends WP_REST_Controller
     public function delete_item( $request ) {
         $id = (int) $request['id'];
 
-        $result = tt_delete_coupon($id);
+        $result = tt_delete_member_by_id($id);
         if(!$result) {
-            return new WP_Error( 'rest_cannot_delete', __( 'The coupon cannot be deleted.', 'tt' ), array( 'status' => 500 ) );
+            return new WP_Error( 'rest_cannot_delete', __( 'The member cannot be deleted.', 'tt' ), array( 'status' => 500 ) );
         }
 
-        return tt_api_success(__('delete coupon successfully', 'tt'), array('coupon_id' => $id));
+        return tt_api_success(__('delete member successfully', 'tt'), array('member_id' => $id));
     }
 }
