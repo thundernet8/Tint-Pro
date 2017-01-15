@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2017-01-15 17:08+0800\n"
+"POT-Creation-Date: 2017-01-15 20:57+0800\n"
 "PO-Revision-Date: 2016-08-17 21:40+0800\n"
 "Last-Translator: \n"
 "Language-Team: Zhiyan <mail@webapproach.net>\n"
@@ -435,28 +435,36 @@ msgstr ""
 msgid "Sorry, you cannot update order without signing in."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:298
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:271
+msgid "Sorry, you are not permitted to update order status."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:306
 msgid "Update order failed"
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:323
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:316
+msgid "Update order successfully"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:331
 msgid "Sorry, you cannot delete order without signing in."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:340
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:348
 msgid "Delete order failed"
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:342
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:350
 msgid "Delete order successfully"
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:357
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:365
 #: core/api/v1/endpoints/class.Rest.ShoppingCart.Controller.php:186
 msgid "Sorry, you cannot delete cart items without signing in."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:373
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:381
 #: core/api/v1/endpoints/class.Rest.ShoppingCart.Controller.php:202
 msgid "Delete items from cart successfully"
 msgstr ""
@@ -2715,68 +2723,70 @@ msgstr ""
 msgid "Order Created"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Order.php:381
-#: core/functions/shop/func.Shop.Order.php:389
-#: core/functions/shop/func.Shop.Order.php:406
+#: core/functions/shop/func.Shop.Order.php:402
+#: core/functions/shop/func.Shop.Order.php:410
+#: core/functions/shop/func.Shop.Order.php:427
 msgid "Create combine order failed"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Order.php:451
+#: core/functions/shop/func.Shop.Order.php:472
 msgid "The order with the a order id you specified is not existed"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Order.php:459
+#: core/functions/shop/func.Shop.Order.php:480
 msgid "The coupon is invalid"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Order.php:518
+#: core/functions/shop/func.Shop.Order.php:539
 msgid "The order is not exist"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Order.php:522
+#: core/functions/shop/func.Shop.Order.php:543
 msgid "You are not permit to delete this order"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Order.php:549
+#: core/functions/shop/func.Shop.Order.php:570
 #, php-format
 msgid "%s 商店交易提醒"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Order.php:565
+#: core/functions/shop/func.Shop.Order.php:586
 #, php-format
 msgid "%s 商店新成功交易提醒"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Order.php:653
+#: core/functions/shop/func.Shop.Order.php:674
 #, php-format
 msgid "The Resources You Bought in %s"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Order.php:656
+#: core/functions/shop/func.Shop.Order.php:677
+#: core/viewModels/management/vm.Mg.Order.php:67
 #: core/viewModels/me/vm.Me.Order.php:73
 #, php-format
 msgid "%d Credits"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Order.php:656
+#: core/functions/shop/func.Shop.Order.php:677
+#: core/viewModels/management/vm.Mg.Order.php:67
 #: core/viewModels/me/vm.Me.Order.php:73
 #, php-format
 msgid "%0.2f YUAN"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Order.php:685
+#: core/functions/shop/func.Shop.Order.php:706
 msgid "The order is not found"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Order.php:689
+#: core/functions/shop/func.Shop.Order.php:710
 msgid "The order has been payed"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Order.php:693
+#: core/functions/shop/func.Shop.Order.php:714
 msgid "The order has been closed"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Order.php:709
+#: core/functions/shop/func.Shop.Order.php:730
 msgid "Some error happened when continue the payment"
 msgstr ""
 
@@ -2964,7 +2974,9 @@ msgstr ""
 msgid "Sales"
 msgstr ""
 
-#: core/functions/shop/func.Shop.php:216 core/modules/me/me.Tab.Orders.php:44
+#: core/functions/shop/func.Shop.php:216
+#: core/modules/management/mg.Tab.Orders.php:45
+#: core/modules/me/me.Tab.Orders.php:44
 #: core/templates/site/tpl.CheckOut.php:86
 msgid "Product Name"
 msgstr ""
@@ -3028,15 +3040,6 @@ msgstr ""
 
 #: core/modules/management/mg.NavMenu.php:29
 msgid "PRODUCTS"
-msgstr ""
-
-#: core/modules/management/mg.NavMenu.php:30
-#: core/modules/uc/uc.NavTabs.php:19
-msgid "COMMENTS"
-msgstr ""
-
-#: core/modules/management/mg.NavMenu.php:31
-msgid "USERS"
 msgstr ""
 
 #: core/modules/management/mg.NavMenu.php:32
@@ -3128,6 +3131,7 @@ msgstr ""
 
 #: core/modules/management/mg.Tab.Coupons.php:81
 #: core/modules/management/mg.Tab.Members.php:67
+#: core/modules/management/mg.Tab.Orders.php:50
 #: core/modules/me/me.Tab.Orders.php:48
 #: core/templates/site/tpl.CheckOut.php:90
 msgid "Actions"
@@ -3147,6 +3151,7 @@ msgstr ""
 
 #: core/modules/management/mg.Tab.Coupons.php:98
 #: core/modules/management/mg.Tab.Members.php:84
+#: core/modules/management/mg.Tab.Orders.php:67
 #: core/modules/me/me.Tab.Orders.php:66
 msgid "Delete"
 msgstr ""
@@ -3155,6 +3160,8 @@ msgstr ""
 #: core/modules/management/mg.Tab.Coupons.php:110
 #: core/modules/management/mg.Tab.Members.php:94
 #: core/modules/management/mg.Tab.Members.php:96
+#: core/modules/management/mg.Tab.Orders.php:78
+#: core/modules/management/mg.Tab.Orders.php:80
 #: core/modules/management/mg.Tab.Posts.php:58
 #: core/modules/management/mg.Tab.Posts.php:60
 #: core/modules/management/mg.Tab.Products.php:61
@@ -3175,6 +3182,7 @@ msgstr ""
 
 #: core/modules/management/mg.Tab.Coupons.php:113
 #: core/modules/management/mg.Tab.Members.php:99
+#: core/modules/management/mg.Tab.Orders.php:83
 #: core/modules/management/mg.Tab.Posts.php:63
 #: core/modules/management/mg.Tab.Products.php:66
 #: core/modules/me/me.Tab.Credits.php:78 core/modules/me/me.Tab.Drafts.php:57
@@ -3191,6 +3199,7 @@ msgstr ""
 
 #: core/modules/management/mg.Tab.Coupons.php:115
 #: core/modules/management/mg.Tab.Members.php:101
+#: core/modules/management/mg.Tab.Orders.php:85
 #: core/modules/management/mg.Tab.Posts.php:65
 #: core/modules/management/mg.Tab.Products.php:68
 #: core/modules/me/me.Tab.Credits.php:80 core/modules/me/me.Tab.Drafts.php:59
@@ -3209,6 +3218,8 @@ msgstr ""
 #: core/modules/management/mg.Tab.Coupons.php:120
 #: core/modules/management/mg.Tab.Members.php:104
 #: core/modules/management/mg.Tab.Members.php:106
+#: core/modules/management/mg.Tab.Orders.php:88
+#: core/modules/management/mg.Tab.Orders.php:90
 #: core/modules/management/mg.Tab.Posts.php:68
 #: core/modules/management/mg.Tab.Posts.php:70
 #: core/modules/management/mg.Tab.Products.php:71
@@ -3229,6 +3240,7 @@ msgstr ""
 
 #: core/modules/management/mg.Tab.Coupons.php:127
 #: core/modules/management/mg.Tab.Members.php:113
+#: core/modules/management/mg.Tab.Orders.php:97
 #: core/modules/management/mg.Tab.Posts.php:77
 #: core/modules/management/mg.Tab.Products.php:80
 #: core/modules/me/me.Tab.Drafts.php:71
@@ -3306,6 +3318,144 @@ msgstr ""
 
 #: core/modules/management/mg.Tab.Members.php:84
 msgid "Delete the member"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Order.php:27
+#: core/modules/management/mg.Tab.Order.php:97
+#: core/modules/me/me.Tab.Order.php:27 core/modules/me/me.Tab.Order.php:107
+msgid "Order Detail"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Order.php:30
+msgid "Buyer Info"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Order.php:34
+#: core/modules/me/me.Tab.Order.php:30
+msgid "Order ID"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Order.php:38
+#: core/modules/me/me.Tab.Order.php:34
+msgid "Order Content"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Order.php:44
+#: core/modules/management/mg.Tab.Orders.php:47
+#: core/modules/me/me.Tab.Order.php:40 core/modules/me/me.Tab.Orders.php:45
+msgid "Order Create Time"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Order.php:49
+#: core/modules/me/me.Tab.Order.php:45
+msgid "Order Success Time"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Order.php:54
+#: core/modules/me/me.Tab.Order.php:50
+msgid "Payment Status"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Order.php:62
+#: core/modules/me/me.Tab.Order.php:61
+msgid "Payment Method"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Order.php:66
+#: core/modules/me/me.Tab.Membership.php:68
+#: core/modules/me/me.Tab.Order.php:65
+msgid "Payment Amount"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Order.php:70
+msgid "Buyer Message"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Order.php:75
+msgid "Delivery Info"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Order.php:83
+msgid "Manage Order Status"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Order.php:87
+msgid "FINISH ORDER"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Order.php:90
+msgid "CLOSE ORDER"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Order.php:100
+#: core/modules/me/me.Tab.Order.php:110
+msgid "No this order"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Orders.php:26
+msgid "Orders List"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Orders.php:29
+#: core/modules/me/me.Tab.Orders.php:29
+#, php-format
+msgid "%d order records in total"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Orders.php:32
+#: core/modules/me/me.Tab.Orders.php:32
+msgid "Orders Type"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Orders.php:34
+#: core/modules/me/me.Tab.Notifications.php:34
+#: core/modules/me/me.Tab.Orders.php:34
+msgid "ALL"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Orders.php:35
+#: core/modules/me/me.Tab.Orders.php:35
+msgid "CASH"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Orders.php:36
+#: core/modules/me/me.Tab.Orders.php:36
+msgid "CREDIT"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Orders.php:44
+#: core/modules/me/me.Tab.Membership.php:66
+#: core/modules/me/me.Tab.Orders.php:43
+msgid "Order Id"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Orders.php:46
+msgid "Buyer Name"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Orders.php:48
+#: core/modules/me/me.Tab.Orders.php:46
+msgid "Order Total Price"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Orders.php:49
+#: core/modules/me/me.Tab.Orders.php:47
+msgid "Order Status"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Orders.php:64
+#: core/modules/me/me.Tab.Orders.php:61
+msgid "View the order detail"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Orders.php:64
+#: core/modules/me/me.Tab.Orders.php:61
+msgid "View Order"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Orders.php:67
+#: core/modules/me/me.Tab.Orders.php:66
+msgid "Delete the order"
 msgstr ""
 
 #: core/modules/management/mg.Tab.Posts.php:26
@@ -3688,18 +3838,8 @@ msgstr ""
 msgid "Member Orders"
 msgstr ""
 
-#: core/modules/me/me.Tab.Membership.php:66
-#: core/modules/me/me.Tab.Orders.php:43
-msgid "Order Id"
-msgstr ""
-
 #: core/modules/me/me.Tab.Membership.php:67
 msgid "Payment Time"
-msgstr ""
-
-#: core/modules/me/me.Tab.Membership.php:68
-#: core/modules/me/me.Tab.Order.php:65
-msgid "Payment Amount"
 msgstr ""
 
 #: core/modules/me/me.Tab.Membership.php:69
@@ -3771,11 +3911,6 @@ msgstr ""
 msgid "Notifications Type"
 msgstr ""
 
-#: core/modules/me/me.Tab.Notifications.php:34
-#: core/modules/me/me.Tab.Orders.php:34
-msgid "ALL"
-msgstr ""
-
 #: core/modules/me/me.Tab.Notifications.php:35
 msgid "COMMENT NOTIFICATION"
 msgstr ""
@@ -3792,40 +3927,12 @@ msgstr ""
 msgid "No notifications"
 msgstr ""
 
-#: core/modules/me/me.Tab.Order.php:27 core/modules/me/me.Tab.Order.php:107
-msgid "Order Detail"
-msgstr ""
-
-#: core/modules/me/me.Tab.Order.php:30
-msgid "Order ID"
-msgstr ""
-
-#: core/modules/me/me.Tab.Order.php:34
-msgid "Order Content"
-msgstr ""
-
-#: core/modules/me/me.Tab.Order.php:40 core/modules/me/me.Tab.Orders.php:45
-msgid "Order Create Time"
-msgstr ""
-
-#: core/modules/me/me.Tab.Order.php:45
-msgid "Order Success Time"
-msgstr ""
-
-#: core/modules/me/me.Tab.Order.php:50
-msgid "Payment Status"
-msgstr ""
-
 #: core/modules/me/me.Tab.Order.php:55 core/modules/me/me.Tab.Orders.php:64
 msgid "Finish the payment"
 msgstr ""
 
 #: core/modules/me/me.Tab.Order.php:55 core/modules/me/me.Tab.Orders.php:64
 msgid "Continue Pay"
-msgstr ""
-
-#: core/modules/me/me.Tab.Order.php:61
-msgid "Payment Method"
 msgstr ""
 
 #: core/modules/me/me.Tab.Order.php:72 core/modules/me/me.Tab.Order.php:97
@@ -3860,47 +3967,6 @@ msgstr ""
 #: core/modules/me/me.Tab.Order.php:90
 #, php-format
 msgid "Download Password: %s"
-msgstr ""
-
-#: core/modules/me/me.Tab.Order.php:110
-msgid "No this order"
-msgstr ""
-
-#: core/modules/me/me.Tab.Orders.php:29
-#, php-format
-msgid "%d order records in total"
-msgstr ""
-
-#: core/modules/me/me.Tab.Orders.php:32
-msgid "Orders Type"
-msgstr ""
-
-#: core/modules/me/me.Tab.Orders.php:35
-msgid "CASH"
-msgstr ""
-
-#: core/modules/me/me.Tab.Orders.php:36
-msgid "CREDIT"
-msgstr ""
-
-#: core/modules/me/me.Tab.Orders.php:46
-msgid "Order Total Price"
-msgstr ""
-
-#: core/modules/me/me.Tab.Orders.php:47
-msgid "Order Status"
-msgstr ""
-
-#: core/modules/me/me.Tab.Orders.php:61
-msgid "View the order detail"
-msgstr ""
-
-#: core/modules/me/me.Tab.Orders.php:61
-msgid "View Order"
-msgstr ""
-
-#: core/modules/me/me.Tab.Orders.php:66
-msgid "Delete the order"
 msgstr ""
 
 #: core/modules/me/me.Tab.Settings.php:27
@@ -4529,6 +4595,10 @@ msgstr ""
 
 #: core/modules/uc/uc.NavTabs.php:18
 msgid "ARTICLES"
+msgstr ""
+
+#: core/modules/uc/uc.NavTabs.php:19
+msgid "COMMENTS"
 msgstr ""
 
 #: core/modules/uc/uc.NavTabs.php:21 core/modules/uc/uc.Tab.Followers.php:37
@@ -5563,6 +5633,16 @@ msgstr ""
 msgid "%d results in total"
 msgstr ""
 
+#: core/viewModels/management/vm.Mg.Order.php:66
+#: core/viewModels/me/vm.Me.Order.php:72
+msgid "Credit Payment"
+msgstr ""
+
+#: core/viewModels/management/vm.Mg.Order.php:66
+#: core/viewModels/me/vm.Me.Order.php:72
+msgid "Cash Payment"
+msgstr ""
+
 #: core/viewModels/management/vm.Mg.Posts.php:93
 msgid "PENDING"
 msgstr ""
@@ -5625,14 +5705,6 @@ msgstr ""
 #: core/viewModels/management/vm.Mg.Products.php:139
 #: core/viewModels/management/vm.Mg.Products.php:146
 msgid "PUSH SELL"
-msgstr ""
-
-#: core/viewModels/me/vm.Me.Order.php:72
-msgid "Credit Payment"
-msgstr ""
-
-#: core/viewModels/me/vm.Me.Order.php:72
-msgid "Cash Payment"
 msgstr ""
 
 #: core/viewModels/shop/vm.Shop.Header.SubNav.php:77

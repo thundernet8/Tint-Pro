@@ -111,13 +111,6 @@ if($order_status == '交易成功'){ // 转账支付只会有`交易成功`这�
             'trade_no' => $trade_no,
             'user_alipay' => $username
         ), array('%d', '%s', '%s', '%s'));
-        tt_update_order_product_quantity($order->order_id);
-        //发送订单状态变更email
-        tt_order_email($order->order_id);
-        //发送购买可见内容或下载链接或会员状态变更
-        tt_send_order_goods($order->order_id);
-        // 钩子 - 用于清理缓存等
-        do_action('tt_order_status_change', $order->order_id);
     }
     echo "success";		//请不要修改或删除
     exit();

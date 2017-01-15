@@ -204,7 +204,7 @@ function tt_comment_mail_notify($comment_id, $comment_object) {
             'commentLink' => $comment_link
         );
         if(filter_var( $post_author_email, FILTER_VALIDATE_EMAIL)){
-            tt_async_mail('', $parent_email, sprintf( __('%1$s在%2$s中回复你', 'tt'), $comment_object->comment_author, $post->post_title ), $args, 'reply');
+            tt_mail('', $parent_email, sprintf( __('%1$s在%2$s中回复你', 'tt'), $comment_object->comment_author, $post->post_title ), $args, 'reply');
         }
         if($parent_comment->user_id){
             tt_create_message($parent_comment->user_id, $comment->user_id, $comment_author, 'notification', sprintf( __('我在%1$s中回复了你', 'tt'), $post->post_title ), $comment_content);
@@ -220,7 +220,7 @@ function tt_comment_mail_notify($comment_id, $comment_object) {
             'commentLink' => $comment_link
         );
         if(filter_var( $post_author_email, FILTER_VALIDATE_EMAIL)){
-            tt_async_mail('', $post_author_email, sprintf( __('%1$s在%2$s中回复你', 'tt'), $comment_author, $post->post_title ), $args, 'comment');
+            tt_mail('', $post_author_email, sprintf( __('%1$s在%2$s中回复你', 'tt'), $comment_author, $post->post_title ), $args, 'comment');
         }
         tt_create_message($post->post_author, 0, 'System', 'notification', sprintf( __('%1$s在%2$s中回复你', 'tt'), $comment_author, $post->post_title ), $comment_content);
     }
@@ -233,7 +233,7 @@ function tt_comment_mail_notify($comment_id, $comment_object) {
             'commentContent' => $comment_content,
             'commentLink' => $comment_link
         );
-        tt_async_mail('', $admin_email, sprintf( __('%1$s上的文章有了新的回复', 'tt'), get_bloginfo('name') ), $args, 'comment-admin');
+        tt_mail('', $admin_email, sprintf( __('%1$s上的文章有了新的回复', 'tt'), get_bloginfo('name') ), $args, 'comment-admin');
         //tt_create_message() //TODO
     }
 }

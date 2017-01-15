@@ -133,7 +133,11 @@ $manage_allow_routes = json_encode(array(
     'comments' => 'comments',
     'users' => 'users',
     //'user' => 'user',
-    'orders' => 'orders',
+    'orders' => array(
+        'all',
+        'credit',
+        'cash'
+    ),
     //'order' => 'order',
     'coupons' => 'coupons',
     'members' => 'members',
@@ -196,7 +200,9 @@ $site_endpoints = json_encode(array(
     'manage_users'              =>  'management/users',
     'manage_posts'              =>  'management/posts',
     'manage_comments'           =>  'management/comments',
-    'manage_orders'             =>  'management/orders',
+    'manage_orders'             =>  'management/orders/all',
+    'manage_cash_orders'        =>  'management/orders/cash',
+    'manage_credit_orders'      =>  'management/orders/credit',
     'manage_coupons'            =>  'management/coupons',
     'manage_members'            =>  'management/members',
     'manage_products'           =>  'management/products'

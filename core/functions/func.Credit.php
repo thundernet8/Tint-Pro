@@ -101,7 +101,7 @@ function tt_add_credits_by_order($order_id){
     }
 
     $user = get_user_by('id', $order->user_id);
-    $credit_price = max(abs(tt_get_option('tt_hundred_credit_price', 1)));
+    $credit_price = abs(tt_get_option('tt_hundred_credit_price', 1));
     $buy_credits = intval($order->order_total_price * 100 / $credit_price);
     tt_update_user_credit($order->user_id, $buy_credits, sprintf(__('Buy <strong>%d</strong> Credits, Cost %0.2f YUAN', 'tt') , $buy_credits, $order->order_total_price));
 
@@ -114,7 +114,8 @@ function tt_add_credits_by_order($order_id){
         'currentCredits' => tt_get_user_credit($user->ID),
         'adminEmail' => get_option('admin_email')
     );
-    tt_async_mail('', $user->user_email, $subject, $args, 'charge-credits-success');
+    // tt_async_mail('', $user->user_email, $subject, $args, 'charge-credits-success');
+    tt_mail('', $user->user_email, $subject, $args, 'charge-credits-success');
 }
 
 

@@ -13,7 +13,7 @@
  */
 ?>
 <?php global $tt_mg_vars; $tt_user_id = $tt_mg_vars['tt_user_id']; $tt_page = $tt_mg_vars['tt_paged']; ?>
-<div class="col col-right coupons">
+<div class="col col-right members">
     <?php $vm = MgMembersVM::getInstance($tt_page); ?>
     <?php if($vm->isCache && $vm->cacheTime) { ?>
         <!-- Manage members cached <?php echo $vm->cacheTime; ?> -->

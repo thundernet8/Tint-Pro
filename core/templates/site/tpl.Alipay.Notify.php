@@ -67,9 +67,6 @@ if($verify_result) {//验证成功
                 'trade_no' => $trade_no,
                 'user_alipay' => $buyer_alipay
             ), array('%d', '%s', '%s'));
-            tt_order_email($out_trade_no);
-            // 钩子 - 用于清理缓存等
-            do_action('tt_order_status_change', $order->order_id);
         }
 
         //构造要请求的参数数组，无需改动
@@ -96,9 +93,6 @@ if($verify_result) {//验证成功
                 tt_update_order($out_trade_no, array(
                     'order_status' => 3
                 ), array('%d'));
-                tt_order_email($out_trade_no);
-                // 钩子 - 用于清理缓存等
-                do_action('tt_order_status_change', $order->order_id);
             }
         }
         echo "success";		//请不要修改或删除
@@ -118,10 +112,6 @@ if($verify_result) {//验证成功
                 'trade_no' => $trade_no,
                 'user_alipay' => $buyer_alipay
             ), array('%d', '%s', '%s', '%s'));
-            //发送订单状态变更email
-            tt_order_email($out_trade_no);
-            // 钩子 - 用于清理缓存等
-            do_action('tt_order_status_change', $order->order_id);
         }
         echo "success";		//请不要修改或删除
 
@@ -141,13 +131,6 @@ if($verify_result) {//验证成功
                 'trade_no' => $trade_no,
                 'user_alipay' => $buyer_alipay
             ), array('%d', '%s', '%s', '%s'));
-            tt_update_order_product_quantity($out_trade_no);
-            //发送订单状态变更email
-            tt_order_email($out_trade_no);
-            //发送购买可见内容或下载链接或会员状态变更
-            tt_send_order_goods($out_trade_no);
-            // 钩子 - 用于清理缓存等
-            do_action('tt_order_status_change', $order->order_id);
         }
         echo "success";		//请不要修改或删除
 
@@ -162,10 +145,6 @@ if($verify_result) {//验证成功
                 'trade_no' => $trade_no,
                 'user_alipay' => $buyer_alipay
             ), array('%d', '%s', '%s', '%s'));
-            //发送订单状态变更email
-            tt_order_email($out_trade_no);
-            // 钩子 - 用于清理缓存等
-            do_action('tt_order_status_change', $order->order_id);
         }
         echo "success";
     }else {

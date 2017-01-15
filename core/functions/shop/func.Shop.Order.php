@@ -158,6 +158,27 @@ function tt_get_orders($limit, $offset, $currency_type = 'all'){
 
 
 /**
+ * 获取订单数量
+ *
+ * @since 2.0.0
+ * @param string $currency_type
+ * @return int
+ */
+function tt_count_orders($currency_type = 'all'){
+    global $wpdb;
+    $prefix = $wpdb->prefix;
+    $orders_table = $prefix . 'tt_orders';
+    if($currency_type == 'all'){
+        $sql = "SELECT COUNT(*) FROM $orders_table WHERE `deleted`=0";
+    }else{
+        $sql = sprintf("SELECT COUNT(*) FROM $orders_table WHERE `deleted`=0 AND `order_currency`='%s'", $currency_type);
+    }
+    $count = $wpdb->get_var($sql);
+    return (int)$count;
+}
+
+
+/**
  * 获取用户的订单
  *
  * @since 2.0.0
@@ -433,7 +454,12 @@ function tt_update_order($order_id, $data, $format){
         $format,
         array('%s')
     );
-    return !($update===false);
+    if(!($update===false)){
+        // 钩子 - 用于清理缓存等
+        do_action('tt_order_status_change', $order_id);
+        return true;
+    }
+    return false;
 }
 
 
@@ -546,7 +572,7 @@ function tt_order_email($order_id) {
     $blog_name = get_bloginfo('name');
     $admin_email = get_option('admin_email');
     $order_status_text = tt_get_order_status_text($order->order_status);
-    $subject = sprintf(__('%s 商店交易提醒', 'tt'), $blog_name);
+    $subject = sprintf(__('%s 商店交易状态变更提醒', 'tt'), $blog_name);
     $args = array(
         'blogName' => $blog_name,
         'buyerName' => $user->display_name,
@@ -558,10 +584,11 @@ function tt_order_email($order_id) {
         'orderTime' => $order->order_time,
         'orderStatusText' => $order_status_text
     );
-    tt_async_mail('', $user->user_email, $subject, $args, 'order-status');
+    //tt_async_mail('', $user->user_email, $subject, $args, 'order-status');  // 同一时间多封异步邮件只会发送第一封, 其他丢失
+    tt_mail('', $user->user_email, $subject, $args, 'order-status');
 
     // 如果交易成功 发信通知管理员
-    if($order->order_status == OrderStatus::TRADE_SUCCESS){
+    //if($order->order_status == OrderStatus::TRADE_SUCCESS){
         $admin_subject = sprintf(__('%s 商店新成功交易提醒', 'tt'), $blog_name);
         $admin_args = array(
             'blogName' => $blog_name,
@@ -575,11 +602,12 @@ function tt_order_email($order_id) {
             'orderStatusText' => $order_status_text,
             'buyerUC' => get_author_posts_url($user->ID)
         );
-        tt_async_mail('', $admin_email, $admin_subject, $admin_args, 'order-status-admin');
-    }
+        tt_mail('', $admin_email, $admin_subject, $admin_args, 'order-status-admin'); // 同一时间多封异步邮件只会发送第一封, 其他丢失
+    //}
 
     // TODO 站内消息
 }
+add_action('tt_order_status_change', 'tt_order_email');
 
 /**
  * 根据订单更新商品销量和存量
@@ -589,9 +617,9 @@ function tt_order_email($order_id) {
  */
 function tt_update_order_product_quantity($order_id) {
     $order = tt_get_order($order_id);
-//    if(!$order || $order->order_status != OrderStatus::TRADE_SUCCESS){
-//        return;
-//    }
+    if(!$order || $order->order_status != OrderStatus::TRADE_SUCCESS){
+        return;
+    }
     $parent_id = $order->parent_id;
     if($parent_id == -1){ // 这是一个合并订单
         $sub_orders = tt_get_sub_orders($order->id);
@@ -615,6 +643,7 @@ function tt_update_order_product_quantity($order_id) {
         update_user_meta($product_id, 'tt_product_sales', $sales+$buy_amounts[$key]);
     }
 }
+add_action('tt_order_status_change', 'tt_update_order_product_quantity');
 
 
 /**
@@ -656,7 +685,8 @@ function tt_send_order_goods($order_id){
                 'totalPrice' => $order->order_currency == 'credit' ? sprintf(__('%d Credits', 'tt'), $order->order_total_price) : sprintf(__('%0.2f YUAN', 'tt'), $order->order_total_price),
                 'payContent' => $download_content . PHP_EOL . $pay_content
             );
-            tt_async_mail('', $user->user_email, $subject, $args, 'order-pay-content');
+            // tt_async_mail('', $user->user_email, $subject, $args, 'order-pay-content');
+            tt_mail('', $user->user_email, $subject, $args, 'order-pay-content');
         }elseif($product_id == Product::MONTHLY_VIP){
             tt_add_or_update_member($user_id, Member::MONTHLY_VIP);
         }elseif($product_id == Product::ANNUAL_VIP){
@@ -670,6 +700,7 @@ function tt_send_order_goods($order_id){
         }
     }
 }
+add_action('tt_order_status_change', 'tt_send_order_goods');
 
 
 /**

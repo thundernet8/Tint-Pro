@@ -199,6 +199,7 @@ class WP_REST_Order_Controller extends WP_REST_Controller
      * @return WP_Error|WP_REST_Response
      */
     public function update_item( $request ) {
+        $current_user_id = get_current_user_id();
         $order_id = $request['id'];
         //$order = tt_get_order($order_id);
         if($coupon = $request->get_param('coupon')){
@@ -238,7 +239,7 @@ class WP_REST_Order_Controller extends WP_REST_Controller
                     // 更新订单支付状态和支付完成时间
                     tt_update_order($order_id, array('order_success_time' => current_time('mysql'), 'order_status' => 4), array('%s', '%d')); //TODO 确保成功
                     // 钩子 - 用于清理缓存等
-                    do_action('tt_order_status_change', $order_id);
+                    // do_action('tt_order_status_change', $order_id); // 已在tt_update_order函数中包括
                     return tt_api_success('', array('data' => array(
                         'orderId' => $order_id,
                         'url' => add_query_arg(array('oid' => $order_id, 'spm' => wp_create_nonce('pay_result')), tt_url_for('payresult'))
@@ -263,6 +264,13 @@ class WP_REST_Order_Controller extends WP_REST_Controller
         }elseif($request->get_param('continuePay')){
             return tt_continue_pay($order_id);
         }else{
+            $order = tt_get_order($order_id);
+            $order_status = $request->get_param('orderStatus');
+            if(!current_user_can('administrator')) {
+                if($order->user_id != $current_user_id || $order_status != OrderStatus::TRADE_CLOSED) { // 普通用户只允许关闭订单
+                    return new WP_Error('rest_order_cannot_update', __('Sorry, you are not permitted to update order status.', 'tt'), array('status' => tt_rest_authorization_required_code()));
+                }
+            }
             // 此条件一般是用户自己或管理员管理订单,需要操作orderStatus信息
             $data = array();
             $format = array();
@@ -274,7 +282,7 @@ class WP_REST_Order_Controller extends WP_REST_Controller
 //                $data['order_success_time'] = $order_success_time;
 //                $format[] = '%s';
 //            }
-            if($order_status = $request->get_param('orderStatus') !== null){
+            if($order_status !== null){
                 $data['order_status'] = $order_status;
                 $format[] = '%d';
             }
@@ -305,7 +313,7 @@ class WP_REST_Order_Controller extends WP_REST_Controller
             $order = tt_get_order($order_id);
             $data['realPrice'] = sprintf('%0.2f', $order->order_total_price);
         }
-        return tt_api_success('', array('data' => $data));
+        return tt_api_success(__('Update order successfully', 'tt'), array('data' => $data));
     }
 
 

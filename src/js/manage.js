@@ -29,6 +29,7 @@ import AddCoupon from './modules/addCoupon';
 import DeleteCoupon from './modules/deleteCoupon';
 import AddMember from './modules/addMember';
 import DeleteMember from './modules/deleteMember';
+import ManageOrderStatus from './modules/manageOrderStatus';
 
 // DOM Ready
 jQuery(document).ready(function ($) {
@@ -79,4 +80,7 @@ jQuery(document).ready(function ($) {
     
     // 删除会员
     DeleteMember.init();
+    
+    // 管理订单状态
+    ManageOrderStatus.init();
 });

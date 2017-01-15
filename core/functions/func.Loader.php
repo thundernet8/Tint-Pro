@@ -236,6 +236,7 @@ if(TT_PRO && tt_get_option('tt_enable_shop', false)){
     load_vm('management/vm.Mg.Coupons');
     load_vm('management/vm.Mg.Members');
     load_vm('management/vm.Mg.Orders');
+    load_vm('management/vm.Mg.Order');
     load_vm('management/vm.Mg.Posts');
     load_vm('management/vm.Mg.Users');
     load_vm('management/vm.Mg.Products');
