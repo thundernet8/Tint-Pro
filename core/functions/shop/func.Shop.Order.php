@@ -588,7 +588,7 @@ function tt_order_email($order_id) {
     tt_mail('', $user->user_email, $subject, $args, 'order-status');
 
     // 如果交易成功 发信通知管理员
-    //if($order->order_status == OrderStatus::TRADE_SUCCESS){
+    if($order->order_status == OrderStatus::TRADE_SUCCESS){
         $admin_subject = sprintf(__('%s 商店新成功交易提醒', 'tt'), $blog_name);
         $admin_args = array(
             'blogName' => $blog_name,
@@ -603,7 +603,7 @@ function tt_order_email($order_id) {
             'buyerUC' => get_author_posts_url($user->ID)
         );
         tt_mail('', $admin_email, $admin_subject, $admin_args, 'order-status-admin'); // 同一时间多封异步邮件只会发送第一封, 其他丢失
-    //}
+    }
 
     // TODO 站内消息
 }
