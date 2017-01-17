@@ -306,6 +306,7 @@ function tt_create_order($product_id, $product_name = '', $order_quantity = 1, $
             $discount = $discount_summary[0];
             break;
     }
+    $discount = min($discount_summary[0], $discount); // 会员的价格不能高于普通打折价
     $order_total_price = $currency == 'cash' ? $order_price * absint($order_quantity) * $discount / 100 : absint($order_price * $order_quantity);
 
     $product_name = $product_name ? : get_the_title($product_id);
@@ -587,9 +588,9 @@ function tt_order_email($order_id) {
     //tt_async_mail('', $user->user_email, $subject, $args, 'order-status');  // 同一时间多封异步邮件只会发送第一封, 其他丢失
     tt_mail('', $user->user_email, $subject, $args, 'order-status');
 
-    // 如果交易成功 发信通知管理员
-    if($order->order_status == OrderStatus::TRADE_SUCCESS){
-        $admin_subject = sprintf(__('%s 商店新成功交易提醒', 'tt'), $blog_name);
+    // 如果有新订单创建或交易成功 发信通知管理员
+    if($order->order_status == OrderStatus::WAIT_PAYMENT || $order->order_status == OrderStatus::TRADE_SUCCESS){
+        $admin_subject = $order->order_status==OrderStatus::TRADE_SUCCESS ? sprintf(__('%s 商店新成功交易提醒', 'tt'), $blog_name) : sprintf(__('%s 商店新订单提醒', 'tt'), $blog_name);
         $admin_args = array(
             'blogName' => $blog_name,
             'buyerName' => $user->display_name,

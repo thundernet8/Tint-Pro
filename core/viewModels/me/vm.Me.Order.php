@@ -63,7 +63,7 @@ class MeOrderVM extends BaseVM {
             $sub_orders = tt_get_sub_orders($order->id);
         }
         if(!$is_combine_order && $order->product_id > 0){
-            $pay_content = tt_get_product_pay_content($order->product_id, false);
+            $pay_content = $order->order_status==OrderStatus::TRADE_SUCCESS ? tt_get_product_pay_content($order->product_id, false) : null;
         }
 
         return (object)array(
