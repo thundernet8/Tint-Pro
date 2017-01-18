@@ -594,7 +594,7 @@ function tt_order_email($order_id) {
         $admin_args = array(
             'blogName' => $blog_name,
             'buyerName' => $user->display_name,
-            'orderUrl' => $order_url,
+            'orderUrl' => tt_url_for('manage_order', $order->id),
             'adminEmail' => $admin_email,
             'productName' => $order->product_name, //TODO suborders
             'orderId' => $order_id,
@@ -638,10 +638,10 @@ function tt_update_order_product_quantity($order_id) {
     foreach ($product_ids as $key => $product_id){
         // 更新存量
         $quantity = (int)get_post_meta($product_id, 'tt_product_quantity', true);
-        update_user_meta($product_id, 'tt_product_quantity', max(0, $quantity-$buy_amounts[$key]));
+        update_post_meta($product_id, 'tt_product_quantity', max(0, $quantity-$buy_amounts[$key]));
         // 更新销量
         $sales = (int)get_post_meta($product_id, 'tt_product_sales', true);
-        update_user_meta($product_id, 'tt_product_sales', $sales+$buy_amounts[$key]);
+        update_post_meta($product_id, 'tt_product_sales', $sales+$buy_amounts[$key]);
     }
 }
 add_action('tt_order_status_change', 'tt_update_order_product_quantity');
