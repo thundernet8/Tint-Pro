@@ -599,7 +599,7 @@ function tt_redirect_management_main_route(){
         }
         exit;
     }
-    if(preg_match('/^\/management/orders$/i', $_SERVER['REQUEST_URI'])){
+    if(preg_match('/^\/management\/orders$/i', $_SERVER['REQUEST_URI'])){
         if(current_user_can('administrator')){
             wp_redirect(tt_url_for('manage_orders'), 302);
         }else{

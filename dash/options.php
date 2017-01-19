@@ -123,7 +123,6 @@ function optionsframework_options() {
         'type' => 'select',
         'options' => array(
             'local_1' => __('Local v1.12', 'tt'),
-            'local_2' => __('Local v3.1', 'tt'),
             'cdn_http' => __('CDN HTTP', 'tt'),
             'cdn_https' => __('CDN HTTPS', 'tt')
         )

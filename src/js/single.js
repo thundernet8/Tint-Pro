@@ -27,6 +27,7 @@ import ModalSignBox from './modules/modalSignBox';
 import {} from 'lazyload/jquery.lazyload';
 import SignHelp from './modules/signHelp';
 import Referral from './modules/referral';
+import TogglePane from './modules/togglePane';
 
 // DOM Ready
 jQuery(document).ready(function ($) {
@@ -93,4 +94,7 @@ jQuery(document).ready(function ($) {
     
     // 设置推广信息cookie, 便于后面使用
     Referral.init();
+    
+    // 折叠板
+    TogglePane.init();
 });

@@ -455,7 +455,7 @@ function tt_update_order($order_id, $data, $format){
         $format,
         array('%s')
     );
-    if(!($update===false)){
+    if(!($update===false) && isset($data['order_status'])){ // 删除订单时不触发
         // 钩子 - 用于清理缓存等
         do_action('tt_order_status_change', $order_id);
         return true;

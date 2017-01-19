@@ -65,7 +65,7 @@ add_action( 'tt_check_version_daily_event', 'tt_check_version_do_this_daily' );
  *
  * @since 2.0.0
  */
-function tin_update_alert_callback(){
+function tt_update_alert_callback(){
     $tt_upgrade = get_option('tt_tint_upgrade', 0);
     $tt_url = get_option('tt_tint_url', 'https://www.webapproach.net/tint');
     $theme = wp_get_theme();

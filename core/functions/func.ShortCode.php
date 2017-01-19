@@ -18,11 +18,7 @@
 function tt_sc_toggle_content($atts, $content = null){
     $content = do_shortcode($content);
     extract(shortcode_atts(array('hide'=>'no','title'=>'','color'=>''), $atts));
-    if($hide=='no'){
-        return '<div class="toggle-wrap"><div class="toggle-click-btn ' . $hide . '" style="color:' . $color . '">' . $title . '</div><div class="toggle-content">' . $content . '</div></div>';
-    }else{
-        return '<div class="toggle-wrap"><div class="toggle-click-btn ' . $hide . '" style="color:' . $color . '">' . $title . '</div><div class="toggle-content" style="display:none;">' . $content . '</div></div>';
-    }
+    return '<div class="' . tt_conditional_class('toggle-wrap', $hide=='no', 'show') . '"><div class="toggle-click-btn" style="color:' . $color . '"><i class="tico tico-angle-right"></i>' . $title . '</div><div class="toggle-content">' . $content . '</div></div>';
 }
 add_shortcode('toggle', 'tt_sc_toggle_content');
 
