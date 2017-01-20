@@ -45,7 +45,7 @@ function tt_rest_resource_not_found_code() {
  * @return WP_REST_Response
  */
 function tt_add_rest_index_link($response) {
-    $response->add_link( 'theme', 'https://www.webapproach.net/tint.html' );
+    $response->add_link( 'theme', TT_SITE . '/tint.html' );
     return $response;
 }
 add_filter('rest_index', 'tt_add_rest_index_link');

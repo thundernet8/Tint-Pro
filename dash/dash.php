@@ -130,7 +130,7 @@ add_action( 'manage_users_custom_column', 'tt_latest_login_column_callback', 10,
  * @return string
  */
 function left_admin_footer_text($text) {
-    $text = sprintf(__('<span id="footer-thankyou">Thanks for using %s to help your creation, %s theme style your website</span>', 'tt'), '<a href=http://cn.wordpress.org/ >WordPress</a>', '<a href="https://www.webapproach.net/tint.html">Tint</a>');
+    $text = sprintf(__('<span id="footer-thankyou">Thanks for using %s to help your creation, %s theme style your website</span>', 'tt'), '<a href=http://cn.wordpress.org/ >WordPress</a>', '<a href="' . TT_SITE . '/tint.html">Tint</a>');
     return $text;
 }
 add_filter('admin_footer_text','left_admin_footer_text');

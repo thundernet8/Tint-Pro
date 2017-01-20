@@ -67,7 +67,7 @@ add_action( 'tt_check_version_daily_event', 'tt_check_version_do_this_daily' );
  */
 function tt_update_alert_callback(){
     $tt_upgrade = get_option('tt_tint_upgrade', 0);
-    $tt_url = get_option('tt_tint_url', 'https://www.webapproach.net/tint');
+    $tt_url = get_option('tt_tint_url', TT_SITE . '/tint.html');
     $theme = wp_get_theme();
     if($tt_upgrade){
         echo '<div class="updated fade"><p>' . sprintf(__('Tint主题已更新至<a style="color:red;">%1$s</a>(当前%2$s)，请访问<a href="' . $tt_url . '" target="_blank">WebApproach Tint</a>查看！', 'tt'), $tt_upgrade, $theme->get('Version')) . '</p></div>';

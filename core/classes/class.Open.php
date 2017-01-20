@@ -613,7 +613,7 @@ abstract class Open{
             // 设置当前用户
             wp_set_current_user( $insert_user_id, $user_login );
             wp_set_auth_cookie( $insert_user_id );
-            do_action( 'wp_login', $user_login ); // TODO: 通过email发送欢迎邮件
+            do_action( 'wp_login', $user_login, get_user_by('ID', $insert_user_id) ); // TODO: 通过email发送欢迎邮件
 
             //return wp_safe_redirect(self::getRedirect());
             return true; // TODO

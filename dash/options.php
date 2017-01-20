@@ -1207,14 +1207,14 @@ function optionsframework_options() {
     // 联系作者
     $options[] = array(
         'name' => __( 'Contact Author', 'tt' ),
-        'desc' => sprintf(__( '<br><h2>Email: chinash2010@gmail.com</h2><br><h2>Wechat & Alipay & QQ(below)</h2><br><img src="%s"><img src="%s"><img src="%s"> ', 'tt' ), 'https://old.webapproach.net/wp-content/themes/Tint/assets/img/qr/weixin.png', 'https://old.webapproach.net/wp-content/themes/Tint/assets/img/qr/alipay.png', 'https://old.webapproach.net/wp-content/themes/Tint/assets/img/qr/qq.png'),
+        'desc' => sprintf(__( '<br><h2>Email: chinash2010@gmail.com</h2><br><h2>Wechat & Alipay & QQ(below)</h2><br><img src="%s"><img src="%s"><img src="%s"> ', 'tt' ), THEME_ASSET . '/img/qr/weixin.png', THEME_ASSET . '/img/qr/alipay.png', THEME_ASSET . '/img/qr/qq.png'),
         'type' => 'info'
     );
 
     // 相关作品
     $options[] = array(
         'name' => __( 'Related Works', 'tt' ),
-        'desc' => sprintf(__( '<br><h2>Alipay Supervisor (<a href="%s">View Detail</a>)</h2><br><p>A toolkit for helping improve payment experience</p>', 'tt'), 'https://www.webapproach.net/shop/apsv.html'),
+        'desc' => sprintf(__( '<br><h2>Alipay Supervisor (<a href="%s" target="_blank">View Detail</a>)</h2><br><p>A toolkit for helping improve payment experience</p>', 'tt'), TT_SITE . '/shop/apsv.html'),
         'type' => 'info'
     );
 

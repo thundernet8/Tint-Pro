@@ -49,6 +49,9 @@ defined('AVATARS_URL') || define('AVATARS_URL', home_url('wp-content/uploads/ava
 /* Theme Version */
 defined('TT_PRO') || define('TT_PRO', !!preg_match('/([0-9-\.]+)PRO/i', trim(wp_get_theme()->get('Version'))));
 
+/* Tint Site Url */
+defined('TT_SITE') || define('TT_SITE', 'https://old.webapproach.net');
+
 /* Asset Names */
 include_once THEME_FUNC . '/asset.Constant.php';
 

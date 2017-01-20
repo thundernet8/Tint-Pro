@@ -86,7 +86,7 @@
                 <?php if($beian = tt_get_option('tt_beian')){
                     echo '·&nbsp;<a href="http://www.miitbeian.gov.cn/" rel="link" target="_blank">' . $beian . '</a>';
                 } ?>
-                <?php echo '·&nbsp;<b style="color: #ff4425;">♥</b>&nbsp;<a href="https://www.webapproach.net/tint.html" title="Tint" rel="link" target="_blank">Tint</a> & Design by <a href="https://www.webapproach.net" title="WebApproach" rel="link" target="_blank">WebApproach.</a>'; ?>
+                <?php echo '·&nbsp;<b style="color: #ff4425;">♥</b>&nbsp;<a href="' . TT_SITE . '/tint.html" title="Tint" rel="link" target="_blank">Tint</a> & Design by <a href="' . TT_SITE . '" title="WebApproach" rel="link" target="_blank">WebApproach.</a>'; ?>
                 <?php if(tt_get_option('tt_show_queries_num', false)) printf(__(' ·&nbsp;%1$s queries in %2$ss', 'tt'), get_num_queries(), timer_stop(0)); ?>
             </div>
         </div>
