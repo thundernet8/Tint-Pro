@@ -57,7 +57,8 @@ var _buyResource = function (btn) {
         if(data.success && data.success == 1) {
             popMsgbox.success({
                 title: data.message,
-                text: '消费积分: ' + data.data.cost + '<br>当前积分余额: ' + data.data.balance,
+                //text: '消费积分: ' + data.data.cost + '<br>当前积分余额: ' + data.data.balance,
+                text: data.data.text,
                 html: true,
                 showConfirmButton: true
             }, function () {

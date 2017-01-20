@@ -290,6 +290,18 @@ function optionsframework_options() {
 	);
 
 
+    // - 所有边栏
+    $all_sidebars = array(
+        'sidebar_common'    =>    __('Common Sidebar', 'tt'),
+        'sidebar_home'      =>    __('Home Sidebar', 'tt'),
+        'sidebar_single'    =>    __('Single Sidebar', 'tt'),
+        //'sidebar_archive'   =>    __('Archive Sidebar', 'tt'),
+        //'sidebar_category'  =>    __('Category Sidebar', 'tt'),
+        'sidebar_search'    =>    __('Search Sidebar', 'tt'),
+        //'sidebar_404'       =>    __('404 Sidebar', 'tt'),
+        'sidebar_page'      =>    __('Page Sidebar', 'tt'),
+        'sidebar_download'  =>    __('Download Page Sidebar', 'tt')
+    );
 	// - 待注册的边栏
     $options[] = array(
         'name' => __('Register Sidebars', 'tt'),
@@ -297,37 +309,21 @@ function optionsframework_options() {
         'id'   => 'tt_register_sidebars',
         'std'  => array('sidebar_common' => true),
         'type' => 'multicheck',
-        'options' => array(
-            'sidebar_common'    =>    __('Common Sidebar', 'tt'),
-            'sidebar_home'      =>    __('Home Sidebar', 'tt'),
-            'sidebar_single'    =>    __('Single Sidebar', 'tt'),
-            //'sidebar_archive'   =>    __('Archive Sidebar', 'tt'),
-            //'sidebar_category'  =>    __('Category Sidebar', 'tt'),
-            'sidebar_search'    =>    __('Search Sidebar', 'tt'),
-            //'sidebar_404'       =>    __('404 Sidebar', 'tt'),
-            'sidebar_page'      =>    __('Page Sidebar', 'tt'),
-            'sidebar_download'  =>    __('Download Page Sidebar', 'tt')
-        )
+        'options' => $all_sidebars
     );
 
-
-    // - 所有边栏
-    $all_sidebars = array(
-        'sidebar_common'    =>    __('Common Sidebar', 'tt'),
-        'sidebar_home'      =>    __('Home Sidebar', 'tt'),
-        'sidebar_single'    =>    __('Single Sidebar', 'tt'),
-        'sidebar_archive'   =>    __('Archive Sidebar', 'tt'),
-        'sidebar_category'  =>    __('Category Sidebar', 'tt'),
-        'sidebar_search'    =>    __('Search Sidebar', 'tt'),
-        'sidebar_404'       =>    __('404 Sidebar', 'tt'),
-        'sidebar_page'      =>    __('Page Sidebar', 'tt'),
-        'sidebar_download'  =>    __('Download Page Sidebar', 'tt')
-    );
     $register_status = of_get_option('tt_register_sidebars', array('sidebar_common' => true));
+    if(!is_array($register_status)) {
+        $register_status = array('sidebar_common' => true);
+    }elseif(!isset($register_status['sidebar_common'])){
+        $register_status['sidebar_common'] = true;
+    }
+
     $available_sidebars = array();
     foreach ($register_status as $key => $value){
         if($value) $available_sidebars[$key] = $all_sidebars[$key];
     }
+    $available_sidebars['sidebar_common'] = __('Common Sidebar', 'tt'); // 默认边栏始终可选
 
     $options[] = array(
         'name' => __('Home Sidebar', 'tt'),
@@ -602,44 +598,11 @@ function optionsframework_options() {
     //
 
 
-    // 主题设置 - 用户系统设置(包含积分和会员)
-	$options[] = array(
-		'name' => __( 'Membership', 'tt' ),
-		'type' => 'heading'
-	);
-
-    // - 月费会员价格
+    // 主题设置 - 积分系统设置
     $options[] = array(
-        'name' => __( '月费会员价格', 'tt' ),
-        'desc' => '',
-        'id' => 'tt_monthly_vip_price',
-        'std' => 10,
-        'class' => 'mini',
-        'type' => 'text'
+        'name' => __('Credit', 'tt'),
+        'type' => 'heading'
     );
-
-
-    // - 年费会员价格
-    $options[] = array(
-        'name' => __( '年费会员价格', 'tt' ),
-        'desc' => '',
-        'id' => 'tt_annual_vip_price',
-        'std' => 100,
-        'class' => 'mini',
-        'type' => 'text'
-    );
-
-
-    // - 永久会员价格
-    $options[] = array(
-        'name' => __( '永久会员价格', 'tt' ),
-        'desc' => '',
-        'id' => 'tt_permanent_vip_price',
-        'std' => 199,
-        'class' => 'mini',
-        'type' => 'text'
-    );
-
 
     // - 积分价格
     $options[] = array(
@@ -749,6 +712,78 @@ function optionsframework_options() {
         'desc' => __( '每日通过评论最多获得积分奖励的次数', 'tt' ),
         'id' => 'tt_rec_comment_num',
         'std' => '10',
+        'class' => 'mini',
+        'type' => 'text'
+    );
+
+
+    // 主题设置 - 会员系统设置
+	$options[] = array(
+		'name' => __( 'Membership', 'tt' ),
+		'type' => 'heading'
+	);
+
+    // - 月费会员价格
+    $options[] = array(
+        'name' => __( '月费会员价格', 'tt' ),
+        'desc' => '',
+        'id' => 'tt_monthly_vip_price',
+        'std' => 8,
+        'class' => 'mini',
+        'type' => 'text'
+    );
+
+
+    // - 年费会员价格
+    $options[] = array(
+        'name' => __( '年费会员价格', 'tt' ),
+        'desc' => '',
+        'id' => 'tt_annual_vip_price',
+        'std' => 80,
+        'class' => 'mini',
+        'type' => 'text'
+    );
+
+
+    // - 永久会员价格
+    $options[] = array(
+        'name' => __( '永久会员价格', 'tt' ),
+        'desc' => '',
+        'id' => 'tt_permanent_vip_price',
+        'std' => 159,
+        'class' => 'mini',
+        'type' => 'text'
+    );
+
+
+    // - 月费会员默认折扣
+    $options[] = array(
+        'name' => __( '月费会员默认折扣 (%)', 'tt' ),
+        'desc' => '',
+        'id' => 'tt_monthly_vip_discount',
+        'std' => 100,
+        'class' => 'mini',
+        'type' => 'text'
+    );
+
+
+    // - 年费会员默认折扣
+    $options[] = array(
+        'name' => __( '年费会员默认折扣 (%)', 'tt' ),
+        'desc' => '',
+        'id' => 'tt_annual_vip_discount',
+        'std' => 90,
+        'class' => 'mini',
+        'type' => 'text'
+    );
+
+
+    // - 永久会员默认折扣
+    $options[] = array(
+        'name' => __( '永久会员默认折扣 (%)', 'tt' ),
+        'desc' => '',
+        'id' => 'tt_permanent_vip_discount',
+        'std' => 80,
         'class' => 'mini',
         'type' => 'text'
     );

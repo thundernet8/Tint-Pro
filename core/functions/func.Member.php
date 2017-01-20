@@ -349,7 +349,7 @@ function tt_get_member_icon($user_id){
 
 
 /**
- * 获取VIP价格
+ * 获取充值VIP价格
  *
  * @since 2.0.0
  * @param int $vip_type

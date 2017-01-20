@@ -537,7 +537,7 @@ function tt_get_product_pay_content($product_id, $html = true){
 function tt_get_product_discount_array($product_id){
     $discount = maybe_unserialize(get_post_meta($product_id, 'tt_product_discount', true));
     if(!is_array($discount)) {
-        return array(100, 100, 100, 100);
+        return array(100, intval(tt_get_option('tt_monthly_vip_discount', 100)), intval(tt_get_option('tt_annual_vip_discount', 90)), intval(tt_get_option('tt_permanent_vip_discount', 80)));
     }
     $discount[0] = isset($discount[0]) ? min(100, absint($discount[0])) : 100;
     $discount[1] = isset($discount[1]) ? min(100, absint($discount[1])) : $discount[0];

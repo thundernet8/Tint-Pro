@@ -77,8 +77,25 @@ function tt_bought_post_resource($post_id, $resource_seq) {
         return new WP_Error('post_resource_bought', __('You have bought the resource yet, do not repeat a purchase', 'tt'), array('status' => 200));
     }
 
+    // 先计算VIP价格优惠
+    $member = new Member($user);
+    $vip_price = $price;
+    $vip_type = $member->vip_type;
+    switch ($vip_type) {
+        case Member::MONTHLY_VIP:
+            $vip_price = absint(tt_get_option('tt_monthly_vip_discount', 100) * $price / 100);
+            break;
+        case Member::ANNUAL_VIP:
+            $vip_price = absint(tt_get_option('tt_annual_vip_discount', 90) * $price / 100);
+            break;
+        case Member::PERMANENT_VIP:
+            $vip_price = absint(tt_get_option('tt_permanent_vip_discount', 80) * $price / 100);
+            break;
+    }
+    $vip_string = tt_get_member_type_string($vip_type);
+
     //检查用户积分是否足够
-    $payment = tt_credit_pay($price, $resource_name, true);
+    $payment = tt_credit_pay($vip_price, $resource_name, true);
     if($payment instanceof WP_Error) {
         return $payment;
     }
@@ -117,8 +134,17 @@ function tt_bought_post_resource($post_id, $resource_seq) {
     );
     tt_async_mail('', $user->user_email, $subject, $args, 'buy-resource');
 
+    if($price - $vip_price > 0) {
+        $text = sprintf(__('消费积分: %1$d (%2$s优惠, 原价%3$d)<br>当前积分余额: %2$d', 'tt'), $vip_price, $vip_string, $price, $balance);
+        $cost = $vip_price;
+    }else{
+        $text = sprintf(__('消费积分: %1$d<br>当前积分余额: %2$d', 'tt'), $price, $balance);
+        $cost = $price;
+    }
     return array(
-        'cost' => $price,
+        'cost' => $cost,
+        'text' => $text,
+        'vip_str' => $vip_string,
         'balance' => $balance
     );
 }
