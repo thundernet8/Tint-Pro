@@ -8,7 +8,7 @@
  * @author 10up, Eric Mann, Luke Gedeon, John P. Bloch
  * @date 2016/12/06 20:03
  * @license MIT
- * @link https://www.webapproach.net/tint
+ * @link https://webapproach.net/tint.html
  */
 ?>
 <?php

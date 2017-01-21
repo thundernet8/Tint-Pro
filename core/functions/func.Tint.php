@@ -9,12 +9,12 @@
  * @date 2016/12/25 16:19
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
- * @link https://www.webapproach.net/tint
+ * @link https://webapproach.net/tint.html
  */
 ?>
 <?php
 
-defined('TT_CHECK_HOME') || define('TT_CHECK_HOME', 'https://old.webapproach.net');
+defined('TT_CHECK_HOME') || define('TT_CHECK_HOME', 'https://webapproach.net');
 
 /**
  * 启动主题时清理版本检查任务

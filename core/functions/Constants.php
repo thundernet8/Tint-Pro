@@ -9,7 +9,7 @@
  * @date 2016/08/28 14:27
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
- * @link https://www.webapproach.net/tint.html
+ * @link https://webapproach.net/tint.html
  */
 ?>
 <?php
@@ -50,7 +50,7 @@ defined('AVATARS_URL') || define('AVATARS_URL', home_url('wp-content/uploads/ava
 defined('TT_PRO') || define('TT_PRO', !!preg_match('/([0-9-\.]+)PRO/i', trim(wp_get_theme()->get('Version'))));
 
 /* Tint Site Url */
-defined('TT_SITE') || define('TT_SITE', 'https://old.webapproach.net');
+defined('TT_SITE') || define('TT_SITE', 'https://webapproach.net');
 
 /* Asset Names */
 include_once THEME_FUNC . '/asset.Constant.php';

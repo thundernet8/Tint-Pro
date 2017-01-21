@@ -9,7 +9,7 @@
  * @date 2016/12/14 22:05
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
- * @link https://www.webapproach.net/tint
+ * @link https://webapproach.net/tint.html
  */
 ?>
 <script type="text/javascript" src="https://cdn.staticfile.org/webuploader/0.1.5/webuploader.html5only.min.js"></script>

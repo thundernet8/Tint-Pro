@@ -9,7 +9,7 @@
  * @date 2016/10/27 20:33
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
- * @link https://www.webapproach.net/tint.html
+ * @link https://webapproach.net/tint.html
  */
 ?>
 <?php
@@ -19,7 +19,7 @@
  */
 class UCWidget extends WP_Widget {
     function __construct() {
-        parent::__construct(false, __('TT-Latest Posts', 'tt'), array( 'description' => __('TT-Show several latest posts', 'tt') ,'classname' => 'widget_hot-posts widget_latest-posts'));
+        parent::__construct(false, __('TT- UC', 'tt'), array( 'description' => __('TT-Show toolkits for current user', 'tt') ,'classname' => 'widget_uc'));
     }
 
     function widget($args, $instance) {
@@ -67,4 +67,4 @@ if ( ! function_exists( 'tt_register_widget_uc' ) ) {
         register_widget( 'UCWidget' );
     }
 }
-add_action( 'widgets_init', 'tt_register_widget_uc' );
+//add_action( 'widgets_init', 'tt_register_widget_uc' );

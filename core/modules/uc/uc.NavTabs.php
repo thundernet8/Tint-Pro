@@ -9,7 +9,7 @@
  * @date 2016/11/06 17:23
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
- * @link https://www.webapproach.net/tint.html
+ * @link https://webapproach.net/tint.html
  */
 ?>
 <?php global $tt_author_vars; global $wp_query; $query_vars=$wp_query->query_vars; $uc_tab = isset($query_vars['uctab']) && in_array($query_vars['uctab'], (array)json_decode(ALLOWED_UC_TABS)) ? $query_vars['uctab'] : 'profile'; $tt_author_vars['uctab'] = $uc_tab; ?>

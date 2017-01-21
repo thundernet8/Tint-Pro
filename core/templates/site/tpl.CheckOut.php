@@ -9,7 +9,7 @@
  * @date 2016/11/27 17:20
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
- * @link https://www.webapproach.net/tint
+ * @link https://webapproach.net/tint.html
  */
 ?>
 <?php

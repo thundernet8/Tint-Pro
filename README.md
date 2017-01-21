@@ -1,12 +1,12 @@
-![https://old.webapproach.net/shop/tint-pro.html](https://img.shields.io/badge/version-Tint--2.0.0-green.svg?style=flat)
+![https://webapproach.net/shop/tint-pro.html](https://img.shields.io/badge/version-Tint--2.0.0-green.svg?style=flat)
 
 ## Tint
 
-基于WordPress内容管理系统的高级扩展主题([原Tinection 2](https://old.webapproach.net/shop/tint-pro.html))
+基于WordPress内容管理系统的高级扩展主题([原Tinection 2](https://webapproach.net/shop/tint-pro.html))
 
-Tint为付费主题，购买地址为[WebApproach商店](https://old.webapproach.net/shop/tint-pro.html)
+Tint为付费主题，购买地址为[WebApproach商店](https://webapproach.net/shop/tint-pro.html)
 
-Tint主题介绍：[查看介绍](https://old.webapproach.net/tint.html)
+Tint主题介绍：[查看介绍](https://webapproach.net/tint.html)
 
 Tint主题专用git仓库和wiki: [访问WebApproach仓库](https://git.webapproach.net/WebApproach/Tint-Pro)
 
@@ -33,13 +33,13 @@ Tint集成了多种缓存方式，包括如下几种:
     
     * Redis对象缓存: 同样是内存对象缓存，不同于Memcache的是其可以将数据同步到文件系统并随时恢复，配置也和Memcache一样只需填写服务器和端口
 
-内存对象缓存能极大降低查询次数，目前[WebApproach](https://old.webapproach.net)已开启Memcache并将首页查询降低到个位数，稳定在7queries左右，相比数据库片段方式优势明显
+内存对象缓存能极大降低查询次数，目前[WebApproach](https://webapproach.net)已开启Memcache并将首页查询降低到个位数，稳定在7queries左右，相比数据库片段方式优势明显
 
 REST API
 
 Tint最大化利用了WP新版本的REST API功能，并将所有AJAX请求与REST API对接并完成相应的路由控制器，v1版本的API仍将基于cookie验证，但未来很容易过渡到v2基于token验证，实现更方便的跨域前后端真正分离
 
-其他...见[介绍文章](https://old.webapproach.net/tint.html)
+其他...见[介绍文章](https://webapproach.net/tint.html)
 
 ### 使用的开源代码\资源
 

@@ -9,7 +9,7 @@
  * @date 2016/12/15 00:14
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
- * @link https://www.webapproach.net/tint
+ * @link https://webapproach.net/tint.html
  */
 ?>
 <?php global $tt_me_vars; $tt_user_id = $tt_me_vars['tt_user_id']; $tt_order_seq = get_query_var('me_grandchild_route'); ?>

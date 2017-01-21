@@ -9,7 +9,7 @@
  * @date 2016/11/14 20:26
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
- * @link https://www.webapproach.net/tint
+ * @link https://webapproach.net/tint.html
  */
 ?>
 <?php $keywords_description = tt_get_keywords_and_description(); ?>

@@ -8,7 +8,7 @@
  * @date 2016/10/11 21:38
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
- * @link https://www.webapproach.net/tint.html
+ * @link https://webapproach.net/tint.html
  */
 
 'use strict';

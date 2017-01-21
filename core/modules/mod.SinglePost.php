@@ -9,7 +9,7 @@
  * @date 2016/10/07 16:04
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
- * @link https://www.webapproach.net/tint.html
+ * @link https://webapproach.net/tint.html
  */
 ?>
 <div id="main" class="main primary col-md-8 post-box" role="main">

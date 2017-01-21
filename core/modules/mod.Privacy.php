@@ -9,7 +9,7 @@
  * @date 2016/12/25 14:51
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
- * @link https://www.webapproach.net/tint
+ * @link https://webapproach.net/tint.html
  */
 ?>
 <?php $blogname = get_bloginfo('name'); $blogurl = home_url(); $admin_email = get_option('admin_email') ?>

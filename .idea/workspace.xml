@@ -2,17 +2,344 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1212df9-9110-41ec-af9e-f8eb72c2514b" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/templates/plates/emails/base.html" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/dash/css/editor-preview.css" afterPath="$PROJECT_DIR$/assets/dash/css/editor-preview.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/dash/js/my_quicktags.js" afterPath="$PROJECT_DIR$/assets/dash/js/my_quicktags.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/api/api.Compatibility.php" afterPath="$PROJECT_DIR$/core/api/api.Compatibility.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/api/api.Config.php" afterPath="$PROJECT_DIR$/core/api/api.Config.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/api/api.Utils.php" afterPath="$PROJECT_DIR$/core/api/api.Utils.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/api/v1/endpoints/class.Rest.Action.Controller.php" afterPath="$PROJECT_DIR$/core/api/v1/endpoints/class.Rest.Action.Controller.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/api/v1/endpoints/class.Rest.BoughtResource.Controller.php" afterPath="$PROJECT_DIR$/core/api/v1/endpoints/class.Rest.BoughtResource.Controller.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/api/v1/endpoints/class.Rest.Comment.Controller.php" afterPath="$PROJECT_DIR$/core/api/v1/endpoints/class.Rest.Comment.Controller.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/api/v1/endpoints/class.Rest.Comment.Star.Controller.php" afterPath="$PROJECT_DIR$/core/api/v1/endpoints/class.Rest.Comment.Star.Controller.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/api/v1/endpoints/class.Rest.Controller.php" afterPath="$PROJECT_DIR$/core/api/v1/endpoints/class.Rest.Controller.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/api/v1/endpoints/class.Rest.Coupon.Controller.php" afterPath="$PROJECT_DIR$/core/api/v1/endpoints/class.Rest.Coupon.Controller.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/api/v1/endpoints/class.Rest.Follow.Controller.php" afterPath="$PROJECT_DIR$/core/api/v1/endpoints/class.Rest.Follow.Controller.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/api/v1/endpoints/class.Rest.Member.Controller.php" afterPath="$PROJECT_DIR$/core/api/v1/endpoints/class.Rest.Member.Controller.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/api/v1/endpoints/class.Rest.Message.Controller.php" afterPath="$PROJECT_DIR$/core/api/v1/endpoints/class.Rest.Message.Controller.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/api/v1/endpoints/class.Rest.Order.Controller.php" afterPath="$PROJECT_DIR$/core/api/v1/endpoints/class.Rest.Order.Controller.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/api/v1/endpoints/class.Rest.Post.Controller.php" afterPath="$PROJECT_DIR$/core/api/v1/endpoints/class.Rest.Post.Controller.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/api/v1/endpoints/class.Rest.Post.Star.Controller.php" afterPath="$PROJECT_DIR$/core/api/v1/endpoints/class.Rest.Post.Star.Controller.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/api/v1/endpoints/class.Rest.Product.Controller.php" afterPath="$PROJECT_DIR$/core/api/v1/endpoints/class.Rest.Product.Controller.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/api/v1/endpoints/class.Rest.Session.Controller.php" afterPath="$PROJECT_DIR$/core/api/v1/endpoints/class.Rest.Session.Controller.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/api/v1/endpoints/class.Rest.ShoppingCart.Controller.php" afterPath="$PROJECT_DIR$/core/api/v1/endpoints/class.Rest.ShoppingCart.Controller.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/api/v1/endpoints/class.Rest.User.Controller.php" afterPath="$PROJECT_DIR$/core/api/v1/endpoints/class.Rest.User.Controller.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/api/v1/endpoints/class.Rest.UserProfile.Controller.php" afterPath="$PROJECT_DIR$/core/api/v1/endpoints/class.Rest.UserProfile.Controller.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/api/v1/endpoints/class.Rest.UserStatus.Controller.php" afterPath="$PROJECT_DIR$/core/api/v1/endpoints/class.Rest.UserStatus.Controller.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/api/v1/endpoints/class.Rest.Usermeta.Controller.php" afterPath="$PROJECT_DIR$/core/api/v1/endpoints/class.Rest.Usermeta.Controller.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/api/v2/extension.php" afterPath="$PROJECT_DIR$/core/api/v2/extension.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/classes/class.Async.Email.php" afterPath="$PROJECT_DIR$/core/classes/class.Async.Email.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/classes/class.Async.Task.php" afterPath="$PROJECT_DIR$/core/classes/class.Async.Task.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/classes/class.Avatar.php" afterPath="$PROJECT_DIR$/core/classes/class.Avatar.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/classes/class.Captcha.php" afterPath="$PROJECT_DIR$/core/classes/class.Captcha.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/classes/class.Member.php" afterPath="$PROJECT_DIR$/core/classes/class.Member.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/classes/class.NameFirstChar.php" afterPath="$PROJECT_DIR$/core/classes/class.NameFirstChar.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/classes/class.Open.php" afterPath="$PROJECT_DIR$/core/classes/class.Open.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/classes/class.PostImage.php" afterPath="$PROJECT_DIR$/core/classes/class.PostImage.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/classes/class.Utils.php" afterPath="$PROJECT_DIR$/core/classes/class.Utils.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/classes/shop/class.OrderStatus.php" afterPath="$PROJECT_DIR$/core/classes/shop/class.OrderStatus.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/classes/shop/class.Product.php" afterPath="$PROJECT_DIR$/core/classes/shop/class.Product.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/Constants.php" afterPath="$PROJECT_DIR$/core/functions/Constants.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/asset.Constant.php" afterPath="$PROJECT_DIR$/core/functions/asset.Constant.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/func.API.Actions.php" afterPath="$PROJECT_DIR$/core/functions/func.API.Actions.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/func.Account.php" afterPath="$PROJECT_DIR$/core/functions/func.Account.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/func.Avatar.php" afterPath="$PROJECT_DIR$/core/functions/func.Avatar.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/func.Cache.php" afterPath="$PROJECT_DIR$/core/functions/func.Cache.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/func.Comment.php" afterPath="$PROJECT_DIR$/core/functions/func.Comment.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/func.Content.php" afterPath="$PROJECT_DIR$/core/functions/func.Content.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/func.Credit.php" afterPath="$PROJECT_DIR$/core/functions/func.Credit.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/func.Download.php" afterPath="$PROJECT_DIR$/core/functions/func.Download.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/func.Follow.php" afterPath="$PROJECT_DIR$/core/functions/func.Follow.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/func.IP.php" afterPath="$PROJECT_DIR$/core/functions/func.IP.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/func.Image.php" afterPath="$PROJECT_DIR$/core/functions/func.Image.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/func.Init.php" afterPath="$PROJECT_DIR$/core/functions/func.Init.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/func.Install.php" afterPath="$PROJECT_DIR$/core/functions/func.Install.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/func.Kits.php" afterPath="$PROJECT_DIR$/core/functions/func.Kits.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/func.L10n.php" afterPath="$PROJECT_DIR$/core/functions/func.L10n.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/func.Loader.php" afterPath="$PROJECT_DIR$/core/functions/func.Loader.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/func.Mail.php" afterPath="$PROJECT_DIR$/core/functions/func.Mail.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/func.Member.php" afterPath="$PROJECT_DIR$/core/functions/func.Member.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/func.Message.php" afterPath="$PROJECT_DIR$/core/functions/func.Message.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/func.Metabox.php" afterPath="$PROJECT_DIR$/core/functions/func.Metabox.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/func.Module.php" afterPath="$PROJECT_DIR$/core/functions/func.Module.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/func.Oauth.php" afterPath="$PROJECT_DIR$/core/functions/func.Oauth.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/func.Optimization.php" afterPath="$PROJECT_DIR$/core/functions/func.Optimization.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/func.Page.php" afterPath="$PROJECT_DIR$/core/functions/func.Page.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/func.PostMeta.php" afterPath="$PROJECT_DIR$/core/functions/func.PostMeta.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/func.Query.php" afterPath="$PROJECT_DIR$/core/functions/func.Query.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/func.Referral.php" afterPath="$PROJECT_DIR$/core/functions/func.Referral.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/func.Rewrite.php" afterPath="$PROJECT_DIR$/core/functions/func.Rewrite.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/func.Robots.php" afterPath="$PROJECT_DIR$/core/functions/func.Robots.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/func.Schedule.php" afterPath="$PROJECT_DIR$/core/functions/func.Schedule.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/func.Script.php" afterPath="$PROJECT_DIR$/core/functions/func.Script.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/func.Seo.php" afterPath="$PROJECT_DIR$/core/functions/func.Seo.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/func.ShortCode.php" afterPath="$PROJECT_DIR$/core/functions/func.ShortCode.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/func.Sidebar.php" afterPath="$PROJECT_DIR$/core/functions/func.Sidebar.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/func.Template.php" afterPath="$PROJECT_DIR$/core/functions/func.Template.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/func.Thumb.php" afterPath="$PROJECT_DIR$/core/functions/func.Thumb.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/func.Tint.php" afterPath="$PROJECT_DIR$/core/functions/func.Tint.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/func.User.php" afterPath="$PROJECT_DIR$/core/functions/func.User.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/shop/alipay/func.Alipay.php" afterPath="$PROJECT_DIR$/core/functions/shop/alipay/func.Alipay.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/shop/func.Shop.Address.php" afterPath="$PROJECT_DIR$/core/functions/shop/func.Shop.Address.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/shop/func.Shop.Cart.php" afterPath="$PROJECT_DIR$/core/functions/shop/func.Shop.Cart.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/shop/func.Shop.Coupon.php" afterPath="$PROJECT_DIR$/core/functions/shop/func.Shop.Coupon.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/shop/func.Shop.Order.php" afterPath="$PROJECT_DIR$/core/functions/shop/func.Shop.Order.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/functions/shop/func.Shop.php" afterPath="$PROJECT_DIR$/core/functions/shop/func.Shop.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/languages/en_US.po" afterPath="$PROJECT_DIR$/core/languages/en_US.po" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/languages/tt.pot" afterPath="$PROJECT_DIR$/core/languages/tt.pot" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/languages/zh_CN.po" afterPath="$PROJECT_DIR$/core/languages/zh_CN.po" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/management/mg.NavMenu.php" afterPath="$PROJECT_DIR$/core/modules/management/mg.NavMenu.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/management/mg.Tab.Comments.php" afterPath="$PROJECT_DIR$/core/modules/management/mg.Tab.Comments.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/management/mg.Tab.Coupons.php" afterPath="$PROJECT_DIR$/core/modules/management/mg.Tab.Coupons.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/management/mg.Tab.Members.php" afterPath="$PROJECT_DIR$/core/modules/management/mg.Tab.Members.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/management/mg.Tab.Order.php" afterPath="$PROJECT_DIR$/core/modules/management/mg.Tab.Order.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/management/mg.Tab.Orders.php" afterPath="$PROJECT_DIR$/core/modules/management/mg.Tab.Orders.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/management/mg.Tab.Posts.php" afterPath="$PROJECT_DIR$/core/modules/management/mg.Tab.Posts.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/management/mg.Tab.Products.php" afterPath="$PROJECT_DIR$/core/modules/management/mg.Tab.Products.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/management/mg.Tab.Status.php" afterPath="$PROJECT_DIR$/core/modules/management/mg.Tab.Status.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/me/me.NavMenu.php" afterPath="$PROJECT_DIR$/core/modules/me/me.NavMenu.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/me/me.Tab.Contribute.php" afterPath="$PROJECT_DIR$/core/modules/me/me.Tab.Contribute.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/me/me.Tab.Credits.php" afterPath="$PROJECT_DIR$/core/modules/me/me.Tab.Credits.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/me/me.Tab.Drafts.php" afterPath="$PROJECT_DIR$/core/modules/me/me.Tab.Drafts.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/me/me.Tab.EditPost.php" afterPath="$PROJECT_DIR$/core/modules/me/me.Tab.EditPost.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/me/me.Tab.Membership.php" afterPath="$PROJECT_DIR$/core/modules/me/me.Tab.Membership.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/me/me.Tab.Messages.php" afterPath="$PROJECT_DIR$/core/modules/me/me.Tab.Messages.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/me/me.Tab.Notifications.php" afterPath="$PROJECT_DIR$/core/modules/me/me.Tab.Notifications.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/me/me.Tab.Order.php" afterPath="$PROJECT_DIR$/core/modules/me/me.Tab.Order.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/me/me.Tab.Orders.php" afterPath="$PROJECT_DIR$/core/modules/me/me.Tab.Orders.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/me/me.Tab.Settings.php" afterPath="$PROJECT_DIR$/core/modules/me/me.Tab.Settings.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/mod.Comments.php" afterPath="$PROJECT_DIR$/core/modules/mod.Comments.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/mod.Download.php" afterPath="$PROJECT_DIR$/core/modules/mod.Download.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/mod.FeaturedCats.php" afterPath="$PROJECT_DIR$/core/modules/mod.FeaturedCats.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/mod.FixedControls.php" afterPath="$PROJECT_DIR$/core/modules/mod.FixedControls.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/mod.Footer.Simple.php" afterPath="$PROJECT_DIR$/core/modules/mod.Footer.Simple.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/mod.Footer.php" afterPath="$PROJECT_DIR$/core/modules/mod.Footer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/mod.Head.php" afterPath="$PROJECT_DIR$/core/modules/mod.Head.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/mod.Header.Shop.php" afterPath="$PROJECT_DIR$/core/modules/mod.Header.Shop.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/mod.Header.Simple.php" afterPath="$PROJECT_DIR$/core/modules/mod.Header.Simple.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/mod.Header.php" afterPath="$PROJECT_DIR$/core/modules/mod.Header.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/mod.HomeLatest.php" afterPath="$PROJECT_DIR$/core/modules/mod.HomeLatest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/mod.HomePopular.php" afterPath="$PROJECT_DIR$/core/modules/mod.HomePopular.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/mod.HomeSlide.php" afterPath="$PROJECT_DIR$/core/modules/mod.HomeSlide.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/mod.LogoHeader.php" afterPath="$PROJECT_DIR$/core/modules/mod.LogoHeader.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/mod.ModalBanBox.php" afterPath="$PROJECT_DIR$/core/modules/mod.ModalBanBox.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/mod.ModalLoginForm.php" afterPath="$PROJECT_DIR$/core/modules/mod.ModalLoginForm.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/mod.ModalPmBox.php" afterPath="$PROJECT_DIR$/core/modules/mod.ModalPmBox.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/mod.ModalQrCodes.php" afterPath="$PROJECT_DIR$/core/modules/mod.ModalQrCodes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/mod.ModalSearch.php" afterPath="$PROJECT_DIR$/core/modules/mod.ModalSearch.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/mod.Privacy.php" afterPath="$PROJECT_DIR$/core/modules/mod.Privacy.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/mod.ProductGallery.php" afterPath="$PROJECT_DIR$/core/modules/mod.ProductGallery.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/mod.ReplyForm.php" afterPath="$PROJECT_DIR$/core/modules/mod.ReplyForm.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/mod.SearchPosts.php" afterPath="$PROJECT_DIR$/core/modules/mod.SearchPosts.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/mod.Sidebar.php" afterPath="$PROJECT_DIR$/core/modules/mod.Sidebar.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/mod.SinglePage.php" afterPath="$PROJECT_DIR$/core/modules/mod.SinglePage.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/mod.SinglePost.php" afterPath="$PROJECT_DIR$/core/modules/mod.SinglePost.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/shop/mod.Shop.Comments.php" afterPath="$PROJECT_DIR$/core/modules/shop/mod.Shop.Comments.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/shop/mod.Shop.Relates.php" afterPath="$PROJECT_DIR$/core/modules/shop/mod.Shop.Relates.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/shop/mod.Shop.ReplyForm.php" afterPath="$PROJECT_DIR$/core/modules/shop/mod.Shop.ReplyForm.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/shop/mod.Shop.Sidebar.Left.php" afterPath="$PROJECT_DIR$/core/modules/shop/mod.Shop.Sidebar.Left.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/shop/mod.Shop.Sidebar.Right.php" afterPath="$PROJECT_DIR$/core/modules/shop/mod.Shop.Sidebar.Right.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/uc/uc.NavTabs.php" afterPath="$PROJECT_DIR$/core/modules/uc/uc.NavTabs.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/uc/uc.Tab.Activities.php" afterPath="$PROJECT_DIR$/core/modules/uc/uc.Tab.Activities.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/uc/uc.Tab.Chat.php" afterPath="$PROJECT_DIR$/core/modules/uc/uc.Tab.Chat.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/uc/uc.Tab.Comments.php" afterPath="$PROJECT_DIR$/core/modules/uc/uc.Tab.Comments.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/uc/uc.Tab.Followers.php" afterPath="$PROJECT_DIR$/core/modules/uc/uc.Tab.Followers.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/uc/uc.Tab.Following.php" afterPath="$PROJECT_DIR$/core/modules/uc/uc.Tab.Following.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/uc/uc.Tab.Latest.php" afterPath="$PROJECT_DIR$/core/modules/uc/uc.Tab.Latest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/uc/uc.Tab.Profile.php" afterPath="$PROJECT_DIR$/core/modules/uc/uc.Tab.Profile.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/uc/uc.Tab.Stars.php" afterPath="$PROJECT_DIR$/core/modules/uc/uc.Tab.Stars.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/uc/uc.TopPane.php" afterPath="$PROJECT_DIR$/core/modules/uc/uc.TopPane.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/widgets/wgt.Author.php" afterPath="$PROJECT_DIR$/core/modules/widgets/wgt.Author.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/widgets/wgt.Donate.php" afterPath="$PROJECT_DIR$/core/modules/widgets/wgt.Donate.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/widgets/wgt.Float.php" afterPath="$PROJECT_DIR$/core/modules/widgets/wgt.Float.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/widgets/wgt.HotHits.Posts.php" afterPath="$PROJECT_DIR$/core/modules/widgets/wgt.HotHits.Posts.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/widgets/wgt.HotReviews.Posts.php" afterPath="$PROJECT_DIR$/core/modules/widgets/wgt.HotReviews.Posts.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/widgets/wgt.Latest.Posts.php" afterPath="$PROJECT_DIR$/core/modules/widgets/wgt.Latest.Posts.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/widgets/wgt.RecentComments.php" afterPath="$PROJECT_DIR$/core/modules/widgets/wgt.RecentComments.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/widgets/wgt.TagCloud.php" afterPath="$PROJECT_DIR$/core/modules/widgets/wgt.TagCloud.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/modules/widgets/wgt.UC.php" afterPath="$PROJECT_DIR$/core/modules/widgets/wgt.UC.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/actions/tpl.M.Activate.php" afterPath="$PROJECT_DIR$/core/templates/actions/tpl.M.Activate.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/actions/tpl.M.Findpass.php" afterPath="$PROJECT_DIR$/core/templates/actions/tpl.M.Findpass.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/actions/tpl.M.Refresh.php" afterPath="$PROJECT_DIR$/core/templates/actions/tpl.M.Refresh.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/actions/tpl.M.Resetpass.php" afterPath="$PROJECT_DIR$/core/templates/actions/tpl.M.Resetpass.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/actions/tpl.M.Signin.php" afterPath="$PROJECT_DIR$/core/templates/actions/tpl.M.Signin.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/actions/tpl.M.Signout.php" afterPath="$PROJECT_DIR$/core/templates/actions/tpl.M.Signout.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/actions/tpl.M.Signup.php" afterPath="$PROJECT_DIR$/core/templates/actions/tpl.M.Signup.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/management/tpl.Manage.Comments.php" afterPath="$PROJECT_DIR$/core/templates/management/tpl.Manage.Comments.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/management/tpl.Manage.Coupons.php" afterPath="$PROJECT_DIR$/core/templates/management/tpl.Manage.Coupons.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/management/tpl.Manage.Members.php" afterPath="$PROJECT_DIR$/core/templates/management/tpl.Manage.Members.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/management/tpl.Manage.Order.php" afterPath="$PROJECT_DIR$/core/templates/management/tpl.Manage.Order.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/management/tpl.Manage.Orders.php" afterPath="$PROJECT_DIR$/core/templates/management/tpl.Manage.Orders.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/management/tpl.Manage.Posts.php" afterPath="$PROJECT_DIR$/core/templates/management/tpl.Manage.Posts.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/management/tpl.Manage.Products.php" afterPath="$PROJECT_DIR$/core/templates/management/tpl.Manage.Products.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/management/tpl.Manage.Status.php" afterPath="$PROJECT_DIR$/core/templates/management/tpl.Manage.Status.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/management/tpl.Manage.Users.php" afterPath="$PROJECT_DIR$/core/templates/management/tpl.Manage.Users.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/me/tpl.Me.Credits.php" afterPath="$PROJECT_DIR$/core/templates/me/tpl.Me.Credits.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/me/tpl.Me.Drafts.php" afterPath="$PROJECT_DIR$/core/templates/me/tpl.Me.Drafts.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/me/tpl.Me.Editpost.php" afterPath="$PROJECT_DIR$/core/templates/me/tpl.Me.Editpost.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/me/tpl.Me.Membership.php" afterPath="$PROJECT_DIR$/core/templates/me/tpl.Me.Membership.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/me/tpl.Me.Messages.php" afterPath="$PROJECT_DIR$/core/templates/me/tpl.Me.Messages.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/me/tpl.Me.Newpost.php" afterPath="$PROJECT_DIR$/core/templates/me/tpl.Me.Newpost.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/me/tpl.Me.Notifications.php" afterPath="$PROJECT_DIR$/core/templates/me/tpl.Me.Notifications.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/me/tpl.Me.Order.php" afterPath="$PROJECT_DIR$/core/templates/me/tpl.Me.Order.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/me/tpl.Me.Orders.php" afterPath="$PROJECT_DIR$/core/templates/me/tpl.Me.Orders.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/me/tpl.Me.Settings.php" afterPath="$PROJECT_DIR$/core/templates/me/tpl.Me.Settings.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/oauth/tpl.OAuth.Last.php" afterPath="$PROJECT_DIR$/core/templates/oauth/tpl.OAuth.Last.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/oauth/tpl.OAuth.php" afterPath="$PROJECT_DIR$/core/templates/oauth/tpl.OAuth.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/page/tpl.Page.Links.php" afterPath="$PROJECT_DIR$/core/templates/page/tpl.Page.Links.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/plates/emails/base.php" afterPath="$PROJECT_DIR$/core/templates/plates/emails/base.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/plates/emails/pure.php" afterPath="$PROJECT_DIR$/core/templates/plates/emails/pure.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/shop/tpl.Product.Archive.php" afterPath="$PROJECT_DIR$/core/templates/shop/tpl.Product.Archive.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/shop/tpl.Product.Category.php" afterPath="$PROJECT_DIR$/core/templates/shop/tpl.Product.Category.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/shop/tpl.Product.Search.php" afterPath="$PROJECT_DIR$/core/templates/shop/tpl.Product.Search.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/shop/tpl.Product.Tag.php" afterPath="$PROJECT_DIR$/core/templates/shop/tpl.Product.Tag.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/shop/tpl.Product.php" afterPath="$PROJECT_DIR$/core/templates/shop/tpl.Product.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/site/tpl.APSV.Notify.php" afterPath="$PROJECT_DIR$/core/templates/site/tpl.APSV.Notify.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/site/tpl.Alipay.Notify.php" afterPath="$PROJECT_DIR$/core/templates/site/tpl.Alipay.Notify.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/site/tpl.Alipay.Return.php" afterPath="$PROJECT_DIR$/core/templates/site/tpl.Alipay.Return.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/site/tpl.Captcha.php" afterPath="$PROJECT_DIR$/core/templates/site/tpl.Captcha.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/site/tpl.CheckOut.php" afterPath="$PROJECT_DIR$/core/templates/site/tpl.CheckOut.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/site/tpl.Download.php" afterPath="$PROJECT_DIR$/core/templates/site/tpl.Download.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/site/tpl.Image.Upload.php" afterPath="$PROJECT_DIR$/core/templates/site/tpl.Image.Upload.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/site/tpl.PayGateway.php" afterPath="$PROJECT_DIR$/core/templates/site/tpl.PayGateway.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/site/tpl.PayResult.php" afterPath="$PROJECT_DIR$/core/templates/site/tpl.PayResult.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/site/tpl.Privacy.php" afterPath="$PROJECT_DIR$/core/templates/site/tpl.Privacy.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/site/tpl.QrCode.php" afterPath="$PROJECT_DIR$/core/templates/site/tpl.QrCode.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/site/tpl.QrPay.php" afterPath="$PROJECT_DIR$/core/templates/site/tpl.QrPay.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/site/tpl.UpgradeBrowser.php" afterPath="$PROJECT_DIR$/core/templates/site/tpl.UpgradeBrowser.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/tpl.Error.php" afterPath="$PROJECT_DIR$/core/templates/tpl.Error.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/uc/tpl.UC.Activities.php" afterPath="$PROJECT_DIR$/core/templates/uc/tpl.UC.Activities.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/uc/tpl.UC.Chat.php" afterPath="$PROJECT_DIR$/core/templates/uc/tpl.UC.Chat.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/uc/tpl.UC.Comments.php" afterPath="$PROJECT_DIR$/core/templates/uc/tpl.UC.Comments.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/uc/tpl.UC.Followers.php" afterPath="$PROJECT_DIR$/core/templates/uc/tpl.UC.Followers.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/uc/tpl.UC.Following.php" afterPath="$PROJECT_DIR$/core/templates/uc/tpl.UC.Following.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/uc/tpl.UC.Latest.php" afterPath="$PROJECT_DIR$/core/templates/uc/tpl.UC.Latest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/uc/tpl.UC.Profile.php" afterPath="$PROJECT_DIR$/core/templates/uc/tpl.UC.Profile.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/uc/tpl.UC.Stars.php" afterPath="$PROJECT_DIR$/core/templates/uc/tpl.UC.Stars.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/uc/tpl.UC.php" afterPath="$PROJECT_DIR$/core/templates/uc/tpl.UC.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/viewModels/management/vm.Mg.Comments.php" afterPath="$PROJECT_DIR$/core/viewModels/management/vm.Mg.Comments.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/viewModels/management/vm.Mg.Coupons.php" afterPath="$PROJECT_DIR$/core/viewModels/management/vm.Mg.Coupons.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/viewModels/management/vm.Mg.Members.php" afterPath="$PROJECT_DIR$/core/viewModels/management/vm.Mg.Members.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/viewModels/management/vm.Mg.Order.php" afterPath="$PROJECT_DIR$/core/viewModels/management/vm.Mg.Order.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/viewModels/management/vm.Mg.Orders.php" afterPath="$PROJECT_DIR$/core/viewModels/management/vm.Mg.Orders.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/viewModels/management/vm.Mg.Posts.php" afterPath="$PROJECT_DIR$/core/viewModels/management/vm.Mg.Posts.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/viewModels/management/vm.Mg.Products.php" afterPath="$PROJECT_DIR$/core/viewModels/management/vm.Mg.Products.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/viewModels/management/vm.Mg.Status.php" afterPath="$PROJECT_DIR$/core/viewModels/management/vm.Mg.Status.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/viewModels/management/vm.Mg.Users.php" afterPath="$PROJECT_DIR$/core/viewModels/management/vm.Mg.Users.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/viewModels/me/vm.Me.Credits.php" afterPath="$PROJECT_DIR$/core/viewModels/me/vm.Me.Credits.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/viewModels/me/vm.Me.Drafts.php" afterPath="$PROJECT_DIR$/core/viewModels/me/vm.Me.Drafts.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/viewModels/me/vm.Me.EditPost.php" afterPath="$PROJECT_DIR$/core/viewModels/me/vm.Me.EditPost.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/viewModels/me/vm.Me.Membership.php" afterPath="$PROJECT_DIR$/core/viewModels/me/vm.Me.Membership.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/viewModels/me/vm.Me.Messages.php" afterPath="$PROJECT_DIR$/core/viewModels/me/vm.Me.Messages.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/viewModels/me/vm.Me.Notifications.php" afterPath="$PROJECT_DIR$/core/viewModels/me/vm.Me.Notifications.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/viewModels/me/vm.Me.Order.php" afterPath="$PROJECT_DIR$/core/viewModels/me/vm.Me.Order.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/viewModels/me/vm.Me.Orders.php" afterPath="$PROJECT_DIR$/core/viewModels/me/vm.Me.Orders.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/viewModels/me/vm.Me.Settings.php" afterPath="$PROJECT_DIR$/core/viewModels/me/vm.Me.Settings.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/viewModels/shop/vm.Embed.Product.php" afterPath="$PROJECT_DIR$/core/viewModels/shop/vm.Embed.Product.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/viewModels/shop/vm.Shop.Category.php" afterPath="$PROJECT_DIR$/core/viewModels/shop/vm.Shop.Category.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/viewModels/shop/vm.Shop.Comment.php" afterPath="$PROJECT_DIR$/core/viewModels/shop/vm.Shop.Comment.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/viewModels/shop/vm.Shop.Header.SubNav.php" afterPath="$PROJECT_DIR$/core/viewModels/shop/vm.Shop.Header.SubNav.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/viewModels/shop/vm.Shop.Home.php" afterPath="$PROJECT_DIR$/core/viewModels/shop/vm.Shop.Home.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/viewModels/shop/vm.Shop.LatestRated.php" afterPath="$PROJECT_DIR$/core/viewModels/shop/vm.Shop.LatestRated.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/viewModels/shop/vm.Shop.Product.php" afterPath="$PROJECT_DIR$/core/viewModels/shop/vm.Shop.Product.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/viewModels/shop/vm.Shop.Search.php" afterPath="$PROJECT_DIR$/core/viewModels/shop/vm.Shop.Search.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/viewModels/shop/vm.Shop.Tag.php" afterPath="$PROJECT_DIR$/core/viewModels/shop/vm.Shop.Tag.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/viewModels/shop/vm.Shop.ViewHistory.php" afterPath="$PROJECT_DIR$/core/viewModels/shop/vm.Shop.ViewHistory.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/viewModels/uc/vm.UC.Chat.php" afterPath="$PROJECT_DIR$/core/viewModels/uc/vm.UC.Chat.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/viewModels/uc/vm.UC.Comments.php" afterPath="$PROJECT_DIR$/core/viewModels/uc/vm.UC.Comments.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/viewModels/uc/vm.UC.Followers.php" afterPath="$PROJECT_DIR$/core/viewModels/uc/vm.UC.Followers.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/viewModels/uc/vm.UC.Following.php" afterPath="$PROJECT_DIR$/core/viewModels/uc/vm.UC.Following.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/viewModels/uc/vm.UC.Latest.php" afterPath="$PROJECT_DIR$/core/viewModels/uc/vm.UC.Latest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/viewModels/uc/vm.UC.Profile.php" afterPath="$PROJECT_DIR$/core/viewModels/uc/vm.UC.Profile.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/viewModels/uc/vm.UC.Stars.php" afterPath="$PROJECT_DIR$/core/viewModels/uc/vm.UC.Stars.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/viewModels/vm.Base.php" afterPath="$PROJECT_DIR$/core/viewModels/vm.Base.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/viewModels/vm.Category.Posts.php" afterPath="$PROJECT_DIR$/core/viewModels/vm.Category.Posts.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/viewModels/vm.Date.Archive.php" afterPath="$PROJECT_DIR$/core/viewModels/vm.Date.Archive.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/viewModels/vm.Home.FeaturedCategory.php" afterPath="$PROJECT_DIR$/core/viewModels/vm.Home.FeaturedCategory.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/viewModels/vm.Home.Latest.php" afterPath="$PROJECT_DIR$/core/viewModels/vm.Home.Latest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/viewModels/vm.Home.Popular.php" afterPath="$PROJECT_DIR$/core/viewModels/vm.Home.Popular.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/viewModels/vm.Home.Slides.php" afterPath="$PROJECT_DIR$/core/viewModels/vm.Home.Slides.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/viewModels/vm.Post.Comments.php" afterPath="$PROJECT_DIR$/core/viewModels/vm.Post.Comments.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/viewModels/vm.ProductGallery.php" afterPath="$PROJECT_DIR$/core/viewModels/vm.ProductGallery.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/viewModels/vm.Search.php" afterPath="$PROJECT_DIR$/core/viewModels/vm.Search.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/viewModels/vm.Single.Page.php" afterPath="$PROJECT_DIR$/core/viewModels/vm.Single.Page.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/viewModels/vm.Single.Post.php" afterPath="$PROJECT_DIR$/core/viewModels/vm.Single.Post.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/viewModels/vm.Tag.Posts.php" afterPath="$PROJECT_DIR$/core/viewModels/vm.Tag.Posts.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/viewModels/vm.Term.Posts.php" afterPath="$PROJECT_DIR$/core/viewModels/vm.Term.Posts.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/viewModels/widgets/vm.Widget.Author.php" afterPath="$PROJECT_DIR$/core/viewModels/widgets/vm.Widget.Author.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/viewModels/widgets/vm.Widget.HotHit.Posts.php" afterPath="$PROJECT_DIR$/core/viewModels/widgets/vm.Widget.HotHit.Posts.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/viewModels/widgets/vm.Widget.HotReviewed.Posts.php" afterPath="$PROJECT_DIR$/core/viewModels/widgets/vm.Widget.HotReviewed.Posts.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/viewModels/widgets/vm.Widget.Latest.Posts.php" afterPath="$PROJECT_DIR$/core/viewModels/widgets/vm.Widget.Latest.Posts.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/viewModels/widgets/vm.Widget.Recent.Comments.php" afterPath="$PROJECT_DIR$/core/viewModels/widgets/vm.Widget.Recent.Comments.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dash/dash.php" afterPath="$PROJECT_DIR$/dash/dash.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dash/of_inc/includes/class-options-sanitization.php" afterPath="$PROJECT_DIR$/dash/of_inc/includes/class-options-sanitization.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dash/options.php" afterPath="$PROJECT_DIR$/dash/options.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/functions.php" afterPath="$PROJECT_DIR$/functions.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/404.js" afterPath="$PROJECT_DIR$/src/js/404.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/actionPage.js" afterPath="$PROJECT_DIR$/src/js/actionPage.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/archive.js" afterPath="$PROJECT_DIR$/src/js/archive.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/frontPage.js" afterPath="$PROJECT_DIR$/src/js/frontPage.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/home.js" afterPath="$PROJECT_DIR$/src/js/home.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/manage.js" afterPath="$PROJECT_DIR$/src/js/manage.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/me.js" afterPath="$PROJECT_DIR$/src/js/me.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/modules/addCoupon.js" afterPath="$PROJECT_DIR$/src/js/modules/addCoupon.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/modules/addMember.js" afterPath="$PROJECT_DIR$/src/js/modules/addMember.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/modules/animateAnchor.js" afterPath="$PROJECT_DIR$/src/js/modules/animateAnchor.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/modules/ban.js" afterPath="$PROJECT_DIR$/src/js/modules/ban.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/modules/bootstrap-flat.js" afterPath="$PROJECT_DIR$/src/js/modules/bootstrap-flat.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/modules/buy.js" afterPath="$PROJECT_DIR$/src/js/modules/buy.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/modules/buyResource.js" afterPath="$PROJECT_DIR$/src/js/modules/buyResource.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/modules/checkout.js" afterPath="$PROJECT_DIR$/src/js/modules/checkout.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/modules/comments.js" afterPath="$PROJECT_DIR$/src/js/modules/comments.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/modules/continuePay.js" afterPath="$PROJECT_DIR$/src/js/modules/continuePay.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/modules/contribute.js" afterPath="$PROJECT_DIR$/src/js/modules/contribute.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/modules/cookie.js" afterPath="$PROJECT_DIR$/src/js/modules/cookie.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/modules/creditsCharge.js" afterPath="$PROJECT_DIR$/src/js/modules/creditsCharge.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/modules/dailySign.js" afterPath="$PROJECT_DIR$/src/js/modules/dailySign.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/modules/deleteCoupon.js" afterPath="$PROJECT_DIR$/src/js/modules/deleteCoupon.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/modules/deleteMember.js" afterPath="$PROJECT_DIR$/src/js/modules/deleteMember.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/modules/deleteOrder.js" afterPath="$PROJECT_DIR$/src/js/modules/deleteOrder.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/modules/findPass.js" afterPath="$PROJECT_DIR$/src/js/modules/findPass.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/modules/fixFooter.js" afterPath="$PROJECT_DIR$/src/js/modules/fixFooter.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/modules/fixProductContent.js" afterPath="$PROJECT_DIR$/src/js/modules/fixProductContent.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/modules/follow.js" afterPath="$PROJECT_DIR$/src/js/modules/follow.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/modules/globalConfig.js" afterPath="$PROJECT_DIR$/src/js/modules/globalConfig.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/modules/imageUploader.js" afterPath="$PROJECT_DIR$/src/js/modules/imageUploader.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/modules/joinVip.js" afterPath="$PROJECT_DIR$/src/js/modules/joinVip.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/modules/loadNextPage.js" afterPath="$PROJECT_DIR$/src/js/modules/loadNextPage.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/modules/loading.js" afterPath="$PROJECT_DIR$/src/js/modules/loading.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/modules/manageOrderStatus.js" afterPath="$PROJECT_DIR$/src/js/modules/manageOrderStatus.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/modules/managePosts.js" afterPath="$PROJECT_DIR$/src/js/modules/managePosts.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/modules/manageProducts.js" afterPath="$PROJECT_DIR$/src/js/modules/manageProducts.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/modules/modalSignBox.js" afterPath="$PROJECT_DIR$/src/js/modules/modalSignBox.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/modules/msgbox.js" afterPath="$PROJECT_DIR$/src/js/modules/msgbox.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/modules/openBind.js" afterPath="$PROJECT_DIR$/src/js/modules/openBind.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/modules/pm.js" afterPath="$PROJECT_DIR$/src/js/modules/pm.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/modules/postStar.js" afterPath="$PROJECT_DIR$/src/js/modules/postStar.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/modules/referral.js" afterPath="$PROJECT_DIR$/src/js/modules/referral.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/modules/resetPass.js" afterPath="$PROJECT_DIR$/src/js/modules/resetPass.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/modules/saveSettings.js" afterPath="$PROJECT_DIR$/src/js/modules/saveSettings.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/modules/scroll.js" afterPath="$PROJECT_DIR$/src/js/modules/scroll.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/modules/seasonalBg.js" afterPath="$PROJECT_DIR$/src/js/modules/seasonalBg.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/modules/signHelp.js" afterPath="$PROJECT_DIR$/src/js/modules/signHelp.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/modules/signin.js" afterPath="$PROJECT_DIR$/src/js/modules/signin.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/modules/signup.js" afterPath="$PROJECT_DIR$/src/js/modules/signup.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/modules/toggle.js" afterPath="$PROJECT_DIR$/src/js/modules/toggle.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/modules/togglePane.js" afterPath="$PROJECT_DIR$/src/js/modules/togglePane.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/modules/unstar.js" afterPath="$PROJECT_DIR$/src/js/modules/unstar.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/modules/usermeta.js" afterPath="$PROJECT_DIR$/src/js/modules/usermeta.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/modules/utils.js" afterPath="$PROJECT_DIR$/src/js/modules/utils.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/oauth.js" afterPath="$PROJECT_DIR$/src/js/oauth.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/page.js" afterPath="$PROJECT_DIR$/src/js/page.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/product.js" afterPath="$PROJECT_DIR$/src/js/product.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/products.js" afterPath="$PROJECT_DIR$/src/js/products.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/single.js" afterPath="$PROJECT_DIR$/src/js/single.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/site-utils.js" afterPath="$PROJECT_DIR$/src/js/site-utils.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/uc.js" afterPath="$PROJECT_DIR$/src/js/uc.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/vender/smooth-scroll.js" afterPath="$PROJECT_DIR$/src/js/vender/smooth-scroll.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/vender/sweet-alert.js" afterPath="$PROJECT_DIR$/src/js/vender/sweet-alert.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/php/asset.Constant.php" afterPath="$PROJECT_DIR$/src/php/asset.Constant.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style.css" afterPath="$PROJECT_DIR$/style.css" />
     </list>
     <ignored path="Tinection 2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -48,21 +375,101 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="options.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dash/options.php">
+      <file leaf-file-name="actionPage.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/js/actionPage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="314" column="58" selection-start-line="314" selection-start-column="38" selection-end-line="314" selection-end-column="58" />
+            <state relative-caret-position="280">
+              <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="class-options-sanitization.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/dash/of_inc/includes/class-options-sanitization.php">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="84" column="21" selection-start-line="84" selection-start-column="21" selection-end-line="84" selection-end-column="21" />
+            <state relative-caret-position="112">
+              <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="en_US.po" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/languages/en_US.po">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="196">
+              <caret line="3517" column="7" selection-start-line="3517" selection-start-column="7" selection-end-line="3517" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tt.pot" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/languages/tt.pot">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="196">
+              <caret line="6925" column="7" selection-start-line="6925" selection-start-column="7" selection-end-line="6925" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="zh_CN.po" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/languages/zh_CN.po">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="196">
+              <caret line="6916" column="8" selection-start-line="6916" selection-start-column="8" selection-end-line="6916" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mod.Shop.ReplyForm.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/modules/shop/mod.Shop.ReplyForm.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="188">
+              <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mod.Shop.Sidebar.Left.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/modules/shop/mod.Shop.Sidebar.Left.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="196">
+              <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mod.Shop.Sidebar.Right.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/modules/shop/mod.Shop.Sidebar.Right.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="196">
+              <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tpl.Manage.Comments.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/templates/management/tpl.Manage.Comments.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-8">
+              <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tpl.Manage.Coupons.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/templates/management/tpl.Manage.Coupons.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="308">
+              <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -85,57 +492,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/core/modules/management/mg.Tab.Coupons.php" />
-        <option value="$PROJECT_DIR$/core/viewModels/management/vm.Mg.Members.php" />
-        <option value="$PROJECT_DIR$/src/js/modules/globalConfig.js" />
-        <option value="$PROJECT_DIR$/src/js/modules/addMember.js" />
-        <option value="$PROJECT_DIR$/src/js/modules/deleteMember.js" />
-        <option value="$PROJECT_DIR$/core/api/api.Config.php" />
-        <option value="$PROJECT_DIR$/core/api/v1/endpoints/class.Rest.Coupon.Controller.php" />
-        <option value="$PROJECT_DIR$/core/api/v1/endpoints/class.Rest.Member.Controller.php" />
-        <option value="$PROJECT_DIR$/core/modules/management/mg.Tab.Members.php" />
-        <option value="$PROJECT_DIR$/core/templates/management/tpl.Manage.Order.php" />
-        <option value="$PROJECT_DIR$/core/viewModels/management/vm.Mg.Orders.php" />
-        <option value="$PROJECT_DIR$/core/modules/management/mg.NavMenu.php" />
-        <option value="$PROJECT_DIR$/core/modules/management/mg.Tab.Orders.php" />
-        <option value="$PROJECT_DIR$/core/functions/func.Loader.php" />
-        <option value="$PROJECT_DIR$/core/viewModels/management/vm.Mg.Order.php" />
-        <option value="$PROJECT_DIR$/src/js/manage.js" />
-        <option value="$PROJECT_DIR$/src/css/manage.less" />
-        <option value="$PROJECT_DIR$/core/api/v1/endpoints/class.Rest.Order.Controller.php" />
-        <option value="$PROJECT_DIR$/src/js/modules/manageOrderStatus.js" />
-        <option value="$PROJECT_DIR$/core/templates/site/tpl.Alipay.Notify.php" />
-        <option value="$PROJECT_DIR$/core/modules/management/mg.Tab.Order.php" />
-        <option value="$PROJECT_DIR$/core/templates/plates/emails/order-status.php" />
-        <option value="$PROJECT_DIR$/core/functions/func.Credit.php" />
-        <option value="$PROJECT_DIR$/core/viewModels/me/vm.Me.Order.php" />
-        <option value="$PROJECT_DIR$/core/templates/plates/emails/order-status-admin.php" />
+        <option value="$PROJECT_DIR$/core/templates/oauth/tpl.OAuth.php" />
+        <option value="$PROJECT_DIR$/core/templates/site/tpl.Captcha.php" />
         <option value="$PROJECT_DIR$/core/templates/site/tpl.Privacy.php" />
-        <option value="$PROJECT_DIR$/core/functions/shop/func.Shop.Order.php" />
-        <option value="$PROJECT_DIR$/core/templates/plates/emails/login.php" />
-        <option value="$PROJECT_DIR$/core/templates/plates/emails/register.php" />
-        <option value="$PROJECT_DIR$/core/templates/plates/emails/register-admin.php" />
-        <option value="$PROJECT_DIR$/src/js/modules/togglePane.js" />
-        <option value="$PROJECT_DIR$/src/js/single.js" />
-        <option value="$PROJECT_DIR$/src/js/product.js" />
-        <option value="$PROJECT_DIR$/core/functions/func.ShortCode.php" />
-        <option value="$PROJECT_DIR$/core/functions/func.Rewrite.php" />
-        <option value="$PROJECT_DIR$/src/css/modules/content/article-content.less" />
-        <option value="$PROJECT_DIR$/src/css/modules/content/toggle-pane.less" />
-        <option value="$PROJECT_DIR$/core/templates/plates/emails/login-fail.php" />
-        <option value="$PROJECT_DIR$/core/functions/shop/func.Shop.php" />
-        <option value="$PROJECT_DIR$/core/functions/func.Member.php" />
-        <option value="$PROJECT_DIR$/core/functions/func.Download.php" />
-        <option value="$PROJECT_DIR$/src/js/modules/buyResource.js" />
-        <option value="$PROJECT_DIR$/core/functions/Constants.php" />
-        <option value="$PROJECT_DIR$/core/modules/mod.Footer.php" />
+        <option value="$PROJECT_DIR$/core/templates/site/tpl.QrCode.php" />
+        <option value="$PROJECT_DIR$/core/templates/site/tpl.UpgradeBrowser.php" />
+        <option value="$PROJECT_DIR$/core/templates/tpl.Error.php" />
+        <option value="$PROJECT_DIR$/core/templates/uc/tpl.UC.Activities.php" />
+        <option value="$PROJECT_DIR$/core/templates/uc/tpl.UC.Chat.php" />
+        <option value="$PROJECT_DIR$/core/templates/uc/tpl.UC.Comments.php" />
+        <option value="$PROJECT_DIR$/core/templates/uc/tpl.UC.Followers.php" />
+        <option value="$PROJECT_DIR$/core/templates/uc/tpl.UC.Following.php" />
+        <option value="$PROJECT_DIR$/core/templates/uc/tpl.UC.Latest.php" />
+        <option value="$PROJECT_DIR$/core/templates/uc/tpl.UC.Profile.php" />
+        <option value="$PROJECT_DIR$/core/templates/uc/tpl.UC.Stars.php" />
+        <option value="$PROJECT_DIR$/core/templates/uc/tpl.UC.php" />
+        <option value="$PROJECT_DIR$/core/viewModels/uc/vm.UC.Chat.php" />
+        <option value="$PROJECT_DIR$/core/viewModels/uc/vm.UC.Comments.php" />
+        <option value="$PROJECT_DIR$/core/viewModels/uc/vm.UC.Followers.php" />
+        <option value="$PROJECT_DIR$/core/viewModels/uc/vm.UC.Following.php" />
+        <option value="$PROJECT_DIR$/core/viewModels/uc/vm.UC.Latest.php" />
+        <option value="$PROJECT_DIR$/core/viewModels/uc/vm.UC.Profile.php" />
+        <option value="$PROJECT_DIR$/core/viewModels/uc/vm.UC.Stars.php" />
+        <option value="$PROJECT_DIR$/core/viewModels/vm.Base.php" />
+        <option value="$PROJECT_DIR$/core/viewModels/vm.Category.Posts.php" />
+        <option value="$PROJECT_DIR$/core/viewModels/vm.Date.Archive.php" />
+        <option value="$PROJECT_DIR$/core/viewModels/vm.Home.FeaturedCategory.php" />
+        <option value="$PROJECT_DIR$/core/viewModels/vm.Home.Latest.php" />
+        <option value="$PROJECT_DIR$/core/viewModels/vm.Home.Popular.php" />
+        <option value="$PROJECT_DIR$/core/viewModels/vm.Home.Slides.php" />
+        <option value="$PROJECT_DIR$/core/viewModels/vm.Post.Comments.php" />
+        <option value="$PROJECT_DIR$/core/viewModels/vm.ProductGallery.php" />
+        <option value="$PROJECT_DIR$/core/viewModels/vm.Single.Post.php" />
+        <option value="$PROJECT_DIR$/core/viewModels/vm.Tag.Posts.php" />
+        <option value="$PROJECT_DIR$/core/viewModels/vm.Term.Posts.php" />
+        <option value="$PROJECT_DIR$/core/viewModels/widgets/vm.Widget.Author.php" />
+        <option value="$PROJECT_DIR$/core/viewModels/widgets/vm.Widget.HotHit.Posts.php" />
+        <option value="$PROJECT_DIR$/core/viewModels/widgets/vm.Widget.HotReviewed.Posts.php" />
+        <option value="$PROJECT_DIR$/core/viewModels/widgets/vm.Widget.Latest.Posts.php" />
+        <option value="$PROJECT_DIR$/core/viewModels/widgets/vm.Widget.Recent.Comments.php" />
         <option value="$PROJECT_DIR$/dash/dash.php" />
-        <option value="$PROJECT_DIR$/core/api/api.Utils.php" />
-        <option value="$PROJECT_DIR$/core/functions/func.Tint.php" />
-        <option value="$PROJECT_DIR$/core/modules/mod.Footer.Simple.php" />
-        <option value="$PROJECT_DIR$/dash/options.php" />
-        <option value="$PROJECT_DIR$/core/classes/class.Open.php" />
-        <option value="$PROJECT_DIR$/dash/of_inc/includes/class-options-sanitization.php" />
+        <option value="$PROJECT_DIR$/src/js/404.js" />
+        <option value="$PROJECT_DIR$/src/js/actionPage.js" />
+        <option value="$PROJECT_DIR$/core/languages/en_US.po" />
+        <option value="$PROJECT_DIR$/core/languages/tt.pot" />
+        <option value="$PROJECT_DIR$/core/languages/zh_CN.po" />
+        <option value="$PROJECT_DIR$/core/modules/shop/mod.Shop.ReplyForm.php" />
+        <option value="$PROJECT_DIR$/core/modules/shop/mod.Shop.Sidebar.Left.php" />
+        <option value="$PROJECT_DIR$/core/modules/shop/mod.Shop.Sidebar.Right.php" />
+        <option value="$PROJECT_DIR$/core/templates/management/tpl.Manage.Comments.php" />
+        <option value="$PROJECT_DIR$/core/templates/management/tpl.Manage.Coupons.php" />
+        <option value="$PROJECT_DIR$/style.css" />
       </list>
     </option>
   </component>
@@ -217,8 +624,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -247,60 +652,6 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tint" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tint" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tint" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tint" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tint" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tint" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="dash" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -315,33 +666,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="dash" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="of_inc" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tint" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tint" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dash" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="of_inc" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="includes" />
+              <option name="myItemId" value="core" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -361,6 +686,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -868,7 +1195,8 @@
       <workItem from="1484739412583" duration="9656000" />
       <workItem from="1484828037278" duration="11311000" />
       <workItem from="1484892754130" duration="4274000" />
-      <workItem from="1484910964924" duration="4389000" />
+      <workItem from="1484910964924" duration="5264000" />
+      <workItem from="1484992957498" duration="3038000" />
     </task>
     <task id="LOCAL-00001" summary="Add change log and contributing doc">
       <created>1476711242287</created>
@@ -888,7 +1216,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1966051000" />
+    <option name="totallyTimeSpent" value="1969964000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -903,12 +1231,13 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28624734" sideWeight="0.4927798" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28944564" sideWeight="0.4927798" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32968238" sideWeight="0.4978678" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20824295" sideWeight="0.5399787" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13062099" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286334" sideWeight="0.4978701" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20065077" sideWeight="0.47228146" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3264642" sideWeight="0.47542736" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3264642" sideWeight="0.47542736" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20824295" sideWeight="0.46002132" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17430703" sideWeight="0.5072202" order="2" side_tool="true" content_ui="tabs" />
@@ -920,7 +1249,6 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329718" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286334" sideWeight="0.4978701" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3991323" sideWeight="0.4978678" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1015,465 +1343,410 @@
     </PATH>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/core/templates/plates/emails/register-confirm.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/viewModels/me/vm.Me.Order.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1568">
-          <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/templates/plates/emails/order-status-admin.php">
+    <entry file="file://$PROJECT_DIR$/core/templates/oauth/tpl.OAuth.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
-          <caret line="7" column="43" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/css/single.less">
+    <entry file="file://$PROJECT_DIR$/core/templates/site/tpl.Captcha.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="105" column="26" selection-start-line="105" selection-start-column="20" selection-end-line="105" selection-end-column="26" />
+        <state relative-caret-position="254">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/templates/site/tpl.Privacy.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="39" column="25" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/templates/plates/emails/order-status.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="118" />
+        <state relative-caret-position="196">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/templates/site/tpl.QrPay.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="73" column="128" selection-start-line="73" selection-start-column="111" selection-end-line="73" selection-end-column="128" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/functions/shop/func.Shop.Address.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1064">
-          <caret line="190" column="23" selection-start-line="190" selection-start-column="4" selection-end-line="190" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/modules/management/mg.Tab.Order.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1652">
-          <caret line="75" column="179" selection-start-line="75" selection-start-column="171" selection-end-line="75" selection-end-column="179" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/modules/checkout.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="71" column="53" selection-start-line="71" selection-start-column="43" selection-end-line="71" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/templates/site/tpl.CheckOut.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="123" column="208" selection-start-line="123" selection-start-column="198" selection-end-line="123" selection-end-column="208" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../WebServer/WWW/wordpress_map/wp-includes/http.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4984">
-          <caret line="186" column="19" selection-start-line="186" selection-start-column="18" selection-end-line="186" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../WebServer/WWW/wordpress_map/wp-includes/class-http.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5152">
-          <caret line="190" column="31" selection-start-line="190" selection-start-column="31" selection-end-line="190" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/functions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="24" selection-end-column="100" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/viewModels/management/vm.Mg.Order.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1372">
-          <caret line="60" column="37" selection-start-line="60" selection-start-column="27" selection-end-line="60" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/templates/plates/emails/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="4" column="113" selection-start-line="4" selection-start-column="113" selection-end-line="4" selection-end-column="113" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/templates/plates/emails/register-admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="7" column="81" selection-start-line="7" selection-start-column="81" selection-end-line="7" selection-end-column="81" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/templates/plates/emails/register.php">
+    <entry file="file://$PROJECT_DIR$/core/templates/site/tpl.QrCode.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
-          <caret line="6" column="79" selection-start-line="6" selection-start-column="79" selection-end-line="6" selection-end-column="79" />
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/templates/plates/emails/findpass.php">
+    <entry file="file://$PROJECT_DIR$/core/templates/site/tpl.UpgradeBrowser.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="-8">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/functions/shop/func.Shop.Order.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="56">
-          <caret line="457" column="54" selection-start-line="457" selection-start-column="54" selection-end-line="457" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/dash/js/my_quicktags.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-252">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/single.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="512">
-          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/modules/togglePane.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="22" column="43" selection-start-line="22" selection-start-column="43" selection-end-line="22" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/product.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="625">
-          <caret line="35" column="46" selection-start-line="35" selection-start-column="46" selection-end-line="35" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/functions/func.ShortCode.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="20" column="186" selection-start-line="20" selection-start-column="186" selection-end-line="20" selection-end-column="186" />
-          <folding>
-            <marker date="1484831224278" expanded="true" signature="617:623" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/functions/func.Rewrite.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16408">
-          <caret line="599" column="13" selection-start-line="599" selection-start-column="13" selection-end-line="599" selection-end-column="13" />
-          <folding>
-            <marker date="1484832372016" expanded="true" signature="4618:4736" ph="SELECT user_... $" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/functions/func.Credit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11312">
-          <caret line="415" column="25" selection-start-line="415" selection-start-column="25" selection-end-line="415" selection-end-column="25" />
-          <folding>
-            <marker date="1484486824258" expanded="true" signature="9722:9893" ph="DELETE FROM " />
-            <marker date="1484486824258" expanded="true" signature="10997:11101" ph="SELECT * FRO... wp_usermeta" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/functions/func.Loader.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2268">
-          <caret line="92" column="35" selection-start-line="92" selection-start-column="35" selection-end-line="92" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/css/modules/content/article-content.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="20" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/css/modules/content/toggle-pane.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/templates/plates/emails/login-fail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dash/of_inc/includes/class-options-framework-admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="102" column="47" selection-start-line="102" selection-start-column="31" selection-end-line="102" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/functions/func.Member.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1484">
-          <caret line="350" column="0" selection-start-line="350" selection-start-column="0" selection-end-line="350" selection-end-column="0" />
-          <folding>
-            <element signature="e#294#431#0#PHP" expanded="false" />
-            <element signature="n#tt_get_user_member_orders#0;n#!!top" expanded="false" />
-            <element signature="e#858#932#0#PHP" expanded="false" />
-            <element signature="n#tt_count_user_member_orders#0;n#!!top" expanded="false" />
-            <element signature="e#1274#1353#0#PHP" expanded="false" />
-            <element signature="n#tt_get_member_type_string#0;n#!!top" expanded="false" />
-            <element signature="e#1932#2016#0#PHP" expanded="false" />
-            <element signature="n#tt_get_member_status_string#0;n#!!top" expanded="false" />
-            <element signature="e#2405#2495#0#PHP" expanded="false" />
-            <element signature="n#tt_get_member#0;n#!!top" expanded="false" />
-            <element signature="e#2725#2820#0#PHP" expanded="false" />
-            <element signature="n#tt_get_member_row#0;n#!!top" expanded="false" />
-            <element signature="e#3069#3257#0#PHP" expanded="false" />
-            <element signature="n#tt_add_or_update_member#0;n#!!top" expanded="false" />
-            <element signature="e#6598#6669#0#PHP" expanded="false" />
-            <element signature="n#tt_delete_member#0;n#!!top" expanded="false" />
-            <element signature="e#6964#7030#0#PHP" expanded="false" />
-            <element signature="n#tt_delete_member_by_id#0;n#!!top" expanded="false" />
-            <element signature="e#7316#7467#0#PHP" expanded="false" />
-            <element signature="n#tt_get_vip_members#0;n#!!top" expanded="false" />
-            <element signature="e#8222#8304#0#PHP" expanded="false" />
-            <element signature="n#tt_count_vip_members#0;n#!!top" expanded="false" />
-            <element signature="e#8969#9040#0#PHP" expanded="false" />
-            <element signature="n#tt_get_member_icon#0;n#!!top" expanded="false" />
-            <element signature="e#9491#9571#0#PHP" expanded="false" />
-            <element signature="n#tt_get_vip_price#0;n#!!top" expanded="false" />
-            <element signature="e#10098#10203#0#PHP" expanded="false" />
-            <element signature="n#tt_create_vip_order#0;n#!!top" expanded="false" />
-            <element signature="e#11929#12019#0#PHP" expanded="false" />
-            <element signature="n#tt_get_vip_product_name#0;n#!!top" expanded="false" />
-            <marker date="1484897264898" expanded="true" signature="686:790" ph="SELECT * FRO... " />
-            <marker date="1484897264898" expanded="true" signature="1150:1223" ph="SELECT COUNT... " />
-            <marker date="1484897264898" expanded="true" signature="2652:2694" ph="SELECT * FRO... ${$members_table}" />
-            <marker date="1484897264898" expanded="true" signature="2986:3033" ph="SELECT * FRO... ${$members_table}" />
-            <marker date="1484897264898" expanded="true" signature="7866:7956" ph="SELECT * FRO... ${$members_table}" />
-            <marker date="1484897264898" expanded="true" signature="8018:8108" ph="SELECT * FRO... ${$members_table}" />
-            <marker date="1484897264898" expanded="true" signature="8679:8757" ph="SELECT COUNT... ${$members_table}" />
-            <marker date="1484897264898" expanded="true" signature="8802:8880" ph="SELECT COUNT... ${$members_table}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/classes/class.Member.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="896">
-          <caret line="43" column="18" selection-start-line="43" selection-start-column="18" selection-end-line="43" selection-end-column="18" />
-          <folding>
-            <element signature="n#__construct#0;n#Member#0;n#!!top" expanded="false" />
-            <element signature="e#2454#2531#0#PHP" expanded="false" />
-            <element signature="n#get_vip_join_time#0;n#Member#0;n#!!top" expanded="false" />
-            <element signature="e#2818#2895#0#PHP" expanded="false" />
-            <element signature="n#get_vip_expire_time#0;n#Member#0;n#!!top" expanded="false" />
-            <element signature="n#is_vip#0;n#Member#0;n#!!top" expanded="false" />
-            <element signature="n#is_monthly_vip#0;n#Member#0;n#!!top" expanded="false" />
-            <element signature="n#is_annual_vip#0;n#Member#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/functions/func.API.Actions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-168">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/modules/buyResource.js">
+    <entry file="file://$PROJECT_DIR$/core/templates/tpl.Error.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
-          <caret line="60" column="37" selection-start-line="60" selection-start-column="37" selection-end-line="60" selection-end-column="37" />
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/functions/func.Download.php">
+    <entry file="file://$PROJECT_DIR$/core/templates/uc/tpl.UC.Activities.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="563">
-          <caret line="145" column="24" selection-start-line="145" selection-start-column="24" selection-end-line="145" selection-end-column="24" />
+        <state relative-caret-position="196">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/api/v1/endpoints/class.Rest.BoughtResource.Controller.php">
+    <entry file="file://$PROJECT_DIR$/core/templates/uc/tpl.UC.Chat.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
-          <caret line="70" column="96" selection-start-line="70" selection-start-column="89" selection-end-line="70" selection-end-column="96" />
+        <state relative-caret-position="196">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/functions/shop/func.Shop.php">
+    <entry file="file://$PROJECT_DIR$/core/templates/uc/tpl.UC.Comments.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="539" column="181" selection-start-line="539" selection-start-column="181" selection-end-line="539" selection-end-column="181" />
-          <folding>
-            <marker date="1484896696807" expanded="true" signature="17585:17591" ph=" " />
-            <marker date="1484896696807" expanded="true" signature="17922:17928" ph=" " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/functions/func.Metabox.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="156" column="44" selection-start-line="156" selection-start-column="24" selection-end-line="156" selection-end-column="53" />
+        <state relative-caret-position="196">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/functions/Constants.php">
+    <entry file="file://$PROJECT_DIR$/core/templates/uc/tpl.UC.Followers.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="52" column="37" selection-start-line="52" selection-start-column="30" selection-end-line="52" selection-end-column="37" />
+        <state relative-caret-position="196">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/modules/mod.Footer.php">
+    <entry file="file://$PROJECT_DIR$/core/templates/uc/tpl.UC.Following.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="1" column="3" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
-          <folding>
-            <element signature="e#6#291#0#PHP" expanded="true" />
-            <marker date="1484917229998" expanded="true" signature="4207:4213" ph=" " />
-            <marker date="1484917229998" expanded="true" signature="4350:4356" ph=" " />
-            <marker date="1484917229998" expanded="true" signature="4366:4381" ph="..." />
-            <marker date="1484917229998" expanded="true" signature="4388:4394" ph=" " />
-          </folding>
+        <state relative-caret-position="196">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/templates/uc/tpl.UC.Latest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/templates/uc/tpl.UC.Profile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/templates/uc/tpl.UC.Stars.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/templates/uc/tpl.UC.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/viewModels/uc/vm.UC.Chat.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/viewModels/uc/vm.UC.Comments.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/viewModels/uc/vm.UC.Followers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/viewModels/uc/vm.UC.Following.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/viewModels/uc/vm.UC.Latest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/viewModels/uc/vm.UC.Profile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/viewModels/uc/vm.UC.Stars.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/viewModels/vm.Base.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/viewModels/vm.Category.Posts.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/viewModels/vm.Date.Archive.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/viewModels/vm.Home.FeaturedCategory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/viewModels/vm.Home.Latest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/viewModels/vm.Home.Popular.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/viewModels/vm.Home.Slides.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/viewModels/vm.Post.Comments.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/viewModels/vm.ProductGallery.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/viewModels/vm.Single.Post.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/viewModels/vm.Tag.Posts.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/viewModels/vm.Term.Posts.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/viewModels/widgets/vm.Widget.Author.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/viewModels/widgets/vm.Widget.HotHit.Posts.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/viewModels/widgets/vm.Widget.HotReviewed.Posts.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/viewModels/widgets/vm.Widget.Latest.Posts.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/viewModels/widgets/vm.Widget.Recent.Comments.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dash/dash.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/404.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/actionPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/languages/en_US.po">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="3517" column="7" selection-start-line="3517" selection-start-column="7" selection-end-line="3517" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/languages/tt.pot">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="6925" column="7" selection-start-line="6925" selection-start-column="7" selection-end-line="6925" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/languages/zh_CN.po">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="6916" column="8" selection-start-line="6916" selection-start-column="8" selection-end-line="6916" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/modules/shop/mod.Shop.ReplyForm.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/modules/shop/mod.Shop.Sidebar.Left.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/modules/shop/mod.Shop.Sidebar.Right.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/templates/management/tpl.Manage.Comments.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/templates/management/tpl.Manage.Coupons.php">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
-          <caret line="132" column="224" selection-start-line="132" selection-start-column="224" selection-end-line="132" selection-end-column="224" />
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/api/api.Utils.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="47" column="56" selection-start-line="47" selection-start-column="56" selection-end-line="47" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/functions/func.Tint.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="69" column="62" selection-start-line="69" selection-start-column="62" selection-end-line="69" selection-end-column="62" />
-          <folding>
-            <marker date="1484917606086" expanded="true" signature="1974:1984" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/modules/mod.Footer.Simple.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="25" column="224" selection-start-line="25" selection-start-column="224" selection-end-line="25" selection-end-column="224" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/functions/func.User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="268" column="21" selection-start-line="268" selection-start-column="13" selection-end-line="268" selection-end-column="21" />
-          <folding>
-            <marker date="1483535397380" expanded="true" signature="1827:2003" ph="SELECT SUM(m... wp_postmeta" />
-            <marker date="1483535397380" expanded="true" signature="2270:2393" ph="SELECT COUNT... wp_postmeta" />
-            <marker date="1483535397380" expanded="true" signature="2344:2392" ph="SELECT ID FR... wp_posts" />
-            <marker date="1483535397380" expanded="true" signature="2661:2741" ph="SELECT `post... wp_postmeta" />
-            <marker date="1483535397380" expanded="true" signature="10657:10664" ph="»" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/api/v1/endpoints/class.Rest.Session.Controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2100">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/classes/class.Open.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="615" column="81" selection-start-line="615" selection-start-column="81" selection-end-line="615" selection-end-column="81" />
-          <folding>
-            <marker date="1484918464632" expanded="true" signature="12878:12949" ph="SELECT user_... wp_usermeta" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dash/options.php">
+    <entry file="file://$PROJECT_DIR$/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
-          <caret line="314" column="58" selection-start-line="314" selection-start-column="38" selection-end-line="314" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dash/of_inc/includes/class-options-sanitization.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="84" column="21" selection-start-line="84" selection-start-column="21" selection-end-line="84" selection-end-column="21" />
+          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
           <folding />
         </state>
       </provider>
@@ -1506,6 +1779,6 @@
     </states>
   </component>
   <component name="webServersAuthStorage">
-    <data>AAAAcMzR+I+lF3q+aVv0zX+QKn07XBjQagAzo+xD/1cIYy6MxoTFtondFdgpzIdtsgXqD1LTdKFac77Xj231/RMVeeU3S+kkFl1Gpj4ZqAs1D4ltSG9s9zKlPe7TkppfXAAeZ6MHQt7cIe3/hIwcjGiJUqf2bgyjNrXsopDwaAt58liL</data>
+    <data>AAAAcEzuuH444T3z9cR6RqbVIHYh9d1xNqavWRsNvYQGSXQmS0jfwL0fZUg9HblLocky/V/ZKJxLqvr+52KPYnQ3X10OgFCEN2GIuW6x6irmOk0BTmn9Ic5DfWozBFQeu+sBXmx/VssP+3MeJa5PYnIe9loBZk69TobKKjanNhEb0aKz</data>
   </component>
 </project>

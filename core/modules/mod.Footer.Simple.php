@@ -9,7 +9,7 @@
  * @date 2016/08/24 23:01
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
- * @link https://www.webapproach.net/tint.html
+ * @link https://webapproach.net/tint.html
  */
 ?>
 <!-- Footer -->
@@ -23,7 +23,7 @@
         <span class="sep" role="separator"></span>
         <a href="javascript:void(0)" title="" rel="link" target="_blank"><?php _e('CONTACT', 'tt'); ?></a> <!-- TODO: 联系方式如二维码 -->
     </div>
-    <div class="foot-copyright pull-right">&copy;&nbsp;<?php echo tt_copyright_year(); ?><?php echo ' ' . get_bloginfo('name') . ' All Right Reserved · <b style="color: #ff4425;">♥</b>&nbsp;<a href="' . TT_SITE . '/tint.html" title="Tint" rel="link" target="_blank">Tint</a> & Design by <a href="https://www.webapproach.net" rel="link" title="WebApproach">WebApproach.</a>'; ?>
+    <div class="foot-copyright pull-right">&copy;&nbsp;<?php echo tt_copyright_year(); ?><?php echo ' ' . get_bloginfo('name') . ' All Right Reserved · <b style="color: #ff4425;">♥</b>&nbsp;<a href="' . TT_SITE . '/tint.html" title="Tint" rel="link" target="_blank">Tint</a> & Design by <a href="' . TT_SITE . '" rel="link" title="WebApproach">WebApproach.</a>'; ?>
     </div>
 </footer>
 <?php if(tt_get_option('tt_foot_code')) { echo tt_get_option('tt_foot_code'); } ?>

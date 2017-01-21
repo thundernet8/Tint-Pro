@@ -9,7 +9,7 @@
  * @date 2016/08/26 21:07
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
- * @link https://www.webapproach.net/tint.html
+ * @link https://webapproach.net/tint.html
  */
 ?>
 <?php
@@ -42,7 +42,7 @@ add_action('load-themes.php', 'tt_force_permalink');
  * @return  void | false
  */
 function tt_rewrite_short_link(){
-    // 短链接前缀, 如https://www.webapproach.net/go/xxx中的go，为了便于识别短链接
+    // 短链接前缀, 如https://webapproach.net/go/xxx中的go，为了便于识别短链接
     $prefix = tt_get_option('tt_short_link_prefix', 'go');
     //$url = Utils::getCurrentUrl(); //该方法需要利用wp的query
     $url = Utils::getPHPCurrentUrl();
