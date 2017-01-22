@@ -375,15 +375,15 @@ function optionsframework_options() {
         'options' => $available_sidebars
     );
 
-    $options[] = array(
-        'name' => __('404 Sidebar', 'tt'),
-        'desc' => __('Select a sidebar for 404 page', 'tt'),
-        'id'   => 'tt_404_sidebar',
-        'std'  => array('sidebar_common' => true),
-        'type' => 'select',
-        'class' => 'mini',
-        'options' => $available_sidebars
-    );
+//    $options[] = array(
+//        'name' => __('404 Sidebar', 'tt'),
+//        'desc' => __('Select a sidebar for 404 page', 'tt'),
+//        'id'   => 'tt_404_sidebar',
+//        'std'  => array('sidebar_common' => true),
+//        'type' => 'select',
+//        'class' => 'mini',
+//        'options' => $available_sidebars
+//    );
 
     $options[] = array(
         'name' => __('Page Sidebar', 'tt'),
