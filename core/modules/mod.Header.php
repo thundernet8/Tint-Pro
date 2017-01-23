@@ -16,7 +16,25 @@
 <body <?php body_class('is-loadingApp'); ?>>
     <div class="loading-line"></div>
     <header class="header common-header white">
+        <input type="checkbox" id="menustate" class="menustate hide">
         <nav id="header-nav" class="navigation container clearfix" role="navigation">
+            <!-- Menu Icon -->
+            <li class="menuicon visible-xs-block">
+                <label class="menuicon-label" for="menustate" aria-hidden="true">
+					<span class="menuicon-bread menuicon-bread-top">
+						<span class="menuicon-bread-crust menuicon-bread-crust-top"></span>
+					</span>
+                    <span class="menuicon-bread menuicon-bread-bottom">
+						<span class="menuicon-bread-crust menuicon-bread-crust-bottom"></span>
+					</span>
+                </label>
+<!--                <a href="#menustate" class="menuanchor menuanchor-open" id="menuanchor-open">-->
+<!--                    <span class="menuanchor-label">Open Menu</span>-->
+<!--                </a>-->
+<!--                <a href="#" class="menuanchor menuanchor-close" id="menuanchor-close">-->
+<!--                    <span class="menuanchor-label">Close Menu</span>-->
+<!--                </a>-->
+            </li>
             <!-- Logo -->
             <a class="logo nav-col" href="<?php echo home_url(); ?>" title="<?php echo get_bloginfo('name'); ?>">
                 <img src="<?php echo tt_get_option('tt_logo'); ?>" alt="<?php echo get_bloginfo('name'); ?>">

@@ -420,3 +420,58 @@ input::-webkit-input-placeholder,
 input::-moz-placeholder {
   font-style: italic;
 }
+
+
+// 响应式
+@media (max-width: 767px) {
+    body.home {
+        &>#content {
+            &>#mod-show {
+                padding: 10px 0;
+                margin-bottom: 10px;
+                &>#slider {
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    .slider-content {
+                        padding: 10px !important;
+                    }
+                    .slider-title {
+                        font-size: 1.4rem;
+                    }
+                    &>.unslider {
+                        &>.unslider-nav {
+                            bottom: 10px;
+                        }
+                    }
+                }
+                &>#popular {
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    margin-top: 10px;
+                    &>.block3-widget {
+                        &>h2 {
+                            display: none;
+                        }
+                    }
+                }
+            }
+            &>#mod-featuredCats {
+                padding-top: 10px;
+                margin-bottom: 10px;
+            }
+            &>#mod-insideContent {
+                &>.main {
+                    padding: 10px 15px;
+                    .block5-widget {
+                        &>.widget-title {
+                            margin-top: 0;
+                        }
+                    }
+                }
+                &>.sidebar {
+                    padding: 10px 0;
+                }
+            }
+        }
+    }
+}

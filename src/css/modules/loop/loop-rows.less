@@ -114,3 +114,37 @@
         }
     }
 }
+
+
+// 响应式
+
+@media (max-width: 480px) {
+    .loop-rows {
+        article {
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+        }
+        article.post {
+            &>.entry-thumb {
+                float: none;
+                width: 100%;
+                margin-right: 0;
+            }
+            &>.entry-detail {
+                min-height: 50px;
+            }
+        }
+        &+nav {
+            padding-right: 0;
+            text-align: center;
+            &>.pagination {
+                padding: 0;
+                margin: 10px auto;
+                overflow: hidden;
+            }
+            &>.page-nums {
+                display: none;
+            }
+        }
+    }
+}

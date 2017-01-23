@@ -77,3 +77,18 @@ body {
 @import "widgets/recent-comments";
 @import "widgets/uc";
 @import "widgets/donate";
+
+
+// 响应式
+
+@media (max-width: 480px) {
+    #sidebar {
+        &>.widget {
+            padding: 10px 15px;
+            margin-bottom: 10px;
+        }
+        &>.float-widget-mirror {
+            display: none;
+        }
+    }
+}
