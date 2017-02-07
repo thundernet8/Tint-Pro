@@ -12,7 +12,7 @@
  * @link https://webapproach.net/tint.html
  */
 ?>
-<?
+<?php
 
 /**
  * 获取用户开通会员订单记录

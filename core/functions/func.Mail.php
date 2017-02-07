@@ -25,7 +25,8 @@
 function tt_switch_mailer($phpmailer){
     $mailer = tt_get_option('tt_default_mailer');
     if($mailer === 'smtp'){
-        $phpmailer->isSMTP();
+        //$phpmailer->isSMTP();
+        $phpmailer->Mailer = 'smtp';
         $phpmailer->Host = tt_get_option('tt_smtp_host');
         $phpmailer->SMTPAuth = true; // Force it to use Username and Password to authenticate
         $phpmailer->Port = tt_get_option('tt_smtp_port');
@@ -35,7 +36,9 @@ function tt_switch_mailer($phpmailer){
         // Additional settings…
         $phpmailer->SMTPSecure = tt_get_option('tt_smtp_secure');
         $phpmailer->FromName = tt_get_option('tt_smtp_name');
-        //$phpmailer->From = "you@yourdomail.com"; // 多数SMTP提供商要求发信人与SMTP服务器匹配，自定义发件人地址无效
+        $phpmailer->From = $phpmailer->Username; // tt_get_option('tt_mail_custom_address'); // 多数SMTP提供商要求发信人与SMTP服务器匹配，自定义发件人地址可能无效
+        $phpmailer->Sender = $phpmailer->From; //Return-Path
+        $phpmailer->AddReplyTo($phpmailer->From,$phpmailer->FromName); //Reply-To
     }else{
         // when use php mail
         $phpmailer->FromName = tt_get_option('tt_mail_custom_sender');

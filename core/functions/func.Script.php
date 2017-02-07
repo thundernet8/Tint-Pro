@@ -50,7 +50,8 @@ function tt_register_scripts() {
         'home'              => esc_url_raw( home_url() ),
         'themeRoot'         => THEME_URI,
         'isHome'            => is_home(),
-        'commentsPerPage'   => tt_get_option('tt_comments_per_page', 20)
+        'commentsPerPage'   => tt_get_option('tt_comments_per_page', 20),
+        'sessionApiTail'    => tt_get_option('tt_session_api', 'session')
     );
     if(is_single()) {
         $data['isSingle'] = true;

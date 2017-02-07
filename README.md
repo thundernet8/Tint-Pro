@@ -1,4 +1,4 @@
-![https://webapproach.net/shop/tint-pro.html](https://img.shields.io/badge/version-Tint--2.0.0-green.svg?style=flat)
+![https://webapproach.net/shop/tint-pro.html](https://img.shields.io/badge/version-Tint--2.0.2-green.svg?style=flat)
 
 ## Tint
 

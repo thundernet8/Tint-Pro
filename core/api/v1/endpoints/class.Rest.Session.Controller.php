@@ -34,7 +34,7 @@ class WP_REST_Session_Controller extends WP_REST_Controller
     public function __construct()
     {
         $this->namespace = 'v1';
-        $this->rest_base = 'session';
+        $this->rest_base = tt_get_option('tt_session_api', 'session');
     }
 
     /**

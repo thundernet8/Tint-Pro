@@ -160,6 +160,7 @@ load_class('class.Utils');
 load_class('class.Member');
 load_class('class.Async.Task');
 load_class('class.Async.Email');
+load_class('class.Enum');
 // Plates模板引擎
 load_class('plates/Engine');
 load_class('plates/Extension/ExtensionInterface');
@@ -228,6 +229,9 @@ if(TT_PRO && tt_get_option('tt_enable_shop', false)){
     load_vm('shop/vm.Shop.LatestRated');
     load_vm('shop/vm.Shop.ViewHistory');
     load_vm('shop/vm.Embed.Product');
+}
+
+if(TT_PRO){
     load_vm('me/vm.Me.Order');
     load_vm('me/vm.Me.Orders');
     load_vm('me/vm.Me.Membership');

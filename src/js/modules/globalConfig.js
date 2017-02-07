@@ -17,8 +17,8 @@ import Utils from './utils';
 
 // API路由列表
 var routes = {
-    signIn: Utils.getAPIUrl('/session'),
-    session: Utils.getAPIUrl('/session'),
+    signIn: Utils.getAPIUrl('/' + TT.sessionApiTail),
+    session: Utils.getAPIUrl('/' + TT.sessionApiTail),
     signUp: Utils.getAPIUrl('/users'),
     users: Utils.getAPIUrl('/users'),
     comments: Utils.getAPIUrl('/comments'),

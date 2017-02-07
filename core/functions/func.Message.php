@@ -30,7 +30,7 @@
  * @param string $date  消息时间
  * @return bool
  */
-function tt_create_message( $user_id=0, $sender_id=0, $sender, $type='', $title='', $content='', $read=0, $status='publish', $date='' ){
+function tt_create_message( $user_id=0, $sender_id=0, $sender, $type='', $title='', $content='', $read=MsgReadStatus::UNREAD, $status='publish', $date='' ){
 
     $user_id = absint($user_id);
     $sender_id = absint($sender_id);
@@ -69,7 +69,8 @@ function tt_create_pm($receiver_id, $sender, $text, $send_mail = false) {
                 'message' => $text,
                 'chatLink' => tt_url_for('uc_chat', $sender)
             );
-            tt_async_mail('', get_user_by('id', $receiver_id)->user_email, $subject, $args, 'pm');
+            //tt_async_mail('', get_user_by('id', $receiver_id)->user_email, $subject, $args, 'pm');
+            tt_mail('', get_user_by('id', $receiver_id)->user_email, $subject, $args, 'pm');
         }
         return tt_create_message($receiver_id, $sender->ID, $sender->display_name, 'chat', $text);
     }elseif(is_int($sender)){
@@ -81,7 +82,8 @@ function tt_create_pm($receiver_id, $sender, $text, $send_mail = false) {
                 'message' => $text,
                 'chatLink' => tt_url_for('uc_chat', $sender)
             );
-            tt_async_mail('', get_user_by('id', $receiver_id)->user_email, $subject, $args, 'pm');
+            //tt_async_mail('', get_user_by('id', $receiver_id)->user_email, $subject, $args, 'pm');
+            tt_mail('', get_user_by('id', $receiver_id)->user_email, $subject, $args, 'pm');
         }
         return tt_create_message($receiver_id, $sender->ID, $sender->display_name, 'chat', $text);
     }
@@ -97,13 +99,13 @@ function tt_create_pm($receiver_id, $sender, $text, $send_mail = false) {
  * @param int $read
  * @return bool
  */
-function tt_mark_message( $id, $read = 1 ) {
+function tt_mark_message( $id, $read = MsgReadStatus::READ ) {
     $id = absint($id);
     $user_id = get_current_user_id(); //确保只能标记自己的消息
 
     if( ( !$id || !$user_id) ) return false;
 
-    $read = $read == 0 ? : 1;
+    $read = $read == MsgReadStatus::UNREAD ? : MsgReadStatus::READ;
 
     global $wpdb;
     $table_name = $wpdb->prefix . 'tt_messages';
@@ -168,7 +170,7 @@ function tt_get_message($msg_id) {
  * @param bool  $count
  * @return array|bool|null|object|int
  */
-function tt_get_messages( $type = 'chat', $limit = 20, $offset = 0, $read = 0, $msg_status = 'publish', $sender_id = 0, $count = false ) {
+function tt_get_messages( $type = 'chat', $limit = 20, $offset = 0, $read = MsgReadStatus::UNREAD, $msg_status = 'publish', $sender_id = 0, $count = false ) {
     $user_id = get_current_user_id();
 
     if(!$user_id) return false;
@@ -176,8 +178,8 @@ function tt_get_messages( $type = 'chat', $limit = 20, $offset = 0, $read = 0, $
     if(is_array($type)) {
         $type = implode("','", $type); //NOTE  IN('comment','star','update','notification') IN表达式的引号
     }
-    if(!in_array($read, array(0, 1, 'all'))) {
-        $read = 0;
+    if(!in_array($read, array(MsgReadStatus::READ, MsgReadStatus::UNREAD, MsgReadStatus::ALL))) {
+        $read = MsgReadStatus::UNREAD;
     }
     if(!in_array($msg_status, array('publish', 'trash', 'all'))) {
         $msg_status = 'publish';
@@ -186,7 +188,7 @@ function tt_get_messages( $type = 'chat', $limit = 20, $offset = 0, $read = 0, $
     global $wpdb;
     $table_name = $wpdb->prefix . 'tt_messages';
 
-    $sql = sprintf("SELECT %s FROM $table_name WHERE `user_id`=%d%s AND `msg_type` IN('$type')%s%s ORDER BY (CASE WHEN `msg_read`='all' THEN 1 ELSE 0 END) DESC, `msg_date` DESC%s", $count ? "COUNT(*)" : "*", $user_id, $sender_id ? " AND `sender_id`=$sender_id" : "", $read!='all' ? " AND `msg_read`='$read'" : "", $msg_status!='all' ? " AND `msg_status`='$msg_status'" : "", $count ? "" : " LIMIT $offset, $limit");
+    $sql = sprintf("SELECT %s FROM $table_name WHERE `user_id`=%d%s AND `msg_type` IN('$type')%s%s ORDER BY (CASE WHEN `msg_read`='all' THEN 1 ELSE 0 END) DESC, `msg_date` DESC%s", $count ? "COUNT(*)" : "*", $user_id, $sender_id ? " AND `sender_id`=$sender_id" : "", $read!=MsgReadStatus::ALL ? " AND `msg_read`=$read" : "", $msg_status!='all' ? " AND `msg_status`='$msg_status'" : "", $count ? "" : " LIMIT $offset, $limit");
 
     $results = $count ? $wpdb->get_var($sql) : $wpdb->get_results($sql);
     if($results){
@@ -206,7 +208,7 @@ function tt_get_messages( $type = 'chat', $limit = 20, $offset = 0, $read = 0, $
  * @param int $sender_id
  * @return array|bool|int|null|object
  */
-function tt_count_messages( $type = 'chat', $read = 0, $msg_status = 'publish', $sender_id = 0) {
+function tt_count_messages( $type = 'chat', $read = MsgReadStatus::UNREAD, $msg_status = 'publish', $sender_id = 0) {
     return tt_get_messages($type, 0, 0, $read, $msg_status, $sender_id, true);
 }
 
@@ -222,7 +224,7 @@ function tt_count_messages( $type = 'chat', $read = 0, $msg_status = 'publish', 
  * @return array|bool|int|null|object
  */
 function tt_get_unread_messages( $type = 'chat', $limit = 20, $offset = 0, $msg_status = 'publish') {
-    return tt_get_messages($type, $limit, $offset, 0, $msg_status);
+    return tt_get_messages($type, $limit, $offset, MsgReadStatus::UNREAD, $msg_status);
 }
 
 
@@ -235,7 +237,7 @@ function tt_get_unread_messages( $type = 'chat', $limit = 20, $offset = 0, $msg_
  * @return array|bool|int|null|object
  */
 function tt_count_unread_messages( $type = 'chat', $msg_status = 'publish' ) {
-    return tt_count_messages($type, 0, $msg_status);
+    return tt_count_messages($type, MsgReadStatus::UNREAD, $msg_status);
 }
 
 
@@ -250,7 +252,7 @@ function tt_count_unread_messages( $type = 'chat', $msg_status = 'publish' ) {
  * @return array|bool|int|null|object
  */
 function tt_get_credit_messages( $limit = 20, $offset = 0, $msg_status = 'all'){ //TODO: 积分消息不应该有msg_status，不可删除
-    return tt_get_messages('credit', $limit, $offset, 'all', $msg_status); //NOTE: 积分消息不分已读未读
+    return tt_get_messages('credit', $limit, $offset, MsgReadStatus::ALL, $msg_status); //NOTE: 积分消息不分已读未读
 }
 
 
@@ -261,7 +263,7 @@ function tt_get_credit_messages( $limit = 20, $offset = 0, $msg_status = 'all'){
  * @return array|bool|int|null|object
  */
 function tt_count_credit_messages() {
-    return tt_count_messages('credit', 'all', 'all');
+    return tt_count_messages('credit', MsgReadStatus::ALL, 'all');
 }
 
 
@@ -275,7 +277,7 @@ function tt_count_credit_messages() {
  * @param int $read
  * @return array|bool|int|null|object
  */
-function tt_get_pm($sender_id, $limit = 20, $offset = 0, $read = 0) {
+function tt_get_pm($sender_id = 0, $limit = 20, $offset = 0, $read = MsgReadStatus::UNREAD) {
     return tt_get_messages( 'chat', $limit, $offset, $read, 'publish', $sender_id);
 }
 
@@ -287,7 +289,7 @@ function tt_get_pm($sender_id, $limit = 20, $offset = 0, $read = 0) {
  * @param int $read
  * @return int
  */
-function tt_count_pm($sender_id = 0, $read = 0) {
+function tt_count_pm($sender_id = 0, $read = MsgReadStatus::UNREAD) {
     return tt_count_messages('chat', $read, 'publish', $sender_id);
 }
 
@@ -299,19 +301,19 @@ function tt_count_pm($sender_id = 0, $read = 0) {
  * @param int $to_user
  * @param int $limit
  * @param int $offset
- * @param int $read
+ * @param int|string $read
  * @param string $msg_status
  * @param bool $count
  * @return array|bool|int|null|object|string
  */
-function tt_get_sent_pm($to_user = 0, $limit = 20, $offset = 0, $read = 'all', $msg_status = 'publish', $count = false ) {
+function tt_get_sent_pm($to_user = 0, $limit = 20, $offset = 0, $read = MsgReadStatus::ALL, $msg_status = 'publish', $count = false ) {
     $sender_id = get_current_user_id();
 
     if(!$sender_id) return false;
 
     $type = 'chat';
-    if(!in_array($read, array(0, 1, 'all'))) {
-        $read = 0;
+    if(!in_array($read, array(MsgReadStatus::UNREAD, MsgReadStatus::READ, MsgReadStatus::UNREAD))) {
+        $read = MsgReadStatus::ALL;
     }
     if(!in_array($msg_status, array('publish', 'trash', 'all'))) {
         $msg_status = 'publish';
@@ -320,7 +322,7 @@ function tt_get_sent_pm($to_user = 0, $limit = 20, $offset = 0, $read = 'all', $
     global $wpdb;
     $table_name = $wpdb->prefix . 'tt_messages';
 
-    $sql = sprintf("SELECT %s FROM $table_name WHERE `sender_id`=%d%s AND `msg_type` IN('$type')%s%s ORDER BY (CASE WHEN `msg_read`='all' THEN 1 ELSE 0 END) DESC, `msg_date` DESC%s", $count ? "COUNT(*)" : "*", $sender_id, $to_user ? " AND `user_id`=$to_user" : "", $read!='all' ? " AND `msg_read`='$read'" : "", $msg_status!='all' ? " AND `msg_status`='$msg_status'" : "", $count ? "" : " LIMIT $offset, $limit");
+    $sql = sprintf("SELECT %s FROM $table_name WHERE `sender_id`=%d%s AND `msg_type` IN('$type')%s%s ORDER BY (CASE WHEN `msg_read`='all' THEN 1 ELSE 0 END) DESC, `msg_date` DESC%s", $count ? "COUNT(*)" : "*", $sender_id, $to_user ? " AND `user_id`=$to_user" : "", $read!=MsgReadStatus::ALL ? " AND `msg_read`='$read'" : "", $msg_status!='all' ? " AND `msg_status`='$msg_status'" : "", $count ? "" : " LIMIT $offset, $limit");
 
     $results = $count ? $wpdb->get_var($sql) : $wpdb->get_results($sql);
     if($results){
@@ -338,7 +340,7 @@ function tt_get_sent_pm($to_user = 0, $limit = 20, $offset = 0, $read = 'all', $
  * @param int $read
  * @return int
  */
-function tt_count_sent_pm($to_user = 0, $read = 'all') {
+function tt_count_sent_pm($to_user = 0, $read = MsgReadStatus::ALL) {
     return tt_get_sent_pm($to_user, 0, 0, $read, 'publish', true);
 }
 
@@ -397,13 +399,13 @@ function tt_restore_message($msg_id) { //NOTE: 应该不用
  * @param bool $count
  * @return array|bool|int|null|object|string
  */
-function tt_get_bothway_chat( $one_uid, $limit = 20, $offset = 0, $read = 0, $msg_status = 'publish', $count = false ) {
+function tt_get_bothway_chat( $one_uid, $limit = 20, $offset = 0, $read = MsgReadStatus::UNREAD, $msg_status = 'publish', $count = false ) {
     $user_id = get_current_user_id();
 
     if(!$user_id) return false;
 
-    if(!in_array($read, array(0, 1, 'all'))) {
-        $read = 0;
+    if(!in_array($read, array(MsgReadStatus::UNREAD, MsgReadStatus::READ, MsgReadStatus::ALL))) {
+        $read = MsgReadStatus::UNREAD;
     }
     if(!in_array($msg_status, array('publish', 'trash', 'all'))) {
         $msg_status = 'publish';
@@ -413,7 +415,7 @@ function tt_get_bothway_chat( $one_uid, $limit = 20, $offset = 0, $read = 0, $ms
     $table_name = $wpdb->prefix . 'tt_messages';
     $concat_id_str = '\'' . $one_uid . '_' . $user_id . '\',' . '\'' . $user_id . '_' . $one_uid . '\'';
 
-    $sql = sprintf("SELECT %s FROM $table_name WHERE CONCAT_WS('_', `user_id`, `sender_id`) IN (%s) AND `msg_type`='chat'%s%s ORDER BY (CASE WHEN `msg_read`='all' THEN 1 ELSE 0 END) DESC, `msg_date` DESC%s", $count ? "COUNT(*)" : "*", $concat_id_str, $read!='all' ? " AND `msg_read`='$read'" : "", $msg_status!='all' ? " AND `msg_status`='$msg_status'" : "", $count ? "" : " LIMIT $offset, $limit");
+    $sql = sprintf("SELECT %s FROM $table_name WHERE CONCAT_WS('_', `user_id`, `sender_id`) IN (%s) AND `msg_type`='chat'%s%s ORDER BY (CASE WHEN `msg_read`='all' THEN 1 ELSE 0 END) DESC, `msg_date` DESC%s", $count ? "COUNT(*)" : "*", $concat_id_str, $read!=MsgReadStatus::ALL ? " AND `msg_read`='$read'" : "", $msg_status!='all' ? " AND `msg_status`='$msg_status'" : "", $count ? "" : " LIMIT $offset, $limit");
     $results = $count ? $wpdb->get_var($sql) : $wpdb->get_results($sql);
 
     if($results){

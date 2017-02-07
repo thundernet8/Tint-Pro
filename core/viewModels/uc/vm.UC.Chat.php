@@ -55,6 +55,7 @@ class UCChatVM extends BaseVM {
         $instance->_page = max(1, $page);
         $instance->_authorId = absint($author_id);
         $instance->_userId = $user_id;
+        $instance->_enableCache = false; // 禁用缓存
         $instance->configInstance();
         return $instance;
     }
@@ -64,11 +65,11 @@ class UCChatVM extends BaseVM {
         $per_page = 20;
         $offset = $per_page * ($this->_page - 1);
 
-        $messages = tt_get_bothway_chat( $this->_authorId, $per_page, $offset, 'all', 'publish', false );
-        $messages_count = tt_get_bothway_chat( $this->_authorId, $per_page, $offset, 'all', 'publish', true );
+        $messages = tt_get_bothway_chat( $this->_authorId, $per_page, $offset, MsgReadStatus::ALL, 'publish', false );
+        $messages_count = tt_get_bothway_chat( $this->_authorId, $per_page, $offset, MsgReadStatus::ALL, 'publish', true );
         $max_num_pages = ceil($messages_count / $per_page);
 
-        $unread_count = tt_count_pm(); //Note: 自己发送的消息一定为已读 //tt_get_bothway_chat( $this->_authorId, $per_page, $offset, 0, 'publish', true );
+        $unread_count = tt_count_pm($this->_authorId, MsgReadStatus::UNREAD); //Note: 自己发送的消息一定为已读 //tt_get_bothway_chat( $this->_authorId, $per_page, $offset, 0, 'publish', true );
 
         $pagination = array(
             'max_num_pages' => $max_num_pages,
@@ -96,8 +97,8 @@ class UCChatVM extends BaseVM {
             $chat_message['text'] = $message->msg_title;
             $chat_message['read'] = $message->sender_id == $user->ID || $message->msg_read != 0;
             $chat_message['tome'] = $message->user_id == $this->_userId;
-            $chat_message['chat_avatar'] = $message->sender_id = $user->ID ? $user_avatar : $author_avatar;
-            $chat_message['chat_name'] = $message->sender_id = $user->ID ? sprintf(__('You to %s', 'tt'), $author_name) : $author_name;
+            $chat_message['chat_avatar'] = $message->sender_id == $user->ID ? $user_avatar : $author_avatar;
+            $chat_message['chat_name'] = $message->sender_id == $user->ID ? sprintf(__('You to %s', 'tt'), $author_name) : $author_name;
             $chat_message['people_home'] = $message->sender_id = $user->ID ? $user_home : $author_home;
             $chat_message['class'] = $chat_message['read'] ? 'message chat-message' : 'message chat-message unread-message';
 

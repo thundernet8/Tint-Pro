@@ -58,7 +58,7 @@
                 <?php if(isset($postdata->download) && $postdata->download) { ?>
                 <!-- 相关下载 -->
                 <h2 class="content-dl"><?php _e('Related Downloads', 'tt'); ?></h2>
-                <p style="text-align: center;margin-bottom: 50px;"><a class="btn btn-download" href="<?php echo $postdata->download; ?>" target="_blank"><?php _e('Click to Download', 'tt'); ?></a></p>
+                <p style="text-align: center;margin-bottom: 50px;text-indent:0;"><a class="btn btn-download" href="<?php echo $postdata->download; ?>" target="_blank"><?php _e('Click to Download', 'tt'); ?></a></p>
                 <?php } ?>
                 <?php if(isset($postdata->embed_product) && $embed_product = $postdata->embed_product) { ?>
                 <!-- 内嵌商品 -->

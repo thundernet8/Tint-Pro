@@ -47,7 +47,7 @@
                                         <span class="msg-author">
                                             <img class="avatar lazy" src="<?php echo LAZY_PENDING_AVATAR; ?>" data-original="<?php echo tt_get_avatar($message->user_id, 'medium'); ?>" style="display: block;">
                                             <?php _e('Send Time: ', 'tt'); ?><span><?php echo $message->msg_date; ?></span>
-                                            <?php _e('Send To: ', 'tt'); ?><span><?php echo $receiver_name; ?></span>
+                                            <?php _e('Send To: ', 'tt'); ?><span><a href="<?php echo tt_url_for('uc_chat', $message->user_id); ?>" target="_blank"><?php echo $receiver_name; ?></a></span>
                                         </span>
                                 </div>
                                 <div class="msg-content">
@@ -59,8 +59,12 @@
                                 <div class="msg-title" title="<?php printf(__('%s send to me', 'tt'), $message->sender); ?>">
                                         <span class="msg-author">
                                             <img class="avatar lazy" src="<?php echo LAZY_PENDING_AVATAR; ?>" data-original="<?php echo tt_get_avatar($message->sender_id, 'medium'); ?>" style="display: block;">
+<!--                                            --><?php //if(!$message->read) { ?>
+<!--                                                <span class="unread-mark"><i class="tico tico-info-circle"></i></span>-->
+<!--                                            --><?php //} ?>
                                             <?php _e('Send Time: ', 'tt'); ?><span><?php echo $message->msg_date; ?></span>
-                                            <?php _e('Sender: ', 'tt'); ?><span><?php echo $message->sender; ?></span>
+                                            <?php _e('Sender: ', 'tt'); ?><span><a href="<?php echo tt_url_for('uc_chat', $message->sender_id); ?>" target="_blank"><?php echo $message->sender; ?></a></span>
+                                            <?php _e('Status: ', 'tt'); ?><span><?php echo $message->msg_read ? __('Read', 'tt') : __('Unread', 'tt'); ?></span>
                                         </span>
                                 </div>
                                 <div class="msg-content">

@@ -62,16 +62,16 @@ class MeMessagesVM extends BaseVM {
         $instance->_type = $type;
         $instance->_page = $page;
         $instance->_limit = $limit;
-        //$instance->_enableCache = false; //TODO debug use
+        $instance->_enableCache = false; // 禁用缓存
         $instance->configInstance();
         return $instance;
     }
 
     protected function getRealData() {
-        $user_id = get_current_user_id();
-        $messages = $this->_type == 'sendbox' ? tt_get_sent_pm(0, $this->_limit, ($this->_page - 1) * $this->_limit) : tt_get_pm($user_id, $this->_limit, ($this->_page - 1) * $this->_limit);
+        // $user_id = get_current_user_id();
+        $messages = $this->_type == 'sendbox' ? tt_get_sent_pm(0, $this->_limit, ($this->_page - 1) * $this->_limit) : tt_get_pm(0, $this->_limit, ($this->_page - 1) * $this->_limit, MsgReadStatus::ALL);
         $count = $messages ? count($messages) : 0;
-        $total = $this->_type == 'sendbox' ? tt_count_sent_pm(0) : tt_count_pm($user_id);
+        $total = $this->_type == 'sendbox' ? tt_count_sent_pm(0) : tt_count_pm(0, MsgReadStatus::ALL);
         $max_pages = ceil($total / $this->_limit);
         $pagination_base = $this->_type == 'sendbox' ? tt_url_for('out_msg') . '/page/%#%' : tt_url_for('in_msg') . '/page/%#%';
         return (object)array(

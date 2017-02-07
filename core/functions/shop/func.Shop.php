@@ -491,7 +491,7 @@ function tt_get_product_download_content($product_id, $html = true){
             $dl_info[0] = isset($dl_info[0]) ? $dl_info[0] : '';
             $dl_info[1] = isset($dl_info[1]) ? $dl_info[1] : '';
             $dl_info[2] = isset($dl_info[2]) ? $dl_info[2] : __('None', 'tt');
-            $content .= sprintf(__('<li><p>%1$s</p><p>下载链接：<a href="%2$s" title="%1$s" target="_blank">%2$s</a>下载密码：%3$s</p></li>', 'tt'), $dl_info[0], $dl_info[1], $dl_info[2]);
+            $content .= sprintf(__('<li style="margin: 0 0 10px 0;"><p style="padding: 5px 0; margin: 0;">%1$s</p><p style="padding: 5px 0; margin: 0;">下载链接：<a href="%2$s" title="%1$s" target="_blank">%2$s</a>下载密码：%3$s</p></li>', 'tt'), $dl_info[0], $dl_info[1], $dl_info[2]);
             $array_content[] = array(
                 'name' => $dl_info[0],
                 'link' => $dl_info[1],

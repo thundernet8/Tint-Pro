@@ -19,8 +19,8 @@
 <?php } ?>
 <div class="author-tab-box follow-tab followers-tab">
     <div class="tab-content author-follow author-followers">
-        <?php if($data = $vm->modelData) { $pagination_args = $data->pagination; $followers = $data->followers; ?>
-            <?php if(count($followers) > 0) { ?>
+        <?php if($data = $vm->modelData) { $count = $data->count; $followers = $data->followers; $total = $data->total; $max_pages = $data->max_pages; ?>
+            <?php if($count > 0) { ?>
                 <div class="row">
                     <?php foreach ($followers as $follower) { ?>
                     <div class="follow-box follower-box col-md-4 col-sm-6">
@@ -56,6 +56,25 @@
                     </div>
                     <?php } ?>
                 </div>
+                <?php if($max_pages > 1) { ?>
+                    <div class="pagination-mini clearfix">
+                        <?php if($tt_paged == 1) { ?>
+                            <div class="col-md-3 prev disabled"><a href="javascript:;"><?php _e('← 上一页', 'tt'); ?></a></div>
+                        <?php }else{ ?>
+                            <div class="col-md-3 prev"><a href="<?php echo $data->prev_page; ?>"><?php _e('← 上一页', 'tt'); ?></a></div>
+                        <?php } ?>
+                        <div class="col-md-6 page-nums">
+                            <span class="current-page"><?php printf(__('Current Page %d', 'tt'), $tt_paged); ?></span>
+                            <span class="separator">/</span>
+                            <span class="max-page"><?php printf(__('Total %d Pages', 'tt'), $max_pages); ?></span>
+                        </div>
+                        <?php if($tt_paged != $data->max_pages) { ?>
+                            <div class="col-md-3 next"><a href="<?php echo $data->next_page; ?>"><?php _e('下一页 →', 'tt'); ?></a></div>
+                        <?php }else{ ?>
+                            <div class="col-md-3 next disabled"><a href="javascript:;"><?php _e('下一页 →', 'tt'); ?></a></div>
+                        <?php } ?>
+                    </div>
+                <?php } ?>
             <?php }else{ ?>
                 <div class="empty-content">
                     <span class="tico tico-dropbox"></span>

@@ -19,8 +19,11 @@
     <meta http-equiv="content-type" content="text/html;charset=utf-8">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <?php if(!isset($_GET['vp'])) { ?>
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,minimal-ui=yes">
-<!--    <meta name="viewport" content="width=1200,initial-scale=1">-->
+    <?php }else{ ?>
+    <meta name="viewport" content="width=1200,initial-scale=1">
+    <?php } ?>
     <title><?php echo tt_get_page_title(); ?></title>
     <meta name="keywords" content="<?php echo $keywords_description['keywords']; ?>">
     <meta name="description" content="<?php echo $keywords_description['description']; ?>">

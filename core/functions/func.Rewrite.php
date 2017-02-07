@@ -97,7 +97,7 @@ function tt_set_user_page_rewrite_rules($wp_rewrite){
 //        }else{
             $new_rules['u/([0-9]{1,})$'] = 'index.php?author=$matches[1]&uc=1';
             $new_rules['u/([0-9]{1,})/([A-Za-z]+)$'] = 'index.php?author=$matches[1]&uctab=$matches[2]&uc=1';
-            $new_rules['u/([0-9]{1,})/([A-Za-z]+)/page/([0-9]{1,})$'] = 'index.php?author_name=$matches[1]&uctab=$matches[2]&uc=1&paged=$matches[3]';
+            $new_rules['u/([0-9]{1,})/([A-Za-z]+)/page/([0-9]{1,})$'] = 'index.php?author=$matches[1]&uctab=$matches[2]&uc=1&paged=$matches[3]';
 //        }
         $wp_rewrite->rules = $new_rules + $wp_rewrite->rules;
     }

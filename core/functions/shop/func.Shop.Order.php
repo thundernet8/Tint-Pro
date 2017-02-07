@@ -342,6 +342,11 @@ function tt_create_order($product_id, $product_name = '', $order_quantity = 1, $
         )
     );
     if($insert) {
+        // 新创建现金订单时邮件通知管理员
+        if($currency == 'cash') {
+            do_action('tt_order_status_change', $order_id);
+        }
+
         return array(
             'insert_id' => $wpdb->insert_id,
             'order_id' => $order_id,

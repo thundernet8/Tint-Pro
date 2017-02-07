@@ -55,7 +55,7 @@
                             <tr id="oid-<?php echo $order->order_id; ?>">
                                 <td><?php echo $order->order_id; ?></td>
                                 <td><?php echo $order->product_name; ?></td>
-                                <td><?php echo get_user_meta($order->user_id, 'nickname', true); ?></td>
+                                <td><a href="<?php echo get_author_posts_url($order->user_id); ?>" target="_blank"><?php echo get_user_meta($order->user_id, 'nickname', true); ?></a></td>
                                 <td><?php echo $order->order_time; ?></td>
                                 <td><?php if($order->order_currency == 'credit'){ echo '<i class="tico tico-diamond"></i>' . intval($order->order_total_price); }else{ echo '<i class="tico tico-cny"></i>' . sprintf('%0.2f', $order->order_total_price); } ?></td>
                                 <td><?php echo tt_get_order_status_text($order->order_status); ?></td>

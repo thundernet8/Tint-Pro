@@ -55,26 +55,22 @@ class UCFollowingVM extends BaseVM {
 
         $per_page = 12;
         $offset = $per_page * ($this->_page - 1);
-        $followers = tt_get_following($this->_authorId, $per_page, $offset );
-        $following_count = tt_count_following($this->_authorId);
-        $max_num_pages = ceil($following_count / $per_page);
-
-        $pagination = array(
-            'max_num_pages' => $max_num_pages,
-            'current_page' => $this->_page,
-            'base' => get_author_posts_url($this->_authorId) . '/following/page/%#%'
-        );
+        $followings = tt_get_following($this->_authorId, $per_page, $offset );
+        $count = $followings ? count($followings) : 0;
+        $total_count = tt_count_following($this->_authorId);
+        $max_pages = ceil($total_count / $per_page);
+        $pagination_base = tt_url_for('uc_following', $this->_authorId) . '/page/%#%';
 
         $following_infos = array();
-        foreach ($followers as $follower) {
+        foreach ($followings as $following) {
             $info = array();
-            $user_id = $follower->user_id;
+            $user_id = $following->user_id;
             $user = get_user_by('ID', $user_id);
 
             $info['ID'] = $user_id;
             $info['user_email'] = $user->user_email;
             $info['nickname'] = get_user_meta($user_id, 'nickname', true);
-            $info['home'] = home_url('/@' . $info['nickname']);
+            $info['home'] = get_author_posts_url($user_id);
             $info['posts_url'] = $info['home'] . '/latest';
             $info['comments_url'] = $info['home'] . '/comments';
             $info['activities_url'] = $info['home'] . '/activities';
@@ -92,8 +88,13 @@ class UCFollowingVM extends BaseVM {
         }
 
         return (object)array(
-            'pagination' => $pagination,
-            'following' => $following_infos
+            'count' => $count,
+            'followings' => $following_infos,
+            'total' => $total_count,
+            'max_pages' => $max_pages,
+            'pagination_base' => $pagination_base,
+            'prev_page' => str_replace('%#%', max(1, $this->_page - 1), $pagination_base),
+            'next_page' => str_replace('%#%', min($max_pages, $this->_page + 1), $pagination_base)
         );
     }
 }

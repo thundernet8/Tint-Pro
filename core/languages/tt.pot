@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2017-01-21 22:37+0800\n"
+"POT-Creation-Date: 2017-02-05 13:48+0800\n"
 "PO-Revision-Date: 2016-08-17 21:40+0800\n"
 "Last-Translator: \n"
 "Language-Team: Zhiyan <mail@webapproach.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.8\n"
+"X-Generator: Poedit 1.8.11\n"
 "X-Poedit-Basepath: ../..\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -365,7 +365,7 @@ msgid "Send message failed"
 msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.Message.Controller.php:170
-#: core/viewModels/uc/vm.UC.Chat.php:100
+#: core/viewModels/uc/vm.UC.Chat.php:101
 #, php-format
 msgid "You to %s"
 msgstr ""
@@ -1982,82 +1982,82 @@ msgstr ""
 msgid "WordPress &rsaquo; Error"
 msgstr ""
 
-#: core/functions/func.Mail.php:125
+#: core/functions/func.Mail.php:128
 #, php-format
 msgid "New Comment Notification - %s"
 msgstr ""
 
-#: core/functions/func.Mail.php:128
+#: core/functions/func.Mail.php:131
 #, php-format
 msgid "New Comment In Your Blog - %s"
 msgstr ""
 
-#: core/functions/func.Mail.php:131 core/functions/func.Mail.php:140
-#: core/functions/func.Mail.php:149
+#: core/functions/func.Mail.php:134 core/functions/func.Mail.php:143
+#: core/functions/func.Mail.php:152
 #, php-format
 msgid "New Comment Reply Notification - %s"
 msgstr ""
 
-#: core/functions/func.Mail.php:134
+#: core/functions/func.Mail.php:137
 #, php-format
 msgid "The Files You Asking For In %s"
 msgstr ""
 
-#: core/functions/func.Mail.php:137
+#: core/functions/func.Mail.php:140
 #, php-format
 msgid "New Download Request Handled In Your Blog %s"
 msgstr ""
 
-#: core/functions/func.Mail.php:143
+#: core/functions/func.Mail.php:146
 #, php-format
 msgid "New Login Event Notification - %s"
 msgstr ""
 
-#: core/functions/func.Mail.php:146
+#: core/functions/func.Mail.php:149
 #, php-format
 msgid "New Login Fail Event Notification - %s"
 msgstr ""
 
-#: core/functions/func.Mail.php:153
+#: core/functions/func.Mail.php:156
 #, php-format
 msgid "Site Internal Notification - %s"
 msgstr ""
 
-#: core/functions/func.Mail.php:207 core/functions/func.Mail.php:223
-#: core/functions/func.Mail.php:225
+#: core/functions/func.Mail.php:210 core/functions/func.Mail.php:226
+#: core/functions/func.Mail.php:228
 #, php-format
 msgid "%1$s在%2$s中回复你"
 msgstr ""
 
-#: core/functions/func.Mail.php:210
+#: core/functions/func.Mail.php:213
 #, php-format
 msgid "我在%1$s中回复了你"
 msgstr ""
 
-#: core/functions/func.Mail.php:236
+#: core/functions/func.Mail.php:239
 #, php-format
 msgid "%1$s上的文章有了新的回复"
 msgstr ""
 
-#: core/functions/func.Mail.php:257
+#: core/functions/func.Mail.php:260
 msgid "你的博客空间登录提醒"
 msgstr ""
 
-#: core/functions/func.Mail.php:280
+#: core/functions/func.Mail.php:283
 msgid "你的博客空间登录错误警告"
 msgstr ""
 
-#: core/functions/func.Mail.php:303
+#: core/functions/func.Mail.php:306
 #, php-format
 msgid "获得文章投稿奖励%1$s积分"
 msgstr ""
 
-#: core/functions/func.Mail.php:308
+#: core/functions/func.Mail.php:311
 #, php-format
 msgid "你在%1$s上有新的文章发表"
 msgstr ""
 
-#: core/functions/func.Mail.php:337 core/functions/func.Mail.php:364
+#: core/functions/func.Mail.php:340 core/functions/func.Mail.php:367
 msgid "会员状态变更提醒"
 msgstr ""
 
@@ -2102,7 +2102,7 @@ msgstr ""
 msgid "会员类型: %1$s, 到期时间: %2$s"
 msgstr ""
 
-#: core/functions/func.Message.php:66 core/functions/func.Message.php:78
+#: core/functions/func.Message.php:66 core/functions/func.Message.php:79
 #, php-format
 msgid "%1$s向你发送了一条消息 - %2$s"
 msgstr ""
@@ -2315,7 +2315,7 @@ msgid "Activate Registration"
 msgstr ""
 
 #: core/functions/func.Seo.php:37 core/functions/func.Seo.php:224
-#: core/modules/mod.Header.Shop.php:103 core/modules/mod.Header.php:48
+#: core/modules/mod.Header.Shop.php:103 core/modules/mod.Header.php:66
 msgid "Sign Out"
 msgstr ""
 
@@ -2329,7 +2329,7 @@ msgid "Reset Password"
 msgstr ""
 
 #: core/functions/func.Seo.php:51 core/modules/mod.Header.Shop.php:101
-#: core/modules/mod.Header.php:46
+#: core/modules/mod.Header.php:64
 msgid "My Settings"
 msgstr ""
 
@@ -2338,7 +2338,7 @@ msgid "My Notifications"
 msgstr ""
 
 #: core/functions/func.Seo.php:57 core/modules/me/me.Tab.Messages.php:26
-#: core/modules/mod.Header.Shop.php:100 core/modules/mod.Header.php:45
+#: core/modules/mod.Header.Shop.php:100 core/modules/mod.Header.php:63
 msgid "My Messages"
 msgstr ""
 
@@ -2363,7 +2363,7 @@ msgstr ""
 msgid "My Drafts"
 msgstr ""
 
-#: core/functions/func.Seo.php:75 core/modules/mod.Header.php:43
+#: core/functions/func.Seo.php:75 core/modules/mod.Header.php:61
 msgid "New Post"
 msgstr ""
 
@@ -2733,75 +2733,75 @@ msgstr ""
 msgid "Order Created"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Order.php:403
-#: core/functions/shop/func.Shop.Order.php:411
-#: core/functions/shop/func.Shop.Order.php:428
+#: core/functions/shop/func.Shop.Order.php:408
+#: core/functions/shop/func.Shop.Order.php:416
+#: core/functions/shop/func.Shop.Order.php:433
 msgid "Create combine order failed"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Order.php:478
+#: core/functions/shop/func.Shop.Order.php:483
 msgid "The order with the a order id you specified is not existed"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Order.php:486
+#: core/functions/shop/func.Shop.Order.php:491
 msgid "The coupon is invalid"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Order.php:545
+#: core/functions/shop/func.Shop.Order.php:550
 msgid "The order is not exist"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Order.php:549
+#: core/functions/shop/func.Shop.Order.php:554
 msgid "You are not permit to delete this order"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Order.php:576
+#: core/functions/shop/func.Shop.Order.php:581
 #, php-format
 msgid "%s 商店交易状态变更提醒"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Order.php:593
+#: core/functions/shop/func.Shop.Order.php:598
 #, php-format
 msgid "%s 商店新成功交易提醒"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Order.php:593
+#: core/functions/shop/func.Shop.Order.php:598
 #, php-format
 msgid "%s 商店新订单提醒"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Order.php:683
+#: core/functions/shop/func.Shop.Order.php:688
 #, php-format
 msgid "The Resources You Bought in %s"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Order.php:686
+#: core/functions/shop/func.Shop.Order.php:691
 #: core/viewModels/management/vm.Mg.Order.php:67
 #: core/viewModels/me/vm.Me.Order.php:73
 #, php-format
 msgid "%d Credits"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Order.php:686
+#: core/functions/shop/func.Shop.Order.php:691
 #: core/viewModels/management/vm.Mg.Order.php:67
 #: core/viewModels/me/vm.Me.Order.php:73
 #, php-format
 msgid "%0.2f YUAN"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Order.php:717
+#: core/functions/shop/func.Shop.Order.php:722
 msgid "The order is not found"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Order.php:721
+#: core/functions/shop/func.Shop.Order.php:726
 msgid "The order has been payed"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Order.php:725
+#: core/functions/shop/func.Shop.Order.php:730
 msgid "The order has been closed"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Order.php:741
+#: core/functions/shop/func.Shop.Order.php:746
 msgid "Some error happened when continue the payment"
 msgstr ""
 
@@ -3186,8 +3186,8 @@ msgstr ""
 #: core/modules/me/me.Tab.Drafts.php:54
 #: core/modules/me/me.Tab.Membership.php:88
 #: core/modules/me/me.Tab.Membership.php:90
-#: core/modules/me/me.Tab.Messages.php:76
-#: core/modules/me/me.Tab.Messages.php:78
+#: core/modules/me/me.Tab.Messages.php:80
+#: core/modules/me/me.Tab.Messages.php:82
 #: core/modules/me/me.Tab.Notifications.php:51
 #: core/modules/me/me.Tab.Notifications.php:53
 #: core/modules/me/me.Tab.Orders.php:77 core/modules/me/me.Tab.Orders.php:79
@@ -3202,7 +3202,7 @@ msgstr ""
 #: core/modules/management/mg.Tab.Products.php:66
 #: core/modules/me/me.Tab.Credits.php:78 core/modules/me/me.Tab.Drafts.php:57
 #: core/modules/me/me.Tab.Membership.php:93
-#: core/modules/me/me.Tab.Messages.php:81
+#: core/modules/me/me.Tab.Messages.php:85
 #: core/modules/me/me.Tab.Notifications.php:56
 #: core/modules/me/me.Tab.Orders.php:82 core/modules/mod.HomeLatest.php:69
 #: core/modules/mod.SearchPosts.php:49 core/modules/uc/uc.Tab.Chat.php:87
@@ -3219,7 +3219,7 @@ msgstr ""
 #: core/modules/management/mg.Tab.Products.php:68
 #: core/modules/me/me.Tab.Credits.php:80 core/modules/me/me.Tab.Drafts.php:59
 #: core/modules/me/me.Tab.Membership.php:95
-#: core/modules/me/me.Tab.Messages.php:83
+#: core/modules/me/me.Tab.Messages.php:87
 #: core/modules/me/me.Tab.Notifications.php:58
 #: core/modules/me/me.Tab.Orders.php:84 core/modules/mod.HomeLatest.php:71
 #: core/modules/mod.SearchPosts.php:51 core/modules/uc/uc.Tab.Chat.php:89
@@ -3244,8 +3244,8 @@ msgstr ""
 #: core/modules/me/me.Tab.Drafts.php:64
 #: core/modules/me/me.Tab.Membership.php:98
 #: core/modules/me/me.Tab.Membership.php:100
-#: core/modules/me/me.Tab.Messages.php:86
-#: core/modules/me/me.Tab.Messages.php:88
+#: core/modules/me/me.Tab.Messages.php:90
+#: core/modules/me/me.Tab.Messages.php:92
 #: core/modules/me/me.Tab.Notifications.php:61
 #: core/modules/me/me.Tab.Notifications.php:63
 #: core/modules/me/me.Tab.Orders.php:87 core/modules/me/me.Tab.Orders.php:89
@@ -3516,7 +3516,7 @@ msgstr ""
 msgid "Sales: "
 msgstr ""
 
-#: core/modules/management/mg.Tab.Status.php:28 dash/options.php:1321
+#: core/modules/management/mg.Tab.Status.php:28 dash/options.php:1331
 msgid "Site Open Date"
 msgstr ""
 
@@ -3666,6 +3666,14 @@ msgstr ""
 
 #: core/modules/me/me.NavMenu.php:33
 msgid "MEMBERSHIP"
+msgstr ""
+
+#: core/modules/me/me.NavMenu.php:35
+msgid "MY FOLLOWERS"
+msgstr ""
+
+#: core/modules/me/me.NavMenu.php:36
+msgid "MY FOLLOWING"
 msgstr ""
 
 #: core/modules/me/me.Tab.Contribute.php:25
@@ -3896,7 +3904,7 @@ msgid "Sent to %s"
 msgstr ""
 
 #: core/modules/me/me.Tab.Messages.php:49
-#: core/modules/me/me.Tab.Messages.php:62
+#: core/modules/me/me.Tab.Messages.php:65
 msgid "Send Time: "
 msgstr ""
 
@@ -3909,11 +3917,23 @@ msgstr ""
 msgid "%s send to me"
 msgstr ""
 
-#: core/modules/me/me.Tab.Messages.php:63
+#: core/modules/me/me.Tab.Messages.php:66
 msgid "Sender: "
 msgstr ""
 
-#: core/modules/me/me.Tab.Messages.php:96
+#: core/modules/me/me.Tab.Messages.php:67
+msgid "Status: "
+msgstr ""
+
+#: core/modules/me/me.Tab.Messages.php:67
+msgid "Read"
+msgstr ""
+
+#: core/modules/me/me.Tab.Messages.php:67
+msgid "Unread"
+msgstr ""
+
+#: core/modules/me/me.Tab.Messages.php:100
 msgid "No message records"
 msgstr ""
 
@@ -4323,11 +4343,11 @@ msgstr ""
 msgid "The shopping cart is empty."
 msgstr ""
 
-#: core/modules/mod.Header.Shop.php:95 core/modules/mod.Header.php:40
+#: core/modules/mod.Header.Shop.php:95 core/modules/mod.Header.php:58
 msgid "Go Dashboard"
 msgstr ""
 
-#: core/modules/mod.Header.Shop.php:108 core/modules/mod.Header.php:53
+#: core/modules/mod.Header.Shop.php:108 core/modules/mod.Header.php:71
 msgid "Sign In or Up"
 msgstr ""
 
@@ -4348,11 +4368,11 @@ msgstr ""
 msgid "Latest"
 msgstr ""
 
-#: core/modules/mod.Header.php:41
+#: core/modules/mod.Header.php:59
 msgid "Site Management"
 msgstr ""
 
-#: core/modules/mod.Header.php:44
+#: core/modules/mod.Header.php:62
 msgid "My Posts"
 msgstr ""
 
@@ -4708,6 +4728,11 @@ msgstr ""
 #: core/modules/uc/uc.Tab.Profile.php:28
 #, php-format
 msgid "Member Since %s"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Profile.php:28
+#, php-format
+msgid " <b>(The %dth Member)</b>"
 msgstr ""
 
 #: core/modules/uc/uc.Tab.Profile.php:29
@@ -6196,14 +6221,6 @@ msgstr ""
 msgid "Select a sidebar for search page"
 msgstr ""
 
-#: dash/options.php:379
-msgid "404 Sidebar"
-msgstr ""
-
-#: dash/options.php:380
-msgid "Select a sidebar for 404 page"
-msgstr ""
-
 #: dash/options.php:390
 msgid "Select a sidebar for page"
 msgstr ""
@@ -6888,54 +6905,62 @@ msgid ""
 msgstr ""
 
 #: dash/options.php:1271
-msgid "QQ Mailme ID"
+msgid "登录API后缀"
 msgstr ""
 
 #: dash/options.php:1272
-msgid "The id of qq mailme, visit `http://open.mail.qq.com` for detail"
+msgid "请变更默认值降低密码爆破攻击风险"
 msgstr ""
 
 #: dash/options.php:1281
-msgid "QQ Mail list ID"
+msgid "QQ Mailme ID"
 msgstr ""
 
 #: dash/options.php:1282
-msgid "The id of qq mailme, visit `http://list.qq.com` for detail"
+msgid "The id of qq mailme, visit `http://open.mail.qq.com` for detail"
 msgstr ""
 
 #: dash/options.php:1291
-msgid "Head Custom Code"
+msgid "QQ Mail list ID"
 msgstr ""
 
 #: dash/options.php:1292
-msgid "Custom code loaded on page head"
+msgid "The id of qq mailme, visit `http://list.qq.com` for detail"
+msgstr ""
+
+#: dash/options.php:1301
+msgid "Head Custom Code"
 msgstr ""
 
 #: dash/options.php:1302
-msgid "Foot Custom Code"
-msgstr ""
-
-#: dash/options.php:1303
-msgid "Custom code loaded on page foot"
+msgid "Custom code loaded on page head"
 msgstr ""
 
 #: dash/options.php:1312
-msgid "Foot Beian Text"
+msgid "Foot Custom Code"
 msgstr ""
 
 #: dash/options.php:1313
-msgid "IDC reference No. for regulations of China"
+msgid "Custom code loaded on page foot"
 msgstr ""
 
 #: dash/options.php:1322
+msgid "Foot Beian Text"
+msgstr ""
+
+#: dash/options.php:1323
+msgid "IDC reference No. for regulations of China"
+msgstr ""
+
+#: dash/options.php:1332
 msgid "The date of when site opened, use `YYYY-mm-dd` format"
 msgstr ""
 
-#: dash/options.php:1333
+#: dash/options.php:1343
 msgid "Footer Queries Info"
 msgstr ""
 
-#: dash/options.php:1334
+#: dash/options.php:1344
 msgid "Show WordPress queries statistic information"
 msgstr ""
 

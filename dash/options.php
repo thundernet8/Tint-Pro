@@ -1266,6 +1266,16 @@ function optionsframework_options() {
     );
 
 
+    // - 登录API后缀
+    $options[] = array(
+        'name' => __( '登录API后缀', 'tt' ),
+        'desc' => __( '请变更默认值降低密码爆破攻击风险', 'tt' ),
+        'id' => 'tt_session_api',
+        'std' => 'session',
+        'type' => 'text'
+    );
+
+
     // - QQ邮我链接ID
     $options[] = array(
         'name' => __( 'QQ Mailme ID', 'tt' ),

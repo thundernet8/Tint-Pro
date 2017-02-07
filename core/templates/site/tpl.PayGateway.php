@@ -74,7 +74,7 @@ $addr_info = tt_get_address($order->address_id);
 $channel = isset($_GET['channel']) && in_array(trim($_GET['channel']), array('alipay')) ? trim($_GET['channel']) : 'alipay';
 
 if($channel == 'alipay'):
-    require_once(THEME_FUNC . "/shop/alipay/alipay_submit.class.php");
+    require_once(THEME_CLASS . "/shop/alipay/alipay_submit.class.php");
     $alipay_config = tt_get_alipay_config();
     $alipay_service = tt_get_option('tt_alipay_service', 'trade_create_by_buyer');
     /**************************请求参数**************************/

@@ -48,18 +48,20 @@ var _warning = function (text) {
 
 var _handleContribute = function (btn) {
     if(_submitting || !Utils.checkLogin()) return false;
-    
+
+    tinyMCE.triggerSave();
+
     var data = {};
-    
+
     var titleInput = $(_titleSel);
     if(!titleInput.length || titleInput.val().length < 10) {
         _warning('标题不能为空或过短');
         return false;
     }
     data.title = titleInput.val();
-    
+
     data.excerpt = $(_excerptSel).val();
-    
+
     var contentInput = $(_contentSel);
     if(!contentInput.length || contentInput.val().length < 100) {
         _warning('文章内容不能少于100字符');
@@ -74,11 +76,11 @@ var _handleContribute = function (btn) {
     data.freeDl = $(_freeDlSel).val();
     data.saleDl = $(_saleDlSel).val();
     data.action = $(_actionSel).val();
-    
+
     var postId = parseInt($(_postIdSel).val());
-    
+
     var url = postId < 1 ? Routes.posts : Routes.posts + '/' + postId;
-    
+
     var beforeSend = function () {
         if(_submitting) return;
         btn.prop('disabled', true);
@@ -86,14 +88,14 @@ var _handleContribute = function (btn) {
         btn.html(_spinner);
         _submitting = true;
     };
-    
+
     var finishRequest = function () {
         if(!_submitting) return;
         btn.html(_btnOriginText);
         btn.prop('disabled', false);
         _submitting = false;
     };
-    
+
     var success = function (data, textStatus, xhr) {
         finishRequest();
         if(data.success && data.success == 1) {
@@ -120,7 +122,7 @@ var _handleContribute = function (btn) {
             showConfirmButton: true
         });
     };
-    
+
     $.post({
         url: url,
         data: Utils.filterDataForRest(data),
