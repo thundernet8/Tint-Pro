@@ -52,6 +52,14 @@ function tt_exec_api_actions($action) {
                 }
             }
             break;
+        case 'add_credits':
+            $user_id = absint($_POST['uid']);
+            $amount = absint($_POST['num']);
+            $result = tt_update_user_credit($user_id, $amount, '', true);
+            if($result) {
+                return tt_api_success(__('Update user credits successfully', 'tt'));
+            }
+            return tt_api_fail(__('Update user credits failed', 'tt'));
     }
     return null;
 }

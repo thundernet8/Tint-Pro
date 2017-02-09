@@ -63,15 +63,15 @@ class MeNotificationsVM extends BaseVM {
         $instance->_type = $type;
         $instance->_page = $page;
         $instance->_limit = $limit;
-        //$instance->_enableCache = false; //TODO debug use
+        $instance->_enableCache = false; //禁用缓存
         $instance->configInstance();
         return $instance;
     }
 
     protected function getRealData() {
-        $notifications = tt_get_messages($this->_type, $this->_limit, ($this->_page - 1) * $this->_limit, 'all');
+        $notifications = tt_get_messages($this->_type, $this->_limit, ($this->_page - 1) * $this->_limit, MsgReadStatus::ALL);
         $count = $notifications ? count($notifications) : 0;
-        $total = tt_count_messages( $this->_type, 'all');
+        $total = tt_count_messages( $this->_type, MsgReadStatus::ALL);
         $max_pages = ceil($total / $this->_limit);
         $pagination_base = is_array($this->_type) ? tt_url_for('all_notify') . '/page/%#%' : tt_url_for($this->_type . '_notify') . '/page/%#%';
         return (object)array(

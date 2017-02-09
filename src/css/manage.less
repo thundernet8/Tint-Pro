@@ -324,12 +324,134 @@ body {
     .users-tab {
         &>.tab-content {
             &>.mg-users {
-
+                &>.info-group {
+                    margin-left: -15px;
+                    margin-right: -15px;
+                    padding: 0;
+                    &>.users-info {
+                        font-size: 1.5rem;
+                        line-height: 36px;
+                    }
+                    &>.users-filter {
+                        text-align: right;
+                        &>label {
+                            margin-right: 10px;
+                            line-height: 36px;
+                        }
+                        &>select {
+                            max-width: 120px;
+                            height: 36px;
+                            padding: 5px 10px;
+                            font-size: 1.4rem;
+                        }
+                    }
+                }
+                &>table {
+                    margin-top: 30px;
+                    .th-time,
+                    .th-sumprice,
+                    .th-status {
+                        min-width: 80px;
+                    }
+                    .th-actions {
+                        min-width: 120px;
+                    }
+                    td>.tico {
+                        vertical-align: -2px;
+                        margin-right: 5px;
+                    }
+                    .text-explode {
+                        vertical-align: 1px;
+                    }
+                    .view-detail {
+                        color: @brand-secondary;
+                    }
+                    .view-home {
+                        color: @brand-success;
+                    }
+                }
             }
         }
     }
 }
 
+/* User */
+body {
+    .user-tab {
+        &>.tab-content {
+            &>section {
+                &>.info-group {
+                    &>.row {
+                        p {
+                            line-height: 32px;
+                        }
+                    }
+                }
+            }
+            .add-credits-form {
+                margin-top: 30px;
+                #add-credits {
+                    position: relative;
+                    padding: 6px 15px;
+                    font-size: 1.4rem;
+                    line-height: 30px;
+                    height: 42px;
+                    min-width: 100px;
+                    i {
+                        width: 16px;
+                        height: 16px;
+                        top: 50%;
+                        left: 50%;
+                        margin-top: -8px;
+                        margin-left: -8px;
+                        font-size: 1.6rem;
+                    }
+                }
+            }
+            .promote-vip-form {
+                margin-top: 30px;
+                &>label {
+                    margin-right: 5px;
+                    &>input {
+                        margin-right: 5px;
+                        vertical-align: -1px;
+                    }
+                }
+                #promotevip-submit {
+                    position: relative;
+                    height: 42px;
+                    min-width: 100px;
+                    margin: 0 0 0 20px;
+                    i {
+                        width: 16px;
+                        height: 16px;
+                        top: 50%;
+                        left: 50%;
+                        margin-top: -8px;
+                        margin-left: -8px;
+                        font-size: 1.6rem;
+                    }
+                }
+                &>.help-block {
+                    margin-top: 10px;
+                }
+            }
+            &>.mg-orders {
+                ul {
+                    li {
+                        margin-bottom: 10px;
+                        .order-time {
+                            margin-right: 10px;
+                        }
+                        .order-title {
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 
 /* Orders */
 body {

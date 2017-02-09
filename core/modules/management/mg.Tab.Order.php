@@ -93,7 +93,7 @@
                     </div>
                 </section>
             <?php }else{ ?>
-            <section class="my-order clearfix">
+            <section class="mg-order clearfix">
                 <header><h2><?php _e('Order Detail', 'tt'); ?></h2></header>
                 <div class="empty-content">
                     <span class="tico tico-cart"></span>

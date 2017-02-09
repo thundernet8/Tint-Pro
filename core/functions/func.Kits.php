@@ -170,7 +170,10 @@ function tt_signup_url($redirect) {
  * @param   string  $redirect  重定向链接，未url encode
  * @return  string
  */
-function tt_signout_url($redirect) {
+function tt_signout_url($redirect = '') {
+    if(empty($redirect)) {
+        $redirect = home_url();
+    }
     return tt_filter_default_logout_url('', $redirect);
 }
 

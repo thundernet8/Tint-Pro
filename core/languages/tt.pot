@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2017-02-05 13:48+0800\n"
+"POT-Creation-Date: 2017-02-09 15:47+0800\n"
 "PO-Revision-Date: 2016-08-17 21:40+0800\n"
 "Last-Translator: \n"
 "Language-Team: Zhiyan <mail@webapproach.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 1.8.8\n"
 "X-Poedit-Basepath: ../..\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -365,7 +365,7 @@ msgid "Send message failed"
 msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.Message.Controller.php:170
-#: core/viewModels/uc/vm.UC.Chat.php:101
+#: core/viewModels/uc/vm.UC.Chat.php:100
 #, php-format
 msgid "You to %s"
 msgstr ""
@@ -1565,6 +1565,14 @@ msgstr ""
 msgid "Create credits charge order failed"
 msgstr ""
 
+#: core/functions/func.API.Actions.php:60
+msgid "Update user credits successfully"
+msgstr ""
+
+#: core/functions/func.API.Actions.php:62
+msgid "Update user credits failed"
+msgstr ""
+
 #: core/functions/func.Account.php:76
 msgid "The key is invalid."
 msgstr ""
@@ -1635,7 +1643,7 @@ msgstr ""
 
 #: core/functions/func.Credit.php:61
 #, php-format
-msgid "Administrator change your credits to %d"
+msgid "Administrator add %d credits to you, current credits %d"
 msgstr ""
 
 #: core/functions/func.Credit.php:71
@@ -1978,7 +1986,7 @@ msgstr ""
 msgid "Can not copy `memcache object-cache.php` to `wp-content` dir.\\n"
 msgstr ""
 
-#: core/functions/func.Kits.php:362
+#: core/functions/func.Kits.php:365
 msgid "WordPress &rsaquo; Error"
 msgstr ""
 
@@ -2663,11 +2671,17 @@ msgid "Unread Messages"
 msgstr ""
 
 #: core/functions/func.User.php:481
+#: core/modules/management/mg.Tab.User.php:63
 msgid "Credits"
 msgstr ""
 
 #: core/functions/func.User.php:495
 msgid "Ref url for this page"
+msgstr ""
+
+#: core/functions/func.User.php:513
+#, php-format
+msgid "欢迎来到%1$s, 请首先在个人设置中完善您的账号信息, 如邮件地址是必需的"
 msgstr ""
 
 #: core/functions/shop/func.Shop.Cart.php:30
@@ -2739,69 +2753,75 @@ msgstr ""
 msgid "Create combine order failed"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Order.php:483
+#: core/functions/shop/func.Shop.Order.php:485
 msgid "The order with the a order id you specified is not existed"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Order.php:491
+#: core/functions/shop/func.Shop.Order.php:493
 msgid "The coupon is invalid"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Order.php:550
+#: core/functions/shop/func.Shop.Order.php:552
 msgid "The order is not exist"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Order.php:554
+#: core/functions/shop/func.Shop.Order.php:556
 msgid "You are not permit to delete this order"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Order.php:581
+#: core/functions/shop/func.Shop.Order.php:583
 #, php-format
 msgid "%s 商店交易状态变更提醒"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Order.php:598
+#: core/functions/shop/func.Shop.Order.php:600
 #, php-format
 msgid "%s 商店新成功交易提醒"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Order.php:598
+#: core/functions/shop/func.Shop.Order.php:600
 #, php-format
 msgid "%s 商店新订单提醒"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Order.php:688
+#: core/functions/shop/func.Shop.Order.php:690
 #, php-format
 msgid "The Resources You Bought in %s"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Order.php:691
+#: core/functions/shop/func.Shop.Order.php:693
+#: core/modules/me/me.Tab.Credits.php:76
+#: core/modules/me/me.Tab.Credits.php:81
+#: core/modules/me/me.Tab.Credits.php:86
+#: core/modules/me/me.Tab.Credits.php:91
+#: core/modules/me/me.Tab.Credits.php:96
+#: core/modules/me/me.Tab.Credits.php:101
 #: core/viewModels/management/vm.Mg.Order.php:67
 #: core/viewModels/me/vm.Me.Order.php:73
 #, php-format
 msgid "%d Credits"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Order.php:691
+#: core/functions/shop/func.Shop.Order.php:693
 #: core/viewModels/management/vm.Mg.Order.php:67
 #: core/viewModels/me/vm.Me.Order.php:73
 #, php-format
 msgid "%0.2f YUAN"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Order.php:722
+#: core/functions/shop/func.Shop.Order.php:724
 msgid "The order is not found"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Order.php:726
+#: core/functions/shop/func.Shop.Order.php:728
 msgid "The order has been payed"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Order.php:730
+#: core/functions/shop/func.Shop.Order.php:732
 msgid "The order has been closed"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Order.php:746
+#: core/functions/shop/func.Shop.Order.php:748
 msgid "Some error happened when continue the payment"
 msgstr ""
 
@@ -3020,8 +3040,9 @@ msgstr ""
 #: core/functions/shop/func.Shop.php:494
 #, php-format
 msgid ""
-"<li><p>%1$s</p><p>下载链接：<a href=\"%2$s\" title=\"%1$s\" target=\"_blank"
-"\">%2$s</a>下载密码：%3$s</p></li>"
+"<li style=\"margin: 0 0 10px 0;\"><p style=\"padding: 5px 0; margin: 0;\">"
+"%1$s</p><p style=\"padding: 5px 0; margin: 0;\">下载链接：<a href=\"%2$s\" "
+"title=\"%1$s\" target=\"_blank\">%2$s</a>下载密码：%3$s</p></li>"
 msgstr ""
 
 #: core/functions/shop/func.Shop.php:520
@@ -3057,9 +3078,13 @@ msgstr ""
 msgid "PRODUCTS"
 msgstr ""
 
-#: core/modules/management/mg.NavMenu.php:32
+#: core/modules/management/mg.NavMenu.php:31
 #: core/modules/me/me.NavMenu.php:34
 msgid "ORDERS"
+msgstr ""
+
+#: core/modules/management/mg.NavMenu.php:32
+msgid "USERS"
 msgstr ""
 
 #: core/modules/management/mg.NavMenu.php:33
@@ -3102,6 +3127,7 @@ msgid "Effect Date"
 msgstr ""
 
 #: core/modules/management/mg.Tab.Coupons.php:58
+#: core/modules/management/mg.Tab.User.php:90
 #: core/modules/me/me.Tab.Membership.php:41
 msgid "Expire Date"
 msgstr ""
@@ -3147,6 +3173,7 @@ msgstr ""
 #: core/modules/management/mg.Tab.Coupons.php:81
 #: core/modules/management/mg.Tab.Members.php:67
 #: core/modules/management/mg.Tab.Orders.php:50
+#: core/modules/management/mg.Tab.Users.php:53
 #: core/modules/me/me.Tab.Orders.php:48
 #: core/templates/site/tpl.CheckOut.php:90
 msgid "Actions"
@@ -3181,9 +3208,11 @@ msgstr ""
 #: core/modules/management/mg.Tab.Posts.php:60
 #: core/modules/management/mg.Tab.Products.php:61
 #: core/modules/management/mg.Tab.Products.php:63
-#: core/modules/me/me.Tab.Credits.php:73
-#: core/modules/me/me.Tab.Credits.php:75 core/modules/me/me.Tab.Drafts.php:52
-#: core/modules/me/me.Tab.Drafts.php:54
+#: core/modules/management/mg.Tab.Users.php:79
+#: core/modules/management/mg.Tab.Users.php:81
+#: core/modules/me/me.Tab.Credits.php:120
+#: core/modules/me/me.Tab.Credits.php:122
+#: core/modules/me/me.Tab.Drafts.php:52 core/modules/me/me.Tab.Drafts.php:54
 #: core/modules/me/me.Tab.Membership.php:88
 #: core/modules/me/me.Tab.Membership.php:90
 #: core/modules/me/me.Tab.Messages.php:80
@@ -3192,6 +3221,10 @@ msgstr ""
 #: core/modules/me/me.Tab.Notifications.php:53
 #: core/modules/me/me.Tab.Orders.php:77 core/modules/me/me.Tab.Orders.php:79
 #: core/modules/mod.SearchPosts.php:44 core/modules/mod.SearchPosts.php:46
+#: core/modules/uc/uc.Tab.Followers.php:62
+#: core/modules/uc/uc.Tab.Followers.php:64
+#: core/modules/uc/uc.Tab.Following.php:62
+#: core/modules/uc/uc.Tab.Following.php:64
 msgid "← 上一页"
 msgstr ""
 
@@ -3200,13 +3233,17 @@ msgstr ""
 #: core/modules/management/mg.Tab.Orders.php:83
 #: core/modules/management/mg.Tab.Posts.php:63
 #: core/modules/management/mg.Tab.Products.php:66
-#: core/modules/me/me.Tab.Credits.php:78 core/modules/me/me.Tab.Drafts.php:57
+#: core/modules/management/mg.Tab.Users.php:84
+#: core/modules/me/me.Tab.Credits.php:125
+#: core/modules/me/me.Tab.Drafts.php:57
 #: core/modules/me/me.Tab.Membership.php:93
 #: core/modules/me/me.Tab.Messages.php:85
 #: core/modules/me/me.Tab.Notifications.php:56
 #: core/modules/me/me.Tab.Orders.php:82 core/modules/mod.HomeLatest.php:69
 #: core/modules/mod.SearchPosts.php:49 core/modules/uc/uc.Tab.Chat.php:87
 #: core/modules/uc/uc.Tab.Comments.php:54
+#: core/modules/uc/uc.Tab.Followers.php:67
+#: core/modules/uc/uc.Tab.Following.php:67
 #: core/modules/uc/uc.Tab.Latest.php:67
 #, php-format
 msgid "Current Page %d"
@@ -3217,13 +3254,17 @@ msgstr ""
 #: core/modules/management/mg.Tab.Orders.php:85
 #: core/modules/management/mg.Tab.Posts.php:65
 #: core/modules/management/mg.Tab.Products.php:68
-#: core/modules/me/me.Tab.Credits.php:80 core/modules/me/me.Tab.Drafts.php:59
+#: core/modules/management/mg.Tab.Users.php:86
+#: core/modules/me/me.Tab.Credits.php:127
+#: core/modules/me/me.Tab.Drafts.php:59
 #: core/modules/me/me.Tab.Membership.php:95
 #: core/modules/me/me.Tab.Messages.php:87
 #: core/modules/me/me.Tab.Notifications.php:58
 #: core/modules/me/me.Tab.Orders.php:84 core/modules/mod.HomeLatest.php:71
 #: core/modules/mod.SearchPosts.php:51 core/modules/uc/uc.Tab.Chat.php:89
 #: core/modules/uc/uc.Tab.Comments.php:56
+#: core/modules/uc/uc.Tab.Followers.php:69
+#: core/modules/uc/uc.Tab.Following.php:69
 #: core/modules/uc/uc.Tab.Latest.php:69
 #, php-format
 msgid "Total %d Pages"
@@ -3239,9 +3280,11 @@ msgstr ""
 #: core/modules/management/mg.Tab.Posts.php:70
 #: core/modules/management/mg.Tab.Products.php:71
 #: core/modules/management/mg.Tab.Products.php:73
-#: core/modules/me/me.Tab.Credits.php:83
-#: core/modules/me/me.Tab.Credits.php:85 core/modules/me/me.Tab.Drafts.php:62
-#: core/modules/me/me.Tab.Drafts.php:64
+#: core/modules/management/mg.Tab.Users.php:89
+#: core/modules/management/mg.Tab.Users.php:91
+#: core/modules/me/me.Tab.Credits.php:130
+#: core/modules/me/me.Tab.Credits.php:132
+#: core/modules/me/me.Tab.Drafts.php:62 core/modules/me/me.Tab.Drafts.php:64
 #: core/modules/me/me.Tab.Membership.php:98
 #: core/modules/me/me.Tab.Membership.php:100
 #: core/modules/me/me.Tab.Messages.php:90
@@ -3250,6 +3293,10 @@ msgstr ""
 #: core/modules/me/me.Tab.Notifications.php:63
 #: core/modules/me/me.Tab.Orders.php:87 core/modules/me/me.Tab.Orders.php:89
 #: core/modules/mod.SearchPosts.php:54 core/modules/mod.SearchPosts.php:56
+#: core/modules/uc/uc.Tab.Followers.php:72
+#: core/modules/uc/uc.Tab.Followers.php:74
+#: core/modules/uc/uc.Tab.Following.php:72
+#: core/modules/uc/uc.Tab.Following.php:74
 msgid "下一页 →"
 msgstr ""
 
@@ -3258,10 +3305,11 @@ msgstr ""
 #: core/modules/management/mg.Tab.Orders.php:97
 #: core/modules/management/mg.Tab.Posts.php:77
 #: core/modules/management/mg.Tab.Products.php:80
+#: core/modules/management/mg.Tab.Users.php:98
 #: core/modules/me/me.Tab.Drafts.php:71
 #: core/modules/uc/uc.Tab.Comments.php:63
-#: core/modules/uc/uc.Tab.Followers.php:62
-#: core/modules/uc/uc.Tab.Following.php:62
+#: core/modules/uc/uc.Tab.Followers.php:81
+#: core/modules/uc/uc.Tab.Following.php:81
 #: core/modules/uc/uc.Tab.Latest.php:76 core/modules/uc/uc.Tab.Stars.php:79
 msgid "Nothing found here"
 msgstr ""
@@ -3303,14 +3351,17 @@ msgid "Sequence"
 msgstr ""
 
 #: core/modules/management/mg.Tab.Members.php:62
+#: core/modules/management/mg.Tab.User.php:30
 msgid "User ID"
 msgstr ""
 
 #: core/modules/management/mg.Tab.Members.php:63
+#: core/modules/management/mg.Tab.Users.php:48
 msgid "User Name"
 msgstr ""
 
 #: core/modules/management/mg.Tab.Members.php:64
+#: core/modules/management/mg.Tab.User.php:77
 #: core/modules/me/me.Tab.Membership.php:29
 msgid "Member Type"
 msgstr ""
@@ -3423,6 +3474,7 @@ msgid "Orders Type"
 msgstr ""
 
 #: core/modules/management/mg.Tab.Orders.php:34
+#: core/modules/management/mg.Tab.Users.php:34
 #: core/modules/me/me.Tab.Notifications.php:34
 #: core/modules/me/me.Tab.Orders.php:34
 msgid "ALL"
@@ -3490,8 +3542,8 @@ msgstr ""
 #: core/modules/management/mg.Tab.Products.php:81
 #: core/modules/me/me.Tab.Drafts.php:72
 #: core/modules/uc/uc.Tab.Comments.php:64
-#: core/modules/uc/uc.Tab.Followers.php:63
-#: core/modules/uc/uc.Tab.Following.php:63
+#: core/modules/uc/uc.Tab.Followers.php:82
+#: core/modules/uc/uc.Tab.Following.php:82
 #: core/modules/uc/uc.Tab.Latest.php:77 core/modules/uc/uc.Tab.Stars.php:80
 msgid "Back to home"
 msgstr ""
@@ -3619,6 +3671,156 @@ msgstr ""
 
 #: core/modules/management/mg.Tab.Status.php:72
 msgid "Product Categories"
+msgstr ""
+
+#: core/modules/management/mg.Tab.User.php:27
+#: core/modules/management/mg.Tab.User.php:121
+msgid "User Detail"
+msgstr ""
+
+#: core/modules/management/mg.Tab.User.php:34
+msgid "User Display Name"
+msgstr ""
+
+#: core/modules/management/mg.Tab.User.php:38
+#: core/modules/management/mg.Tab.Users.php:51
+msgid "Register Time"
+msgstr ""
+
+#: core/modules/management/mg.Tab.User.php:39
+#, php-format
+msgid " <b>(%d days)</b>"
+msgstr ""
+
+#: core/modules/management/mg.Tab.User.php:42
+#: core/modules/management/mg.Tab.Users.php:52 dash/dash.php:111
+msgid "Last Login"
+msgstr ""
+
+#: core/modules/management/mg.Tab.User.php:49
+msgid "User Credits"
+msgstr ""
+
+#: core/modules/management/mg.Tab.User.php:52
+msgid "Current Credits"
+msgstr ""
+
+#: core/modules/management/mg.Tab.User.php:56
+msgid "Consumed Credits"
+msgstr ""
+
+#: core/modules/management/mg.Tab.User.php:67
+msgid "ADD CREDITS"
+msgstr ""
+
+#: core/modules/management/mg.Tab.User.php:74
+msgid "User Membership"
+msgstr ""
+
+#: core/modules/management/mg.Tab.User.php:82
+#: core/modules/me/me.Tab.Membership.php:33
+msgid "Member Status"
+msgstr ""
+
+#: core/modules/management/mg.Tab.User.php:86
+#: core/modules/me/me.Tab.Membership.php:37
+msgid "Join Time"
+msgstr ""
+
+#: core/modules/management/mg.Tab.User.php:95
+msgid "Monthly VIP"
+msgstr ""
+
+#: core/modules/management/mg.Tab.User.php:96
+msgid "Annual VIP"
+msgstr ""
+
+#: core/modules/management/mg.Tab.User.php:97
+msgid "Permanent VIP"
+msgstr ""
+
+#: core/modules/management/mg.Tab.User.php:98
+msgid "PROMOTE VIP"
+msgstr ""
+
+#: core/modules/management/mg.Tab.User.php:99
+#: core/modules/me/me.Tab.Membership.php:55
+msgid ""
+"提示:若已开通会员则按照选择开通的类型自动续费,若会员已到期,则按重新开通计算"
+"有效期"
+msgstr ""
+
+#: core/modules/management/mg.Tab.User.php:106
+msgid "Latest Orders"
+msgstr ""
+
+#: core/modules/management/mg.Tab.User.php:124
+msgid "No this user"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Users.php:26
+msgid "Users List"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Users.php:29
+#, php-format
+msgid "%d users in total"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Users.php:32
+msgid "User Role"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Users.php:35
+msgid "ADMINISTRATOR"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Users.php:36
+msgid "EDITOR"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Users.php:37
+msgid "AUTHOR"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Users.php:38
+msgid "CONTRIBUTOR"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Users.php:39
+msgid "SUBSCRIBER"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Users.php:47
+msgid "ID"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Users.php:49
+#: core/modules/uc/uc.Tab.Profile.php:48
+#: core/templates/actions/tpl.M.Findpass.php:36
+#: core/templates/actions/tpl.M.Signup.php:46
+#: core/templates/site/tpl.CheckOut.php:152
+msgid "Email"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Users.php:50
+msgid "Role"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Users.php:67
+msgid "Manage the user"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Users.php:67
+msgid "Manage"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Users.php:69
+msgid "View the user's homepage"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Users.php:69
+msgid "Homepage"
 msgstr ""
 
 #: core/modules/me/me.NavMenu.php:23
@@ -3781,6 +3983,59 @@ msgid ""
 msgstr ""
 
 #: core/modules/me/me.Tab.Credits.php:63
+msgid "Way to Gain Credits"
+msgstr ""
+
+#: core/modules/me/me.Tab.Credits.php:68
+msgid "积分方法"
+msgstr ""
+
+#: core/modules/me/me.Tab.Credits.php:69
+msgid "一次得分"
+msgstr ""
+
+#: core/modules/me/me.Tab.Credits.php:70
+msgid "可用次数"
+msgstr ""
+
+#: core/modules/me/me.Tab.Credits.php:75
+msgid "注册奖励"
+msgstr ""
+
+#: core/modules/me/me.Tab.Credits.php:77
+msgid "Only Once"
+msgstr ""
+
+#: core/modules/me/me.Tab.Credits.php:80
+msgid "文章投稿"
+msgstr ""
+
+#: core/modules/me/me.Tab.Credits.php:82
+#: core/modules/me/me.Tab.Credits.php:87
+#: core/modules/me/me.Tab.Credits.php:92
+#: core/modules/me/me.Tab.Credits.php:97
+#: core/modules/me/me.Tab.Credits.php:102
+#, php-format
+msgid "%d per Day"
+msgstr ""
+
+#: core/modules/me/me.Tab.Credits.php:85
+msgid "评论回复"
+msgstr ""
+
+#: core/modules/me/me.Tab.Credits.php:90
+msgid "访问推广"
+msgstr ""
+
+#: core/modules/me/me.Tab.Credits.php:95
+msgid "注册推广"
+msgstr ""
+
+#: core/modules/me/me.Tab.Credits.php:100
+msgid "每日签到"
+msgstr ""
+
+#: core/modules/me/me.Tab.Credits.php:110
 msgid "Credit Records"
 msgstr ""
 
@@ -3806,14 +4061,6 @@ msgstr ""
 
 #: core/modules/me/me.Tab.Membership.php:26
 msgid "Member Info"
-msgstr ""
-
-#: core/modules/me/me.Tab.Membership.php:33
-msgid "Member Status"
-msgstr ""
-
-#: core/modules/me/me.Tab.Membership.php:37
-msgid "Join Time"
 msgstr ""
 
 #: core/modules/me/me.Tab.Membership.php:48
@@ -3845,12 +4092,6 @@ msgstr ""
 
 #: core/modules/me/me.Tab.Membership.php:54
 msgid "Confirm Join"
-msgstr ""
-
-#: core/modules/me/me.Tab.Membership.php:55
-msgid ""
-"提示:若已开通会员则按照选择开通的类型自动续费,若会员已到期,则按重新开通计算"
-"有效期"
 msgstr ""
 
 #: core/modules/me/me.Tab.Membership.php:61
@@ -4754,13 +4995,6 @@ msgstr ""
 #: core/modules/uc/uc.Tab.Profile.php:34
 #, php-format
 msgid "Last Login IP %s"
-msgstr ""
-
-#: core/modules/uc/uc.Tab.Profile.php:48
-#: core/templates/actions/tpl.M.Findpass.php:36
-#: core/templates/actions/tpl.M.Signup.php:46
-#: core/templates/site/tpl.CheckOut.php:152
-msgid "Email"
 msgstr ""
 
 #: core/modules/uc/uc.Tab.Profile.php:66
@@ -5753,6 +5987,10 @@ msgstr ""
 msgid "PUSH SELL"
 msgstr ""
 
+#: core/viewModels/management/vm.Mg.User.php:90
+msgid "Combined Orders"
+msgstr ""
+
 #: core/viewModels/shop/vm.Shop.Header.SubNav.php:77
 msgid "Free Products"
 msgstr ""
@@ -5813,10 +6051,6 @@ msgstr ""
 
 #: dash/dash.php:85
 msgid "Display Name"
-msgstr ""
-
-#: dash/dash.php:111
-msgid "Last Login"
 msgstr ""
 
 #: dash/dash.php:118

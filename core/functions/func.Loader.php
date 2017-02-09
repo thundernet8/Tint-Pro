@@ -243,6 +243,7 @@ if(TT_PRO){
     load_vm('management/vm.Mg.Order');
     load_vm('management/vm.Mg.Posts');
     load_vm('management/vm.Mg.Users');
+    load_vm('management/vm.Mg.User');
     load_vm('management/vm.Mg.Products');
 }
 

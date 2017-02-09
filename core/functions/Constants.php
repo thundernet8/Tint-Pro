@@ -134,7 +134,14 @@ $manage_allow_routes = json_encode(array(
     'status' => 'status',
     'posts' => 'posts',
     'comments' => 'comments',
-    'users' => 'users',
+    'users' => array(
+        'all',
+        'administrator',
+        'editor',
+        'author',
+        'contributor',
+        'subscriber'
+    ),
     //'user' => 'user',
     'orders' => array(
         'all',
@@ -200,7 +207,12 @@ $site_endpoints = json_encode(array(
     'oauth_weixin_refresh'      =>  'oauth/weixin?act=refresh',
     'manage_home'               =>  'management', //302 to status
     'manage_status'             =>  'management/status', // 全站数据统计 用户文章评论订单等数据量 运营时间等
-    'manage_users'              =>  'management/users',
+    'manage_users'              =>  'management/users/all',
+    'manage_admins'             =>  'management/users/administrator',
+    'manage_editors'            =>  'management/users/editor',
+    'manage_authors'            =>  'management/users/author',
+    'manage_contributors'       =>  'management/users/contributor',
+    'manage_subscribers'        =>  'management/users/subscriber',
     'manage_posts'              =>  'management/posts',
     'manage_comments'           =>  'management/comments',
     'manage_orders'             =>  'management/orders/all',
@@ -217,7 +229,8 @@ defined('SITE_ROUTES') || define('SITE_ROUTES', $site_endpoints);
 /* Some Actions for API */
 $site_api_actions = json_encode(array(
     'daily_sign' => 1, // 1代表私密action必须登录执行, 其它为公开action
-    'credits_charge' => 1
+    'credits_charge' => 1,
+    'add_credits' => 1
     // TODO: Add more
 ));
 defined('ALLOWED_ACTIONS') || define('ALLOWED_ACTIONS', $site_api_actions);

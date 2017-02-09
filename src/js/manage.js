@@ -30,6 +30,8 @@ import DeleteCoupon from './modules/deleteCoupon';
 import AddMember from './modules/addMember';
 import DeleteMember from './modules/deleteMember';
 import ManageOrderStatus from './modules/manageOrderStatus';
+import PromoteVip from './modules/promoteVip';
+import AddCredits from './modules/addCredits';
 
 // DOM Ready
 jQuery(document).ready(function ($) {
@@ -83,4 +85,10 @@ jQuery(document).ready(function ($) {
     
     // 管理订单状态
     ManageOrderStatus.init();
+    
+    // 提升会员
+    PromoteVip.init();
+    
+    // 添加积分
+    AddCredits.init();
 });

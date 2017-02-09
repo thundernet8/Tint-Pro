@@ -45,7 +45,6 @@ class UCChatVM extends BaseVM {
      * @since   2.0.0
      * @param   int    $page   分页号
      * @param   int    $author_id 作者ID
-     * @param   int    $user_id 用户ID
      * @return  static
      */
     public static function getInstance($page = 1, $author_id = 0) {
@@ -99,7 +98,7 @@ class UCChatVM extends BaseVM {
             $chat_message['tome'] = $message->user_id == $this->_userId;
             $chat_message['chat_avatar'] = $message->sender_id == $user->ID ? $user_avatar : $author_avatar;
             $chat_message['chat_name'] = $message->sender_id == $user->ID ? sprintf(__('You to %s', 'tt'), $author_name) : $author_name;
-            $chat_message['people_home'] = $message->sender_id = $user->ID ? $user_home : $author_home;
+            $chat_message['people_home'] = $message->sender_id == $user->ID ? $user_home : $author_home;
             $chat_message['class'] = $chat_message['read'] ? 'message chat-message' : 'message chat-message unread-message';
 
             $chat_messages[] = $chat_message;

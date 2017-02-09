@@ -601,7 +601,7 @@ function tt_redirect_management_main_route(){
     }
     if(preg_match('/^\/management\/orders$/i', $_SERVER['REQUEST_URI'])){
         if(current_user_can('administrator')){
-            wp_redirect(tt_url_for('manage_orders'), 302);
+            wp_redirect(tt_url_for('manage_orders'), 302); // /management/orders -> management/orders/all
         }else{
             Utils::set404();
             return;
@@ -626,10 +626,11 @@ function tt_handle_management_child_routes_rewrite($wp_rewrite){
         $new_rules['management/([a-zA-Z]+)$'] = 'index.php?manage_child_route=$matches[1]&is_manage_route=1';
         //$new_rules['management/([a-zA-Z]+)/([a-zA-Z]+)$'] = 'index.php?manage_child_route=$matches[1]&manage_grandchild_route=$matches[2]&is_manage_route=1';
         $new_rules['management/orders/([a-zA-Z0-9]+)$'] = 'index.php?manage_child_route=orders&manage_grandchild_route=$matches[1]&is_manage_route=1';
-        //$new_rules['management/users/([0-9]{1,})$'] = 'index.php?manage_child_route=users&manage_grandchild_route=$matches[1]&is_manage_route=1';
+        $new_rules['management/users/([a-zA-Z0-9]+)$'] = 'index.php?manage_child_route=users&manage_grandchild_route=$matches[1]&is_manage_route=1';
         // 分页
         $new_rules['management/([a-zA-Z]+)/page/([0-9]{1,})$'] = 'index.php?manage_child_route=$matches[1]&is_manage_route=1&paged=$matches[2]';
         $new_rules['management/orders/([a-zA-Z]+)/page/([0-9]{1,})$'] = 'index.php?manage_child_route=orders&manage_grandchild_route=$matches[1]&is_manage_route=1&paged=$matches[2]';
+        $new_rules['management/users/([a-zA-Z]+)/page/([0-9]{1,})$'] = 'index.php?manage_child_route=users&manage_grandchild_route=$matches[1]&is_manage_route=1&paged=$matches[2]';
         $wp_rewrite->rules = $new_rules + $wp_rewrite->rules;
     }
     return $wp_rewrite;
@@ -685,8 +686,21 @@ function tt_handle_manage_child_routes_template(){
             Utils::set404();
             return;
         }
-        if($manage_child_route !== 'orders'){
-            // 除orders外不允许有孙路由
+        if($manage_child_route === 'users' && $manage_grandchild_route){
+            if(preg_match('/([0-9]{1,})/', $manage_grandchild_route)){ // 对于users/57单个订单详情路由，孙路由必须是数字
+                $template = THEME_TPL . '/management/tpl.Manage.User.php';
+                load_template($template);
+                exit;
+            }elseif(in_array($manage_grandchild_route, $allow_routes['users'])){ // 对于users/all 指定类型订单列表路由，孙路由是all/administrator/editor/author/contributor/subscriber之中
+                $template = THEME_TPL . '/management/tpl.Manage.Users.php';
+                load_template($template);
+                exit;
+            }
+            Utils::set404();
+            return;
+        }
+        if($manage_child_route !== 'orders' && $manage_child_route !== 'users'){
+            // 除orders/users外不允许有孙路由
             if($manage_grandchild_route) {
                 Utils::set404();
                 return;

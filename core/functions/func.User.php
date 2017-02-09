@@ -142,7 +142,7 @@ function tt_get_user_star_post_ids ($user_id) {
  *
  * @since 2.0.0
  * @param $user_id
- * @return intval
+ * @return int
  */
 function tt_count_user_star_posts($user_id) {
     return count(tt_get_user_star_post_ids($user_id));
@@ -498,3 +498,18 @@ function tt_uc_widget_content() {
 	</li>
     <?php
 }
+
+
+/**
+ * 站内信欢迎新注册用户并通知完善账号信息
+ *
+ * @since 2.0.4
+ * @param $user_id
+ * @return void
+ */
+function tt_welcome_for_new_registering($user_id){
+    $blog_name = get_bloginfo('name');
+    //tt_create_message($user_id, 0, 'System', 'notification', sprintf( __('欢迎来到%1$s, 请首先在个人设置中完善您的账号信息, 如邮件地址是必需的', 'tt'), $blog_name ), '', 0, 'publish');
+    tt_create_pm($user_id, $blog_name, sprintf( __('欢迎来到%1$s, 请首先在个人设置中完善您的账号信息, 如邮件地址是必需的', 'tt'), $blog_name), true);
+}
+add_action('user_register', 'tt_welcome_for_new_registering');

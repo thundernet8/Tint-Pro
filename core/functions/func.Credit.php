@@ -55,11 +55,11 @@ function tt_update_user_credit($user_id = 0, $amount = 0, $msg = '', $admin_hand
     $before_credits = (int)get_user_meta($user_id, 'tt_credits', true);
     // 管理员直接更改用户积分
     if($admin_handle){
-        $update = update_user_meta($user_id, 'tt_credits', min(0, (int)$amount));
+        $update = update_user_meta($user_id, 'tt_credits', max(0, (int)$amount) + $before_credits);
         if($update){
             // 添加积分消息
-            $msg = $msg ? : sprintf(__('Administrator change your credits to %d', 'tt') , $amount);
-            tt_create_message( $user_id, 0, 'System', 'credit', $msg, '', 0, 'publish');
+            $msg = $msg ? : sprintf(__('Administrator add %d credits to you, current credits %d', 'tt') , max(0, (int)$amount), max(0, (int)$amount) + $before_credits);
+            tt_create_message( $user_id, 0, 'System', 'credit', $msg, '', MsgReadStatus::UNREAD, 'publish');
         }
         return !!$update;
     }
@@ -69,7 +69,7 @@ function tt_update_user_credit($user_id = 0, $amount = 0, $msg = '', $admin_hand
         if($update){
             // 添加积分消息
             $msg = $msg ? : sprintf(__('Gain %d credits', 'tt') , $amount);
-            tt_create_message( $user_id, 0, 'System', 'credit', $msg, '', 0, 'publish');
+            tt_create_message( $user_id, 0, 'System', 'credit', $msg, '', MsgReadStatus::UNREAD, 'publish');
         }
     }elseif($amount < 0){
         if($before_credits + $amount < 0){
@@ -81,7 +81,7 @@ function tt_update_user_credit($user_id = 0, $amount = 0, $msg = '', $admin_hand
         if($update){
             // 添加积分消息
             $msg = $msg ? : sprintf(__('Spend %d credits', 'tt') , absint($amount));
-            tt_create_message( $user_id, 0, 'System', 'credit', $msg, '', 0, 'publish');
+            tt_create_message( $user_id, 0, 'System', 'credit', $msg, '', MsgReadStatus::UNREAD, 'publish');
         }
     }
     return true;

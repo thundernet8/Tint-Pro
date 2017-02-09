@@ -1300,9 +1300,9 @@ class OpenWeibo extends Open{
 
     protected static $_status_option_name = 'tt_enable_weibo_login';
 
-    protected static $_openkey_option_name = 'tt_weibo_openid';
+    protected static $_openkey_option_name = 'tt_weibo_openkey';
 
-    protected static $_opensecret_option_name = 'tt_weibo_openkey';
+    protected static $_opensecret_option_name = 'tt_weibo_opensecret';
 
     protected static $_openid_meta_key = 'tt_weibo_openid';
 
@@ -1339,7 +1339,7 @@ class OpenWeibo extends Open{
             'redirect_uri' => self::getCallbackUrl(array('state' => $state))  // 由于微博不需要state参数，也不会回调时返回state，为了统一，在生成回调地址上附上state参数
         );
 
-        $auth_url = 'https://graph.qq.com/oauth2.0/authorize?' . http_build_query($params);
+        $auth_url = 'https://api.weibo.com/oauth2/authorize?' . http_build_query($params);
         wp_redirect($auth_url);
         exit;
     }

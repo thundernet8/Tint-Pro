@@ -57,7 +57,18 @@ class MgOrdersVM extends BaseVM {
         $count = $orders ? count($orders) : 0;
         $total_count = tt_count_orders($this->_type);
         $max_pages = ceil($total_count / $limit);
-        $pagination_base = tt_url_for('manage_orders') . '/page/%#%';
+
+        switch ($this->_type) {
+            case 'cash':
+                $url_key = 'manage_cash_orders';
+                break;
+            case 'credit':
+                $url_key = 'manage_credit_orders';
+                break;
+            default:
+                $url_key = 'manage_orders';
+        }
+        $pagination_base = tt_url_for($url_key) . '/page/%#%';
 
         return (object)array(
             'count' => $count,

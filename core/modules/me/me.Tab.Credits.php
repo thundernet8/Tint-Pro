@@ -58,6 +58,53 @@
                     </div>
                 </div>
             </section>
+            <!-- 积分获取方式 -->
+            <section class="credits-approach clearfix">
+                <header><h2><?php _e('Way to Gain Credits', 'tt'); ?></h2></header>
+                <div class="info-group clearfix">
+                    <table class="table table-centered table-framed table-striped credit-table">
+                        <thead>
+                        <tr>
+                            <th><?php _e('积分方法', 'tt'); ?></th>
+                            <th><?php _e('一次得分', 'tt'); ?></th>
+                            <th><?php _e('可用次数', 'tt'); ?></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><?php _e('注册奖励', 'tt'); ?></td>
+                            <td><?php printf(__('%d Credits', 'tt'), tt_get_option('tt_reg_credit', 50)); ?></td>
+                            <td><?php _e('Only Once', 'tt'); ?></td>
+                        </tr>
+                        <tr>
+                            <td><?php _e('文章投稿', 'tt'); ?></td>
+                            <td><?php printf(__('%d Credits', 'tt'), tt_get_option('tt_rec_post_credit', 50)); ?></td>
+                            <td><?php printf(__('%d per Day', 'tt'), tt_get_option('tt_rec_post_num', 5)); ?></td>
+                        </tr>
+                        <tr>
+                            <td><?php _e('评论回复', 'tt'); ?></td>
+                            <td><?php printf(__('%d Credits', 'tt'), tt_get_option('tt_rec_comment_credit', 5)); ?></td>
+                            <td><?php printf(__('%d per Day', 'tt'), tt_get_option('tt_rec_comment_num', 5)); ?></td>
+                        </tr>
+                        <tr>
+                            <td><?php _e('访问推广', 'tt'); ?></td>
+                            <td><?php printf(__('%d Credits', 'tt'), tt_get_option('tt_rec_view_credit', 5)); ?></td>
+                            <td><?php printf(__('%d per Day', 'tt'), tt_get_option('tt_rec_view_num', 50)); ?></td>
+                        </tr>
+                        <tr>
+                            <td><?php _e('注册推广', 'tt'); ?></td>
+                            <td><?php printf(__('%d Credits', 'tt'), tt_get_option('tt_rec_reg_credit', 30)); ?></td>
+                            <td><?php printf(__('%d per Day', 'tt'), tt_get_option('tt_rec_reg_num', 5)); ?></td>
+                        </tr>
+                        <tr>
+                            <td><?php _e('每日签到', 'tt'); ?></td>
+                            <td><?php printf(__('%d Credits', 'tt'), tt_get_option('tt_daily_sign_credits', 10)); ?></td>
+                            <td><?php printf(__('%d per Day', 'tt'), 1); ?></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
             <!-- 积分记录 -->
             <section class="credit-records clearfix">
                 <header><h2><?php _e('Credit Records', 'tt'); ?></h2></header>

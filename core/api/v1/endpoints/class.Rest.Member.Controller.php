@@ -142,7 +142,7 @@ class WP_REST_Member_Controller extends WP_REST_Controller
         if(is_numeric($user_name_or_id)) {
             $user = get_user_by('ID', $user_name_or_id);
         }else{
-            $user = get_user_by('display_name', $user_name_or_id);
+            $user = get_user_by('login', $user_name_or_id);
         }
 
         if(!$user){
