@@ -28,8 +28,8 @@ $open_type = strtolower(get_query_var('oauth'));
             <div class="form-account">
                 <h2 class="form-account-heading"><?php _e('The Last Step, Complete Basic Account Info', 'tt'); ?></h2>
                 <input type="hidden" id="oauthType" value="<?php echo $open_type; ?>">
-                <label for="inputUsername" class="sr-only"><?php _e('Username', 'tt'); ?></label>
-                <input type="text" id="inputUsername" class="form-control" placeholder="<?php _e('Username', 'tt'); ?>" required="required">
+                <label for="inputUsername" class="sr-only"><?php _e('Email', 'tt'); ?></label>
+                <input type="text" id="inputUsername" class="form-control" placeholder="<?php _e('Email', 'tt'); ?>" required="required">
                 <label for="inputPassword" class="sr-only"><?php _e('Repeat Password', 'tt'); ?></label>
                 <input type="password" id="inputPassword" class="form-control" placeholder="<?php _e('Password', 'tt'); ?>" required="required">
                 <button class="btn btn-lg btn-primary btn-block" id="bind-account" type="submit"><?php _e('Bind', 'tt'); ?></button>

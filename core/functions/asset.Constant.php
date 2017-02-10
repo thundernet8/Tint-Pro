@@ -17,21 +17,21 @@
 // 静态文件名常量，便于自动替换带特征值的文件名
 
 // CSS
-defined('CSS_HOME') || define('CSS_HOME', 'home-0a14eb1039.css');
-defined('CSS_FRONT_PAGE') || define('CSS_FRONT_PAGE', 'front-page-3f270e4351.css');
-defined('CSS_SINGLE') || define('CSS_SINGLE', 'single-f4331784c9.css');
-defined('CSS_PAGE') || define('CSS_PAGE', 'page-b504e5277b.css');
-defined('CSS_ARCHIVE') || define('CSS_ARCHIVE', 'archive-e9b8bcf822.css');
-defined('CSS_PRODUCT') || define('CSS_PRODUCT', 'product-b9254efd6d.css');
-defined('CSS_PRODUCT_ARCHIVE') || define('CSS_PRODUCT_ARCHIVE', 'products-d3078f549c.css');
-defined('CSS_UC') || define('CSS_UC', 'uc-e79caae421.css');
-defined('CSS_ME') || define('CSS_ME', 'me-a088ac653e.css');
-defined('CSS_ACTION') || define('CSS_ACTION', 'actions-fc73f6f129.css');
-defined('CSS_404') || define('CSS_404', '404-7b08d0b373.css');
+defined('CSS_HOME') || define('CSS_HOME', 'home-cae4f3676d.css');
+defined('CSS_FRONT_PAGE') || define('CSS_FRONT_PAGE', 'front-page-1efa2438b2.css');
+defined('CSS_SINGLE') || define('CSS_SINGLE', 'single-70e97e0d8b.css');
+defined('CSS_PAGE') || define('CSS_PAGE', 'page-6dd39ef676.css');
+defined('CSS_ARCHIVE') || define('CSS_ARCHIVE', 'archive-c24010d99c.css');
+defined('CSS_PRODUCT') || define('CSS_PRODUCT', 'product-71c8021538.css');
+defined('CSS_PRODUCT_ARCHIVE') || define('CSS_PRODUCT_ARCHIVE', 'products-72f5df0437.css');
+defined('CSS_UC') || define('CSS_UC', 'uc-1e1d665f9b.css');
+defined('CSS_ME') || define('CSS_ME', 'me-bd81800553.css');
+defined('CSS_ACTION') || define('CSS_ACTION', 'actions-3209d6bb08.css');
+defined('CSS_404') || define('CSS_404', '404-75e614ce91.css');
 defined('CSS_ERROR_PAGE') || define('CSS_ERROR_PAGE', 'error-page-9441bbec80.css');
-defined('CSS_SITE_UTILS') || define('CSS_SITE_UTILS', 'site-utils-d662891a77.css');
-defined('CSS_OAUTH') || define('CSS_OAUTH', 'oauth-f635656a6a.css');
-defined('CSS_MANAGE') || define('CSS_MANAGE', 'manage-3344e794ca.css');
+defined('CSS_SITE_UTILS') || define('CSS_SITE_UTILS', 'site-utils-f8b50602dc.css');
+defined('CSS_OAUTH') || define('CSS_OAUTH', 'oauth-ddde6d6d30.css');
+defined('CSS_MANAGE') || define('CSS_MANAGE', 'manage-871e3336c6.css');
 
 // JS
 defined('JS_COMMON') || define('JS_COMMON', 'common-caa0d2a669.js');
@@ -47,5 +47,5 @@ defined('JS_ME') || define('JS_ME', 'me-e6200e66bc.js');
 defined('JS_ACTION') || define('JS_ACTION', 'actionPage-78ccbec86e.js');
 defined('JS_404') || define('JS_404', '404-356723b4a1.js');
 defined('JS_SITE_UTILS') || define('JS_SITE_UTILS', 'site-utils-79501a9b55.js');
-defined('JS_OAUTH') || define('JS_OAUTH', 'oauth-391a4f1078.js');
+defined('JS_OAUTH') || define('JS_OAUTH', 'oauth-a704bc2c2c.js');
 defined('JS_MANAGE') || define('JS_MANAGE', 'manage-38cfedc631.js');

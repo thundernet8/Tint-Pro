@@ -153,6 +153,9 @@ function tt_product_info_callback($post){
     $price = get_post_meta($post->ID, 'tt_product_price', true);
     $amount = get_post_meta($post->ID, 'tt_product_quantity', true);
 
+    $taobao_link_raw = get_post_meta($post->ID, 'tt_taobao_link', true);
+    $taobao_link = $taobao_link_raw ? esc_url($taobao_link_raw) : '';
+
     // 注意，折扣保存的是百分数的数值部分
     $discount_summary = tt_get_product_discount_array($post->ID); // 第1项为普通折扣, 第2项为会员(月付)折扣, 第3项为会员(年付)折扣, 第4项为会员(永久)折扣
     $site_discount = $discount_summary[0];
@@ -210,6 +213,11 @@ function tt_product_info_callback($post){
     <p style="width:20%;clear:both;"><?php _e( '优惠促销折扣(100代表原价)', 'tt' );?>
         <input name="tt_product_promote_discount" class="small-text code" value="<?php echo $site_discount; ?>" style="width:80px;height: 28px;"> %
     </p>
+    <p style="clear:both;font-weight:bold;border-bottom:1px solid #ddd;padding-bottom:8px;">
+        <?php _e('淘宝链接', 'tt'); ?>
+    </p>
+    <p style="clear:both;"><?php _e( '购买渠道为淘宝时，请务必填写该项', 'tt' );?></p>
+    <textarea name="tt_taobao_link" rows="2" class="large-text code"><?php echo $taobao_link;?></textarea>
     <p style="clear:both;font-weight:bold;border-bottom:1px solid #ddd;padding-bottom:8px;">
         <?php _e('付费内容', 'tt'); ?>
     </p>
@@ -290,6 +298,10 @@ function tt_save_meta_box_data( $post_id ) {
     if(isset($_POST['tt_buy_channel'])){
         $channel = trim($_POST['tt_buy_channel']) == 'taobao' ? 'taobao' : 'instation';
         update_post_meta($post_id, 'tt_buy_channel', $channel);
+    }
+
+    if(isset($_POST['tt_taobao_link'])){
+        update_post_meta($post_id, 'tt_taobao_link', esc_url($_POST['tt_taobao_link']));
     }
 
     if(isset($_POST['tt_product_price'])){

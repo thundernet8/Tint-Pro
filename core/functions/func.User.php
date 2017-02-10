@@ -365,7 +365,8 @@ function tt_ban_user($user_id, $reason = '', $return = 'bool') {
         update_user_meta($user_id, 'tt_banned_reason', $reason);
         update_user_meta($user_id, 'tt_banned_time', current_time('mysql'));
         // 清理Profile缓存
-        tt_clear_cache_key_like('tt_cache_daily_vm_UCProfileVM');
+        // tt_clear_cache_key_like('tt_cache_daily_vm_UCProfileVM');
+        tt_clear_cache_by_key('tt_cache_daily_vm_UCProfileVM_author' . $user_id);
 
         return $return == 'bool' ? true : array(
             'success' => true,
@@ -399,7 +400,8 @@ function tt_unban_user($user_id, $return = 'bool') {
         //update_user_meta($user_id, 'tt_banned_reason', '');
         //update_user_meta($user_id, 'tt_banned_time', '');
         // 清理Profile缓存
-        tt_clear_cache_key_like('tt_cache_daily_vm_UCProfileVM');
+        // tt_clear_cache_key_like('tt_cache_daily_vm_UCProfileVM');
+        tt_clear_cache_by_key('tt_cache_daily_vm_UCProfileVM_author' . $user_id);
         return $return == 'bool' ? true : array(
             'success' => true,
             'message' => __('The specified user is unlocked', 'tt')

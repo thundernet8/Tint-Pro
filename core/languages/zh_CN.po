@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2017-02-09 15:47+0800\n"
-"PO-Revision-Date: 2017-02-09 15:47+0800\n"
+"POT-Creation-Date: 2017-02-10 20:13+0800\n"
+"PO-Revision-Date: 2017-02-10 20:13+0800\n"
 "Last-Translator: Zhiyan <mail@webapproach.net>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -156,7 +156,7 @@ msgid "You cannot comment this product becasue you donot buy it"
 msgstr "未购买该商品, 不能评论"
 
 #: core/api/v1/endpoints/class.Rest.Comment.Controller.php:273
-#: core/api/v1/endpoints/class.Rest.Session.Controller.php:157
+#: core/api/v1/endpoints/class.Rest.Session.Controller.php:161
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:569
 msgid "Sorry, you are not allowed to delete this resource."
 msgstr "抱歉, 你无权删除该资源"
@@ -573,32 +573,36 @@ msgstr "更新商品失败"
 msgid "Update product successfully"
 msgstr "更新商品成功"
 
-#: core/api/v1/endpoints/class.Rest.Session.Controller.php:105
+#: core/api/v1/endpoints/class.Rest.Session.Controller.php:92
+msgid "Invalid email format"
+msgstr "无效的邮箱格式"
+
+#: core/api/v1/endpoints/class.Rest.Session.Controller.php:109
 msgid "Open connect failed to complete your profile"
 msgstr "开放平台登录失败, 必要资料未完成"
 
-#: core/api/v1/endpoints/class.Rest.Session.Controller.php:107
+#: core/api/v1/endpoints/class.Rest.Session.Controller.php:111
 msgid "Open connected"
 msgstr "开放平台连接登录成功"
 
-#: core/api/v1/endpoints/class.Rest.Session.Controller.php:118
+#: core/api/v1/endpoints/class.Rest.Session.Controller.php:122
 msgid "Verify the login nonce failed"
 msgstr "验证登录Nonce失败"
 
-#: core/api/v1/endpoints/class.Rest.Session.Controller.php:137
+#: core/api/v1/endpoints/class.Rest.Session.Controller.php:141
 msgid "Welcome, you have signed in successfully"
 msgstr "欢迎, 你已成功登录"
 
-#: core/api/v1/endpoints/class.Rest.Session.Controller.php:144
+#: core/api/v1/endpoints/class.Rest.Session.Controller.php:148
 msgid "There is no user matches the info you offered"
 msgstr "未找到匹配用户"
 
-#: core/api/v1/endpoints/class.Rest.Session.Controller.php:174
+#: core/api/v1/endpoints/class.Rest.Session.Controller.php:178
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:588
 msgid "Users do not support trashing."
 msgstr "用户资源不支持删除"
 
-#: core/api/v1/endpoints/class.Rest.Session.Controller.php:179
+#: core/api/v1/endpoints/class.Rest.Session.Controller.php:183
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:238
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:265
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:510
@@ -606,7 +610,7 @@ msgstr "用户资源不支持删除"
 msgid "Invalid resource id."
 msgstr "无效的用户 id"
 
-#: core/api/v1/endpoints/class.Rest.Session.Controller.php:187
+#: core/api/v1/endpoints/class.Rest.Session.Controller.php:191
 msgid "You have signed out successfully"
 msgstr "你已成功登出"
 
@@ -993,100 +997,100 @@ msgid ""
 "you or choose another username"
 msgstr "该用户名已存在, 请提供正确的密码以供连接或重选新的用户名"
 
-#: core/classes/class.Open.php:584
+#: core/classes/class.Open.php:585
 msgid "Create New User Failed"
 msgstr "创建新用户失败"
 
-#: core/classes/class.Open.php:604
+#: core/classes/class.Open.php:605
 msgid "请完善账号信息"
 msgstr ""
 
-#: core/classes/class.Open.php:605
+#: core/classes/class.Open.php:606
 #, php-format
 msgid "欢迎来到%1$s, 请<a href=\"%2$s\">完善资料</a>"
 msgstr ""
 
-#: core/classes/class.Open.php:660
+#: core/classes/class.Open.php:661
 msgid "Unallowed Open Type"
 msgstr "不允许的开放平台登录类型"
 
-#: core/classes/class.Open.php:661
+#: core/classes/class.Open.php:662
 msgid "The open connect type is not allowed"
 msgstr "不允许该开放平台登录"
 
-#: core/classes/class.Open.php:704
+#: core/classes/class.Open.php:705
 msgid "User Authorization Canceled"
 msgstr "用户取消了授权"
 
-#: core/classes/class.Open.php:705
+#: core/classes/class.Open.php:706
 msgid ""
 "You should agree to authorize our application connecting your open account"
 msgstr "你应该同意授权本应用连接你的开放平台账户"
 
-#: core/classes/class.Open.php:734 core/classes/class.Open.php:951
-#: core/classes/class.Open.php:1213 core/classes/class.Open.php:1567
+#: core/classes/class.Open.php:735 core/classes/class.Open.php:952
+#: core/classes/class.Open.php:1214 core/classes/class.Open.php:1568
 msgid "User Not Logged In"
 msgstr "用户未登录"
 
-#: core/classes/class.Open.php:735
+#: core/classes/class.Open.php:736
 msgid "You must be logged in and then log out"
 msgstr "你必须登录了才能登出"
 
-#: core/classes/class.Open.php:844
+#: core/classes/class.Open.php:845
 msgid "Grant QQ Access Token Failed"
 msgstr "获取 QQ Access Token 失败"
 
-#: core/classes/class.Open.php:897
+#: core/classes/class.Open.php:898
 msgid "Grant QQ OpenID Failed"
 msgstr "获取 QQ OpenID 失败"
 
-#: core/classes/class.Open.php:925
+#: core/classes/class.Open.php:926
 msgid "Grant QQ User Info Failed"
 msgstr "获取 QQ 用户信息失败"
 
-#: core/classes/class.Open.php:952 core/classes/class.Open.php:1214
-#: core/classes/class.Open.php:1568
+#: core/classes/class.Open.php:953 core/classes/class.Open.php:1215
+#: core/classes/class.Open.php:1569
 msgid "You must log in to refresh your token"
 msgstr "你必须登录才能刷新Token"
 
-#: core/classes/class.Open.php:963 core/classes/class.Open.php:1225
-#: core/classes/class.Open.php:1579
+#: core/classes/class.Open.php:964 core/classes/class.Open.php:1226
+#: core/classes/class.Open.php:1580
 msgid "Refresh Token Miss"
 msgstr "丢失Refresh Token"
 
-#: core/classes/class.Open.php:964 core/classes/class.Open.php:1226
-#: core/classes/class.Open.php:1580
+#: core/classes/class.Open.php:965 core/classes/class.Open.php:1227
+#: core/classes/class.Open.php:1581
 msgid "A refresh token is required to get new access token"
 msgstr "需要 Refresh Token 以获取新的 Access Token"
 
-#: core/classes/class.Open.php:1107 core/classes/class.Open.php:1186
-#: core/classes/class.Open.php:1271 core/classes/class.Open.php:1399
-#: core/classes/class.Open.php:1462 core/classes/class.Open.php:1542
-#: core/classes/class.Open.php:1617
+#: core/classes/class.Open.php:1108 core/classes/class.Open.php:1187
+#: core/classes/class.Open.php:1272 core/classes/class.Open.php:1400
+#: core/classes/class.Open.php:1463 core/classes/class.Open.php:1543
+#: core/classes/class.Open.php:1618
 msgid "The open server returned with a incorrect response"
 msgstr "开放平台服务器响应格式错误"
 
-#: core/classes/class.Open.php:1177 core/classes/class.Open.php:1185
+#: core/classes/class.Open.php:1178 core/classes/class.Open.php:1186
 msgid "Get WeiXin Userinfo Failed"
 msgstr "获取微信用户信息失败"
 
-#: core/classes/class.Open.php:1262 core/classes/class.Open.php:1270
+#: core/classes/class.Open.php:1263 core/classes/class.Open.php:1271
 msgid "Refresh WeiXin Token Failed"
 msgstr "刷新微信 Token 失败"
 
-#: core/classes/class.Open.php:1390
+#: core/classes/class.Open.php:1391
 msgid "Grant Weibo Access Token Failed"
 msgstr "获取微博 Access Token 失败"
 
-#: core/classes/class.Open.php:1453
+#: core/classes/class.Open.php:1454
 msgid "Grant Weibo Token Info Failed"
 msgstr "获取微博 Token 信息失败"
 
-#: core/classes/class.Open.php:1533
+#: core/classes/class.Open.php:1534
 msgid "Grant Weibo User Show Info Failed"
 msgstr "获取微博用户信息失败"
 
-#: core/classes/class.Open.php:1608
+#: core/classes/class.Open.php:1609
 msgid "Refresh Weibo Access Token Failed"
 msgstr "刷新微博 Access Token 失败"
 
@@ -2155,80 +2159,84 @@ msgstr "页面关键词"
 msgid "页面描述"
 msgstr "页面描述"
 
-#: core/functions/func.Metabox.php:172
+#: core/functions/func.Metabox.php:175
 #, php-format
 msgid "此商品购买按钮快捷插入短代码为[product id=\"%1$s\"][/product]"
 msgstr "此商品购买按钮快捷插入短代码为[product id=\"%1$s\"][/product]"
 
-#: core/functions/func.Metabox.php:175
+#: core/functions/func.Metabox.php:178
 msgid "基本信息"
 msgstr "基本信息"
 
-#: core/functions/func.Metabox.php:177
+#: core/functions/func.Metabox.php:180
 msgid "选择支付币种"
 msgstr "选择支付币种"
 
-#: core/functions/func.Metabox.php:179
+#: core/functions/func.Metabox.php:182
 msgid "积分"
 msgstr "积分"
 
-#: core/functions/func.Metabox.php:180
+#: core/functions/func.Metabox.php:183
 msgid "人民币"
 msgstr "人民币"
 
-#: core/functions/func.Metabox.php:183
+#: core/functions/func.Metabox.php:186
 msgid "选择购买渠道"
 msgstr ""
 
-#: core/functions/func.Metabox.php:185
+#: core/functions/func.Metabox.php:188
 msgid "站内购买"
 msgstr ""
 
-#: core/functions/func.Metabox.php:186
+#: core/functions/func.Metabox.php:189 core/functions/func.Metabox.php:217
 msgid "淘宝链接"
 msgstr ""
 
-#: core/functions/func.Metabox.php:189
+#: core/functions/func.Metabox.php:192
 msgid "商品售价 "
 msgstr "商品售价 "
 
-#: core/functions/func.Metabox.php:192
+#: core/functions/func.Metabox.php:195
 msgid "商品数量 "
 msgstr "商品数量 "
 
-#: core/functions/func.Metabox.php:196
+#: core/functions/func.Metabox.php:199
 msgid "VIP会员折扣百分数(100代表原价)"
 msgstr "VIP会员折扣百分数(100代表原价)"
 
-#: core/functions/func.Metabox.php:198
+#: core/functions/func.Metabox.php:201
 msgid "VIP月费会员折扣 "
 msgstr "VIP月费会员折扣 "
 
-#: core/functions/func.Metabox.php:201
+#: core/functions/func.Metabox.php:204
 msgid "VIP年费会员折扣 "
 msgstr "VIP年费会员折扣 "
 
-#: core/functions/func.Metabox.php:204
+#: core/functions/func.Metabox.php:207
 msgid "VIP永久会员折扣 "
 msgstr "VIP永久会员折扣 "
 
-#: core/functions/func.Metabox.php:208
+#: core/functions/func.Metabox.php:211
 msgid "促销信息"
 msgstr "促销信息"
 
-#: core/functions/func.Metabox.php:210
+#: core/functions/func.Metabox.php:213
 msgid "优惠促销折扣(100代表原价)"
 msgstr "优惠促销折扣(100代表原价)"
 
-#: core/functions/func.Metabox.php:214
+#: core/functions/func.Metabox.php:219
+msgid "购买渠道为淘宝时，请务必填写该项"
+msgstr ""
+
+#: core/functions/func.Metabox.php:222
 msgid "付费内容"
 msgstr "付费内容"
 
-#: core/functions/func.Metabox.php:216
+#: core/functions/func.Metabox.php:224
 msgid "付费查看下载链接,一行一个,每个资源格式为资源名|资源下载链接|密码"
 msgstr "付费查看下载链接,一行一个,每个资源格式为资源名|资源下载链接|密码"
 
-#: core/functions/func.Metabox.php:218
+#: core/functions/func.Metabox.php:226
 msgid "付费查看的内容信息"
 msgstr "付费查看的内容信息"
 
@@ -3156,7 +3164,7 @@ msgstr "删除优惠码"
 #: core/modules/management/mg.Tab.Coupons.php:98
 #: core/modules/management/mg.Tab.Members.php:84
 #: core/modules/management/mg.Tab.Orders.php:67
-#: core/modules/me/me.Tab.Orders.php:66
+#: core/modules/me/me.Tab.Orders.php:68
 msgid "Delete"
 msgstr "删除"
 
@@ -3181,7 +3189,7 @@ msgstr "删除"
 #: core/modules/me/me.Tab.Messages.php:82
 #: core/modules/me/me.Tab.Notifications.php:51
 #: core/modules/me/me.Tab.Notifications.php:53
-#: core/modules/me/me.Tab.Orders.php:77 core/modules/me/me.Tab.Orders.php:79
+#: core/modules/me/me.Tab.Orders.php:79 core/modules/me/me.Tab.Orders.php:81
 #: core/modules/mod.SearchPosts.php:44 core/modules/mod.SearchPosts.php:46
 #: core/modules/uc/uc.Tab.Followers.php:62
 #: core/modules/uc/uc.Tab.Followers.php:64
@@ -3200,7 +3208,7 @@ msgstr "← 上一页"
 #: core/modules/me/me.Tab.Membership.php:93
 #: core/modules/me/me.Tab.Messages.php:85
 #: core/modules/me/me.Tab.Notifications.php:56
-#: core/modules/me/me.Tab.Orders.php:82 core/modules/mod.HomeLatest.php:69
+#: core/modules/me/me.Tab.Orders.php:84 core/modules/mod.HomeLatest.php:69
 #: core/modules/mod.SearchPosts.php:49 core/modules/uc/uc.Tab.Chat.php:87
 #: core/modules/uc/uc.Tab.Comments.php:54
 #: core/modules/uc/uc.Tab.Followers.php:67
@@ -3219,7 +3227,7 @@ msgstr "第 %d 页"
 #: core/modules/me/me.Tab.Membership.php:95
 #: core/modules/me/me.Tab.Messages.php:87
 #: core/modules/me/me.Tab.Notifications.php:58
-#: core/modules/me/me.Tab.Orders.php:84 core/modules/mod.HomeLatest.php:71
+#: core/modules/me/me.Tab.Orders.php:86 core/modules/mod.HomeLatest.php:71
 #: core/modules/mod.SearchPosts.php:51 core/modules/uc/uc.Tab.Chat.php:89
 #: core/modules/uc/uc.Tab.Comments.php:56
 #: core/modules/uc/uc.Tab.Followers.php:69
@@ -3249,7 +3257,7 @@ msgstr "共 %d 页"
 #: core/modules/me/me.Tab.Messages.php:92
 #: core/modules/me/me.Tab.Notifications.php:61
 #: core/modules/me/me.Tab.Notifications.php:63
-#: core/modules/me/me.Tab.Orders.php:87 core/modules/me/me.Tab.Orders.php:89
+#: core/modules/me/me.Tab.Orders.php:89 core/modules/me/me.Tab.Orders.php:91
 #: core/modules/mod.SearchPosts.php:54 core/modules/mod.SearchPosts.php:56
 #: core/modules/uc/uc.Tab.Followers.php:72
 #: core/modules/uc/uc.Tab.Followers.php:74
@@ -3477,7 +3485,7 @@ msgid "View Order"
 msgstr "查看"
 
 #: core/modules/management/mg.Tab.Orders.php:67
-#: core/modules/me/me.Tab.Orders.php:66
+#: core/modules/me/me.Tab.Orders.php:68
 msgid "Delete the order"
 msgstr "删除订单"
 
@@ -3756,6 +3764,8 @@ msgstr "ID"
 #: core/modules/uc/uc.Tab.Profile.php:48
 #: core/templates/actions/tpl.M.Findpass.php:36
 #: core/templates/actions/tpl.M.Signup.php:46
+#: core/templates/oauth/tpl.OAuth.Last.php:31
+#: core/templates/oauth/tpl.OAuth.Last.php:32
 #: core/templates/site/tpl.CheckOut.php:152
 msgid "Email"
 msgstr "邮箱"
@@ -4159,11 +4169,11 @@ msgstr "积分通知"
 msgid "No notifications"
 msgstr "没有通知消息"
 
-#: core/modules/me/me.Tab.Order.php:55 core/modules/me/me.Tab.Orders.php:64
+#: core/modules/me/me.Tab.Order.php:55 core/modules/me/me.Tab.Orders.php:65
 msgid "Finish the payment"
 msgstr "完成订单支付"
 
-#: core/modules/me/me.Tab.Order.php:55 core/modules/me/me.Tab.Orders.php:64
+#: core/modules/me/me.Tab.Order.php:55 core/modules/me/me.Tab.Orders.php:65
 msgid "Continue Pay"
 msgstr "支付"
 
@@ -5366,11 +5376,6 @@ msgstr ""
 #: core/templates/oauth/tpl.OAuth.Last.php:29
 msgid "The Last Step, Complete Basic Account Info"
 msgstr "最后一步 完善账号信息"
-
-#: core/templates/oauth/tpl.OAuth.Last.php:31
-#: core/templates/oauth/tpl.OAuth.Last.php:32
-msgid "Username"
-msgstr "用户名"
 
 #: core/templates/oauth/tpl.OAuth.Last.php:35
 msgid "Bind"
@@ -7205,6 +7210,9 @@ msgstr "Zhiyan"
 #. Author URI of the plugin/theme
 msgid "https://webapproach.net/u/57"
 msgstr "https://webapproach.net/u/57"
+
+#~ msgid "Username"
+#~ msgstr "用户名"
 
 #~ msgid "Once per Day"
 #~ msgstr "每天一次"

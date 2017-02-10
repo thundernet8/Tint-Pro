@@ -84,9 +84,13 @@ class WP_REST_Session_Controller extends WP_REST_Controller
     public function create_item( $request ) {
 
         $user_login = sanitize_text_field($request->get_param('user_login'));
+
         $password = sanitize_text_field($request->get_param('password'));
         $oauth = $request->get_param('oauth');
         if($oauth !== null && in_array($oauth, (array)json_decode(ALLOWED_OAUTH_TYPES))){
+            if(!is_email($user_login)) {
+                return new WP_Error('rest_invalid_email', __('Invalid email format', 'tt'));
+            }
             switch($oauth) {
                 case 'qq':
                     $open = new OpenQQ(wp_get_current_user());

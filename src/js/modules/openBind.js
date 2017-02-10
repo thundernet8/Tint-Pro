@@ -44,14 +44,14 @@ var _handleOpenBind = function (btn) {
     
     if(username === '') {
         popMsgbox.error({
-            title: '请输入用户名',
+            title: '请输入邮箱',
             timer: 2000,
             showConfirmButton: true
         });
         return false;
-    } else if (!Utils.isValidUserName(username)) {
+    } else if (!Utils.isEmail(username)) {
         popMsgbox.error({
-            title: '用户名必须以字母开头, 英文/数字/下划线组合',
+            title: '不正确的邮箱格式',
             timer: 2000,
             showConfirmButton: true
         });
@@ -76,7 +76,7 @@ var _handleOpenBind = function (btn) {
     
    
     var data = {
-        user_login: username,
+        user_login: username, // 就是Email
         password: password,
         oauth: oauthType,
         key: Utils.getQueryString('key')

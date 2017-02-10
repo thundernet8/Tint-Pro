@@ -540,7 +540,7 @@ abstract class Open{
      *
      * @since   2.0.0
      *
-     * @param   string  $user_login  用户登录名
+     * @param   string  $user_login  用户登录名(以邮箱做用户名)
      * @param   string  $password   用户密码
      * @return  bool|string|WP_Error
      */
@@ -572,6 +572,7 @@ abstract class Open{
             // 开放平台连接并需要新建一个本地用户绑定
             $insert_user_id = wp_insert_user( array(
                 'user_login'  => $user_login,
+                'user_email' => $user_login,
                 'nickname'  => $data['name'],
                 'display_name'  => $data['name'],
                 'user_pass' => $password
@@ -603,7 +604,7 @@ abstract class Open{
             if($is_new) {
                 $msg_title = __('请完善账号信息','tt');
                 $msg_content = sprintf(__('欢迎来到%1$s, 请<a href="%2$s">完善资料</a>','tt'), get_bloginfo('name'), tt_url_for('my_settings'));
-                tt_create_message( $insert_user_id, 0, 'System', 'notification', $msg_title, $msg_content, 0, 'publish');
+                tt_create_message( $insert_user_id, 0, 'System', 'notification', $msg_title, $msg_content, MsgReadStatus::UNREAD, 'publish');
             }
 
 
