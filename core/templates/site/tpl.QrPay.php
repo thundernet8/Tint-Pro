@@ -76,10 +76,12 @@ if($currency != 'cash'){
                 <p class="remark"><?php echo sprintf(__('Your remark is: <strong>%d</strong>', 'tt'), $order->id); ?></p>
                 <div class="pay-qr-images row">
                     <div class="qrcode col-md-6 col-sm-6 col-xs-12 alipay">
+                        <h4 style="color: #07b6e8;"><?php _e('Alipay', 'tt'); ?></h4>
                         <div class="ali-qr"><img src="<?php echo tt_get_option('tt_site_alipay_qr'); ?>" title="<?php _e('Scan the qrcode image and pay forward to me', 'tt'); ?>"></div>
                         <p><?php _e('Recommended, support auto delivery if you leave right remark', 'tt'); ?></p>
                     </div>
                     <div class="qrcode col-md-6 col-sm-6 col-xs-12 weixin">
+                        <h4 style="color: #07b6e8;"><?php _e('Wechat', 'tt'); ?></h4>
                         <div class="wx-qr"><img src="<?php echo tt_get_option('tt_site_weixin_qr'); ?>" title="<?php _e('Scan the qrcode image and pay forward to me', 'tt'); ?>"></div>
                         <p><?php _e('Auto delivery not supported, we will check and handle the order manually in time', 'tt'); ?></p>
                     </div>

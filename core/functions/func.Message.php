@@ -111,6 +111,11 @@ function tt_mark_message( $id, $read = MsgReadStatus::READ ) {
     $table_name = $wpdb->prefix . 'tt_messages';
 
     if($wpdb->query( $wpdb->prepare("UPDATE $table_name SET `msg_read` = %d WHERE `msg_id` = %d AND `user_id` = %d", $read, $id, $user_id) )) {
+        // 清理未读消息统计数的缓存
+        if(wp_using_ext_object_cache()) {
+            $key = 'tt_user_' . $user_id . '_unread';
+            wp_cache_delete($key);
+        }
         return true;
     }
     return false;
@@ -131,6 +136,11 @@ function tt_mark_all_message_read( ) {
     $table_name = $wpdb->prefix . 'tt_messages';
 
     if($wpdb->query( $wpdb->prepare("UPDATE $table_name SET `msg_read` = 1 WHERE `user_id` = %d AND `msg_read` = 0", $user_id) )) {
+        // 清理未读消息统计数的缓存
+        if(wp_using_ext_object_cache()) {
+            $key = 'tt_user_' . $user_id . '_unread';
+            wp_cache_delete($key);
+        }
         return true;
     }
     return false;
@@ -291,6 +301,22 @@ function tt_get_pm($sender_id = 0, $limit = 20, $offset = 0, $read = MsgReadStat
  */
 function tt_count_pm($sender_id = 0, $read = MsgReadStatus::UNREAD) {
     return tt_count_messages('chat', $read, 'publish', $sender_id);
+}
+
+
+function tt_count_pm_cached($user_id = 0, $sender_id = 0, $read = MsgReadStatus::UNREAD) {
+    if(wp_using_ext_object_cache()) {
+        $user_id = $user_id ? : get_current_user_id();
+        $key = 'tt_user_' . $user_id . '_unread';
+        $cache = wp_cache_get($key);
+        if($cache !== false) {
+            return (int)$cache;
+        }
+        $unread = tt_count_pm($sender_id, $read);
+        wp_cache_add($key, $unread, '', 3600);
+        return $unread;
+    }
+    return tt_count_pm($sender_id, $read);
 }
 
 

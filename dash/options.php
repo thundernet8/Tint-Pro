@@ -596,6 +596,11 @@ function optionsframework_options() {
 	);
 
     //
+    $options[] = array(
+		'name' => __( '暂不可用', 'tt' ),
+		'desc' => '', //__( 'This is just some example information you can put in the panel.', 'tt' ),
+		'type' => 'info'
+	);
 
 
     // 主题设置 - 积分系统设置

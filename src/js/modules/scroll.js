@@ -22,12 +22,14 @@ var _scrollTopAnchorCls = 'scroll-top';
 var _scrollBottomAnchorCls = 'scroll-bottom';
 
 var _handleScrollTo = function (btn) {
+    // firefox 不支持$('body')的scrollTo
+    // chrome 不支持$('html')的scrollTo
     if(btn.hasClass(_scrollBottomAnchorCls)) {
-        _body.animate({
+        $('html,body').animate({
             scrollTop: $(document).height()
         }, 'slow');
     }else if(btn.hasClass(_scrollTopAnchorCls)) {
-        _body.animate({
+        $('html,body').animate({
             scrollTop: 0
         }, 'slow');
     }
