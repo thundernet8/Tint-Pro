@@ -1178,6 +1178,7 @@ function optionsframework_options() {
         'desc' => __( 'One line for one record, please conform to the sample', 'tt' ),
         'id' => 'tt_short_link_records',
         'std' => 'baidu | http://www.baidu.com' . PHP_EOL,
+        'raw' => true,
         'type' => 'textarea'
     );
 

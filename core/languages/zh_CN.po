@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2017-02-10 20:13+0800\n"
-"PO-Revision-Date: 2017-02-10 20:13+0800\n"
+"POT-Creation-Date: 2017-02-12 12:42+0800\n"
+"PO-Revision-Date: 2017-02-12 12:46+0800\n"
 "Last-Translator: Zhiyan <mail@webapproach.net>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -879,7 +879,7 @@ msgstr "抱歉, 必须登录才能查看用户账户状态"
 
 #: core/api/v1/endpoints/class.Rest.UserStatus.Controller.php:75
 #: core/api/v1/endpoints/class.Rest.UserStatus.Controller.php:107
-#: core/functions/func.User.php:361 core/functions/func.User.php:395
+#: core/functions/func.User.php:361 core/functions/func.User.php:396
 msgid "The specified user is not existed"
 msgstr "指定的用户不存在"
 
@@ -1684,7 +1684,7 @@ msgid "获得评论回复奖励%d积分"
 msgstr "获得评论回复奖励%d积分"
 
 #: core/functions/func.Credit.php:299 core/functions/shop/func.Shop.php:238
-#: dash/options.php:603
+#: dash/options.php:608
 msgid "Credit"
 msgstr "积分"
 
@@ -1734,7 +1734,7 @@ msgstr "你要购买的资源不存在"
 
 #: core/functions/func.Download.php:73 core/functions/shop/func.Shop.php:493
 #: core/modules/mod.Download.php:35 core/modules/mod.Download.php:49
-#: dash/options.php:991 dash/options.php:1097
+#: dash/options.php:996 dash/options.php:1102
 msgid "None"
 msgstr "无"
 
@@ -2305,7 +2305,7 @@ msgid "Activate Registration"
 msgstr "激活注册"
 
 #: core/functions/func.Seo.php:37 core/functions/func.Seo.php:224
-#: core/modules/mod.Header.Shop.php:103 core/modules/mod.Header.php:66
+#: core/modules/mod.Header.Shop.php:103 core/modules/mod.Header.php:68
 msgid "Sign Out"
 msgstr "注销"
 
@@ -2319,7 +2319,7 @@ msgid "Reset Password"
 msgstr "重置密码"
 
 #: core/functions/func.Seo.php:51 core/modules/mod.Header.Shop.php:101
-#: core/modules/mod.Header.php:64
+#: core/modules/mod.Header.php:66
 msgid "My Settings"
 msgstr "个人设置"
 
@@ -2328,7 +2328,7 @@ msgid "My Notifications"
 msgstr "站内通知"
 
 #: core/functions/func.Seo.php:57 core/modules/me/me.Tab.Messages.php:26
-#: core/modules/mod.Header.Shop.php:100 core/modules/mod.Header.php:63
+#: core/modules/mod.Header.Shop.php:100 core/modules/mod.Header.php:65
 msgid "My Messages"
 msgstr "站内消息"
 
@@ -2353,7 +2353,7 @@ msgstr "我的订单"
 msgid "My Drafts"
 msgstr "我的草稿"
 
-#: core/functions/func.Seo.php:75 core/modules/mod.Header.php:61
+#: core/functions/func.Seo.php:75 core/modules/mod.Header.php:63
 msgid "New Post"
 msgstr "新建文章"
 
@@ -2450,7 +2450,7 @@ msgstr "商品标签"
 
 #: core/functions/func.Seo.php:175 core/functions/func.Seo.php:178
 #: core/functions/func.Seo.php:276 core/modules/mod.Header.Shop.php:29
-#: dash/options.php:840
+#: dash/options.php:845
 msgid "Market"
 msgstr "商店"
 
@@ -2584,76 +2584,76 @@ msgstr "你的账户已被封禁, 理由为: %s"
 msgid "Account Banned"
 msgstr "账户冻结"
 
-#: core/functions/func.User.php:372
+#: core/functions/func.User.php:373
 msgid "The specified user is banned"
 msgstr "指定的用户已被封禁"
 
-#: core/functions/func.User.php:377
+#: core/functions/func.User.php:378
 msgid "Error occurs when banning the user"
 msgstr "当封禁用户时发生了错误"
 
-#: core/functions/func.User.php:405
+#: core/functions/func.User.php:407
 msgid "The specified user is unlocked"
 msgstr "指定的用户已解禁"
 
-#: core/functions/func.User.php:410
+#: core/functions/func.User.php:412
 msgid "Error occurs when unlock the user"
 msgstr "当解禁用户时发生了错误"
 
-#: core/functions/func.User.php:424
+#: core/functions/func.User.php:426
 #, php-format
 msgid "Log User <a href=\"%1$s\">%2$s</a>"
 msgstr "登录者 <a href=\"%1$s\">%2$s</a>"
 
-#: core/functions/func.User.php:424
+#: core/functions/func.User.php:426
 #, php-format
 msgid "<a href=\"%1$s\" title=\"Log Out\">Log Out &raquo;</a>"
 msgstr "<a href=\"%1$s\" title=\"注销你的会话\">登出 &raquo;</a>"
 
-#: core/functions/func.User.php:426
+#: core/functions/func.User.php:428
 #, php-format
 msgid ""
 "<a href=\"%1$s#securityInfo\">Please add correct email for safety of your "
 "account.</a>"
 msgstr "<a href=\"%1$s#securityInfo\">请添加正确的邮箱以保护你的账户安全.</a>"
 
-#: core/functions/func.User.php:431
+#: core/functions/func.User.php:433
 msgid "My HomePage"
 msgstr "我的主页"
 
-#: core/functions/func.User.php:436
+#: core/functions/func.User.php:438
 msgid "Manage Dashboard"
 msgstr "管理后台"
 
-#: core/functions/func.User.php:441 core/modules/me/me.Tab.Contribute.php:22
+#: core/functions/func.User.php:443 core/modules/me/me.Tab.Contribute.php:22
 msgid "Add New Post"
 msgstr "发布文章"
 
-#: core/functions/func.User.php:458
+#: core/functions/func.User.php:460
 msgid "Posts"
 msgstr "文章"
 
-#: core/functions/func.User.php:463
+#: core/functions/func.User.php:465
 msgid "Comments"
 msgstr "评论"
 
-#: core/functions/func.User.php:468
+#: core/functions/func.User.php:470
 msgid "Stars"
 msgstr "收藏"
 
-#: core/functions/func.User.php:475
+#: core/functions/func.User.php:477
 msgid "Unread Messages"
 msgstr "未读消息"
 
-#: core/functions/func.User.php:481 core/modules/management/mg.Tab.User.php:63
+#: core/functions/func.User.php:483 core/modules/management/mg.Tab.User.php:63
 msgid "Credits"
 msgstr "积分"
 
-#: core/functions/func.User.php:495
+#: core/functions/func.User.php:497
 msgid "Ref url for this page"
 msgstr "本页推广链接"
 
-#: core/functions/func.User.php:513
+#: core/functions/func.User.php:515
 #, php-format
 msgid "欢迎来到%1$s, 请首先在个人设置中完善您的账号信息, 如邮件地址是必需的"
 msgstr ""
@@ -2979,7 +2979,7 @@ msgstr "销量"
 
 #: core/functions/shop/func.Shop.php:216
 #: core/modules/management/mg.Tab.Orders.php:45
-#: core/modules/me/me.Tab.Orders.php:44 core/templates/site/tpl.CheckOut.php:86
+#: core/modules/me/me.Tab.Orders.php:44 core/templates/site/tpl.CheckOut.php:87
 msgid "Product Name"
 msgstr "商品名称"
 
@@ -3145,7 +3145,7 @@ msgstr "失效时间"
 #: core/modules/management/mg.Tab.Members.php:67
 #: core/modules/management/mg.Tab.Orders.php:50
 #: core/modules/management/mg.Tab.Users.php:53
-#: core/modules/me/me.Tab.Orders.php:48 core/templates/site/tpl.CheckOut.php:90
+#: core/modules/me/me.Tab.Orders.php:48 core/templates/site/tpl.CheckOut.php:91
 msgid "Actions"
 msgstr "操作"
 
@@ -3531,7 +3531,7 @@ msgstr "库存: "
 msgid "Sales: "
 msgstr "销量: "
 
-#: core/modules/management/mg.Tab.Status.php:28 dash/options.php:1331
+#: core/modules/management/mg.Tab.Status.php:28 dash/options.php:1337
 msgid "Site Open Date"
 msgstr "建站日期"
 
@@ -3766,7 +3766,7 @@ msgstr "ID"
 #: core/templates/actions/tpl.M.Signup.php:46
 #: core/templates/oauth/tpl.OAuth.Last.php:31
 #: core/templates/oauth/tpl.OAuth.Last.php:32
-#: core/templates/site/tpl.CheckOut.php:152
+#: core/templates/site/tpl.CheckOut.php:153
 msgid "Email"
 msgstr "邮箱"
 
@@ -4565,11 +4565,11 @@ msgstr "清空"
 msgid "The shopping cart is empty."
 msgstr "购物车空空如也."
 
-#: core/modules/mod.Header.Shop.php:95 core/modules/mod.Header.php:58
+#: core/modules/mod.Header.Shop.php:95 core/modules/mod.Header.php:60
 msgid "Go Dashboard"
 msgstr "访问后台"
 
-#: core/modules/mod.Header.Shop.php:108 core/modules/mod.Header.php:71
+#: core/modules/mod.Header.Shop.php:108 core/modules/mod.Header.php:73
 msgid "Sign In or Up"
 msgstr "登录/注册"
 
@@ -4590,11 +4590,11 @@ msgstr "热门"
 msgid "Latest"
 msgstr "最新上架"
 
-#: core/modules/mod.Header.php:59
+#: core/modules/mod.Header.php:61
 msgid "Site Management"
 msgstr "站务管理"
 
-#: core/modules/mod.Header.php:62
+#: core/modules/mod.Header.php:64
 msgid "My Posts"
 msgstr "我的文章"
 
@@ -5534,19 +5534,19 @@ msgid "Verify Failed"
 msgstr "验证失败"
 
 #: core/templates/site/tpl.Alipay.Return.php:138
-#: core/templates/site/tpl.CheckOut.php:60
+#: core/templates/site/tpl.CheckOut.php:61
 #: core/templates/site/tpl.PayResult.php:60
 #: core/templates/site/tpl.QrPay.php:53
 msgid "Confirm Order"
 msgstr "确认订单详情"
 
 #: core/templates/site/tpl.Alipay.Return.php:145
-#: core/templates/site/tpl.CheckOut.php:67
+#: core/templates/site/tpl.CheckOut.php:68
 msgid "Payment Accomplish"
 msgstr "完成支付"
 
 #: core/templates/site/tpl.Alipay.Return.php:152
-#: core/templates/site/tpl.CheckOut.php:74
+#: core/templates/site/tpl.CheckOut.php:75
 #: core/templates/site/tpl.PayResult.php:74
 #: core/templates/site/tpl.QrPay.php:67
 msgid "Confirm Delivery"
@@ -5569,7 +5569,7 @@ msgstr "<br>你需要访问你的支付宝账户, 并对此交易确认收货."
 
 #: core/templates/site/tpl.Alipay.Return.php:161
 #: core/templates/site/tpl.PayResult.php:87
-#: core/templates/site/tpl.QrPay.php:101
+#: core/templates/site/tpl.QrPay.php:103
 msgid "Check Order Detail"
 msgstr "查看订单详情"
 
@@ -5604,81 +5604,81 @@ msgstr "无效订单"
 msgid "The order with order id you specified has been payed"
 msgstr "该订单已经支付, 请勿重复支付"
 
-#: core/templates/site/tpl.CheckOut.php:80
+#: core/templates/site/tpl.CheckOut.php:81
 msgid "Order Details"
 msgstr "订单详情"
 
-#: core/templates/site/tpl.CheckOut.php:87
+#: core/templates/site/tpl.CheckOut.php:88
 msgid "Single Price"
 msgstr "单价"
 
-#: core/templates/site/tpl.CheckOut.php:88
+#: core/templates/site/tpl.CheckOut.php:89
 msgid "Quantity"
 msgstr "数量"
 
-#: core/templates/site/tpl.CheckOut.php:89
+#: core/templates/site/tpl.CheckOut.php:90
 msgid "Gross"
 msgstr "总价"
 
-#: core/templates/site/tpl.CheckOut.php:108
+#: core/templates/site/tpl.CheckOut.php:109
 msgid "View Details"
 msgstr "查看详情"
 
-#: core/templates/site/tpl.CheckOut.php:113
+#: core/templates/site/tpl.CheckOut.php:114
 msgid "Message sent to vendor: "
 msgstr "给卖家的留言: "
 
-#: core/templates/site/tpl.CheckOut.php:114
+#: core/templates/site/tpl.CheckOut.php:115
 msgid "Optional, please leave some remind note for this deal to the vendor"
 msgstr "可选, 请在此处填写针对该交易的发送至卖家的备注信息"
 
-#: core/templates/site/tpl.CheckOut.php:118
+#: core/templates/site/tpl.CheckOut.php:119
 msgid "Address Info"
 msgstr "收货信息"
 
-#: core/templates/site/tpl.CheckOut.php:126
+#: core/templates/site/tpl.CheckOut.php:127
 #, php-format
 msgid "Receiver: %s"
 msgstr "%s 收"
 
-#: core/templates/site/tpl.CheckOut.php:140
+#: core/templates/site/tpl.CheckOut.php:141
 msgid "Use New Address"
 msgstr "使用新地址"
 
-#: core/templates/site/tpl.CheckOut.php:148
+#: core/templates/site/tpl.CheckOut.php:149
 msgid "Name"
 msgstr "姓名"
 
-#: core/templates/site/tpl.CheckOut.php:156
+#: core/templates/site/tpl.CheckOut.php:157
 msgid "Phone"
 msgstr "电话"
 
-#: core/templates/site/tpl.CheckOut.php:160
+#: core/templates/site/tpl.CheckOut.php:161
 msgid "Address"
 msgstr "详细地址"
 
-#: core/templates/site/tpl.CheckOut.php:164
+#: core/templates/site/tpl.CheckOut.php:165
 msgid "Zip"
 msgstr "邮编"
 
-#: core/templates/site/tpl.CheckOut.php:171
-#: core/templates/site/tpl.CheckOut.php:183
+#: core/templates/site/tpl.CheckOut.php:172
+#: core/templates/site/tpl.CheckOut.php:184
 msgid "Pay Methods"
 msgstr "支付方式"
 
-#: core/templates/site/tpl.CheckOut.php:198
+#: core/templates/site/tpl.CheckOut.php:199
 msgid "Coupon: "
 msgstr "优惠码: "
 
-#: core/templates/site/tpl.CheckOut.php:201
+#: core/templates/site/tpl.CheckOut.php:202
 msgid "Apply"
 msgstr "应用"
 
-#: core/templates/site/tpl.CheckOut.php:206
+#: core/templates/site/tpl.CheckOut.php:207
 msgid "Real Pay: "
 msgstr "实付款: "
 
-#: core/templates/site/tpl.CheckOut.php:211
+#: core/templates/site/tpl.CheckOut.php:212
 msgid "Submit Order"
 msgstr "提交订单"
 
@@ -5834,15 +5834,23 @@ msgstr ""
 msgid "Your remark is: <strong>%d</strong>"
 msgstr "你的备注信息为: <strong>%d</strong>"
 
-#: core/templates/site/tpl.QrPay.php:79 core/templates/site/tpl.QrPay.php:83
+#: core/templates/site/tpl.QrPay.php:79 dash/options.php:878
+msgid "Alipay"
+msgstr "支付宝"
+
+#: core/templates/site/tpl.QrPay.php:80 core/templates/site/tpl.QrPay.php:85
 msgid "Scan the qrcode image and pay forward to me"
 msgstr "扫一扫二维码向我付款"
 
-#: core/templates/site/tpl.QrPay.php:80
+#: core/templates/site/tpl.QrPay.php:81
 msgid "Recommended, support auto delivery if you leave right remark"
 msgstr "推荐, 支持自动发货(需正确备注)"
 
-#: core/templates/site/tpl.QrPay.php:84
+#: core/templates/site/tpl.QrPay.php:84 dash/dash.php:149
+msgid "Wechat"
+msgstr "微信"
+
+#: core/templates/site/tpl.QrPay.php:86
 msgid ""
 "Auto delivery not supported, we will check and handle the order manually in "
 "time"
@@ -6036,10 +6044,6 @@ msgid ""
 msgstr ""
 "<span id=\"footer-thankyou\">感谢使用 %s 进行创作, %s 主题定义您的网站样式</"
 "span>"
-
-#: dash/dash.php:149
-msgid "Wechat"
-msgstr "微信"
 
 #: dash/dash.php:154
 msgid "Alipay Pay Qrcode"
@@ -6495,7 +6499,7 @@ msgstr "网站支付宝"
 
 #: dash/options.php:479
 msgid "The qrcode image of Alipay account which is dedicated for the site"
-msgstr "站点服务专属支付宝账号的二维码图片"
+msgstr "站点服务专属支付宝账号的二维码图片(非收款二维码)"
 
 #: dash/options.php:489
 msgid "QQ login "
@@ -6577,193 +6581,197 @@ msgstr "订阅者"
 msgid "Ad"
 msgstr "广告"
 
-#: dash/options.php:609
+#: dash/options.php:600
+msgid "暂不可用"
+msgstr ""
+
+#: dash/options.php:614
 msgid "积分价格(元/100积分)"
 msgstr "积分价格(元/100积分)"
 
-#: dash/options.php:610
+#: dash/options.php:615
 msgid "注意: 积分充值最小单位为100, 此价格为100个积分的价格"
 msgstr "注意: 积分充值最小单位为100, 此价格为100个积分的价格"
 
-#: dash/options.php:620
+#: dash/options.php:625
 msgid "每日签到积分奖励"
 msgstr "每日签到积分奖励"
 
-#: dash/options.php:631
+#: dash/options.php:636
 msgid "注册奖励积分"
 msgstr "注册奖励积分"
 
-#: dash/options.php:632
+#: dash/options.php:637
 msgid "新用户注册时默认赠送的积分数量"
 msgstr "新用户注册时默认赠送的积分数量"
 
-#: dash/options.php:641
+#: dash/options.php:646
 msgid "访问推广奖励积分"
 msgstr "访问推广奖励积分"
 
-#: dash/options.php:642
+#: dash/options.php:647
 msgid "通过分享链接推广其他用户访问本站时奖励的积分数量"
 msgstr "通过分享链接推广其他用户访问本站时奖励的积分数量"
 
-#: dash/options.php:651
+#: dash/options.php:656
 msgid "注册推广奖励积分"
 msgstr "注册推广奖励积分"
 
-#: dash/options.php:652
+#: dash/options.php:657
 msgid "通过分享链接推广其他用户注册本站用户时奖励的积分数量"
 msgstr "通过分享链接推广其他用户注册本站用户时奖励的积分数量"
 
-#: dash/options.php:661
+#: dash/options.php:666
 msgid "投稿奖励积分"
 msgstr "投稿奖励积分"
 
-#: dash/options.php:662
+#: dash/options.php:667
 msgid "用户向本站投稿文章通过时奖励的积分"
 msgstr "用户向本站投稿文章通过时奖励的积分"
 
-#: dash/options.php:671
+#: dash/options.php:676
 msgid "评论奖励积分"
 msgstr "评论奖励积分"
 
-#: dash/options.php:672
+#: dash/options.php:677
 msgid "用户在站内发表评论一次奖励的积分"
 msgstr "用户在站内发表评论一次奖励的积分"
 
-#: dash/options.php:681
+#: dash/options.php:686
 msgid "访问推广次数限制"
 msgstr "访问推广次数限制"
 
-#: dash/options.php:682
+#: dash/options.php:687
 msgid "每日通过访问推广最多获得积分奖励的次数"
 msgstr "每日通过访问推广最多获得积分奖励的次数"
 
-#: dash/options.php:691
+#: dash/options.php:696
 msgid "注册推广次数限制"
 msgstr "注册推广次数限制"
 
-#: dash/options.php:692
+#: dash/options.php:697
 msgid "每日通过注册推广最多获得积分奖励的次数"
 msgstr "每日通过注册推广最多获得积分奖励的次数"
 
-#: dash/options.php:701
+#: dash/options.php:706
 msgid "投稿积分奖励次数限制"
 msgstr "投稿积分奖励次数限制"
 
-#: dash/options.php:702
+#: dash/options.php:707
 msgid "每日通过投稿最多获得积分奖励的次数"
 msgstr "每日通过投稿最多获得积分奖励的次数"
 
-#: dash/options.php:711
+#: dash/options.php:716
 msgid "评论积分奖励次数限制"
 msgstr "评论积分奖励次数限制"
 
-#: dash/options.php:712
+#: dash/options.php:717
 msgid "每日通过评论最多获得积分奖励的次数"
 msgstr "每日通过评论最多获得积分奖励的次数"
 
-#: dash/options.php:722
+#: dash/options.php:727
 msgid "Membership"
 msgstr "会员"
 
-#: dash/options.php:728
+#: dash/options.php:733
 msgid "月费会员价格"
 msgstr "月费会员价格"
 
-#: dash/options.php:739
+#: dash/options.php:744
 msgid "年费会员价格"
 msgstr "年费会员价格"
 
-#: dash/options.php:750
+#: dash/options.php:755
 msgid "永久会员价格"
 msgstr "永久会员价格"
 
-#: dash/options.php:761
+#: dash/options.php:766
 msgid "月费会员默认折扣 (%)"
 msgstr "月费会员默认折扣 (%)"
 
-#: dash/options.php:772
+#: dash/options.php:777
 msgid "年费会员默认折扣 (%)"
 msgstr "年费会员默认折扣 (%)"
 
-#: dash/options.php:783
+#: dash/options.php:788
 msgid "永久会员默认折扣 (%)"
 msgstr "永久会员默认折扣 (%)"
 
-#: dash/options.php:794
+#: dash/options.php:799
 msgid "Shop"
 msgstr "商店"
 
-#: dash/options.php:801
+#: dash/options.php:806
 msgid "Enable Shop"
 msgstr "开启商品系统"
 
-#: dash/options.php:802
+#: dash/options.php:807
 msgid ""
 "After enable this, users can create orders and buy something those the site "
 "provided"
 msgstr "启用此选项以支持商品创建, 用户订单创建以及购买提供的商品"
 
-#: dash/options.php:811
+#: dash/options.php:816
 msgid "Products Archive Link Slug"
 msgstr "商品归档固定链接Slug"
 
-#: dash/options.php:812
+#: dash/options.php:817
 msgid "The special prefix in product archive link"
 msgstr "商品归档页固定链接的标识, 商品详情页固定链接前缀也将使用此字符"
 
-#: dash/options.php:822
+#: dash/options.php:827
 msgid "Product Permalink Mode"
 msgstr "商品固定链接模式"
 
-#: dash/options.php:823
+#: dash/options.php:828
 msgid "The link mode for the rewrite product permalink"
 msgstr "商品固定链接Rewrite的模式, 请保持与全站的固定链接模式一致"
 
-#: dash/options.php:829
+#: dash/options.php:834
 msgid "Post ID"
 msgstr "Post ID"
 
-#: dash/options.php:830
+#: dash/options.php:835
 msgid "Post Name"
 msgstr "Post Name"
 
-#: dash/options.php:837
+#: dash/options.php:842
 msgid "Shop Home Keywords"
 msgstr "商店主页关键词"
 
-#: dash/options.php:838
+#: dash/options.php:843
 msgid "The keywords of shop homepage, good for SEO"
 msgstr "商店主页关键词元信息，SEO友好(多个关键词以英文逗号分隔)"
 
-#: dash/options.php:847
+#: dash/options.php:852
 msgid "Shop Home Banner Title"
 msgstr "商店主页横幅标题"
 
-#: dash/options.php:848
+#: dash/options.php:853
 msgid "The main title displayed in the banner of shop homepage"
 msgstr "商店主页顶部横幅上显示的主标题"
 
-#: dash/options.php:850
+#: dash/options.php:855
 msgid "Shop Quality Products"
 msgstr "Shop Quality Products"
 
-#: dash/options.php:857
+#: dash/options.php:862
 msgid "Shop Home Banner Sub Title"
 msgstr "商店主页横幅副标题"
 
-#: dash/options.php:858
+#: dash/options.php:863
 msgid "The sub title displayed in the banner of shop homepage"
 msgstr "商店主页顶部横幅上显示的副标题/描述"
 
-#: dash/options.php:860
+#: dash/options.php:865
 msgid "Themes - Plugins - Services"
 msgstr "Themes - Plugins - Services"
 
-#: dash/options.php:867
+#: dash/options.php:872
 msgid "支付方式"
 msgstr "支付方式"
 
-#: dash/options.php:868
+#: dash/options.php:873
 msgid ""
 "目前支持支付宝原生即时到账、担保交易、双功能接口, 对于无法申请支付宝接口的提"
 "供个人开发的Alipay Supervisor免签约支付程序"
@@ -6771,43 +6779,39 @@ msgstr ""
 "目前支持支付宝原生即时到账、担保交易、双功能接口, 对于无法申请支付宝接口的提"
 "供个人开发的Alipay Supervisor免签约支付程序"
 
-#: dash/options.php:873
-msgid "Alipay"
-msgstr "支付宝"
-
-#: dash/options.php:874
+#: dash/options.php:879
 msgid "Alipay Supervisor免签约支付"
 msgstr "Alipay Supervisor免签约支付"
 
-#: dash/options.php:881
+#: dash/options.php:886
 msgid "支付宝收款帐户邮箱"
 msgstr "支付宝收款帐户邮箱"
 
-#: dash/options.php:882
+#: dash/options.php:887
 msgid "支付宝收款帐户邮箱,要收款必填并务必保持正确"
 msgstr "支付宝收款帐户邮箱,要收款必填并务必保持正确"
 
-#: dash/options.php:891
+#: dash/options.php:896
 msgid "支付宝商家身份ID"
 msgstr "支付宝商家身份ID"
 
-#: dash/options.php:892
+#: dash/options.php:897
 msgid "合作身份者id，以2088开头的16位纯数字"
 msgstr "合作身份者id，以2088开头的16位纯数字"
 
-#: dash/options.php:901
+#: dash/options.php:906
 msgid "支付宝商家身份key"
 msgstr "支付宝商家身份key"
 
-#: dash/options.php:902
+#: dash/options.php:907
 msgid "支付宝商家身份安全检验码，以数字和字母组成的32位字符"
 msgstr "支付宝商家身份安全检验码，以数字和字母组成的32位字符"
 
-#: dash/options.php:911
+#: dash/options.php:916
 msgid "支付宝商家收款类型"
 msgstr "支付宝商家收款类型"
 
-#: dash/options.php:912
+#: dash/options.php:917
 msgid ""
 "支付宝商家收款类型, 支持即时到账, 双功能和担保交易, 注意：切换类型后必须对应"
 "修改商家身份key"
@@ -6815,39 +6819,39 @@ msgstr ""
 "支付宝商家收款类型, 支持即时到账, 双功能和担保交易, 注意：切换类型后必须对应"
 "修改商家身份key"
 
-#: dash/options.php:917
+#: dash/options.php:922
 msgid "即时到账"
 msgstr "即时到账"
 
-#: dash/options.php:918
+#: dash/options.php:923
 msgid "双功能"
 msgstr "双功能"
 
-#: dash/options.php:919
+#: dash/options.php:924
 msgid "担保交易"
 msgstr "担保交易"
 
-#: dash/options.php:926
+#: dash/options.php:931
 msgid "Alipay Supervisor APP ID"
 msgstr "Alipay Supervisor APP ID"
 
-#: dash/options.php:927
+#: dash/options.php:932
 msgid "You should buy Alipay Supervisor first and then get the app id"
 msgstr "你需要购买Alipay Supervisor免签约支付辅助软件以获得app id"
 
-#: dash/options.php:936
+#: dash/options.php:941
 msgid "Alipay Supervisor APP Key"
 msgstr "Alipay Supervisor APP Key"
 
-#: dash/options.php:937
+#: dash/options.php:942
 msgid "You should buy Alipay Supervisor first and then get the app key"
 msgstr "你需要购买Alipay Supervisor免签约支付辅助软件以获得app key"
 
-#: dash/options.php:946
+#: dash/options.php:951
 msgid "Alipay Supervisor Secret"
 msgstr "Alipay Supervisor Secret"
 
-#: dash/options.php:947
+#: dash/options.php:952
 msgid ""
 "A random string which verify the legitimacy of a request from Alipay "
 "Supervisor, should conform to Alipay Supervisor configuration"
@@ -6855,209 +6859,209 @@ msgstr ""
 "一段随机字符串, 用于校验来自Alipay Supervisor请求的合法性, 并且要和Alipay "
 "Supervisor配置中的pushStateSecret一致"
 
-#: dash/options.php:956
+#: dash/options.php:961
 msgid "Site Weixin Pay QR"
 msgstr "网站微信收款二维码"
 
-#: dash/options.php:957
+#: dash/options.php:962
 msgid "The Weixin pay qrcode image for collection money"
-msgstr "用于网站收集打赏等的微信收款二维码图片"
+msgstr "用于网站收集打赏等的微信收款二维码图片(赞助站长小工具等使用)"
 
-#: dash/options.php:966
+#: dash/options.php:971
 msgid "Site Alipay Pay QR"
 msgstr "网站支付宝收款二维码"
 
-#: dash/options.php:967
+#: dash/options.php:972
 msgid "The Alipay pay qrcode image for collection money"
-msgstr "用于网站收集打赏等的支付宝收款二维码图片"
+msgstr "用于网站收集打赏等的支付宝收款二维码图片(赞助站长小工具等使用)"
 
-#: dash/options.php:976
+#: dash/options.php:981
 msgid "Auxiliary"
 msgstr "辅助"
 
-#: dash/options.php:983
+#: dash/options.php:988
 msgid "Object Cache"
 msgstr "对象缓存"
 
-#: dash/options.php:984
+#: dash/options.php:989
 msgid "Object cache support, accelerate your site"
 msgstr "对象缓存支持，加速网站"
 
-#: dash/options.php:989
+#: dash/options.php:994
 msgid "Memcache"
 msgstr "Memcache"
 
-#: dash/options.php:990
+#: dash/options.php:995
 msgid "Redis"
 msgstr "Redis"
 
-#: dash/options.php:999
+#: dash/options.php:1004
 msgid "Memcache Host"
 msgstr "Memcache主机"
 
-#: dash/options.php:1000
+#: dash/options.php:1005
 msgid "Memcache server host"
 msgstr "Memcache服务器的地址(IP或url)"
 
-#: dash/options.php:1009
+#: dash/options.php:1014
 msgid "Memcache Port"
 msgstr "Memcache端口"
 
-#: dash/options.php:1010
+#: dash/options.php:1015
 msgid "Memcache server port"
 msgstr "Memcache服务器端口"
 
-#: dash/options.php:1022
+#: dash/options.php:1027
 msgid "Redis Host"
 msgstr "Redis主机"
 
-#: dash/options.php:1023
+#: dash/options.php:1028
 msgid "Redis server host"
 msgstr "Redis服务器的地址(IP或url)"
 
-#: dash/options.php:1032
+#: dash/options.php:1037
 msgid "Redis Port"
 msgstr "Redis端口"
 
-#: dash/options.php:1033
+#: dash/options.php:1038
 msgid "Redis server port"
 msgstr "Redis服务器的端口"
 
-#: dash/options.php:1051
+#: dash/options.php:1056
 msgid "SMTP/PHPMailer"
 msgstr "SMTP/PHPMailer"
 
-#: dash/options.php:1052
+#: dash/options.php:1057
 msgid "Use SMTP or PHPMail as default mailer"
 msgstr "使用SMTP或PHPMail作为默认邮件发送方式"
 
-#: dash/options.php:1057
+#: dash/options.php:1062
 msgid "PHP"
 msgstr "PHP"
 
-#: dash/options.php:1058
+#: dash/options.php:1063
 msgid "SMTP"
 msgstr "SMTP"
 
-#: dash/options.php:1066
+#: dash/options.php:1071
 msgid "SMTP Host"
 msgstr "SMTP 服务器"
 
-#: dash/options.php:1067
+#: dash/options.php:1072
 msgid "Your SMTP service host"
 msgstr "你的SMTP服务器主机地址"
 
-#: dash/options.php:1077
+#: dash/options.php:1082
 msgid "SMTP Port"
 msgstr "SMTP 端口"
 
-#: dash/options.php:1078
+#: dash/options.php:1083
 msgid "Your SMTP service port"
 msgstr "你的SMTP服务器服务端口"
 
-#: dash/options.php:1088
+#: dash/options.php:1093
 msgid "SMTP Secure"
 msgstr "SMTP安全"
 
-#: dash/options.php:1089
+#: dash/options.php:1094
 msgid "Your SMTP server secure protocol"
 msgstr "你的SMTP服务器安全协议"
 
-#: dash/options.php:1094
+#: dash/options.php:1099
 msgid "Auto"
 msgstr "自动"
 
-#: dash/options.php:1095
+#: dash/options.php:1100
 msgid "SSL"
 msgstr "SSL"
 
-#: dash/options.php:1096
+#: dash/options.php:1101
 msgid "TLS"
 msgstr "TLS"
 
-#: dash/options.php:1104
+#: dash/options.php:1109
 msgid "SMTP Username"
 msgstr "SMTP 用户名"
 
-#: dash/options.php:1105
+#: dash/options.php:1110
 msgid "Your SMTP username"
 msgstr "你的SMTP服务的登录用户名"
 
-#: dash/options.php:1114
+#: dash/options.php:1119
 msgid "SMTP Password"
 msgstr "SMTP 密码"
 
-#: dash/options.php:1115
+#: dash/options.php:1120
 msgid "Your SMTP password"
 msgstr "你的SMTP服务登录密码"
 
-#: dash/options.php:1125
+#: dash/options.php:1130
 msgid "Your Name"
 msgstr "发信姓名"
 
-#: dash/options.php:1126
+#: dash/options.php:1131
 msgid "Your display name as the sender"
 msgstr "你发送的邮件中显示的名称"
 
-#: dash/options.php:1138
+#: dash/options.php:1143
 msgid "PHP Mail Sender Display Name"
 msgstr "PHPMailer发信人名称"
 
-#: dash/options.php:1139
+#: dash/options.php:1144
 msgid "The Sender display name when using PHPMail send mail"
 msgstr "使用PHPMailer发送邮件的显示名"
 
-#: dash/options.php:1149
+#: dash/options.php:1154
 msgid "PHP Mail Sender Address"
 msgstr "PHPMailer 发信人地址"
 
-#: dash/options.php:1150
+#: dash/options.php:1155
 msgid "You can use fake mail address when use PHPMail"
 msgstr "当使用PHPMailer发信时可使用自定义的发信人地址"
 
-#: dash/options.php:1161
+#: dash/options.php:1166
 msgid "Short Link Prefix"
 msgstr "短链接前缀标识"
 
-#: dash/options.php:1162
+#: dash/options.php:1167
 msgid ""
 "Use short link instead long link or even convert external link to internal "
 "link"
 msgstr "使用短链接代替长链接或站外链接转为站内链接"
 
-#: dash/options.php:1172
+#: dash/options.php:1177
 msgid "Short Link Records"
 msgstr "短链接记录"
 
-#: dash/options.php:1173
+#: dash/options.php:1178
 msgid "One line for one record, please conform to the sample"
 msgstr "一行一条记录，请参照样例格式"
 
-#: dash/options.php:1182
+#: dash/options.php:1188
 msgid "Login Email Notification"
 msgstr "登录邮件通知"
 
-#: dash/options.php:1183
+#: dash/options.php:1189
 msgid "Enable email notification when a successfully login event happened"
 msgstr "开启登录成功事件的邮件通知"
 
-#: dash/options.php:1192
+#: dash/options.php:1198
 msgid "Login Failure Email Notification"
 msgstr "登录失败邮件通知"
 
-#: dash/options.php:1193
+#: dash/options.php:1199
 msgid "Enable email notification when a login failure event happened"
 msgstr "开启登录失败事件的邮件通知"
 
-#: dash/options.php:1202
+#: dash/options.php:1208
 msgid "Feedback"
 msgstr "反馈"
 
-#: dash/options.php:1209
+#: dash/options.php:1215
 msgid "Contact Author"
 msgstr "联系作者"
 
-#: dash/options.php:1210
+#: dash/options.php:1216
 #, php-format
 msgid ""
 "<br><h2>Email: chinash2010@gmail.com</h2><br><h2>Wechat & Alipay & "
@@ -7066,11 +7070,11 @@ msgstr ""
 "<br><h2>Email: chinash2010@gmail.com</h2><br><h2>微信 & 支付宝 & QQ(如下)</"
 "h2><br><img src=\"%s\"><img src=\"%s\"><img src=\"%s\"> "
 
-#: dash/options.php:1216
+#: dash/options.php:1222
 msgid "Related Works"
 msgstr "相关作品"
 
-#: dash/options.php:1217
+#: dash/options.php:1223
 #, php-format
 msgid ""
 "<br><h2>Alipay Supervisor (<a href=\"%s\" target=\"_blank\">View Detail</"
@@ -7080,41 +7084,41 @@ msgstr ""
 "h2><br><p>帮助无法签约支付宝交易接口的个人用户实现免签约交易，自动通知交易状"
 "态的辅助工具</p>"
 
-#: dash/options.php:1225
+#: dash/options.php:1231
 msgid "Others"
 msgstr "其他"
 
-#: dash/options.php:1232
+#: dash/options.php:1238
 msgid "Debug Mode"
 msgstr "调试模式"
 
-#: dash/options.php:1233
+#: dash/options.php:1239
 msgid ""
 "Enable debug will force display php errors, disable theme cache, enable some "
 "private links or functions, etc."
 msgstr "启用Debug将强制输出PHP错误，禁用主题缓存，启用一些私有链接或功能等"
 
-#: dash/options.php:1242
+#: dash/options.php:1248
 msgid "Disable Cache"
 msgstr "禁用缓存"
 
-#: dash/options.php:1243
+#: dash/options.php:1249
 msgid "Stop cache, user always get the latest content"
 msgstr "停用缓存，用户总是会看到最新的内容"
 
-#: dash/options.php:1252
+#: dash/options.php:1258
 msgid "Tint Token"
 msgstr "Tint Token"
 
-#: dash/options.php:1253
+#: dash/options.php:1259
 msgid "Private token for theme, maybe useful somewhere."
 msgstr "主题私有Token，在某些地方有用"
 
-#: dash/options.php:1263
+#: dash/options.php:1269
 msgid "Refresh Rewrite Rules"
 msgstr "刷新固定链接规则"
 
-#: dash/options.php:1264
+#: dash/options.php:1270
 #, php-format
 msgid ""
 "Please Click to <a href=\"%1$s/m/refresh?token=%2$s\" target=\"_blank"
@@ -7123,63 +7127,63 @@ msgstr ""
 "如果你遭遇一些404访问错误，请点击 <a href=\"%1$s/m/refresh?token=%2$s\" "
 "target=\"_blank\">刷新固定链接规则</a>。"
 
-#: dash/options.php:1271
+#: dash/options.php:1277
 msgid "登录API后缀"
 msgstr ""
 
-#: dash/options.php:1272
+#: dash/options.php:1278
 msgid "请变更默认值降低密码爆破攻击风险"
 msgstr ""
 
-#: dash/options.php:1281
+#: dash/options.php:1287
 msgid "QQ Mailme ID"
 msgstr "QQ邮我按钮ID"
 
-#: dash/options.php:1282
+#: dash/options.php:1288
 msgid "The id of qq mailme, visit `http://open.mail.qq.com` for detail"
 msgstr "QQ邮我链接内的ID字段, 访问`http://open.mail.qq.com`获取"
 
-#: dash/options.php:1291
+#: dash/options.php:1297
 msgid "QQ Mail list ID"
 msgstr "QQ邮件列表ID"
 
-#: dash/options.php:1292
+#: dash/options.php:1298
 msgid "The id of qq mailme, visit `http://list.qq.com` for detail"
 msgstr "QQ邮件列表链接内的ID字段, 访问`http://list.qq.com`获取"
 
-#: dash/options.php:1301
+#: dash/options.php:1307
 msgid "Head Custom Code"
 msgstr "页头自定义代码"
 
-#: dash/options.php:1302
+#: dash/options.php:1308
 msgid "Custom code loaded on page head"
 msgstr "页面头部加载的自定义代码，位于head标签结束前"
 
-#: dash/options.php:1312
+#: dash/options.php:1318
 msgid "Foot Custom Code"
 msgstr "页脚自定义代码"
 
-#: dash/options.php:1313
+#: dash/options.php:1319
 msgid "Custom code loaded on page foot"
 msgstr "页面底部加载的自定义代码，位于body标签结束前"
 
-#: dash/options.php:1322
+#: dash/options.php:1328
 msgid "Foot Beian Text"
 msgstr "页脚备案文字"
 
-#: dash/options.php:1323
+#: dash/options.php:1329
 msgid "IDC reference No. for regulations of China"
 msgstr "工信部域名备案号码"
 
-#: dash/options.php:1332
+#: dash/options.php:1338
 msgid "The date of when site opened, use `YYYY-mm-dd` format"
 msgstr "网站开放的日期, 使用`YYYY-mm-dd`格式"
 
-#: dash/options.php:1343
+#: dash/options.php:1349
 msgid "Footer Queries Info"
 msgstr "页脚查询信息"
 
-#: dash/options.php:1344
+#: dash/options.php:1350
 msgid "Show WordPress queries statistic information"
 msgstr "在页脚显示WordPress查询统计信息"
 

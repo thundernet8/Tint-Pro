@@ -64,7 +64,7 @@ function tt_rewrite_short_link(){
     }
 
     if($target_url){
-        wp_redirect(esc_url($target_url), 302);
+        wp_redirect(esc_url_raw($target_url), 302);
         exit;
     }
 

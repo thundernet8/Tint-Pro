@@ -44,6 +44,7 @@ if($order->parent_id == -1){
 }
 
 $current_user = wp_get_current_user();
+$user_id = $current_user->ID;
 
 ?>
 <?php tt_get_header('simple'); ?>

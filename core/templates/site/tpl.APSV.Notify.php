@@ -32,13 +32,14 @@ tt_debug_log('ping....');
 $event = isset($_GET['event']) ? trim($_GET['event']) : 'new_order';
 
 if($event != 'new_order') {
-    echo 'fail1';
-    tt_debug_log('fail1');
+    echo 'fail(invalid event)';
+    tt_debug_log('fail(invalid event)');
     exit();
 }
 
 if(!isset($_GET['appId']) || !isset($_GET['appKey'])){
     //echo 'fail';
+    tt_debug_log('fail(miss appId or appKey)');
     wp_die(__('You are acting an illegal visit', 'tt'), __('Illegal Visit', 'tt'), 404); // 防止直接GET访问
     exit();
 }
@@ -112,6 +113,7 @@ if($order_status == '交易成功'){ // 转账支付只会有`交易成功`这�
             'user_alipay' => $username
         ), array('%d', '%s', '%s', '%s'));
     }
+    tt_debug_log('success');
     echo "success";		//请不要修改或删除
     exit();
 }else{

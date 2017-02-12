@@ -22,7 +22,7 @@ $current_user = wp_get_current_user();
 
 $alipay_config = tt_get_alipay_config();
 
-if(empty($alipay_config['partner']) || $alipay_config['key']){
+if(empty($alipay_config['partner']) || empty($alipay_config['key'])){
     wp_die(__('Alipay trade interface configuration is incorrect', 'tt'), __('Error: Incorrect Alipay Trade Interface Configuration', 'tt'), 500);
 }
 

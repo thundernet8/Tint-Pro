@@ -219,8 +219,8 @@ class WP_REST_Order_Controller extends WP_REST_Controller
             //
             $data = array();
             $format = array();
-            if($address_id || $address_id = $request->get_param('addressId') !== null){
-                $data['address_id'] = $address_id;
+            if($address_id || $request->get_param('addressId') !== null){
+                $data['address_id'] = $address_id ? : (int)$request->get_param('addressId');
                 $format[0] = '%d';
             }
             if($user_message = $request->get_param('userMessage')){
@@ -250,9 +250,16 @@ class WP_REST_Order_Controller extends WP_REST_Controller
                 $pay_method = $request->get_param('payMethod') == 'alipay' ? 'alipay' : 'qrcode';
                 switch ($pay_method){
                     case 'alipay':
+                        // 如果支付金额为0直接返回订单详情页面并更新订单为成功
+                        if($order->order_total_price < 0.01) {
+                            tt_update_order($order_id, array('order_success_time' => current_time('mysql'), 'order_status' => 4), array('%s', '%d'));
+                            $url = tt_url_for('my_order', $order->id);
+                        }else{
+                            $url = add_query_arg(array('oid' => $order_id, 'spm' => wp_create_nonce('pay_gateway'), 'channel' => 'alipay'), tt_url_for('paygateway'));
+                        }
                         return tt_api_success('', array('data' => array( // 返回payment gateway url
                             'orderId' => $order_id,
-                            'url' => add_query_arg(array('oid' => $order_id, 'spm' => wp_create_nonce('pay_gateway'), 'channel' => 'alipay'), tt_url_for('paygateway'))
+                            'url' => $url
                         )));
                     default: //qrcode
                         return tt_api_success('', array('data' => array( // 直接返回扫码支付url,后面手动修改订单

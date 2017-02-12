@@ -46,7 +46,7 @@ class MgUsersVM extends BaseVM {
         $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . __CLASS__ . '_type' . $type . '_page' . $page;
         $instance->_page = $page;
         $instance->_type = $type;
-        $instance->_enableCache = false; // TODO debug use
+        //$instance->_enableCache = false; // TODO debug use
         $instance->configInstance();
         return $instance;
     }
@@ -56,8 +56,8 @@ class MgUsersVM extends BaseVM {
 
         $args = array(
             //'role'         => '',
-            'orderby'      => 'login',
-            'order'        => 'ASC',
+            'orderby'      => 'ID', //'login',
+            'order'        => 'DESC',
             'offset'       => ($this->_page - 1) * $limit,
             'number'       => $limit,
             'count_total'  => true
