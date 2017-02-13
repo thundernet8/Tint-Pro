@@ -183,16 +183,17 @@ add_action( 'rest_api_init', 'tt_create_initial_rest_routes', 0 );  // TODO cach
  * REST请求时设置DOING_AJAX为true
  *
  * @since 2.0.0
+ * @param $access
  * @return bool
  */
-function tt_rest_set_doing_ajax () {
+function tt_rest_set_doing_ajax ($access) {
     if(!defined('DOING_AJAX')) {
         define('DOING_AJAX', true);
     }
 
-    return true;
+    return $access;
 }
-add_filter('rest_enabled', 'tt_rest_set_doing_ajax');
+add_filter('rest_authentication_errors', 'tt_rest_set_doing_ajax');
 
 
 /**

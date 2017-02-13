@@ -432,7 +432,13 @@ function tt_check_user_has_buy_product($product_id, $user_id = 0) {
         return false;
     }
     foreach ($the_orders as $the_order){
-        if($the_order->order_status == OrderStatus::TRADE_SUCCESS){
+        if($the_order->parent_id > 0) {
+            // 这是个合并订单的子订单，支付状态根据父级订单算
+            $parent_order = tt_get_order_by_sequence($the_order->parent_id);
+            if($parent_order && $parent_order->order_status == OrderStatus::TRADE_SUCCESS) {
+                return true;
+            }
+        }elseif($the_order->order_status == OrderStatus::TRADE_SUCCESS){
             return true;
         }
     }

@@ -307,6 +307,7 @@ function tt_create_order($product_id, $product_name = '', $order_quantity = 1, $
             break;
     }
     $discount = min($discount_summary[0], $discount); // 会员的价格不能高于普通打折价
+    $order_quantity = max(1, $order_quantity);
     $order_total_price = $currency == 'cash' ? $order_price * absint($order_quantity) * $discount / 100 : absint($order_price * $order_quantity);
 
     $product_name = $product_name ? : get_the_title($product_id);
