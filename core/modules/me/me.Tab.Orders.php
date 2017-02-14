@@ -52,7 +52,7 @@
                     <?php foreach ($orders as $order){ ?>
                         <tr id="oid-<?php echo $order->order_id; ?>">
                             <td><?php echo $order->order_id; ?></td>
-                            <td><?php echo $order->product_name; ?></td>
+                            <td><?php if($order->product_link){ ?><a href="<?php echo $order->product_link; ?>" target="_blank"><?php echo $order->product_name; ?></a><?php }else{echo $order->product_name;} ?></td>
                             <td><?php echo $order->order_time; ?></td>
                             <td><?php if($order->order_currency == 'credit'){ echo '<i class="tico tico-diamond"></i>' . intval($order->order_total_price); }else{ echo '<i class="tico tico-cny"></i>' . sprintf('%0.2f', $order->order_total_price); } ?></td>
                             <td><?php echo $order->parent_id > 0 ? 'N/A(子订单)' : tt_get_order_status_text($order->order_status); ?></td>

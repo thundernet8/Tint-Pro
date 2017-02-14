@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2017-02-12 12:42+0800\n"
+"POT-Creation-Date: 2017-02-13 22:38+0800\n"
 "PO-Revision-Date: 2016-08-17 21:40+0800\n"
 "Last-Translator: \n"
 "Language-Team: Zhiyan <mail@webapproach.net>\n"
@@ -435,36 +435,36 @@ msgstr ""
 msgid "Sorry, you cannot update order without signing in."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:271
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:278
 msgid "Sorry, you are not permitted to update order status."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:306
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:313
 msgid "Update order failed"
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:316
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:323
 msgid "Update order successfully"
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:331
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:338
 msgid "Sorry, you cannot delete order without signing in."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:348
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:355
 msgid "Delete order failed"
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:350
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:357
 msgid "Delete order successfully"
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:365
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:372
 #: core/api/v1/endpoints/class.Rest.ShoppingCart.Controller.php:186
 msgid "Sorry, you cannot delete cart items without signing in."
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Order.Controller.php:381
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:388
 #: core/api/v1/endpoints/class.Rest.ShoppingCart.Controller.php:202
 msgid "Delete items from cart successfully"
 msgstr ""
@@ -1752,7 +1752,7 @@ msgstr ""
 msgid "The resource you willing to buy is not existed"
 msgstr ""
 
-#: core/functions/func.Download.php:73 core/functions/shop/func.Shop.php:493
+#: core/functions/func.Download.php:73 core/functions/shop/func.Shop.php:499
 #: core/modules/mod.Download.php:35 core/modules/mod.Download.php:49
 #: dash/options.php:996 dash/options.php:1102
 msgid "None"
@@ -2575,6 +2575,10 @@ msgstr ""
 msgid "Download Page Sidebar"
 msgstr ""
 
+#: core/functions/func.Sidebar.php:88
+msgid "Float Widgets Container"
+msgstr ""
+
 #: core/functions/func.Sidebar.php:90
 msgid ""
 "A container for placing some widgets, it will be float once exceed the "
@@ -2755,49 +2759,49 @@ msgstr ""
 msgid "Order Created"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Order.php:408
-#: core/functions/shop/func.Shop.Order.php:416
-#: core/functions/shop/func.Shop.Order.php:433
+#: core/functions/shop/func.Shop.Order.php:409
+#: core/functions/shop/func.Shop.Order.php:417
+#: core/functions/shop/func.Shop.Order.php:434
 msgid "Create combine order failed"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Order.php:485
+#: core/functions/shop/func.Shop.Order.php:486
 msgid "The order with the a order id you specified is not existed"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Order.php:493
+#: core/functions/shop/func.Shop.Order.php:494
 msgid "The coupon is invalid"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Order.php:552
+#: core/functions/shop/func.Shop.Order.php:553
 msgid "The order is not exist"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Order.php:556
+#: core/functions/shop/func.Shop.Order.php:557
 msgid "You are not permit to delete this order"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Order.php:583
+#: core/functions/shop/func.Shop.Order.php:584
 #, php-format
 msgid "%s 商店交易状态变更提醒"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Order.php:600
+#: core/functions/shop/func.Shop.Order.php:601
 #, php-format
 msgid "%s 商店新成功交易提醒"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Order.php:600
+#: core/functions/shop/func.Shop.Order.php:601
 #, php-format
 msgid "%s 商店新订单提醒"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Order.php:690
+#: core/functions/shop/func.Shop.Order.php:691
 #, php-format
 msgid "The Resources You Bought in %s"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Order.php:693
+#: core/functions/shop/func.Shop.Order.php:694
 #: core/modules/me/me.Tab.Credits.php:76
 #: core/modules/me/me.Tab.Credits.php:81
 #: core/modules/me/me.Tab.Credits.php:86
@@ -2805,31 +2809,31 @@ msgstr ""
 #: core/modules/me/me.Tab.Credits.php:96
 #: core/modules/me/me.Tab.Credits.php:101
 #: core/viewModels/management/vm.Mg.Order.php:67
-#: core/viewModels/me/vm.Me.Order.php:73
+#: core/viewModels/me/vm.Me.Order.php:79
 #, php-format
 msgid "%d Credits"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Order.php:693
+#: core/functions/shop/func.Shop.Order.php:694
 #: core/viewModels/management/vm.Mg.Order.php:67
-#: core/viewModels/me/vm.Me.Order.php:73
+#: core/viewModels/me/vm.Me.Order.php:79
 #, php-format
 msgid "%0.2f YUAN"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Order.php:724
+#: core/functions/shop/func.Shop.Order.php:725
 msgid "The order is not found"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Order.php:728
+#: core/functions/shop/func.Shop.Order.php:729
 msgid "The order has been payed"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Order.php:732
+#: core/functions/shop/func.Shop.Order.php:733
 msgid "The order has been closed"
 msgstr ""
 
-#: core/functions/shop/func.Shop.Order.php:748
+#: core/functions/shop/func.Shop.Order.php:749
 msgid "Some error happened when continue the payment"
 msgstr ""
 
@@ -3045,7 +3049,7 @@ msgstr ""
 msgid "Show all categories"
 msgstr ""
 
-#: core/functions/shop/func.Shop.php:494
+#: core/functions/shop/func.Shop.php:500
 #, php-format
 msgid ""
 "<li style=\"margin: 0 0 10px 0;\"><p style=\"padding: 5px 0; margin: 0;\">"
@@ -3053,14 +3057,14 @@ msgid ""
 "title=\"%1$s\" target=\"_blank\">%2$s</a>下载密码：%3$s</p></li>"
 msgstr ""
 
-#: core/functions/shop/func.Shop.php:520
+#: core/functions/shop/func.Shop.php:526
 msgid ""
 "<div class=\"contextual-bg bg-paycontent\"><span><i class=\"tico tico-"
 "paypal\">&nbsp;</i>付费内容</span><p>你只有购买支付后才能查看该内容！</p></"
 "div>"
 msgstr ""
 
-#: core/functions/shop/func.Shop.php:526
+#: core/functions/shop/func.Shop.php:532
 #, php-format
 msgid ""
 "<div class=\"contextual-bg bg-paycontent\"><span><i class=\"tico tico-"
@@ -5516,8 +5520,8 @@ msgstr ""
 msgid "%d reviews for the product"
 msgstr ""
 
-#: core/templates/site/tpl.APSV.Notify.php:42
-#: core/templates/site/tpl.APSV.Notify.php:57
+#: core/templates/site/tpl.APSV.Notify.php:43
+#: core/templates/site/tpl.APSV.Notify.php:58
 #: core/templates/site/tpl.Alipay.Notify.php:18
 #: core/templates/site/tpl.CheckOut.php:26
 #: core/templates/site/tpl.PayGateway.php:26
@@ -5525,8 +5529,8 @@ msgstr ""
 msgid "You are acting an illegal visit"
 msgstr ""
 
-#: core/templates/site/tpl.APSV.Notify.php:42
-#: core/templates/site/tpl.APSV.Notify.php:57
+#: core/templates/site/tpl.APSV.Notify.php:43
+#: core/templates/site/tpl.APSV.Notify.php:58
 #: core/templates/site/tpl.Alipay.Notify.php:18
 #: core/templates/site/tpl.CheckOut.php:26
 #: core/templates/site/tpl.PayGateway.php:26
@@ -5927,12 +5931,12 @@ msgid "%d results in total"
 msgstr ""
 
 #: core/viewModels/management/vm.Mg.Order.php:66
-#: core/viewModels/me/vm.Me.Order.php:72
+#: core/viewModels/me/vm.Me.Order.php:78
 msgid "Credit Payment"
 msgstr ""
 
 #: core/viewModels/management/vm.Mg.Order.php:66
-#: core/viewModels/me/vm.Me.Order.php:72
+#: core/viewModels/me/vm.Me.Order.php:78
 msgid "Cash Payment"
 msgstr ""
 

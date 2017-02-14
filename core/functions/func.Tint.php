@@ -129,7 +129,9 @@ function tt_tint_authorize() {
     }
 
     $server_arr = explode('.', $server);
-    if(count($server_arr)==3){
+    if($server_arr[0]=='www'){
+        $server = implode('.', array_slice($server_arr, 1));
+    }elseif(count($server_arr)==3){
         $server = $server_arr[1] . '.' . $server_arr[2];
     }
     if($info = get_option('_wp_tt_authorize')){

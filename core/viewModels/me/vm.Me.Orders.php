@@ -62,6 +62,7 @@ class MeOrdersVM extends BaseVM {
         $instance->_type = $type;
         $instance->_page = $page;
         $instance->_limit = $limit;
+        $instance->_enableCache = false; // 禁用缓存
         $instance->configInstance();
         return $instance;
     }
@@ -72,9 +73,19 @@ class MeOrdersVM extends BaseVM {
         $total = tt_count_user_orders($this->_userId, $this->_type);
         $max_pages = ceil($total / $this->_limit);
         $pagination_base = tt_url_for('my_' . $this->_type . '_orders') . '/page/%#%';
+
+        $copy_orders = array();
+        foreach ($orders as $order){
+            if($order->product_id > 0){
+                $order->product_link = get_permalink($order->product_id);
+            }else{
+                $order->product_link = null;
+            }
+            $copy_orders[] = $order;
+        }
         return (object)array(
             'count' => $count,
-            'orders' => $orders,
+            'orders' => $copy_orders,
             'total' => $total,
             'max_pages' => $max_pages,
             'pagination_base' => $pagination_base,

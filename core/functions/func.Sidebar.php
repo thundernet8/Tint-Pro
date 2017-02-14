@@ -85,7 +85,7 @@ function tt_register_sidebars(){
     // 注册浮动小工具容器边栏
     register_sidebar(
         array(
-            'name' => 'Float Widgets Container',
+            'name' => __('Float Widgets Container', 'tt'),
             'id' => 'sidebar_float',
             'description' => __("A container for placing some widgets, it will be float once exceed the vision", 'tt'),
             'before_widget' => '<div id="%1$s" class="widget %2$s">',

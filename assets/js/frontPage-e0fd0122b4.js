@@ -1,8 +1,8 @@
 /**
- * Generated on Sat Feb 11 2017 12:03:42 GMT+0800 (中国标准时间) by Zhiyan
+ * Generated on Tue Feb 14 2017 22:59:38 GMT+0800 (中国标准时间) by Zhiyan
  *
  * @package   Tint
- * @version   v2.0.3
+ * @version   v2.0.4
  * @author    Zhiyan <mail@webapproach.net>
  * @site      WebApproach <webapproach.net>
  * @copyright Copyright (c) 2014-2017, Zhiyan
