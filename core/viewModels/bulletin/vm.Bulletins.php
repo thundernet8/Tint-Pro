@@ -78,8 +78,8 @@ class HomeBulletinsVM extends BaseVM {
             $bulletin['author'] = get_the_author();
             $bulletin['author_url'] = get_author_posts_url($post->post_author);
 //            $bulletin['time'] = get_post_time('F j, Y', false, $post, false); //get_post_time( string $d = 'U', bool $gmt = false, int|WP_Post $post = null, bool $translate = false )
-            $bulletin['datetime'] = get_the_time('m-d H:i', $post);
-            $bulletin['modified'] = get_post_modified_time('m-d H:i', false, $post);
+            $bulletin['datetime'] = get_the_time('m-d', $post);
+            $bulletin['modified'] = get_post_modified_time('m-d', false, $post);
             $bulletin['modified'] = !empty($bulletin['modified']) ? $bulletin['modified'] : $bulletin['datetime'];
 
             //$bulletin['views'] = (int)get_post_meta($post->ID, 'views', true);

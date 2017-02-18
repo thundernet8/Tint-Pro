@@ -360,3 +360,90 @@ body {
         }
     }
 }
+
+
+/* 响应式 */
+@media (max-width: 480px) {
+    body {
+        &>#content {
+            &>.main-wrap {
+                padding: 0;
+                &>#main {
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+
+    #main {
+        &>.post {
+            &>.single-header {
+                height: 160px;
+                &>.header-wrap {
+                    top: 0;
+                    bottom: 0;
+                    padding: 40px 20px;
+                    overflow: hidden;
+                    &>h1 {
+                        margin: 10px 0 0;
+                        padding: 10px 0 0;
+                        font-size: 1.6rem;
+                    }
+                }
+            }
+            &>.single-body {
+                padding: 20px 10px;
+                &>.share-bar {
+                    display: none;
+                }
+                &>.article-header {
+                    display: block;
+                    &>.post-tags {
+                        display: block;
+                        padding-right: 0;
+                    }
+                    &>.post-meta {
+                        display: block;
+                        width: 100%;
+                        margin-top: 10px;
+                    }
+                }
+            }
+            &>.navigation {
+                .col-md-6 {
+                    padding-left: 10px;
+                    padding-right: 10px;
+                }
+                .post-navi-next {
+                    text-align: left;
+                }
+            }
+        }
+        .article-footer {
+            margin-bottom: 0;
+            &>.post-like {
+                text-align: center;
+                &>.post-meta-likes {
+                    display: block;
+                    width: 120px;
+                    position: relative;
+                    left: 50%;
+                    margin-left: -60px;
+                }
+                &>ul {
+                    float: none;
+                    overflow: hidden;
+                    margin-top: 20px;
+                    &>li {
+                        float: none;
+                        &.post-like-counter {
+                            display: block;
+                            line-height: 16px;
+                            height: 16px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
