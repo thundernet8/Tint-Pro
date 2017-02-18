@@ -15,7 +15,7 @@
 <?php load_mod('mod.Head'); ?>
 <body <?php body_class('is-loadingApp'); ?>>
     <div class="loading-line"></div>
-    <?php if(is_home()) { ?>
+    <?php if(is_home() || (is_single() && in_array(get_post_type(), array('post', 'product', 'page')))) { ?>
     <!-- 顶部公告 -->
     <?php load_mod('mod.HomeBulletins'); ?>
     <?php } ?>

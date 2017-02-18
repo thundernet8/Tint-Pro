@@ -34,6 +34,8 @@ import Usermeta from './modules/usermeta';
 import Buy from './modules/buy';
 import Referral from './modules/referral';
 import TogglePane from './modules/togglePane';
+import ToggleClose from './modules/close';
+import MarqueeBulletins from './modules/marqueeBulletins';
 
 // DOM Ready
 jQuery(document).ready(function ($) {
@@ -155,4 +157,10 @@ jQuery(document).ready(function ($) {
     
     // 折叠板
     TogglePane.init();
+    
+    // 关闭公告栏目
+    ToggleClose.init('tt_close_bulletins');
+    
+    // 滚动公告栏条目
+    MarqueeBulletins.init();
 });

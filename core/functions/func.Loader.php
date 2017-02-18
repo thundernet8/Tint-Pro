@@ -191,6 +191,7 @@ if(TT_PRO && tt_get_option('tt_enable_shop', false)){
 load_vm('vm.Base');
 load_vm('vm.Home.Slides');
 load_vm('vm.Home.Popular');
+load_vm('vm.Stickys');
 load_vm('vm.Home.Latest');
 load_vm('vm.Home.FeaturedCategory');
 load_vm('vm.Single.Post');

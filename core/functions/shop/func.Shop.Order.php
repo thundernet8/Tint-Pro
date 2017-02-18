@@ -594,8 +594,8 @@ function tt_order_email($order_id) {
         'orderTime' => $order->order_time,
         'orderStatusText' => $order_status_text
     );
-    //tt_async_mail('', $user->user_email, $subject, $args, 'order-status');  // 同一时间多封异步邮件只会发送第一封, 其他丢失
-    tt_mail('', $user->user_email, $subject, $args, 'order-status');
+    tt_async_mail('', $user->user_email, $subject, $args, 'order-status');  // 同一时间多封异步邮件只会发送第一封, 其他丢失
+    //tt_mail('', $user->user_email, $subject, $args, 'order-status');
 
     // 如果有新订单创建或交易成功 发信通知管理员
     if($order->order_status == OrderStatus::WAIT_PAYMENT || $order->order_status == OrderStatus::TRADE_SUCCESS){

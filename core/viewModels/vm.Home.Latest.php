@@ -84,6 +84,7 @@ class HomeLatestVM extends BaseVM {
             $latest_post['datetime'] = get_the_time(DATE_W3C, $post);
             $latest_post['thumb'] = tt_get_thumb($post, 'medium');
             $latest_post['format'] = get_post_format($post) ? : 'standard';
+            $latest_post['sticky_class'] = '';
 
             $latest_posts[] = $latest_post;
         endwhile;

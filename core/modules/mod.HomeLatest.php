@@ -23,8 +23,18 @@
             <h2 class="widget-title"><?php _e('Latest Posts', 'tt'); ?></h2>
             <?php if($data = $vm->modelData) { $pagination_args = $data->pagination; $latest_posts = $data->latest_posts; ?>
             <div class="block5_widget_content block5_list loop-rows posts-loop-rows">
+                <?php if($paged === 1) { ?>
+                <?php $sticky_vm = StickysVM::getInstance(); ?>
+                    <?php if($sticky_vm->isCache && $sticky_vm->cacheTime) { ?>
+                        <!-- Sticky posts cached <?php echo $sticky_vm->cacheTime; ?> -->
+                    <?php } ?>
+                    <?php if($sticky_data = $sticky_vm->modelData) {
+                        $sticky_posts = $sticky_data->sticky_posts; $sticky_count = $sticky_data->count;
+                        $latest_posts = $sticky_count > 0 && $sticky_posts ? array_merge($sticky_posts, $latest_posts) : $latest_posts;
+                    } ?>
+                <?php } ?>
                 <?php foreach ($latest_posts as $latest_post) { ?>
-                <article id="<?php echo 'post-' . $latest_post['ID']; ?>" class="post type-post status-publish <?php echo 'format-' . $latest_post['format']; ?>">
+                <article id="<?php echo 'post-' . $latest_post['ID']; ?>" class="post type-post status-publish <?php echo 'format-' . $latest_post['format'] . ' ' . $latest_post['sticky_class']; ?>">
                     <div class="entry-thumb hover-scale">
                         <a href="<?php echo $latest_post['permalink']; ?>"><img width="250" height="170" src="<?php echo LAZY_PENDING_IMAGE; ?>" data-original="<?php echo $latest_post['thumb']; ?>" class="thumb-medium wp-post-image lazy" alt="<?php echo $latest_post['title']; ?>" style="max-height: 175px;"></a>
 <!--                        <span class="shadow"></span>-->
@@ -33,7 +43,12 @@
                     </div>
                     <div class="entry-detail">
                         <header class="entry-header">
-                            <h2 class="entry-title"><a href="<?php echo $latest_post['permalink']; ?>" rel="bookmark"><?php echo $latest_post['title']; ?></a></h2>
+                            <h2 class="entry-title">
+                                <a href="<?php echo $latest_post['permalink']; ?>" rel="bookmark"><?php echo $latest_post['title']; ?></a>
+                                <?php if($latest_post['sticky_class'] == 'sticky') { ?>
+                                <img class="sticky-ico" src="<?php echo THEME_ASSET . '/img/sticky.png'; ?>" >
+                                <?php } ?>
+                            </h2>
                             <div class="entry-meta entry-meta-1">
                                 <span class="author vcard"><a class="url" href="<?php echo $latest_post['author_url']; ?>"><?php echo $latest_post['author']; ?></a></span>
                                 <span class="entry-date text-muted"><time class="entry-date" datetime="<?php echo $latest_post['datetime']; ?>" title="<?php echo $latest_post['datetime']; ?>"><?php echo $latest_post['time']; ?></time></span>
