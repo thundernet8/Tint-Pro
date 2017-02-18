@@ -571,6 +571,7 @@ function tt_delete_order_by_order_id($order_id){
  * @param $order_id
  */
 function tt_order_email($order_id) {
+    if(!tt_get_option('tt_order_events_notify', true)) return;
     $order = tt_get_order($order_id);
     if(!$order) {
         return;
@@ -723,6 +724,15 @@ function tt_continue_pay($order_id){
     $order = tt_get_order($order_id);
     if(!$order) {
         return new WP_Error('order_not_found', __('The order is not found', 'tt'), array('status' => 404));
+    }
+
+    // 如果是子订单则转向父级订单
+    if($order->parent_id > 0){
+        $parent_order = tt_get_order_by_sequence($order->parent_id);
+        if(!$parent_order) {
+            return new WP_Error('order_not_found', __('The order is not found', 'tt'), array('status' => 404));
+        }
+        return tt_continue_pay($parent_order->order_id);
     }
 
     if(in_array($order->order_status, [OrderStatus::PAYED_AND_WAIT_DELIVERY, OrderStatus::DELIVERED_AND_WAIT_CONFIRM, OrderStatus::TRADE_SUCCESS])) {

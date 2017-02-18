@@ -89,7 +89,7 @@ class ShopHomeVM extends BaseVM {
             $product['excerpt'] = get_the_excerpt($post);
             $product['category'] = get_the_category_list(' ', '', $post->ID);
             $product['author'] = get_the_author();
-            $product['author_url'] = home_url('/@' . $product['author']); //TODO the link
+            $product['author_url'] = get_author_posts_url($post->post_author);
             $product['time'] = get_post_time('F j, Y', false, $post, false); //get_post_time( string $d = 'U', bool $gmt = false, int|WP_Post $post = null, bool $translate = false )
             $product['datetime'] = get_the_time(DATE_W3C, $post);
             $product['thumb'] = tt_get_thumb($post, array('width' => 350, 'height' => 250, 'str' => 'medium'));

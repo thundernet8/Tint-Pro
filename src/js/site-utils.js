@@ -20,6 +20,7 @@ import {} from './modules/bootstrap-flat';
 import Checkout from './modules/checkout';
 import FixFooter from './modules/fixFooter';
 import BuyResource from './modules/buyResource';
+import PollOrderStatus from './modules/pollOrderStatus';
 
 // DOM Ready
 jQuery(document).ready(function ($) {
@@ -43,4 +44,7 @@ jQuery(document).ready(function ($) {
     
     // 初始化购买文章内资源请求handler
     BuyResource.init();
+    
+    // 实时查询订单支付状态
+    PollOrderStatus.init();
 });

@@ -106,7 +106,7 @@ function tt_url_for($key, $arg = null, $relative = false){
             $endpoint = 'me/editpost/' . absint($arg);
             break;
         case 'download':
-            $endpoint = 'site/download?_=' . rtrim(tt_encrypt($arg, tt_get_option('tt_private_token')), '=');
+            $endpoint = 'site/download?_=' . urlencode(rtrim(tt_encrypt($arg, tt_get_option('tt_private_token')), '='));
             break;
     }
     if($endpoint){
@@ -400,7 +400,7 @@ function tt_get_css($filename = '') {
     if(is_home()) {
         $filename = CSS_HOME;
     }elseif(is_single()) {
-        $filename = get_post_type()==='product' ? CSS_PRODUCT : CSS_SINGLE;
+        $filename = get_post_type()==='product' ? CSS_PRODUCT : (get_post_type()==='bulletin' ? CSS_PAGE : CSS_SINGLE);
     }elseif((is_archive() && !is_author()) || (is_search() && isset($_GET['in_shop']) && $_GET['in_shop'] == 1)) {
         $filename = get_post_type()==='product' || (is_search() && isset($_GET['in_shop']) && $_GET['in_shop'] == 1) ? CSS_PRODUCT_ARCHIVE : CSS_ARCHIVE;
     }elseif(is_author()) {
@@ -496,4 +496,27 @@ function tt_get_referral_link($user_id = 0, $base_link = ''){
 function tt_get_http_response_code($theURL) {
     @$headers = get_headers($theURL);
     return substr($headers[0], 9, 3);
+}
+
+
+/**
+ * 过滤multicheck选项的设置值
+ *
+ * @since 2.0.5
+ * @param $option
+ * @return array
+ */
+function tt_filter_of_multicheck_option($option) {
+    // 主题选项框架获得multicheck类型选项的值为 array(id => bool), 而我们需要的是bool为true的array(id)
+    if(!is_array($option)) {
+        return $option;
+    }
+
+    $new_option = array();
+    foreach ($option as $key => $value) {
+        if($value) {
+            $new_option[] = $key;
+        }
+    }
+    return $new_option;
 }

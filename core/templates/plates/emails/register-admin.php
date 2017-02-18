@@ -6,4 +6,4 @@
     <br>注册邮箱: <?=$this->e($email)?>
     <br>注册时间: <?php echo date("Y-m-d H:i:s"); ?>
     <br>注册IP: <?=$this->e($ip)?><?php echo ' [' . tt_query_ip_addr($ip) . ']'; ?>
-</div
+</div>

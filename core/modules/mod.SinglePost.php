@@ -113,7 +113,7 @@
         </div>
         <!-- 上下篇导航 -->
         <div class="navigation clearfix">
-            <div class="col-md-6">
+            <div class="col-md-6 post-navi-prev">
                 <span><?php _e('Previous article', 'tt'); ?></span>
                 <h2 class="h5"><?php echo $postdata->prev; ?></h2>
             </div>

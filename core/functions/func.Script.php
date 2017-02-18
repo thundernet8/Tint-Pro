@@ -64,7 +64,7 @@ function tt_register_scripts() {
     if(is_home()) {
         $script = 'tt_home';
     }elseif(is_single()) {
-        $script = get_post_type()==='product' ? 'tt_product_page' : 'tt_single_post';
+        $script = get_post_type()==='product' ? 'tt_product_page' : (get_post_type()==='bulletin' ? 'tt_single_page' : 'tt_single_post');
     }elseif((is_archive() && !is_author()) || (is_search() && isset($_GET['in_shop']) && $_GET['in_shop'] == 1)) {
         $script = get_post_type()==='product' || (is_search() && isset($_GET['in_shop']) && $_GET['in_shop'] == 1) ? 'tt_products_page' : 'tt_archive_page';
     }elseif(is_author()) {

@@ -13,7 +13,8 @@
  */
 ?>
 <?php global $tt_me_vars; $tt_user_id = $tt_me_vars['tt_user_id']; ?>
-<?php $categories = get_categories(); ?>
+<?php $allow_catIds = tt_filter_of_multicheck_option(tt_get_option('tt_contribute_cats', array())); ?>
+<?php $categories = get_categories(array('include' => $allow_catIds)); ?>
 <div class="col col-right contribute">
     <div class="me-tab-box contribute-tab">
         <div class="tab-content me-contribute">

@@ -75,16 +75,20 @@ if($currency != 'cash'){
                 <p class="introduction"><?php _e('Currently we only support a payment via transfer by scanning qrcode image, when you transfer cash to us, you should leave some important information for remark', 'tt'); ?></p>
                 <p class="remark"><?php echo sprintf(__('Your remark is: <strong>%d</strong>', 'tt'), $order->id); ?></p>
                 <div class="pay-qr-images row">
-                    <div class="qrcode col-md-6 col-sm-6 col-xs-12 alipay">
+                    <div class="qrcode col-md-12 col-sm-6 col-xs-12 alipay">
                         <h4 style="color: #07b6e8;"><?php _e('Alipay', 'tt'); ?></h4>
                         <div class="ali-qr"><img src="<?php echo tt_get_option('tt_site_alipay_qr'); ?>" title="<?php _e('Scan the qrcode image and pay forward to me', 'tt'); ?>"></div>
                         <p><?php _e('Recommended, support auto delivery if you leave right remark', 'tt'); ?></p>
                     </div>
-                    <div class="qrcode col-md-6 col-sm-6 col-xs-12 weixin">
-                        <h4 style="color: #07b6e8;"><?php _e('Wechat', 'tt'); ?></h4>
-                        <div class="wx-qr"><img src="<?php echo tt_get_option('tt_site_weixin_qr'); ?>" title="<?php _e('Scan the qrcode image and pay forward to me', 'tt'); ?>"></div>
-                        <p><?php _e('Auto delivery not supported, we will check and handle the order manually in time', 'tt'); ?></p>
-                    </div>
+<!--                    <div class="qrcode col-md-6 col-sm-6 col-xs-12 weixin">-->
+<!--                        <h4 style="color: #07b6e8;">--><?php //_e('Wechat', 'tt'); ?><!--</h4>-->
+<!--                        <div class="wx-qr"><img src="--><?php //echo tt_get_option('tt_site_weixin_qr'); ?><!--" title="--><?php //_e('Scan the qrcode image and pay forward to me', 'tt'); ?><!--"></div>-->
+<!--                        <p>--><?php //_e('Auto delivery not supported, we will check and handle the order manually in time', 'tt'); ?><!--</p>-->
+<!--                    </div>-->
+                </div>
+                <div class="pay-qr-images row">
+                    <p class="mb20" style="color: red;"><?php printf(__('iOS用户注意, 请按如下方式操作, 我的收款账户为 <strong>%s</strong>', 'tt'), tt_get_option('tt_alipay_email')); ?></p>
+                    <img src="<?php echo THEME_ASSET . '/img/pay-tip.jpg'; ?>">
                 </div>
 <!--                <div class="contact-qr-images row">-->
 <!--                    <div class="col-md-6 col-sm-6 col-xs-12 alipay">-->

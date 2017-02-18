@@ -50,6 +50,14 @@ class WP_REST_Order_Controller extends WP_REST_Controller
 
         register_rest_route( $this->namespace, '/' . $this->rest_base . '/(?P<id>[\d]+)', array(
             array(
+                'methods'         => WP_REST_Server::READABLE,
+                'callback'        => array( $this, 'get_item' ),
+                'permission_callback' => array( $this, 'get_item_permissions_check' ),
+                'args'            => array(
+                    'context'          => $this->get_context_param( array( 'default' => 'view' ) ),
+                ),
+            ),
+            array(
                 'methods'         => WP_REST_Server::EDITABLE,
                 'callback'        => array( $this, 'update_item' ),
                 'permission_callback' => array( $this, 'update_item_permissions_check' ),
@@ -176,6 +184,42 @@ class WP_REST_Order_Controller extends WP_REST_Controller
         $checkout_url = add_query_arg(array('oid' => $create['order_id'], 'spm' => $checkout_nonce), tt_url_for('checkout'));
         $create['url'] = $checkout_url;
         return tt_api_success(__('Create order successfully', 'tt'), array('data' => $create));
+    }
+
+
+    /**
+     * 判断请求是否有权限读取单个订单
+     *
+     * @param  WP_REST_Request $request Full details about the request.
+     * @return boolean | WP_Error
+     */
+    public function get_item_permissions_check( $request ) {
+        if (!is_user_logged_in()) {
+            return new WP_Error('rest_order_cannot_read', __('Sorry, you cannot view a order without signing in.', 'tt'), array('status' => tt_rest_authorization_required_code()));
+        }
+        return true;
+    }
+
+    /**
+     * 读取指定订单
+     *
+     * @param WP_REST_Request $request Full details about the request.
+     * @return WP_Error | WP_REST_Response
+     */
+    public function get_item( $request ) {
+        $order_id = $request['id'];
+
+        $order = tt_get_order($order_id);
+        if(!$order) {
+            return tt_api_fail(__('Cannot find the order specified', 'tt'));
+        }
+
+        if($order->order_status != OrderStatus::TRADE_SUCCESS) {
+            return tt_api_fail(__('The order has not been payed', 'tt'));
+        }
+
+        $manage_url = add_query_arg('cache', 0, tt_url_for('my_order', $order->id));
+        return tt_api_success(__('The order has been payed', 'tt'), array('url' => $manage_url));
     }
 
 

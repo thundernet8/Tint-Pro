@@ -5,4 +5,4 @@
     用户名: <?=$this->e($loginName)?>
     <br>登录密码: <?=$this->e($password)?>
     <br>登录链接: <a href="<?=$this->e($loginLink)?>"><?=$this->e($loginLink)?></a>
-</div
+</div>

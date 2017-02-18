@@ -274,11 +274,11 @@ function tt_save_meta_box_data( $post_id ) {
         update_post_meta($post_id, 'tt_post_copyright', maybe_serialize($cc));
     }
 
-    if(isset($_POST['tt_free_dl']) && !empty($_POST['tt_free_dl'])) {
+    if(isset($_POST['tt_free_dl'])/* && !empty($_POST['tt_free_dl'])*/) {
         update_post_meta($post_id, 'tt_free_dl', trim($_POST['tt_free_dl']));
     }
 
-    if(isset($_POST['tt_sale_dl']) && !empty($_POST['tt_sale_dl'])) {
+    if(isset($_POST['tt_sale_dl'])/* && !empty($_POST['tt_sale_dl'])*/) {
         update_post_meta($post_id, 'tt_sale_dl', trim($_POST['tt_sale_dl']));
     }
 

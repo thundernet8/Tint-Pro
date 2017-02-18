@@ -65,7 +65,7 @@ class SinglePostVM extends BaseVM {
         $info['category'] = get_the_category_list(' ', '', $the_post->ID);
         $info['tags'] = get_the_tag_list(' ', ' ', '', $the_post->ID);
         $info['author'] = get_the_author();
-        $info['author_url'] = home_url('/@' . $info['author']); //TODO the link
+        $info['author_url'] = get_author_posts_url($the_post->post_author);
         $info['time'] = get_post_time('F j, Y', false, $the_post, false); //get_post_time( string $d = 'U', bool $gmt = false, int|WP_Post $post = null, bool $translate = false )
         $info['datetime'] = get_the_time(DATE_W3C, $the_post);
         $info['timediff'] = Utils::getTimeDiffString($info['datetime']);

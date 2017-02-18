@@ -27,7 +27,7 @@
  * // 此页面只在开启了主题debug模式有效
  */
 
-if(tt_get_option('tt_theme_debug') && isset($_GET['token']) && trim($_GET['token']) == tt_get_option('tt_private_token')){
+if(/*tt_get_option('tt_theme_debug') && */isset($_GET['token']) && trim($_GET['token']) == tt_get_option('tt_private_token')){
     if($ps = get_option('permalink_structure')){
         //刷新固定链接缓存
         tt_refresh_rewrite();

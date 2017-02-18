@@ -75,29 +75,31 @@
                     <div class="tip"><?php _e('This is a combined order, please visit sub orders below for more specified payed content', 'tt'); ?></div>
                     <ul class="sub-orders">
                         <?php foreach ($sub_orders as $sub_order) { ?>
-                        <li class="sub-order"><a class="btn btn-info" href="<?php echo tt_url_for('my_order', $sub_order->id); ?>"><?php printf(__('Order %s', 'tt'), $sub_order->order_id); ?></a></li>
+                        <li class="sub-order mt10"><a class="btn btn-info" href="<?php echo tt_url_for('my_order', $sub_order->id); ?>"><?php printf(__('Order %s', 'tt'), $sub_order->order_id); ?></a></li>
                         <?php } ?>
                     </ul>
                     <?php }else{ ?>
                     <div class="row clearfix">
+                        <?php if(isset($pay_content['download_content'])){ $downloads = $pay_content['download_content']; ?>
                         <label class="col-md-3 control-label"><?php _e('Download Content', 'tt'); ?></label>
                         <div class="col-md-9">
                             <div class="form-control-static">
-                                <?php if(isset($pay_content['download_content'])){ $downloads = $pay_content['download_content']; ?>
                                 <?php foreach ($downloads as $download) { ?>
                                 <p><?php printf(__('Download Name: %s', 'tt'), $download['name']); ?></p>
                                 <p><?php printf(__('Download Link: <a href="%1$s">%1$s</a>', 'tt'), $download['link']); ?></p>
                                 <p><?php printf(__('Download Password: %s', 'tt'), $download['password']); ?></p>
                                 <?php } ?>
-                                <?php } ?>
                             </div>
                         </div>
+                        <?php } ?>
                     </div>
                     <div class="row clearfix">
+                        <?php if(isset($pay_content['pay_content'])) { ?>
                         <label class="col-md-3 control-label"><?php _e('Payed Content', 'tt'); ?></label>
                         <div class="col-md-9">
-                            <div class="form-control-static"><p><?php echo isset($pay_content['pay_content']) ? $pay_content['pay_content'] : ''; ?></p></div>
+                            <div class="form-control-static"><p><?php echo $pay_content['pay_content']; ?></p></div>
                         </div>
+                        <?php } ?>
                     </div>
                     <?php } ?>
                 </div>

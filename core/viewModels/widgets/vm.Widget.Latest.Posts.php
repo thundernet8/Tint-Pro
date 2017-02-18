@@ -47,7 +47,7 @@ class WidgetLatestPostsVM extends BaseVM {
 
     protected function getRealData() {
         // 排除分类
-        $uncat = tt_get_option('tt_home_undisplay_cats', array());
+        $uncat = tt_filter_of_multicheck_option(tt_get_option('tt_home_undisplay_cats', array()));
         // 检索置顶用于排除
          $stickies = get_option('sticky_posts');
 

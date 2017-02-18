@@ -15,6 +15,10 @@
 <?php load_mod('mod.Head'); ?>
 <body <?php body_class('is-loadingApp'); ?>>
     <div class="loading-line"></div>
+    <?php if(is_home()) { ?>
+    <!-- 顶部公告 -->
+    <?php load_mod('mod.HomeBulletins'); ?>
+    <?php } ?>
     <header class="header common-header white">
         <input type="checkbox" id="menustate" class="menustate hide">
         <nav id="header-nav" class="navigation container clearfix" role="navigation">

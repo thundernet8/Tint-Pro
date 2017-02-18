@@ -133,6 +133,7 @@
                             <!-- Product meta -->
                             <div class="product_meta">
                                 <span class="sku_wrapper"><?php _e('SKU: ', 'tt'); ?><span class="sku" itemprop="sku"><?php echo $productdata->ID; ?></span></span>
+                                <span class="inventory_wrapper"><?php _e('Inventory: ', 'tt'); ?><span class="inventory" itemprop="inventory"><?php echo $productdata->amount; ?></span></span>
                                 <span class="posted_in"><?php _e('Categories: ', 'tt'); ?><?php echo implode(', ', $cat_breads); ?></span>
                             </div>
                         </section>

@@ -14,12 +14,14 @@
 ?>
 <?php tt_get_header(); ?>
 <div id="content" class="wrapper container right-aside">
-    <?php $paged = get_query_var('paged'); if(!$paged || $paged===1) : ?>
+    <?php $paged = get_query_var('paged'); if((!$paged || $paged===1) && tt_get_option('tt_enable_home_slides', false)) : ?>
     <!-- 顶部Slides + Popular -->
     <section id="mod-show" class="content-section clearfix">
         <?php load_mod('mod.HomeSlide'); ?>
         <?php load_mod('mod.HomePopular'); ?>
     </section>
+    <?php endif; ?>
+    <?php if((!$paged || $paged===1) && tt_get_option('tt_enable_sticky_cats', true)) : ?>
     <!-- 中部置顶分类 -->
     <section id="mod-featuredCats" class="content-section clearfix">
         <?php load_mod('mod.FeaturedCats'); ?>

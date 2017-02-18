@@ -363,3 +363,51 @@ body.search {
         }
     }
 }
+
+/* 公告 */
+body.single-bulletin {
+    background: #f5f6f8;
+    &>#content {
+        max-width: 960px;
+        &>.main-wrap {
+            &>#main {
+                &>.bulletin {
+                    padding: 20px 0;
+                    background: #fff;
+                    .separator {
+                        padding: 0 10px;
+                    }
+                    &>.single-body {
+                        padding: 20px 30px;
+                    }
+                    box-shadow: rgba(0,0,0,.0980392) 0 0 1px;
+                }
+                &>.navigation {
+                    margin-top: 20px;
+                    padding: 20px 0;
+                    background: #fff;
+                    box-shadow: rgba(0,0,0,.0980392) 0 0 1px;
+                    &>.col-md-6 {
+                        padding-left: 30px;
+                        padding-right: 20px;
+                        &.post-navi-next {
+                            padding-left: 20px;
+                            padding-right: 30px;
+                            text-align: right;
+                        }
+                        &>span {
+                            font-size: 1.3rem;
+                            color: #999;
+                            margin-bottom: 3px;
+                            display: block;
+                        }
+                        a {
+                            color: #34495e;
+                            font-weight: 700;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

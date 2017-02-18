@@ -129,13 +129,13 @@ function optionsframework_options() {
     );
 
     // - jQuery 加载位置
-    $options[] = array(
-        'name' => __( 'jQuery Load Position', 'tt' ),
-        'desc' => __( 'Check to load jQuery on `body` end', 'tt' ),
-        'id' => 'tt_foot_jquery',
-        'std' => false,
-        'type' => 'checkbox'
-    );
+//    $options[] = array(
+//        'name' => __( 'jQuery Load Position', 'tt' ),
+//        'desc' => __( 'Check to load jQuery on `body` end', 'tt' ),
+//        'id' => 'tt_foot_jquery',
+//        'std' => false,
+//        'type' => 'checkbox'
+//    );
 
 
 	// 主题选项 - 样式设置
@@ -177,6 +177,24 @@ function optionsframework_options() {
         'std' => array(),
         'type' => 'multicheck',
         'options' => $options_categories
+    );
+
+    // - 首页幻灯开关
+    $options[] = array(
+        'name' => __( '首页顶部展示幻灯和热门文章', 'tt' ),
+        'desc' => __( '展示幻灯和热门文章', 'tt' ),
+        'id' => 'tt_enable_home_slides',
+        'std' => false,
+        'type' => 'checkbox'
+    );
+
+    // - 首页置顶分类开关
+    $options[] = array(
+        'name' => __( '首页展示置顶分类', 'tt' ),
+        'desc' => __( '展示置顶分类', 'tt' ),
+        'id' => 'tt_enable_sticky_cats',
+        'std' => true,
+        'type' => 'checkbox'
     );
 
     // - 幻灯文章ID列表
@@ -234,13 +252,13 @@ function optionsframework_options() {
     );
 
     // - 商品推荐
-    $options[] = array(
-        'name' => __( 'Home Products Recommendation', 'tt' ),
-        'desc' => __( 'Enable products recommendation module for homepage', 'tt' ),
-        'id' => 'tt_home_products_recommendation',
-        'std' => false,
-        'type' => $theme_pro ? 'checkbox' : 'disabled'
-    );
+//    $options[] = array(
+//        'name' => __( 'Home Products Recommendation', 'tt' ),
+//        'desc' => __( 'Enable products recommendation module for homepage', 'tt' ),
+//        'id' => 'tt_home_products_recommendation',
+//        'std' => false,
+//        'type' => $theme_pro ? 'checkbox' : 'disabled'
+//    );
 
     // - 文章评论数
     $options[] = array(
@@ -280,6 +298,68 @@ function optionsframework_options() {
         'id' => 'tt_disable_external_links',
         'std' => false,
         'type' => 'checkbox'
+    );
+
+
+    // - 可投稿分类
+    $default_allow_cats = array();
+    foreach ($category_keys as $category_key) {
+        $default_allow_cats[$category_key] = true;
+    }
+    $options[] = array(
+        'name' => __('可投稿分类', 'tt'),
+        'desc' => __('选择允许用户投稿的分类, 至少选择一个', 'tt'),
+        'id' => 'tt_contribute_cats',
+        'std' => $default_allow_cats,
+        'type' => 'multicheck',
+        'options' => $options_categories
+    );
+
+
+    // - 开启首页顶部公告显示
+    $options[] = array(
+        'name' => __( 'Enable Home Bulletins', 'tt' ),
+        'desc' => __( 'Show site bulletins on the top of homepage', 'tt' ),
+        'id' => 'tt_enable_homepage_bulletins',
+        'std' => true,
+        'type' => 'checkbox'
+    );
+
+
+    // - 公告链接的链接前缀
+    $options[] = array(
+        'name' => __( 'Bulletins Archive Link Slug', 'tt' ),
+        'desc' => __( 'The special prefix in bulletin archive link', 'tt' ),
+        'id' => 'tt_bulletin_archives_slug',
+        'std' => 'bulletin',
+        'class' => 'mini',
+        'type' => 'text'
+    );
+
+
+    // - 公告链接模式
+    $options[] = array(
+        'name' => __( 'Bulletin Permalink Mode', 'tt' ),
+        'desc' => __( 'The link mode for the rewrite bulletin permalink', 'tt' ),
+        'id' => 'tt_bulletin_link_mode',
+        'std' => 'post_id',
+        'type' => 'select',
+        'class' => 'mini',
+        'options' => array(
+            'post_id' => __( 'Post ID', 'tt' ),
+            'post_name' => __( 'Post Name', 'tt' )
+        )
+    );
+
+
+    // - 公告的有效期天数
+    $options[] = array(
+        'name' => __( 'Bulletin Effect Days', 'tt' ),
+        'desc' => __( 'The effect days of a bulletin, expired bulletin will never be show', 'tt' ),
+        'id' => 'tt_bulletin_effect_days',
+        'std' => 10,
+        'class' => 'mini',
+        'type' => 'text'
     );
 
 
@@ -827,7 +907,7 @@ function optionsframework_options() {
         'name' => __( 'Product Permalink Mode', 'tt' ),
         'desc' => __( 'The link mode for the rewrite product permalink', 'tt' ),
         'id' => 'tt_product_link_mode',
-        'std' => 'name',
+        'std' => 'post_name',
         'type' => $theme_pro ? 'select' : 'disabled',
         'class' => 'mini',
         'options' => array(
@@ -1199,6 +1279,16 @@ function optionsframework_options() {
         'desc' => __( 'Enable email notification when a login failure event happened', 'tt' ),
         'id' => 'tt_login_failure_notify',
         'std' => false,
+        'type' => 'checkbox'
+    );
+
+
+    // - 启用订单相关邮件提醒
+    $options[] = array(
+        'name' => __( 'Order Related Notification', 'tt' ),
+        'desc' => __( 'Enable order related notifications', 'tt' ),
+        'id' => 'tt_order_events_notify',
+        'std' => true,
         'type' => 'checkbox'
     );
 

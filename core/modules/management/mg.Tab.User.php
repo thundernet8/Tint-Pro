@@ -35,6 +35,10 @@
                             <div class="col-md-9"><p class="form-control-static"><?php echo $data->display_name; ?></p></div>
                         </div>
                         <div class="row clearfix">
+                            <label class="col-md-3 control-label"><?php _e('User Email', 'tt'); ?></label>
+                            <div class="col-md-9"><p class="form-control-static"><?php echo $data->email; ?></p></div>
+                        </div>
+                        <div class="row clearfix">
                             <label class="col-md-3 control-label"><?php _e('Register Time', 'tt'); ?></label>
                             <div class="col-md-9"><p class="form-control-static"><?php echo $data->member_since; ?><?php printf(__(' <b>(%d days)</b>', 'tt'), $data->member_days); ?></p></div>
                         </div>

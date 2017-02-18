@@ -24,6 +24,8 @@ import SignHelp from './modules/signHelp';
 //import Scrollbar from 'perfect-scrollbar/jquery';
 // require('./modules/smooth-scroll');
 import Referral from './modules/referral';
+import ToggleClose from './modules/close';
+import MarqueeBulletins from './modules/marqueeBulletins';
 
 // DOM Ready
 jQuery(document).ready(function ($) {
@@ -84,4 +86,10 @@ jQuery(document).ready(function ($) {
     
     // 设置推广信息cookie, 便于后面使用
     Referral.init();
+    
+    // 关闭公告栏目
+    ToggleClose.init('tt_close_bulletins');
+    
+    // 滚动公告栏条目
+    MarqueeBulletins.init();
 });

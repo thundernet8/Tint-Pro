@@ -150,6 +150,7 @@ if(TT_PRO && tt_get_option('tt_enable_shop', false)){
     load_func('shop/func.Shop.Address');
     load_func('shop/alipay/func.Alipay');
 }
+load_func('func.Bulletin');
 
 /* 载入类 */
 load_class('class.Avatar');
@@ -230,6 +231,8 @@ if(TT_PRO && tt_get_option('tt_enable_shop', false)){
     load_vm('shop/vm.Shop.ViewHistory');
     load_vm('shop/vm.Embed.Product');
 }
+load_vm('bulletin/vm.Bulletin');
+load_vm('bulletin/vm.Bulletins');
 
 if(TT_PRO){
     load_vm('me/vm.Me.Order');

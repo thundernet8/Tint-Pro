@@ -61,6 +61,12 @@ function tt_create_message( $user_id=0, $sender_id=0, $sender, $type='', $title=
  * @return bool
  */
 function tt_create_pm($receiver_id, $sender, $text, $send_mail = false) {
+    // 清理未读消息统计数的缓存
+    if(wp_using_ext_object_cache()) {
+        $key = 'tt_user_' . $receiver_id . '_unread';
+        wp_cache_delete($key);
+    }
+
     if($sender instanceof WP_User && $sender->ID) {
         if($send_mail && $sender->user_email) {
             $subject = sprintf( __('%1$s向你发送了一条消息 - %2$s', 'tt'), $sender->display_name, get_bloginfo('name') );
