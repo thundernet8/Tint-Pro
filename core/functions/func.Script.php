@@ -25,21 +25,21 @@ function tt_register_scripts() {
     // TODO: if debug mode, use `min.js`
     $jquery_url = json_decode(JQUERY_SOURCES)->{tt_get_option('tt_jquery', 'local_1')};
     wp_register_script( 'tt_jquery', $jquery_url, array(), null, tt_get_option('tt_foot_jquery', false) );
-    //wp_register_script( 'tt_common', THEME_ASSET . '/js/' . JS_COMMON, array(), null, true );
-    wp_register_script( 'tt_home', THEME_ASSET . '/js/' . JS_HOME, array(), null, true );
-    wp_register_script( 'tt_front_page', THEME_ASSET . '/js/' . JS_FRONT_PAGE, array(), null, true );
-    wp_register_script( 'tt_single_post', THEME_ASSET . '/js/' . JS_SINGLE, array(), null, true );
-    wp_register_script( 'tt_single_page', THEME_ASSET . '/js/' . JS_PAGE, array(), null, true );
-    wp_register_script( 'tt_archive_page', THEME_ASSET . '/js/' . JS_ARCHIVE, array(), null, true );
-    wp_register_script( 'tt_product_page', THEME_ASSET . '/js/' . JS_PRODUCT, array(), null, true );
-    wp_register_script( 'tt_products_page', THEME_ASSET . '/js/' . JS_PRODUCT_ARCHIVE, array(), null, true );
-    wp_register_script( 'tt_uc_page', THEME_ASSET . '/js/' . JS_UC, array(), null, true );
-    wp_register_script( 'tt_me_page', THEME_ASSET . '/js/' . JS_ME, array(), null, true );
-    wp_register_script( 'tt_action_page', THEME_ASSET . '/js/' . JS_ACTION, array(), null, true );
-    wp_register_script( 'tt_404_page', THEME_ASSET . '/js/' . JS_404, array(), null, true );
-    wp_register_script( 'tt_site_utils', THEME_ASSET . '/js/' . JS_SITE_UTILS, array(), null, true);
-    wp_register_script( 'tt_oauth_page', THEME_ASSET . '/js/' . JS_OAUTH, array(), null, true);
-    wp_register_script( 'tt_manage_page', THEME_ASSET . '/js/' . JS_MANAGE, array(), null, true);
+    //wp_register_script( 'tt_common', THEME_CDN_ASSET . '/js/' . JS_COMMON, array(), null, true );
+    wp_register_script( 'tt_home', THEME_CDN_ASSET . '/js/' . JS_HOME, array(), null, true );
+    wp_register_script( 'tt_front_page', THEME_CDN_ASSET . '/js/' . JS_FRONT_PAGE, array(), null, true );
+    wp_register_script( 'tt_single_post', THEME_CDN_ASSET . '/js/' . JS_SINGLE, array(), null, true );
+    wp_register_script( 'tt_single_page', THEME_CDN_ASSET . '/js/' . JS_PAGE, array(), null, true );
+    wp_register_script( 'tt_archive_page', THEME_CDN_ASSET . '/js/' . JS_ARCHIVE, array(), null, true );
+    wp_register_script( 'tt_product_page', THEME_CDN_ASSET . '/js/' . JS_PRODUCT, array(), null, true );
+    wp_register_script( 'tt_products_page', THEME_CDN_ASSET . '/js/' . JS_PRODUCT_ARCHIVE, array(), null, true );
+    wp_register_script( 'tt_uc_page', THEME_CDN_ASSET . '/js/' . JS_UC, array(), null, true );
+    wp_register_script( 'tt_me_page', THEME_CDN_ASSET . '/js/' . JS_ME, array(), null, true );
+    wp_register_script( 'tt_action_page', THEME_CDN_ASSET . '/js/' . JS_ACTION, array(), null, true );
+    wp_register_script( 'tt_404_page', THEME_CDN_ASSET . '/js/' . JS_404, array(), null, true );
+    wp_register_script( 'tt_site_utils', THEME_CDN_ASSET . '/js/' . JS_SITE_UTILS, array(), null, true);
+    wp_register_script( 'tt_oauth_page', THEME_CDN_ASSET . '/js/' . JS_OAUTH, array(), null, true);
+    wp_register_script( 'tt_manage_page', THEME_CDN_ASSET . '/js/' . JS_MANAGE, array(), null, true);
 
     $data = array(
         'debug'             => tt_get_option('tt_theme_debug', false),

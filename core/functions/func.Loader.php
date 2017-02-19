@@ -87,6 +87,9 @@ load_dash('of_inc/options-framework');
 
 /* 载入主题选项 */
 load_dash('options');
+
+defined('THEME_CDN_ASSET') || define('THEME_CDN_ASSET', of_get_option('tt_tint_static_cdn_path', THEME_ASSET));
+
 /* 调试模式选项保存为全局变量 */
 defined('TT_DEBUG') || define('TT_DEBUG', of_get_option('tt_theme_debug', false));
 if(TT_DEBUG) {

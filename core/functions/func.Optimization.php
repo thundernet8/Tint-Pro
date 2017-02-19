@@ -254,8 +254,18 @@ function tt_convert_to_internal_links($content){
     preg_match_all('/\shref=(\'|\")(http[^\'\"#]*?)(\'|\")([\s]?)/', $content, $matches);
     if($matches){
         $home = home_url();
+        $white_list = trim(tt_get_option('tt_external_link_whitelist', ''));
+        $white_links = !empty($white_list) ? explode(PHP_EOL, $white_list) : array();
+        array_push($white_links, $home);
         foreach($matches[2] as $val){
-            if(strpos($val, $home)===false){
+            $external = true;
+            foreach ($white_links as $white_link) {
+                if(strpos($val, $white_link)!==false) {
+                    $external = false;
+                    break;
+                }
+            }
+            if($external===true){
                 $rep = $matches[1][0].$val.$matches[3][0];
                 $new = '"'. $home . '/redirect/' . base64_encode($val). '" target="_blank"';
                 $content = str_replace("$rep", "$new", $content);

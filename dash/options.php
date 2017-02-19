@@ -301,6 +301,17 @@ function optionsframework_options() {
     );
 
 
+    // - 外链白名单
+    $options[] = array(
+        'name' => __( 'External Link Whitelist', 'tt' ),
+        'desc' => __( 'External links which will not be converted', 'tt' ),
+        'id' => 'tt_external_link_whitelist',
+        'std' => '',
+        'row' => 5,
+        'type' => 'textarea'
+    );
+
+
     // - 可投稿分类
     $default_allow_cats = array();
     foreach ($category_keys as $category_key) {
@@ -1290,6 +1301,16 @@ function optionsframework_options() {
         'id' => 'tt_order_events_notify',
         'std' => true,
         'type' => 'checkbox'
+    );
+
+
+    // - 主题静态资源CDN路径
+    $options[] = array(
+        'name' => __('主题静态资源CDN路径', 'tt'),
+        'desc' => __('主题程序的JS/CSS/IMG的CDN存放路径URL, css/js/img文件夹位于该路径下, 默认为本站Tint主题assets文件夹的路径, 更改为CDN的assets路径将从CDN加速主题的JS/CSS/IMG文件', 'tt'),
+        'id' => 'tt_tint_static_cdn_path',
+        'std' => THEME_ASSET,
+        'type' => 'text'
     );
 
 

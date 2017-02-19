@@ -394,7 +394,7 @@ add_filter('wp_die_handler', 'tt_wp_die_handler_switch');
  */
 function tt_get_css($filename = '') {
     if($filename) {
-        return THEME_ASSET.'/css/' . $filename;
+        return THEME_CDN_ASSET . '/css/' . $filename;
     }
 
     if(is_home()) {
@@ -423,7 +423,7 @@ function tt_get_css($filename = '') {
         // is_page() ?
         $filename = CSS_PAGE;
     }
-    return THEME_ASSET.'/css/' . $filename;
+    return THEME_CDN_ASSET . '/css/' . $filename;
 }
 
 
