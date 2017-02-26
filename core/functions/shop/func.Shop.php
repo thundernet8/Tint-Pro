@@ -587,3 +587,35 @@ function tt_get_alipay_gateway($order_id) {
 function tt_get_qrpay_gateway($order_id) {
     return add_query_arg(array('oid' => $order_id), tt_url_for('qrpay'));
 }
+
+
+/**
+ * 查找某个商品的购买用户的邮箱
+ *
+ * @param $product_id
+ * @return array|null|object
+ */
+function tt_get_buyer_emails($product_id) {
+    $cache_key = 'tt_product' . $product_id . '_buyer_emails';
+    if($cache = get_transient($cache_key)) {
+        return maybe_unserialize($cache);
+    }
+
+    global $wpdb;
+    $prefix = $wpdb->prefix;
+    $orders_table = $prefix . 'tt_orders';
+    $sql = sprintf("SELECT `user_id` FROM $orders_table WHERE `deleted`=0 AND `order_status`=%d AND `product_id`=%d ORDER BY `id` DESC", OrderStatus::TRADE_SUCCESS, $product_id); // TODO 子订单因为状态由父级订单决定，不好查找
+    $results = $wpdb->get_col($sql);
+
+    if(!$results || count($results) < 1) return null;
+
+//    $users = get_users(array(
+//       'include' => $results,
+//        'fields' => array('user_email')
+//    ));
+
+    $user_emails = $wpdb->get_col(sprintf("SELECT `user_email` FROM $wpdb->users WHERE ID IN (%s) AND wp_users.user_email<>''", implode(',', $results)));
+
+    set_transient($cache_key, maybe_serialize($user_emails), 3600*24);
+    return $user_emails;
+}

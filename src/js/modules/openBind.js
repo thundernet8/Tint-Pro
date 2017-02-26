@@ -38,7 +38,7 @@ var _handleOpenBind = function (btn) {
     
     if(usernameInput.length < 1 || passInput.length < 1) return false;
     
-    var oauthType = oauthTypeInput.length > 1 ? oauthTypeInput.val() : 'qq';
+    var oauthType = oauthTypeInput.length > 0 ? oauthTypeInput.val() : 'qq';
     var username = usernameInput.val();
     var password = passInput.val();
     

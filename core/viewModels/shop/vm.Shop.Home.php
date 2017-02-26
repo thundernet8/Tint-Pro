@@ -29,6 +29,11 @@ class ShopHomeVM extends BaseVM {
      */
     private $_sort = 'latest';
 
+    /*
+     * @var string 货币和价格类型
+     */
+    private $_priceType = 'all';
+
     protected function __construct() {
         $this->_cacheUpdateFrequency = 'daily';
         $this->_cacheInterval = 3600*24; // 缓存保留一天
@@ -40,13 +45,15 @@ class ShopHomeVM extends BaseVM {
      * @since   2.0.0
      * @param   int    $page   分页号
      * @param   string $sort   排序类型
+     * @param   string $price_type 价格类型
      * @return  static
      */
-    public static function getInstance($page = 1, $sort = 'latest') {
+    public static function getInstance($page = 1, $sort = 'latest', $price_type = 'all') {
         $instance = new static();
-        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . __CLASS__ . '_page' . $page . '_sort' . $sort;
+        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . __CLASS__ . '_page' . $page . '_sort' . $sort . '_type' . $price_type;
         $instance->_page = max(1, $page);
         $instance->_sort = in_array($sort, array('latest', 'popular')) ? $sort : 'latest';
+        $instance->_priceType = in_array($price_type, array('all', 'free', 'cash', 'credit')) ? $price_type : 'all';
         $instance->configInstance();
         return $instance;
     }
@@ -67,6 +74,45 @@ class ShopHomeVM extends BaseVM {
         if($this->_sort == 'popular') {
             $args['orderby'] = 'meta_value_num';
             $args['meta_key'] = 'tt_product_sales';
+        }
+
+        if($this->_priceType == 'free') {
+            $args['meta_query'] = array(
+                'relation' => 'AND',
+                array(
+                    'key' => 'tt_product_price',
+                    'value' => 0.01,
+                    'compare' => '<'
+                )
+            );
+        }elseif($this->_priceType == 'credit') {
+            $args['meta_query'] = array(
+                'relation' => 'AND',
+                array(
+                    'key' => 'tt_pay_currency',
+                    'value' => 0,
+                    'compare' => '='
+                ),
+                array(
+                    'key' => 'tt_product_price',
+                    'value' => '0.00',
+                    'compare' => '>'
+                )
+            );
+        }elseif($this->_priceType == 'cash') {
+            $args['meta_query'] = array(
+                'relation' => 'AND',
+                array(
+                    'key' => 'tt_pay_currency',
+                    'value' => 1,
+                    'compare' => '='
+                ),
+                array(
+                    'key' => 'tt_product_price',
+                    'value' => '0.00',
+                    'compare' => '>'
+                )
+            );
         }
 
         $query = new WP_Query($args);

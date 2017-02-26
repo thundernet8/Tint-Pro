@@ -215,7 +215,7 @@ class WP_REST_Order_Controller extends WP_REST_Controller
         }
 
         if($order->order_status != OrderStatus::TRADE_SUCCESS) {
-            return tt_api_fail(__('The order has not been payed', 'tt'));
+            return tt_api_fail(__('The order has not been payed yet', 'tt'));
         }
 
         $manage_url = add_query_arg('cache', 0, tt_url_for('my_order', $order->id));

@@ -15,9 +15,9 @@
 <?php global $origin_post; ?>
 <?php
     $free_dls = trim(get_post_meta($origin_post->ID, 'tt_free_dl', true));
-    $free_dls = !empty($free_dls) ? explode(',', $free_dls) : array();
+    $free_dls = !empty($free_dls) ? explode(',', str_replace(PHP_EOL, ',', $free_dls)) : array();
     $sale_dls = trim(get_post_meta($origin_post->ID, 'tt_sale_dl', true));
-    $sale_dls = !empty($sale_dls) ? explode(',', $sale_dls) : array();
+    $sale_dls = !empty($sale_dls) ? explode(',', str_replace(PHP_EOL, ',', $sale_dls)) : array();
 ?>
 <div id="main" class="main primary col-md-8 download-box" role="main">
     <div class="download">

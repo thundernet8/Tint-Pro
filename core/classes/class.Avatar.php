@@ -211,7 +211,9 @@ final class Avatar{
                 return self::$_qqAvatarAPI . tt_get_option('tt_qq_openid') . '/' . get_user_meta( $this->_user->ID, 'tt_qq_openid', true ) . '/100';
                 break;
             case 'weibo':
-                return self::$_weiboAvatarAPI . get_user_meta( $this->_user->ID, 'tt_weibo_openid', true ) . '/180/0/1';
+                // return self::$_weiboAvatarAPI . get_user_meta( $this->_user->ID, 'tt_weibo_openid', true ) . '/180/0/1';
+                $weibo_avatar = get_user_meta($this->_user->ID, 'tt_weibo_avatar', true);
+                return set_url_scheme($weibo_avatar);
                 break;
             case 'weixin':
                 return get_user_meta( $this->_user->ID, 'tt_weixin_avatar', true) ? get_user_meta( $this->_user->ID, 'tt_weixin_avatar', true) : $this->getLetterAvatar();

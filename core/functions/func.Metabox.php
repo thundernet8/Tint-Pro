@@ -111,9 +111,9 @@ function tt_download_metabox_callback( $post ) {
 
     ?>
     <p><?php _e( '普通下载资源下载方式', 'tt' );?></p>
-    <p><?php _e( '普通下载资源，格式为 资源1名称|资源1url|下载密码,资源2名称|资源2url|下载密码 资源名称与url用|隔开，不同资源用英文逗号隔开，url请添加http://头，如提供百度网盘加密下载可以填写密码，也可以留空', 'tt' );?></p>
+    <p><?php _e( '普通下载资源，格式为 资源1名称|资源1url|下载密码,资源2名称|资源2url|下载密码 资源名称与url用|隔开，一行一个资源记录，url请添加http://头，如提供百度网盘加密下载可以填写密码，也可以留空', 'tt' );?></p>
     <textarea name="tt_free_dl" rows="5" cols="50" class="large-text code"><?php echo stripcslashes(htmlspecialchars_decode($free_dl));?></textarea>
-    <p><?php _e( '积分下载资源，格式为 资源1名称|资源1url|资源1价格|下载密码,资源2名称|资源2url|资源2价格|下载密码 资源名称与url以及价格、下载密码用|隔开，不同资源用英文逗号隔开', 'tt' );?></p>
+    <p><?php _e( '积分下载资源，格式为 资源1名称|资源1url|资源1价格|下载密码,资源2名称|资源2url|资源2价格|下载密码 资源名称与url以及价格、下载密码用|隔开，一行一个资源记录', 'tt' );?></p>
     <textarea name="tt_sale_dl" rows="5" cols="50" class="large-text code"><?php echo stripcslashes(htmlspecialchars_decode($sale_dl));?></textarea>
 
     <?php
@@ -170,6 +170,7 @@ function tt_product_info_callback($post){
     //$discount_period = get_post_meta($post->ID,'product_discount_period',true);
     $download_links = get_post_meta($post->ID, 'tt_product_download_links', true);
     $pay_content = get_post_meta($post->ID,'tt_product_pay_content',true);
+    $buyer_emails = implode(';', tt_get_buyer_emails($post->ID));
     ?>
     <p style="clear:both;font-weight:bold;">
         <?php echo sprintf(__('此商品购买按钮快捷插入短代码为[product id="%1$s"][/product]', 'tt'), $post->ID); ?>
@@ -225,6 +226,9 @@ function tt_product_info_callback($post){
     <textarea name="tt_product_download_links" rows="5" class="large-text code"><?php echo $download_links;?></textarea>
     <p style="clear:both;"><?php _e( '付费查看的内容信息', 'tt' );?></p>
     <textarea name="tt_product_pay_content" rows="5" class="large-text code"><?php echo $pay_content;?></textarea>
+
+    <p style="clear:both;"><?php _e( '当前购买的用户邮箱', 'tt' );?></p>
+    <textarea name="tt_product_buyer_emails" rows="6" class="large-text code"><?php echo $buyer_emails;?></textarea>
 
     <?php
 }

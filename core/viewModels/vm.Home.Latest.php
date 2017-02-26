@@ -40,6 +40,7 @@ class HomeLatestVM extends BaseVM {
         $instance = new static(); // 因为不同分页共用该模型，不采用单例模式
         $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . get_called_class() . '_page' . $page;
         $instance->_page = max(1, $page);
+        //$instance->_enableCache = false; // TODO Debug use
         $instance->configInstance();
         return $instance;
     }
@@ -55,6 +56,7 @@ class HomeLatestVM extends BaseVM {
             //'category__not_in' => $featured_catIds, // TODO: 第二页置顶分类隐藏了会仍然不显示这些分类的文章
             'has_password' => false,
             'ignore_sticky_posts' => true,
+            'post__not_in' => get_option('sticky_posts'),
             'orderby' => 'date', // modified - 如果按最新编辑时间排序
             'order' => 'DESC'
         );

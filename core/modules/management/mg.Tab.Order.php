@@ -83,10 +83,10 @@
                     <header><h2><?php _e('Manage Order Status', 'tt'); ?></h2></header>
                     <div class="info-group clearfix">
                         <div class="row clearfix">
-                            <?php if(in_array($order->order_status, array(OrderStatus::WAIT_PAYMENT, OrderStatus::PAYED_AND_WAIT_DELIVERY, OrderStatus::DELIVERED_AND_WAIT_CONFIRM))) { ?>
+                            <?php if($order->parent_id < 1 && in_array($order->order_status, array(OrderStatus::WAIT_PAYMENT, OrderStatus::PAYED_AND_WAIT_DELIVERY, OrderStatus::DELIVERED_AND_WAIT_CONFIRM))) { ?>
                             <a class="btn btn-success btn-wide order-status-act" data-order-seq="<?php echo $order->id; ?>" data-order-id="<?php echo $order->order_id; ?>" data-act-value="<?php echo OrderStatus::TRADE_SUCCESS; ?>"><?php _e('FINISH ORDER', 'tt'); ?></a>
                             <?php } ?>
-                            <?php if(in_array($order->order_status, array(OrderStatus::DEFAULT_STATUS, OrderStatus::WAIT_PAYMENT))) { ?>
+                            <?php if($order->parent_id < 1 && in_array($order->order_status, array(OrderStatus::DEFAULT_STATUS, OrderStatus::WAIT_PAYMENT))) { ?>
                             <a class="btn btn-danger btn-wide order-status-act" data-order-seq="<?php echo $order->id; ?>" data-order-id="<?php echo $order->order_id; ?>" data-act-value="<?php echo OrderStatus::TRADE_CLOSED; ?>"><?php _e('CLOSE ORDER', 'tt'); ?></a>
                             <?php } ?>
                         </div>

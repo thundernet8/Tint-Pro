@@ -40,8 +40,8 @@
         <link rel="alternate icon" type="image/png" href="<?php echo $png_favicon; ?>" >
     <?php } ?>
     <!--[if lt IE 9]>
-    <script src="<?php echo THEME_ASSET.'/vender/js/html5shiv/3.7.3/html5shiv.min.js'; ?>"></script>
-    <script src="<?php echo THEME_ASSET.'/vender/js/respond/1.4.2/respond.min.js'; ?>"></script>
+    <script src="<?php echo THEME_ASSET . '/vender/js/html5shiv/3.7.3/html5shiv.min.js'; ?>"></script>
+    <script src="<?php echo THEME_ASSET . '/vender/js/respond/1.4.2/respond.min.js'; ?>"></script>
     <![endif]-->
     <!--[if lte IE 7]>
     <script type="text/javascript">
@@ -49,5 +49,7 @@
     </script>
     <![endif]-->
     <link rel="stylesheet" type="text/css" href="<?php echo tt_get_css(); ?>"  />
+    <!-- 页头自定义代码 -->
+    <?php if(tt_get_option('tt_head_code')) { echo tt_get_option('tt_head_code'); } ?>
     <?php wp_head(); ?>
 </head>

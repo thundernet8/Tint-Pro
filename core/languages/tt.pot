@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2017-02-19 12:53+0800\n"
+"POT-Creation-Date: 2017-02-26 17:38+0800\n"
 "PO-Revision-Date: 2016-08-17 21:40+0800\n"
 "Last-Translator: \n"
 "Language-Team: Zhiyan <mail@webapproach.net>\n"
@@ -129,35 +129,35 @@ msgstr ""
 msgid "Spam nonce check failed"
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:152
-msgid "Comment closed for the post"
-msgstr ""
-
-#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:155
-msgid "Cannot comment a unpublished post"
-msgstr ""
-
 #: core/api/v1/endpoints/class.Rest.Comment.Controller.php:158
-msgid "Cannot comment a password protected post"
-msgstr ""
-
-#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:190
-msgid "Sorry, you must be logged in to reply to a comment."
-msgstr ""
-
-#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:195
-msgid "Comment cannot be blank"
-msgstr ""
-
-#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:228
-msgid "Add comment failed"
-msgstr ""
-
-#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:235
 msgid "You cannot comment this product becasue you donot buy it"
 msgstr ""
 
-#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:273
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:163
+msgid "Comment closed for the post"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:166
+msgid "Cannot comment a unpublished post"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:169
+msgid "Cannot comment a password protected post"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:198
+msgid "Sorry, you must be logged in to reply to a comment."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:203
+msgid "Comment cannot be blank"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:236
+msgid "Add comment failed"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:276
 #: core/api/v1/endpoints/class.Rest.Session.Controller.php:161
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:569
 msgid "Sorry, you are not allowed to delete this resource."
@@ -440,7 +440,7 @@ msgid "Cannot find the order specified"
 msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.Order.Controller.php:218
-msgid "The order has not been payed"
+msgid "The order has not been payed yet"
 msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.Order.Controller.php:222
@@ -2260,85 +2260,89 @@ msgstr ""
 msgid "页面描述"
 msgstr ""
 
-#: core/functions/func.Metabox.php:175
+#: core/functions/func.Metabox.php:176
 #, php-format
 msgid "此商品购买按钮快捷插入短代码为[product id=\"%1$s\"][/product]"
 msgstr ""
 
-#: core/functions/func.Metabox.php:178
+#: core/functions/func.Metabox.php:179
 msgid "基本信息"
 msgstr ""
 
-#: core/functions/func.Metabox.php:180
+#: core/functions/func.Metabox.php:181
 msgid "选择支付币种"
 msgstr ""
 
-#: core/functions/func.Metabox.php:182
+#: core/functions/func.Metabox.php:183
 msgid "积分"
 msgstr ""
 
-#: core/functions/func.Metabox.php:183
+#: core/functions/func.Metabox.php:184
 msgid "人民币"
 msgstr ""
 
-#: core/functions/func.Metabox.php:186
+#: core/functions/func.Metabox.php:187
 msgid "选择购买渠道"
 msgstr ""
 
-#: core/functions/func.Metabox.php:188
+#: core/functions/func.Metabox.php:189
 msgid "站内购买"
 msgstr ""
 
-#: core/functions/func.Metabox.php:189 core/functions/func.Metabox.php:217
+#: core/functions/func.Metabox.php:190 core/functions/func.Metabox.php:218
 msgid "淘宝链接"
 msgstr ""
 
-#: core/functions/func.Metabox.php:192
+#: core/functions/func.Metabox.php:193
 msgid "商品售价 "
 msgstr ""
 
-#: core/functions/func.Metabox.php:195
+#: core/functions/func.Metabox.php:196
 msgid "商品数量 "
 msgstr ""
 
-#: core/functions/func.Metabox.php:199
+#: core/functions/func.Metabox.php:200
 msgid "VIP会员折扣百分数(100代表原价)"
 msgstr ""
 
-#: core/functions/func.Metabox.php:201
+#: core/functions/func.Metabox.php:202
 msgid "VIP月费会员折扣 "
 msgstr ""
 
-#: core/functions/func.Metabox.php:204
+#: core/functions/func.Metabox.php:205
 msgid "VIP年费会员折扣 "
 msgstr ""
 
-#: core/functions/func.Metabox.php:207
+#: core/functions/func.Metabox.php:208
 msgid "VIP永久会员折扣 "
 msgstr ""
 
-#: core/functions/func.Metabox.php:211
+#: core/functions/func.Metabox.php:212
 msgid "促销信息"
 msgstr ""
 
-#: core/functions/func.Metabox.php:213
+#: core/functions/func.Metabox.php:214
 msgid "优惠促销折扣(100代表原价)"
 msgstr ""
 
-#: core/functions/func.Metabox.php:219
+#: core/functions/func.Metabox.php:220
 msgid "购买渠道为淘宝时，请务必填写该项"
 msgstr ""
 
-#: core/functions/func.Metabox.php:222
+#: core/functions/func.Metabox.php:223
 msgid "付费内容"
 msgstr ""
 
-#: core/functions/func.Metabox.php:224
+#: core/functions/func.Metabox.php:225
 msgid "付费查看下载链接,一行一个,每个资源格式为资源名|资源下载链接|密码"
 msgstr ""
 
-#: core/functions/func.Metabox.php:226
+#: core/functions/func.Metabox.php:227
 msgid "付费查看的内容信息"
+msgstr ""
+
+#: core/functions/func.Metabox.php:230
+msgid "当前购买的用户邮箱"
 msgstr ""
 
 #: core/functions/func.Optimization.php:305
@@ -2883,14 +2887,14 @@ msgstr ""
 #: core/modules/me/me.Tab.Credits.php:91
 #: core/modules/me/me.Tab.Credits.php:96
 #: core/modules/me/me.Tab.Credits.php:101
-#: core/viewModels/management/vm.Mg.Order.php:67
+#: core/viewModels/management/vm.Mg.Order.php:73
 #: core/viewModels/me/vm.Me.Order.php:79
 #, php-format
 msgid "%d Credits"
 msgstr ""
 
 #: core/functions/shop/func.Shop.Order.php:695
-#: core/viewModels/management/vm.Mg.Order.php:67
+#: core/viewModels/management/vm.Mg.Order.php:73
 #: core/viewModels/me/vm.Me.Order.php:79
 #, php-format
 msgid "%0.2f YUAN"
@@ -3270,7 +3274,7 @@ msgstr ""
 #: core/modules/management/mg.Tab.Coupons.php:98
 #: core/modules/management/mg.Tab.Members.php:84
 #: core/modules/management/mg.Tab.Orders.php:67
-#: core/modules/me/me.Tab.Orders.php:68
+#: core/modules/me/me.Tab.Orders.php:69
 msgid "Delete"
 msgstr ""
 
@@ -3295,7 +3299,7 @@ msgstr ""
 #: core/modules/me/me.Tab.Messages.php:82
 #: core/modules/me/me.Tab.Notifications.php:51
 #: core/modules/me/me.Tab.Notifications.php:53
-#: core/modules/me/me.Tab.Orders.php:79 core/modules/me/me.Tab.Orders.php:81
+#: core/modules/me/me.Tab.Orders.php:81 core/modules/me/me.Tab.Orders.php:83
 #: core/modules/mod.SearchPosts.php:44 core/modules/mod.SearchPosts.php:46
 #: core/modules/uc/uc.Tab.Followers.php:62
 #: core/modules/uc/uc.Tab.Followers.php:64
@@ -3315,7 +3319,7 @@ msgstr ""
 #: core/modules/me/me.Tab.Membership.php:93
 #: core/modules/me/me.Tab.Messages.php:85
 #: core/modules/me/me.Tab.Notifications.php:56
-#: core/modules/me/me.Tab.Orders.php:84 core/modules/mod.HomeLatest.php:84
+#: core/modules/me/me.Tab.Orders.php:86 core/modules/mod.HomeLatest.php:84
 #: core/modules/mod.SearchPosts.php:49 core/modules/uc/uc.Tab.Chat.php:87
 #: core/modules/uc/uc.Tab.Comments.php:54
 #: core/modules/uc/uc.Tab.Followers.php:67
@@ -3336,7 +3340,7 @@ msgstr ""
 #: core/modules/me/me.Tab.Membership.php:95
 #: core/modules/me/me.Tab.Messages.php:87
 #: core/modules/me/me.Tab.Notifications.php:58
-#: core/modules/me/me.Tab.Orders.php:86 core/modules/mod.HomeLatest.php:86
+#: core/modules/me/me.Tab.Orders.php:88 core/modules/mod.HomeLatest.php:86
 #: core/modules/mod.SearchPosts.php:51 core/modules/uc/uc.Tab.Chat.php:89
 #: core/modules/uc/uc.Tab.Comments.php:56
 #: core/modules/uc/uc.Tab.Followers.php:69
@@ -3367,7 +3371,7 @@ msgstr ""
 #: core/modules/me/me.Tab.Messages.php:92
 #: core/modules/me/me.Tab.Notifications.php:61
 #: core/modules/me/me.Tab.Notifications.php:63
-#: core/modules/me/me.Tab.Orders.php:89 core/modules/me/me.Tab.Orders.php:91
+#: core/modules/me/me.Tab.Orders.php:91 core/modules/me/me.Tab.Orders.php:93
 #: core/modules/mod.SearchPosts.php:54 core/modules/mod.SearchPosts.php:56
 #: core/modules/uc/uc.Tab.Followers.php:72
 #: core/modules/uc/uc.Tab.Followers.php:74
@@ -3597,7 +3601,7 @@ msgid "View Order"
 msgstr ""
 
 #: core/modules/management/mg.Tab.Orders.php:67
-#: core/modules/me/me.Tab.Orders.php:68
+#: core/modules/me/me.Tab.Orders.php:69
 msgid "Delete the order"
 msgstr ""
 
@@ -3644,7 +3648,7 @@ msgstr ""
 msgid "Sales: "
 msgstr ""
 
-#: core/modules/management/mg.Tab.Status.php:28 dash/options.php:1438
+#: core/modules/management/mg.Tab.Status.php:28 dash/options.php:1448
 msgid "Site Open Date"
 msgstr ""
 
@@ -3937,7 +3941,7 @@ msgstr ""
 #: core/viewModels/management/vm.Mg.Products.php:95
 #: core/viewModels/shop/vm.Embed.Product.php:72
 #: core/viewModels/shop/vm.Shop.Category.php:117
-#: core/viewModels/shop/vm.Shop.Home.php:110
+#: core/viewModels/shop/vm.Shop.Home.php:156
 #: core/viewModels/shop/vm.Shop.Product.php:120
 #: core/viewModels/shop/vm.Shop.Product.php:234
 #: core/viewModels/shop/vm.Shop.Product.php:281
@@ -6013,12 +6017,12 @@ msgstr ""
 msgid "Not any more"
 msgstr ""
 
-#: core/viewModels/management/vm.Mg.Order.php:66
+#: core/viewModels/management/vm.Mg.Order.php:72
 #: core/viewModels/me/vm.Me.Order.php:78
 msgid "Credit Payment"
 msgstr ""
 
-#: core/viewModels/management/vm.Mg.Order.php:66
+#: core/viewModels/management/vm.Mg.Order.php:72
 #: core/viewModels/me/vm.Me.Order.php:78
 msgid "Cash Payment"
 msgstr ""
@@ -6055,7 +6059,7 @@ msgstr ""
 #: core/viewModels/management/vm.Mg.Products.php:95
 #: core/viewModels/shop/vm.Embed.Product.php:72
 #: core/viewModels/shop/vm.Shop.Category.php:117
-#: core/viewModels/shop/vm.Shop.Home.php:110
+#: core/viewModels/shop/vm.Shop.Home.php:156
 #: core/viewModels/shop/vm.Shop.Product.php:120
 #: core/viewModels/shop/vm.Shop.Product.php:234
 #: core/viewModels/shop/vm.Shop.Product.php:281
@@ -7228,129 +7232,140 @@ msgid "Enable order related notifications"
 msgstr ""
 
 #: dash/options.php:1309
+msgid "主题静态资源CDN路径"
+msgstr ""
+
+#: dash/options.php:1310
+msgid ""
+"主题程序的JS/CSS/IMG的CDN存放路径URL, css/js/img文件夹位于该路径下, 默认为"
+"本站Tint主题assets文件夹的路径, 更改为CDN的assets路径将从CDN加速主题的JS/"
+"CSS/IMG文件"
+msgstr ""
+
+#: dash/options.php:1319
 msgid "Feedback"
 msgstr ""
 
-#: dash/options.php:1316
+#: dash/options.php:1326
 msgid "Contact Author"
 msgstr ""
 
-#: dash/options.php:1317
+#: dash/options.php:1327
 #, php-format
 msgid ""
 "<br><h2>Email: chinash2010@gmail.com</h2><br><h2>Wechat & Alipay & "
 "QQ(below)</h2><br><img src=\"%s\"><img src=\"%s\"><img src=\"%s\"> "
 msgstr ""
 
-#: dash/options.php:1323
+#: dash/options.php:1333
 msgid "Related Works"
 msgstr ""
 
-#: dash/options.php:1324
+#: dash/options.php:1334
 #, php-format
 msgid ""
 "<br><h2>Alipay Supervisor (<a href=\"%s\" target=\"_blank\">View Detail</"
 "a>)</h2><br><p>A toolkit for helping improve payment experience</p>"
 msgstr ""
 
-#: dash/options.php:1332
+#: dash/options.php:1342
 msgid "Others"
 msgstr ""
 
-#: dash/options.php:1339
+#: dash/options.php:1349
 msgid "Debug Mode"
 msgstr ""
 
-#: dash/options.php:1340
+#: dash/options.php:1350
 msgid ""
 "Enable debug will force display php errors, disable theme cache, enable "
 "some private links or functions, etc."
 msgstr ""
 
-#: dash/options.php:1349
+#: dash/options.php:1359
 msgid "Disable Cache"
 msgstr ""
 
-#: dash/options.php:1350
+#: dash/options.php:1360
 msgid "Stop cache, user always get the latest content"
 msgstr ""
 
-#: dash/options.php:1359
+#: dash/options.php:1369
 msgid "Tint Token"
 msgstr ""
 
-#: dash/options.php:1360
+#: dash/options.php:1370
 msgid "Private token for theme, maybe useful somewhere."
 msgstr ""
 
-#: dash/options.php:1370
+#: dash/options.php:1380
 msgid "Refresh Rewrite Rules"
 msgstr ""
 
-#: dash/options.php:1371
+#: dash/options.php:1381
 #, php-format
 msgid ""
 "Please Click to <a href=\"%1$s/m/refresh?token=%2$s\" target=\"_blank"
 "\">Refresh Rewrite Rules</a> if you have encounter some 404 errors"
 msgstr ""
 
-#: dash/options.php:1378
+#: dash/options.php:1388
 msgid "登录API后缀"
 msgstr ""
 
-#: dash/options.php:1379
+#: dash/options.php:1389
 msgid "请变更默认值降低密码爆破攻击风险"
 msgstr ""
 
-#: dash/options.php:1388
+#: dash/options.php:1398
 msgid "QQ Mailme ID"
 msgstr ""
 
-#: dash/options.php:1389
+#: dash/options.php:1399
 msgid "The id of qq mailme, visit `http://open.mail.qq.com` for detail"
 msgstr ""
 
-#: dash/options.php:1398
+#: dash/options.php:1408
 msgid "QQ Mail list ID"
 msgstr ""
 
-#: dash/options.php:1399
+#: dash/options.php:1409
 msgid "The id of qq mailme, visit `http://list.qq.com` for detail"
 msgstr ""
 
-#: dash/options.php:1408
+#: dash/options.php:1418
 msgid "Head Custom Code"
 msgstr ""
 
-#: dash/options.php:1409
+#: dash/options.php:1419
 msgid "Custom code loaded on page head"
 msgstr ""
 
-#: dash/options.php:1419
+#: dash/options.php:1429
 msgid "Foot Custom Code"
 msgstr ""
 
-#: dash/options.php:1420
+#: dash/options.php:1430
 msgid "Custom code loaded on page foot"
 msgstr ""
 
-#: dash/options.php:1429
+#: dash/options.php:1439
 msgid "Foot Beian Text"
 msgstr ""
 
-#: dash/options.php:1430
+#: dash/options.php:1440
 msgid "IDC reference No. for regulations of China"
 msgstr ""
 
-#: dash/options.php:1439
+#: dash/options.php:1449
 msgid "The date of when site opened, use `YYYY-mm-dd` format"
 msgstr ""
 
-#: dash/options.php:1450
+#: dash/options.php:1460
 msgid "Footer Queries Info"
 msgstr ""
 
-#: dash/options.php:1451
+#: dash/options.php:1461
 msgid "Show WordPress queries statistic information"
 msgstr ""
 

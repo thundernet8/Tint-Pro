@@ -1367,7 +1367,7 @@ class OpenWeibo extends Open{
 
         $url = 'https://api.weibo.com/oauth2/access_token?' . http_build_query($params);
 
-        $response = wp_remote_get($url);
+        $response = wp_remote_post($url, null);
 
         $body = wp_remote_retrieve_body($response);
         // {
@@ -1412,9 +1412,9 @@ class OpenWeibo extends Open{
         $info = $this->getOpenUser($access_token);
         if(!$info) return false;
 
-        // 将QQ用户信息接入WP，尝试登入
+        // 将微博用户信息接入WP，尝试登入
         $expiration = time() + $expire_in - 60*10;
-        return $this->openSignIn($info->openid, $access_token, $refresh_token, $expiration, $info);
+        return $this->openSignIn($info->id, $access_token, $refresh_token, $expiration, $info); // 微博没有openid， 以id替代
 
     }
 
@@ -1430,7 +1430,7 @@ class OpenWeibo extends Open{
     protected function getOpenUser($access_token, $openid = null){
 
         // Step 1. http://open.weibo.com/wiki/Oauth2/get_token_info
-        $graph_url = 'https://api.weibo.com/oauth2/get_token_info';  // POST请求
+        $graph_url = 'https://api.weibo.com/oauth2/get_token_info?' . http_build_query(array('access_token' => $access_token));  // POST请求
         $response = wp_remote_post($graph_url, array('access_token' => $access_token));
         $body = wp_remote_retrieve_body($response);
 

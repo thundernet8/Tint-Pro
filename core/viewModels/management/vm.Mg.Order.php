@@ -58,11 +58,17 @@ class MgOrderVM extends BaseVM {
 //            $pay_content = tt_get_product_pay_content($order->product_id, false);
 //        }
 
+        $order_status = $order->order_status;
+        if(!$is_combine_order && $order->parent_id > 0){
+            // 子订单的支付状态由父级订单决定
+            $parent_order = tt_get_order_by_sequence($order->parent_id);
+            $order_status = $parent_order ? $parent_order->order_status : $order_status;
+        }
         $address = $order->address_id ? tt_get_address($order->address_id) : null;
 
         return (object)array(
             'order' => $order,
-            'order_status_text' => tt_get_order_status_text($order->order_status),
+            'order_status_text' => tt_get_order_status_text($order_status),
             'pay_method' => $order->order_currency == 'credit' ? __('Credit Payment', 'tt') : __('Cash Payment', 'tt'),
             'pay_amount' => $order->order_currency == 'credit' ? sprintf(__('%d Credits', 'tt'), $order->order_total_price) : sprintf(__('%0.2f YUAN', 'tt'), $order->order_total_price),
             'pay_content' => $pay_content,

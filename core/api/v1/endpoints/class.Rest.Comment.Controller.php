@@ -148,6 +148,17 @@ class WP_REST_Comment_Controller extends WP_REST_Controller
             return tt_api_fail(__('Spam nonce check failed', 'tt'));
         }
         $comment_post_ID = absint($_POST['postId']);
+        $user = wp_get_current_user();
+
+        $post_type = get_post_type($comment_post_ID);
+        $product_rating = absint($request->get_param('productRating'));
+        if($post_type=='product' && $product_rating) {
+            // 商品对仅购买成功的用户方可评论
+            if(!tt_check_user_has_buy_product($comment_post_ID, $user->ID)){
+                return tt_api_fail(__('You cannot comment this product becasue you donot buy it', 'tt'));
+            }
+        }
+
         if($comment_post_ID <= 0 || !comments_open($comment_post_ID)) {
             return tt_api_fail(__('Comment closed for the post', 'tt'));
         }
@@ -159,19 +170,16 @@ class WP_REST_Comment_Controller extends WP_REST_Controller
         }
         do_action('pre_comment_on_post', $comment_post_ID);
 
-        $post_type = get_post_type($comment_post_ID);
         $comment_content = trim( $_POST['content'] );
         $comment_type = isset( $_POST['commentType'] ) ? trim( $_POST['commentType'] ) : '';
         $ksesNonce = trim( $_POST['ksesNonce'] );
         $comment_parent = absint($_POST['parentId']);
-        $product_rating = absint($request->get_param('productRating'));
 
         $user_ID = 0;
         $comment_author = '';
         $comment_author_email = '';
         $comment_author_url = '';
 
-        $user = wp_get_current_user();
         if ( $user->ID ) { // $user->exists()
             $user_ID = $user->ID;
             $comment_author = wp_slash( $user->display_name );
@@ -230,11 +238,6 @@ class WP_REST_Comment_Controller extends WP_REST_Controller
 
         // add comment meta(rating for product)
         if($post_type=='product' && $product_rating) {
-            // 仅购买成功的用户方可评论
-            if(!tt_check_user_has_buy_product($comment_post_ID, $user->ID)){
-                return tt_api_fail(__('You cannot comment this product becasue you donot buy it', 'tt'));
-            }
-
             update_comment_meta($comment_id, 'tt_rating_product', $product_rating);
             $product_ratings_raw = get_post_meta($comment_post_ID, 'tt_post_ratings', true);
             $product_ratings = $product_ratings_raw ? (array)maybe_unserialize($product_ratings_raw) : array();

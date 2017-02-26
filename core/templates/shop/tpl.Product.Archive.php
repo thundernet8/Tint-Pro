@@ -34,7 +34,7 @@
                 </div>
             </div>
         </div>
-        <?php $vm = ShopHomeVM::getInstance($paged, isset($_GET['sort']) ? $_GET['sort'] : 'latest'); ?>
+        <?php $vm = ShopHomeVM::getInstance($paged, isset($_GET['sort']) ? $_GET['sort'] : 'latest', isset($_GET['type']) ? $_GET['type'] : 'all'); ?>
         <?php if($vm->isCache && $vm->cacheTime) { ?>
             <!-- Products cached <?php echo $vm->cacheTime; ?> -->
         <?php } ?>

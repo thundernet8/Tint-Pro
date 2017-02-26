@@ -87,7 +87,7 @@ if($currency != 'cash'){
 <!--                    </div>-->
                 </div>
                 <div class="pay-qr-images row">
-                    <p class="mb20" style="color: red;"><?php printf(__('iOS用户注意, 请按如下方式操作, 我的收款账户为 <strong>%s</strong>', 'tt'), tt_get_option('tt_alipay_email')); ?></p>
+                    <p class="mb20" style="color: red;"><?php printf(__('用户注意, 如果扫码无法输入备注, 请按如下方式操作, 我的收款账户为 <strong>%s</strong>', 'tt'), tt_get_option('tt_alipay_email')); ?></p>
                     <img src="<?php echo THEME_ASSET . '/img/pay-tip.jpg'; ?>">
                 </div>
 <!--                <div class="contact-qr-images row">-->

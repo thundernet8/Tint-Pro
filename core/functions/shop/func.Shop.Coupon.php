@@ -222,7 +222,7 @@ function tt_check_coupon($code){
     global $wpdb;
     $prefix = $wpdb->prefix;
     $coupons_table = $prefix . 'tt_coupons';
-    $coupon = $wpdb->get_row(sprintf("SELECT * FROM $coupons_table WHERE `coupon_code`=%s", $code));
+    $coupon = $wpdb->get_row(sprintf("SELECT * FROM $coupons_table WHERE `coupon_code`='%s'", $code));
     if(!$coupon){
         return new WP_Error('coupon_not_exist', __('The coupon is not existed', 'tt'), array( 'status' => 404 ));
     }

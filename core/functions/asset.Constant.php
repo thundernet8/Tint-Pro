@@ -17,12 +17,12 @@
 // 静态文件名常量，便于自动替换带特征值的文件名
 
 // CSS
-defined('CSS_HOME') || define('CSS_HOME', 'home-0b2946f895.css');
+defined('CSS_HOME') || define('CSS_HOME', 'home-67119a9996.css');
 defined('CSS_FRONT_PAGE') || define('CSS_FRONT_PAGE', 'front-page-ddb032a2cb.css');
-defined('CSS_SINGLE') || define('CSS_SINGLE', 'single-a98da91d87.css');
-defined('CSS_PAGE') || define('CSS_PAGE', 'page-3ff7afef6d.css');
+defined('CSS_SINGLE') || define('CSS_SINGLE', 'single-c424f8e0cf.css');
+defined('CSS_PAGE') || define('CSS_PAGE', 'page-fc8535b1de.css');
 defined('CSS_ARCHIVE') || define('CSS_ARCHIVE', 'archive-c45eda5651.css');
-defined('CSS_PRODUCT') || define('CSS_PRODUCT', 'product-704f805de7.css');
+defined('CSS_PRODUCT') || define('CSS_PRODUCT', 'product-8757257941.css');
 defined('CSS_PRODUCT_ARCHIVE') || define('CSS_PRODUCT_ARCHIVE', 'products-19bf6b4e8a.css');
 defined('CSS_UC') || define('CSS_UC', 'uc-e64f16c236.css');
 defined('CSS_ME') || define('CSS_ME', 'me-23330e7124.css');
@@ -47,5 +47,5 @@ defined('JS_ME') || define('JS_ME', 'me-7a2f2ec9d4.js');
 defined('JS_ACTION') || define('JS_ACTION', 'actionPage-78ccbec86e.js');
 defined('JS_404') || define('JS_404', '404-356723b4a1.js');
 defined('JS_SITE_UTILS') || define('JS_SITE_UTILS', 'site-utils-e17531b524.js');
-defined('JS_OAUTH') || define('JS_OAUTH', 'oauth-a20e3b037c.js');
+defined('JS_OAUTH') || define('JS_OAUTH', 'oauth-80b9018c36.js');
 defined('JS_MANAGE') || define('JS_MANAGE', 'manage-77998e0393.js');
