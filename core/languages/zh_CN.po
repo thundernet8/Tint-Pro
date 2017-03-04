@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TinT\n"
-"POT-Creation-Date: 2017-02-26 17:38+0800\n"
-"PO-Revision-Date: 2017-02-26 17:38+0800\n"
+"POT-Creation-Date: 2017-03-04 19:34+0800\n"
+"PO-Revision-Date: 2017-03-04 19:34+0800\n"
 "Last-Translator: Zhiyan <mail@webapproach.net>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -361,7 +361,7 @@ msgid "Send message failed"
 msgstr "发送消息失败"
 
 #: core/api/v1/endpoints/class.Rest.Message.Controller.php:170
-#: core/viewModels/uc/vm.UC.Chat.php:100
+#: core/viewModels/uc/vm.UC.Chat.php:99
 #, php-format
 msgid "You to %s"
 msgstr "你对 %s"
@@ -2204,23 +2204,23 @@ msgstr "文章源链接, 留空表明为原创"
 msgid "普通下载资源下载方式"
 msgstr "普通下载资源下载方式"
 
-#: core/functions/func.Metabox.php:114 core/modules/me/me.Tab.Contribute.php:70
-#: core/modules/me/me.Tab.EditPost.php:74
+#: core/functions/func.Metabox.php:114
+#, fuzzy
 msgid ""
 "普通下载资源，格式为 资源1名称|资源1url|下载密码,资源2名称|资源2url|下载密码 "
-"资源名称与url用|隔开，不同资源用英文逗号隔开，url请添加http://头，如提供百度"
-"网盘加密下载可以填写密码，也可以留空"
+"资源名称与url用|隔开，一行一个资源记录，url请添加http://头，如提供百度网盘加"
+"密下载可以填写密码，也可以留空"
 msgstr ""
 "普通下载资源，格式为 资源1名称|资源1url|下载密码,资源2名称|资源2url|下载密码 "
 "资源名称与url用|隔开，不同资源用英文逗号隔开，url请添加http://头，如提供百度"
 "网盘加密下载可以填写密码，也可以留空"
 
-#: core/functions/func.Metabox.php:116 core/modules/me/me.Tab.Contribute.php:76
-#: core/modules/me/me.Tab.EditPost.php:80
+#: core/functions/func.Metabox.php:116
+#, fuzzy
 msgid ""
 "积分下载资源，格式为 资源1名称|资源1url|资源1价格|下载密码,资源2名称|资源"
-"2url|资源2价格|下载密码 资源名称与url以及价格、下载密码用|隔开，不同资源用英"
-"文逗号隔开"
+"2url|资源2价格|下载密码 资源名称与url以及价格、下载密码用|隔开，一行一个资源"
+"记录"
 msgstr ""
 "积分下载资源，格式为 资源1名称|资源1url|资源1价格|下载密码,资源2名称|资源"
 "2url|资源2价格|下载密码 资源名称与url以及价格、下载密码用|隔开，不同资源用英"
@@ -3963,10 +3963,32 @@ msgstr "版权 - 原文链接"
 msgid "Embed free resources"
 msgstr "添加免费资源"
 
+#: core/modules/me/me.Tab.Contribute.php:70
+#: core/modules/me/me.Tab.EditPost.php:74
+msgid ""
+"普通下载资源，格式为 资源1名称|资源1url|下载密码,资源2名称|资源2url|下载密码 "
+"资源名称与url用|隔开，不同资源用英文逗号隔开，url请添加http://头，如提供百度"
+"网盘加密下载可以填写密码，也可以留空"
+msgstr ""
+"普通下载资源，格式为 资源1名称|资源1url|下载密码,资源2名称|资源2url|下载密码 "
+"资源名称与url用|隔开，不同资源用英文逗号隔开，url请添加http://头，如提供百度"
+"网盘加密下载可以填写密码，也可以留空"
+
 #: core/modules/me/me.Tab.Contribute.php:74
 #: core/modules/me/me.Tab.EditPost.php:78
 msgid "Embed sale resources"
 msgstr "添加付费资源"
+
+#: core/modules/me/me.Tab.Contribute.php:76
+#: core/modules/me/me.Tab.EditPost.php:80
+msgid ""
+"积分下载资源，格式为 资源1名称|资源1url|资源1价格|下载密码,资源2名称|资源"
+"2url|资源2价格|下载密码 资源名称与url以及价格、下载密码用|隔开，不同资源用英"
+"文逗号隔开"
+msgstr ""
+"积分下载资源，格式为 资源1名称|资源1url|资源1价格|下载密码,资源2名称|资源"
+"2url|资源2价格|下载密码 资源名称与url以及价格、下载密码用|隔开，不同资源用英"
+"文逗号隔开"
 
 #: core/modules/me/me.Tab.Contribute.php:83
 #: core/modules/me/me.Tab.EditPost.php:87
@@ -4677,6 +4699,10 @@ msgstr "我的文章"
 #: core/modules/mod.HomeLatest.php:23
 msgid "Latest Posts"
 msgstr "近期文章"
+
+#: core/modules/mod.HomeLatest.php:49
+msgid "Sticky Post"
+msgstr "置顶文章"
 
 #: core/modules/mod.HomePopular.php:22
 msgid "Popular"
@@ -5940,7 +5966,9 @@ msgstr "推荐, 支持自动发货(需正确备注)"
 
 #: core/templates/site/tpl.QrPay.php:90
 #, php-format
-msgid "iOS用户注意, 请按如下方式操作, 我的收款账户为 <strong>%s</strong>"
+msgid ""
+"用户注意, 如果扫码无法输入备注, 请按如下方式操作, 我的收款账户为 <strong>%s</"
+"strong>"
 msgstr ""
 
 #: core/templates/tax/tpl.Archive.php:60 core/templates/tax/tpl.Category.php:84

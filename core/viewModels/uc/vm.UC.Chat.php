@@ -60,7 +60,6 @@ class UCChatVM extends BaseVM {
     }
 
     protected function getRealData() {
-
         $per_page = 20;
         $offset = $per_page * ($this->_page - 1);
 

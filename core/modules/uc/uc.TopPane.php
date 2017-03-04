@@ -15,7 +15,7 @@
 <?php global $tt_author_vars; ?>
 <?php $tt_author_vars['tt_author_id'] = get_queried_object_id(); ?>
 <?php $tt_author_vars['tt_author'] = get_user_by('ID', $tt_author_vars['tt_author_id']); ?>
-<?php $tt_author_vars['tt_paged'] = get_query_var('paged') ? : 1; ?>
+<?php $tt_author_vars['tt_paged'] = get_query_var('tt_paged') ? : 1; ?>
 <!-- 作者头像及背景图 -->
 <section class="billboard author-header mb20" style="background-image: url(<?php echo tt_get_user_cover($tt_author_vars['tt_author_id']); ?>)">
     <div class="container text-center">

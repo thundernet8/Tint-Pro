@@ -40,7 +40,7 @@ class HomeBulletinsVM extends BaseVM {
         $instance = new static();
         $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . __CLASS__ . '_orderBy_' . $order_by;
         $instance->_orderBy = $order_by;
-        //$instance->_enableCache = false; // TODO debug use
+        $instance->_enableCache = false; // TODO debug use
         $instance->configInstance();
         return $instance;
     }
@@ -57,6 +57,7 @@ class HomeBulletinsVM extends BaseVM {
             'order' => 'DESC',
             'date_query' => array(
                 array(
+                    'column' => 'post_modified_gmt',
                     'after'     => sprintf('midnight %d days ago', tt_get_option('tt_bulletin_effect_days', 10)),
                     'inclusive' => true,
                 ),

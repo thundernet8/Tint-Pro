@@ -88,7 +88,7 @@
                             <tr id="cid-<?php echo $coupon->id; ?>">
                                 <td><?php echo $seq; ?></td>
                                 <td><?php echo $coupon->coupon_code; ?></td>
-                                <td><?php if($coupon->coupon_type == 'multi'){_e('ONCE COUPON', 'tt');}else{_e('MULTI COUPON', 'tt');} ?></td>
+                                <td><?php if($coupon->coupon_type !== 'multi'){_e('ONCE COUPON', 'tt');}else{_e('MULTI COUPON', 'tt');} ?></td>
                                 <td><?php echo $coupon->discount_value; ?></td>
                                 <td><?php if($coupon->coupon_status == 1){_e('Not Used', 'tt');}else{_e('Used', 'tt');} ?></td>
                                 <td><?php echo $coupon->begin_date ?></td>

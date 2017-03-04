@@ -46,7 +46,7 @@
                             <h2 class="entry-title">
                                 <a href="<?php echo $latest_post['permalink']; ?>" rel="bookmark"><?php echo $latest_post['title']; ?></a>
                                 <?php if($latest_post['sticky_class'] == 'sticky') { ?>
-                                <img class="sticky-ico" src="<?php echo THEME_ASSET . '/img/sticky.png'; ?>" >
+                                <img class="sticky-ico" src="<?php echo THEME_ASSET . '/img/sticky.png'; ?>" title="<?php _e('Sticky Post', 'tt'); ?>" >
                                 <?php } ?>
                             </h2>
                             <div class="entry-meta entry-meta-1">

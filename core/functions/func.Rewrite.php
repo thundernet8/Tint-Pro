@@ -97,7 +97,7 @@ function tt_set_user_page_rewrite_rules($wp_rewrite){
 //        }else{
             $new_rules['u/([0-9]{1,})$'] = 'index.php?author=$matches[1]&uc=1';
             $new_rules['u/([0-9]{1,})/([A-Za-z]+)$'] = 'index.php?author=$matches[1]&uctab=$matches[2]&uc=1';
-            $new_rules['u/([0-9]{1,})/([A-Za-z]+)/page/([0-9]{1,})$'] = 'index.php?author=$matches[1]&uctab=$matches[2]&uc=1&paged=$matches[3]';
+            $new_rules['u/([0-9]{1,})/([A-Za-z]+)/page/([0-9]{1,})$'] = 'index.php?author=$matches[1]&uctab=$matches[2]&uc=1&tt_paged=$matches[3]';
 //        }
         $wp_rewrite->rules = $new_rules + $wp_rewrite->rules;
     }
@@ -117,6 +117,7 @@ function tt_add_user_page_query_vars($public_query_vars) {
     if(!is_admin()){
         $public_query_vars[] = 'uc'; // 添加参数白名单uc，代表是用户中心页，采用用户模板而非作者模板
         $public_query_vars[] = 'uctab'; // 添加参数白名单uc，代表是用户中心页，采用用户模板而非作者模板
+        $public_query_vars[] = 'tt_paged';
     }
     return $public_query_vars;
 }
@@ -184,7 +185,7 @@ function tt_match_author_link_field($query_vars){
                 unset($query_vars['uc']);
                 $query_vars['error'] = '404';
                 return $query_vars;
-            }elseif($uc_tab === 'chat' && (!$logged_user_id || $logged_user_id == $author_id)){
+            }elseif($uc_tab === 'chat' && !$logged_user_id){
                 // 用户未登录, 跳转至登录页面
                 wp_redirect(tt_add_redirect(tt_url_for('signin'), get_author_posts_url($author_id) . '/chat'), 302);
                 exit;
@@ -197,6 +198,34 @@ function tt_match_author_link_field($query_vars){
             unset($query_vars['author_name']);
         }
         // 找不对匹配nickname的用户id则将nickname当作display_name解析 // TODO: 是否需要按此解析，可能导致不可预见的错误
+        return $query_vars;
+    }elseif(array_key_exists('author', $query_vars)){
+        $logged_user_id = get_current_user_id();
+        $author_id = $query_vars['author'];
+        // 如果是原始author链接访问，重定向至新的自定义链接 /author/nickname -> /u/57
+        if(!array_key_exists('uc', $query_vars)){
+            wp_redirect(get_author_posts_url($author_id), 301);
+            exit;
+        }
+
+        // 对不不合法的/u/57/xxx子路由，引向404
+        if(array_key_exists('uctab', $query_vars) && $uc_tab = $query_vars['uctab']){
+            if($uc_tab === 'profile'){
+                wp_redirect(get_author_posts_url($author_id), 301);
+                exit;
+            }elseif(!in_array($uc_tab, (array)json_decode(ALLOWED_UC_TABS)) || ($uc_tab === 'chat' && $logged_user_id == $author_id)){
+                unset($query_vars['author_name']);
+                unset($query_vars['author']);
+                unset($query_vars['uctab']);
+                unset($query_vars['uc']);
+                $query_vars['error'] = '404';
+                return $query_vars;
+            }elseif($uc_tab === 'chat' && !$logged_user_id){
+                // 用户未登录, 跳转至登录页面
+                wp_redirect(tt_add_redirect(tt_url_for('signin'), get_author_posts_url($author_id) . '/chat'), 302);
+                exit;
+            }
+        }
         return $query_vars;
     }
     return $query_vars;
