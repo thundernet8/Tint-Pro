@@ -53,6 +53,7 @@
                     <a class="post-meta-likes js-article-like <?php if(in_array(get_current_user_id(), $postdata->star_uids)) echo 'active'; ?>" href="javascript: void(0)" data-post-id="<?php echo $postdata->ID; ?>" data-nonce="<?php echo wp_create_nonce('tt_post_star_nonce'); ?>"><i class="tico tico-favorite"></i><span class="js-article-like-count num"><?php echo $postdata->stars; ?></span></a>
                 </div>
             </div>
+            <?php load_mod(('banners/bn.PostContent.Top')); ?>
             <article class="single-article">
                 <?php echo $postdata->content; apply_filters('the_content', 'content'); // 一些插件(如crayon-syntax-highlighter)将非内容性的钩子(wp_enqueue_script等)挂载在the_content上, 缓存命中时将失效 ?>
                 <?php if(isset($postdata->download) && $postdata->download) { ?>
@@ -95,6 +96,7 @@
                 </div>
                 <?php } ?>
             </article>
+            <?php load_mod(('banners/bn.PostContent.Bottom')); ?>
             <div class="article-footer">
                 <div class="post-copyright">
                     <p><i class="tico tico-bell-o"></i><?php echo $postdata->cc_text; ?></p>
@@ -124,6 +126,7 @@
         </div>
         <!-- 相关文章 -->
         <?php if(count($postdata->relates) > 0) { ?>
+        <?php load_mod(('banners/bn.Post.Relates.Top')); ?>
         <div class="related-posts">
             <h3><?php _e('Related Articles', 'tt'); ?></h3>
             <div class="related-articles row clearfix">
@@ -144,6 +147,7 @@
         </div>
         <?php } ?>
         <!-- 评论 -->
+        <?php load_mod(('banners/bn.Post.Comment.Top')); ?>
         <div id="respond">
         <?php if($postdata->comment_status) { ?>
             <h3><?php _e('LEAVE A REPLY', 'tt'); ?></h3>

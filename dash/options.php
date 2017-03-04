@@ -564,16 +564,6 @@ function optionsframework_options() {
     );
 
 
-    // - 站点服务支付宝
-    $options[] = array(
-        'name' => __( 'Site Alipay', 'tt' ),
-        'desc' => __( 'The qrcode image of Alipay account which is dedicated for the site', 'tt' ),
-        'id' => 'tt_site_alipay_qr',
-        'std' => THEME_ASSET . '/img/qr/alipay.png',
-        'type' => 'upload'
-    );
-
-
     // - 开启QQ登录
     $options[] = array(
         'name' => __( 'QQ Login', 'tt' ),
@@ -686,12 +676,215 @@ function optionsframework_options() {
 		'type' => 'heading'
 	);
 
-    //
+
+    // - 开启导航栏下方大横幅广告
     $options[] = array(
-		'name' => __( '暂不可用', 'tt' ),
-		'desc' => '', //__( 'This is just some example information you can put in the panel.', 'tt' ),
-		'type' => 'info'
-	);
+        'name' => __( '开启导航栏下方大横幅广告', 'tt' ),
+        'desc' => __('开启', 'tt'),
+        'id' => 'tt_enable_nav_banner',
+        'std' => false,
+        'type' => 'checkbox'
+    );
+
+    // - 导航栏下方大横幅广告
+    $options[] = array(
+        'name' => __( '导航栏下方横幅广告', 'tt' ),
+        'desc' => __( '多个页面可用', 'tt' ),
+        'id' => 'tt_nav_banner',
+        'std' => '<a href="https://webapproach.net" target="_blank"><img src="' . THEME_ASSET . '/img/banner/960x90.jpg"></a>',
+        'raw' => true,
+        'type' => 'textarea'
+    );
+
+
+    // - 开启幻灯下方大横幅广告
+    $options[] = array(
+        'name' => __( '开启幻灯下方大横幅广告', 'tt' ),
+        'desc' => __('开启', 'tt'),
+        'id' => 'tt_enable_slide_bottom_banner',
+        'std' => false,
+        'type' => 'checkbox'
+    );
+
+    // - 幻灯下方大横幅广告
+    $options[] = array(
+        'name' => __( '幻灯下方大横幅广告', 'tt' ),
+        'desc' => __( '仅首页幻灯开启时可用, 标准尺寸960*90', 'tt' ),
+        'id' => 'tt_slide_bottom_banner',
+        'std' => '<a href="https://webapproach.net" target="_blank"><img src="' . THEME_ASSET . '/img/banner/960x90.jpg"></a>',
+        'raw' => true,
+        'type' => 'textarea'
+    );
+
+
+    // - 开启置顶分类下方大横幅广告
+    $options[] = array(
+        'name' => __( '开启置顶分类下方大横幅广告', 'tt' ),
+        'desc' => __('开启', 'tt'),
+        'id' => 'tt_enable_fc_bottom_banner',
+        'std' => false,
+        'type' => 'checkbox'
+    );
+
+    // - 置顶分类下方大横幅广告
+    $options[] = array(
+        'name' => __( '置顶分类下方大横幅广告', 'tt' ),
+        'desc' => __( '仅首页置顶分类开启时可用, 标准尺寸960*90', 'tt' ),
+        'id' => 'tt_fc_bottom_banner',
+        'std' => '<a href="https://webapproach.net" target="_blank"><img src="' . THEME_ASSET . '/img/banner/960x90.jpg"></a>',
+        'raw' => true,
+        'type' => 'textarea'
+    );
+
+
+    // - 开启底部大横幅广告
+    $options[] = array(
+        'name' => __( '开启底部大横幅广告', 'tt' ),
+        'desc' => __('开启', 'tt'),
+        'id' => 'tt_enable_bottom_banner',
+        'std' => false,
+        'type' => 'checkbox'
+    );
+
+    // - 底部大横幅广告
+    $options[] = array(
+        'name' => __( '底部大横幅广告', 'tt' ),
+        'desc' => __( '多个页面可用, 标准尺寸960*90', 'tt' ),
+        'id' => 'tt_bottom_banner',
+        'std' => '<a href="https://webapproach.net" target="_blank"><img src="' . THEME_ASSET . '/img/banner/960x90.jpg"></a>',
+        'raw' => true,
+        'type' => 'textarea'
+    );
+
+
+    // - 开启文章文字上方广告
+    $options[] = array(
+        'name' => __( '开启文章文字上方广告', 'tt' ),
+        'desc' => __('开启', 'tt'),
+        'id' => 'tt_enable_post_content_top_banner',
+        'std' => false,
+        'type' => 'checkbox'
+    );
+
+    // - 文章文字上方广告
+    $options[] = array(
+        'name' => __( '文章文字上方广告', 'tt' ),
+        'desc' => __( '标准尺寸640*60', 'tt' ),
+        'id' => 'tt_post_content_top_banner',
+        'std' => '<a href="https://webapproach.net" target="_blank"><img src="' . THEME_ASSET . '/img/banner/640x60.jpg"></a>',
+        'raw' => true,
+        'type' => 'textarea'
+    );
+
+
+    // - 开启文章文字下方广告
+    $options[] = array(
+        'name' => __( '开启文章文字下方广告', 'tt' ),
+        'desc' => __('开启', 'tt'),
+        'id' => 'tt_enable_post_content_bottom_banner',
+        'std' => false,
+        'type' => 'checkbox'
+    );
+
+    // - 文章文字下方广告
+    $options[] = array(
+        'name' => __( '文章文字下方广告', 'tt' ),
+        'desc' => __( '标准尺寸640*60', 'tt' ),
+        'id' => 'tt_post_content_bottom_banner',
+        'std' => '<a href="https://webapproach.net" target="_blank"><img src="' . THEME_ASSET . '/img/banner/640x60.jpg"></a>',
+        'raw' => true,
+        'type' => 'textarea'
+    );
+
+
+    // - 开启相关文章上方广告
+    $options[] = array(
+        'name' => __( '开启相关文章上方广告', 'tt' ),
+        'desc' => __('开启', 'tt'),
+        'id' => 'tt_enable_post_relates_top_banner',
+        'std' => false,
+        'type' => 'checkbox'
+    );
+
+    // - 相关文章上方广告
+    $options[] = array(
+        'name' => __( '相关文章上方广告', 'tt' ),
+        'desc' => __( '标准尺寸760*90', 'tt' ),
+        'id' => 'tt_post_relates_top_banner',
+        'std' => '<a href="https://webapproach.net" target="_blank"><img src="' . THEME_ASSET . '/img/banner/760x90.jpg"></a>',
+        'raw' => true,
+        'type' => 'textarea'
+    );
+
+
+    // - 开启评论框上方广告
+    $options[] = array(
+        'name' => __( '开启评论框上方广告', 'tt' ),
+        'desc' => __('开启', 'tt'),
+        'id' => 'tt_enable_post_comment_top_banner',
+        'std' => false,
+        'type' => 'checkbox'
+    );
+
+    // - 评论框上方广告
+    $options[] = array(
+        'name' => __( '评论框上方广告', 'tt' ),
+        'desc' => __( '标准尺寸760*90', 'tt' ),
+        'id' => 'tt_post_comment_top_banner',
+        'std' => '<a href="https://webapproach.net" target="_blank"><img src="' . THEME_ASSET . '/img/banner/760x90.jpg"></a>',
+        'raw' => true,
+        'type' => 'textarea'
+    );
+
+
+    // - 开启下载页面内容区上方广告
+    $options[] = array(
+        'name' => __( '开启下载页面内容区上方广告', 'tt' ),
+        'desc' => __('开启', 'tt'),
+        'id' => 'tt_enable_dl_top_banner',
+        'std' => false,
+        'type' => 'checkbox'
+    );
+
+    // - 下载页面内容区上方广告1
+    $options[] = array(
+        'name' => __( '下载页面内容区上方广告1', 'tt' ),
+        'desc' => __( '双矩形广告位-左, 标准尺寸350*300', 'tt' ),
+        'id' => 'tt_dl_top_banner_1',
+        'std' => '<a href="https://webapproach.net" target="_blank"><img src="' . THEME_ASSET . '/img/banner/350x300.jpg"></a>',
+        'raw' => true,
+        'type' => 'textarea'
+    );
+
+    // - 下载页面内容区上方广告2
+    $options[] = array(
+        'name' => __( '下载页面内容区上方广告2', 'tt' ),
+        'desc' => __( '双矩形广告位-右, 标准尺寸350*300', 'tt' ),
+        'id' => 'tt_dl_top_banner_2',
+        'std' => '<a href="https://webapproach.net" target="_blank"><img src="' . THEME_ASSET . '/img/banner/350x300.jpg"></a>',
+        'raw' => true,
+        'type' => 'textarea'
+    );
+
+
+    // - 开启下载页面内容区下方广告
+    $options[] = array(
+        'name' => __( '开启下载页面内容区下方广告', 'tt' ),
+        'desc' => __('开启', 'tt'),
+        'id' => 'tt_enable_dl_bottom_banner',
+        'std' => false,
+        'type' => 'checkbox'
+    );
+
+    // - 底部大横幅广告
+    $options[] = array(
+        'name' => __( '下载页面内容区下方广告', 'tt' ),
+        'desc' => __( '仅适用于下载页面内容区下方, 标准尺寸760*90', 'tt' ),
+        'id' => 'tt_dl_bottom_banner',
+        'std' => '<a href="https://webapproach.net" target="_blank"><img src="' . THEME_ASSET . '/img/banner/760x90.jpg"></a>',
+        'raw' => true,
+        'type' => 'textarea'
+    );
 
 
     // 主题设置 - 积分系统设置
@@ -979,6 +1172,16 @@ function optionsframework_options() {
         'id' => 'tt_alipay_email',
         'std' => '',
         'type' => $theme_pro ? 'text' : 'disabled'
+    );
+
+
+    // - 站点服务支付宝
+    $options[] = array(
+        'name' => __( 'Site Alipay', 'tt' ),
+        'desc' => __( 'The qrcode image of Alipay account which is dedicated for the site', 'tt' ),
+        'id' => 'tt_site_alipay_qr',
+        'std' => THEME_ASSET . '/img/qr/alipay.png',
+        'type' => 'upload'
     );
 
 

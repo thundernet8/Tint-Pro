@@ -24,6 +24,7 @@
         <div class="dl-declaration contextual-callout callout-warning">
             <p><?php _e('本站所刊载内容均为网络上收集整理，包括但不限于代码、应用程序、影音资源、电子书籍资料等，并且以研究交流为目的，所有仅供大家参考、学习，不存在任何商业目的与商业用途。若您使用开源的软件代码，请遵守相应的开源许可规范和精神，若您需要使用非免费的软件或服务，您应当购买正版授权并合法使用。如果你下载此文件，表示您同意只将此文件用于参考、学习使用而非任何其他用途。', 'tt'); ?></p>
         </div>
+        <?php load_mod(('banners/bn.Download.Top')); ?>
         <div class="dl-detail">
         <?php if(count($free_dls)) { ?>
             <h2><?php _e('Free Resources', 'tt'); ?></h2>
@@ -65,4 +66,5 @@
             <p><?php _e('本站仅提供文件的免费下载服务，如果你对代码程序软件的使用有任何疑惑，请留意相关网站论坛。对于本站个人发布的资源，站长会提供有限的帮助！', 'tt'); ?></p>
         </div>
     </div>
+    <?php load_mod(('banners/bn.Download.Bottom')); ?>
 </div>
