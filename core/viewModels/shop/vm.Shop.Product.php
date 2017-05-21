@@ -95,19 +95,21 @@ class ShopProductVM extends BaseVM {
         $cat_terms = get_the_terms($the_product, 'product_category');
         $catIDs = array();
         $cats = array();
-        foreach ($cat_terms as $cat_term){
-            $catIDs[] = $cat_term->term_id;
+        if ($cat_terms) {
+            foreach ($cat_terms as $cat_term){
+                $catIDs[] = $cat_term->term_id;
 
-            $cat = array();
-            $cat['ID'] = $cat_term->term_id;
-            $cat['slug'] = $cat_term->slug;
-            $cat['name'] = $cat_term->name;
-            $cat['description'] = $cat_term->description;
-            $cat['parent'] = $cat_term->parent;
-            $cat['count'] = $cat_term->count;
-            $cat['permalink'] = get_term_link($cat_term, 'product_category');
+                $cat = array();
+                $cat['ID'] = $cat_term->term_id;
+                $cat['slug'] = $cat_term->slug;
+                $cat['name'] = $cat_term->name;
+                $cat['description'] = $cat_term->description;
+                $cat['parent'] = $cat_term->parent;
+                $cat['count'] = $cat_term->count;
+                $cat['permalink'] = get_term_link($cat_term, 'product_category');
 
-            $cats[] = $cat;
+                $cats[] = $cat;
+            }
         }
 
         // 支付类型
@@ -192,8 +194,10 @@ class ShopProductVM extends BaseVM {
         }else{
             $r_cats = get_the_terms($the_product, 'product_category');
             $r_catIDs = array();
-            foreach ($r_cats as $r_cat){
-                $r_catIDs[] = $r_cat->term_id;
+            if ($r_cats) {
+                foreach ($r_cats as $r_cat){
+                    $r_catIDs[] = $r_cat->term_id;
+                }
             }
             $relates_query_args = array(
                 'tax_query' => array(

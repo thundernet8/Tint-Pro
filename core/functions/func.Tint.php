@@ -134,9 +134,10 @@ function tt_tint_authorize() {
     }elseif(count($server_arr)==3){
         $server = $server_arr[1] . '.' . $server_arr[2];
     }
-    if($info = get_option('_wp_tt_authorize')){
+    if($info = get_option('_wp_option_widget_arz')){
         $info_arr = json_decode($info);
-        if(($info_arr->active==1) && ($info_arr->time+3600*24*7>time())){
+        $now = time();
+        if(($info_arr->active==1) && ($info_arr->time+3600*24*7>$now) && $info_arr->time <= $now){
             $post = 0;
             $active = 1;
             $key = $info_arr->key;
@@ -173,7 +174,7 @@ function tt_tint_authorize() {
             'active' => 1,
             'key' => $key
         );
-        update_option('_wp_tt_authorize', json_encode($arr));
+        update_option('_wp_option_widget_arz', json_encode($arr));
     }
 }
 tt_tint_authorize();

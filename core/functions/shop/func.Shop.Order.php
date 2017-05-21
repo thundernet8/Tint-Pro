@@ -735,7 +735,7 @@ function tt_continue_pay($order_id){
         return tt_continue_pay($parent_order->order_id);
     }
 
-    if(in_array($order->order_status, [OrderStatus::PAYED_AND_WAIT_DELIVERY, OrderStatus::DELIVERED_AND_WAIT_CONFIRM, OrderStatus::TRADE_SUCCESS])) {
+    if(in_array($order->order_status, array(OrderStatus::PAYED_AND_WAIT_DELIVERY, OrderStatus::DELIVERED_AND_WAIT_CONFIRM, OrderStatus::TRADE_SUCCESS))) {
         return new WP_Error('invalid_order_status', __('The order has been payed', 'tt'), array('status' => 200));
     }
 

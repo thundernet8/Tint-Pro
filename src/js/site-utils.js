@@ -47,4 +47,21 @@ jQuery(document).ready(function ($) {
     
     // 实时查询订单支付状态
     PollOrderStatus.init();
+    
+    // 延迟加载图片
+    $('img.lazy').lazyload({
+        //effect: "fadeIn",
+        threshold: 50,
+        failure_limit: 10,
+        load: function () {
+            $(this).addClass('show');
+        }
+    });
+    $('.sidebar img.lazy').lazyload({
+        //effect: "fadeIn",
+        threshold: 0,
+        load: function () {
+            $(this).addClass('show');
+        }
+    });
 });

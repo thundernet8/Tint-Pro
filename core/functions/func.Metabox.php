@@ -170,7 +170,8 @@ function tt_product_info_callback($post){
     //$discount_period = get_post_meta($post->ID,'product_discount_period',true);
     $download_links = get_post_meta($post->ID, 'tt_product_download_links', true);
     $pay_content = get_post_meta($post->ID,'tt_product_pay_content',true);
-    $buyer_emails = implode(';', tt_get_buyer_emails($post->ID));
+    $buyer_emails_string = tt_get_buyer_emails($post->ID);
+    $buyer_emails = is_array($buyer_emails_string) ? implode(';', $buyer_emails_string) : '';
     ?>
     <p style="clear:both;font-weight:bold;">
         <?php echo sprintf(__('此商品购买按钮快捷插入短代码为[product id="%1$s"][/product]', 'tt'), $post->ID); ?>

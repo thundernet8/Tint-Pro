@@ -614,7 +614,7 @@ function tt_get_buyer_emails($product_id) {
 //        'fields' => array('user_email')
 //    ));
 
-    $user_emails = $wpdb->get_col(sprintf("SELECT `user_email` FROM $wpdb->users WHERE ID IN (%s) AND wp_users.user_email<>''", implode(',', $results)));
+    $user_emails = $wpdb->get_col(sprintf("SELECT `user_email` FROM $wpdb->users WHERE ID IN (%s) AND `user_email`<>''", implode(',', $results)));
 
     set_transient($cache_key, maybe_serialize($user_emails), 3600*24);
     return $user_emails;

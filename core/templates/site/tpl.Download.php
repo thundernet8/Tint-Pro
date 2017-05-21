@@ -34,7 +34,7 @@ if(!$origin_post){
 ?>
 <?php tt_get_header(); ?>
 <div id="content" class="wrapper container download-wrapper">
-    <?php sload_mod(('banners/bn.Top')); ?>
+    <?php load_mod(('banners/bn.Top')); ?>
     <section id="mod-insideContent" class="main-wrap content-section clearfix">
         <!-- 下载页面 -->
         <?php load_mod('mod.Download'); ?>
