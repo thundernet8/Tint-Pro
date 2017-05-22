@@ -17,21 +17,21 @@
 // 静态文件名常量，便于自动替换带特征值的文件名
 
 // CSS
-defined('CSS_HOME') || define('CSS_HOME', 'home-d155f5a3f5.css');
-defined('CSS_FRONT_PAGE') || define('CSS_FRONT_PAGE', 'front-page-64e994a1a8.css');
-defined('CSS_SINGLE') || define('CSS_SINGLE', 'single-936090d0a2.css');
-defined('CSS_PAGE') || define('CSS_PAGE', 'page-6efaf90bd8.css');
-defined('CSS_ARCHIVE') || define('CSS_ARCHIVE', 'archive-587a26f634.css');
-defined('CSS_PRODUCT') || define('CSS_PRODUCT', 'product-fa92760024.css');
-defined('CSS_PRODUCT_ARCHIVE') || define('CSS_PRODUCT_ARCHIVE', 'products-a9fb2b2e6c.css');
-defined('CSS_UC') || define('CSS_UC', 'uc-e0236f9210.css');
-defined('CSS_ME') || define('CSS_ME', 'me-8e82c01029.css');
-defined('CSS_ACTION') || define('CSS_ACTION', 'actions-209408a7fc.css');
-defined('CSS_404') || define('CSS_404', '404-e4167223e1.css');
-defined('CSS_ERROR_PAGE') || define('CSS_ERROR_PAGE', 'error-page-85082160ba.css');
-defined('CSS_SITE_UTILS') || define('CSS_SITE_UTILS', 'site-utils-601b0ec5a8.css');
-defined('CSS_OAUTH') || define('CSS_OAUTH', 'oauth-1981930a17.css');
-defined('CSS_MANAGE') || define('CSS_MANAGE', 'manage-19145fef8b.css');
+defined('CSS_HOME') || define('CSS_HOME', 'home-3ec69d656b.css');
+defined('CSS_FRONT_PAGE') || define('CSS_FRONT_PAGE', 'front-page-ae9d0c3213.css');
+defined('CSS_SINGLE') || define('CSS_SINGLE', 'single-c3c8ac5544.css');
+defined('CSS_PAGE') || define('CSS_PAGE', 'page-59ff546e2b.css');
+defined('CSS_ARCHIVE') || define('CSS_ARCHIVE', 'archive-25c8398002.css');
+defined('CSS_PRODUCT') || define('CSS_PRODUCT', 'product-e5a4586a3c.css');
+defined('CSS_PRODUCT_ARCHIVE') || define('CSS_PRODUCT_ARCHIVE', 'products-1f53393fe0.css');
+defined('CSS_UC') || define('CSS_UC', 'uc-637dac2555.css');
+defined('CSS_ME') || define('CSS_ME', 'me-e06df8f3c3.css');
+defined('CSS_ACTION') || define('CSS_ACTION', 'actions-c80122a18c.css');
+defined('CSS_404') || define('CSS_404', '404-cad539c1c5.css');
+defined('CSS_ERROR_PAGE') || define('CSS_ERROR_PAGE', 'error-page-d36886b3b4.css');
+defined('CSS_SITE_UTILS') || define('CSS_SITE_UTILS', 'site-utils-78bca962ad.css');
+defined('CSS_OAUTH') || define('CSS_OAUTH', 'oauth-dfb1efcb22.css');
+defined('CSS_MANAGE') || define('CSS_MANAGE', 'manage-e179776f50.css');
 
 // JS
 defined('JS_COMMON') || define('JS_COMMON', 'common-caa0d2a669.js');

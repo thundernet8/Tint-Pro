@@ -520,3 +520,69 @@ function tt_filter_of_multicheck_option($option) {
     }
     return $new_option;
 }
+
+
+/**
+ * 分页
+ *
+ * @param $base
+ * @param $current
+ * @param $max
+ */
+function tt_default_pagination($base, $current, $max) {
+?>
+    <nav aria-label="Page navigation">
+        <ul class="pagination">
+            <?php $pagination = paginate_links(array(
+                'base' => $base,
+                'format' => '?paged=%#%',
+                'current' => $current,
+                'total' => $max,
+                'type' => 'array',
+                'prev_next' => true,
+                'prev_text' => '<i class="tico tico-angle-left"></i>',
+                'next_text' => '<i class="tico tico-angle-right"></i>'
+            )); ?>
+            <?php foreach ($pagination as $page_item) {
+                echo '<li class="page-item">' . $page_item . '</li>';
+            } ?>
+        </ul>
+        <div class="page-nums">
+            <span class="current-page"><?php printf(__('Current Page %d', 'tt'), $current); ?></span>
+            <span class="separator">/</span>
+            <span class="max-page"><?php printf(__('Total %d Pages', 'tt'), $max); ?></span>
+        </div>
+    </nav>
+<?php
+}
+
+
+/**
+ * 分页
+ *
+ * @param $base
+ * @param $current
+ * @param $max
+ */
+function tt_pagination($base, $current, $max) {
+    ?>
+    <nav class="pagination-new">
+        <ul>
+            <?php $pagination = paginate_links(array(
+                'base' => $base,
+                'format' => '?paged=%#%',
+                'current' => $current,
+                'total' => $max,
+                'type' => 'array',
+                'prev_next' => true,
+                'prev_text' => '<span class="prev">' . __('PREV PAGE', 'tt') . '</span>',
+                'next_text' => '<span class="next">' . __('NEXT PAGE', 'tt') . '</span>'
+            )); ?>
+            <?php foreach ($pagination as $page_item) {
+                echo '<li class="page-item">' . $page_item . '</li>';
+            } ?>
+            <li class="page-item"><span class="max-page"><?php printf(__('Total %d Pages', 'tt'), $max); ?></span></li>
+        </ul>
+    </nav>
+    <?php
+}

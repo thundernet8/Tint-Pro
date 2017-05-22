@@ -34,28 +34,7 @@
                 </div>
 
                 <?php if($pagination_args['max_num_pages'] > 1) { ?>
-                    <nav aria-label="Page navigation">
-                        <ul class="pagination">
-                            <?php $pagination = paginate_links(array(
-                                'base' => $pagination_args['base'],
-                                'format' => '?paged=%#%',
-                                'current' => $pagination_args['current_page'],
-                                'total' => $pagination_args['max_num_pages'],
-                                'type' => 'array',
-                                'prev_next' => true,
-                                'prev_text' => '<i class="tico tico-angle-left"></i>',
-                                'next_text' => '<i class="tico tico-angle-right"></i>'
-                            )); ?>
-                            <?php foreach ($pagination as $page_item) {
-                                echo '<li class="page-item">' . $page_item . '</li>';
-                            } ?>
-                        </ul>
-                        <div class="page-nums">
-                            <span class="current-page"><?php printf(__('Current Page %d', 'tt'), $pagination_args['current_page']); ?></span>
-                            <span class="separator">/</span>
-                            <span class="max-page"><?php printf(__('Total %d Pages', 'tt'), $pagination_args['max_num_pages']); ?></span>
-                        </div>
-                    </nav>
+                    <?php tt_pagination($pagination_args['base'], $pagination_args['current_page'], $pagination_args['max_num_pages']); ?>
                 <?php } ?>
             <?php }else{ ?>
                 <div class="empty-content">

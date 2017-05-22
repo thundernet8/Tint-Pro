@@ -55,10 +55,8 @@
                         </div>
                     <?php } ?>
                 </div>
-                <?php if($pagination_args['max_num_pages'] > $paged) { ?>
-                    <div class="row load-next clearfix mt30 mb30 text-center">
-                        <a class="btn btn-danger btn-wide btn-next" title="<?php _e('LOAD NEXT', 'tt'); ?>" data-component="loadNext" data-next-page="<?php echo $paged + 1; ?>" data-next-page-url="<?php echo $pagination_args['next']; ?>"><i class="tico tico-angle-down"></i></a>
-                    </div>
+                <?php if($pagination_args['max_num_pages'] > 1) { ?>
+                    <?php tt_pagination($pagination_args['base'], $pagination_args['current_page'], $pagination_args['max_num_pages']); ?>
                 <?php } ?>
             </section>
         <?php } ?>

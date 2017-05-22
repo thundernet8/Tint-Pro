@@ -59,7 +59,7 @@ class MgStatusVM extends BaseVM {
         $statistic['page_count'] = $count_pages->publish;
         // 商品总数
         $count_products = wp_count_posts('product');
-        $statistic['product_count'] = $count_products->publish;
+        $statistic['product_count'] = $count_products && isset($count_products->publish) ? $count_products->publish : 0;
         // 评论总数
         $statistic['comment_count'] = $wpdb->get_var("SELECT COUNT(*) FROM $wpdb->comments WHERE comment_approved=1 AND comment_type=''");
         // 分类总数

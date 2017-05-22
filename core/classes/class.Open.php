@@ -458,7 +458,7 @@ abstract class Open{
         $data['access_token'] = $access_token;
         $data['refresh_token'] = $refresh_token;
         $data['expiration'] = $expiration;
-        $data['name'] = $info->name;
+        $data['name'] = isset($info->name) ? $info->name : '';
 
         global $wpdb;
         $user_exist = $wpdb->get_var( $wpdb->prepare("SELECT user_id FROM $wpdb->usermeta WHERE meta_key=%s AND meta_value=%s", static::$_openid_meta_key, $openid) );
@@ -477,8 +477,8 @@ abstract class Open{
             wp_set_current_user( $user_exist );
             wp_set_auth_cookie( $user_exist );
 
-            $user_login = get_userdata($user_exist)->user_login;
-            do_action( 'wp_login', $user_login );  // 保证挂载的action执行
+            $user = get_user_by('id', $user_exist);
+            do_action( 'wp_login', $user->user_login, $user );  // 保证挂载的action执行
 
             wp_safe_redirect(self::getRedirect());
             exit;
