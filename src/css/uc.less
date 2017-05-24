@@ -1,0 +1,673 @@
+/* 引入变量 */
+@import "modules/vars";
+
+/* 初始化所有浏览器样式 */
+@import "modules/normalize";
+
+/* 引入基本样式 */
+@import "modules/base";
+
+/* 引入图标字体 */
+@import "modules/tico";
+
+/* 引入Flat元素 */
+@import "modules/flat";
+
+/* 引入动画 */
+@import "modules/animation/animation";
+
+/* Msgbox */
+@import "modules/sweetAlert/sweet-alert";
+
+/* Header */
+@import "modules/loading/loading";
+@import "modules/nav/header";
+
+/* Footer */
+@import "modules/nav/footer";
+
+/* Modal Search */
+@import "modules/search/modal-search";
+
+/* PM */
+@import "modules/pm/pm";
+
+/* Modal Signbox */
+@import "modules/modalSign/sign-box";
+
+/* Loop row */
+@import "modules/loop/loop-rows";
+
+/* Ban */
+@import "modules/ban/ban";
+
+
+body.author {
+    background: #f5f6f8;
+    //&>header {
+    //    position: absolute;
+    //    top: 0;
+    //    background: transparent;
+    //    box-shadow: none;
+    //}
+    &>#content {
+        &>.billboard {
+            position: relative;
+            background-color: rgba(5,15,25,.2);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            height: 280px;
+            padding: 20px 20px 0;
+            //&:before {
+            //    position: absolute;
+            //    top: 0;
+            //    bottom: 0;
+            //    left: 0;
+            //    right: 0;
+            //    content: '';
+            //    background-color: rgba(0,0,0,.5);
+            //    z-index: 0;
+            //}
+            &>.container {
+                position: relative;
+                color: #ffffff;
+                &>.avatar-wrap {
+                    width: 98px;
+                    height: 98px;
+                    padding: 4px;
+                    margin: 10px auto;
+                    border-radius: 50%;
+                    background: rgba(255,255,255,0.3);
+                    img {
+                        width: 90px;
+                        height: 90px;
+                        border-radius: 50%;
+                    }
+                }
+                &>h2 {
+                    margin-top: 0;
+                    font-size: 2.4rem;
+                    line-height: 1;
+                    i {
+                        font-size: 1.6rem;
+                        margin-left: 5px;
+                    }
+                }
+                &>p {
+                    //border-top: 1px solid rgba(255,255,255,.2);
+                    //padding-top: 10px;
+                    line-height: 1.2;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                }
+                &>.author-interact {
+                    margin-top: 15px;
+                    text-align: center;
+                    &>a {
+                        display: inline-block;
+                        width: 104px;
+                        height: 34px;
+                        padding: 0 !important;
+                        margin: 0 5px;
+                        white-space: nowrap;
+                        border-radius: 2px;
+                        font-size: 1.4rem;
+                        line-height: 34px;
+                        color: #fff;
+                        background: lighten(@brand-secondary, 5%);
+                        background: -moz-linear-gradient(top, lighten(@brand-secondary, 5%) 0%, @brand-secondary 100%);
+                        background: -webkit-linear-gradient(top, lighten(@brand-secondary, 5%) 0%, @brand-secondary 100%);
+                        background: -o-linear-gradient(top, lighten(@brand-secondary, 5%) 0%, @brand-secondary 100%);
+                        background: -ms-linear-gradient(top, lighten(@brand-secondary, 5%) 0%, @brand-secondary 100%);
+                        background: linear-gradient(top, lighten(@brand-secondary, 5%) 0%, @brand-secondary 100%);
+                        box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+                        &:hover {
+                            background: lighten(@brand-secondary, 2%);
+                            background: -moz-linear-gradient(top, lighten(@brand-secondary, 2%) 0%, darken(@brand-secondary, 2%) 100%);
+                            background: -webkit-linear-gradient(top, lighten(@brand-secondary, 2%) 0%, darken(@brand-secondary, 2%) 100%);
+                            background: -o-linear-gradient(top, lighten(@brand-secondary, 2%) 0%, darken(@brand-secondary, 2%) 100%);
+                            background: -ms-linear-gradient(top, lighten(@brand-secondary, 2%) 0%, darken(@brand-secondary, 2%) 100%);
+                            background: linear-gradient(top, lighten(@brand-secondary, 2%) 0%, darken(@brand-secondary, 2%) 100%);
+                        }
+                        &.followed, &.pm-btn {
+                            background: lighten(@brand-primary, 35%);
+                            background: -moz-linear-gradient(top, lighten(@brand-primary, 35%) 0%, lighten(@brand-primary, 30%) 100%);
+                            background: -webkit-linear-gradient(top, lighten(@brand-primary, 35%) 0%, lighten(@brand-primary, 30%) 100%);
+                            background: -o-linear-gradient(top, lighten(@brand-primary, 35%) 0%, lighten(@brand-primary, 30%) 100%);
+                            background: -ms-linear-gradient(top, lighten(@brand-primary, 35%) 0%, lighten(@brand-primary, 30%) 100%);
+                            background: linear-gradient(top, lighten(@brand-primary, 35%) 0%, lighten(@brand-primary, 30%) 100%);
+                            &:hover {
+                                background: lighten(@brand-primary, 20%);
+                                background: -moz-linear-gradient(top, lighten(@brand-primary, 30%) 0%, lighten(@brand-primary, 25%) 100%);
+                                background: -webkit-linear-gradient(top, lighten(@brand-primary, 30%) 0%, lighten(@brand-primary, 25%) 100%);
+                                background: -o-linear-gradient(top, lighten(@brand-primary, 30%) 0%, lighten(@brand-primary, 25%) 100%);
+                                background: -ms-linear-gradient(top, lighten(@brand-primary, 30%) 0%, lighten(@brand-primary, 25%) 100%);
+                                background: linear-gradient(top, lighten(@brand-primary, 30%) 0%, lighten(@brand-primary, 25%) 100%);
+                            }
+                        }
+                        i {
+                            margin-right: 5px;
+                            vertical-align: -1px;
+                        }
+                    }
+                }
+            }
+        }
+
+        &>.author-area {
+            &>.inner {
+                max-width: 880px;
+                margin: 0 auto;
+                //text-align: center;
+                &>.author-tabs {
+                    margin-bottom: 20px;
+                    font-size: 0; //去除空隙
+                    -webkit-text-size-adjust:none;
+                    text-align: center;
+                    &>a {
+                        display: inline-block;
+                        width: 90px;
+                        padding: 5px 0;
+                        border: 1px solid #cccccc;
+                        margin-right: -1px;
+                        font-size: 1.5rem;
+                        color: #666666;
+                        background: #f7f7f7;
+                        &:first-child {
+                            border-top-left-radius: 4px;
+                            border-bottom-left-radius: 4px;
+                        }
+                        &:last-child {
+                            border-top-right-radius: 4px;
+                            border-bottom-right-radius: 4px;
+                        }
+                        &.active {
+                            background: lighten(@brand-primary, 20%);
+                            /* box-shadow: 1px 1px 4px #34495e inset; */
+                            border-color: lighten(@brand-primary, 20%);
+                            color: #fff;
+                        }
+                    }
+                }
+                &>.author-tab-box {
+                    position: relative;
+                    padding: 20px;
+                    margin-bottom: 50px;
+                    background: #fff;
+                    border-radius: 5px;
+                    &.follow-tab {
+                        background: transparent;
+                    }
+                    &>.tab-content {
+                        &>.empty-content {
+                            padding: 30px 0;
+                            text-align: center;
+                            font-size: 2rem;
+                            &>.tico {
+                                font-size: 6rem;
+                                color: #dddddd;
+                            }
+                            &>p {
+                                margin: 40px auto 20px;
+                            }
+                        }
+                        &>.tip {
+                            margin: 10px 0 30px;
+                            color: #222;
+                            font-size: 1.5rem;
+                        }
+                    }
+
+                    &>.latest-posts {
+                        &>.loop-rows {
+                            &>article {
+                                &>.entry-detail {
+                                    &>header {
+                                        &>h2 {
+                                            span {
+                                                margin-left: 10px;
+                                                font-size: 1.6rem;
+                                                a {
+                                                    &:hover {
+                                                        color: @brand-hot;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &>.author-comments {
+                        &>.loop-rows {
+                            &>.comment {
+                                position: relative;
+                                margin-bottom: 15px;
+                                padding-bottom: 15px;
+                                border-bottom: 1px solid #f5f6f8;
+                                &>.comment-title {
+                                    white-space: nowrap;
+                                    text-overflow: ellipsis;
+                                    overflow: hidden;
+                                    //font-size: 1.4rem;
+                                    color: #757f90;
+                                    &>.comment-author {
+                                        margin-right: 5px;
+                                        color: @brand-primary;
+                                        img {
+                                            position: absolute;
+                                            top: 33px;
+                                            width: 36px;
+                                            height: 36px;
+                                            border-radius: 50%;
+                                            margin-right: 5px;
+                                        }
+                                    }
+                                    a {
+                                        padding-left: 5px;
+                                        //color: lighten(@brand-primary, 5%);
+                                        &:hover {
+                                            //color: @link-color;
+                                        }
+                                    }
+                                }
+                                &>.comment-content {
+                                    position: relative;
+                                    padding: 10px 20px;
+                                    margin-top: 10px;
+                                    margin-left: 50px;
+                                    border-radius: 3px;
+                                    font-size: 1.3rem;
+                                    line-height: 1.5;
+                                    word-break: break-all;
+                                    color: @brand-primary;
+                                    background-color: @light-blue-bg;
+                                    &:before {
+                                        content: " ";
+                                        height: 0;
+                                        width: 0;
+                                        border: 5px solid transparent;
+                                        border-right-color: @light-blue-bg;
+                                        position: absolute;
+                                        left: -10px;
+                                        top: 12px;
+                                    }
+                                    p {
+                                        &:last-child {
+                                            margin-bottom: 0;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &>.author-follow {
+                        &>.row {
+                            &>.follow-box {
+                                padding-left: 8px;
+                                padding-right: 8px;
+                                margin-bottom: 25px;
+                                &>.box-inner {
+                                    border: 1px solid rgba(0,0,0,.05);
+                                    //overflow: hidden;
+                                    background: #fff;
+                                    &:hover {
+                                        box-shadow: 0 2px 4px rgba(0,0,0,.1);
+                                    }
+                                    &>.cover {
+                                        position: relative;
+                                        background-color: rgba(5,15,25,.2);
+                                        background-repeat: no-repeat;
+                                        background-size: cover;
+                                        background-position: center center;
+                                        height: 125px;
+                                        padding: 10px 20px;
+                                        color: #ffffff;
+                                        img {
+                                            display: block;
+                                            width: 46px;
+                                            height: 46px;
+                                            margin: 0 auto 10px;
+                                            border-radius: 50%;
+                                            text-align: center;
+                                        }
+                                        &>.mask {
+                                            position: absolute;
+                                            width: 100%;
+                                            height: 70px;
+                                            bottom: 0;
+                                            left: 0;
+                                            text-shadow: 0 0 3px rgba(0,0,0,0.3);
+                                            background: url(../img/personcard-mask.png) center bottom repeat-x;
+                                            _background: none;
+                                            overflow: hidden;
+                                            h2 {
+                                                margin: 15px auto 0;
+                                                font-size: 1.5rem;
+                                                font-weight: normal;
+                                                text-align: center;
+                                            }
+                                            p {
+                                                padding: 0 8px;
+                                                margin: 6px auto 0;
+                                                font-size: 1.4rem;
+                                                line-height: 1.2;
+                                                text-align: center;
+                                                white-space: nowrap;
+                                                text-overflow: ellipsis;
+                                                overflow: hidden;
+                                            }
+                                        }
+                                    }
+                                    &>.user-stats {
+                                        margin-top: 10px;
+                                        text-align: center;
+                                        span {
+                                            display: inline-block;
+                                            font-size: 1.3rem;
+                                            line-height: 14px;
+                                            font-weight: 700;
+                                            color: #333333;
+                                            &>.unit {
+                                                margin-right: 5px;
+                                            }
+                                        }
+                                        .following {
+                                            padding-right: 9px;
+                                        }
+                                        .followers {
+                                            padding: 0 9px;
+                                            border-left: 1px solid #e6e6e6;
+                                            border-right: 1px solid #e6e6e6;
+                                        }
+                                        .posts {
+                                            padding-left: 9px;
+                                        }
+                                    }
+                                    &>.user-interact {
+                                        position: relative;
+                                        height: 21px;
+                                        margin-top: 10px;
+                                        margin-bottom: 15px;
+                                        text-align: center;
+                                        &>a {
+                                            position: relative;
+                                            padding: 2px 8px 2px 24px;
+                                            margin: 0 3px;
+                                            font-size: 1.2rem;
+                                            line-height: 1;
+                                            border-radius: 2px;
+                                            border: 1px solid #e5e5e5;
+                                            box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+                                            color: @brand-primary;
+                                            &:hover {
+                                                border: 1px solid #dddddd;
+                                                box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+                                            }
+                                            i {
+                                                position: absolute;
+                                                top: 50%;
+                                                left: 8px;
+                                                margin-top: -6px;
+                                            }
+                                        }
+                                        &>.follow-btn {
+
+                                        }
+                                        &>.pm-btn {
+
+                                        }
+                                        &>.more-link-btn {
+                                            position: relative;
+                                            padding-left: 8px;
+                                            i {
+                                                position: static;
+                                            }
+                                        }
+                                        &>.dropdown-menu {
+                                            min-width: 80px;
+                                            right: 5px;
+                                            left: auto;
+                                            margin-top: 8px;
+                                            border: 1px solid #e5e5e5;
+                                            border-radius: 2px;
+                                            background: #ffffff;
+
+                                            &>li {
+                                                a {
+                                                    padding: 6px 10px;
+                                                    overflow: hidden;
+                                                    &:hover {
+                                                        color: @link-color;
+                                                    }
+                                                }
+                                            }
+                                            &>.divider {
+                                                height: 1px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &>.author-chat {
+                        &>#pmForm {
+                            &>.pm-content {
+                                &>.pm-inner {
+                                    &>.pm-info {
+                                        &>.info_label {
+
+                                        }
+                                        &>.pm-info_receiver {
+
+                                        }
+                                    }
+                                    &>.pm-text {
+                                        width: 100%;
+                                        height: 80px;
+                                        border-radius: 3px;
+                                        font-size: 1.4rem;
+                                        line-height: 1.3;
+                                    }
+                                }
+                            }
+                            &>.pm-btns {
+                                text-align: right;
+                                button {
+                                    position: relative;
+                                    width: 100px;
+                                    height: 42px;
+                                    i {
+                                        position: absolute;
+                                        top: 50%;
+                                        left: 50%;
+                                        margin-top: -8px;
+                                        margin-left: -8px;
+                                    }
+                                }
+                            }
+                        }
+                        &>.tip {
+                            margin: 30px 0;
+                            color: #222;
+                            font-size: 1.5rem;
+                        }
+                        &>.loop-rows {
+                            &>.message {
+                                position: relative;
+                                margin-bottom: 15px;
+                                padding-bottom: 15px;
+                                border-bottom: 1px solid #f5f6f8;
+                                &>.people-link {
+                                    position: absolute;
+                                    top: 5px;
+                                    img {
+                                        width: 40px;
+                                        height: 40px;
+                                        border-radius: 50%;
+                                    }
+                                }
+                                &>.msg-main {
+                                    margin-left: 60px;
+                                    &>.msg-content {
+                                        min-height: 42px;
+                                        word-break: break-all;
+                                        &>.sender-label {
+
+                                        }
+                                    }
+                                    &>.msg-meta {
+                                        margin-top: 10px;
+                                        font-size: 1.3rem;
+                                        line-height: 1;
+                                        &>.msg-date {
+
+                                        }
+                                        &>.msg-act {
+                                            display: inline-block;
+                                            padding: 0 5px;
+                                            border-right: 1px solid #ddd;
+                                            cursor: pointer;
+                                            visibility: hidden;
+                                        }
+                                        &>.msg-act-delete {
+                                            border-right: 0;
+                                        }
+                                        &>.msg-act-reply {
+
+                                        }
+                                        &>.msg-act-mark {
+
+                                        }
+                                    }
+                                    &>.unread-mark {
+                                        position: absolute;
+                                        top: 2px;
+                                        color: #27be67;
+                                    }
+                                }
+                                &:last-child {
+                                    border-bottom: 0;
+                                }
+                                &:hover {
+                                    .msg-act {
+                                        visibility: visible !important;
+                                    }
+                                }
+                            }
+                            &>.unread-message {
+                                &>.msg-main {
+                                    &>.msg-content {
+                                        text-indent: 20px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &>.author-profile {
+                        &>section {
+                            padding: 10px 0;
+                            margin-bottom: 10px;
+                            &>header {
+                                h2 {
+                                    padding-bottom: 10px;
+                                    margin: 10px auto 20px;
+                                    border-bottom: 1px solid #f5f5f5;
+                                    font-size: 2rem;
+                                }
+                                small {
+                                    margin-left: 6px;
+                                    color: @text-muted-color;
+                                    font-size: 1.2rem;
+                                }
+                            }
+                            &>.info-group {
+                                padding-left: 15px;
+                                padding-right: 15px;
+                                margin: 10px 0;
+                                &>label {
+                                    max-width: 120px;
+                                    line-height: 1.5;
+                                    font-weight: 600;
+                                }
+                                &>p {
+                                    margin: 0;
+                                }
+                            }
+                        }
+                        &>.author-card {
+                            &>.inner {
+                                padding: 0 15px;
+                                &>.avatar {
+                                    width: 64px;
+                                    height: 64px;
+                                    margin-left: 15px;
+                                    border-radius: 50%;
+                                    float: left;
+                                }
+                                &>.card-text {
+                                    padding-left: 120px;
+                                    &>div {
+
+                                    }
+                                    &>.display-name {
+                                        font-size: 1.6rem;
+                                        font-weight: 600;
+                                        line-height: 1.8;
+                                    }
+                                }
+                            ;
+                            }
+                        }
+                        &>.info-basis {
+                            &>.info-group {
+                                padding: 5px 0;
+                            }
+                        }
+                        &>.info-extends {
+                            position: relative;
+                            &>.info-group {
+                                &>a {
+                                    margin: 0 5px 20px;
+                                    i {
+                                        vertical-align: -2px;
+                                        margin-right: 5px;
+                                    }
+                                }
+                            }
+                        }
+                        &>.info-donate {
+                            position: relative;
+                            &>.info-group {
+                                &>a {
+                                    margin: 0 5px 20px;
+                                }
+                            }
+                        }
+                        &>.info-referral {
+
+                        }
+                        &>.admin-operation {
+                            &>.info-group {
+                                &>p {
+                                    padding-right: 120px;
+                                }
+                                &>.ban-btn {
+                                    float: right;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

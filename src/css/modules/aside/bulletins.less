@@ -1,0 +1,83 @@
+/* Top Bulletins */
+
+#topBulletins {
+    background: @brand-business;
+    height: 60px;
+    line-height: 60px;
+    color: #fff;
+    font-size: 16px;
+    overflow: hidden;
+    &>.inner {
+        position: relative;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        &>i {
+            font-size: 20px;
+            line-height: 60px;
+            position: absolute;
+            left: 20px;
+            top: 0;
+        }
+        li {
+            padding: 0 10px 0 40px;
+            &>a {
+                display: block;
+                color: #ffffff;
+                word-break: break-all;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+    &>.act_close {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        i {
+            display: inline-block;
+            position: absolute;
+            top: 14px;
+            left: 4px;
+            width: 20px;
+            height: 1px;
+            background: #ffffff;
+            transform-origin: center;
+            transform: rotate(45deg);
+            &:last-child {
+                transform: rotate(-45deg);
+            }
+        }
+        &:hover {
+            i {
+                height: 2px;
+            }
+        }
+    }
+}
+
+#bulletins-scroll-zone {
+    height: 20px;
+    line-height: 20px;
+    overflow: hidden;
+}
+
+/* 响应式 */
+@media (max-width: 480px) {
+    #topBulletins {
+        &>.inner {
+            &>i {
+                left: 18px;
+            }
+            li {
+                padding: 0 25px 0 35px;
+                span:first-child {
+                    display: none;
+                }
+            }
+        }
+    }
+}

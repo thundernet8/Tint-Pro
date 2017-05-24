@@ -1,0 +1,144 @@
+// Colors
+// @blue:                      #3292ff;
+@blue:                      #45B6F7;
+@lightred:                  #E46A52;
+@red:                       #d62223;
+@yellow:                    #fd9e17;
+@green:                     #4becb5;
+
+// Color swatches
+@turquoise:                 #1abc9c;
+@green-sea:                 #16a085;
+
+@emerald:                   #2ecc71;
+@nephritis:                 #27ae60;
+
+@peter-river:               #3498db;
+@belize-hole:               #2980b9;
+
+@amethyst:                  #9b59b6;
+@wisteria:                  #8e44ad;
+
+@wet-asphalt:               #34495e;
+@midnight-blue:             #2c3e50;
+
+@sun-flower:                #f1c40f;
+@orange:                    #f39c12;
+
+@carrot:                    #e67e22;
+@pumpkin:                   #d35400;
+
+@alizarin:                  #e74c3c;
+@pomegranate:               #c0392b;
+
+@clouds:                    #ecf0f1;
+@silver:                    #bdc3c7;
+
+@concrete:                  #95a5a6;
+@asbestos:                  #7f8c8d;
+
+// Grays
+@gray:                      @concrete;
+@gray-light:                @silver;
+@gray-lighter:           lighten(@gray-light, 10%);
+@inverse:                   white;
+
+// Brand colors
+@brand-primary:             @wet-asphalt;
+@brand-secondary:           @turquoise;
+@brand-success:             @emerald;
+@brand-warning:             @sun-flower;
+@brand-danger:              @alizarin;
+@brand-info:                @peter-river;
+@brand-business:            #17a8e3;
+@brand-elegant:             #a26ff9;
+@brand-ico:                 #07b6e8;
+@brand-hot:                 #F64540;
+
+// Contextual bg
+@bg-note:                   #fcf8e3;
+
+// Social colors
+@social-qq:                 #f68575;//#00c5ff;
+@social-qqgroup:            #6cbd9f;
+@social-weixin:             #2dc100;
+@social-weibo:              #f74660;
+@social-rss:                #f1af1b;
+@social-email:              #a6c5d2; //#834dd5;
+@social-pinterest:          #cb2028;
+@social-linkedin:           #0072b5;
+@social-stumbleupon:        #ed4a13;
+@social-googleplus:         #2d2d2d;
+@social-facebook:           #2f4b93;
+@social-twitter:            #00bdef;
+@social-alipay:             #00aaee;
+@alipay-pay:                #00aaee;
+@wechat-pay:                #01c271;
+
+//## Settings for some of the most global styles.
+
+@body-bg:                   #fff;
+@light-blue-bg:             #f3f7fb;
+@text-color:                @brand-primary;
+@text-muted-color:          @asbestos;
+@caption-muted-color:       #8899a6;
+@header-color:              #222;
+
+//** Global textual link color.
+@link-color:                @brand-ico; //#da655c; //@blue; // TODO change 10/22/2016
+@link-hover-color:          @belize-hole;
+//** Link hover decoration.
+@link-hover-decoration:     none;
+
+@nav-link-color:            #7289a2; //@text-color;
+@nav-link-hover-color:      #fff; //@link-color;
+@nav-bg:                    #252525;
+
+@pag-link-hover-bg:        @brand-ico;
+
+@price-color: #85ad74;
+
+//** Font
+@line-height-base: 1.72222; // 31/18
+@line-height-computed: 3.2rem;
+@font-size-base: 1.8rem;
+@font-family-base: Titillium,"Lucida Sans Typewriter","Helvetica Neue",Helvetica,Arial,"\5FAE\8F6F\96C5\9ED1","Microsoft YaHei","\5B8B\4F53";
+@font-base: 14px/1.5 @font-family-base;
+
+//== Media queries breakpoints
+//
+//## Define the breakpoints at which your layout will change, adapting to different screen sizes.
+
+// Extra small screen / phone
+//** Deprecated `@screen-xs` as of v3.0.1
+@screen-xs:                  480px;
+//** Deprecated `@screen-xs-min` as of v3.2.0
+@screen-xs-min:              @screen-xs;
+//** Deprecated `@screen-phone` as of v3.0.1
+@screen-phone:               @screen-xs-min;
+
+// Small screen / tablet
+//** Deprecated `@screen-sm` as of v3.0.1
+@screen-sm:                  768px;
+@screen-sm-min:              @screen-sm;
+//** Deprecated `@screen-tablet` as of v3.0.1
+@screen-tablet:              @screen-sm-min;
+
+// Medium screen / desktop
+//** Deprecated `@screen-md` as of v3.0.1
+@screen-md:                  992px;
+@screen-md-min:              @screen-md;
+//** Deprecated `@screen-desktop` as of v3.0.1
+@screen-desktop:             @screen-md-min;
+
+// Large screen / wide desktop
+//** Deprecated `@screen-lg` as of v3.0.1
+@screen-lg:                  1200px;
+@screen-lg-min:              @screen-lg;
+//** Deprecated `@screen-lg-desktop` as of v3.0.1
+@screen-lg-desktop:          @screen-lg-min;
+
+// So media queries don't overlap when required, provide a maximum
+@screen-xs-max:              (@screen-sm-min - 1);
+@screen-sm-max:              (@screen-md-min - 1);
+@screen-md-max:              (@screen-lg-min - 1);

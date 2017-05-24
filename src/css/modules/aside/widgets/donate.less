@@ -1,0 +1,35 @@
+.widget_donate {
+    &>.widget-content {
+        &>.row {
+            &>.qr-col {
+                position: relative;
+                padding-top: 25px;
+                &>.qr-type-icon {
+                    position: absolute;
+                    width: 20px;
+                    height: 20px;
+                    top: 0;
+                    left: 50%;
+                    margin-left: -12px;
+                    font-size: 2rem;
+                }
+                &>.qr-type-wechat {
+                    color: @social-weixin;
+                }
+                &>.qr-type-alipay {
+                    margin-left: -15px;
+                    background: url('../img/icon/alipay.png') no-repeat;
+                    background-size: cover;
+                }
+            }
+            &>.col-md-6 {
+                &:first-child {
+                    padding-right: 6px;
+                }
+                &:last-child {
+                    padding-left: 6px;
+                }
+            }
+        }
+    }
+}

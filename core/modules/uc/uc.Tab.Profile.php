@@ -9,7 +9,11 @@
  * @date 2016/11/06 17:49
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
+<<<<<<< HEAD
  * @link https://www.webapproach.net/tint.html
+=======
+ * @link https://webapproach.net/tint.html
+>>>>>>> dev
  */
 ?>
 <?php global $tt_author_vars; $tt_author_id = $tt_author_vars['tt_author_id']; $logged_user_id = get_current_user_id(); $is_me = $logged_user_id == $tt_author_id; ?>
@@ -24,8 +28,13 @@
             <div class="inner">
                 <img class="avatar" src="<?php echo $info->avatar; ?>">
                 <div class="card-text">
+<<<<<<< HEAD
                     <div class="display-name"><?php echo $info->display_name; ?> </div>
                     <div class="register-time"><?php printf(__('Member Since %s', 'tt'), $info->member_since); ?></div>
+=======
+                    <div class="display-name"><?php echo $info->display_name; ?></div>
+                    <div class="register-time"><?php printf(__('Member Since %s', 'tt'), $info->member_since); ?><?php printf(__(' <b>(The %dth Member)</b>', 'tt'), $info->ID); ?></div>
+>>>>>>> dev
                     <div class="login-time"><?php if($is_me){printf(__('Last Login %s', 'tt'), $info->latest_login_before ? : 'N/A');} else {printf(__('Latest Login %s', 'tt'), $info->latest_login ? : 'N/A');}; ?></div>
                     <?php if($is_me) { ?>
                     <div class="login-ip"><?php echo sprintf(__('This Login IP %s', 'tt'), $info->this_login_ip ? : $_SERVER['REMOTE_ADDR']) . '&nbsp;&nbsp;&nbsp;&nbsp;' . sprintf(__('Last Login IP %s', 'tt'), $info->last_login_ip ? : 'N/A'); ?></div>

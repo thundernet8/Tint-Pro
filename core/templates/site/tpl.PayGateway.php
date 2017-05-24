@@ -9,7 +9,11 @@
  * @date 2016/11/30 22:42
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
+<<<<<<< HEAD
  * @link https://www.webapproach.net/tint
+=======
+ * @link https://webapproach.net/tint.html
+>>>>>>> dev
  */
 ?>
 <?php
@@ -74,7 +78,11 @@ $addr_info = tt_get_address($order->address_id);
 $channel = isset($_GET['channel']) && in_array(trim($_GET['channel']), array('alipay')) ? trim($_GET['channel']) : 'alipay';
 
 if($channel == 'alipay'):
+<<<<<<< HEAD
     require_once(THEME_FUNC . "/shop/alipay/alipay_submit.class.php");
+=======
+    require_once(THEME_CLASS . "/shop/alipay/alipay_submit.class.php");
+>>>>>>> dev
     $alipay_config = tt_get_alipay_config();
     $alipay_service = tt_get_option('tt_alipay_service', 'trade_create_by_buyer');
     /**************************请求参数**************************/

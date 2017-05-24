@@ -9,7 +9,11 @@
  * @date 2016/5/27 17:33
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
+<<<<<<< HEAD
  * @link https://www.webapproach.net/tint.html
+=======
+ * @link https://webapproach.net/tint.html
+>>>>>>> dev
  */
 ?>
 <?php
@@ -130,7 +134,11 @@ add_action( 'manage_users_custom_column', 'tt_latest_login_column_callback', 10,
  * @return string
  */
 function left_admin_footer_text($text) {
+<<<<<<< HEAD
     $text = sprintf(__('<span id="footer-thankyou">Thanks for using %s to help your creation, %s theme style your website</span>', 'tt'), '<a href=http://cn.wordpress.org/ >WordPress</a>', '<a href="https://www.webapproach.net/tint.html">Tint</a>');
+=======
+    $text = sprintf(__('<span id="footer-thankyou">Thanks for using %s to help your creation, %s theme style your website</span>', 'tt'), '<a href=http://cn.wordpress.org/ >WordPress</a>', '<a href="' . TT_SITE . '/tint.html">Tint</a>');
+>>>>>>> dev
     return $text;
 }
 add_filter('admin_footer_text','left_admin_footer_text');

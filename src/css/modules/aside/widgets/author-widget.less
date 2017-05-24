@@ -1,0 +1,103 @@
+.widget_author-info {
+    &>.widget-content {
+        margin: -15px -20px 0;
+        &>.author-card_bg {
+            display: block;
+            width: 100%;
+            height: 145px;
+            border-radius: 3px 3px 0 0;
+
+            background-size: cover;
+        }
+        &>.author-card_content {
+            &>.author_avatar-link {
+                position: absolute;
+                width: 72px;
+                height: 72px;
+                top: 121px;
+                left: 10px;
+                border-radius: 3px 3px 0 0;
+                img {
+                    border-radius: 6px;
+                    height: 72px;
+                    width: 72px;
+                    border: 2px solid #fff;
+                    box-sizing: border-box;
+                    color: #fff;
+                }
+            }
+            &>.author-fields {
+                padding-left: 100px;
+                &>.author-name {
+                    font-size: 1.8rem;
+                    font-weight: bold;
+                }
+                &>.author-user_level {
+                    padding: 0 5px;
+                    margin-left: 5px;
+                    border-radius: 2px;
+                    font-size: 1.2rem;
+                    line-height: 1;
+                    vertical-align: 2px;
+                    color: #ffffff;
+                    background: @brand-ico;
+                }
+            }
+            &>.author-interact {
+                padding-left: 100px;
+                &>a {
+                    position: relative;
+                    color: #66757f;
+                    i {
+                        margin-right: 6px;
+                    }
+                }
+                &>.follow-btn {
+                    padding-left: 20px;
+                    margin-right: 10px;
+                    //color: @social-qq;
+                    i {
+                        position: absolute;
+                        left: 0;
+                        top: 4px;
+                    }
+                }
+                &>.pm-btn {
+                    //color: @brand-elegant;
+                }
+            }
+            &>.author-stats {
+                display: table;
+                width: 100%;
+                padding: 10px;
+                margin-top: 10px;
+                &>span {
+                    position: relative;
+                    display: table-cell;
+                    width: 25%;
+                    height: 36px;
+                    text-align: center;
+                    font-weight: bold;
+                    font-size: 1.8rem;
+                    &>span {
+                        display: block;
+                        color: @caption-muted-color;
+                        font-size: 1.3rem;
+                        font-weight: normal;
+                        text-indent: 3px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* 响应式 */
+@media (max-width: 480px) {
+    .widget_author-info {
+        &>.widget-content {
+            margin: -10px -15px 0;
+        }
+    }
+}

@@ -9,7 +9,11 @@
  * @date 2016/11/13 23:13
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
+<<<<<<< HEAD
  * @link https://www.webapproach.net/tint
+=======
+ * @link https://webapproach.net/tint.html
+>>>>>>> dev
  */
 ?>
 <?php $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1; ?>
@@ -34,7 +38,11 @@
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
         <?php $vm = ShopHomeVM::getInstance($paged, isset($_GET['sort']) ? $_GET['sort'] : 'latest'); ?>
+=======
+        <?php $vm = ShopHomeVM::getInstance($paged, isset($_GET['sort']) ? $_GET['sort'] : 'latest', isset($_GET['type']) ? $_GET['type'] : 'all'); ?>
+>>>>>>> dev
         <?php if($vm->isCache && $vm->cacheTime) { ?>
             <!-- Products cached <?php echo $vm->cacheTime; ?> -->
         <?php } ?>
@@ -81,6 +89,7 @@
             </div>
             <?php if($pagination_args['max_num_pages'] > 1) { ?>
             <div class="pagination-wrap">
+<<<<<<< HEAD
                 <nav aria-label="Page navigation">
                     <ul class="pagination">
                         <?php $pagination = paginate_links(array(
@@ -103,6 +112,9 @@
 <!--                        <span class="max-page">--><?php //echo $pagination_args['max_num_pages']; ?><!--</span>-->
 <!--                    </div>-->
                 </nav>
+=======
+                <?php tt_pagination($pagination_args['base'], $pagination_args['current_page'], $pagination_args['max_num_pages']); ?>
+>>>>>>> dev
             </div>
             <?php } ?>
             <?php } ?>

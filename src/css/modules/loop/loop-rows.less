@@ -1,0 +1,155 @@
+@import "./thumb";
+
+.loop-rows {
+    article {
+        position: relative;
+        padding-bottom: 25px;
+        border-bottom: 1px solid #f5f5f5;//#fcfcfc;
+        margin-bottom: 25px;
+        &:last-child {
+            border-bottom: none;
+        }
+        &.post {
+            &>.entry-thumb {
+                //position: absolute;
+                position: relative;
+                float: left;
+                left: 0;
+                top: 0;
+                //max-width: 250px;
+                width: 250px;
+                margin-right: 20px;
+                &>a {
+                    //&[rel="category tag"] {
+                    //    position: absolute;
+                    //    top: 0;
+                    //    left: 0;
+                    //    //background: rgba(0, 0, 0, 0.7);
+                    //    background: @brand-business;
+                    //    color: #FFFFFF;
+                    //    font-size: 11px;
+                    //    padding: 1px 10px 2px;
+                    //}
+                }
+            }
+            &>.entry-detail {
+                width: 100%;
+                min-height: 170px;
+                //margin-left: 275px;
+                &>.entry-header {
+                    &>h2 {
+                        position: relative;
+                        font-weight: 500;
+                        font-size: 1.8rem;
+                        margin-bottom: 5px;
+                        a {
+                            color: @brand-primary;
+                            &:hover {
+                                color: @link-color;
+                            }
+                        }
+                        .sticky-ico {
+                            vertical-align: -2px;
+                            margin-left: 5px;
+                        }
+                    }
+                    &>.entry-meta {
+                        &>span {
+                            margin-right: 12px;
+                        }
+                        &>.author {
+                            &>a {
+                                color: @brand-primary;
+                                font-weight: 500;
+                                &:hover {
+                                    color: @link-color;
+                                }
+                            }
+                        }
+                        &>.comments-link {
+                            float: right;
+                            margin-right: 0;
+                            //font-size: 1.2rem;
+                            &>i {
+                                margin-right: 5px;
+                            }
+                            &>a {
+                                color: @text-muted-color;
+                            }
+                        }
+                        &>.unstar-link {
+                            float: right;
+                            &>i {
+                                margin-right: 5px;
+                            }
+                            &>a {
+                                color: @text-muted-color;
+                            }
+                            &:hover {
+                                i, a {
+                                    color: @brand-danger;
+                                }
+                            }
+                        }
+                    }
+                }
+                &>.entry-excerpt {
+                    color: #777777;
+                    margin-top: 16px;
+                    word-break: break-all;
+                }
+            }
+        }
+    }
+
+    &+nav {
+        position: relative;
+        padding-right: 100px;
+        &>.pagination {
+
+        }
+        &>.page-nums {
+            position: absolute;
+            top: 20px;
+            right: 0;
+            line-height: 42px;
+            color: @brand-primary;
+            font-size: 2rem;
+            font-weight: 500;
+        }
+    }
+}
+
+
+// 响应式
+
+@media (max-width: 480px) {
+    .loop-rows {
+        article {
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+        }
+        article.post {
+            &>.entry-thumb {
+                float: none;
+                width: 100%;
+                margin-right: 0;
+            }
+            &>.entry-detail {
+                min-height: 50px;
+            }
+        }
+        &+nav {
+            padding-right: 0;
+            text-align: center;
+            &>.pagination {
+                padding: 0;
+                margin: 10px auto;
+                overflow: hidden;
+            }
+            &>.page-nums {
+                display: none;
+            }
+        }
+    }
+}

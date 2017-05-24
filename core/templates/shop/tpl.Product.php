@@ -9,7 +9,11 @@
  * @date 2016/11/13 23:13
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
+<<<<<<< HEAD
  * @link https://www.webapproach.net/tint
+=======
+ * @link https://webapproach.net/tint.html
+>>>>>>> dev
  */
 ?>
 <?php $product = get_queried_object(); ?>
@@ -39,7 +43,11 @@
                     <nav class="commerce-breadcrumb">
                         <a href="<?php echo home_url(); ?>"><?php _e('HOME', 'tt'); ?></a>
                         <span class="breadcrumb-delimeter">/</span>
+<<<<<<< HEAD
                         <a href="<?php echo home_url(); ?>"><?php _e('SHOP', 'tt'); ?></a>
+=======
+                        <a href="<?php echo tt_url_for('shop_archive'); ?>"><?php _e('SHOP', 'tt'); ?></a>
+>>>>>>> dev
                         <span class="breadcrumb-delimeter">/</span>
                         <?php $cat_breads = array(); foreach($categories as $category) { ?>
                         <?php $category = (array)$category; $cat_breads[] = '<a href="' . $category['permalink'] . '">' . $category['name'] . '</a>'; ?>
@@ -133,6 +141,10 @@
                             <!-- Product meta -->
                             <div class="product_meta">
                                 <span class="sku_wrapper"><?php _e('SKU: ', 'tt'); ?><span class="sku" itemprop="sku"><?php echo $productdata->ID; ?></span></span>
+<<<<<<< HEAD
+=======
+                                <span class="inventory_wrapper"><?php _e('Inventory: ', 'tt'); ?><span class="inventory" itemprop="inventory"><?php echo $productdata->amount; ?></span></span>
+>>>>>>> dev
                                 <span class="posted_in"><?php _e('Categories: ', 'tt'); ?><?php echo implode(', ', $cat_breads); ?></span>
                             </div>
                         </section>

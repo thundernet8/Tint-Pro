@@ -9,7 +9,11 @@
  * @date 2016/10/07 16:07
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
+<<<<<<< HEAD
  * @link https://www.webapproach.net/tint.html
+=======
+ * @link https://webapproach.net/tint.html
+>>>>>>> dev
  */
 ?>
 <?php
@@ -37,7 +41,11 @@ class SinglePostVM extends BaseVM {
      */
     public static function getInstance($post_id = 1) {
         $instance = new static(); // 因为不同分页共用该模型，不采用单例模式
+<<<<<<< HEAD
         $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . static::class . '_post' . $post_id;
+=======
+        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . __CLASS__ . '_post' . $post_id;
+>>>>>>> dev
         $instance->_postId = absint($post_id);
         //$instance->_enableCache = false; //Debug关闭缓存
         $instance->configInstance();
@@ -65,7 +73,11 @@ class SinglePostVM extends BaseVM {
         $info['category'] = get_the_category_list(' ', '', $the_post->ID);
         $info['tags'] = get_the_tag_list(' ', ' ', '', $the_post->ID);
         $info['author'] = get_the_author();
+<<<<<<< HEAD
         $info['author_url'] = home_url('/@' . $info['author']); //TODO the link
+=======
+        $info['author_url'] = get_author_posts_url($the_post->post_author);
+>>>>>>> dev
         $info['time'] = get_post_time('F j, Y', false, $the_post, false); //get_post_time( string $d = 'U', bool $gmt = false, int|WP_Post $post = null, bool $translate = false )
         $info['datetime'] = get_the_time(DATE_W3C, $the_post);
         $info['timediff'] = Utils::getTimeDiffString($info['datetime']);
@@ -162,7 +174,12 @@ class SinglePostVM extends BaseVM {
             'ignore_sticky_posts'=>1
         );
         $relates_query = null;
+<<<<<<< HEAD
         if(count($tagIDs) > 0 && ($the_query = new WP_Query($relates_query_args))->have_posts()) {
+=======
+        $the_query = new WP_Query($relates_query_args);
+        if(count($tagIDs) > 0 && ($the_query->have_posts())) {
+>>>>>>> dev
             $relates_query = $the_query;
         }else{
             $catIDs = wp_get_post_categories($the_post->ID);

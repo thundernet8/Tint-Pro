@@ -9,7 +9,11 @@
  * @date 2016/09/21 21:50
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
+<<<<<<< HEAD
  * @link https://www.webapproach.net/tint.html
+=======
+ * @link https://webapproach.net/tint.html
+>>>>>>> dev
  */
 ?>
 <?php
@@ -25,7 +29,11 @@ class PopularVM extends BaseVM {
 
     protected function getRealData() {
         // 排除分类
+<<<<<<< HEAD
         $uncat = tt_get_option('tt_home_undisplay_cats', array());
+=======
+        $uncat = tt_filter_of_multicheck_option(tt_get_option('tt_home_undisplay_cats', array()));
+>>>>>>> dev
         // 检索置顶用于排除
         $stickies = get_option('sticky_posts');
 

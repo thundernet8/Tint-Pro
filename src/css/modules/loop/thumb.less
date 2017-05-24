@@ -1,0 +1,101 @@
+article {
+    .entry-thumb {
+        position: relative;
+        overflow: hidden;
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        //&>.shadow {
+        //    display: block;
+        //    position: absolute;
+        //    top: 0;
+        //    left: 0;
+        //    width: 100%;
+        //    height: 100%;
+        //    background: rgba(0,0,0,.1);
+        //    background: linear-gradient(135deg,rgba(0,0,0,.2) 0,rgba(0,0,0,.1) 100%);
+        //}
+        &>a {
+            display: block;
+            max-height: 100%;
+            //&:before {
+            //    content: ' ';
+            //    display: block;
+            //    position: absolute;
+            //    top: 0;
+            //    left: 0;
+            //    width: 100%;
+            //    height: 100%;
+            //    background: rgba(0,0,0,.1);
+            //    background: linear-gradient(135deg,rgba(0,0,0,.2) 0,rgba(0,0,0,.1) 100%);
+            //}
+        }
+        &>a[rel="category tag"],
+        &>a[rel="tag"],
+        &>a.category {
+            display: inline-block;
+            min-width: 50px;
+            padding: 0 10px;
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            z-index: 2;
+            color: #fff;
+            background-color: rgba(0,0,0,.6);
+            border-radius: 2px;
+            font-size: 12px;
+            line-height: 22px;
+            text-align: center;
+            &:hover {
+                background: rgba(0,0,0,.8);
+            }
+            &+a {
+                display: none;
+            }
+        }
+    }
+
+    .wp-post-image {
+        -webkit-transition: all .3s ease;
+        -moz-transition: all .3s ease;
+        -ms-transition: all .3s ease;
+        -o-transition: all .3s ease;
+        transition: all .3s ease;
+    }
+
+    &>.hover-overlay {
+        &>a {
+            &:before {
+                content: '';
+                display: block;
+                opacity: 0;
+                width: 100%;
+                height: 150%;
+                background: -webkit-linear-gradient(270deg,rgba(0,0,0,.01) 2%,rgba(0,0,0,.95) 100%);
+                background: linear-gradient(180deg,rgba(0,0,0,.01) 2%,rgba(0,0,0,.95) 100%);
+                -webkit-transition: opacity .4s ease-in-out;
+                transition: opacity .4s ease-in-out;
+                position: absolute;
+            }
+        }
+    }
+
+    &:hover {
+        &>.hover-scale {
+            .wp-post-image {
+                -webkit-transform: scale(1.1);
+                -moz-transform: scale(1.1);
+                -ms-transform: scale(1.1);
+                -o-transform: scale(1.1);
+                transform: scale(1.1);
+            }
+        }
+        &>.hover-overlay {
+            &>a:before {
+                opacity: 1;
+            }
+        }
+    }
+}

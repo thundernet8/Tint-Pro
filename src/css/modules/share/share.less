@@ -1,0 +1,69 @@
+.share-bar {
+    &>.share-btn {
+        width: 24px;
+        height: 24px;
+        display: inline-block;
+        margin-right: 5px;
+        background: url(../img/share.png);
+        cursor: pointer;
+        margin-bottom: -8px;
+        opacity: .8;
+        position: relative;
+        top: -2px;
+    }
+    &>.share-weibo {
+        background-position: 0 0 !important;
+    }
+    &>.share-qzone {
+        background-position: 0 -65px !important;
+    }
+    &>.share-weixin {
+        background-position: 0 -32px !important;
+        position: relative;
+        z-index: 2;
+        &>.weixin-qr {
+            position: absolute;
+            display: none;
+            visibility: hidden;
+            left: -55px;
+            top: 40px;
+            //width: 260px;
+            box-shadow: 0 2px 3px #eee;
+            z-index: 10;
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            &>img {
+                width: 120px;
+                height: 120px;
+                max-width: 120px;
+                display: block;
+            }
+            &>.weixin-qr-msg {
+
+            }
+        }
+        &:hover {
+            &>.weixin-qr {
+                visibility: visible;
+            }
+        }
+    }
+    &>.share-qq {
+        background-position: 0 -98px !important;
+    }
+    &>.share-douban {
+        background-position: 0 -196px !important;
+    }
+    &>.share-facebook {
+        background-position: 0 -226px !important;
+    }
+    &>.share-twitter {
+        background-position: 0 -257px !important;
+    }
+    &>.share-googleplus {
+        background-position: 0 -288px !important;
+    }
+    &>.share-email {
+        background-position: 0 -382px !important;
+    }
+}

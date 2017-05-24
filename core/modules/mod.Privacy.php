@@ -9,7 +9,11 @@
  * @date 2016/12/25 14:51
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
+<<<<<<< HEAD
  * @link https://www.webapproach.net/tint
+=======
+ * @link https://webapproach.net/tint.html
+>>>>>>> dev
  */
 ?>
 <?php $blogname = get_bloginfo('name'); $blogurl = home_url(); $admin_email = get_option('admin_email') ?>
@@ -19,7 +23,11 @@
 
 <h2>免责声明</h2>
 <p>本站的内容均基于<a title="CC BY-NC-SA 2.5 CN" href="http://creativecommons.org/licenses/by-nc-sa/2.5/cn/" data-toggle="tooltip" target="_blank">署名-非商业性使用-相同方式共享 2.5 中国大陆(CC BY-NC-SA 2.5 CN) </a>协议创作或转载，您可以转载分享，但同时保留原文链接</p>
+<<<<<<< HEAD
 <p>本站提供的所有内容仅供学习、分享与交流，我们不保证内容的正确性。通过使用本站内容随之而来的风险与本站无关。当使用本站时，代表你已接受本站的免费声明和隐私原则等条款。</p>
+=======
+<p>本站提供的所有内容仅供学习、分享与交流，我们不保证内容的正确性。通过使用本站内容随之而来的风险与本站无关。当使用本站时，代表你已接受本站的免责声明和隐私原则等条款。</p>
+>>>>>>> dev
 
 <h2>隐私原则</h2>
 <p>本站的留言区可能会透露你的隐私信息，当你留言时，你的电子邮箱、Cookie信息和IP地址都会被记录。这些信息仅为了改进我们的网站质量和可能的交流沟通。我们不会将这些信息进行展示、出租或出售给任何人。但以下情况除外：

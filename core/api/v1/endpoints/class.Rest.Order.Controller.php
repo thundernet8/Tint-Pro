@@ -9,7 +9,11 @@
  * @date 2016/11/27 20:17
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
+<<<<<<< HEAD
  * @link https://www.webapproach.net/tint
+=======
+ * @link https://webapproach.net/tint.html
+>>>>>>> dev
  */
 ?>
 <?php
@@ -50,6 +54,17 @@ class WP_REST_Order_Controller extends WP_REST_Controller
 
         register_rest_route( $this->namespace, '/' . $this->rest_base . '/(?P<id>[\d]+)', array(
             array(
+<<<<<<< HEAD
+=======
+                'methods'         => WP_REST_Server::READABLE,
+                'callback'        => array( $this, 'get_item' ),
+                'permission_callback' => array( $this, 'get_item_permissions_check' ),
+                'args'            => array(
+                    'context'          => $this->get_context_param( array( 'default' => 'view' ) ),
+                ),
+            ),
+            array(
+>>>>>>> dev
                 'methods'         => WP_REST_Server::EDITABLE,
                 'callback'        => array( $this, 'update_item' ),
                 'permission_callback' => array( $this, 'update_item_permissions_check' ),
@@ -180,6 +195,45 @@ class WP_REST_Order_Controller extends WP_REST_Controller
 
 
     /**
+<<<<<<< HEAD
+=======
+     * 判断请求是否有权限读取单个订单
+     *
+     * @param  WP_REST_Request $request Full details about the request.
+     * @return boolean | WP_Error
+     */
+    public function get_item_permissions_check( $request ) {
+        if (!is_user_logged_in()) {
+            return new WP_Error('rest_order_cannot_read', __('Sorry, you cannot view a order without signing in.', 'tt'), array('status' => tt_rest_authorization_required_code()));
+        }
+        return true;
+    }
+
+    /**
+     * 读取指定订单
+     *
+     * @param WP_REST_Request $request Full details about the request.
+     * @return WP_Error | WP_REST_Response
+     */
+    public function get_item( $request ) {
+        $order_id = $request['id'];
+
+        $order = tt_get_order($order_id);
+        if(!$order) {
+            return tt_api_fail(__('Cannot find the order specified', 'tt'));
+        }
+
+        if($order->order_status != OrderStatus::TRADE_SUCCESS) {
+            return tt_api_fail(__('The order has not been payed yet', 'tt'));
+        }
+
+        $manage_url = add_query_arg('cache', 0, tt_url_for('my_order', $order->id));
+        return tt_api_success(__('The order has been payed', 'tt'), array('url' => $manage_url));
+    }
+
+
+    /**
+>>>>>>> dev
      * 判断当前请求是否有权限更新指定订单
      *
      * @param  WP_REST_Request $request Full details about the request.
@@ -199,6 +253,10 @@ class WP_REST_Order_Controller extends WP_REST_Controller
      * @return WP_Error|WP_REST_Response
      */
     public function update_item( $request ) {
+<<<<<<< HEAD
+=======
+        $current_user_id = get_current_user_id();
+>>>>>>> dev
         $order_id = $request['id'];
         //$order = tt_get_order($order_id);
         if($coupon = $request->get_param('coupon')){
@@ -218,6 +276,7 @@ class WP_REST_Order_Controller extends WP_REST_Controller
             //
             $data = array();
             $format = array();
+<<<<<<< HEAD
             if($address_id || $address_id = $request->get_param('addressId') !== null){
                 $data['address_id'] = $address_id;
                 $format[] = '%d';
@@ -225,6 +284,15 @@ class WP_REST_Order_Controller extends WP_REST_Controller
             if($user_message = $request->get_param('userMessage') !== null){
                 $data['user_message'] = $user_message;
                 $format[] = '%s';
+=======
+            if($address_id || $request->get_param('addressId') !== null){
+                $data['address_id'] = $address_id ? : (int)$request->get_param('addressId');
+                $format[0] = '%d';
+            }
+            if($user_message = $request->get_param('userMessage')){
+                $data['user_message'] = $user_message;
+                $format[1] = '%s';
+>>>>>>> dev
             }
 
             $update = tt_update_order($order_id, $data, $format); // 把用户留言和地址更新到订单
@@ -237,6 +305,11 @@ class WP_REST_Order_Controller extends WP_REST_Controller
                 if($pay) {
                     // 更新订单支付状态和支付完成时间
                     tt_update_order($order_id, array('order_success_time' => current_time('mysql'), 'order_status' => 4), array('%s', '%d')); //TODO 确保成功
+<<<<<<< HEAD
+=======
+                    // 钩子 - 用于清理缓存等
+                    // do_action('tt_order_status_change', $order_id); // 已在tt_update_order函数中包括
+>>>>>>> dev
                     return tt_api_success('', array('data' => array(
                         'orderId' => $order_id,
                         'url' => add_query_arg(array('oid' => $order_id, 'spm' => wp_create_nonce('pay_result')), tt_url_for('payresult'))
@@ -247,9 +320,22 @@ class WP_REST_Order_Controller extends WP_REST_Controller
                 $pay_method = $request->get_param('payMethod') == 'alipay' ? 'alipay' : 'qrcode';
                 switch ($pay_method){
                     case 'alipay':
+<<<<<<< HEAD
                         return tt_api_success('', array('data' => array( // 返回payment gateway url
                             'orderId' => $order_id,
                             'url' => add_query_arg(array('oid' => $order_id, 'spm' => wp_create_nonce('pay_gateway'), 'channel' => 'alipay'), tt_url_for('paygateway'))
+=======
+                        // 如果支付金额为0直接返回订单详情页面并更新订单为成功
+                        if($order->order_total_price < 0.01) {
+                            tt_update_order($order_id, array('order_success_time' => current_time('mysql'), 'order_status' => 4), array('%s', '%d'));
+                            $url = tt_url_for('my_order', $order->id);
+                        }else{
+                            $url = add_query_arg(array('oid' => $order_id, 'spm' => wp_create_nonce('pay_gateway'), 'channel' => 'alipay'), tt_url_for('paygateway'));
+                        }
+                        return tt_api_success('', array('data' => array( // 返回payment gateway url
+                            'orderId' => $order_id,
+                            'url' => $url
+>>>>>>> dev
                         )));
                     default: //qrcode
                         return tt_api_success('', array('data' => array( // 直接返回扫码支付url,后面手动修改订单
@@ -261,6 +347,16 @@ class WP_REST_Order_Controller extends WP_REST_Controller
         }elseif($request->get_param('continuePay')){
             return tt_continue_pay($order_id);
         }else{
+<<<<<<< HEAD
+=======
+            $order = tt_get_order($order_id);
+            $order_status = $request->get_param('orderStatus');
+            if(!current_user_can('administrator')) {
+                if($order->user_id != $current_user_id || $order_status != OrderStatus::TRADE_CLOSED) { // 普通用户只允许关闭订单
+                    return new WP_Error('rest_order_cannot_update', __('Sorry, you are not permitted to update order status.', 'tt'), array('status' => tt_rest_authorization_required_code()));
+                }
+            }
+>>>>>>> dev
             // 此条件一般是用户自己或管理员管理订单,需要操作orderStatus信息
             $data = array();
             $format = array();
@@ -272,7 +368,11 @@ class WP_REST_Order_Controller extends WP_REST_Controller
 //                $data['order_success_time'] = $order_success_time;
 //                $format[] = '%s';
 //            }
+<<<<<<< HEAD
             if($order_status = $request->get_param('orderStatus') !== null){
+=======
+            if($order_status !== null){
+>>>>>>> dev
                 $data['order_status'] = $order_status;
                 $format[] = '%d';
             }
@@ -303,7 +403,11 @@ class WP_REST_Order_Controller extends WP_REST_Controller
             $order = tt_get_order($order_id);
             $data['realPrice'] = sprintf('%0.2f', $order->order_total_price);
         }
+<<<<<<< HEAD
         return tt_api_success('', array('data' => $data));
+=======
+        return tt_api_success(__('Update order successfully', 'tt'), array('data' => $data));
+>>>>>>> dev
     }
 
 

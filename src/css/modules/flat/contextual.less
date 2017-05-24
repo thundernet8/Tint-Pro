@@ -1,0 +1,174 @@
+.contextual-bg {
+    position:relative;
+    padding: 15px;
+    margin:10px 0 20px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border-width: 1px;
+    border-style: solid;
+    border-radius:3px;
+    font-size: 1.4rem;
+    line-height: 1.5;
+    color: #666666;
+    &.unborder {
+        border-width: 0 !important;
+    }
+    &.showicon {
+        padding: 16px 16px 16px 65px;
+        &:before {
+            display: block;
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            top: 50%;
+            left: 20px;
+            margin-top: -12px;
+            content: '';
+        }
+    }
+    &>h4 {
+        display: block;
+        font-size: 1.6rem;
+        font-weight: 500;
+        color: #464c5b;
+        margin-bottom: 12px;
+        text-align: center;
+    }
+    &>p {
+        font-size: 1.4rem;
+        color: #657180;
+        line-height: 21px;
+        text-align: justify;
+        word-break: break-all;
+    }
+    &>.infobg-close {
+        // TODO add close function and remove this
+        display: none;
+    }
+}
+
+//.bg-primary {
+//    background-color: #f8f8fa;
+//    border-color: #eaebed;
+//}
+
+.bg-success {
+    border: 1px solid #ccf5e0;
+    background-color: #e6faf0;
+    &:before {
+        background: url('../img/icon/ctx-success.png') no-repeat;
+    }
+}
+
+.bg-primary,
+.bg-tips,
+.bg-info {
+    border: 1px solid #d6ebff;
+    background-color: #ebf5ff;
+    &:before {
+        background: url('../img/icon/ctx-info.png') no-repeat;
+    }
+}
+
+//.bg-notice {
+//    background-color: #fff4b9;
+//    border-color: #ecd162;
+//}
+
+.bg-notice,
+.bg-warning {
+    border: 1px solid #ffebcc;
+    background-color: #fff5e6;
+    &:before {
+        background: url('../img/icon/ctx-warning.png') no-repeat;
+    }
+}
+
+.bg-danger,
+.bg-error{
+    border: 1px solid #fdc;
+    background-color: #ffeee6;
+    &:before {
+        background: url('../img/icon/ctx-error.png') no-repeat;
+    }
+}
+
+.bg-lightbulb {
+    border: 1px solid #d6ebff;
+    background-color: #ebf5ff;
+    &:before {
+        background: url('../img/icon/ctx-light.png') no-repeat;
+    }
+}
+
+.contextual-callout {
+    position:relative;
+    padding: 15px;
+    margin:10px 0 20px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 1px solid #eee;
+    border-left-width: 4px;
+    border-style: solid;
+    border-radius:3px;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    color: #666666;
+    &>h4 {
+        display: block;
+        font-size: 1.6rem;
+        font-weight: 500;
+        color: #464c5b;
+        margin-bottom: 16px;
+        text-align: center;
+    }
+    &>p {
+        font-size: 1.3rem;
+        color: #657180;
+        line-height: 21px;
+        text-align: justify;
+        word-break: break-all;
+    }
+}
+
+
+.callout-info {
+    border-left-color: #ebf5ff;
+}
+
+.callout-success {
+    border-left-color: #e6faf0;
+}
+
+.callout-warning {
+    border-left-color: #fff5e6;
+}
+
+.callout-danger,
+.callout-error {
+    border-left-color: #ffeee6;
+}
+
+
+.contextual-panel {
+
+}
+
+.panel-info {
+
+}
+
+.panel-success {
+
+}
+
+.panel-warning {
+
+}
+
+.panel-danger,
+.panel-error {
+
+}

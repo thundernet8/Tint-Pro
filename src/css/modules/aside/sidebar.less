@@ -1,0 +1,106 @@
+body {
+    &>#content {
+        .main-wrap {
+            position: relative;
+            //padding-right: 330px !important;
+
+            &>.primary {
+                //width: 100%;
+                //float: left;
+            }
+
+            &>#sidebar {
+                position: relative;
+                //width: 320px;
+                //margin-right: -330px;
+                //float: right;
+            }
+        }
+    }
+}
+
+#sidebar {
+    &>.widget {
+        padding: 15px 20px;
+        margin-bottom: 20px;
+        border-radius: 3px;
+        background: #ffffff;
+        box-shadow: 0 1px 2px rgba(0,0,0,.09);
+
+        &>.widget-title {
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 2rem;
+        }
+        &>.widget-content {
+            position: relative;
+        }
+    }
+    &>.widget_float-sidebar {
+        &>.widget {
+            &>.widget-title {
+                margin-top: 0;
+                margin-bottom: 15px;
+                font-size: 2rem;
+            }
+            &>.widget-content {
+                position: relative;
+            }
+        }
+    }
+    &>.float-widget-mirror {
+        position: relative;
+        //display: none; // Note: 使用display:none脱离文档流导致无法计算距离顶部高度
+        visibility: hidden;
+    }
+}
+
+body {
+    &.home {
+        #sidebar {
+            &>.widget {
+                border-radius: 0;
+                //background: #ffffff;
+                box-shadow: none;
+            }
+            &>.float-widget-mirror {
+                visibility: hidden !important;
+            }
+        }
+    }
+}
+
+@import "../loop/thumb";
+@import "widgets/tag-cloud";
+@import "widgets/author-widget";
+@import "widgets/hot-posts";
+@import "widgets/recent-comments";
+@import "widgets/uc";
+@import "widgets/donate";
+
+
+// 响应式
+
+@media (max-width: 480px) {
+    #sidebar {
+        &>.widget {
+            padding: 10px 15px;
+            margin-bottom: 10px;
+        }
+        &>.float-widget-mirror {
+            display: none;
+        }
+        margin-bottom: -10px;
+    }
+    body {
+        &>#content {
+            .main-wrap {
+                &>#sidebar {
+                    margin-top: 20px;
+                    padding-left: 0;
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+}

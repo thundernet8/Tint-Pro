@@ -1,0 +1,67 @@
+@import "modules/vars";
+@import "modules/normalize";
+@import "modules/base";
+
+// start
+
+body {
+  height: 100%;
+
+  &.error-page {
+    header {
+      max-width: 990px;
+      height: 60px;
+      margin: 0 auto;
+      line-height: 60px;
+    }
+
+    .wrapper {
+      width: 100%;
+      height: calc(e('100% - 110px'));
+      text-align: center;
+
+      .main {
+        padding-top: 75px;
+
+        h1 {
+          font-size: 4.6rem;
+          margin-bottom: 20px;
+        }
+
+        p {
+          &.die-msg {
+            font-size: 2.5rem;
+          }
+        }
+
+        #linkBackHome {
+          position: relative;
+          margin-top: 50px;
+          display: inline-block;
+          font-size: 2.4rem;
+          color: @blue;
+        }
+      }
+    }
+
+    footer {
+      height: 40px;
+      line-height: 40px;
+      font-size: 1.4rem;
+      text-align: center;
+
+      p {
+        position: relative;
+
+        span{
+
+          &.copy {
+            position: relative;
+            top: 4px;
+            font-size: 2rem;
+          }
+        }
+      }
+    }
+  }
+}

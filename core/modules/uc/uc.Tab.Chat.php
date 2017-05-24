@@ -9,7 +9,11 @@
  * @date 2016/11/06 17:55
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
+<<<<<<< HEAD
  * @link https://www.webapproach.net/tint.html
+=======
+ * @link https://webapproach.net/tint.html
+>>>>>>> dev
  */
 ?>
 <?php global $tt_author_vars; $tt_paged = $tt_author_vars['tt_paged']; $tt_author_id = $tt_author_vars['tt_author_id']; $logged_user_id = get_current_user_id(); ?>
@@ -67,6 +71,7 @@
                 </div>
 
                 <?php if($pagination_args['max_num_pages'] > 1) { ?>
+<<<<<<< HEAD
                     <nav aria-label="Page navigation">
                         <ul class="pagination">
                             <?php $pagination = paginate_links(array(
@@ -89,6 +94,9 @@
                             <span class="max-page"><?php printf(__('Total %d Pages', 'tt'), $pagination_args['max_num_pages']); ?></span>
                         </div>
                     </nav>
+=======
+                    <?php tt_pagination($pagination_args['base'], $pagination_args['current_page'], $pagination_args['max_num_pages']); ?>
+>>>>>>> dev
                 <?php } ?>
             <?php } ?>
         <?php } ?>

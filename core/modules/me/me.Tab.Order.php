@@ -9,7 +9,11 @@
  * @date 2016/12/15 00:14
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
+<<<<<<< HEAD
  * @link https://www.webapproach.net/tint
+=======
+ * @link https://webapproach.net/tint.html
+>>>>>>> dev
  */
 ?>
 <?php global $tt_me_vars; $tt_user_id = $tt_me_vars['tt_user_id']; $tt_order_seq = get_query_var('me_grandchild_route'); ?>
@@ -21,6 +25,10 @@
     <?php $data = $vm->modelData; $order = $data->order; $order_status_text = $data->order_status_text; $pay_method = $data->pay_method; $pay_amount = $data->pay_amount; $pay_content = $data->pay_content; $is_combined = $data->is_combined; $sub_orders = $data->sub_orders; ?>
     <div class="me-tab-box order-tab">
         <div class="tab-content me-order">
+<<<<<<< HEAD
+=======
+            <?php if($order) { ?>
+>>>>>>> dev
             <!-- 订单信息 -->
             <section class="my-order clearfix">
                 <header><h2><?php _e('Order Detail', 'tt'); ?></h2></header>
@@ -31,7 +39,13 @@
                     </div>
                     <div class="row clearfix">
                         <label class="col-md-3 control-label"><?php _e('Order Content', 'tt'); ?></label>
+<<<<<<< HEAD
                         <div class="col-md-9"><p class="form-control-static"><?php echo $order->product_name; ?></p></div>
+=======
+                        <div class="col-md-9">
+                            <p class="form-control-static"><?php if($order->product_id > 0) { ?><a href="<?php echo get_permalink($order->product_id); ?>" target="_blank"><?php echo $order->product_name; ?></a><?php }else{ echo $order->product_name; } ?></p>
+                        </div>
+>>>>>>> dev
                     </div>
                     <div class="row clearfix">
                         <label class="col-md-3 control-label"><?php _e('Order Create Time', 'tt'); ?></label>
@@ -72,11 +86,16 @@
                     <div class="tip"><?php _e('This is a combined order, please visit sub orders below for more specified payed content', 'tt'); ?></div>
                     <ul class="sub-orders">
                         <?php foreach ($sub_orders as $sub_order) { ?>
+<<<<<<< HEAD
                         <li class="sub-order"><a class="btn btn-info" href="<?php echo tt_url_for('my_order', $sub_order->id); ?>"><?php printf(__('Order %s', 'tt'), $sub_order->order_id); ?></a></li>
+=======
+                        <li class="sub-order mt10"><a class="btn btn-info" href="<?php echo tt_url_for('my_order', $sub_order->id); ?>"><?php printf(__('Order %s', 'tt'), $sub_order->order_id); ?></a></li>
+>>>>>>> dev
                         <?php } ?>
                     </ul>
                     <?php }else{ ?>
                     <div class="row clearfix">
+<<<<<<< HEAD
                         <label class="col-md-3 control-label"><?php _e('Download Content', 'tt'); ?></label>
                         <div class="col-md-9">
                             <div class="form-control-static">
@@ -93,10 +112,43 @@
                         <div class="col-md-9">
                             <div class="form-control-static"><p><?php echo isset($pay_content['pay_content']) ? $pay_content['pay_content'] : ''; ?></p></div>
                         </div>
+=======
+                        <?php if(isset($pay_content['download_content'])){ $downloads = $pay_content['download_content']; ?>
+                        <label class="col-md-3 control-label"><?php _e('Download Content', 'tt'); ?></label>
+                        <div class="col-md-9">
+                            <div class="form-control-static">
+                                <?php foreach ($downloads as $download) { ?>
+                                <p><?php printf(__('Download Name: %s', 'tt'), $download['name']); ?></p>
+                                <p><?php printf(__('Download Link: <a href="%1$s">%1$s</a>', 'tt'), $download['link']); ?></p>
+                                <p><?php printf(__('Download Password: %s', 'tt'), $download['password']); ?></p>
+                                <?php } ?>
+                            </div>
+                        </div>
+                        <?php } ?>
+                    </div>
+                    <div class="row clearfix">
+                        <?php if(isset($pay_content['pay_content'])) { ?>
+                        <label class="col-md-3 control-label"><?php _e('Payed Content', 'tt'); ?></label>
+                        <div class="col-md-9">
+                            <div class="form-control-static"><p><?php echo $pay_content['pay_content']; ?></p></div>
+                        </div>
+                        <?php } ?>
+>>>>>>> dev
                     </div>
                     <?php } ?>
                 </div>
             </section>
+<<<<<<< HEAD
+=======
+            <?php }else{ ?>
+            <section class="my-order clearfix">
+                <header><h2><?php _e('Order Detail', 'tt'); ?></h2></header>
+                <div class="empty-content">
+                    <span class="tico tico-cart"></span>
+                    <p><?php _e('No this order', 'tt'); ?></p>
+                </div>
+            <?php } ?>
+>>>>>>> dev
         </div>
     </div>
 </div>

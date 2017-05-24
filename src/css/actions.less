@@ -1,0 +1,429 @@
+/* 引入变量 */
+@import "modules/vars";
+
+/* 初始化所有浏览器样式 */
+@import "modules/normalize";
+
+/* 引入基本样式 */
+@import "modules/base";
+
+/* 引入图标字体 */
+@import "modules/tico";
+
+/* 引入Flat元素 */
+@import "modules/flat";
+
+/* 引入动画 */
+@import "modules/animation/animation";
+
+/* Msgbox */
+@import "modules/sweetAlert/sweet-alert";
+@import "modules/sweetAlert/msgbox";
+
+/* Header */
+@import "modules/loading/loading";
+@import "modules/nav/header";
+
+/* Footer */
+@import "modules/nav/footer-simple";
+
+// Begin
+.action-page {
+  &.signin {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0 0 61px;
+    background: url("../img/login-bg2.jpg") top fixed / cover no-repeat;
+    color: #ffffff;
+
+    a {
+      color: #ffffff;
+      &:before {
+        background-color: rgba(255,255,255,.8);
+      }
+
+      &:hover {
+
+      }
+    }
+
+    &>header {
+      display: none;
+    }
+
+    &>#bg-layer {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,.2);
+      //-webkit-filter: blur(5px);
+      //filter: blur(5px);
+      background: url(../img/login-bg2.jpg) top/cover no-repeat fixed;
+    }
+
+    &>.wrapper {
+      position: relative;
+      height: 100%;
+      overflow: hidden;
+
+      &>.main {
+        position: relative;
+        top: 40%;
+        left: 50%;
+        width: 320px;
+        height: 360px;
+        margin-top: -180px;
+        margin-left: -160px;
+        text-align: center;
+
+        &>.logo {
+          max-width: 120px;
+          height: auto;
+          margin: 30px auto 50px;
+        }
+
+        &>.form-signin {
+
+          &>.local-signin {
+
+            &>.input-container {
+              position: relative;
+              margin: 20px 0 30px;
+
+              &>input {
+                display: block;
+                float: left;
+                width: 100%;
+                padding-bottom: 6px;
+                padding-left: 11px;
+                -webkit-order: 2;
+                -ms-flex-order: 2;
+                order: 2;
+                margin-top: 0;
+                background: 0 0;
+                border-radius: 0;
+                border: none;
+                border-bottom:1px solid rgba(255,255,255,.5);
+                outline: none;
+                transition: border-bottom .3s,border-color .3s,border-width .3s,border .3s ease-in-out;
+                font-size: 1.6rem;
+                line-height: 28px;
+                color: rgba(255,255,255,.8);
+                background: transparent;
+              }
+
+              &>.indicator {
+                position: absolute;
+                width: 16px;
+                height: 16px;
+                top: 10px;
+                right: 5px;
+                font-size: 16px;
+                line-height: 16px;
+                opacity: 0;
+              }
+
+              &.error {
+
+              }
+
+              &>.error-tip {
+                position: absolute;
+                width: 100%;
+                left: -100%;
+                bottom: 10px;
+                padding-right: 20px;
+                text-align: right;
+                font-size: 1.2rem;
+              }
+            }
+          }
+
+          &>.open-login {
+            &>p {
+              line-height: 25px;
+            }
+
+            &>a {
+              padding: 12px 10px 8px;
+            }
+          }
+
+          &>.login-help {
+            position: relative;
+
+            &>a {
+              color: rgba(255,255,255,.8);
+            }
+
+            &>span {
+              display: inline-block;
+              position: relative;
+              top: -4px;
+              width: 4px;
+              height: 4px;
+              border-radius: 4px;
+              background: rgba(255,255,255,.6);
+            }
+          }
+
+          &.submitting {
+            .indicator {
+              opacity: 1 !important;
+            }
+          }
+        }
+      }
+    }
+
+    &>footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 20px 30px;
+
+      &>.foot-menu {
+        &>a {
+          text-decoration: none;
+          //font-size: 12px;
+        }
+        &>.sep {
+          display: inline-block;
+          height: 12px;
+          vertical-align: middle;
+          margin: 0 10px 2px;
+          border-right: 1px solid;
+        }
+      }
+
+      &>.foot-copyright {
+
+      }
+    }
+  }
+
+  &.signup,
+  &.findpass,
+  &.activate,
+  &.resetpass{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 72px 0 61px;
+
+    a {
+      color: @link-color;
+      &:before {
+        background-color: @link-color;
+      }
+
+      &:hover {
+
+      }
+    }
+
+    &>header {
+      position: absolute;
+      top: 0;
+    }
+
+    &>.wrapper {
+      position: relative;
+      height: 100%;
+      overflow: hidden;
+
+      &>.main {
+        position: relative;
+        top: 40%;
+        left: 50%;
+        width: 320px;
+        height: auto;
+        margin-top: -180px;
+        margin-left: -160px;
+        text-align: center;
+      }
+    }
+  }
+
+  &.signup {
+    background: url("../img/login-bg2.jpg") top fixed / cover no-repeat;
+    color: #ffffff;
+
+    a {
+      color: #ffffff;
+      &:before {
+        background-color: rgba(255,255,255,.8);
+      }
+
+      &:hover {
+
+      }
+    }
+    &>header {
+      background: transparent;
+    }
+    &>.wrapper {
+      &>.main {
+        top: 50%;
+        margin-top: -300px;
+
+        &>.form-signup {
+
+          &>.local-signup {
+
+            &>.input-container {
+              position: relative;
+              margin: 10px 0;
+
+              &>input {
+                display: block;
+                width: 100%;
+                outline: none;
+                font-size: 1.6rem;
+                line-height: 28px;
+              }
+
+              &>.pull-left {
+                position: relative;
+                width: 200px;
+
+                &.captcha-wrap {
+                  width: 100px;
+                  margin-left: 15px;
+
+                  &>img {
+                    width: 100%;
+                    height: 42px;
+                    border-radius: 6px;
+                  }
+                }
+
+                &>#captcha-input {
+
+                }
+
+                &>.status-icon {
+                  position: absolute;
+                  right: 10px;
+                  top: 12px;
+                  width: 18px;
+                  height: 18px;
+                  background-repeat: no-repeat;
+                  background-size: cover;
+                  background-position: center top;
+                }
+
+                &>.captcha {
+                  &:hover {
+                    cursor: pointer;
+                  }
+                }
+              }
+            }
+
+            &>#signup-btn {
+              position: relative;
+              width: 100%;
+              height: 42px;
+              letter-spacing: 5px;
+
+              &>.indicator {
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                top: 13px;
+                left: 50%;
+                margin-left: -10px;
+                font-size: 2rem;
+              }
+            }
+          }
+
+          &>.open-login {
+            &>p {
+              line-height: 25px;
+            }
+
+            &>a {
+              padding: 10px;
+              font-size: 25px;
+            }
+
+            &>.btn-sn-qq {
+              color: @social-qq;
+            }
+
+            &>.btn-sn-weibo {
+              color: @social-weibo;
+            }
+
+            &>.btn-sn-weixin {
+              color: @social-weixin;
+            }
+          }
+
+          &>.note {
+            &>p {
+              &.terms-note {
+                font-size: 1rem;
+              }
+            }
+          }
+
+        }
+      }
+    }
+    footer.simple-footer>.foot-menu>.sep {
+      border-right-color: #ffffff;
+    }
+  }
+
+  &.findpass {
+    #find-pass {
+      position: relative;
+      width: 72px;
+      height: 42px;
+      i {
+        width: 16px;
+        height: 16px;
+        top: 50%;
+        left: 50%;
+        margin-top: -8px;
+        margin-left: -8px;
+        font-size: 1.6rem;
+      }
+    }
+  }
+
+    &.resetpass {
+        .main {
+            max-width: 320px;
+            margin: 0 auto;
+
+            .form-resetpass {
+                label {
+                    display: none;
+                }
+                input {
+                    margin: 10px 0;
+                }
+                #reset-pass {
+                    position: relative;
+                    width: 100%;
+                    height: 45px;
+                    margin: 20px auto;
+                    i {
+                        width: 16px;
+                        height: 16px;
+                        top: 50%;
+                        left: 50%;
+                        margin-top: -8px;
+                        margin-left: -8px;
+                        font-size: 1.6rem;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -9,7 +9,11 @@
  * @date 2016/11/08 20:18
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
+<<<<<<< HEAD
  * @link https://www.webapproach.net/tint.html
+=======
+ * @link https://webapproach.net/tint.html
+>>>>>>> dev
  */
 ?>
 <?php
@@ -49,7 +53,11 @@ class UCCommentsVM extends BaseVM {
      */
     public static function getInstance($page = 1, $author_id = 0, $all_status = false) {
         $instance = new static(); // 因为不同作者不同分页的评论共用该模型，不采用单例模式
+<<<<<<< HEAD
         $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . static::class . '_author' . $author_id . '_page' . $page . '_status' . intval(!$all_status);
+=======
+        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . __CLASS__ . '_author' . $author_id . '_page' . $page . '_status' . intval(!$all_status);
+>>>>>>> dev
         $instance->_authorId = absint($author_id);
         $instance->_page = absint($page);
         $instance->_allStatus = $all_status;
@@ -71,9 +79,15 @@ class UCCommentsVM extends BaseVM {
             'offset' => ($this->_page - 1) * $per_page
         ));
 
+<<<<<<< HEAD
         $uc_comments = [];
         foreach ($the_comments as $the_comment) {
             $uc_comment = [];
+=======
+        $uc_comments = array();
+        foreach ($the_comments as $the_comment) {
+            $uc_comment = array();
+>>>>>>> dev
             if(!$the_comment->user_id) continue;
             $uc_comment['comment_ID'] = $the_comment->comment_ID;
             $uc_comment['author_name'] = $the_comment->comment_author;

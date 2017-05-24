@@ -1,0 +1,556 @@
+/* 引入变量 */
+@import "modules/vars";
+
+/* 初始化所有浏览器样式 */
+@import "modules/normalize";
+
+/* 引入基本样式 */
+@import "modules/base";
+
+/* 引入图标字体 */
+@import "modules/tico";
+
+/* 引入Flat元素 */
+@import "modules/flat";
+
+/* 引入动画 */
+@import "modules/animation/animation";
+
+/* Msgbox */
+@import "modules/sweetAlert/sweet-alert";
+
+/* Header */
+@import "modules/loading/loading";
+@import "modules/nav/header";
+
+/* Footer */
+@import "modules/nav/footer";
+
+/* Modal Search */
+@import "modules/search/modal-search";
+
+/* Post loop */
+@import "modules/loop/loop-rows";
+
+body.manage {
+    background-color: #f5f6f8;
+    &>.wrapper {
+        &>.main-area {
+            &>.row {
+                position: relative;
+                margin: 20px auto;
+                clear: both;
+                border-radius: 5px;
+                background: #ffffff;
+                overflow: hidden;
+                &>.col-left{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    width: 180px;
+                }
+                &>.col-right {
+                    position: relative;
+                    min-height: 500px;
+                    margin-left: 200px;
+                    border-left: 1px solid #f5f5f5;
+                }
+            }
+            .nav {
+                padding: 20px 0 20px 75px;
+                border-radius: 3px;
+                &>.context-title {
+                    position: relative;
+                    height: 40px;
+                    font-size: 1.3rem;
+                    line-height: 40px;
+                    font-weight: 400;
+                    margin-bottom: 10px;
+                    i {
+                        position: absolute;
+                        top: 8px;
+                        left: -32px;
+                        width: 24px;
+                        height: 24px;
+                        font-size: 2.4rem;
+                    }
+                    h2 {
+                        white-space: nowrap;
+                    }
+                }
+                &>.mg_tabs {
+                    &>li {
+                        margin-bottom: 10px;
+                        &>a {
+                            font-size: 1.6rem;
+                            line-height: 1.6;
+                            padding: 5px 0;
+                            color: #999999;
+                            &.active {
+                                color: @link-color;
+                            }
+                            &:hover {
+                                color: @brand-primary;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .mg-tab-box {
+                position: relative;
+                padding: 20px;
+                background: #fff;
+                //border-radius: 3px;
+            }
+        }
+    }
+}
+
+body {
+    .mg-tab-box {
+        &>.tab-content {
+            &>section {
+                padding: 10px 0;
+                margin-bottom: 10px;
+                &>header {
+                    h2 {
+                        padding-bottom: 10px;
+                        margin: 10px auto 20px;
+                        border-bottom: 1px solid #f5f5f5;
+                        font-size: 2rem;
+                    }
+                    small {
+                        margin-left: 6px;
+                        color: @text-muted-color;
+                        font-size: 1.2rem;
+                    }
+                }
+                &>.info-group {
+                    padding: 5px 15px;
+                    margin: 10px 0;
+                    &>label {
+                        max-width: 130px;
+                        line-height: 40px;
+                        font-weight: 600;
+                        white-space: nowrap;
+                    }
+                    &>p {
+                        margin: 0;
+                        line-height: 40px;
+                        &>.help-block {
+                            display: block;
+                            padding: 0 5px;
+                            margin-top: 5px;
+                            margin-bottom: 10px;
+                            font-size: 1.4rem;
+                            word-break: break-all;
+                        }
+                        &>.form-control {
+                            height: auto;
+                            font-size: 1.4rem;
+                        }
+                    }
+                }
+                &>.empty-content {
+                    padding: 30px 0;
+                    text-align: center;
+                    font-size: 2rem;
+                    &>.tico {
+                        font-size: 6rem;
+                        color: #ddd;
+                    }
+                    &>p {
+                        margin: 40px auto 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Posts/Products */
+body {
+    .posts-tab {
+        &>.tab-content {
+            &>.mg-posts {
+                &>.empty-content {
+                    padding: 30px 0;
+                    text-align: center;
+                    font-size: 2rem;
+                    &>.tico {
+                        font-size: 6rem;
+                        color: #ddd;
+                    }
+                    &>p {
+                        margin: 40px auto 20px;
+                    }
+                }
+                &>.loop-wrap {
+                    padding-right: 100px;
+                    &>article {
+                        border-bottom: 1px solid #f5f5f5;
+                        &:hover {
+                            .actions {
+                                opacity: 1;
+                            }
+                        }
+                        &>.entry-thumb {
+                            width: 175px;
+                            &>a {
+                                img {
+                                    width: 175px;
+                                    height: 120px;
+                                }
+                            }
+                        }
+                        &>.entry-detail {
+                            min-height: 120px;
+                            &>header {
+                                &>.entry-title {
+
+                                }
+                                &>.entry-meta {
+                                    .tico {
+                                        margin-right: 5px;
+                                        vertical-align: -2px;
+                                    }
+                                }
+                            }
+                            &>.entry-excerpt {
+                                margin-top: 8px;
+                            }
+                        }
+                        &>.actions {
+                            position: absolute;
+                            width: 80px;
+                            top: 6px;
+                            right: -100px;
+                            opacity: 0;
+                            &>a {
+                                width: 100%;
+                                height: 36px;
+                                line-height: 16px;
+                                font-size: 1.5rem;
+                                border-radius: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* Coupons */
+body {
+    .coupons-tab {
+        &>.tab-content {
+            &>.mg-coupon {
+                .coupon-radios {
+                    &>label {
+                        margin: 0 10px;
+                        input {
+                            vertical-align: -2px;
+                            margin-right: 5px;
+                        }
+                    }
+                }
+                #add-coupon {
+                    position: relative;
+                    width: 100px;
+                    height: 42px;
+                    i {
+                        width: 16px;
+                        height: 16px;
+                        top: 50%;
+                        left: 50%;
+                        margin-top: -8px;
+                        margin-left: -8px;
+                        font-size: 1.6rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Members */
+body {
+    .members-tab {
+        &>.tab-content {
+            &>.mg-member {
+                .member-radios {
+                    &>label {
+                        margin: 0 10px;
+                        input {
+                            vertical-align: -2px;
+                            margin-right: 5px;
+                        }
+                    }
+                }
+                #add-member {
+                    position: relative;
+                    width: 100px;
+                    height: 42px;
+                    i {
+                        width: 16px;
+                        height: 16px;
+                        top: 50%;
+                        left: 50%;
+                        margin-top: -8px;
+                        margin-left: -8px;
+                        font-size: 1.6rem;
+                    }
+                }
+            }
+            &>.mg-members {
+                .view-detail {
+                    color: @brand-secondary;
+                }
+                .delete-member {
+                    color: @brand-danger;
+                }
+            }
+        }
+    }
+}
+
+
+/* Users */
+body {
+    .users-tab {
+        &>.tab-content {
+            &>.mg-users {
+                &>.info-group {
+                    margin-left: -15px;
+                    margin-right: -15px;
+                    padding: 0;
+                    &>.users-info {
+                        font-size: 1.5rem;
+                        line-height: 36px;
+                    }
+                    &>.users-filter {
+                        text-align: right;
+                        &>label {
+                            margin-right: 10px;
+                            line-height: 36px;
+                        }
+                        &>select {
+                            max-width: 120px;
+                            height: 36px;
+                            padding: 5px 10px;
+                            font-size: 1.4rem;
+                        }
+                    }
+                }
+                &>table {
+                    margin-top: 30px;
+                    .th-time,
+                    .th-sumprice,
+                    .th-status {
+                        min-width: 80px;
+                    }
+                    .th-actions {
+                        min-width: 120px;
+                    }
+                    td>.tico {
+                        vertical-align: -2px;
+                        margin-right: 5px;
+                    }
+                    .text-explode {
+                        vertical-align: 1px;
+                    }
+                    .view-detail {
+                        color: @brand-secondary;
+                    }
+                    .view-home {
+                        color: @brand-success;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* User */
+body {
+    .user-tab {
+        &>.tab-content {
+            &>section {
+                &>.info-group {
+                    &>.row {
+                        p {
+                            line-height: 32px;
+                        }
+                    }
+                }
+            }
+            .add-credits-form {
+                margin-top: 30px;
+                #add-credits {
+                    position: relative;
+                    padding: 6px 15px;
+                    font-size: 1.4rem;
+                    line-height: 30px;
+                    height: 42px;
+                    min-width: 100px;
+                    i {
+                        width: 16px;
+                        height: 16px;
+                        top: 50%;
+                        left: 50%;
+                        margin-top: -8px;
+                        margin-left: -8px;
+                        font-size: 1.6rem;
+                    }
+                }
+            }
+            .promote-vip-form {
+                margin-top: 30px;
+                &>label {
+                    margin-right: 5px;
+                    &>input {
+                        margin-right: 5px;
+                        vertical-align: -1px;
+                    }
+                }
+                #promotevip-submit {
+                    position: relative;
+                    height: 42px;
+                    min-width: 100px;
+                    margin: 0 0 0 20px;
+                    i {
+                        width: 16px;
+                        height: 16px;
+                        top: 50%;
+                        left: 50%;
+                        margin-top: -8px;
+                        margin-left: -8px;
+                        font-size: 1.6rem;
+                    }
+                }
+                &>.help-block {
+                    margin-top: 10px;
+                }
+            }
+            &>.mg-orders {
+                ul {
+                    li {
+                        margin-bottom: 10px;
+                        .order-time {
+                            margin-right: 10px;
+                        }
+                        .order-title {
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Orders */
+body {
+    .orders-tab {
+        &>.tab-content {
+            &>.mg-orders {
+                &>.info-group {
+                    margin-left: -15px;
+                    margin-right: -15px;
+                    padding: 0;
+                    &>.orders-info {
+                        font-size: 1.5rem;
+                        line-height: 36px;
+                    }
+                    &>.orders-filter {
+                        text-align: right;
+                        &>label {
+                            margin-right: 10px;
+                            line-height: 36px;
+                        }
+                        &>select {
+                            max-width: 120px;
+                            height: 36px;
+                            padding: 5px 10px;
+                            font-size: 1.4rem;
+                        }
+                    }
+                }
+                &>table {
+                    margin-top: 30px;
+                    .th-time,
+                    .th-sumprice,
+                    .th-status {
+                        min-width: 80px;
+                    }
+                    .th-actions {
+                        min-width: 120px;
+                    }
+                    td>.tico {
+                        vertical-align: -2px;
+                        margin-right: 5px;
+                    }
+                    .text-explode {
+                        vertical-align: 1px;
+                    }
+                    .view-detail {
+                        color: @brand-secondary;
+                    }
+                    .delete-order {
+                        color: @brand-danger;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* Order */
+body {
+    .order-tab {
+        &>.tab-content {
+            &>.mg-order {
+                &>.info-group {
+                    &>.row {
+                        p {
+                            line-height: 32px;
+                        }
+                    }
+                }
+            }
+            &>.mg-status {
+                .order-status-act {
+                    position: relative;
+                    height: 42px;
+                    margin: 0 0 0 20px;
+                    i {
+                        width: 16px;
+                        height: 16px;
+                        top: 50%;
+                        left: 50%;
+                        margin-top: -8px;
+                        margin-left: -8px;
+                        font-size: 1.6rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* Comments */
+body {
+    .comments-tab {
+        &>.tab-content {
+            &>.mg-comments {
+
+            }
+        }
+    }
+}

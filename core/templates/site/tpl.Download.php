@@ -9,7 +9,11 @@
  * @date 2016/12/11 11:23
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
+<<<<<<< HEAD
  * @link https://www.webapproach.net/tint
+=======
+ * @link https://webapproach.net/tint.html
+>>>>>>> dev
  */
 ?>
 <?php
@@ -28,13 +32,21 @@ global $origin_post;
 $origin_post = get_post($post_id);
 
 if(!$origin_post){
+<<<<<<< HEAD
     var_dump(tt_encrypt(977, tt_get_option('tt_private_token')));
     //wp_die(__('The resource id is invalid or resource is not exist', 'tt'), __('Invalid Resource ID', 'tt'), 404);
+=======
+    wp_die(__('The resource id is invalid or resource is not exist', 'tt'), __('Invalid Resource ID', 'tt'), 404);
+>>>>>>> dev
 }
 
 ?>
 <?php tt_get_header(); ?>
 <div id="content" class="wrapper container download-wrapper">
+<<<<<<< HEAD
+=======
+    <?php load_mod(('banners/bn.Top')); ?>
+>>>>>>> dev
     <section id="mod-insideContent" class="main-wrap content-section clearfix">
         <!-- 下载页面 -->
         <?php load_mod('mod.Download'); ?>

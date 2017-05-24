@@ -9,7 +9,11 @@
  * @date 2016/09/04 15:18
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
+<<<<<<< HEAD
  * @link https://www.webapproach.net/tint.html
+=======
+ * @link https://webapproach.net/tint.html
+>>>>>>> dev
  */
 ?>
 <?php
@@ -29,16 +33,27 @@ tt_get_header('simple');
     <?php load_template(THEME_MOD . '/mod.LogoHeader.php'); ?>
     <div id="content" class="wrapper container no-aside">
         <div class="main inner-wrap">
+<<<<<<< HEAD
             <form class="form-findpass">
+=======
+            <div class="form-findpass">
+>>>>>>> dev
                 <h2 class="mb30"><?php _e('Find Password', 'tt'); ?></h2>
                 <p class="form-findpass-heading"><?php _e('Please input your account associated email', 'tt'); ?></p>
                 <div class="input-group">
                     <input type="email" id="inputEmail" class="form-control" placeholder="<?php _e('Email', 'tt'); ?>" required="required">
                     <span class="input-group-btn">
+<<<<<<< HEAD
                         <button class="btn btn-lg btn-primary btn-block" type="submit"><?php _e('Submit', 'tt'); ?></button>
                     </span>
                 </div>
             </form>
+=======
+                        <button class="btn btn-lg btn-primary btn-block" id="find-pass" type="submit"><?php _e('Submit', 'tt'); ?></button>
+                    </span>
+                </div>
+            </div>
+>>>>>>> dev
         </div>
     </div>
 

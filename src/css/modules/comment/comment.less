@@ -1,0 +1,271 @@
+#respond {
+    &>h3 {
+
+    }
+    .err {
+        display: none;
+        font-size: 1.4rem;
+        padding: 10px 0;
+        line-height: 100%;
+
+        &.h3 {
+            font-size: 2.4rem;
+        }
+    }
+
+    .submit-box {
+        position: relative;
+        &>.text{
+            padding-right: 108px;
+            height: 100px;
+            &>textarea {
+                width: 100%;
+                height: 100%;
+                color: #adadad;
+                font-size: 1.4rem;
+                border: 1px solid #e8e8e8;
+                padding: 15px;
+                background: #f9f9f9;
+            }
+        }
+        &>#submit {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 108px;
+            height: 100px;
+            border-radius: 0;
+            font-size: 1.6rem;
+            color: #ffffff;
+            i {
+                width: 16px;
+                height: 16px;
+                top: 50%;
+                left: 50%;
+                margin-top: -8px;
+                margin-left: -8px;
+                font-size: 1.6rem;
+            }
+        }
+        &>.comment-kits {
+            padding-top: 10px;
+        }
+        .emotion-ico {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 0;
+            cursor: pointer;
+            i {
+                font-size: 2rem;
+            }
+            &:hover {
+                color: @brand-hot;
+            }
+        }
+        .qqFace {
+            background: #ffffff;
+            padding: 2px;
+            border: 1px solid #dfe6f6;
+            &>table {
+                td {
+                    padding: 0;
+                    img {
+                        cursor: pointer;
+                        border: 1px solid #ffffff;
+                    }
+                }
+            }
+        }
+    }
+
+    .comment-form {
+
+    }
+
+    &>#comments-wrap {
+        &>.comments-list {
+            li {
+                position: relative;
+                padding: 10px 0;
+                &.depth-1 {
+                    padding: 20px 0 8px;
+                    border-bottom: dashed 1px #ECECEC;
+                }
+                &.depth-2 {
+                    margin-left: 30px; //TODO 加箭头
+                }
+                &.depth-3 {
+                    margin-left: 60px;
+                }
+                &.depth-2,
+                &.depth-3 {
+                    &:before {
+                        content: ' ';
+                        position: absolute;
+                        top: 15px;
+                        left: -20px;
+                        width: 20px;
+                        height: 20px;
+                        visibility: visible;
+                        opacity: 0;
+                        background: url('../img/icon/up-arrow.png') no-repeat;
+                        background-size: 100%;
+                        -webkit-transition: all .3s ease;
+                        -moz-transition: all .3s ease;
+                        -ms-transition: all .3s ease;
+                        -o-transition: all .3s ease;
+                        transition: all .3s ease;
+                    }
+                    &:hover {
+                        &:before {
+                            opacity: 1;
+                        }
+                    }
+                }
+                .comment-left {
+                    width: 40px;
+                    .avatar {
+                        margin-top: 4px;
+                        border-radius: 50%;
+                    }
+                }
+                .comment-body {
+                    position: relative;
+                    padding-left: 55px;
+                    .comment-content {
+                        color: #666666;
+                        font-size: 1.4rem;
+                        padding-bottom: 10px;
+                        word-break: break-all;
+                        word-wrap: break-word;
+                        overflow: auto;
+                        img.em {
+                            vertical-align: -5px;
+                        }
+                    }
+                    .comment-time {
+                        position: absolute;
+                        top: 5px;
+                        right: 20px;
+                        font-size: 1.2rem;
+                        color: #cccccc;
+                        height: 16px;
+                        line-height: 16px;
+                    }
+                    .comment-meta {
+                        font-size: 1.2rem;
+                        color: #cccccc;
+                        height: 16px;
+                        line-height: 16px;
+                        margin: 0 0 10px;
+                        .respond-coin {
+                            i.msg {
+                                display: inline-block;
+                                width: 17px;
+                                height: 16px;
+                                vertical-align: middle;
+                                background: url('../img/icon/comment.png') no-repeat;
+                            }
+                            em {
+                                color: #a0a0a0;
+                                font-size: 1.4rem;
+                                position: relative;
+                                margin-left: 8px;
+                            }
+                        }
+                        .like {
+                            i.zan {
+                                position: relative;
+                                display: inline-block;
+                                top: -2px;
+                                width: 15px;
+                                height: 14px;
+                                margin-left: 15px;
+                                margin-right: 8px;
+                                cursor: pointer;
+                                vertical-align: middle;
+                                background: url('../img/icon/zan.png') no-repeat;
+                            }
+                            &.active {
+                                i.zan {
+                                    background-position: 0 -14px;
+                                }
+                            }
+                            .like-count {
+                                position: relative;
+                                font-size: 1.4rem;
+                            }
+                        }
+                    }
+                    .respond-submit {
+                        display: none;
+                        .text {
+                            position: relative;
+                            input {
+                                border-radius: 2px;
+                                padding-left: 10px;
+                                padding-right: 10px;
+                                width: 100%;
+                                height: 37px;
+                                font-size: 1.4rem;
+                                line-height: 14px;
+                                color: #5A5A5A;
+                                border: solid 1px #EEEEEE;
+                                background: #F7F7F7;
+                            }
+                            .tip {
+                                position: absolute;
+                                top: 8px;
+                                left: 10px;
+                                color: #999999;
+                                a {
+                                    padding: 0 5px;
+                                    color: @brand-primary;
+                                }
+                            }
+                        }
+                        .submit-box {
+                            padding-top: 10px;
+                            button {
+                                position: relative;
+                                width: 85px;
+                                height: 34px;
+                                border-radius: 0;
+                                font-size: 1.4rem;
+                                line-height: 1;
+                                i {
+                                    width: 16px;
+                                    height: 16px;
+                                    top: 50%;
+                                    left: 50%;
+                                    margin-top: -8px;
+                                    margin-left: -8px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &>.load-more {
+            button {
+                display: block;
+                position: relative;
+                margin: 30px auto 20px;
+                min-width: 160px;
+                height: 42px;
+                i {
+                    width: 16px;
+                    height: 16px;
+                    top: 50%;
+                    left: 50%;
+                    margin-top: -8px;
+                    margin-left: -8px;
+                }
+            }
+        }
+    }
+
+}

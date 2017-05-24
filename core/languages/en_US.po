@@ -1,8 +1,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TinT\n"
+<<<<<<< HEAD
 "POT-Creation-Date: 2016-11-13 21:02+0800\n"
 "PO-Revision-Date: 2016-11-13 21:02+0800\n"
+=======
+"POT-Creation-Date: 2017-05-22 22:06+0800\n"
+"PO-Revision-Date: 2017-05-22 22:06+0800\n"
+>>>>>>> dev
 "Last-Translator: Zhiyan <mail@webapproach.net>\n"
 "Language-Team: Zhiyan <mail@webapproach.net>\n"
 "Language: en_US\n"
@@ -10,7 +15,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+<<<<<<< HEAD
 "X-Generator: Poedit 1.8.8\n"
+=======
+"X-Generator: Poedit 2.0.2\n"
+>>>>>>> dev
 "X-Poedit-Basepath: .\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -77,6 +86,7 @@ msgstr ""
 msgid "%s must be between %d (inclusive) and %d (inclusive)"
 msgstr ""
 
+<<<<<<< HEAD
 #: core/api/v1/endpoints/class.Rest.Comment.Controller.php:57
 #: core/api/v1/endpoints/class.Rest.Message.Controller.php:73
 #: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:55
@@ -131,6 +141,88 @@ msgstr ""
 #: core/api/v1/endpoints/class.Rest.Comment.Controller.php:255
 #: core/api/v1/endpoints/class.Rest.Session.Controller.php:127
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:588
+=======
+#: core/api/v1/endpoints/class.Rest.Action.Controller.php:56
+msgid "Sorry, the action is invalid."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Action.Controller.php:59
+msgid "Sorry, you cannot execute the action without signing in."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.BoughtResource.Controller.php:53
+msgid "Sorry, you cannot buy post resources without signing in."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.BoughtResource.Controller.php:71
+msgid "Buy the resource successfully"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:57
+#: core/api/v1/endpoints/class.Rest.Coupon.Controller.php:73
+#: core/api/v1/endpoints/class.Rest.Member.Controller.php:73
+#: core/api/v1/endpoints/class.Rest.Message.Controller.php:73
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:73
+#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:55
+#: core/api/v1/endpoints/class.Rest.Session.Controller.php:58
+#: core/api/v1/endpoints/class.Rest.ShoppingCart.Controller.php:49
+#: core/api/v1/endpoints/class.Rest.ShoppingCart.Controller.php:71
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:69
+#: core/api/v1/endpoints/class.Rest.Usermeta.Controller.php:55
+msgid "Required to be true, as resource does not support trashing."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:88
+msgid "Invalid post ID"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:94
+#: core/api/v1/endpoints/class.Rest.Comment.Star.Controller.php:102
+#: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:115
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:372
+msgid "Nonce verify failed"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:110
+msgid "No more comments"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:148
+msgid "Spam nonce check failed"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:158
+msgid "You cannot comment this product becasue you donot buy it"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:163
+msgid "Comment closed for the post"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:166
+msgid "Cannot comment a unpublished post"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:169
+msgid "Cannot comment a password protected post"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:198
+msgid "Sorry, you must be logged in to reply to a comment."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:203
+msgid "Comment cannot be blank"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:236
+msgid "Add comment failed"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Comment.Controller.php:276
+#: core/api/v1/endpoints/class.Rest.Session.Controller.php:161
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:569
+>>>>>>> dev
 msgid "Sorry, you are not allowed to delete this resource."
 msgstr ""
 
@@ -146,6 +238,7 @@ msgstr ""
 msgid "Star comment successfully"
 msgstr ""
 
+<<<<<<< HEAD
 #: core/api/v1/endpoints/class.Rest.Controller.php:38
 msgid "The register_routes() method must be overriden"
 msgstr ""
@@ -162,10 +255,29 @@ msgstr ""
 #: core/api/v1/endpoints/class.Rest.Controller.php:138
 #: core/api/v1/endpoints/class.Rest.Controller.php:148
 #: core/api/v1/endpoints/class.Rest.Controller.php:159
+=======
+#: core/api/v1/endpoints/class.Rest.Controller.php:40
+msgid "The register_routes() method must be overriden"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Controller.php:50
+#: core/api/v1/endpoints/class.Rest.Controller.php:60
+#: core/api/v1/endpoints/class.Rest.Controller.php:70
+#: core/api/v1/endpoints/class.Rest.Controller.php:80
+#: core/api/v1/endpoints/class.Rest.Controller.php:90
+#: core/api/v1/endpoints/class.Rest.Controller.php:100
+#: core/api/v1/endpoints/class.Rest.Controller.php:110
+#: core/api/v1/endpoints/class.Rest.Controller.php:120
+#: core/api/v1/endpoints/class.Rest.Controller.php:130
+#: core/api/v1/endpoints/class.Rest.Controller.php:140
+#: core/api/v1/endpoints/class.Rest.Controller.php:150
+#: core/api/v1/endpoints/class.Rest.Controller.php:161
+>>>>>>> dev
 #, php-format
 msgid "Method '%s' not implemented. Must be over-ridden in subclass."
 msgstr ""
 
+<<<<<<< HEAD
 #: core/api/v1/endpoints/class.Rest.Controller.php:261
 msgid "Current page of the collection."
 msgstr ""
@@ -179,14 +291,152 @@ msgid "Limit results to those matching a string."
 msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.Controller.php:296
+=======
+#: core/api/v1/endpoints/class.Rest.Controller.php:263
+msgid "Current page of the collection."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Controller.php:271
+msgid "Maximum number of items to be returned in result set."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Controller.php:280
+msgid "Limit results to those matching a string."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Controller.php:298
+>>>>>>> dev
 msgid ""
 "Scope under which the request is made; determines fields present in response."
 msgstr ""
 
+<<<<<<< HEAD
+=======
+#: core/api/v1/endpoints/class.Rest.Coupon.Controller.php:92
+msgid "Sorry, you are not permitted to view coupons."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Coupon.Controller.php:110
+msgid "Retrieve coupons failed"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Coupon.Controller.php:126
+msgid "Sorry, you are not permitted to create a coupon."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Coupon.Controller.php:148
+msgid "Coupon type is not right"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Coupon.Controller.php:153
+msgid "Coupon code is too short"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Coupon.Controller.php:158
+msgid ""
+"Invalid coupon discount value, should not less than 0 and not greater than 1"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Coupon.Controller.php:163
+msgid "Coupon effect date should not be empty"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Coupon.Controller.php:167
+msgid "Coupon expire date should not be empty"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Coupon.Controller.php:175
+msgid "Add coupon failed"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Coupon.Controller.php:178
+msgid "Add coupon successfully"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Coupon.Controller.php:190
+msgid "Sorry, you are not permitted to view a coupon."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Coupon.Controller.php:205
+msgid "Cannot get the coupon specified"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Coupon.Controller.php:219
+msgid "Sorry, you are not permitted to update a coupon."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Coupon.Controller.php:244
+msgid "Sorry, you are not permitted to delete a coupon."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Coupon.Controller.php:260
+msgid "The coupon cannot be deleted."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Coupon.Controller.php:263
+msgid "delete coupon successfully"
+msgstr ""
+
+>>>>>>> dev
 #: core/api/v1/endpoints/class.Rest.Follow.Controller.php:218
 msgid "Sorry, you cannot follow or unfollow without signing in."
 msgstr ""
 
+<<<<<<< HEAD
+=======
+#: core/api/v1/endpoints/class.Rest.Member.Controller.php:92
+msgid "Sorry, you are not permitted to view members."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Member.Controller.php:110
+msgid "Retrieve members failed"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Member.Controller.php:126
+msgid "Sorry, you are not permitted to create a member."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Member.Controller.php:149
+msgid "User you specified is not found"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Member.Controller.php:154
+msgid "Member VIP type is not right"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Member.Controller.php:162
+msgid "Add member failed"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Member.Controller.php:165
+msgid "Add member successfully"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Member.Controller.php:177
+msgid "Sorry, you are not permitted to view a member without signing in."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Member.Controller.php:192
+msgid "Cannot get the member specified"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Member.Controller.php:206
+msgid "Sorry, you are not permitted to update a member."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Member.Controller.php:231
+msgid "Sorry, you are not permitted to delete a member."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Member.Controller.php:247
+msgid "The member cannot be deleted."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Member.Controller.php:250
+msgid "delete member successfully"
+msgstr ""
+
+>>>>>>> dev
 #: core/api/v1/endpoints/class.Rest.Message.Controller.php:92
 msgid "Sorry, you cannot view messages without signing in."
 msgstr ""
@@ -200,7 +450,11 @@ msgid "Sorry, you cannot create message without signing in."
 msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.Message.Controller.php:150
+<<<<<<< HEAD
 #: core/api/v1/endpoints/class.Rest.UserStatus.Controller.php:110
+=======
+#: core/api/v1/endpoints/class.Rest.UserStatus.Controller.php:113
+>>>>>>> dev
 msgid "Verify nonce failed"
 msgstr ""
 
@@ -217,7 +471,11 @@ msgid "Send message failed"
 msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.Message.Controller.php:170
+<<<<<<< HEAD
 #: core/viewModels/vm.UC.Chat.php:100
+=======
+#: core/viewModels/uc/vm.UC.Chat.php:99
+>>>>>>> dev
 #, php-format
 msgid "You to %s"
 msgstr ""
@@ -235,34 +493,176 @@ msgid "Cannot get the message specified"
 msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.Message.Controller.php:218
+<<<<<<< HEAD
 msgid "Sorry, you cannot update message without signing in."
 msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.Message.Controller.php:254
 #: core/api/v1/endpoints/class.Rest.UserStatus.Controller.php:149
+=======
+#: core/api/v1/endpoints/class.Rest.Usermeta.Controller.php:104
+msgid "Sorry, you cannot update message without signing in."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Message.Controller.php:235
+msgid "Mark message read successfully"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Message.Controller.php:237
+msgid "Mark message read failed"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Message.Controller.php:254
+>>>>>>> dev
 msgid "Sorry, you cannot delete message without signing in."
 msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.Message.Controller.php:258
+<<<<<<< HEAD
 #: core/api/v1/endpoints/class.Rest.UserStatus.Controller.php:153
+=======
+>>>>>>> dev
 msgid "Sorry, the message is not found."
 msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.Message.Controller.php:262
+<<<<<<< HEAD
 #: core/api/v1/endpoints/class.Rest.UserStatus.Controller.php:157
+=======
+>>>>>>> dev
 msgid "Sorry, you cannot delete message not belong to you."
 msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.Message.Controller.php:279
+<<<<<<< HEAD
 #: core/api/v1/endpoints/class.Rest.UserStatus.Controller.php:174
+=======
+>>>>>>> dev
 msgid "The message cannot be deleted."
 msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.Message.Controller.php:282
+<<<<<<< HEAD
 #: core/api/v1/endpoints/class.Rest.UserStatus.Controller.php:177
 msgid "delete message successfully"
 msgstr ""
 
+=======
+msgid "delete message successfully"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:93
+msgid "Sorry, you cannot view orders without signing in."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:126
+msgid "Sorry, you cannot create order without signing in."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:181
+msgid "Create order failed"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:186
+msgid "Create order successfully"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:198
+msgid "Sorry, you cannot view a order without signing in."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:214
+msgid "Cannot find the order specified"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:218
+msgid "The order has not been payed yet"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:222
+#: core/functions/shop/func.Shop.Order.php:739
+msgid "The order has been payed"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:234
+msgid "Sorry, you cannot update order without signing in."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:322
+msgid "Sorry, you are not permitted to update order status."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:357
+msgid "Update order failed"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:367
+msgid "Update order successfully"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:382
+msgid "Sorry, you cannot delete order without signing in."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:399
+msgid "Delete order failed"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:401
+msgid "Delete order successfully"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:416
+#: core/api/v1/endpoints/class.Rest.ShoppingCart.Controller.php:186
+msgid "Sorry, you cannot delete cart items without signing in."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Order.Controller.php:432
+#: core/api/v1/endpoints/class.Rest.ShoppingCart.Controller.php:202
+msgid "Delete items from cart successfully"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Post.Controller.php:112
+#: core/api/v1/endpoints/class.Rest.Post.Controller.php:190
+msgid "Sorry, you do not have the capability to publish a post."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Post.Controller.php:114
+#: core/api/v1/endpoints/class.Rest.Post.Controller.php:192
+msgid "Sorry, you do not have the capability to contribute a post."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Post.Controller.php:128
+#: core/api/v1/endpoints/class.Rest.Post.Controller.php:223
+msgid "The post title is too short or empty"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Post.Controller.php:133
+#: core/api/v1/endpoints/class.Rest.Post.Controller.php:228
+msgid "The post content is too short or empty"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Post.Controller.php:177
+msgid "Create post successfully"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Post.Controller.php:215
+msgid "Handle post failed"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Post.Controller.php:217
+msgid "Handle post successfully"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Post.Controller.php:258
+msgid "Update the post failed"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Post.Controller.php:277
+msgid "Update post successfully"
+msgstr ""
+
+>>>>>>> dev
 #: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:110
 #: core/api/v1/endpoints/class.Rest.Post.Star.Controller.php:169
 msgid "Wrong post id"
@@ -292,6 +692,7 @@ msgstr ""
 msgid "Unstar post successfully"
 msgstr ""
 
+<<<<<<< HEAD
 #: core/api/v1/endpoints/class.Rest.Session.Controller.php:94
 msgid "Verify the login nonce failed"
 msgstr ""
@@ -321,17 +722,123 @@ msgstr ""
 msgid "You have signed out successfully"
 msgstr ""
 
+=======
+#: core/api/v1/endpoints/class.Rest.Product.Controller.php:112
+msgid "Sorry, you do not have the capability to publish a product."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Product.Controller.php:114
+#: core/api/v1/endpoints/class.Rest.Product.Controller.php:179
+msgid "Sorry, you do not have the capability to contribute a product."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Product.Controller.php:128
+#: core/api/v1/endpoints/class.Rest.Product.Controller.php:210
+msgid "The product name is too short or empty"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Product.Controller.php:133
+#: core/api/v1/endpoints/class.Rest.Product.Controller.php:215
+msgid "The product description is too short or empty"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Product.Controller.php:161
+msgid "Create product successfully"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Product.Controller.php:202
+msgid "Handle product failed"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Product.Controller.php:204
+msgid "Handle product successfully"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Product.Controller.php:241
+msgid "Update the product failed"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Product.Controller.php:248
+msgid "Update product successfully"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Session.Controller.php:92
+msgid "Invalid email format"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Session.Controller.php:109
+msgid "Open connect failed to complete your profile"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Session.Controller.php:111
+msgid "Open connected"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Session.Controller.php:122
+msgid "Verify the login nonce failed"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Session.Controller.php:141
+msgid "Welcome, you have signed in successfully"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Session.Controller.php:148
+msgid "There is no user matches the info you offered"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Session.Controller.php:178
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:588
+msgid "Users do not support trashing."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Session.Controller.php:183
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:238
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:265
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:510
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:593
+msgid "Invalid resource id."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Session.Controller.php:191
+msgid "You have signed out successfully"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.ShoppingCart.Controller.php:91
+msgid "Sorry, you cannot view shopping cart without signing in."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.ShoppingCart.Controller.php:121
+msgid "Sorry, you cannot update cart without signing in."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.ShoppingCart.Controller.php:139
+msgid "Add to cart successfully"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.ShoppingCart.Controller.php:153
+msgid "Sorry, you cannot delete cart item without signing in."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.ShoppingCart.Controller.php:171
+msgid "Delete item from cart successfully"
+msgstr ""
+
+>>>>>>> dev
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:118
 msgid "Sorry, you cannot filter by role."
 msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:122
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:246
+<<<<<<< HEAD
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:295
+=======
+>>>>>>> dev
 msgid "Sorry, you cannot view this resource with edit context."
 msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:248
+<<<<<<< HEAD
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:297
 msgid "Sorry, you cannot view this resource."
 msgstr ""
@@ -350,10 +857,43 @@ msgid "Sorry, you are not allowed to create resource."
 msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:397
+=======
+msgid "Sorry, you cannot view this resource."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:295
+msgid "Invalid resource email."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:303
+#, php-format
+msgid "Your Password Reset Link - %s"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:306
+msgid "Request to find password was sent"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:309
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:676
+msgid "Unknown action request"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:321
+msgid "You are not currently logged in."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:342
+msgid "Sorry, you are not allowed to create resource."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:378
+>>>>>>> dev
 msgid ""
 "Password length does not match the requirement, must more than or equal to 6."
 msgstr ""
 
+<<<<<<< HEAD
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:406
 msgid "Captcha does not match."
 msgstr ""
@@ -375,11 +915,39 @@ msgid "Email is already used."
 msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:435
+=======
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:387
+msgid "Captcha does not match."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:393
+msgid "Invalid resource login name."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:397
+msgid "Login name is already existed."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:403
+msgid "Invalid email format."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:407
+msgid "Email is already used."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:412
+msgid "Your account activation link"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:416
+>>>>>>> dev
 msgid ""
 "Send registration request successfully, please go to your email box to find "
 "and visit the activation link"
 msgstr ""
 
+<<<<<<< HEAD
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:508
 msgid "Sorry, you are not allowed to edit resource."
 msgstr ""
@@ -409,10 +977,54 @@ msgid "The resource cannot be deleted."
 msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:831
+=======
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:489
+msgid "Sorry, you are not allowed to edit resource."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:493
+msgid "Sorry, you are not allowed to edit roles of this resource."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:514
+msgid "Email address is invalid."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:518
+msgid "Username isn't editable"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:522
+msgid "Slug is invalid."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:598
+msgid "Invalid resource id for reassignment."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:611
+msgid "The resource cannot be deleted."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:652
+msgid "The new password length is too short and not safe"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:670
+msgid "Reset password failed, please retry or contact the administrator"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:673
+msgid "Your password has been reset successfully"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:827
+>>>>>>> dev
 #, php-format
 msgid "The role %s does not exist."
 msgstr ""
 
+<<<<<<< HEAD
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:838
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:848
 msgid "You cannot give resource that role."
@@ -483,10 +1095,83 @@ msgid "Any extra capabilities assigned to the resource."
 msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:988
+=======
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:834
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:844
+msgid "You cannot give resource that role."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:864
+msgid "Unique identifier for the resource."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:870
+msgid "Login name for the resource."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:880
+msgid "Display name for the resource."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:888
+msgid "First name for the resource."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:896
+msgid "Last name for the resource."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:904
+msgid "The email address for the resource."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:911
+msgid "URL of the resource."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:917
+msgid "Description of the resource."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:925
+msgid "Author URL to the resource."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:932
+msgid "The nickname for the resource."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:940
+msgid "An alphanumeric identifier for the resource."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:948
+msgid "Registration date for the resource."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:954
+msgid "Roles assigned to the resource."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:959
+msgid "Password for the resource (never included)."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:965
+msgid "All capabilities assigned to the resource."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:970
+msgid "Any extra capabilities assigned to the resource."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:984
+>>>>>>> dev
 #, php-format
 msgid "Avatar URL with image size of %d pixels."
 msgstr ""
 
+<<<<<<< HEAD
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:996
 msgid "Avatar URLs for the resource."
 msgstr ""
@@ -516,11 +1201,43 @@ msgid "Limit result set to resources with a specific slug."
 msgstr ""
 
 #: core/api/v1/endpoints/class.Rest.User.Controller.php:1063
+=======
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:992
+msgid "Avatar URLs for the resource."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:1015
+msgid "Ensure result set excludes specific ids."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:1021
+msgid "Limit result set to specific ids."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:1027
+msgid "Offset the result set by a specific number of items."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:1034
+msgid "Order sort attribute ascending or descending."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:1042
+msgid "Sort collection by object attribute."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:1054
+msgid "Limit result set to resources with a specific slug."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.User.Controller.php:1059
+>>>>>>> dev
 msgid ""
 "Limit result set to resources matching at least one specific role provided. "
 "Accepts csv list or single role."
 msgstr ""
 
+<<<<<<< HEAD
 #: core/api/v1/endpoints/class.Rest.UserStatus.Controller.php:57
 msgid "Sorry, you cannot view user account status without signing in."
 msgstr ""
@@ -614,10 +1331,175 @@ msgid "User Authorization Canceled"
 msgstr ""
 
 #: core/classes/class.Open.php:576
+=======
+#: core/api/v1/endpoints/class.Rest.UserProfile.Controller.php:61
+msgid "Sorry, you cannot update user profiles without signing in."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.UserProfile.Controller.php:64
+msgid "Sorry, you have no authority to update user profiles."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.UserProfile.Controller.php:136
+msgid "Sorry, invalid profile type"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.UserStatus.Controller.php:60
+msgid "Sorry, you cannot view user account status without signing in."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.UserStatus.Controller.php:75
+#: core/api/v1/endpoints/class.Rest.UserStatus.Controller.php:107
+#: core/functions/func.User.php:361 core/functions/func.User.php:396
+msgid "The specified user is not existed"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.UserStatus.Controller.php:89
+msgid "Sorry, you cannot update user account status without signing in."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.UserStatus.Controller.php:92
+msgid "Sorry, you have no authority to update user account status."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.UserStatus.Controller.php:121
+msgid "A reason is required"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Usermeta.Controller.php:73
+msgid "Sorry, you cannot retrieve usermeta without signing in."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Usermeta.Controller.php:90
+msgid "Cannot get the usermeta specified"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Usermeta.Controller.php:126
+msgid "Cannot update or create the usermeta specified"
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Usermeta.Controller.php:142
+msgid "Sorry, you cannot delete usermeta without signing in."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Usermeta.Controller.php:160
+msgid "The usermeta cannot be deleted."
+msgstr ""
+
+#: core/api/v1/endpoints/class.Rest.Usermeta.Controller.php:163
+msgid "delete usermeta successfully"
+msgstr ""
+
+#: core/classes/class.Open.php:171 core/modules/me/me.Tab.Settings.php:74
+msgid "QQ"
+msgstr ""
+
+#: core/classes/class.Open.php:173
+msgid "Weibo"
+msgstr ""
+
+#: core/classes/class.Open.php:175
+msgid "Weixin"
+msgstr ""
+
+#: core/classes/class.Open.php:300
+#, php-format
+msgid "Can Not Bind %s Again"
+msgstr ""
+
+#: core/classes/class.Open.php:301
+#, php-format
+msgid ""
+"You have connected with %s before, can not do it again, please unbind it "
+"before if need"
+msgstr ""
+
+#: core/classes/class.Open.php:312
+#, php-format
+msgid "%s Login Disabled"
+msgstr ""
+
+#: core/classes/class.Open.php:313
+#, php-format
+msgid ""
+"You have not enabled %s login, or the required information e.g OpenID, "
+"OpenKey missed"
+msgstr ""
+
+#: core/classes/class.Open.php:324
+#, php-format
+msgid "%s connected by other one"
+msgstr ""
+
+#: core/classes/class.Open.php:325
+#, php-format
+msgid ""
+"Someone in your WordPress user system have connected with this %s before, "
+"please unbind it before if need"
+msgstr ""
+
+#: core/classes/class.Open.php:348
+msgid "State Missing"
+msgstr ""
+
+#: core/classes/class.Open.php:349
+msgid "The state parameter was not found in the url"
+msgstr ""
+
+#: core/classes/class.Open.php:356
+msgid "State Incorrect"
+msgstr ""
+
+#: core/classes/class.Open.php:357
+msgid "The state parameter in the url is incorrect"
+msgstr ""
+
+#: core/classes/class.Open.php:530
+msgid "OAuth Data Not Exist"
+msgstr ""
+
+#: core/classes/class.Open.php:531
+msgid "Can not get oauth data, please retry the oauth steps"
+msgstr ""
+
+#: core/classes/class.Open.php:562
+msgid ""
+"The username is exist, please provide correct password for it if owned by "
+"you or choose another username"
+msgstr ""
+
+#: core/classes/class.Open.php:585
+msgid "Create New User Failed"
+msgstr ""
+
+#: core/classes/class.Open.php:605
+msgid "请完善账号信息"
+msgstr ""
+
+#: core/classes/class.Open.php:606
+#, php-format
+msgid "欢迎来到%1$s, 请<a href=\"%2$s\">完善资料</a>"
+msgstr ""
+
+#: core/classes/class.Open.php:661
+msgid "Unallowed Open Type"
+msgstr ""
+
+#: core/classes/class.Open.php:662
+msgid "The open connect type is not allowed"
+msgstr ""
+
+#: core/classes/class.Open.php:705
+msgid "User Authorization Canceled"
+msgstr ""
+
+#: core/classes/class.Open.php:706
+>>>>>>> dev
 msgid ""
 "You should agree to authorize our application connecting your open account"
 msgstr ""
 
+<<<<<<< HEAD
 #: core/classes/class.Open.php:604 core/classes/class.Open.php:821
 #: core/classes/class.Open.php:1084 core/classes/class.Open.php:1439
 msgid "User Not Logged In"
@@ -682,16 +1564,90 @@ msgid "Grant Weibo User Show Info Failed"
 msgstr ""
 
 #: core/classes/class.Open.php:1480
+=======
+#: core/classes/class.Open.php:735 core/classes/class.Open.php:952
+#: core/classes/class.Open.php:1214 core/classes/class.Open.php:1568
+msgid "User Not Logged In"
+msgstr ""
+
+#: core/classes/class.Open.php:736
+msgid "You must be logged in and then log out"
+msgstr ""
+
+#: core/classes/class.Open.php:845
+msgid "Grant QQ Access Token Failed"
+msgstr ""
+
+#: core/classes/class.Open.php:898
+msgid "Grant QQ OpenID Failed"
+msgstr ""
+
+#: core/classes/class.Open.php:926
+msgid "Grant QQ User Info Failed"
+msgstr ""
+
+#: core/classes/class.Open.php:953 core/classes/class.Open.php:1215
+#: core/classes/class.Open.php:1569
+msgid "You must log in to refresh your token"
+msgstr ""
+
+#: core/classes/class.Open.php:964 core/classes/class.Open.php:1226
+#: core/classes/class.Open.php:1580
+msgid "Refresh Token Miss"
+msgstr ""
+
+#: core/classes/class.Open.php:965 core/classes/class.Open.php:1227
+#: core/classes/class.Open.php:1581
+msgid "A refresh token is required to get new access token"
+msgstr ""
+
+#: core/classes/class.Open.php:1108 core/classes/class.Open.php:1187
+#: core/classes/class.Open.php:1272 core/classes/class.Open.php:1400
+#: core/classes/class.Open.php:1463 core/classes/class.Open.php:1543
+#: core/classes/class.Open.php:1618
+msgid "The open server returned with a incorrect response"
+msgstr ""
+
+#: core/classes/class.Open.php:1178 core/classes/class.Open.php:1186
+msgid "Get WeiXin Userinfo Failed"
+msgstr ""
+
+#: core/classes/class.Open.php:1263 core/classes/class.Open.php:1271
+msgid "Refresh WeiXin Token Failed"
+msgstr ""
+
+#: core/classes/class.Open.php:1391
+msgid "Grant Weibo Access Token Failed"
+msgstr ""
+
+#: core/classes/class.Open.php:1454
+msgid "Grant Weibo Token Info Failed"
+msgstr ""
+
+#: core/classes/class.Open.php:1534
+msgid "Grant Weibo User Show Info Failed"
+msgstr ""
+
+#: core/classes/class.Open.php:1609
+>>>>>>> dev
 msgid "Refresh Weibo Access Token Failed"
 msgstr ""
 
 #: core/classes/class.Tgm.Plugin.Activation.php:334
+<<<<<<< HEAD
 #: core/functions/func.Init.php:77
+=======
+#: core/functions/func.Init.php:80
+>>>>>>> dev
 msgid "Install Required Plugins"
 msgstr ""
 
 #: core/classes/class.Tgm.Plugin.Activation.php:335
+<<<<<<< HEAD
 #: core/functions/func.Init.php:78
+=======
+#: core/functions/func.Init.php:81
+>>>>>>> dev
 msgid "Install Plugins"
 msgstr ""
 
@@ -1145,6 +2101,26 @@ msgstr "minutes"
 msgid "秒前"
 msgstr "seconds"
 
+<<<<<<< HEAD
+=======
+#: core/functions/func.API.Actions.php:32
+#, php-format
+msgid "Daily sign successfully and gain %d credits"
+msgstr ""
+
+#: core/functions/func.API.Actions.php:38
+msgid "Create credits charge order failed"
+msgstr ""
+
+#: core/functions/func.API.Actions.php:60
+msgid "Update user credits successfully"
+msgstr ""
+
+#: core/functions/func.API.Actions.php:62
+msgid "Update user credits failed"
+msgstr ""
+
+>>>>>>> dev
 #: core/functions/func.Account.php:76
 msgid "The key is invalid."
 msgstr ""
@@ -1161,6 +2137,7 @@ msgstr ""
 msgid "Activate the registration successfully"
 msgstr ""
 
+<<<<<<< HEAD
 #: core/functions/func.Cache.php:192
 #, php-format
 msgid "<!-- Nav cached %s -->"
@@ -1194,6 +2171,265 @@ msgstr ""
 
 #: core/functions/func.Follow.php:113
 msgid "You cannot follow yourself"
+=======
+#: core/functions/func.Account.php:156
+#, php-format
+msgid "欢迎加入[%s]"
+msgstr ""
+
+#: core/functions/func.Account.php:158
+#, php-format
+msgid "您的站点「%s」有新用户注册 :"
+msgstr ""
+
+#: core/functions/func.Account.php:280
+msgid "Update basic profiles successfully"
+msgstr ""
+
+#: core/functions/func.Account.php:305
+msgid "Update extended profiles successfully"
+msgstr ""
+
+#: core/functions/func.Account.php:330
+msgid "Update security profiles successfully"
+msgstr ""
+
+#: core/functions/func.Bulletin.php:28
+msgctxt "taxonomy general name"
+msgid "Bulletins"
+msgstr ""
+
+#: core/functions/func.Bulletin.php:29
+msgctxt "taxonomy singular name"
+msgid "Bulletin"
+msgstr ""
+
+#: core/functions/func.Bulletin.php:30 core/functions/func.Bulletin.php:31
+msgid "Add New Bulletin"
+msgstr ""
+
+#: core/functions/func.Bulletin.php:32 core/functions/shop/func.Shop.php:32
+msgid "Edit"
+msgstr ""
+
+#: core/functions/func.Bulletin.php:33
+msgid "Edit Bulletin"
+msgstr ""
+
+#: core/functions/func.Bulletin.php:34
+msgid "Add Bulletin"
+msgstr ""
+
+#: core/functions/func.Bulletin.php:35 core/functions/shop/func.Shop.php:35
+#, fuzzy
+msgid "View"
+msgstr "View File"
+
+#: core/functions/func.Bulletin.php:36
+msgid "All Bulletins"
+msgstr ""
+
+#: core/functions/func.Bulletin.php:37
+#, fuzzy
+msgid "View Bulletin"
+msgstr "View File"
+
+#: core/functions/func.Bulletin.php:38
+msgid "Search Bulletin"
+msgstr ""
+
+#: core/functions/func.Bulletin.php:39
+msgid "Bulletin not found"
+msgstr ""
+
+#: core/functions/func.Bulletin.php:40
+msgid "Bulletin not found in trash"
+msgstr ""
+
+#: core/functions/func.Bulletin.php:41
+msgid "Parent Bulletin"
+msgstr ""
+
+#: core/functions/func.Bulletin.php:42
+msgid "Bulletins"
+msgstr ""
+
+#: core/functions/func.Cache.php:214
+#, php-format
+msgid "<!-- Nav cached %s -->"
+msgstr ""
+
+#: core/functions/func.Cache.php:214
+msgid "<!-- Nav cache end -->"
+msgstr ""
+
+#: core/functions/func.Comment.php:79 core/functions/func.Comment.php:152
+msgid "Your comment is under review..."
+msgstr ""
+
+#: core/functions/func.Comment.php:89 core/functions/func.Comment.php:97
+#: core/functions/func.Comment.php:101 core/functions/func.Comment.php:165
+#: core/functions/func.Comment.php:169 core/functions/func.Comment.php:173
+msgid "Reply"
+msgstr ""
+
+#: core/functions/func.Comment.php:100 core/functions/func.Comment.php:172
+#: core/modules/mod.ReplyForm.php:35
+#: core/modules/shop/mod.Shop.ReplyForm.php:60
+#, fuzzy
+msgid "Emotion"
+msgstr "Theme Options"
+
+#: core/functions/func.Comment.php:160
+#, php-format
+msgid "Rated %d out of 5"
+msgstr ""
+
+#: core/functions/func.Credit.php:61
+#, php-format
+msgid "Administrator add %d credits to you, current credits %d"
+msgstr ""
+
+#: core/functions/func.Credit.php:71
+#, php-format
+msgid "Gain %d credits"
+msgstr ""
+
+#: core/functions/func.Credit.php:83
+#, php-format
+msgid "Spend %d credits"
+msgstr ""
+
+#: core/functions/func.Credit.php:106
+#, php-format
+msgid "Buy <strong>%d</strong> Credits, Cost %0.2f YUAN"
+msgstr ""
+
+#: core/functions/func.Credit.php:110
+#, php-format
+msgid "Charge Credits Successfully - %s"
+msgstr ""
+
+#: core/functions/func.Credit.php:135
+msgid "You must sign in before payment"
+msgstr ""
+
+#: core/functions/func.Credit.php:140
+msgid "You do not have enough credits to accomplish this payment"
+msgstr ""
+
+#: core/functions/func.Credit.php:153
+#, php-format
+msgid "Cost %d to buy %s"
+msgstr ""
+
+#: core/functions/func.Credit.php:197
+#, php-format
+msgid "获得注册推广（来自%1$s的注册）奖励%2$s积分"
+msgstr ""
+
+#: core/functions/func.Credit.php:203
+#, php-format
+msgid "获得注册奖励%s积分"
+msgstr ""
+
+#: core/functions/func.Credit.php:238
+#, php-format
+msgid "获得访问推广奖励%d积分"
+msgstr ""
+
+#: core/functions/func.Credit.php:262
+#, php-format
+msgid "获得评论回复奖励%d积分"
+msgstr ""
+
+#: core/functions/func.Credit.php:299 core/functions/shop/func.Shop.php:238
+#: dash/options.php:892
+msgid "Credit"
+msgstr ""
+
+#: core/functions/func.Credit.php:309
+#, php-format
+msgid "总积分 %1$d 已消费 %2$d 剩余 %3$d"
+msgstr ""
+
+#: core/functions/func.Credit.php:401 core/functions/func.Credit.php:406
+msgid "Sign to gain credits"
+msgstr ""
+
+#: core/functions/func.Credit.php:401 core/functions/func.Credit.php:406
+#: core/modules/me/me.Tab.Credits.php:37
+msgid "Daily Sign"
+msgstr ""
+
+#: core/functions/func.Credit.php:403
+#, php-format
+msgid "Signed on %s"
+msgstr ""
+
+#: core/functions/func.Credit.php:403
+msgid "Signed today"
+msgstr ""
+
+#: core/functions/func.Credit.php:420
+msgid "You must sign in before daily sign"
+msgstr ""
+
+#: core/functions/func.Credit.php:429
+#, php-format
+msgid "Gain %d credits for daily sign"
+msgstr ""
+
+#: core/functions/func.Credit.php:433
+msgid "You have signed today"
+msgstr ""
+
+#: core/functions/func.Download.php:61
+msgid "You must sign in to continue your purchase"
+msgstr ""
+
+#: core/functions/func.Download.php:67
+msgid "The resource you willing to buy is not existed"
+msgstr ""
+
+#: core/functions/func.Download.php:73 core/functions/shop/func.Shop.php:499
+#: core/modules/mod.Download.php:36 core/modules/mod.Download.php:50
+#: dash/options.php:1290 dash/options.php:1396
+msgid "None"
+msgstr ""
+
+#: core/functions/func.Download.php:77
+msgid "You have bought the resource yet, do not repeat a purchase"
+msgstr ""
+
+#: core/functions/func.Download.php:121
+msgid "Failed to buy the resource, or maybe you have bought before"
+msgstr ""
+
+#: core/functions/func.Download.php:125
+msgid "Payment for the resource finished successfully"
+msgstr ""
+
+#: core/functions/func.Download.php:138
+msgid "消费积分: %1$d (%2$s优惠, 原价%3$d)<br>当前积分余额: %2$d"
+msgstr ""
+
+#: core/functions/func.Download.php:141
+#, php-format
+msgid "消费积分: %1$d<br>当前积分余额: %2$d"
+msgstr ""
+
+#: core/functions/func.Follow.php:106
+msgid "The user you are following not exist"
+msgstr ""
+
+#: core/functions/func.Follow.php:110
+msgid "You must sign in to follow someone"
+msgstr ""
+
+#: core/functions/func.Follow.php:113
+msgid "You cannot follow yourself"
+>>>>>>> dev
 msgstr ""
 
 #: core/functions/func.Follow.php:128
@@ -1236,83 +2472,146 @@ msgstr ""
 msgid "FOLLOW"
 msgstr ""
 
+<<<<<<< HEAD
 #: core/functions/func.Init.php:79
+=======
+#: core/functions/func.Init.php:36
+#, fuzzy
+msgid "Top Menu"
+msgstr "Top Left"
+
+#: core/functions/func.Init.php:37
+msgid "Foot Menu"
+msgstr ""
+
+#: core/functions/func.Init.php:41
+#, fuzzy
+msgid "Shop Left Menu"
+msgstr "Top Left"
+
+#: core/functions/func.Init.php:82
+>>>>>>> dev
 #, php-format
 msgid "Installing: %s"
 msgstr ""
 
+<<<<<<< HEAD
 #: core/functions/func.Init.php:80
 msgid "There is a problem with the plugin API"
 msgstr ""
 
 #: core/functions/func.Init.php:81
+=======
+#: core/functions/func.Init.php:83
+msgid "There is a problem with the plugin API"
+msgstr ""
+
+#: core/functions/func.Init.php:84
+>>>>>>> dev
 #, php-format
 msgid "Tint require the plugin: %1$s."
 msgid_plural "Tint require these plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
+<<<<<<< HEAD
 #: core/functions/func.Init.php:82
+=======
+#: core/functions/func.Init.php:85
+>>>>>>> dev
 #, php-format
 msgid "Tint recommend the plugin: %1$s."
 msgid_plural "Tint recommend these plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
+<<<<<<< HEAD
 #: core/functions/func.Init.php:83
+=======
+#: core/functions/func.Init.php:86
+>>>>>>> dev
 #, php-format
 msgid "Permission denied while installing %s plugin."
 msgid_plural "Permission denied while installing %s plugins."
 msgstr[0] ""
 msgstr[1] ""
 
+<<<<<<< HEAD
 #: core/functions/func.Init.php:84
+=======
+#: core/functions/func.Init.php:87
+>>>>>>> dev
 #, php-format
 msgid "The required plugin are not activated yet: %1$s"
 msgid_plural "These required plugins are not activated yet: %1$s"
 msgstr[0] ""
 msgstr[1] ""
 
+<<<<<<< HEAD
 #: core/functions/func.Init.php:85
+=======
+#: core/functions/func.Init.php:88
+>>>>>>> dev
 #, php-format
 msgid "The recommended plugin are not activated yet: %1$s"
 msgid_plural "These recommended plugins are not activated yet: %1$s"
 msgstr[0] ""
 msgstr[1] ""
 
+<<<<<<< HEAD
 #: core/functions/func.Init.php:86
+=======
+#: core/functions/func.Init.php:89
+>>>>>>> dev
 #, php-format
 msgid "Permission denied while activating the %s plugin."
 msgid_plural "Permission denied while activating the %s plugins."
 msgstr[0] ""
 msgstr[1] ""
 
+<<<<<<< HEAD
 #: core/functions/func.Init.php:87
+=======
+#: core/functions/func.Init.php:90
+>>>>>>> dev
 #, php-format
 msgid "The plugin need update: %1$s."
 msgid_plural "These plugins need update: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
+<<<<<<< HEAD
 #: core/functions/func.Init.php:88
+=======
+#: core/functions/func.Init.php:91
+>>>>>>> dev
 #, php-format
 msgid "Permission denied while updating the %s plugin."
 msgid_plural "Permission denied while updating %s plugins."
 msgstr[0] ""
 msgstr[1] ""
 
+<<<<<<< HEAD
 #: core/functions/func.Init.php:89
+=======
+#: core/functions/func.Init.php:92
+>>>>>>> dev
 msgid "Install the plugin"
 msgid_plural "Install the plugins"
 msgstr[0] ""
 msgstr[1] ""
 
+<<<<<<< HEAD
 #: core/functions/func.Init.php:90
+=======
+#: core/functions/func.Init.php:93
+>>>>>>> dev
 msgid "Activate the installed plugin"
 msgid_plural "Activate the installed plugins"
 msgstr[0] ""
 msgstr[1] ""
 
+<<<<<<< HEAD
 #: core/functions/func.Init.php:91
 msgid "return back"
 msgstr ""
@@ -1322,6 +2621,17 @@ msgid "Plugin activated"
 msgstr ""
 
 #: core/functions/func.Init.php:93
+=======
+#: core/functions/func.Init.php:94
+msgid "return back"
+msgstr ""
+
+#: core/functions/func.Init.php:95
+msgid "Plugin activated"
+msgstr ""
+
+#: core/functions/func.Init.php:96
+>>>>>>> dev
 #, php-format
 msgid "All plugins are installed and activated %s"
 msgstr ""
@@ -1333,6 +2643,7 @@ msgid ""
 msgstr ""
 
 #: core/functions/func.Install.php:35 core/functions/func.Install.php:59
+<<<<<<< HEAD
 #: core/functions/func.Install.php:84 core/functions/func.Install.php:97
 msgid "Caught exception: "
 msgstr ""
@@ -2726,12 +4037,4251 @@ msgstr ""
 
 #: dash/of_inc/includes/class-options-sanitization.php:338
 msgid "Middle Left"
+=======
+#: core/functions/func.Install.php:93 core/functions/func.Install.php:119
+#: core/functions/func.Install.php:132
+msgid "Caught exception: "
+msgstr ""
+
+#: core/functions/func.Install.php:36 core/functions/func.Install.php:60
+#: core/functions/func.Install.php:133 functions.php:16
+msgid "WordPress internal error"
+msgstr ""
+
+#: core/functions/func.Install.php:59
+msgid ""
+"Create tmp upload folder failed, maybe check your php.ini to enable `mkdir` "
+"function.\\n"
+msgstr ""
+
+#: core/functions/func.Install.php:80
+msgid ""
+"You choose the memcache object cache, but the Memcache library is not "
+"installed"
+msgstr ""
+
+#: core/functions/func.Install.php:80 core/functions/func.Install.php:83
+#: core/functions/func.Install.php:94
+msgid "Copy plugin error"
+msgstr ""
+
+#: core/functions/func.Install.php:83
+msgid ""
+"You choose the redis object cache, but the Redis library is not installed"
+msgstr ""
+
+#: core/functions/func.Install.php:93
+msgid "Can not copy `object-cache.php` to `wp-content` dir.\\n"
+msgstr ""
+
+#: core/functions/func.Install.php:119
+msgid ""
+"Create timthumb cache folder failed, maybe check your php.ini to enable "
+"`mkdir` function.\\n"
+msgstr ""
+
+#: core/functions/func.Install.php:120
+msgid "Create folder error"
+msgstr ""
+
+#: core/functions/func.Install.php:132
+msgid "Can not copy `memcache object-cache.php` to `wp-content` dir.\\n"
+msgstr ""
+
+#: core/functions/func.Kits.php:365
+msgid "WordPress &rsaquo; Error"
+msgstr ""
+
+#: core/functions/func.Kits.php:551
+#: core/modules/management/mg.Tab.Coupons.php:113
+#: core/modules/management/mg.Tab.Members.php:99
+#: core/modules/management/mg.Tab.Orders.php:83
+#: core/modules/management/mg.Tab.Posts.php:63
+#: core/modules/management/mg.Tab.Products.php:66
+#: core/modules/management/mg.Tab.Users.php:84
+#: core/modules/me/me.Tab.Credits.php:125 core/modules/me/me.Tab.Drafts.php:57
+#: core/modules/me/me.Tab.Membership.php:93
+#: core/modules/me/me.Tab.Messages.php:85
+#: core/modules/me/me.Tab.Notifications.php:56
+#: core/modules/me/me.Tab.Orders.php:86 core/modules/mod.SearchPosts.php:49
+#: core/modules/uc/uc.Tab.Chat.php:87 core/modules/uc/uc.Tab.Comments.php:54
+#: core/modules/uc/uc.Tab.Followers.php:67
+#: core/modules/uc/uc.Tab.Following.php:67 core/modules/uc/uc.Tab.Latest.php:67
+#, php-format
+msgid "Current Page %d"
+msgstr ""
+
+#: core/functions/func.Kits.php:553 core/functions/func.Kits.php:584
+#: core/modules/management/mg.Tab.Coupons.php:115
+#: core/modules/management/mg.Tab.Members.php:101
+#: core/modules/management/mg.Tab.Orders.php:85
+#: core/modules/management/mg.Tab.Posts.php:65
+#: core/modules/management/mg.Tab.Products.php:68
+#: core/modules/management/mg.Tab.Users.php:86
+#: core/modules/me/me.Tab.Credits.php:127 core/modules/me/me.Tab.Drafts.php:59
+#: core/modules/me/me.Tab.Membership.php:95
+#: core/modules/me/me.Tab.Messages.php:87
+#: core/modules/me/me.Tab.Notifications.php:58
+#: core/modules/me/me.Tab.Orders.php:88 core/modules/mod.SearchPosts.php:51
+#: core/modules/uc/uc.Tab.Chat.php:89 core/modules/uc/uc.Tab.Comments.php:56
+#: core/modules/uc/uc.Tab.Followers.php:69
+#: core/modules/uc/uc.Tab.Following.php:69 core/modules/uc/uc.Tab.Latest.php:69
+#, php-format
+msgid "Total %d Pages"
+msgstr ""
+
+#: core/functions/func.Kits.php:578
+msgid "PREV PAGE"
+msgstr "PREV"
+
+#: core/functions/func.Kits.php:579
+msgid "NEXT PAGE"
+msgstr "NEXT"
+
+#: core/functions/func.Mail.php:128
+#, php-format
+msgid "New Comment Notification - %s"
+msgstr ""
+
+#: core/functions/func.Mail.php:131
+#, php-format
+msgid "New Comment In Your Blog - %s"
+msgstr ""
+
+#: core/functions/func.Mail.php:134 core/functions/func.Mail.php:143
+#: core/functions/func.Mail.php:152
+#, php-format
+msgid "New Comment Reply Notification - %s"
+msgstr ""
+
+#: core/functions/func.Mail.php:137
+#, php-format
+msgid "The Files You Asking For In %s"
+msgstr ""
+
+#: core/functions/func.Mail.php:140
+#, php-format
+msgid "New Download Request Handled In Your Blog %s"
+msgstr ""
+
+#: core/functions/func.Mail.php:146
+#, php-format
+msgid "New Login Event Notification - %s"
+msgstr ""
+
+#: core/functions/func.Mail.php:149
+#, php-format
+msgid "New Login Fail Event Notification - %s"
+msgstr ""
+
+#: core/functions/func.Mail.php:156
+#, php-format
+msgid "Site Internal Notification - %s"
+msgstr ""
+
+#: core/functions/func.Mail.php:210 core/functions/func.Mail.php:226
+#: core/functions/func.Mail.php:228
+#, php-format
+msgid "%1$s在%2$s中回复你"
+msgstr ""
+
+#: core/functions/func.Mail.php:213
+#, php-format
+msgid "我在%1$s中回复了你"
+msgstr ""
+
+#: core/functions/func.Mail.php:239
+#, php-format
+msgid "%1$s上的文章有了新的回复"
+msgstr ""
+
+#: core/functions/func.Mail.php:260
+msgid "你的博客空间登录提醒"
+msgstr ""
+
+#: core/functions/func.Mail.php:283
+msgid "你的博客空间登录错误警告"
+msgstr ""
+
+#: core/functions/func.Mail.php:306
+#, php-format
+msgid "获得文章投稿奖励%1$s积分"
+msgstr ""
+
+#: core/functions/func.Mail.php:311
+#, php-format
+msgid "你在%1$s上有新的文章发表"
+msgstr ""
+
+#: core/functions/func.Mail.php:340 core/functions/func.Mail.php:367
+msgid "会员状态变更提醒"
+msgstr ""
+
+#: core/functions/func.Member.php:63
+msgid "Permanent Membership"
+msgstr ""
+
+#: core/functions/func.Member.php:66
+msgid "Annual Membership"
+msgstr ""
+
+#: core/functions/func.Member.php:69
+msgid "Monthly Membership"
+msgstr ""
+
+#: core/functions/func.Member.php:72
+msgid "Expired Membership"
+msgstr ""
+
+#: core/functions/func.Member.php:75
+msgid "None Membership"
+msgstr ""
+
+#: core/functions/func.Member.php:93
+msgid "In Effective"
+msgstr ""
+
+#: core/functions/func.Member.php:96
+msgid "Expired"
+msgstr ""
+
+#: core/functions/func.Member.php:99
+msgid "N/A"
+msgstr ""
+
+#: core/functions/func.Member.php:204 core/functions/func.Member.php:224
+msgid "你的会员状态发生了变化"
+msgstr ""
+
+#: core/functions/func.Member.php:204 core/functions/func.Member.php:224
+#, php-format
+msgid "会员类型: %1$s, 到期时间: %2$s"
+msgstr ""
+
+#: core/functions/func.Message.php:72 core/functions/func.Message.php:85
+#, php-format
+msgid "%1$s向你发送了一条消息 - %2$s"
+msgstr ""
+
+#: core/functions/func.Metabox.php:20
+msgid "Post Embed Product"
+msgstr ""
+
+#: core/functions/func.Metabox.php:28
+msgid "Post Copyright Info"
+msgstr ""
+
+#: core/functions/func.Metabox.php:36
+msgid "普通与积分收费下载"
+msgstr ""
+
+#: core/functions/func.Metabox.php:44
+msgid "页面关键词与描述"
+msgstr ""
+
+#: core/functions/func.Metabox.php:52
+msgid "商品信息"
+msgstr ""
+
+#: core/functions/func.Metabox.php:72
+msgid "Embed Product ID"
+msgstr ""
+
+#: core/functions/func.Metabox.php:74
+msgid "(Leave empty or zero to disable)"
+msgstr ""
+
+#: core/functions/func.Metabox.php:90
+msgid "Post Source Title"
+msgstr ""
+
+#: core/functions/func.Metabox.php:92
+msgid "Post Source Link, leaving empty means the post is original article"
+msgstr ""
+
+#: core/functions/func.Metabox.php:113
+msgid "普通下载资源下载方式"
+msgstr ""
+
+#: core/functions/func.Metabox.php:114
+msgid ""
+"普通下载资源，格式为 资源1名称|资源1url|下载密码,资源2名称|资源2url|下载密码 "
+"资源名称与url用|隔开，一行一个资源记录，url请添加http://头，如提供百度网盘加"
+"密下载可以填写密码，也可以留空"
+msgstr ""
+
+#: core/functions/func.Metabox.php:116
+msgid ""
+"积分下载资源，格式为 资源1名称|资源1url|资源1价格|下载密码,资源2名称|资源"
+"2url|资源2价格|下载密码 资源名称与url以及价格、下载密码用|隔开，一行一个资源"
+"记录"
+msgstr ""
+
+#: core/functions/func.Metabox.php:134
+msgid "页面关键词"
+msgstr ""
+
+#: core/functions/func.Metabox.php:136
+msgid "页面描述"
+msgstr ""
+
+#: core/functions/func.Metabox.php:177
+#, php-format
+msgid "此商品购买按钮快捷插入短代码为[product id=\"%1$s\"][/product]"
+msgstr ""
+
+#: core/functions/func.Metabox.php:180
+msgid "基本信息"
+msgstr ""
+
+#: core/functions/func.Metabox.php:182
+msgid "选择支付币种"
+msgstr ""
+
+#: core/functions/func.Metabox.php:184
+msgid "积分"
+msgstr ""
+
+#: core/functions/func.Metabox.php:185
+msgid "人民币"
+msgstr ""
+
+#: core/functions/func.Metabox.php:188
+msgid "选择购买渠道"
+msgstr ""
+
+#: core/functions/func.Metabox.php:190
+msgid "站内购买"
+msgstr ""
+
+#: core/functions/func.Metabox.php:191 core/functions/func.Metabox.php:219
+msgid "淘宝链接"
+msgstr ""
+
+#: core/functions/func.Metabox.php:194
+msgid "商品售价 "
+msgstr ""
+
+#: core/functions/func.Metabox.php:197
+msgid "商品数量 "
+msgstr ""
+
+#: core/functions/func.Metabox.php:201
+msgid "VIP会员折扣百分数(100代表原价)"
+msgstr ""
+
+#: core/functions/func.Metabox.php:203
+msgid "VIP月费会员折扣 "
+msgstr ""
+
+#: core/functions/func.Metabox.php:206
+msgid "VIP年费会员折扣 "
+msgstr ""
+
+#: core/functions/func.Metabox.php:209
+msgid "VIP永久会员折扣 "
+msgstr ""
+
+#: core/functions/func.Metabox.php:213
+msgid "促销信息"
+msgstr ""
+
+#: core/functions/func.Metabox.php:215
+msgid "优惠促销折扣(100代表原价)"
+msgstr ""
+
+#: core/functions/func.Metabox.php:221
+msgid "购买渠道为淘宝时，请务必填写该项"
+msgstr ""
+
+#: core/functions/func.Metabox.php:224
+msgid "付费内容"
+msgstr ""
+
+#: core/functions/func.Metabox.php:226
+msgid "付费查看下载链接,一行一个,每个资源格式为资源名|资源下载链接|密码"
+msgstr ""
+
+#: core/functions/func.Metabox.php:228
+msgid "付费查看的内容信息"
+msgstr ""
+
+#: core/functions/func.Metabox.php:231
+msgid "当前购买的用户邮箱"
+msgstr ""
+
+#: core/functions/func.Optimization.php:305
+#, php-format
+msgid "查看更多关于 %s 的文章"
+msgstr ""
+
+#: core/functions/func.Page.php:72
+msgid "(no parent)"
+msgstr ""
+
+#: core/functions/func.Page.php:81 core/functions/func.Page.php:82
+msgid "Parent"
+msgstr ""
+
+#: core/functions/func.Page.php:91
+msgid "Template"
+msgstr ""
+
+#: core/functions/func.Page.php:94
+msgid "Page Template"
+msgstr ""
+
+#: core/functions/func.Page.php:96
+msgid "Default Template"
+msgstr ""
+
+#: core/functions/func.Page.php:103 core/functions/func.Page.php:104
+msgid "Order"
+msgstr ""
+
+#: core/functions/func.Page.php:106
+msgid "Need help? Use the Help tab in the upper right of your screen."
+msgstr ""
+
+#: core/functions/func.Page.php:121
+msgid "Page Attributes"
+msgstr ""
+
+#: core/functions/func.Page.php:175
+msgid "The page template is invalid"
+msgstr ""
+
+#: core/functions/func.Page.php:175
+msgid "Invalid Page Template"
+msgstr ""
+
+#: core/functions/func.Schedule.php:28
+msgid "Weekly"
+msgstr ""
+
+#: core/functions/func.Seo.php:28 core/functions/func.Seo.php:215
+#: core/modules/mod.ModalLoginForm.php:17
+#: core/templates/actions/tpl.M.Signup.php:90
+msgid "Sign In"
+msgstr ""
+
+#: core/functions/func.Seo.php:31 core/functions/func.Seo.php:218
+#: core/templates/actions/tpl.M.Signup.php:62
+msgid "Sign Up"
+msgstr ""
+
+#: core/functions/func.Seo.php:34 core/functions/func.Seo.php:221
+msgid "Activate Registration"
+msgstr ""
+
+#: core/functions/func.Seo.php:37 core/functions/func.Seo.php:224
+#: core/modules/mod.Header.Shop.php:103 core/modules/mod.Header.php:72
+msgid "Sign Out"
+msgstr ""
+
+#: core/functions/func.Seo.php:40 core/functions/func.Seo.php:227
+#: core/templates/actions/tpl.M.Findpass.php:33
+msgid "Find Password"
+msgstr ""
+
+#: core/functions/func.Seo.php:43
+msgid "Reset Password"
+msgstr ""
+
+#: core/functions/func.Seo.php:51 core/modules/mod.Header.Shop.php:101
+#: core/modules/mod.Header.php:70
+msgid "My Settings"
+msgstr ""
+
+#: core/functions/func.Seo.php:54 core/modules/me/me.Tab.Notifications.php:26
+msgid "My Notifications"
+msgstr ""
+
+#: core/functions/func.Seo.php:57 core/modules/me/me.Tab.Messages.php:26
+#: core/modules/mod.Header.Shop.php:100 core/modules/mod.Header.php:69
+msgid "My Messages"
+msgstr ""
+
+#: core/functions/func.Seo.php:60
+msgid "My Stars"
+msgstr ""
+
+#: core/functions/func.Seo.php:63 core/modules/me/me.Tab.Credits.php:26
+msgid "My Credits"
+msgstr ""
+
+#: core/functions/func.Seo.php:66 core/modules/me/me.Tab.Orders.php:26
+#: core/modules/mod.Header.Shop.php:99
+msgid "My Orders"
+msgstr ""
+
+#: core/functions/func.Seo.php:69
+msgid "My Order"
+msgstr ""
+
+#: core/functions/func.Seo.php:72 core/modules/me/me.Tab.Drafts.php:26
+msgid "My Drafts"
+msgstr ""
+
+#: core/functions/func.Seo.php:75 core/modules/mod.Header.php:67
+msgid "New Post"
+msgstr ""
+
+#: core/functions/func.Seo.php:78 core/modules/me/me.Tab.EditPost.php:26
+#: core/modules/uc/uc.Tab.Latest.php:34
+msgid "Edit Post"
+msgstr ""
+
+#: core/functions/func.Seo.php:81
+msgid "My Membership"
+msgstr ""
+
+#: core/functions/func.Seo.php:89
+msgid "Check Out Orders"
+msgstr ""
+
+#: core/functions/func.Seo.php:92
+msgid "Payment Result"
+msgstr ""
+
+#: core/functions/func.Seo.php:95
+msgid "Do Payment"
+msgstr ""
+
+#: core/functions/func.Seo.php:99
+msgid "Resources Download:"
+msgstr ""
+
+#: core/functions/func.Seo.php:102 core/templates/site/tpl.Privacy.php:23
+msgid "Privacy Policies and Terms"
+msgstr ""
+
+#: core/functions/func.Seo.php:111
+msgid "Complete Account Info - QQ Connect"
+msgstr ""
+
+#: core/functions/func.Seo.php:114
+msgid "Complete Account Info - Weibo Connect"
+msgstr ""
+
+#: core/functions/func.Seo.php:117
+msgid "Complete Account Info - Weixin Connect"
+msgstr ""
+
+#: core/functions/func.Seo.php:125 core/modules/management/mg.Tab.Status.php:26
+msgid "Site Statistic"
+msgstr ""
+
+#: core/functions/func.Seo.php:128
+msgid "Posts Management"
+msgstr ""
+
+#: core/functions/func.Seo.php:131
+msgid "Comments Management"
+msgstr ""
+
+#: core/functions/func.Seo.php:134
+msgid "Users Management"
+msgstr ""
+
+#: core/functions/func.Seo.php:137
+msgid "Orders Management"
+msgstr ""
+
+#: core/functions/func.Seo.php:140
+msgid "Coupons Management"
+msgstr ""
+
+#: core/functions/func.Seo.php:143
+msgid "Members Management"
+msgstr ""
+
+#: core/functions/func.Seo.php:146
+msgid "Products Management"
+msgstr ""
+
+#: core/functions/func.Seo.php:156
+#, php-format
+msgid " - Page %d"
+msgstr ""
+
+#: core/functions/func.Seo.php:167 core/functions/func.Seo.php:264
+#, php-format
+msgid "%s's Home Page"
+msgstr ""
+
+#: core/functions/func.Seo.php:171 core/functions/shop/func.Shop.php:297
+msgid "Product Category"
+msgstr ""
+
+#: core/functions/func.Seo.php:173
+msgid "Product Tag"
+msgstr ""
+
+#: core/functions/func.Seo.php:175 core/functions/func.Seo.php:178
+#: core/functions/func.Seo.php:276 core/modules/mod.Header.Shop.php:29
+#: dash/options.php:1129
+msgid "Market"
+msgstr ""
+
+#: core/functions/func.Seo.php:181
+msgid "Search"
+msgstr ""
+
+#: core/functions/func.Seo.php:183
+msgid "Y"
+msgstr ""
+
+#: core/functions/func.Seo.php:183 core/functions/func.Seo.php:185
+#: core/functions/func.Seo.php:187
+msgid "posts archive"
+msgstr ""
+
+#: core/functions/func.Seo.php:185
+msgid "Y.n"
+msgstr ""
+
+#: core/functions/func.Seo.php:187
+msgid "Y.n.j"
+msgstr ""
+
+#: core/functions/func.Seo.php:189
+msgid "Tag: "
+msgstr ""
+
+#: core/functions/func.Seo.php:191
+msgid "Page Not Found"
+msgstr ""
+
+#: core/functions/func.Seo.php:196
+#, php-format
+msgid " - Page %d "
+msgstr ""
+
+#: core/functions/func.Seo.php:230 core/functions/func.Seo.php:264
+msgid "Powered by Tint(Tinection 2)"
+msgstr ""
+
+#: core/functions/func.Seo.php:263
+msgid "Ucenter"
+msgstr ""
+
+#: core/functions/func.Seo.php:263 core/functions/func.Seo.php:276
+msgid "Tint Ucenter and Market System"
+msgstr ""
+
+#: core/functions/func.Seo.php:279
+msgid ""
+"Powered by Tint(Tinection 2, a powerful wordpress theme with ucenter and "
+"shop system integrated)"
+msgstr ""
+
+#: core/functions/func.ShortCode.php:82
+msgid " 此处内容需要 <span class=\"user-login\">登录</span> 才可见"
+msgstr ""
+
+#: core/functions/func.ShortCode.php:91
+msgid "此处内容需要登录并 <span class=\"user-login\">发表评论</span> 才可见"
+msgstr ""
+
+#: core/functions/func.ShortCode.php:98
+msgid "此处内容需要登录并 <a href=\"#respond\">发表评论</a> 才可见"
+msgstr ""
+
+#: core/functions/func.Sidebar.php:60 dash/options.php:386 dash/options.php:417
+msgid "Common Sidebar"
+msgstr ""
+
+#: core/functions/func.Sidebar.php:61 dash/options.php:387 dash/options.php:420
+msgid "Home Sidebar"
+msgstr ""
+
+#: core/functions/func.Sidebar.php:62 dash/options.php:388 dash/options.php:430
+msgid "Single Sidebar"
+msgstr ""
+
+#: core/functions/func.Sidebar.php:65 dash/options.php:391 dash/options.php:460
+msgid "Search Sidebar"
+msgstr ""
+
+#: core/functions/func.Sidebar.php:67 dash/options.php:393 dash/options.php:480
+msgid "Page Sidebar"
+msgstr ""
+
+#: core/functions/func.Sidebar.php:68 dash/options.php:394 dash/options.php:490
+msgid "Download Page Sidebar"
+msgstr ""
+
+#: core/functions/func.Sidebar.php:88
+msgid "Float Widgets Container"
+msgstr ""
+
+#: core/functions/func.Sidebar.php:90
+msgid ""
+"A container for placing some widgets, it will be float once exceed the vision"
+msgstr ""
+
+#: core/functions/func.Tint.php:73
+#, php-format
+msgid ""
+"Tint主题已更新至<a style=\"color:red;\">%1$s</a>(当前%2$s)，请访问<a href=\""
+msgstr ""
+
+#: core/functions/func.User.php:26
+msgid "Site Manager"
+msgstr ""
+
+#: core/functions/func.User.php:29 dash/options.php:664
+msgid "Editor"
+msgstr ""
+
+#: core/functions/func.User.php:32 dash/options.php:665
+msgid "Author"
+msgstr ""
+
+#: core/functions/func.User.php:35 dash/options.php:666
+msgid "Contributor"
+msgstr ""
+
+#: core/functions/func.User.php:37
+msgid "Reader"
+msgstr ""
+
+#: core/functions/func.User.php:312
+#, php-format
+msgid "Your account is banned for reason: %s"
+msgstr ""
+
+#: core/functions/func.User.php:312
+msgid "Account Banned"
+msgstr ""
+
+#: core/functions/func.User.php:373
+msgid "The specified user is banned"
+msgstr ""
+
+#: core/functions/func.User.php:378
+msgid "Error occurs when banning the user"
+msgstr ""
+
+#: core/functions/func.User.php:407
+msgid "The specified user is unlocked"
+msgstr ""
+
+#: core/functions/func.User.php:412
+msgid "Error occurs when unlock the user"
+msgstr ""
+
+#: core/functions/func.User.php:426
+#, php-format
+msgid "Log User <a href=\"%1$s\">%2$s</a>"
+msgstr ""
+
+#: core/functions/func.User.php:426
+#, php-format
+msgid "<a href=\"%1$s\" title=\"Log Out\">Log Out &raquo;</a>"
+msgstr ""
+
+#: core/functions/func.User.php:428
+#, php-format
+msgid ""
+"<a href=\"%1$s#securityInfo\">Please add correct email for safety of your "
+"account.</a>"
+msgstr ""
+
+#: core/functions/func.User.php:433
+msgid "My HomePage"
+msgstr ""
+
+#: core/functions/func.User.php:438
+msgid "Manage Dashboard"
+msgstr ""
+
+#: core/functions/func.User.php:443 core/modules/me/me.Tab.Contribute.php:23
+msgid "Add New Post"
+msgstr ""
+
+#: core/functions/func.User.php:460
+msgid "Posts"
+msgstr ""
+
+#: core/functions/func.User.php:465
+msgid "Comments"
+msgstr ""
+
+#: core/functions/func.User.php:470
+msgid "Stars"
+msgstr ""
+
+#: core/functions/func.User.php:477
+msgid "Unread Messages"
+msgstr ""
+
+#: core/functions/func.User.php:483 core/modules/management/mg.Tab.User.php:67
+msgid "Credits"
+msgstr ""
+
+#: core/functions/func.User.php:497
+msgid "Ref url for this page"
+msgstr ""
+
+#: core/functions/func.User.php:515
+#, php-format
+msgid "欢迎来到%1$s, 请首先在个人设置中完善您的账号信息, 如邮件地址是必需的"
+msgstr ""
+
+#: core/functions/shop/func.Shop.Cart.php:30
+msgid "You need sign in to view the shopping cart"
+msgstr ""
+
+#: core/functions/shop/func.Shop.Cart.php:52
+#: core/functions/shop/func.Shop.Cart.php:102
+#: core/functions/shop/func.Shop.Cart.php:152
+msgid "You need sign in to update shopping cart"
+msgstr ""
+
+#: core/functions/shop/func.Shop.Cart.php:66
+#: core/functions/shop/func.Shop.Cart.php:118
+msgid "The product you are adding to cart is not found or available"
+msgstr ""
+
+#: core/functions/shop/func.Shop.Coupon.php:68
+msgid "You do not have the permission to add a coupon"
+msgstr ""
+
+#: core/functions/shop/func.Shop.Coupon.php:76
+msgid "The coupon code is existed"
+msgstr ""
+
+#: core/functions/shop/func.Shop.Coupon.php:227
+msgid "The coupon is not existed"
+msgstr ""
+
+#: core/functions/shop/func.Shop.Coupon.php:230
+msgid "The coupon is used"
+msgstr ""
+
+#: core/functions/shop/func.Shop.Coupon.php:234
+msgid "The coupon have not taken in effect yet"
+msgstr ""
+
+#: core/functions/shop/func.Shop.Coupon.php:237
+msgid "The coupon is expired"
+msgstr ""
+
+#: core/functions/shop/func.Shop.Order.php:84
+msgid "Wait Payment"
+msgstr ""
+
+#: core/functions/shop/func.Shop.Order.php:87
+msgid "Payed, Wait Delivery"
+msgstr ""
+
+#: core/functions/shop/func.Shop.Order.php:90
+msgid "Delivered, Wait Confirm"
+msgstr ""
+
+#: core/functions/shop/func.Shop.Order.php:93
+msgid "Trade Succeed"
+msgstr ""
+
+#: core/functions/shop/func.Shop.Order.php:96
+msgid "Trade Closed"
+msgstr ""
+
+#: core/functions/shop/func.Shop.Order.php:99
+msgid "Order Created"
+msgstr ""
+
+#: core/functions/shop/func.Shop.Order.php:409
+#: core/functions/shop/func.Shop.Order.php:417
+#: core/functions/shop/func.Shop.Order.php:434
+msgid "Create combine order failed"
+msgstr ""
+
+#: core/functions/shop/func.Shop.Order.php:486
+msgid "The order with the a order id you specified is not existed"
+msgstr ""
+
+#: core/functions/shop/func.Shop.Order.php:494
+msgid "The coupon is invalid"
+msgstr ""
+
+#: core/functions/shop/func.Shop.Order.php:553
+msgid "The order is not exist"
+msgstr ""
+
+#: core/functions/shop/func.Shop.Order.php:557
+msgid "You are not permit to delete this order"
+msgstr ""
+
+#: core/functions/shop/func.Shop.Order.php:585
+#, php-format
+msgid "%s 商店交易状态变更提醒"
+msgstr ""
+
+#: core/functions/shop/func.Shop.Order.php:602
+#, php-format
+msgid "%s 商店新成功交易提醒"
+msgstr ""
+
+#: core/functions/shop/func.Shop.Order.php:602
+#, php-format
+msgid "%s 商店新订单提醒"
+msgstr ""
+
+#: core/functions/shop/func.Shop.Order.php:692
+#, php-format
+msgid "The Resources You Bought in %s"
+msgstr ""
+
+#: core/functions/shop/func.Shop.Order.php:695
+#: core/modules/me/me.Tab.Credits.php:76 core/modules/me/me.Tab.Credits.php:81
+#: core/modules/me/me.Tab.Credits.php:86 core/modules/me/me.Tab.Credits.php:91
+#: core/modules/me/me.Tab.Credits.php:96 core/modules/me/me.Tab.Credits.php:101
+#: core/viewModels/management/vm.Mg.Order.php:73
+#: core/viewModels/me/vm.Me.Order.php:79
+#, php-format
+msgid "%d Credits"
+msgstr ""
+
+#: core/functions/shop/func.Shop.Order.php:695
+#: core/viewModels/management/vm.Mg.Order.php:73
+#: core/viewModels/me/vm.Me.Order.php:79
+#, php-format
+msgid "%0.2f YUAN"
+msgstr ""
+
+#: core/functions/shop/func.Shop.Order.php:726
+#: core/functions/shop/func.Shop.Order.php:733
+msgid "The order is not found"
+msgstr ""
+
+#: core/functions/shop/func.Shop.Order.php:743
+msgid "The order has been closed"
+msgstr ""
+
+#: core/functions/shop/func.Shop.Order.php:759
+msgid "Some error happened when continue the payment"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:28
+msgctxt "taxonomy general name"
+msgid "Products"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:29
+msgctxt "taxonomy singular name"
+msgid "Product"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:30
+msgid "Add New"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:31
+msgid "Add New Product"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:33
+msgid "Edit Product"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:34
+msgid "Add Product"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:36
+msgid "All Products"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:37
+msgid "View Product"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:38
+msgid "Search Product"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:39
+msgid "Product not found"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:40
+msgid "Product not found in trash"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:41
+msgid "Parent Product"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:42
+msgid "Shop and Products"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:104
+msgctxt "taxonomy general name"
+msgid "Products Categories"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:105
+msgctxt "taxonomy singular name"
+msgid "Products Category"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:106
+msgid "Search Products Categories"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:107
+msgid "All Products Categories"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:108
+msgid "Parent Products Category"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:109
+msgid "Parent Products Category:"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:110
+msgid "Edit Products Category"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:111
+msgid "Update Products Category"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:112
+msgid "Add New Products Category"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:113
+msgid "Name of New Products Category"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:114
+msgid "Products Categories"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:128
+msgctxt "taxonomy general name"
+msgid "Product Tags"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:129
+msgctxt "taxonomy singular name"
+msgid "Product Tag"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:130
+msgid "Search Product Tags"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:131
+msgid "Popular Product Tags"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:132
+msgid "All Product Tags"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:135
+msgid "Edit Product Tag"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:136
+msgid "Update Product Tag"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:137
+msgid "Add New Product Tag"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:138
+msgid "Name of New Product Tag"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:139
+msgid "Separate Product Tags with Commas"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:140
+msgid "Add or Remove Product Tag"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:141
+msgid "Choose from Most Used Product Tags"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:142
+#: core/modules/management/mg.Tab.Status.php:76
+#: core/modules/shop/mod.Shop.Sidebar.Left.php:52
+msgid "Product Tags"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:210 core/functions/shop/func.Shop.php:262
+msgid "Product ID"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:211 core/functions/shop/func.Shop.php:263
+#: core/modules/mod.Header.Shop.php:136
+msgid "Price"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:212 core/functions/shop/func.Shop.php:264
+msgid "Quantities"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:213 core/functions/shop/func.Shop.php:265
+msgid "Sales"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:216
+#: core/modules/management/mg.Tab.Orders.php:45
+#: core/modules/me/me.Tab.Orders.php:44 core/templates/site/tpl.CheckOut.php:87
+msgid "Product Name"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:219
+msgid "Publisher"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:222
+msgid "Hot Hits"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:240
+msgid "RMB YUAN"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:246 core/functions/shop/func.Shop.php:249
+msgid "pieces"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:295
+msgid "Show all categories"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:500
+#, php-format
+msgid ""
+"<li style=\"margin: 0 0 10px 0;\"><p style=\"padding: 5px 0; margin: 0;\">"
+"%1$s</p><p style=\"padding: 5px 0; margin: 0;\">下载链接：<a href=\"%2$s\" "
+"title=\"%1$s\" target=\"_blank\">%2$s</a>下载密码：%3$s</p></li>"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:526
+msgid ""
+"<div class=\"contextual-bg bg-paycontent\"><span><i class=\"tico tico-paypal"
+"\">&nbsp;</i>付费内容</span><p>你只有购买支付后才能查看该内容！</p></div>"
+msgstr ""
+
+#: core/functions/shop/func.Shop.php:532
+#, php-format
+msgid ""
+"<div class=\"contextual-bg bg-paycontent\"><span><i class=\"tico tico-paypal"
+"\">&nbsp;</i>付费内容</span><p>%1$s</p><p>%2$s</p></div>"
+msgstr ""
+
+#: core/modules/management/mg.NavMenu.php:24
+msgid "SITE MANAGEMENT"
+msgstr ""
+
+#: core/modules/management/mg.NavMenu.php:27
+msgid "STATISTIC"
+msgstr ""
+
+#: core/modules/management/mg.NavMenu.php:28
+#: core/modules/uc/uc.Tab.Followers.php:38
+#: core/modules/uc/uc.Tab.Following.php:38
+#: core/modules/widgets/wgt.Author.php:52
+msgid "POSTS"
+msgstr ""
+
+#: core/modules/management/mg.NavMenu.php:29
+msgid "PRODUCTS"
+msgstr ""
+
+#: core/modules/management/mg.NavMenu.php:31 core/modules/me/me.NavMenu.php:34
+msgid "ORDERS"
+msgstr ""
+
+#: core/modules/management/mg.NavMenu.php:32
+msgid "USERS"
+msgstr ""
+
+#: core/modules/management/mg.NavMenu.php:33
+msgid "MEMBERS"
+msgstr ""
+
+#: core/modules/management/mg.NavMenu.php:34
+msgid "COUPONS"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Coupons.php:26
+msgid "Add Coupon"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Coupons.php:29
+#: core/modules/management/mg.Tab.Coupons.php:76
+msgid "Coupon Type"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Coupons.php:31
+#: core/modules/management/mg.Tab.Coupons.php:91
+msgid "ONCE COUPON"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Coupons.php:34
+#: core/modules/management/mg.Tab.Coupons.php:91
+msgid "MULTI COUPON"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Coupons.php:42
+msgid "Code"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Coupons.php:46
+msgid "Discount"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Coupons.php:54
+msgid "Effect Date"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Coupons.php:58
+#: core/modules/management/mg.Tab.User.php:94
+#: core/modules/me/me.Tab.Membership.php:41
+msgid "Expire Date"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Coupons.php:62
+#: core/modules/management/mg.Tab.Members.php:49
+msgid "ADD"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Coupons.php:64
+msgid ""
+"折扣请填写0~1之间的小数, 并精确到2位小数, 有效期格式为2017-01-01 10:00:00"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Coupons.php:69
+msgid "Coupons List"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Coupons.php:74
+msgid "Coupon Sequence"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Coupons.php:75
+msgid "Coupon Code"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Coupons.php:77
+msgid "Coupon Discount"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Coupons.php:78
+msgid "Coupon Status"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Coupons.php:79
+msgid "Coupon Effect Date"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Coupons.php:80
+msgid "Coupon Expire Date"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Coupons.php:81
+#: core/modules/management/mg.Tab.Members.php:67
+#: core/modules/management/mg.Tab.Orders.php:50
+#: core/modules/management/mg.Tab.Users.php:53
+#: core/modules/me/me.Tab.Orders.php:48 core/templates/site/tpl.CheckOut.php:91
+msgid "Actions"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Coupons.php:93
+msgid "Not Used"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Coupons.php:93
+msgid "Used"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Coupons.php:98
+msgid "Delete the coupon"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Coupons.php:98
+#: core/modules/management/mg.Tab.Members.php:84
+#: core/modules/management/mg.Tab.Orders.php:67
+#: core/modules/me/me.Tab.Orders.php:69
+msgid "Delete"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Coupons.php:108
+#: core/modules/management/mg.Tab.Coupons.php:110
+#: core/modules/management/mg.Tab.Members.php:94
+#: core/modules/management/mg.Tab.Members.php:96
+#: core/modules/management/mg.Tab.Orders.php:78
+#: core/modules/management/mg.Tab.Orders.php:80
+#: core/modules/management/mg.Tab.Posts.php:58
+#: core/modules/management/mg.Tab.Posts.php:60
+#: core/modules/management/mg.Tab.Products.php:61
+#: core/modules/management/mg.Tab.Products.php:63
+#: core/modules/management/mg.Tab.Users.php:79
+#: core/modules/management/mg.Tab.Users.php:81
+#: core/modules/me/me.Tab.Credits.php:120
+#: core/modules/me/me.Tab.Credits.php:122 core/modules/me/me.Tab.Drafts.php:52
+#: core/modules/me/me.Tab.Drafts.php:54
+#: core/modules/me/me.Tab.Membership.php:88
+#: core/modules/me/me.Tab.Membership.php:90
+#: core/modules/me/me.Tab.Messages.php:80
+#: core/modules/me/me.Tab.Messages.php:82
+#: core/modules/me/me.Tab.Notifications.php:51
+#: core/modules/me/me.Tab.Notifications.php:53
+#: core/modules/me/me.Tab.Orders.php:81 core/modules/me/me.Tab.Orders.php:83
+#: core/modules/mod.SearchPosts.php:44 core/modules/mod.SearchPosts.php:46
+#: core/modules/uc/uc.Tab.Followers.php:62
+#: core/modules/uc/uc.Tab.Followers.php:64
+#: core/modules/uc/uc.Tab.Following.php:62
+#: core/modules/uc/uc.Tab.Following.php:64
+msgid "← 上一页"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Coupons.php:118
+#: core/modules/management/mg.Tab.Coupons.php:120
+#: core/modules/management/mg.Tab.Members.php:104
+#: core/modules/management/mg.Tab.Members.php:106
+#: core/modules/management/mg.Tab.Orders.php:88
+#: core/modules/management/mg.Tab.Orders.php:90
+#: core/modules/management/mg.Tab.Posts.php:68
+#: core/modules/management/mg.Tab.Posts.php:70
+#: core/modules/management/mg.Tab.Products.php:71
+#: core/modules/management/mg.Tab.Products.php:73
+#: core/modules/management/mg.Tab.Users.php:89
+#: core/modules/management/mg.Tab.Users.php:91
+#: core/modules/me/me.Tab.Credits.php:130
+#: core/modules/me/me.Tab.Credits.php:132 core/modules/me/me.Tab.Drafts.php:62
+#: core/modules/me/me.Tab.Drafts.php:64
+#: core/modules/me/me.Tab.Membership.php:98
+#: core/modules/me/me.Tab.Membership.php:100
+#: core/modules/me/me.Tab.Messages.php:90
+#: core/modules/me/me.Tab.Messages.php:92
+#: core/modules/me/me.Tab.Notifications.php:61
+#: core/modules/me/me.Tab.Notifications.php:63
+#: core/modules/me/me.Tab.Orders.php:91 core/modules/me/me.Tab.Orders.php:93
+#: core/modules/mod.SearchPosts.php:54 core/modules/mod.SearchPosts.php:56
+#: core/modules/uc/uc.Tab.Followers.php:72
+#: core/modules/uc/uc.Tab.Followers.php:74
+#: core/modules/uc/uc.Tab.Following.php:72
+#: core/modules/uc/uc.Tab.Following.php:74
+msgid "下一页 →"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Coupons.php:127
+#: core/modules/management/mg.Tab.Members.php:113
+#: core/modules/management/mg.Tab.Orders.php:97
+#: core/modules/management/mg.Tab.Posts.php:77
+#: core/modules/management/mg.Tab.Products.php:80
+#: core/modules/management/mg.Tab.Users.php:98
+#: core/modules/me/me.Tab.Drafts.php:71 core/modules/uc/uc.Tab.Comments.php:63
+#: core/modules/uc/uc.Tab.Followers.php:81
+#: core/modules/uc/uc.Tab.Following.php:81 core/modules/uc/uc.Tab.Latest.php:76
+#: core/modules/uc/uc.Tab.Stars.php:79
+msgid "Nothing found here"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Members.php:26
+msgid "Add Member"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Members.php:29
+msgid "Member VIP Type"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Members.php:31
+msgid "MONTHLY VIP"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Members.php:34
+msgid "ANNUAL VIP"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Members.php:37
+msgid "PERMANENT VIP"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Members.php:45
+msgid "User name or ID"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Members.php:51
+msgid "请提供要提升会员用户的登录名或用户ID"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Members.php:56
+msgid "Members List"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Members.php:61
+msgid "Sequence"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Members.php:62
+#: core/modules/management/mg.Tab.User.php:30
+msgid "User ID"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Members.php:63
+#: core/modules/management/mg.Tab.Users.php:48
+msgid "User Name"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Members.php:64
+#: core/modules/management/mg.Tab.User.php:81
+#: core/modules/me/me.Tab.Membership.php:29
+msgid "Member Type"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Members.php:65
+msgid "Member Effect Date"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Members.php:66
+msgid "Member Expire Date"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Members.php:83
+msgid "View the user homepage"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Members.php:83
+#, fuzzy
+msgid "View User"
+msgstr "View File"
+
+#: core/modules/management/mg.Tab.Members.php:84
+msgid "Delete the member"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Order.php:27
+#: core/modules/management/mg.Tab.Order.php:97
+#: core/modules/me/me.Tab.Order.php:27 core/modules/me/me.Tab.Order.php:109
+msgid "Order Detail"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Order.php:30
+#: core/modules/me/me.Tab.Order.php:30
+msgid "Order ID"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Order.php:34
+#: core/modules/me/me.Tab.Order.php:34
+msgid "Order Content"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Order.php:40
+#: core/modules/management/mg.Tab.Orders.php:47
+#: core/modules/me/me.Tab.Order.php:40 core/modules/me/me.Tab.Orders.php:45
+msgid "Order Create Time"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Order.php:45
+#: core/modules/me/me.Tab.Order.php:45
+msgid "Order Success Time"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Order.php:50
+#: core/modules/me/me.Tab.Order.php:50
+msgid "Payment Status"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Order.php:58
+#: core/modules/me/me.Tab.Order.php:61
+msgid "Payment Method"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Order.php:62
+#: core/modules/me/me.Tab.Membership.php:68 core/modules/me/me.Tab.Order.php:65
+msgid "Payment Amount"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Order.php:66
+msgid "Buyer Info"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Order.php:70
+msgid "Buyer Message"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Order.php:75
+msgid "Delivery Info"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Order.php:83
+msgid "Manage Order Status"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Order.php:87
+msgid "FINISH ORDER"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Order.php:90
+msgid "CLOSE ORDER"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Order.php:100
+#: core/modules/me/me.Tab.Order.php:112
+msgid "No this order"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Orders.php:26
+msgid "Orders List"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Orders.php:29
+#: core/modules/me/me.Tab.Orders.php:29
+#, php-format
+msgid "%d order records in total"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Orders.php:32
+#: core/modules/me/me.Tab.Orders.php:32
+msgid "Orders Type"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Orders.php:34
+#: core/modules/management/mg.Tab.Users.php:34
+#: core/modules/me/me.Tab.Notifications.php:34
+#: core/modules/me/me.Tab.Orders.php:34
+msgid "ALL"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Orders.php:35
+#: core/modules/me/me.Tab.Orders.php:35
+msgid "CASH"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Orders.php:36
+#: core/modules/me/me.Tab.Orders.php:36
+msgid "CREDIT"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Orders.php:44
+#: core/modules/me/me.Tab.Membership.php:66
+#: core/modules/me/me.Tab.Orders.php:43
+msgid "Order Id"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Orders.php:46
+msgid "Buyer Name"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Orders.php:48
+#: core/modules/me/me.Tab.Orders.php:46
+msgid "Order Total Price"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Orders.php:49
+#: core/modules/me/me.Tab.Orders.php:47
+msgid "Order Status"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Orders.php:64
+#: core/modules/me/me.Tab.Orders.php:61
+msgid "View the order detail"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Orders.php:64
+#: core/modules/me/me.Tab.Orders.php:61
+#, fuzzy
+msgid "View Order"
+msgstr "View File"
+
+#: core/modules/management/mg.Tab.Orders.php:67
+#: core/modules/me/me.Tab.Orders.php:69
+msgid "Delete the order"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Posts.php:26
+msgid "Posts List"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Posts.php:39
+#: core/modules/management/mg.Tab.Products.php:39
+msgid "Date: "
+msgstr ""
+
+#: core/modules/management/mg.Tab.Posts.php:40
+msgid "Author: "
+msgstr ""
+
+#: core/modules/management/mg.Tab.Posts.php:78
+#: core/modules/management/mg.Tab.Products.php:81
+#: core/modules/me/me.Tab.Drafts.php:72 core/modules/uc/uc.Tab.Comments.php:64
+#: core/modules/uc/uc.Tab.Followers.php:82
+#: core/modules/uc/uc.Tab.Following.php:82 core/modules/uc/uc.Tab.Latest.php:77
+#: core/modules/uc/uc.Tab.Stars.php:80
+msgid "Back to home"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Products.php:26
+msgid "Products List"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Products.php:40
+msgid "Modified: "
+msgstr ""
+
+#: core/modules/management/mg.Tab.Products.php:41
+msgid "Price: "
+msgstr ""
+
+#: core/modules/management/mg.Tab.Products.php:42
+msgid "Amounts: "
+msgstr ""
+
+#: core/modules/management/mg.Tab.Products.php:43
+msgid "Sales: "
+msgstr ""
+
+#: core/modules/management/mg.Tab.Status.php:28 dash/options.php:1651
+msgid "Site Open Date"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Status.php:29
+#, php-format
+msgid "%s (Online for %d days)"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Status.php:32
+msgid "Site Link"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Status.php:33
+#, php-format
+msgid "%d links"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Status.php:36
+msgid "Last Modified"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Status.php:37
+#, php-format
+msgid "%s"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Status.php:40
+msgid "Site Users"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Status.php:41
+#, php-format
+msgid "%d Registered users"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Status.php:44
+msgid "Site Members"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Status.php:45
+#, php-format
+msgid "%d Payed members (%d monthly VIP, %d annual VIP, %d permanent VIP)"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Status.php:48
+msgid "Site Posts"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Status.php:49
+#, php-format
+msgid "%d posts in total (%d published, %d drafts, %d pending)"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Status.php:52
+msgid "Site Pages"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Status.php:53
+#, php-format
+msgid "%d pages"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Status.php:56
+msgid "Sale Products"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Status.php:57
+#, php-format
+msgid "%d products"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Status.php:60
+msgid "User Comments"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Status.php:61
+#, php-format
+msgid "%d comments"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Status.php:64
+msgid "Post Categories"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Status.php:65
+#: core/modules/management/mg.Tab.Status.php:73
+#, php-format
+msgid "%d categories"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Status.php:68
+msgid "Post Tags"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Status.php:69
+#: core/modules/management/mg.Tab.Status.php:77
+#, php-format
+msgid "%d tags"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Status.php:72
+msgid "Product Categories"
+msgstr ""
+
+#: core/modules/management/mg.Tab.User.php:27
+#: core/modules/management/mg.Tab.User.php:125
+#, fuzzy
+msgid "User Detail"
+msgstr "View File"
+
+#: core/modules/management/mg.Tab.User.php:34
+msgid "User Display Name"
+msgstr ""
+
+#: core/modules/management/mg.Tab.User.php:38
+msgid "User Email"
+msgstr ""
+
+#: core/modules/management/mg.Tab.User.php:42
+#: core/modules/management/mg.Tab.Users.php:51
+msgid "Register Time"
+msgstr ""
+
+#: core/modules/management/mg.Tab.User.php:43
+#, php-format
+msgid " <b>(%d days)</b>"
+msgstr ""
+
+#: core/modules/management/mg.Tab.User.php:46
+#: core/modules/management/mg.Tab.Users.php:52 dash/dash.php:111
+msgid "Last Login"
+msgstr ""
+
+#: core/modules/management/mg.Tab.User.php:53
+msgid "User Credits"
+msgstr ""
+
+#: core/modules/management/mg.Tab.User.php:56
+msgid "Current Credits"
+msgstr ""
+
+#: core/modules/management/mg.Tab.User.php:60
+msgid "Consumed Credits"
+msgstr ""
+
+#: core/modules/management/mg.Tab.User.php:71
+msgid "ADD CREDITS"
+msgstr ""
+
+#: core/modules/management/mg.Tab.User.php:78
+msgid "User Membership"
+msgstr ""
+
+#: core/modules/management/mg.Tab.User.php:86
+#: core/modules/me/me.Tab.Membership.php:33
+msgid "Member Status"
+msgstr ""
+
+#: core/modules/management/mg.Tab.User.php:90
+#: core/modules/me/me.Tab.Membership.php:37
+msgid "Join Time"
+msgstr ""
+
+#: core/modules/management/mg.Tab.User.php:99
+msgid "Monthly VIP"
+msgstr ""
+
+#: core/modules/management/mg.Tab.User.php:100
+msgid "Annual VIP"
+msgstr ""
+
+#: core/modules/management/mg.Tab.User.php:101
+msgid "Permanent VIP"
+msgstr ""
+
+#: core/modules/management/mg.Tab.User.php:102
+msgid "PROMOTE VIP"
+msgstr ""
+
+#: core/modules/management/mg.Tab.User.php:103
+#: core/modules/me/me.Tab.Membership.php:55
+msgid ""
+"提示:若已开通会员则按照选择开通的类型自动续费,若会员已到期,则按重新开通计算有"
+"效期"
+msgstr ""
+
+#: core/modules/management/mg.Tab.User.php:110
+#, fuzzy
+msgid "Latest Orders"
+msgstr "View File"
+
+#: core/modules/management/mg.Tab.User.php:128
+msgid "No this user"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Users.php:26
+msgid "Users List"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Users.php:29
+#, php-format
+msgid "%d users in total"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Users.php:32
+msgid "User Role"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Users.php:35
+msgid "ADMINISTRATOR"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Users.php:36
+msgid "EDITOR"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Users.php:37
+msgid "AUTHOR"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Users.php:38
+msgid "CONTRIBUTOR"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Users.php:39
+msgid "SUBSCRIBER"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Users.php:47
+msgid "ID"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Users.php:49
+#: core/modules/uc/uc.Tab.Profile.php:48
+#: core/templates/actions/tpl.M.Findpass.php:36
+#: core/templates/actions/tpl.M.Signup.php:46
+#: core/templates/oauth/tpl.OAuth.Last.php:31
+#: core/templates/oauth/tpl.OAuth.Last.php:32
+#: core/templates/site/tpl.CheckOut.php:153
+msgid "Email"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Users.php:50
+msgid "Role"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Users.php:67
+msgid "Manage the user"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Users.php:67
+msgid "Manage"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Users.php:69
+msgid "View the user's homepage"
+msgstr ""
+
+#: core/modules/management/mg.Tab.Users.php:69
+msgid "Homepage"
+msgstr ""
+
+#: core/modules/me/me.NavMenu.php:23
+msgid "Visit My Homepage"
+msgstr ""
+
+#: core/modules/me/me.NavMenu.php:26
+msgid "SETTINGS"
+msgstr ""
+
+#: core/modules/me/me.NavMenu.php:27
+msgid "NOTIFICATIONS"
+msgstr ""
+
+#: core/modules/me/me.NavMenu.php:28
+msgid "MESSAGES"
+msgstr ""
+
+#: core/modules/me/me.NavMenu.php:29
+msgid "MY POSTS"
+msgstr ""
+
+#: core/modules/me/me.NavMenu.php:30
+msgid "MY DRAFTS"
+msgstr ""
+
+#: core/modules/me/me.NavMenu.php:31 core/modules/uc/uc.NavTabs.php:20
+msgid "MY STARS"
+msgstr ""
+
+#: core/modules/me/me.NavMenu.php:32
+#: core/viewModels/management/vm.Mg.Products.php:95
+#: core/viewModels/shop/vm.Embed.Product.php:72
+#: core/viewModels/shop/vm.Shop.Category.php:117
+#: core/viewModels/shop/vm.Shop.Home.php:156
+#: core/viewModels/shop/vm.Shop.Product.php:122
+#: core/viewModels/shop/vm.Shop.Product.php:238
+#: core/viewModels/shop/vm.Shop.Product.php:285
+#: core/viewModels/shop/vm.Shop.Search.php:111
+#: core/viewModels/shop/vm.Shop.Tag.php:117
+#: core/viewModels/shop/vm.Shop.ViewHistory.php:99
+#: core/viewModels/vm.Single.Post.php:107
+msgid "CREDITS"
+msgstr ""
+
+#: core/modules/me/me.NavMenu.php:33
+msgid "MEMBERSHIP"
+msgstr ""
+
+#: core/modules/me/me.NavMenu.php:35
+msgid "MY FOLLOWERS"
+msgstr ""
+
+#: core/modules/me/me.NavMenu.php:36
+msgid "MY FOLLOWING"
+msgstr ""
+
+#: core/modules/me/me.Tab.Contribute.php:26
+#: core/modules/me/me.Tab.EditPost.php:30
+msgid "Please save your draft timely in case of missing content"
+msgstr ""
+
+#: core/modules/me/me.Tab.Contribute.php:29
+#: core/modules/me/me.Tab.EditPost.php:33
+msgid "Input your title here"
+msgstr ""
+
+#: core/modules/me/me.Tab.Contribute.php:34
+msgid "Write your words here..."
+msgstr ""
+
+#: core/modules/me/me.Tab.Contribute.php:39
+#: core/modules/me/me.Tab.EditPost.php:43
+msgid "Choose the category"
+msgstr ""
+
+#: core/modules/me/me.Tab.Contribute.php:48
+msgid "Input the tags, comma separate multi tags"
+msgstr ""
+
+#: core/modules/me/me.Tab.Contribute.php:53
+msgid "Add excerpt"
+msgstr ""
+
+#: core/modules/me/me.Tab.Contribute.php:58
+#: core/modules/me/me.Tab.EditPost.php:62
+msgid "Copyright - Original post title"
+msgstr ""
+
+#: core/modules/me/me.Tab.Contribute.php:63
+#: core/modules/me/me.Tab.EditPost.php:67
+msgid "Copyright - Original post link, please leave empty if yours is original"
+msgstr ""
+
+#: core/modules/me/me.Tab.Contribute.php:68
+#: core/modules/me/me.Tab.EditPost.php:72
+msgid "Embed free resources"
+msgstr ""
+
+#: core/modules/me/me.Tab.Contribute.php:70
+#: core/modules/me/me.Tab.EditPost.php:74
+msgid ""
+"普通下载资源，格式为 资源1名称|资源1url|下载密码,资源2名称|资源2url|下载密码 "
+"资源名称与url用|隔开，不同资源用英文逗号隔开，url请添加http://头，如提供百度"
+"网盘加密下载可以填写密码，也可以留空"
+msgstr ""
+
+#: core/modules/me/me.Tab.Contribute.php:74
+#: core/modules/me/me.Tab.EditPost.php:78
+msgid "Embed sale resources"
+msgstr ""
+
+#: core/modules/me/me.Tab.Contribute.php:76
+#: core/modules/me/me.Tab.EditPost.php:80
+msgid ""
+"积分下载资源，格式为 资源1名称|资源1url|资源1价格|下载密码,资源2名称|资源"
+"2url|资源2价格|下载密码 资源名称与url以及价格、下载密码用|隔开，不同资源用英"
+"文逗号隔开"
+msgstr ""
+
+#: core/modules/me/me.Tab.Contribute.php:83
+#: core/modules/me/me.Tab.EditPost.php:87
+msgid "Submit for review"
+msgstr ""
+
+#: core/modules/me/me.Tab.Contribute.php:84
+#: core/modules/me/me.Tab.EditPost.php:88
+msgid "Save draft"
+msgstr ""
+
+#: core/modules/me/me.Tab.Contribute.php:86
+#: core/modules/me/me.Tab.EditPost.php:90
+msgid "Publish post"
+msgstr ""
+
+#: core/modules/me/me.Tab.Contribute.php:91
+#: core/modules/me/me.Tab.EditPost.php:95
+msgid "Confirm Action"
+msgstr ""
+
+#: core/modules/me/me.Tab.Contribute.php:96
+msgid "Sorry, you do not have the capability of contributing"
+msgstr ""
+
+#: core/modules/me/me.Tab.Credits.php:29
+msgid "Credits Balance"
+msgstr ""
+
+#: core/modules/me/me.Tab.Credits.php:33
+msgid "Credits Consumed"
+msgstr ""
+
+#: core/modules/me/me.Tab.Credits.php:44
+#: core/templates/site/tpl.PayGateway.php:62
+msgid "Credits Charge"
+msgstr ""
+
+#: core/modules/me/me.Tab.Credits.php:47
+#, php-format
+msgid "当前积分兑换比率为：100 积分 = %d 元"
+msgstr ""
+
+#: core/modules/me/me.Tab.Credits.php:51
+msgid "Credits*100"
+msgstr ""
+
+#: core/modules/me/me.Tab.Credits.php:55
+msgid "CHARGE"
+msgstr ""
+
+#: core/modules/me/me.Tab.Credits.php:57
+msgid ""
+"积分数以100为单位起计算,请填写整数数值，如填1即表明充值100积分，所需现金根据"
+"具体兑换比率计算。"
+msgstr ""
+
+#: core/modules/me/me.Tab.Credits.php:63
+msgid "Way to Gain Credits"
+msgstr ""
+
+#: core/modules/me/me.Tab.Credits.php:68
+msgid "积分方法"
+msgstr ""
+
+#: core/modules/me/me.Tab.Credits.php:69
+msgid "一次得分"
+msgstr ""
+
+#: core/modules/me/me.Tab.Credits.php:70
+msgid "可用次数"
+msgstr ""
+
+#: core/modules/me/me.Tab.Credits.php:75
+msgid "注册奖励"
+msgstr ""
+
+#: core/modules/me/me.Tab.Credits.php:77
+msgid "Only Once"
+msgstr ""
+
+#: core/modules/me/me.Tab.Credits.php:80
+msgid "文章投稿"
+msgstr ""
+
+#: core/modules/me/me.Tab.Credits.php:82 core/modules/me/me.Tab.Credits.php:87
+#: core/modules/me/me.Tab.Credits.php:92 core/modules/me/me.Tab.Credits.php:97
+#: core/modules/me/me.Tab.Credits.php:102
+#, php-format
+msgid "%d per Day"
+msgstr ""
+
+#: core/modules/me/me.Tab.Credits.php:85
+msgid "评论回复"
+msgstr ""
+
+#: core/modules/me/me.Tab.Credits.php:90
+msgid "访问推广"
+msgstr ""
+
+#: core/modules/me/me.Tab.Credits.php:95
+msgid "注册推广"
+msgstr ""
+
+#: core/modules/me/me.Tab.Credits.php:100
+msgid "每日签到"
+msgstr ""
+
+#: core/modules/me/me.Tab.Credits.php:110
+msgid "Credit Records"
+msgstr ""
+
+#: core/modules/me/me.Tab.Drafts.php:37
+msgid "Edit Draft"
+msgstr ""
+
+#: core/modules/me/me.Tab.EditPost.php:52
+msgid "Post tags, comma separate multi tags"
+msgstr ""
+
+#: core/modules/me/me.Tab.EditPost.php:57
+msgid "Post excerpt"
+msgstr ""
+
+#: core/modules/me/me.Tab.EditPost.php:100
+msgid "Sorry, you do not have the capability to edit the post"
+msgstr ""
+
+#: core/modules/me/me.Tab.EditPost.php:106
+msgid "The post you specified is not existed"
+msgstr ""
+
+#: core/modules/me/me.Tab.Membership.php:26
+msgid "Member Info"
+msgstr ""
+
+#: core/modules/me/me.Tab.Membership.php:48
+msgid "Join Member"
+msgstr ""
+
+#: core/modules/me/me.Tab.Membership.php:48
+msgid "Join, Renew"
+msgstr ""
+
+#: core/modules/me/me.Tab.Membership.php:51
+#, php-format
+msgid "Monthly VIP(%d YUAN/Month)"
+msgstr ""
+
+#: core/modules/me/me.Tab.Membership.php:52
+#, php-format
+msgid "Annual VIP(%d YUAN/Year)"
+msgstr ""
+
+#: core/modules/me/me.Tab.Membership.php:53
+#, php-format
+msgid "Permanent VIP(%d YUAN)"
+msgstr ""
+
+#: core/modules/me/me.Tab.Membership.php:54
+msgid "Renew VIP"
+msgstr ""
+
+#: core/modules/me/me.Tab.Membership.php:54
+msgid "Confirm Join"
+msgstr ""
+
+#: core/modules/me/me.Tab.Membership.php:61
+msgid "Member Records"
+msgstr ""
+
+#: core/modules/me/me.Tab.Membership.php:61
+msgid "Member Orders"
+msgstr ""
+
+#: core/modules/me/me.Tab.Membership.php:67
+msgid "Payment Time"
+msgstr ""
+
+#: core/modules/me/me.Tab.Membership.php:69
+msgid "VIP Type"
+msgstr ""
+
+#: core/modules/me/me.Tab.Membership.php:70
+msgid "VIP Order Status"
+msgstr ""
+
+#: core/modules/me/me.Tab.Messages.php:26
+msgid "Sendbox"
+msgstr ""
+
+#: core/modules/me/me.Tab.Messages.php:26
+msgid "Inbox"
+msgstr ""
+
+#: core/modules/me/me.Tab.Messages.php:29
+#, php-format
+msgid "%d message records in total"
+msgstr ""
+
+#: core/modules/me/me.Tab.Messages.php:32
+msgid "Messages Type"
+msgstr ""
+
+#: core/modules/me/me.Tab.Messages.php:34
+msgid "INBOX"
+msgstr ""
+
+#: core/modules/me/me.Tab.Messages.php:35
+msgid "SENDBOX"
+msgstr ""
+
+#: core/modules/me/me.Tab.Messages.php:46
+#, php-format
+msgid "Sent to %s"
+msgstr ""
+
+#: core/modules/me/me.Tab.Messages.php:49
+#: core/modules/me/me.Tab.Messages.php:65
+msgid "Send Time: "
+msgstr ""
+
+#: core/modules/me/me.Tab.Messages.php:50
+msgid "Send To: "
+msgstr ""
+
+#: core/modules/me/me.Tab.Messages.php:59
+#, php-format
+msgid "%s send to me"
+msgstr ""
+
+#: core/modules/me/me.Tab.Messages.php:66
+msgid "Sender: "
+msgstr ""
+
+#: core/modules/me/me.Tab.Messages.php:67
+msgid "Status: "
+msgstr ""
+
+#: core/modules/me/me.Tab.Messages.php:67
+msgid "Read"
+msgstr ""
+
+#: core/modules/me/me.Tab.Messages.php:67
+msgid "Unread"
+msgstr ""
+
+#: core/modules/me/me.Tab.Messages.php:100
+msgid "No message records"
+msgstr ""
+
+#: core/modules/me/me.Tab.Notifications.php:29
+#, php-format
+msgid "%d notifications records in total"
+msgstr ""
+
+#: core/modules/me/me.Tab.Notifications.php:32
+msgid "Notifications Type"
+msgstr ""
+
+#: core/modules/me/me.Tab.Notifications.php:35
+msgid "COMMENT NOTIFICATION"
+msgstr ""
+
+#: core/modules/me/me.Tab.Notifications.php:36
+msgid "STAR NOTIFICATION"
+msgstr ""
+
+#: core/modules/me/me.Tab.Notifications.php:37
+msgid "CREDIT NOTIFICATION"
+msgstr ""
+
+#: core/modules/me/me.Tab.Notifications.php:71
+msgid "No notifications"
+msgstr ""
+
+#: core/modules/me/me.Tab.Order.php:55 core/modules/me/me.Tab.Orders.php:65
+msgid "Finish the payment"
+msgstr ""
+
+#: core/modules/me/me.Tab.Order.php:55 core/modules/me/me.Tab.Orders.php:65
+msgid "Continue Pay"
+msgstr ""
+
+#: core/modules/me/me.Tab.Order.php:72 core/modules/me/me.Tab.Order.php:98
+msgid "Payed Content"
+msgstr ""
+
+#: core/modules/me/me.Tab.Order.php:75
+msgid ""
+"This is a combined order, please visit sub orders below for more specified "
+"payed content"
+msgstr ""
+
+#: core/modules/me/me.Tab.Order.php:78
+#, php-format
+msgid "Order %s"
+msgstr ""
+
+#: core/modules/me/me.Tab.Order.php:84
+msgid "Download Content"
+msgstr ""
+
+#: core/modules/me/me.Tab.Order.php:88
+#, php-format
+msgid "Download Name: %s"
+msgstr ""
+
+#: core/modules/me/me.Tab.Order.php:89
+#, php-format
+msgid "Download Link: <a href=\"%1$s\">%1$s</a>"
+msgstr ""
+
+#: core/modules/me/me.Tab.Order.php:90
+#, php-format
+msgid "Download Password: %s"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:27 core/modules/uc/uc.Tab.Profile.php:41
+msgid "Basic Info"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:29
+msgid "Avatar"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:32
+#, fuzzy
+msgid "Upload Avatar"
+msgstr "Upload"
+
+#: core/modules/me/me.Tab.Settings.php:36
+msgid "Custom Avatar"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:38
+msgid "Letter Avatar"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:40
+msgid "QQ Avatar"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:43
+msgid "Weibo Avatar"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:46
+msgid "Weixin Avatar"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:52 core/modules/uc/uc.Tab.Profile.php:43
+msgid "Nickname"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:56 core/modules/uc/uc.Tab.Profile.php:53
+msgid "Site"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:60 core/modules/uc/uc.Tab.Profile.php:57
+msgid "Description"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:61
+msgid "Add your bio..."
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:66
+msgid "Save Profile"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:72 core/modules/uc/uc.Tab.Profile.php:63
+msgid "Extended Info"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:72
+msgid "e.g. Social Infos"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:81 dash/dash.php:148
+msgid "Sina Weibo"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:84
+msgid "微博用户名, 如weibo.com/touchumind中的touchumind"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:88
+msgid "Wechat Qrcode"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:91
+msgid "微信二维码图片地址"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:95 dash/dash.php:150
+msgid "Twitter"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:98
+msgid "Twitter用户名, 如twitter.com/thundernet8中的thundernet8"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:102
+msgid "Facebook"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:105
+msgid "Facebook用户名, 如www.facebook.com/xueqian.wu中的xueqian.wu"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:109
+#: core/modules/uc/uc.Tab.Profile.php:81
+msgid "Google+"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:112
+msgid ""
+"Google+用户ID, 如plus.google.com/u/0/103638104473894849180中的"
+"103638104473894849180"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:116 dash/dash.php:153
+msgid "Alipay Account"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:119
+msgid "支付宝账户邮箱或手机, 推荐邮箱"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:123
+msgid "Alipay Gather Qrcode"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:126
+msgid "支付宝收款二维码地址"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:130
+msgid "Wechat Gather Qrcode"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:133
+msgid "微信收款二维码地址"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:139
+msgid "Save Extended Profile"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:152
+msgid "Bind Account"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:152
+msgid "Used for quick login"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:155
+msgid "QQ Social Account"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:158
+msgid "Disconnect QQ"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:160
+msgid "Connect QQ"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:167
+msgid "Weibo Social Account"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:170
+msgid "Disconnect Weibo"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:172
+msgid "Connect Weibo"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:179
+msgid "Wechat Social Account"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:182
+msgid "Disconnect Wechat"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:184
+msgid "Connect Wechat"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:193
+msgid "Account Security"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:193
+msgid "Be careful"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:195
+msgid "Email (Required)"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:199
+msgid "New Password"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:202
+msgid "如果您想修改您的密码, 请在此输入新密码, 否则请留空."
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:206
+#: core/templates/actions/tpl.M.Resetpass.php:40
+#: core/templates/actions/tpl.M.Resetpass.php:41
+#: core/templates/oauth/tpl.OAuth.Last.php:33
+msgid "Repeat Password"
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:209
+msgid ""
+"再输入一遍新密码. 提示: 您的密码最好至少包含7个字符. 为了保证密码强度, 使用大"
+"小写字母、数字和符号（例如! \" ? $ % ^ &amp; ) )."
+msgstr ""
+
+#: core/modules/me/me.Tab.Settings.php:215
+msgid "Save Security Info"
+msgstr ""
+
+#: core/modules/mod.Comments.php:29 core/modules/shop/mod.Shop.Comments.php:29
+msgid "Load More Comments"
+msgstr ""
+
+#: core/modules/mod.Download.php:25
+msgid ""
+"本站所刊载内容均为网络上收集整理，包括但不限于代码、应用程序、影音资源、电子"
+"书籍资料等，并且以研究交流为目的，所有仅供大家参考、学习，不存在任何商业目的"
+"与商业用途。若您使用开源的软件代码，请遵守相应的开源许可规范和精神，若您需要"
+"使用非免费的软件或服务，您应当购买正版授权并合法使用。如果你下载此文件，表示"
+"您同意只将此文件用于参考、学习使用而非任何其他用途。"
+msgstr ""
+
+#: core/modules/mod.Download.php:30
+msgid "Free Resources"
+msgstr ""
+
+#: core/modules/mod.Download.php:36 core/modules/mod.Download.php:50
+#, php-format
+msgid ""
+"%d. %2$s <a href=\"%3$s\" target=\"_blank\"><i class=\"tico tico-cloud-"
+"download\"></i>点击下载</a> (密码: %4$s)"
+msgstr ""
+
+#: core/modules/mod.Download.php:43
+msgid "Sale Resources"
+msgstr ""
+
+#: core/modules/mod.Download.php:52
+#, php-format
+msgid ""
+"%1$s. %2$s <a class=\"buy-resource\" href=\"javascript:;\" data-post-id="
+"\"%3$s\" data-resource-seq=\"%1$s\" target=\"_blank\"><i class=\"tico tico-"
+"cart\"></i>点击购买</a> (%4$s Credits)"
+msgstr ""
+
+#: core/modules/mod.Download.php:62
+msgid "如果您发现本文件已经失效不能下载，请联系站长修正！"
+msgstr ""
+
+#: core/modules/mod.Download.php:63
+msgid ""
+"本站提供的资源多数为百度网盘下载，对于大文件，你需要安装百度云客户端才能下"
+"载！"
+msgstr ""
+
+#: core/modules/mod.Download.php:64
+msgid ""
+"部分文件引用的官方或者非网盘类他站下载链接，你可能需要使用迅雷、BT等下载工具"
+"下载！"
+msgstr ""
+
+#: core/modules/mod.Download.php:65
+msgid ""
+"本站推荐的资源均经由站长检测或者个人发布，不包含恶意软件病毒代码等，如果你发"
+"现此类问题，请向站长举报！"
+msgstr ""
+
+#: core/modules/mod.Download.php:66
+msgid ""
+"本站仅提供文件的免费下载服务，如果你对代码程序软件的使用有任何疑惑，请留意相"
+"关网站论坛。对于本站个人发布的资源，站长会提供有限的帮助！"
+msgstr ""
+
+#: core/modules/mod.FixedControls.php:17
+msgid "Scroll to top"
+msgstr ""
+
+#: core/modules/mod.FixedControls.php:18
+msgid "Scroll to bottom"
+msgstr ""
+
+#: core/modules/mod.Footer.Simple.php:18 core/templates/shop/tpl.Product.php:40
+msgid "HOME"
+msgstr ""
+
+#: core/modules/mod.Footer.Simple.php:20
+msgid "TERMS AND POLICIES"
+msgstr ""
+
+#: core/modules/mod.Footer.Simple.php:22
+msgid "ABOUT"
+msgstr ""
+
+#: core/modules/mod.Footer.Simple.php:24
+msgid "CONTACT"
+msgstr ""
+
+#: core/modules/mod.Footer.php:90
+#, php-format
+msgid " ·&nbsp;%1$s queries in %2$ss"
+msgstr ""
+
+#: core/modules/mod.Header.Shop.php:38
+msgid "Search for something..."
+msgstr ""
+
+#: core/modules/mod.Header.Shop.php:62
+msgid "Shopping Cart"
+msgstr ""
+
+#: core/modules/mod.Header.Shop.php:74
+#: core/modules/shop/mod.Shop.Sidebar.Right.php:33
+msgid "TOTAL: "
+msgstr ""
+
+#: core/modules/mod.Header.Shop.php:77
+#: core/modules/shop/mod.Shop.Sidebar.Right.php:36
+msgid "Check Out Now"
+msgstr ""
+
+#: core/modules/mod.Header.Shop.php:78
+#: core/modules/shop/mod.Shop.Sidebar.Right.php:37
+#, fuzzy
+msgid "Clear All"
+msgstr "Repeat All"
+
+#: core/modules/mod.Header.Shop.php:80
+msgid "The shopping cart is empty."
+msgstr ""
+
+#: core/modules/mod.Header.Shop.php:95 core/modules/mod.Header.php:64
+msgid "Go Dashboard"
+msgstr ""
+
+#: core/modules/mod.Header.Shop.php:108 core/modules/mod.Header.php:77
+msgid "Sign In or Up"
+msgstr ""
+
+#: core/modules/mod.Header.Shop.php:126
+#: core/modules/shop/mod.Shop.Sidebar.Left.php:19
+msgid "Categories"
+msgstr ""
+
+#: core/modules/mod.Header.Shop.php:146
+msgid "Tags"
+msgstr ""
+
+#: core/modules/mod.Header.Shop.php:156
+msgid "Most Popular"
+msgstr ""
+
+#: core/modules/mod.Header.Shop.php:159
+msgid "Latest"
+msgstr ""
+
+#: core/modules/mod.Header.php:65
+msgid "Site Management"
+msgstr ""
+
+#: core/modules/mod.Header.php:68
+msgid "My Posts"
+msgstr ""
+
+#: core/modules/mod.HomeLatest.php:23
+msgid "Latest Posts"
+msgstr ""
+
+#: core/modules/mod.HomeLatest.php:49
+msgid "Sticky Post"
+msgstr ""
+
+#: core/modules/mod.HomePopular.php:22
+msgid "Popular"
+msgstr ""
+
+#: core/modules/mod.ModalBanBox.php:18 core/modules/uc/uc.Tab.Profile.php:110
+msgid "Account Management"
+msgstr ""
+
+#: core/modules/mod.ModalBanBox.php:23
+msgid "Write your reason here."
+msgstr ""
+
+#: core/modules/mod.ModalBanBox.php:27 core/modules/mod.ModalPmBox.php:31
+msgid "CANCEL"
+msgstr ""
+
+#: core/modules/mod.ModalBanBox.php:28
+msgid "CONFIRM"
+msgstr ""
+
+#: core/modules/mod.ModalLoginForm.php:23
+#: core/templates/actions/tpl.M.Signin.php:49
+msgid "Email/Username"
+msgstr ""
+
+#: core/modules/mod.ModalLoginForm.php:27
+#: core/templates/actions/tpl.M.Resetpass.php:38
+#: core/templates/actions/tpl.M.Resetpass.php:39
+#: core/templates/actions/tpl.M.Signin.php:53
+#: core/templates/actions/tpl.M.Signup.php:49
+#: core/templates/oauth/tpl.OAuth.Last.php:34
+msgid "Password"
+msgstr ""
+
+#: core/modules/mod.ModalLoginForm.php:31 core/modules/mod.ReplyForm.php:32
+#: core/modules/mod.ReplyForm.php:129
+#: core/modules/shop/mod.Shop.ReplyForm.php:57
+#: core/modules/shop/mod.Shop.ReplyForm.php:64
+#: core/templates/actions/tpl.M.Findpass.php:38
+#: core/templates/actions/tpl.M.Resetpass.php:47
+#: core/templates/actions/tpl.M.Signin.php:58
+msgid "Submit"
+msgstr ""
+
+#: core/modules/mod.ModalLoginForm.php:33
+#: core/templates/actions/tpl.M.Signin.php:93
+msgid "Register Now"
+msgstr ""
+
+#: core/modules/mod.ModalLoginForm.php:35
+#: core/templates/actions/tpl.M.Signin.php:95
+msgid "Forgot your password?"
+msgstr ""
+
+#: core/modules/mod.ModalLoginForm.php:47
+msgid "SignIn with Social Account"
+msgstr ""
+
+#: core/modules/mod.ModalPmBox.php:18
+msgid "Send Message"
+msgstr ""
+
+#: core/modules/mod.ModalPmBox.php:23 core/modules/uc/uc.Tab.Chat.php:30
+msgid "Send to:"
+msgstr ""
+
+#: core/modules/mod.ModalPmBox.php:27 core/modules/uc/uc.Tab.Chat.php:35
+msgid "Write your message here."
+msgstr ""
+
+#: core/modules/mod.ModalPmBox.php:32 core/modules/uc/uc.Tab.Chat.php:39
+msgid "SEND"
+msgstr ""
+
+#: core/modules/mod.ModalQrCodes.php:20 core/modules/mod.ModalQrCodes.php:25
+msgid "Scan the qrcode image and contact with me"
+msgstr ""
+
+#: core/modules/mod.ModalSearch.php:20
+msgid "Type a keyword"
+msgstr ""
+
+#: core/modules/mod.ReplyForm.php:26
+#: core/modules/shop/mod.Shop.ReplyForm.php:51
+msgid "Leave some words..."
+msgstr ""
+
+#: core/modules/mod.ReplyForm.php:28
+#: core/modules/shop/mod.Shop.ReplyForm.php:53
+msgid "Signin and Leave some words..."
+msgstr ""
+
+#: core/modules/mod.SearchPosts.php:63
+msgid "No results matched your search words"
+msgstr ""
+
+#: core/modules/mod.SinglePage.php:26
+#: core/templates/bulletins/tpl.Bulletin.php:32
+#: core/templates/page/tpl.Page.Links.php:32
+#: core/templates/site/tpl.Privacy.php:25
+msgid "Post on: "
+msgstr ""
+
+#: core/modules/mod.SinglePage.php:28 core/templates/page/tpl.Page.Links.php:34
+#: core/templates/site/tpl.Privacy.php:27
+msgid "Modified on: "
+msgstr ""
+
+#: core/modules/mod.SinglePage.php:45 core/modules/mod.SinglePage.php:50
+#: core/modules/mod.SinglePost.php:106 core/modules/mod.SinglePost.php:111
+#: core/templates/page/tpl.Page.Links.php:65
+#: core/templates/page/tpl.Page.Links.php:70
+msgid "Stared"
+msgstr ""
+
+#: core/modules/mod.SinglePage.php:45 core/modules/mod.SinglePost.php:106
+#: core/templates/page/tpl.Page.Links.php:65
+msgid "Star It"
+msgstr ""
+
+#: core/modules/mod.SinglePage.php:50 core/modules/mod.SinglePost.php:111
+#: core/templates/page/tpl.Page.Links.php:70
+msgid "persons"
+msgstr ""
+
+#: core/modules/mod.SinglePage.php:58 core/modules/mod.SinglePost.php:153
+#: core/templates/page/tpl.Page.Links.php:78
+msgid "LEAVE A REPLY"
+msgstr ""
+
+#: core/modules/mod.SinglePage.php:62 core/modules/mod.SinglePost.php:157
+#: core/templates/page/tpl.Page.Links.php:82
+msgid "COMMENTS CLOSED"
+msgstr ""
+
+#: core/modules/mod.SinglePost.php:34 core/templates/shop/tpl.Product.php:63
+msgid "Share to Weibo"
+msgstr ""
+
+#: core/modules/mod.SinglePost.php:35 core/templates/shop/tpl.Product.php:64
+msgid "Share to QZone"
+msgstr ""
+
+#: core/modules/mod.SinglePost.php:36 core/templates/shop/tpl.Product.php:65
+msgid "Share to QQ"
+msgstr ""
+
+#: core/modules/mod.SinglePost.php:37 core/templates/shop/tpl.Product.php:66
+msgid "Share to Wechat"
+msgstr ""
+
+#: core/modules/mod.SinglePost.php:42
+msgid "Share to Douban"
+msgstr ""
+
+#: core/modules/mod.SinglePost.php:61
+#, fuzzy
+msgid "Related Downloads"
+msgstr "Repeat Vertically"
+
+#: core/modules/mod.SinglePost.php:62
+msgid "Click to Download"
+msgstr ""
+
+#: core/modules/mod.SinglePost.php:72 core/modules/shop/mod.Shop.Relates.php:33
+#: core/modules/shop/mod.Shop.Sidebar.Left.php:39
+#: core/modules/shop/mod.Shop.Sidebar.Right.php:75
+#: core/templates/plates/embed-product.php:7
+#: core/templates/shop/tpl.Product.Archive.php:62
+#: core/templates/shop/tpl.Product.Category.php:63
+#: core/templates/shop/tpl.Product.Search.php:63
+#: core/templates/shop/tpl.Product.Tag.php:63
+#: core/templates/shop/tpl.Product.php:94
+msgid "FREE"
+msgstr ""
+
+#: core/modules/mod.SinglePost.php:87 core/modules/shop/mod.Shop.Relates.php:26
+#: core/modules/shop/mod.Shop.Sidebar.Right.php:51
+#: core/templates/plates/embed-product.php:17
+#: core/templates/shop/tpl.Product.php:82
+#, php-format
+msgid "Rated %0.1f out of 5"
+msgstr ""
+
+#: core/modules/mod.SinglePost.php:89 core/modules/shop/mod.Shop.Relates.php:28
+#: core/modules/shop/mod.Shop.Sidebar.Right.php:53
+#: core/templates/plates/embed-product.php:19
+#: core/templates/shop/tpl.Product.php:84
+#, php-format
+msgid ""
+"<strong itemprop=\"ratingValue\" class=\"rating\">%0.1f</strong> out of "
+"<span itemprop=\"bestRating\">5</span>based on <span itemprop=\"ratingCount"
+"\" class=\"rating\">%d</span> customer ratings"
+msgstr ""
+
+#: core/modules/mod.SinglePost.php:92 core/templates/shop/tpl.Product.php:87
+#, php-format
+msgid ""
+"<span itemprop=\"reviewCount\" class=\"count\">%d</span> customer reviews"
+msgstr ""
+
+#: core/modules/mod.SinglePost.php:94
+#: core/templates/plates/embed-product.php:23
+msgid "Buy Now"
+msgstr ""
+
+#: core/modules/mod.SinglePost.php:119
+#: core/templates/bulletins/tpl.Bulletin.php:47
+msgid "Previous article"
+msgstr ""
+
+#: core/modules/mod.SinglePost.php:123
+#: core/templates/bulletins/tpl.Bulletin.php:51
+msgid "Next article"
+msgstr ""
+
+#: core/modules/mod.SinglePost.php:131
+#, fuzzy
+msgid "Related Articles"
+msgstr "Repeat Vertically"
+
+#: core/modules/shop/mod.Shop.Relates.php:17
+#, fuzzy
+msgid "Related Products"
+msgstr "Repeat Vertically"
+
+#: core/modules/shop/mod.Shop.ReplyForm.php:26
+msgid "RATING"
+msgstr ""
+
+#: core/modules/shop/mod.Shop.Sidebar.Left.php:30
+msgid "Products"
+msgstr ""
+
+#: core/modules/shop/mod.Shop.Sidebar.Right.php:21
+msgid "CART"
+msgstr ""
+
+#: core/modules/shop/mod.Shop.Sidebar.Right.php:43
+msgid "Recent Rated"
+msgstr ""
+
+#: core/modules/shop/mod.Shop.Sidebar.Right.php:66
+msgid "Recent Viewed Products"
+msgstr ""
+
+#: core/modules/uc/uc.NavTabs.php:17
+msgid "PROFILE"
+msgstr ""
+
+#: core/modules/uc/uc.NavTabs.php:18
+msgid "ARTICLES"
+msgstr ""
+
+#: core/modules/uc/uc.NavTabs.php:19
+msgid "COMMENTS"
+msgstr ""
+
+#: core/modules/uc/uc.NavTabs.php:21 core/modules/uc/uc.Tab.Followers.php:37
+#: core/modules/uc/uc.Tab.Following.php:37
+#: core/modules/widgets/wgt.Author.php:55
+msgid "FOLLOWERS"
+msgstr ""
+
+#: core/modules/uc/uc.NavTabs.php:22 core/modules/uc/uc.Tab.Followers.php:36
+#: core/modules/uc/uc.Tab.Following.php:36
+#: core/modules/widgets/wgt.Author.php:54
+msgid "FOLLOWING"
+msgstr ""
+
+#: core/modules/uc/uc.NavTabs.php:23
+msgid "ACTIVITIES"
+msgstr ""
+
+#: core/modules/uc/uc.NavTabs.php:24
+msgid "CHAT"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Chat.php:44
+#, php-format
+msgid "%d messages in total, %d new income messages (with green mark)"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Chat.php:55
+#: core/viewModels/management/vm.Mg.Products.php:153
+msgid "DELETE"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Chat.php:56
+msgid "REPLY"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Chat.php:58
+msgid "Unread message"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Chat.php:58
+msgid "MARK READ"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Comments.php:23
+#, php-format
+msgid "%d comments in total, %d comments approved and %d comments under review"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Comments.php:29
+msgid "REVIEW"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Followers.php:32
+#: core/modules/uc/uc.Tab.Following.php:32
+msgid "Brief Intro : "
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Followers.php:43
+#: core/modules/uc/uc.Tab.Following.php:43 core/modules/uc/uc.TopPane.php:28
+#: core/modules/widgets/wgt.Author.php:48
+msgid "Send a message"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Followers.php:43
+#: core/modules/uc/uc.Tab.Following.php:43 core/modules/uc/uc.TopPane.php:28
+#: core/modules/widgets/wgt.Author.php:48
+msgid "Chat"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Followers.php:47
+#: core/modules/uc/uc.Tab.Following.php:47
+msgid "View Homepage"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Followers.php:48
+#: core/modules/uc/uc.Tab.Following.php:48
+msgid "His Posts"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Followers.php:49
+#: core/modules/uc/uc.Tab.Following.php:49
+msgid "His Comments"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Followers.php:51
+#: core/modules/uc/uc.Tab.Following.php:51
+msgid "Check Activities"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Profile.php:28
+#, php-format
+msgid "Member Since %s"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Profile.php:28
+#, php-format
+msgid " <b>(The %dth Member)</b>"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Profile.php:29
+#, php-format
+msgid "Last Login %s"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Profile.php:29
+#, php-format
+msgid "Latest Login %s"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Profile.php:31
+#, php-format
+msgid "This Login IP %s"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Profile.php:31 core/modules/uc/uc.Tab.Profile.php:34
+#, php-format
+msgid "Last Login IP %s"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Profile.php:66
+msgid "Talk with QQ"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Profile.php:69
+msgid "Follow on Weibo"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Profile.php:72
+msgid "Talk with Wechat"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Profile.php:75
+msgid "Follow on Twitter"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Profile.php:78
+msgid "Find on Facebook"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Profile.php:88
+msgid "Donate Info"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Profile.php:88
+msgid "Donate to me"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Profile.php:91
+msgid "Donate via Alipay"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Profile.php:94
+msgid "Donate via Wechat"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Profile.php:101
+msgid "Referral Info"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Profile.php:103
+msgid "Referral Link"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Profile.php:104
+msgid "COPY"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Profile.php:110
+msgid "Visible for administrator"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Profile.php:113
+msgid "Unlock Account"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Profile.php:114
+msgid "This action will enable the account to normal functions"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Profile.php:116
+msgid "Ban Account"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Profile.php:117
+msgid ""
+"Warning: this action will ban the account, the all features is not "
+"accessible until manual unlock"
+msgstr ""
+
+#: core/modules/uc/uc.Tab.Stars.php:40
+msgid "Unstar"
+msgstr ""
+
+#: core/modules/widgets/wgt.Author.php:22
+msgid "TT-Author Widget"
+msgstr ""
+
+#: core/modules/widgets/wgt.Author.php:22
+msgid ""
+"TT-Show the post author information, only can be used in single post page"
+msgstr ""
+
+#: core/modules/widgets/wgt.Author.php:53
+msgid "STARS"
+msgstr ""
+
+#: core/modules/widgets/wgt.Author.php:69
+msgid ""
+"<strong>Warning: </strong>This widget has nothing to configure, and also do "
+"not use it"
+msgstr ""
+
+#: core/modules/widgets/wgt.Donate.php:22
+msgid "TT-Donate Me"
+msgstr ""
+
+#: core/modules/widgets/wgt.Donate.php:22
+msgid "TT-Show alipay and wechat pay qr code images for visitors donating"
+msgstr ""
+
+#: core/modules/widgets/wgt.Donate.php:56
+msgid "DONATE ME"
+msgstr ""
+
+#: core/modules/widgets/wgt.Donate.php:58
+#: core/modules/widgets/wgt.HotHits.Posts.php:66
+#: core/modules/widgets/wgt.HotReviews.Posts.php:66
+#: core/modules/widgets/wgt.Latest.Posts.php:65
+#: core/modules/widgets/wgt.RecentComments.php:60
+#: core/modules/widgets/wgt.TagCloud.php:57 core/modules/widgets/wgt.UC.php:59
+msgid "Title："
+msgstr ""
+
+#: core/modules/widgets/wgt.Donate.php:59
+msgid ""
+"The widget will auto query the qr code images from theme options, please "
+"configure it on `SHOP` tab of theme options page"
+msgstr ""
+
+#: core/modules/widgets/wgt.EnhancedText.php:23
+msgid "Text, HTML, CSS, PHP, Flash, JavaScript, Shortcodes"
+msgstr ""
+
+#: core/modules/widgets/wgt.EnhancedText.php:25
+msgid "TT-Enhanced Text"
+msgstr ""
+
+#: core/modules/widgets/wgt.EnhancedText.php:123
+msgid "Title"
+msgstr ""
+
+#: core/modules/widgets/wgt.EnhancedText.php:127
+msgid "URL"
+msgstr ""
+
+#: core/modules/widgets/wgt.EnhancedText.php:131
+msgid "CSS Class"
+msgstr ""
+
+#: core/modules/widgets/wgt.EnhancedText.php:135 dash/options.php:168
+msgid "Content"
+msgstr ""
+
+#: core/modules/widgets/wgt.EnhancedText.php:139
+msgid "Hide Title"
+msgstr ""
+
+#: core/modules/widgets/wgt.EnhancedText.php:143
+msgid "Link Opened in New Window"
+msgstr ""
+
+#: core/modules/widgets/wgt.EnhancedText.php:146
+msgid "Auto P tag"
+msgstr ""
+
+#: core/modules/widgets/wgt.EnhancedText.php:149
+msgid "Do Not echo before/after_widget/title"
+msgstr ""
+
+#: core/modules/widgets/wgt.Float.php:22
+msgid "TT-Float Sidebar Placeholder"
+msgstr ""
+
+#: core/modules/widgets/wgt.Float.php:22
+msgid "TT-Used to choose the position of float sidebar"
+msgstr ""
+
+#: core/modules/widgets/wgt.HotHits.Posts.php:22
+msgid "TT-Hot Hit Posts"
+msgstr ""
+
+#: core/modules/widgets/wgt.HotHits.Posts.php:22
+msgid "TT-Show several most viewed posts"
+msgstr ""
+
+#: core/modules/widgets/wgt.HotHits.Posts.php:63
+msgid "HOT HITS"
+msgstr ""
+
+#: core/modules/widgets/wgt.HotHits.Posts.php:67
+#: core/modules/widgets/wgt.HotReviews.Posts.php:67
+#: core/modules/widgets/wgt.Latest.Posts.php:66
+#: core/modules/widgets/wgt.RecentComments.php:61
+#: core/modules/widgets/wgt.TagCloud.php:58
+msgid "Number："
+msgstr ""
+
+#: core/modules/widgets/wgt.HotReviews.Posts.php:22
+msgid "TT-Hot Reviewed Posts"
+msgstr ""
+
+#: core/modules/widgets/wgt.HotReviews.Posts.php:22
+msgid "TT-Show several most reviewed posts"
+msgstr ""
+
+#: core/modules/widgets/wgt.HotReviews.Posts.php:63
+msgid "HOT REVIEWED"
+msgstr ""
+
+#: core/modules/widgets/wgt.Latest.Posts.php:22
+msgid "TT-Latest Posts"
+msgstr ""
+
+#: core/modules/widgets/wgt.Latest.Posts.php:22
+msgid "TT-Show several latest posts"
+msgstr ""
+
+#: core/modules/widgets/wgt.Latest.Posts.php:62
+msgid "LATEST POSTS"
+msgstr ""
+
+#: core/modules/widgets/wgt.RecentComments.php:22
+msgid "TT-Recent Comments"
+msgstr ""
+
+#: core/modules/widgets/wgt.RecentComments.php:22
+msgid "TT-Show several recent comments"
+msgstr ""
+
+#: core/modules/widgets/wgt.RecentComments.php:40
+msgid "REVIEWED ON "
+msgstr ""
+
+#: core/modules/widgets/wgt.RecentComments.php:57
+msgid "RECENT COMMENTS"
+msgstr ""
+
+#: core/modules/widgets/wgt.TagCloud.php:22
+msgid "TT-Tag Cloud"
+msgstr ""
+
+#: core/modules/widgets/wgt.TagCloud.php:22
+msgid "TT-Show some site tags in tag cloud style"
+msgstr ""
+
+#: core/modules/widgets/wgt.TagCloud.php:54
+msgid "TAG CLOUD"
+msgstr ""
+
+#: core/modules/widgets/wgt.UC.php:22
+msgid "TT- UC"
+msgstr ""
+
+#: core/modules/widgets/wgt.UC.php:22
+msgid "TT-Show toolkits for current user"
+msgstr ""
+
+#: core/modules/widgets/wgt.UC.php:35
+msgid "Local Account"
+msgstr ""
+
+#: core/modules/widgets/wgt.UC.php:37 dash/options.php:569
+msgid "QQ Login"
+msgstr ""
+
+#: core/modules/widgets/wgt.UC.php:40 dash/options.php:599
+msgid "Weibo Login"
+msgstr ""
+
+#: core/modules/widgets/wgt.UC.php:43
+msgid "Wechat Login"
+msgstr ""
+
+#: core/modules/widgets/wgt.UC.php:57
+msgid "USER MANAGEMENT"
+msgstr ""
+
+#: core/templates/actions/tpl.M.Activate.php:21
+msgid "Can not activate your registration, the link your visit is incorrect."
+msgstr ""
+
+#: core/templates/actions/tpl.M.Activate.php:21
+msgid "Invalid Activation Link"
+msgstr ""
+
+#: core/templates/actions/tpl.M.Activate.php:31
+msgid ""
+"Can not activate your registration, please try again the registration steps."
+msgstr ""
+
+#: core/templates/actions/tpl.M.Activate.php:31
+msgid "Activate Registration Failed"
+msgstr ""
+
+#: core/templates/actions/tpl.M.Activate.php:53
+msgid "Activate Successfully"
+msgstr ""
+
+#: core/templates/actions/tpl.M.Activate.php:54
+msgid "You will be redirected to the signin page in 3s"
+msgstr ""
+
+#: core/templates/actions/tpl.M.Findpass.php:34
+msgid "Please input your account associated email"
+msgstr ""
+
+#: core/templates/actions/tpl.M.Refresh.php:20
+msgid "Refresh Rewrite"
+msgstr ""
+
+#: core/templates/actions/tpl.M.Refresh.php:34
+#, php-format
+msgid "Rewrite rules refresh successfully, <a href=\"%1$s\">back to home</a>"
+msgstr ""
+
+#: core/templates/actions/tpl.M.Refresh.php:36
+msgid ""
+"Please customize your permalink structure, it's the basis of better theme "
+"functionality"
+msgstr ""
+
+#: core/templates/actions/tpl.M.Refresh.php:39
+msgid "Forbidden Access"
+msgstr ""
+
+#: core/templates/actions/tpl.M.Resetpass.php:20
+msgid "The link you visited is invalid or expired"
+msgstr ""
+
+#: core/templates/actions/tpl.M.Resetpass.php:20
+msgid "Link Error"
+msgstr ""
+
+#: core/templates/actions/tpl.M.Resetpass.php:37
+msgid "Please input your new password"
+msgstr ""
+
+#: core/templates/actions/tpl.M.Signin.php:70
+#: core/templates/actions/tpl.M.Signup.php:67
+msgid "Quick SignIn"
+msgstr ""
+
+#: core/templates/actions/tpl.M.Signin.php:74
+#: core/templates/actions/tpl.M.Signup.php:71
+msgid "Signin with Sina weibo"
+msgstr ""
+
+#: core/templates/actions/tpl.M.Signin.php:80
+#: core/templates/actions/tpl.M.Signup.php:77
+msgid "Signin with QQ"
+msgstr ""
+
+#: core/templates/actions/tpl.M.Signin.php:86
+#: core/templates/actions/tpl.M.Signup.php:83
+msgid "Signin with Wechat"
+msgstr ""
+
+#: core/templates/actions/tpl.M.Signin.php:109
+msgid ""
+"The manager has disabled the new registration, please sign in if you already "
+"have a account"
+msgstr ""
+
+#: core/templates/actions/tpl.M.Signout.php:49
+msgid "Sign Out Successfully"
+msgstr ""
+
+#: core/templates/actions/tpl.M.Signout.php:50
+#, php-format
+msgid "You will be redirected to %s in 2s"
+msgstr ""
+
+#: core/templates/actions/tpl.M.Signup.php:32
+msgid "Create Account"
+msgstr ""
+
+#: core/templates/actions/tpl.M.Signup.php:34
+msgid ""
+"We will send you an email including a activation link to help to complete "
+"the registration steps."
+msgstr ""
+
+#: core/templates/actions/tpl.M.Signup.php:43
+msgid "Account"
+msgstr ""
+
+#: core/templates/actions/tpl.M.Signup.php:53
+msgid "Captcha"
+msgstr ""
+
+#: core/templates/actions/tpl.M.Signup.php:57
+msgid "Click to refresh"
+msgstr ""
+
+#: core/templates/actions/tpl.M.Signup.php:90
+msgid "Already have an account? "
+msgstr ""
+
+#: core/templates/actions/tpl.M.Signup.php:92
+#, php-format
+msgid ""
+"* By signing up, you agree to our <a href=\"%s\" target=\"_blank"
+"\"><strong>「Terms of Use, Privacy Policy」</strong></a> and to receive "
+"emails, newsletters &amp; updates."
+msgstr ""
+
+#: core/templates/bulletins/tpl.Bulletin.php:30
+msgid "Publisher: "
+msgstr ""
+
+#: core/templates/bulletins/tpl.Bulletin.php:34
+msgid "Views: "
+msgstr "Views: "
+
+#: core/templates/oauth/tpl.OAuth.Last.php:29
+msgid "The Last Step, Complete Basic Account Info"
+msgstr ""
+
+#: core/templates/oauth/tpl.OAuth.Last.php:35
+msgid "Bind"
+msgstr ""
+
+#: core/templates/oauth/tpl.OAuth.php:24 core/templates/oauth/tpl.OAuth.php:48
+msgid "The request you have done is illegal, please retry"
+msgstr ""
+
+#: core/templates/oauth/tpl.OAuth.php:24 core/templates/oauth/tpl.OAuth.php:48
+msgid "Illegal Request"
+msgstr ""
+
+#: core/templates/shop/tpl.Product.Archive.php:60
+#: core/templates/shop/tpl.Product.Category.php:61
+#: core/templates/shop/tpl.Product.Search.php:61
+#: core/templates/shop/tpl.Product.Tag.php:61
+msgid "Free"
+msgstr ""
+
+#: core/templates/shop/tpl.Product.Archive.php:70
+#: core/templates/shop/tpl.Product.Category.php:74
+#: core/templates/shop/tpl.Product.Search.php:74
+#: core/templates/shop/tpl.Product.Tag.php:74
+msgid "ZAN"
+msgstr ""
+
+#: core/templates/shop/tpl.Product.Search.php:33
+#, php-format
+msgid "Searching: %s"
+msgstr ""
+
+#: core/templates/shop/tpl.Product.php:42
+msgid "SHOP"
+msgstr ""
+
+#: core/templates/shop/tpl.Product.php:54
+msgid "Sale!"
+msgstr ""
+
+#: core/templates/shop/tpl.Product.php:62
+msgid "Share"
+msgstr ""
+
+#: core/templates/shop/tpl.Product.php:73
+#, php-format
+msgid "Product Views: %d"
+msgstr ""
+
+#: core/templates/shop/tpl.Product.php:115
+msgid "SOLD OUT"
+msgstr ""
+
+#: core/templates/shop/tpl.Product.php:115
+msgid "Please contact the site manager via: "
+msgstr ""
+
+#: core/templates/shop/tpl.Product.php:117
+#: core/templates/shop/tpl.Product.php:125
+msgid "Qty"
+msgstr ""
+
+#: core/templates/shop/tpl.Product.php:120
+msgid "Purchase in Taobao"
+msgstr ""
+
+#: core/templates/shop/tpl.Product.php:122
+msgid "CHECK OUT"
+msgstr ""
+
+#: core/templates/shop/tpl.Product.php:123
+msgid "ADD TO CART"
+msgstr ""
+
+#: core/templates/shop/tpl.Product.php:135
+msgid "SKU: "
+msgstr ""
+
+#: core/templates/shop/tpl.Product.php:136
+msgid "Inventory: "
+msgstr ""
+
+#: core/templates/shop/tpl.Product.php:137
+msgid "Categories: "
+msgstr ""
+
+#: core/templates/shop/tpl.Product.php:144
+#: core/templates/shop/tpl.Product.php:159
+msgid "Product Description"
+msgstr ""
+
+#: core/templates/shop/tpl.Product.php:147
+#, php-format
+msgid "Reviews (%d)"
+msgstr ""
+
+#: core/templates/shop/tpl.Product.php:150
+msgid "History"
+msgstr ""
+
+#: core/templates/shop/tpl.Product.php:153
+msgid "Pay Content"
+msgstr ""
+
+#: core/templates/shop/tpl.Product.php:165
+#, php-format
+msgid "%d reviews for the product"
+msgstr ""
+
+#: core/templates/site/tpl.APSV.Notify.php:43
+#: core/templates/site/tpl.APSV.Notify.php:58
+#: core/templates/site/tpl.Alipay.Notify.php:18
+#: core/templates/site/tpl.CheckOut.php:26
+#: core/templates/site/tpl.PayGateway.php:26
+#: core/templates/site/tpl.PayResult.php:26
+msgid "You are acting an illegal visit"
+msgstr ""
+
+#: core/templates/site/tpl.APSV.Notify.php:43
+#: core/templates/site/tpl.APSV.Notify.php:58
+#: core/templates/site/tpl.Alipay.Notify.php:18
+#: core/templates/site/tpl.CheckOut.php:26
+#: core/templates/site/tpl.PayGateway.php:26
+#: core/templates/site/tpl.PayResult.php:26
+msgid "Illegal Visit"
+msgstr ""
+
+#: core/templates/site/tpl.Alipay.Return.php:18
+#: core/templates/site/tpl.CheckOut.php:18
+#: core/templates/site/tpl.Download.php:18
+#: core/templates/site/tpl.PayGateway.php:18
+#: core/templates/site/tpl.PayResult.php:18
+msgid "You cannot visit this page without sign in"
+msgstr ""
+
+#: core/templates/site/tpl.Alipay.Return.php:18
+#: core/templates/site/tpl.CheckOut.php:18
+#: core/templates/site/tpl.Download.php:18
+#: core/templates/site/tpl.PayGateway.php:18
+#: core/templates/site/tpl.PayResult.php:18
+msgid "Error: Unknown User"
+msgstr ""
+
+#: core/templates/site/tpl.Alipay.Return.php:26
+msgid "Alipay trade interface configuration is incorrect"
+msgstr ""
+
+#: core/templates/site/tpl.Alipay.Return.php:26
+msgid "Error: Incorrect Alipay Trade Interface Configuration"
+msgstr ""
+
+#: core/templates/site/tpl.Alipay.Return.php:120
+msgid ""
+"Verify return result failed, please contact the site administrator if you "
+"have finished your payment"
+msgstr ""
+
+#: core/templates/site/tpl.Alipay.Return.php:120
+msgid "Verify Failed"
+msgstr ""
+
+#: core/templates/site/tpl.Alipay.Return.php:138
+#: core/templates/site/tpl.CheckOut.php:61
+#: core/templates/site/tpl.PayResult.php:60
+#: core/templates/site/tpl.QrPay.php:53
+msgid "Confirm Order"
+msgstr ""
+
+#: core/templates/site/tpl.Alipay.Return.php:145
+#: core/templates/site/tpl.CheckOut.php:68
+msgid "Payment Accomplish"
+msgstr ""
+
+#: core/templates/site/tpl.Alipay.Return.php:152
+#: core/templates/site/tpl.CheckOut.php:75
+#: core/templates/site/tpl.PayResult.php:74
+#: core/templates/site/tpl.QrPay.php:67
+msgid "Confirm Delivery"
+msgstr ""
+
+#: core/templates/site/tpl.Alipay.Return.php:159
+#: core/templates/site/tpl.PayResult.php:81
+#, php-format
+msgid "Payment for Order ID %s has finished successfully"
+msgstr ""
+
+#: core/templates/site/tpl.Alipay.Return.php:160
+#, php-format
+msgid "You have payed %f yuan, Currently the order status is: %s"
+msgstr ""
+
+#: core/templates/site/tpl.Alipay.Return.php:160
+msgid "<br>You need to go to visit your alipay account and confirm delivery."
+msgstr ""
+
+#: core/templates/site/tpl.Alipay.Return.php:161
+#: core/templates/site/tpl.PayResult.php:87
+#: core/templates/site/tpl.QrPay.php:107
+msgid "Check Order Detail"
+msgstr ""
+
+#: core/templates/site/tpl.CheckOut.php:22
+msgid "The required parameters for checking out order are missing"
+msgstr ""
+
+#: core/templates/site/tpl.CheckOut.php:22
+msgid "Invalid Checkout Parameters"
+msgstr ""
+
+#: core/templates/site/tpl.CheckOut.php:32
+#: core/templates/site/tpl.PayGateway.php:32
+#: core/templates/site/tpl.PayResult.php:32
+#: core/templates/site/tpl.QrPay.php:28
+msgid "The order with order id you specified is not existed"
+msgstr ""
+
+#: core/templates/site/tpl.CheckOut.php:32
+#: core/templates/site/tpl.CheckOut.php:36
+#: core/templates/site/tpl.PayGateway.php:32
+#: core/templates/site/tpl.PayGateway.php:36
+#: core/templates/site/tpl.PayResult.php:32
+#: core/templates/site/tpl.PayResult.php:36
+#: core/templates/site/tpl.QrPay.php:28 core/templates/site/tpl.QrPay.php:32
+msgid "Invalid Order"
+msgstr ""
+
+#: core/templates/site/tpl.CheckOut.php:36
+#: core/templates/site/tpl.PayGateway.php:36
+#: core/templates/site/tpl.QrPay.php:32
+msgid "The order with order id you specified has been payed"
+msgstr ""
+
+#: core/templates/site/tpl.CheckOut.php:81
+msgid "Order Details"
+msgstr ""
+
+#: core/templates/site/tpl.CheckOut.php:88
+msgid "Single Price"
+msgstr ""
+
+#: core/templates/site/tpl.CheckOut.php:89
+msgid "Quantity"
+msgstr ""
+
+#: core/templates/site/tpl.CheckOut.php:90
+msgid "Gross"
+msgstr ""
+
+#: core/templates/site/tpl.CheckOut.php:109
+#, fuzzy
+msgid "View Details"
+msgstr "View File"
+
+#: core/templates/site/tpl.CheckOut.php:114
+msgid "Message sent to vendor: "
+msgstr ""
+
+#: core/templates/site/tpl.CheckOut.php:115
+msgid "Optional, please leave some remind note for this deal to the vendor"
+msgstr ""
+
+#: core/templates/site/tpl.CheckOut.php:119
+msgid "Address Info"
+msgstr ""
+
+#: core/templates/site/tpl.CheckOut.php:127
+#, php-format
+msgid "Receiver: %s"
+msgstr ""
+
+#: core/templates/site/tpl.CheckOut.php:141
+msgid "Use New Address"
+msgstr ""
+
+#: core/templates/site/tpl.CheckOut.php:149
+msgid "Name"
+msgstr ""
+
+#: core/templates/site/tpl.CheckOut.php:157
+msgid "Phone"
+msgstr ""
+
+#: core/templates/site/tpl.CheckOut.php:161
+msgid "Address"
+msgstr ""
+
+#: core/templates/site/tpl.CheckOut.php:165
+msgid "Zip"
+msgstr ""
+
+#: core/templates/site/tpl.CheckOut.php:172
+#: core/templates/site/tpl.CheckOut.php:184
+msgid "Pay Methods"
+msgstr ""
+
+#: core/templates/site/tpl.CheckOut.php:199
+msgid "Coupon: "
+msgstr ""
+
+#: core/templates/site/tpl.CheckOut.php:202
+msgid "Apply"
+msgstr ""
+
+#: core/templates/site/tpl.CheckOut.php:207
+msgid "Real Pay: "
+msgstr ""
+
+#: core/templates/site/tpl.CheckOut.php:212
+msgid "Submit Order"
+msgstr ""
+
+#: core/templates/site/tpl.Download.php:22
+msgid "The required resource id is missing"
+msgstr ""
+
+#: core/templates/site/tpl.Download.php:22
+#: core/templates/site/tpl.Download.php:31
+msgid "Invalid Resource ID"
+msgstr ""
+
+#: core/templates/site/tpl.Download.php:31
+msgid "The resource id is invalid or resource is not exist"
+msgstr ""
+
+#: core/templates/site/tpl.PayGateway.php:22
+msgid "The required parameters for payment are missing"
+msgstr ""
+
+#: core/templates/site/tpl.PayGateway.php:22
+msgid "Invalid Payment Parameters"
+msgstr ""
+
+#: core/templates/site/tpl.PayGateway.php:42
+msgid "The seller information verify failed, please contact the site manager"
+msgstr ""
+
+#: core/templates/site/tpl.PayGateway.php:42
+msgid "Internal Error"
+msgstr ""
+
+#: core/templates/site/tpl.PayGateway.php:53
+msgid "VIP Membership(Monthly)"
+msgstr ""
+
+#: core/templates/site/tpl.PayGateway.php:54
+msgid "Subscribe VIP Membership(Monthly)"
+msgstr ""
+
+#: core/templates/site/tpl.PayGateway.php:56
+msgid "VIP Membership(Annual)"
+msgstr ""
+
+#: core/templates/site/tpl.PayGateway.php:57
+msgid "Subscribe VIP Membership(Annual)"
+msgstr ""
+
+#: core/templates/site/tpl.PayGateway.php:59
+msgid "VIP Membership(Permanent)"
+msgstr ""
+
+#: core/templates/site/tpl.PayGateway.php:60
+msgid "Subscribe VIP Membership(Permanent)"
+msgstr ""
+
+#: core/templates/site/tpl.PayGateway.php:174
+msgid "Confirm"
+msgstr ""
+
+#: core/templates/site/tpl.PayGateway.php:182
+msgid "Payment Gateway"
+msgstr ""
+
+#: core/templates/site/tpl.PayGateway.php:185
+msgid "Redirecting to alipay..."
+msgstr ""
+
+#: core/templates/site/tpl.PayGateway.php:193
+msgid ""
+"The payment channel you choose is not supported, please select another one "
+"or contact with the site manager"
+msgstr ""
+
+#: core/templates/site/tpl.PayGateway.php:193
+msgid "Unsupported Payment Channel"
+msgstr ""
+
+#: core/templates/site/tpl.PayResult.php:22
+msgid "The required parameters for check result of order payment  are missing"
+msgstr ""
+
+#: core/templates/site/tpl.PayResult.php:22
+#: core/templates/site/tpl.QrPay.php:22
+msgid "Invalid Query Parameters"
+msgstr ""
+
+#: core/templates/site/tpl.PayResult.php:36
+msgid "The order with order id you specified has not been payed"
+msgstr ""
+
+#: core/templates/site/tpl.PayResult.php:67
+#: core/templates/site/tpl.QrPay.php:60
+msgid "Accomplish Payment"
+msgstr ""
+
+#: core/templates/site/tpl.PayResult.php:83
+#, php-format
+msgid ""
+"You use site credit to accomplish this payment, cost %d credits, currently "
+"your credit balance is: %d"
+msgstr ""
+
+#: core/templates/site/tpl.PayResult.php:85
+#, php-format
+msgid "Currently the order status is: %s"
+msgstr ""
+
+#: core/templates/site/tpl.QrCode.php:18
+msgid "The request is not allowed"
+msgstr ""
+
+#: core/templates/site/tpl.QrCode.php:18
+msgid "Illegal request"
+msgstr ""
+
+#: core/templates/site/tpl.QrCode.php:22
+msgid "The text parameter is missing"
+msgstr ""
+
+#: core/templates/site/tpl.QrCode.php:22
+msgid "Missing argument"
+msgstr ""
+
+#: core/templates/site/tpl.QrPay.php:22
+msgid "The required parameters for retrieve a order  are missing"
+msgstr ""
+
+#: core/templates/site/tpl.QrPay.php:38
+msgid "The order does not support cash payment"
+msgstr ""
+
+#: core/templates/site/tpl.QrPay.php:38
+msgid "Unsuitable Payment Method"
+msgstr ""
+
+#: core/templates/site/tpl.QrPay.php:74
+#, php-format
+msgid "Payment Amount for Order ID %s is %0.2f"
+msgstr ""
+
+#: core/templates/site/tpl.QrPay.php:75
+msgid ""
+"Currently we only support a payment via transfer by scanning qrcode image, "
+"when you transfer cash to us, you should leave some important information "
+"for remark"
+msgstr ""
+
+#: core/templates/site/tpl.QrPay.php:76
+#, php-format
+msgid "Your remark is: <strong>%d</strong>"
+msgstr ""
+
+#: core/templates/site/tpl.QrPay.php:79 dash/options.php:1162
+msgid "Alipay"
+msgstr ""
+
+#: core/templates/site/tpl.QrPay.php:80
+msgid "Scan the qrcode image and pay forward to me"
+msgstr ""
+
+#: core/templates/site/tpl.QrPay.php:81
+msgid "Recommended, support auto delivery if you leave right remark"
+msgstr ""
+
+#: core/templates/site/tpl.QrPay.php:90
+#, php-format
+msgid ""
+"用户注意, 如果扫码无法输入备注, 请按如下方式操作, 我的收款账户为 <strong>%s</"
+"strong>"
+msgstr ""
+
+#: core/templates/tax/tpl.Archive.php:60 core/templates/tax/tpl.Category.php:84
+#: core/templates/tax/tpl.Date.php:82 core/templates/tax/tpl.Tag.php:82
+msgid "LOAD NEXT"
+msgstr ""
+
+#: core/templates/tpl.404.php:22
+msgid "The page you were looking for doesn't exist"
+msgstr ""
+
+#: core/templates/tpl.404.php:24 core/templates/tpl.Error.php:63
+msgid "Go Back Home"
+msgstr ""
+
+#: core/templates/tpl.404.php:24
+msgid "Redirect to home after <span class=\"num\">5</span>s"
+msgstr ""
+
+#: core/templates/tpl.Error.php:22 core/templates/tpl.Error.php:57
+msgid "Error Happened!"
+msgstr ""
+
+#: core/templates/tpl.Error.php:60
+msgid "An error has happened on this page."
+msgstr ""
+
+#: core/templates/tpl.Search.php:28
+#, php-format
+msgid "Search %s"
+msgstr ""
+
+#: core/templates/tpl.Search.php:29
+#, php-format
+msgid "%d results in total"
+msgstr ""
+
+#: core/viewModels/bulletin/vm.Bulletin.php:84
+#: core/viewModels/bulletin/vm.Bulletin.php:85
+msgid "Not any more"
+msgstr ""
+
+#: core/viewModels/management/vm.Mg.Order.php:72
+#: core/viewModels/me/vm.Me.Order.php:78
+msgid "Credit Payment"
+msgstr ""
+
+#: core/viewModels/management/vm.Mg.Order.php:72
+#: core/viewModels/me/vm.Me.Order.php:78
+msgid "Cash Payment"
+msgstr ""
+
+#: core/viewModels/management/vm.Mg.Posts.php:93
+msgid "PENDING"
+msgstr ""
+
+#: core/viewModels/management/vm.Mg.Posts.php:95
+msgid "DRAFT"
+msgstr ""
+
+#: core/viewModels/management/vm.Mg.Posts.php:102
+#: core/viewModels/management/vm.Mg.Products.php:124
+msgid "EDIT"
+msgstr ""
+
+#: core/viewModels/management/vm.Mg.Posts.php:110
+msgid "SAVE DRAFT"
+msgstr ""
+
+#: core/viewModels/management/vm.Mg.Posts.php:117
+msgid "PUBLISH"
+msgstr ""
+
+#: core/viewModels/management/vm.Mg.Posts.php:124
+msgid "APPROVE"
+msgstr ""
+
+#: core/viewModels/management/vm.Mg.Posts.php:131
+msgid "TRASH"
+msgstr ""
+
+#: core/viewModels/management/vm.Mg.Products.php:95
+#: core/viewModels/shop/vm.Embed.Product.php:72
+#: core/viewModels/shop/vm.Shop.Category.php:117
+#: core/viewModels/shop/vm.Shop.Home.php:156
+#: core/viewModels/shop/vm.Shop.Product.php:122
+#: core/viewModels/shop/vm.Shop.Product.php:238
+#: core/viewModels/shop/vm.Shop.Product.php:285
+#: core/viewModels/shop/vm.Shop.Search.php:111
+#: core/viewModels/shop/vm.Shop.Tag.php:117
+#: core/viewModels/shop/vm.Shop.ViewHistory.php:99
+#: core/viewModels/vm.Single.Post.php:107
+msgid "YUAN"
+msgstr ""
+
+#: core/viewModels/management/vm.Mg.Products.php:113
+msgid "On Sell"
+msgstr ""
+
+#: core/viewModels/management/vm.Mg.Products.php:115
+msgid "Await Sell"
+msgstr ""
+
+#: core/viewModels/management/vm.Mg.Products.php:117
+msgid "Await Edit"
+msgstr ""
+
+#: core/viewModels/management/vm.Mg.Products.php:132
+msgid "PULL DOWN"
+msgstr ""
+
+#: core/viewModels/management/vm.Mg.Products.php:139
+#: core/viewModels/management/vm.Mg.Products.php:146
+msgid "PUSH SELL"
+msgstr ""
+
+#: core/viewModels/management/vm.Mg.User.php:90
+#, fuzzy
+msgid "Combined Orders"
+msgstr "View File"
+
+#: core/viewModels/shop/vm.Shop.Header.SubNav.php:77
+msgid "Free Products"
+msgstr ""
+
+#: core/viewModels/shop/vm.Shop.Header.SubNav.php:83
+msgid "Credit Paid Products"
+msgstr ""
+
+#: core/viewModels/shop/vm.Shop.Header.SubNav.php:89
+msgid "Cash Paid Products"
+msgstr ""
+
+#: core/viewModels/vm.Date.Archive.php:47
+msgid "DAY ARCHIVE"
+msgstr ""
+
+#: core/viewModels/vm.Date.Archive.php:49
+#: core/viewModels/vm.Date.Archive.php:54
+#, php-format
+msgid "All posts which were published in %s"
+msgstr ""
+
+#: core/viewModels/vm.Date.Archive.php:52
+msgid "MONTH ARCHIVE"
+msgstr ""
+
+#: core/viewModels/vm.Date.Archive.php:57
+msgid "YEAR ARCHIVE"
+msgstr ""
+
+#: core/viewModels/vm.Date.Archive.php:59
+#, php-format
+msgid "All posts which were published in year %s"
+msgstr ""
+
+#: core/viewModels/vm.Single.Post.php:123
+#, php-format
+msgid ""
+"All the posts are created by <a href=\"%1$s\" title=\"%2$s\" target=\"_blank"
+"\">%2$s</a> if without special annotations, please mark the source as <a "
+"href=\"%3$s\" title=\"%4$s\">%3$s</a> when reprinting"
+msgstr ""
+
+#: core/viewModels/vm.Single.Post.php:124
+#, php-format
+msgid ""
+"The post is from: <a href=\"%1$s\" title=\"%2$s\" target=\"_blank\">%2$s</a>"
+msgstr ""
+
+#: dash/dash.php:56
+msgid "Clear Cache"
+msgstr ""
+
+#: dash/dash.php:69
+msgid "All Cache Clear."
+msgstr ""
+
+#: dash/dash.php:85
+msgid "Display Name"
+msgstr ""
+
+#: dash/dash.php:118
+msgid "No Record"
+msgstr ""
+
+#: dash/dash.php:133
+#, php-format
+msgid ""
+"<span id=\"footer-thankyou\">Thanks for using %s to help your creation, %s "
+"theme style your website</span>"
+msgstr ""
+
+#: dash/dash.php:149
+msgid "Wechat"
+msgstr ""
+
+#: dash/dash.php:154
+msgid "Alipay Pay Qrcode"
+msgstr ""
+
+#: dash/dash.php:155
+msgid "Wechat Pay Qrcode"
+msgstr ""
+
+#: dash/of_inc/includes/class-options-framework-admin.php:91
+#: dash/of_inc/includes/class-options-framework-admin.php:92
+msgid "Theme Options"
+msgstr "Theme Options"
+
+#: dash/of_inc/includes/class-options-framework-admin.php:205
+msgid "Save Options"
+msgstr "Save Options"
+
+#: dash/of_inc/includes/class-options-framework-admin.php:206
+msgid "Restore Defaults"
+msgstr "Restore Defaults"
+
+#: dash/of_inc/includes/class-options-framework-admin.php:206
+msgid "Click OK to reset. Any theme settings will be lost!"
+msgstr "Click OK to reset. Any theme settings will be lost!"
+
+#: dash/of_inc/includes/class-options-framework-admin.php:237
+msgid "Default options restored."
+msgstr "Default options restored."
+
+#: dash/of_inc/includes/class-options-framework-admin.php:295
+msgid "Options saved."
+msgstr "Options saved."
+
+#: dash/of_inc/includes/class-options-interface.php:73
+msgid " (Function for Pro Edition Only)"
+msgstr ""
+
+#: dash/of_inc/includes/class-options-interface.php:126
+msgid "Disabled"
+msgstr ""
+
+#: dash/of_inc/includes/class-options-media-uploader.php:62
+msgid "No file chosen"
+msgstr "No file chosen"
+
+#: dash/of_inc/includes/class-options-media-uploader.php:65
+#: dash/of_inc/includes/class-options-media-uploader.php:118
+msgid "Upload"
+msgstr "Upload"
+
+#: dash/of_inc/includes/class-options-media-uploader.php:67
+#: dash/of_inc/includes/class-options-media-uploader.php:119
+msgid "Remove"
+msgstr "Remove"
+
+#: dash/of_inc/includes/class-options-media-uploader.php:70
+msgid "Upgrade your version of WordPress for full media support."
+msgstr "Upgrade your version of WordPress for full media support."
+
+#: dash/of_inc/includes/class-options-media-uploader.php:94
+msgid "View File"
+msgstr "View File"
+
+#: dash/of_inc/includes/class-options-sanitization.php:320
+msgid "No Repeat"
+msgstr "No Repeat"
+
+#: dash/of_inc/includes/class-options-sanitization.php:321
+msgid "Repeat Horizontally"
+msgstr "Repeat Horizontally"
+
+#: dash/of_inc/includes/class-options-sanitization.php:322
+msgid "Repeat Vertically"
+msgstr "Repeat Vertically"
+
+#: dash/of_inc/includes/class-options-sanitization.php:323
+msgid "Repeat All"
+msgstr "Repeat All"
+
+#: dash/of_inc/includes/class-options-sanitization.php:335
+msgid "Top Left"
+msgstr "Top Left"
+
+#: dash/of_inc/includes/class-options-sanitization.php:336
+msgid "Top Center"
+msgstr ""
+
+#: dash/of_inc/includes/class-options-sanitization.php:337
+msgid "Top Right"
+msgstr ""
+
+#: dash/of_inc/includes/class-options-sanitization.php:338
+msgid "Middle Left"
+>>>>>>> dev
 msgstr ""
 
 #: dash/of_inc/includes/class-options-sanitization.php:339
 msgid "Middle Center"
 msgstr ""
 
+<<<<<<< HEAD
 #: dash/of_inc/includes/class-options-sanitization.php:340
 msgid "Middle Right"
 msgstr ""
@@ -3408,11 +8958,1059 @@ msgid "Short Link Prefix"
 msgstr ""
 
 #: dash/options.php:855
+=======
+#: dash/of_inc/includes/class-options-sanitization.php:340
+msgid "Middle Right"
+msgstr ""
+
+#: dash/of_inc/includes/class-options-sanitization.php:341
+msgid "Bottom Left"
+msgstr ""
+
+#: dash/of_inc/includes/class-options-sanitization.php:342
+msgid "Bottom Center"
+msgstr ""
+
+#: dash/of_inc/includes/class-options-sanitization.php:343
+msgid "Bottom Right"
+msgstr ""
+
+#: dash/of_inc/includes/class-options-sanitization.php:355
+msgid "Scroll Normally"
+msgstr ""
+
+#: dash/of_inc/includes/class-options-sanitization.php:356
+msgid "Fixed in Place"
+msgstr ""
+
+#: dash/of_inc/includes/class-options-sanitization.php:428
+msgid "Normal"
+msgstr ""
+
+#: dash/of_inc/includes/class-options-sanitization.php:429
+msgid "Italic"
+msgstr ""
+
+#: dash/of_inc/includes/class-options-sanitization.php:430
+msgid "Bold"
+msgstr ""
+
+#: dash/of_inc/includes/class-options-sanitization.php:431
+msgid "Bold Italic"
+msgstr ""
+
+#: dash/options.php:45
+msgid "Basic"
+msgstr ""
+
+#: dash/options.php:51
+msgid "Home Page Description"
+msgstr ""
+
+#: dash/options.php:52
+msgid "Home page description meta information, good for SEO"
+msgstr ""
+
+#: dash/options.php:60
+msgid "Home Page Keywords"
+msgstr ""
+
+#: dash/options.php:61
+msgid "Home page keywords meta information, good for SEO"
+msgstr ""
+
+#: dash/options.php:69
+msgid "Favicon"
+msgstr ""
+
+#: dash/options.php:70
+msgid "Please upload an ico file"
+msgstr ""
+
+#: dash/options.php:78
+msgid "Favicon(PNG)"
+msgstr ""
+
+#: dash/options.php:79
+msgid "Please upload an png file"
+msgstr ""
+
+#: dash/options.php:87
+msgid "I18n"
+msgstr ""
+
+#: dash/options.php:88
+msgid "Multi languages and I18n support"
+msgstr ""
+
+#: dash/options.php:93
+msgid "zh_cn"
+msgstr ""
+
+#: dash/options.php:94
+msgid "en_us"
+msgstr ""
+
+#: dash/options.php:100
+msgid "Gravatar"
+msgstr ""
+
+#: dash/options.php:101
+msgid "Gravatar support"
+msgstr ""
+
+#: dash/options.php:110
+msgid "Timthumb Crop"
+msgstr ""
+
+#: dash/options.php:111
+msgid "Timthumb crop support"
+msgstr ""
+
+#: dash/options.php:119
+msgid "jQuery Source"
+msgstr ""
+
+#: dash/options.php:120
+msgid "Choose local or a CDN jQuery file"
+msgstr ""
+
+#: dash/options.php:125
+msgid "Local v1.12"
+msgstr ""
+
+#: dash/options.php:126
+msgid "CDN HTTP"
+msgstr ""
+
+#: dash/options.php:127
+msgid "CDN HTTPS"
+msgstr ""
+
+#: dash/options.php:143
+msgid "Style"
+msgstr ""
+
+#: dash/options.php:149
+msgid "Site Logo"
+msgstr ""
+
+#: dash/options.php:150
+msgid "Please upload an png file as site logo"
+msgstr ""
+
+#: dash/options.php:158
+msgid "Site Small Logo"
+msgstr ""
+
+#: dash/options.php:159
+msgid "Please upload an png file as site small logo"
+msgstr ""
+
+#: dash/options.php:174
+msgid "Home Hide Categories"
+msgstr ""
+
+#: dash/options.php:175
+msgid "Choose categories those are not displayed in homepage"
+msgstr ""
+
+#: dash/options.php:184
+msgid "首页顶部展示幻灯和热门文章"
+msgstr ""
+
+#: dash/options.php:185
+msgid "展示幻灯和热门文章"
+msgstr ""
+
+#: dash/options.php:193
+msgid "首页展示置顶分类"
+msgstr ""
+
+#: dash/options.php:194
+msgid "展示置顶分类"
+msgstr ""
+
+#: dash/options.php:202
+msgid "Slide Post IDs"
+msgstr ""
+
+#: dash/options.php:203
+msgid "The post IDs for home slides, separate with comma"
+msgstr ""
+
+#: dash/options.php:211
+msgid "Home Popular Posts Algorithm"
+msgstr ""
+
+#: dash/options.php:212
+msgid "Choose the method of retrieving popular posts for homepage"
+msgstr ""
+
+#: dash/options.php:217
+msgid "Most Viewed"
+msgstr ""
+
+#: dash/options.php:218
+msgid "Most Reviewed"
+msgstr ""
+
+#: dash/options.php:219
+msgid "Latest Reviewed"
+msgstr ""
+
+#: dash/options.php:226
+msgid "Featured Category 1"
+msgstr ""
+
+#: dash/options.php:227
+msgid "Choose the first featured category for homepage"
+msgstr ""
+
+#: dash/options.php:236
+msgid "Featured Category 2"
+msgstr ""
+
+#: dash/options.php:237
+msgid "Choose the second featured category for homepage"
+msgstr ""
+
+#: dash/options.php:246
+msgid "Featured Category 3"
+msgstr ""
+
+#: dash/options.php:247
+msgid "Choose the third featured category for homepage"
+msgstr ""
+
+#: dash/options.php:265
+msgid "Post Comments Count"
+msgstr ""
+
+#: dash/options.php:266
+msgid ""
+"The num of comments per page for a post to display, leave empty or set 0 to "
+"show all comments"
+msgstr ""
+
+#: dash/options.php:275
+msgid "Excerpt Read More Text"
+msgstr ""
+
+#: dash/options.php:276
+msgid "The placeholder string at end of excerpt for indicating reading more"
+msgstr ""
+
+#: dash/options.php:285
+msgid "Excerpt Length"
+msgstr ""
+
+#: dash/options.php:296
+msgid "Disable External Links"
+msgstr ""
+
+#: dash/options.php:297
+msgid ""
+"Convert external links in post content, excerpt or comments to internal links"
+msgstr ""
+
+#: dash/options.php:306
+msgid "External Link Whitelist"
+msgstr ""
+
+#: dash/options.php:307
+msgid "External links which will not be converted"
+msgstr ""
+
+#: dash/options.php:321
+msgid "可投稿分类"
+msgstr ""
+
+#: dash/options.php:322
+msgid "选择允许用户投稿的分类, 至少选择一个"
+msgstr ""
+
+#: dash/options.php:332
+msgid "Enable Home Bulletins"
+msgstr ""
+
+#: dash/options.php:333
+msgid "Show site bulletins on the top of homepage"
+msgstr ""
+
+#: dash/options.php:342
+msgid "Bulletins Archive Link Slug"
+msgstr ""
+
+#: dash/options.php:343
+msgid "The special prefix in bulletin archive link"
+msgstr ""
+
+#: dash/options.php:353
+msgid "Bulletin Permalink Mode"
+msgstr ""
+
+#: dash/options.php:354
+msgid "The link mode for the rewrite bulletin permalink"
+msgstr ""
+
+#: dash/options.php:360 dash/options.php:1118
+msgid "Post ID"
+msgstr ""
+
+#: dash/options.php:361 dash/options.php:1119
+msgid "Post Name"
+msgstr ""
+
+#: dash/options.php:368
+msgid "Bulletin Effect Days"
+msgstr ""
+
+#: dash/options.php:369
+msgid "The effect days of a bulletin, expired bulletin will never be show"
+msgstr ""
+
+#: dash/options.php:379
+msgid "Sidebar"
+msgstr ""
+
+#: dash/options.php:398
+msgid "Register Sidebars"
+msgstr ""
+
+#: dash/options.php:399
+msgid "Check the sidebars to register"
+msgstr ""
+
+#: dash/options.php:421
+msgid "Select a sidebar for homepage"
+msgstr ""
+
+#: dash/options.php:431
+msgid "Select a sidebar for single post page"
+msgstr ""
+
+#: dash/options.php:440
+msgid "Archive Sidebar"
+msgstr ""
+
+#: dash/options.php:441
+msgid "Select a sidebar for archive page"
+msgstr ""
+
+#: dash/options.php:461
+msgid "Select a sidebar for search page"
+msgstr ""
+
+#: dash/options.php:481
+msgid "Select a sidebar for page"
+msgstr ""
+
+#: dash/options.php:491
+msgid "Select a sidebar for download page"
+msgstr ""
+
+#: dash/options.php:502
+msgid "Social"
+msgstr ""
+
+#: dash/options.php:509
+msgid "Site QQ"
+msgstr ""
+
+#: dash/options.php:510
+msgid "The QQ which is dedicated for the site"
+msgstr ""
+
+#: dash/options.php:519
+msgid "Site QQ Group ID"
+msgstr ""
+
+#: dash/options.php:520
+msgid ""
+"The ID key of QQ group which is dedicated for the site, visit `http://shang."
+"qq.com` for detail"
+msgstr ""
+
+#: dash/options.php:529
+msgid "Site Weibo"
+msgstr ""
+
+#: dash/options.php:530
+msgid "The name of Weibo account which is dedicated for the site"
+msgstr ""
+
+#: dash/options.php:539
+msgid "Site Facebook"
+msgstr ""
+
+#: dash/options.php:540
+msgid "The name of Facebook account which is dedicated for the site"
+msgstr ""
+
+#: dash/options.php:549
+msgid "Site Twitter"
+msgstr ""
+
+#: dash/options.php:550
+msgid "The name of Twitter account which is dedicated for the site"
+msgstr ""
+
+#: dash/options.php:559
+msgid "Site Weixin"
+msgstr ""
+
+#: dash/options.php:560
+msgid "The qrcode image of Weixin account which is dedicated for the site"
+msgstr ""
+
+#: dash/options.php:570
+msgid "QQ login "
+msgstr ""
+
+#: dash/options.php:579
+msgid "QQ Open ID"
+msgstr ""
+
+#: dash/options.php:580
+msgid "Your QQ open application ID"
+msgstr ""
+
+#: dash/options.php:589
+msgid "QQ Open Key"
+msgstr ""
+
+#: dash/options.php:590
+msgid "Your QQ open application key"
+msgstr ""
+
+#: dash/options.php:600
+msgid "Weibo login access"
+msgstr ""
+
+#: dash/options.php:609
+msgid "Weibo Open Key"
+msgstr ""
+
+#: dash/options.php:610
+msgid "Your weibo open application key"
+msgstr ""
+
+#: dash/options.php:619
+msgid "Weibo Open Secret"
+msgstr ""
+
+#: dash/options.php:620
+msgid "Your weibo open application secret"
+msgstr ""
+
+#: dash/options.php:629
+msgid "Weixin Login"
+msgstr ""
+
+#: dash/options.php:630
+msgid "Weixin login access"
+msgstr ""
+
+#: dash/options.php:639
+msgid "Weixin Open Key"
+msgstr ""
+
+#: dash/options.php:640
+msgid "Your weixin open application key"
+msgstr ""
+
+#: dash/options.php:649
+msgid "Weixin Open Secret"
+msgstr ""
+
+#: dash/options.php:650
+msgid "Your weixin open application secret"
+msgstr ""
+
+#: dash/options.php:658
+msgid "Open User Default Role"
+msgstr ""
+
+#: dash/options.php:659
+msgid "Choose the role and capabilities for the new connected user from open"
+msgstr ""
+
+#: dash/options.php:667
+msgid "Subscriber"
+msgstr ""
+
+#: dash/options.php:675
+msgid "Ad"
+msgstr ""
+
+#: dash/options.php:682
+msgid "开启导航栏下方大横幅广告"
+msgstr ""
+
+#: dash/options.php:683 dash/options.php:703 dash/options.php:723
+#: dash/options.php:743 dash/options.php:763 dash/options.php:783
+#: dash/options.php:803 dash/options.php:823 dash/options.php:843
+#: dash/options.php:873
+msgid "开启"
+msgstr ""
+
+#: dash/options.php:691
+msgid "导航栏下方横幅广告"
+msgstr ""
+
+#: dash/options.php:692
+msgid "多个页面可用"
+msgstr ""
+
+#: dash/options.php:702
+msgid "开启幻灯下方大横幅广告"
+msgstr ""
+
+#: dash/options.php:711
+msgid "幻灯下方大横幅广告"
+msgstr ""
+
+#: dash/options.php:712
+msgid "仅首页幻灯开启时可用, 标准尺寸960*90"
+msgstr ""
+
+#: dash/options.php:722
+msgid "开启置顶分类下方大横幅广告"
+msgstr ""
+
+#: dash/options.php:731
+msgid "置顶分类下方大横幅广告"
+msgstr ""
+
+#: dash/options.php:732
+msgid "仅首页置顶分类开启时可用, 标准尺寸960*90"
+msgstr ""
+
+#: dash/options.php:742
+msgid "开启底部大横幅广告"
+msgstr ""
+
+#: dash/options.php:751
+msgid "底部大横幅广告"
+msgstr ""
+
+#: dash/options.php:752
+msgid "多个页面可用, 标准尺寸960*90"
+msgstr ""
+
+#: dash/options.php:762
+msgid "开启文章文字上方广告"
+msgstr ""
+
+#: dash/options.php:771
+msgid "文章文字上方广告"
+msgstr ""
+
+#: dash/options.php:772 dash/options.php:792
+msgid "标准尺寸640*60"
+msgstr ""
+
+#: dash/options.php:782
+msgid "开启文章文字下方广告"
+msgstr ""
+
+#: dash/options.php:791
+msgid "文章文字下方广告"
+msgstr ""
+
+#: dash/options.php:802
+msgid "开启相关文章上方广告"
+msgstr ""
+
+#: dash/options.php:811
+msgid "相关文章上方广告"
+msgstr ""
+
+#: dash/options.php:812 dash/options.php:832
+msgid "标准尺寸760*90"
+msgstr ""
+
+#: dash/options.php:822
+msgid "开启评论框上方广告"
+msgstr ""
+
+#: dash/options.php:831
+msgid "评论框上方广告"
+msgstr ""
+
+#: dash/options.php:842
+msgid "开启下载页面内容区上方广告"
+msgstr ""
+
+#: dash/options.php:851
+msgid "下载页面内容区上方广告1"
+msgstr ""
+
+#: dash/options.php:852
+msgid "双矩形广告位-左, 标准尺寸350*300"
+msgstr ""
+
+#: dash/options.php:861
+msgid "下载页面内容区上方广告2"
+msgstr ""
+
+#: dash/options.php:862
+msgid "双矩形广告位-右, 标准尺寸350*300"
+msgstr ""
+
+#: dash/options.php:872
+msgid "开启下载页面内容区下方广告"
+msgstr ""
+
+#: dash/options.php:881
+msgid "下载页面内容区下方广告"
+msgstr ""
+
+#: dash/options.php:882
+msgid "仅适用于下载页面内容区下方, 标准尺寸760*90"
+msgstr ""
+
+#: dash/options.php:898
+msgid "积分价格(元/100积分)"
+msgstr ""
+
+#: dash/options.php:899
+msgid "注意: 积分充值最小单位为100, 此价格为100个积分的价格"
+msgstr ""
+
+#: dash/options.php:909
+msgid "每日签到积分奖励"
+msgstr ""
+
+#: dash/options.php:920
+msgid "注册奖励积分"
+msgstr ""
+
+#: dash/options.php:921
+msgid "新用户注册时默认赠送的积分数量"
+msgstr ""
+
+#: dash/options.php:930
+msgid "访问推广奖励积分"
+msgstr ""
+
+#: dash/options.php:931
+msgid "通过分享链接推广其他用户访问本站时奖励的积分数量"
+msgstr ""
+
+#: dash/options.php:940
+msgid "注册推广奖励积分"
+msgstr ""
+
+#: dash/options.php:941
+msgid "通过分享链接推广其他用户注册本站用户时奖励的积分数量"
+msgstr ""
+
+#: dash/options.php:950
+msgid "投稿奖励积分"
+msgstr ""
+
+#: dash/options.php:951
+msgid "用户向本站投稿文章通过时奖励的积分"
+msgstr ""
+
+#: dash/options.php:960
+msgid "评论奖励积分"
+msgstr ""
+
+#: dash/options.php:961
+msgid "用户在站内发表评论一次奖励的积分"
+msgstr ""
+
+#: dash/options.php:970
+msgid "访问推广次数限制"
+msgstr ""
+
+#: dash/options.php:971
+msgid "每日通过访问推广最多获得积分奖励的次数"
+msgstr ""
+
+#: dash/options.php:980
+msgid "注册推广次数限制"
+msgstr ""
+
+#: dash/options.php:981
+msgid "每日通过注册推广最多获得积分奖励的次数"
+msgstr ""
+
+#: dash/options.php:990
+msgid "投稿积分奖励次数限制"
+msgstr ""
+
+#: dash/options.php:991
+msgid "每日通过投稿最多获得积分奖励的次数"
+msgstr ""
+
+#: dash/options.php:1000
+msgid "评论积分奖励次数限制"
+msgstr ""
+
+#: dash/options.php:1001
+msgid "每日通过评论最多获得积分奖励的次数"
+msgstr ""
+
+#: dash/options.php:1011
+msgid "Membership"
+msgstr ""
+
+#: dash/options.php:1017
+msgid "月费会员价格"
+msgstr ""
+
+#: dash/options.php:1028
+msgid "年费会员价格"
+msgstr ""
+
+#: dash/options.php:1039
+msgid "永久会员价格"
+msgstr ""
+
+#: dash/options.php:1050
+msgid "月费会员默认折扣 (%)"
+msgstr ""
+
+#: dash/options.php:1061
+msgid "年费会员默认折扣 (%)"
+msgstr ""
+
+#: dash/options.php:1072
+msgid "永久会员默认折扣 (%)"
+msgstr ""
+
+#: dash/options.php:1083
+msgid "Shop"
+msgstr ""
+
+#: dash/options.php:1090
+msgid "Enable Shop"
+msgstr ""
+
+#: dash/options.php:1091
+msgid ""
+"After enable this, users can create orders and buy something those the site "
+"provided"
+msgstr ""
+
+#: dash/options.php:1100
+msgid "Products Archive Link Slug"
+msgstr ""
+
+#: dash/options.php:1101
+msgid "The special prefix in product archive link"
+msgstr ""
+
+#: dash/options.php:1111
+msgid "Product Permalink Mode"
+msgstr ""
+
+#: dash/options.php:1112
+msgid "The link mode for the rewrite product permalink"
+msgstr ""
+
+#: dash/options.php:1126
+msgid "Shop Home Keywords"
+msgstr ""
+
+#: dash/options.php:1127
+msgid "The keywords of shop homepage, good for SEO"
+msgstr ""
+
+#: dash/options.php:1136
+msgid "Shop Home Banner Title"
+msgstr ""
+
+#: dash/options.php:1137
+msgid "The main title displayed in the banner of shop homepage"
+msgstr ""
+
+#: dash/options.php:1139
+msgid "Shop Quality Products"
+msgstr ""
+
+#: dash/options.php:1146
+msgid "Shop Home Banner Sub Title"
+msgstr ""
+
+#: dash/options.php:1147
+msgid "The sub title displayed in the banner of shop homepage"
+msgstr ""
+
+#: dash/options.php:1149
+msgid "Themes - Plugins - Services"
+msgstr ""
+
+#: dash/options.php:1156
+msgid "支付方式"
+msgstr ""
+
+#: dash/options.php:1157
+msgid ""
+"目前支持支付宝原生即时到账、担保交易、双功能接口, 对于无法申请支付宝接口的提"
+"供个人开发的Alipay Supervisor免签约支付程序"
+msgstr ""
+
+#: dash/options.php:1163
+msgid "Alipay Supervisor免签约支付"
+msgstr ""
+
+#: dash/options.php:1170
+msgid "支付宝收款帐户邮箱"
+msgstr ""
+
+#: dash/options.php:1171
+msgid "支付宝收款帐户邮箱,要收款必填并务必保持正确"
+msgstr ""
+
+#: dash/options.php:1180
+msgid "Site Alipay"
+msgstr ""
+
+#: dash/options.php:1181
+msgid "The qrcode image of Alipay account which is dedicated for the site"
+msgstr ""
+
+#: dash/options.php:1190
+msgid "支付宝商家身份ID"
+msgstr ""
+
+#: dash/options.php:1191
+msgid "合作身份者id，以2088开头的16位纯数字"
+msgstr ""
+
+#: dash/options.php:1200
+msgid "支付宝商家身份key"
+msgstr ""
+
+#: dash/options.php:1201
+msgid "支付宝商家身份安全检验码，以数字和字母组成的32位字符"
+msgstr ""
+
+#: dash/options.php:1210
+msgid "支付宝商家收款类型"
+msgstr ""
+
+#: dash/options.php:1211
+msgid ""
+"支付宝商家收款类型, 支持即时到账, 双功能和担保交易, 注意：切换类型后必须对应"
+"修改商家身份key"
+msgstr ""
+
+#: dash/options.php:1216
+msgid "即时到账"
+msgstr ""
+
+#: dash/options.php:1217
+msgid "双功能"
+msgstr ""
+
+#: dash/options.php:1218
+msgid "担保交易"
+msgstr ""
+
+#: dash/options.php:1225
+msgid "Alipay Supervisor APP ID"
+msgstr ""
+
+#: dash/options.php:1226
+msgid "You should buy Alipay Supervisor first and then get the app id"
+msgstr ""
+
+#: dash/options.php:1235
+msgid "Alipay Supervisor APP Key"
+msgstr ""
+
+#: dash/options.php:1236
+msgid "You should buy Alipay Supervisor first and then get the app key"
+msgstr ""
+
+#: dash/options.php:1245
+msgid "Alipay Supervisor Secret"
+msgstr ""
+
+#: dash/options.php:1246
+msgid ""
+"A random string which verify the legitimacy of a request from Alipay "
+"Supervisor, should conform to Alipay Supervisor configuration"
+msgstr ""
+
+#: dash/options.php:1255
+msgid "Site Weixin Pay QR"
+msgstr ""
+
+#: dash/options.php:1256
+msgid "The Weixin pay qrcode image for collection money"
+msgstr ""
+
+#: dash/options.php:1265
+msgid "Site Alipay Pay QR"
+msgstr ""
+
+#: dash/options.php:1266
+msgid "The Alipay pay qrcode image for collection money"
+msgstr ""
+
+#: dash/options.php:1275
+msgid "Auxiliary"
+msgstr ""
+
+#: dash/options.php:1282
+msgid "Object Cache"
+msgstr ""
+
+#: dash/options.php:1283
+msgid "Object cache support, accelerate your site"
+msgstr ""
+
+#: dash/options.php:1288
+msgid "Memcache"
+msgstr ""
+
+#: dash/options.php:1289
+msgid "Redis"
+msgstr ""
+
+#: dash/options.php:1298
+msgid "Memcache Host"
+msgstr ""
+
+#: dash/options.php:1299
+msgid "Memcache server host"
+msgstr ""
+
+#: dash/options.php:1308
+msgid "Memcache Port"
+msgstr ""
+
+#: dash/options.php:1309
+msgid "Memcache server port"
+msgstr ""
+
+#: dash/options.php:1321
+msgid "Redis Host"
+msgstr ""
+
+#: dash/options.php:1322
+msgid "Redis server host"
+msgstr ""
+
+#: dash/options.php:1331
+msgid "Redis Port"
+msgstr ""
+
+#: dash/options.php:1332
+msgid "Redis server port"
+msgstr ""
+
+#: dash/options.php:1350
+msgid "SMTP/PHPMailer"
+msgstr ""
+
+#: dash/options.php:1351
+msgid "Use SMTP or PHPMail as default mailer"
+msgstr ""
+
+#: dash/options.php:1356
+msgid "PHP"
+msgstr ""
+
+#: dash/options.php:1357
+msgid "SMTP"
+msgstr ""
+
+#: dash/options.php:1365
+msgid "SMTP Host"
+msgstr ""
+
+#: dash/options.php:1366
+msgid "Your SMTP service host"
+msgstr ""
+
+#: dash/options.php:1376
+msgid "SMTP Port"
+msgstr ""
+
+#: dash/options.php:1377
+msgid "Your SMTP service port"
+msgstr ""
+
+#: dash/options.php:1387
+msgid "SMTP Secure"
+msgstr ""
+
+#: dash/options.php:1388
+msgid "Your SMTP server secure protocol"
+msgstr ""
+
+#: dash/options.php:1393
+msgid "Auto"
+msgstr ""
+
+#: dash/options.php:1394
+msgid "SSL"
+msgstr ""
+
+#: dash/options.php:1395
+msgid "TLS"
+msgstr ""
+
+#: dash/options.php:1403
+msgid "SMTP Username"
+msgstr ""
+
+#: dash/options.php:1404
+msgid "Your SMTP username"
+msgstr ""
+
+#: dash/options.php:1413
+msgid "SMTP Password"
+msgstr ""
+
+#: dash/options.php:1414
+msgid "Your SMTP password"
+msgstr ""
+
+#: dash/options.php:1424
+msgid "Your Name"
+msgstr ""
+
+#: dash/options.php:1425
+msgid "Your display name as the sender"
+msgstr ""
+
+#: dash/options.php:1437
+msgid "PHP Mail Sender Display Name"
+msgstr ""
+
+#: dash/options.php:1438
+msgid "The Sender display name when using PHPMail send mail"
+msgstr ""
+
+#: dash/options.php:1448
+msgid "PHP Mail Sender Address"
+msgstr ""
+
+#: dash/options.php:1449
+msgid "You can use fake mail address when use PHPMail"
+msgstr ""
+
+#: dash/options.php:1460
+msgid "Short Link Prefix"
+msgstr ""
+
+#: dash/options.php:1461
+>>>>>>> dev
 msgid ""
 "Use short link instead long link or even convert external link to internal "
 "link"
 msgstr ""
 
+<<<<<<< HEAD
 #: dash/options.php:865
 msgid "Short Link Records"
 msgstr ""
@@ -3434,11 +10032,93 @@ msgid "Debug Mode"
 msgstr ""
 
 #: dash/options.php:899
+=======
+#: dash/options.php:1471
+msgid "Short Link Records"
+msgstr ""
+
+#: dash/options.php:1472
+msgid "One line for one record, please conform to the sample"
+msgstr ""
+
+#: dash/options.php:1482
+msgid "Login Email Notification"
+msgstr ""
+
+#: dash/options.php:1483
+msgid "Enable email notification when a successfully login event happened"
+msgstr ""
+
+#: dash/options.php:1492
+msgid "Login Failure Email Notification"
+msgstr ""
+
+#: dash/options.php:1493
+msgid "Enable email notification when a login failure event happened"
+msgstr ""
+
+#: dash/options.php:1502
+msgid "Order Related Notification"
+msgstr ""
+
+#: dash/options.php:1503
+msgid "Enable order related notifications"
+msgstr ""
+
+#: dash/options.php:1512
+msgid "主题静态资源CDN路径"
+msgstr ""
+
+#: dash/options.php:1513
+msgid ""
+"主题程序的JS/CSS/IMG的CDN存放路径URL, css/js/img文件夹位于该路径下, 默认为本"
+"站Tint主题assets文件夹的路径, 更改为CDN的assets路径将从CDN加速主题的JS/CSS/"
+"IMG文件"
+msgstr ""
+
+#: dash/options.php:1522
+msgid "Feedback"
+msgstr ""
+
+#: dash/options.php:1529
+msgid "Contact Author"
+msgstr ""
+
+#: dash/options.php:1530
+#, php-format
+msgid ""
+"<br><h2>Email: chinash2010@gmail.com</h2><br><h2>Wechat & Alipay & "
+"QQ(below)</h2><br><img src=\"%s\"><img src=\"%s\"><img src=\"%s\"> "
+msgstr ""
+
+#: dash/options.php:1536
+#, fuzzy
+msgid "Related Works"
+msgstr "Repeat Vertically"
+
+#: dash/options.php:1537
+#, php-format
+msgid ""
+"<br><h2>Alipay Supervisor (<a href=\"%s\" target=\"_blank\">View Detail</"
+"a>)</h2><br><p>A toolkit for helping improve payment experience</p>"
+msgstr ""
+
+#: dash/options.php:1545
+msgid "Others"
+msgstr ""
+
+#: dash/options.php:1552
+msgid "Debug Mode"
+msgstr ""
+
+#: dash/options.php:1553
+>>>>>>> dev
 msgid ""
 "Enable debug will force display php errors, disable theme cache, enable some "
 "private links or functions, etc."
 msgstr ""
 
+<<<<<<< HEAD
 #: dash/options.php:908
 msgid "Tint Token"
 msgstr ""
@@ -3452,12 +10132,36 @@ msgid "Refresh Rewrite Rules"
 msgstr ""
 
 #: dash/options.php:920
+=======
+#: dash/options.php:1562
+msgid "Disable Cache"
+msgstr ""
+
+#: dash/options.php:1563
+msgid "Stop cache, user always get the latest content"
+msgstr ""
+
+#: dash/options.php:1572
+msgid "Tint Token"
+msgstr ""
+
+#: dash/options.php:1573
+msgid "Private token for theme, maybe useful somewhere."
+msgstr ""
+
+#: dash/options.php:1583
+msgid "Refresh Rewrite Rules"
+msgstr ""
+
+#: dash/options.php:1584
+>>>>>>> dev
 #, php-format
 msgid ""
 "Please Click to <a href=\"%1$s/m/refresh?token=%2$s\" target=\"_blank"
 "\">Refresh Rewrite Rules</a> if you have encounter some 404 errors"
 msgstr ""
 
+<<<<<<< HEAD
 #: dash/options.php:927
 msgid "QQ Mailme ID"
 msgstr ""
@@ -3504,6 +10208,66 @@ msgstr ""
 
 #: dash/options.php:978
 msgid "The date of when site opened, use `YYYY-mm-dd` format"
+=======
+#: dash/options.php:1591
+msgid "登录API后缀"
+msgstr ""
+
+#: dash/options.php:1592
+msgid "请变更默认值降低密码爆破攻击风险"
+msgstr ""
+
+#: dash/options.php:1601
+msgid "QQ Mailme ID"
+msgstr ""
+
+#: dash/options.php:1602
+msgid "The id of qq mailme, visit `http://open.mail.qq.com` for detail"
+msgstr ""
+
+#: dash/options.php:1611
+msgid "QQ Mail list ID"
+msgstr ""
+
+#: dash/options.php:1612
+msgid "The id of qq mailme, visit `http://list.qq.com` for detail"
+msgstr ""
+
+#: dash/options.php:1621
+msgid "Head Custom Code"
+msgstr ""
+
+#: dash/options.php:1622
+msgid "Custom code loaded on page head"
+msgstr ""
+
+#: dash/options.php:1632
+msgid "Foot Custom Code"
+msgstr ""
+
+#: dash/options.php:1633
+msgid "Custom code loaded on page foot"
+msgstr ""
+
+#: dash/options.php:1642
+msgid "Foot Beian Text"
+msgstr ""
+
+#: dash/options.php:1643
+msgid "IDC reference No. for regulations of China"
+msgstr ""
+
+#: dash/options.php:1652
+msgid "The date of when site opened, use `YYYY-mm-dd` format"
+msgstr ""
+
+#: dash/options.php:1663
+msgid "Footer Queries Info"
+msgstr ""
+
+#: dash/options.php:1664
+msgid "Show WordPress queries statistic information"
+>>>>>>> dev
 msgstr ""
 
 #: functions.php:16
@@ -3515,7 +10279,11 @@ msgid "TinT"
 msgstr ""
 
 #. Theme URI of the plugin/theme
+<<<<<<< HEAD
 msgid "https://www.webapproach.net/tint"
+=======
+msgid "https://webapproach.net/tint.html"
+>>>>>>> dev
 msgstr ""
 
 #. Description of the plugin/theme
@@ -3529,5 +10297,9 @@ msgid "Zhiyan"
 msgstr ""
 
 #. Author URI of the plugin/theme
+<<<<<<< HEAD
 msgid "https://www.webapproach.net/@zhiyan"
+=======
+msgid "https://webapproach.net/u/57"
+>>>>>>> dev
 msgstr ""

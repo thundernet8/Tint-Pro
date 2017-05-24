@@ -9,7 +9,11 @@
  * @date 2016/12/17 22:56
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
+<<<<<<< HEAD
  * @link https://www.webapproach.net/tint
+=======
+ * @link https://webapproach.net/tint.html
+>>>>>>> dev
  */
 ?>
 <?php
@@ -56,12 +60,21 @@ class MeOrdersVM extends BaseVM {
      */
     public static function getInstance($user_id = 0, $type = 'all', $page = 1, $limit = 20) {
         $instance = new static();
+<<<<<<< HEAD
         $type = in_array($type, ['all', 'credit', 'cash']) ? $type : 'all';
         $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . static::class . '_user' . $user_id . '_type' . $type;
+=======
+        $type = in_array($type, array('all', 'credit', 'cash')) ? $type : 'all';
+        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . __CLASS__ . '_user' . $user_id . '_type' . $type;
+>>>>>>> dev
         $instance->_userId = $user_id;
         $instance->_type = $type;
         $instance->_page = $page;
         $instance->_limit = $limit;
+<<<<<<< HEAD
+=======
+        $instance->_enableCache = false; // 禁用缓存
+>>>>>>> dev
         $instance->configInstance();
         return $instance;
     }
@@ -72,9 +85,25 @@ class MeOrdersVM extends BaseVM {
         $total = tt_count_user_orders($this->_userId, $this->_type);
         $max_pages = ceil($total / $this->_limit);
         $pagination_base = tt_url_for('my_' . $this->_type . '_orders') . '/page/%#%';
+<<<<<<< HEAD
         return (object)array(
             'count' => $count,
             'orders' => $orders,
+=======
+
+        $copy_orders = array();
+        foreach ($orders as $order){
+            if($order->product_id > 0){
+                $order->product_link = get_permalink($order->product_id);
+            }else{
+                $order->product_link = null;
+            }
+            $copy_orders[] = $order;
+        }
+        return (object)array(
+            'count' => $count,
+            'orders' => $copy_orders,
+>>>>>>> dev
             'total' => $total,
             'max_pages' => $max_pages,
             'pagination_base' => $pagination_base,

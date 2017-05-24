@@ -9,7 +9,11 @@
  * @date 2016/11/16 20:02
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
+<<<<<<< HEAD
  * @link https://www.webapproach.net/tint
+=======
+ * @link https://webapproach.net/tint.html
+>>>>>>> dev
  */
 ?>
 <?php
@@ -29,6 +33,14 @@ class ShopHomeVM extends BaseVM {
      */
     private $_sort = 'latest';
 
+<<<<<<< HEAD
+=======
+    /*
+     * @var string 货币和价格类型
+     */
+    private $_priceType = 'all';
+
+>>>>>>> dev
     protected function __construct() {
         $this->_cacheUpdateFrequency = 'daily';
         $this->_cacheInterval = 3600*24; // 缓存保留一天
@@ -40,6 +52,7 @@ class ShopHomeVM extends BaseVM {
      * @since   2.0.0
      * @param   int    $page   分页号
      * @param   string $sort   排序类型
+<<<<<<< HEAD
      * @return  static
      */
     public static function getInstance($page = 1, $sort = 'latest') {
@@ -47,6 +60,17 @@ class ShopHomeVM extends BaseVM {
         $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . static::class . '_page' . $page . '_sort' . $sort;
         $instance->_page = max(1, $page);
         $instance->_sort = in_array($sort, array('latest', 'popular')) ? $sort : 'latest';
+=======
+     * @param   string $price_type 价格类型
+     * @return  static
+     */
+    public static function getInstance($page = 1, $sort = 'latest', $price_type = 'all') {
+        $instance = new static();
+        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . __CLASS__ . '_page' . $page . '_sort' . $sort . '_type' . $price_type;
+        $instance->_page = max(1, $page);
+        $instance->_sort = in_array($sort, array('latest', 'popular')) ? $sort : 'latest';
+        $instance->_priceType = in_array($price_type, array('all', 'free', 'cash', 'credit')) ? $price_type : 'all';
+>>>>>>> dev
         $instance->configInstance();
         return $instance;
     }
@@ -69,6 +93,48 @@ class ShopHomeVM extends BaseVM {
             $args['meta_key'] = 'tt_product_sales';
         }
 
+<<<<<<< HEAD
+=======
+        if($this->_priceType == 'free') {
+            $args['meta_query'] = array(
+                'relation' => 'AND',
+                array(
+                    'key' => 'tt_product_price',
+                    'value' => 0.01,
+                    'compare' => '<'
+                )
+            );
+        }elseif($this->_priceType == 'credit') {
+            $args['meta_query'] = array(
+                'relation' => 'AND',
+                array(
+                    'key' => 'tt_pay_currency',
+                    'value' => 0,
+                    'compare' => '='
+                ),
+                array(
+                    'key' => 'tt_product_price',
+                    'value' => '0.00',
+                    'compare' => '>'
+                )
+            );
+        }elseif($this->_priceType == 'cash') {
+            $args['meta_query'] = array(
+                'relation' => 'AND',
+                array(
+                    'key' => 'tt_pay_currency',
+                    'value' => 1,
+                    'compare' => '='
+                ),
+                array(
+                    'key' => 'tt_product_price',
+                    'value' => '0.00',
+                    'compare' => '>'
+                )
+            );
+        }
+
+>>>>>>> dev
         $query = new WP_Query($args);
         $GLOBALS['wp_query'] = $query; // 取代主循环(query_posts只返回posts，为了获取其他有用数据，使用WP_Query) //TODO 缓存时无效
 
@@ -89,7 +155,11 @@ class ShopHomeVM extends BaseVM {
             $product['excerpt'] = get_the_excerpt($post);
             $product['category'] = get_the_category_list(' ', '', $post->ID);
             $product['author'] = get_the_author();
+<<<<<<< HEAD
             $product['author_url'] = home_url('/@' . $product['author']); //TODO the link
+=======
+            $product['author_url'] = get_author_posts_url($post->post_author);
+>>>>>>> dev
             $product['time'] = get_post_time('F j, Y', false, $post, false); //get_post_time( string $d = 'U', bool $gmt = false, int|WP_Post $post = null, bool $translate = false )
             $product['datetime'] = get_the_time(DATE_W3C, $post);
             $product['thumb'] = tt_get_thumb($post, array('width' => 350, 'height' => 250, 'str' => 'medium'));

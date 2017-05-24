@@ -1,0 +1,57 @@
+@import "./thumb";
+
+.loop-grid {
+    article {
+        position: relative;
+        display: block;
+        border: 1px solid rgba(0,0,0,.05);
+        overflow: hidden;
+        background: #ffffff;
+        &>.entry-detail {
+            padding: 10px;
+            &>header {
+                &>h2 {
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    padding: 0;
+                    margin: 0 auto 10px;
+                    font-size: 1.6rem;
+                    font-weight: 500;
+                    line-height: 20px;
+                    height: 40px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    &>a {
+                        color: @header-color;
+                    }
+                }
+                &>.entry-meta {
+                    &>span {
+                        i {
+                            margin-right: 5px;
+                            vertical-align: -1px;
+                        }
+                        a {
+                            color: @text-muted-color;
+                        }
+                    }
+                    &>.author {
+                        display: none;
+                    }
+                    &>.entry-date {
+
+                    }
+                    &>.likes-link {
+                    }
+                    &>.comments-link {
+                    }
+                }
+            }
+            &>.entry-excerpt {
+                display: none;
+                &>.post-excerpt {
+                }
+            }
+        }
+    }
+}

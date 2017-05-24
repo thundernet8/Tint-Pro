@@ -9,7 +9,11 @@
  * @date 2016/12/20 22:26
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
+<<<<<<< HEAD
  * @link https://www.webapproach.net/tint
+=======
+ * @link https://webapproach.net/tint.html
+>>>>>>> dev
  */
 ?>
 <?php
@@ -50,7 +54,11 @@ class MeMembershipVM extends BaseVM {
      */
     public static function getInstance($user_id = 0, $page = 1, $limit = 20) {
         $instance = new static();
+<<<<<<< HEAD
         $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . static::class . '_user' . $user_id;
+=======
+        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . __CLASS__ . '_user' . $user_id;
+>>>>>>> dev
         $instance->_userId = $user_id;
         $instance->_page = $page;
         $instance->_limit = $limit;

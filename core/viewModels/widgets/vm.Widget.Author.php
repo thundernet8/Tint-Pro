@@ -9,7 +9,11 @@
  * @date 2016/10/24 21:01
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
+<<<<<<< HEAD
  * @link https://www.webapproach.net/tint.html
+=======
+ * @link https://webapproach.net/tint.html
+>>>>>>> dev
  */
 ?>
 <?php
@@ -37,7 +41,11 @@ class AuthorWidgetVM extends BaseVM {
      */
     public static function getInstance($author_id = 1) {
         $instance = new static(); // 因为不同作者共用该模型，不采用单例模式
+<<<<<<< HEAD
         $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . static::class . '_author' . $author_id;
+=======
+        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . __CLASS__ . '_author' . $author_id;
+>>>>>>> dev
         $instance->_authorId = absint($author_id);
         $instance->configInstance();
         return $instance;

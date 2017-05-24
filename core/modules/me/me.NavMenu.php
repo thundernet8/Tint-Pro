@@ -9,7 +9,11 @@
  * @date 2016/12/14 22:05
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
+<<<<<<< HEAD
  * @link https://www.webapproach.net/tint
+=======
+ * @link https://webapproach.net/tint.html
+>>>>>>> dev
  */
 ?>
 <?php global $tt_me_vars; ?>
@@ -26,12 +30,23 @@
             <li><a class="<?php echo tt_conditional_class('me_tab settings', $me_tab == 'settings'); ?>" href="<?php echo tt_url_for('my_settings', $tt_me_vars['tt_user_id']); ?>"><?php _e('SETTINGS', 'tt'); ?></a></li>
             <li><a class="<?php echo tt_conditional_class('me_tab notifications', $me_tab == 'notifications'); ?>" href="<?php echo tt_url_for('all_notify', $tt_me_vars['tt_user_id']); ?>"><?php _e('NOTIFICATIONS', 'tt'); ?></a></li>
             <li><a class="<?php echo tt_conditional_class('me_tab messages', $me_tab == 'messages'); ?>" href="<?php echo tt_url_for('in_msg', $tt_me_vars['tt_user_id']); ?>"><?php _e('MESSAGES', 'tt'); ?></a></li>
+<<<<<<< HEAD
             <li><a class="<?php echo tt_conditional_class('me_tab posts', $me_tab == 'posts'); ?>" href="<?php echo tt_url_for('uc_latest', $tt_me_vars['tt_user_id']); ?>" target="_blank"><?php _e('MY POSTS', 'tt'); ?></a></li>
             <li><a class="<?php echo tt_conditional_class('me_tab drafts', $me_tab == 'drafts'); ?>" href="<?php echo tt_url_for('my_drafts', $tt_me_vars['tt_user_id']); ?>"><?php _e('MY DRAFTS', 'tt'); ?></a></li>
             <li><a class="<?php echo tt_conditional_class('me_tab stars', $me_tab == 'stars'); ?>" href="<?php echo tt_url_for('uc_stars', $tt_me_vars['tt_user_id']); ?>" target="_blank"><?php _e('MY STARS', 'tt'); ?></a></li>
             <li><a class="<?php echo tt_conditional_class('me_tab credits', $me_tab == 'credits'); ?>" href="<?php echo tt_url_for('my_credits', $tt_me_vars['tt_user_id']); ?>"><?php _e('CREDITS', 'tt'); ?></a></li>
             <li><a class="<?php echo tt_conditional_class('me_tab membership', $me_tab == 'membership'); ?>" href="<?php echo tt_url_for('my_membership', $tt_me_vars['tt_user_id']); ?>"><?php _e('MEMBERSHIP', 'tt'); ?></a></li>
             <li><a class="<?php echo tt_conditional_class('me_tab orders', $me_tab == 'orders' || $me_tab == 'order'); ?>" href="<?php echo tt_url_for('my_all_orders', $tt_me_vars['tt_user_id']); ?>"><?php _e('ORDERS', 'tt'); ?></a></li>
+=======
+            <li><a class="me_tab posts" href="<?php echo tt_url_for('uc_latest', $tt_me_vars['tt_user_id']); ?>" target="_blank"><?php _e('MY POSTS', 'tt'); ?></a></li>
+            <li><a class="<?php echo tt_conditional_class('me_tab drafts', $me_tab == 'drafts'); ?>" href="<?php echo tt_url_for('my_drafts', $tt_me_vars['tt_user_id']); ?>"><?php _e('MY DRAFTS', 'tt'); ?></a></li>
+            <li><a class="me_tab stars" href="<?php echo tt_url_for('uc_stars', $tt_me_vars['tt_user_id']); ?>" target="_blank"><?php _e('MY STARS', 'tt'); ?></a></li>
+            <li><a class="<?php echo tt_conditional_class('me_tab credits', $me_tab == 'credits'); ?>" href="<?php echo tt_url_for('my_credits', $tt_me_vars['tt_user_id']); ?>"><?php _e('CREDITS', 'tt'); ?></a></li>
+            <li><a class="<?php echo tt_conditional_class('me_tab membership', $me_tab == 'membership'); ?>" href="<?php echo tt_url_for('my_membership', $tt_me_vars['tt_user_id']); ?>"><?php _e('MEMBERSHIP', 'tt'); ?></a></li>
+            <li><a class="<?php echo tt_conditional_class('me_tab orders', $me_tab == 'orders' || $me_tab == 'order'); ?>" href="<?php echo tt_url_for('my_all_orders', $tt_me_vars['tt_user_id']); ?>"><?php _e('ORDERS', 'tt'); ?></a></li>
+            <li><a class="me_tab followers" href="<?php echo tt_url_for('uc_followers', $tt_me_vars['tt_user_id']); ?>" target="_blank"><?php _e('MY FOLLOWERS', 'tt'); ?></a></li>
+            <li><a class="me_tab following" href="<?php echo tt_url_for('uc_following', $tt_me_vars['tt_user_id']); ?>" target="_blank"><?php _e('MY FOLLOWING', 'tt'); ?></a></li>
+>>>>>>> dev
         </ul>
     </nav>
 </aside>

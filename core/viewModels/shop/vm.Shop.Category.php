@@ -9,7 +9,11 @@
  * @date 2016/11/16 23:54
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
+<<<<<<< HEAD
  * @link https://www.webapproach.net/tint
+=======
+ * @link https://webapproach.net/tint.html
+>>>>>>> dev
  */
 ?>
 <?php
@@ -44,7 +48,11 @@ class ShopCategoryVM extends BaseVM {
      */
     public static function getInstance($page = 1, $cat = 0) {
         $instance = new static();
+<<<<<<< HEAD
         $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . static::class . '_page' . $page . '_category' . $cat;
+=======
+        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . __CLASS__ . '_page' . $page . '_category' . $cat;
+>>>>>>> dev
         $instance->_page = max(1, $page);
         $instance->_cat = absint($cat);
         $instance->configInstance();

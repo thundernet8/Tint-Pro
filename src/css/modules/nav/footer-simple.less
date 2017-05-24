@@ -1,0 +1,29 @@
+
+//simple footer
+footer {
+
+  &.simple-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 20px 30px;
+
+    &>.foot-menu {
+      &>a {
+        text-decoration: none;
+        //font-size: 12px;
+      }
+      &>.sep {
+        display: inline-block;
+        height: 12px;
+        vertical-align: middle;
+        margin: 0 10px 2px;
+        border-right: 1px solid @link-color;
+      }
+    }
+
+    &>.foot-copyright {
+
+    }
+  }
+}

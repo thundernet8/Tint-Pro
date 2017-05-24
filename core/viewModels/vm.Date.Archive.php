@@ -9,7 +9,11 @@
  * @date 2016/10/22 21:08
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
+<<<<<<< HEAD
  * @link https://www.webapproach.net/tint.html
+=======
+ * @link https://webapproach.net/tint.html
+>>>>>>> dev
  */
 ?>
 <?php
@@ -59,7 +63,11 @@ class DateArchivePostsVM extends BaseVM {
             $period_des = sprintf(__('All posts which were published in year %s', 'tt'), get_the_time('Y'));
         }
         $instance = new static(); // 因为不同分页不同标签共用该模型，不采用单例模式
+<<<<<<< HEAD
         $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . static::class . '_archive_' . $period_type . $period_num . '_page' . $page;
+=======
+        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . __CLASS__ . '_archive_' . $period_type . $period_num . '_page' . $page;
+>>>>>>> dev
         $instance->_page = max(1, $page);
         $instance->_period = array(
             'type' => $period_type,

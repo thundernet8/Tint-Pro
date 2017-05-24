@@ -9,7 +9,11 @@
  * @date 2016/11/06 17:54
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
+<<<<<<< HEAD
  * @link https://www.webapproach.net/tint.html
+=======
+ * @link https://webapproach.net/tint.html
+>>>>>>> dev
  */
 ?>
 <?php global $tt_author_vars; $tt_paged = $tt_author_vars['tt_paged']; $tt_author_id = $tt_author_vars['tt_author_id']; $logged_user_id = get_current_user_id(); ?>
@@ -19,8 +23,13 @@
 <?php } ?>
 <div class="author-tab-box follow-tab following-tab">
     <div class="tab-content author-follow author-following">
+<<<<<<< HEAD
         <?php if($data = $vm->modelData) { $pagination_args = $data->pagination; $followings = $data->following; ?>
             <?php if(count($followings) > 0) { ?>
+=======
+        <?php if($data = $vm->modelData) { $count = $data->count; $followings = $data->followings; $total = $data->total; $max_pages = $data->max_pages; ?>
+            <?php if($count > 0) { ?>
+>>>>>>> dev
                 <div class="row">
                     <?php foreach ($followings as $following) { ?>
                         <div class="follow-box follower-box col-md-4 col-sm-6">
@@ -56,6 +65,28 @@
                         </div>
                     <?php } ?>
                 </div>
+<<<<<<< HEAD
+=======
+                <?php if($max_pages > 1) { ?>
+                    <div class="pagination-mini clearfix">
+                        <?php if($tt_paged == 1) { ?>
+                            <div class="col-md-3 prev disabled"><a href="javascript:;"><?php _e('← 上一页', 'tt'); ?></a></div>
+                        <?php }else{ ?>
+                            <div class="col-md-3 prev"><a href="<?php echo $data->prev_page; ?>"><?php _e('← 上一页', 'tt'); ?></a></div>
+                        <?php } ?>
+                        <div class="col-md-6 page-nums">
+                            <span class="current-page"><?php printf(__('Current Page %d', 'tt'), $tt_paged); ?></span>
+                            <span class="separator">/</span>
+                            <span class="max-page"><?php printf(__('Total %d Pages', 'tt'), $max_pages); ?></span>
+                        </div>
+                        <?php if($tt_paged != $data->max_pages) { ?>
+                            <div class="col-md-3 next"><a href="<?php echo $data->next_page; ?>"><?php _e('下一页 →', 'tt'); ?></a></div>
+                        <?php }else{ ?>
+                            <div class="col-md-3 next disabled"><a href="javascript:;"><?php _e('下一页 →', 'tt'); ?></a></div>
+                        <?php } ?>
+                    </div>
+                <?php } ?>
+>>>>>>> dev
             <?php }else{ ?>
                 <div class="empty-content">
                     <span class="tico tico-dropbox"></span>

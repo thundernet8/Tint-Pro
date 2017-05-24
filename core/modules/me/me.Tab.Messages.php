@@ -9,7 +9,11 @@
  * @date 2016/12/15 00:15
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
+<<<<<<< HEAD
  * @link https://www.webapproach.net/tint
+=======
+ * @link https://webapproach.net/tint.html
+>>>>>>> dev
  */
 ?>
 <?php global $tt_me_vars; $tt_user_id = $tt_me_vars['tt_user_id']; $tt_filter_type = get_query_var('me_grandchild_route'); $tt_page = $tt_me_vars['tt_paged']; ?>
@@ -47,7 +51,11 @@
                                         <span class="msg-author">
                                             <img class="avatar lazy" src="<?php echo LAZY_PENDING_AVATAR; ?>" data-original="<?php echo tt_get_avatar($message->user_id, 'medium'); ?>" style="display: block;">
                                             <?php _e('Send Time: ', 'tt'); ?><span><?php echo $message->msg_date; ?></span>
+<<<<<<< HEAD
                                             <?php _e('Send To: ', 'tt'); ?><span><?php echo $receiver_name; ?></span>
+=======
+                                            <?php _e('Send To: ', 'tt'); ?><span><a href="<?php echo tt_url_for('uc_chat', $message->user_id); ?>" target="_blank"><?php echo $receiver_name; ?></a></span>
+>>>>>>> dev
                                         </span>
                                 </div>
                                 <div class="msg-content">
@@ -59,8 +67,17 @@
                                 <div class="msg-title" title="<?php printf(__('%s send to me', 'tt'), $message->sender); ?>">
                                         <span class="msg-author">
                                             <img class="avatar lazy" src="<?php echo LAZY_PENDING_AVATAR; ?>" data-original="<?php echo tt_get_avatar($message->sender_id, 'medium'); ?>" style="display: block;">
+<<<<<<< HEAD
                                             <?php _e('Send Time: ', 'tt'); ?><span><?php echo $message->msg_date; ?></span>
                                             <?php _e('Sender: ', 'tt'); ?><span><?php echo $message->sender; ?></span>
+=======
+<!--                                            --><?php //if(!$message->read) { ?>
+<!--                                                <span class="unread-mark"><i class="tico tico-info-circle"></i></span>-->
+<!--                                            --><?php //} ?>
+                                            <?php _e('Send Time: ', 'tt'); ?><span><?php echo $message->msg_date; ?></span>
+                                            <?php _e('Sender: ', 'tt'); ?><span><a href="<?php echo tt_url_for('uc_chat', $message->sender_id); ?>" target="_blank"><?php echo $message->sender; ?></a></span>
+                                            <?php _e('Status: ', 'tt'); ?><span><?php echo $message->msg_read ? __('Read', 'tt') : __('Unread', 'tt'); ?></span>
+>>>>>>> dev
                                         </span>
                                 </div>
                                 <div class="msg-content">

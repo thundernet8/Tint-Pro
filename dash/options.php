@@ -123,13 +123,17 @@ function optionsframework_options() {
         'type' => 'select',
         'options' => array(
             'local_1' => __('Local v1.12', 'tt'),
+<<<<<<< HEAD
             'local_2' => __('Local v3.1', 'tt'),
+=======
+>>>>>>> dev
             'cdn_http' => __('CDN HTTP', 'tt'),
             'cdn_https' => __('CDN HTTPS', 'tt')
         )
     );
 
     // - jQuery 加载位置
+<<<<<<< HEAD
     $options[] = array(
         'name' => __( 'jQuery Load Position', 'tt' ),
         'desc' => __( 'Check to load jQuery on `body` end', 'tt' ),
@@ -137,6 +141,15 @@ function optionsframework_options() {
         'std' => false,
         'type' => 'checkbox'
     );
+=======
+//    $options[] = array(
+//        'name' => __( 'jQuery Load Position', 'tt' ),
+//        'desc' => __( 'Check to load jQuery on `body` end', 'tt' ),
+//        'id' => 'tt_foot_jquery',
+//        'std' => false,
+//        'type' => 'checkbox'
+//    );
+>>>>>>> dev
 
 
 	// 主题选项 - 样式设置
@@ -180,6 +193,27 @@ function optionsframework_options() {
         'options' => $options_categories
     );
 
+<<<<<<< HEAD
+=======
+    // - 首页幻灯开关
+    $options[] = array(
+        'name' => __( '首页顶部展示幻灯和热门文章', 'tt' ),
+        'desc' => __( '展示幻灯和热门文章', 'tt' ),
+        'id' => 'tt_enable_home_slides',
+        'std' => false,
+        'type' => 'checkbox'
+    );
+
+    // - 首页置顶分类开关
+    $options[] = array(
+        'name' => __( '首页展示置顶分类', 'tt' ),
+        'desc' => __( '展示置顶分类', 'tt' ),
+        'id' => 'tt_enable_sticky_cats',
+        'std' => true,
+        'type' => 'checkbox'
+    );
+
+>>>>>>> dev
     // - 幻灯文章ID列表
     $options[] = array(
         'name' => __( 'Slide Post IDs', 'tt' ),
@@ -203,12 +237,20 @@ function optionsframework_options() {
         )
     );
 
+<<<<<<< HEAD
+=======
+    $category_keys = array_keys($options_categories);
+>>>>>>> dev
     // - 置顶分类1
     $options[] = array(
         'name' => __('Featured Category 1', 'tt'),
         'desc' => __('Choose the first featured category for homepage', 'tt'),
         'id' => 'tt_home_featured_category_one',
+<<<<<<< HEAD
         'std' => array_keys($options_categories)[0],
+=======
+        'std' => $category_keys[0],
+>>>>>>> dev
         'type' => 'select',
         'options' => $options_categories
     );
@@ -218,7 +260,11 @@ function optionsframework_options() {
         'name' => __('Featured Category 2', 'tt'),
         'desc' => __('Choose the second featured category for homepage', 'tt'),
         'id' => 'tt_home_featured_category_two',
+<<<<<<< HEAD
         'std' => array_keys($options_categories)[min(1, count($options_categories)-1)],
+=======
+        'std' => $category_keys[min(1, count($options_categories)-1)],
+>>>>>>> dev
         'type' => 'select',
         'options' => $options_categories
     );
@@ -228,12 +274,17 @@ function optionsframework_options() {
         'name' => __('Featured Category 3', 'tt'),
         'desc' => __('Choose the third featured category for homepage', 'tt'),
         'id' => 'tt_home_featured_category_three',
+<<<<<<< HEAD
         'std' => array_keys($options_categories)[min(2, count($options_categories)-1)],
+=======
+        'std' => $category_keys[min(2, count($options_categories)-1)],
+>>>>>>> dev
         'type' => 'select',
         'options' => $options_categories
     );
 
     // - 商品推荐
+<<<<<<< HEAD
     $options[] = array(
         'name' => __( 'Home Products Recommendation', 'tt' ),
         'desc' => __( 'Enable products recommendation module for homepage', 'tt' ),
@@ -241,6 +292,15 @@ function optionsframework_options() {
         'std' => false,
         'type' => $theme_pro ? 'checkbox' : 'disabled'
     );
+=======
+//    $options[] = array(
+//        'name' => __( 'Home Products Recommendation', 'tt' ),
+//        'desc' => __( 'Enable products recommendation module for homepage', 'tt' ),
+//        'id' => 'tt_home_products_recommendation',
+//        'std' => false,
+//        'type' => $theme_pro ? 'checkbox' : 'disabled'
+//    );
+>>>>>>> dev
 
     // - 文章评论数
     $options[] = array(
@@ -283,6 +343,7 @@ function optionsframework_options() {
     );
 
 
+<<<<<<< HEAD
 	// 主题设置 - 边栏设置
 	$options[] = array(
 		'name' => __( 'Sidebar', 'tt' ),
@@ -307,15 +368,97 @@ function optionsframework_options() {
             //'sidebar_404'       =>    __('404 Sidebar', 'tt'),
             'sidebar_page'      =>    __('Page Sidebar', 'tt'),
             'sidebar_download'  =>    __('Download Page Sidebar', 'tt')
+=======
+    // - 外链白名单
+    $options[] = array(
+        'name' => __( 'External Link Whitelist', 'tt' ),
+        'desc' => __( 'External links which will not be converted', 'tt' ),
+        'id' => 'tt_external_link_whitelist',
+        'std' => '',
+        'row' => 5,
+        'type' => 'textarea'
+    );
+
+
+    // - 可投稿分类
+    $default_allow_cats = array();
+    foreach ($category_keys as $category_key) {
+        $default_allow_cats[$category_key] = true;
+    }
+    $options[] = array(
+        'name' => __('可投稿分类', 'tt'),
+        'desc' => __('选择允许用户投稿的分类, 至少选择一个', 'tt'),
+        'id' => 'tt_contribute_cats',
+        'std' => $default_allow_cats,
+        'type' => 'multicheck',
+        'options' => $options_categories
+    );
+
+
+    // - 开启首页顶部公告显示
+    $options[] = array(
+        'name' => __( 'Enable Home Bulletins', 'tt' ),
+        'desc' => __( 'Show site bulletins on the top of homepage', 'tt' ),
+        'id' => 'tt_enable_homepage_bulletins',
+        'std' => true,
+        'type' => 'checkbox'
+    );
+
+
+    // - 公告链接的链接前缀
+    $options[] = array(
+        'name' => __( 'Bulletins Archive Link Slug', 'tt' ),
+        'desc' => __( 'The special prefix in bulletin archive link', 'tt' ),
+        'id' => 'tt_bulletin_archives_slug',
+        'std' => 'bulletin',
+        'class' => 'mini',
+        'type' => 'text'
+    );
+
+
+    // - 公告链接模式
+    $options[] = array(
+        'name' => __( 'Bulletin Permalink Mode', 'tt' ),
+        'desc' => __( 'The link mode for the rewrite bulletin permalink', 'tt' ),
+        'id' => 'tt_bulletin_link_mode',
+        'std' => 'post_id',
+        'type' => 'select',
+        'class' => 'mini',
+        'options' => array(
+            'post_id' => __( 'Post ID', 'tt' ),
+            'post_name' => __( 'Post Name', 'tt' )
+>>>>>>> dev
         )
     );
 
 
+<<<<<<< HEAD
+=======
+    // - 公告的有效期天数
+    $options[] = array(
+        'name' => __( 'Bulletin Effect Days', 'tt' ),
+        'desc' => __( 'The effect days of a bulletin, expired bulletin will never be show', 'tt' ),
+        'id' => 'tt_bulletin_effect_days',
+        'std' => 10,
+        'class' => 'mini',
+        'type' => 'text'
+    );
+
+
+	// 主题设置 - 边栏设置
+	$options[] = array(
+		'name' => __( 'Sidebar', 'tt' ),
+		'type' => 'heading'
+	);
+
+
+>>>>>>> dev
     // - 所有边栏
     $all_sidebars = array(
         'sidebar_common'    =>    __('Common Sidebar', 'tt'),
         'sidebar_home'      =>    __('Home Sidebar', 'tt'),
         'sidebar_single'    =>    __('Single Sidebar', 'tt'),
+<<<<<<< HEAD
         'sidebar_archive'   =>    __('Archive Sidebar', 'tt'),
         'sidebar_category'  =>    __('Category Sidebar', 'tt'),
         'sidebar_search'    =>    __('Search Sidebar', 'tt'),
@@ -328,6 +471,37 @@ function optionsframework_options() {
     foreach ($register_status as $key => $value){
         if($value) $available_sidebars[$key] = $all_sidebars[$key];
     }
+=======
+        //'sidebar_archive'   =>    __('Archive Sidebar', 'tt'),
+        //'sidebar_category'  =>    __('Category Sidebar', 'tt'),
+        'sidebar_search'    =>    __('Search Sidebar', 'tt'),
+        //'sidebar_404'       =>    __('404 Sidebar', 'tt'),
+        'sidebar_page'      =>    __('Page Sidebar', 'tt'),
+        'sidebar_download'  =>    __('Download Page Sidebar', 'tt')
+    );
+	// - 待注册的边栏
+    $options[] = array(
+        'name' => __('Register Sidebars', 'tt'),
+        'desc' => __('Check the sidebars to register', 'tt'),
+        'id'   => 'tt_register_sidebars',
+        'std'  => array('sidebar_common' => true),
+        'type' => 'multicheck',
+        'options' => $all_sidebars
+    );
+
+    $register_status = of_get_option('tt_register_sidebars', array('sidebar_common' => true));
+    if(!is_array($register_status)) {
+        $register_status = array('sidebar_common' => true);
+    }elseif(!isset($register_status['sidebar_common'])){
+        $register_status['sidebar_common'] = true;
+    }
+
+    $available_sidebars = array();
+    foreach ($register_status as $key => $value){
+        if($value) $available_sidebars[$key] = $all_sidebars[$key];
+    }
+    $available_sidebars['sidebar_common'] = __('Common Sidebar', 'tt'); // 默认边栏始终可选
+>>>>>>> dev
 
     $options[] = array(
         'name' => __('Home Sidebar', 'tt'),
@@ -379,6 +553,7 @@ function optionsframework_options() {
         'options' => $available_sidebars
     );
 
+<<<<<<< HEAD
     $options[] = array(
         'name' => __('404 Sidebar', 'tt'),
         'desc' => __('Select a sidebar for 404 page', 'tt'),
@@ -388,6 +563,17 @@ function optionsframework_options() {
         'class' => 'mini',
         'options' => $available_sidebars
     );
+=======
+//    $options[] = array(
+//        'name' => __('404 Sidebar', 'tt'),
+//        'desc' => __('Select a sidebar for 404 page', 'tt'),
+//        'id'   => 'tt_404_sidebar',
+//        'std'  => array('sidebar_common' => true),
+//        'type' => 'select',
+//        'class' => 'mini',
+//        'options' => $available_sidebars
+//    );
+>>>>>>> dev
 
     $options[] = array(
         'name' => __('Page Sidebar', 'tt'),
@@ -477,6 +663,7 @@ function optionsframework_options() {
     );
 
 
+<<<<<<< HEAD
     // - 站点服务支付宝
     $options[] = array(
         'name' => __( 'Site Alipay', 'tt' ),
@@ -487,6 +674,8 @@ function optionsframework_options() {
     );
 
 
+=======
+>>>>>>> dev
     // - 开启QQ登录
     $options[] = array(
         'name' => __( 'QQ Login', 'tt' ),
@@ -599,6 +788,7 @@ function optionsframework_options() {
 		'type' => 'heading'
 	);
 
+<<<<<<< HEAD
     //
 
 
@@ -641,6 +831,225 @@ function optionsframework_options() {
     );
 
 
+=======
+
+    // - 开启导航栏下方大横幅广告
+    $options[] = array(
+        'name' => __( '开启导航栏下方大横幅广告', 'tt' ),
+        'desc' => __('开启', 'tt'),
+        'id' => 'tt_enable_nav_banner',
+        'std' => false,
+        'type' => 'checkbox'
+    );
+
+    // - 导航栏下方大横幅广告
+    $options[] = array(
+        'name' => __( '导航栏下方横幅广告', 'tt' ),
+        'desc' => __( '多个页面可用', 'tt' ),
+        'id' => 'tt_nav_banner',
+        'std' => '<a href="https://webapproach.net" target="_blank"><img src="' . THEME_ASSET . '/img/banner/960x90.jpg"></a>',
+        'raw' => true,
+        'type' => 'textarea'
+    );
+
+
+    // - 开启幻灯下方大横幅广告
+    $options[] = array(
+        'name' => __( '开启幻灯下方大横幅广告', 'tt' ),
+        'desc' => __('开启', 'tt'),
+        'id' => 'tt_enable_slide_bottom_banner',
+        'std' => false,
+        'type' => 'checkbox'
+    );
+
+    // - 幻灯下方大横幅广告
+    $options[] = array(
+        'name' => __( '幻灯下方大横幅广告', 'tt' ),
+        'desc' => __( '仅首页幻灯开启时可用, 标准尺寸960*90', 'tt' ),
+        'id' => 'tt_slide_bottom_banner',
+        'std' => '<a href="https://webapproach.net" target="_blank"><img src="' . THEME_ASSET . '/img/banner/960x90.jpg"></a>',
+        'raw' => true,
+        'type' => 'textarea'
+    );
+
+
+    // - 开启置顶分类下方大横幅广告
+    $options[] = array(
+        'name' => __( '开启置顶分类下方大横幅广告', 'tt' ),
+        'desc' => __('开启', 'tt'),
+        'id' => 'tt_enable_fc_bottom_banner',
+        'std' => false,
+        'type' => 'checkbox'
+    );
+
+    // - 置顶分类下方大横幅广告
+    $options[] = array(
+        'name' => __( '置顶分类下方大横幅广告', 'tt' ),
+        'desc' => __( '仅首页置顶分类开启时可用, 标准尺寸960*90', 'tt' ),
+        'id' => 'tt_fc_bottom_banner',
+        'std' => '<a href="https://webapproach.net" target="_blank"><img src="' . THEME_ASSET . '/img/banner/960x90.jpg"></a>',
+        'raw' => true,
+        'type' => 'textarea'
+    );
+
+
+    // - 开启底部大横幅广告
+    $options[] = array(
+        'name' => __( '开启底部大横幅广告', 'tt' ),
+        'desc' => __('开启', 'tt'),
+        'id' => 'tt_enable_bottom_banner',
+        'std' => false,
+        'type' => 'checkbox'
+    );
+
+    // - 底部大横幅广告
+    $options[] = array(
+        'name' => __( '底部大横幅广告', 'tt' ),
+        'desc' => __( '多个页面可用, 标准尺寸960*90', 'tt' ),
+        'id' => 'tt_bottom_banner',
+        'std' => '<a href="https://webapproach.net" target="_blank"><img src="' . THEME_ASSET . '/img/banner/960x90.jpg"></a>',
+        'raw' => true,
+        'type' => 'textarea'
+    );
+
+
+    // - 开启文章文字上方广告
+    $options[] = array(
+        'name' => __( '开启文章文字上方广告', 'tt' ),
+        'desc' => __('开启', 'tt'),
+        'id' => 'tt_enable_post_content_top_banner',
+        'std' => false,
+        'type' => 'checkbox'
+    );
+
+    // - 文章文字上方广告
+    $options[] = array(
+        'name' => __( '文章文字上方广告', 'tt' ),
+        'desc' => __( '标准尺寸640*60', 'tt' ),
+        'id' => 'tt_post_content_top_banner',
+        'std' => '<a href="https://webapproach.net" target="_blank"><img src="' . THEME_ASSET . '/img/banner/640x60.jpg"></a>',
+        'raw' => true,
+        'type' => 'textarea'
+    );
+
+
+    // - 开启文章文字下方广告
+    $options[] = array(
+        'name' => __( '开启文章文字下方广告', 'tt' ),
+        'desc' => __('开启', 'tt'),
+        'id' => 'tt_enable_post_content_bottom_banner',
+        'std' => false,
+        'type' => 'checkbox'
+    );
+
+    // - 文章文字下方广告
+    $options[] = array(
+        'name' => __( '文章文字下方广告', 'tt' ),
+        'desc' => __( '标准尺寸640*60', 'tt' ),
+        'id' => 'tt_post_content_bottom_banner',
+        'std' => '<a href="https://webapproach.net" target="_blank"><img src="' . THEME_ASSET . '/img/banner/640x60.jpg"></a>',
+        'raw' => true,
+        'type' => 'textarea'
+    );
+
+
+    // - 开启相关文章上方广告
+    $options[] = array(
+        'name' => __( '开启相关文章上方广告', 'tt' ),
+        'desc' => __('开启', 'tt'),
+        'id' => 'tt_enable_post_relates_top_banner',
+        'std' => false,
+        'type' => 'checkbox'
+    );
+
+    // - 相关文章上方广告
+    $options[] = array(
+        'name' => __( '相关文章上方广告', 'tt' ),
+        'desc' => __( '标准尺寸760*90', 'tt' ),
+        'id' => 'tt_post_relates_top_banner',
+        'std' => '<a href="https://webapproach.net" target="_blank"><img src="' . THEME_ASSET . '/img/banner/760x90.jpg"></a>',
+        'raw' => true,
+        'type' => 'textarea'
+    );
+
+
+    // - 开启评论框上方广告
+    $options[] = array(
+        'name' => __( '开启评论框上方广告', 'tt' ),
+        'desc' => __('开启', 'tt'),
+        'id' => 'tt_enable_post_comment_top_banner',
+        'std' => false,
+        'type' => 'checkbox'
+    );
+
+    // - 评论框上方广告
+    $options[] = array(
+        'name' => __( '评论框上方广告', 'tt' ),
+        'desc' => __( '标准尺寸760*90', 'tt' ),
+        'id' => 'tt_post_comment_top_banner',
+        'std' => '<a href="https://webapproach.net" target="_blank"><img src="' . THEME_ASSET . '/img/banner/760x90.jpg"></a>',
+        'raw' => true,
+        'type' => 'textarea'
+    );
+
+
+    // - 开启下载页面内容区上方广告
+    $options[] = array(
+        'name' => __( '开启下载页面内容区上方广告', 'tt' ),
+        'desc' => __('开启', 'tt'),
+        'id' => 'tt_enable_dl_top_banner',
+        'std' => false,
+        'type' => 'checkbox'
+    );
+
+    // - 下载页面内容区上方广告1
+    $options[] = array(
+        'name' => __( '下载页面内容区上方广告1', 'tt' ),
+        'desc' => __( '双矩形广告位-左, 标准尺寸350*300', 'tt' ),
+        'id' => 'tt_dl_top_banner_1',
+        'std' => '<a href="https://webapproach.net" target="_blank"><img src="' . THEME_ASSET . '/img/banner/350x300.jpg"></a>',
+        'raw' => true,
+        'type' => 'textarea'
+    );
+
+    // - 下载页面内容区上方广告2
+    $options[] = array(
+        'name' => __( '下载页面内容区上方广告2', 'tt' ),
+        'desc' => __( '双矩形广告位-右, 标准尺寸350*300', 'tt' ),
+        'id' => 'tt_dl_top_banner_2',
+        'std' => '<a href="https://webapproach.net" target="_blank"><img src="' . THEME_ASSET . '/img/banner/350x300.jpg"></a>',
+        'raw' => true,
+        'type' => 'textarea'
+    );
+
+
+    // - 开启下载页面内容区下方广告
+    $options[] = array(
+        'name' => __( '开启下载页面内容区下方广告', 'tt' ),
+        'desc' => __('开启', 'tt'),
+        'id' => 'tt_enable_dl_bottom_banner',
+        'std' => false,
+        'type' => 'checkbox'
+    );
+
+    // - 底部大横幅广告
+    $options[] = array(
+        'name' => __( '下载页面内容区下方广告', 'tt' ),
+        'desc' => __( '仅适用于下载页面内容区下方, 标准尺寸760*90', 'tt' ),
+        'id' => 'tt_dl_bottom_banner',
+        'std' => '<a href="https://webapproach.net" target="_blank"><img src="' . THEME_ASSET . '/img/banner/760x90.jpg"></a>',
+        'raw' => true,
+        'type' => 'textarea'
+    );
+
+
+    // 主题设置 - 积分系统设置
+    $options[] = array(
+        'name' => __('Credit', 'tt'),
+        'type' => 'heading'
+    );
+
+>>>>>>> dev
     // - 积分价格
     $options[] = array(
         'name' => __( '积分价格(元/100积分)', 'tt' ),
@@ -754,6 +1163,81 @@ function optionsframework_options() {
     );
 
 
+<<<<<<< HEAD
+=======
+    // 主题设置 - 会员系统设置
+	$options[] = array(
+		'name' => __( 'Membership', 'tt' ),
+		'type' => 'heading'
+	);
+
+    // - 月费会员价格
+    $options[] = array(
+        'name' => __( '月费会员价格', 'tt' ),
+        'desc' => '',
+        'id' => 'tt_monthly_vip_price',
+        'std' => 8,
+        'class' => 'mini',
+        'type' => 'text'
+    );
+
+
+    // - 年费会员价格
+    $options[] = array(
+        'name' => __( '年费会员价格', 'tt' ),
+        'desc' => '',
+        'id' => 'tt_annual_vip_price',
+        'std' => 80,
+        'class' => 'mini',
+        'type' => 'text'
+    );
+
+
+    // - 永久会员价格
+    $options[] = array(
+        'name' => __( '永久会员价格', 'tt' ),
+        'desc' => '',
+        'id' => 'tt_permanent_vip_price',
+        'std' => 159,
+        'class' => 'mini',
+        'type' => 'text'
+    );
+
+
+    // - 月费会员默认折扣
+    $options[] = array(
+        'name' => __( '月费会员默认折扣 (%)', 'tt' ),
+        'desc' => '',
+        'id' => 'tt_monthly_vip_discount',
+        'std' => 100,
+        'class' => 'mini',
+        'type' => 'text'
+    );
+
+
+    // - 年费会员默认折扣
+    $options[] = array(
+        'name' => __( '年费会员默认折扣 (%)', 'tt' ),
+        'desc' => '',
+        'id' => 'tt_annual_vip_discount',
+        'std' => 90,
+        'class' => 'mini',
+        'type' => 'text'
+    );
+
+
+    // - 永久会员默认折扣
+    $options[] = array(
+        'name' => __( '永久会员默认折扣 (%)', 'tt' ),
+        'desc' => '',
+        'id' => 'tt_permanent_vip_discount',
+        'std' => 80,
+        'class' => 'mini',
+        'type' => 'text'
+    );
+
+
+>>>>>>> dev
 	// 主题设置 - 商店设置
 	$options[] = array(
 		'name' => __( 'Shop', 'tt' ),
@@ -787,7 +1271,11 @@ function optionsframework_options() {
         'name' => __( 'Product Permalink Mode', 'tt' ),
         'desc' => __( 'The link mode for the rewrite product permalink', 'tt' ),
         'id' => 'tt_product_link_mode',
+<<<<<<< HEAD
         'std' => 'name',
+=======
+        'std' => 'post_name',
+>>>>>>> dev
         'type' => $theme_pro ? 'select' : 'disabled',
         'class' => 'mini',
         'options' => array(
@@ -851,6 +1339,19 @@ function optionsframework_options() {
     );
 
 
+<<<<<<< HEAD
+=======
+    // - 站点服务支付宝
+    $options[] = array(
+        'name' => __( 'Site Alipay', 'tt' ),
+        'desc' => __( 'The qrcode image of Alipay account which is dedicated for the site', 'tt' ),
+        'id' => 'tt_site_alipay_qr',
+        'std' => THEME_ASSET . '/img/qr/alipay.png',
+        'type' => 'upload'
+    );
+
+
+>>>>>>> dev
     // - 支付宝商家身份ID
     $options[] = array(
         'name' => __( '支付宝商家身份ID', 'tt' ),
@@ -1005,11 +1506,19 @@ function optionsframework_options() {
 
 
     // - Separator
+<<<<<<< HEAD
     $options[] = array(
         'name' => __( 'Mailer Separator', 'tt' ),
         'class'=> 'option-separator',
         'type' => 'info'
     );
+=======
+//    $options[] = array(
+//        'name' => __( 'Mailer Separator', 'tt' ),
+//        'class'=> 'option-separator',
+//        'type' => 'info'
+//    );
+>>>>>>> dev
 
     // - SMTP/PHPMail
     $options[] = array(
@@ -1138,6 +1647,10 @@ function optionsframework_options() {
         'desc' => __( 'One line for one record, please conform to the sample', 'tt' ),
         'id' => 'tt_short_link_records',
         'std' => 'baidu | http://www.baidu.com' . PHP_EOL,
+<<<<<<< HEAD
+=======
+        'raw' => true,
+>>>>>>> dev
         'type' => 'textarea'
     );
 
@@ -1162,6 +1675,29 @@ function optionsframework_options() {
     );
 
 
+<<<<<<< HEAD
+=======
+    // - 启用订单相关邮件提醒
+    $options[] = array(
+        'name' => __( 'Order Related Notification', 'tt' ),
+        'desc' => __( 'Enable order related notifications', 'tt' ),
+        'id' => 'tt_order_events_notify',
+        'std' => true,
+        'type' => 'checkbox'
+    );
+
+
+    // - 主题静态资源CDN路径
+    $options[] = array(
+        'name' => __('主题静态资源CDN路径', 'tt'),
+        'desc' => __('主题程序的JS/CSS/IMG的CDN存放路径URL, css/js/img文件夹位于该路径下, 默认为本站Tint主题assets文件夹的路径, 更改为CDN的assets路径将从CDN加速主题的JS/CSS/IMG文件', 'tt'),
+        'id' => 'tt_tint_static_cdn_path',
+        'std' => THEME_ASSET,
+        'type' => 'text'
+    );
+
+
+>>>>>>> dev
     // 主题反馈
     $options[] = array(
         'name' => __( 'Feedback', 'tt' ),
@@ -1172,14 +1708,22 @@ function optionsframework_options() {
     // 联系作者
     $options[] = array(
         'name' => __( 'Contact Author', 'tt' ),
+<<<<<<< HEAD
         'desc' => sprintf(__( '<br><h2>Email: chinash2010@gmail.com</h2><br><h2>Wechat & Alipay & QQ(below)</h2><br><img src="%s"><img src="%s"><img src="%s"> ', 'tt' ), 'https://old.webapproach.net/wp-content/themes/Tint/assets/img/qr/weixin.png', 'https://old.webapproach.net/wp-content/themes/Tint/assets/img/qr/alipay.png', 'https://old.webapproach.net/wp-content/themes/Tint/assets/img/qr/qq.png'),
+=======
+        'desc' => sprintf(__( '<br><h2>Email: chinash2010@gmail.com</h2><br><h2>Wechat & Alipay & QQ(below)</h2><br><img src="%s"><img src="%s"><img src="%s"> ', 'tt' ), THEME_ASSET . '/img/qr/weixin.png', THEME_ASSET . '/img/qr/alipay.png', THEME_ASSET . '/img/qr/qq.png'),
+>>>>>>> dev
         'type' => 'info'
     );
 
     // 相关作品
     $options[] = array(
         'name' => __( 'Related Works', 'tt' ),
+<<<<<<< HEAD
         'desc' => sprintf(__( '<br><h2>Alipay Supervisor (<a href="%s">View Detail</a>)</h2><br><p>A toolkit for helping improve payment experience</p>', 'tt'), 'https://www.webapproach.net/alipaysupervisor'),
+=======
+        'desc' => sprintf(__( '<br><h2>Alipay Supervisor (<a href="%s" target="_blank">View Detail</a>)</h2><br><p>A toolkit for helping improve payment experience</p>', 'tt'), TT_SITE . '/shop/apsv.html'),
+>>>>>>> dev
         'type' => 'info'
     );
 
@@ -1202,6 +1746,19 @@ function optionsframework_options() {
     );
 
 
+<<<<<<< HEAD
+=======
+    // - 单独暂停缓存
+    $options[] = array(
+        'name' => __( 'Disable Cache', 'tt' ),
+        'desc' => __( 'Stop cache, user always get the latest content', 'tt' ),
+        'id' => 'tt_disable_cache',
+        'std' => false,
+        'type' => 'checkbox'
+    );
+
+
+>>>>>>> dev
     // - 主题专用私有Token
     $options[] = array(
         'name' => __('Tint Token', 'tt'),
@@ -1221,6 +1778,19 @@ function optionsframework_options() {
     );
 
 
+<<<<<<< HEAD
+=======
+    // - 登录API后缀
+    $options[] = array(
+        'name' => __( '登录API后缀', 'tt' ),
+        'desc' => __( '请变更默认值降低密码爆破攻击风险', 'tt' ),
+        'id' => 'tt_session_api',
+        'std' => 'session',
+        'type' => 'text'
+    );
+
+
+>>>>>>> dev
     // - QQ邮我链接ID
     $options[] = array(
         'name' => __( 'QQ Mailme ID', 'tt' ),
@@ -1283,6 +1853,18 @@ function optionsframework_options() {
 
 
 
+<<<<<<< HEAD
+=======
+    // - 页脚输出统计PHP查询信息
+    $options[] = array(
+        'name' => __( 'Footer Queries Info', 'tt' ),
+        'desc' => __( 'Show WordPress queries statistic information', 'tt' ),
+        'id' => 'tt_show_queries_num',
+        'std' => false,
+        'type' => 'checkbox'
+    );
+
+>>>>>>> dev
 
 
 	///////////////////////////////////////////////////////////////////////////

@@ -9,11 +9,20 @@
  * @date 2016/12/24 17:03
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
+<<<<<<< HEAD
  * @link https://www.webapproach.net/tint
  */
 ?>
 <?php global $tt_me_vars; $tt_user_id = $tt_me_vars['tt_user_id']; ?>
 <?php $categories = get_categories(); ?>
+=======
+ * @link https://webapproach.net/tint.html
+ */
+?>
+<?php global $tt_me_vars; $tt_user_id = $tt_me_vars['tt_user_id']; ?>
+<?php $allow_catIds = tt_filter_of_multicheck_option(tt_get_option('tt_contribute_cats', array())); ?>
+<?php $categories = get_categories(array('include' => $allow_catIds)); ?>
+>>>>>>> dev
 <div class="col col-right contribute">
     <div class="me-tab-box contribute-tab">
         <div class="tab-content me-contribute">

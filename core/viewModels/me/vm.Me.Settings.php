@@ -9,7 +9,11 @@
  * @date 2016/12/15 21:39
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
+<<<<<<< HEAD
  * @link https://www.webapproach.net/tint
+=======
+ * @link https://webapproach.net/tint.html
+>>>>>>> dev
  */
 ?>
 <?php
@@ -38,7 +42,11 @@ class MeSettingsVM extends BaseVM {
      */
     public static function getInstance($user_id = 0) {
         $instance = new static();
+<<<<<<< HEAD
         $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . static::class . '_user' . $user_id;
+=======
+        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . __CLASS__ . '_user' . $user_id;
+>>>>>>> dev
         $instance->_userId = $user_id;
         $instance->configInstance();
         return $instance;
@@ -61,11 +69,36 @@ class MeSettingsVM extends BaseVM {
         $avatar = new Avatar($data->ID, 'medium');
         $user_info['avatar'] = $avatar->getAvatar();
         $user_info['avatar_type'] = $avatar->avatarType;
+<<<<<<< HEAD
         $user_info['use_local_avatar'] = true;
         if($user_info['avatar_type'] != Avatar::LETTER_AVATAR && $user_info['avatar_type'] != Avatar::CUSTOM_AVATAR){
             $user_info['local_avatar'] = $avatar->getAvatar(Avatar::CUSTOM_AVATAR) ? : $avatar->getAvatar(Avatar::LETTER_AVATAR);
             $user_info['use_local_avatar'] = false;
         }
+=======
+
+        $custom_avatar_path = AVATARS_PATH . DIRECTORY_SEPARATOR . $this->_userId . '.jpg';
+        if(file_exists($custom_avatar_path)){
+            $user_info['custom_avatar'] = $avatar->getAvatar('custom');
+        }else{
+            $user_info['custom_avatar'] = Avatar::getDefaultAvatar('medium');
+        }
+
+        $user_info['letter_avatar'] = $avatar->getAvatar(Avatar::LETTER_AVATAR);
+
+        if(tt_has_connect('qq', $this->_userId)) {
+            $user_info['qq_avatar'] = $avatar->getAvatar(Avatar::QQ_AVATAR);
+        }
+
+        if(tt_has_connect('weibo', $this->_userId)){
+            $user_info['weibo_avatar'] = $avatar->getAvatar(Avatar::WEIBO_AVATAR);
+        }
+
+        if(tt_has_connect('weixin', $this->_userId)){
+            $user_info['weixin_avatar'] = $avatar->getAvatar(Avatar::WEIXIN_AVATAR);
+        }
+
+>>>>>>> dev
 //        $user_info['latest_login'] = mysql2date('Y/m/d g:i:s A', $data->tt_latest_login);
 //        $user_info['latest_login_before'] = mysql2date('Y/m/d g:i:s A', $data->tt_latest_login_before);
 //        $user_info['last_login_ip'] = $data->tt_latest_ip_before;

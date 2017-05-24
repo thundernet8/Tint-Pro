@@ -9,7 +9,11 @@
  * @date 2016/08/24 23:00
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
+<<<<<<< HEAD
  * @link https://www.webapproach.net/tint.html
+=======
+ * @link https://webapproach.net/tint.html
+>>>>>>> dev
  */
 ?>
 <?php $keywords_description = tt_get_keywords_and_description(); ?>
@@ -40,8 +44,13 @@
         <link rel="alternate icon" type="image/png" href="<?php echo $png_favicon; ?>" >
     <?php } ?>
     <!--[if lt IE 9]>
+<<<<<<< HEAD
     <script src="<?php echo THEME_ASSET.'/vender/js/html5shiv/3.7.3/html5shiv.min.js'; ?>"></script>
     <script src="<?php echo THEME_ASSET.'/vender/js/respond/1.4.2/respond.min.js'; ?>"></script>
+=======
+    <script src="<?php echo THEME_ASSET . '/vender/js/html5shiv/3.7.3/html5shiv.min.js'; ?>"></script>
+    <script src="<?php echo THEME_ASSET . '/vender/js/respond/1.4.2/respond.min.js'; ?>"></script>
+>>>>>>> dev
     <![endif]-->
     <!--[if lte IE 7]>
     <script type="text/javascript">
@@ -49,5 +58,10 @@
     </script>
     <![endif]-->
     <link rel="stylesheet" type="text/css" href="<?php echo tt_get_css(); ?>"  />
+<<<<<<< HEAD
+=======
+    <!-- 页头自定义代码 -->
+    <?php if(tt_get_option('tt_head_code')) { echo tt_get_option('tt_head_code'); } ?>
+>>>>>>> dev
     <?php wp_head(); ?>
 </head>

@@ -9,7 +9,11 @@
  * @date 2016/12/24 18:34
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
+<<<<<<< HEAD
  * @link https://www.webapproach.net/tint
+=======
+ * @link https://webapproach.net/tint.html
+>>>>>>> dev
  */
 ?>
 <?php
@@ -141,7 +145,11 @@ class WP_REST_Post_Controller extends WP_REST_Controller
         $free_dl = sanitize_text_field(trim($request->get_param('freeDl')));
         $sale_dl = sanitize_text_field(trim($request->get_param('saleDl')));
 
+<<<<<<< HEAD
         $action = in_array($request->get_param('action'), ['publish', 'draft', 'pending']) ? $request->get_param('action') : 'draft';
+=======
+        $action = in_array($request->get_param('action'), array('publish', 'draft', 'pending')) ? $request->get_param('action') : 'draft';
+>>>>>>> dev
 
         // 插入文章
         $new_post = wp_insert_post( array(
@@ -195,13 +203,36 @@ class WP_REST_Post_Controller extends WP_REST_Controller
     }
 
     /**
+<<<<<<< HEAD
      * 更新单条订单
+=======
+     * 更新单篇文章
+>>>>>>> dev
      *
      * @param WP_REST_Request $request Full details about the request.
      * @return WP_Error|WP_REST_Response
      */
     public function update_item( $request ) {
         $post_id = intval($request['id']);
+<<<<<<< HEAD
+=======
+        $action = in_array($request->get_param('action'), array('publish', 'draft', 'pending', 'trash')) ? $request->get_param('action') : 'draft';
+        // 只更新post status的请求处理
+        if($request->get_param('onlyStatus')) {
+            $update_post = wp_update_post( array( //Return: The ID of the post if the post is successfully updated in the database. Otherwise returns WP_Error
+                'ID'            => $post_id,
+                'post_status'   => $action
+            ), true );
+            if($update_post instanceof WP_Error) {
+                return $update_post;
+            }elseif(!$update_post){
+                return new WP_Error('update_post_failed', __('Handle post failed', 'tt'));
+            }
+            return tt_api_success(__('Handle post successfully', 'tt'));
+        }
+
+        // 普通投稿情况
+>>>>>>> dev
         $title = sanitize_text_field(trim($request->get_param('title')));
         if(strlen($title) < 10) {
             return new WP_Error('update_post_failed', __('The post title is too short or empty', 'tt'));
@@ -220,7 +251,11 @@ class WP_REST_Post_Controller extends WP_REST_Controller
         $free_dl = sanitize_text_field(trim($request->get_param('freeDl')));
         $sale_dl = sanitize_text_field(trim($request->get_param('saleDl')));
 
+<<<<<<< HEAD
         $action = in_array($request->get_param('action'), ['publish', 'draft', 'pending']) ? $request->get_param('action') : 'draft';
+=======
+
+>>>>>>> dev
 
         // 插入文章
         $update_post = wp_update_post( array( //Return: The ID of the post if the post is successfully updated in the database. Otherwise returns 0

@@ -1,0 +1,43 @@
+.pagination-new {
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    display: block;
+    &>ul {
+        display: inline-block;
+        margin-left: 0;
+        margin-bottom: 0;
+        padding: 0;
+        &>li {
+            display: inline;
+            &>span,
+            &>a {
+                margin: 0 2px;
+                float: left;
+                padding: 5px 12px;
+                background-color: #ddd;
+                color: #666;
+                border-radius: 2px;
+                opacity: .88;
+                &:hover {
+                    cursor: pointer;
+                    opacity: 1;
+                }
+            }
+            &>.current {
+                background-color: @blue;
+                color: #ffffff;
+                opacity: 1;
+                &:hover {
+                    cursor: default;
+                }
+            }
+            &>.max-page,
+            &>.dots {
+                opacity: 1;
+                background-color: transparent;
+            }
+        }
+    }
+}

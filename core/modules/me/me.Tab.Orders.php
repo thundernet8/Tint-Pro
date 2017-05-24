@@ -9,7 +9,11 @@
  * @date 2016/12/15 00:13
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
+<<<<<<< HEAD
  * @link https://www.webapproach.net/tint
+=======
+ * @link https://webapproach.net/tint.html
+>>>>>>> dev
  */
 ?>
 <?php global $tt_me_vars; $tt_user_id = $tt_me_vars['tt_user_id']; $tt_filter_type = get_query_var('me_grandchild_route'); $tt_page = $tt_me_vars['tt_paged']; ?>
@@ -52,18 +56,36 @@
                     <?php foreach ($orders as $order){ ?>
                         <tr id="oid-<?php echo $order->order_id; ?>">
                             <td><?php echo $order->order_id; ?></td>
+<<<<<<< HEAD
                             <td><?php echo $order->product_name; ?></td>
                             <td><?php echo $order->order_time; ?></td>
                             <td><?php if($order->order_currency == 'credit'){ echo '<i class="tico tico-diamond"></i>' . intval($order->order_total_price); }else{ echo '<i class="tico tico-cny"></i>' . sprintf('%0.2f', $order->order_total_price); } ?></td>
                             <td><?php echo tt_get_order_status_text($order->order_status); ?></td>
+=======
+                            <td><?php if($order->product_link){ ?><a href="<?php echo $order->product_link; ?>" target="_blank"><?php echo $order->product_name; ?></a><?php }else{echo $order->product_name;} ?></td>
+                            <td><?php echo $order->order_time; ?></td>
+                            <td><?php if($order->order_currency == 'credit'){ echo '<i class="tico tico-diamond"></i>' . intval($order->order_total_price); }else{ echo '<i class="tico tico-cny"></i>' . sprintf('%0.2f', $order->order_total_price); } ?></td>
+                            <td><?php echo $order->parent_id > 0 ? 'N/A(子订单)' : tt_get_order_status_text($order->order_status); ?></td>
+>>>>>>> dev
                             <td>
                                 <div class="order-actions">
                                     <a class="view-detail" href="<?php echo tt_url_for('my_order', $order->id); ?>" title="<?php _e('View the order detail', 'tt'); ?>" target="_blank"><?php _e('View Order', 'tt'); ?></a>
                                     <?php if(!in_array($order->order_status, [OrderStatus::PAYED_AND_WAIT_DELIVERY, OrderStatus::DELIVERED_AND_WAIT_CONFIRM, OrderStatus::TRADE_SUCCESS])) { ?>
+<<<<<<< HEAD
                                         <span class="text-explode">|</span>
                                         <a class="continue-pay" href="javascript:;" data-order-action="continue_pay" data-order-id="<?php echo $order->order_id; ?>" data-order-seq="<?php echo $order->id; ?>" title="<?php _e('Finish the payment', 'tt'); ?>"><?php _e('Continue Pay', 'tt'); ?></a>
                                         <span class="text-explode">|</span>
                                         <a class="delete-order" href="javascript:;" data-order-action="delete" data-order-id="<?php echo $order->order_id; ?>" data-order-seq="<?php echo $order->id; ?>" title="<?php _e('Delete the order', 'tt'); ?>"><?php _e('Delete', 'tt'); ?></a>
+=======
+                                        <?php if($order->order_status == OrderStatus::WAIT_PAYMENT) { ?>
+                                        <span class="text-explode">|</span>
+                                        <a class="continue-pay" href="javascript:;" data-order-action="continue_pay" data-order-id="<?php echo $order->order_id; ?>" data-order-seq="<?php echo $order->id; ?>" title="<?php _e('Finish the payment', 'tt'); ?>"><?php _e('Continue Pay', 'tt'); ?></a>
+                                        <?php } ?>
+                                        <?php if($order->parent_id < 1) { ?>
+                                        <span class="text-explode">|</span>
+                                        <a class="delete-order" href="javascript:;" data-order-action="delete" data-order-id="<?php echo $order->order_id; ?>" data-order-seq="<?php echo $order->id; ?>" title="<?php _e('Delete the order', 'tt'); ?>"><?php _e('Delete', 'tt'); ?></a>
+                                        <?php } ?>
+>>>>>>> dev
                                     <?php } ?>
                                 </div>
                             </td>

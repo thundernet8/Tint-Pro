@@ -9,7 +9,11 @@
  * @date 2016/10/07 16:04
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
+<<<<<<< HEAD
  * @link https://www.webapproach.net/tint.html
+=======
+ * @link https://webapproach.net/tint.html
+>>>>>>> dev
  */
 ?>
 <div id="main" class="main primary col-md-8 post-box" role="main">
@@ -53,12 +57,20 @@
                     <a class="post-meta-likes js-article-like <?php if(in_array(get_current_user_id(), $postdata->star_uids)) echo 'active'; ?>" href="javascript: void(0)" data-post-id="<?php echo $postdata->ID; ?>" data-nonce="<?php echo wp_create_nonce('tt_post_star_nonce'); ?>"><i class="tico tico-favorite"></i><span class="js-article-like-count num"><?php echo $postdata->stars; ?></span></a>
                 </div>
             </div>
+<<<<<<< HEAD
+=======
+            <?php load_mod(('banners/bn.PostContent.Top')); ?>
+>>>>>>> dev
             <article class="single-article">
                 <?php echo $postdata->content; apply_filters('the_content', 'content'); // 一些插件(如crayon-syntax-highlighter)将非内容性的钩子(wp_enqueue_script等)挂载在the_content上, 缓存命中时将失效 ?>
                 <?php if(isset($postdata->download) && $postdata->download) { ?>
                 <!-- 相关下载 -->
                 <h2 class="content-dl"><?php _e('Related Downloads', 'tt'); ?></h2>
+<<<<<<< HEAD
                 <p style="text-align: center;margin-bottom: 50px;"><a class="btn btn-download" href="<?php echo $postdata->download; ?>" target="_blank"><?php _e('Click to Download', 'tt'); ?></a></p>
+=======
+                <p style="text-align: center;margin-bottom: 50px;text-indent:0;"><a class="btn btn-download" href="<?php echo $postdata->download; ?>" target="_blank"><?php _e('Click to Download', 'tt'); ?></a></p>
+>>>>>>> dev
                 <?php } ?>
                 <?php if(isset($postdata->embed_product) && $embed_product = $postdata->embed_product) { ?>
                 <!-- 内嵌商品 -->
@@ -95,6 +107,10 @@
                 </div>
                 <?php } ?>
             </article>
+<<<<<<< HEAD
+=======
+            <?php load_mod(('banners/bn.PostContent.Bottom')); ?>
+>>>>>>> dev
             <div class="article-footer">
                 <div class="post-copyright">
                     <p><i class="tico tico-bell-o"></i><?php echo $postdata->cc_text; ?></p>
@@ -113,7 +129,11 @@
         </div>
         <!-- 上下篇导航 -->
         <div class="navigation clearfix">
+<<<<<<< HEAD
             <div class="col-md-6">
+=======
+            <div class="col-md-6 post-navi-prev">
+>>>>>>> dev
                 <span><?php _e('Previous article', 'tt'); ?></span>
                 <h2 class="h5"><?php echo $postdata->prev; ?></h2>
             </div>
@@ -124,6 +144,10 @@
         </div>
         <!-- 相关文章 -->
         <?php if(count($postdata->relates) > 0) { ?>
+<<<<<<< HEAD
+=======
+        <?php load_mod(('banners/bn.Post.Relates.Top')); ?>
+>>>>>>> dev
         <div class="related-posts">
             <h3><?php _e('Related Articles', 'tt'); ?></h3>
             <div class="related-articles row clearfix">
@@ -144,6 +168,10 @@
         </div>
         <?php } ?>
         <!-- 评论 -->
+<<<<<<< HEAD
+=======
+        <?php load_mod(('banners/bn.Post.Comment.Top')); ?>
+>>>>>>> dev
         <div id="respond">
         <?php if($postdata->comment_status) { ?>
             <h3><?php _e('LEAVE A REPLY', 'tt'); ?></h3>

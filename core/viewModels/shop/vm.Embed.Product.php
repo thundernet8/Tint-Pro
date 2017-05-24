@@ -9,7 +9,11 @@
  * @date 2016/12/17 21:35
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
+<<<<<<< HEAD
  * @link https://www.webapproach.net/tint
+=======
+ * @link https://webapproach.net/tint.html
+>>>>>>> dev
  */
 ?>
 <?php
@@ -37,7 +41,11 @@ class EmbedProductVM extends BaseVM {
      */
     public static function getInstance($product_id = 0) {
         $instance = new static();
+<<<<<<< HEAD
         $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . static::class . '_product' . $product_id;
+=======
+        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . __CLASS__ . '_product' . $product_id;
+>>>>>>> dev
         $instance->_productId = absint($product_id);
         $instance->configInstance();
         return $instance;
