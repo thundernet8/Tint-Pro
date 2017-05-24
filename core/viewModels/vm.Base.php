@@ -9,11 +9,7 @@
  * @date 2016/09/22 21:52
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
-<<<<<<< HEAD
- * @link https://www.webapproach.net/tint.html
-=======
  * @link https://webapproach.net/tint.html
->>>>>>> dev
  */
 ?>
 <?php
@@ -59,14 +55,11 @@ abstract class BaseVM {
     protected $_cacheInterval = 3600;
 
     /**
-<<<<<<< HEAD
-=======
      * @var int
      */
     protected $_objectCacheInterval = 3600;
 
     /**
->>>>>>> dev
      * @var object
      */
     public $modelData;
@@ -88,16 +81,12 @@ abstract class BaseVM {
 
         $args = func_get_args();
         if(count($args)) {
-<<<<<<< HEAD
-            $reflect = new ReflectionClass(static::class);
-=======
             //if(version_compare(PHP_VERSION,'5.5.0','ge')) {
                 //$reflect = new ReflectionClass(static::class); //static::class 是PHP5.5的新特性
             //}else{
                 $reflect = new ReflectionClass(get_called_class());
             //}
 
->>>>>>> dev
             static::$_instance = $reflect->newInstanceArgs($args);
         }
         static::$_instance = new static();
@@ -121,11 +110,7 @@ abstract class BaseVM {
     protected function configInstance() {
         // cache key
         if(!$this->_cacheKey) {
-<<<<<<< HEAD
-            $this->_cacheKey = 'tt_cache_' . $this->_cacheUpdateFrequency . '_vm_' . static::class;
-=======
             $this->_cacheKey = 'tt_cache_' . $this->_cacheUpdateFrequency . '_vm_' . get_called_class();
->>>>>>> dev
         }
 
         if($cache = $this->getDataFromCache()) {
@@ -146,11 +131,7 @@ abstract class BaseVM {
      */
     protected function getDataFromCache() {
         // DEBUG模式不使用缓存 //TODO
-<<<<<<< HEAD
-        if(TT_DEBUG || !($this->_enableCache)) {
-=======
         if(TT_DEBUG || tt_get_option('tt_disable_cache', false) || !($this->_enableCache) || (isset($_GET['cache']) && $_GET['cache'] == 0)) {
->>>>>>> dev
             return false;
         }
 
@@ -184,11 +165,7 @@ abstract class BaseVM {
             'data' => $data,
             'cacheTime' => $cacheTime
         ));
-<<<<<<< HEAD
-        set_transient($this->_cacheKey, $store, $this->_cacheInterval);
-=======
         set_transient($this->_cacheKey, $store, wp_using_ext_object_cache() ? $this->_objectCacheInterval : $this->_cacheInterval);
->>>>>>> dev
     }
 
     /**

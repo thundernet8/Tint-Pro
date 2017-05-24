@@ -9,20 +9,12 @@
  * @date 2016/08/24 23:00
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
-<<<<<<< HEAD
- * @link https://www.webapproach.net/tint.html
-=======
  * @link https://webapproach.net/tint.html
->>>>>>> dev
  */
 ?>
 <?php load_mod('mod.Head'); ?>
 <body <?php body_class('is-loadingApp'); ?>>
     <div class="loading-line"></div>
-<<<<<<< HEAD
-    <header class="header common-header white">
-        <nav id="header-nav" class="navigation container clearfix" role="navigation">
-=======
     <?php if(is_home() || (is_single() && in_array(get_post_type(), array('post', 'product', 'page')))) { ?>
     <!-- 顶部公告 -->
     <?php load_mod('mod.HomeBulletins'); ?>
@@ -47,7 +39,6 @@
 <!--                    <span class="menuanchor-label">Close Menu</span>-->
 <!--                </a>-->
             </li>
->>>>>>> dev
             <!-- Logo -->
             <a class="logo nav-col" href="<?php echo home_url(); ?>" title="<?php echo get_bloginfo('name'); ?>">
                 <img src="<?php echo tt_get_option('tt_logo'); ?>" alt="<?php echo get_bloginfo('name'); ?>">
@@ -60,15 +51,10 @@
                 <li class="nav-search"><a href="javascript:void(0)" data-toggle="modal" data-target="#globalSearch" data-backdrop="1"><span class="tico tico-search"></span></a></li>
                 <?php $user = wp_get_current_user(); ?>
                 <?php if($user && $user->ID) { ?>
-<<<<<<< HEAD
-                    <li class="nav-user dropdown">
-                        <a href="javascript:void(0)" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-=======
                     <?php $unread = tt_count_pm_cached($user->ID, 0, MsgReadStatus::UNREAD); ?>
                     <li class="nav-user dropdown">
                         <a href="javascript:void(0)" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <?php if($unread) { ?><i class="badge"></i><?php } ?>
->>>>>>> dev
                             <img src="<?php echo tt_get_avatar($user->ID, 'small'); ?>" class="avatar">
                             <span class="username"><?php echo $user->display_name; ?></span>
                             <span class="tico-angle-down"></span>
@@ -80,11 +66,7 @@
                             <?php } ?>
                             <li><a href="<?php echo tt_url_for('new_post'); ?>"><span class="tico tico-quill"></span><?php _e('New Post', 'tt'); ?></a></li>
                             <li><a href="<?php echo tt_url_for('uc_latest', $user); ?>"><span class="tico tico-stack-overflow"></span><?php _e('My Posts', 'tt'); ?></a></li>
-<<<<<<< HEAD
-                            <li><a href="<?php echo tt_url_for('in_msg'); ?>"><span class="tico tico-envelope"></span><?php _e('My Messages', 'tt'); ?></a></li>
-=======
                             <li><a href="<?php echo tt_url_for('in_msg'); ?>"><span class="tico tico-envelope"></span><?php _e('My Messages', 'tt'); ?><?php if($unread){printf('<i style="position: absolute;margin-left: 5px;">(%d)</i>', intval($unread));} ?></a></li>
->>>>>>> dev
                             <li><a href="<?php echo tt_url_for('my_settings'); ?>"><span class="tico tico-equalizer"></span><?php _e('My Settings', 'tt'); ?></a></li>
                             <li role="separator" class="divider"></li>
                             <li><a href="<?php echo tt_add_redirect(tt_url_for('signout'), tt_get_current_url()); ?>"><span class="tico tico-sign-out"></span><?php _e('Sign Out', 'tt'); ?></a></li>

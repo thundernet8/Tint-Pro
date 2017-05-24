@@ -9,11 +9,7 @@
  * @date 2016/11/15 23:17
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
-<<<<<<< HEAD
- * @link https://www.webapproach.net/tint
-=======
  * @link https://webapproach.net/tint.html
->>>>>>> dev
  */
 ?>
 <?php $category = get_queried_object(); ?>
@@ -89,32 +85,7 @@
             </div>
             <?php if($pagination_args['max_num_pages'] > 1) { ?>
                 <div class="pagination-wrap">
-<<<<<<< HEAD
-                    <nav aria-label="Page navigation">
-                        <ul class="pagination">
-                            <?php $pagination = paginate_links(array(
-                                'base' => $pagination_args['base'],
-                                'format' => '?paged=%#%',
-                                'current' => $pagination_args['current_page'],
-                                'total' => $pagination_args['max_num_pages'],
-                                'type' => 'array',
-                                'prev_next' => true,
-                                'prev_text' => '<i class="tico tico-angle-left"></i>',
-                                'next_text' => '<i class="tico tico-angle-right"></i>'
-                            )); ?>
-                            <?php foreach ($pagination as $page_item) {
-                                echo '<li class="page-item">' . $page_item . '</li>';
-                            } ?>
-                        </ul>
-<!--                        <div class="page-nums">-->
-<!--                            Page&nbsp;<span class="current-page">--><?php //echo $pagination_args['current_page']; ?><!--</span>-->
-<!--                            <span class="separator">/</span>-->
-<!--                            <span class="max-page">--><?php //echo $pagination_args['max_num_pages']; ?><!--</span>-->
-<!--                        </div>-->
-                    </nav>
-=======
                     <?php tt_pagination($pagination_args['base'], $pagination_args['current_page'], $pagination_args['max_num_pages']); ?>
->>>>>>> dev
                 </div>
             <?php } ?>
         <?php } ?>

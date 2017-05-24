@@ -9,11 +9,7 @@
  * @date 2016/12/15 23:13
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
-<<<<<<< HEAD
- * @link https://www.webapproach.net/tint
-=======
  * @link https://webapproach.net/tint.html
->>>>>>> dev
  */
 ?>
 <?php
@@ -46,41 +42,23 @@ $imageFor = isset($_POST['imgFor']) && $_POST['imgFor'] == 'avatar' ? 'avatar' :
 @set_time_limit(1 * 60);
 
 // Settings
-<<<<<<< HEAD
-$targetDir = WP_CONTENT_DIR . '/uploads/tmp';
-=======
 $tmpDir = WP_CONTENT_DIR . '/uploads/tmp';
->>>>>>> dev
 //$uploadDir = $imageFor=='avatar' ? AVATARS_PATH : WP_CONTENT_DIR . '/uploads/images';
 $uploadDir = WP_CONTENT_DIR . '/uploads/images';
 $uploadUrl = home_url('wp-content/uploads/images');
 $cleanupTargetDir = true; // Remove old files
 $maxFileAge = 5 * 3600; // Temp file age in seconds
 // Create target dir
-<<<<<<< HEAD
-if (!file_exists($targetDir)) {
-    @mkdir($targetDir);
-}
-// Create target dir
-=======
 if (!file_exists($tmpDir)) {
     @mkdir($tmpDir);
 }
 // Create upload dir
->>>>>>> dev
 if (!file_exists($uploadDir)) {
     @mkdir($uploadDir);
 }
 // Get a file name
-<<<<<<< HEAD
-if($imageFor == 'avatar'){
-    $fileName = $_REQUEST["name"];
-}elseif (isset($_POST["name"])) { // for avatars use [user_id].jpg
-    $fileName = $_REQUEST["name"];
-=======
 if (isset($_POST["name"])) { // for avatars use [user_id].jpg
     $fileName = $_POST["name"];
->>>>>>> dev
 } elseif (!empty($_FILES)) {
     $fileName = $_FILES["file"]["name"];
 } else {
@@ -89,11 +67,7 @@ if (isset($_POST["name"])) { // for avatars use [user_id].jpg
 
 $fileName = tt_unique_img_name($fileName, isset($_POST['type']) ? trim($_POST['type']) : 'image/jpg');
 
-<<<<<<< HEAD
-$filePath = $targetDir . DIRECTORY_SEPARATOR . $fileName;
-=======
 $filePath = $tmpDir . DIRECTORY_SEPARATOR . $fileName;
->>>>>>> dev
 $uploadPath = $uploadDir . DIRECTORY_SEPARATOR . $fileName;
 
 // Chunking might be enabled
@@ -101,19 +75,11 @@ $chunk = isset($_POST["chunk"]) ? intval($_POST["chunk"]) : 0;
 $chunks = isset($_POST["chunks"]) ? intval($_POST["chunks"]) : 1;
 // Remove old temp files
 if ($cleanupTargetDir) {
-<<<<<<< HEAD
-    if (!is_dir($targetDir) || !$dir = opendir($targetDir)) {
-        die('{"jsonrpc" : "2.0", "error" : {"code": 100, "message": "Failed to open temp directory."}, "id" : "id"}');
-    }
-    while (($file = readdir($dir)) !== false) {
-        $tmpfilePath = $targetDir . DIRECTORY_SEPARATOR . $file;
-=======
     if (!is_dir($tmpDir) || !$dir = opendir($tmpDir)) {
         die('{"jsonrpc" : "2.0", "error" : {"code": 100, "message": "Failed to open temp directory."}, "id" : "id"}');
     }
     while (($file = readdir($dir)) !== false) {
         $tmpfilePath = $tmpDir . DIRECTORY_SEPARATOR . $file;
->>>>>>> dev
         // If temp file is current file proceed to the next
         if ($tmpfilePath == "{$filePath}_{$chunk}.part" || $tmpfilePath == "{$filePath}_{$chunk}.parttmp") {
             continue;
@@ -178,11 +144,7 @@ if ( $done ) {
     // 转为jpg, avatar移动到专用文件夹
     if($imageFor == 'avatar'){
         $avatar_path = AVATARS_PATH . DIRECTORY_SEPARATOR . $user_id . '.jpg';
-<<<<<<< HEAD
-        tt_resize_img($uploadPath, $avatar_path);
-=======
         tt_resize_img($uploadPath, $avatar_path, 100, 100, true);
->>>>>>> dev
         // TODO uploads/images删除临时文件
         tt_update_user_avatar_by_upload($user_id);
         echo json_encode(array(

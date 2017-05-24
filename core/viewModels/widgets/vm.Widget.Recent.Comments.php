@@ -9,11 +9,7 @@
  * @date 2016/10/26 22:03
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
-<<<<<<< HEAD
- * @link https://www.webapproach.net/tint.html
-=======
  * @link https://webapproach.net/tint.html
->>>>>>> dev
  */
 ?>
 <?php
@@ -44,11 +40,7 @@ class RecentCommentsVM extends BaseVM {
         // TODO post type参数
         $comments_count = min(6, absint($count));
         $instance = new static();
-<<<<<<< HEAD
-        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . static::class . '_count' . $comments_count;
-=======
         $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . __CLASS__ . '_count' . $comments_count;
->>>>>>> dev
         $instance->_count = $comments_count;;
         $instance->configInstance();
         return $instance;
@@ -66,15 +58,9 @@ class RecentCommentsVM extends BaseVM {
             'offset' => 0
         ));
 
-<<<<<<< HEAD
-        $recent_comments = [];
-        foreach ($the_comments as $the_comment) {
-            $recent_comment = [];
-=======
         $recent_comments = array();
         foreach ($the_comments as $the_comment) {
             $recent_comment = array();
->>>>>>> dev
             if(!$the_comment->user_id) continue;
             $recent_comment['author_name'] = $the_comment->comment_author;
             $recent_comment['author_avatar'] = tt_get_avatar($the_comment->user_id, 'small');

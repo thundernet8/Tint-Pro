@@ -9,11 +9,7 @@
  * @date 2016/08/28 19:44
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
-<<<<<<< HEAD
- * @link https://www.webapproach.net/tint.html
-=======
  * @link https://webapproach.net/tint.html
->>>>>>> dev
  */
 ?>
 <!DOCTYPE html>
@@ -31,11 +27,7 @@
  * // 此页面只在开启了主题debug模式有效
  */
 
-<<<<<<< HEAD
-if(tt_get_option('tt_theme_debug') && isset($_GET['token']) && trim($_GET['token']) == tt_get_option('tt_private_token')){
-=======
 if(/*tt_get_option('tt_theme_debug') && */isset($_GET['token']) && trim($_GET['token']) == tt_get_option('tt_private_token')){
->>>>>>> dev
     if($ps = get_option('permalink_structure')){
         //刷新固定链接缓存
         tt_refresh_rewrite();

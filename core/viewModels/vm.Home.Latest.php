@@ -9,11 +9,7 @@
  * @date 2016/09/21 22:26
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
-<<<<<<< HEAD
- * @link https://www.webapproach.net/tint.html
-=======
  * @link https://webapproach.net/tint.html
->>>>>>> dev
  */
 ?>
 <?php
@@ -42,14 +38,9 @@ class HomeLatestVM extends BaseVM {
      */
     public static function getInstance($page = 1) {
         $instance = new static(); // 因为不同分页共用该模型，不采用单例模式
-<<<<<<< HEAD
-        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . static::class . '_page' . $page;
-        $instance->_page = max(1, $page);
-=======
         $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . get_called_class() . '_page' . $page;
         $instance->_page = max(1, $page);
         //$instance->_enableCache = false; // TODO Debug use
->>>>>>> dev
         $instance->configInstance();
         return $instance;
     }
@@ -65,10 +56,7 @@ class HomeLatestVM extends BaseVM {
             //'category__not_in' => $featured_catIds, // TODO: 第二页置顶分类隐藏了会仍然不显示这些分类的文章
             'has_password' => false,
             'ignore_sticky_posts' => true,
-<<<<<<< HEAD
-=======
             'post__not_in' => get_option('sticky_posts'),
->>>>>>> dev
             'orderby' => 'date', // modified - 如果按最新编辑时间排序
             'order' => 'DESC'
         );
@@ -98,10 +86,7 @@ class HomeLatestVM extends BaseVM {
             $latest_post['datetime'] = get_the_time(DATE_W3C, $post);
             $latest_post['thumb'] = tt_get_thumb($post, 'medium');
             $latest_post['format'] = get_post_format($post) ? : 'standard';
-<<<<<<< HEAD
-=======
             $latest_post['sticky_class'] = '';
->>>>>>> dev
 
             $latest_posts[] = $latest_post;
         endwhile;

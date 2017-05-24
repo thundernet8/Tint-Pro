@@ -9,11 +9,7 @@
  * @date 2016/11/09 19:40
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
-<<<<<<< HEAD
- * @link https://www.webapproach.net/tint.html
-=======
  * @link https://webapproach.net/tint.html
->>>>>>> dev
  */
 ?>
 <?php
@@ -48,11 +44,7 @@ class UCFollowersVM extends BaseVM {
      */
     public static function getInstance($page = 1, $author_id = 0) {
         $instance = new static(); // 因为不同分页共用该模型，不采用单例模式
-<<<<<<< HEAD
-        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . static::class . '_author' . $author_id . '_page' . $page;
-=======
         $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . __CLASS__ . '_author' . $author_id . '_page' . $page;
->>>>>>> dev
         $instance->_page = max(1, $page);
         $instance->_authorId = $author_id;
         $instance->configInstance();
@@ -64,21 +56,10 @@ class UCFollowersVM extends BaseVM {
         $per_page = 12;
         $offset = $per_page * ($this->_page - 1);
         $followers = tt_get_followers($this->_authorId, $per_page, $offset );
-<<<<<<< HEAD
-        $followers_count = tt_count_followers($this->_authorId);
-        $max_num_pages = ceil($followers_count / $per_page);
-
-        $pagination = array(
-            'max_num_pages' => $max_num_pages,
-            'current_page' => $this->_page,
-            'base' => get_author_posts_url($this->_authorId) . '/followers/page/%#%'
-        );
-=======
         $count = $followers ? count($followers) : 0;
         $total_count = tt_count_followers($this->_authorId);
         $max_pages = ceil($total_count / $per_page);
         $pagination_base = tt_url_for('uc_followers', $this->_authorId) . '/page/%#%';
->>>>>>> dev
 
         $follower_infos = array();
         foreach ($followers as $follower) {
@@ -89,11 +70,7 @@ class UCFollowersVM extends BaseVM {
             $info['ID'] = $user_id;
             $info['user_email'] = $user->user_email;
             $info['nickname'] = get_user_meta($user_id, 'nickname', true);
-<<<<<<< HEAD
-            $info['home'] = home_url('/@' . $info['nickname']);
-=======
             $info['home'] = get_author_posts_url($user_id);
->>>>>>> dev
             $info['posts_url'] = $info['home'] . '/latest';
             $info['comments_url'] = $info['home'] . '/comments';
             $info['activities_url'] = $info['home'] . '/activities';
@@ -111,10 +88,6 @@ class UCFollowersVM extends BaseVM {
         }
 
         return (object)array(
-<<<<<<< HEAD
-            'pagination' => $pagination,
-            'followers' => $follower_infos
-=======
             'count' => $count,
             'followers' => $follower_infos,
             'total' => $total_count,
@@ -122,7 +95,6 @@ class UCFollowersVM extends BaseVM {
             'pagination_base' => $pagination_base,
             'prev_page' => str_replace('%#%', max(1, $this->_page - 1), $pagination_base),
             'next_page' => str_replace('%#%', min($max_pages, $this->_page + 1), $pagination_base)
->>>>>>> dev
         );
     }
 }

@@ -9,11 +9,7 @@
  * @date 2016/11/14 20:26
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
-<<<<<<< HEAD
- * @link https://www.webapproach.net/tint
-=======
  * @link https://webapproach.net/tint.html
->>>>>>> dev
  */
 ?>
 <?php $keywords_description = tt_get_keywords_and_description(); ?>
@@ -23,15 +19,11 @@
     <meta http-equiv="content-type" content="text/html;charset=utf-8">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<<<<<<< HEAD
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,minimal-ui=yes">
-=======
     <?php if(!isset($_GET['vp'])) { ?>
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,minimal-ui=yes">
     <?php }else{ ?>
     <meta name="viewport" content="width=1200,initial-scale=1">
     <?php } ?>
->>>>>>> dev
     <title><?php echo tt_get_page_title(); ?></title>
     <meta name="keywords" content="<?php echo $keywords_description['keywords']; ?>">
     <meta name="description" content="<?php echo $keywords_description['description']; ?>">

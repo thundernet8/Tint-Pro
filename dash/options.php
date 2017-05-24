@@ -123,25 +123,12 @@ function optionsframework_options() {
         'type' => 'select',
         'options' => array(
             'local_1' => __('Local v1.12', 'tt'),
-<<<<<<< HEAD
-            'local_2' => __('Local v3.1', 'tt'),
-=======
->>>>>>> dev
             'cdn_http' => __('CDN HTTP', 'tt'),
             'cdn_https' => __('CDN HTTPS', 'tt')
         )
     );
 
     // - jQuery 加载位置
-<<<<<<< HEAD
-    $options[] = array(
-        'name' => __( 'jQuery Load Position', 'tt' ),
-        'desc' => __( 'Check to load jQuery on `body` end', 'tt' ),
-        'id' => 'tt_foot_jquery',
-        'std' => false,
-        'type' => 'checkbox'
-    );
-=======
 //    $options[] = array(
 //        'name' => __( 'jQuery Load Position', 'tt' ),
 //        'desc' => __( 'Check to load jQuery on `body` end', 'tt' ),
@@ -149,7 +136,6 @@ function optionsframework_options() {
 //        'std' => false,
 //        'type' => 'checkbox'
 //    );
->>>>>>> dev
 
 
 	// 主题选项 - 样式设置
@@ -193,8 +179,6 @@ function optionsframework_options() {
         'options' => $options_categories
     );
 
-<<<<<<< HEAD
-=======
     // - 首页幻灯开关
     $options[] = array(
         'name' => __( '首页顶部展示幻灯和热门文章', 'tt' ),
@@ -213,7 +197,6 @@ function optionsframework_options() {
         'type' => 'checkbox'
     );
 
->>>>>>> dev
     // - 幻灯文章ID列表
     $options[] = array(
         'name' => __( 'Slide Post IDs', 'tt' ),
@@ -237,20 +220,13 @@ function optionsframework_options() {
         )
     );
 
-<<<<<<< HEAD
-=======
     $category_keys = array_keys($options_categories);
->>>>>>> dev
     // - 置顶分类1
     $options[] = array(
         'name' => __('Featured Category 1', 'tt'),
         'desc' => __('Choose the first featured category for homepage', 'tt'),
         'id' => 'tt_home_featured_category_one',
-<<<<<<< HEAD
-        'std' => array_keys($options_categories)[0],
-=======
         'std' => $category_keys[0],
->>>>>>> dev
         'type' => 'select',
         'options' => $options_categories
     );
@@ -260,11 +236,7 @@ function optionsframework_options() {
         'name' => __('Featured Category 2', 'tt'),
         'desc' => __('Choose the second featured category for homepage', 'tt'),
         'id' => 'tt_home_featured_category_two',
-<<<<<<< HEAD
-        'std' => array_keys($options_categories)[min(1, count($options_categories)-1)],
-=======
         'std' => $category_keys[min(1, count($options_categories)-1)],
->>>>>>> dev
         'type' => 'select',
         'options' => $options_categories
     );
@@ -274,25 +246,12 @@ function optionsframework_options() {
         'name' => __('Featured Category 3', 'tt'),
         'desc' => __('Choose the third featured category for homepage', 'tt'),
         'id' => 'tt_home_featured_category_three',
-<<<<<<< HEAD
-        'std' => array_keys($options_categories)[min(2, count($options_categories)-1)],
-=======
         'std' => $category_keys[min(2, count($options_categories)-1)],
->>>>>>> dev
         'type' => 'select',
         'options' => $options_categories
     );
 
     // - 商品推荐
-<<<<<<< HEAD
-    $options[] = array(
-        'name' => __( 'Home Products Recommendation', 'tt' ),
-        'desc' => __( 'Enable products recommendation module for homepage', 'tt' ),
-        'id' => 'tt_home_products_recommendation',
-        'std' => false,
-        'type' => $theme_pro ? 'checkbox' : 'disabled'
-    );
-=======
 //    $options[] = array(
 //        'name' => __( 'Home Products Recommendation', 'tt' ),
 //        'desc' => __( 'Enable products recommendation module for homepage', 'tt' ),
@@ -300,7 +259,6 @@ function optionsframework_options() {
 //        'std' => false,
 //        'type' => $theme_pro ? 'checkbox' : 'disabled'
 //    );
->>>>>>> dev
 
     // - 文章评论数
     $options[] = array(
@@ -343,32 +301,6 @@ function optionsframework_options() {
     );
 
 
-<<<<<<< HEAD
-	// 主题设置 - 边栏设置
-	$options[] = array(
-		'name' => __( 'Sidebar', 'tt' ),
-		'type' => 'heading'
-	);
-
-
-	// - 待注册的边栏
-    $options[] = array(
-        'name' => __('Register Sidebars', 'tt'),
-        'desc' => __('Check the sidebars to register', 'tt'),
-        'id'   => 'tt_register_sidebars',
-        'std'  => array('sidebar_common' => true),
-        'type' => 'multicheck',
-        'options' => array(
-            'sidebar_common'    =>    __('Common Sidebar', 'tt'),
-            'sidebar_home'      =>    __('Home Sidebar', 'tt'),
-            'sidebar_single'    =>    __('Single Sidebar', 'tt'),
-            //'sidebar_archive'   =>    __('Archive Sidebar', 'tt'),
-            //'sidebar_category'  =>    __('Category Sidebar', 'tt'),
-            'sidebar_search'    =>    __('Search Sidebar', 'tt'),
-            //'sidebar_404'       =>    __('404 Sidebar', 'tt'),
-            'sidebar_page'      =>    __('Page Sidebar', 'tt'),
-            'sidebar_download'  =>    __('Download Page Sidebar', 'tt')
-=======
     // - 外链白名单
     $options[] = array(
         'name' => __( 'External Link Whitelist', 'tt' ),
@@ -427,13 +359,10 @@ function optionsframework_options() {
         'options' => array(
             'post_id' => __( 'Post ID', 'tt' ),
             'post_name' => __( 'Post Name', 'tt' )
->>>>>>> dev
         )
     );
 
 
-<<<<<<< HEAD
-=======
     // - 公告的有效期天数
     $options[] = array(
         'name' => __( 'Bulletin Effect Days', 'tt' ),
@@ -452,26 +381,11 @@ function optionsframework_options() {
 	);
 
 
->>>>>>> dev
     // - 所有边栏
     $all_sidebars = array(
         'sidebar_common'    =>    __('Common Sidebar', 'tt'),
         'sidebar_home'      =>    __('Home Sidebar', 'tt'),
         'sidebar_single'    =>    __('Single Sidebar', 'tt'),
-<<<<<<< HEAD
-        'sidebar_archive'   =>    __('Archive Sidebar', 'tt'),
-        'sidebar_category'  =>    __('Category Sidebar', 'tt'),
-        'sidebar_search'    =>    __('Search Sidebar', 'tt'),
-        'sidebar_404'       =>    __('404 Sidebar', 'tt'),
-        'sidebar_page'      =>    __('Page Sidebar', 'tt'),
-        'sidebar_download'  =>    __('Download Page Sidebar', 'tt')
-    );
-    $register_status = of_get_option('tt_register_sidebars', array('sidebar_common' => true));
-    $available_sidebars = [];
-    foreach ($register_status as $key => $value){
-        if($value) $available_sidebars[$key] = $all_sidebars[$key];
-    }
-=======
         //'sidebar_archive'   =>    __('Archive Sidebar', 'tt'),
         //'sidebar_category'  =>    __('Category Sidebar', 'tt'),
         'sidebar_search'    =>    __('Search Sidebar', 'tt'),
@@ -501,7 +415,6 @@ function optionsframework_options() {
         if($value) $available_sidebars[$key] = $all_sidebars[$key];
     }
     $available_sidebars['sidebar_common'] = __('Common Sidebar', 'tt'); // 默认边栏始终可选
->>>>>>> dev
 
     $options[] = array(
         'name' => __('Home Sidebar', 'tt'),
@@ -553,17 +466,6 @@ function optionsframework_options() {
         'options' => $available_sidebars
     );
 
-<<<<<<< HEAD
-    $options[] = array(
-        'name' => __('404 Sidebar', 'tt'),
-        'desc' => __('Select a sidebar for 404 page', 'tt'),
-        'id'   => 'tt_404_sidebar',
-        'std'  => array('sidebar_common' => true),
-        'type' => 'select',
-        'class' => 'mini',
-        'options' => $available_sidebars
-    );
-=======
 //    $options[] = array(
 //        'name' => __('404 Sidebar', 'tt'),
 //        'desc' => __('Select a sidebar for 404 page', 'tt'),
@@ -573,7 +475,6 @@ function optionsframework_options() {
 //        'class' => 'mini',
 //        'options' => $available_sidebars
 //    );
->>>>>>> dev
 
     $options[] = array(
         'name' => __('Page Sidebar', 'tt'),
@@ -663,19 +564,6 @@ function optionsframework_options() {
     );
 
 
-<<<<<<< HEAD
-    // - 站点服务支付宝
-    $options[] = array(
-        'name' => __( 'Site Alipay', 'tt' ),
-        'desc' => __( 'The qrcode image of Alipay account which is dedicated for the site', 'tt' ),
-        'id' => 'tt_site_alipay_qr',
-        'std' => THEME_ASSET . '/img/qr/alipay.png',
-        'type' => 'upload'
-    );
-
-
-=======
->>>>>>> dev
     // - 开启QQ登录
     $options[] = array(
         'name' => __( 'QQ Login', 'tt' ),
@@ -788,50 +676,6 @@ function optionsframework_options() {
 		'type' => 'heading'
 	);
 
-<<<<<<< HEAD
-    //
-
-
-    // 主题设置 - 用户系统设置(包含积分和会员)
-	$options[] = array(
-		'name' => __( 'Membership', 'tt' ),
-		'type' => 'heading'
-	);
-
-    // - 月费会员价格
-    $options[] = array(
-        'name' => __( '月费会员价格', 'tt' ),
-        'desc' => '',
-        'id' => 'tt_monthly_vip_price',
-        'std' => 10,
-        'class' => 'mini',
-        'type' => 'text'
-    );
-
-
-    // - 年费会员价格
-    $options[] = array(
-        'name' => __( '年费会员价格', 'tt' ),
-        'desc' => '',
-        'id' => 'tt_annual_vip_price',
-        'std' => 100,
-        'class' => 'mini',
-        'type' => 'text'
-    );
-
-
-    // - 永久会员价格
-    $options[] = array(
-        'name' => __( '永久会员价格', 'tt' ),
-        'desc' => '',
-        'id' => 'tt_permanent_vip_price',
-        'std' => 199,
-        'class' => 'mini',
-        'type' => 'text'
-    );
-
-
-=======
 
     // - 开启导航栏下方大横幅广告
     $options[] = array(
@@ -1049,7 +893,6 @@ function optionsframework_options() {
         'type' => 'heading'
     );
 
->>>>>>> dev
     // - 积分价格
     $options[] = array(
         'name' => __( '积分价格(元/100积分)', 'tt' ),
@@ -1163,8 +1006,6 @@ function optionsframework_options() {
     );
 
 
-<<<<<<< HEAD
-=======
     // 主题设置 - 会员系统设置
 	$options[] = array(
 		'name' => __( 'Membership', 'tt' ),
@@ -1237,7 +1078,6 @@ function optionsframework_options() {
     );
 
 
->>>>>>> dev
 	// 主题设置 - 商店设置
 	$options[] = array(
 		'name' => __( 'Shop', 'tt' ),
@@ -1271,11 +1111,7 @@ function optionsframework_options() {
         'name' => __( 'Product Permalink Mode', 'tt' ),
         'desc' => __( 'The link mode for the rewrite product permalink', 'tt' ),
         'id' => 'tt_product_link_mode',
-<<<<<<< HEAD
-        'std' => 'name',
-=======
         'std' => 'post_name',
->>>>>>> dev
         'type' => $theme_pro ? 'select' : 'disabled',
         'class' => 'mini',
         'options' => array(
@@ -1339,8 +1175,6 @@ function optionsframework_options() {
     );
 
 
-<<<<<<< HEAD
-=======
     // - 站点服务支付宝
     $options[] = array(
         'name' => __( 'Site Alipay', 'tt' ),
@@ -1351,7 +1185,6 @@ function optionsframework_options() {
     );
 
 
->>>>>>> dev
     // - 支付宝商家身份ID
     $options[] = array(
         'name' => __( '支付宝商家身份ID', 'tt' ),
@@ -1506,19 +1339,11 @@ function optionsframework_options() {
 
 
     // - Separator
-<<<<<<< HEAD
-    $options[] = array(
-        'name' => __( 'Mailer Separator', 'tt' ),
-        'class'=> 'option-separator',
-        'type' => 'info'
-    );
-=======
 //    $options[] = array(
 //        'name' => __( 'Mailer Separator', 'tt' ),
 //        'class'=> 'option-separator',
 //        'type' => 'info'
 //    );
->>>>>>> dev
 
     // - SMTP/PHPMail
     $options[] = array(
@@ -1647,10 +1472,7 @@ function optionsframework_options() {
         'desc' => __( 'One line for one record, please conform to the sample', 'tt' ),
         'id' => 'tt_short_link_records',
         'std' => 'baidu | http://www.baidu.com' . PHP_EOL,
-<<<<<<< HEAD
-=======
         'raw' => true,
->>>>>>> dev
         'type' => 'textarea'
     );
 
@@ -1675,8 +1497,6 @@ function optionsframework_options() {
     );
 
 
-<<<<<<< HEAD
-=======
     // - 启用订单相关邮件提醒
     $options[] = array(
         'name' => __( 'Order Related Notification', 'tt' ),
@@ -1697,7 +1517,6 @@ function optionsframework_options() {
     );
 
 
->>>>>>> dev
     // 主题反馈
     $options[] = array(
         'name' => __( 'Feedback', 'tt' ),
@@ -1708,22 +1527,14 @@ function optionsframework_options() {
     // 联系作者
     $options[] = array(
         'name' => __( 'Contact Author', 'tt' ),
-<<<<<<< HEAD
-        'desc' => sprintf(__( '<br><h2>Email: chinash2010@gmail.com</h2><br><h2>Wechat & Alipay & QQ(below)</h2><br><img src="%s"><img src="%s"><img src="%s"> ', 'tt' ), 'https://old.webapproach.net/wp-content/themes/Tint/assets/img/qr/weixin.png', 'https://old.webapproach.net/wp-content/themes/Tint/assets/img/qr/alipay.png', 'https://old.webapproach.net/wp-content/themes/Tint/assets/img/qr/qq.png'),
-=======
         'desc' => sprintf(__( '<br><h2>Email: chinash2010@gmail.com</h2><br><h2>Wechat & Alipay & QQ(below)</h2><br><img src="%s"><img src="%s"><img src="%s"> ', 'tt' ), THEME_ASSET . '/img/qr/weixin.png', THEME_ASSET . '/img/qr/alipay.png', THEME_ASSET . '/img/qr/qq.png'),
->>>>>>> dev
         'type' => 'info'
     );
 
     // 相关作品
     $options[] = array(
         'name' => __( 'Related Works', 'tt' ),
-<<<<<<< HEAD
-        'desc' => sprintf(__( '<br><h2>Alipay Supervisor (<a href="%s">View Detail</a>)</h2><br><p>A toolkit for helping improve payment experience</p>', 'tt'), 'https://www.webapproach.net/alipaysupervisor'),
-=======
         'desc' => sprintf(__( '<br><h2>Alipay Supervisor (<a href="%s" target="_blank">View Detail</a>)</h2><br><p>A toolkit for helping improve payment experience</p>', 'tt'), TT_SITE . '/shop/apsv.html'),
->>>>>>> dev
         'type' => 'info'
     );
 
@@ -1746,8 +1557,6 @@ function optionsframework_options() {
     );
 
 
-<<<<<<< HEAD
-=======
     // - 单独暂停缓存
     $options[] = array(
         'name' => __( 'Disable Cache', 'tt' ),
@@ -1758,7 +1567,6 @@ function optionsframework_options() {
     );
 
 
->>>>>>> dev
     // - 主题专用私有Token
     $options[] = array(
         'name' => __('Tint Token', 'tt'),
@@ -1778,8 +1586,6 @@ function optionsframework_options() {
     );
 
 
-<<<<<<< HEAD
-=======
     // - 登录API后缀
     $options[] = array(
         'name' => __( '登录API后缀', 'tt' ),
@@ -1790,7 +1596,6 @@ function optionsframework_options() {
     );
 
 
->>>>>>> dev
     // - QQ邮我链接ID
     $options[] = array(
         'name' => __( 'QQ Mailme ID', 'tt' ),
@@ -1853,8 +1658,6 @@ function optionsframework_options() {
 
 
 
-<<<<<<< HEAD
-=======
     // - 页脚输出统计PHP查询信息
     $options[] = array(
         'name' => __( 'Footer Queries Info', 'tt' ),
@@ -1864,7 +1667,6 @@ function optionsframework_options() {
         'type' => 'checkbox'
     );
 
->>>>>>> dev
 
 
 	///////////////////////////////////////////////////////////////////////////

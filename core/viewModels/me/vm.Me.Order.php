@@ -9,11 +9,7 @@
  * @date 2016/12/24 12:35
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
-<<<<<<< HEAD
- * @link https://www.webapproach.net/tint
-=======
  * @link https://webapproach.net/tint.html
->>>>>>> dev
  */
 ?>
 <?php
@@ -49,11 +45,7 @@ class MeOrderVM extends BaseVM {
      */
     public static function getInstance($order_seq = 0, $user_id = 0) {
         $instance = new static();
-<<<<<<< HEAD
-        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . static::class . '_user' . $user_id . '_seq' . $order_seq;
-=======
         $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . __CLASS__ . '_user' . $user_id . '_seq' . $order_seq;
->>>>>>> dev
         $instance->_orderSeq = $order_seq;
         $instance->_userId = $user_id;
         $instance->_enableCache = false; // 订单详情不使用缓存
@@ -64,10 +56,7 @@ class MeOrderVM extends BaseVM {
     protected function getRealData() {
         $order = tt_get_order_by_sequence($this->_orderSeq);
         $order = ($order && $order->user_id == $this->_userId) ? $order : null;
-<<<<<<< HEAD
-=======
         $order_status = $order->order_status;
->>>>>>> dev
         $is_combine_order = $order->parent_id == -1;
         $pay_content = null;
         $sub_orders = array();
@@ -75,25 +64,17 @@ class MeOrderVM extends BaseVM {
             $sub_orders = tt_get_sub_orders($order->id);
         }
         if(!$is_combine_order && $order->product_id > 0){
-<<<<<<< HEAD
-            $pay_content = tt_get_product_pay_content($order->product_id, false);
-=======
             // 如果是子订单, 支付状态按照父级订单
             if($order->parent_id > 0) {
                 $parent_order = tt_get_order_by_sequence($order->parent_id);
                 $order_status = $parent_order->order_status;
             }
             $pay_content = $order_status==OrderStatus::TRADE_SUCCESS ? tt_get_product_pay_content($order->product_id, false) : null;
->>>>>>> dev
         }
 
         return (object)array(
             'order' => $order,
-<<<<<<< HEAD
-            'order_status_text' => tt_get_order_status_text($order->order_status),
-=======
             'order_status_text' => tt_get_order_status_text($order_status),
->>>>>>> dev
             'pay_method' => $order->order_currency == 'credit' ? __('Credit Payment', 'tt') : __('Cash Payment', 'tt'),
             'pay_amount' => $order->order_currency == 'credit' ? sprintf(__('%d Credits', 'tt'), $order->order_total_price) : sprintf(__('%0.2f YUAN', 'tt'), $order->order_total_price),
             'pay_content' => $pay_content,

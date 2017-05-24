@@ -9,11 +9,7 @@
  * @date 2016/12/24 19:22
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
-<<<<<<< HEAD
- * @link https://www.webapproach.net/tint
-=======
  * @link https://webapproach.net/tint.html
->>>>>>> dev
  */
 ?>
 <?php
@@ -48,11 +44,7 @@ class MeEditPostVM extends BaseVM {
      */
     public static function getInstance($post_id = 0, $user_id = 0) {
         $instance = new static();
-<<<<<<< HEAD
-        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . static::class . '_post' . $post_id . '_user' . $user_id;
-=======
         $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . __CLASS__ . '_post' . $post_id . '_user' . $user_id;
->>>>>>> dev
         $instance->_postId = $post_id;
         $instance->_userId = $user_id;
         $instance->_enableCache = false; // 待编辑文章不使用缓存

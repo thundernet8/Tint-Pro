@@ -9,11 +9,7 @@
  * @date 2016/09/16 20:32
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
-<<<<<<< HEAD
- * @link https://www.webapproach.net/tint.html
-=======
  * @link https://webapproach.net/tint.html
->>>>>>> dev
  */
 
 //GET /session # 获取会话信息
@@ -38,11 +34,7 @@ class WP_REST_Session_Controller extends WP_REST_Controller
     public function __construct()
     {
         $this->namespace = 'v1';
-<<<<<<< HEAD
-        $this->rest_base = 'session';
-=======
         $this->rest_base = tt_get_option('tt_session_api', 'session');
->>>>>>> dev
     }
 
     /**
@@ -92,9 +84,6 @@ class WP_REST_Session_Controller extends WP_REST_Controller
     public function create_item( $request ) {
 
         $user_login = sanitize_text_field($request->get_param('user_login'));
-<<<<<<< HEAD
-        $password = sanitize_text_field($request->get_param('password'));
-=======
 
         $password = sanitize_text_field($request->get_param('password'));
         $oauth = $request->get_param('oauth');
@@ -124,7 +113,6 @@ class WP_REST_Session_Controller extends WP_REST_Controller
         }
 
 
->>>>>>> dev
         $nonce = trim($request->get_param('nonce'));
 
         // 验证登录nonce
@@ -145,12 +133,9 @@ class WP_REST_Session_Controller extends WP_REST_Controller
         if ($user && wp_check_password( $password, $user->data->user_pass, $user->ID)) {
             $creds = array('user_login' => $user->data->user_login, 'user_password' => $password, 'remember' => true);
             $user = wp_signon( $creds, is_ssl() );
-<<<<<<< HEAD
-=======
             if($user instanceof WP_Error) {
                 return $user;
             }
->>>>>>> dev
             return rest_ensure_response(array(
                 'success' => 1,
                 'message' => __('Welcome, you have signed in successfully', 'tt')

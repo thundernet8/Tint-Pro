@@ -9,11 +9,7 @@
  * @date 2016/10/20 22:56
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
-<<<<<<< HEAD
- * @link https://www.webapproach.net/tint.html
-=======
  * @link https://webapproach.net/tint.html
->>>>>>> dev
  */
 ?>
 <?php
@@ -48,11 +44,7 @@ class CategoryPostsVM extends BaseVM {
     public static function getInstance($page = 1) {
         $cat_ID = absint(get_queried_object_id());
         $instance = new static(); // 因为不同分页不同分类共用该模型，不采用单例模式
-<<<<<<< HEAD
-        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . static::class . '_cat' . $cat_ID . '_page' . $page;
-=======
         $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . __CLASS__ . '_cat' . $cat_ID . '_page' . $page;
->>>>>>> dev
         $instance->_page = max(1, $page);
         $instance->_catID = $cat_ID;
         $instance->configInstance();

@@ -9,11 +9,7 @@
  * @date 2016/12/02 22:07
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
-<<<<<<< HEAD
- * @link https://www.webapproach.net/tint
-=======
  * @link https://webapproach.net/tint.html
->>>>>>> dev
  */
 ?>
 <?php
@@ -71,10 +67,6 @@ if($verify_result) {//验证成功
                 'trade_no' => $trade_no,
                 'user_alipay' => $buyer_alipay
             ), array('%d', '%s', '%s'));
-<<<<<<< HEAD
-            tt_order_email($out_trade_no);
-=======
->>>>>>> dev
         }
 
         //构造要请求的参数数组，无需改动
@@ -101,10 +93,6 @@ if($verify_result) {//验证成功
                 tt_update_order($out_trade_no, array(
                     'order_status' => 3
                 ), array('%d'));
-<<<<<<< HEAD
-                tt_order_email($out_trade_no);
-=======
->>>>>>> dev
             }
         }
         echo "success";		//请不要修改或删除
@@ -124,11 +112,6 @@ if($verify_result) {//验证成功
                 'trade_no' => $trade_no,
                 'user_alipay' => $buyer_alipay
             ), array('%d', '%s', '%s', '%s'));
-<<<<<<< HEAD
-            //发送订单状态变更email
-            tt_order_email($out_trade_no);
-=======
->>>>>>> dev
         }
         echo "success";		//请不要修改或删除
 
@@ -148,14 +131,6 @@ if($verify_result) {//验证成功
                 'trade_no' => $trade_no,
                 'user_alipay' => $buyer_alipay
             ), array('%d', '%s', '%s', '%s'));
-<<<<<<< HEAD
-            tt_update_order_product_quantity($out_trade_no);
-            //发送订单状态变更email
-            tt_order_email($out_trade_no);
-            //发送购买可见内容或下载链接或会员状态变更
-            tt_send_order_goods($out_trade_no);
-=======
->>>>>>> dev
         }
         echo "success";		//请不要修改或删除
 
@@ -170,11 +145,6 @@ if($verify_result) {//验证成功
                 'trade_no' => $trade_no,
                 'user_alipay' => $buyer_alipay
             ), array('%d', '%s', '%s', '%s'));
-<<<<<<< HEAD
-            //发送订单状态变更email
-            tt_order_email($out_trade_no);
-=======
->>>>>>> dev
         }
         echo "success";
     }else {

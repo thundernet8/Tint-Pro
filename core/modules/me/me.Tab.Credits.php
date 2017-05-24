@@ -9,11 +9,7 @@
  * @date 2016/12/15 00:16
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
-<<<<<<< HEAD
- * @link https://www.webapproach.net/tint
-=======
  * @link https://webapproach.net/tint.html
->>>>>>> dev
  */
 ?>
 <?php global $tt_me_vars; $tt_user_id = $tt_me_vars['tt_user_id']; $tt_page = $tt_me_vars['tt_paged']; ?>
@@ -62,8 +58,6 @@
                     </div>
                 </div>
             </section>
-<<<<<<< HEAD
-=======
             <!-- 积分获取方式 -->
             <section class="credits-approach clearfix">
                 <header><h2><?php _e('Way to Gain Credits', 'tt'); ?></h2></header>
@@ -111,7 +105,6 @@
                     </table>
                 </div>
             </section>
->>>>>>> dev
             <!-- 积分记录 -->
             <section class="credit-records clearfix">
                 <header><h2><?php _e('Credit Records', 'tt'); ?></h2></header>

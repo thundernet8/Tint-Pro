@@ -9,35 +9,22 @@
  * @date 2016/12/11 12:43
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
-<<<<<<< HEAD
- * @link https://www.webapproach.net/tint
-=======
  * @link https://webapproach.net/tint.html
->>>>>>> dev
  */
 ?>
 <?php global $origin_post; ?>
 <?php
     $free_dls = trim(get_post_meta($origin_post->ID, 'tt_free_dl', true));
-<<<<<<< HEAD
-    $free_dls = !empty($free_dls) ? explode(',', $free_dls) : array();
-    $sale_dls = trim(get_post_meta($origin_post->ID, 'tt_sale_dl', true));
-    $sale_dls = !empty($sale_dls) ? explode(',', $sale_dls) : array();
-=======
     $free_dls = !empty($free_dls) ? explode(',', str_replace(PHP_EOL, ',', $free_dls)) : array();
     $sale_dls = trim(get_post_meta($origin_post->ID, 'tt_sale_dl', true));
     $sale_dls = !empty($sale_dls) ? explode(',', str_replace(PHP_EOL, ',', $sale_dls)) : array();
->>>>>>> dev
 ?>
 <div id="main" class="main primary col-md-8 download-box" role="main">
     <div class="download">
         <div class="dl-declaration contextual-callout callout-warning">
             <p><?php _e('本站所刊载内容均为网络上收集整理，包括但不限于代码、应用程序、影音资源、电子书籍资料等，并且以研究交流为目的，所有仅供大家参考、学习，不存在任何商业目的与商业用途。若您使用开源的软件代码，请遵守相应的开源许可规范和精神，若您需要使用非免费的软件或服务，您应当购买正版授权并合法使用。如果你下载此文件，表示您同意只将此文件用于参考、学习使用而非任何其他用途。', 'tt'); ?></p>
         </div>
-<<<<<<< HEAD
-=======
         <?php load_mod(('banners/bn.Download.Top')); ?>
->>>>>>> dev
         <div class="dl-detail">
         <?php if(count($free_dls)) { ?>
             <h2><?php _e('Free Resources', 'tt'); ?></h2>
@@ -79,8 +66,5 @@
             <p><?php _e('本站仅提供文件的免费下载服务，如果你对代码程序软件的使用有任何疑惑，请留意相关网站论坛。对于本站个人发布的资源，站长会提供有限的帮助！', 'tt'); ?></p>
         </div>
     </div>
-<<<<<<< HEAD
-=======
     <?php load_mod(('banners/bn.Download.Bottom')); ?>
->>>>>>> dev
 </div>

@@ -9,11 +9,7 @@
  * @date 2016/11/10 21:35
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
-<<<<<<< HEAD
- * @link https://www.webapproach.net/tint.html
-=======
  * @link https://webapproach.net/tint.html
->>>>>>> dev
  */
 ?>
 <?php
@@ -49,43 +45,21 @@ class UCChatVM extends BaseVM {
      * @since   2.0.0
      * @param   int    $page   分页号
      * @param   int    $author_id 作者ID
-<<<<<<< HEAD
-     * @param   int    $user_id 用户ID
-=======
->>>>>>> dev
      * @return  static
      */
     public static function getInstance($page = 1, $author_id = 0) {
         $instance = new static();
         $user_id = get_current_user_id();
-<<<<<<< HEAD
-        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . static::class . '_author' . $author_id . '_user' . $user_id . '_page' . $page;
-        $instance->_page = max(1, $page);
-        $instance->_authorId = absint($author_id);
-        $instance->_userId = $user_id;
-=======
         $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . __CLASS__ . '_author' . $author_id . '_user' . $user_id . '_page' . $page;
         $instance->_page = max(1, $page);
         $instance->_authorId = absint($author_id);
         $instance->_userId = $user_id;
         $instance->_enableCache = false; // 禁用缓存
->>>>>>> dev
         $instance->configInstance();
         return $instance;
     }
 
     protected function getRealData() {
-<<<<<<< HEAD
-
-        $per_page = 20;
-        $offset = $per_page * ($this->_page - 1);
-
-        $messages = tt_get_bothway_chat( $this->_authorId, $per_page, $offset, 'all', 'publish', false );
-        $messages_count = tt_get_bothway_chat( $this->_authorId, $per_page, $offset, 'all', 'publish', true );
-        $max_num_pages = ceil($messages_count / $per_page);
-
-        $unread_count = tt_count_pm(); //Note: 自己发送的消息一定为已读 //tt_get_bothway_chat( $this->_authorId, $per_page, $offset, 0, 'publish', true );
-=======
         $per_page = 20;
         $offset = $per_page * ($this->_page - 1);
 
@@ -94,7 +68,6 @@ class UCChatVM extends BaseVM {
         $max_num_pages = ceil($messages_count / $per_page);
 
         $unread_count = tt_count_pm($this->_authorId, MsgReadStatus::UNREAD); //Note: 自己发送的消息一定为已读 //tt_get_bothway_chat( $this->_authorId, $per_page, $offset, 0, 'publish', true );
->>>>>>> dev
 
         $pagination = array(
             'max_num_pages' => $max_num_pages,
@@ -122,15 +95,9 @@ class UCChatVM extends BaseVM {
             $chat_message['text'] = $message->msg_title;
             $chat_message['read'] = $message->sender_id == $user->ID || $message->msg_read != 0;
             $chat_message['tome'] = $message->user_id == $this->_userId;
-<<<<<<< HEAD
-            $chat_message['chat_avatar'] = $message->sender_id = $user->ID ? $user_avatar : $author_avatar;
-            $chat_message['chat_name'] = $message->sender_id = $user->ID ? sprintf(__('You to %s', 'tt'), $author_name) : $author_name;
-            $chat_message['people_home'] = $message->sender_id = $user->ID ? $user_home : $author_home;
-=======
             $chat_message['chat_avatar'] = $message->sender_id == $user->ID ? $user_avatar : $author_avatar;
             $chat_message['chat_name'] = $message->sender_id == $user->ID ? sprintf(__('You to %s', 'tt'), $author_name) : $author_name;
             $chat_message['people_home'] = $message->sender_id == $user->ID ? $user_home : $author_home;
->>>>>>> dev
             $chat_message['class'] = $chat_message['read'] ? 'message chat-message' : 'message chat-message unread-message';
 
             $chat_messages[] = $chat_message;

@@ -8,11 +8,7 @@
  * @date 2016/12/08 20:31
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
-<<<<<<< HEAD
- * @link https://www.webapproach.net/tint.html
-=======
  * @link https://webapproach.net/tint.html
->>>>>>> dev
  */
 
 QTags.addButton( 'hr', '水平线', "\n<hr />\n", '' );//添加横线

@@ -9,11 +9,7 @@
  * @date 2016/11/27 17:20
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
-<<<<<<< HEAD
- * @link https://www.webapproach.net/tint
-=======
  * @link https://webapproach.net/tint.html
->>>>>>> dev
  */
 ?>
 <?php
@@ -48,10 +44,7 @@ if($order->parent_id == -1){
 }
 
 $current_user = wp_get_current_user();
-<<<<<<< HEAD
-=======
 $user_id = $current_user->ID;
->>>>>>> dev
 
 ?>
 <?php tt_get_header('simple'); ?>

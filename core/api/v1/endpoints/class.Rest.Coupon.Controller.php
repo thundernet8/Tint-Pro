@@ -9,10 +9,6 @@
  * @date 2016/11/30 21:32
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
-<<<<<<< HEAD
- * @link https://www.webapproach.net/tint
- */
-=======
  * @link https://webapproach.net/tint.html
  */
 ?>
@@ -267,4 +263,3 @@ class WP_REST_Coupon_Controller extends WP_REST_Controller
         return tt_api_success(__('delete coupon successfully', 'tt'), array('coupon_id' => $id));
     }
 }
->>>>>>> dev

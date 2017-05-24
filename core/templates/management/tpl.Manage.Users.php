@@ -9,14 +9,6 @@
  * @date 2016/12/17 19:25
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
-<<<<<<< HEAD
- * @link https://www.webapproach.net/tint
- */
-?>
-<?php
-
-echo 'Manage - Users';
-=======
  * @link https://webapproach.net/tint.html
  */
 ?>
@@ -31,4 +23,3 @@ echo 'Manage - Users';
         </section>
     </div>
 <?php tt_get_footer(); ?>
->>>>>>> dev

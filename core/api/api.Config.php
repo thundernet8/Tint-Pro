@@ -9,11 +9,7 @@
  * @date 2016/08/29 23:29
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
-<<<<<<< HEAD
- * @link https://www.webapproach.net/tint.html
-=======
  * @link https://webapproach.net/tint.html
->>>>>>> dev
  */
 ?>
 <?php
@@ -50,11 +46,7 @@ require_once THEME_API . '/v1/endpoints/class.Rest.Order.Controller.php';
 require_once THEME_API . '/v1/endpoints/class.Rest.BoughtResource.Controller.php';
 require_once THEME_API . '/v1/endpoints/class.Rest.UserProfile.Controller.php';
 require_once THEME_API . '/v1/endpoints/class.Rest.Action.Controller.php';
-<<<<<<< HEAD
-require_once THEME_API . '/v1/endpoints/class.Rest.Post.Controller.php';
-=======
 require_once THEME_API . '/v1/endpoints/class.Rest.Post.Controller.php';
 require_once THEME_API . '/v1/endpoints/class.Rest.Product.Controller.php';
 require_once THEME_API . '/v1/endpoints/class.Rest.Coupon.Controller.php';
 require_once THEME_API . '/v1/endpoints/class.Rest.Member.Controller.php';
->>>>>>> dev

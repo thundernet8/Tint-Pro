@@ -9,11 +9,7 @@
  * @date 2016/09/04 21:25
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
-<<<<<<< HEAD
- * @link https://www.webapproach.net/tint.html
-=======
  * @link https://webapproach.net/tint.html
->>>>>>> dev
  */
 ?>
 <?php
@@ -87,11 +83,7 @@ class WP_REST_User_Controller extends WP_REST_Controller {
             'schema' => array( $this, 'get_public_item_schema' ),
         ));
 
-<<<<<<< HEAD
-        register_rest_route( $this->namespace, '/' . $this->rest_base . '/email:(?P<email>[\S]+)', array(
-=======
         register_rest_route( $this->namespace, '/' . $this->rest_base . '/email', array(
->>>>>>> dev
             array(
                 'methods'         => WP_REST_Server::READABLE,
                 'callback'        => array( $this, 'get_item_by_email' ),
@@ -102,11 +94,7 @@ class WP_REST_User_Controller extends WP_REST_Controller {
             ),
             'schema' => array( $this, 'get_public_item_schema' ),
         ) );
-<<<<<<< HEAD
-        register_rest_route( $this->namespace, '/' . $this->rest_base . '/key:(?P<key>[\S]+)', array(
-=======
         register_rest_route( $this->namespace, '/' . $this->rest_base . '/key', array(
->>>>>>> dev
             array(
                 'methods'         => WP_REST_Server::EDITABLE,
                 'callback'        => array( $this, 'update_item_by_key' ),
@@ -290,28 +278,6 @@ class WP_REST_User_Controller extends WP_REST_Controller {
      * @return WP_Error|boolean
      */
     public function get_item_by_email_permissions_check( $request ) {
-<<<<<<< HEAD
-
-        $email = base64_decode( $request['email'] );
-        $user = get_user_by( 'email', $email );
-        $types = get_post_types( array( 'public' => true ), 'names' );
-
-        if ( empty( $email ) || empty( $user->ID ) ) {
-            return new WP_Error( 'rest_user_invalid_email', __( 'Invalid resource email.', 'tt' ), array( 'status' => tt_rest_resource_not_found_code() ) );
-        }
-
-        if ( get_current_user_id() === $user->ID ) {
-            return true;
-        }
-
-        if ( 'edit' === $request['context'] && ! current_user_can( 'list_users' ) ) {
-            return new WP_Error( 'rest_user_cannot_view', __( 'Sorry, you cannot view this resource with edit context.', 'tt' ), array( 'status' => tt_rest_authorization_required_code() ) );
-        } else if ( ! count_user_posts( $user->ID, $types ) && ! current_user_can( 'edit_user', $user->ID ) && ! current_user_can( 'list_users' ) ) {
-            return new WP_Error( 'rest_user_cannot_view', __( 'Sorry, you cannot view this resource.', 'tt' ), array( 'status' => tt_rest_authorization_required_code() ) );
-        }
-
-=======
->>>>>>> dev
         return true;
     }
 
@@ -322,34 +288,18 @@ class WP_REST_User_Controller extends WP_REST_Controller {
      * @return WP_Error|WP_REST_Response
      */
     public function get_item_by_email( $request ) {
-<<<<<<< HEAD
-        $email = base64_decode( $request['email'] );
-=======
         $email = $request->get_param('email');
->>>>>>> dev
         $user = get_user_by( 'email', $email );
 
         if ( !is_email( $email ) || empty( $user->ID ) ) {
             return new WP_Error( 'rest_user_invalid_email', __( 'Invalid resource email.', 'tt' ), array( 'status' => tt_rest_resource_not_found_code() ) );
         }
 
-<<<<<<< HEAD
-        //$user = $this->prepare_item_for_response( $user, $request );
-        $response = rest_ensure_response( $user );
-
-=======
->>>>>>> dev
         // GET参数act=findpass
         $act = $request->get_param('act');
         if($act === 'findpass'){
             // 发送重置密码链接
             $reset_link = tt_generate_reset_password_link($email, $user->ID);
-<<<<<<< HEAD
-            tt_mail('', $email, '', array('email' => $email, 'user_id' => $user->ID, 'name' => $user->display_name, 'link' => $reset_link), 'reset_pass');
-        }
-
-        return $response;
-=======
             $subject = sprintf(__('Your Password Reset Link - %s', 'tt'), get_bloginfo('name'));
             $args = array('home' => home_url(), 'userLogin' => $user->user_login, 'resetPassLink' => $reset_link);
             tt_async_mail('', $email, $subject, $args, 'findpass');
@@ -357,7 +307,6 @@ class WP_REST_User_Controller extends WP_REST_Controller {
         }
 
         return tt_api_fail(__('Unknown action request', 'tt'));
->>>>>>> dev
     }
 
     /**
@@ -693,25 +642,6 @@ class WP_REST_User_Controller extends WP_REST_Controller {
      * @return WP_Error|WP_REST_Response
      */
     public function update_item_by_key( $request ) {
-<<<<<<< HEAD
-        $key = trim($request['key']);
-        $password = $request->get_param('password');
-
-        $user = tt_reset_password_by_key($key, $password);
-
-        if(!($user instanceof WP_User)){
-            return $user; // WP_Error
-        }
-
-        // $user->user_pass = $password;
-
-        // do_action( 'rest_update_user_password', $user, $request, false );
-
-        $request->set_param( 'context', 'edit' );
-        $response = $this->prepare_item_for_response( $user, $request );
-        $response = rest_ensure_response( $response );
-        return $response;
-=======
         $key = trim($request->get_param('key'));
         $act = $request->get_param('act');
 
@@ -744,7 +674,6 @@ class WP_REST_User_Controller extends WP_REST_Controller {
         }
 
         return tt_api_fail(__('Unknown action request', 'tt'));
->>>>>>> dev
     }
 
 

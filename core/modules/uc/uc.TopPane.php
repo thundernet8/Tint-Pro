@@ -9,21 +9,13 @@
  * @date 2016/11/06 17:11
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
-<<<<<<< HEAD
- * @link https://www.webapproach.net/tint.html
-=======
  * @link https://webapproach.net/tint.html
->>>>>>> dev
  */
 ?>
 <?php global $tt_author_vars; ?>
 <?php $tt_author_vars['tt_author_id'] = get_queried_object_id(); ?>
 <?php $tt_author_vars['tt_author'] = get_user_by('ID', $tt_author_vars['tt_author_id']); ?>
-<<<<<<< HEAD
-<?php $tt_author_vars['tt_paged'] = get_query_var('paged') ? : 1; ?>
-=======
 <?php $tt_author_vars['tt_paged'] = get_query_var('tt_paged') ? : 1; ?>
->>>>>>> dev
 <!-- 作者头像及背景图 -->
 <section class="billboard author-header mb20" style="background-image: url(<?php echo tt_get_user_cover($tt_author_vars['tt_author_id']); ?>)">
     <div class="container text-center">

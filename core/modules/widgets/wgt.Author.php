@@ -9,11 +9,7 @@
  * @date 2016/10/24 20:27
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
-<<<<<<< HEAD
- * @link https://www.webapproach.net/tint.html
-=======
  * @link https://webapproach.net/tint.html
->>>>>>> dev
  */
 ?>
 <?php
@@ -53,17 +49,10 @@ class AuthorWidget extends WP_Widget {
                 </div>
                 <?php } ?>
                 <div class="author-stats">
-<<<<<<< HEAD
-                    <span class="posts"><?php echo $data->posts_count; ?><span class="unit"><?php _e('POSTS', 'tt'); ?></span></span>
-                    <span class="stars"><?php echo $data->posts_stars; ?><span class="unit"><?php _e('STARS', 'tt'); ?></span></span>
-                    <span class="following"><?php echo $data->following_count; ?><span class="unit"><?php _e('FOLLOWING', 'tt'); ?></span></span>
-                    <span class="followers"><?php echo $data->followers_count; ?><span class="unit"><?php _e('FOLLOWERS', 'tt'); ?></span></span>
-=======
                     <span class="posts"><?php echo intval($data->posts_count); ?><span class="unit"><?php _e('POSTS', 'tt'); ?></span></span>
                     <span class="stars"><?php echo intval($data->posts_stars); ?><span class="unit"><?php _e('STARS', 'tt'); ?></span></span>
                     <span class="following"><?php echo intval($data->following_count); ?><span class="unit"><?php _e('FOLLOWING', 'tt'); ?></span></span>
                     <span class="followers"><?php echo intval($data->followers_count); ?><span class="unit"><?php _e('FOLLOWERS', 'tt'); ?></span></span>
->>>>>>> dev
                 </div>
             </div>
         </div>

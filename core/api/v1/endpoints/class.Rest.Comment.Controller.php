@@ -9,11 +9,7 @@
  * @date 2016/10/12 21:38
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
-<<<<<<< HEAD
- * @link https://www.webapproach.net/tint.html
-=======
  * @link https://webapproach.net/tint.html
->>>>>>> dev
  */
 ?>
 <?php
@@ -152,8 +148,6 @@ class WP_REST_Comment_Controller extends WP_REST_Controller
             return tt_api_fail(__('Spam nonce check failed', 'tt'));
         }
         $comment_post_ID = absint($_POST['postId']);
-<<<<<<< HEAD
-=======
         $user = wp_get_current_user();
 
         $post_type = get_post_type($comment_post_ID);
@@ -165,7 +159,6 @@ class WP_REST_Comment_Controller extends WP_REST_Controller
             }
         }
 
->>>>>>> dev
         if($comment_post_ID <= 0 || !comments_open($comment_post_ID)) {
             return tt_api_fail(__('Comment closed for the post', 'tt'));
         }
@@ -181,20 +174,12 @@ class WP_REST_Comment_Controller extends WP_REST_Controller
         $comment_type = isset( $_POST['commentType'] ) ? trim( $_POST['commentType'] ) : '';
         $ksesNonce = trim( $_POST['ksesNonce'] );
         $comment_parent = absint($_POST['parentId']);
-<<<<<<< HEAD
-        $product_rating = absint($request->get_param('productRating'));
-=======
->>>>>>> dev
 
         $user_ID = 0;
         $comment_author = '';
         $comment_author_email = '';
         $comment_author_url = '';
 
-<<<<<<< HEAD
-        $user = wp_get_current_user();
-=======
->>>>>>> dev
         if ( $user->ID ) { // $user->exists()
             $user_ID = $user->ID;
             $comment_author = wp_slash( $user->display_name );
@@ -252,11 +237,7 @@ class WP_REST_Comment_Controller extends WP_REST_Controller
         }
 
         // add comment meta(rating for product)
-<<<<<<< HEAD
-        if($product_rating) {
-=======
         if($post_type=='product' && $product_rating) {
->>>>>>> dev
             update_comment_meta($comment_id, 'tt_rating_product', $product_rating);
             $product_ratings_raw = get_post_meta($comment_post_ID, 'tt_post_ratings', true);
             $product_ratings = $product_ratings_raw ? (array)maybe_unserialize($product_ratings_raw) : array();
@@ -276,11 +257,7 @@ class WP_REST_Comment_Controller extends WP_REST_Controller
             'page'=>1,
             'per_page'=>1,
             'echo'=>false
-<<<<<<< HEAD
-        ), [$comment]);
-=======
         ), array($comment));
->>>>>>> dev
 
         return tt_api_success($comment_html);
 

@@ -9,11 +9,7 @@
  * @date 2016/12/14 22:05
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
-<<<<<<< HEAD
- * @link https://www.webapproach.net/tint
-=======
  * @link https://webapproach.net/tint.html
->>>>>>> dev
  */
 ?>
 <script type="text/javascript" src="https://cdn.staticfile.org/webuploader/0.1.5/webuploader.html5only.min.js"></script>
@@ -33,23 +29,6 @@
                     <label class="col-md-2 control-label"><?php _e('Avatar', 'tt'); ?></label>
                     <div class="col-md-10">
                         <div class="radio">
-<<<<<<< HEAD
-                            <?php if($info->use_local_avatar){ ?>
-                            <label class="local-avatar-label" title="<?php _e('Upload Avatar', 'tt'); ?>">
-                                <img src="<?php echo $info->avatar; ?>" class="avatar" data-filename="<?php echo $tt_user_id . '.jpg'; ?>" width="40" height="40">
-                                <span class="avatar-picker img-picker"></span>
-                                <svg class="svgIcon-use" width="40" height="40" viewBox="-8 -8 80 80"><g fill-rule="evenodd"><path d="M10.61 44.486V23.418c0-2.798 2.198-4.757 5.052-4.757h6.405c1.142-1.915 2.123-5.161 3.055-5.138L40.28 13.5c.79 0 1.971 3.4 3.073 5.14 0 .2 6.51 0 6.51 0 2.856 0 5.136 1.965 5.136 4.757V44.47c-.006 2.803-2.28 4.997-5.137 4.997h-34.2c-2.854.018-5.052-2.184-5.052-4.981zm5.674-23.261c-1.635 0-3.063 1.406-3.063 3.016v19.764c0 1.607 1.428 2.947 3.063 2.947H49.4c1.632 0 2.987-1.355 2.987-2.957v-19.76c0-1.609-1.357-3.016-2.987-3.016h-7.898c-.627-1.625-1.909-4.937-2.28-5.148 0 0-13.19.018-13.055 0-.554.276-2.272 5.143-2.272 5.143l-7.611.01z"></path><path d="M32.653 41.727c-5.06 0-9.108-3.986-9.108-8.975 0-4.98 4.047-8.966 9.108-8.966 5.057 0 9.107 3.985 9.107 8.969 0 4.988-4.047 8.974-9.107 8.974v-.002zm0-15.635c-3.674 0-6.763 3.042-6.763 6.66 0 3.62 3.089 6.668 6.763 6.668 3.673 0 6.762-3.047 6.762-6.665 0-3.616-3.088-6.665-6.762-6.665v.002z"></path></g></svg>
-                                <input type="radio" name="avatar" value="custom" checked><?php echo $info->avatar_type == 'letter' ? __('Default Avatar', 'tt') : __('Custom Avatar', 'tt'); ?>
-                            </label>
-                            <?php }else{ ?>
-                            <label class="local-avatar-label" title="<?php _e('Upload Avatar', 'tt'); ?>">
-                                <img src="<?php echo $info->local_avatar; ?>" class="avatar" data-filename="<?php echo $tt_user_id . '.jpg'; ?>" width="40" height="40">
-                                <span class="avatar-picker img-picker"></span>
-                                <svg class="svgIcon-use" width="40" height="40" viewBox="-8 -8 80 80"><g fill-rule="evenodd"><path d="M10.61 44.486V23.418c0-2.798 2.198-4.757 5.052-4.757h6.405c1.142-1.915 2.123-5.161 3.055-5.138L40.28 13.5c.79 0 1.971 3.4 3.073 5.14 0 .2 6.51 0 6.51 0 2.856 0 5.136 1.965 5.136 4.757V44.47c-.006 2.803-2.28 4.997-5.137 4.997h-34.2c-2.854.018-5.052-2.184-5.052-4.981zm5.674-23.261c-1.635 0-3.063 1.406-3.063 3.016v19.764c0 1.607 1.428 2.947 3.063 2.947H49.4c1.632 0 2.987-1.355 2.987-2.957v-19.76c0-1.609-1.357-3.016-2.987-3.016h-7.898c-.627-1.625-1.909-4.937-2.28-5.148 0 0-13.19.018-13.055 0-.554.276-2.272 5.143-2.272 5.143l-7.611.01z"></path><path d="M32.653 41.727c-5.06 0-9.108-3.986-9.108-8.975 0-4.98 4.047-8.966 9.108-8.966 5.057 0 9.107 3.985 9.107 8.969 0 4.988-4.047 8.974-9.107 8.974v-.002zm0-15.635c-3.674 0-6.763 3.042-6.763 6.66 0 3.62 3.089 6.668 6.763 6.668 3.673 0 6.762-3.047 6.762-6.665 0-3.616-3.088-6.665-6.762-6.665v.002z"></path></g></svg>
-                                <input type="radio" name="avatar" value="<?php echo $info->avatar; ?>"><?php echo $info->avatar_type == 'letter' ? __('Default Avatar', 'tt') : __('Custom Avatar', 'tt'); ?>
-                            </label><!-- //TODO change the value to custom after upload image finished -->
-                            <label  class="current-avatar-label"><img src="<?php echo $info->avatar; ?>" class="avatar" width="40" height="40"><input type="radio" name="avatar" value="<?php echo $info->avatar_type; ?>" checked><?php _e('Default Avatar', 'tt'); ?></label>
-=======
                             <label class="local-avatar-label" title="<?php _e('Upload Avatar', 'tt'); ?>">
                                 <img src="<?php echo $info->custom_avatar; ?>" class="avatar" data-filename="<?php echo $tt_user_id . '.jpg'; ?>" width="40" height="40">
                                 <span class="avatar-picker img-picker"></span>
@@ -65,7 +44,6 @@
                             <?php } ?>
                             <?php if(isset($info->weixin_avatar)) { ?>
                                 <label  class="weixin-avatar-label"><img src="<?php echo $info->weixin_avatar; ?>" class="avatar" width="40" height="40"><input type="radio" name="avatar" value="weixin" <?php if($info->avatar_type=='weixin') echo 'checked'; ?>><?php _e('Weixin Avatar', 'tt'); ?></label>
->>>>>>> dev
                             <?php } ?>
                         </div>
                     </div>
@@ -211,11 +189,7 @@
                 </section>
             <?php } ?>
             <!-- 账户安全 -->
-<<<<<<< HEAD
-            <section class="info-security clearfix">
-=======
             <section class="info-security clearfix" id="securityInfo">
->>>>>>> dev
                 <header><h2><?php _e('Account Security', 'tt'); ?><small><?php _e('Be careful', 'tt'); ?></small></h2></header>
                 <div class="form-group info-group clearfix">
                     <label class="col-md-2 control-label"><?php _e('Email (Required)', 'tt'); ?></label>

@@ -9,11 +9,7 @@
  * @date 2016/10/26 21:32
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
-<<<<<<< HEAD
- * @link https://www.webapproach.net/tint.html
-=======
  * @link https://webapproach.net/tint.html
->>>>>>> dev
  */
 ?>
 <?php
@@ -40,11 +36,7 @@ class HotReviewedPostsVM extends BaseVM {
     public static function getInstance($count = 5) {
         $posts_count = min(5, absint($count));
         $instance = new static(); // 因为配置不同文章数量共用该模型，不采用单例模式
-<<<<<<< HEAD
-        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . static::class . '_count' . $posts_count;
-=======
         $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . __CLASS__ . '_count' . $posts_count;
->>>>>>> dev
         $instance->_count = $posts_count;;
         $instance->configInstance();
         return $instance;
@@ -52,11 +44,7 @@ class HotReviewedPostsVM extends BaseVM {
 
     protected function getRealData() {
 //        // 排除分类
-<<<<<<< HEAD
-//        $uncat = tt_get_option('tt_home_undisplay_cats', array());
-=======
 //        $uncat = tt_filter_of_multicheck_option(tt_get_option('tt_home_undisplay_cats', array()));
->>>>>>> dev
         // 检索置顶用于排除
         $stickies = get_option('sticky_posts');
 

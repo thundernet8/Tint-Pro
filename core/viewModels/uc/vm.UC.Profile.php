@@ -9,11 +9,7 @@
  * @date 2016/11/11 21:11
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
-<<<<<<< HEAD
- * @link https://www.webapproach.net/tint.html
-=======
  * @link https://webapproach.net/tint.html
->>>>>>> dev
  */
 ?>
 <?php
@@ -42,11 +38,7 @@ class UCProfileVM extends BaseVM {
      */
     public static function getInstance($author_id = 0) {
         $instance = new static();
-<<<<<<< HEAD
-        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . static::class . '_author' . $author_id;
-=======
         $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . __CLASS__ . '_author' . $author_id;
->>>>>>> dev
         $instance->_authorId = $author_id;
         $instance->configInstance();
         return $instance;

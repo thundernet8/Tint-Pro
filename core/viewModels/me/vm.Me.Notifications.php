@@ -9,11 +9,7 @@
  * @date 2016/12/23 22:53
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
-<<<<<<< HEAD
- * @link https://www.webapproach.net/tint
-=======
  * @link https://webapproach.net/tint.html
->>>>>>> dev
  */
 ?>
 <?php
@@ -60,38 +56,22 @@ class MeNotificationsVM extends BaseVM {
      */
     public static function getInstance($user_id = 0, $type = 'all', $page = 1, $limit = 20) {
         $instance = new static();
-<<<<<<< HEAD
-        $type = in_array($type, ['comment', 'star', 'credit', 'update']) ? $type : ['comment', 'star', 'update', 'notification', 'credit']; //TODO add more
-        $type_str = is_array($type) ? implode('_', $type) : $type;
-        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . static::class . '_user' . $user_id . '_type' . $type_str;
-=======
         $type = in_array($type, array('comment', 'star', 'credit', 'update')) ? $type : array('comment', 'star', 'update', 'notification', 'credit'); //TODO add more
         $type_str = is_array($type) ? implode('_', $type) : $type;
         $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . __CLASS__ . '_user' . $user_id . '_type' . $type_str;
->>>>>>> dev
         $instance->_userId = $user_id;
         $instance->_type = $type;
         $instance->_page = $page;
         $instance->_limit = $limit;
-<<<<<<< HEAD
-        //$instance->_enableCache = false; //TODO debug use
-=======
         $instance->_enableCache = false; //禁用缓存
->>>>>>> dev
         $instance->configInstance();
         return $instance;
     }
 
     protected function getRealData() {
-<<<<<<< HEAD
-        $notifications = tt_get_messages($this->_type, $this->_limit, ($this->_page - 1) * $this->_limit, 'all');
-        $count = $notifications ? count($notifications) : 0;
-        $total = tt_count_messages( $this->_type, 'all');
-=======
         $notifications = tt_get_messages($this->_type, $this->_limit, ($this->_page - 1) * $this->_limit, MsgReadStatus::ALL);
         $count = $notifications ? count($notifications) : 0;
         $total = tt_count_messages( $this->_type, MsgReadStatus::ALL);
->>>>>>> dev
         $max_pages = ceil($total / $this->_limit);
         $pagination_base = is_array($this->_type) ? tt_url_for('all_notify') . '/page/%#%' : tt_url_for($this->_type . '_notify') . '/page/%#%';
         return (object)array(

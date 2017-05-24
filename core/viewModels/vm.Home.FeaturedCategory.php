@@ -9,11 +9,7 @@
  * @date 2016/09/24 09:19
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
-<<<<<<< HEAD
- * @link https://www.webapproach.net/tint.html
-=======
  * @link https://webapproach.net/tint.html
->>>>>>> dev
  */
 ?>
 <?php
@@ -42,14 +38,9 @@ class FeaturedCategoryVM extends BaseVM {
      */
     public static function getInstance($sequence = 1) {
         $instance = new static(); // 因为首页置顶三个分类公用该模型，因此不采用单例模式，覆盖父类方法
-<<<<<<< HEAD
-        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . static::class . $sequence;
-        $instance->_categorySequence = in_array($sequence, array(1, 2, 3)) ? $sequence : 1;
-=======
         $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . __CLASS__ . $sequence;
         $instance->_categorySequence = in_array($sequence, array(1, 2, 3)) ? $sequence : 1;
         //$instance->_enableCache = false; // TODO debug use
->>>>>>> dev
         $instance->configInstance();
         return $instance;
     }
@@ -98,11 +89,7 @@ class FeaturedCategoryVM extends BaseVM {
 //            $cat_post['cat_name'] = $cat->cat_name;
 //            $cat_post['cat_link'] = $cat_link;
             $cat_post['author'] = get_the_author();
-<<<<<<< HEAD
-            $cat_post['author_url'] = home_url('/@' . $cat_post['author']); //TODO the link
-=======
             $cat_post['author_url'] = get_author_posts_url($post->post_author);
->>>>>>> dev
             $cat_post['time'] = get_post_time('F j, Y', false, $post, false); //get_post_time( string $d = 'U', bool $gmt = false, int|WP_Post $post = null, bool $translate = false )
             $cat_post['datetime'] = get_the_time(DATE_W3C, $post);
             $cat_post['thumb'] = tt_get_thumb($post, $thumb_size);

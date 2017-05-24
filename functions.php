@@ -20,15 +20,9 @@ if (!defined('ABSPATH')){
 //Tint Pro授权相关参数
 global $tt_auth_config;
 //订单号
-<<<<<<< HEAD
-$tt_auth_config['order'] = '这里填订单号';//在https://old.webapproach.net/shop购买Tint高级版主题后，可在订单列表中看到自己的订单号
-//授权码
-$tt_auth_config['sn'] = '这里填授权码';//购买后凭订单号至https://old.webapproach.net/tint/authorize.php授权域名获得唯一授权码
-=======
 $tt_auth_config['order'] = '这里填订单号';//在https://webapproach.net/shop购买Tint高级版主题后，可在订单列表中看到自己的订单号
 //授权码
 $tt_auth_config['sn'] = '这里填授权码';//购买后凭订单号至https://webapproach.net/tint/authorize.php授权域名获得唯一授权码
->>>>>>> dev
 
 /* 引入加载器 */
 require_once (get_template_directory() . DIRECTORY_SEPARATOR . 'core' . DIRECTORY_SEPARATOR . 'functions' . DIRECTORY_SEPARATOR . 'func.Loader.php');

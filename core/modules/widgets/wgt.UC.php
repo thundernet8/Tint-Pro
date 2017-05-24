@@ -9,11 +9,7 @@
  * @date 2016/10/27 20:33
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
-<<<<<<< HEAD
- * @link https://www.webapproach.net/tint.html
-=======
  * @link https://webapproach.net/tint.html
->>>>>>> dev
  */
 ?>
 <?php
@@ -23,11 +19,7 @@
  */
 class UCWidget extends WP_Widget {
     function __construct() {
-<<<<<<< HEAD
-        parent::__construct(false, __('TT-Latest Posts', 'tt'), array( 'description' => __('TT-Show several latest posts', 'tt') ,'classname' => 'widget_hot-posts widget_latest-posts'));
-=======
         parent::__construct(false, __('TT- UC', 'tt'), array( 'description' => __('TT-Show toolkits for current user', 'tt') ,'classname' => 'widget_uc'));
->>>>>>> dev
     }
 
     function widget($args, $instance) {
@@ -37,11 +29,6 @@ class UCWidget extends WP_Widget {
         if($instance['title']) { echo $args['before_title'] . $instance['title'] . $args['after_title']; } ?>
         <div class="widget-content">
         <?php if(is_user_logged_in()) { ?>
-<<<<<<< HEAD
-            // TODO
-        <?php }else{ ?>
-
-=======
             tt_uc_widget_content();
         <?php }else{ ?>
             <li>
@@ -56,7 +43,6 @@ class UCWidget extends WP_Widget {
                 <span class="other-sign"><a class="wxlogin btn btn-social-weixin" href="<?php echo tt_add_redirect(tt_url_for('oauth_weixin'), Utils::getPHPCurrentUrl()); ?>"><i class="tico tico-wechat"></i><span><?php _e('Wechat Login', 'tt'); ?></span></a></span>
                 <?php } ?>
             </li>
->>>>>>> dev
         <?php } ?>
         </div>
         <?php echo $args['after_widget']; ?>
@@ -81,8 +67,4 @@ if ( ! function_exists( 'tt_register_widget_uc' ) ) {
         register_widget( 'UCWidget' );
     }
 }
-<<<<<<< HEAD
-add_action( 'widgets_init', 'tt_register_widget_uc' );
-=======
 //add_action( 'widgets_init', 'tt_register_widget_uc' );
->>>>>>> dev

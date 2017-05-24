@@ -9,11 +9,7 @@
  * @date 2016/12/24 23:28
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
-<<<<<<< HEAD
- * @link https://www.webapproach.net/tint
-=======
  * @link https://webapproach.net/tint.html
->>>>>>> dev
  */
 ?>
 <?php
@@ -48,11 +44,7 @@ class SearchVM extends BaseVM {
      */
     public static function getInstance($page = 1, $search = '') {
         $instance = new static();
-<<<<<<< HEAD
-        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . static::class . '_page' . $page . '_search' . $search;
-=======
         $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . __CLASS__ . '_page' . $page . '_search' . $search;
->>>>>>> dev
         $instance->_page = max(1, $page);
         $instance->_search = $search;
         //$instance->_enableCache = false; //Debug use

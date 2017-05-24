@@ -9,11 +9,7 @@
  * @date 2016/11/07 21:13
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
-<<<<<<< HEAD
- * @link https://www.webapproach.net/tint.html
-=======
  * @link https://webapproach.net/tint.html
->>>>>>> dev
  */
 ?>
 <?php
@@ -49,11 +45,7 @@ class UCLatestVM extends BaseVM {
      */
     public static function getInstance($page = 1, $author_id = 0) {
         $instance = new static(); // 因为不同分页不同作者共用该模型，不采用单例模式
-<<<<<<< HEAD
-        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . static::class . '_author' . $author_id . '_page' . $page;
-=======
         $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . __CLASS__ . '_author' . $author_id . '_page' . $page;
->>>>>>> dev
         $instance->_page = max(1, $page);
         $instance->_authorId = $author_id;
         $instance->configInstance();
@@ -93,11 +85,7 @@ class UCLatestVM extends BaseVM {
             $uc_latest_post['excerpt'] = get_the_excerpt($post);
             $uc_latest_post['category'] = get_the_category_list(' ', '', $post->ID);
             $uc_latest_post['author'] = get_the_author();
-<<<<<<< HEAD
-            $uc_latest_post['author_url'] = home_url('/@' . $uc_latest_post['author']); //TODO the link
-=======
             $uc_latest_post['author_url'] = get_author_posts_url(get_the_author_meta('ID'));
->>>>>>> dev
             $uc_latest_post['time'] = get_post_time('F j, Y', false, $post, false); //get_post_time( string $d = 'U', bool $gmt = false, int|WP_Post $post = null, bool $translate = false )
             $uc_latest_post['datetime'] = get_the_time(DATE_W3C, $post);
             $uc_latest_post['thumb'] = tt_get_thumb($post, 'medium');

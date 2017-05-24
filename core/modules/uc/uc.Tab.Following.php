@@ -9,11 +9,7 @@
  * @date 2016/11/06 17:54
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
-<<<<<<< HEAD
- * @link https://www.webapproach.net/tint.html
-=======
  * @link https://webapproach.net/tint.html
->>>>>>> dev
  */
 ?>
 <?php global $tt_author_vars; $tt_paged = $tt_author_vars['tt_paged']; $tt_author_id = $tt_author_vars['tt_author_id']; $logged_user_id = get_current_user_id(); ?>
@@ -23,13 +19,8 @@
 <?php } ?>
 <div class="author-tab-box follow-tab following-tab">
     <div class="tab-content author-follow author-following">
-<<<<<<< HEAD
-        <?php if($data = $vm->modelData) { $pagination_args = $data->pagination; $followings = $data->following; ?>
-            <?php if(count($followings) > 0) { ?>
-=======
         <?php if($data = $vm->modelData) { $count = $data->count; $followings = $data->followings; $total = $data->total; $max_pages = $data->max_pages; ?>
             <?php if($count > 0) { ?>
->>>>>>> dev
                 <div class="row">
                     <?php foreach ($followings as $following) { ?>
                         <div class="follow-box follower-box col-md-4 col-sm-6">
@@ -65,8 +56,6 @@
                         </div>
                     <?php } ?>
                 </div>
-<<<<<<< HEAD
-=======
                 <?php if($max_pages > 1) { ?>
                     <div class="pagination-mini clearfix">
                         <?php if($tt_paged == 1) { ?>
@@ -86,7 +75,6 @@
                         <?php } ?>
                     </div>
                 <?php } ?>
->>>>>>> dev
             <?php }else{ ?>
                 <div class="empty-content">
                     <span class="tico tico-dropbox"></span>

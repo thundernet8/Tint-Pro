@@ -1,56 +1,5 @@
 /* Options Framework Admin Styles */
 
-<<<<<<< HEAD
-#optionsframework {
-    max-width:840px;
-    background:#fff;
-}
-#optionsframework h3 {
-	cursor: default;
-	background-color: #f1f1f1;
-	border-bottom: 1px solid #ddd;
-	padding: 12px 10px;
-	margin: 0;
-}
-#optionsframework p {
-	margin-bottom:0;
-	padding-bottom:10px;
-}
-
-#optionsframework input::-webkit-input-placeholde,
-#optionsframework input::-moz-placeholder {
-	font-style: italic;
-}
-
-#optionsframework .controls input:focus, #optionsframework .controls select:focus, #optionsframework .controls textarea:focus {
-    border: 1px solid #3292ff;
-    box-shadow: none;
-}
-
-#optionsframework .section {
-	padding:10px 10px 0;
-}
-#optionsframework .group {
-	padding-bottom:40px;
-}
-#optionsframework .section .heading {
-	font-weight: 500;
-	border-left: 2px solid #38d;
-	padding-left: 10px;
-	color: #34495e;
-	font-size: 16px;
-}
-#optionsframework .section.section-info a {
-	color: #3292ff;
-	text-decoration: none;
-}
-#optionsframework .section.section-info a:hover {
-	color: #f74660;
-}
-#optionsframework .section.section-info a:focus {
-	outline: none;
-	box-shadow: none;
-=======
 body {
 	font-family:miranafont,"Hiragino Sans GB",STXihei,"Microsoft YaHei",SimSun,sans-serif;
 	background:#F5F5F5 ;
@@ -259,7 +208,6 @@ select, textarea{
 	margin:0 0 15px;
 	font-weight: 600;
 	color: #455E8C;
->>>>>>> dev
 }
 #optionsframework .section .controls {
 	float: left;
@@ -271,11 +219,7 @@ select, textarea{
 	max-width:38%;
 	float: left;
 	font-size: 12px;
-<<<<<<< HEAD
-	line-height:29px;
-=======
 	line-height:20px;
->>>>>>> dev
 	color: #777;
 }
 #optionsframework .section-checkbox .controls {
@@ -283,27 +227,10 @@ select, textarea{
 }
 #optionsframework .section-checkbox .explain {
 	max-width:94%;
-<<<<<<< HEAD
-	line-height: 16px;
-}
-#optionsframework .controls input[type=text] {
-	width:100%;
-}
-#optionsframework .controls input.disabled {
-	border: 1px solid #ff1616;
-    color: #ff1616;
-    opacity: 0.36;
-    cursor: not-allowed;
-}
-#optionsframework .controls input[type=text].wp-color-picker {
-    width: 65px;
-}
-=======
 }
 #optionsframework .of-input {
 	width:100%;
 }
->>>>>>> dev
 #optionsframework .controls select, #optionsframework .controls textarea {
 	margin-bottom:10px;
 	width:100%;
@@ -315,22 +242,12 @@ select, textarea{
 	margin-bottom: 5px;
 }
 #optionsframework input.checkbox, #optionsframework input.of-radio {
-<<<<<<< HEAD
-	margin: 0 10px 5px 0;
-	float:left;
-	clear:both;
-}
- #optionsframework input.checkbox:before {
-    color: #3292ff!important;
- }
-=======
 	width: 15px;
 	margin-top:2px;
 	float:left;
 	clear:both;
 	border-radius: 50%;
 }
->>>>>>> dev
 #optionsframework .section-typography .controls {
 	float:none;
 	width:auto;
@@ -359,12 +276,6 @@ select, textarea{
 	margin-right:5px;
 	float:left
 }
-<<<<<<< HEAD
-#optionsframework .section-typography .wp-picker-container {
-	margin-top:2px;
-}
-=======
->>>>>>> dev
 #optionsframework .of-background-properties {
 	clear:both;
 	margin-top: 18px;
@@ -438,8 +349,6 @@ select, textarea{
 
 #optionsframework .controls input.upload {
 	width:80%;
-<<<<<<< HEAD
-=======
 	box-shadow: none;
 }
 #optionsframework .controls input.upload_button {
@@ -450,24 +359,16 @@ select, textarea{
 #optionsframework .controls input.upload_button:hover {
 	border-color:#666666;
 	color:#000;
->>>>>>> dev
 }
 #optionsframework .screenshot {
 	float:left;
 	margin-left:1px;
 	position:relative;
 	width:344px;
-<<<<<<< HEAD
-	margin-top:3px;
-}
-#optionsframework .screenshot img {
-	background:#fafafa;
-=======
 	margin-top:20px;
 }
 #optionsframework .screenshot img {
 	background:#FAFAFA;
->>>>>>> dev
 	border-color:#ccc #eee #eee #ccc;
 	border-style:solid;
 	border-width:1px;
@@ -488,10 +389,6 @@ select, textarea{
 	left:-4px;
 	text-indent:-9999px;
 	width:16px;
-<<<<<<< HEAD
-	cursor:pointer;
-=======
->>>>>>> dev
 }
 #optionsframework .screenshot .no_image .file_link {
 	margin-left: 20px;
@@ -500,9 +397,6 @@ select, textarea{
 	bottom: 0px;
 }
 #optionsframework .reset-button {
-<<<<<<< HEAD
-	float:left;
-=======
 	float: left;
 	box-shadow: none;
 	border: none;
@@ -512,7 +406,6 @@ select, textarea{
 	height: 40px;
 	width: 100px;
 	border-radius: 0;
->>>>>>> dev
 	cursor:pointer;
 }
 
@@ -520,18 +413,6 @@ select, textarea{
 
 #optionsframework-submit {
 	padding: 7px 10px;
-<<<<<<< HEAD
-	border-top: 1px solid #ddd;
-	background-color: #f1f1f1;
-}
-#optionsframework .button-primary {
-	float:right;
-    background: #3292ff;
-    box-shadow: none;
-    border: none;
-    color: #fff;
-    text-shadow: none;
-=======
 	background-image: -moz-linear-gradient(center top , #F9F9F9, #ECECEC);
 }
 #optionsframework .button-primary {
@@ -544,7 +425,6 @@ select, textarea{
 	height: 40px;
 	width: 100px;
 	border-radius: 0;
->>>>>>> dev
 }
 #optionsframework .section:after {
 	content: "";
@@ -554,11 +434,6 @@ select, textarea{
 	clear: both;
 }
 
-<<<<<<< HEAD
-#optionsframework-wrap .nav-tab {
-	font-weight: normal;
-}
-=======
 input.of-radio-img-radio{display: none;}
 .of-radio-img-label{display: none;}
 .of-radio-color{
@@ -594,4 +469,3 @@ input.of-radio-img-radio{display: none;}
 #optionsframework .section-color .explain,
 #optionsframework .section-colorradio .explain,
 #optionsframework .section-radio .explain{float: none;width: 100%;}
->>>>>>> dev

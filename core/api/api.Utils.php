@@ -9,11 +9,7 @@
  * @date 2016/09/04 20:50
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
-<<<<<<< HEAD
- * @link https://www.webapproach.net/tint.html
-=======
  * @link https://webapproach.net/tint.html
->>>>>>> dev
  */
 ?>
 <?php
@@ -49,11 +45,7 @@ function tt_rest_resource_not_found_code() {
  * @return WP_REST_Response
  */
 function tt_add_rest_index_link($response) {
-<<<<<<< HEAD
-    $response->add_link( 'theme', 'https://www.webapproach.net/tint.html' );
-=======
     $response->add_link( 'theme', TT_SITE . '/tint.html' );
->>>>>>> dev
     return $response;
 }
 add_filter('rest_index', 'tt_add_rest_index_link');
@@ -171,8 +163,6 @@ function tt_create_initial_rest_routes() {
     // TT post
     $tt_post_controller = new WP_REST_Post_Controller;
     $tt_post_controller->register_routes();
-<<<<<<< HEAD
-=======
 
     // Product
     $product_controller = new WP_REST_Product_Controller;
@@ -185,7 +175,6 @@ function tt_create_initial_rest_routes() {
     // Member
     $member_controller = new WP_REST_Member_Controller;
     $member_controller->register_routes();
->>>>>>> dev
 }
 add_action( 'rest_api_init', 'tt_create_initial_rest_routes', 0 );  // TODO cached 接口
 
@@ -194,29 +183,17 @@ add_action( 'rest_api_init', 'tt_create_initial_rest_routes', 0 );  // TODO cach
  * REST请求时设置DOING_AJAX为true
  *
  * @since 2.0.0
-<<<<<<< HEAD
- * @return void
- */
-function tt_rest_set_doing_ajax () {
-=======
  * @param $access
  * @return bool
  */
 function tt_rest_set_doing_ajax ($access) {
->>>>>>> dev
     if(!defined('DOING_AJAX')) {
         define('DOING_AJAX', true);
     }
 
-<<<<<<< HEAD
-    return true;
-}
-add_filter('rest_enabled', 'tt_rest_set_doing_ajax');
-=======
     return $access;
 }
 add_filter('rest_authentication_errors', 'tt_rest_set_doing_ajax');
->>>>>>> dev
 
 
 /**
@@ -260,11 +237,7 @@ function tt_rest_pre_dispatch_cache($result, $server, $request) {
 
     // 部分接口不缓存，如登录接口 //TODO more
     // POST请求不缓存|DEBUG模式不緩存
-<<<<<<< HEAD
-    if($request->get_method() == 'POST' || in_array($request->get_route(), ['/v1/session']) || tt_get_option('tt_theme_debug', false)) {
-=======
     if($request->get_method() == 'POST' || in_array($request->get_route(), array('/v1/session')) || tt_get_option('tt_theme_debug', false)) {
->>>>>>> dev
         return false;
     }
 

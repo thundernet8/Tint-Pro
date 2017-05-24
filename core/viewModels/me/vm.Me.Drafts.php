@@ -9,11 +9,7 @@
  * @date 2016/12/23 20:30
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
-<<<<<<< HEAD
- * @link https://www.webapproach.net/tint
-=======
  * @link https://webapproach.net/tint.html
->>>>>>> dev
  */
 ?>
 <?php
@@ -48,11 +44,7 @@ class MeDraftsVM extends BaseVM {
      */
     public static function getInstance($user_id = 0, $page = 1) {
         $instance = new static();
-<<<<<<< HEAD
-        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . static::class . '_page' . $page . '_user' . $user_id;
-=======
         $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . __CLASS__ . '_page' . $page . '_user' . $user_id;
->>>>>>> dev
         $instance->_userId = $user_id;
         $instance->_page = max(1, $page);
         $instance->_enableCache = false; // 不使用缓存
@@ -80,13 +72,8 @@ class MeDraftsVM extends BaseVM {
         $GLOBALS['wp_query'] = $query; // 取代主循环(query_posts只返回posts，为了获取其他有用数据，使用WP_Query) //TODO 缓存时无效
 
         $draft_posts = array();
-<<<<<<< HEAD
-        $count = $query->max_num_pages;
-        $max_pages = ceil($count / $posts_per_page);
-=======
         $count = $query->found_posts;
         $max_pages = $query->max_num_pages; //ceil($count / $posts_per_page);
->>>>>>> dev
         $pagination_base = tt_url_for('my_drafts') . '/page/%#%';
 
         $author_url = get_author_posts_url($this->_userId);

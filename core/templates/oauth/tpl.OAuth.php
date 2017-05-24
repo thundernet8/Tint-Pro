@@ -9,11 +9,7 @@
  * @date 2016/09/01 20:39
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
-<<<<<<< HEAD
- * @link https://www.webapproach.net/tint.html
-=======
  * @link https://webapproach.net/tint.html
->>>>>>> dev
  */
 ?>
 <?php
@@ -21,11 +17,6 @@
 // 要求noindex
 wp_no_robots();
 
-<<<<<<< HEAD
-$open_type = get_query_var('oauth');
-
-$open = new OpenQQ(wp_get_current_user());
-=======
 $open_type = strtolower(get_query_var('oauth'));
 
 if(!in_array($open_type, (array)json_decode(ALLOWED_OAUTH_TYPES))){
@@ -44,7 +35,6 @@ switch($open_type) {
         $open = new OpenWeiXin(wp_get_current_user());
         break;
 }
->>>>>>> dev
 
 $try = $open->openHandle(); // 成功会跳转，无需再执行处理
 

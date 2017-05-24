@@ -9,11 +9,7 @@
  * @date 2016/11/19 16:07
  * @license GPL v3 LICENSE
  * @license uri http://www.gnu.org/licenses/gpl-3.0.html
-<<<<<<< HEAD
- * @link https://www.webapproach.net/tint
-=======
  * @link https://webapproach.net/tint.html
->>>>>>> dev
  */
 ?>
 <?php
@@ -41,11 +37,7 @@ class ShopProductVM extends BaseVM {
      */
     public static function getInstance($product_id = 1) {
         $instance = new static();
-<<<<<<< HEAD
-        $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . static::class . '_product' . $product_id;
-=======
         $instance->_cacheKey = 'tt_cache_' . $instance->_cacheUpdateFrequency . '_vm_' . __CLASS__ . '_product' . $product_id . '_user' . get_current_user_id();
->>>>>>> dev
         $instance->_productId = absint($product_id);
         $instance->configInstance();
         return $instance;
@@ -103,21 +95,6 @@ class ShopProductVM extends BaseVM {
         $cat_terms = get_the_terms($the_product, 'product_category');
         $catIDs = array();
         $cats = array();
-<<<<<<< HEAD
-        foreach ($cat_terms as $cat_term){
-            $catIDs[] = $cat_term->term_id;
-
-            $cat = array();
-            $cat['ID'] = $cat_term->term_id;
-            $cat['slug'] = $cat_term->slug;
-            $cat['name'] = $cat_term->name;
-            $cat['description'] = $cat_term->description;
-            $cat['parent'] = $cat_term->parent;
-            $cat['count'] = $cat_term->count;
-            $cat['permalink'] = get_term_link($cat_term, 'product_category');
-
-            $cats[] = $cat;
-=======
         if ($cat_terms) {
             foreach ($cat_terms as $cat_term){
                 $catIDs[] = $cat_term->term_id;
@@ -133,7 +110,6 @@ class ShopProductVM extends BaseVM {
 
                 $cats[] = $cat;
             }
->>>>>>> dev
         }
 
         // 支付类型
@@ -212,25 +188,16 @@ class ShopProductVM extends BaseVM {
             'ignore_sticky_posts'=>1
         );
         $relates_query = null;
-<<<<<<< HEAD
-        if(count($tagIDs) > 0 && ($the_query = new WP_Query($relates_query_args))->have_posts()) {
-=======
         $the_query = new WP_Query($relates_query_args);
         if(count($tagIDs) > 0 && $the_query->have_posts()) {
->>>>>>> dev
             $relates_query = $the_query;
         }else{
             $r_cats = get_the_terms($the_product, 'product_category');
             $r_catIDs = array();
-<<<<<<< HEAD
-            foreach ($r_cats as $r_cat){
-                $r_catIDs[] = $r_cat->term_id;
-=======
             if ($r_cats) {
                 foreach ($r_cats as $r_cat){
                     $r_catIDs[] = $r_cat->term_id;
                 }
->>>>>>> dev
             }
             $relates_query_args = array(
                 'tax_query' => array(
@@ -267,11 +234,7 @@ class ShopProductVM extends BaseVM {
             ));
             $related_product['sales'] = get_post_meta($post->ID, 'tt_product_sales', true);
             $related_product['currency'] = get_post_meta( $post->ID, 'tt_pay_currency', true) ? 'cash' : 'credit';
-<<<<<<< HEAD
-            $related_product['price'] = $related_product['currency'] == 'cash' ? sprintf('%0.2f', get_post_meta($post->ID, 'tt_product_price', true)) : (int)get_post_meta($the_product->ID, 'tt_product_price', true);
-=======
             $related_product['price'] = $related_product['currency'] == 'cash' ? sprintf('%0.2f', get_post_meta($post->ID, 'tt_product_price', true)) : (int)get_post_meta($post->ID, 'tt_product_price', true);
->>>>>>> dev
             $related_product['price_unit'] = $related_product['currency'] == 'cash' ? __('YUAN', 'tt') : __('CREDITS', 'tt');
             $related_product['price_icon'] = !($related_product['price'] > 0) ? '' : $related_product['currency'] == 'cash' ? '<i class="tico tico-cny"></i>' : '<i class="tico tico-diamond"></i>';
             $related_product['discount'] = tt_get_product_discount_array($post->ID); // array 第1项为普通折扣, 第2项为会员(月付)折扣, 第3项为会员(年付)折扣, 第4项为会员(永久)折扣

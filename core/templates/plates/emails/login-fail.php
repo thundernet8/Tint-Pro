@@ -2,16 +2,9 @@
 
 <p>你好! 你的博客空间(<?php echo get_bloginfo('name'); ?>)有失败登录!</p>
 <p>请确定是您自己的登录失误, 以防别人攻击! 登录信息如下: </p>
-<<<<<<< HEAD
-<p>登录名: <?=$this->e($loginName)?><p>
-<p>登录密码: ****** <p>
-<p>登录时间<?php echo date("Y-m-d H:i:s"); ?><p>
-<p>登录IP: <?=$this->e($ip)?><?php echo ' [' . tt_query_ip_addr($ip) . ']'; ?><p>
-=======
 <div style="background-color:#fefcc9; padding:10px 15px; border:1px solid #f7dfa4; font-size: 12px;line-height:160%;">
     登录名: <?=$this->e($loginName)?>
     <br>登录密码: ******
     <br>登录时间: <?php echo date("Y-m-d H:i:s"); ?>
     <br>登录IP: <?=$this->e($ip)?><?php echo ' [' . tt_query_ip_addr($ip) . ']'; ?>
 </div>
->>>>>>> dev
